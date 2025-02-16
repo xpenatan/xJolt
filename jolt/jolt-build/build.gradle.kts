@@ -25,7 +25,7 @@ val sourceDestination = "${buildDir}/jolt/"
 tasks.register<Download>("download_source") {
     group = "jolt"
     description = "Download jolt source"
-    src("https://github.com/jrouwe/JoltPhysics/archive/refs/tags/v5.1.0.zip")
+    src("https://github.com/jrouwe/JoltPhysics/archive/refs/tags/v5.2.0.zip")
 //    src("https://github.com/jrouwe/JoltPhysics/archive/master.zip")
     dest(File(zippedPath))
     doLast {

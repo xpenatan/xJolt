@@ -615,10 +615,10 @@ public:
         mInstance = inVehicleConstraint;
     }
 
-    virtual void OnStep(float inDeltaTime, PhysicsSystem &inPhysicsSystem) override
+    virtual void OnStep(const PhysicsStepListenerContext &inContext) override
     {
-        PhysicsStepListener* instance = mInstance;
-        instance->OnStep(inDeltaTime, inPhysicsSystem);
+        PhysicsStepListener *instance = mInstance;
+        instance->OnStep(inContext);
     }
 
 private:
@@ -669,21 +669,21 @@ public:
             ioLongitudinalFriction = GetCombinedFriction(inWheelIndex, ETireFrictionDirection_Longitudinal, ioLongitudinalFriction, inBody2, inSubShapeID2);
             ioLateralFriction = GetCombinedFriction(inWheelIndex, ETireFrictionDirection_Lateral, ioLateralFriction, inBody2, inSubShapeID2);
         });
-        inConstraint.SetPreStepCallback([this](VehicleConstraint &inVehicle, float inDeltaTime, PhysicsSystem &inPhysicsSystem) {
-            OnPreStepCallback(inVehicle, inDeltaTime, inPhysicsSystem);
+        inConstraint.SetPreStepCallback([this](VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) {
+            OnPreStepCallback(inVehicle, inContext);
         });
-        inConstraint.SetPostCollideCallback([this](VehicleConstraint &inVehicle, float inDeltaTime, PhysicsSystem &inPhysicsSystem) {
-            OnPostCollideCallback(inVehicle, inDeltaTime, inPhysicsSystem);
+        inConstraint.SetPostCollideCallback([this](VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) {
+            OnPostCollideCallback(inVehicle, inContext);
         });
-        inConstraint.SetPostStepCallback([this](VehicleConstraint &inVehicle, float inDeltaTime, PhysicsSystem &inPhysicsSystem) {
-            OnPostStepCallback(inVehicle, inDeltaTime, inPhysicsSystem);
+        inConstraint.SetPostStepCallback([this](VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) {
+            OnPostStepCallback(inVehicle, inContext);
         });
     }
 
     virtual float GetCombinedFriction(unsigned int inWheelIndex, ETireFrictionDirection inTireFrictionDirection, float inTireFriction, const Body &inBody2, const SubShapeID &inSubShapeID2) = 0;
-    virtual void OnPreStepCallback(VehicleConstraint &inVehicle, float inDeltaTime, PhysicsSystem &inPhysicsSystem) = 0;
-    virtual void OnPostCollideCallback(VehicleConstraint &inVehicle, float inDeltaTime, PhysicsSystem &inPhysicsSystem) = 0;
-    virtual void OnPostStepCallback(VehicleConstraint &inVehicle, float inDeltaTime, PhysicsSystem &inPhysicsSystem) = 0;
+    virtual void OnPreStepCallback(VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) = 0;
+    virtual void OnPostCollideCallback(VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) = 0;
+    virtual void OnPostStepCallback(VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) = 0;
 };
 
 /// The tire max impulse callback returns multiple parameters, so we need to store them in a class

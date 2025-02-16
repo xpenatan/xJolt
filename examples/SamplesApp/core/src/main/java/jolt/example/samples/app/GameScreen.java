@@ -7,8 +7,6 @@ public class GameScreen extends ScreenAdapter {
 
     private SamplesApp samplesApp;
 
-
-
     @Override
     public void show() {
         samplesApp = new SamplesApp();

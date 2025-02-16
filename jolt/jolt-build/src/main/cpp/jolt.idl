@@ -811,6 +811,7 @@ interface Shape {
     unsigned long GetSubShapeIDBitsRecursive();
     float GetInnerRadius();
     [Value] MassProperties GetMassProperties();
+    [Const] Shape GetLeafShape([Const, Ref] SubShapeID inSubShapeID, [Ref] SubShapeID outRemainder);
     [Const] PhysicsMaterial GetMaterial([Const, Ref] SubShapeID inSubShapeID);
     [Value] Vec3 GetSurfaceNormal([Const, Ref] SubShapeID inSubShapeID, [Const, Ref] Vec3 inLocalSurfacePosition);
     unsigned long long GetSubShapeUserData([Const, Ref] SubShapeID inSubShapeID);
@@ -2012,7 +2013,8 @@ interface BroadPhaseQuery {
 interface RayCastSettings {
     void RayCastSettings();
 
-    attribute EBackFaceMode mBackFaceMode;
+    attribute EBackFaceMode mBackFaceModeTriangles;
+    attribute EBackFaceMode mBackFaceModeConvex;
     attribute boolean mTreatConvexAsSolid;
 };
 
@@ -2293,13 +2295,20 @@ interface NarrowPhaseQuery {
     void CollectTransformedShapes([Const, Ref] AABox inBox, [Ref] TransformedShapeCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
 };
 
+interface PhysicsStepListenerContext {
+    attribute float mDeltaTime;
+    attribute boolean mIsFirstStep;
+    attribute boolean mIsLastStep;
+    attribute PhysicsSystem mPhysicsSystem;
+};
+
 interface PhysicsStepListener {
 };
 
 [JSImplementation="PhysicsStepListener"]
 interface PhysicsStepListenerJS {
     void PhysicsStepListenerJS();
-    void OnStep(float inDeltaTime, [Ref] PhysicsSystem inSystem);
+    void OnStep([Const, Ref] PhysicsStepListenerContext inContext);
 };
 
 interface BodyActivationListener {
@@ -3053,9 +3062,9 @@ interface VehicleConstraintCallbacksEm {
 interface VehicleConstraintCallbacksJS {
     void VehicleConstraintCallbacksJS();
     float GetCombinedFriction(unsigned long inWheelIndex, ETireFrictionDirection inTireFrictionDirection, float inTireFriction, [Const, Ref] Body inBody2, [Const, Ref] SubShapeID inSubShapeID2);
-    void OnPreStepCallback([Ref] VehicleConstraint inVehicle, float inDeltaTime, [Ref] PhysicsSystem inPhysicsSystem);
-    void OnPostCollideCallback([Ref] VehicleConstraint inVehicle, float inDeltaTime, [Ref] PhysicsSystem inPhysicsSystem);
-    void OnPostStepCallback([Ref] VehicleConstraint inVehicle, float inDeltaTime, [Ref] PhysicsSystem inPhysicsSystem);
+    void OnPreStepCallback([Ref] VehicleConstraint inVehicle, [Const, Ref] PhysicsStepListenerContext inContext);
+    void OnPostCollideCallback([Ref] VehicleConstraint inVehicle, [Const, Ref] PhysicsStepListenerContext inContext);
+    void OnPostStepCallback([Ref] VehicleConstraint inVehicle, [Const, Ref] PhysicsStepListenerContext inContext);
 };
 
 interface TireMaxImpulseCallbackResult {
