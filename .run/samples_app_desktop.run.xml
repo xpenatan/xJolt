@@ -10,7 +10,7 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="samplesapp-run-desktop" />
+          <option value="SamplesApp-run-desktop" />
         </list>
       </option>
       <option name="vmOptions" />

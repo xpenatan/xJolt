@@ -1,19 +1,50 @@
 package jolt.example.samples.app;
 
+import com.badlogic.gdx.utils.ScreenUtils;
+import jolt.BodyManagerDrawSettings;
+import jolt.JoltInterface;
+import jolt.JoltSettings;
 import jolt.example.samples.app.tests.BoxShapeTest;
+import jolt.jolt.physics.PhysicsSystem;
+import jolt.jolt.physics.collision.ObjectLayerPairFilterTable;
+import jolt.jolt.physics.collision.broadphase.BroadPhaseLayer;
+import jolt.jolt.physics.collision.broadphase.BroadPhaseLayerInterfaceTable;
+import jolt.jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilterTable;
 
 public class SamplesApp {
+    // Object layers
+    public static int LAYER_NON_MOVING = 0;
+    public static int LAYER_MOVING = 1;
+    public static int NUM_OBJECT_LAYERS = 2;
 
     Test test;
 
-    public void setup() {
+    protected JoltInterface jolt;
+    private PhysicsSystem  physicsSystem;
+    private DefaultDebugRenderer debugRenderer;
+    private BodyManagerDrawSettings debugSettings;
 
+    public void setup() {
+        JoltSettings settings = new JoltSettings();
+        setupCollisionFiltering(settings);
+        jolt = new JoltInterface(settings);
+        settings.dispose();
+        physicsSystem = jolt.GetPhysicsSystem();
+        debugRenderer = new DefaultDebugRenderer();
+        debugSettings = new BodyManagerDrawSettings();
+        debugSettings.set_mDrawShape(true);
     }
 
     public void update(float delta) {
+        ScreenUtils.clear(1, 1, 1, 1, true);
+        // Don't go below 30 Hz to prevent spiral of death
+        float deltaTime = (float)Math.min(delta, 1.0 / 30.0);
+
         if(test != null) {
-            test.update(delta);
+            test.update(deltaTime);
         }
+        DrawPhysics();
+        StepPhysics(deltaTime);
     }
 
     public void startTest(Class<? extends Test> testClass) {
@@ -22,10 +53,50 @@ public class SamplesApp {
             test = null;
         }
         test = new BoxShapeTest();
-        test.setup();
+
+        test.setPhysicsSystem(physicsSystem);
+        test.initialize();
     }
 
-    public void nextTest() {
+    private void nextTest() {
 
+    }
+
+    private void DrawPhysics() {
+        debugRenderer.DrawBodies(physicsSystem, debugSettings);
+    }
+
+    public void StepPhysics(float deltaTime) {
+        // When running below 55 Hz, do 2 steps instead of 1
+        var numSteps = deltaTime > 1.0 / 55.0 ? 2 : 1;
+        jolt.Step(deltaTime, numSteps);
+    }
+
+    private void setupCollisionFiltering(JoltSettings settings) {
+        // Layer that objects can be in, determines which other objects it can collide with
+        // Typically you at least want to have 1 layer for moving bodies and 1 layer for static bodies, but you can have more
+        // layers if you want. E.g. you could have a layer for high detail collision (which is not used by the physics simulation
+        // but only if you do collision testing).
+
+        ObjectLayerPairFilterTable objectFilter = new ObjectLayerPairFilterTable(NUM_OBJECT_LAYERS);
+        objectFilter.EnableCollision(LAYER_NON_MOVING, LAYER_MOVING);
+        objectFilter.EnableCollision(LAYER_MOVING, LAYER_MOVING);
+
+        // Each broadphase layer results in a separate bounding volume tree in the broad phase. You at least want to have
+        // a layer for non-moving and moving objects to avoid having to update a tree full of static objects every frame.
+        // You can have a 1-on-1 mapping between object layers and broadphase layers (like in this case) but if you have
+        // many object layers you'll be creating many broad phase trees, which is not efficient.
+
+        BroadPhaseLayer BP_LAYER_NON_MOVING = new BroadPhaseLayer((short)0);
+        BroadPhaseLayer BP_LAYER_MOVING = new BroadPhaseLayer((short)1);
+        int NUM_BROAD_PHASE_LAYERS = 2;
+        BroadPhaseLayerInterfaceTable bpInterface = new BroadPhaseLayerInterfaceTable(NUM_OBJECT_LAYERS, NUM_BROAD_PHASE_LAYERS);
+        bpInterface.MapObjectToBroadPhaseLayer(LAYER_NON_MOVING, BP_LAYER_NON_MOVING);
+        bpInterface.MapObjectToBroadPhaseLayer(LAYER_MOVING, BP_LAYER_MOVING);
+
+        settings.set_mObjectLayerPairFilter(objectFilter);
+        settings.set_mBroadPhaseLayerInterface(bpInterface);
+        ObjectVsBroadPhaseLayerFilterTable broadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(settings.get_mBroadPhaseLayerInterface(), NUM_BROAD_PHASE_LAYERS, settings.get_mObjectLayerPairFilter(), NUM_OBJECT_LAYERS);
+        settings.set_mObjectVsBroadPhaseLayerFilter(broadPhaseLayerFilter);
     }
 }

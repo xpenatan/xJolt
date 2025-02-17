@@ -3482,16 +3482,17 @@ interface BroadPhaseLayer {
     unsigned short GetValue();
 };
 
-interface BroadPhaseLayerInterfaceEm {
-};
-BroadPhaseLayerInterfaceEm implements BroadPhaseLayerInterface;
-
-[JSImplementation="BroadPhaseLayerInterfaceEm"]
-interface BroadPhaseLayerInterfaceJS {
-    void BroadPhaseLayerInterfaceJS();
-    [Const] unsigned long GetNumBroadPhaseLayers();
-    [Const] unsigned short GetBPLayer(unsigned long inLayer); // Unfortunately the C++ version of GetBroadPhaseLayer is not compatible with JS so we have to use a different name and use an unsigned short instead of a BroadPhaseLayer
-};
+// TODO is this needed?
+//interface BroadPhaseLayerInterfaceEm {
+//};
+//BroadPhaseLayerInterfaceEm implements BroadPhaseLayerInterface;
+//
+//[JSImplementation="BroadPhaseLayerInterfaceEm"]
+//interface BroadPhaseLayerInterfaceJS {
+//    void BroadPhaseLayerInterfaceJS();
+//    [Const] unsigned long GetNumBroadPhaseLayers();
+//    [Const] unsigned short GetBPLayer(unsigned long inLayer); // Unfortunately the C++ version of GetBroadPhaseLayer is not compatible with JS so we have to use a different name and use an unsigned short instead of a BroadPhaseLayer
+//};
 
 interface BroadPhaseLayerInterfaceTable {
     void BroadPhaseLayerInterfaceTable(unsigned long inNumObjectLayers, unsigned long inNumBroadPhaseLayers);
