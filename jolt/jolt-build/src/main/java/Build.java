@@ -17,7 +17,8 @@ public class Build {
         String libName = "jolt";
         String modulePrefix = "jolt";
         String basePackage = "jolt";
-        String sourceDir =  "/build/jolt";
+        String sourcePath =  "/build/jolt";
+//        String sourcePath =  "E:\\Dev\\Projects\\cpp\\JoltPhysics";
 
         IDLHelper.cppConverter = idlType -> {
             if(idlType.equals("unsigned long long")) {
@@ -26,7 +27,7 @@ public class Build {
             return null;
         };
 
-        BuildToolOptions op = new BuildToolOptions(modulePrefix, libName, basePackage, sourceDir, args);
+        BuildToolOptions op = new BuildToolOptions(modulePrefix, libName, basePackage, sourcePath, args);
         BuilderTool.build(op, new BuildToolListener() {
             @Override
             public void onAddTarget(BuildToolOptions op, IDLReader idlReader, ArrayList<BuildMultiTarget> targets) {
@@ -56,17 +57,17 @@ public class Build {
     }
 
     private static BuildMultiTarget getWindowTarget(BuildToolOptions op) {
-        String libBuildCPPPath = op.getModuleBuildCPPPath();
-
         BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+        String sourceDir = op.getSourceDir();
 
         WindowsMSVCTarget.DEBUG_BUILD = true;
 
         // Make a static library
         WindowsMSVCTarget windowsTarget = new WindowsMSVCTarget();
         windowsTarget.isStatic = true;
-        windowsTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jolt/");
-        windowsTarget.cppInclude.add(libBuildCPPPath + "/**/jolt/Jolt/**.cpp");
+        windowsTarget.headerDirs.add("-I" + sourceDir);
+        windowsTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
         windowsTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
         windowsTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
         windowsTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
@@ -77,9 +78,10 @@ public class Build {
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
         linkTarget.addJNIHeaders();
-        linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jolt/");
-        linkTarget.linkerFlags.add(libBuildCPPPath + "/libs/windows/vc/jolt64_.lib");
+        linkTarget.headerDirs.add("-I" + sourceDir);
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+        linkTarget.linkerFlags.add(libBuildCPPPath + "/libs/windows/vc/jolt64_.lib");
         linkTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
         linkTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
         linkTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
@@ -91,15 +93,15 @@ public class Build {
     }
 
     private static BuildMultiTarget getLinuxTarget(BuildToolOptions op) {
-        String libBuildCPPPath = op.getModuleBuildCPPPath();
-
         BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+        String sourceDir = op.getSourceDir();
 
         // Make a static library
         LinuxTarget linuxTarget = new LinuxTarget();
         linuxTarget.isStatic = true;
-        linuxTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jolt/");
-        linuxTarget.cppInclude.add(libBuildCPPPath + "/**/jolt/Jolt/**.cpp");
+        linuxTarget.headerDirs.add("-I" + sourceDir);
+        linuxTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
         linuxTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
         linuxTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
         linuxTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
@@ -110,7 +112,8 @@ public class Build {
         // Compile glue code and link
         LinuxTarget linkTarget = new LinuxTarget();
         linkTarget.addJNIHeaders();
-        linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jolt/");
+        linkTarget.headerDirs.add("-I" + sourceDir);
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.linkerFlags.add(libBuildCPPPath + "/libs/linux/libjolt64_.a");
         linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
         linkTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
@@ -124,15 +127,15 @@ public class Build {
     }
 
     private static BuildMultiTarget getMacTarget(BuildToolOptions op, boolean isArm) {
-        String libBuildCPPPath = op.getModuleBuildCPPPath();
-
         BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
+        String sourceDir = op.getSourceDir();
 
         // Make a static library
         MacTarget macTarget = new MacTarget(isArm);
         macTarget.isStatic = true;
-        macTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jolt/");
-        macTarget.cppInclude.add(libBuildCPPPath + "/**/jolt/Jolt/**.cpp");
+        macTarget.headerDirs.add("-I" + sourceDir);
+        macTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
         macTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
         macTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
         macTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
@@ -143,7 +146,8 @@ public class Build {
         // Compile glue code and link
         MacTarget linkTarget = new MacTarget(isArm);
         linkTarget.addJNIHeaders();
-        linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jolt/");
+        linkTarget.headerDirs.add("-I" + sourceDir);
+        linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         if(isArm) {
             linkTarget.linkerFlags.add(libBuildCPPPath + "/libs/mac/arm/libjolt64_.a");
         }
@@ -162,18 +166,18 @@ public class Build {
     }
 
     private static BuildMultiTarget getTeaVMTarget(BuildToolOptions op, IDLReader idlReader) {
+        BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
+        String sourceDir = op.getSourceDir();
 
         EmscriptenTarget.DEBUG_BUILD = false;
-
-        BuildMultiTarget multiTarget = new BuildMultiTarget();
 
         // Make a static library
         EmscriptenTarget libTarget = new EmscriptenTarget(idlReader);
         libTarget.isStatic = true;
         libTarget.compileGlueCode = false;
-        libTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jolt");
-        libTarget.cppInclude.add(libBuildCPPPath + "/**/jolt/Jolt/**.cpp");
+        libTarget.headerDirs.add("-I" + sourceDir);
+        libTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
         libTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
         libTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
         libTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
@@ -183,8 +187,8 @@ public class Build {
 
         // Compile glue code and link
         EmscriptenTarget linkTarget = new EmscriptenTarget(idlReader);
-        linkTarget.headerDirs.add("-I" + libBuildCPPPath + "/src/jolt");
-        linkTarget.headerDirs.add("-include" + libBuildCPPPath + "/src/jolt/JoltCustom.h");
+        linkTarget.headerDirs.add("-I" + sourceDir);
+        linkTarget.headerDirs.add("-include" + op.getCustomSourceDir() + "JoltCustom.h");
         linkTarget.linkerFlags.add(libBuildCPPPath + "/libs/emscripten/jolt_.a");
         linkTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
         linkTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
@@ -197,14 +201,14 @@ public class Build {
     }
 
     private static BuildMultiTarget getAndroidTarget(BuildToolOptions op) {
-        String libBuildCPPPath = op.getModuleBuildCPPPath();
-
         BuildMultiTarget multiTarget = new BuildMultiTarget();
+        String sourceDir = op.getSourceDir();
 
         AndroidTarget androidTarget = new AndroidTarget();
         androidTarget.addJNIHeaders();
-        androidTarget.headerDirs.add(libBuildCPPPath + "/src/jolt");
-        androidTarget.cppInclude.add(libBuildCPPPath + "/**/jolt/Jolt/**.cpp");
+        androidTarget.headerDirs.add("-I" + sourceDir);
+        androidTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        androidTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
         androidTarget.cppFlags.add("-Wno-error=format-security");
         androidTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
         androidTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
