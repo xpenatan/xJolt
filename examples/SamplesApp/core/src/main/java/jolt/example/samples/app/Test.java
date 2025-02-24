@@ -2,7 +2,7 @@ package jolt.example.samples.app;
 
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.utils.ScreenUtils;
-import jolt.DebugRendererEm;
+import jolt.DebugRendererSimpleEm;
 import jolt.EMotionType;
 import jolt.JoltInterface;
 import jolt.JoltSettings;
@@ -19,10 +19,6 @@ import jolt.jolt.physics.PhysicsSystem;
 import jolt.jolt.physics.body.Body;
 import jolt.jolt.physics.body.BodyCreationSettings;
 import jolt.jolt.physics.body.BodyInterface;
-import jolt.jolt.physics.collision.ObjectLayerPairFilterTable;
-import jolt.jolt.physics.collision.broadphase.BroadPhaseLayer;
-import jolt.jolt.physics.collision.broadphase.BroadPhaseLayerInterfaceTable;
-import jolt.jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilterTable;
 import jolt.jolt.physics.collision.shape.BoxShape;
 import static jolt.EMotionType.EMotionType_Static;
 import static jolt.jolt.physics.EActivation.EActivation_Activate;
@@ -33,8 +29,6 @@ public abstract class Test {
 
     protected PhysicsSystem physicsSystem = null;
     protected BodyInterface bodyInterface = null;
-    protected DebugRendererEm debugRenderer = null;
-    protected TempAllocator tempAllocator = null;
 
     public void setPhysicsSystem(PhysicsSystem physicsSystem) {
         this.physicsSystem = physicsSystem;

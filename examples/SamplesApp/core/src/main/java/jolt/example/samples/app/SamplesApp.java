@@ -1,42 +1,81 @@
 package jolt.example.samples.app;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
+import com.badlogic.gdx.InputMultiplexer;
+import com.badlogic.gdx.graphics.PerspectiveCamera;
+import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
+import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import jolt.BodyIDVector;
 import jolt.BodyManagerDrawSettings;
+import jolt.EShapeColor;
 import jolt.JoltInterface;
 import jolt.JoltSettings;
 import jolt.example.samples.app.tests.BoxShapeTest;
 import jolt.jolt.physics.PhysicsSystem;
+import jolt.jolt.physics.body.BodyID;
+import jolt.jolt.physics.body.BodyInterface;
 import jolt.jolt.physics.collision.ObjectLayerPairFilterTable;
 import jolt.jolt.physics.collision.broadphase.BroadPhaseLayer;
 import jolt.jolt.physics.collision.broadphase.BroadPhaseLayerInterfaceTable;
 import jolt.jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilterTable;
 
-public class SamplesApp {
+public class SamplesApp extends InputAdapter {
     // Object layers
     public static int LAYER_NON_MOVING = 0;
     public static int LAYER_MOVING = 1;
     public static int NUM_OBJECT_LAYERS = 2;
 
-    Test test;
+    private boolean isPaused;
 
-    protected JoltInterface jolt;
+    private Test test;
+
+    private JoltInterface jolt;
     private PhysicsSystem  physicsSystem;
-    private DefaultDebugRenderer debugRenderer;
+    private DebugRendererSimple debugRenderer;
     private BodyManagerDrawSettings debugSettings;
+    private BodyIDVector bodyIDVector;
+
+    private PerspectiveCamera camera;
+    private ScreenViewport viewport;
+    private CameraInputController cameraController;
+    private Tests tests;
 
     public void setup() {
+        tests = new Tests();
         JoltSettings settings = new JoltSettings();
         setupCollisionFiltering(settings);
         jolt = new JoltInterface(settings);
         settings.dispose();
         physicsSystem = jolt.GetPhysicsSystem();
-        debugRenderer = new DefaultDebugRenderer();
+        debugRenderer = new DebugRendererSimple();
         debugSettings = new BodyManagerDrawSettings();
-        debugSettings.set_mDrawShape(true);
+        debugSettings.set_mDrawShapeWireframe(true);
+        debugSettings.set_mDrawShapeColor(EShapeColor.EShapeColor_SleepColor);
+        bodyIDVector = new BodyIDVector();
+
+        camera = new PerspectiveCamera();
+        viewport = new ScreenViewport(camera);
+        camera.far = 1000f;
+        camera.position.set(30, 10, 30);
+        camera.lookAt(0, 0, 0);
+
+        cameraController = new CameraInputController(camera);
+        cameraController.autoUpdate = false;
+        cameraController.forwardTarget = false;
+        cameraController.translateTarget = false;
+        Gdx.input.setInputProcessor(new InputMultiplexer(this, cameraController));
     }
 
-    public void update(float delta) {
-        ScreenUtils.clear(1, 1, 1, 1, true);
+    public Array<Class<?>> getAllTests() {
+        return tests.getAllTests();
+    }
+
+    public void render(float delta) {
+        ScreenUtils.clear(0.2f, 0.2f, 0.2f, 1, true);
         // Don't go below 30 Hz to prevent spiral of death
         float deltaTime = (float)Math.min(delta, 1.0 / 30.0);
 
@@ -52,24 +91,28 @@ public class SamplesApp {
             test.dispose();
             test = null;
         }
-        test = new BoxShapeTest();
-
+        clearBodies();
+        isPaused = true;
+        test = tests.getTest(testClass);
         test.setPhysicsSystem(physicsSystem);
         test.initialize();
     }
 
-    private void nextTest() {
-
-    }
-
     private void DrawPhysics() {
+        camera.update();
+        viewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
+        debugRenderer.begin(camera);
         debugRenderer.DrawBodies(physicsSystem, debugSettings);
+        debugRenderer.end();
     }
 
     public void StepPhysics(float deltaTime) {
         // When running below 55 Hz, do 2 steps instead of 1
         var numSteps = deltaTime > 1.0 / 55.0 ? 2 : 1;
-        jolt.Step(deltaTime, numSteps);
+
+        if(!isPaused) {
+            jolt.Step(deltaTime, numSteps);
+        }
     }
 
     private void setupCollisionFiltering(JoltSettings settings) {
@@ -98,5 +141,32 @@ public class SamplesApp {
         settings.set_mBroadPhaseLayerInterface(bpInterface);
         ObjectVsBroadPhaseLayerFilterTable broadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(settings.get_mBroadPhaseLayerInterface(), NUM_BROAD_PHASE_LAYERS, settings.get_mObjectLayerPairFilter(), NUM_OBJECT_LAYERS);
         settings.set_mObjectVsBroadPhaseLayerFilter(broadPhaseLayerFilter);
+    }
+
+    private void clearBodies() {
+        BodyInterface bodyInterface  = physicsSystem.GetBodyInterface();
+        physicsSystem.GetBodies(bodyIDVector);
+        int size = bodyIDVector.size();
+        for(int i = 0; i < size; i++) {
+            BodyID bodyId = bodyIDVector.at(i);
+            bodyInterface.RemoveBody(bodyId);
+            bodyInterface.DestroyBody(bodyId);
+        }
+    }
+
+    @Override
+    public boolean keyUp(int keycode) {
+        if(keycode == Input.Keys.SPACE) {
+            isPaused = !isPaused;
+            return true;
+        }
+        if(keycode == Input.Keys.R) {
+            if(test != null) {
+                Class<? extends Test> aClass = test.getClass();
+                startTest(aClass);
+            }
+            return true;
+        }
+        return false;
     }
 }
