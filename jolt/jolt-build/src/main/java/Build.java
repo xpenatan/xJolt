@@ -203,20 +203,45 @@ public class Build {
     private static BuildMultiTarget getAndroidTarget(BuildToolOptions op) {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String sourceDir = op.getSourceDir();
+        String libBuildCPPPath = op.getModuleBuildCPPPath();
 
-        AndroidTarget androidTarget = new AndroidTarget();
-        androidTarget.addJNIHeaders();
-        androidTarget.headerDirs.add("-I" + sourceDir);
-        androidTarget.headerDirs.add("-I" + op.getCustomSourceDir());
-        androidTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
-        androidTarget.cppFlags.add("-Wno-error=format-security");
-        androidTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
-        androidTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
-        androidTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
-        androidTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
-        androidTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+        AndroidTarget.ApiLevel apiLevel = AndroidTarget.ApiLevel.Android_10_29;
+        ArrayList<AndroidTarget.Target> targets = new ArrayList<>();
 
-        multiTarget.add(androidTarget);
+        targets.add(AndroidTarget.Target.x86);
+        targets.add(AndroidTarget.Target.x86_64);
+        targets.add(AndroidTarget.Target.armeabi_v7a);
+        targets.add(AndroidTarget.Target.arm64_v8a);
+
+        for(int i = 0; i < targets.size(); i++) {
+            AndroidTarget.Target target = targets.get(i);
+
+            // Make a static library
+            AndroidTarget androidTarget = new AndroidTarget(target, apiLevel);
+            androidTarget.isStatic = true;
+            androidTarget.headerDirs.add("-I" + sourceDir);
+            androidTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
+            androidTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
+            androidTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
+            androidTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
+            androidTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
+            androidTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+            multiTarget.add(androidTarget);
+
+            // Compile glue code and link
+            AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
+            linkTarget.addJNIHeaders();
+            linkTarget.headerDirs.add("-I" + sourceDir);
+            linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+            linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");
+            linkTarget.linkerFlags.add(libBuildCPPPath + "/libs/android/" + target.getFolder() +"/lib" + op.libName + ".a");
+            linkTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
+            linkTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
+            linkTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
+            linkTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
+            linkTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+            multiTarget.add(linkTarget);
+        }
         return multiTarget;
     }
 }
