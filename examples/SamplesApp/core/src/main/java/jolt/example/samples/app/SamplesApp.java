@@ -14,7 +14,6 @@ import jolt.BodyManagerDrawSettings;
 import jolt.EShapeColor;
 import jolt.JoltInterface;
 import jolt.JoltSettings;
-import jolt.example.samples.app.tests.BoxShapeTest;
 import jolt.jolt.physics.PhysicsSystem;
 import jolt.jolt.physics.body.BodyID;
 import jolt.jolt.physics.body.BodyInterface;
@@ -156,7 +155,7 @@ public class SamplesApp extends InputAdapter {
 
     @Override
     public boolean keyUp(int keycode) {
-        if(keycode == Input.Keys.SPACE) {
+        if(keycode == Input.Keys.P) {
             isPaused = !isPaused;
             return true;
         }

@@ -1,5 +1,6 @@
 package jolt.example.samples.app.tests;
 
+import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import jolt.RVec3;
 import jolt.example.samples.app.SamplesApp;
@@ -27,14 +28,26 @@ public class BoxShapeTest extends Test {
         Body body2 = createBody(new Vector3(2, 3, 4), new Vector3(0, 10, 10), Quat.sRotation(Vec3.sAxisZ(), 0.25f * JPH_PI));
         bodyInterface.AddBody(body2.GetID(), EActivation_Activate);
 
-        //TODO figure out why this CreateBody crash when calling mBodyManager->AllocateBody(inSettings);
-//        Quat quatX3 = Quat.sRotation(Vec3.sAxisX(), 0.25f * JPH_PI);
-//        Quat quatZ3 = Quat.sRotation(Vec3.sAxisZ(), 0.25f * JPH_PI);
-//        quatX3.SetX(quatX3.GetX() * quatZ3.GetX());
-//        quatX3.SetY(quatX3.GetY() * quatZ3.GetY());
-//        quatX3.SetZ(quatX3.GetZ() * quatZ3.GetZ());
-//        Body body3 = createBody(new Vector3(0.5f, 0.75f, 1.0f), new Vector3(0, 10, 20), quatX3);
-//        bodyInterface.AddBody(body3.GetID(), EActivation_Activate);
+        // Methods that return a Value c++ object will be replaced every time its called. Save its value before calling again.
+        Quat quatX3 = Quat.sRotation(Vec3.sAxisX(), 0.25f * JPH_PI);
+        float q1X = quatX3.GetX();
+        float q1Y = quatX3.GetY();
+        float q1Z = quatX3.GetZ();
+        float q1W = quatX3.GetW();
+        Quat quatZ3 = Quat.sRotation(Vec3.sAxisZ(), 0.25f * JPH_PI);
+        float q2X = quatZ3.GetX();
+        float q2Y = quatZ3.GetY();
+        float q2Z = quatZ3.GetZ();
+        float q2W = quatZ3.GetW();
+        Quaternion q1 = new Quaternion(q1X, q1Y, q1Z, q1W);
+        Quaternion q2 = new Quaternion(q2X, q2Y, q2Z, q2W);
+        Quaternion mul = q1.mul(q2);
+        quatX3.SetX(mul.x);
+        quatX3.SetY(mul.y);
+        quatX3.SetZ(mul.z);
+        quatX3.SetW(mul.w);
+        Body body3 = createBody(new Vector3(0.5f, 0.75f, 1.0f), new Vector3(0, 10, 20), quatX3);
+        bodyInterface.AddBody(body3.GetID(), EActivation_Activate);
     }
 
     private Body createBody(Vector3 inHalfExtent, Vector3 inPosition, Quat inRotation) {
