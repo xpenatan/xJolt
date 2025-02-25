@@ -60,7 +60,6 @@ interface BodyManagerDrawSettings {
 };
 
 interface DebugRendererSimpleEm {
-    void DebugRendererSimpleEm();
     void DrawBodies(PhysicsSystem system, BodyManagerDrawSettings inDrawSettings);
     void DrawBodies(PhysicsSystem system);
 };
