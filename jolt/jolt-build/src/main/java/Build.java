@@ -19,6 +19,7 @@ public class Build {
         String basePackage = "jolt";
         String sourcePath =  "/build/jolt";
 //        String sourcePath =  "E:\\Dev\\Projects\\cpp\\JoltPhysics";
+//        WindowsMSVCTarget.DEBUG_BUILD = true;
 
         IDLHelper.cppConverter = idlType -> {
             if(idlType.equals("unsigned long long")) {
@@ -60,8 +61,6 @@ public class Build {
         BuildMultiTarget multiTarget = new BuildMultiTarget();
         String libBuildCPPPath = op.getModuleBuildCPPPath();
         String sourceDir = op.getSourceDir();
-
-        WindowsMSVCTarget.DEBUG_BUILD = true;
 
         // Make a static library
         WindowsMSVCTarget windowsTarget = new WindowsMSVCTarget();
