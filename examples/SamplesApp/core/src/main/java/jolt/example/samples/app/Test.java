@@ -19,7 +19,6 @@ import static jolt.jolt.physics.EActivation.EActivation_DontActivate;
 
 public abstract class Test {
 
-
     protected PhysicsSystem physicsSystem = null;
     protected BodyInterface bodyInterface = null;
 

@@ -1,23 +1,14 @@
 package jolt.example.samples.app;
 
-import com.badlogic.gdx.graphics.Camera;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Mesh;
-import com.badlogic.gdx.graphics.VertexAttribute;
-import com.badlogic.gdx.graphics.VertexAttributes;
+import com.badlogic.gdx.graphics.*;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g3d.Environment;
-import com.badlogic.gdx.graphics.g3d.Material;
-import com.badlogic.gdx.graphics.g3d.Model;
-import com.badlogic.gdx.graphics.g3d.ModelBatch;
-import com.badlogic.gdx.graphics.g3d.Renderable;
-import com.badlogic.gdx.graphics.g3d.RenderableProvider;
+import com.badlogic.gdx.graphics.g3d.*;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
+import com.badlogic.gdx.graphics.g3d.attributes.TextureAttribute;
 import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.model.Node;
 import com.badlogic.gdx.graphics.g3d.model.NodePart;
-import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.utils.Array;
@@ -25,23 +16,23 @@ import com.badlogic.gdx.utils.FloatArray;
 import com.badlogic.gdx.utils.Pool;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import java.util.ArrayList;
-import java.util.Iterator;
 import jolt.ArrayTriangle;
 import jolt.DebugRendererEm;
 import jolt.DebugRendererTriangle;
 import jolt.DebugRendererVertex;
 import jolt.EDrawMode;
 import jolt.jolt.core.Color;
+import jolt.jolt.math.Float2;
 import jolt.jolt.math.Float3;
 import jolt.jolt.math.Mat44;
 import jolt.jolt.math.Vec3;
+import jolt.jolt.math.Vec4;
 
 public class DebugRenderer extends DebugRendererEm {
 
     private ModelBatch batch;
     protected Environment environment;
 
-    private Camera camera;
     private ShapeRenderer filledShapeRenderer;
     private ShapeRenderer lineShapeRenderer;
     private SpriteBatch spriteBatch;
@@ -49,11 +40,9 @@ public class DebugRenderer extends DebugRendererEm {
     private ArrayList<ModelProvider> modelPool = new ArrayList<>();
     private ArrayList<ModelProvider> modelRenderer = new ArrayList<>();
 
-    private Vec3 v0;
-    private Vec3 v1;
-    private Vec3 v2;
-
-    FloatArray vertices;
+    private Vec3 v0, v1, v2, tempVec3;
+    private FloatArray vertices;
+    private Texture checkerboardTexture;
 
     public DebugRenderer() {
         batch = new ModelBatch();
@@ -69,7 +58,20 @@ public class DebugRenderer extends DebugRendererEm {
         v0 = new Vec3();
         v1 = new Vec3();
         v2 = new Vec3();
+        tempVec3 = new Vec3();
         vertices = new FloatArray();
+
+        // Create a simple 2x2 checkerboard texture
+        Pixmap pixmap = new Pixmap(2, 2, Pixmap.Format.RGBA8888);
+        pixmap.setColor(0.3f, 0.3f, 0.3f, 1f);          // Dark gray
+        pixmap.fillRectangle(0, 0, 1, 1);         // Top-left
+        pixmap.fillRectangle(1, 1, 1, 1);         // Bottom-right
+        pixmap.setColor(0.7f, 0.7f, 0.7f, 1f);          // Light gray
+        pixmap.fillRectangle(1, 0, 1, 1);         // Top-right
+        pixmap.fillRectangle(0, 1, 1, 1);         // Bottom-left
+        checkerboardTexture = new Texture(pixmap, true); // Enable mipmapping for smoothness
+        checkerboardTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
+        pixmap.dispose();
     }
 
     @Override
@@ -79,123 +81,93 @@ public class DebugRenderer extends DebugRendererEm {
         int size = triangleArray.size();
         if (size == 0) return;
 
-        int mU32 = inModelColor.get_mU32();
-        int primitiveType;
+        Vec4 vec4 = inModelColor.ToVec4();
+        float r1 = vec4.GetX();
+        float g1 = vec4.GetY();
+        float b1 = vec4.GetZ();
+        float a1 = vec4.GetW();
+
         if (wireframeMode) {
-            int idx = 0;
             for (int i = 0; i < size; i++) {
                 DebugRendererTriangle triangle = triangleArray.at(i);
+                Color vertexColor = triangle.get_mV(0).get_mColor();
+                Vec4 vec41 = vertexColor.ToVec4();
+                float r = r1 * vec41.GetX();
+                float g = g1 * vec41.GetY();
+                float b = b1 * vec41.GetZ();
+                float a = a1 * vec41.GetW();
+
+                color.set(r, g, b, a);
+                lineShapeRenderer.setColor(color);
+
                 DebugRendererVertex mV0 = triangle.get_mV(0);
                 updateTemp(mV0, inModelMatrix, v0);
                 DebugRendererVertex mV1 = triangle.get_mV(1);
                 updateTemp(mV1, inModelMatrix, v1);
                 DebugRendererVertex mV2 = triangle.get_mV(2);
                 updateTemp(mV2, inModelMatrix, v2);
-                vertices.insert(idx++, v0.GetX());
-                vertices.insert(idx++, v0.GetY());
-                vertices.insert(idx++, v0.GetZ());
-                vertices.insert(idx++, v1.GetX());
-                vertices.insert(idx++, v1.GetY());
-                vertices.insert(idx++, v1.GetZ());
-                vertices.insert(idx++, v1.GetX());
-                vertices.insert(idx++, v1.GetY());
-                vertices.insert(idx++, v1.GetZ());
-                vertices.insert(idx++, v2.GetX());
-                vertices.insert(idx++, v2.GetY());
-                vertices.insert(idx++, v2.GetZ());
-                vertices.insert(idx++, v2.GetX());
-                vertices.insert(idx++, v2.GetY());
-                vertices.insert(idx++, v2.GetZ());
-                vertices.insert(idx++, v0.GetX());
-                vertices.insert(idx++, v0.GetY());
-                vertices.insert(idx++, v0.GetZ());
+                lineShapeRenderer.line(v0.GetX(), v0.GetY(), v0.GetZ(), v1.GetX(), v1.GetY(), v1.GetZ());
+                lineShapeRenderer.line(v1.GetX(), v1.GetY(), v1.GetZ(), v2.GetX(), v2.GetY(), v2.GetZ());
+                lineShapeRenderer.line(v2.GetX(), v2.GetY(), v2.GetZ(), v0.GetX(), v0.GetY(), v0.GetZ());
             }
-            primitiveType = GL20.GL_LINES;
         } else if (solidMode) {
             int idx = 0;
             for (int i = 0; i < size; i++) {
                 DebugRendererTriangle triangle = triangleArray.at(i);
-                DebugRendererVertex mV0 = triangle.get_mV(0);
-                updateTemp(mV0, inModelMatrix, v0);
-                DebugRendererVertex mV1 = triangle.get_mV(1);
-                updateTemp(mV1, inModelMatrix, v1);
-                DebugRendererVertex mV2 = triangle.get_mV(2);
-                updateTemp(mV2, inModelMatrix, v2);
-                vertices.insert(idx++, v0.GetX());
-                vertices.insert(idx++, v0.GetY());
-                vertices.insert(idx++, v0.GetZ());
-                vertices.insert(idx++, v1.GetX());
-                vertices.insert(idx++, v1.GetY());
-                vertices.insert(idx++, v1.GetZ());
-                vertices.insert(idx++, v2.GetX());
-                vertices.insert(idx++, v2.GetY());
-                vertices.insert(idx++, v2.GetZ());
+                Color vertexColor = triangle.get_mV(0).get_mColor();
+                Vec4 vec41 = vertexColor.ToVec4();
+                float r = r1 * vec41.GetX();
+                float g = g1 * vec41.GetY();
+                float b = b1 * vec41.GetZ();
+                float a = a1 * vec41.GetW();
+
+                for (int j = 0; j < 3; j++) {
+                    DebugRendererVertex mV = triangle.get_mV(j);
+                    Float3 localPos = mV.get_mPosition();
+                    Vec3 localVec = new Vec3(localPos.get_x(), localPos.get_y(), localPos.get_z());
+                    Vec3 worldPos = inModelMatrix.Multiply(localVec);
+                    float worldPosX = worldPos.GetX();
+                    float worldPosY = worldPos.GetY();
+                    float worldPosZ = worldPos.GetZ();
+                    Float3 localNormal = mV.get_mNormal();
+                    tempVec3.Set(localNormal.get_x(), localNormal.get_y(), localNormal.get_z());
+                    Vec3 worldNormal = inModelMatrix.Multiply3x3(tempVec3);
+                    float worldNormalX = worldNormal.GetX();
+                    float worldNormalY = worldNormal.GetY();
+                    float worldNormalZ = worldNormal.GetZ();
+
+                    Float2 mUV = mV.get_mUV();
+                    float u = mUV.get_x();
+                    float v = mUV.get_y();
+
+                    vertices.insert(idx++, worldPosX);
+                    vertices.insert(idx++, worldPosY);
+                    vertices.insert(idx++, worldPosZ);
+                    vertices.insert(idx++, worldNormalX);
+                    vertices.insert(idx++, worldNormalY);
+                    vertices.insert(idx++, worldNormalZ);
+                    vertices.insert(idx++, u);
+                    vertices.insert(idx++, v);
+                    vertices.insert(idx++, r);
+                    vertices.insert(idx++, g);
+                    vertices.insert(idx++, b);
+                    vertices.insert(idx++, a);
+                }
             }
-            primitiveType = GL20.GL_TRIANGLES;
-        } else {
-            return;
-        }
-        ModelProvider modelProvider = obtain();
-        modelProvider.setVertices(vertices, primitiveType, mU32);
-        modelRenderer.add(modelProvider);
-    }
-
-    private void updateTemp(DebugRendererVertex mV0, Mat44 inModelMatrix, Vec3 temp0) {
-        Float3 mPosition0 = mV0.get_mPosition();
-        float x = mPosition0.get_x();
-        float y = mPosition0.get_y();
-        float z = mPosition0.get_z();
-        temp0.Set(x, y, z);
-        Vec3 vv0 = inModelMatrix.Multiply(temp0);
-        float v0X = vv0.GetX();
-        float v0Y = vv0.GetY();
-        float v0Z = vv0.GetZ();
-        temp0.Set(v0X, v0Y, v0Z);
-    }
-
-    @Override
-    protected void DrawLine(Vec3 inFrom, Vec3 inTo, Color inColor) {
-        if (camera != null) {
-            float fromX = inFrom.GetX();
-            float fromY = inFrom.GetY();
-            float fromZ = inFrom.GetZ();
-            float toX = inTo.GetX();
-            float toY = inTo.GetY();
-            float toZ = inTo.GetZ();
-            int mU32 = inColor.get_mU32();
-            color.set(mU32);
-            lineShapeRenderer.setColor(color);
-            lineShapeRenderer.line(fromX, fromY, fromZ, toX, toY, toZ);
+            ModelProvider modelProvider = obtain();
+            modelProvider.setVertices(vertices, GL20.GL_TRIANGLES);
+            modelRenderer.add(modelProvider);
         }
     }
 
-    @Override
-    protected void DrawTriangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, Color inColor, int inCastShadow) {
-        if (camera != null) {
-            float x1 = inV1.GetX();
-            float y1 = inV1.GetY();
-            float z1 = inV1.GetZ();
-            float x2 = inV2.GetX();
-            float y2 = inV2.GetY();
-            float z2 = inV2.GetZ();
-            float x3 = inV3.GetX();
-            float y3 = inV3.GetY();
-            float z3 = inV3.GetZ();
-            color.set(inColor.get_mU32());
-            filledShapeRenderer.setColor(color);
-            triangle3D(x1, y1, z1, x2, y2, z2, x3, y3, z3);
-        }
-    }
-
-    @Override
-    protected void DrawText3D(Vec3 inPosition, long inString, int inStringLen, Color inColor, float inHeight) {
-        if (camera != null) {
-            System.out.println("DrawText3D");
-        }
+    private void updateTemp(DebugRendererVertex mV, Mat44 inModelMatrix, Vec3 temp) {
+        Float3 mPosition = mV.get_mPosition();
+        temp.Set(mPosition.get_x(), mPosition.get_y(), mPosition.get_z());
+        Vec3 vv = inModelMatrix.Multiply(temp);
+        temp.Set(vv.GetX(), vv.GetY(), vv.GetZ());
     }
 
     public void begin(Camera camera) {
-        this.camera = camera;
         batch.begin(camera);
         filledShapeRenderer.setProjectionMatrix(camera.combined);
         filledShapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
@@ -210,37 +182,36 @@ public class DebugRenderer extends DebugRendererEm {
     public void end() {
         filledShapeRenderer.end();
         lineShapeRenderer.end();
-        for(ModelProvider modelProvider : modelRenderer) {
+        for (ModelProvider modelProvider : modelRenderer) {
             batch.render(modelProvider, environment);
         }
         modelPool.addAll(modelRenderer);
         modelRenderer.clear();
         batch.end();
-        camera = null;
     }
 
+    private ModelProvider obtain() {
+        ModelProvider modelProvider;
+        if (!modelPool.isEmpty()) {
+            int last = modelPool.size() - 1;
+            modelProvider = modelPool.get(last);
+            modelPool.remove(last);
+        } else {
+            modelProvider = new ModelProvider(checkerboardTexture);
+        }
+        return modelProvider;
+    }
+
+    @Override
     public void dispose() {
-        super.dispose();
+        batch.dispose();
+        spriteBatch.dispose();
         filledShapeRenderer.dispose();
         lineShapeRenderer.dispose();
-        spriteBatch.dispose();
-        batch.dispose();
-        for (ModelProvider m : modelPool) {
-            m.dispose();
+        checkerboardTexture.dispose();
+        for (ModelProvider provider : modelPool) {
+            provider.dispose();
         }
-    }
-
-    public void triangle3D(float x1, float y1, float z1,
-                           float x2, float y2, float z2,
-                           float x3, float y3, float z3) {
-        ImmediateModeRenderer renderer = filledShapeRenderer.getRenderer();
-        float colorBits = color.toFloatBits();
-        renderer.color(colorBits);
-        renderer.vertex(x1, y1, z1);
-        renderer.color(colorBits);
-        renderer.vertex(x2, y2, z2);
-        renderer.color(colorBits);
-        renderer.vertex(x3, y3, z3);
     }
 
     private class ModelProvider implements RenderableProvider {
@@ -248,13 +219,16 @@ public class DebugRenderer extends DebugRendererEm {
         public final MeshPart meshPart;
         public Model model;
         public final Matrix4 transform = new Matrix4();
-        private final ColorAttribute diffuse;
+        private final Material material;
 
-        public ModelProvider() {
-            diffuse = ColorAttribute.createDiffuse(1, 1, 1, 1);
-            Material material = new Material(diffuse);
-            mesh = new Mesh(true, 9999999, 0, new VertexAttribute(VertexAttributes.Usage.Position, 3, "a_position"));
-            meshPart = new MeshPart("meshpart1", mesh, 0, 0, 0);
+        public ModelProvider(Texture texture) {
+            material = new Material(TextureAttribute.createDiffuse(texture));
+            mesh = new Mesh(true, 9999999, 0,
+                    new VertexAttribute(VertexAttributes.Usage.Position, 3, "a_position"),
+                    new VertexAttribute(VertexAttributes.Usage.Normal, 3, "a_normal"),
+                    new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
+                    new VertexAttribute(VertexAttributes.Usage.ColorUnpacked, 4, "a_color"));
+            meshPart = new MeshPart("meshpart1", mesh, 0, 0, GL20.GL_TRIANGLES);
             Node node = new Node();
             node.id = "node1";
             node.parts.add(new NodePart(meshPart, material));
@@ -265,71 +239,33 @@ public class DebugRenderer extends DebugRendererEm {
             model.meshParts.add(meshPart);
         }
 
-        public void setVertices(FloatArray vertices, int primitiveType, int colorU32) {
+        public void setVertices(FloatArray vertices, int primitiveType) {
             mesh.setVertices(vertices.items, 0, vertices.size);
-            meshPart.size = vertices.size;
+            int floatsPerVertex = mesh.getVertexSize() / 4; // 8 floats: 3 pos + 3 norm + 2 tex
+            meshPart.size = vertices.size / floatsPerVertex;
             meshPart.primitiveType = primitiveType;
-            diffuse.color.set(colorU32);
             vertices.clear();
         }
 
         @Override
         public void getRenderables(Array<Renderable> renderables, Pool<Renderable> pool) {
-            Array.ArrayIterator var3 = model.nodes.iterator();
-
-            while(var3.hasNext()) {
-                Node node = (Node)var3.next();
-                this.getRenderables(node, renderables, pool);
-            }
-        }
-
-        protected void getRenderables(Node node, Array<Renderable> renderables, Pool<Renderable> pool) {
-            if (node.parts.size > 0) {
-                Array.ArrayIterator var4 = node.parts.iterator();
-
-                while(var4.hasNext()) {
-                    NodePart nodePart = (NodePart)var4.next();
-                    if (nodePart.enabled) {
-                        renderables.add(this.getRenderable((Renderable)pool.obtain(), node, nodePart));
-                    }
-                }
-            }
-
-            Iterator var7 = node.getChildren().iterator();
-
-            while(var7.hasNext()) {
-                Node child = (Node)var7.next();
-                this.getRenderables(child, renderables, pool);
-            }
-        }
-
-        public Renderable getRenderable(Renderable out, Node node, NodePart nodePart) {
-            nodePart.setRenderable(out);
+            Renderable renderable = pool.obtain();
+            Node node = model.nodes.get(0);
+            NodePart nodePart = node.parts.get(0);
+            nodePart.setRenderable(renderable);
             if (nodePart.bones == null && this.transform != null) {
-                out.worldTransform.set(this.transform).mul(node.globalTransform);
+                renderable.worldTransform.set(this.transform).mul(node.globalTransform);
             } else if (this.transform != null) {
-                out.worldTransform.set(this.transform);
+                renderable.worldTransform.set(this.transform);
             } else {
-                out.worldTransform.idt();
+                renderable.worldTransform.idt();
             }
-
-            return out;
+            renderable.environment = environment;
+            renderables.add(renderable);
         }
 
         public void dispose() {
             model.dispose();
-            mesh.dispose();
         }
-    }
-
-    private ModelProvider obtain() {
-        ModelProvider model = null;
-        if(modelPool.isEmpty()) {
-            model = new ModelProvider();
-        }
-        else {
-            model = modelPool.remove(0);
-        }
-        return model;
     }
 }

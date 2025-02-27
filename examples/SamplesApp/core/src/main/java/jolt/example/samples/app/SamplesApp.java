@@ -53,7 +53,7 @@ public class SamplesApp extends InputAdapter {
         debugRenderer = new DebugRenderer();
         debugSettings = new BodyManagerDrawSettings();
 //        debugSettings.set_mDrawShapeWireframe(true);
-        debugSettings.set_mDrawShapeColor(EShapeColor.EShapeColor_SleepColor);
+//        debugSettings.set_mDrawShapeColor(EShapeColor.EShapeColor_SleepColor);
         bodyIDVector = new BodyIDVector();
 
         camera = new PerspectiveCamera();
@@ -112,6 +112,12 @@ public class SamplesApp extends InputAdapter {
         if(!isPaused) {
             jolt.Step(deltaTime, numSteps);
         }
+    }
+
+    public void dispose() {
+        debugRenderer.dispose();
+        physicsSystem.dispose();
+        debugSettings.dispose();
     }
 
     private void setupCollisionFiltering(JoltSettings settings) {

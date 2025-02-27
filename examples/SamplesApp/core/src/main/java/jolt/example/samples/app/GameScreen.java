@@ -18,4 +18,9 @@ public class GameScreen extends ScreenAdapter {
     public void render(float delta) {
         samplesApp.render(delta);
     }
+
+    @Override
+    public void dispose() {
+        samplesApp.dispose();
+    }
 }

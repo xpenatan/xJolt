@@ -32,6 +32,7 @@ enum ESoftBodyConstraintColor {
 interface Color {
     attribute unsigned long mU32;
     [Operator="*", Value] Color Multiply([Const, Ref] Color other);
+    [Value] Vec4 ToVec4();
 };
 
 interface BodyManagerDrawSettings {
@@ -72,7 +73,7 @@ interface DebugRendererTriangle {
 interface DebugRendererVertex {
     [Value] readonly attribute Float3 mPosition;
     [Value] readonly attribute Float3 mNormal;
-    [Value] readonly attribute Float3 mUV;
+    [Value] readonly attribute Float2 mUV;
     [Value] readonly attribute Color mColor;
 };
 
@@ -465,6 +466,12 @@ interface Float3 {
     attribute float x;
     attribute float y;
     attribute float z;
+};
+
+interface Float2 {
+    void Float2(float inX, float inY);
+    attribute float x;
+    attribute float y;
 };
 
 interface Mat44 {
