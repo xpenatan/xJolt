@@ -223,7 +223,7 @@ public class DebugRenderer extends DebugRendererEm {
 
         public ModelProvider(Texture texture) {
             material = new Material(TextureAttribute.createDiffuse(texture));
-            mesh = new Mesh(true, 9999999, 0,
+            mesh = new Mesh(true, 99999, 0,
                     new VertexAttribute(VertexAttributes.Usage.Position, 3, "a_position"),
                     new VertexAttribute(VertexAttributes.Usage.Normal, 3, "a_normal"),
                     new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
