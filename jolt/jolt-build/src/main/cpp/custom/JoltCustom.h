@@ -750,6 +750,7 @@ public:
 using BodyManagerDrawSettings = BodyManager::DrawSettings;
 using DebugRendererVertex = DebugRenderer::Vertex;
 using DebugRendererTriangle = DebugRenderer::Triangle;
+using ArrayTriangle = Array<DebugRendererTriangle>;
 
 using ECullMode = DebugRenderer::ECullMode;
 constexpr ECullMode ECullMode_CullBackFace = ECullMode::CullBackFace;
@@ -795,9 +796,15 @@ class ShapeFilterEm : public JPH::ShapeFilter
         }
 };
 
-class DebugRendererSimpleEm : public JPH::DebugRendererSimple
+class DebugRendererEm : public JPH::DebugRenderer
 {
     public:
+
+        DebugRendererEm()
+        {
+            Initialize();
+        }
+
         void DrawBodies(PhysicsSystem *inSystem, BodyManager::DrawSettings *inDrawSettings)
         {
            inSystem->DrawBodies(*inDrawSettings, this);
@@ -805,6 +812,49 @@ class DebugRendererSimpleEm : public JPH::DebugRendererSimple
         void DrawBodies(PhysicsSystem *inSystem)
         {
            inSystem->DrawBodies(BodyManager::DrawSettings(), this);
+        }
+
+        virtual void DrawMesh(const RMat44 &inModelMatrix, const ArrayTriangle &triangleArray, const Color &inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) = 0;
+
+        virtual void DrawGeometry(RMat44Arg inModelMatrix, const AABox& inWorldSpaceBounds, float inLODScaleSq, ColorArg inModelColor, const GeometryRef& inGeometry, ECullMode inCullMode, ECastShadow inCastShadow, EDrawMode inDrawMode)
+        {
+            // Figure out which LOD to use
+            const LOD* lod = inGeometry->mLODs.data();
+
+            // Draw the batch
+            const BatchImpl* batch = static_cast<const BatchImpl*>(lod->mTriangleBatch.GetPtr());
+            const ArrayTriangle triangleArray = batch->mTriangles;
+
+            DrawMesh(inModelMatrix, triangleArray, inModelColor, inCullMode, inDrawMode);
+        }
+
+        virtual Batch CreateTriangleBatch(const Triangle *inTriangles, int inTriangleCount)
+	    {
+            BatchImpl *batch = new BatchImpl;
+            if (inTriangles == nullptr || inTriangleCount == 0)
+                return batch;
+
+            batch->mTriangles.assign(inTriangles, inTriangles + inTriangleCount);
+            return batch;
+        }
+
+        virtual Batch CreateTriangleBatch(const Vertex* inVertices, int inVertexCount, const uint32* inIndices, int inIndexCount)
+        {
+            BatchImpl* batch = new BatchImpl;
+            if (inVertices == nullptr || inVertexCount == 0 || inIndices == nullptr || inIndexCount == 0)
+                return batch;
+
+            // Convert indexed triangle list to triangle list
+            batch->mTriangles.resize(inIndexCount / 3);
+            for (size_t t = 0; t < batch->mTriangles.size(); ++t)
+            {
+                Triangle& triangle = batch->mTriangles[t];
+                triangle.mV[0] = inVertices[inIndices[t * 3 + 0]];
+                triangle.mV[1] = inVertices[inIndices[t * 3 + 1]];
+                triangle.mV[2] = inVertices[inIndices[t * 3 + 2]];
+            }
+
+            return batch;
         }
 
         virtual void DrawLine(const RVec3 *inFrom, const RVec3 *inTo, const Color *inColor) = 0;
@@ -827,4 +877,21 @@ class DebugRendererSimpleEm : public JPH::DebugRendererSimple
         {
             DrawText3D(&inPosition, (const void*)inString.data(), inString.size(), &inColor, inHeight);
         }
+
+private:
+    /// Implementation specific batch object
+    class BatchImpl : public RefTargetVirtual
+    {
+    public:
+        JPH_OVERRIDE_NEW_DELETE
+
+            virtual void AddRef() override { ++mRefCount; }
+        virtual void Release() override { if (--mRefCount == 0) delete this; }
+
+        ArrayTriangle mTriangles;
+
+    private:
+        atomic<uint32> mRefCount = 0;
+    };
+
 };

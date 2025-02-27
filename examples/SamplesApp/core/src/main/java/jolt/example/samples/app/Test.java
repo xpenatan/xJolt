@@ -1,17 +1,10 @@
 package jolt.example.samples.app;
 
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.utils.ScreenUtils;
-import jolt.DebugRendererSimpleEm;
-import jolt.EMotionType;
-import jolt.JoltInterface;
-import jolt.JoltSettings;
 import jolt.MeshShapeSettings;
 import jolt.PhysicsMaterialList;
-import jolt.RVec3;
 import jolt.ShapeResult;
 import jolt.TriangleList;
-import jolt.jolt.core.TempAllocator;
 import jolt.jolt.geometry.Triangle;
 import jolt.jolt.math.Quat;
 import jolt.jolt.math.Vec3;
@@ -53,7 +46,7 @@ public abstract class Test {
     protected Body createFloor(float inSize) {
         float scale = getWorldScale();
         Vec3 inHalfExtent = new Vec3(scale * (0.5f * inSize), scale * 1.0f, scale * (0.5f * inSize));
-        RVec3 inPosition = new RVec3(0.0f, scale * -1.0f, 0.0f);
+        Vec3 inPosition = new Vec3(0.0f, scale * -1.0f, 0.0f);
         Quat inRotation = Quat.sIdentity();
         BoxShape bodyShape = new BoxShape(inHalfExtent, 0.0f);
         BodyCreationSettings bodySettings = new BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType_Static, SamplesApp.LAYER_NON_MOVING);
@@ -128,7 +121,7 @@ public abstract class Test {
 //        System.out.println("ShapeResult GetError: " + data);
         var shape = shapeResult.Get();
         // Create body
-        var creationSettings = new BodyCreationSettings(shape, new RVec3(posX, posY, posZ), new Quat(0, 0, 0, 1), EMotionType_Static, SamplesApp.LAYER_NON_MOVING);
+        var creationSettings = new BodyCreationSettings(shape, new Vec3(posX, posY, posZ), new Quat(0, 0, 0, 1), EMotionType_Static, SamplesApp.LAYER_NON_MOVING);
         var body = bodyInterface.CreateBody(creationSettings);
         creationSettings.dispose();
         addToScene(body, 0xc7c7c7);

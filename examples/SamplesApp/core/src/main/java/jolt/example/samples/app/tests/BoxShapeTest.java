@@ -2,7 +2,6 @@ package jolt.example.samples.app.tests;
 
 import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
-import jolt.RVec3;
 import jolt.example.samples.app.SamplesApp;
 import jolt.example.samples.app.Test;
 import jolt.jolt.math.Quat;
@@ -53,7 +52,7 @@ public class BoxShapeTest extends Test {
     private Body createBody(Vector3 inHalfExtent, Vector3 inPosition, Quat inRotation) {
         float scale = getWorldScale();
         Vec3 inHalfExtentJolt = new Vec3(inHalfExtent.x, inHalfExtent.y, inHalfExtent.z);
-        RVec3 inPositionJolt = new RVec3(inPosition.x, inPosition.y, inPosition.z);
+        Vec3 inPositionJolt = new Vec3(inPosition.x, inPosition.y, inPosition.z);
         BoxShape bodyShape = new BoxShape(inHalfExtentJolt);
         BodyCreationSettings bodySettings = new BodyCreationSettings(bodyShape, inPositionJolt, inRotation, EMotionType_Dynamic, SamplesApp.LAYER_MOVING);
         Body body = bodyInterface.CreateBody(bodySettings);

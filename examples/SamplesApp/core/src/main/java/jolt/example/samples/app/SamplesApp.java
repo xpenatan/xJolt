@@ -34,7 +34,7 @@ public class SamplesApp extends InputAdapter {
 
     private JoltInterface jolt;
     private PhysicsSystem  physicsSystem;
-    private DebugRendererSimple debugRenderer;
+    private DebugRenderer debugRenderer;
     private BodyManagerDrawSettings debugSettings;
     private BodyIDVector bodyIDVector;
 
@@ -50,9 +50,9 @@ public class SamplesApp extends InputAdapter {
         jolt = new JoltInterface(settings);
         settings.dispose();
         physicsSystem = jolt.GetPhysicsSystem();
-        debugRenderer = new DebugRendererSimple();
+        debugRenderer = new DebugRenderer();
         debugSettings = new BodyManagerDrawSettings();
-        debugSettings.set_mDrawShapeWireframe(true);
+//        debugSettings.set_mDrawShapeWireframe(true);
         debugSettings.set_mDrawShapeColor(EShapeColor.EShapeColor_SleepColor);
         bodyIDVector = new BodyIDVector();
 
