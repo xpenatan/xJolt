@@ -31,6 +31,7 @@ enum ESoftBodyConstraintColor {
 
 interface Color {
     attribute unsigned long mU32;
+    [Operator="*", Value] Color Multiply([Const, Ref] Color other);
 };
 
 interface BodyManagerDrawSettings {

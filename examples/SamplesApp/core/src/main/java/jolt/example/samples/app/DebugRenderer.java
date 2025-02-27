@@ -6,19 +6,26 @@ import com.badlogic.gdx.graphics.Mesh;
 import com.badlogic.gdx.graphics.VertexAttribute;
 import com.badlogic.gdx.graphics.VertexAttributes;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g3d.Environment;
 import com.badlogic.gdx.graphics.g3d.Material;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.ModelBatch;
-import com.badlogic.gdx.graphics.g3d.ModelInstance;
+import com.badlogic.gdx.graphics.g3d.Renderable;
+import com.badlogic.gdx.graphics.g3d.RenderableProvider;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
+import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.model.Node;
 import com.badlogic.gdx.graphics.g3d.model.NodePart;
 import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Matrix4;
+import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.FloatArray;
+import com.badlogic.gdx.utils.Pool;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import java.util.ArrayList;
+import java.util.Iterator;
 import jolt.ArrayTriangle;
 import jolt.DebugRendererEm;
 import jolt.DebugRendererTriangle;
@@ -31,29 +38,38 @@ import jolt.jolt.math.Vec3;
 
 public class DebugRenderer extends DebugRendererEm {
 
+    private ModelBatch batch;
+    protected Environment environment;
+
     private Camera camera;
     private ShapeRenderer filledShapeRenderer;
     private ShapeRenderer lineShapeRenderer;
     private SpriteBatch spriteBatch;
     private com.badlogic.gdx.graphics.Color color;
-    ModelBatch batch;
-    private ArrayList<Model> modelsToDispose = new ArrayList<>();
+    private ArrayList<ModelProvider> modelPool = new ArrayList<>();
+    private ArrayList<ModelProvider> modelRenderer = new ArrayList<>();
 
     private Vec3 v0;
     private Vec3 v1;
     private Vec3 v2;
 
+    FloatArray vertices;
+
     public DebugRenderer() {
         batch = new ModelBatch();
+        environment = new Environment();
+        environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1.f));
+        environment.add(new DirectionalLight().set(0.8f, 0.8f, 0.8f, -0.5f, -1.0f, -0.8f));
+
         spriteBatch = new SpriteBatch();
         filledShapeRenderer = new ShapeRenderer();
         lineShapeRenderer = new ShapeRenderer();
         color = new com.badlogic.gdx.graphics.Color();
 
-        color = new com.badlogic.gdx.graphics.Color();
         v0 = new Vec3();
         v1 = new Vec3();
         v2 = new Vec3();
+        vertices = new FloatArray();
     }
 
     @Override
@@ -63,11 +79,9 @@ public class DebugRenderer extends DebugRendererEm {
         int size = triangleArray.size();
         if (size == 0) return;
 
-        float[] vertices;
+        int mU32 = inModelColor.get_mU32();
         int primitiveType;
-        int vertexCount;
         if (wireframeMode) {
-            vertices = new float[6 * size * 3];
             int idx = 0;
             for (int i = 0; i < size; i++) {
                 DebugRendererTriangle triangle = triangleArray.at(i);
@@ -77,30 +91,27 @@ public class DebugRenderer extends DebugRendererEm {
                 updateTemp(mV1, inModelMatrix, v1);
                 DebugRendererVertex mV2 = triangle.get_mV(2);
                 updateTemp(mV2, inModelMatrix, v2);
-
-                vertices[idx++] = v0.GetX();
-                vertices[idx++] = v0.GetY();
-                vertices[idx++] = v0.GetZ();
-                vertices[idx++] = v1.GetX();
-                vertices[idx++] = v1.GetY();
-                vertices[idx++] = v1.GetZ();
-                vertices[idx++] = v1.GetX();
-                vertices[idx++] = v1.GetY();
-                vertices[idx++] = v1.GetZ();
-                vertices[idx++] = v2.GetX();
-                vertices[idx++] = v2.GetY();
-                vertices[idx++] = v2.GetZ();
-                vertices[idx++] = v2.GetX();
-                vertices[idx++] = v2.GetY();
-                vertices[idx++] = v2.GetZ();
-                vertices[idx++] = v0.GetX();
-                vertices[idx++] = v0.GetY();
-                vertices[idx++] = v0.GetZ();
+                vertices.insert(idx++, v0.GetX());
+                vertices.insert(idx++, v0.GetY());
+                vertices.insert(idx++, v0.GetZ());
+                vertices.insert(idx++, v1.GetX());
+                vertices.insert(idx++, v1.GetY());
+                vertices.insert(idx++, v1.GetZ());
+                vertices.insert(idx++, v1.GetX());
+                vertices.insert(idx++, v1.GetY());
+                vertices.insert(idx++, v1.GetZ());
+                vertices.insert(idx++, v2.GetX());
+                vertices.insert(idx++, v2.GetY());
+                vertices.insert(idx++, v2.GetZ());
+                vertices.insert(idx++, v2.GetX());
+                vertices.insert(idx++, v2.GetY());
+                vertices.insert(idx++, v2.GetZ());
+                vertices.insert(idx++, v0.GetX());
+                vertices.insert(idx++, v0.GetY());
+                vertices.insert(idx++, v0.GetZ());
             }
             primitiveType = GL20.GL_LINES;
-            vertexCount = 6 * size;
         } else if (solidMode) {
-            vertices = new float[3 * size * 3];
             int idx = 0;
             for (int i = 0; i < size; i++) {
                 DebugRendererTriangle triangle = triangleArray.at(i);
@@ -110,45 +121,23 @@ public class DebugRenderer extends DebugRendererEm {
                 updateTemp(mV1, inModelMatrix, v1);
                 DebugRendererVertex mV2 = triangle.get_mV(2);
                 updateTemp(mV2, inModelMatrix, v2);
-                vertices[idx++] = v0.GetX();
-                vertices[idx++] = v0.GetY();
-                vertices[idx++] = v0.GetZ();
-                vertices[idx++] = v1.GetX();
-                vertices[idx++] = v1.GetY();
-                vertices[idx++] = v1.GetZ();
-                vertices[idx++] = v2.GetX();
-                vertices[idx++] = v2.GetY();
-                vertices[idx++] = v2.GetZ();
+                vertices.insert(idx++, v0.GetX());
+                vertices.insert(idx++, v0.GetY());
+                vertices.insert(idx++, v0.GetZ());
+                vertices.insert(idx++, v1.GetX());
+                vertices.insert(idx++, v1.GetY());
+                vertices.insert(idx++, v1.GetZ());
+                vertices.insert(idx++, v2.GetX());
+                vertices.insert(idx++, v2.GetY());
+                vertices.insert(idx++, v2.GetZ());
             }
             primitiveType = GL20.GL_TRIANGLES;
-            vertexCount = 3 * size;
         } else {
             return;
         }
-
-        Mesh mesh = new Mesh(true, vertexCount, 0, new VertexAttribute(VertexAttributes.Usage.Position, 3, "a_position"));
-        mesh.setVertices(vertices);
-
-        com.badlogic.gdx.graphics.Color libgdxColor = new com.badlogic.gdx.graphics.Color(inModelColor.get_mU32());
-        Material material = new Material(ColorAttribute.createDiffuse(libgdxColor));
-
-        MeshPart meshPart = new MeshPart("meshpart1", mesh, 0, vertexCount, primitiveType);
-        Node node = new Node();
-        node.id = "node1";
-        node.parts.add(new NodePart(meshPart, material));
-        Model model = new Model();
-        model.nodes.add(node);
-        model.meshes.add(mesh);
-        model.materials.add(material);
-        model.meshParts.add(meshPart);
-
-        ModelInstance instance = new ModelInstance(model);
-//        Matrix4 transform = new Matrix4(inModelMatrix.getValues());
-        Matrix4 transform = new Matrix4();
-        instance.transform.set(transform);
-
-        batch.render(instance);
-        modelsToDispose.add(model);
+        ModelProvider modelProvider = obtain();
+        modelProvider.setVertices(vertices, primitiveType, mU32);
+        modelRenderer.add(modelProvider);
     }
 
     private void updateTemp(DebugRendererVertex mV0, Mat44 inModelMatrix, Vec3 temp0) {
@@ -221,11 +210,12 @@ public class DebugRenderer extends DebugRendererEm {
     public void end() {
         filledShapeRenderer.end();
         lineShapeRenderer.end();
-        batch.end();
-        for (Model m : modelsToDispose) {
-            m.dispose();
+        for(ModelProvider modelProvider : modelRenderer) {
+            batch.render(modelProvider, environment);
         }
-        modelsToDispose.clear();
+        modelPool.addAll(modelRenderer);
+        modelRenderer.clear();
+        batch.end();
         camera = null;
     }
 
@@ -235,6 +225,9 @@ public class DebugRenderer extends DebugRendererEm {
         lineShapeRenderer.dispose();
         spriteBatch.dispose();
         batch.dispose();
+        for (ModelProvider m : modelPool) {
+            m.dispose();
+        }
     }
 
     public void triangle3D(float x1, float y1, float z1,
@@ -248,5 +241,95 @@ public class DebugRenderer extends DebugRendererEm {
         renderer.vertex(x2, y2, z2);
         renderer.color(colorBits);
         renderer.vertex(x3, y3, z3);
+    }
+
+    private class ModelProvider implements RenderableProvider {
+        public final Mesh mesh;
+        public final MeshPart meshPart;
+        public Model model;
+        public final Matrix4 transform = new Matrix4();
+        private final ColorAttribute diffuse;
+
+        public ModelProvider() {
+            diffuse = ColorAttribute.createDiffuse(1, 1, 1, 1);
+            Material material = new Material(diffuse);
+            mesh = new Mesh(true, 9999999, 0, new VertexAttribute(VertexAttributes.Usage.Position, 3, "a_position"));
+            meshPart = new MeshPart("meshpart1", mesh, 0, 0, 0);
+            Node node = new Node();
+            node.id = "node1";
+            node.parts.add(new NodePart(meshPart, material));
+            model = new Model();
+            model.nodes.add(node);
+            model.meshes.add(mesh);
+            model.materials.add(material);
+            model.meshParts.add(meshPart);
+        }
+
+        public void setVertices(FloatArray vertices, int primitiveType, int colorU32) {
+            mesh.setVertices(vertices.items, 0, vertices.size);
+            meshPart.size = vertices.size;
+            meshPart.primitiveType = primitiveType;
+            diffuse.color.set(colorU32);
+            vertices.clear();
+        }
+
+        @Override
+        public void getRenderables(Array<Renderable> renderables, Pool<Renderable> pool) {
+            Array.ArrayIterator var3 = model.nodes.iterator();
+
+            while(var3.hasNext()) {
+                Node node = (Node)var3.next();
+                this.getRenderables(node, renderables, pool);
+            }
+        }
+
+        protected void getRenderables(Node node, Array<Renderable> renderables, Pool<Renderable> pool) {
+            if (node.parts.size > 0) {
+                Array.ArrayIterator var4 = node.parts.iterator();
+
+                while(var4.hasNext()) {
+                    NodePart nodePart = (NodePart)var4.next();
+                    if (nodePart.enabled) {
+                        renderables.add(this.getRenderable((Renderable)pool.obtain(), node, nodePart));
+                    }
+                }
+            }
+
+            Iterator var7 = node.getChildren().iterator();
+
+            while(var7.hasNext()) {
+                Node child = (Node)var7.next();
+                this.getRenderables(child, renderables, pool);
+            }
+        }
+
+        public Renderable getRenderable(Renderable out, Node node, NodePart nodePart) {
+            nodePart.setRenderable(out);
+            if (nodePart.bones == null && this.transform != null) {
+                out.worldTransform.set(this.transform).mul(node.globalTransform);
+            } else if (this.transform != null) {
+                out.worldTransform.set(this.transform);
+            } else {
+                out.worldTransform.idt();
+            }
+
+            return out;
+        }
+
+        public void dispose() {
+            model.dispose();
+            mesh.dispose();
+        }
+    }
+
+    private ModelProvider obtain() {
+        ModelProvider model = null;
+        if(modelPool.isEmpty()) {
+            model = new ModelProvider();
+        }
+        else {
+            model = modelPool.remove(0);
+        }
+        return model;
     }
 }
