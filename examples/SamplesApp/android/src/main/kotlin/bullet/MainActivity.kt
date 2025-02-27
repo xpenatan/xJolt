@@ -3,7 +3,7 @@ package bullet
 import android.os.Bundle
 import com.badlogic.gdx.backends.android.AndroidApplication
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration
-import jolt.example.basic.JoltGame
+import jolt.example.samples.app.JoltGame
 
 class MainActivity : AndroidApplication() {
     override fun onCreate(savedInstanceState: Bundle?) {
