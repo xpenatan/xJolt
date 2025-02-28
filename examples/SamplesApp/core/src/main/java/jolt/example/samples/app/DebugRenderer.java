@@ -124,8 +124,8 @@ public class DebugRenderer extends DebugRendererEm {
                 for (int j = 0; j < 3; j++) {
                     DebugRendererVertex mV = triangle.get_mV(j);
                     Float3 localPos = mV.get_mPosition();
-                    Vec3 localVec = new Vec3(localPos.get_x(), localPos.get_y(), localPos.get_z());
-                    Vec3 worldPos = inModelMatrix.Multiply(localVec);
+                    tempVec3.Set(localPos.get_x(), localPos.get_y(), localPos.get_z());
+                    Vec3 worldPos = inModelMatrix.Multiply(tempVec3);
                     float worldPosX = worldPos.GetX();
                     float worldPosY = worldPos.GetY();
                     float worldPosZ = worldPos.GetZ();
@@ -156,6 +156,7 @@ public class DebugRenderer extends DebugRendererEm {
             }
             ModelProvider modelProvider = obtain();
             modelProvider.setVertices(vertices, GL20.GL_TRIANGLES);
+            vertices.clear();
             modelRenderer.add(modelProvider);
         }
     }
@@ -244,7 +245,6 @@ public class DebugRenderer extends DebugRendererEm {
             int floatsPerVertex = mesh.getVertexSize() / 4; // 8 floats: 3 pos + 3 norm + 2 tex
             meshPart.size = vertices.size / floatsPerVertex;
             meshPart.primitiveType = primitiveType;
-            vertices.clear();
         }
 
         @Override
