@@ -11,7 +11,6 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import jolt.BodyIDVector;
 import jolt.BodyManagerDrawSettings;
-import jolt.EShapeColor;
 import jolt.JoltInterface;
 import jolt.JoltSettings;
 import jolt.jolt.physics.PhysicsSystem;
@@ -23,11 +22,6 @@ import jolt.jolt.physics.collision.broadphase.BroadPhaseLayerInterfaceTable;
 import jolt.jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilterTable;
 
 public class SamplesApp extends InputAdapter {
-    // Object layers
-    public static int LAYER_NON_MOVING = 0;
-    public static int LAYER_MOVING = 1;
-    public static int NUM_OBJECT_LAYERS = 2;
-
     private boolean isPaused;
 
     private Test test;
@@ -93,7 +87,7 @@ public class SamplesApp extends InputAdapter {
         clearBodies();
         isPaused = true;
         test = tests.getTest(testClass);
-        test.setPhysicsSystem(physicsSystem);
+        test.setmPhysicsSystem(physicsSystem);
         test.initialize();
     }
 
@@ -126,9 +120,9 @@ public class SamplesApp extends InputAdapter {
         // layers if you want. E.g. you could have a layer for high detail collision (which is not used by the physics simulation
         // but only if you do collision testing).
 
-        ObjectLayerPairFilterTable objectFilter = new ObjectLayerPairFilterTable(NUM_OBJECT_LAYERS);
-        objectFilter.EnableCollision(LAYER_NON_MOVING, LAYER_MOVING);
-        objectFilter.EnableCollision(LAYER_MOVING, LAYER_MOVING);
+        ObjectLayerPairFilterTable objectFilter = new ObjectLayerPairFilterTable(Layers.NUM_LAYERS);
+        objectFilter.EnableCollision(Layers.NON_MOVING, Layers.MOVING);
+        objectFilter.EnableCollision(Layers.MOVING, Layers.MOVING);
 
         // Each broadphase layer results in a separate bounding volume tree in the broad phase. You at least want to have
         // a layer for non-moving and moving objects to avoid having to update a tree full of static objects every frame.
@@ -138,13 +132,13 @@ public class SamplesApp extends InputAdapter {
         BroadPhaseLayer BP_LAYER_NON_MOVING = new BroadPhaseLayer((short)0);
         BroadPhaseLayer BP_LAYER_MOVING = new BroadPhaseLayer((short)1);
         int NUM_BROAD_PHASE_LAYERS = 2;
-        BroadPhaseLayerInterfaceTable bpInterface = new BroadPhaseLayerInterfaceTable(NUM_OBJECT_LAYERS, NUM_BROAD_PHASE_LAYERS);
-        bpInterface.MapObjectToBroadPhaseLayer(LAYER_NON_MOVING, BP_LAYER_NON_MOVING);
-        bpInterface.MapObjectToBroadPhaseLayer(LAYER_MOVING, BP_LAYER_MOVING);
+        BroadPhaseLayerInterfaceTable bpInterface = new BroadPhaseLayerInterfaceTable(Layers.NUM_LAYERS, NUM_BROAD_PHASE_LAYERS);
+        bpInterface.MapObjectToBroadPhaseLayer(Layers.NON_MOVING, BP_LAYER_NON_MOVING);
+        bpInterface.MapObjectToBroadPhaseLayer(Layers.MOVING, BP_LAYER_MOVING);
 
         settings.set_mObjectLayerPairFilter(objectFilter);
         settings.set_mBroadPhaseLayerInterface(bpInterface);
-        ObjectVsBroadPhaseLayerFilterTable broadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(settings.get_mBroadPhaseLayerInterface(), NUM_BROAD_PHASE_LAYERS, settings.get_mObjectLayerPairFilter(), NUM_OBJECT_LAYERS);
+        ObjectVsBroadPhaseLayerFilterTable broadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(settings.get_mBroadPhaseLayerInterface(), NUM_BROAD_PHASE_LAYERS, settings.get_mObjectLayerPairFilter(), Layers.NUM_LAYERS);
         settings.set_mObjectVsBroadPhaseLayerFilter(broadPhaseLayerFilter);
     }
 

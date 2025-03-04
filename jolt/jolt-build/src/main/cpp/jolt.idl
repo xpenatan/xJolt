@@ -1,40 +1,3 @@
-enum ECullMode {
-    "ECullMode_CullBackFace",
-    "ECullMode_CullFrontFace",
-    "ECullMode_Off"
-};
-
-enum ECastShadow {
-    "ECastShadow_On",
-    "ECastShadow_Off",
-};
-
-enum EDrawMode {
-    "EDrawMode_Solid",
-    "EDrawMode_Wireframe",
-};
-
-enum EShapeColor {
-    "EShapeColor_InstanceColor",
-    "EShapeColor_ShapeTypeColor",
-    "EShapeColor_MotionTypeColor",
-    "EShapeColor_SleepColor",
-    "EShapeColor_IslandColor",
-    "EShapeColor_MaterialColor"
-};
-
-enum ESoftBodyConstraintColor {
-    "ESoftBodyConstraintColor_ConstraintType",
-    "ESoftBodyConstraintColor_ConstraintGroup",
-    "ESoftBodyConstraintColor_ConstraintOrder"
-};
-
-interface Color {
-    attribute unsigned long mU32;
-    [Operator="*", Value] Color Multiply([Const, Ref] Color other);
-    [Value] Vec4 ToVec4();
-};
-
 interface BodyManagerDrawSettings {
     void BodyManagerDrawSettings();
 
@@ -61,7 +24,7 @@ interface BodyManagerDrawSettings {
     attribute ESoftBodyConstraintColor mDrawSoftBodyConstraintColor;
 };
 
-interface ArrayTriangle {
+interface DebugArrayTriangle {
     long size();
     [Ref] DebugRendererTriangle at(long inIndex);
 };
@@ -83,20 +46,50 @@ interface DebugRendererEm {
 };
 
 [JSImplementation = "DebugRendererEm"]
-interface DebugRendererImpl : DebugRendererEm {
-    void DebugRendererImpl();
-    void DrawMesh([Const, Ref] Mat44 inModelMatrix, [Const, Ref] ArrayTriangle triangleArray, [Const, Ref] Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode);
+interface DebugRendererImplCustom : DebugRendererEm {
+    void DebugRendererImplCustom();
+    void DrawMesh([Const, Ref] Mat44 inModelMatrix, [Const, Ref] DebugArrayTriangle triangleArray, [Const, Ref] Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode);
     void DrawLine([Const] Vec3 inFrom, [Const] Vec3 inTo, [Const] Color inColor);
     void DrawTriangle([Const] Vec3 inV1, [Const] Vec3 inV2, [Const]  Vec3 inV3, [Const] Color inColor, ECastShadow inCastShadow);
     void DrawText3D([Const] Vec3 inPosition, [Const] any inString, unsigned long inStringLen, [Const] Color inColor, float inHeight);
 };
 
+interface JoltInterface {
+    void JoltInterface([Const, Ref] JoltSettings inSettings);
+    void Step(float inDeltaTime, long inCollisionSteps);
+    PhysicsSystem GetPhysicsSystem();
+    TempAllocator GetTempAllocator();
+    ObjectLayerPairFilter GetObjectLayerPairFilter();
+    ObjectVsBroadPhaseLayerFilter GetObjectVsBroadPhaseLayerFilter();
+//    static unsigned long long sGetTotalMemory();
+//    static unsigned long long sGetFreeMemory();
+};
 
-//interface JPHString {
-//    void JPHString(DOMString str, long length);
-//    [Const] DOMString c_str(); // TODO: This is not a nice way to get a string from an interface
-//    unsigned long size();
-//};
+interface JoltSettings {
+    void JoltSettings();
+
+    attribute unsigned long mMaxBodies;
+    attribute unsigned long mMaxBodyPairs;
+    attribute unsigned long mMaxContactConstraints;
+    attribute BroadPhaseLayerInterface mBroadPhaseLayerInterface;
+    attribute ObjectVsBroadPhaseLayerFilter mObjectVsBroadPhaseLayerFilter;
+    attribute ObjectLayerPairFilter mObjectLayerPairFilter;
+};
+
+interface Vector2 {
+    void Vector2();
+    void SetZero();
+    void IsZero();
+    void IsClose([Const, Ref] Vector2 inV, optional float inMaxDistSq);
+    void IsNormalized(optional float inTolerance);
+    [Const, Value] Vector2 Normalized();
+//    [Operator="[]"] float GetComponent(unsigned long inCoordinate);
+//    [Operator="+=", Ref] Vector2 Add([Const, Ref] Vector2 inV);
+//    [Operator="-=", Ref] Vector2 Sub([Const, Ref] Vector2 inV);
+//    [Operator="*=", Ref] Vector2 Mul(float inV);
+//    [Operator="/=", Ref] Vector2 Div(float inV);
+    float Dot([Const, Ref] Vector2 inRHS);
+};
 
 interface ArrayVec3 {
     boolean empty();
@@ -129,6 +122,676 @@ interface ArrayMat44 {
     void resize(unsigned long inSize);
     void clear();
     Mat44MemRef data();
+};
+
+interface ArrayFloat {
+    boolean empty();
+    long size();
+    float at(long inIndex);
+    void push_back(float inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+    FloatMemRef data();
+};
+
+interface ArrayUint {
+    boolean empty();
+    long size();
+    unsigned long at(long inIndex);
+    void push_back(unsigned long inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+    UintMemRef data();
+};
+
+interface ArrayUint8 {
+    boolean empty();
+    long size();
+//    octet at(long inIndex);
+//    void push_back(octet inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+    Uint8MemRef data();
+};
+
+interface ArrayVehicleAntiRollBar {
+    boolean empty();
+    long size();
+    [Ref] VehicleAntiRollBar at(long inIndex);
+    void push_back([Ref] VehicleAntiRollBar inValue);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArrayWheelSettings {
+    void ArrayWheelSettings();
+    boolean empty();
+    long size();
+    WheelSettings at(long inIndex);
+    void push_back(WheelSettings inValue);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArrayVehicleDifferentialSettings {
+    boolean empty();
+    long size();
+    [Ref] VehicleDifferentialSettings at(long inIndex);
+    void push_back([Ref] VehicleDifferentialSettings inValue);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface Vec3MemRef {
+};
+
+interface QuatMemRef {
+};
+
+interface Mat44MemRef {
+};
+
+interface FloatMemRef {
+};
+
+interface Uint8MemRef {
+};
+
+interface UintMemRef {
+};
+
+interface SoftBodySharedSettingsVertex {
+    void SoftBodySharedSettingsVertex();
+
+    [Value] attribute Float3 mPosition;
+    [Value] attribute Float3 mVelocity;
+    attribute float mInvMass;
+};
+
+interface SoftBodySharedSettingsFace {
+    void SoftBodySharedSettingsFace(unsigned long inVertex1, unsigned long inVertex2, unsigned long inVertex3, unsigned long inMaterialIndex);
+
+    attribute unsigned long[] mVertex;
+    attribute unsigned long mMaterialIndex;
+};
+
+interface SoftBodySharedSettingsEdge {
+    void SoftBodySharedSettingsEdge(unsigned long inVertex1, unsigned long inVertex2, float inCompliance);
+
+    attribute unsigned long[] mVertex;
+    attribute float mRestLength;
+    attribute float mCompliance;
+};
+
+interface SoftBodySharedSettingsDihedralBend {
+    void SoftBodySharedSettingsDihedralBend(unsigned long inVertex1, unsigned long inVertex2, unsigned long inVertex3, unsigned long inVertex4, float inCompliance);
+
+    attribute unsigned long[] mVertex;
+    attribute float mCompliance;
+    attribute float mInitialAngle;
+};
+
+interface SoftBodySharedSettingsVolume {
+    void SoftBodySharedSettingsVolume(unsigned long inVertex1, unsigned long inVertex2, unsigned long inVertex3, unsigned long inVertex4, float inCompliance);
+
+    attribute unsigned long[] mVertex;
+    attribute float mSixRestVolume;
+    attribute float mCompliance;
+};
+
+interface SoftBodySharedSettingsInvBind
+{
+    attribute unsigned long mJointIndex;
+    [Value] attribute Mat44 mInvBind;
+};
+
+interface SoftBodySharedSettingsSkinWeight
+{
+    attribute unsigned long mInvBindIndex;
+    attribute float mWeight;
+};
+
+interface SoftBodySharedSettingsSkinned
+{
+    attribute unsigned long mVertex;
+    [Value] attribute SoftBodySharedSettingsSkinWeight[] mWeights;
+    attribute float mMaxDistance;
+    attribute float mBackStopDistance;
+    attribute float mBackStopRadius;
+};
+
+interface SoftBodySharedSettingsLRA {
+    void SoftBodySharedSettingsLRA(unsigned long inVertex1, unsigned long inVertex2, float inMaxDistance);
+
+    attribute unsigned long[] mVertex;
+    attribute float mMaxDistance;
+};
+
+interface CollideShapeResultFace {
+    boolean empty();
+    long size();
+    [Ref] Vec3 at(long inIndex);
+    void push_back([Const, Ref] Vec3 inValue);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArraySoftBodySharedSettingsVertex {
+    boolean empty();
+    long size();
+    [Ref] SoftBodySharedSettingsVertex at(long inIndex);
+    void push_back([Const, Ref] SoftBodySharedSettingsVertex inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArraySoftBodySharedSettingsFace {
+    boolean empty();
+    long size();
+    [Ref] SoftBodySharedSettingsFace at(long inIndex);
+    void push_back([Const, Ref] SoftBodySharedSettingsFace inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArraySoftBodySharedSettingsEdge {
+    boolean empty();
+    long size();
+    [Ref] SoftBodySharedSettingsEdge at(long inIndex);
+    void push_back([Const, Ref] SoftBodySharedSettingsEdge inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArraySoftBodySharedSettingsDihedralBend {
+    boolean empty();
+    long size();
+    [Ref] SoftBodySharedSettingsDihedralBend at(long inIndex);
+    void push_back([Const, Ref] SoftBodySharedSettingsDihedralBend inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArraySoftBodySharedSettingsVolume {
+    boolean empty();
+    long size();
+    [Ref] SoftBodySharedSettingsVolume at(long inIndex);
+    void push_back([Const, Ref] SoftBodySharedSettingsVolume inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArraySoftBodySharedSettingsInvBind {
+    boolean empty();
+    long size();
+    [Ref] SoftBodySharedSettingsInvBind at(long inIndex);
+    void push_back([Const, Ref] SoftBodySharedSettingsInvBind inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArraySoftBodySharedSettingsSkinned {
+    boolean empty();
+    long size();
+    [Ref] SoftBodySharedSettingsSkinned at(long inIndex);
+    void push_back([Const, Ref] SoftBodySharedSettingsSkinned inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArraySoftBodySharedSettingsLRA {
+    boolean empty();
+    long size();
+    [Ref] SoftBodySharedSettingsLRA at(long inIndex);
+    void push_back([Const, Ref] SoftBodySharedSettingsLRA inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface SoftBodySharedSettingsVertexAttributes {
+    void SoftBodySharedSettingsVertexAttributes();
+
+    attribute float mCompliance;
+    attribute float mShearCompliance;
+    attribute float mBendCompliance;
+    attribute SoftBodySharedSettings_ELRAType mLRAType;
+    attribute float mLRAMaxDistanceMultiplier;
+};
+
+interface ArraySoftBodySharedSettingsVertexAttributes {
+    boolean empty();
+    long size();
+    [Ref] SoftBodySharedSettingsVertexAttributes at(long inIndex);
+    void push_back([Const, Ref] SoftBodySharedSettingsVertexAttributes inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+    SoftBodySharedSettingsVertexAttributes data();
+};
+
+interface ArrayRayCastResult {
+    boolean empty();
+    long size();
+    [Ref] RayCastResult at(long inIndex);
+    void push_back([Const, Ref] RayCastResult inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface SkeletalAnimationJointState {
+    void FromMatrix([Const, Ref] Mat44 inMatrix);
+    [Value] Mat44 ToMatrix();
+
+    [Value] attribute Vec3 mTranslation;
+    [Value] attribute Quat mRotation;
+};
+
+interface SkeletalAnimationKeyframe {
+    void SkeletalAnimationKeyframe();
+
+    attribute float mTime;
+};
+SkeletalAnimationKeyframe implements SkeletalAnimationJointState;
+
+interface SkeletalAnimationAnimatedJoint {
+    void SkeletalAnimationAnimatedJoint();
+
+    [Value] attribute IDLString mJointName;
+    [Value] attribute ArraySkeletonKeyframe mKeyframes;
+};
+
+interface ArraySkeletonKeyframe {
+    void ArraySkeletonKeyframe();
+    boolean empty();
+    long size();
+    [Ref] SkeletalAnimationKeyframe at(long inIndex);
+    void push_back([Ref] SkeletalAnimationKeyframe inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArraySkeletonAnimatedJoint {
+    void ArraySkeletonAnimatedJoint();
+    boolean empty();
+    long size();
+    [Ref] SkeletalAnimationAnimatedJoint at(long inIndex);
+    void push_back([Ref] SkeletalAnimationAnimatedJoint inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface RagdollPart {
+    attribute TwoBodyConstraintSettings mToParent;
+};
+RagdollPart implements BodyCreationSettings;
+
+interface ArrayRagdollPart {
+    void ArrayRagdollPart();
+    boolean empty();
+    long size();
+    [Ref] RagdollPart at(long inIndex);
+    void push_back([Ref] RagdollPart inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface RagdollAdditionalConstraint {
+    attribute long[] mBodyIdx;
+    attribute TwoBodyConstraintSettings mConstraint;
+};
+
+interface ArrayRagdollAdditionalConstraint {
+    void ArrayRagdollAdditionalConstraint();
+    boolean empty();
+    long size();
+    [Ref] RagdollAdditionalConstraint at(long inIndex);
+    void push_back([Ref] RagdollAdditionalConstraint inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface CompoundShapeSubShape {
+    [Value] Vec3 GetPositionCOM();
+    [Value] Quat GetRotation();
+
+    [Const] attribute Shape mShape;
+    attribute unsigned long mUserData;
+};
+
+interface ArrayShapeCastResult {
+    boolean empty();
+    long size();
+    [Ref] ShapeCastResult at(long inIndex);
+    void push_back([Const, Ref] ShapeCastResult inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+
+interface CastShapeAllHitCollisionCollector {
+    void CastShapeAllHitCollisionCollector();
+    void Sort();
+    boolean HadHit();
+    [Value] attribute ArrayShapeCastResult mHits;
+};
+CastShapeAllHitCollisionCollector implements CastShapeCollector;
+
+interface CastShapeClosestHitCollisionCollector {
+    void CastShapeClosestHitCollisionCollector();
+    boolean HadHit();
+    [Value] attribute ShapeCastResult mHit;
+};
+CastShapeClosestHitCollisionCollector implements CastShapeCollector;
+
+interface CastShapeAnyHitCollisionCollector {
+    void CastShapeAnyHitCollisionCollector();
+    boolean HadHit();
+    [Value] attribute ShapeCastResult mHit;
+};
+CastShapeAnyHitCollisionCollector implements CastShapeCollector;
+
+interface WheeledVehicleControllerCallbacksEm {
+    void SetWheeledVehicleController([Ref] WheeledVehicleController inController);
+};
+
+[JSImplementation="WheeledVehicleControllerCallbacksEm"]
+interface WheeledVehicleControllerCallbacksJS {
+    void WheeledVehicleControllerCallbacksJS();
+    void OnTireMaxImpulseCallback(unsigned long inWheelIndex, TireMaxImpulseCallbackResult outResult, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime);
+};
+
+interface TireMaxImpulseCallbackResult {
+    attribute float mLongitudinalImpulse;
+    attribute float mLateralImpulse;
+};
+
+interface VehicleConstraintCallbacksEm {
+    void SetVehicleConstraint([Ref] VehicleConstraint inConstraint);
+};
+
+[JSImplementation="VehicleConstraintCallbacksEm"]
+interface VehicleConstraintCallbacksJS {
+    void VehicleConstraintCallbacksJS();
+    float GetCombinedFriction(unsigned long inWheelIndex, ETireFrictionDirection inTireFrictionDirection, float inTireFriction, [Const, Ref] Body inBody2, [Const, Ref] SubShapeID inSubShapeID2);
+    void OnPreStepCallback([Ref] VehicleConstraint inVehicle, [Const, Ref] PhysicsStepListenerContext inContext);
+    void OnPostCollideCallback([Ref] VehicleConstraint inVehicle, [Const, Ref] PhysicsStepListenerContext inContext);
+    void OnPostStepCallback([Ref] VehicleConstraint inVehicle, [Const, Ref] PhysicsStepListenerContext inContext);
+};
+
+interface VehicleConstraintStepListener {
+    void VehicleConstraintStepListener(VehicleConstraint inConstraint);
+};
+VehicleConstraintStepListener implements PhysicsStepListener;
+
+interface ShapeFilterEm : ShapeFilter {
+};
+
+[JSImplementation="ShapeFilterEm"]
+interface ShapeFilterJS {
+    void ShapeFilterJS();
+    [Const] boolean ShouldCollide_1([Const] Shape inShape2, [Const, Ref] SubShapeID inSubShapeIDOfShape2);
+    [Const] boolean ShouldCollide_2([Const] Shape inShape1, [Const, Ref] SubShapeID inSubShapeIDOfShape1, [Const] Shape inShape2, [Const, Ref] SubShapeID inSubShapeIDOfShape2);
+};
+
+interface ObjectVsBroadPhaseLayerFilterEm {
+};
+ObjectVsBroadPhaseLayerFilterEm implements ObjectVsBroadPhaseLayerFilter;
+
+[JSImplementation="ObjectVsBroadPhaseLayerFilterEm"]
+interface ObjectVsBroadPhaseLayerFilterJS {
+    void ObjectVsBroadPhaseLayerFilterJS();
+    [Const] boolean ShouldCollide(unsigned long inLayer1, BroadPhaseLayer inLayer2);
+};
+
+interface CharacterContactListenerEm {
+};
+CharacterContactListenerEm implements CharacterContactListener;
+
+[JSImplementation="CharacterContactListenerEm"]
+interface CharacterContactListenerJS {
+    void CharacterContactListenerJS();
+    void OnAdjustBodyVelocity([Const] CharacterVirtual inCharacter, [Const, Ref] Body inBody2, [Ref] Vec3 ioLinearVelocity, [Ref] Vec3 ioAngularVelocity);
+    boolean OnContactValidate([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2);
+    boolean OnCharacterContactValidate([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2);
+    void OnContactAdded([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnCharacterContactAdded([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnContactSolve([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
+    void OnCharacterContactSolve([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
+};
+
+interface ArraySoftBodyVertex {
+    boolean empty();
+    long size();
+    [Ref] SoftBodyVertex at(long inIndex);
+    void push_back([Const, Ref] SoftBodyVertex inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface ArrayCollideShapeResult {
+    boolean empty();
+    long size();
+    [Ref] CollideShapeResult at(long inIndex);
+    void push_back([Const, Ref] CollideShapeResult inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface CollideShapeAllHitCollisionCollector {
+    void CollideShapeAllHitCollisionCollector();
+    void Sort();
+    boolean HadHit();
+    [Value] attribute ArrayCollideShapeResult mHits;
+};
+CollideShapeAllHitCollisionCollector implements CollideShapeCollector;
+
+interface CollideShapeClosestHitCollisionCollector {
+    void CollideShapeClosestHitCollisionCollector();
+    boolean HadHit();
+    [Value] attribute CollideShapeResult mHit;
+};
+CollideShapeClosestHitCollisionCollector implements CollideShapeCollector;
+
+interface CollideShapeAnyHitCollisionCollector {
+    void CollideShapeAnyHitCollisionCollector();
+    boolean HadHit();
+    [Value] attribute CollideShapeResult mHit;
+};
+CollideShapeAnyHitCollisionCollector implements CollideShapeCollector;
+
+interface ArrayCollidePointResult {
+    boolean empty();
+    long size();
+    [Ref] CollidePointResult at(long inIndex);
+    void push_back([Const, Ref] CollidePointResult inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
+};
+
+interface CollidePointAllHitCollisionCollector {
+    void CollidePointAllHitCollisionCollector();
+    void Sort();
+    boolean HadHit();
+    [Value] attribute ArrayCollidePointResult mHits;
+};
+CollidePointAllHitCollisionCollector implements CollidePointCollector;
+
+interface CollidePointClosestHitCollisionCollector {
+    void CollidePointClosestHitCollisionCollector();
+    boolean HadHit();
+    [Value] attribute CollidePointResult mHit;
+};
+CollidePointClosestHitCollisionCollector implements CollidePointCollector;
+
+interface CollidePointAnyHitCollisionCollector {
+    void CollidePointAnyHitCollisionCollector();
+    boolean HadHit();
+    [Value] attribute CollidePointResult mHit;
+};
+CollidePointAnyHitCollisionCollector implements CollidePointCollector;
+
+interface CastRayAllHitCollisionCollector {
+    void CastRayAllHitCollisionCollector();
+    void Sort();
+    boolean HadHit();
+    [Value] attribute ArrayRayCastResult mHits;
+};
+CastRayAllHitCollisionCollector implements CastRayCollector;
+
+interface CastRayClosestHitCollisionCollector {
+    void CastRayClosestHitCollisionCollector();
+    boolean HadHit();
+    [Value] attribute RayCastResult mHit;
+};
+CastRayClosestHitCollisionCollector implements CastRayCollector;
+
+interface CastRayAnyHitCollisionCollector {
+    void CastRayAnyHitCollisionCollector();
+    boolean HadHit();
+    [Value] attribute RayCastResult mHit;
+};
+CastRayAnyHitCollisionCollector implements CastRayCollector;
+
+interface SoftBodyContactListenerEm {
+};
+SoftBodyContactListenerEm implements SoftBodyContactListener;
+
+[JSImplementation="SoftBodyContactListenerEm"]
+interface SoftBodyContactListenerJS {
+    void SoftBodyContactListenerJS();
+    long OnSoftBodyContactValidate([Const, Ref] Body inSoftBody, [Const, Ref] Body inOtherBody, SoftBodyContactSettings ioSettings);
+    void OnSoftBodyContactAdded([Const, Ref] Body inSoftBody, [Const, Ref] SoftBodyManifold inManifold);
+};
+
+interface ContactListenerEm {
+};
+ContactListenerEm implements ContactListener;
+
+[JSImplementation="ContactListenerEm"]
+interface ContactListenerJS {
+    void ContactListenerJS();
+    long OnContactValidate([Const, Ref] Body inBody1, [Const, Ref] Body inBody2, [Const] Vec3 inBaseOffset, [Const, Ref] CollideShapeResult inCollisionResult); // Return value ValidateResult doesn't work with emscripten
+    void OnContactAdded([Const, Ref] Body inBody1, [Const, Ref] Body inBody2, [Const, Ref] ContactManifold inManifold, [Ref] ContactSettings ioSettings);
+    void OnContactPersisted([Const, Ref] Body inBody1, [Const, Ref] Body inBody2, [Const, Ref] ContactManifold inManifold, [Ref] ContactSettings ioSettings);
+    void OnContactRemoved([Const, Ref] SubShapeIDPair inSubShapePair);
+};
+
+interface PathConstraintPathEm {
+};
+PathConstraintPathEm implements PathConstraintPath;
+
+[JSImplementation="PathConstraintPathEm"]
+interface PathConstraintPathJS {
+    [Const] void PathConstraintPathJS();
+    [Const] float GetPathMaxFraction();
+    [Const] float GetClosestPoint([Const] Vec3 inPosition, float inFractionHint);
+    [Const] void GetPointOnPath(float inFraction, Vec3 outPathPosition, Vec3 outPathTangent, Vec3 outPathNormal, Vec3 outPathBinormal);
+};
+
+interface HeightFieldShapeConstantValues {
+    [Const] static readonly attribute float cNoCollisionValue;
+};
+
+interface ShapeGetTriangles {
+    void ShapeGetTriangles(Shape inShape, [Const, Ref] AABox inBox, [Const, Ref] Vec3 inPositionCOM, [Const, Ref] Quat inRotation, [Const, Ref] Vec3 inScale);
+    long GetNumTriangles();
+    long GetVerticesSize();
+    [Const] any GetVerticesData();
+    [Const] PhysicsMaterial GetMaterial(long inTriangle);
+};
+
+interface SoftBodyVertexTraits {
+    static readonly attribute unsigned long mPreviousPositionOffset;
+    static readonly attribute unsigned long mPositionOffset;
+    static readonly attribute unsigned long mVelocityOffset;
+};
+
+interface PhysicsSystem {
+    void PhysicsSystem();
+    void Init(long inMaxBodies, long inNumBodyMutexes, long inMaxBodyPairs, long inMaxContactConstraints, [Const, Ref] BroadPhaseLayerInterface inBroadPhaseLayerInterface, [Const, Ref] ObjectVsBroadPhaseLayerFilter inObjectVsBroadPhaseLayerFilter, [Const, Ref] ObjectLayerPairFilter inObjectLayerPairFilter);
+    void SetGravity([Const, Ref] Vec3 inGravity);
+    [Value] Vec3 GetGravity();
+    [Const, Ref] PhysicsSettings GetPhysicsSettings();
+    void SetPhysicsSettings([Const, Ref] PhysicsSettings inPhysicsSettings);
+    unsigned long GetNumBodies();
+    unsigned long GetNumActiveBodies(EBodyType inBodyType);
+    unsigned long GetMaxBodies();
+    void GetBodies([Ref] BodyIDVector outBodies);
+    void GetActiveBodies(EBodyType inBodyType, [Ref] BodyIDVector outBodies);
+    [Const, Value] AABox GetBounds();
+    void AddConstraint(Constraint inConstraint);
+    void RemoveConstraint(Constraint inConstraint);
+    void SetContactListener(ContactListener inListener);
+    ContactListener GetContactListener();
+    void SetSoftBodyContactListener(SoftBodyContactListener inListener);
+    SoftBodyContactListener GetSoftBodyContactListener();
+    void OptimizeBroadPhase();
+    [Ref] BodyInterface GetBodyInterface();
+    [Ref] BodyInterface GetBodyInterfaceNoLock();
+    [Const, Ref] BodyLockInterfaceNoLock GetBodyLockInterfaceNoLock();
+    [Const, Ref] BodyLockInterfaceLocking GetBodyLockInterface();
+    [Const, Ref] BroadPhaseQuery GetBroadPhaseQuery();
+    [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQuery();
+    [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQueryNoLock();
+    void SaveState([Ref] StateRecorder inStream, optional EStateRecorderState inState);
+    boolean RestoreState([Ref] StateRecorder inStream);
+    void AddStepListener(PhysicsStepListener inListener);
+    void AddStepListener_1(VehicleConstraint inListener);
+    void RemoveStepListener(PhysicsStepListener inListener);
+    void SetBodyActivationListener(BodyActivationListener inListener);
+    [Const] BodyActivationListener GetBodyActivationListener();
+    boolean WereBodiesInContact([Const, Ref] BodyID inBodyID1, [Const, Ref] BodyID inBodyID2);
+};
+
+enum ECullMode {
+    "ECullMode_CullBackFace",
+    "ECullMode_CullFrontFace",
+    "ECullMode_Off"
+};
+
+enum ECastShadow {
+    "ECastShadow_On",
+    "ECastShadow_Off",
+};
+
+enum EDrawMode {
+    "EDrawMode_Solid",
+    "EDrawMode_Wireframe",
+};
+
+enum EShapeColor {
+    "EShapeColor_InstanceColor",
+    "EShapeColor_ShapeTypeColor",
+    "EShapeColor_MotionTypeColor",
+    "EShapeColor_SleepColor",
+    "EShapeColor_IslandColor",
+    "EShapeColor_MaterialColor"
+};
+
+enum ESoftBodyConstraintColor {
+    "ESoftBodyConstraintColor_ConstraintType",
+    "ESoftBodyConstraintColor_ConstraintGroup",
+    "ESoftBodyConstraintColor_ConstraintOrder"
 };
 
 enum EBodyType {
@@ -318,27 +981,23 @@ enum SoftBodySharedSettings_ELRAType {
     "SoftBodySharedSettings_ELRAType_GeodesicDistance"
 };
 
-interface Vec3MemRef {
+[Prefix="JPH::"]
+interface Color {
+    attribute unsigned long mU32;
+    [Operator="*", Value] Color Multiply([Const, Ref] Color other);
+    [Value] Vec4 ToVec4();
 };
 
-interface QuatMemRef {
-};
+////interface JPHString {
+////    void JPHString(DOMString str, long length);
+////    [Const] DOMString c_str(); // TODO: This is not a nice way to get a string from an interface
+////    unsigned long size();
+////};
 
-interface Mat44MemRef {
-};
-
-interface FloatMemRef {
-};
-
-interface Uint8MemRef {
-};
-
-interface UintMemRef {
-};
-
+[Prefix="JPH::"]
 interface Vec3 {
     void Vec3();
-    void Vec3([Const, Ref] Float3 inV);
+//    void Vec3([Const, Ref] Float3 inV);
     void Vec3(float inX, float inY, float inZ);
     [Value] static Vec3 sZero();
     [Value] static Vec3 sAxisX();
@@ -374,6 +1033,7 @@ interface Vec3 {
     [Const, Value] Vec3 Reciprocal();
     [Const, Value] Vec3 Cross([Const, Ref] Vec3 inRHS);
     float Dot([Const, Ref] Vec3 inRHS);
+    [Operator="*", Value] Vec3 Multiply([Const, Ref] Vec3 other);
 //    [Operator="+=", Ref] Vec3 Add([Const, Ref] Vec3 inV);
 //    [Operator="-=", Ref] Vec3 Sub([Const, Ref] Vec3 inV);
 //    [Operator="*=", Ref] Vec3 Mul(float inV);
@@ -384,6 +1044,7 @@ interface Vec3 {
     [Const, Value] Vec3 GetSign();
 };
 
+[Prefix="JPH::"]
 interface Vec4 {
     void Vec4();
     void Vec4([Const, Ref] Vec4 inV);
@@ -401,21 +1062,7 @@ interface Vec4 {
 //    [Operator="[]"] float GetComponent(unsigned long inCoordinate);
 };
 
-interface Vector2 {
-    void Vector2();
-    void SetZero();
-    void IsZero();
-    void IsClose([Const, Ref] Vector2 inV, optional float inMaxDistSq);
-    void IsNormalized(optional float inTolerance);
-    [Const, Value] Vector2 Normalized();
-//    [Operator="[]"] float GetComponent(unsigned long inCoordinate);
-//    [Operator="+=", Ref] Vector2 Add([Const, Ref] Vector2 inV);
-//    [Operator="-=", Ref] Vector2 Sub([Const, Ref] Vector2 inV);
-//    [Operator="*=", Ref] Vector2 Mul(float inV);
-//    [Operator="/=", Ref] Vector2 Div(float inV);
-    float Dot([Const, Ref] Vector2 inRHS);
-};
-
+[Prefix="JPH::"]
 interface Quat {
     void Quat();
     void Quat(float inX, float inY, float inZ, float inW);
@@ -458,6 +1105,7 @@ interface Quat {
     [Const, Value] Quat SLERP([Const, Ref] Quat inDestination, float inFraction);
 };
 
+[Prefix="JPH::"]
 interface Float3 {
     void Float3(float inX, float inY, float inZ);
 //    [Operator="=="] boolean Equals([Const, Ref] Float3 inV);
@@ -468,12 +1116,14 @@ interface Float3 {
     attribute float z;
 };
 
+[Prefix="JPH::"]
 interface Float2 {
     void Float2(float inX, float inY);
     attribute float x;
     attribute float y;
 };
 
+[Prefix="JPH::"]
 interface Mat44 {
     void Mat44();
     [Value] static Mat44 sZero();
@@ -517,6 +1167,7 @@ interface Mat44 {
     [Value] Vec4 GetColumn4(long inCol);
 };
 
+[Prefix="JPH::"]
 interface AABox {
     void AABox();
     void AABox([Const, Ref] Vec3 inMin, [Const, Ref] Vec3 inMax);
@@ -527,6 +1178,7 @@ interface AABox {
     boolean Overlaps([Const, Ref] AABox inOther);
 };
 
+[Prefix="JPH::"]
 interface OrientedBox {
     void OrientedBox();
     void OrientedBox([Const, Ref] Mat44 inOrientation, [Const, Ref] Vec3 inHalfExtents);
@@ -535,6 +1187,7 @@ interface OrientedBox {
     [Value] attribute Vec3 mHalfExtents;
 };
 
+[Prefix="JPH::"]
 interface RayCast {
     void RayCast();
     void RayCast([Const, Ref] Vec3 inOrigin, [Const, Ref] Vec3 inDirection);
@@ -546,6 +1199,7 @@ interface RayCast {
     [Value] attribute Vec3 mDirection;
 };
 
+[Prefix="JPH::"]
 interface RRayCast {
     void RRayCast();
     void RRayCast([Const, Ref] Vec3 inOrigin, [Const, Ref] Vec3 inDirection);
@@ -557,6 +1211,7 @@ interface RRayCast {
     [Value] attribute Vec3 mDirection;
 };
 
+[Prefix="JPH::"]
 interface BroadPhaseCastResult {
     void BroadPhaseCastResult();
     void Reset();
@@ -565,6 +1220,7 @@ interface BroadPhaseCastResult {
     attribute float mFraction;
 };
 
+[Prefix="JPH::"]
 interface RayCastResult {
     void RayCastResult();
 
@@ -572,6 +1228,7 @@ interface RayCastResult {
 };
 RayCastResult implements BroadPhaseCastResult;
 
+[Prefix="JPH::"]
 interface AABoxCast {
     void AABoxCast();
 
@@ -579,6 +1236,7 @@ interface AABoxCast {
     [Value] attribute Vec3 mDirection;
 };
 
+[Prefix="JPH::"]
 interface ShapeCast {
     void ShapeCast([Const] Shape inShape, [Const, Ref] Vec3 inScale, [Const, Ref] Mat44 inCenterOfMassStart, [Const, Ref] Vec3 inDirection);
 
@@ -589,6 +1247,7 @@ interface ShapeCast {
     [Const, Value] Vec3 GetPointOnRay(float inFraction);
 };
 
+[Prefix="JPH::"]
 interface RShapeCast {
     void RShapeCast([Const] Shape inShape, [Const, Ref] Vec3 inScale, [Const, Ref] Mat44 inCenterOfMassStart, [Const, Ref] Vec3 inDirection);
 
@@ -599,6 +1258,7 @@ interface RShapeCast {
     [Const, Value] Vec3 GetPointOnRay(float inFraction);
 };
 
+[Prefix="JPH::"]
 interface Plane {
     void Plane([Const, Ref] Vec3 inNormal, float inConstant);
     [Value] Vec3 GetNormal();
@@ -612,6 +1272,7 @@ interface Plane {
     float SignedDistance([Const, Ref] Vec3 inPoint);
 };
 
+[Prefix="JPH::"]
 interface TransformedShape {
     void TransformedShape();
     void CastRay([Const, Ref] RRayCast inRay, [Ref] RayCastResult ioHit);
@@ -638,6 +1299,7 @@ interface TransformedShape {
     [Value] attribute BodyID mBodyID;
 };
 
+[Prefix="JPH::"]
 interface PhysicsMaterial {
     void PhysicsMaterial();
     unsigned long GetRefCount();
@@ -645,6 +1307,7 @@ interface PhysicsMaterial {
     void Release();
 };
 
+[Prefix="JPH::"]
 interface PhysicsMaterialList {
     void PhysicsMaterialList();
     boolean empty();
@@ -656,6 +1319,7 @@ interface PhysicsMaterialList {
     void clear();
 };
 
+[Prefix="JPH::"]
 interface Triangle {
     void Triangle();
     void Triangle([Const, Ref] Vec3 inV1, [Const, Ref] Vec3 inV2, [Const, Ref] Vec3 inV3);
@@ -664,6 +1328,7 @@ interface Triangle {
     attribute unsigned long mMaterialIndex;
 };
 
+[Prefix="JPH::"]
 interface TriangleList {
     void TriangleList();
     boolean empty();
@@ -675,6 +1340,7 @@ interface TriangleList {
     void clear();
 };
 
+[Prefix="JPH::"]
 interface VertexList {
     void VertexList();
     boolean empty();
@@ -686,6 +1352,7 @@ interface VertexList {
     void clear();
 };
 
+[Prefix="JPH::"]
 interface IndexedTriangle {
     void IndexedTriangle();
     void IndexedTriangle(unsigned long inI1, unsigned long inI2, unsigned long inI3, unsigned long inMaterialIndex);
@@ -694,6 +1361,7 @@ interface IndexedTriangle {
     attribute unsigned long mMaterialIndex;
 };
 
+[Prefix="JPH::"]
 interface IndexedTriangleList {
     void IndexedTriangleList();
     boolean empty();
@@ -705,7 +1373,7 @@ interface IndexedTriangleList {
     void clear();
 };
 
-[Prefix="Shape::"]
+[Prefix="JPH::Shape::"]
 interface ShapeResult {
     boolean IsValid();
     boolean HasError();
@@ -715,6 +1383,7 @@ interface ShapeResult {
 };
 
 // Shape
+[Prefix="JPH::"]
 interface ShapeSettings {
     unsigned long GetRefCount();
     void AddRef();
@@ -725,6 +1394,7 @@ interface ShapeSettings {
     attribute unsigned long long mUserData;
 };
 
+[Prefix="JPH::"]
 interface Shape {
     unsigned long GetRefCount();
     void AddRef();
@@ -751,21 +1421,15 @@ interface Shape {
     [Value] ShapeResult ScaleShape([Const, Ref] Vec3 inScale);
 };
 
-interface ShapeGetTriangles {
-    void ShapeGetTriangles(Shape inShape, [Const, Ref] AABox inBox, [Const, Ref] Vec3 inPositionCOM, [Const, Ref] Quat inRotation, [Const, Ref] Vec3 inScale);
-    long GetNumTriangles();
-    long GetVerticesSize();
-    [Const] any GetVerticesData();
-    [Const] PhysicsMaterial GetMaterial(long inTriangle);
-};
-
 // Convex shape
+[Prefix="JPH::"]
 interface ConvexShapeSettings {
     [Const] attribute PhysicsMaterial mMaterial;
     attribute float mDensity;
 };
 ConvexShapeSettings implements ShapeSettings;
 
+[Prefix="JPH::"]
 interface ConvexShape {
     float GetDensity();
     void SetDensity(float inDensity);
@@ -773,6 +1437,7 @@ interface ConvexShape {
 ConvexShape implements Shape;
 
 // Sphere
+[Prefix="JPH::"]
 interface SphereShapeSettings {
     void SphereShapeSettings(float inRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -780,6 +1445,7 @@ interface SphereShapeSettings {
 };
 SphereShapeSettings implements ConvexShapeSettings;
 
+[Prefix="JPH::"]
 interface SphereShape {
     void SphereShape(float inRadius, [Const] optional PhysicsMaterial inMaterial);
     float GetRadius();
@@ -787,6 +1453,7 @@ interface SphereShape {
 SphereShape implements ConvexShape;
 
 // Box
+[Prefix="JPH::"]
 interface BoxShapeSettings {
     void BoxShapeSettings([Ref] Vec3 inHalfExtent, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -795,6 +1462,7 @@ interface BoxShapeSettings {
 };
 BoxShapeSettings implements ConvexShapeSettings;
 
+[Prefix="JPH::"]
 interface BoxShape {
     void BoxShape([Ref] Vec3 inHalfExtent, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
     [Value] Vec3 GetHalfExtent();
@@ -802,6 +1470,7 @@ interface BoxShape {
 BoxShape implements ConvexShape;
 
 // Cylinder
+[Prefix="JPH::"]
 interface CylinderShapeSettings {
     void CylinderShapeSettings(float inHalfHeight, float inRadius, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -811,6 +1480,7 @@ interface CylinderShapeSettings {
 };
 CylinderShapeSettings implements ConvexShapeSettings;
 
+[Prefix="JPH::"]
 interface CylinderShape {
     void CylinderShape(float inHalfHeight, float inRadius, float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
     float GetRadius();
@@ -819,6 +1489,7 @@ interface CylinderShape {
 CylinderShape implements ConvexShape;
 
 // Capsule
+[Prefix="JPH::"]
 interface CapsuleShapeSettings {
     void CapsuleShapeSettings(float inHalfHeight, float inRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -827,6 +1498,7 @@ interface CapsuleShapeSettings {
 };
 CapsuleShapeSettings implements ConvexShapeSettings;
 
+[Prefix="JPH::"]
 interface CapsuleShape {
     void CapsuleShape(float inHalfHeight, float inRadius, [Const] optional PhysicsMaterial inMaterial);
     float GetRadius();
@@ -835,6 +1507,7 @@ interface CapsuleShape {
 CapsuleShape implements ConvexShape;
 
 // Tapered capsule
+[Prefix="JPH::"]
 interface TaperedCapsuleShapeSettings {
     void TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -844,11 +1517,13 @@ interface TaperedCapsuleShapeSettings {
 };
 TaperedCapsuleShapeSettings implements ConvexShapeSettings;
 
+[Prefix="JPH::"]
 interface TaperedCapsuleShape {
 };
 TaperedCapsuleShape implements ConvexShape;
 
 // Convex hull
+[Prefix="JPH::"]
 interface ConvexHullShapeSettings {
     void ConvexHullShapeSettings();
 
@@ -859,24 +1534,19 @@ interface ConvexHullShapeSettings {
 };
 ConvexHullShapeSettings implements ConvexShapeSettings;
 
+[Prefix="JPH::"]
 interface ConvexHullShape {
 };
 ConvexHullShape implements ConvexShape;
 
 // Compound shape
+[Prefix="JPH::"]
 interface CompoundShapeSettings {
     void AddShape([Const, Ref] Vec3 inPosition, [Const, Ref] Quat inRotation, [Const] ShapeSettings inShape, unsigned long inUserData);
 };
 CompoundShapeSettings implements ShapeSettings;
 
-interface CompoundShapeSubShape {
-    [Value] Vec3 GetPositionCOM();
-    [Value] Quat GetRotation();
-
-    [Const] attribute Shape mShape;
-    attribute unsigned long mUserData;
-};
-
+[Prefix="JPH::"]
 interface CompoundShape {
     long GetNumSubShapes();
     [Const, Ref] CompoundShapeSubShape GetSubShape(long inIdx);
@@ -884,21 +1554,25 @@ interface CompoundShape {
 CompoundShape implements Shape;
 
 // Static compound
+[Prefix="JPH::"]
 interface StaticCompoundShapeSettings {
     void StaticCompoundShapeSettings();
 };
 StaticCompoundShapeSettings implements CompoundShapeSettings;
 
+[Prefix="JPH::"]
 interface StaticCompoundShape {
 };
 StaticCompoundShape implements CompoundShape;
 
 // Mutable compound
+[Prefix="JPH::"]
 interface MutableCompoundShapeSettings {
     void MutableCompoundShapeSettings();
 };
 MutableCompoundShapeSettings implements CompoundShapeSettings;
 
+[Prefix="JPH::"]
 interface MutableCompoundShape {
     unsigned long AddShape([Const, Ref] Vec3 inPosition, [Const, Ref] Quat inRotation, Shape inShape, unsigned long inUserData);
     void RemoveShape(unsigned long inIndex);
@@ -910,16 +1584,19 @@ interface MutableCompoundShape {
 MutableCompoundShape implements CompoundShape;
 
 // Decorated shape
+[Prefix="JPH::"]
 interface DecoratedShapeSettings {
 };
 DecoratedShapeSettings implements ShapeSettings;
 
+[Prefix="JPH::"]
 interface DecoratedShape {
     [Const] Shape GetInnerShape();
 };
 DecoratedShape implements Shape;
 
 // Scaled shape
+[Prefix="JPH::"]
 interface ScaledShapeSettings {
     void ScaledShapeSettings(ShapeSettings inShape, [Ref, Const] Vec3 inScale);
 
@@ -927,6 +1604,7 @@ interface ScaledShapeSettings {
 };
 ScaledShapeSettings implements DecoratedShapeSettings;
 
+[Prefix="JPH::"]
 interface ScaledShape {
     void ScaledShape(Shape inShape, [Ref, Const] Vec3 inScale);
     [Value] Vec3 GetScale();
@@ -934,19 +1612,23 @@ interface ScaledShape {
 ScaledShape implements DecoratedShape;
 
 // Offset COM
+[Prefix="JPH::"]
 interface OffsetCenterOfMassShapeSettings {
-    void OffsetCenterOfMassShapeSettings([Ref, Const] Vec3 inOffset, ShapeSettings inShape);
+//    void OffsetCenterOfMassShapeSettings([Ref, Const] Vec3 inOffset, ShapeSettings inShape);
+    void OffsetCenterOfMassShapeSettings([Ref, Const] Vec3 inOffset, [Const] Shape inShape);
 
     [Value] attribute Vec3 mOffset;
 };
 OffsetCenterOfMassShapeSettings implements DecoratedShapeSettings;
 
+[Prefix="JPH::"]
 interface OffsetCenterOfMassShape {
     void OffsetCenterOfMassShape([Const] Shape inShape, [Const, Ref] Vec3 inOffset);
 };
 OffsetCenterOfMassShape implements DecoratedShape;
 
 // Rotated translated
+[Prefix="JPH::"]
 interface RotatedTranslatedShapeSettings {
     void RotatedTranslatedShapeSettings([Ref, Const] Vec3 inPosition, [Ref, Const] Quat inRotation, ShapeSettings inShape);
 
@@ -955,6 +1637,7 @@ interface RotatedTranslatedShapeSettings {
 };
 RotatedTranslatedShapeSettings implements DecoratedShapeSettings;
 
+[Prefix="JPH::"]
 interface RotatedTranslatedShape {
     [Value] Quat GetRotation();
     [Value] Vec3 GetPosition();
@@ -962,6 +1645,7 @@ interface RotatedTranslatedShape {
 RotatedTranslatedShape implements DecoratedShape;
 
 // Mesh shape
+[Prefix="JPH::"]
 interface MeshShapeSettings {
     void MeshShapeSettings();
     void MeshShapeSettings([Ref, Const] TriangleList inTriangleList, [Ref, Const] optional PhysicsMaterialList inMaterialList);
@@ -976,14 +1660,12 @@ interface MeshShapeSettings {
 };
 MeshShapeSettings implements ShapeSettings;
 
+[Prefix="JPH::"]
 interface MeshShape {
 };
 MeshShape implements Shape;
 
-interface HeightFieldShapeConstantValues {
-    [Const] static readonly attribute float cNoCollisionValue;
-};
-
+[Prefix="JPH::"]
 interface HeightFieldShapeSettings {
     void HeightFieldShapeSettings();
 
@@ -1002,6 +1684,7 @@ interface HeightFieldShapeSettings {
 };
 HeightFieldShapeSettings implements ShapeSettings;
 
+[Prefix="JPH::"]
 interface HeightFieldShape {
     long GetSampleCount();
     long GetBlockSize();
@@ -1017,16 +1700,20 @@ interface HeightFieldShape {
 HeightFieldShape implements Shape;
 
 // Constraint
+[Prefix="JPH::"]
 interface ConstraintSettings {
     unsigned long GetRefCount();
     void AddRef();
     void Release();
 
     attribute boolean mEnabled;
+    attribute long mConstraintPriority;
     attribute long mNumVelocityStepsOverride;
     attribute long mNumPositionStepsOverride;
+    attribute float mDrawConstraintSize;
 };
 
+[Prefix="JPH::"]
 interface Constraint {
     unsigned long GetRefCount();
     void AddRef();
@@ -1048,11 +1735,13 @@ interface Constraint {
 };
 
 // Two body constraint
+[Prefix="JPH::"]
 interface TwoBodyConstraintSettings {
     Constraint Create([Ref] Body inBody1, [Ref] Body inBody2);
 };
 TwoBodyConstraintSettings implements ConstraintSettings;
 
+[Prefix="JPH::"]
 interface TwoBodyConstraint {
     Body GetBody1();
     Body GetBody2();
@@ -1062,6 +1751,7 @@ interface TwoBodyConstraint {
 TwoBodyConstraint implements Constraint;
 
 // Fixed constraint
+[Prefix="JPH::"]
 interface FixedConstraintSettings {
     void FixedConstraintSettings();
 
@@ -1077,6 +1767,7 @@ interface FixedConstraintSettings {
 FixedConstraintSettings implements TwoBodyConstraintSettings;
 
 // Spring settings
+[Prefix="JPH::"]
 interface SpringSettings {
     void SpringSettings();
     boolean HasStiffness();
@@ -1088,6 +1779,7 @@ interface SpringSettings {
 };
 
 // Motor settings
+[Prefix="JPH::"]
 interface MotorSettings {
     void MotorSettings();
 
@@ -1099,6 +1791,7 @@ interface MotorSettings {
 };
 
 // Distance constraint
+[Prefix="JPH::"]
 interface DistanceConstraintSettings {
     void DistanceConstraintSettings();
 
@@ -1111,6 +1804,7 @@ interface DistanceConstraintSettings {
 };
 DistanceConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface DistanceConstraint {
     void SetDistance(float inMinDistance, float inMaxDistance);
     float GetMinDistance();
@@ -1122,6 +1816,7 @@ interface DistanceConstraint {
 DistanceConstraint implements TwoBodyConstraint;
 
 // Point constraint
+[Prefix="JPH::"]
 interface PointConstraintSettings {
     void PointConstraintSettings();
 
@@ -1131,6 +1826,7 @@ interface PointConstraintSettings {
 };
 PointConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface PointConstraint {
     [Value] Vec3 GetLocalSpacePoint1();
     [Value] Vec3 GetLocalSpacePoint2();
@@ -1139,6 +1835,7 @@ interface PointConstraint {
 PointConstraint implements TwoBodyConstraint;
 
 // Hinge constraint
+[Prefix="JPH::"]
 interface HingeConstraintSettings {
     void HingeConstraintSettings();
 
@@ -1157,6 +1854,7 @@ interface HingeConstraintSettings {
 };
 HingeConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface HingeConstraint {
     float GetCurrentAngle();
     void SetMaxFrictionTorque(float inFrictionTorque);
@@ -1182,6 +1880,7 @@ interface HingeConstraint {
 HingeConstraint implements TwoBodyConstraint;
 
 // Cone constraint
+[Prefix="JPH::"]
 interface ConeConstraintSettings {
     void ConeConstraintSettings();
 
@@ -1194,6 +1893,7 @@ interface ConeConstraintSettings {
 };
 ConeConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface ConeConstraint {
     void SetHalfConeAngle(float inHalfConeAngle);
     float GetCosHalfConeAngle();
@@ -1203,6 +1903,7 @@ interface ConeConstraint {
 ConeConstraint implements TwoBodyConstraint;
 
 // Slider constraint
+[Prefix="JPH::"]
 interface SliderConstraintSettings {
     void SliderConstraintSettings();
 
@@ -1222,6 +1923,7 @@ interface SliderConstraintSettings {
 };
 SliderConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface SliderConstraint {
     float GetCurrentPosition();
     void SetMaxFrictionForce(float inFrictionForce);
@@ -1247,6 +1949,7 @@ interface SliderConstraint {
 SliderConstraint implements TwoBodyConstraint;
 
 // Swing twist constraint
+[Prefix="JPH::"]
 interface SwingTwistConstraintSettings {
     void SwingTwistConstraintSettings();
 
@@ -1268,6 +1971,7 @@ interface SwingTwistConstraintSettings {
 };
 SwingTwistConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface SwingTwistConstraint {
     [Value] Vec3 GetLocalSpacePosition1();
     [Value] Vec3 GetLocalSpacePosition2();
@@ -1304,6 +2008,7 @@ interface SwingTwistConstraint {
 SwingTwistConstraint implements TwoBodyConstraint;
 
 // Six DOF constraint
+[Prefix="JPH::"]
 interface SixDOFConstraintSettings {
     void SixDOFConstraintSettings();
     void MakeFreeAxis(SixDOFConstraintSettings_EAxis inAxis);
@@ -1328,6 +2033,7 @@ interface SixDOFConstraintSettings {
 };
 SixDOFConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface SixDOFConstraint {
     void SetTranslationLimits([Const, Ref] Vec3 inLimitMin, [Const, Ref] Vec3 inLimitMax);
     void SetRotationLimits([Const, Ref] Vec3 inLimitMin, [Const, Ref] Vec3 inLimitMax);
@@ -1363,6 +2069,7 @@ interface SixDOFConstraint {
 };
 SixDOFConstraint implements TwoBodyConstraint;
 
+[Prefix="JPH::"]
 interface PathConstraintSettings {
     void PathConstraintSettings();
 
@@ -1376,6 +2083,7 @@ interface PathConstraintSettings {
 };
 PathConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface PathConstraintPath {
     boolean IsLooping();
     void SetIsLooping(boolean inIsLooping);
@@ -1384,18 +2092,7 @@ interface PathConstraintPath {
     void Release();
 };
 
-interface PathConstraintPathEm {
-};
-PathConstraintPathEm implements PathConstraintPath;
-
-[JSImplementation="PathConstraintPathEm"]
-interface PathConstraintPathJS {
-    [Const] void PathConstraintPathJS();
-    [Const] float GetPathMaxFraction();
-    [Const] float GetClosestPoint([Const] Vec3 inPosition, float inFractionHint);
-    [Const] void GetPointOnPath(float inFraction, Vec3 outPathPosition, Vec3 outPathTangent, Vec3 outPathNormal, Vec3 outPathBinormal);
-};
-
+[Prefix="JPH::"]
 interface PathConstraint {
     void SetPath([Const] PathConstraintPath inPath, float inPathFraction);
     [Const] PathConstraintPath GetPath();
@@ -1412,6 +2109,7 @@ interface PathConstraint {
 };
 PathConstraint implements TwoBodyConstraint;
 
+[Prefix="JPH::"]
 interface PulleyConstraintSettings {
     void PulleyConstraintSettings();
 
@@ -1426,6 +2124,7 @@ interface PulleyConstraintSettings {
 };
 PulleyConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface PulleyConstraint {
     void SetLength(float inMinLength, float inMaxLength);
     float GetMinLength();
@@ -1434,6 +2133,7 @@ interface PulleyConstraint {
 };
 PulleyConstraint implements TwoBodyConstraint;
 
+[Prefix="JPH::"]
 interface GearConstraintSettings {
     void GearConstraintSettings();
     void SetRatio(long inNumTeethGear1, long inNumTeethGear2);
@@ -1445,12 +2145,14 @@ interface GearConstraintSettings {
 };
 GearConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface GearConstraint {
     void SetConstraints([Const] Constraint inGear1, [Const] Constraint inGear2);
     float GetTotalLambda();
 };
 GearConstraint implements TwoBodyConstraint;
 
+[Prefix="JPH::"]
 interface RackAndPinionConstraintSettings {
     void RackAndPinionConstraintSettings();
     void SetRatio(long inNumTeethRack, float inRackLength, long inNumTeethPinion);
@@ -1462,12 +2164,14 @@ interface RackAndPinionConstraintSettings {
 };
 RackAndPinionConstraintSettings implements TwoBodyConstraintSettings;
 
+[Prefix="JPH::"]
 interface RackAndPinionConstraint {
     void SetConstraints([Const] Constraint inPinion, [Const] Constraint inRack);
     float GetTotalLambda();
 };
 RackAndPinionConstraint implements TwoBodyConstraint;
 
+[Prefix="JPH::"]
 interface BodyID {
     void BodyID();
     void BodyID(unsigned long inIndexAndSequenceNumber);
@@ -1475,12 +2179,14 @@ interface BodyID {
     unsigned long GetIndexAndSequenceNumber();
 };
 
+[Prefix="JPH::"]
 interface SubShapeID {
     void SubShapeID();
     [Const] long GetValue();
     void SetValue(long inValue);
 };
 
+[Prefix="JPH::"]
 interface MotionProperties {
     EMotionQuality GetMotionQuality();
     EAllowedDOFs GetAllowedDOFs();
@@ -1528,6 +2234,7 @@ interface MotionProperties {
     unsigned long GetNumPositionStepsOverride();
 };
 
+[Prefix="JPH::"]
 interface GroupFilter {
     unsigned long GetRefCount();
     void AddRef();
@@ -1540,6 +2247,7 @@ interface GroupFilterJS {
     [Const] boolean CanCollide([Const, Ref] CollisionGroup inGroup1, [Const, Ref] CollisionGroup inGroup2);
 };
 
+[Prefix="JPH::"]
 interface GroupFilterTable {
     void GroupFilterTable(unsigned long inNumGroups);
     void DisableCollision(unsigned long inSubGroup1, unsigned long inSubGroup2);
@@ -1548,6 +2256,7 @@ interface GroupFilterTable {
 };
 GroupFilterTable implements GroupFilter;
 
+[Prefix="JPH::"]
 interface CollisionGroup {
     void CollisionGroup();
     void CollisionGroup(GroupFilter inFilter, unsigned long inGroupID, unsigned long inSubGroupID);
@@ -1559,7 +2268,7 @@ interface CollisionGroup {
     unsigned long GetSubGroupID();
 };
 
-[NoDelete]
+[Prefix="JPH::", NoDelete]
 interface Body {
     [Const, Ref] BodyID GetID();
     boolean IsActive();
@@ -1628,6 +2337,7 @@ interface Body {
     void SetUserData(unsigned long long inUserData);
 };
 
+[Prefix="JPH::"]
 interface BodyInterface {
     Body CreateBody([Const, Ref] BodyCreationSettings inSettings);
     Body CreateSoftBody([Const, Ref] SoftBodyCreationSettings inSettings);
@@ -1704,11 +2414,13 @@ interface BodyInterface {
     void InvalidateContactCache([Const, Ref] BodyID inBodyID);
 };
 
+[Prefix="JPH::"]
 interface StateRecorder {
     void SetValidating(boolean inValidating);
     boolean IsValidating();
 };
 
+[Prefix="JPH::"]
 interface StateRecorderImpl {
     void StateRecorderImpl();
     void Clear();
@@ -1717,18 +2429,22 @@ interface StateRecorderImpl {
 };
 StateRecorderImpl implements StateRecorder;
 
+[Prefix="JPH::"]
 interface BodyLockInterface {
     Body TryGetBody([Const, Ref] BodyID inBodyID);
 };
 
+[Prefix="JPH::"]
 interface BodyLockInterfaceNoLock {
 };
 BodyLockInterfaceNoLock implements BodyLockInterface;
 
+[Prefix="JPH::"]
 interface BodyLockInterfaceLocking {
 };
 BodyLockInterfaceLocking implements BodyLockInterface;
 
+[Prefix="JPH::"]
 interface PhysicsSettings {
     void PhysicsSettings();
 
@@ -1760,15 +2476,7 @@ interface PhysicsSettings {
     attribute boolean mCheckActiveEdges;
 };
 
-interface CollideShapeResultFace {
-    boolean empty();
-    long size();
-    [Ref] Vec3 at(long inIndex);
-    void push_back([Const, Ref] Vec3 inValue);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
+[Prefix="JPH::"]
 interface CollideShapeResult {
     void CollideShapeResult();
 
@@ -1783,6 +2491,7 @@ interface CollideShapeResult {
     [Value] attribute CollideShapeResultFace mShape2Face;
 };
 
+[Prefix="JPH::"]
 interface ContactPoints {
     boolean empty();
     long size();
@@ -1792,6 +2501,7 @@ interface ContactPoints {
     void clear();
 };
 
+[Prefix="JPH::"]
 interface ContactManifold {
     void ContactManifold();
     [Value] ContactManifold SwapShapes();
@@ -1807,6 +2517,7 @@ interface ContactManifold {
     [Value] attribute ContactPoints mRelativeContactPointsOn2;
 };
 
+[Prefix="JPH::"]
 interface ContactSettings {
     void ContactSettings();
     attribute float mCombinedFriction;
@@ -1820,6 +2531,7 @@ interface ContactSettings {
     [Value] attribute Vec3 mRelativeAngularSurfaceVelocity;
 };
 
+[Prefix="JPH::"]
 interface SubShapeIDPair {
     void SubShapeIDPair();
     [Const, Ref] BodyID GetBody1ID();
@@ -1828,22 +2540,11 @@ interface SubShapeIDPair {
     [Const, Ref] SubShapeID GetSubShapeID2();
 };
 
+[Prefix="JPH::"]
 interface ContactListener {
 };
 
-interface ContactListenerEm {
-};
-ContactListenerEm implements ContactListener;
-
-[JSImplementation="ContactListenerEm"]
-interface ContactListenerJS {
-    void ContactListenerJS();
-    long OnContactValidate([Const, Ref] Body inBody1, [Const, Ref] Body inBody2, [Const] Vec3 inBaseOffset, [Const, Ref] CollideShapeResult inCollisionResult); // Return value ValidateResult doesn't work with emscripten
-    void OnContactAdded([Const, Ref] Body inBody1, [Const, Ref] Body inBody2, [Const, Ref] ContactManifold inManifold, [Ref] ContactSettings ioSettings);
-    void OnContactPersisted([Const, Ref] Body inBody1, [Const, Ref] Body inBody2, [Const, Ref] ContactManifold inManifold, [Ref] ContactSettings ioSettings);
-    void OnContactRemoved([Const, Ref] SubShapeIDPair inSubShapePair);
-};
-
+[Prefix="JPH::"]
 interface SoftBodyManifold {
     [Const, Ref] ArraySoftBodyVertex GetVertices();
     boolean HasContact([Const, Ref] SoftBodyVertex inVertex);
@@ -1852,6 +2553,7 @@ interface SoftBodyManifold {
     [Value] BodyID GetContactBodyID([Const, Ref] SoftBodyVertex inVertex);
 };
 
+[Prefix="JPH::"]
 interface SoftBodyContactSettings {
     attribute float mInvMassScale1;
     attribute float mInvMassScale2;
@@ -1859,20 +2561,11 @@ interface SoftBodyContactSettings {
     attribute boolean mIsSensor;
 };
 
+[Prefix="JPH::"]
 interface SoftBodyContactListener {
 };
 
-interface SoftBodyContactListenerEm {
-};
-SoftBodyContactListenerEm implements SoftBodyContactListener;
-
-[JSImplementation="SoftBodyContactListenerEm"]
-interface SoftBodyContactListenerJS {
-    void SoftBodyContactListenerJS();
-    long OnSoftBodyContactValidate([Const, Ref] Body inSoftBody, [Const, Ref] Body inOtherBody, SoftBodyContactSettings ioSettings);
-    void OnSoftBodyContactAdded([Const, Ref] Body inSoftBody, [Const, Ref] SoftBodyManifold inManifold);
-};
-
+[Prefix="JPH::"]
 interface RayCastBodyCollector {
 //    void Reset();
     void SetContext([Const] TransformedShape inContext);
@@ -1892,6 +2585,7 @@ interface RayCastBodyCollectorJS {
     void AddHit([Const, Ref] BroadPhaseCastResult inResult);
 };
 
+[Prefix="JPH::"]
 interface CollideShapeBodyCollector {
 //    void Reset();
     void SetContext([Const] TransformedShape inContext);
@@ -1911,6 +2605,7 @@ interface CollideShapeBodyCollectorJS {
     void AddHit([Const, Ref] BodyID inResult);
 };
 
+[Prefix="JPH::"]
 interface CastShapeBodyCollector {
 //    void Reset();
     void SetContext([Const] TransformedShape inContext);
@@ -1930,6 +2625,7 @@ interface CastShapeBodyCollectorJS {
     void AddHit([Const, Ref] BroadPhaseCastResult inResult);
 };
 
+[Prefix="JPH::"]
 interface BroadPhaseQuery {
     void CastRay([Const, Ref] RayCast inRay, [Ref] RayCastBodyCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter);
     void CollideAABox([Const, Ref] AABox inBox, [Ref] CollideShapeBodyCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter);
@@ -1939,6 +2635,7 @@ interface BroadPhaseQuery {
     void CastAABox([Const, Ref] AABoxCast inBox, [Ref] CastShapeBodyCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter);
 };
 
+[Prefix="JPH::"]
 interface RayCastSettings {
     void RayCastSettings();
 
@@ -1947,6 +2644,7 @@ interface RayCastSettings {
     attribute boolean mTreatConvexAsSolid;
 };
 
+[Prefix="JPH::"]
 interface CastRayCollector {
 //    void Reset();
     void SetContext([Const] TransformedShape inContext);
@@ -1967,38 +2665,7 @@ interface CastRayCollectorJS {
     void AddHit([Const, Ref] RayCastResult inResult);
 };
 
-interface ArrayRayCastResult {
-    boolean empty();
-    long size();
-    [Ref] RayCastResult at(long inIndex);
-    void push_back([Const, Ref] RayCastResult inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface CastRayAllHitCollisionCollector {
-    void CastRayAllHitCollisionCollector();
-    void Sort();
-    boolean HadHit();
-    [Value] attribute ArrayRayCastResult mHits;
-};
-CastRayAllHitCollisionCollector implements CastRayCollector;
-
-interface CastRayClosestHitCollisionCollector {
-    void CastRayClosestHitCollisionCollector();
-    boolean HadHit();
-    [Value] attribute RayCastResult mHit;
-};
-CastRayClosestHitCollisionCollector implements CastRayCollector;
-
-interface CastRayAnyHitCollisionCollector {
-    void CastRayAnyHitCollisionCollector();
-    boolean HadHit();
-    [Value] attribute RayCastResult mHit;
-};
-CastRayAnyHitCollisionCollector implements CastRayCollector;
-
+[Prefix="JPH::"]
 interface CollidePointResult {
     void CollidePointResult();
 
@@ -2006,6 +2673,7 @@ interface CollidePointResult {
     [Value] attribute SubShapeID mSubShapeID2;
 };
 
+[Prefix="JPH::"]
 interface CollidePointCollector {
 //    void Reset();
     void SetContext([Const] TransformedShape inContext);
@@ -2026,38 +2694,8 @@ interface CollidePointCollectorJS {
     void AddHit([Const, Ref] CollidePointResult inResult);
 };
 
-interface ArrayCollidePointResult {
-    boolean empty();
-    long size();
-    [Ref] CollidePointResult at(long inIndex);
-    void push_back([Const, Ref] CollidePointResult inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
 
-interface CollidePointAllHitCollisionCollector {
-    void CollidePointAllHitCollisionCollector();
-    void Sort();
-    boolean HadHit();
-    [Value] attribute ArrayCollidePointResult mHits;
-};
-CollidePointAllHitCollisionCollector implements CollidePointCollector;
-
-interface CollidePointClosestHitCollisionCollector {
-    void CollidePointClosestHitCollisionCollector();
-    boolean HadHit();
-    [Value] attribute CollidePointResult mHit;
-};
-CollidePointClosestHitCollisionCollector implements CollidePointCollector;
-
-interface CollidePointAnyHitCollisionCollector {
-    void CollidePointAnyHitCollisionCollector();
-    boolean HadHit();
-    [Value] attribute CollidePointResult mHit;
-};
-CollidePointAnyHitCollisionCollector implements CollidePointCollector;
-
+[Prefix="JPH::"]
 interface CollideSettingsBase {
     attribute EActiveEdgeMode mActiveEdgeMode;
     attribute ECollectFacesMode mCollectFacesMode;
@@ -2066,6 +2704,7 @@ interface CollideSettingsBase {
     [Value] attribute Vec3 mActiveEdgeMovementDirection;
 };
 
+[Prefix="JPH::"]
 interface CollideShapeSettings {
     void CollideShapeSettings();
 
@@ -2074,6 +2713,7 @@ interface CollideShapeSettings {
 };
 CollideShapeSettings implements CollideSettingsBase;
 
+[Prefix="JPH::"]
 interface CollideShapeCollector {
 //    void Reset();
     void SetContext([Const] TransformedShape inContext);
@@ -2094,38 +2734,7 @@ interface CollideShapeCollectorJS {
     void AddHit([Const, Ref] CollideShapeResult inResult);
 };
 
-interface ArrayCollideShapeResult {
-    boolean empty();
-    long size();
-    [Ref] CollideShapeResult at(long inIndex);
-    void push_back([Const, Ref] CollideShapeResult inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface CollideShapeAllHitCollisionCollector {
-    void CollideShapeAllHitCollisionCollector();
-    void Sort();
-    boolean HadHit();
-    [Value] attribute ArrayCollideShapeResult mHits;
-};
-CollideShapeAllHitCollisionCollector implements CollideShapeCollector;
-
-interface CollideShapeClosestHitCollisionCollector {
-    void CollideShapeClosestHitCollisionCollector();
-    boolean HadHit();
-    [Value] attribute CollideShapeResult mHit;
-};
-CollideShapeClosestHitCollisionCollector implements CollideShapeCollector;
-
-interface CollideShapeAnyHitCollisionCollector {
-    void CollideShapeAnyHitCollisionCollector();
-    boolean HadHit();
-    [Value] attribute CollideShapeResult mHit;
-};
-CollideShapeAnyHitCollisionCollector implements CollideShapeCollector;
-
+[Prefix="JPH::"]
 interface ShapeCastSettings {
     void ShapeCastSettings();
 
@@ -2136,6 +2745,7 @@ interface ShapeCastSettings {
 };
 ShapeCastSettings implements CollideSettingsBase;
 
+[Prefix="JPH::"]
 interface ShapeCastResult {
     void ShapeCastResult();
 
@@ -2144,6 +2754,7 @@ interface ShapeCastResult {
 };
 ShapeCastResult implements CollideShapeResult;
 
+[Prefix="JPH::"]
 interface CastShapeCollector {
 //    void Reset();
     void SetContext([Const] TransformedShape inContext);
@@ -2164,38 +2775,7 @@ interface CastShapeCollectorJS {
     void AddHit([Const, Ref] ShapeCastResult inResult);
 };
 
-interface ArrayShapeCastResult {
-    boolean empty();
-    long size();
-    [Ref] ShapeCastResult at(long inIndex);
-    void push_back([Const, Ref] ShapeCastResult inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface CastShapeAllHitCollisionCollector {
-    void CastShapeAllHitCollisionCollector();
-    void Sort();
-    boolean HadHit();
-    [Value] attribute ArrayShapeCastResult mHits;
-};
-CastShapeAllHitCollisionCollector implements CastShapeCollector;
-
-interface CastShapeClosestHitCollisionCollector {
-    void CastShapeClosestHitCollisionCollector();
-    boolean HadHit();
-    [Value] attribute ShapeCastResult mHit;
-};
-CastShapeClosestHitCollisionCollector implements CastShapeCollector;
-
-interface CastShapeAnyHitCollisionCollector {
-    void CastShapeAnyHitCollisionCollector();
-    boolean HadHit();
-    [Value] attribute ShapeCastResult mHit;
-};
-CastShapeAnyHitCollisionCollector implements CastShapeCollector;
-
+[Prefix="JPH::"]
 interface TransformedShapeCollector {
 //    void Reset();
     void SetContext([Const] TransformedShape inContext);
@@ -2216,6 +2796,7 @@ interface TransformedShapeCollectorJS {
     void AddHit([Const, Ref] TransformedShape inResult);
 };
 
+[Prefix="JPH::"]
 interface NarrowPhaseQuery {
     void CastRay([Const, Ref] RRayCast inRay, [Const, Ref] RayCastSettings inRayCastSettings, [Ref] CastRayCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
     void CollidePoint([Const, Ref] Vec3 inPoint, [Ref] CollidePointCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
@@ -2224,13 +2805,15 @@ interface NarrowPhaseQuery {
     void CollectTransformedShapes([Const, Ref] AABox inBox, [Ref] TransformedShapeCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
 };
 
+[Prefix="JPH::"]
 interface PhysicsStepListenerContext {
     attribute float mDeltaTime;
     attribute boolean mIsFirstStep;
     attribute boolean mIsLastStep;
-    attribute PhysicsSystem mPhysicsSystem;
+//    attribute PhysicsSystem mPhysicsSystem; // Dont think we need this
 };
 
+[Prefix="JPH::"]
 interface PhysicsStepListener {
 };
 
@@ -2240,6 +2823,7 @@ interface PhysicsStepListenerJS {
     void OnStep([Const, Ref] PhysicsStepListenerContext inContext);
 };
 
+[Prefix="JPH::"]
 interface BodyActivationListener {
 };
 
@@ -2250,6 +2834,7 @@ interface BodyActivationListenerJS {
     void OnBodyDeactivated([Const, Ref] BodyID inBodyID, unsigned long long inBodyUserData);
 };
 
+[Prefix="JPH::"]
 interface BodyIDVector {
     void BodyIDVector();
     boolean empty();
@@ -2261,42 +2846,7 @@ interface BodyIDVector {
     void clear();
 };
 
-interface PhysicsSystem {
-    void PhysicsSystem();
-    void Init(long inMaxBodies, long inNumBodyMutexes, long inMaxBodyPairs, long inMaxContactConstraints, [Const, Ref] BroadPhaseLayerInterface inBroadPhaseLayerInterface, [Const, Ref] ObjectVsBroadPhaseLayerFilter inObjectVsBroadPhaseLayerFilter, [Const, Ref] ObjectLayerPairFilter inObjectLayerPairFilter);
-    void SetGravity([Const, Ref] Vec3 inGravity);
-    [Value] Vec3 GetGravity();
-    [Const, Ref] PhysicsSettings GetPhysicsSettings();
-    void SetPhysicsSettings([Const, Ref] PhysicsSettings inPhysicsSettings);
-    unsigned long GetNumBodies();
-    unsigned long GetNumActiveBodies(EBodyType inBodyType);
-    unsigned long GetMaxBodies();
-    void GetBodies([Ref] BodyIDVector outBodies);
-    void GetActiveBodies(EBodyType inBodyType, [Ref] BodyIDVector outBodies);
-    [Const, Value] AABox GetBounds();
-    void AddConstraint(Constraint inConstraint);
-    void RemoveConstraint(Constraint inConstraint);
-    void SetContactListener(ContactListener inListener);
-    ContactListener GetContactListener();
-    void SetSoftBodyContactListener(SoftBodyContactListener inListener);
-    SoftBodyContactListener GetSoftBodyContactListener();
-    void OptimizeBroadPhase();
-    [Ref] BodyInterface GetBodyInterface();
-    [Ref] BodyInterface GetBodyInterfaceNoLock();
-    [Const, Ref] BodyLockInterfaceNoLock GetBodyLockInterfaceNoLock();
-    [Const, Ref] BodyLockInterfaceLocking GetBodyLockInterface();
-    [Const, Ref] BroadPhaseQuery GetBroadPhaseQuery();
-    [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQuery();
-    [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQueryNoLock();
-    void SaveState([Ref] StateRecorder inStream, optional EStateRecorderState inState);
-    boolean RestoreState([Ref] StateRecorder inStream);
-    void AddStepListener(PhysicsStepListener inListener);
-    void RemoveStepListener(PhysicsStepListener inListener);
-    void SetBodyActivationListener(BodyActivationListener inListener);
-    [Const] BodyActivationListener GetBodyActivationListener();
-    boolean WereBodiesInContact([Const, Ref] BodyID inBodyID1, [Const, Ref] BodyID inBodyID2);
-};
-
+[Prefix="JPH::"]
 interface MassProperties {
     void MassProperties();
     void SetMassAndInertiaOfSolidBox([Const, Ref] Vec3 inBoxSize, float inDensity);
@@ -2310,8 +2860,11 @@ interface MassProperties {
     [Value] attribute Mat44 mInertia;
 };
 
+[Prefix="JPH::"]
 interface BodyCreationSettings {
+// TODO overloading error in teavm
     void BodyCreationSettings();
+    void BodyCreationSettings([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
     void BodyCreationSettings([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
     [Const] ShapeSettings GetShapeSettings();
     void SetShapeSettings([Const] ShapeSettings inShape);
@@ -2352,174 +2905,7 @@ interface BodyCreationSettings {
     [Value] attribute MassProperties mMassPropertiesOverride;
 };
 
-interface SoftBodySharedSettingsVertex {
-    void SoftBodySharedSettingsVertex();
-
-    [Value] attribute Float3 mPosition;
-    [Value] attribute Float3 mVelocity;
-    attribute float mInvMass;
-};
-
-interface SoftBodySharedSettingsFace {
-    void SoftBodySharedSettingsFace(unsigned long inVertex1, unsigned long inVertex2, unsigned long inVertex3, unsigned long inMaterialIndex);
-
-    attribute unsigned long[] mVertex;
-    attribute unsigned long mMaterialIndex;
-};
-
-interface SoftBodySharedSettingsEdge {
-    void SoftBodySharedSettingsEdge(unsigned long inVertex1, unsigned long inVertex2, float inCompliance);
-
-    attribute unsigned long[] mVertex;
-    attribute float mRestLength;
-    attribute float mCompliance;
-};
-
-interface SoftBodySharedSettingsDihedralBend {
-    void SoftBodySharedSettingsDihedralBend(unsigned long inVertex1, unsigned long inVertex2, unsigned long inVertex3, unsigned long inVertex4, float inCompliance);
-
-    attribute unsigned long[] mVertex;
-    attribute float mCompliance;
-    attribute float mInitialAngle;
-};
-
-interface SoftBodySharedSettingsVolume {
-    void SoftBodySharedSettingsVolume(unsigned long inVertex1, unsigned long inVertex2, unsigned long inVertex3, unsigned long inVertex4, float inCompliance);
-
-    attribute unsigned long[] mVertex;
-    attribute float mSixRestVolume;
-    attribute float mCompliance;
-};
-
-interface SoftBodySharedSettingsInvBind
-{
-    attribute unsigned long mJointIndex;
-    [Value] attribute Mat44 mInvBind;
-};
-
-interface SoftBodySharedSettingsSkinWeight
-{
-    attribute unsigned long mInvBindIndex;
-    attribute float mWeight;
-};
-
-interface SoftBodySharedSettingsSkinned
-{
-    attribute unsigned long mVertex;
-    [Value] attribute SoftBodySharedSettingsSkinWeight[] mWeights;
-    attribute float mMaxDistance;
-    attribute float mBackStopDistance;
-    attribute float mBackStopRadius;
-};
-
-interface SoftBodySharedSettingsLRA {
-    void SoftBodySharedSettingsLRA(unsigned long inVertex1, unsigned long inVertex2, float inMaxDistance);
-
-    attribute unsigned long[] mVertex;
-    attribute float mMaxDistance;
-};
-
-interface ArraySoftBodySharedSettingsVertex {
-    boolean empty();
-    long size();
-    [Ref] SoftBodySharedSettingsVertex at(long inIndex);
-    void push_back([Const, Ref] SoftBodySharedSettingsVertex inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface ArraySoftBodySharedSettingsFace {
-    boolean empty();
-    long size();
-    [Ref] SoftBodySharedSettingsFace at(long inIndex);
-    void push_back([Const, Ref] SoftBodySharedSettingsFace inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface ArraySoftBodySharedSettingsEdge {
-    boolean empty();
-    long size();
-    [Ref] SoftBodySharedSettingsEdge at(long inIndex);
-    void push_back([Const, Ref] SoftBodySharedSettingsEdge inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface ArraySoftBodySharedSettingsDihedralBend {
-    boolean empty();
-    long size();
-    [Ref] SoftBodySharedSettingsDihedralBend at(long inIndex);
-    void push_back([Const, Ref] SoftBodySharedSettingsDihedralBend inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface ArraySoftBodySharedSettingsVolume {
-    boolean empty();
-    long size();
-    [Ref] SoftBodySharedSettingsVolume at(long inIndex);
-    void push_back([Const, Ref] SoftBodySharedSettingsVolume inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface ArraySoftBodySharedSettingsInvBind {
-    boolean empty();
-    long size();
-    [Ref] SoftBodySharedSettingsInvBind at(long inIndex);
-    void push_back([Const, Ref] SoftBodySharedSettingsInvBind inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface ArraySoftBodySharedSettingsSkinned {
-    boolean empty();
-    long size();
-    [Ref] SoftBodySharedSettingsSkinned at(long inIndex);
-    void push_back([Const, Ref] SoftBodySharedSettingsSkinned inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface ArraySoftBodySharedSettingsLRA {
-    boolean empty();
-    long size();
-    [Ref] SoftBodySharedSettingsLRA at(long inIndex);
-    void push_back([Const, Ref] SoftBodySharedSettingsLRA inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface SoftBodySharedSettingsVertexAttributes {
-    void SoftBodySharedSettingsVertexAttributes();
-
-    attribute float mCompliance;
-    attribute float mShearCompliance;
-    attribute float mBendCompliance;
-    attribute SoftBodySharedSettings_ELRAType mLRAType;
-    attribute float mLRAMaxDistanceMultiplier;
-};
-
-interface ArraySoftBodySharedSettingsVertexAttributes {
-    boolean empty();
-    long size();
-    [Ref] SoftBodySharedSettingsVertexAttributes at(long inIndex);
-    void push_back([Const, Ref] SoftBodySharedSettingsVertexAttributes inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-    SoftBodySharedSettingsVertexAttributes data();
-};
-
+[Prefix="JPH::"]
 interface SoftBodySharedSettings {
     void SoftBodySharedSettings();
     unsigned long GetRefCount();
@@ -2547,6 +2933,7 @@ interface SoftBodySharedSettings {
     attribute float mVertexRadius;
 };
 
+[Prefix="JPH::"]
 interface SoftBodyCreationSettings {
     void SoftBodyCreationSettings([Const] SoftBodySharedSettings inSettings, [Ref] Vec3 inPosition, [Ref] Quat inRotation, unsigned long inObjectLayer);
 
@@ -2567,6 +2954,7 @@ interface SoftBodyCreationSettings {
     attribute boolean mAllowSleeping;
 };
 
+[Prefix="JPH::"]
 interface SoftBodyVertex {
     [Value] attribute Vec3 mPreviousPosition;
     [Value] attribute Vec3 mPosition;
@@ -2574,22 +2962,7 @@ interface SoftBodyVertex {
     attribute float mInvMass;
 };
 
-interface SoftBodyVertexTraits {
-    static readonly attribute unsigned long mPreviousPositionOffset;
-    static readonly attribute unsigned long mPositionOffset;
-    static readonly attribute unsigned long mVelocityOffset;
-};
-
-interface ArraySoftBodyVertex {
-    boolean empty();
-    long size();
-    [Ref] SoftBodyVertex at(long inIndex);
-    void push_back([Const, Ref] SoftBodyVertex inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
+[Prefix="JPH::"]
 interface SoftBodyMotionProperties {
     [Const] SoftBodySharedSettings GetSettings();
     [Ref] ArraySoftBodyVertex GetVertices();
@@ -2613,12 +2986,14 @@ interface SoftBodyMotionProperties {
 };
 SoftBodyMotionProperties implements MotionProperties;
 
+[Prefix="JPH::"]
 interface SoftBodyShape {
     [Const] unsigned long GetSubShapeIDBits();
     [Const] unsigned long GetFaceIndex([Const, Ref] SubShapeID inSubShapeID);
 };
 SoftBodyShape implements Shape;
 
+[Prefix="JPH::"]
 interface CharacterBaseSettings {
     unsigned long GetRefCount();
     void AddRef();
@@ -2631,6 +3006,7 @@ interface CharacterBaseSettings {
     [Const] attribute Shape mShape;
 };
 
+[Prefix="JPH::"]
 interface CharacterVirtualSettings {
     void CharacterVirtualSettings();
 
@@ -2650,6 +3026,7 @@ interface CharacterVirtualSettings {
 };
 CharacterVirtualSettings implements CharacterBaseSettings;
 
+[Prefix="JPH::"]
 interface CharacterContactSettings {
     void CharacterContactSettings();
 
@@ -2657,35 +3034,22 @@ interface CharacterContactSettings {
     attribute boolean mCanReceiveImpulses;
 };
 
+[Prefix="JPH::"]
 interface CharacterContactListener {
 };
 
-interface CharacterContactListenerEm {
-};
-CharacterContactListenerEm implements CharacterContactListener;
-
-[JSImplementation="CharacterContactListenerEm"]
-interface CharacterContactListenerJS {
-    void CharacterContactListenerJS();
-    void OnAdjustBodyVelocity([Const] CharacterVirtual inCharacter, [Const, Ref] Body inBody2, [Ref] Vec3 ioLinearVelocity, [Ref] Vec3 ioAngularVelocity);
-    boolean OnContactValidate([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2);
-    boolean OnCharacterContactValidate([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2);
-    void OnContactAdded([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
-    void OnCharacterContactAdded([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
-    void OnContactSolve([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
-    void OnCharacterContactSolve([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
-};
-
+[Prefix="JPH::"]
 interface CharacterVsCharacterCollision {
 };
 
+[Prefix="JPH::"]
 interface CharacterVsCharacterCollisionSimple {
     void Add(CharacterVirtual inCharacter);
     void Remove(CharacterVirtual inCharacter);
 };
 CharacterVsCharacterCollisionSimple implements CharacterVsCharacterCollision;
 
-[Prefix="CharacterVirtual::"]
+[Prefix="JPH::CharacterVirtual::"]
 interface ExtendedUpdateSettings {
     void ExtendedUpdateSettings();
 
@@ -2697,32 +3061,27 @@ interface ExtendedUpdateSettings {
     [Value] attribute Vec3 mWalkStairsStepDownExtra;
 };
 
+[Prefix="JPH::"]
 interface TempAllocator {
 };
 
+[Prefix="JPH::"]
 interface BroadPhaseLayerFilter {
     void BroadPhaseLayerFilter();
 };
 
+[Prefix="JPH::"]
 interface ObjectVsBroadPhaseLayerFilter {
     void ObjectVsBroadPhaseLayerFilter();
 };
 
-interface ObjectVsBroadPhaseLayerFilterEm {
-};
-ObjectVsBroadPhaseLayerFilterEm implements ObjectVsBroadPhaseLayerFilter;
-
-[JSImplementation="ObjectVsBroadPhaseLayerFilterEm"]
-interface ObjectVsBroadPhaseLayerFilterJS {
-    void ObjectVsBroadPhaseLayerFilterJS();
-    [Const] boolean ShouldCollide(unsigned long inLayer1, BroadPhaseLayer inLayer2);
-};
-
+[Prefix="JPH::"]
 interface DefaultBroadPhaseLayerFilter {
     void DefaultBroadPhaseLayerFilter([Const, Ref] ObjectVsBroadPhaseLayerFilter inFilter, unsigned long inObjectLayer);
 };
 DefaultBroadPhaseLayerFilter implements ObjectLayerFilter;
 
+[Prefix="JPH::"]
 interface ObjectLayerFilter {
     void ObjectLayerFilter();
 };
@@ -2733,6 +3092,7 @@ interface ObjectLayerFilterJS {
     [Const] boolean ShouldCollide(unsigned long inLayer);
 };
 
+[Prefix="JPH::"]
 interface ObjectLayerPairFilter {
     void ObjectLayerPairFilter();
 //    boolean ShouldCollide(unsigned long inLayer1, unsigned long inLayer2);
@@ -2744,16 +3104,19 @@ interface ObjectLayerPairFilterJS {
     [Const] boolean ShouldCollide(unsigned long inLayer1, unsigned long inLayer2);
 };
 
+[Prefix="JPH::"]
 interface DefaultObjectLayerFilter {
     void DefaultObjectLayerFilter([Const, Ref] ObjectLayerPairFilter inFilter, unsigned long inObjectLayer);
 };
 DefaultObjectLayerFilter implements ObjectLayerFilter;
 
+[Prefix="JPH::"]
 interface SpecifiedObjectLayerFilter {
     void SpecifiedObjectLayerFilter(unsigned long inObjectLayer);
 };
 SpecifiedObjectLayerFilter implements ObjectLayerFilter;
 
+[Prefix="JPH::"]
 interface BodyFilter {
     void BodyFilter();
 };
@@ -2765,11 +3128,13 @@ interface BodyFilterJS {
     [Const] boolean ShouldCollideLocked([Const, Ref] Body inBody);
 };
 
+[Prefix="JPH::"]
 interface IgnoreSingleBodyFilter {
     void IgnoreSingleBodyFilter([Const, Ref] BodyID inBodyID);
 };
 IgnoreSingleBodyFilter implements BodyFilter;
 
+[Prefix="JPH::"]
 interface IgnoreMultipleBodiesFilter {
     void IgnoreMultipleBodiesFilter();
     void Clear();
@@ -2778,19 +3143,11 @@ interface IgnoreMultipleBodiesFilter {
 };
 IgnoreMultipleBodiesFilter implements BodyFilter;
 
+[Prefix="JPH::"]
 interface ShapeFilter {
 };
 
-interface ShapeFilterEm : ShapeFilter {
-};
-
-[JSImplementation="ShapeFilterEm"]
-interface ShapeFilterJS {
-    void ShapeFilterJS();
-    [Const] boolean ShouldCollide_1([Const] Shape inShape2, [Const, Ref] SubShapeID inSubShapeIDOfShape2);
-    [Const] boolean ShouldCollide_2([Const] Shape inShape1, [Const, Ref] SubShapeID inSubShapeIDOfShape1, [Const] Shape inShape2, [Const, Ref] SubShapeID inSubShapeIDOfShape2);
-};
-
+[Prefix="JPH::"]
 interface CharacterBase {
     unsigned long GetRefCount();
     void AddRef();
@@ -2810,6 +3167,7 @@ interface CharacterBase {
     [Value] BodyID GetGroundBodyID();
 };
 
+[Prefix="JPH::"]
 interface CharacterVirtual {
     void CharacterVirtual([Const] CharacterVirtualSettings inSettings, [Ref] Vec3 inPosition, [Ref] Quat inRotation, PhysicsSystem inSystem);
     void SetListener(CharacterContactListener inListener);
@@ -2851,6 +3209,7 @@ interface CharacterVirtual {
 };
 CharacterVirtual implements CharacterBase;
 
+[Prefix="JPH::"]
 interface LinearCurve {
     void LinearCurve();
     void Clear();
@@ -2862,87 +3221,32 @@ interface LinearCurve {
     float GetValue(float inX);
 };
 
-interface ArrayFloat {
-    boolean empty();
-    long size();
-    float at(long inIndex);
-    void push_back(float inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-    FloatMemRef data();
-};
-
-interface ArrayUint {
-    boolean empty();
-    long size();
-    unsigned long at(long inIndex);
-    void push_back(unsigned long inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-    UintMemRef data();
-};
-
-interface ArrayUint8 {
-    boolean empty();
-    long size();
-//    octet at(long inIndex);
-//    void push_back(octet inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-    Uint8MemRef data();
-};
-
-interface ArrayVehicleAntiRollBar {
-    boolean empty();
-    long size();
-    [Ref] VehicleAntiRollBar at(long inIndex);
-    void push_back([Ref] VehicleAntiRollBar inValue);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface ArrayWheelSettings {
-    boolean empty();
-    long size();
-    WheelSettings at(long inIndex);
-    void push_back(WheelSettings inValue);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface ArrayVehicleDifferentialSettings {
-    boolean empty();
-    long size();
-    [Ref] VehicleDifferentialSettings at(long inIndex);
-    void push_back([Ref] VehicleDifferentialSettings inValue);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
+[Prefix="JPH::"]
 interface VehicleCollisionTester {
     unsigned long GetRefCount();
     void AddRef();
     void Release();
 };
 
+[Prefix="JPH::"]
 interface VehicleCollisionTesterRay {
     void VehicleCollisionTesterRay(unsigned long inObjectLayer, [Ref] optional Vec3 inUp, optional float inMaxSlopeAngle);
 };
 VehicleCollisionTesterRay implements VehicleCollisionTester;
 
+[Prefix="JPH::"]
 interface VehicleCollisionTesterCastSphere {
     void VehicleCollisionTesterCastSphere(unsigned long inObjectLayer, float inRadius, [Ref] optional Vec3 inUp, optional float inMaxSlopeAngle);
 };
 VehicleCollisionTesterCastSphere implements VehicleCollisionTester;
 
+[Prefix="JPH::"]
 interface VehicleCollisionTesterCastCylinder {
     void VehicleCollisionTesterCastCylinder(unsigned long inObjectLayer, optional float inConvexRadiusFraction);
 };
 VehicleCollisionTesterCastCylinder implements VehicleCollisionTester;
 
+[Prefix="JPH::"]
 interface VehicleConstraintSettings {
     void VehicleConstraintSettings();
 
@@ -2955,6 +3259,7 @@ interface VehicleConstraintSettings {
 };
 VehicleConstraintSettings implements ConstraintSettings;
 
+[Prefix="JPH::"]
 interface VehicleConstraint {
     void VehicleConstraint([Ref] Body inVehicleBody, [Const, Ref] VehicleConstraintSettings inSettings);
     void SetMaxPitchRollAngle(float inMaxPitchRollAngle);
@@ -2978,39 +3283,7 @@ interface VehicleConstraint {
 };
 VehicleConstraint implements Constraint;
 
-interface VehicleConstraintStepListener {
-    void VehicleConstraintStepListener(VehicleConstraint inConstraint);
-};
-VehicleConstraintStepListener implements PhysicsStepListener;
-
-interface VehicleConstraintCallbacksEm {
-    void SetVehicleConstraint([Ref] VehicleConstraint inConstraint);
-};
-
-[JSImplementation="VehicleConstraintCallbacksEm"]
-interface VehicleConstraintCallbacksJS {
-    void VehicleConstraintCallbacksJS();
-    float GetCombinedFriction(unsigned long inWheelIndex, ETireFrictionDirection inTireFrictionDirection, float inTireFriction, [Const, Ref] Body inBody2, [Const, Ref] SubShapeID inSubShapeID2);
-    void OnPreStepCallback([Ref] VehicleConstraint inVehicle, [Const, Ref] PhysicsStepListenerContext inContext);
-    void OnPostCollideCallback([Ref] VehicleConstraint inVehicle, [Const, Ref] PhysicsStepListenerContext inContext);
-    void OnPostStepCallback([Ref] VehicleConstraint inVehicle, [Const, Ref] PhysicsStepListenerContext inContext);
-};
-
-interface TireMaxImpulseCallbackResult {
-    attribute float mLongitudinalImpulse;
-    attribute float mLateralImpulse;
-};
-
-interface WheeledVehicleControllerCallbacksEm {
-    void SetWheeledVehicleController([Ref] WheeledVehicleController inController);
-};
-
-[JSImplementation="WheeledVehicleControllerCallbacksEm"]
-interface WheeledVehicleControllerCallbacksJS {
-    void WheeledVehicleControllerCallbacksJS();
-    void OnTireMaxImpulseCallback(unsigned long inWheelIndex, TireMaxImpulseCallbackResult outResult, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime);
-};
-
+[Prefix="JPH::"]
 interface WheelSettings {
     void WheelSettings();
     unsigned long GetRefCount();
@@ -3032,6 +3305,7 @@ interface WheelSettings {
     attribute boolean mEnableSuspensionForcePoint;
 };
 
+[Prefix="JPH::"]
 interface VehicleAntiRollBar {
     void VehicleAntiRollBar();
 
@@ -3040,6 +3314,7 @@ interface VehicleAntiRollBar {
     attribute float mStiffness;
 };
 
+[Prefix="JPH::"]
 interface Wheel {
     void Wheel([Const, Ref] WheelSettings inSettings);
     [Const] WheelSettings GetSettings();
@@ -3063,6 +3338,7 @@ interface Wheel {
     float GetLateralLambda();
 };
 
+[Prefix="JPH::"]
 interface WheelSettingsWV {
     void WheelSettingsWV();
 
@@ -3076,6 +3352,7 @@ interface WheelSettingsWV {
 };
 WheelSettingsWV implements WheelSettings;
 
+[Prefix="JPH::"]
 interface WheelWV {
     void WheelWV([Const, Ref] WheelSettingsWV inWheel);
     [Const] WheelSettingsWV GetSettings();
@@ -3088,6 +3365,7 @@ interface WheelWV {
 };
 WheelWV implements Wheel;
 
+[Prefix="JPH::"]
 interface WheelSettingsTV {
     void WheelSettingsTV();
 
@@ -3096,6 +3374,7 @@ interface WheelSettingsTV {
 };
 WheelSettingsTV implements WheelSettings;
 
+[Prefix="JPH::"]
 interface WheelTV {
     void WheelTV([Const, Ref] WheelSettingsTV inWheel);
     [Const] WheelSettingsTV GetSettings();
@@ -3107,6 +3386,7 @@ interface WheelTV {
 };
 WheelTV implements Wheel;
 
+[Prefix="JPH::"]
 interface VehicleTrackSettings {
     attribute long mDrivenWheel;
     [Value] attribute ArrayUint mWheels;
@@ -3116,11 +3396,13 @@ interface VehicleTrackSettings {
     attribute float mDifferentialRatio;
 };
 
+[Prefix="JPH::"]
 interface VehicleTrack {
     attribute float mAngularVelocity;
 };
 VehicleTrack implements VehicleTrackSettings;
 
+[Prefix="JPH::"]
 interface WheeledVehicleControllerSettings {
     void WheeledVehicleControllerSettings();
 
@@ -3131,6 +3413,7 @@ interface WheeledVehicleControllerSettings {
 };
 WheeledVehicleControllerSettings implements VehicleControllerSettings;
 
+[Prefix="JPH::"]
 interface TrackedVehicleControllerSettings {
     void TrackedVehicleControllerSettings();
 
@@ -3140,6 +3423,7 @@ interface TrackedVehicleControllerSettings {
 };
 TrackedVehicleControllerSettings implements VehicleControllerSettings;
 
+[Prefix="JPH::"]
 interface TrackedVehicleController {
     void TrackedVehicleController([Const, Ref] TrackedVehicleControllerSettings inSettings, [Ref] VehicleConstraint inConstraint);
     void SetDriverInput(float inForward, float inLeftRatio, float inRightRatio, float inBrake);
@@ -3157,6 +3441,7 @@ interface TrackedVehicleController {
 };
 TrackedVehicleController implements VehicleController;
 
+[Prefix="JPH::"]
 interface VehicleEngineSettings {
     attribute float mMaxTorque;
     attribute float mMinRPM;
@@ -3166,6 +3451,7 @@ interface VehicleEngineSettings {
     attribute float mAngularDamping;
 };
 
+[Prefix="JPH::"]
 interface VehicleEngine {
     void ClampRPM();
     float GetCurrentRPM();
@@ -3175,6 +3461,7 @@ interface VehicleEngine {
 };
 VehicleEngine implements VehicleEngineSettings;
 
+[Prefix="JPH::"]
 interface VehicleTransmissionSettings {
     attribute ETransmissionMode mMode;
     [Value] attribute ArrayFloat mGearRatios;
@@ -3187,6 +3474,7 @@ interface VehicleTransmissionSettings {
     attribute float mClutchStrength;
 };
 
+[Prefix="JPH::"]
 interface VehicleTransmission {
     void Set(long inCurrentGear, float inClutchFriction);
     long GetCurrentGear();
@@ -3196,6 +3484,7 @@ interface VehicleTransmission {
 };
 VehicleTransmission implements VehicleTransmissionSettings;
 
+[Prefix="JPH::"]
 interface VehicleDifferentialSettings {
     void VehicleDifferentialSettings();
 
@@ -3207,15 +3496,18 @@ interface VehicleDifferentialSettings {
     attribute float mEngineTorqueRatio;
 };
 
+[Prefix="JPH::"]
 interface VehicleControllerSettings {
 };
 
+[Prefix="JPH::"]
 interface VehicleController {
     unsigned long GetRefCount();
     void AddRef();
     void Release();
 };
 
+[Prefix="JPH::"]
 interface WheeledVehicleController {
     void WheeledVehicleController([Const, Ref] WheeledVehicleControllerSettings inSettings, [Ref] VehicleConstraint inConstraint);
     void SetDriverInput(float inForward, float inRight, float inBrake, float inHandBrake);
@@ -3236,6 +3528,7 @@ interface WheeledVehicleController {
 };
 WheeledVehicleController implements VehicleController;
 
+[Prefix="JPH::"]
 interface MotorcycleControllerSettings {
     void MotorcycleControllerSettings();
 
@@ -3248,6 +3541,7 @@ interface MotorcycleControllerSettings {
 };
 MotorcycleControllerSettings implements WheeledVehicleControllerSettings;
 
+[Prefix="JPH::"]
 interface MotorcycleController {
     void MotorcycleController([Const, Ref] MotorcycleControllerSettings inSettings, [Ref] VehicleConstraint inConstraint);
     float GetWheelBase();
@@ -3256,6 +3550,7 @@ interface MotorcycleController {
 };
 MotorcycleController implements WheeledVehicleController;
 
+[Prefix="JPH::"]
 interface Skeleton {
     void Skeleton();
     long AddJoint([Const, Ref] IDLString inName, long inParentIndex);
@@ -3264,50 +3559,7 @@ interface Skeleton {
     void CalculateParentJointIndices();
 };
 
-interface SkeletalAnimationJointState {
-    void FromMatrix([Const, Ref] Mat44 inMatrix);
-    [Value] Mat44 ToMatrix();
-
-    [Value] attribute Vec3 mTranslation;
-    [Value] attribute Quat mRotation;
-};
-
-interface SkeletalAnimationKeyframe {
-    void SkeletalAnimationKeyframe();
-
-    attribute float mTime;
-};
-SkeletalAnimationKeyframe implements SkeletalAnimationJointState;
-
-interface ArraySkeletonKeyframe {
-    void ArraySkeletonKeyframe();
-    boolean empty();
-    long size();
-    [Ref] SkeletalAnimationKeyframe at(long inIndex);
-    void push_back([Ref] SkeletalAnimationKeyframe inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface SkeletalAnimationAnimatedJoint {
-    void SkeletalAnimationAnimatedJoint();
-
-    [Value] attribute IDLString mJointName;
-    [Value] attribute ArraySkeletonKeyframe mKeyframes;
-};
-
-interface ArraySkeletonAnimatedJoint {
-    void ArraySkeletonAnimatedJoint();
-    boolean empty();
-    long size();
-    [Ref] SkeletalAnimationAnimatedJoint at(long inIndex);
-    void push_back([Ref] SkeletalAnimationAnimatedJoint inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
+[Prefix="JPH::"]
 interface SkeletalAnimation {
     void SkeletalAnimation();
     float GetDuration();
@@ -3316,6 +3568,7 @@ interface SkeletalAnimation {
     [Ref] ArraySkeletonAnimatedJoint GetAnimatedJoints();
 };
 
+[Prefix="JPH::"]
 interface SkeletonPose {
     void SkeletonPose();
     void SetSkeleton([Const] Skeleton inSkeleton);
@@ -3330,38 +3583,7 @@ interface SkeletonPose {
     void CalculateJointStates();
 };
 
-interface RagdollPart {
-    attribute TwoBodyConstraintSettings mToParent;
-};
-RagdollPart implements BodyCreationSettings;
-
-interface ArrayRagdollPart {
-    void ArrayRagdollPart();
-    boolean empty();
-    long size();
-    [Ref] RagdollPart at(long inIndex);
-    void push_back([Ref] RagdollPart inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
-interface RagdollAdditionalConstraint {
-    attribute long[] mBodyIdx;
-    attribute TwoBodyConstraintSettings mConstraint;
-};
-
-interface ArrayRagdollAdditionalConstraint {
-    void ArrayRagdollAdditionalConstraint();
-    boolean empty();
-    long size();
-    [Ref] RagdollAdditionalConstraint at(long inIndex);
-    void push_back([Ref] RagdollAdditionalConstraint inValue);
-    void reserve(unsigned long inSize);
-    void resize(unsigned long inSize);
-    void clear();
-};
-
+[Prefix="JPH::"]
 interface RagdollSettings {
     void RagdollSettings();
     boolean Stabilize();
@@ -3376,6 +3598,7 @@ interface RagdollSettings {
     [Value] attribute ArrayRagdollAdditionalConstraint mAdditionalConstraints;
 };
 
+[Prefix="JPH::"]
 interface Ragdoll {
     void Ragdoll(PhysicsSystem inSystem);
     void AddToPhysicsSystem(EActivation inActivationMode, optional boolean inLockBodies);
@@ -3402,10 +3625,12 @@ interface Ragdoll {
     [Const] RagdollSettings GetRagdollSettings();
 };
 
+[Prefix="JPH::"]
 interface BroadPhaseLayerInterface {
     unsigned long GetNumBroadPhaseLayers();
 };
 
+[Prefix="JPH::"]
 interface BroadPhaseLayer {
     void BroadPhaseLayer(unsigned short inLayer);
     unsigned short GetValue();
@@ -3423,17 +3648,20 @@ interface BroadPhaseLayer {
 //    [Const] unsigned short GetBPLayer(unsigned long inLayer); // Unfortunately the C++ version of GetBroadPhaseLayer is not compatible with JS so we have to use a different name and use an unsigned short instead of a BroadPhaseLayer
 //};
 
+[Prefix="JPH::"]
 interface BroadPhaseLayerInterfaceTable {
     void BroadPhaseLayerInterfaceTable(unsigned long inNumObjectLayers, unsigned long inNumBroadPhaseLayers);
     void MapObjectToBroadPhaseLayer(unsigned long inObjectLayer, [Const, Ref] BroadPhaseLayer inBroadPhaseLayer);
 };
 BroadPhaseLayerInterfaceTable implements BroadPhaseLayerInterface;
 
+[Prefix="JPH::"]
 interface ObjectVsBroadPhaseLayerFilterTable {
     void ObjectVsBroadPhaseLayerFilterTable([Const, Ref] BroadPhaseLayerInterface inBroadPhaseLayerInterface, unsigned long inNumBroadPhaseLayers, [Const, Ref] ObjectLayerPairFilter inObjectLayerPairFilter, unsigned long inNumObjectLayers);
 };
 ObjectVsBroadPhaseLayerFilterTable implements ObjectVsBroadPhaseLayerFilter;
 
+[Prefix="JPH::"]
 interface ObjectLayerPairFilterTable {
     void ObjectLayerPairFilterTable(unsigned long inNumObjectLayers);
     unsigned long GetNumObjectLayers();
@@ -3442,17 +3670,20 @@ interface ObjectLayerPairFilterTable {
 };
 ObjectLayerPairFilterTable implements ObjectLayerPairFilter;
 
+[Prefix="JPH::"]
 interface BroadPhaseLayerInterfaceMask {
     void BroadPhaseLayerInterfaceMask(unsigned long inNumBroadPhaseLayers);
     void ConfigureLayer([Const, Ref] BroadPhaseLayer inBroadPhaseLayer, unsigned long inGroupsToInclude, unsigned long inGroupsToExclude);
 };
 BroadPhaseLayerInterfaceMask implements BroadPhaseLayerInterface;
 
+[Prefix="JPH::"]
 interface ObjectVsBroadPhaseLayerFilterMask {
     void ObjectVsBroadPhaseLayerFilterMask([Const, Ref] BroadPhaseLayerInterfaceMask inBroadPhaseLayerInterface);
 };
 ObjectVsBroadPhaseLayerFilterMask implements ObjectVsBroadPhaseLayerFilter;
 
+[Prefix="JPH::"]
 interface ObjectLayerPairFilterMask {
     void ObjectLayerPairFilterMask();
     static unsigned long sGetObjectLayer(unsigned long inGroup, unsigned long inMask);
@@ -3461,33 +3692,13 @@ interface ObjectLayerPairFilterMask {
 };
 ObjectLayerPairFilterMask implements ObjectLayerPairFilter;
 
-interface JoltSettings {
-    void JoltSettings();
-
-    attribute unsigned long mMaxBodies;
-    attribute unsigned long mMaxBodyPairs;
-    attribute unsigned long mMaxContactConstraints;
-    attribute BroadPhaseLayerInterface mBroadPhaseLayerInterface;
-    attribute ObjectVsBroadPhaseLayerFilter mObjectVsBroadPhaseLayerFilter;
-    attribute ObjectLayerPairFilter mObjectLayerPairFilter;
-};
-
-interface JoltInterface {
-    void JoltInterface([Const, Ref] JoltSettings inSettings);
-    void Step(float inDeltaTime, long inCollisionSteps);
-    PhysicsSystem GetPhysicsSystem();
-    TempAllocator GetTempAllocator();
-    ObjectLayerPairFilter GetObjectLayerPairFilter();
-    ObjectVsBroadPhaseLayerFilter GetObjectVsBroadPhaseLayerFilter();
-//    static unsigned long long sGetTotalMemory();
-//    static unsigned long long sGetFreeMemory();
-};
-
+[Prefix="JPH::"]
 interface TempAllocatorImpl {
     void TempAllocatorImpl(unsigned long inSize);
 
 };
 
+[Prefix="JPH::"]
 interface JobSystemThreadPool {
     void JobSystemThreadPool(unsigned long inMaxJobs, unsigned long inMaxBarriers, optional long inNumThreads);
 

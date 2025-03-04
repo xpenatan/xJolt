@@ -16,7 +16,7 @@ import com.badlogic.gdx.utils.FloatArray;
 import com.badlogic.gdx.utils.Pool;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import java.util.ArrayList;
-import jolt.ArrayTriangle;
+import jolt.DebugArrayTriangle;
 import jolt.DebugRendererEm;
 import jolt.DebugRendererTriangle;
 import jolt.DebugRendererVertex;
@@ -75,7 +75,7 @@ public class DebugRenderer extends DebugRendererEm {
     }
 
     @Override
-    protected void DrawMesh(Mat44 inModelMatrix, ArrayTriangle triangleArray, Color inModelColor, int inCullMode, int inDrawMode) {
+    protected void DrawMesh(Mat44 inModelMatrix, DebugArrayTriangle triangleArray, Color inModelColor, int inCullMode, int inDrawMode) {
         boolean wireframeMode = inDrawMode == EDrawMode.EDrawMode_Wireframe;
         boolean solidMode = inDrawMode == EDrawMode.EDrawMode_Solid;
         int size = triangleArray.size();

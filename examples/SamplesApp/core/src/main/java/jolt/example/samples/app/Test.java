@@ -1,13 +1,16 @@
 package jolt.example.samples.app;
 
 import com.badlogic.gdx.math.MathUtils;
+import jolt.EMotionType;
 import jolt.MeshShapeSettings;
 import jolt.PhysicsMaterialList;
 import jolt.ShapeResult;
 import jolt.TriangleList;
+import jolt.example.samples.app.math.Perlin;
 import jolt.jolt.geometry.Triangle;
 import jolt.jolt.math.Quat;
 import jolt.jolt.math.Vec3;
+import jolt.jolt.physics.EActivation;
 import jolt.jolt.physics.PhysicsSystem;
 import jolt.jolt.physics.body.Body;
 import jolt.jolt.physics.body.BodyCreationSettings;
@@ -19,12 +22,12 @@ import static jolt.jolt.physics.EActivation.EActivation_DontActivate;
 
 public abstract class Test {
 
-    protected PhysicsSystem physicsSystem = null;
-    protected BodyInterface bodyInterface = null;
+    protected PhysicsSystem mPhysicsSystem = null;
+    protected BodyInterface mBodyInterface = null;
 
-    public void setPhysicsSystem(PhysicsSystem physicsSystem) {
-        this.physicsSystem = physicsSystem;
-        bodyInterface = physicsSystem.GetBodyInterface();
+    public void setmPhysicsSystem(PhysicsSystem mPhysicsSystem) {
+        this.mPhysicsSystem = mPhysicsSystem;
+        mBodyInterface = mPhysicsSystem.GetBodyInterface();
     }
 
     public void dispose() {
@@ -48,9 +51,9 @@ public abstract class Test {
         Vec3 inPosition = new Vec3(0.0f, scale * -1.0f, 0.0f);
         Quat inRotation = Quat.sIdentity();
         BoxShape bodyShape = new BoxShape(inHalfExtent, 0.0f);
-        BodyCreationSettings bodySettings = new BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType_Static, SamplesApp.LAYER_NON_MOVING);
-        Body body = bodyInterface.CreateBody(bodySettings);
-        bodyInterface.AddBody(body.GetID(), EActivation_DontActivate);
+        BodyCreationSettings bodySettings = new BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType_Static, Layers.NON_MOVING);
+        Body body = mBodyInterface.CreateBody(bodySettings);
+        mBodyInterface.AddBody(body.GetID(), EActivation_DontActivate);
         inHalfExtent.dispose();
         inPosition.dispose();
         return body;
@@ -120,16 +123,57 @@ public abstract class Test {
 //        System.out.println("ShapeResult GetError: " + data);
         var shape = shapeResult.Get();
         // Create body
-        var creationSettings = new BodyCreationSettings(shape, new Vec3(posX, posY, posZ), new Quat(0, 0, 0, 1), EMotionType_Static, SamplesApp.LAYER_NON_MOVING);
-        var body = bodyInterface.CreateBody(creationSettings);
+        var creationSettings = new BodyCreationSettings(shape, new Vec3(posX, posY, posZ), new Quat(0, 0, 0, 1), EMotionType_Static, Layers.NON_MOVING);
+        var body = mBodyInterface.CreateBody(creationSettings);
         creationSettings.dispose();
         addToScene(body, 0xc7c7c7);
     }
 
     void addToScene(Body body, int color) {
-        bodyInterface.AddBody(body.GetID(), EActivation_Activate);
+        mBodyInterface.AddBody(body.GetID(), EActivation_Activate);
 
 //        addToThreeScene(body, color);
     }
 
+    float GetWorldScale() { return 1.0f; }
+
+
+    protected Body CreateMeshTerrain() {
+        float scale = GetWorldScale();
+        int n = 50;
+        float max_height = scale * 3.0f;
+        float cell_size = scale * 1.0f;
+
+        float[][] heights = new float[n + 1][n + 1];
+        for (int x = 0; x <= n; ++x)
+            for (int z = 0; z <= n; ++z)
+                heights[x][z] = max_height * Perlin.perlinNoise3((float)x * 8.0f / n, 0, (float)z * 8.0f / n, 256, 256, 256);
+
+        // Create regular grid of triangles
+        TriangleList triangles = new TriangleList();
+        for (int x = 0; x < n; ++x) {
+            for (int z = 0; z < n; ++z)
+            {
+                float center = n * cell_size / 2;
+
+                float x1 = cell_size * x - center;
+                float z1 = cell_size * z - center;
+                float x2 = x1 + cell_size;
+                float z2 = z1 + cell_size;
+
+                Vec3 v1 = new Vec3(x1, heights[x][z], z1);
+                Vec3 v2 = new Vec3(x2, heights[x + 1][z], z1);
+                Vec3 v3 = new Vec3(x1, heights[x][z + 1], z2);
+                Vec3 v4 = new Vec3(x2, heights[x + 1][z + 1], z2);
+
+                triangles.push_back(new Triangle(v1, v3, v4));
+                triangles.push_back(new Triangle(v1, v4, v2));
+            }
+        }
+
+        int NON_MOVING = 4;
+        Body floor = mBodyInterface.CreateBody(new BodyCreationSettings(new MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType.EMotionType_Static, NON_MOVING));
+        mBodyInterface.AddBody(floor.GetID(), EActivation.EActivation_DontActivate);
+        return floor;
+    }
 }
