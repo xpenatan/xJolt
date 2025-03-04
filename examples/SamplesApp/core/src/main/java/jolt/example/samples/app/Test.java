@@ -24,17 +24,28 @@ public abstract class Test {
 
     protected PhysicsSystem mPhysicsSystem = null;
     protected BodyInterface mBodyInterface = null;
+    protected DebugRenderer mDebugRenderer = null;
 
-    public void setmPhysicsSystem(PhysicsSystem mPhysicsSystem) {
+    public void setPhysicsSystem(PhysicsSystem mPhysicsSystem) {
         this.mPhysicsSystem = mPhysicsSystem;
         mBodyInterface = mPhysicsSystem.GetBodyInterface();
+    }
+
+    public void setDebugRenderer(DebugRenderer mDebugRenderer) {
+        this.mDebugRenderer = mDebugRenderer;
     }
 
     public void dispose() {
 
     }
 
-    public void update(float delta) {
+    public void prePhysicsUpdate(boolean isPlaying) {
+    }
+
+    public void postPhysicsUpdate(boolean isPlaying, float deltaTime) {
+    }
+
+    public void processInput() {
     }
 
     protected void initialize() {}
@@ -140,7 +151,7 @@ public abstract class Test {
 
     protected Body CreateMeshTerrain() {
         float scale = GetWorldScale();
-        int n = 50;
+        int n = 100;
         float max_height = scale * 3.0f;
         float cell_size = scale * 1.0f;
 

@@ -68,15 +68,19 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void render(float delta) {
-        ScreenUtils.clear(0.2f, 0.2f, 0.2f, 1, true);
+        ScreenUtils.clear(0.5f, 0.5f, 0.5f, 1, true);
         // Don't go below 30 Hz to prevent spiral of death
         float deltaTime = (float)Math.min(delta, 1.0 / 30.0);
 
         if(test != null) {
-            test.update(deltaTime);
+            if(!isPaused) {
+                test.processInput();
+            }
         }
         DrawPhysics();
-        StepPhysics(deltaTime);
+        if(deltaTime > 0) {
+            StepPhysics(deltaTime);
+        }
     }
 
     public void startTest(Class<? extends Test> testClass) {
@@ -87,7 +91,8 @@ public class SamplesApp extends InputAdapter {
         clearBodies();
         isPaused = true;
         test = tests.getTest(testClass);
-        test.setmPhysicsSystem(physicsSystem);
+        test.setPhysicsSystem(physicsSystem);
+        test.setDebugRenderer(debugRenderer);
         test.initialize();
     }
 
@@ -102,9 +107,15 @@ public class SamplesApp extends InputAdapter {
     public void StepPhysics(float deltaTime) {
         // When running below 55 Hz, do 2 steps instead of 1
         var numSteps = deltaTime > 1.0 / 55.0 ? 2 : 1;
-
-        if(!isPaused) {
+        boolean isPlaying = !isPaused;
+        if(test != null) {
+            test.prePhysicsUpdate(isPlaying);
+        }
+        if(isPlaying) {
             jolt.Step(deltaTime, numSteps);
+        }
+        if(test != null) {
+            test.postPhysicsUpdate(isPlaying, deltaTime);
         }
     }
 
