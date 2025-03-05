@@ -6,6 +6,8 @@ import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
+import com.badlogic.gdx.math.Matrix4;
+import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -13,6 +15,8 @@ import jolt.BodyIDVector;
 import jolt.BodyManagerDrawSettings;
 import jolt.JoltInterface;
 import jolt.JoltSettings;
+import jolt.jolt.math.Mat44;
+import jolt.jolt.math.Vec3;
 import jolt.jolt.physics.PhysicsSystem;
 import jolt.jolt.physics.body.BodyID;
 import jolt.jolt.physics.body.BodyInterface;
@@ -27,7 +31,7 @@ public class SamplesApp extends InputAdapter {
     private Test test;
 
     private JoltInterface jolt;
-    private PhysicsSystem  physicsSystem;
+    private PhysicsSystem physicsSystem;
     private DebugRenderer debugRenderer;
     private BodyManagerDrawSettings debugSettings;
     private BodyIDVector bodyIDVector;
@@ -70,11 +74,11 @@ public class SamplesApp extends InputAdapter {
     public void render(float delta) {
         // Don't go below 30 Hz to prevent spiral of death
         float deltaTime = (float)Math.min(delta, 1.0 / 30.0);
-
         if(test != null) {
             if(!isPaused) {
                 test.processInput();
             }
+            test.updateCamera(camera);
         }
         DrawPhysics();
         if(deltaTime > 0) {
@@ -101,6 +105,7 @@ public class SamplesApp extends InputAdapter {
         test.setPhysicsSystem(physicsSystem);
         test.setDebugRenderer(debugRenderer);
         test.initialize();
+        test.initializeCamera(camera);
     }
 
     private void DrawPhysics() {
@@ -161,7 +166,7 @@ public class SamplesApp extends InputAdapter {
     }
 
     private void clearBodies() {
-        BodyInterface bodyInterface  = physicsSystem.GetBodyInterface();
+        BodyInterface bodyInterface = physicsSystem.GetBodyInterface();
         physicsSystem.GetBodies(bodyIDVector);
         int size = bodyIDVector.size();
         for(int i = 0; i < size; i++) {

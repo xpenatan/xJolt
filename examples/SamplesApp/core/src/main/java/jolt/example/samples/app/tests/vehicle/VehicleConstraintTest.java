@@ -2,7 +2,10 @@ package jolt.example.samples.app.tests.vehicle;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.math.Matrix4;
+import com.badlogic.gdx.math.Vector3;
 import jolt.ArrayVehicleAntiRollBar;
 import jolt.ArrayWheelSettings;
 import jolt.EMotionType;
@@ -21,6 +24,7 @@ import jolt.jolt.core.Color;
 import jolt.jolt.math.Mat44;
 import jolt.jolt.math.Quat;
 import jolt.jolt.math.Vec3;
+import jolt.jolt.math.Vec4;
 import jolt.jolt.physics.EActivation;
 import jolt.jolt.physics.body.Body;
 import jolt.jolt.physics.body.BodyCreationSettings;
@@ -67,7 +71,6 @@ public class VehicleConstraintTest extends VehicleTest {
     private Body mCarBody; ///< The vehicle
     private VehicleConstraint mVehicleConstraint; ///< The vehicle constraint
     private VehicleCollisionTester[] mTesters = new VehicleCollisionTester[3];
-    private Mat44 mCameraPivot = Mat44.sIdentity(); ///< The camera pivot, recorded before the physics update to align with the drawn world
 
     private float mForward = 0.0f;
     private float mPreviousForward = 1.0f; ///< Keeps track of last car direction so we know when to brake and when to accelerate
@@ -75,9 +78,22 @@ public class VehicleConstraintTest extends VehicleTest {
     private float mBrake = 0.0f;
     private float mHandBrake = 0.0f;
 
+    private Vec3 tempVec3_1;
+    private Vec4 tempVec4_1;
+    private Vec4 tempVec4_2;
+    private Vec4 tempVec4_3;
+    private Vec4 tempVec4_4;
+    private Mat44 tempMat44_1;
+
     @Override
     protected void initialize() {
         super.initialize();
+        tempVec3_1 = Jolt.New_Vec3();
+        tempVec4_1 = Jolt.New_Vec4();
+        tempVec4_2 = Jolt.New_Vec4();
+        tempVec4_3 = Jolt.New_Vec4();
+        tempVec4_4 = Jolt.New_Vec4();
+        tempMat44_1 = Jolt.New_Mat44();
 
         float wheel_radius = 0.3f;
         float wheel_width = 0.1f;
@@ -91,9 +107,9 @@ public class VehicleConstraintTest extends VehicleTest {
         mTesters[2] = new VehicleCollisionTesterCastCylinder(Layers.MOVING);
 
         // Create vehicle body
-        Vec3 position = new Vec3(0, 5, 0);
-        Shape car_shape = new OffsetCenterOfMassShapeSettings(new Vec3(0, -half_vehicle_height, 0), new BoxShape(new Vec3(half_vehicle_width, half_vehicle_height, half_vehicle_length))).Create().Get();
-        BodyCreationSettings car_body_settings = Jolt.BodyCreationSettings_New(car_shape, position, Quat.sRotation(Vec3.sAxisZ(), sInitialRollAngle), EMotionType.EMotionType_Dynamic, Layers.MOVING);
+        Vec3 position = Jolt.New_Vec3(0, 5, 0);
+        Shape car_shape = new OffsetCenterOfMassShapeSettings(Jolt.New_Vec3(0, -half_vehicle_height, 0), new BoxShape(Jolt.New_Vec3(half_vehicle_width, half_vehicle_height, half_vehicle_length))).Create().Get();
+        BodyCreationSettings car_body_settings = Jolt.New_BodyCreationSettings(car_shape, position, Quat.sRotation(Vec3.sAxisZ(), sInitialRollAngle), EMotionType.EMotionType_Dynamic, Layers.MOVING);
         car_body_settings.set_mOverrideMassProperties(EOverrideMassProperties.EOverrideMassProperties_CalculateInertia);
         car_body_settings.get_mMassPropertiesOverride().set_mMass(1500.0f);
         mCarBody = mBodyInterface.CreateBody(car_body_settings);
@@ -105,15 +121,15 @@ public class VehicleConstraintTest extends VehicleTest {
         vehicle.set_mMaxPitchRollAngle(sMaxRollAngle);
 
         // Suspension direction
-        Vec3 front_suspension_dir = new Vec3(MathUtils.tan(sFrontSuspensionSidewaysAngle), -1, MathUtils.tan(sFrontSuspensionForwardAngle));
-        Vec3 front_steering_axis = new Vec3(-MathUtils.tan(sFrontKingPinAngle), 1, -MathUtils.tan(sFrontCasterAngle));
-        Vec3 front_wheel_up = new Vec3(MathUtils.sin(sFrontCamber), MathUtils.cos(sFrontCamber), 0);
-        Vec3 front_wheel_forward = new Vec3(-MathUtils.sin(sFrontToe), 0, MathUtils.cos(sFrontToe));
-        Vec3 rear_suspension_dir = new Vec3(MathUtils.tan(sRearSuspensionSidewaysAngle), -1, MathUtils.tan(sRearSuspensionForwardAngle));
-        Vec3 rear_steering_axis = new Vec3(-MathUtils.tan(sRearKingPinAngle), 1, -MathUtils.tan(sRearCasterAngle));
-        Vec3 rear_wheel_up = new Vec3(MathUtils.sin(sRearCamber), MathUtils.cos(sRearCamber), 0);
-        Vec3 rear_wheel_forward = new Vec3(-MathUtils.sin(sRearToe), 0, MathUtils.cos(sRearToe));
-        Vec3 flip_x = new Vec3(-1, 1, 1);
+        Vec3 front_suspension_dir = Jolt.New_Vec3(MathUtils.tan(sFrontSuspensionSidewaysAngle), -1, MathUtils.tan(sFrontSuspensionForwardAngle));
+        Vec3 front_steering_axis = Jolt.New_Vec3(-MathUtils.tan(sFrontKingPinAngle), 1, -MathUtils.tan(sFrontCasterAngle));
+        Vec3 front_wheel_up = Jolt.New_Vec3(MathUtils.sin(sFrontCamber), MathUtils.cos(sFrontCamber), 0);
+        Vec3 front_wheel_forward = Jolt.New_Vec3(-MathUtils.sin(sFrontToe), 0, MathUtils.cos(sFrontToe));
+        Vec3 rear_suspension_dir = Jolt.New_Vec3(MathUtils.tan(sRearSuspensionSidewaysAngle), -1, MathUtils.tan(sRearSuspensionForwardAngle));
+        Vec3 rear_steering_axis = Jolt.New_Vec3(-MathUtils.tan(sRearKingPinAngle), 1, -MathUtils.tan(sRearCasterAngle));
+        Vec3 rear_wheel_up = Jolt.New_Vec3(MathUtils.sin(sRearCamber), MathUtils.cos(sRearCamber), 0);
+        Vec3 rear_wheel_forward = Jolt.New_Vec3(-MathUtils.sin(sRearToe), 0, MathUtils.cos(sRearToe));
+        Vec3 flip_x = Jolt.New_Vec3(-1, 1, 1);
 
         // Wheels, left front
         WheelSettingsWV w1 = new WheelSettingsWV();
@@ -305,5 +321,78 @@ public class VehicleConstraintTest extends VehicleTest {
     @Override
     public void dispose() {
         super.dispose();
+    }
+
+    private Vector3 vec = new Vector3();
+
+    @Override
+    public void updateCamera(PerspectiveCamera camera) {
+        updateCameraPivot();
+        camera.up.set(0, 1, 0);
+        cameraPivot.getTranslation(vec);
+        camera.position.set(vec.x, vec.y, vec.z);
+
+        float forwardX = cameraPivot.val[8];
+        float forwardY = cameraPivot.val[9];
+        float forwardZ = cameraPivot.val[10];
+
+        camera.lookAt(
+                vec.x + forwardX,
+                vec.y + forwardY,
+                vec.z + forwardZ
+        );
+    }
+
+    private void updateCameraPivot() {
+        // Get the forward direction of the car (Z axis in local space)
+        Vec3 fwd = mCarBody.GetRotation().RotateAxisZ();
+        fwd.SetY(-0.2f); // Project onto XZ plane
+        float len = fwd.Length();
+        if (len != 0.0f)
+            fwd.DivFloatAssign(len);
+        else
+            fwd = Vec3.sAxisZ();
+
+        // Calculate up and right vectors
+        Vec3 up = Vec3.sAxisY();
+        Vec3 right = up.Cross(fwd);
+
+        // Get the car's position
+        Vec3 carPosition = mCarBody.GetPosition();
+
+        // Add offset to position the camera behind the car
+        // Move 5 units back and 2 units up from the car's position
+        tempVec3_1.Set(
+                carPosition.GetX() - fwd.GetX() * 5.0f,
+                carPosition.GetY() + 2.0f,
+                carPosition.GetZ() - fwd.GetZ() * 5.0f
+        );
+
+        // Create the transformation matrix for the camera pivot
+        // The camera will look at the car from this pivot point
+        tempVec4_1.Set(right.GetX(), right.GetY(), right.GetZ(), 0f);
+        tempVec4_2.Set(up.GetX(), up.GetY(), up.GetZ(), 0f);
+        tempVec4_3.Set(fwd.GetX(), fwd.GetY(), fwd.GetZ(), 0f);
+        tempVec4_4.Set(tempVec3_1.GetX(), tempVec3_1.GetY(), tempVec3_1.GetZ(), 1f);
+
+        tempMat44_1.SetColumn4(0, tempVec4_1);
+        tempMat44_1.SetColumn4(1, tempVec4_2);
+        tempMat44_1.SetColumn4(2, tempVec4_3);
+        tempMat44_1.SetColumn4(3, tempVec4_4);
+
+        getMat44Data(tempMat44_1, cameraPivot);
+    }
+
+    // Function to extract Mat44 data into a flat float array
+    void getMat44Data(Mat44 mat, Matrix4 matrix4) {
+        float[] outArray = matrix4.val;
+        // Column-major order: copy each column directly
+        for (int col = 0; col < 4; col++) {
+            Vec4 vec4 = mat.GetColumn4(col);
+            for (int row = 0; row < 4; row++) {
+                float val = vec4.Get(row);
+                outArray[col * 4 + row] = val; // m[col][row]
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ import jolt.DebugRendererEm;
 import jolt.DebugRendererTriangle;
 import jolt.DebugRendererVertex;
 import jolt.EDrawMode;
+import jolt.jolt.Jolt;
 import jolt.jolt.core.Color;
 import jolt.jolt.math.Float3;
 import jolt.jolt.math.Mat44;
@@ -36,9 +37,9 @@ public class DebugRendererOld extends DebugRendererEm {
         filledShapeRenderer = new ShapeRenderer();
         lineShapeRenderer = new ShapeRenderer();
         color = new com.badlogic.gdx.graphics.Color();
-        v0 = new Vec3();
-        v1 = new Vec3();
-        v2 = new Vec3();
+        v0 = Jolt.New_Vec3();
+        v1 = Jolt.New_Vec3();
+        v2 = Jolt.New_Vec3();
     }
 
     @Override

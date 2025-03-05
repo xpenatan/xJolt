@@ -1,3 +1,27 @@
+// ##################################################
+// ################# CUSTOM CLASSES #################
+// ##################################################
+
+interface Jolt {
+    [BindTo="New_BodyCreationSettings", NewObject] static BodyCreationSettings New_BodyCreationSettings_0();
+    [BindTo="New_BodyCreationSettings", NewObject] static BodyCreationSettings New_BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
+    [BindTo="New_BodyCreationSettings", NewObject] static BodyCreationSettings New_BodyCreationSettings_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
+
+    [BindTo="New_Mat44", NewObject] static Mat44 New_Mat44_0();
+    [BindTo="New_Mat44", NewObject] static Mat44 New_Mat44_1([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec4 inC4);
+    [BindTo="New_Mat44", NewObject] static Mat44 New_Mat44_2([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec3 inC4);
+
+    [BindTo="New_Vec3", NewObject] static Vec3 New_Vec3_0();
+    [BindTo="New_Vec3", NewObject] static Vec3 New_Vec3_1(float inX, float inY, float inZ);
+    [BindTo="New_Vec3", NewObject] static Vec3 New_Vec3_2([Const, Ref] Vec3 inRHS);
+    [BindTo="New_Vec3", NewObject] static Vec3 New_Vec3_3([Const, Ref] Float3 inV);
+
+    [BindTo="New_Vec4", NewObject] static Vec4 New_Vec4_0();
+    [BindTo="New_Vec4", NewObject] static Vec4 New_Vec4_1(float inX, float inY, float inZ, float inW);
+    [BindTo="New_Vec4", NewObject] static Vec4 New_Vec4_2([Const, Ref] Vec4 inV);
+    [BindTo="New_Vec4", NewObject] static Vec4 New_Vec4_3([Ref] Vec3 inV, float inW);
+};
+
 interface BodyManagerDrawSettings {
     void BodyManagerDrawSettings();
 
@@ -53,12 +77,6 @@ interface DebugRendererImplCustom : DebugRendererEm {
     void DrawLine([Const] Vec3 inFrom, [Const] Vec3 inTo, [Const] Color inColor);
     void DrawTriangle([Const] Vec3 inV1, [Const] Vec3 inV2, [Const]  Vec3 inV3, [Const] Color inColor, ECastShadow inCastShadow);
     void DrawText3D([Const] Vec3 inPosition, [Const] any inString, unsigned long inStringLen, [Const] Color inColor, float inHeight);
-};
-
-interface Jolt {
-    [BindTo="BodyCreationSettings_New", NewObject] static BodyCreationSettings BodyCreationSettings_New_0();
-    [BindTo="BodyCreationSettings_New", NewObject] static BodyCreationSettings BodyCreationSettings_New_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
-    [BindTo="BodyCreationSettings_New", NewObject] static BodyCreationSettings BodyCreationSettings_New_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
 };
 
 interface JoltInterface {
@@ -952,6 +970,10 @@ enum SoftBodySharedSettings_ELRAType {
     "SoftBodySharedSettings_ELRAType_GeodesicDistance"
 };
 
+// ##################################################
+// ################## JOLT CLASSES ##################
+// ##################################################
+
 [Prefix="JPH::"]
 interface PhysicsSystem {
     void PhysicsSystem();
@@ -1022,9 +1044,6 @@ interface Color {
 
 [Prefix="JPH::"]
 interface Vec3 {
-    void Vec3();
-//    void Vec3([Const, Ref] Float3 inV);
-    void Vec3(float inX, float inY, float inZ);
     [Value] static Vec3 sZero();
     [Value] static Vec3 sAxisX();
     [Value] static Vec3 sAxisY();
@@ -1075,10 +1094,6 @@ interface Vec3 {
 
 [Prefix="JPH::"]
 interface Vec4 {
-    void Vec4();
-    void Vec4([Const, Ref] Vec4 inV);
-    void Vec4([Ref] Vec3 inV, float inW);
-    void Vec4(float inX, float inY, float inZ, float inW);
     float GetX();
     float GetY();
     float GetZ();
@@ -1088,7 +1103,7 @@ interface Vec4 {
     void SetZ(float inZ);
     void SetW(float inW);
     void Set(float inX, float inY, float inZ, float inW);
-//    [Operator="[]"] float GetComponent(unsigned long inCoordinate);
+    [Operator="[]"] float Get(unsigned long index);
 };
 
 [Prefix="JPH::"]
@@ -1155,7 +1170,6 @@ interface Float2 {
 
 [Prefix="JPH::"]
 interface Mat44 {
-    void Mat44();
     [Value] static Mat44 sZero();
     [Value] static Mat44 sIdentity();
     [Value] static Mat44 sRotationX(float inX);

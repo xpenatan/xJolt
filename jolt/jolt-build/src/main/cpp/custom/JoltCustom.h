@@ -340,18 +340,54 @@ constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_None =
 constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_EuclideanDistance = SoftBodySharedSettings_ELRAType::EuclideanDistance;
 constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_GeodesicDistance = SoftBodySharedSettings_ELRAType::GeodesicDistance;
 
-// Custom class to be able to create new instance and other things
+// Custom class to be able to create new instance.
 class Jolt
 {
 public:
-    static JPH::BodyCreationSettings* BodyCreationSettings_New() {
+    static JPH::BodyCreationSettings* New_BodyCreationSettings() {
         return new JPH::BodyCreationSettings();
     }
-    static JPH::BodyCreationSettings* BodyCreationSettings_New(const JPH::ShapeSettings* inShape, JPH::RVec3Arg inPosition, JPH::QuatArg inRotation, JPH::EMotionType inMotionType, JPH::ObjectLayer inObjectLayer) {
+    static JPH::BodyCreationSettings* New_BodyCreationSettings(const JPH::ShapeSettings* inShape, JPH::RVec3Arg inPosition, JPH::QuatArg inRotation, JPH::EMotionType inMotionType, JPH::ObjectLayer inObjectLayer) {
         return new JPH::BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
     }
-    static JPH::BodyCreationSettings* BodyCreationSettings_New(const JPH::Shape* inShape, JPH::RVec3Arg inPosition, JPH::QuatArg inRotation, JPH::EMotionType inMotionType, JPH::ObjectLayer inObjectLayer) {
+    static JPH::BodyCreationSettings* New_BodyCreationSettings(const JPH::Shape* inShape, JPH::RVec3Arg inPosition, JPH::QuatArg inRotation, JPH::EMotionType inMotionType, JPH::ObjectLayer inObjectLayer) {
         return new JPH::BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
+    }
+
+    static JPH::Mat44* New_Mat44() {
+        return new JPH::Mat44();
+    }
+    static JPH::Mat44* New_Mat44(JPH::Vec4& inC1, JPH::Vec4& inC2, JPH::Vec4& inC3, JPH::Vec4& inC4) {
+        return new JPH::Mat44(inC1, inC2, inC3, inC4);
+    }
+    static JPH::Mat44* New_Mat44(JPH::Vec4& inC1, JPH::Vec4& inC2, JPH::Vec4& inC3, JPH::Vec3& inC4) {
+        return new JPH::Mat44(inC1, inC2, inC3, inC4);
+    }
+
+    static JPH::Vec3* New_Vec3() {
+        return new JPH::Vec3();
+    }
+    static JPH::Vec3* New_Vec3(float inX, float inY, float inZ) {
+        return new JPH::Vec3(inX, inY, inZ);
+    }
+    static JPH::Vec3* New_Vec3(const JPH::Vec3 &inRHS) {
+        return new JPH::Vec3(inRHS);
+    }
+    static JPH::Vec3* New_Vec3(const JPH::Float3 &inV) {
+        return new JPH::Vec3(inV);
+    }
+
+    static JPH::Vec4* New_Vec4() {
+        return new JPH::Vec4();
+    }
+    static JPH::Vec4* New_Vec4(float inX, float inY, float inZ, float inW) {
+        return new JPH::Vec4(inX, inY, inZ, inW);
+    }
+    static JPH::Vec4* New_Vec4(const JPH::Vec4 &inRHS) {
+        return new JPH::Vec4(inRHS);
+    }
+    static JPH::Vec4* New_Vec4(const JPH::Vec3 &inV, float inW) {
+        return new JPH::Vec4(inV, inW);
     }
 };
 
