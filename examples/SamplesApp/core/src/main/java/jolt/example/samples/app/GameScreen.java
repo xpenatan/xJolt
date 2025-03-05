@@ -2,6 +2,7 @@ package jolt.example.samples.app;
 
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.FPSLogger;
+import com.badlogic.gdx.utils.ScreenUtils;
 import jolt.example.samples.app.tests.vehicle.VehicleConstraintTest;
 
 public class GameScreen extends ScreenAdapter {
@@ -19,6 +20,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+        ScreenUtils.clear(0.1f, 0.1f, 0.8f, 1, true);
         samplesApp.render(delta);
         fpsLogger.log();
     }

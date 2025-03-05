@@ -68,7 +68,6 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void render(float delta) {
-        ScreenUtils.clear(0.5f, 0.5f, 0.5f, 1, true);
         // Don't go below 30 Hz to prevent spiral of death
         float deltaTime = (float)Math.min(delta, 1.0 / 30.0);
 
@@ -80,6 +79,14 @@ public class SamplesApp extends InputAdapter {
         DrawPhysics();
         if(deltaTime > 0) {
             StepPhysics(deltaTime);
+        }
+
+        if(Gdx.input.isKeyJustPressed(Input.Keys.D)) {
+            debugRenderer.setEnable(!debugRenderer.isEnable());
+        }
+        else if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
+            boolean mDrawShapeWireframe = debugSettings.get_mDrawShapeWireframe();
+            debugSettings.set_mDrawShapeWireframe(!mDrawShapeWireframe);
         }
     }
 

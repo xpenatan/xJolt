@@ -44,7 +44,10 @@ public class DebugRenderer extends DebugRendererEm {
     private FloatArray vertices;
     private Texture checkerboardTexture;
 
+    private boolean enable;
+
     public DebugRenderer() {
+        enable = true;
         batch = new ModelBatch();
         environment = new Environment();
         environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1.f));
@@ -76,6 +79,9 @@ public class DebugRenderer extends DebugRendererEm {
 
     @Override
     protected void DrawMesh(Mat44 inModelMatrix, DebugArrayTriangle triangleArray, Color inModelColor, int inCullMode, int inDrawMode) {
+        if(!enable) {
+            return;
+        }
         boolean wireframeMode = inDrawMode == EDrawMode.EDrawMode_Wireframe;
         boolean solidMode = inDrawMode == EDrawMode.EDrawMode_Solid;
         int size = triangleArray.size();
@@ -166,6 +172,14 @@ public class DebugRenderer extends DebugRendererEm {
         temp.Set(mPosition.get_x(), mPosition.get_y(), mPosition.get_z());
         Vec3 vv = inModelMatrix.Multiply(temp);
         temp.Set(vv.GetX(), vv.GetY(), vv.GetZ());
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
+
+    public boolean isEnable() {
+        return enable;
     }
 
     public void begin(Camera camera) {
