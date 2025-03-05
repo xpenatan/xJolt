@@ -73,7 +73,7 @@ public class DebugRendererOld extends DebugRendererEm {
         float y = mPosition0.get_y();
         float z = mPosition0.get_z();
         temp0.Set(x, y, z);
-        Vec3 vv0 = inModelMatrix.Multiply(temp0);
+        Vec3 vv0 = inModelMatrix.MulVec3(temp0);
         float v0X = vv0.GetX();
         float v0Y = vv0.GetY();
         float v0Z = vv0.GetZ();

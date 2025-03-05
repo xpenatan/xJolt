@@ -994,7 +994,7 @@ interface PhysicsSystem {
 interface Color {
     void Color();
     attribute unsigned long mU32;
-    [Operator="*", Value] Color Multiply([Const, Ref] Color other);
+    [Operator="*", Value] Color MulColor([Const, Ref] Color other);
     [Value] Vec4 ToVec4();
 
     [Const, Value] static readonly attribute Color sBlack;
@@ -1059,12 +1059,14 @@ interface Vec3 {
     [Const, Value] Vec3 Reciprocal();
     [Const, Value] Vec3 Cross([Const, Ref] Vec3 inRHS);
     float Dot([Const, Ref] Vec3 inRHS);
-    [Operator="*", Value] Vec3 Multiply([Const, Ref] Vec3 other);
-    [Operator="*", Value] Vec3 MultiplyVector(float other);
-//    [Operator="+=", Ref] Vec3 Add([Const, Ref] Vec3 inV);
-//    [Operator="-=", Ref] Vec3 Sub([Const, Ref] Vec3 inV);
-//    [Operator="*=", Ref] Vec3 Mul(float inV);
-//    [Operator="/=", Ref] Vec3 Div(float inV);
+    [Operator="*", Value] Vec3 MulVec3([Const, Ref] Vec3 other);
+    [Operator="*", Value] Vec3 MulFloat(float other);
+    [Operator="+", Value] Vec3 Add([Const, Ref] Vec3 other); /// Add two float vectors and return a new value
+    [Operator="-", Value] Vec3 SubVec3([Const, Ref] Vec3 other); /// Add two float vectors and return a new value
+    [Operator="+=", Ref] Vec3 AddVec3Assign([Const, Ref] Vec3 inV);
+    [Operator="-=", Ref] Vec3 SubVec3Assign([Const, Ref] Vec3 inV);
+    [Operator="*=", Ref] Vec3 MulFloatAssign(float inV);
+    [Operator="/=", Ref] Vec3 DivFloatAssign(float inV);
     float ReduceMin();
     float ReduceMax();
     [Const, Value] Vec3 Sqrt();
@@ -1130,7 +1132,7 @@ interface Quat {
     void GetSwingTwist([Ref] Quat outSwing, [Ref] Quat outTwist);
     [Const, Value] Quat LERP([Const, Ref] Quat inDestination, float inFraction);
     [Const, Value] Quat SLERP([Const, Ref] Quat inDestination, float inFraction);
-    [Operator="*", Value] Vec3 Multiply([Const, Ref] Vec3 other);
+    [Operator="*", Value] Vec3 MulVec3([Const, Ref] Vec3 other);
 };
 
 [Prefix="JPH::"]
@@ -1172,7 +1174,7 @@ interface Mat44 {
     [Value] Quat GetQuaternion();
     [Value] Vec3 GetTranslation();
     boolean IsClose([Const, Ref] Mat44 inM, optional float inMaxDistSq);
-    [Operator="*", Value] Vec3 Multiply([Const, Ref] Vec3 other);
+    [Operator="*", Value] Vec3 MulVec3([Const, Ref] Vec3 other);
     [Value] Vec3 Multiply3x3([Const, Ref] Vec3 inV);
     [Value] Vec3 Multiply3x3Transposed([Const, Ref] Vec3 inV);
     [Value] Mat44 Transposed();
@@ -2369,16 +2371,16 @@ interface Body {
 
 [Prefix="JPH::"]
 interface BodyInterface {
-    Body CreateBody([Const, Ref] BodyCreationSettings inSettings);
-    Body CreateSoftBody([Const, Ref] SoftBodyCreationSettings inSettings);
+    [NewObject] Body CreateBody([Const, Ref] BodyCreationSettings inSettings);
+    [NewObject] Body CreateSoftBody([Const, Ref] SoftBodyCreationSettings inSettings);
     void CreateBodyWithID([Const, Ref] BodyID inBodyID, [Const, Ref] BodyCreationSettings inSettings);
     void CreateSoftBodyWithID([Const, Ref] BodyID inBodyID, [Const, Ref] SoftBodyCreationSettings inSettings);
-    Body CreateBodyWithoutID([Const, Ref] BodyCreationSettings inSettings);
-    Body CreateSoftBodyWithoutID([Const, Ref] SoftBodyCreationSettings inSettings);
+    [NewObject] Body CreateBodyWithoutID([Const, Ref] BodyCreationSettings inSettings);
+    [NewObject] Body CreateSoftBodyWithoutID([Const, Ref] SoftBodyCreationSettings inSettings);
     void DestroyBodyWithoutID(Body inBody);
     boolean AssignBodyID(Body ioBody);
     boolean AssignBodyID(Body ioBody, [Const, Ref] BodyID inBodyID);
-    Body UnassignBodyID([Const, Ref] BodyID inBodyID);
+    [NewObject] Body UnassignBodyID([Const, Ref] BodyID inBodyID); // TODO: Need NewObject?
     void DestroyBody([Const, Ref] BodyID inBodyID);
     void AddBody([Const, Ref] BodyID inBodyID, EActivation inActivationMode);
     void RemoveBody([Const, Ref] BodyID inBodyID);

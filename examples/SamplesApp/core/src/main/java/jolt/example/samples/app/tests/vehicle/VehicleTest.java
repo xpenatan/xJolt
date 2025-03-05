@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 import jolt.ArrayVec3;
 import jolt.ConvexHullShapeSettings;
+import jolt.DistanceConstraintSettings;
 import jolt.EMotionType;
 import jolt.example.samples.app.Layers;
 import jolt.example.samples.app.Test;
@@ -14,6 +15,8 @@ import jolt.jolt.math.Vec3;
 import jolt.jolt.physics.EActivation;
 import jolt.jolt.physics.body.Body;
 import jolt.jolt.physics.body.BodyCreationSettings;
+import jolt.jolt.physics.collision.CollisionGroup;
+import jolt.jolt.physics.collision.GroupFilterTable;
 import jolt.jolt.physics.collision.shape.BoxShape;
 import jolt.jolt.physics.collision.shape.Shape;
 import static jolt.example.samples.app.tests.BoxShapeTest.JPH_PI;
@@ -34,7 +37,52 @@ public abstract class VehicleTest extends Test {
     }
 
     private void createBridge() {
+        int cChainLength = 20;
 
+        // Build a collision group filter that disables collision between adjacent bodies
+        GroupFilterTable group_filter = new GroupFilterTable(cChainLength);
+        for (int i = 0; i < cChainLength - 1; ++i) {
+            group_filter.DisableCollision(i, i + 1);
+        }
+
+        Vec3 part_half_size = new Vec3(2.5f, 0.25f, 1.0f);
+        Shape part_shape = new BoxShape(part_half_size);
+
+        Vec3 large_part_half_size = new Vec3(2.5f, 0.25f, 22.5f);
+        Shape large_part_shape = new BoxShape(large_part_half_size);
+
+        Quat first_part_rot = Quat.sRotation(Vec3.sAxisX(), MathUtils.degreesToRadians * -10.0f);
+
+        Vec3 prev_pos = new Vec3(-25, 7, 0);
+        Body prev_part = null;
+
+        for (int i = 0; i < cChainLength; ++i) {
+            float prevX = prev_pos.GetX();
+            float prevY = prev_pos.GetY();
+            float prevZ = prev_pos.GetZ();
+
+            Vec3 pos = new Vec3(prevX, prevY, (2.0f * part_half_size.GetZ()) + prevZ);
+            Vec3 val = new Vec3(0, large_part_half_size.GetY() - part_half_size.GetY(), large_part_half_size.GetZ() - part_half_size.GetZ());
+            Body part = i == 0 ? mBodyInterface.CreateBody(Jolt.BodyCreationSettings_New(large_part_shape, pos.SubVec3(first_part_rot.MulVec3(val)), first_part_rot, EMotionType.EMotionType_Static, Layers.NON_MOVING))
+                    : mBodyInterface.CreateBody(Jolt.BodyCreationSettings_New(part_shape, pos, Quat.sIdentity(), i == 19? EMotionType.EMotionType_Static : EMotionType.EMotionType_Dynamic, i == 19? Layers.NON_MOVING : Layers.MOVING));
+            part.SetCollisionGroup(new CollisionGroup(group_filter, 1, i));
+            part.SetFriction(1.0f);
+            mBodyInterface.AddBody(part.GetID(), EActivation.EActivation_Activate);
+
+            if (prev_part != null) {
+                DistanceConstraintSettings dc = new DistanceConstraintSettings();
+                dc.set_mPoint1(prev_pos.Add(new Vec3(-part_half_size.GetX(), 0, part_half_size.GetZ())));
+                dc.set_mPoint2(pos.Add(new Vec3(-part_half_size.GetX(), 0, -part_half_size.GetZ())));
+                mPhysicsSystem.AddConstraint(dc.Create(prev_part, part));
+
+                dc.set_mPoint1(prev_pos.Add(new Vec3(part_half_size.GetX(), 0, part_half_size.GetZ())));
+                dc.set_mPoint2(pos.Add(new Vec3(part_half_size.GetX(), 0, -part_half_size.GetZ())));
+                mPhysicsSystem.AddConstraint(dc.Create(prev_part, part));
+            }
+
+            prev_part = part;
+            prev_pos = pos;
+        }
     }
 
     private void createWall() {

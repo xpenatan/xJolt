@@ -132,10 +132,10 @@ public class VehicleConstraintTest extends VehicleTest {
         // Right front
         WheelSettingsWV w2 = new WheelSettingsWV();
         w2.get_mPosition().Set(-half_vehicle_width, -0.9f * half_vehicle_height, half_vehicle_length - 2.0f * wheel_radius);
-        w2.set_mSuspensionDirection(flip_x.Multiply(front_suspension_dir.Normalized()));
-        w2.set_mSteeringAxis(flip_x.Multiply(front_steering_axis.Normalized()));
-        w2.set_mWheelUp(flip_x.Multiply(front_wheel_up));
-        w2.set_mWheelForward(flip_x.Multiply(front_wheel_forward));
+        w2.set_mSuspensionDirection(flip_x.MulVec3(front_suspension_dir.Normalized()));
+        w2.set_mSteeringAxis(flip_x.MulVec3(front_steering_axis.Normalized()));
+        w2.set_mWheelUp(flip_x.MulVec3(front_wheel_up));
+        w2.set_mWheelForward(flip_x.MulVec3(front_wheel_forward));
         w2.set_mSuspensionMinLength(sFrontSuspensionMinLength);
         w2.set_mSuspensionMaxLength(sFrontSuspensionMaxLength);
         w2.get_mSuspensionSpring().set_mFrequency(sFrontSuspensionFrequency);
@@ -159,10 +159,10 @@ public class VehicleConstraintTest extends VehicleTest {
         // Right rear
         WheelSettingsWV w4 = new WheelSettingsWV();
         w4.get_mPosition().Set(-half_vehicle_width, -0.9f * half_vehicle_height, -half_vehicle_length + 2.0f * wheel_radius);
-        w4.set_mSuspensionDirection(flip_x.Multiply(rear_suspension_dir.Normalized()));
-        w4.set_mSteeringAxis(flip_x.Multiply(rear_steering_axis.Normalized()));
-        w4.set_mWheelUp(flip_x.Multiply(rear_wheel_up));
-        w4.set_mWheelForward(flip_x.Multiply(rear_wheel_forward));
+        w4.set_mSuspensionDirection(flip_x.MulVec3(rear_suspension_dir.Normalized()));
+        w4.set_mSteeringAxis(flip_x.MulVec3(rear_steering_axis.Normalized()));
+        w4.set_mWheelUp(flip_x.MulVec3(rear_wheel_up));
+        w4.set_mWheelForward(flip_x.MulVec3(rear_wheel_forward));
         w4.set_mSuspensionMinLength(sRearSuspensionMinLength);
         w4.set_mSuspensionMaxLength(sRearSuspensionMaxLength);
         w4.get_mSuspensionSpring().set_mFrequency(sRearSuspensionFrequency);
@@ -273,7 +273,7 @@ public class VehicleConstraintTest extends VehicleTest {
         mBrake = 0.0f;
         if(mPreviousForward * mForward < 0.0f) {
             // Get vehicle velocity in local space to the body of the vehicle
-            float velocity = (mCarBody.GetRotation().Conjugated().Multiply(mCarBody.GetLinearVelocity()).GetZ());
+            float velocity = (mCarBody.GetRotation().Conjugated().MulVec3(mCarBody.GetLinearVelocity()).GetZ());
             if((mForward > 0.0f && velocity < -0.1f) || (mForward < 0.0f && velocity > 0.1f)) {
                 // Brake while we've not stopped yet
                 mForward = 0.0f;

@@ -135,7 +135,7 @@ public class DebugRenderer extends DebugRendererEm {
                     DebugRendererVertex mV = triangle.get_mV(j);
                     Float3 localPos = mV.get_mPosition();
                     tempVec3.Set(localPos.get_x(), localPos.get_y(), localPos.get_z());
-                    Vec3 worldPos = inModelMatrix.Multiply(tempVec3);
+                    Vec3 worldPos = inModelMatrix.MulVec3(tempVec3);
                     float worldPosX = worldPos.GetX();
                     float worldPosY = worldPos.GetY();
                     float worldPosZ = worldPos.GetZ();
@@ -174,7 +174,7 @@ public class DebugRenderer extends DebugRendererEm {
     private void updateTemp(DebugRendererVertex mV, Mat44 inModelMatrix, Vec3 temp) {
         Float3 mPosition = mV.get_mPosition();
         temp.Set(mPosition.get_x(), mPosition.get_y(), mPosition.get_z());
-        Vec3 vv = inModelMatrix.Multiply(temp);
+        Vec3 vv = inModelMatrix.MulVec3(temp);
         temp.Set(vv.GetX(), vv.GetY(), vv.GetZ());
     }
 
