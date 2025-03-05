@@ -16,6 +16,7 @@ import jolt.WheelSettings;
 import jolt.WheelSettingsWV;
 import jolt.WheeledVehicleControllerSettings;
 import jolt.example.samples.app.Layers;
+import jolt.jolt.Jolt;
 import jolt.jolt.core.Color;
 import jolt.jolt.math.Mat44;
 import jolt.jolt.math.Quat;
@@ -92,7 +93,7 @@ public class VehicleConstraintTest extends VehicleTest {
         // Create vehicle body
         Vec3 position = new Vec3(0, 5, 0);
         Shape car_shape = new OffsetCenterOfMassShapeSettings(new Vec3(0, -half_vehicle_height, 0), new BoxShape(new Vec3(half_vehicle_width, half_vehicle_height, half_vehicle_length))).Create().Get();
-        BodyCreationSettings car_body_settings = new BodyCreationSettings(car_shape, position, Quat.sRotation(Vec3.sAxisZ(), sInitialRollAngle), EMotionType.EMotionType_Dynamic, Layers.MOVING);
+        BodyCreationSettings car_body_settings = Jolt.BodyCreationSettings_New(car_shape, position, Quat.sRotation(Vec3.sAxisZ(), sInitialRollAngle), EMotionType.EMotionType_Dynamic, Layers.MOVING);
         car_body_settings.set_mOverrideMassProperties(EOverrideMassProperties.EOverrideMassProperties_CalculateInertia);
         car_body_settings.get_mMassPropertiesOverride().set_mMass(1500.0f);
         mCarBody = mBodyInterface.CreateBody(car_body_settings);

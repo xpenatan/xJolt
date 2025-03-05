@@ -55,6 +55,12 @@ interface DebugRendererImplCustom : DebugRendererEm {
     void DrawText3D([Const] Vec3 inPosition, [Const] any inString, unsigned long inStringLen, [Const] Color inColor, float inHeight);
 };
 
+interface Jolt {
+    [BindTo="BodyCreationSettings_New", NewObject] static BodyCreationSettings BodyCreationSettings_New_0();
+    [BindTo="BodyCreationSettings_New", NewObject] static BodyCreationSettings BodyCreationSettings_New_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
+    [BindTo="BodyCreationSettings_New", NewObject] static BodyCreationSettings BodyCreationSettings_New_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
+};
+
 interface JoltInterface {
     void JoltInterface([Const, Ref] JoltSettings inSettings);
     void Step(float inDeltaTime, long inCollisionSteps);
@@ -727,43 +733,6 @@ interface SoftBodyVertexTraits {
     static readonly attribute unsigned long mVelocityOffset;
 };
 
-interface PhysicsSystem {
-    void PhysicsSystem();
-    void Init(long inMaxBodies, long inNumBodyMutexes, long inMaxBodyPairs, long inMaxContactConstraints, [Const, Ref] BroadPhaseLayerInterface inBroadPhaseLayerInterface, [Const, Ref] ObjectVsBroadPhaseLayerFilter inObjectVsBroadPhaseLayerFilter, [Const, Ref] ObjectLayerPairFilter inObjectLayerPairFilter);
-    void SetGravity([Const, Ref] Vec3 inGravity);
-    [Value] Vec3 GetGravity();
-    [Const, Ref] PhysicsSettings GetPhysicsSettings();
-    void SetPhysicsSettings([Const, Ref] PhysicsSettings inPhysicsSettings);
-    unsigned long GetNumBodies();
-    unsigned long GetNumActiveBodies(EBodyType inBodyType);
-    unsigned long GetMaxBodies();
-    void GetBodies([Ref] BodyIDVector outBodies);
-    void GetActiveBodies(EBodyType inBodyType, [Ref] BodyIDVector outBodies);
-    [Const, Value] AABox GetBounds();
-    void AddConstraint(Constraint inConstraint);
-    void RemoveConstraint(Constraint inConstraint);
-    void SetContactListener(ContactListener inListener);
-    ContactListener GetContactListener();
-    void SetSoftBodyContactListener(SoftBodyContactListener inListener);
-    SoftBodyContactListener GetSoftBodyContactListener();
-    void OptimizeBroadPhase();
-    [Ref] BodyInterface GetBodyInterface();
-    [Ref] BodyInterface GetBodyInterfaceNoLock();
-    [Const, Ref] BodyLockInterfaceNoLock GetBodyLockInterfaceNoLock();
-    [Const, Ref] BodyLockInterfaceLocking GetBodyLockInterface();
-    [Const, Ref] BroadPhaseQuery GetBroadPhaseQuery();
-    [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQuery();
-    [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQueryNoLock();
-    void SaveState([Ref] StateRecorder inStream, optional EStateRecorderState inState);
-    boolean RestoreState([Ref] StateRecorder inStream);
-    void AddStepListener(PhysicsStepListener inListener);
-    void AddStepListener_1(VehicleConstraint inListener);
-    void RemoveStepListener(PhysicsStepListener inListener);
-    void SetBodyActivationListener(BodyActivationListener inListener);
-    [Const] BodyActivationListener GetBodyActivationListener();
-    boolean WereBodiesInContact([Const, Ref] BodyID inBodyID1, [Const, Ref] BodyID inBodyID2);
-};
-
 enum ECullMode {
     "ECullMode_CullBackFace",
     "ECullMode_CullFrontFace",
@@ -983,13 +952,65 @@ enum SoftBodySharedSettings_ELRAType {
 };
 
 [Prefix="JPH::"]
+interface PhysicsSystem {
+    void PhysicsSystem();
+    void Init(long inMaxBodies, long inNumBodyMutexes, long inMaxBodyPairs, long inMaxContactConstraints, [Const, Ref] BroadPhaseLayerInterface inBroadPhaseLayerInterface, [Const, Ref] ObjectVsBroadPhaseLayerFilter inObjectVsBroadPhaseLayerFilter, [Const, Ref] ObjectLayerPairFilter inObjectLayerPairFilter);
+    void SetGravity([Const, Ref] Vec3 inGravity);
+    [Value] Vec3 GetGravity();
+    [Const, Ref] PhysicsSettings GetPhysicsSettings();
+    void SetPhysicsSettings([Const, Ref] PhysicsSettings inPhysicsSettings);
+    unsigned long GetNumBodies();
+    unsigned long GetNumActiveBodies(EBodyType inBodyType);
+    unsigned long GetMaxBodies();
+    void GetBodies([Ref] BodyIDVector outBodies);
+    void GetActiveBodies(EBodyType inBodyType, [Ref] BodyIDVector outBodies);
+    [Const, Value] AABox GetBounds();
+    void AddConstraint(Constraint inConstraint);
+    void RemoveConstraint(Constraint inConstraint);
+    void SetContactListener(ContactListener inListener);
+    ContactListener GetContactListener();
+    void SetSoftBodyContactListener(SoftBodyContactListener inListener);
+    SoftBodyContactListener GetSoftBodyContactListener();
+    void OptimizeBroadPhase();
+    [Ref] BodyInterface GetBodyInterface();
+    [Ref] BodyInterface GetBodyInterfaceNoLock();
+    [Const, Ref] BodyLockInterfaceNoLock GetBodyLockInterfaceNoLock();
+    [Const, Ref] BodyLockInterfaceLocking GetBodyLockInterface();
+    [Const, Ref] BroadPhaseQuery GetBroadPhaseQuery();
+    [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQuery();
+    [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQueryNoLock();
+    void SaveState([Ref] StateRecorder inStream, optional EStateRecorderState inState);
+    boolean RestoreState([Ref] StateRecorder inStream);
+    [BindTo="AddStepListener"] void AddStepListener_0(PhysicsStepListener inListener);
+    [BindTo="AddStepListener"] void AddStepListener_1(VehicleConstraint inListener);
+    void RemoveStepListener(PhysicsStepListener inListener);
+    void SetBodyActivationListener(BodyActivationListener inListener);
+    [Const] BodyActivationListener GetBodyActivationListener();
+    boolean WereBodiesInContact([Const, Ref] BodyID inBodyID1, [Const, Ref] BodyID inBodyID2);
+};
+
+[Prefix="JPH::"]
 interface Color {
     void Color();
     attribute unsigned long mU32;
     [Operator="*", Value] Color Multiply([Const, Ref] Color other);
     [Value] Vec4 ToVec4();
 
-    [Value] static readonly attribute Color sGreen;
+    [Const, Value] static readonly attribute Color sBlack;
+    [Const, Value] static readonly attribute Color sDarkRed;
+    [Const, Value] static readonly attribute Color sRed;
+    [Const, Value] static readonly attribute Color sDarkGreen;
+    [Const, Value] static readonly attribute Color sGreen;
+    [Const, Value] static readonly attribute Color sDarkBlue;
+    [Const, Value] static readonly attribute Color sBlue;
+    [Const, Value] static readonly attribute Color sYellow;
+    [Const, Value] static readonly attribute Color sPurple;
+    [Const, Value] static readonly attribute Color sCyan;
+    [Const, Value] static readonly attribute Color sOrange;
+    [Const, Value] static readonly attribute Color sDarkOrange;
+    [Const, Value] static readonly attribute Color sGrey;
+    [Const, Value] static readonly attribute Color sLightGrey;
+    [Const, Value] static readonly attribute Color sWhite;
 };
 
 ////interface JPHString {
@@ -1038,6 +1059,7 @@ interface Vec3 {
     [Const, Value] Vec3 Cross([Const, Ref] Vec3 inRHS);
     float Dot([Const, Ref] Vec3 inRHS);
     [Operator="*", Value] Vec3 Multiply([Const, Ref] Vec3 other);
+    [Operator="*", Value] Vec3 MultiplyVector(float other);
 //    [Operator="+=", Ref] Vec3 Add([Const, Ref] Vec3 inV);
 //    [Operator="-=", Ref] Vec3 Sub([Const, Ref] Vec3 inV);
 //    [Operator="*=", Ref] Vec3 Mul(float inV);
@@ -1531,6 +1553,7 @@ TaperedCapsuleShape implements ConvexShape;
 [Prefix="JPH::", NoDelete]
 interface ConvexHullShapeSettings {
     void ConvexHullShapeSettings();
+    void ConvexHullShapeSettings([Const, Ref] ArrayVec3 inPoints, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
 
     [Value] attribute ArrayVec3 mPoints;
     attribute float mMaxConvexRadius;
@@ -2867,10 +2890,6 @@ interface MassProperties {
 
 [Prefix="JPH::"]
 interface BodyCreationSettings {
-// TODO overloading error in teavm
-    void BodyCreationSettings();
-    void BodyCreationSettings([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
-    void BodyCreationSettings([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
     [Const] ShapeSettings GetShapeSettings();
     void SetShapeSettings([Const] ShapeSettings inShape);
     [Value] ShapeResult ConvertShapeSettings();

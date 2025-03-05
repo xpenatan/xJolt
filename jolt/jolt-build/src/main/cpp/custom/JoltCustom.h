@@ -340,12 +340,18 @@ constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_None =
 constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_EuclideanDistance = SoftBodySharedSettings_ELRAType::EuclideanDistance;
 constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_GeodesicDistance = SoftBodySharedSettings_ELRAType::GeodesicDistance;
 
-// Java dont support class with multiple parents so this is a wrapper for overloading method
-class PhysicsSystem: public JPH::PhysicsSystem
+// Custom class to be able to create new instance and other things
+class Jolt
 {
 public:
-    void AddStepListener_1(JPH::VehicleConstraint* inListener) {
-        JPH::PhysicsSystem::AddStepListener(inListener);
+    static JPH::BodyCreationSettings* BodyCreationSettings_New() {
+        return new JPH::BodyCreationSettings();
+    }
+    static JPH::BodyCreationSettings* BodyCreationSettings_New(const JPH::ShapeSettings* inShape, JPH::RVec3Arg inPosition, JPH::QuatArg inRotation, JPH::EMotionType inMotionType, JPH::ObjectLayer inObjectLayer) {
+        return new JPH::BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
+    }
+    static JPH::BodyCreationSettings* BodyCreationSettings_New(const JPH::Shape* inShape, JPH::RVec3Arg inPosition, JPH::QuatArg inRotation, JPH::EMotionType inMotionType, JPH::ObjectLayer inObjectLayer) {
+        return new JPH::BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
     }
 };
 
@@ -429,7 +435,7 @@ public:
 
         // Init the physics system
         constexpr JPH::uint cNumBodyMutexes = 0;
-        mPhysicsSystem = new PhysicsSystem();
+        mPhysicsSystem = new JPH::PhysicsSystem();
         mPhysicsSystem->Init(inSettings.mMaxBodies, cNumBodyMutexes, inSettings.mMaxBodyPairs, inSettings.mMaxContactConstraints, *inSettings.mBroadPhaseLayerInterface, *inSettings.mObjectVsBroadPhaseLayerFilter, *inSettings.mObjectLayerPairFilter);
     }
 
@@ -454,7 +460,7 @@ public:
     }
 
     /// Access to the physics system
-    PhysicsSystem * GetPhysicsSystem()
+    JPH::PhysicsSystem * GetPhysicsSystem()
     {
         return mPhysicsSystem;
     }
@@ -500,7 +506,7 @@ private:
     JPH::BroadPhaseLayerInterface *mBroadPhaseLayerInterface = nullptr;
     JPH::ObjectVsBroadPhaseLayerFilter *mObjectVsBroadPhaseLayerFilter = nullptr;
     JPH::ObjectLayerPairFilter * mObjectLayerPairFilter = nullptr;
-    PhysicsSystem * mPhysicsSystem = nullptr;
+    JPH::PhysicsSystem * mPhysicsSystem = nullptr;
 };
 
 /// Helper class to extract triangles from the shape

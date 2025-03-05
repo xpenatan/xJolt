@@ -4,6 +4,7 @@ import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import jolt.example.samples.app.Layers;
 import jolt.example.samples.app.Test;
+import jolt.jolt.Jolt;
 import jolt.jolt.math.Quat;
 import jolt.jolt.math.Vec3;
 import jolt.jolt.physics.body.Body;
@@ -14,7 +15,7 @@ import static jolt.jolt.physics.EActivation.EActivation_Activate;
 
 public class BoxShapeTest extends Test {
 
-    static float JPH_PI = 3.14159265358979323846f;
+    public static float JPH_PI = 3.14159265358979323846f;
 
     @Override
     protected void initialize() {
@@ -54,7 +55,7 @@ public class BoxShapeTest extends Test {
         Vec3 inHalfExtentJolt = new Vec3(inHalfExtent.x, inHalfExtent.y, inHalfExtent.z);
         Vec3 inPositionJolt = new Vec3(inPosition.x, inPosition.y, inPosition.z);
         BoxShape bodyShape = new BoxShape(inHalfExtentJolt);
-        BodyCreationSettings bodySettings = new BodyCreationSettings(bodyShape, inPositionJolt, inRotation, EMotionType_Dynamic, Layers.MOVING);
+        BodyCreationSettings bodySettings = Jolt.BodyCreationSettings_New(bodyShape, inPositionJolt, inRotation, EMotionType_Dynamic, Layers.MOVING);
         Body body = mBodyInterface.CreateBody(bodySettings);
         inHalfExtentJolt.dispose();
         inPositionJolt.dispose();

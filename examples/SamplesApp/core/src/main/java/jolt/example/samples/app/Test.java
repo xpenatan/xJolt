@@ -7,6 +7,7 @@ import jolt.PhysicsMaterialList;
 import jolt.ShapeResult;
 import jolt.TriangleList;
 import jolt.example.samples.app.math.Perlin;
+import jolt.jolt.Jolt;
 import jolt.jolt.geometry.Triangle;
 import jolt.jolt.math.Quat;
 import jolt.jolt.math.Vec3;
@@ -62,7 +63,7 @@ public abstract class Test {
         Vec3 inPosition = new Vec3(0.0f, scale * -1.0f, 0.0f);
         Quat inRotation = Quat.sIdentity();
         BoxShape bodyShape = new BoxShape(inHalfExtent, 0.0f);
-        BodyCreationSettings bodySettings = new BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType_Static, Layers.NON_MOVING);
+        BodyCreationSettings bodySettings = Jolt.BodyCreationSettings_New(bodyShape, inPosition, inRotation, EMotionType_Static, Layers.NON_MOVING);
         Body body = mBodyInterface.CreateBody(bodySettings);
         mBodyInterface.AddBody(body.GetID(), EActivation_DontActivate);
         inHalfExtent.dispose();
@@ -134,7 +135,7 @@ public abstract class Test {
 //        System.out.println("ShapeResult GetError: " + data);
         var shape = shapeResult.Get();
         // Create body
-        var creationSettings = new BodyCreationSettings(shape, new Vec3(posX, posY, posZ), new Quat(0, 0, 0, 1), EMotionType_Static, Layers.NON_MOVING);
+        var creationSettings = Jolt.BodyCreationSettings_New(shape, new Vec3(posX, posY, posZ), new Quat(0, 0, 0, 1), EMotionType_Static, Layers.NON_MOVING);
         var body = mBodyInterface.CreateBody(creationSettings);
         creationSettings.dispose();
         addToScene(body, 0xc7c7c7);
@@ -183,7 +184,7 @@ public abstract class Test {
         }
 
         int NON_MOVING = 4;
-        Body floor = mBodyInterface.CreateBody(new BodyCreationSettings(new MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType.EMotionType_Static, NON_MOVING));
+        Body floor = mBodyInterface.CreateBody(Jolt.BodyCreationSettings_New(new MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType.EMotionType_Static, NON_MOVING));
         mBodyInterface.AddBody(floor.GetID(), EActivation.EActivation_DontActivate);
         return floor;
     }
