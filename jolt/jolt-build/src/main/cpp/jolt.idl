@@ -2364,6 +2364,7 @@ interface Body {
     [Const, Value] Vec3 GetWorldSpaceSurfaceNormal([Const, Ref] SubShapeID inSubShapeID, [Const, Ref] Vec3 inPosition);
     unsigned long long GetUserData();
     void SetUserData(unsigned long long inUserData);
+    void SetCollisionGroup([Const, Ref] CollisionGroup inGroup);
 };
 
 [Prefix="JPH::"]
