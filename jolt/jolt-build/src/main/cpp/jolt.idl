@@ -99,6 +99,7 @@ interface Vector2 {
 };
 
 interface ArrayVec3 {
+    void ArrayVec3();
     boolean empty();
     long size();
     [Ref] Vec3 at(long inIndex);

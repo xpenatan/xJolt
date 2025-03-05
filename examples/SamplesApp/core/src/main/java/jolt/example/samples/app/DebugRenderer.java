@@ -47,7 +47,11 @@ public class DebugRenderer extends DebugRendererEm {
     private boolean enable;
 
     public DebugRenderer() {
-        enable = true;
+        this(true);
+    }
+
+    public DebugRenderer(boolean enable) {
+        this.enable = enable;
         batch = new ModelBatch();
         environment = new Environment();
         environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1.f));
