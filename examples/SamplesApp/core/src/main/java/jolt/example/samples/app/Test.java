@@ -152,7 +152,7 @@ public abstract class Test {
 
     protected Body CreateMeshTerrain() {
         float scale = GetWorldScale();
-        int n = 100;
+        int n = 80;
         float max_height = scale * 3.0f;
         float cell_size = scale * 1.0f;
 
