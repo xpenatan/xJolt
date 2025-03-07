@@ -469,7 +469,7 @@ public:
     void ClearWorld() {
         JPH::PhysicsSystem& physicsSystem = *mPhysicsSystem;
 
-        // Step 1: Remove and delete all constraints
+        // Step 1: Remove all constraints
         JPH::Array<JPH::Ref<JPH::Constraint>> constraints = physicsSystem.GetConstraints();
         for (JPH::Ref<JPH::Constraint>& constraintRef : constraints) {
             if (constraintRef) { // Check if the reference is valid
