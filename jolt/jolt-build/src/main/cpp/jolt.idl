@@ -22,6 +22,16 @@ interface Jolt {
     [BindTo="New_Vec4", NewObject] static Vec4 New_Vec4_3([Ref] Vec3 inV, float inW);
 };
 
+interface JoltInterface {
+    void JoltInterface(BroadPhaseLayerInterface mBroadPhaseLayerInterface, ObjectVsBroadPhaseLayerFilter mObjectVsBroadPhaseLayerFilter, ObjectLayerPairFilter mObjectLayerPairFilter, optional unsigned long mMaxBodies, optional unsigned long mMaxBodyPairs, optional unsigned long mMaxContactConstraints);
+    void ClearWorld();
+    void Step(float inDeltaTime, long inCollisionSteps);
+    PhysicsSystem GetPhysicsSystem();
+    TempAllocator GetTempAllocator();
+    ObjectLayerPairFilter GetObjectLayerPairFilter();
+    ObjectVsBroadPhaseLayerFilter GetObjectVsBroadPhaseLayerFilter();
+};
+
 interface BodyManagerDrawSettings {
     void BodyManagerDrawSettings();
 
@@ -77,28 +87,6 @@ interface DebugRendererImplCustom : DebugRendererEm {
     void DrawLine([Const] Vec3 inFrom, [Const] Vec3 inTo, [Const] Color inColor);
     void DrawTriangle([Const] Vec3 inV1, [Const] Vec3 inV2, [Const]  Vec3 inV3, [Const] Color inColor, ECastShadow inCastShadow);
     void DrawText3D([Const] Vec3 inPosition, [Const] any inString, unsigned long inStringLen, [Const] Color inColor, float inHeight);
-};
-
-interface JoltInterface {
-    void JoltInterface([Const, Ref] JoltSettings inSettings);
-    void Step(float inDeltaTime, long inCollisionSteps);
-    PhysicsSystem GetPhysicsSystem();
-    TempAllocator GetTempAllocator();
-    ObjectLayerPairFilter GetObjectLayerPairFilter();
-    ObjectVsBroadPhaseLayerFilter GetObjectVsBroadPhaseLayerFilter();
-//    static unsigned long long sGetTotalMemory();
-//    static unsigned long long sGetFreeMemory();
-};
-
-interface JoltSettings {
-    void JoltSettings();
-
-    attribute unsigned long mMaxBodies;
-    attribute unsigned long mMaxBodyPairs;
-    attribute unsigned long mMaxContactConstraints;
-    attribute BroadPhaseLayerInterface mBroadPhaseLayerInterface;
-    attribute ObjectVsBroadPhaseLayerFilter mObjectVsBroadPhaseLayerFilter;
-    attribute ObjectLayerPairFilter mObjectLayerPairFilter;
 };
 
 interface Vector2 {
@@ -1006,7 +994,8 @@ interface PhysicsSystem {
     boolean RestoreState([Ref] StateRecorder inStream);
     [BindTo="AddStepListener"] void AddStepListener_0(PhysicsStepListener inListener);
     [BindTo="AddStepListener"] void AddStepListener_1(VehicleConstraint inListener);
-    void RemoveStepListener(PhysicsStepListener inListener);
+    [BindTo="RemoveStepListener"] void RemoveStepListener_0(PhysicsStepListener inListener);
+    [BindTo="RemoveStepListener"] void RemoveStepListener_1(VehicleConstraint inListener);
     void SetBodyActivationListener(BodyActivationListener inListener);
     [Const] BodyActivationListener GetBodyActivationListener();
     boolean WereBodiesInContact([Const, Ref] BodyID inBodyID1, [Const, Ref] BodyID inBodyID2);

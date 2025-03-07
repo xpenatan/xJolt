@@ -391,15 +391,6 @@ public:
     }
 };
 
-// Helper class to store information about the memory layout of SoftBodyVertex
-class SoftBodyVertexTraits
-{
-public:
-    static constexpr JPH::uint mPreviousPositionOffset = offsetof(JPH::SoftBodyVertex, mPreviousPosition);
-    static constexpr JPH::uint mPositionOffset = offsetof(JPH::SoftBodyVertex, mPosition);
-    static constexpr JPH::uint mVelocityOffset = offsetof(JPH::SoftBodyVertex, mVelocity);
-};
-
 // Callback for traces
 static void TraceImpl(const char *inFMT, ...)
 {
@@ -427,25 +418,20 @@ static bool AssertFailedImpl(const char *inExpression, const char *inMessage, co
 
 #endif // JPH_ENABLE_ASSERTS
 
-/// Settings to pass to constructor
-class JoltSettings
-{
-public:
-    JPH::uint mMaxBodies = 10240;
-    JPH::uint mMaxBodyPairs = 65536;
-    JPH::uint mMaxContactConstraints = 10240;
-    JPH::uint mTempAllocatorSize = 10 * 1024 * 1024;
-    JPH::BroadPhaseLayerInterface *mBroadPhaseLayerInterface = nullptr;
-    JPH::ObjectVsBroadPhaseLayerFilter *mObjectVsBroadPhaseLayerFilter = nullptr;
-    JPH::ObjectLayerPairFilter * mObjectLayerPairFilter = nullptr;
-};
-
 /// Main API for JavaScript
 class JoltInterface
 {
 public:
     /// Constructor
-    JoltInterface(const JoltSettings &inSettings)
+    JoltInterface(
+        JPH::BroadPhaseLayerInterface *mBroadPhaseLayerInterface,
+        JPH::ObjectVsBroadPhaseLayerFilter *mObjectVsBroadPhaseLayerFilter,
+        JPH::ObjectLayerPairFilter * mObjectLayerPairFilter,
+        JPH::uint mMaxBodies = 10240,
+        JPH::uint mMaxBodyPairs = 65536,
+        JPH::uint mMaxContactConstraints = 10240,
+        JPH::uint mTempAllocatorSize = 10 * 1024 * 1024
+    )
     {
         // Install callbacks
         JPH::Trace = TraceImpl;
@@ -458,21 +444,12 @@ public:
         JPH::RegisterTypes();
 
         // Init temp allocator
-        mTempAllocator = new JPH::TempAllocatorImpl(inSettings.mTempAllocatorSize);
-
-        // Check required objects
-        if (inSettings.mBroadPhaseLayerInterface == nullptr || inSettings.mObjectVsBroadPhaseLayerFilter == nullptr || inSettings.mObjectLayerPairFilter == nullptr)
-            JPH::Trace("Error: BroadPhaseLayerInterface, ObjectVsBroadPhaseLayerFilter and ObjectLayerPairFilter must be provided");
-
-        // Store interfaces
-        mBroadPhaseLayerInterface = inSettings.mBroadPhaseLayerInterface;
-        mObjectVsBroadPhaseLayerFilter = inSettings.mObjectVsBroadPhaseLayerFilter;
-        mObjectLayerPairFilter = inSettings.mObjectLayerPairFilter;
+        mTempAllocator = new JPH::TempAllocatorImpl(mTempAllocatorSize);
 
         // Init the physics system
         constexpr JPH::uint cNumBodyMutexes = 0;
         mPhysicsSystem = new JPH::PhysicsSystem();
-        mPhysicsSystem->Init(inSettings.mMaxBodies, cNumBodyMutexes, inSettings.mMaxBodyPairs, inSettings.mMaxContactConstraints, *inSettings.mBroadPhaseLayerInterface, *inSettings.mObjectVsBroadPhaseLayerFilter, *inSettings.mObjectLayerPairFilter);
+        mPhysicsSystem->Init(mMaxBodies, cNumBodyMutexes, mMaxBodyPairs, mMaxContactConstraints, *mBroadPhaseLayerInterface, *mObjectVsBroadPhaseLayerFilter, *mObjectLayerPairFilter);
     }
 
     /// Destructor
@@ -487,6 +464,31 @@ public:
         delete JPH::Factory::sInstance;
         JPH::Factory::sInstance = nullptr;
         JPH::UnregisterTypes();
+    }
+
+    void ClearWorld() {
+        JPH::PhysicsSystem& physicsSystem = *mPhysicsSystem;
+
+        // Step 1: Remove and delete all constraints
+        JPH::Array<JPH::Ref<JPH::Constraint>> constraints = physicsSystem.GetConstraints();
+        for (JPH::Ref<JPH::Constraint>& constraintRef : constraints) {
+            if (constraintRef) { // Check if the reference is valid
+                JPH::Constraint* constraint = constraintRef.GetPtr();
+                physicsSystem.RemoveConstraint(constraint);
+            }
+        }
+
+        // Step 2: Remove and destroy all bodies
+        JPH::BodyInterface& bodyInterface = physicsSystem.GetBodyInterface();
+        JPH::BodyIDVector bodyIDs;
+        physicsSystem.GetBodies(bodyIDs); // Fills the vector with all body IDs
+
+        if (!bodyIDs.empty()) {
+            // Remove bodies from the simulation
+            bodyInterface.RemoveBodies(bodyIDs.data(), bodyIDs.size());
+            // Destroy bodies to free their memory
+            bodyInterface.DestroyBodies(bodyIDs.data(), bodyIDs.size());
+        }
     }
 
     /// Step the world
@@ -543,6 +545,15 @@ private:
     JPH::ObjectVsBroadPhaseLayerFilter *mObjectVsBroadPhaseLayerFilter = nullptr;
     JPH::ObjectLayerPairFilter * mObjectLayerPairFilter = nullptr;
     JPH::PhysicsSystem * mPhysicsSystem = nullptr;
+};
+
+// Helper class to store information about the memory layout of SoftBodyVertex
+class SoftBodyVertexTraits
+{
+public:
+    static constexpr JPH::uint mPreviousPositionOffset = offsetof(JPH::SoftBodyVertex, mPreviousPosition);
+    static constexpr JPH::uint mPositionOffset = offsetof(JPH::SoftBodyVertex, mPosition);
+    static constexpr JPH::uint mVelocityOffset = offsetof(JPH::SoftBodyVertex, mVelocity);
 };
 
 /// Helper class to extract triangles from the shape

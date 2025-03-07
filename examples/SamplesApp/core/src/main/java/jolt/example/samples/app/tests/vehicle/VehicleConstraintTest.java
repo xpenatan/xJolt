@@ -321,6 +321,7 @@ public class VehicleConstraintTest extends VehicleTest {
     @Override
     public void dispose() {
         super.dispose();
+        mPhysicsSystem.RemoveStepListener(mVehicleConstraint);
     }
 
     private Vector3 vec = new Vector3();

@@ -6,17 +6,11 @@ import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
-import com.badlogic.gdx.math.Matrix4;
-import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import jolt.BodyIDVector;
 import jolt.BodyManagerDrawSettings;
 import jolt.JoltInterface;
-import jolt.JoltSettings;
-import jolt.jolt.math.Mat44;
-import jolt.jolt.math.Vec3;
 import jolt.jolt.physics.PhysicsSystem;
 import jolt.jolt.physics.body.BodyID;
 import jolt.jolt.physics.body.BodyInterface;
@@ -43,10 +37,7 @@ public class SamplesApp extends InputAdapter {
 
     public void setup() {
         tests = new Tests();
-        JoltSettings settings = new JoltSettings();
-        setupCollisionFiltering(settings);
-        jolt = new JoltInterface(settings);
-        settings.dispose();
+        jolt = setupJolt();
         physicsSystem = jolt.GetPhysicsSystem();
         debugRenderer = new DebugRenderer();
         debugSettings = new BodyManagerDrawSettings();
@@ -132,12 +123,13 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void dispose() {
+        clearBodies();
+        jolt.dispose();
         debugRenderer.dispose();
-        physicsSystem.dispose();
         debugSettings.dispose();
     }
 
-    private void setupCollisionFiltering(JoltSettings settings) {
+    private JoltInterface setupJolt() {
         // Layer that objects can be in, determines which other objects it can collide with
         // Typically you at least want to have 1 layer for moving bodies and 1 layer for static bodies, but you can have more
         // layers if you want. E.g. you could have a layer for high detail collision (which is not used by the physics simulation
@@ -159,21 +151,12 @@ public class SamplesApp extends InputAdapter {
         bpInterface.MapObjectToBroadPhaseLayer(Layers.NON_MOVING, BP_LAYER_NON_MOVING);
         bpInterface.MapObjectToBroadPhaseLayer(Layers.MOVING, BP_LAYER_MOVING);
 
-        settings.set_mObjectLayerPairFilter(objectFilter);
-        settings.set_mBroadPhaseLayerInterface(bpInterface);
-        ObjectVsBroadPhaseLayerFilterTable broadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(settings.get_mBroadPhaseLayerInterface(), NUM_BROAD_PHASE_LAYERS, settings.get_mObjectLayerPairFilter(), Layers.NUM_LAYERS);
-        settings.set_mObjectVsBroadPhaseLayerFilter(broadPhaseLayerFilter);
+        ObjectVsBroadPhaseLayerFilterTable broadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(bpInterface, NUM_BROAD_PHASE_LAYERS, objectFilter, Layers.NUM_LAYERS);
+        return new JoltInterface(bpInterface, broadPhaseLayerFilter, objectFilter);
     }
 
     private void clearBodies() {
-        BodyInterface bodyInterface = physicsSystem.GetBodyInterface();
-        physicsSystem.GetBodies(bodyIDVector);
-        int size = bodyIDVector.size();
-        for(int i = 0; i < size; i++) {
-            BodyID bodyId = bodyIDVector.at(i);
-            bodyInterface.RemoveBody(bodyId);
-            bodyInterface.DestroyBody(bodyId);
-        }
+        jolt.ClearWorld();
     }
 
     @Override

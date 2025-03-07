@@ -1,8 +1,6 @@
 package jolt.example.samples.app.tests.vehicle;
 
 import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.utils.Array;
 import jolt.ArrayVec3;
 import jolt.ConvexHullShapeSettings;
 import jolt.DistanceConstraintSettings;
@@ -14,7 +12,6 @@ import jolt.jolt.math.Quat;
 import jolt.jolt.math.Vec3;
 import jolt.jolt.physics.EActivation;
 import jolt.jolt.physics.body.Body;
-import jolt.jolt.physics.body.BodyCreationSettings;
 import jolt.jolt.physics.collision.CollisionGroup;
 import jolt.jolt.physics.collision.GroupFilterTable;
 import jolt.jolt.physics.collision.shape.BoxShape;
