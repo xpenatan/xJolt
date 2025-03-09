@@ -3,23 +3,23 @@
 // ##################################################
 
 interface Jolt {
-    [BindTo="New_BodyCreationSettings", NewObject] static BodyCreationSettings New_BodyCreationSettings_0();
-    [BindTo="New_BodyCreationSettings", NewObject] static BodyCreationSettings New_BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
-    [BindTo="New_BodyCreationSettings", NewObject] static BodyCreationSettings New_BodyCreationSettings_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer);
+    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_0(); //[-NEW_OBJECT]
+    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
+    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
 
-    [BindTo="New_Mat44", NewObject] static Mat44 New_Mat44_0();
-    [BindTo="New_Mat44", NewObject] static Mat44 New_Mat44_1([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec4 inC4);
-    [BindTo="New_Mat44", NewObject] static Mat44 New_Mat44_2([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec3 inC4);
+    [BindTo="New_Mat44"] static Mat44 New_Mat44_0(); //[-NEW_OBJECT]
+    [BindTo="New_Mat44"] static Mat44 New_Mat44_1([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec4 inC4); //[-NEW_OBJECT]
+    [BindTo="New_Mat44"] static Mat44 New_Mat44_2([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec3 inC4); //[-NEW_OBJECT]
 
-    [BindTo="New_Vec3", NewObject] static Vec3 New_Vec3_0();
-    [BindTo="New_Vec3", NewObject] static Vec3 New_Vec3_1(float inX, float inY, float inZ);
-    [BindTo="New_Vec3", NewObject] static Vec3 New_Vec3_2([Const, Ref] Vec3 inRHS);
-    [BindTo="New_Vec3", NewObject] static Vec3 New_Vec3_3([Const, Ref] Float3 inV);
+    [BindTo="New_Vec3"] static Vec3 New_Vec3_0(); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 New_Vec3_1(float inX, float inY, float inZ); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 New_Vec3_2([Const, Ref] Vec3 inRHS); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 New_Vec3_3([Const, Ref] Float3 inV); //[-NEW_OBJECT]
 
-    [BindTo="New_Vec4", NewObject] static Vec4 New_Vec4_0();
-    [BindTo="New_Vec4", NewObject] static Vec4 New_Vec4_1(float inX, float inY, float inZ, float inW);
-    [BindTo="New_Vec4", NewObject] static Vec4 New_Vec4_2([Const, Ref] Vec4 inV);
-    [BindTo="New_Vec4", NewObject] static Vec4 New_Vec4_3([Ref] Vec3 inV, float inW);
+    [BindTo="New_Vec4"] static Vec4 New_Vec4_0(); //[-NEW_OBJECT, MEM_OWN]
+    [BindTo="New_Vec4"] static Vec4 New_Vec4_1(float inX, float inY, float inZ, float inW); //[-NEW_OBJECT]
+    [BindTo="New_Vec4"] static Vec4 New_Vec4_2([Const, Ref] Vec4 inV); //[-NEW_OBJECT]
+    [BindTo="New_Vec4"] static Vec4 New_Vec4_3([Ref] Vec3 inV, float inW); //[-NEW_OBJECT]
 };
 
 interface JoltInterface {
@@ -2374,16 +2374,16 @@ interface Body {
 
 [Prefix="JPH::"]
 interface BodyInterface {
-    [NewObject] Body CreateBody([Const, Ref] BodyCreationSettings inSettings);
-    [NewObject] Body CreateSoftBody([Const, Ref] SoftBodyCreationSettings inSettings);
+    Body CreateBody([Const, Ref] BodyCreationSettings inSettings); //[-NEW_OBJECT, NOT_MEM_OWN]
+    Body CreateSoftBody([Const, Ref] SoftBodyCreationSettings inSettings); //[-NEW_OBJECT, NOT_MEM_OWN]
     void CreateBodyWithID([Const, Ref] BodyID inBodyID, [Const, Ref] BodyCreationSettings inSettings);
     void CreateSoftBodyWithID([Const, Ref] BodyID inBodyID, [Const, Ref] SoftBodyCreationSettings inSettings);
-    [NewObject] Body CreateBodyWithoutID([Const, Ref] BodyCreationSettings inSettings);
-    [NewObject] Body CreateSoftBodyWithoutID([Const, Ref] SoftBodyCreationSettings inSettings);
+    Body CreateBodyWithoutID([Const, Ref] BodyCreationSettings inSettings); //[-NEW_OBJECT, NOT_MEM_OWN]
+    Body CreateSoftBodyWithoutID([Const, Ref] SoftBodyCreationSettings inSettings); //[-NEW_OBJECT, NOT_MEM_OWN]
     void DestroyBodyWithoutID(Body inBody);
     boolean AssignBodyID(Body ioBody);
     boolean AssignBodyID(Body ioBody, [Const, Ref] BodyID inBodyID);
-    [NewObject] Body UnassignBodyID([Const, Ref] BodyID inBodyID); // TODO: Need NewObject?
+    Body UnassignBodyID([Const, Ref] BodyID inBodyID);
     void DestroyBody([Const, Ref] BodyID inBodyID);
     void AddBody([Const, Ref] BodyID inBodyID, EActivation inActivationMode);
     void RemoveBody([Const, Ref] BodyID inBodyID);

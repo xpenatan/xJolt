@@ -77,6 +77,7 @@ public abstract class Test {
         BoxShape bodyShape = new BoxShape(inHalfExtent, 0.0f);
         BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType_Static, Layers.NON_MOVING);
         Body body = mBodyInterface.CreateBody(bodySettings);
+        bodySettings.dispose();
         mBodyInterface.AddBody(body.GetID(), EActivation_DontActivate);
         inHalfExtent.dispose();
         inPosition.dispose();
@@ -196,7 +197,9 @@ public abstract class Test {
         }
 
         int NON_MOVING = 4;
-        Body floor = mBodyInterface.CreateBody(Jolt.New_BodyCreationSettings(new MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType.EMotionType_Static, NON_MOVING));
+        BodyCreationSettings bodyCreationSettings = Jolt.New_BodyCreationSettings(new MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType_Static, NON_MOVING);
+        Body floor = mBodyInterface.CreateBody(bodyCreationSettings);
+        bodyCreationSettings.dispose();
         mBodyInterface.AddBody(floor.GetID(), EActivation.EActivation_DontActivate);
         return floor;
     }

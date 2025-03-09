@@ -57,6 +57,7 @@ public class BoxShapeTest extends Test {
         BoxShape bodyShape = new BoxShape(inHalfExtentJolt);
         BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, inPositionJolt, inRotation, EMotionType_Dynamic, Layers.MOVING);
         Body body = mBodyInterface.CreateBody(bodySettings);
+        bodySettings.dispose();
         inHalfExtentJolt.dispose();
         inPositionJolt.dispose();
         return body;

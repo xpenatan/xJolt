@@ -113,6 +113,7 @@ public class VehicleConstraintTest extends VehicleTest {
         car_body_settings.set_mOverrideMassProperties(EOverrideMassProperties.EOverrideMassProperties_CalculateInertia);
         car_body_settings.get_mMassPropertiesOverride().set_mMass(1500.0f);
         mCarBody = mBodyInterface.CreateBody(car_body_settings);
+        car_body_settings.dispose();
         mBodyInterface.AddBody(mCarBody.GetID(), EActivation.EActivation_Activate);
 
         // Create vehicle constraint
