@@ -344,6 +344,9 @@ constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_Geodes
 class Jolt
 {
 public:
+    static JPH::PhysicsSystem* New_PhysicsSystem() {
+        return new JPH::PhysicsSystem();
+    }
     static JPH::BodyCreationSettings* New_BodyCreationSettings() {
         return new JPH::BodyCreationSettings();
     }

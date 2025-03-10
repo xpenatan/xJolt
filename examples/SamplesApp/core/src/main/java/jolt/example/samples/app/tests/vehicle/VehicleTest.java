@@ -73,8 +73,10 @@ public abstract class VehicleTest extends Test {
                 part = mBodyInterface.CreateBody(bodyCreationSettings);
                 bodyCreationSettings.dispose();
             }
-            part.SetCollisionGroup(new CollisionGroup(group_filter, 1, i));
+            CollisionGroup collisionGroup = new CollisionGroup(group_filter, 1, i);
+            part.SetCollisionGroup(collisionGroup);
             part.SetFriction(1.0f);
+            collisionGroup.dispose();
             mBodyInterface.AddBody(part.GetID(), EActivation.EActivation_Activate);
 
             if (prev_part != null) {
@@ -86,6 +88,8 @@ public abstract class VehicleTest extends Test {
                 dc.set_mPoint1(prev_pos.Add(Jolt.New_Vec3(part_half_size.GetX(), 0, part_half_size.GetZ())));
                 dc.set_mPoint2(pos.Add(Jolt.New_Vec3(part_half_size.GetX(), 0, -part_half_size.GetZ())));
                 mPhysicsSystem.AddConstraint(dc.Create(prev_part, part));
+
+                dc.dispose();
             }
 
             prev_part = part;
@@ -94,7 +98,9 @@ public abstract class VehicleTest extends Test {
     }
 
     private void createWall() {
-        Shape box_shape = new BoxShape(Jolt.New_Vec3(0.5f, 0.5f, 0.5f));
+        Vec3 vec3 = Jolt.New_Vec3(0.5f, 0.5f, 0.5f);
+        Shape box_shape = new BoxShape(vec3);
+        vec3.dispose();
         for (int i = 0; i < 3; ++i) {
             for (int j = i / 2; j < 5 - (i + 1) / 2; ++j)
             {
@@ -102,6 +108,7 @@ public abstract class VehicleTest extends Test {
                 BodyCreationSettings bodyCreationSettings = Jolt.New_BodyCreationSettings(box_shape, position, Quat.sIdentity(), EMotionType.EMotionType_Dynamic, Layers.MOVING);
                 mBodyInterface.CreateAndAddBody(bodyCreationSettings, EActivation.EActivation_Activate);
                 bodyCreationSettings.dispose();
+                position.dispose();
             }
         }
     }
@@ -116,6 +123,7 @@ public abstract class VehicleTest extends Test {
                 BodyCreationSettings bodyCreationSettings = Jolt.New_BodyCreationSettings(box_shape, position, Quat.sIdentity(), EMotionType.EMotionType_Dynamic, Layers.MOVING);
                 mBodyInterface.CreateAndAddBody(bodyCreationSettings, EActivation.EActivation_Activate);
                 bodyCreationSettings.dispose();
+                position.dispose();
             }
 
 
@@ -131,10 +139,15 @@ public abstract class VehicleTest extends Test {
                     Vec3 vec3 = Vec3.sUnitSpherical(theta, phi);
                     Vec3 vec = Jolt.New_Vec3(vec3.GetX() * value, vec3.GetY() * value, vec3.GetZ() * value);
                     points.push_back(vec);
+                    vec.dispose();
                 }
-                BodyCreationSettings bodyCreationSettings = Jolt.New_BodyCreationSettings(new ConvexHullShapeSettings(points), Jolt.New_Vec3(-5.0f + 0.5f * j, 2.0f, 15.0f + 0.5f * i), Quat.sIdentity(), EMotionType.EMotionType_Dynamic, Layers.MOVING);
+                ConvexHullShapeSettings convexHullShapeSettings = new ConvexHullShapeSettings(points);
+                Vec3 vec3 = Jolt.New_Vec3(-5.0f + 0.5f * j, 2.0f, 15.0f + 0.5f * i);
+                BodyCreationSettings bodyCreationSettings = Jolt.New_BodyCreationSettings(convexHullShapeSettings, vec3, Quat.sIdentity(), EMotionType.EMotionType_Dynamic, Layers.MOVING);
                 mBodyInterface.CreateAndAddBody(bodyCreationSettings, EActivation.EActivation_Activate);
                 bodyCreationSettings.dispose();
+                points.dispose();
+                vec3.dispose();
             }
         }
     }

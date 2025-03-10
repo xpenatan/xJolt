@@ -144,15 +144,15 @@ public class SamplesApp extends InputAdapter {
         // You can have a 1-on-1 mapping between object layers and broadphase layers (like in this case) but if you have
         // many object layers you'll be creating many broad phase trees, which is not efficient.
 
-        BroadPhaseLayer BP_LAYER_NON_MOVING = new BroadPhaseLayer((short)0);
-        BroadPhaseLayer BP_LAYER_MOVING = new BroadPhaseLayer((short)1);
         int NUM_BROAD_PHASE_LAYERS = 2;
         BroadPhaseLayerInterfaceTable bpInterface = new BroadPhaseLayerInterfaceTable(Layers.NUM_LAYERS, NUM_BROAD_PHASE_LAYERS);
+        BroadPhaseLayer BP_LAYER_NON_MOVING = new BroadPhaseLayer((short)0);
         bpInterface.MapObjectToBroadPhaseLayer(Layers.NON_MOVING, BP_LAYER_NON_MOVING);
+        BroadPhaseLayer BP_LAYER_MOVING = new BroadPhaseLayer((short)1);
         bpInterface.MapObjectToBroadPhaseLayer(Layers.MOVING, BP_LAYER_MOVING);
 
-        ObjectVsBroadPhaseLayerFilterTable broadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(bpInterface, NUM_BROAD_PHASE_LAYERS, objectFilter, Layers.NUM_LAYERS);
-        return new JoltInterface(bpInterface, broadPhaseLayerFilter, objectFilter);
+        ObjectVsBroadPhaseLayerFilterTable mObjectVsBroadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(bpInterface, NUM_BROAD_PHASE_LAYERS, objectFilter, Layers.NUM_LAYERS);
+        return new JoltInterface(bpInterface, mObjectVsBroadPhaseLayerFilter, objectFilter);
     }
 
     private void clearBodies() {

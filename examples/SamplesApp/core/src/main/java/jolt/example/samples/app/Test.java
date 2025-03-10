@@ -77,10 +77,11 @@ public abstract class Test {
         BoxShape bodyShape = new BoxShape(inHalfExtent, 0.0f);
         BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType_Static, Layers.NON_MOVING);
         Body body = mBodyInterface.CreateBody(bodySettings);
-        bodySettings.dispose();
         mBodyInterface.AddBody(body.GetID(), EActivation_DontActivate);
+        bodySettings.dispose();
         inHalfExtent.dispose();
         inPosition.dispose();
+        inRotation.dispose();
         return body;
     }
 
@@ -148,9 +149,11 @@ public abstract class Test {
 //        System.out.println("ShapeResult GetError: " + data);
         var shape = shapeResult.Get();
         // Create body
-        var creationSettings = Jolt.New_BodyCreationSettings(shape, Jolt.New_Vec3(posX, posY, posZ), new Quat(0, 0, 0, 1), EMotionType_Static, Layers.NON_MOVING);
+        Vec3 vec3 = Jolt.New_Vec3(posX, posY, posZ);
+        var creationSettings = Jolt.New_BodyCreationSettings(shape, vec3, new Quat(0, 0, 0, 1), EMotionType_Static, Layers.NON_MOVING);
         var body = mBodyInterface.CreateBody(creationSettings);
         creationSettings.dispose();
+        vec3.dispose();
         addToScene(body, 0xc7c7c7);
     }
 
@@ -191,8 +194,17 @@ public abstract class Test {
                 Vec3 v3 = Jolt.New_Vec3(x1, heights[x][z + 1], z2);
                 Vec3 v4 = Jolt.New_Vec3(x2, heights[x + 1][z + 1], z2);
 
-                triangles.push_back(new Triangle(v1, v3, v4));
-                triangles.push_back(new Triangle(v1, v4, v2));
+                Triangle triangle1 = new Triangle(v1, v3, v4);
+                Triangle triangle2 = new Triangle(v1, v4, v2);
+                triangles.push_back(triangle1);
+                triangles.push_back(triangle2);
+
+                triangle1.dispose();
+                triangle2.dispose();
+                v1.dispose();
+                v2.dispose();
+                v3.dispose();
+                v4.dispose();
             }
         }
 
