@@ -10,40 +10,31 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import jolt.BodyIDVector;
 import jolt.BodyManagerDrawSettings;
-import jolt.JoltInterface;
-import jolt.jolt.physics.PhysicsSystem;
-import jolt.jolt.physics.body.BodyID;
-import jolt.jolt.physics.body.BodyInterface;
-import jolt.jolt.physics.collision.ObjectLayerPairFilterTable;
-import jolt.jolt.physics.collision.broadphase.BroadPhaseLayer;
-import jolt.jolt.physics.collision.broadphase.BroadPhaseLayerInterfaceTable;
-import jolt.jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilterTable;
+import jolt.example.samples.app.jolt.JoltInstance;
 
 public class SamplesApp extends InputAdapter {
     private boolean isPaused;
 
     private Test test;
 
-    private JoltInterface jolt;
-    private PhysicsSystem physicsSystem;
     private DebugRenderer debugRenderer;
     private BodyManagerDrawSettings debugSettings;
-    private BodyIDVector bodyIDVector;
 
     private PerspectiveCamera camera;
     private ScreenViewport viewport;
     private CameraInputController cameraController;
     private Tests tests;
 
+    private JoltInstance joltInstance;
+
     public void setup() {
         tests = new Tests();
-        jolt = setupJolt();
-        physicsSystem = jolt.GetPhysicsSystem();
+
+        joltInstance = new JoltInstance();
         debugRenderer = new DebugRenderer();
         debugSettings = new BodyManagerDrawSettings();
 //        debugSettings.set_mDrawShapeWireframe(true);
 //        debugSettings.set_mDrawShapeColor(EShapeColor.EShapeColor_SleepColor);
-        bodyIDVector = new BodyIDVector();
 
         camera = new PerspectiveCamera();
         viewport = new ScreenViewport(camera);
@@ -93,7 +84,7 @@ public class SamplesApp extends InputAdapter {
         clearBodies();
         isPaused = true;
         test = tests.getTest(testClass);
-        test.setPhysicsSystem(physicsSystem);
+        test.setPhysicsSystem(joltInstance.getPhysicsSystem());
         test.setDebugRenderer(debugRenderer);
         test.initialize();
         test.initializeCamera(camera);
@@ -103,7 +94,7 @@ public class SamplesApp extends InputAdapter {
         camera.update();
         viewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
         debugRenderer.begin(camera);
-        debugRenderer.DrawBodies(physicsSystem, debugSettings);
+        debugRenderer.DrawBodies(joltInstance.getPhysicsSystem(), debugSettings);
         debugRenderer.end();
     }
 
@@ -115,7 +106,7 @@ public class SamplesApp extends InputAdapter {
             test.prePhysicsUpdate(isPlaying);
         }
         if(isPlaying) {
-            jolt.Step(deltaTime, numSteps);
+            joltInstance.update(deltaTime, numSteps);
         }
         if(test != null) {
             test.postPhysicsUpdate(isPlaying, deltaTime);
@@ -124,39 +115,13 @@ public class SamplesApp extends InputAdapter {
 
     public void dispose() {
         clearBodies();
-        jolt.dispose();
         debugRenderer.dispose();
         debugSettings.dispose();
-    }
-
-    private JoltInterface setupJolt() {
-        // Layer that objects can be in, determines which other objects it can collide with
-        // Typically you at least want to have 1 layer for moving bodies and 1 layer for static bodies, but you can have more
-        // layers if you want. E.g. you could have a layer for high detail collision (which is not used by the physics simulation
-        // but only if you do collision testing).
-
-        ObjectLayerPairFilterTable objectFilter = new ObjectLayerPairFilterTable(Layers.NUM_LAYERS);
-        objectFilter.EnableCollision(Layers.NON_MOVING, Layers.MOVING);
-        objectFilter.EnableCollision(Layers.MOVING, Layers.MOVING);
-
-        // Each broadphase layer results in a separate bounding volume tree in the broad phase. You at least want to have
-        // a layer for non-moving and moving objects to avoid having to update a tree full of static objects every frame.
-        // You can have a 1-on-1 mapping between object layers and broadphase layers (like in this case) but if you have
-        // many object layers you'll be creating many broad phase trees, which is not efficient.
-
-        int NUM_BROAD_PHASE_LAYERS = 2;
-        BroadPhaseLayerInterfaceTable bpInterface = new BroadPhaseLayerInterfaceTable(Layers.NUM_LAYERS, NUM_BROAD_PHASE_LAYERS);
-        BroadPhaseLayer BP_LAYER_NON_MOVING = new BroadPhaseLayer((short)0);
-        bpInterface.MapObjectToBroadPhaseLayer(Layers.NON_MOVING, BP_LAYER_NON_MOVING);
-        BroadPhaseLayer BP_LAYER_MOVING = new BroadPhaseLayer((short)1);
-        bpInterface.MapObjectToBroadPhaseLayer(Layers.MOVING, BP_LAYER_MOVING);
-
-        ObjectVsBroadPhaseLayerFilterTable mObjectVsBroadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(bpInterface, NUM_BROAD_PHASE_LAYERS, objectFilter, Layers.NUM_LAYERS);
-        return new JoltInterface(bpInterface, mObjectVsBroadPhaseLayerFilter, objectFilter);
+        joltInstance.dispose();
     }
 
     private void clearBodies() {
-        jolt.ClearWorld();
+        joltInstance.clearWorld();
     }
 
     @Override

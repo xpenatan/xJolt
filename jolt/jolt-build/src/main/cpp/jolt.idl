@@ -6,6 +6,7 @@ interface Jolt {
     static PhysicsSystem New_PhysicsSystem(); //[-NEW_OBJECT]
     static Factory New_Factory(); //[-NEW_OBJECT]
     static TempAllocatorImpl New_TempAllocatorImpl(unsigned long inSize); //[-NEW_OBJECT]
+    static JobSystemThreadPool New_JobSystemThreadPool(optional long inNumThreads, optional unsigned long inMaxJobs, optional unsigned long inMaxBarriers); //[-NEW_OBJECT]
 
     [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_0(); //[-NEW_OBJECT]
     [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
@@ -29,16 +30,6 @@ interface Jolt {
     static void RegisterTypes();
     static void UnregisterTypes();
     static void ClearWorld([Ref] PhysicsSystem physicsSystem);
-};
-
-interface JoltInterface {
-    void JoltInterface(BroadPhaseLayerInterface mBroadPhaseLayerInterface, ObjectVsBroadPhaseLayerFilter mObjectVsBroadPhaseLayerFilter, ObjectLayerPairFilter mObjectLayerPairFilter, optional unsigned long mMaxBodies, optional unsigned long mMaxBodyPairs, optional unsigned long mMaxContactConstraints);
-    void ClearWorld();
-    void Step(float inDeltaTime, long inCollisionSteps);
-    PhysicsSystem GetPhysicsSystem();
-    TempAllocator GetTempAllocator();
-    ObjectLayerPairFilter GetObjectLayerPairFilter();
-    ObjectVsBroadPhaseLayerFilter GetObjectVsBroadPhaseLayerFilter();
 };
 
 interface BodyManagerDrawSettings {
@@ -3126,7 +3117,6 @@ JobSystemWithBarrier implements JobSystem;
 
 [Prefix="JPH::"]
 interface JobSystemThreadPool {
-    void JobSystemThreadPool(unsigned long inMaxJobs, unsigned long inMaxBarriers, optional long inNumThreads);
 };
 JobSystemThreadPool implements JobSystemWithBarrier;
 

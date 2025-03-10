@@ -383,6 +383,10 @@ public:
         return new JPH::TempAllocatorImpl(inSize);
     }
 
+    static JPH::JobSystemThreadPool* New_JobSystemThreadPool(int inNumThreads = -1, uint inMaxJobs = JPH::cMaxPhysicsJobs, uint inMaxBarriers = JPH::cMaxPhysicsBarriers) {
+        return new JPH::JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);
+    }
+
     static JPH::BodyCreationSettings* New_BodyCreationSettings() {
         return new JPH::BodyCreationSettings();
     }
@@ -464,135 +468,6 @@ public:
             bodyInterface.DestroyBodies(bodyIDs.data(), bodyIDs.size());
         }
     }
-};
-
-/// Main API for JavaScript
-class JoltInterface
-{
-public:
-    /// Constructor
-    JoltInterface(
-        JPH::BroadPhaseLayerInterface *mBroadPhaseLayerInterface,
-        JPH::ObjectVsBroadPhaseLayerFilter *mObjectVsBroadPhaseLayerFilter,
-        JPH::ObjectLayerPairFilter * mObjectLayerPairFilter,
-        JPH::uint mMaxBodies = 10240,
-        JPH::uint mMaxBodyPairs = 65536,
-        JPH::uint mMaxContactConstraints = 10240,
-        JPH::uint mTempAllocatorSize = 10 * 1024 * 1024
-    )
-    {
-        // Install callbacks
-        JPH::Trace = TraceImpl;
-        JPH_IF_ENABLE_ASSERTS(JPH::AssertFailed = AssertFailedImpl;)
-
-        // Create a factory
-        JPH::Factory::sInstance = new JPH::Factory();
-
-        // Register all Jolt physics types
-        JPH::RegisterTypes();
-
-        // Init temp allocator
-        mTempAllocator = new JPH::TempAllocatorImpl(mTempAllocatorSize);
-
-        // Init the physics system
-        constexpr JPH::uint cNumBodyMutexes = 0;
-        mPhysicsSystem = new JPH::PhysicsSystem();
-        mPhysicsSystem->Init(mMaxBodies, cNumBodyMutexes, mMaxBodyPairs, mMaxContactConstraints, *mBroadPhaseLayerInterface, *mObjectVsBroadPhaseLayerFilter, *mObjectLayerPairFilter);
-    }
-
-    /// Destructor
-    ~JoltInterface()
-    {
-        // Destroy subsystems
-        delete mPhysicsSystem;
-        delete mBroadPhaseLayerInterface;
-        delete mObjectVsBroadPhaseLayerFilter;
-        delete mObjectLayerPairFilter;
-        delete mTempAllocator;
-        delete JPH::Factory::sInstance;
-        JPH::Factory::sInstance = nullptr;
-        JPH::UnregisterTypes();
-    }
-
-    void ClearWorld() {
-        JPH::PhysicsSystem& physicsSystem = *mPhysicsSystem;
-
-        // Step 1: Remove all constraints
-        JPH::Array<JPH::Ref<JPH::Constraint>> constraints = physicsSystem.GetConstraints();
-        for (JPH::Ref<JPH::Constraint>& constraintRef : constraints) {
-            if (constraintRef) { // Check if the reference is valid
-                JPH::Constraint* constraint = constraintRef.GetPtr();
-                physicsSystem.RemoveConstraint(constraint);
-            }
-        }
-
-        // Step 2: Remove and destroy all bodies
-        JPH::BodyInterface& bodyInterface = physicsSystem.GetBodyInterface();
-        JPH::BodyIDVector bodyIDs;
-        physicsSystem.GetBodies(bodyIDs); // Fills the vector with all body IDs
-
-        if (!bodyIDs.empty()) {
-            // Remove bodies from the simulation
-            bodyInterface.RemoveBodies(bodyIDs.data(), bodyIDs.size());
-            // Destroy bodies to free their memory
-            bodyInterface.DestroyBodies(bodyIDs.data(), bodyIDs.size());
-        }
-    }
-
-    /// Step the world
-    void Step(float inDeltaTime, int inCollisionSteps)
-    {
-        mPhysicsSystem->Update(inDeltaTime, inCollisionSteps, mTempAllocator, &mJobSystem);
-    }
-
-    /// Access to the physics system
-    JPH::PhysicsSystem * GetPhysicsSystem()
-    {
-        return mPhysicsSystem;
-    }
-
-    /// Access to the temp allocator
-    JPH::TempAllocator * GetTempAllocator()
-    {
-        return mTempAllocator;
-    }
-
-    /// Access the default object layer pair filter
-    JPH::ObjectLayerPairFilter *GetObjectLayerPairFilter()
-    {
-        return mObjectLayerPairFilter;
-    }
-
-    /// Access the default object vs broadphase layer filter
-    JPH::ObjectVsBroadPhaseLayerFilter *GetObjectVsBroadPhaseLayerFilter()
-    {
-        return mObjectVsBroadPhaseLayerFilter;
-    }
-
-//    /// Get the total reserved memory in bytes
-//    /// See: https://github.com/emscripten-core/emscripten/blob/7459cab167138419168b5ac5eacf74702d5a3dae/test/core/test_mallinfo.c#L16-L18
-//    static size_t sGetTotalMemory()
-//    {
-//        return (size_t)EM_ASM_PTR(return HEAP8.length);
-//    }
-//
-//    /// Get the amount of free memory in bytes
-//    /// See: https://github.com/emscripten-core/emscripten/blob/7459cab167138419168b5ac5eacf74702d5a3dae/test/core/test_mallinfo.c#L20-L25
-//    static size_t sGetFreeMemory()
-//    {
-//        struct mallinfo i = mallinfo();
-//        uintptr_t total_memory = sGetTotalMemory();
-//        uintptr_t dynamic_top = (uintptr_t)sbrk(0);
-//        return total_memory - dynamic_top + i.fordblks;
-//    }
-
-private:
-    JPH::TempAllocatorImpl * mTempAllocator;
-    JPH::JobSystemThreadPool mJobSystem { JPH::cMaxPhysicsJobs, JPH::cMaxPhysicsBarriers, min<int>(thread::hardware_concurrency() - 1, 16) }; // Limit to 16 threads since we limit the webworker thread pool size to this as well
-    JPH::BroadPhaseLayerInterface *mBroadPhaseLayerInterface = nullptr;
-    JPH::ObjectVsBroadPhaseLayerFilter *mObjectVsBroadPhaseLayerFilter = nullptr;
-    JPH::ObjectLayerPairFilter * mObjectLayerPairFilter = nullptr;
-    JPH::PhysicsSystem * mPhysicsSystem = nullptr;
 };
 
 // Helper class to store information about the memory layout of SoftBodyVertex
