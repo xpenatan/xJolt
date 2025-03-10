@@ -437,6 +437,29 @@ public:
     static void UnregisterTypes() {
         JPH::UnregisterTypes();
     }
+
+    static void ClearWorld(JPH::PhysicsSystem& physicsSystem) {
+        // Step 1: Remove all constraints
+        JPH::Array<JPH::Ref<JPH::Constraint>> constraints = physicsSystem.GetConstraints();
+        for (JPH::Ref<JPH::Constraint>& constraintRef : constraints) {
+            if (constraintRef) { // Check if the reference is valid
+                JPH::Constraint* constraint = constraintRef.GetPtr();
+                physicsSystem.RemoveConstraint(constraint);
+            }
+        }
+
+        // Step 2: Remove and destroy all bodies
+        JPH::BodyInterface& bodyInterface = physicsSystem.GetBodyInterface();
+        JPH::BodyIDVector bodyIDs;
+        physicsSystem.GetBodies(bodyIDs); // Fills the vector with all body IDs
+
+        if (!bodyIDs.empty()) {
+            // Remove bodies from the simulation
+            bodyInterface.RemoveBodies(bodyIDs.data(), bodyIDs.size());
+            // Destroy bodies to free their memory
+            bodyInterface.DestroyBodies(bodyIDs.data(), bodyIDs.size());
+        }
+    }
 };
 
 /// Main API for JavaScript

@@ -27,6 +27,7 @@ interface Jolt {
     static void Init();
     static void RegisterTypes();
     static void UnregisterTypes();
+    static void ClearWorld([Ref] PhysicsSystem physicsSystem);
 };
 
 interface JoltInterface {
