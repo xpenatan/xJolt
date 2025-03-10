@@ -340,6 +340,33 @@ constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_None =
 constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_EuclideanDistance = SoftBodySharedSettings_ELRAType::EuclideanDistance;
 constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_GeodesicDistance = SoftBodySharedSettings_ELRAType::GeodesicDistance;
 
+// Callback for traces
+static void TraceImpl(const char* inFMT, ...)
+{
+    // Format the message
+    va_list list;
+    va_start(list, inFMT);
+    char buffer[1024];
+    vsnprintf(buffer, sizeof(buffer), inFMT, list);
+
+    // Print to the TTY
+    cout << buffer << endl;
+}
+
+#ifdef JPH_ENABLE_ASSERTS
+
+// Callback for asserts
+static bool AssertFailedImpl(const char* inExpression, const char* inMessage, const char* inFile, JPH::uint inLine)
+{
+    // Print to the TTY
+    cout << inFile << ":" << inLine << ": (" << inExpression << ") " << (inMessage != nullptr ? inMessage : "") << endl;
+
+    // Breakpoint
+    return true;
+};
+
+#endif // JPH_ENABLE_ASSERTS
+
 // Custom class to be able to create new instance.
 class Jolt
 {
@@ -398,6 +425,11 @@ public:
         return new JPH::Vec4(inV, inW);
     }
 
+    static void Init() {
+        JPH::Trace = TraceImpl;
+        JPH_IF_ENABLE_ASSERTS(JPH::AssertFailed = AssertFailedImpl;)
+    }
+
     static void RegisterTypes() {
         JPH::RegisterTypes();
     }
@@ -406,33 +438,6 @@ public:
         JPH::UnregisterTypes();
     }
 };
-
-// Callback for traces
-static void TraceImpl(const char *inFMT, ...)
-{
-    // Format the message
-    va_list list;
-    va_start(list, inFMT);
-    char buffer[1024];
-    vsnprintf(buffer, sizeof(buffer), inFMT, list);
-
-    // Print to the TTY
-    cout << buffer << endl;
-}
-
-#ifdef JPH_ENABLE_ASSERTS
-
-// Callback for asserts
-static bool AssertFailedImpl(const char *inExpression, const char *inMessage, const char *inFile, JPH::uint inLine)
-{
-    // Print to the TTY
-    cout << inFile << ":" << inLine << ": (" << inExpression << ") " << (inMessage != nullptr? inMessage : "") << endl;
-
-    // Breakpoint
-    return true;
-};
-
-#endif // JPH_ENABLE_ASSERTS
 
 /// Main API for JavaScript
 class JoltInterface

@@ -24,6 +24,7 @@ interface Jolt {
     [BindTo="New_Vec4"] static Vec4 New_Vec4_2([Const, Ref] Vec4 inV); //[-NEW_OBJECT]
     [BindTo="New_Vec4"] static Vec4 New_Vec4_3([Ref] Vec3 inV, float inW); //[-NEW_OBJECT]
 
+    static void Init();
     static void RegisterTypes();
     static void UnregisterTypes();
 };
@@ -3108,6 +3109,12 @@ interface TempAllocator {
 };
 
 [Prefix="JPH::"]
+interface TempAllocatorImpl {
+    void TempAllocatorImpl(unsigned long inSize);
+};
+TempAllocatorImpl implements TempAllocator;
+
+[Prefix="JPH::"]
 interface JobSystem {
 };
 
@@ -3748,9 +3755,3 @@ interface ObjectLayerPairFilterMask {
     static unsigned long sGetMask(unsigned long inObjectLayer);
 };
 ObjectLayerPairFilterMask implements ObjectLayerPairFilter;
-
-[Prefix="JPH::"]
-interface TempAllocatorImpl {
-    void TempAllocatorImpl(unsigned long inSize);
-
-};
