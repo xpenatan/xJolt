@@ -347,6 +347,11 @@ public:
     static JPH::PhysicsSystem* New_PhysicsSystem() {
         return new JPH::PhysicsSystem();
     }
+
+    static JPH::Factory* New_Factory() {
+        return new JPH::Factory();
+    }
+
     static JPH::BodyCreationSettings* New_BodyCreationSettings() {
         return new JPH::BodyCreationSettings();
     }
@@ -391,6 +396,14 @@ public:
     }
     static JPH::Vec4* New_Vec4(const JPH::Vec3 &inV, float inW) {
         return new JPH::Vec4(inV, inW);
+    }
+
+    static void RegisterTypes() {
+        JPH::RegisterTypes();
+    }
+
+    static void UnregisterTypes() {
+        JPH::UnregisterTypes();
     }
 };
 
