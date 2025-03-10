@@ -379,6 +379,10 @@ public:
         return new JPH::Factory();
     }
 
+    static JPH::TempAllocatorImpl* New_TempAllocatorImpl(uint inSize) {
+        return new JPH::TempAllocatorImpl(inSize);
+    }
+
     static JPH::BodyCreationSettings* New_BodyCreationSettings() {
         return new JPH::BodyCreationSettings();
     }

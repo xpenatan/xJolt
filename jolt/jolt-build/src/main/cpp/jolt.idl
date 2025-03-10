@@ -5,6 +5,7 @@
 interface Jolt {
     static PhysicsSystem New_PhysicsSystem(); //[-NEW_OBJECT]
     static Factory New_Factory(); //[-NEW_OBJECT]
+    static TempAllocatorImpl New_TempAllocatorImpl(unsigned long inSize); //[-NEW_OBJECT]
 
     [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_0(); //[-NEW_OBJECT]
     [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
@@ -3111,7 +3112,6 @@ interface TempAllocator {
 
 [Prefix="JPH::"]
 interface TempAllocatorImpl {
-    void TempAllocatorImpl(unsigned long inSize);
 };
 TempAllocatorImpl implements TempAllocator;
 
