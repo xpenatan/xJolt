@@ -805,13 +805,18 @@ class ShapeFilterEm : public JPH::ShapeFilter
         }
 };
 
+int GLOBAL_ID = 0;
+
 class DebugRendererEm : public JPH::DebugRenderer
 {
     public:
 
         DebugRendererEm()
         {
-            Initialize();
+            Vertex empty_vertex { JPH::Float3(0, 0, 0), JPH::Float3(1, 0, 0), JPH::Float2(0, 0), JPH::Color::sWhite };
+            JPH::uint32 empty_indices[] = { 0, 0, 0 };
+            mEmptyBatch = CreateTriangleBatch(&empty_vertex, 1, empty_indices, 3);
+            DebugRenderer::Initialize();
         }
 
         void DrawBodies(JPH::PhysicsSystem *inSystem, JPH::BodyManager::DrawSettings *inDrawSettings)
@@ -823,7 +828,7 @@ class DebugRendererEm : public JPH::DebugRenderer
            inSystem->DrawBodies(JPH::BodyManager::DrawSettings(), this);
         }
 
-        virtual void DrawMesh(const JPH::RMat44 &inModelMatrix, const DebugArrayTriangle &triangleArray, const JPH::Color &inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) = 0;
+        virtual void DrawMesh(int id, const JPH::RMat44 &inModelMatrix, const DebugArrayTriangle &triangleArray, const JPH::Color &inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) = 0;
 
         virtual void DrawGeometry(JPH::RMat44Arg inModelMatrix, const JPH::AABox& inWorldSpaceBounds, float inLODScaleSq, JPH::ColorArg inModelColor, const GeometryRef& inGeometry, ECullMode inCullMode, ECastShadow inCastShadow, EDrawMode inDrawMode)
         {
@@ -834,14 +839,16 @@ class DebugRendererEm : public JPH::DebugRenderer
             const BatchImpl* batch = static_cast<const BatchImpl*>(lod->mTriangleBatch.GetPtr());
             const DebugArrayTriangle triangleArray = batch->mTriangles;
 
-            DrawMesh(inModelMatrix, triangleArray, inModelColor, inCullMode, inDrawMode);
+            DrawMesh(batch->mID, inModelMatrix, triangleArray, inModelColor, inCullMode, inDrawMode);
         }
 
         virtual Batch CreateTriangleBatch(const DebugRendererTriangle*inTriangles, int inTriangleCount)
         {
-            BatchImpl *batch = new BatchImpl;
             if (inTriangles == nullptr || inTriangleCount == 0)
-                return batch;
+                return mEmptyBatch;
+
+            BatchImpl *batch = new BatchImpl(GLOBAL_ID);
+            GLOBAL_ID++;
 
             batch->mTriangles.assign(inTriangles, inTriangles + inTriangleCount);
             return batch;
@@ -849,9 +856,10 @@ class DebugRendererEm : public JPH::DebugRenderer
 
         virtual Batch CreateTriangleBatch(const Vertex* inVertices, int inVertexCount, const JPH::uint32* inIndices, int inIndexCount)
         {
-            BatchImpl* batch = new BatchImpl;
             if (inVertices == nullptr || inVertexCount == 0 || inIndices == nullptr || inIndexCount == 0)
-                return batch;
+                return mEmptyBatch;
+            BatchImpl* batch = new BatchImpl(GLOBAL_ID);
+            GLOBAL_ID++;
 
             // Convert indexed triangle list to triangle list
             batch->mTriangles.resize(inIndexCount / 3);
@@ -888,16 +896,24 @@ class DebugRendererEm : public JPH::DebugRenderer
         }
 
 private:
+
+    Batch mEmptyBatch;
+
     /// Implementation specific batch object
     class BatchImpl : public JPH::RefTargetVirtual
     {
     public:
         JPH_OVERRIDE_NEW_DELETE
 
-            virtual void AddRef() override { ++mRefCount; }
+        BatchImpl(int id) {
+            mID = id;
+        }
+
+        virtual void AddRef() override { ++mRefCount; }
         virtual void Release() override { if (--mRefCount == 0) delete this; }
 
         DebugArrayTriangle mTriangles;
+        int mID;
 
     private:
         atomic<JPH::uint32> mRefCount = 0;

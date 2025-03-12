@@ -121,6 +121,7 @@ public class SamplesApp extends InputAdapter {
     }
 
     private void clearBodies() {
+        debugRenderer.clear();
         joltInstance.clearWorld();
     }
 
