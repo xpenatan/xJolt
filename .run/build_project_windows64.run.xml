@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="gdx-jolt:jolt:jolt-build [build_project_all]" type="GradleRunConfiguration" factoryName="Gradle" folderName="jolt">
+  <configuration default="false" name="build_project_windows64" type="GradleRunConfiguration" factoryName="Gradle" folderName="jolt-build">
     <ExternalSystemSettings>
       <option name="executionName" />
-      <option name="externalProjectPath" value="$PROJECT_DIR$/jolt/jolt-build" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$" />
       <option name="externalSystemIdString" value="GRADLE" />
       <option name="scriptParameters" value="" />
       <option name="taskDescriptions">
@@ -10,7 +10,7 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="build_project_all" />
+          <option value="build_project_windows64" />
         </list>
       </option>
       <option name="vmOptions" />

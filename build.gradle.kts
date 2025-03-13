@@ -38,6 +38,7 @@ allprojects  {
 configure(allprojects - project(":jolt:jolt-android") - project(":examples:SamplesApp:android")) {
     apply {
         plugin("java")
+        plugin("java-library")
     }
     java.sourceCompatibility = JavaVersion.VERSION_11
     java.targetCompatibility = JavaVersion.VERSION_11

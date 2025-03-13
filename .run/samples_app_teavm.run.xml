@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="samples_app_teavm" type="GradleRunConfiguration" factoryName="Gradle" folderName="jolt">
+  <configuration default="false" name="samples_app_teavm" type="GradleRunConfiguration" factoryName="Gradle" folderName="jolt-examples">
     <ExternalSystemSettings>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$/examples/SamplesApp/teavm" />

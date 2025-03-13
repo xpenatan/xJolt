@@ -15,7 +15,7 @@ public class InitScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-        JoltLoader.init(() -> init = true);
+        JoltLoader.init((isSuccess, e) -> init = isSuccess);
     }
 
     @Override
