@@ -286,6 +286,9 @@ jobs:
           name: teavm-natives
           path: ./jolt/jolt-build/build/c++/libs/
 
+      - name: Download sources
+        run: ./gradlew download_all_sources
+
       - name: Generate Jolt classes
         run: ./gradlew :jolt:jolt-build:build_project
 
