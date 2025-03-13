@@ -40,8 +40,6 @@ jobs:
       - name: Upload Samples app demo to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
-          external_repository: xpenatan/xpenatan.github.io
-          publish_branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./examples/SamplesApp/teavm/build/dist/webapp
           destination_dir: ./examples/samples
