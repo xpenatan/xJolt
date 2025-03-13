@@ -12,3 +12,7 @@ jobs:
       isRelease: false
       shouldUpload: true
     secrets: inherit
+  upload-examples:
+      needs: build-and-upload
+      uses: ./.github/workflows/workflow_call_upload_demos_pages.yml
+      secrets: inherit

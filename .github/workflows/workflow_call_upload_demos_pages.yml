@@ -1,0 +1,47 @@
+name: Dispatch Build
+
+on:
+  workflow_call:
+
+
+jobs:
+  upload_demos_linux:
+    name: Build Linux
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+#      - name: Cancel Previous Runs
+#        uses: styfle/cancel-workflow-action@0.12.1
+#        with:
+#          access_token: ${{ github.token }}
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: "zulu"
+          java-version: 11
+
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
+      - name: Build everything
+        run: |
+          ./gradlew build
+
+      - name: Build web Samples
+        run: |
+          ./gradlew :examples:SamplesApp:teavm:SamplesApp-build"
+
+      - name: Upload Samples app demo to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: xpenatan/xpenatan.github.io
+          publish_branch: master
+          publish_dir: ./examples/SamplesApp/teavm/build/dist/webapp
+          destination_dir: ./examples/samples
