@@ -35,7 +35,7 @@ jobs:
 
       - name: Build web Samples
         run: |
-          ./gradlew :examples:SamplesApp:teavm:SamplesApp-build"
+          ./gradlew :examples:SamplesApp:teavm:SamplesApp-build
 
       - name: Upload Samples app demo to gh-pages
         uses: peaceiris/actions-gh-pages@v4
