@@ -1,4 +1,4 @@
-package jolt.jolt.math;
+package jolt.math;
 
 public class Vec3 {
 

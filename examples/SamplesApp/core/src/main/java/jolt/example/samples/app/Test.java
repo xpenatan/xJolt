@@ -1,29 +1,26 @@
 package jolt.example.samples.app;
 
-import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
-import jolt.EMotionType;
 import jolt.MeshShapeSettings;
 import jolt.PhysicsMaterialList;
 import jolt.ShapeResult;
 import jolt.TriangleList;
 import jolt.example.samples.app.math.Perlin;
-import jolt.jolt.Jolt;
-import jolt.jolt.geometry.Triangle;
-import jolt.jolt.math.Mat44;
-import jolt.jolt.math.Quat;
-import jolt.jolt.math.Vec3;
-import jolt.jolt.physics.EActivation;
-import jolt.jolt.physics.PhysicsSystem;
-import jolt.jolt.physics.body.Body;
-import jolt.jolt.physics.body.BodyCreationSettings;
-import jolt.jolt.physics.body.BodyInterface;
-import jolt.jolt.physics.collision.shape.BoxShape;
+import jolt.Jolt;
+import jolt.geometry.Triangle;
+import jolt.math.Quat;
+import jolt.math.Vec3;
+import jolt.physics.EActivation;
+import jolt.physics.PhysicsSystem;
+import jolt.physics.body.Body;
+import jolt.physics.body.BodyCreationSettings;
+import jolt.physics.body.BodyInterface;
+import jolt.physics.collision.shape.BoxShape;
 import static jolt.EMotionType.EMotionType_Static;
-import static jolt.jolt.physics.EActivation.EActivation_Activate;
-import static jolt.jolt.physics.EActivation.EActivation_DontActivate;
+import static jolt.physics.EActivation.EActivation_Activate;
+import static jolt.physics.EActivation.EActivation_DontActivate;
 
 public abstract class Test {
 

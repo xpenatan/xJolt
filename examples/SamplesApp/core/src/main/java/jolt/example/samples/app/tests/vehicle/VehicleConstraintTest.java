@@ -19,21 +19,21 @@ import jolt.WheelSettings;
 import jolt.WheelSettingsWV;
 import jolt.WheeledVehicleControllerSettings;
 import jolt.example.samples.app.Layers;
-import jolt.jolt.Jolt;
-import jolt.jolt.core.Color;
-import jolt.jolt.math.Mat44;
-import jolt.jolt.math.Quat;
-import jolt.jolt.math.Vec3;
-import jolt.jolt.math.Vec4;
-import jolt.jolt.physics.EActivation;
-import jolt.jolt.physics.body.Body;
-import jolt.jolt.physics.body.BodyCreationSettings;
-import jolt.jolt.physics.collision.shape.BoxShape;
-import jolt.jolt.physics.collision.shape.Shape;
-import jolt.jolt.physics.vehicle.VehicleCollisionTester;
-import jolt.jolt.physics.vehicle.VehicleConstraint;
-import jolt.jolt.physics.vehicle.VehicleController;
-import jolt.jolt.physics.vehicle.WheeledVehicleController;
+import jolt.Jolt;
+import jolt.core.Color;
+import jolt.math.Mat44;
+import jolt.math.Quat;
+import jolt.math.Vec3;
+import jolt.math.Vec4;
+import jolt.physics.EActivation;
+import jolt.physics.body.Body;
+import jolt.physics.body.BodyCreationSettings;
+import jolt.physics.collision.shape.BoxShape;
+import jolt.physics.collision.shape.Shape;
+import jolt.physics.vehicle.VehicleCollisionTester;
+import jolt.physics.vehicle.VehicleConstraint;
+import jolt.physics.vehicle.VehicleController;
+import jolt.physics.vehicle.WheeledVehicleController;
 
 public class VehicleConstraintTest extends VehicleTest {
 

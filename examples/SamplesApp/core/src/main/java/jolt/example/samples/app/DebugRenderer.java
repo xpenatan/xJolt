@@ -33,12 +33,12 @@ import jolt.DebugRendererTriangle;
 import jolt.DebugRendererVertex;
 import jolt.ECastShadow;
 import jolt.EDrawMode;
-import jolt.jolt.core.Color;
-import jolt.jolt.math.Float2;
-import jolt.jolt.math.Float3;
-import jolt.jolt.math.Mat44;
-import jolt.jolt.math.Vec4;
-import jolt.jolt.physics.PhysicsSystem;
+import jolt.core.Color;
+import jolt.math.Float2;
+import jolt.math.Float3;
+import jolt.math.Mat44;
+import jolt.math.Vec4;
+import jolt.physics.PhysicsSystem;
 
 public class DebugRenderer extends DebugRendererEm {
 

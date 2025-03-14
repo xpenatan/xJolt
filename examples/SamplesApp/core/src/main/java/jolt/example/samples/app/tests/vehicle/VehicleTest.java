@@ -7,16 +7,16 @@ import jolt.DistanceConstraintSettings;
 import jolt.EMotionType;
 import jolt.example.samples.app.Layers;
 import jolt.example.samples.app.Test;
-import jolt.jolt.Jolt;
-import jolt.jolt.math.Quat;
-import jolt.jolt.math.Vec3;
-import jolt.jolt.physics.EActivation;
-import jolt.jolt.physics.body.Body;
-import jolt.jolt.physics.body.BodyCreationSettings;
-import jolt.jolt.physics.collision.CollisionGroup;
-import jolt.jolt.physics.collision.GroupFilterTable;
-import jolt.jolt.physics.collision.shape.BoxShape;
-import jolt.jolt.physics.collision.shape.Shape;
+import jolt.Jolt;
+import jolt.math.Quat;
+import jolt.math.Vec3;
+import jolt.physics.EActivation;
+import jolt.physics.body.Body;
+import jolt.physics.body.BodyCreationSettings;
+import jolt.physics.collision.CollisionGroup;
+import jolt.physics.collision.GroupFilterTable;
+import jolt.physics.collision.shape.BoxShape;
+import jolt.physics.collision.shape.Shape;
 import static jolt.example.samples.app.tests.BoxShapeTest.JPH_PI;
 
 public abstract class VehicleTest extends Test {

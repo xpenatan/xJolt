@@ -8,6 +8,7 @@ import com.github.xpenatan.jparser.builder.tool.BuildToolListener;
 import com.github.xpenatan.jparser.builder.tool.BuildToolOptions;
 import com.github.xpenatan.jparser.builder.tool.BuilderTool;
 import com.github.xpenatan.jparser.idl.IDLHelper;
+import com.github.xpenatan.jparser.idl.IDLPackageRenaming;
 import com.github.xpenatan.jparser.idl.IDLReader;
 import java.util.ArrayList;
 
@@ -53,6 +54,13 @@ public class Build {
 //                if(op.iOS) {
 //                    targets.add(getIOSTarget(op));
 //                }
+            }
+        }, new IDLPackageRenaming() {
+            @Override
+            public String obtainNewPackage(String className, String classPackage) {
+                // This remove duplicate jolt name in package.
+                // The reason for this is that the lib name start with jolt and there is an already c++ jolt subfolder
+                return classPackage.replace("jolt", "");
             }
         });
     }

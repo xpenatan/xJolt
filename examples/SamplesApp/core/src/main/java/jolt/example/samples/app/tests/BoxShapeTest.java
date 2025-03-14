@@ -4,14 +4,14 @@ import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import jolt.example.samples.app.Layers;
 import jolt.example.samples.app.Test;
-import jolt.jolt.Jolt;
-import jolt.jolt.math.Quat;
-import jolt.jolt.math.Vec3;
-import jolt.jolt.physics.body.Body;
-import jolt.jolt.physics.body.BodyCreationSettings;
-import jolt.jolt.physics.collision.shape.BoxShape;
+import jolt.Jolt;
+import jolt.math.Quat;
+import jolt.math.Vec3;
+import jolt.physics.body.Body;
+import jolt.physics.body.BodyCreationSettings;
+import jolt.physics.collision.shape.BoxShape;
 import static jolt.EMotionType.EMotionType_Dynamic;
-import static jolt.jolt.physics.EActivation.EActivation_Activate;
+import static jolt.physics.EActivation.EActivation_Activate;
 
 public class BoxShapeTest extends Test {
 

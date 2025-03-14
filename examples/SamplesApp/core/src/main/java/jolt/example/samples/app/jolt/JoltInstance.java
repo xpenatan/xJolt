@@ -2,14 +2,14 @@ package jolt.example.samples.app.jolt;
 
 import jolt.TempAllocatorImpl;
 import jolt.example.samples.app.Layers;
-import jolt.jolt.Jolt;
-import jolt.jolt.core.Factory;
-import jolt.jolt.core.JobSystemThreadPool;
-import jolt.jolt.physics.PhysicsSystem;
-import jolt.jolt.physics.collision.ObjectLayerPairFilterTable;
-import jolt.jolt.physics.collision.broadphase.BroadPhaseLayer;
-import jolt.jolt.physics.collision.broadphase.BroadPhaseLayerInterfaceTable;
-import jolt.jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilterTable;
+import jolt.Jolt;
+import jolt.core.Factory;
+import jolt.core.JobSystemThreadPool;
+import jolt.physics.PhysicsSystem;
+import jolt.physics.collision.ObjectLayerPairFilterTable;
+import jolt.physics.collision.broadphase.BroadPhaseLayer;
+import jolt.physics.collision.broadphase.BroadPhaseLayerInterfaceTable;
+import jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilterTable;
 
 public class JoltInstance {
 
