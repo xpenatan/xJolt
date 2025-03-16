@@ -351,7 +351,7 @@ public class VehicleConstraintTest extends VehicleTest {
         fwd.SetY(-0.2f); // Project onto XZ plane
         float len = fwd.Length();
         if (len != 0.0f)
-            fwd.DivFloatAssign(len);
+            fwd.Div(len);
         else
             fwd = Vec3.sAxisZ();
 
@@ -392,7 +392,7 @@ public class VehicleConstraintTest extends VehicleTest {
         for (int col = 0; col < 4; col++) {
             Vec4 vec4 = mat.GetColumn4(col);
             for (int row = 0; row < 4; row++) {
-                float val = vec4.Get(row);
+                float val = vec4.GetComponent(row);
                 outArray[col * 4 + row] = val; // m[col][row]
             }
         }

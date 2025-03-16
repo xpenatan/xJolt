@@ -165,7 +165,7 @@ public class DebugRenderer extends DebugRendererEm {
         for (int col = 0; col < 4; col++) {
             Vec4 vec4 = mat.GetColumn4(col);
             for (int row = 0; row < 4; row++) {
-                float val = vec4.Get(row);
+                float val = vec4.GetComponent(row);
                 outArray[col * 4 + row] = val; // m[col][row]
             }
         }

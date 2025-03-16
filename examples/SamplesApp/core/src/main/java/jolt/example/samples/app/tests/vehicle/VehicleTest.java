@@ -81,12 +81,12 @@ public abstract class VehicleTest extends Test {
 
             if (prev_part != null) {
                 DistanceConstraintSettings dc = new DistanceConstraintSettings();
-                dc.set_mPoint1(prev_pos.Add(Jolt.New_Vec3(-part_half_size.GetX(), 0, part_half_size.GetZ())));
-                dc.set_mPoint2(pos.Add(Jolt.New_Vec3(-part_half_size.GetX(), 0, -part_half_size.GetZ())));
+                dc.set_mPoint1(prev_pos.AddVec3(Jolt.New_Vec3(-part_half_size.GetX(), 0, part_half_size.GetZ())));
+                dc.set_mPoint2(pos.AddVec3(Jolt.New_Vec3(-part_half_size.GetX(), 0, -part_half_size.GetZ())));
                 mPhysicsSystem.AddConstraint(dc.Create(prev_part, part));
 
-                dc.set_mPoint1(prev_pos.Add(Jolt.New_Vec3(part_half_size.GetX(), 0, part_half_size.GetZ())));
-                dc.set_mPoint2(pos.Add(Jolt.New_Vec3(part_half_size.GetX(), 0, -part_half_size.GetZ())));
+                dc.set_mPoint1(prev_pos.AddVec3(Jolt.New_Vec3(part_half_size.GetX(), 0, part_half_size.GetZ())));
+                dc.set_mPoint2(pos.AddVec3(Jolt.New_Vec3(part_half_size.GetX(), 0, -part_half_size.GetZ())));
                 mPhysicsSystem.AddConstraint(dc.Create(prev_part, part));
 
                 dc.dispose();

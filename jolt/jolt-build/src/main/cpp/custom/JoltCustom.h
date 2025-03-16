@@ -88,9 +88,7 @@ using namespace std;
 //static_assert(sizeof(ObjectLayer) == 4);
 
 //// Types that need to be exposed to JavaScript
-using uint = uint;
-using uint8 = uint8;
-using uint64 = uint64;
+using JPHString = String;
 using ArrayVec3 = Array<Vec3>;
 using ArrayFloat = Array<float>;
 using ArrayUint = Array<uint>;
@@ -100,6 +98,10 @@ using QuatMemRef = Quat;
 using ArrayQuat = Array<Quat>;
 using Mat44MemRef = Mat44;
 using ArrayMat44 = Array<Mat44>;
+using BodyIDMemRef = BodyID;
+using ArrayBodyID = Array<BodyID>;
+using BodyPtrMemRef = Body *;
+using ArrayBodyPtr = Array<Body *>;
 using FloatMemRef = float;
 using UintMemRef = uint;
 using Uint8MemRef = uint8;
@@ -125,6 +127,7 @@ using ArraySoftBodySharedSettingsSkinned = Array<SoftBodySharedSettingsSkinned>;
 using ArraySoftBodySharedSettingsLRA = Array<SoftBodySharedSettingsLRA>;
 using ArraySoftBodySharedSettingsVertexAttributes = Array<SoftBodySharedSettingsVertexAttributes>;
 using ArraySoftBodyVertex = Array<SoftBodyVertex>;
+using EGroundState = CharacterBase::EGroundState;
 using Vector2 = Vector<2>;
 using ArrayRayCastResult = Array<RayCastResult>;
 using CastRayAllHitCollisionCollector = AllHitCollisionCollector<CastRayCollector>;
@@ -155,6 +158,9 @@ using RagdollAdditionalConstraint = RagdollSettings::AdditionalConstraint;
 using ArrayRagdollPart = Array<RagdollPart>;
 using ArrayRagdollAdditionalConstraint = Array<RagdollAdditionalConstraint>;
 using CompoundShapeSubShape = CompoundShape::SubShape;
+using BodyInterface_AddState = void;
+using CharacterVirtualContact = CharacterVirtual::Contact;
+using ArrayCharacterVirtualContact = Array<CharacterVirtualContact>;
 
 // Alias for EBodyType values to avoid clashes
 constexpr EBodyType EBodyType_RigidBody = EBodyType::RigidBody;
@@ -179,6 +185,8 @@ constexpr EShapeType EShapeType_Compound = EShapeType::Compound;
 constexpr EShapeType EShapeType_Decorated = EShapeType::Decorated;
 constexpr EShapeType EShapeType_Mesh = EShapeType::Mesh;
 constexpr EShapeType EShapeType_HeightField = EShapeType::HeightField;
+constexpr EShapeType EShapeType_Plane = EShapeType::Plane;
+constexpr EShapeType EShapeType_Empty = EShapeType::Empty;
 
 // Alias for EShapeSubType values to avoid clashes
 constexpr EShapeSubType EShapeSubType_Sphere = EShapeSubType::Sphere;
@@ -186,6 +194,7 @@ constexpr EShapeSubType EShapeSubType_Box = EShapeSubType::Box;
 constexpr EShapeSubType EShapeSubType_Capsule = EShapeSubType::Capsule;
 constexpr EShapeSubType EShapeSubType_TaperedCapsule = EShapeSubType::TaperedCapsule;
 constexpr EShapeSubType EShapeSubType_Cylinder = EShapeSubType::Cylinder;
+constexpr EShapeSubType EShapeSubType_TaperedCylinder = EShapeSubType::TaperedCylinder;
 constexpr EShapeSubType EShapeSubType_ConvexHull = EShapeSubType::ConvexHull;
 constexpr EShapeSubType EShapeSubType_StaticCompound = EShapeSubType::StaticCompound;
 constexpr EShapeSubType EShapeSubType_MutableCompound = EShapeSubType::MutableCompound;
@@ -194,6 +203,8 @@ constexpr EShapeSubType EShapeSubType_Scaled = EShapeSubType::Scaled;
 constexpr EShapeSubType EShapeSubType_OffsetCenterOfMass = EShapeSubType::OffsetCenterOfMass;
 constexpr EShapeSubType EShapeSubType_Mesh = EShapeSubType::Mesh;
 constexpr EShapeSubType EShapeSubType_HeightField = EShapeSubType::HeightField;
+constexpr EShapeSubType EShapeSubType_Plane = EShapeSubType::Plane;
+constexpr EShapeSubType EShapeSubType_Empty = EShapeSubType::Empty;
 
 // Alias for EConstraintSpace values to avoid clashes
 constexpr EConstraintSpace EConstraintSpace_LocalToBodyCOM = EConstraintSpace::LocalToBodyCOM;
@@ -231,7 +242,6 @@ constexpr EBackFaceMode EBackFaceMode_IgnoreBackFaces = EBackFaceMode::IgnoreBac
 constexpr EBackFaceMode EBackFaceMode_CollideWithBackFaces = EBackFaceMode::CollideWithBackFaces;
 
 // Alias for EGroundState values to avoid clashes
-using EGroundState = CharacterBase::EGroundState;
 constexpr EGroundState EGroundState_OnGround = EGroundState::OnGround;
 constexpr EGroundState EGroundState_OnSteepGround = EGroundState::OnSteepGround;
 constexpr EGroundState EGroundState_NotSupported = EGroundState::NotSupported;
@@ -303,8 +313,8 @@ constexpr ETransmissionMode ETransmissionMode_Manual = ETransmissionMode::Manual
 // Defining ETireFrictionDirection since we cannot pass references to float
 enum ETireFrictionDirection
 {
-    ETireFrictionDirection_Longitudinal,
-    ETireFrictionDirection_Lateral
+	ETireFrictionDirection_Longitudinal,
+	ETireFrictionDirection_Lateral
 };
 
 // Alias for ESwingType values to avoid clashes
@@ -313,15 +323,20 @@ constexpr ESwingType ESwingType_Pyramid = ESwingType::Pyramid;
 
 // Alias for EBendType values to avoid clashes
 using SoftBodySharedSettings_EBendType = SoftBodySharedSettings::EBendType;
-constexpr SoftBodySharedSettings_EBendType SoftBodySharedSettings_EBendType_None = SoftBodySharedSettings_EBendType::None;
-constexpr SoftBodySharedSettings_EBendType SoftBodySharedSettings_EBendType_Distance = SoftBodySharedSettings_EBendType::Distance;
-constexpr SoftBodySharedSettings_EBendType SoftBodySharedSettings_EBendType_Dihedral = SoftBodySharedSettings_EBendType::Dihedral;
+constexpr SoftBodySharedSettings_EBendType SoftBodySharedSettings_EBendType_None = SoftBodySharedSettings::EBendType::None;
+constexpr SoftBodySharedSettings_EBendType SoftBodySharedSettings_EBendType_Distance = SoftBodySharedSettings::EBendType::Distance;
+constexpr SoftBodySharedSettings_EBendType SoftBodySharedSettings_EBendType_Dihedral = SoftBodySharedSettings::EBendType::Dihedral;
 
 // Alias for ELRAType values to avoid clashes
 using SoftBodySharedSettings_ELRAType = SoftBodySharedSettings::ELRAType;
-constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_None = SoftBodySharedSettings_ELRAType::None;
-constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_EuclideanDistance = SoftBodySharedSettings_ELRAType::EuclideanDistance;
-constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_GeodesicDistance = SoftBodySharedSettings_ELRAType::GeodesicDistance;
+constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_None = SoftBodySharedSettings::ELRAType::None;
+constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_EuclideanDistance = SoftBodySharedSettings::ELRAType::EuclideanDistance;
+constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_GeodesicDistance = SoftBodySharedSettings::ELRAType::GeodesicDistance;
+
+// Alias for EBuildQuality
+using MeshShapeSettings_EBuildQuality = MeshShapeSettings::EBuildQuality;
+constexpr MeshShapeSettings_EBuildQuality MeshShapeSettings_EBuildQuality_FavorRuntimePerformance = MeshShapeSettings::EBuildQuality::FavorRuntimePerformance;
+constexpr MeshShapeSettings_EBuildQuality MeshShapeSettings_EBuildQuality_FavorBuildSpeed = MeshShapeSettings::EBuildQuality::FavorBuildSpeed;
 
 // Callback for traces
 static void TraceImpl(const char* inFMT, ...)
@@ -780,24 +795,6 @@ constexpr EShapeColor EShapeColor_MaterialColor = EShapeColor::MaterialColor;
 constexpr ESoftBodyConstraintColor ESoftBodyConstraintColor_ConstraintType = ESoftBodyConstraintColor::ConstraintType;
 constexpr ESoftBodyConstraintColor ESoftBodyConstraintColor_ConstraintGroup = ESoftBodyConstraintColor::ConstraintGroup;
 constexpr ESoftBodyConstraintColor ESoftBodyConstraintColor_ConstraintOrder = ESoftBodyConstraintColor::ConstraintOrder;
-
-class ShapeFilterEm : public ShapeFilter
-{
-    public:
-
-        virtual bool ShouldCollide_1(const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const = 0;
-        virtual bool ShouldCollide_2(const Shape *inShape1, const SubShapeID &inSubShapeIDOfShape1, const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const = 0;
-
-        virtual bool ShouldCollide(const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const
-        {
-            return ShouldCollide_1(inShape2, inSubShapeIDOfShape2);
-        }
-
-        virtual bool ShouldCollide(const Shape *inShape1, const SubShapeID &inSubShapeIDOfShape1, const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const
-        {
-            return ShouldCollide_2(inShape1, inSubShapeIDOfShape1, inShape2, inSubShapeIDOfShape2);
-        }
-};
 
 int GLOBAL_ID = 0;
 
