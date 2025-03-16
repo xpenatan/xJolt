@@ -27830,13 +27830,13 @@ jp_PhysicsSystem_AddStepListener = ($this, $inListener) => {
     let var$2, var$3;
     var$2 = Long_lo(((ji_IDLBase_getNativeData($this)).$getCPointer()));
     var$3 = Long_lo(($inListener === null ? Long_ZERO : (ji_IDLBase_getNativeData($inListener)).$getCPointer()));
-    jp_PhysicsSystem_internal_native_AddStepListener_1$js_body$_66(var$2, var$3);
+    jp_PhysicsSystem_internal_native_AddStepListener_1$js_body$_70(var$2, var$3);
 },
 jp_PhysicsSystem_RemoveStepListener = ($this, $inListener) => {
     let var$2, var$3;
     var$2 = Long_lo(((ji_IDLBase_getNativeData($this)).$getCPointer()));
     var$3 = Long_lo(($inListener === null ? Long_ZERO : (ji_IDLBase_getNativeData($inListener)).$getCPointer()));
-    jp_PhysicsSystem_internal_native_RemoveStepListener_1$js_body$_70(var$2, var$3);
+    jp_PhysicsSystem_internal_native_RemoveStepListener_1$js_body$_74(var$2, var$3);
 },
 jp_PhysicsSystem__clinit_ = () => {
     jp_PhysicsSystem_T_01 = jp_PhysicsSystem__init_(1, 1);
@@ -27865,11 +27865,11 @@ jp_PhysicsSystem_internal_native_GetBodyInterface$js_body$_44 = var$1 => {
     if (!returnedJSObj.hasOwnProperty('ptr')) return 0;
     return jolt.getPointer(returnedJSObj);
 },
-jp_PhysicsSystem_internal_native_AddStepListener_1$js_body$_66 = (var$1, var$2) => {
+jp_PhysicsSystem_internal_native_AddStepListener_1$js_body$_70 = (var$1, var$2) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.PhysicsSystem);
     jsObj.AddStepListener_1(var$2);
 },
-jp_PhysicsSystem_internal_native_RemoveStepListener_1$js_body$_70 = (var$1, var$2) => {
+jp_PhysicsSystem_internal_native_RemoveStepListener_1$js_body$_74 = (var$1, var$2) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.PhysicsSystem);
     jsObj.RemoveStepListener_1(var$2);
 },
