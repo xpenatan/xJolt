@@ -967,6 +967,11 @@ enum SoftBodySharedSettings_ELRAType {
 // ##################################################
 
 [Prefix="JPH::"]
+interface SimShapeFilter {
+    void SimShapeFilter();
+};
+
+[Prefix="JPH::"]
 interface PhysicsSystem {
     void Init(long inMaxBodies, long inNumBodyMutexes, long inMaxBodyPairs, long inMaxContactConstraints, [Const, Ref] BroadPhaseLayerInterface inBroadPhaseLayerInterface, [Const, Ref] ObjectVsBroadPhaseLayerFilter inObjectVsBroadPhaseLayerFilter, [Const, Ref] ObjectLayerPairFilter inObjectLayerPairFilter);
     void Update(float inDeltaTime, long inCollisionSteps, TempAllocator inTempAllocator, JobSystem inJobSystem);
@@ -994,8 +999,8 @@ interface PhysicsSystem {
     [Const, Ref] BroadPhaseQuery GetBroadPhaseQuery();
     [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQuery();
     [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQueryNoLock();
-    void SaveState([Ref] StateRecorder inStream, optional EStateRecorderState inState);
-    boolean RestoreState([Ref] StateRecorder inStream);
+    void SaveState([Ref] StateRecorder inStream, optional EStateRecorderState inState, optional StateRecorderFilter inFilter);
+    boolean RestoreState([Ref] StateRecorder inStream, optional StateRecorderFilter inFilter);
     [BindTo="AddStepListener"] void AddStepListener_0(PhysicsStepListener inListener);
     [BindTo="AddStepListener"] void AddStepListener_1(VehicleConstraint inListener);
     [BindTo="RemoveStepListener"] void RemoveStepListener_0(PhysicsStepListener inListener);
@@ -1003,6 +1008,8 @@ interface PhysicsSystem {
     void SetBodyActivationListener(BodyActivationListener inListener);
     [Const] BodyActivationListener GetBodyActivationListener();
     boolean WereBodiesInContact([Const, Ref] BodyID inBodyID1, [Const, Ref] BodyID inBodyID2);
+    void SetSimShapeFilter([Const] SimShapeFilter inShapeFilter);
+    [Const] SimShapeFilter GetSimShapeFilter();
 };
 
 [Prefix="JPH::"]
@@ -2458,6 +2465,19 @@ interface BodyInterface {
     void SetUserData([Const, Ref] BodyID inBodyID, unsigned long long inUserData);
     [Const] PhysicsMaterial GetMaterial([Const, Ref] BodyID inBodyID, [Const, Ref] SubShapeID inSubShapeID);
     void InvalidateContactCache([Const, Ref] BodyID inBodyID);
+};
+
+[Prefix="JPH::"]
+interface StateRecorderFilter {
+};
+
+[JSImplementation="StateRecorderFilter"]
+interface StateRecorderFilterJS {
+    void StateRecorderFilterJS();
+    [Const] boolean ShouldSaveBody([Const, Ref] Body inBody);
+    [Const] boolean ShouldSaveConstraint([Const, Ref] Constraint inConstraint);
+    [Const] boolean ShouldSaveContact([Const, Ref] BodyID inBody1, [Const, Ref] BodyID inBody2);
+    [Const] boolean ShouldRestoreContact([Const, Ref] BodyID inBody1, [Const, Ref] BodyID inBody2);
 };
 
 [Prefix="JPH::"]
