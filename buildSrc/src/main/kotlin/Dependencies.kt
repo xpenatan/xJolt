@@ -5,7 +5,7 @@ object LibExt {
     const val groupId = "com.github.xpenatan.gdx-jolt"
     val libVersion: String = getVersion()
 
-    const val gdxVersion = "1.12.1"
+    const val gdxVersion = "1.13.1"
     const val teaVMVersion = "0.10.1"
     const val gdxTeaVMVersion = "-SNAPSHOT"
     const val jParserVersion = "-SNAPSHOT"
