@@ -585,7 +585,11 @@ interface CharacterContactListenerJS {
     boolean OnContactValidate([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2);
     boolean OnCharacterContactValidate([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2);
     void OnContactAdded([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnContactPersisted([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnContactRemoved([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2);
     void OnCharacterContactAdded([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnCharacterContactPersisted([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnCharacterContactRemoved([Const] CharacterVirtual inCharacter, [Const, Ref] CharacterID inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2);
     void OnContactSolve([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
     void OnCharacterContactSolve([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
 };
@@ -2439,6 +2443,8 @@ interface BodyInterface {
     float GetGravityFactor([Const, Ref] BodyID inBodyID);
     void SetUseManifoldReduction([Const, Ref] BodyID inBodyID, boolean inUseReduction);
     boolean GetUseManifoldReduction([Const, Ref] BodyID inBodyID);
+    void SetCollisionGroup([Const, Ref] BodyID inBodyID, [Const, Ref] CollisionGroup inCollisionGroup);
+    [Const, Ref] CollisionGroup GetCollisionGroup([Const, Ref] BodyID inBodyID);
     void AddForce([Const, Ref] BodyID inBodyID, [Const, Ref] Vec3 inForce, EActivation inActivationMode);
     void AddForce([Const, Ref] BodyID inBodyID, [Const, Ref] Vec3 inForce, [Const, Ref] Vec3 inPoint, EActivation inActivationMode);
     void AddTorque([Const, Ref] BodyID inBodyID, [Const, Ref] Vec3 inTorque, EActivation inActivationMode);
@@ -2496,7 +2502,7 @@ interface PhysicsSettings {
     attribute float mPenetrationSlop;
     attribute float mLinearCastThreshold;
     attribute float mLinearCastMaxPenetration;
-    attribute float mManifoldToleranceSq;
+    attribute float mManifoldTolerance;
     attribute float mMaxPenetrationDistance;
     attribute float mBodyPairCacheMaxDeltaPositionSq;
     attribute float mBodyPairCacheCosMaxDeltaRotationDiv2;
@@ -3043,6 +3049,15 @@ interface CharacterBaseSettings {
 };
 
 [Prefix="JPH::"]
+interface CharacterID {
+    void CharacterID();
+    unsigned long GetValue();
+    boolean IsInvalid();
+    [Value] static CharacterID sNextCharacterID();
+    static void sSetNextCharacterID(unsigned long inNextValue);
+};
+
+[Prefix="JPH::"]
 interface CharacterVirtualSettings {
     void CharacterVirtualSettings();
 
@@ -3331,6 +3346,7 @@ interface VehicleConstraint {
     [Const] Wheel GetWheel(unsigned long inIdx);
     [Value] Mat44 GetWheelLocalTransform(unsigned long inWheelIndex, [Ref] Vec3 inWheelRight, [Ref] Vec3 inWheelUp);
     [Value] Mat44 GetWheelWorldTransform(unsigned long inWheelIndex, [Ref] Vec3 inWheelRight, [Ref] Vec3 inWheelUp);
+    [Ref] ArrayVehicleAntiRollBar GetAntiRollBars();
     void SetNumStepsBetweenCollisionTestActive(unsigned long inSteps);
     [Const] unsigned long GetNumStepsBetweenCollisionTestActive();
     void SetNumStepsBetweenCollisionTestInactive(unsigned long inSteps);
@@ -3557,9 +3573,7 @@ interface VehicleControllerSettings {
 
 [Prefix="JPH::"]
 interface VehicleController {
-    unsigned long GetRefCount();
-    void AddRef();
-    void Release();
+    [Ref] VehicleConstraint GetConstraint();
 };
 
 [Prefix="JPH::"]

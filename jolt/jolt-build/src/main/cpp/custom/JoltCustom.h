@@ -589,7 +589,9 @@ class CharacterContactListenerEm: public JPH::CharacterContactListener
 public:
     // JavaScript compatible virtual functions
     virtual void OnContactAdded(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, JPH::CharacterContactSettings &ioSettings) = 0;
+    virtual void OnContactPersisted(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, JPH::CharacterContactSettings &ioSettings) = 0;
     virtual void OnCharacterContactAdded(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, JPH::CharacterContactSettings &ioSettings) = 0;
+    virtual void OnCharacterContactPersisted(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, JPH::CharacterContactSettings &ioSettings) = 0;
     virtual void OnContactSolve(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, const JPH::Vec3 *inContactVelocity, const JPH::PhysicsMaterial *inContactMaterial, const JPH::Vec3 *inCharacterVelocity, JPH::Vec3 &ioNewCharacterVelocity) = 0;
     virtual void OnCharacterContactSolve(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, const JPH::Vec3 *inContactVelocity, const JPH::PhysicsMaterial *inContactMaterial, const JPH::Vec3 *inCharacterVelocity, JPH::Vec3 &ioNewCharacterVelocity) = 0;
 
@@ -599,9 +601,19 @@ public:
         OnContactAdded(inCharacter, inBodyID2, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
     }
 
+    virtual void OnContactPersisted(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::CharacterContactSettings &ioSettings) override
+    {
+        OnContactPersisted(inCharacter, inBodyID2, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
+    }
+
     virtual void OnCharacterContactAdded(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::CharacterContactSettings &ioSettings) override
     {
         OnCharacterContactAdded(inCharacter, inOtherCharacter, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
+    }
+
+    virtual void OnCharacterContactPersisted(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::CharacterContactSettings &ioSettings) override
+    {
+        OnCharacterContactPersisted(inCharacter, inOtherCharacter, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
     }
 
     virtual void OnContactSolve(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::Vec3Arg inContactVelocity, const JPH::PhysicsMaterial *inContactMaterial, JPH::Vec3Arg inCharacterVelocity, JPH::Vec3 &ioNewCharacterVelocity) override
