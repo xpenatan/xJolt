@@ -77,6 +77,7 @@
 //#include <unistd.h>
 //#include <emscripten/em_asm.h>
 
+using namespace JPH;
 using namespace std;
 //
 //#ifdef JPH_DEBUG_RENDERER
@@ -87,97 +88,92 @@ using namespace std;
 //static_assert(sizeof(ObjectLayer) == 4);
 
 //// Types that need to be exposed to JavaScript
-using uint = JPH::uint;
-using uint8 = JPH::uint8;
-using uint64 = JPH::uint64;
-using ArrayVec3 = JPH::Array<JPH::Vec3>;
-using ArrayFloat = JPH::Array<float>;
-using ArrayUint = JPH::Array<JPH::uint>;
-using ArrayUint8 = JPH::Array<JPH::uint8>;
-using Vec3MemRef = JPH::Vec3;
-using QuatMemRef = JPH::Quat;
-using ArrayQuat = JPH::Array<JPH::Quat>;
-using Mat44MemRef = JPH::Mat44;
-using ArrayMat44 = JPH::Array<JPH::Mat44>;
+using uint = uint;
+using uint8 = uint8;
+using uint64 = uint64;
+using ArrayVec3 = Array<Vec3>;
+using ArrayFloat = Array<float>;
+using ArrayUint = Array<uint>;
+using ArrayUint8 = Array<uint8>;
+using Vec3MemRef = Vec3;
+using QuatMemRef = Quat;
+using ArrayQuat = Array<Quat>;
+using Mat44MemRef = Mat44;
+using ArrayMat44 = Array<Mat44>;
 using FloatMemRef = float;
-using UintMemRef = JPH::uint;
-using Uint8MemRef = JPH::uint8;
-using SoftBodySharedSettingsVertex = JPH::SoftBodySharedSettings::Vertex;
-using SoftBodySharedSettingsFace = JPH::SoftBodySharedSettings::Face;
-using SoftBodySharedSettingsEdge = JPH::SoftBodySharedSettings::Edge;
-using SoftBodySharedSettingsDihedralBend = JPH::SoftBodySharedSettings::DihedralBend;
-using SoftBodySharedSettingsVolume = JPH::SoftBodySharedSettings::Volume;
-using SoftBodySharedSettingsInvBind = JPH::SoftBodySharedSettings::InvBind;
-using SoftBodySharedSettingsSkinWeight = JPH::SoftBodySharedSettings::SkinWeight;
-using SoftBodySharedSettingsSkinned = JPH::SoftBodySharedSettings::Skinned;
-using SoftBodySharedSettingsLRA = JPH::SoftBodySharedSettings::LRA;
-using SoftBodySharedSettingsVertexAttributes = JPH::SoftBodySharedSettings::VertexAttributes;
-using CollideShapeResultFace = JPH::CollideShapeResult::Face;
-using ArraySoftBodySharedSettingsVertex = JPH::Array<SoftBodySharedSettingsVertex>;
-using ArraySoftBodySharedSettingsFace = JPH::Array<SoftBodySharedSettingsFace>;
-using ArraySoftBodySharedSettingsEdge = JPH::Array<SoftBodySharedSettingsEdge>;
-using ArraySoftBodySharedSettingsDihedralBend = JPH::Array<SoftBodySharedSettingsDihedralBend>;
-using ArraySoftBodySharedSettingsVolume = JPH::Array<SoftBodySharedSettingsVolume>;
-using ArraySoftBodySharedSettingsInvBind = JPH::Array<SoftBodySharedSettingsInvBind>;
-using ArraySoftBodySharedSettingsSkinWeight = JPH::Array<SoftBodySharedSettingsSkinWeight>;
-using ArraySoftBodySharedSettingsSkinned = JPH::Array<SoftBodySharedSettingsSkinned>;
-using ArraySoftBodySharedSettingsLRA = JPH::Array<SoftBodySharedSettingsLRA>;
-using ArraySoftBodySharedSettingsVertexAttributes = JPH::Array<SoftBodySharedSettingsVertexAttributes>;
-using ArraySoftBodyVertex = JPH::Array<JPH::SoftBodyVertex>;
-using Vector2 = JPH::Vector<2>;
-using ArrayRayCastResult = JPH::Array<JPH::RayCastResult>;
-using CastRayAllHitCollisionCollector = JPH::AllHitCollisionCollector<JPH::CastRayCollector>;
-using CastRayClosestHitCollisionCollector = JPH::ClosestHitCollisionCollector<JPH::CastRayCollector>;
-using CastRayAnyHitCollisionCollector = JPH::AnyHitCollisionCollector<JPH::CastRayCollector>;
-using ArrayCollidePointResult = JPH::Array<JPH::CollidePointResult>;
-using CollidePointAllHitCollisionCollector = JPH::AllHitCollisionCollector<JPH::CollidePointCollector>;
-using CollidePointClosestHitCollisionCollector = JPH::ClosestHitCollisionCollector<JPH::CollidePointCollector>;
-using CollidePointAnyHitCollisionCollector = JPH::AnyHitCollisionCollector<JPH::CollidePointCollector>;
-using ArrayCollideShapeResult = JPH::Array<JPH::CollideShapeResult>;
-using CollideShapeAllHitCollisionCollector = JPH::AllHitCollisionCollector<JPH::CollideShapeCollector>;
-using CollideShapeClosestHitCollisionCollector = JPH::ClosestHitCollisionCollector<JPH::CollideShapeCollector>;
-using CollideShapeAnyHitCollisionCollector = JPH::AnyHitCollisionCollector<JPH::CollideShapeCollector>;
-using ArrayShapeCastResult = JPH::Array<JPH::ShapeCastResult>;
-using CastShapeAllHitCollisionCollector = JPH::AllHitCollisionCollector<JPH::CastShapeCollector>;
-using CastShapeClosestHitCollisionCollector = JPH::ClosestHitCollisionCollector<JPH::CastShapeCollector>;
-using CastShapeAnyHitCollisionCollector = JPH::AnyHitCollisionCollector<JPH::CastShapeCollector>;
-using ArrayWheelSettings = JPH::Array<JPH::Ref<JPH::WheelSettings>>;
-using ArrayVehicleAntiRollBar = JPH::Array<JPH::VehicleAntiRollBar>;
-using ArrayVehicleDifferentialSettings = JPH::Array<JPH::VehicleDifferentialSettings>;
-using SkeletalAnimationJointState = JPH::SkeletalAnimation::JointState;
-using SkeletalAnimationKeyframe = JPH::SkeletalAnimation::Keyframe;
-using SkeletalAnimationAnimatedJoint = JPH::SkeletalAnimation::AnimatedJoint;
-using ArraySkeletonKeyframe = JPH::Array<SkeletalAnimationKeyframe>;
-using ArraySkeletonAnimatedJoint = JPH::Array<SkeletalAnimationAnimatedJoint>;
-using RagdollPart = JPH::RagdollSettings::Part;
-using RagdollAdditionalConstraint = JPH::RagdollSettings::AdditionalConstraint;
-using ArrayRagdollPart = JPH::Array<RagdollPart>;
-using ArrayRagdollAdditionalConstraint = JPH::Array<RagdollAdditionalConstraint>;
-using CompoundShapeSubShape = JPH::CompoundShape::SubShape;
+using UintMemRef = uint;
+using Uint8MemRef = uint8;
+using SoftBodySharedSettingsVertex = SoftBodySharedSettings::Vertex;
+using SoftBodySharedSettingsFace = SoftBodySharedSettings::Face;
+using SoftBodySharedSettingsEdge = SoftBodySharedSettings::Edge;
+using SoftBodySharedSettingsDihedralBend = SoftBodySharedSettings::DihedralBend;
+using SoftBodySharedSettingsVolume = SoftBodySharedSettings::Volume;
+using SoftBodySharedSettingsInvBind = SoftBodySharedSettings::InvBind;
+using SoftBodySharedSettingsSkinWeight = SoftBodySharedSettings::SkinWeight;
+using SoftBodySharedSettingsSkinned = SoftBodySharedSettings::Skinned;
+using SoftBodySharedSettingsLRA = SoftBodySharedSettings::LRA;
+using SoftBodySharedSettingsVertexAttributes = SoftBodySharedSettings::VertexAttributes;
+using CollideShapeResultFace = CollideShapeResult::Face;
+using ArraySoftBodySharedSettingsVertex = Array<SoftBodySharedSettingsVertex>;
+using ArraySoftBodySharedSettingsFace = Array<SoftBodySharedSettingsFace>;
+using ArraySoftBodySharedSettingsEdge = Array<SoftBodySharedSettingsEdge>;
+using ArraySoftBodySharedSettingsDihedralBend = Array<SoftBodySharedSettingsDihedralBend>;
+using ArraySoftBodySharedSettingsVolume = Array<SoftBodySharedSettingsVolume>;
+using ArraySoftBodySharedSettingsInvBind = Array<SoftBodySharedSettingsInvBind>;
+using ArraySoftBodySharedSettingsSkinWeight = Array<SoftBodySharedSettingsSkinWeight>;
+using ArraySoftBodySharedSettingsSkinned = Array<SoftBodySharedSettingsSkinned>;
+using ArraySoftBodySharedSettingsLRA = Array<SoftBodySharedSettingsLRA>;
+using ArraySoftBodySharedSettingsVertexAttributes = Array<SoftBodySharedSettingsVertexAttributes>;
+using ArraySoftBodyVertex = Array<SoftBodyVertex>;
+using Vector2 = Vector<2>;
+using ArrayRayCastResult = Array<RayCastResult>;
+using CastRayAllHitCollisionCollector = AllHitCollisionCollector<CastRayCollector>;
+using CastRayClosestHitCollisionCollector = ClosestHitCollisionCollector<CastRayCollector>;
+using CastRayAnyHitCollisionCollector = AnyHitCollisionCollector<CastRayCollector>;
+using ArrayCollidePointResult = Array<CollidePointResult>;
+using CollidePointAllHitCollisionCollector = AllHitCollisionCollector<CollidePointCollector>;
+using CollidePointClosestHitCollisionCollector = ClosestHitCollisionCollector<CollidePointCollector>;
+using CollidePointAnyHitCollisionCollector = AnyHitCollisionCollector<CollidePointCollector>;
+using ArrayCollideShapeResult = Array<CollideShapeResult>;
+using CollideShapeAllHitCollisionCollector = AllHitCollisionCollector<CollideShapeCollector>;
+using CollideShapeClosestHitCollisionCollector = ClosestHitCollisionCollector<CollideShapeCollector>;
+using CollideShapeAnyHitCollisionCollector = AnyHitCollisionCollector<CollideShapeCollector>;
+using ArrayShapeCastResult = Array<ShapeCastResult>;
+using CastShapeAllHitCollisionCollector = AllHitCollisionCollector<CastShapeCollector>;
+using CastShapeClosestHitCollisionCollector = ClosestHitCollisionCollector<CastShapeCollector>;
+using CastShapeAnyHitCollisionCollector = AnyHitCollisionCollector<CastShapeCollector>;
+using ArrayWheelSettings = Array<Ref<WheelSettings>>;
+using ArrayVehicleAntiRollBar = Array<VehicleAntiRollBar>;
+using ArrayVehicleDifferentialSettings = Array<VehicleDifferentialSettings>;
+using SkeletalAnimationJointState = SkeletalAnimation::JointState;
+using SkeletalAnimationKeyframe = SkeletalAnimation::Keyframe;
+using SkeletalAnimationAnimatedJoint = SkeletalAnimation::AnimatedJoint;
+using ArraySkeletonKeyframe = Array<SkeletalAnimationKeyframe>;
+using ArraySkeletonAnimatedJoint = Array<SkeletalAnimationAnimatedJoint>;
+using RagdollPart = RagdollSettings::Part;
+using RagdollAdditionalConstraint = RagdollSettings::AdditionalConstraint;
+using ArrayRagdollPart = Array<RagdollPart>;
+using ArrayRagdollAdditionalConstraint = Array<RagdollAdditionalConstraint>;
+using CompoundShapeSubShape = CompoundShape::SubShape;
 
 // Alias for EBodyType values to avoid clashes
-using EBodyType = JPH::EBodyType;
 constexpr EBodyType EBodyType_RigidBody = EBodyType::RigidBody;
 constexpr EBodyType EBodyType_SoftBody = EBodyType::SoftBody;
 
 // Alias for EMotionType values to avoid clashes
-using EMotionType = JPH::EMotionType;
 constexpr EMotionType EMotionType_Static = EMotionType::Static;
 constexpr EMotionType EMotionType_Kinematic = EMotionType::Kinematic;
 constexpr EMotionType EMotionType_Dynamic = EMotionType::Dynamic;
 
 // Alias for EMotionQuality values to avoid clashes
-using EMotionQuality = JPH::EMotionQuality;
 constexpr EMotionQuality EMotionQuality_Discrete = EMotionQuality::Discrete;
 constexpr EMotionQuality EMotionQuality_LinearCast = EMotionQuality::LinearCast;
 
 // Alias for EActivation values to avoid clashes
-using EActivation = JPH::EActivation;
 constexpr EActivation EActivation_Activate = EActivation::Activate;
 constexpr EActivation EActivation_DontActivate = EActivation::DontActivate;
 
 // Alias for EShapeType values to avoid clashes
-using EShapeType = JPH::EShapeType;
 constexpr EShapeType EShapeType_Convex = EShapeType::Convex;
 constexpr EShapeType EShapeType_Compound = EShapeType::Compound;
 constexpr EShapeType EShapeType_Decorated = EShapeType::Decorated;
@@ -185,7 +181,6 @@ constexpr EShapeType EShapeType_Mesh = EShapeType::Mesh;
 constexpr EShapeType EShapeType_HeightField = EShapeType::HeightField;
 
 // Alias for EShapeSubType values to avoid clashes
-using EShapeSubType = JPH::EShapeSubType;
 constexpr EShapeSubType EShapeSubType_Sphere = EShapeSubType::Sphere;
 constexpr EShapeSubType EShapeSubType_Box = EShapeSubType::Box;
 constexpr EShapeSubType EShapeSubType_Capsule = EShapeSubType::Capsule;
@@ -201,23 +196,19 @@ constexpr EShapeSubType EShapeSubType_Mesh = EShapeSubType::Mesh;
 constexpr EShapeSubType EShapeSubType_HeightField = EShapeSubType::HeightField;
 
 // Alias for EConstraintSpace values to avoid clashes
-using EConstraintSpace = JPH::EConstraintSpace;
 constexpr EConstraintSpace EConstraintSpace_LocalToBodyCOM = EConstraintSpace::LocalToBodyCOM;
 constexpr EConstraintSpace EConstraintSpace_WorldSpace = EConstraintSpace::WorldSpace;
 
 // Alias for ESpringMode values to avoid clashes
-using ESpringMode = JPH::ESpringMode;
 constexpr ESpringMode ESpringMode_FrequencyAndDamping = ESpringMode::FrequencyAndDamping;
 constexpr ESpringMode ESpringMode_StiffnessAndDamping = ESpringMode::StiffnessAndDamping;
 
 // Alias for EOverrideMassProperties values to avoid clashes
-using EOverrideMassProperties = JPH::EOverrideMassProperties;
 constexpr EOverrideMassProperties EOverrideMassProperties_CalculateMassAndInertia = EOverrideMassProperties::CalculateMassAndInertia;
 constexpr EOverrideMassProperties EOverrideMassProperties_CalculateInertia = EOverrideMassProperties::CalculateInertia;
 constexpr EOverrideMassProperties EOverrideMassProperties_MassAndInertiaProvided = EOverrideMassProperties::MassAndInertiaProvided;
 
 // Alias for EAllowedDOFs values to avoid clashes
-using EAllowedDOFs = JPH::EAllowedDOFs;
 constexpr EAllowedDOFs EAllowedDOFs_TranslationX = EAllowedDOFs::TranslationX;
 constexpr EAllowedDOFs EAllowedDOFs_TranslationY = EAllowedDOFs::TranslationY;
 constexpr EAllowedDOFs EAllowedDOFs_TranslationZ = EAllowedDOFs::TranslationZ;
@@ -228,7 +219,6 @@ constexpr EAllowedDOFs EAllowedDOFs_Plane2D = EAllowedDOFs::Plane2D;
 constexpr EAllowedDOFs EAllowedDOFs_All = EAllowedDOFs::All;
 
 // Alias for EStateRecorderState values to avoid clashes
-using EStateRecorderState = JPH::EStateRecorderState;
 constexpr EStateRecorderState EStateRecorderState_None = EStateRecorderState::None;
 constexpr EStateRecorderState EStateRecorderState_Global = EStateRecorderState::Global;
 constexpr EStateRecorderState EStateRecorderState_Bodies = EStateRecorderState::Bodies;
@@ -237,46 +227,39 @@ constexpr EStateRecorderState EStateRecorderState_Constraints = EStateRecorderSt
 constexpr EStateRecorderState EStateRecorderState_All = EStateRecorderState::All;
 
 // Alias for EBackFaceMode values to avoid clashes
-using EBackFaceMode = JPH::EBackFaceMode;
 constexpr EBackFaceMode EBackFaceMode_IgnoreBackFaces = EBackFaceMode::IgnoreBackFaces;
 constexpr EBackFaceMode EBackFaceMode_CollideWithBackFaces = EBackFaceMode::CollideWithBackFaces;
 
 // Alias for EGroundState values to avoid clashes
-using EGroundState = JPH::CharacterBase::EGroundState;
+using EGroundState = CharacterBase::EGroundState;
 constexpr EGroundState EGroundState_OnGround = EGroundState::OnGround;
 constexpr EGroundState EGroundState_OnSteepGround = EGroundState::OnSteepGround;
 constexpr EGroundState EGroundState_NotSupported = EGroundState::NotSupported;
 constexpr EGroundState EGroundState_InAir = EGroundState::InAir;
 
 // Alias for ValidateResult values to avoid clashes
-using ValidateResult = JPH::ValidateResult;
 constexpr ValidateResult ValidateResult_AcceptAllContactsForThisBodyPair = ValidateResult::AcceptAllContactsForThisBodyPair;
 constexpr ValidateResult ValidateResult_AcceptContact = ValidateResult::AcceptContact;
 constexpr ValidateResult ValidateResult_RejectContact = ValidateResult::RejectContact;
 constexpr ValidateResult ValidateResult_RejectAllContactsForThisBodyPair = ValidateResult::RejectAllContactsForThisBodyPair;
 
 // Alias for SoftBodyValidateResult values to avoid clashes
-using SoftBodyValidateResult = JPH::SoftBodyValidateResult;
 constexpr SoftBodyValidateResult SoftBodyValidateResult_AcceptContact = SoftBodyValidateResult::AcceptContact;
 constexpr SoftBodyValidateResult SoftBodyValidateResult_RejectContact = SoftBodyValidateResult::RejectContact;
 
 // Alias for EActiveEdgeMode values to avoid clashes
-using EActiveEdgeMode = JPH::EActiveEdgeMode;
 constexpr EActiveEdgeMode EActiveEdgeMode_CollideOnlyWithActive = EActiveEdgeMode::CollideOnlyWithActive;
 constexpr EActiveEdgeMode EActiveEdgeMode_CollideWithAll = EActiveEdgeMode::CollideWithAll;
 
 // Alias for ECollectFacesMode values to avoid clashes
-using ECollectFacesMode = JPH::ECollectFacesMode;
 constexpr ECollectFacesMode ECollectFacesMode_CollectFaces = ECollectFacesMode::CollectFaces;
 constexpr ECollectFacesMode ECollectFacesMode_NoFaces = ECollectFacesMode::NoFaces;
 
 // Alias for EConstraintType values to avoid clashes
-using EConstraintType = JPH::EConstraintType;
 constexpr EConstraintType EConstraintType_Constraint = EConstraintType::Constraint;
 constexpr EConstraintType EConstraintType_TwoBodyConstraint = EConstraintType::TwoBodyConstraint;
 
 // Alias for EConstraintSubType values to avoid clashes
-using EConstraintSubType = JPH::EConstraintSubType;
 constexpr EConstraintSubType EConstraintSubType_Fixed = EConstraintSubType::Fixed;
 constexpr EConstraintSubType EConstraintSubType_Point = EConstraintSubType::Point;
 constexpr EConstraintSubType EConstraintSubType_Hinge = EConstraintSubType::Hinge;
@@ -292,7 +275,6 @@ constexpr EConstraintSubType EConstraintSubType_Gear = EConstraintSubType::Gear;
 constexpr EConstraintSubType EConstraintSubType_Pulley = EConstraintSubType::Pulley;
 
 /// Alias for EPathRotationConstraintType to avoid clash
-using EPathRotationConstraintType = JPH::EPathRotationConstraintType;
 constexpr EPathRotationConstraintType EPathRotationConstraintType_Free = EPathRotationConstraintType::Free;
 constexpr EPathRotationConstraintType EPathRotationConstraintType_ConstrainAroundTangent = EPathRotationConstraintType::ConstrainAroundTangent;
 constexpr EPathRotationConstraintType EPathRotationConstraintType_ConstrainAroundNormal = EPathRotationConstraintType::ConstrainAroundNormal;
@@ -301,7 +283,7 @@ constexpr EPathRotationConstraintType EPathRotationConstraintType_ConstrainToPat
 constexpr EPathRotationConstraintType EPathRotationConstraintType_FullyConstrained = EPathRotationConstraintType::FullyConstrained;
 
 // Alias for SixDOFConstraintSettings::EAxis to avoid clashes
-using SixDOFConstraintSettings_EAxis = JPH::SixDOFConstraintSettings::EAxis;
+using SixDOFConstraintSettings_EAxis = SixDOFConstraintSettings::EAxis;
 constexpr SixDOFConstraintSettings_EAxis SixDOFConstraintSettings_EAxis_TranslationX = SixDOFConstraintSettings_EAxis::TranslationX;
 constexpr SixDOFConstraintSettings_EAxis SixDOFConstraintSettings_EAxis_TranslationY = SixDOFConstraintSettings_EAxis::TranslationY;
 constexpr SixDOFConstraintSettings_EAxis SixDOFConstraintSettings_EAxis_TranslationZ = SixDOFConstraintSettings_EAxis::TranslationZ;
@@ -310,13 +292,11 @@ constexpr SixDOFConstraintSettings_EAxis SixDOFConstraintSettings_EAxis_Rotation
 constexpr SixDOFConstraintSettings_EAxis SixDOFConstraintSettings_EAxis_RotationZ = SixDOFConstraintSettings_EAxis::RotationZ;
 
 // Alias for EMotorState values to avoid clashes
-using EMotorState = JPH::EMotorState;
 constexpr EMotorState EMotorState_Off = EMotorState::Off;
 constexpr EMotorState EMotorState_Velocity = EMotorState::Velocity;
 constexpr EMotorState EMotorState_Position = EMotorState::Position;
 
 // Alias for ETransmissionMode values to avoid clashes
-using ETransmissionMode = JPH::ETransmissionMode;
 constexpr ETransmissionMode ETransmissionMode_Auto = ETransmissionMode::Auto;
 constexpr ETransmissionMode ETransmissionMode_Manual = ETransmissionMode::Manual;
 
@@ -328,18 +308,17 @@ enum ETireFrictionDirection
 };
 
 // Alias for ESwingType values to avoid clashes
-using ESwingType = JPH::ESwingType;
 constexpr ESwingType ESwingType_Cone = ESwingType::Cone;
 constexpr ESwingType ESwingType_Pyramid = ESwingType::Pyramid;
 
 // Alias for EBendType values to avoid clashes
-using SoftBodySharedSettings_EBendType = JPH::SoftBodySharedSettings::EBendType;
+using SoftBodySharedSettings_EBendType = SoftBodySharedSettings::EBendType;
 constexpr SoftBodySharedSettings_EBendType SoftBodySharedSettings_EBendType_None = SoftBodySharedSettings_EBendType::None;
 constexpr SoftBodySharedSettings_EBendType SoftBodySharedSettings_EBendType_Distance = SoftBodySharedSettings_EBendType::Distance;
 constexpr SoftBodySharedSettings_EBendType SoftBodySharedSettings_EBendType_Dihedral = SoftBodySharedSettings_EBendType::Dihedral;
 
 // Alias for ELRAType values to avoid clashes
-using SoftBodySharedSettings_ELRAType = JPH::SoftBodySharedSettings::ELRAType;
+using SoftBodySharedSettings_ELRAType = SoftBodySharedSettings::ELRAType;
 constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_None = SoftBodySharedSettings_ELRAType::None;
 constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_EuclideanDistance = SoftBodySharedSettings_ELRAType::EuclideanDistance;
 constexpr SoftBodySharedSettings_ELRAType SoftBodySharedSettings_ELRAType_GeodesicDistance = SoftBodySharedSettings_ELRAType::GeodesicDistance;
@@ -360,7 +339,7 @@ static void TraceImpl(const char* inFMT, ...)
 #ifdef JPH_ENABLE_ASSERTS
 
 // Callback for asserts
-static bool AssertFailedImpl(const char* inExpression, const char* inMessage, const char* inFile, JPH::uint inLine)
+static bool AssertFailedImpl(const char* inExpression, const char* inMessage, const char* inFile, uint inLine)
 {
     // Print to the TTY
     cout << inFile << ":" << inLine << ": (" << inExpression << ") " << (inMessage != nullptr ? inMessage : "") << endl;
@@ -375,71 +354,71 @@ static bool AssertFailedImpl(const char* inExpression, const char* inMessage, co
 class Jolt
 {
 public:
-    static JPH::PhysicsSystem* New_PhysicsSystem() {
-        return new JPH::PhysicsSystem();
+    static PhysicsSystem* New_PhysicsSystem() {
+        return new PhysicsSystem();
     }
 
-    static JPH::Factory* New_Factory() {
-        return new JPH::Factory();
+    static Factory* New_Factory() {
+        return new Factory();
     }
 
-    static JPH::TempAllocatorImpl* New_TempAllocatorImpl(uint inSize) {
-        return new JPH::TempAllocatorImpl(inSize);
+    static TempAllocatorImpl* New_TempAllocatorImpl(uint inSize) {
+        return new TempAllocatorImpl(inSize);
     }
 
-    static JPH::JobSystemThreadPool* New_JobSystemThreadPool(int inNumThreads = -1, uint inMaxJobs = JPH::cMaxPhysicsJobs, uint inMaxBarriers = JPH::cMaxPhysicsBarriers) {
-        return new JPH::JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);
+    static JobSystemThreadPool* New_JobSystemThreadPool(int inNumThreads = -1, uint inMaxJobs = cMaxPhysicsJobs, uint inMaxBarriers = cMaxPhysicsBarriers) {
+        return new JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);
     }
 
-    static JPH::BodyCreationSettings* New_BodyCreationSettings() {
-        return new JPH::BodyCreationSettings();
+    static BodyCreationSettings* New_BodyCreationSettings() {
+        return new BodyCreationSettings();
     }
-    static JPH::BodyCreationSettings* New_BodyCreationSettings(const JPH::ShapeSettings* inShape, JPH::RVec3Arg inPosition, JPH::QuatArg inRotation, JPH::EMotionType inMotionType, JPH::ObjectLayer inObjectLayer) {
-        return new JPH::BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
+    static BodyCreationSettings* New_BodyCreationSettings(const ShapeSettings* inShape, RVec3Arg inPosition, QuatArg inRotation, EMotionType inMotionType, ObjectLayer inObjectLayer) {
+        return new BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
     }
-    static JPH::BodyCreationSettings* New_BodyCreationSettings(const JPH::Shape* inShape, JPH::RVec3Arg inPosition, JPH::QuatArg inRotation, JPH::EMotionType inMotionType, JPH::ObjectLayer inObjectLayer) {
-        return new JPH::BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
-    }
-
-    static JPH::Mat44* New_Mat44() {
-        return new JPH::Mat44();
-    }
-    static JPH::Mat44* New_Mat44(JPH::Vec4& inC1, JPH::Vec4& inC2, JPH::Vec4& inC3, JPH::Vec4& inC4) {
-        return new JPH::Mat44(inC1, inC2, inC3, inC4);
-    }
-    static JPH::Mat44* New_Mat44(JPH::Vec4& inC1, JPH::Vec4& inC2, JPH::Vec4& inC3, JPH::Vec3& inC4) {
-        return new JPH::Mat44(inC1, inC2, inC3, inC4);
+    static BodyCreationSettings* New_BodyCreationSettings(const Shape* inShape, RVec3Arg inPosition, QuatArg inRotation, EMotionType inMotionType, ObjectLayer inObjectLayer) {
+        return new BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
     }
 
-    static JPH::Vec3* New_Vec3() {
-        return new JPH::Vec3();
+    static Mat44* New_Mat44() {
+        return new Mat44();
     }
-    static JPH::Vec3* New_Vec3(float inX, float inY, float inZ) {
-        return new JPH::Vec3(inX, inY, inZ);
+    static Mat44* New_Mat44(Vec4& inC1, Vec4& inC2, Vec4& inC3, Vec4& inC4) {
+        return new Mat44(inC1, inC2, inC3, inC4);
     }
-    static JPH::Vec3* New_Vec3(const JPH::Vec3 &inRHS) {
-        return new JPH::Vec3(inRHS);
-    }
-    static JPH::Vec3* New_Vec3(const JPH::Float3 &inV) {
-        return new JPH::Vec3(inV);
+    static Mat44* New_Mat44(Vec4& inC1, Vec4& inC2, Vec4& inC3, Vec3& inC4) {
+        return new Mat44(inC1, inC2, inC3, inC4);
     }
 
-    static JPH::Vec4* New_Vec4() {
-        return new JPH::Vec4();
+    static Vec3* New_Vec3() {
+        return new Vec3();
     }
-    static JPH::Vec4* New_Vec4(float inX, float inY, float inZ, float inW) {
-        return new JPH::Vec4(inX, inY, inZ, inW);
+    static Vec3* New_Vec3(float inX, float inY, float inZ) {
+        return new Vec3(inX, inY, inZ);
     }
-    static JPH::Vec4* New_Vec4(const JPH::Vec4 &inRHS) {
-        return new JPH::Vec4(inRHS);
+    static Vec3* New_Vec3(const Vec3 &inRHS) {
+        return new Vec3(inRHS);
     }
-    static JPH::Vec4* New_Vec4(const JPH::Vec3 &inV, float inW) {
-        return new JPH::Vec4(inV, inW);
+    static Vec3* New_Vec3(const Float3 &inV) {
+        return new Vec3(inV);
+    }
+
+    static Vec4* New_Vec4() {
+        return new Vec4();
+    }
+    static Vec4* New_Vec4(float inX, float inY, float inZ, float inW) {
+        return new Vec4(inX, inY, inZ, inW);
+    }
+    static Vec4* New_Vec4(const Vec4 &inRHS) {
+        return new Vec4(inRHS);
+    }
+    static Vec4* New_Vec4(const Vec3 &inV, float inW) {
+        return new Vec4(inV, inW);
     }
 
     static void Init() {
-        JPH::Trace = TraceImpl;
-        JPH_IF_ENABLE_ASSERTS(JPH::AssertFailed = AssertFailedImpl;)
+        Trace = TraceImpl;
+        JPH_IF_ENABLE_ASSERTS(AssertFailed = AssertFailedImpl;)
     }
 
     static void RegisterTypes() {
@@ -450,19 +429,19 @@ public:
         JPH::UnregisterTypes();
     }
 
-    static void ClearWorld(JPH::PhysicsSystem& physicsSystem) {
+    static void ClearWorld(PhysicsSystem& physicsSystem) {
         // Step 1: Remove all constraints
-        JPH::Array<JPH::Ref<JPH::Constraint>> constraints = physicsSystem.GetConstraints();
-        for (JPH::Ref<JPH::Constraint>& constraintRef : constraints) {
+        Array<Ref<Constraint>> constraints = physicsSystem.GetConstraints();
+        for (Ref<Constraint>& constraintRef : constraints) {
             if (constraintRef) { // Check if the reference is valid
-                JPH::Constraint* constraint = constraintRef.GetPtr();
+                Constraint* constraint = constraintRef.GetPtr();
                 physicsSystem.RemoveConstraint(constraint);
             }
         }
 
         // Step 2: Remove and destroy all bodies
-        JPH::BodyInterface& bodyInterface = physicsSystem.GetBodyInterface();
-        JPH::BodyIDVector bodyIDs;
+        BodyInterface& bodyInterface = physicsSystem.GetBodyInterface();
+        BodyIDVector bodyIDs;
         physicsSystem.GetBodies(bodyIDs); // Fills the vector with all body IDs
 
         if (!bodyIDs.empty()) {
@@ -478,37 +457,37 @@ public:
 class SoftBodyVertexTraits
 {
 public:
-    static constexpr JPH::uint mPreviousPositionOffset = offsetof(JPH::SoftBodyVertex, mPreviousPosition);
-    static constexpr JPH::uint mPositionOffset = offsetof(JPH::SoftBodyVertex, mPosition);
-    static constexpr JPH::uint mVelocityOffset = offsetof(JPH::SoftBodyVertex, mVelocity);
+    static constexpr uint mPreviousPositionOffset = offsetof(SoftBodyVertex, mPreviousPosition);
+    static constexpr uint mPositionOffset = offsetof(SoftBodyVertex, mPosition);
+    static constexpr uint mVelocityOffset = offsetof(SoftBodyVertex, mVelocity);
 };
 
 /// Helper class to extract triangles from the shape
 class ShapeGetTriangles
 {
 public:
-    ShapeGetTriangles(const JPH::Shape *inShape, const JPH::AABox &inBox, JPH::Vec3Arg inPositionCOM, JPH::QuatArg inRotation, JPH::Vec3Arg inScale)
+    ShapeGetTriangles(const Shape *inShape, const AABox &inBox, Vec3Arg inPositionCOM, QuatArg inRotation, Vec3Arg inScale)
     {
         const size_t cBlockSize = 8096;
 
         // First collect all leaf shapes
-        JPH::AllHitCollisionCollector<JPH::TransformedShapeCollector> collector;
-        inShape->CollectTransformedShapes(inBox, inPositionCOM, inRotation, inScale, JPH::SubShapeIDCreator(), collector, { });
+        AllHitCollisionCollector<TransformedShapeCollector> collector;
+        inShape->CollectTransformedShapes(inBox, inPositionCOM, inRotation, inScale, SubShapeIDCreator(), collector, { });
 
         size_t cur_pos = 0;
 
         // Iterate the leaf shapes
-        for (const JPH::TransformedShape &ts : collector.mHits)
+        for (const TransformedShape &ts : collector.mHits)
         {
             // Start iterating triangles
-            JPH::Shape::GetTrianglesContext context;
-            ts.GetTrianglesStart(context, inBox, JPH::RVec3::sZero());
+            Shape::GetTrianglesContext context;
+            ts.GetTrianglesStart(context, inBox, RVec3::sZero());
 
             for (;;)
             {
                 // Ensure we have space to get more triangles
                 size_t tri_left = mMaterials.size() - cur_pos;
-                if (tri_left < JPH::Shape::cGetTrianglesMinTrianglesRequested)
+                if (tri_left < Shape::cGetTrianglesMinTrianglesRequested)
                 {
                     mVertices.resize(mVertices.size() + 3 * cBlockSize);
                     mMaterials.resize(mMaterials.size() + cBlockSize);
@@ -541,141 +520,141 @@ public:
 
     int GetVerticesSize() const
     {
-        return (int)mVertices.size() * sizeof(JPH::Float3);
+        return (int)mVertices.size() * sizeof(Float3);
     }
 
-    const JPH::Float3 * GetVerticesData() const
+    const Float3 * GetVerticesData() const
     {
         return mVertices.data();
     }
 
-    const JPH::PhysicsMaterial * GetMaterial(int inTriangle) const
+    const PhysicsMaterial * GetMaterial(int inTriangle) const
     {
         return mMaterials[inTriangle];
     }
 
 private:
-    JPH::Array<JPH::Float3> mVertices;
-    JPH::Array<const JPH::PhysicsMaterial *>	mMaterials;
+    Array<Float3> mVertices;
+    Array<const PhysicsMaterial *>	mMaterials;
 };
 
 /// A wrapper around ContactListener that is compatible with JavaScript
-class ContactListenerEm: public JPH::ContactListener
+class ContactListenerEm: public ContactListener
 {
 public:
     // JavaScript compatible virtual functions
-    virtual int OnContactValidate(const JPH::Body &inBody1, const JPH::Body &inBody2, const JPH::RVec3 *inBaseOffset, const JPH::CollideShapeResult &inCollisionResult) = 0;
+    virtual int OnContactValidate(const Body &inBody1, const Body &inBody2, const RVec3 *inBaseOffset, const CollideShapeResult &inCollisionResult) = 0;
 
     // Functions that call the JavaScript compatible virtual functions
-    virtual JPH::ValidateResult OnContactValidate(const JPH::Body &inBody1, const JPH::Body &inBody2, JPH::RVec3Arg inBaseOffset, const JPH::CollideShapeResult &inCollisionResult) override
+    virtual ValidateResult OnContactValidate(const Body &inBody1, const Body &inBody2, RVec3Arg inBaseOffset, const CollideShapeResult &inCollisionResult) override
     {
-        return (JPH::ValidateResult)OnContactValidate(inBody1, inBody2, &inBaseOffset, inCollisionResult);
+        return (ValidateResult)OnContactValidate(inBody1, inBody2, &inBaseOffset, inCollisionResult);
     }
 };
 
 /// A wrapper around SoftBodyContactListener that is compatible with JavaScript
-class SoftBodyContactListenerEm: public JPH::SoftBodyContactListener
+class SoftBodyContactListenerEm: public SoftBodyContactListener
 {
 public:
     // JavaScript compatible virtual functions
-    virtual int OnSoftBodyContactValidate(const JPH::Body &inSoftBody, const JPH::Body &inOtherBody, JPH::SoftBodyContactSettings *ioSettings) = 0;
+    virtual int OnSoftBodyContactValidate(const Body &inSoftBody, const Body &inOtherBody, SoftBodyContactSettings *ioSettings) = 0;
 
     // Functions that call the JavaScript compatible virtual functions
-    virtual JPH::SoftBodyValidateResult	OnSoftBodyContactValidate(const JPH::Body &inSoftBody, const JPH::Body &inOtherBody, JPH::SoftBodyContactSettings &ioSettings)
+    virtual SoftBodyValidateResult	OnSoftBodyContactValidate(const Body &inSoftBody, const Body &inOtherBody, SoftBodyContactSettings &ioSettings)
     {
-        return (JPH::SoftBodyValidateResult)OnSoftBodyContactValidate(inSoftBody, inOtherBody, &ioSettings);
+        return (SoftBodyValidateResult)OnSoftBodyContactValidate(inSoftBody, inOtherBody, &ioSettings);
     }
 };
 
 /// A wrapper around CharacterContactListener that is compatible with JavaScript
-class CharacterContactListenerEm: public JPH::CharacterContactListener
+class CharacterContactListenerEm: public CharacterContactListener
 {
 public:
     // JavaScript compatible virtual functions
-    virtual void OnContactAdded(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, JPH::CharacterContactSettings &ioSettings) = 0;
-    virtual void OnContactPersisted(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, JPH::CharacterContactSettings &ioSettings) = 0;
-    virtual void OnCharacterContactAdded(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, JPH::CharacterContactSettings &ioSettings) = 0;
-    virtual void OnCharacterContactPersisted(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, JPH::CharacterContactSettings &ioSettings) = 0;
-    virtual void OnContactSolve(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, const JPH::Vec3 *inContactVelocity, const JPH::PhysicsMaterial *inContactMaterial, const JPH::Vec3 *inCharacterVelocity, JPH::Vec3 &ioNewCharacterVelocity) = 0;
-    virtual void OnCharacterContactSolve(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, const JPH::RVec3 *inContactPosition, const JPH::Vec3 *inContactNormal, const JPH::Vec3 *inContactVelocity, const JPH::PhysicsMaterial *inContactMaterial, const JPH::Vec3 *inCharacterVelocity, JPH::Vec3 &ioNewCharacterVelocity) = 0;
+    virtual void OnContactAdded(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, CharacterContactSettings &ioSettings) = 0;
+    virtual void OnContactPersisted(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, CharacterContactSettings &ioSettings) = 0;
+    virtual void OnCharacterContactAdded(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, CharacterContactSettings &ioSettings) = 0;
+    virtual void OnCharacterContactPersisted(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, CharacterContactSettings &ioSettings) = 0;
+    virtual void OnContactSolve(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, const Vec3 *inContactVelocity, const PhysicsMaterial *inContactMaterial, const Vec3 *inCharacterVelocity, Vec3 &ioNewCharacterVelocity) = 0;
+    virtual void OnCharacterContactSolve(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, const Vec3 *inContactVelocity, const PhysicsMaterial *inContactMaterial, const Vec3 *inCharacterVelocity, Vec3 &ioNewCharacterVelocity) = 0;
 
     // Functions that call the JavaScript compatible virtual functions
-    virtual void OnContactAdded(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::CharacterContactSettings &ioSettings) override
+    virtual void OnContactAdded(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) override
     {
         OnContactAdded(inCharacter, inBodyID2, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
     }
 
-    virtual void OnContactPersisted(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::CharacterContactSettings &ioSettings) override
+    virtual void OnContactPersisted(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) override
     {
         OnContactPersisted(inCharacter, inBodyID2, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
     }
 
-    virtual void OnCharacterContactAdded(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::CharacterContactSettings &ioSettings) override
+    virtual void OnCharacterContactAdded(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) override
     {
         OnCharacterContactAdded(inCharacter, inOtherCharacter, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
     }
 
-    virtual void OnCharacterContactPersisted(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::CharacterContactSettings &ioSettings) override
+    virtual void OnCharacterContactPersisted(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) override
     {
         OnCharacterContactPersisted(inCharacter, inOtherCharacter, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
     }
 
-    virtual void OnContactSolve(const JPH::CharacterVirtual *inCharacter, const JPH::BodyID &inBodyID2, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::Vec3Arg inContactVelocity, const JPH::PhysicsMaterial *inContactMaterial, JPH::Vec3Arg inCharacterVelocity, JPH::Vec3 &ioNewCharacterVelocity) override
+    virtual void OnContactSolve(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, Vec3Arg inContactVelocity, const PhysicsMaterial *inContactMaterial, Vec3Arg inCharacterVelocity, Vec3 &ioNewCharacterVelocity) override
     {
         OnContactSolve(inCharacter, inBodyID2, inSubShapeID2, &inContactPosition, &inContactNormal, &inContactVelocity, inContactMaterial, &inCharacterVelocity, ioNewCharacterVelocity);
     }
 
-    virtual void OnCharacterContactSolve(const JPH::CharacterVirtual *inCharacter, const JPH::CharacterVirtual *inOtherCharacter, const JPH::SubShapeID &inSubShapeID2, JPH::RVec3Arg inContactPosition, JPH::Vec3Arg inContactNormal, JPH::Vec3Arg inContactVelocity, const JPH::PhysicsMaterial *inContactMaterial, JPH::Vec3Arg inCharacterVelocity, JPH::Vec3 &ioNewCharacterVelocity) override
+    virtual void OnCharacterContactSolve(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, Vec3Arg inContactVelocity, const PhysicsMaterial *inContactMaterial, Vec3Arg inCharacterVelocity, Vec3 &ioNewCharacterVelocity) override
     {
         OnCharacterContactSolve(inCharacter, inOtherCharacter, inSubShapeID2, &inContactPosition, &inContactNormal, &inContactVelocity, inContactMaterial, &inCharacterVelocity, ioNewCharacterVelocity);
     }
 };
 
 /// A wrapper around the physics step listener that is compatible with JavaScript (JS doesn't like multiple inheritance)
-class VehicleConstraintStepListener : public JPH::PhysicsStepListener
+class VehicleConstraintStepListener : public PhysicsStepListener
 {
 public:
-    VehicleConstraintStepListener(JPH::VehicleConstraint *inVehicleConstraint)
+    VehicleConstraintStepListener(VehicleConstraint *inVehicleConstraint)
     {
         mInstance = inVehicleConstraint;
     }
 
-    virtual void OnStep(const JPH::PhysicsStepListenerContext &inContext) override
+    virtual void OnStep(const PhysicsStepListenerContext &inContext) override
     {
-        JPH::PhysicsStepListener *instance = mInstance;
+        PhysicsStepListener *instance = mInstance;
         instance->OnStep(inContext);
     }
 
 private:
-    JPH::VehicleConstraint * mInstance;
+    VehicleConstraint * mInstance;
 };
 
 /// Wrapper class around ObjectVsBroadPhaseLayerFilter to make it compatible with JavaScript (JS cannot pass parameter by value)
-class ObjectVsBroadPhaseLayerFilterEm : public JPH::ObjectVsBroadPhaseLayerFilter
+class ObjectVsBroadPhaseLayerFilterEm : public ObjectVsBroadPhaseLayerFilter
 {
 public:
-    virtual bool ShouldCollide(JPH::ObjectLayer inLayer1, JPH::BroadPhaseLayer *inLayer2) const = 0;
+    virtual bool ShouldCollide(ObjectLayer inLayer1, BroadPhaseLayer *inLayer2) const = 0;
 
-    virtual bool ShouldCollide(JPH::ObjectLayer inLayer1, JPH::BroadPhaseLayer inLayer2) const
+    virtual bool ShouldCollide(ObjectLayer inLayer1, BroadPhaseLayer inLayer2) const
     {
         return ShouldCollide(inLayer1, &inLayer2);
     }
 };
 
 /// Wrapper class around BroadPhaseLayerInterface to make it compatible with JavaScript (JS cannot return parameter by value)
-class BroadPhaseLayerInterfaceEm : public JPH::BroadPhaseLayerInterface
+class BroadPhaseLayerInterfaceEm : public BroadPhaseLayerInterface
 {
 public:
-    virtual unsigned short GetBPLayer(JPH::ObjectLayer inLayer) const = 0;
+    virtual unsigned short GetBPLayer(ObjectLayer inLayer) const = 0;
 
-    virtual JPH::BroadPhaseLayer GetBroadPhaseLayer(JPH::ObjectLayer inLayer) const override
+    virtual BroadPhaseLayer GetBroadPhaseLayer(ObjectLayer inLayer) const override
     {
-        return JPH::BroadPhaseLayer(GetBPLayer(inLayer));
+        return BroadPhaseLayer(GetBPLayer(inLayer));
     }
 
 #if defined(JPH_EXTERNAL_PROFILE) || defined(JPH_PROFILE_ENABLED)
     /// Get the user readable name of a broadphase layer (debugging purposes)
-    virtual const char * GetBroadPhaseLayerName(JPH::BroadPhaseLayer inLayer) const override
+    virtual const char * GetBroadPhaseLayerName(BroadPhaseLayer inLayer) const override
     {
         return "Undefined";
     }
@@ -688,27 +667,27 @@ class VehicleConstraintCallbacksEm
 public:
     virtual ~VehicleConstraintCallbacksEm() = default;
 
-    void SetVehicleConstraint(JPH::VehicleConstraint &inConstraint)
+    void SetVehicleConstraint(VehicleConstraint &inConstraint)
     {
-        inConstraint.SetCombineFriction([this](JPH::uint inWheelIndex, float &ioLongitudinalFriction, float &ioLateralFriction, const JPH::Body &inBody2, const JPH::SubShapeID &inSubShapeID2) {
+        inConstraint.SetCombineFriction([this](uint inWheelIndex, float &ioLongitudinalFriction, float &ioLateralFriction, const Body &inBody2, const SubShapeID &inSubShapeID2) {
             ioLongitudinalFriction = GetCombinedFriction(inWheelIndex, ETireFrictionDirection_Longitudinal, ioLongitudinalFriction, inBody2, inSubShapeID2);
             ioLateralFriction = GetCombinedFriction(inWheelIndex, ETireFrictionDirection_Lateral, ioLateralFriction, inBody2, inSubShapeID2);
         });
-        inConstraint.SetPreStepCallback([this](JPH::VehicleConstraint &inVehicle, const JPH::PhysicsStepListenerContext &inContext) {
+        inConstraint.SetPreStepCallback([this](VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) {
             OnPreStepCallback(inVehicle, inContext);
         });
-        inConstraint.SetPostCollideCallback([this](JPH::VehicleConstraint &inVehicle, const JPH::PhysicsStepListenerContext &inContext) {
+        inConstraint.SetPostCollideCallback([this](VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) {
             OnPostCollideCallback(inVehicle, inContext);
         });
-        inConstraint.SetPostStepCallback([this](JPH::VehicleConstraint &inVehicle, const JPH::PhysicsStepListenerContext &inContext) {
+        inConstraint.SetPostStepCallback([this](VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) {
             OnPostStepCallback(inVehicle, inContext);
         });
     }
 
-    virtual float GetCombinedFriction(unsigned int inWheelIndex, ETireFrictionDirection inTireFrictionDirection, float inTireFriction, const JPH::Body &inBody2, const JPH::SubShapeID &inSubShapeID2) = 0;
-    virtual void OnPreStepCallback(JPH::VehicleConstraint &inVehicle, const JPH::PhysicsStepListenerContext &inContext) = 0;
-    virtual void OnPostCollideCallback(JPH::VehicleConstraint &inVehicle, const JPH::PhysicsStepListenerContext &inContext) = 0;
-    virtual void OnPostStepCallback(JPH::VehicleConstraint &inVehicle, const JPH::PhysicsStepListenerContext &inContext) = 0;
+    virtual float GetCombinedFriction(unsigned int inWheelIndex, ETireFrictionDirection inTireFrictionDirection, float inTireFriction, const Body &inBody2, const SubShapeID &inSubShapeID2) = 0;
+    virtual void OnPreStepCallback(VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) = 0;
+    virtual void OnPostCollideCallback(VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) = 0;
+    virtual void OnPostStepCallback(VehicleConstraint &inVehicle, const PhysicsStepListenerContext &inContext) = 0;
 };
 
 /// The tire max impulse callback returns multiple parameters, so we need to store them in a class
@@ -725,9 +704,9 @@ class WheeledVehicleControllerCallbacksEm
 public:
     virtual ~WheeledVehicleControllerCallbacksEm() = default;
 
-    void SetWheeledVehicleController(JPH::WheeledVehicleController &inController)
+    void SetWheeledVehicleController(WheeledVehicleController &inController)
     {
-        inController.SetTireMaxImpulseCallback([this](JPH::uint inWheelIndex, float &outLongitudinalImpulse, float &outLateralImpulse, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime) {
+        inController.SetTireMaxImpulseCallback([this](uint inWheelIndex, float &outLongitudinalImpulse, float &outLateralImpulse, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime) {
             // Pre-fill the structure with default calculated values
             TireMaxImpulseCallbackResult result;
             result.mLongitudinalImpulse = inLongitudinalFriction * inSuspensionImpulse;
@@ -741,56 +720,56 @@ public:
         });
     }
 
-    virtual void OnTireMaxImpulseCallback(JPH::uint inWheelIndex, TireMaxImpulseCallbackResult *outResult, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime) = 0;
+    virtual void OnTireMaxImpulseCallback(uint inWheelIndex, TireMaxImpulseCallbackResult *outResult, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime) = 0;
 };
 
-class PathConstraintPathEm: public JPH::PathConstraintPath
+class PathConstraintPathEm: public PathConstraintPath
 {
 public:
-    virtual float  GetClosestPoint(JPH::Vec3Arg inPosition, float inFractionHint) const
+    virtual float  GetClosestPoint(Vec3Arg inPosition, float inFractionHint) const
     {
         return GetClosestPoint(&inPosition, inFractionHint);
     }
 
-    virtual void GetPointOnPath(float inFraction, JPH::Vec3 &outPathPosition, JPH::Vec3 &outPathTangent, JPH::Vec3 &outPathNormal, JPH::Vec3 &outPathBinormal) const
+    virtual void GetPointOnPath(float inFraction, Vec3 &outPathPosition, Vec3 &outPathTangent, Vec3 &outPathNormal, Vec3 &outPathBinormal) const
     {
         GetPointOnPath(inFraction, &outPathPosition, &outPathTangent, &outPathNormal, &outPathBinormal);
     }
 
-    virtual float GetClosestPoint(const JPH::Vec3 *inPosition, float inFractionHint) const = 0;
-    virtual void GetPointOnPath(float inFraction, JPH::Vec3 *outPathPosition, JPH::Vec3 *outPathTangent, JPH::Vec3 *outPathNormal, JPH::Vec3 *outPathBinormal) const = 0;
+    virtual float GetClosestPoint(const Vec3 *inPosition, float inFractionHint) const = 0;
+    virtual void GetPointOnPath(float inFraction, Vec3 *outPathPosition, Vec3 *outPathTangent, Vec3 *outPathNormal, Vec3 *outPathBinormal) const = 0;
 };
 
 class HeightFieldShapeConstantValues
 {
 public:
     /// Value used to create gaps in the height field
-    static constexpr float cNoCollisionValue = JPH::HeightFieldShapeConstants::cNoCollisionValue;
+    static constexpr float cNoCollisionValue = HeightFieldShapeConstants::cNoCollisionValue;
 };
 
 // DEBUG RENDERER
 
 #include "Jolt/Renderer/DebugRendererSimple.h"
 
-using BodyManagerDrawSettings = JPH::BodyManager::DrawSettings;
-using DebugRendererVertex = JPH::DebugRenderer::Vertex;
-using DebugRendererTriangle = JPH::DebugRenderer::Triangle;
-using DebugArrayTriangle = JPH::Array<DebugRendererTriangle>;
+using BodyManagerDrawSettings = BodyManager::DrawSettings;
+using DebugRendererVertex = DebugRenderer::Vertex;
+using DebugRendererTriangle = DebugRenderer::Triangle;
+using DebugArrayTriangle = Array<DebugRendererTriangle>;
 
-using ECullMode = JPH::DebugRenderer::ECullMode;
+using ECullMode = DebugRenderer::ECullMode;
 constexpr ECullMode ECullMode_CullBackFace = ECullMode::CullBackFace;
 constexpr ECullMode ECullMode_CullFrontFace = ECullMode::CullFrontFace;
 constexpr ECullMode ECullMode_Off = ECullMode::Off;
 
-using ECastShadow = JPH::DebugRenderer::ECastShadow;
+using ECastShadow = DebugRenderer::ECastShadow;
 constexpr ECastShadow ECastShadow_On = ECastShadow::On;
 constexpr ECastShadow ECastShadow_Off = ECastShadow::Off;
 
-using EDrawMode = JPH::DebugRenderer::EDrawMode;
+using EDrawMode = DebugRenderer::EDrawMode;
 constexpr EDrawMode EDrawMode_Solid = EDrawMode::Solid;
 constexpr EDrawMode EDrawMode_Wireframe = EDrawMode::Wireframe;
 
-using EShapeColor = JPH::BodyManager::EShapeColor;
+using EShapeColor = BodyManager::EShapeColor;
 constexpr EShapeColor EShapeColor_InstanceColor = EShapeColor::InstanceColor;
 constexpr EShapeColor EShapeColor_ShapeTypeColor = EShapeColor::ShapeTypeColor;
 constexpr EShapeColor EShapeColor_MotionTypeColor = EShapeColor::MotionTypeColor;
@@ -798,24 +777,23 @@ constexpr EShapeColor EShapeColor_SleepColor = EShapeColor::SleepColor;
 constexpr EShapeColor EShapeColor_IslandColor = EShapeColor::IslandColor;
 constexpr EShapeColor EShapeColor_MaterialColor = EShapeColor::MaterialColor;
 
-using ESoftBodyConstraintColor = JPH::ESoftBodyConstraintColor;
 constexpr ESoftBodyConstraintColor ESoftBodyConstraintColor_ConstraintType = ESoftBodyConstraintColor::ConstraintType;
 constexpr ESoftBodyConstraintColor ESoftBodyConstraintColor_ConstraintGroup = ESoftBodyConstraintColor::ConstraintGroup;
 constexpr ESoftBodyConstraintColor ESoftBodyConstraintColor_ConstraintOrder = ESoftBodyConstraintColor::ConstraintOrder;
 
-class ShapeFilterEm : public JPH::ShapeFilter
+class ShapeFilterEm : public ShapeFilter
 {
     public:
 
-        virtual bool ShouldCollide_1(const JPH::Shape *inShape2, const JPH::SubShapeID &inSubShapeIDOfShape2) const = 0;
-        virtual bool ShouldCollide_2(const JPH::Shape *inShape1, const JPH::SubShapeID &inSubShapeIDOfShape1, const JPH::Shape *inShape2, const JPH::SubShapeID &inSubShapeIDOfShape2) const = 0;
+        virtual bool ShouldCollide_1(const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const = 0;
+        virtual bool ShouldCollide_2(const Shape *inShape1, const SubShapeID &inSubShapeIDOfShape1, const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const = 0;
 
-        virtual bool ShouldCollide(const JPH::Shape *inShape2, const JPH::SubShapeID &inSubShapeIDOfShape2) const
+        virtual bool ShouldCollide(const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const
         {
             return ShouldCollide_1(inShape2, inSubShapeIDOfShape2);
         }
 
-        virtual bool ShouldCollide(const JPH::Shape *inShape1, const JPH::SubShapeID &inSubShapeIDOfShape1, const JPH::Shape *inShape2, const JPH::SubShapeID &inSubShapeIDOfShape2) const
+        virtual bool ShouldCollide(const Shape *inShape1, const SubShapeID &inSubShapeIDOfShape1, const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const
         {
             return ShouldCollide_2(inShape1, inSubShapeIDOfShape1, inShape2, inSubShapeIDOfShape2);
         }
@@ -823,30 +801,30 @@ class ShapeFilterEm : public JPH::ShapeFilter
 
 int GLOBAL_ID = 0;
 
-class DebugRendererEm : public JPH::DebugRenderer
+class DebugRendererEm : public DebugRenderer
 {
     public:
 
         DebugRendererEm()
         {
-            Vertex empty_vertex { JPH::Float3(0, 0, 0), JPH::Float3(1, 0, 0), JPH::Float2(0, 0), JPH::Color::sWhite };
-            JPH::uint32 empty_indices[] = { 0, 0, 0 };
+            Vertex empty_vertex { Float3(0, 0, 0), Float3(1, 0, 0), Float2(0, 0), Color::sWhite };
+            uint32 empty_indices[] = { 0, 0, 0 };
             mEmptyBatch = CreateTriangleBatch(&empty_vertex, 1, empty_indices, 3);
             DebugRenderer::Initialize();
         }
 
-        void DrawBodies(JPH::PhysicsSystem *inSystem, JPH::BodyManager::DrawSettings *inDrawSettings)
+        void DrawBodies(PhysicsSystem *inSystem, BodyManager::DrawSettings *inDrawSettings)
         {
            inSystem->DrawBodies(*inDrawSettings, this);
         }
-        void DrawBodies(JPH::PhysicsSystem *inSystem)
+        void DrawBodies(PhysicsSystem *inSystem)
         {
-           inSystem->DrawBodies(JPH::BodyManager::DrawSettings(), this);
+           inSystem->DrawBodies(BodyManager::DrawSettings(), this);
         }
 
-        virtual void DrawMesh(int id, const JPH::RMat44 &inModelMatrix, const DebugArrayTriangle &triangleArray, const JPH::Color &inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) = 0;
+        virtual void DrawMesh(int id, const RMat44 &inModelMatrix, const DebugArrayTriangle &triangleArray, const Color &inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) = 0;
 
-        virtual void DrawGeometry(JPH::RMat44Arg inModelMatrix, const JPH::AABox& inWorldSpaceBounds, float inLODScaleSq, JPH::ColorArg inModelColor, const GeometryRef& inGeometry, ECullMode inCullMode, ECastShadow inCastShadow, EDrawMode inDrawMode)
+        virtual void DrawGeometry(RMat44Arg inModelMatrix, const AABox& inWorldSpaceBounds, float inLODScaleSq, ColorArg inModelColor, const GeometryRef& inGeometry, ECullMode inCullMode, ECastShadow inCastShadow, EDrawMode inDrawMode)
         {
             // Figure out which LOD to use
             const LOD* lod = inGeometry->mLODs.data();
@@ -870,7 +848,7 @@ class DebugRendererEm : public JPH::DebugRenderer
             return batch;
         }
 
-        virtual Batch CreateTriangleBatch(const Vertex* inVertices, int inVertexCount, const JPH::uint32* inIndices, int inIndexCount)
+        virtual Batch CreateTriangleBatch(const Vertex* inVertices, int inVertexCount, const uint32* inIndices, int inIndexCount)
         {
             if (inVertices == nullptr || inVertexCount == 0 || inIndices == nullptr || inIndexCount == 0)
                 return mEmptyBatch;
@@ -890,23 +868,23 @@ class DebugRendererEm : public JPH::DebugRenderer
             return batch;
         }
 
-        virtual void DrawLine(const JPH::RVec3 *inFrom, const JPH::RVec3 *inTo, const JPH::Color *inColor) = 0;
+        virtual void DrawLine(const RVec3 *inFrom, const RVec3 *inTo, const Color *inColor) = 0;
 
-        virtual void DrawLine(JPH::RVec3Arg inFrom, JPH::RVec3Arg inTo, JPH::ColorArg inColor)
+        virtual void DrawLine(RVec3Arg inFrom, RVec3Arg inTo, ColorArg inColor)
         {
             DrawLine(&inFrom, &inTo, &inColor);
         }
 
-        virtual void DrawTriangle(const JPH::RVec3 *inV1, const JPH::RVec3 *inV2, const JPH::RVec3 *inV3, const JPH::Color *inColor, ECastShadow inCastShadow = ECastShadow::Off) = 0;
+        virtual void DrawTriangle(const RVec3 *inV1, const RVec3 *inV2, const RVec3 *inV3, const Color *inColor, ECastShadow inCastShadow = ECastShadow::Off) = 0;
 
-        virtual void DrawTriangle(JPH::RVec3Arg inV1, JPH::RVec3Arg inV2, JPH::RVec3Arg inV3, JPH::ColorArg inColor, ECastShadow inCastShadow = ECastShadow::Off)
+        virtual void DrawTriangle(RVec3Arg inV1, RVec3Arg inV2, RVec3Arg inV3, ColorArg inColor, ECastShadow inCastShadow = ECastShadow::Off)
         {
             DrawTriangle(&inV1, &inV2, &inV3, &inColor, inCastShadow);
         }
 
-        virtual void DrawText3D(const JPH::RVec3 *inPosition, const void *inString, JPH::uint32 inStringLen, const JPH::Color *inColor, float inHeight) = 0;
+        virtual void DrawText3D(const RVec3 *inPosition, const void *inString, uint32 inStringLen, const Color *inColor, float inHeight) = 0;
 
-        virtual void DrawText3D(JPH::RVec3Arg inPosition, const string_view &inString, JPH::ColorArg inColor, float inHeight)
+        virtual void DrawText3D(RVec3Arg inPosition, const string_view &inString, ColorArg inColor, float inHeight)
         {
             DrawText3D(&inPosition, (const void*)inString.data(), inString.size(), &inColor, inHeight);
         }
@@ -916,7 +894,7 @@ private:
     Batch mEmptyBatch;
 
     /// Implementation specific batch object
-    class BatchImpl : public JPH::RefTargetVirtual
+    class BatchImpl : public RefTargetVirtual
     {
     public:
         JPH_OVERRIDE_NEW_DELETE
@@ -932,7 +910,7 @@ private:
         int mID;
 
     private:
-        atomic<JPH::uint32> mRefCount = 0;
+        atomic<uint32> mRefCount = 0;
     };
 
 };
