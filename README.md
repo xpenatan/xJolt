@@ -60,6 +60,7 @@ dependencies {
 ## Notes
 * In certain classes, new instances are created using `Jolt.New_` instead of standard constructors. This approach is necessary due to limitations in constructor overloading within WebIDL when targeting Emscripten.
 * Methods that return an object typically return a temporary object. You should not retain a reference to it, as calling the method again with another instance will overwrite the previously returned object.
+* Classes are not disposed automatically; the dispose method must be called when they are no longer in use. However, classes in a WebIDL file marked with "NoDelete" do not require disposal.
 
 ## Source Build Prerequisites
 
