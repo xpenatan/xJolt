@@ -9,7 +9,6 @@ public class Main {
         config.setWindowedMode(1444, 800);
         config.setTitle("Jolt Basic Example");
         config.useVsync(true);
-        config.setOpenGLEmulation(Lwjgl3ApplicationConfiguration.GLEmulation.GL30, 3, 2);
         new Lwjgl3Application(new JoltGame(), config);
     }
 }
