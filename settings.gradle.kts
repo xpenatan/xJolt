@@ -5,6 +5,7 @@ include(":jolt:jolt-core")
 include(":jolt:jolt-desktop")
 include(":jolt:jolt-teavm")
 include(":jolt:jolt-android")
+include(":jolt-gdx")
 
 // Examples
 include(":examples:SamplesApp:base")

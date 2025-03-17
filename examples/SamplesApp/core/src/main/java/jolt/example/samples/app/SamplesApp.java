@@ -8,9 +8,9 @@ import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import jolt.BodyIDVector;
 import jolt.BodyManagerDrawSettings;
 import jolt.example.samples.app.jolt.JoltInstance;
+import jolt.gdx.DebugRenderer;
 
 public class SamplesApp extends InputAdapter {
     private boolean isPaused;

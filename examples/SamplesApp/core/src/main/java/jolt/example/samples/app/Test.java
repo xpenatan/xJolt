@@ -9,6 +9,7 @@ import jolt.ShapeResult;
 import jolt.TriangleList;
 import jolt.example.samples.app.math.Perlin;
 import jolt.Jolt;
+import jolt.gdx.DebugRenderer;
 import jolt.geometry.Triangle;
 import jolt.math.Quat;
 import jolt.math.Vec3;

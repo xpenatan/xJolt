@@ -45,6 +45,7 @@ configure(allprojects - project(":jolt:jolt-android") - project(":examples:Sampl
 }
 
 var libProjects = mutableSetOf(
+    project(":jolt-gdx"),
     project(":jolt:jolt-core"),
     project(":jolt:jolt-desktop"),
     project(":jolt:jolt-teavm"),

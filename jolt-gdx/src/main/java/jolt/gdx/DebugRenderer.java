@@ -1,4 +1,4 @@
-package jolt.example.samples.app;
+package jolt.gdx;
 
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.GL20;
@@ -100,7 +100,7 @@ public class DebugRenderer extends DebugRendererEm {
         int primitiveType = inDrawMode == EDrawMode.EDrawMode_Wireframe ? GL20.GL_LINES : GL20.GL_TRIANGLES;
         ModelRenderer modelRenderer = obtain();
         modelRenderer.setModel(model, primitiveType);
-        getMat44Data(inModelMatrix, modelRenderer.transform);
+        JoltGdx.mat44_to_matrix4(inModelMatrix, modelRenderer.transform);
         modelRenderer.diffuseColor.color.set(r1, g1, b1, a1);
         modelRendererList.add(modelRenderer);
     }
@@ -156,19 +156,6 @@ public class DebugRenderer extends DebugRendererEm {
         model.materials.add(material);
         model.meshParts.add(meshPart);
         return model;
-    }
-
-    // Function to extract Mat44 data into a flat float array
-    void getMat44Data(Mat44 mat, Matrix4 matrix4) {
-        float[] outArray = matrix4.val;
-        // Column-major order: copy each column directly
-        for (int col = 0; col < 4; col++) {
-            Vec4 vec4 = mat.GetColumn4(col);
-            for (int row = 0; row < 4; row++) {
-                float val = vec4.GetComponent(row);
-                outArray[col * 4 + row] = val; // m[col][row]
-            }
-        }
     }
 
     public void clear() {
