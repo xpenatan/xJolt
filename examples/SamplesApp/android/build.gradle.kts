@@ -7,12 +7,11 @@ group = "jolt.example.samples.app.android"
 
 android {
     namespace = "jolt.example.samples.app.android"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "jolt.example.samples.app.android"
         minSdk = 24
-        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
     }

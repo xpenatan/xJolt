@@ -54,6 +54,9 @@ public abstract class VehicleTest extends Test {
         Vec3 prev_pos = Jolt.New_Vec3(-25, 7, 0);
         Body prev_part = null;
 
+        Vec3 temp1 = Jolt.New_Vec3();
+        Vec3 temp2 = Jolt.New_Vec3();
+
         for (int i = 0; i < cChainLength; ++i) {
             float prevX = prev_pos.GetX();
             float prevY = prev_pos.GetY();
@@ -73,6 +76,8 @@ public abstract class VehicleTest extends Test {
                 part = mBodyInterface.CreateBody(bodyCreationSettings);
                 bodyCreationSettings.dispose();
             }
+            val.dispose();
+
             CollisionGroup collisionGroup = new CollisionGroup(group_filter, 1, i);
             part.SetCollisionGroup(collisionGroup);
             part.SetFriction(1.0f);
@@ -81,20 +86,29 @@ public abstract class VehicleTest extends Test {
 
             if (prev_part != null) {
                 DistanceConstraintSettings dc = new DistanceConstraintSettings();
-                dc.set_mPoint1(prev_pos.AddVec3(Jolt.New_Vec3(-part_half_size.GetX(), 0, part_half_size.GetZ())));
-                dc.set_mPoint2(pos.AddVec3(Jolt.New_Vec3(-part_half_size.GetX(), 0, -part_half_size.GetZ())));
+                temp1.Set(-part_half_size.GetX(), 0, part_half_size.GetZ());
+                dc.set_mPoint1(prev_pos.AddVec3(temp1));
+                temp2.Set(-part_half_size.GetX(), 0, -part_half_size.GetZ());
+                dc.set_mPoint2(pos.AddVec3(temp2));
                 mPhysicsSystem.AddConstraint(dc.Create(prev_part, part));
 
-                dc.set_mPoint1(prev_pos.AddVec3(Jolt.New_Vec3(part_half_size.GetX(), 0, part_half_size.GetZ())));
-                dc.set_mPoint2(pos.AddVec3(Jolt.New_Vec3(part_half_size.GetX(), 0, -part_half_size.GetZ())));
+                temp1.Set(part_half_size.GetX(), 0, part_half_size.GetZ());
+                dc.set_mPoint1(prev_pos.AddVec3(temp1));
+                temp2.Set(part_half_size.GetX(), 0, -part_half_size.GetZ());
+                dc.set_mPoint2(pos.AddVec3(temp2));
                 mPhysicsSystem.AddConstraint(dc.Create(prev_part, part));
-
                 dc.dispose();
             }
-
+            prev_pos.dispose();
             prev_part = part;
             prev_pos = pos;
         }
+
+//        group_filter.dispose();
+        large_part_half_size.dispose();
+        part_half_size.dispose();
+        temp1.dispose();
+        temp2.dispose();
     }
 
     private void createWall() {
@@ -115,7 +129,9 @@ public abstract class VehicleTest extends Test {
 
     private void createRubble() {
         // Flat and light objects
-        Shape box_shape = new BoxShape(Jolt.New_Vec3(0.5f, 0.1f, 0.5f));
+        Vec3 temp = Jolt.New_Vec3(0.5f, 0.1f, 0.5f);
+        Shape box_shape = new BoxShape(temp);
+        temp.dispose();
         for (int i = 0; i < 5; ++i)
             for (int j = 0; j < 5; ++j)
             {

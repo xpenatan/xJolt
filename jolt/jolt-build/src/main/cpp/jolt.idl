@@ -1928,6 +1928,7 @@ interface Constraint {
 };
 
 // Two body constraint
+[NoDelete]
 interface TwoBodyConstraintSettings {
     Constraint Create([Ref] Body inBody1, [Ref] Body inBody2);
 };
@@ -2419,6 +2420,7 @@ interface GroupFilterJS {
     [Const] boolean CanCollide([Const, Ref] CollisionGroup inGroup1, [Const, Ref] CollisionGroup inGroup2);
 };
 
+[NoDelete]
 interface GroupFilterTable {
     void GroupFilterTable(unsigned long inNumGroups);
     void DisableCollision(unsigned long inSubGroup1, unsigned long inSubGroup2);
@@ -3059,6 +3061,7 @@ interface BodyCreationSettings {
     [Value] attribute MassProperties mMassPropertiesOverride;
 };
 
+[NoDelete]
 interface SoftBodySharedSettings {
     void SoftBodySharedSettings();
     unsigned long GetRefCount();
@@ -3072,7 +3075,7 @@ interface SoftBodySharedSettings {
     void CalculateVolumeConstraintVolumes();
     void CalculateSkinnedConstraintNormals();
     void Optimize();
-    SoftBodySharedSettings Clone();
+    SoftBodySharedSettings Clone(); //[-NEW_OBJECT]
 
     [Value] attribute ArraySoftBodySharedSettingsVertex mVertices;
     [Value] attribute ArraySoftBodySharedSettingsFace mFaces;
@@ -3143,6 +3146,7 @@ interface SoftBodyShape {
 };
 SoftBodyShape implements Shape;
 
+[NoDelete]
 interface CharacterBaseSettings {
     unsigned long GetRefCount();
     void AddRef();
@@ -3163,6 +3167,7 @@ interface CharacterID {
     static void sSetNextCharacterID(unsigned long inNextValue);
 };
 
+[NoDelete]
 interface CharacterVirtualSettings {
     void CharacterVirtualSettings();
 
@@ -3328,6 +3333,7 @@ IgnoreMultipleBodiesFilter implements BodyFilter;
 interface ShapeFilter {
 };
 
+[NoDelete]
 interface CharacterBase {
     unsigned long GetRefCount();
     void AddRef();
@@ -3347,6 +3353,7 @@ interface CharacterBase {
     [Value] BodyID GetGroundBodyID();
 };
 
+[NoDelete]
 interface CharacterVirtual {
     void CharacterVirtual([Const] CharacterVirtualSettings inSettings, [Ref] Vec3 inPosition, [Ref] Quat inRotation, PhysicsSystem inSystem);
     [Const, Ref] CharacterID GetID();
@@ -3410,27 +3417,32 @@ interface LinearCurve {
     float GetValue(float inX);
 };
 
+[NoDelete]
 interface VehicleCollisionTester {
     unsigned long GetRefCount();
     void AddRef();
     void Release();
 };
 
+[NoDelete]
 interface VehicleCollisionTesterRay {
     void VehicleCollisionTesterRay(unsigned long inObjectLayer, [Ref] optional Vec3 inUp, optional float inMaxSlopeAngle);
 };
 VehicleCollisionTesterRay implements VehicleCollisionTester;
 
+[NoDelete]
 interface VehicleCollisionTesterCastSphere {
     void VehicleCollisionTesterCastSphere(unsigned long inObjectLayer, float inRadius, [Ref] optional Vec3 inUp, optional float inMaxSlopeAngle);
 };
 VehicleCollisionTesterCastSphere implements VehicleCollisionTester;
 
+[NoDelete]
 interface VehicleCollisionTesterCastCylinder {
     void VehicleCollisionTesterCastCylinder(unsigned long inObjectLayer, optional float inConvexRadiusFraction);
 };
 VehicleCollisionTesterCastCylinder implements VehicleCollisionTester;
 
+[NoDelete]
 interface VehicleConstraintSettings {
     void VehicleConstraintSettings();
 
@@ -3468,6 +3480,7 @@ interface VehicleConstraint {
 };
 VehicleConstraint implements Constraint;
 
+[NoDelete]
 interface WheelSettings {
     void WheelSettings();
     unsigned long GetRefCount();
@@ -3520,6 +3533,7 @@ interface Wheel {
     float GetLateralLambda();
 };
 
+[NoDelete]
 interface WheelSettingsWV {
     void WheelSettingsWV();
 
@@ -3545,6 +3559,7 @@ interface WheelWV {
 };
 WheelWV implements Wheel;
 
+[NoDelete]
 interface WheelSettingsTV {
     void WheelSettingsTV();
 
@@ -3578,6 +3593,7 @@ interface VehicleTrack {
 };
 VehicleTrack implements VehicleTrackSettings;
 
+[NoDelete]
 interface WheeledVehicleControllerSettings {
     void WheeledVehicleControllerSettings();
 
@@ -3588,6 +3604,7 @@ interface WheeledVehicleControllerSettings {
 };
 WheeledVehicleControllerSettings implements VehicleControllerSettings;
 
+[NoDelete]
 interface TrackedVehicleControllerSettings {
     void TrackedVehicleControllerSettings();
 
@@ -3597,6 +3614,7 @@ interface TrackedVehicleControllerSettings {
 };
 TrackedVehicleControllerSettings implements VehicleControllerSettings;
 
+[NoDelete]
 interface TrackedVehicleController {
     void TrackedVehicleController([Const, Ref] TrackedVehicleControllerSettings inSettings, [Ref] VehicleConstraint inConstraint);
     void SetDriverInput(float inForward, float inLeftRatio, float inRightRatio, float inBrake);
@@ -3664,13 +3682,16 @@ interface VehicleDifferentialSettings {
     attribute float mEngineTorqueRatio;
 };
 
+[NoDelete]
 interface VehicleControllerSettings {
 };
 
+[NoDelete]
 interface VehicleController {
     [Ref] VehicleConstraint GetConstraint();
 };
 
+[NoDelete]
 interface WheeledVehicleController {
     void WheeledVehicleController([Const, Ref] WheeledVehicleControllerSettings inSettings, [Ref] VehicleConstraint inConstraint);
     void SetDriverInput(float inForward, float inRight, float inBrake, float inHandBrake);
@@ -3711,6 +3732,7 @@ interface MotorcycleController {
 };
 MotorcycleController implements WheeledVehicleController;
 
+[NoDelete]
 interface Skeleton {
     void Skeleton();
     long AddJoint([Const, Ref] IDLString inName, long inParentIndex);
@@ -3719,6 +3741,7 @@ interface Skeleton {
     void CalculateParentJointIndices();
 };
 
+[NoDelete]
 interface SkeletalAnimation {
     void SkeletalAnimation();
     float GetDuration();
@@ -3741,6 +3764,7 @@ interface SkeletonPose {
     void CalculateJointStates();
 };
 
+[NoDelete]
 interface RagdollSettings {
     void RagdollSettings();
     boolean Stabilize();
@@ -3755,6 +3779,7 @@ interface RagdollSettings {
     [Value] attribute ArrayRagdollAdditionalConstraint mAdditionalConstraints;
 };
 
+[NoDelete]
 interface Ragdoll {
     void Ragdoll(PhysicsSystem inSystem);
     void AddToPhysicsSystem(EActivation inActivationMode, optional boolean inLockBodies);

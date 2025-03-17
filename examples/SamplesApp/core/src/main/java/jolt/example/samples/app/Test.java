@@ -208,8 +208,9 @@ public abstract class Test {
         int NON_MOVING = 4;
         BodyCreationSettings bodyCreationSettings = Jolt.New_BodyCreationSettings(new MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType_Static, NON_MOVING);
         Body floor = mBodyInterface.CreateBody(bodyCreationSettings);
-        bodyCreationSettings.dispose();
         mBodyInterface.AddBody(floor.GetID(), EActivation.EActivation_DontActivate);
+        triangles.dispose();
+        bodyCreationSettings.dispose();
         return floor;
     }
 }
