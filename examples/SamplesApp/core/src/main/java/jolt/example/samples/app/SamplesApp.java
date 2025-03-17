@@ -8,9 +8,13 @@ import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import imgui.ImGui;
+import imgui.ImGuiTabBarFlags;
 import jolt.BodyManagerDrawSettings;
+import jolt.example.samples.app.imgui.ImGuiSettingsRenderer;
 import jolt.example.samples.app.jolt.JoltInstance;
 import jolt.gdx.DebugRenderer;
+import jolt.idl.helper.IDLBool;
 
 public class SamplesApp extends InputAdapter {
     private boolean isPaused;
@@ -27,8 +31,11 @@ public class SamplesApp extends InputAdapter {
 
     private JoltInstance joltInstance;
 
-    public void setup() {
+    private ImGuiSettingsRenderer settingsRenderer;
+
+    public void setup(InputMultiplexer input) {
         tests = new Tests();
+        settingsRenderer = new ImGuiSettingsRenderer();
 
         joltInstance = new JoltInstance();
         debugRenderer = new DebugRenderer();
@@ -46,7 +53,9 @@ public class SamplesApp extends InputAdapter {
         cameraController.autoUpdate = false;
         cameraController.forwardTarget = false;
         cameraController.translateTarget = false;
-        Gdx.input.setInputProcessor(new InputMultiplexer(this, cameraController));
+
+        input.addProcessor(this);
+        input.addProcessor(cameraController);
     }
 
     public Array<Class<?>> getAllTests() {
@@ -66,14 +75,26 @@ public class SamplesApp extends InputAdapter {
         if(deltaTime > 0) {
             StepPhysics(deltaTime);
         }
+    }
 
-        if(Gdx.input.isKeyJustPressed(Input.Keys.D)) {
-            debugRenderer.setEnable(!debugRenderer.isEnable());
+    public void renderUI() {
+        ImGui.Begin("Settings");
+        if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.ImGuiTabBarFlags_FittingPolicyScroll | ImGuiTabBarFlags.ImGuiTabBarFlags_Reorderable)) {
+            if(ImGui.BeginTabItem("Physics")) {
+                settingsRenderer.render(joltInstance);
+                ImGui.EndTabItem();
+            }
+            if(ImGui.BeginTabItem("DebugRenderer")) {
+                settingsRenderer.render(debugSettings);
+                ImGui.EndTabItem();
+            }
+            if(ImGui.BeginTabItem("Test")) {
+                test.renderUI();
+                ImGui.EndTabItem();
+            }
+            ImGui.EndTabBar();
         }
-        else if(Gdx.input.isKeyJustPressed(Input.Keys.W)) {
-            boolean mDrawShapeWireframe = debugSettings.get_mDrawShapeWireframe();
-            debugSettings.set_mDrawShapeWireframe(!mDrawShapeWireframe);
-        }
+        ImGui.End();
     }
 
     public void startTest(Class<? extends Test> testClass) {
@@ -114,6 +135,7 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void dispose() {
+        settingsRenderer.dispose();
         clearBodies();
         debugRenderer.dispose();
         debugSettings.dispose();
@@ -131,12 +153,19 @@ public class SamplesApp extends InputAdapter {
             isPaused = !isPaused;
             return true;
         }
-        if(keycode == Input.Keys.R) {
+        else if(keycode == Input.Keys.R) {
             if(test != null) {
                 Class<? extends Test> aClass = test.getClass();
                 startTest(aClass);
             }
             return true;
+        }
+        else if(keycode == Input.Keys.D) {
+            debugRenderer.setEnable(!debugRenderer.isEnable());
+        }
+        else if(keycode == Input.Keys.W) {
+            boolean mDrawShapeWireframe = debugSettings.get_mDrawShapeWireframe();
+            debugSettings.set_mDrawShapeWireframe(!mDrawShapeWireframe);
         }
         return false;
     }

@@ -276,6 +276,10 @@ public class VehicleConstraintTest extends VehicleTest {
     }
 
     @Override
+    public void renderUI() {
+    }
+
+    @Override
     public void processInput() {
         // Determine acceleration and brake
         mForward = 0.0f;

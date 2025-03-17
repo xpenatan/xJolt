@@ -53,6 +53,8 @@ public abstract class Test {
     public void processInput() {
     }
 
+    public void renderUI() {}
+
     public void initializeCamera(PerspectiveCamera camera) {
     }
 
@@ -162,7 +164,6 @@ public abstract class Test {
     }
 
     float GetWorldScale() { return 1.0f; }
-
 
     protected Body CreateMeshTerrain() {
         float scale = GetWorldScale();
