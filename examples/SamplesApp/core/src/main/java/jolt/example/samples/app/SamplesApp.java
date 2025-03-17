@@ -9,7 +9,9 @@ import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import imgui.ImGui;
+import imgui.ImGuiCond;
 import imgui.ImGuiTabBarFlags;
+import imgui.ImVec2;
 import jolt.BodyManagerDrawSettings;
 import jolt.example.samples.app.imgui.ImGuiSettingsRenderer;
 import jolt.example.samples.app.jolt.JoltInstance;
@@ -78,6 +80,7 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void renderUI() {
+        ImGui.SetNextWindowSize(ImVec2.TMP_1.set(250, 400), ImGuiCond.ImGuiCond_FirstUseEver);
         ImGui.Begin("Settings");
         if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.ImGuiTabBarFlags_FittingPolicyScroll | ImGuiTabBarFlags.ImGuiTabBarFlags_Reorderable)) {
             if(ImGui.BeginTabItem("Physics")) {
