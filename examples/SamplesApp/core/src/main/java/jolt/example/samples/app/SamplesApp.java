@@ -42,8 +42,6 @@ public class SamplesApp extends InputAdapter {
         joltInstance = new JoltInstance();
         debugRenderer = new DebugRenderer();
         debugSettings = new BodyManagerDrawSettings();
-//        debugSettings.set_mDrawShapeWireframe(true);
-//        debugSettings.set_mDrawShapeColor(EShapeColor.EShapeColor_SleepColor);
 
         camera = new PerspectiveCamera();
         viewport = new ScreenViewport(camera);
