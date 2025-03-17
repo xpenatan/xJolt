@@ -71,7 +71,7 @@ dependencies {
 
 ¹: Only need if you want to build from source.
 
-To try the samples with your build, change `LibExt.exampleUseRepoLibs` to false in `Dependencies.kt` to use the local Jolt source code instead of the remote repository.
+To try the samples with your build, change `LibExt.exampleUseRepoLibs` to false in `Dependencies.kt`. This will allow you to use the local Jolt source code instead of the remote repository.
 
 ## How to run the samples
 - Clone the repository
