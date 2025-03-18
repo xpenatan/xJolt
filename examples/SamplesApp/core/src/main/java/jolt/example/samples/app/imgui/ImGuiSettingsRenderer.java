@@ -14,7 +14,7 @@ import jolt.example.samples.app.tests.TestGroup;
 
 public class ImGuiSettingsRenderer {
 
-    private IDLBool idlBool;
+    public IDLBool idlBool;
     private IDLInt idlInt;
 
     private int mDrawSoftBodyConstraintColor;
@@ -161,14 +161,8 @@ public class ImGuiSettingsRenderer {
         }
     }
 
-    public Class<Test> render(Array<TestGroup> allTests) {
-        for(TestGroup testGroup : allTests) {
-            Class<Test> testClass = renderGroupRecursive(testGroup);
-            if(testClass != null) {
-                return testClass;
-            }
-        }
-        return null;
+    public Class<Test> render(TestGroup allTests) {
+        return renderGroupRecursive(allTests);
     }
 
     private Class<Test> renderGroupRecursive(TestGroup group) {

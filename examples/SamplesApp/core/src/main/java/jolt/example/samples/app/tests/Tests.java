@@ -27,8 +27,10 @@ public class Tests {
         return null;
     }
 
-    public Array<TestGroup> getAllTests() {
-        Array<TestGroup> allTests = new Array<>();
+    public TestGroup getAllTests() {
+        TestGroup root = new TestGroup();
+        root.name = "Tests";
+        Array<TestGroup> allTests = root.children;
         for(JoltTestInstancer testInstancer : tests) {
             TestGroup parent = null;
             int length = testInstancer.groups.length;
@@ -58,7 +60,7 @@ public class Tests {
                 }
             }
         }
-        return allTests;
+        return root;
     }
 
     static TestGroup findGroup(String name, Array<TestGroup> allTests) {

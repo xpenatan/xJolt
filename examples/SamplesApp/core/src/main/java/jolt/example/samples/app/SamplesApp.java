@@ -6,7 +6,6 @@ import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
-import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import imgui.ImGui;
 import imgui.ImGuiCond;
@@ -36,7 +35,7 @@ public class SamplesApp extends InputAdapter {
     private JoltInstance joltInstance;
 
     private ImGuiSettingsRenderer settingsRenderer;
-    private Array<TestGroup> allTests;
+    private TestGroup allTests;
 
     public void setup(InputMultiplexer input) {
         tests = new Tests();
@@ -81,9 +80,17 @@ public class SamplesApp extends InputAdapter {
         ImGui.SetNextWindowSize(ImVec2.TMP_1.set(250, 400), ImGuiCond.ImGuiCond_FirstUseEver);
         ImGui.Begin("Settings");
 
-        ImGui.BeginChild("Tests", ImVec2.TMP_1.set(-1, 160));
         newTest = settingsRenderer.render(allTests);
-        ImGui.EndChild();
+
+        settingsRenderer.idlBool.set(isPaused);
+        if(ImGui.Checkbox("IsPaused", settingsRenderer.idlBool)) {
+            isPaused = settingsRenderer.idlBool.getValue();
+        }
+
+        settingsRenderer.idlBool.set(debugRenderer.isEnable());
+        if(ImGui.Checkbox("DebugRenderer", settingsRenderer.idlBool)) {
+            debugRenderer.setEnable(settingsRenderer.idlBool.getValue());
+        }
 
         if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.ImGuiTabBarFlags_FittingPolicyScroll | ImGuiTabBarFlags.ImGuiTabBarFlags_Reorderable)) {
             if(ImGui.BeginTabItem("Physics")) {
