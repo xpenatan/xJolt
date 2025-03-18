@@ -1,7 +1,6 @@
 package jolt.example.samples.app.tests.vehicle;
 
 import com.badlogic.gdx.math.MathUtils;
-import jolt.DistanceConstraintSettings;
 import jolt.array.ArrayVec3;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
@@ -17,6 +16,7 @@ import jolt.physics.collision.GroupFilterTable;
 import jolt.physics.collision.shape.BoxShape;
 import jolt.physics.collision.shape.ConvexHullShapeSettings;
 import jolt.physics.collision.shape.Shape;
+import jolt.physics.constraints.DistanceConstraintSettings;
 import static jolt.example.samples.app.tests.shapes.BoxShapeTest.JPH_PI;
 
 public abstract class VehicleTest extends Test {

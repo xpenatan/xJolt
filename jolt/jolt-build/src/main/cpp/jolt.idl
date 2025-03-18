@@ -1978,7 +1978,7 @@ interface MotorSettings {
 };
 
 // Distance constraint
-interface DistanceConstraintSettings {
+interface DistanceConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void DistanceConstraintSettings();
 
     attribute EConstraintSpace mSpace;
@@ -2002,7 +2002,7 @@ interface DistanceConstraint {
 DistanceConstraint implements TwoBodyConstraint;
 
 // Point constraint
-interface PointConstraintSettings {
+interface PointConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void PointConstraintSettings();
 
     attribute EConstraintSpace mSpace;
@@ -2020,7 +2020,7 @@ interface PointConstraint {
 PointConstraint implements TwoBodyConstraint;
 
 // Hinge constraint
-interface HingeConstraintSettings {
+interface HingeConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void HingeConstraintSettings();
 
     attribute EConstraintSpace mSpace;
@@ -2064,7 +2064,7 @@ interface HingeConstraint {
 HingeConstraint implements TwoBodyConstraint;
 
 // Cone constraint
-interface ConeConstraintSettings {
+interface ConeConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void ConeConstraintSettings();
 
     attribute EConstraintSpace mSpace;
@@ -2086,7 +2086,7 @@ interface ConeConstraint {
 ConeConstraint implements TwoBodyConstraint;
 
 // Slider constraint
-interface SliderConstraintSettings {
+interface SliderConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void SliderConstraintSettings();
 
     attribute EConstraintSpace mSpace;
@@ -2189,7 +2189,7 @@ interface SwingTwistConstraint {
 SwingTwistConstraint implements TwoBodyConstraint;
 
 // Six DOF constraint
-interface SixDOFConstraintSettings {
+interface SixDOFConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void SixDOFConstraintSettings();
     void MakeFreeAxis(SixDOFConstraintSettings_EAxis inAxis);
     boolean IsFreeAxis(SixDOFConstraintSettings_EAxis inAxis);
@@ -2249,7 +2249,7 @@ interface SixDOFConstraint {
 };
 SixDOFConstraint implements TwoBodyConstraint;
 
-interface PathConstraintSettings {
+interface PathConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void PathConstraintSettings();
 
     [Const] attribute PathConstraintPath mPath;
@@ -2287,7 +2287,7 @@ interface PathConstraint {
 };
 PathConstraint implements TwoBodyConstraint;
 
-interface PulleyConstraintSettings {
+interface PulleyConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void PulleyConstraintSettings();
 
     attribute EConstraintSpace mSpace;
@@ -2309,7 +2309,7 @@ interface PulleyConstraint {
     float GetCurrentLength();
 };
 PulleyConstraint implements TwoBodyConstraint;
-interface GearConstraintSettings {
+interface GearConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void GearConstraintSettings();
     void SetRatio(long inNumTeethGear1, long inNumTeethGear2);
 
@@ -2327,7 +2327,7 @@ interface GearConstraint {
 };
 GearConstraint implements TwoBodyConstraint;
 
-interface RackAndPinionConstraintSettings {
+interface RackAndPinionConstraintSettings { //[-SUB_PACKAGE=physics.constraints]
     void RackAndPinionConstraintSettings();
     void SetRatio(long inNumTeethRack, float inRackLength, long inNumTeethPinion);
 
