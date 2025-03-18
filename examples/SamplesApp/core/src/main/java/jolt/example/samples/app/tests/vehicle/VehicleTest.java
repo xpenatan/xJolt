@@ -6,7 +6,7 @@ import jolt.ConvexHullShapeSettings;
 import jolt.DistanceConstraintSettings;
 import jolt.EMotionType;
 import jolt.example.samples.app.Layers;
-import jolt.example.samples.app.Test;
+import jolt.example.samples.app.tests.Test;
 import jolt.Jolt;
 import jolt.math.Quat;
 import jolt.math.Vec3;
@@ -17,12 +17,12 @@ import jolt.physics.collision.CollisionGroup;
 import jolt.physics.collision.GroupFilterTable;
 import jolt.physics.collision.shape.BoxShape;
 import jolt.physics.collision.shape.Shape;
-import static jolt.example.samples.app.tests.BoxShapeTest.JPH_PI;
+import static jolt.example.samples.app.tests.shapes.BoxShapeTest.JPH_PI;
 
 public abstract class VehicleTest extends Test {
 
     @Override
-    protected void initialize() {
+    public void initialize() {
         // Scene with hilly terrain and some objects to drive into
         Body floor = CreateMeshTerrain();
         floor.SetFriction(1.0f);

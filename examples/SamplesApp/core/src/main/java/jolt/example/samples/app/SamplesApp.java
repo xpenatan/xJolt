@@ -15,8 +15,10 @@ import imgui.ImVec2;
 import jolt.BodyManagerDrawSettings;
 import jolt.example.samples.app.imgui.ImGuiSettingsRenderer;
 import jolt.example.samples.app.jolt.JoltInstance;
+import jolt.example.samples.app.tests.Test;
+import jolt.example.samples.app.tests.TestGroup;
+import jolt.example.samples.app.tests.Tests;
 import jolt.gdx.DebugRenderer;
-import jolt.idl.helper.IDLBool;
 
 public class SamplesApp extends InputAdapter {
     private boolean isPaused;
@@ -34,9 +36,12 @@ public class SamplesApp extends InputAdapter {
     private JoltInstance joltInstance;
 
     private ImGuiSettingsRenderer settingsRenderer;
+    private Array<TestGroup> allTests;
 
     public void setup(InputMultiplexer input) {
         tests = new Tests();
+        allTests = tests.getAllTests();
+
         settingsRenderer = new ImGuiSettingsRenderer();
 
         joltInstance = new JoltInstance();
@@ -46,8 +51,6 @@ public class SamplesApp extends InputAdapter {
         camera = new PerspectiveCamera();
         viewport = new ScreenViewport(camera);
         camera.far = 1000f;
-        camera.position.set(30, 10, 30);
-        camera.lookAt(0, 0, 0);
 
         cameraController = new CameraInputController(camera);
         cameraController.autoUpdate = false;
@@ -56,10 +59,6 @@ public class SamplesApp extends InputAdapter {
 
         input.addProcessor(this);
         input.addProcessor(cameraController);
-    }
-
-    public Array<Class<?>> getAllTests() {
-        return tests.getAllTests();
     }
 
     public void render(float delta) {
@@ -78,8 +77,14 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void renderUI() {
+        Class<Test> newTest = null;
         ImGui.SetNextWindowSize(ImVec2.TMP_1.set(250, 400), ImGuiCond.ImGuiCond_FirstUseEver);
         ImGui.Begin("Settings");
+
+        ImGui.BeginChild("Tests", ImVec2.TMP_1.set(-1, 160));
+        newTest = settingsRenderer.render(allTests);
+        ImGui.EndChild();
+
         if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.ImGuiTabBarFlags_FittingPolicyScroll | ImGuiTabBarFlags.ImGuiTabBarFlags_Reorderable)) {
             if(ImGui.BeginTabItem("Physics")) {
                 settingsRenderer.render(joltInstance);
@@ -96,6 +101,10 @@ public class SamplesApp extends InputAdapter {
             ImGui.EndTabBar();
         }
         ImGui.End();
+
+        if(newTest != null) {
+            startTest(newTest);
+        }
     }
 
     public void startTest(Class<? extends Test> testClass) {
@@ -105,6 +114,9 @@ public class SamplesApp extends InputAdapter {
         }
         clearBodies();
         isPaused = true;
+        camera.up.set(0, 1, 0);
+        camera.position.set(30, 10, 30);
+        camera.lookAt(0, 0, 0);
         test = tests.getTest(testClass);
         test.setPhysicsSystem(joltInstance.getPhysicsSystem());
         test.setDebugRenderer(debugRenderer);

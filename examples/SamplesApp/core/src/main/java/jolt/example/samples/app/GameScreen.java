@@ -7,8 +7,10 @@ import com.badlogic.gdx.graphics.FPSLogger;
 import com.badlogic.gdx.utils.ScreenUtils;
 import imgui.ImDrawData;
 import imgui.ImGui;
+import imgui.ImGuiCol;
 import imgui.ImGuiConfigFlags;
 import imgui.ImGuiIO;
+import imgui.ImGuiStyle;
 import imgui.gdx.ImGuiGdxImpl;
 import imgui.gdx.ImGuiGdxInput;
 import imgui.gdx.ImGuiGdxInputMultiplexer;
@@ -38,6 +40,9 @@ public class GameScreen extends ScreenAdapter {
         inputMultiplexer.addProcessor(input);
         samplesApp.setup(inputMultiplexer);
         samplesApp.startTest(VehicleConstraintTest.class);
+
+        ImGuiStyle imGuiStyle = ImGui.GetStyle();
+        imGuiStyle.Colors(ImGuiCol.ImGuiCol_WindowBg, 0.00f, 0.00f, 0.00f, 0.6f);
     }
 
     @Override

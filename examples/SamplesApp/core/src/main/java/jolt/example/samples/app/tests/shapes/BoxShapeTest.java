@@ -1,9 +1,9 @@
-package jolt.example.samples.app.tests;
+package jolt.example.samples.app.tests.shapes;
 
 import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import jolt.example.samples.app.Layers;
-import jolt.example.samples.app.Test;
+import jolt.example.samples.app.tests.Test;
 import jolt.Jolt;
 import jolt.math.Quat;
 import jolt.math.Vec3;
@@ -18,7 +18,7 @@ public class BoxShapeTest extends Test {
     public static float JPH_PI = 3.14159265358979323846f;
 
     @Override
-    protected void initialize() {
+    public void initialize() {
         // Floor
         createFloor();
 

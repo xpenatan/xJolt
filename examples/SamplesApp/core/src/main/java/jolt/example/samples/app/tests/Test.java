@@ -1,4 +1,4 @@
-package jolt.example.samples.app;
+package jolt.example.samples.app.tests;
 
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.math.MathUtils;
@@ -7,6 +7,7 @@ import jolt.MeshShapeSettings;
 import jolt.PhysicsMaterialList;
 import jolt.ShapeResult;
 import jolt.TriangleList;
+import jolt.example.samples.app.Layers;
 import jolt.example.samples.app.math.Perlin;
 import jolt.Jolt;
 import jolt.gdx.DebugRenderer;
@@ -61,7 +62,7 @@ public abstract class Test {
     public void updateCamera(PerspectiveCamera camera) {
     }
 
-    protected void initialize() {}
+    public void initialize() {}
 
     protected float getWorldScale() { return 1.0f; }
 

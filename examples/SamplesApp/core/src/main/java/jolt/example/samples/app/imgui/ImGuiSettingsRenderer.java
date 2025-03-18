@@ -8,7 +8,9 @@ import jolt.BodyManagerDrawSettings;
 import jolt.EShapeColor;
 import jolt.ESoftBodyConstraintColor;
 import jolt.core.JobSystemThreadPool;
+import jolt.example.samples.app.tests.Test;
 import jolt.example.samples.app.jolt.JoltInstance;
+import jolt.example.samples.app.tests.TestGroup;
 
 public class ImGuiSettingsRenderer {
 
@@ -157,6 +159,38 @@ public class ImGuiSettingsRenderer {
             int value = idlInt.getValue();
             jobSystem.SetNumThreads(value);
         }
+    }
+
+    public Class<Test> render(Array<TestGroup> allTests) {
+        for(TestGroup testGroup : allTests) {
+            Class<Test> testClass = renderGroupRecursive(testGroup);
+            if(testClass != null) {
+                return testClass;
+            }
+        }
+        return null;
+    }
+
+    private Class<Test> renderGroupRecursive(TestGroup group) {
+        Class<Test> testClass = null;
+        String name = group.getName();
+        if(group.testClass != null) {
+            if(ImGui.MenuItem(name)) {
+                testClass = group.testClass;
+            }
+        }
+        else {
+            if(ImGui.BeginMenu(name)) {
+                for(TestGroup child : group.children) {
+                    testClass = renderGroupRecursive(child);
+                    if(testClass != null) {
+                        break;
+                    }
+                }
+                ImGui.EndMenu();
+            }
+        }
+        return testClass;
     }
 
     private static class IntStringPair {

@@ -86,7 +86,7 @@ public class VehicleConstraintTest extends VehicleTest {
     private Mat44 tempMat44_1;
 
     @Override
-    protected void initialize() {
+    public void initialize() {
         super.initialize();
         tempVec3_1 = Jolt.New_Vec3();
         tempVec4_1 = Jolt.New_Vec4();
