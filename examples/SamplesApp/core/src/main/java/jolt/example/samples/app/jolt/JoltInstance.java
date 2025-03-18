@@ -69,6 +69,10 @@ public class JoltInstance {
         return physicsSystem;
     }
 
+    public JobSystemThreadPool getJobSystem() {
+        return mJobSystem;
+    }
+
     public void update(float deltaTime, int inCollisionSteps) {
         physicsSystem.Update(deltaTime, inCollisionSteps, mTempAllocator, mJobSystem);
     }

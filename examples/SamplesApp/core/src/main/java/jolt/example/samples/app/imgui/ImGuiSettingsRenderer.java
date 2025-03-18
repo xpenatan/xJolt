@@ -3,22 +3,29 @@ package jolt.example.samples.app.imgui;
 import com.badlogic.gdx.utils.Array;
 import imgui.ImGui;
 import imgui.idl.helper.IDLBool;
+import imgui.idl.helper.IDLInt;
 import jolt.BodyManagerDrawSettings;
 import jolt.EShapeColor;
 import jolt.ESoftBodyConstraintColor;
+import jolt.core.JobSystemThreadPool;
 import jolt.example.samples.app.jolt.JoltInstance;
 
 public class ImGuiSettingsRenderer {
 
     private IDLBool idlBool;
+    private IDLInt idlInt;
 
     private int mDrawSoftBodyConstraintColor;
     private int mDrawShapeColor;
     private Array<IntStringPair> mDrawSoftBodyConstraintColorArray;
     private Array<IntStringPair> mDrawShapeColorArray;
 
+    private int maxThreads;
+
     public ImGuiSettingsRenderer() {
+        maxThreads = Runtime.getRuntime().availableProcessors();
         idlBool = new IDLBool();
+        idlInt = new IDLInt();
         mDrawSoftBodyConstraintColorArray = new Array<>();
         mDrawSoftBodyConstraintColorArray.add(new IntStringPair("ConstraintType", ESoftBodyConstraintColor.ESoftBodyConstraintColor_ConstraintType));
         mDrawSoftBodyConstraintColorArray.add(new IntStringPair("ConstraintGroup", ESoftBodyConstraintColor.ESoftBodyConstraintColor_ConstraintGroup));
@@ -34,6 +41,7 @@ public class ImGuiSettingsRenderer {
 
     public void dispose() {
         idlBool.dispose();
+        idlInt.dispose();
     }
 
     public void render(BodyManagerDrawSettings settings) {
@@ -142,7 +150,13 @@ public class ImGuiSettingsRenderer {
     }
 
     public void render(JoltInstance instance) {
-
+        JobSystemThreadPool jobSystem = instance.getJobSystem();
+        int currentMaxThread = jobSystem.GetMaxConcurrency() - 1;
+        idlInt.set(currentMaxThread);
+        if(ImGui.SliderInt("Max Threads", idlInt, 1, maxThreads)) {
+            int value = idlInt.getValue();
+            jobSystem.SetNumThreads(value);
+        }
     }
 
     private static class IntStringPair {
