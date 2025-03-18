@@ -3259,6 +3259,8 @@ interface JobSystemWithBarrier {
 JobSystemWithBarrier implements JobSystem;
 
 interface JobSystemThreadPool {
+    long GetMaxConcurrency();
+    void SetNumThreads(long inNumThreads);
 };
 JobSystemThreadPool implements JobSystemWithBarrier;
 
