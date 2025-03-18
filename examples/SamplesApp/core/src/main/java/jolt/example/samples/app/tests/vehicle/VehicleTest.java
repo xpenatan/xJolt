@@ -1,21 +1,21 @@
 package jolt.example.samples.app.tests.vehicle;
 
 import com.badlogic.gdx.math.MathUtils;
-import jolt.ArrayVec3;
-import jolt.ConvexHullShapeSettings;
 import jolt.DistanceConstraintSettings;
-import jolt.EMotionType;
+import jolt.array.ArrayVec3;
+import jolt.enums.EActivation;
+import jolt.enums.EMotionType;
 import jolt.example.samples.app.Layers;
 import jolt.example.samples.app.tests.Test;
 import jolt.Jolt;
 import jolt.math.Quat;
 import jolt.math.Vec3;
-import jolt.physics.EActivation;
 import jolt.physics.body.Body;
 import jolt.physics.body.BodyCreationSettings;
 import jolt.physics.collision.CollisionGroup;
 import jolt.physics.collision.GroupFilterTable;
 import jolt.physics.collision.shape.BoxShape;
+import jolt.physics.collision.shape.ConvexHullShapeSettings;
 import jolt.physics.collision.shape.Shape;
 import static jolt.example.samples.app.tests.shapes.BoxShapeTest.JPH_PI;
 

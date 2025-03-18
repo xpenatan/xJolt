@@ -10,8 +10,8 @@ import jolt.math.Vec3;
 import jolt.physics.body.Body;
 import jolt.physics.body.BodyCreationSettings;
 import jolt.physics.collision.shape.BoxShape;
-import static jolt.EMotionType.EMotionType_Dynamic;
-import static jolt.physics.EActivation.EActivation_Activate;
+import static jolt.enums.EActivation.EActivation_Activate;
+import static jolt.enums.EMotionType.EMotionType_Dynamic;
 
 public class BoxShapeTest extends Test {
 

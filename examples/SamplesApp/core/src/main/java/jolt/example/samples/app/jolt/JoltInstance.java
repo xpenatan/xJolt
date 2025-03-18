@@ -1,6 +1,6 @@
 package jolt.example.samples.app.jolt;
 
-import jolt.TempAllocatorImpl;
+import jolt.core.TempAllocatorImpl;
 import jolt.example.samples.app.Layers;
 import jolt.Jolt;
 import jolt.core.Factory;

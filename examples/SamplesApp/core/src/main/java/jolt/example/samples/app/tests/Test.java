@@ -5,24 +5,24 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
 import jolt.MeshShapeSettings;
 import jolt.PhysicsMaterialList;
-import jolt.ShapeResult;
-import jolt.TriangleList;
+import jolt.enums.EActivation;
 import jolt.example.samples.app.Layers;
 import jolt.example.samples.app.math.Perlin;
 import jolt.Jolt;
 import jolt.gdx.DebugRenderer;
 import jolt.geometry.Triangle;
 import jolt.math.Quat;
+import jolt.math.TriangleList;
 import jolt.math.Vec3;
-import jolt.physics.EActivation;
 import jolt.physics.PhysicsSystem;
 import jolt.physics.body.Body;
 import jolt.physics.body.BodyCreationSettings;
 import jolt.physics.body.BodyInterface;
 import jolt.physics.collision.shape.BoxShape;
-import static jolt.EMotionType.EMotionType_Static;
-import static jolt.physics.EActivation.EActivation_Activate;
-import static jolt.physics.EActivation.EActivation_DontActivate;
+import jolt.physics.collision.shape.ShapeResult;
+import static jolt.enums.EActivation.EActivation_Activate;
+import static jolt.enums.EActivation.EActivation_DontActivate;
+import static jolt.enums.EMotionType.EMotionType_Static;
 
 public abstract class Test {
 

@@ -26,19 +26,19 @@ import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.Pool;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import java.util.ArrayList;
-import jolt.BodyManagerDrawSettings;
-import jolt.DebugArrayTriangle;
-import jolt.DebugRendererEm;
-import jolt.DebugRendererTriangle;
-import jolt.DebugRendererVertex;
-import jolt.ECastShadow;
-import jolt.EDrawMode;
 import jolt.core.Color;
+import jolt.enums.ECastShadow;
+import jolt.enums.EDrawMode;
 import jolt.math.Float2;
 import jolt.math.Float3;
 import jolt.math.Mat44;
 import jolt.math.Vec4;
 import jolt.physics.PhysicsSystem;
+import jolt.physics.body.BodyManagerDrawSettings;
+import jolt.renderer.DebugArrayTriangle;
+import jolt.renderer.DebugRendererEm;
+import jolt.renderer.DebugRendererTriangle;
+import jolt.renderer.DebugRendererVertex;
 
 public class DebugRenderer extends DebugRendererEm {
 

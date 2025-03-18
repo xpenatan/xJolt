@@ -4,13 +4,13 @@ import com.badlogic.gdx.utils.Array;
 import imgui.ImGui;
 import imgui.idl.helper.IDLBool;
 import imgui.idl.helper.IDLInt;
-import jolt.BodyManagerDrawSettings;
-import jolt.EShapeColor;
-import jolt.ESoftBodyConstraintColor;
 import jolt.core.JobSystemThreadPool;
+import jolt.enums.EShapeColor;
+import jolt.enums.ESoftBodyConstraintColor;
 import jolt.example.samples.app.tests.Test;
 import jolt.example.samples.app.jolt.JoltInstance;
 import jolt.example.samples.app.tests.TestGroup;
+import jolt.physics.body.BodyManagerDrawSettings;
 
 public class ImGuiSettingsRenderer {
 

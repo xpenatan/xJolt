@@ -11,13 +11,13 @@ import imgui.ImGui;
 import imgui.ImGuiCond;
 import imgui.ImGuiTabBarFlags;
 import imgui.ImVec2;
-import jolt.BodyManagerDrawSettings;
 import jolt.example.samples.app.imgui.ImGuiSettingsRenderer;
 import jolt.example.samples.app.jolt.JoltInstance;
 import jolt.example.samples.app.tests.Test;
 import jolt.example.samples.app.tests.TestGroup;
 import jolt.example.samples.app.tests.Tests;
 import jolt.gdx.DebugRenderer;
+import jolt.physics.body.BodyManagerDrawSettings;
 
 public class SamplesApp extends InputAdapter {
     private boolean isPaused;
