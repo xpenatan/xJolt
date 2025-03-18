@@ -155,7 +155,7 @@ public class ImGuiSettingsRenderer {
         JobSystemThreadPool jobSystem = instance.getJobSystem();
         int currentMaxThread = jobSystem.GetMaxConcurrency() - 1;
         idlInt.set(currentMaxThread);
-        if(ImGui.SliderInt("Max Threads", idlInt, 1, maxThreads)) {
+        if(ImGui.SliderInt("Total Threads", idlInt, 1, maxThreads)) {
             int value = idlInt.getValue();
             jobSystem.SetNumThreads(value);
         }
