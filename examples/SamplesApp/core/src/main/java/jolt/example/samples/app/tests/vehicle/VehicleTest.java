@@ -1,12 +1,12 @@
 package jolt.example.samples.app.tests.vehicle;
 
 import com.badlogic.gdx.math.MathUtils;
-import jolt.array.ArrayVec3;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.example.samples.app.Layers;
 import jolt.example.samples.app.tests.Test;
 import jolt.Jolt;
+import jolt.math.ArrayVec3;
 import jolt.math.Quat;
 import jolt.math.Vec3;
 import jolt.physics.body.Body;
