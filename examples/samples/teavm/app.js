@@ -28047,7 +28047,7 @@ jpv_VehicleConstraint_GetController = $this => {
 },
 jpv_VehicleConstraint_GetWheel = ($this, $inIdx) => {
     let $pointer;
-    $pointer = jpv_VehicleConstraint_internal_native_GetWheel$js_body$_26(Long_lo(((ji_IDLBase_getNativeData($this)).$getCPointer())), $inIdx);
+    $pointer = jpv_VehicleConstraint_internal_native_GetWheel$js_body$_28(Long_lo(((ji_IDLBase_getNativeData($this)).$getCPointer())), $inIdx);
     if (!$pointer)
         return null;
     if ($this.$Wheel_TEMP_GEN_0 === null)
@@ -28057,7 +28057,7 @@ jpv_VehicleConstraint_GetWheel = ($this, $inIdx) => {
 },
 jpv_VehicleConstraint_GetWheelWorldTransform = ($this, $inWheelIndex, $inWheelRight, $inWheelUp) => {
     let $pointer;
-    $pointer = jpv_VehicleConstraint_internal_native_GetWheelWorldTransform$js_body$_30(Long_lo(((ji_IDLBase_getNativeData($this)).$getCPointer())), $inWheelIndex, Long_lo(($inWheelRight === null ? Long_ZERO : (ji_IDLBase_getNativeData($inWheelRight)).$getCPointer())), Long_lo(($inWheelUp === null ? Long_ZERO : (ji_IDLBase_getNativeData($inWheelUp)).$getCPointer())));
+    $pointer = jpv_VehicleConstraint_internal_native_GetWheelWorldTransform$js_body$_32(Long_lo(((ji_IDLBase_getNativeData($this)).$getCPointer())), $inWheelIndex, Long_lo(($inWheelRight === null ? Long_ZERO : (ji_IDLBase_getNativeData($inWheelRight)).$getCPointer())), Long_lo(($inWheelUp === null ? Long_ZERO : (ji_IDLBase_getNativeData($inWheelUp)).$getCPointer())));
     if (!$pointer)
         return null;
     if ($this.$Mat44_TEMP_GEN_1 === null)
@@ -28084,13 +28084,13 @@ jpv_VehicleConstraint_internal_native_GetController$js_body$_24 = var$1 => {
     if (!returnedJSObj.hasOwnProperty('ptr')) return 0;
     return jolt.getPointer(returnedJSObj);
 },
-jpv_VehicleConstraint_internal_native_GetWheel$js_body$_26 = (var$1, var$2) => {
+jpv_VehicleConstraint_internal_native_GetWheel$js_body$_28 = (var$1, var$2) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.VehicleConstraint);
     var returnedJSObj = jsObj.GetWheel(var$2);
     if (!returnedJSObj.hasOwnProperty('ptr')) return 0;
     return jolt.getPointer(returnedJSObj);
 },
-jpv_VehicleConstraint_internal_native_GetWheelWorldTransform$js_body$_30 = (var$1, var$2, var$3, var$4) => {
+jpv_VehicleConstraint_internal_native_GetWheelWorldTransform$js_body$_32 = (var$1, var$2, var$3, var$4) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.VehicleConstraint);
     var returnedJSObj = jsObj.GetWheelWorldTransform(var$2, var$3, var$4);
     if (!returnedJSObj.hasOwnProperty('ptr')) return 0;
@@ -42808,7 +42808,7 @@ jpc_GroupFilterTable__init_ = (var_0, var_1) => {
     return var_2;
 },
 jpc_GroupFilterTable_DisableCollision = ($this, $inSubGroup1, $inSubGroup2) => {
-    jpc_GroupFilterTable_internal_native_DisableCollision$js_body$_4(Long_lo(((ji_IDLBase_getNativeData($this)).$getCPointer())), $inSubGroup1, $inSubGroup2);
+    jpc_GroupFilterTable_internal_native_DisableCollision$js_body$_6(Long_lo(((ji_IDLBase_getNativeData($this)).$getCPointer())), $inSubGroup1, $inSubGroup2);
 },
 jpc_GroupFilterTable__clinit_ = () => {
     jpc_GroupFilterTable_T_01 = jpc_GroupFilterTable__init_(1, 1);
@@ -42819,7 +42819,7 @@ jpc_GroupFilterTable_internal_native_create_int$js_body$_1 = var$1 => {
     var jsObj = new jolt.GroupFilterTable(var$1);
     return jolt.getPointer(jsObj);
 },
-jpc_GroupFilterTable_internal_native_DisableCollision$js_body$_4 = (var$1, var$2, var$3) => {
+jpc_GroupFilterTable_internal_native_DisableCollision$js_body$_6 = (var$1, var$2, var$3) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.GroupFilterTable);
     jsObj.DisableCollision(var$2, var$3);
 };
