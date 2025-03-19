@@ -13194,17 +13194,17 @@ jpv_TrackedVehicleController_internal_native_SetDriverInput$js_body$_4 = (var$1,
     jsObj.SetDriverInput(var$2, var$3, var$4, var$5);
 },
 je_EMotionType = $rt_classWithoutFields(),
-je_EMotionType_EMotionType_Static = 0,
-je_EMotionType_EMotionType_Kinematic = 0,
-je_EMotionType_EMotionType_Dynamic = 0,
+je_EMotionType_Static = 0,
+je_EMotionType_Kinematic = 0,
+je_EMotionType_Dynamic = 0,
 je_EMotionType_$callClinit = () => {
     je_EMotionType_$callClinit = $rt_eraseClinit(je_EMotionType);
     je_EMotionType__clinit_();
 },
 je_EMotionType__clinit_ = () => {
-    je_EMotionType_EMotionType_Static = jolt.EMotionType_Static;
-    je_EMotionType_EMotionType_Kinematic = jolt.EMotionType_Kinematic;
-    je_EMotionType_EMotionType_Dynamic = jolt.EMotionType_Dynamic;
+    je_EMotionType_Static = jolt.EMotionType_Static;
+    je_EMotionType_Kinematic = jolt.EMotionType_Kinematic;
+    je_EMotionType_Dynamic = jolt.EMotionType_Dynamic;
 };
 function cbgggm_MeshPart() {
     let a = this; jl_Object.call(a);
@@ -16499,15 +16499,15 @@ cbggga_FloatAttribute__clinit_ = () => {
     cbggga_FloatAttribute_AlphaTest = cbggg_Attribute_register($rt_s(379));
 },
 je_EActivation = $rt_classWithoutFields(),
-je_EActivation_EActivation_Activate = 0,
-je_EActivation_EActivation_DontActivate = 0,
+je_EActivation_Activate = 0,
+je_EActivation_DontActivate = 0,
 je_EActivation_$callClinit = () => {
     je_EActivation_$callClinit = $rt_eraseClinit(je_EActivation);
     je_EActivation__clinit_();
 },
 je_EActivation__clinit_ = () => {
-    je_EActivation_EActivation_Activate = jolt.EActivation_Activate;
-    je_EActivation_EActivation_DontActivate = jolt.EActivation_DontActivate;
+    je_EActivation_Activate = jolt.EActivation_Activate;
+    je_EActivation_DontActivate = jolt.EActivation_DontActivate;
 },
 jl_CloneNotSupportedException = $rt_classWithoutFields(jl_Exception),
 jl_CloneNotSupportedException__init_ = $this => {
@@ -16617,14 +16617,14 @@ jesat_Test_createFloor0 = ($this, $inSize) => {
     $inRotation = jm_Quat_sIdentity();
     $bodyShape = jpcs_BoxShape__init_4($inHalfExtent, 0.0);
     je_EMotionType_$callClinit();
-    var$8 = je_EMotionType_EMotionType_Static;
+    var$8 = je_EMotionType_Static;
     jesa_Layers_$callClinit();
     $bodySettings = j_Jolt_New_BodyCreationSettings($bodyShape, $inPosition, $inRotation, var$8, jesa_Layers_NON_MOVING);
     $body = $this.$mBodyInterface.$CreateBody($bodySettings);
     var$11 = $this.$mBodyInterface;
     var$12 = $body.$GetID();
     je_EActivation_$callClinit();
-    var$11.$AddBody(var$12, je_EActivation_EActivation_DontActivate);
+    var$11.$AddBody(var$12, je_EActivation_DontActivate);
     $bodySettings.$dispose();
     $inHalfExtent.$dispose();
     $inPosition.$dispose();
@@ -16686,12 +16686,12 @@ jesat_Test_CreateMeshTerrain = $this => {
     var$25 = jm_Vec3_sZero();
     var$26 = jm_Quat_sIdentity();
     je_EMotionType_$callClinit();
-    $bodyCreationSettings = j_Jolt_New_BodyCreationSettings0(var$24, var$25, var$26, je_EMotionType_EMotionType_Static, $NON_MOVING);
+    $bodyCreationSettings = j_Jolt_New_BodyCreationSettings0(var$24, var$25, var$26, je_EMotionType_Static, $NON_MOVING);
     $floor = $this.$mBodyInterface.$CreateBody($bodyCreationSettings);
     var$24 = $this.$mBodyInterface;
     var$25 = $floor.$GetID();
     je_EActivation_$callClinit();
-    var$24.$AddBody(var$25, je_EActivation_EActivation_DontActivate);
+    var$24.$AddBody(var$25, je_EActivation_DontActivate);
     $triangles.$dispose();
     $bodyCreationSettings.$dispose();
     return $floor;
@@ -19704,7 +19704,7 @@ jesatv_VehicleTest_createBridge = $this => {
         if (!$i) {
             var$19 = $pos.$SubVec3($first_part_rot.$MulVec3($val));
             je_EMotionType_$callClinit();
-            var$20 = je_EMotionType_EMotionType_Static;
+            var$20 = je_EMotionType_Static;
             jesa_Layers_$callClinit();
             $bodyCreationSettings = j_Jolt_New_BodyCreationSettings($large_part_shape, var$19, $first_part_rot, var$20, jesa_Layers_NON_MOVING);
             var$22 = $this.$mBodyInterface.$CreateBody($bodyCreationSettings);
@@ -19714,10 +19714,10 @@ jesatv_VehicleTest_createBridge = $this => {
             var$20 = $rt_compare($i, 19);
             if (var$20) {
                 je_EMotionType_$callClinit();
-                var$23 = je_EMotionType_EMotionType_Dynamic;
+                var$23 = je_EMotionType_Dynamic;
             } else {
                 je_EMotionType_$callClinit();
-                var$23 = je_EMotionType_EMotionType_Static;
+                var$23 = je_EMotionType_Static;
             }
             if (var$20) {
                 jesa_Layers_$callClinit();
@@ -19738,7 +19738,7 @@ jesatv_VehicleTest_createBridge = $this => {
         var$19 = $this.$mBodyInterface;
         var$25 = var$22.$GetID();
         je_EActivation_$callClinit();
-        var$19.$AddBody(var$25, je_EActivation_EActivation_Activate);
+        var$19.$AddBody(var$25, je_EActivation_Activate);
         if ($prev_part !== null) {
             $dc = jpc_DistanceConstraintSettings__init_2();
             $temp1.$Set( -$part_half_size.$GetX(), 0.0, $part_half_size.$GetZ());
@@ -19778,12 +19778,12 @@ jesatv_VehicleTest_createWall = $this => {
             $position = j_Jolt_New_Vec3(2.0 + $j * 1.0 + (($i & 1) != 1 ? 0.0 : 0.5), 2.0 + $i * 1.0, 10.0);
             var$7 = jm_Quat_sIdentity();
             je_EMotionType_$callClinit();
-            var$8 = je_EMotionType_EMotionType_Dynamic;
+            var$8 = je_EMotionType_Dynamic;
             jesa_Layers_$callClinit();
             $bodyCreationSettings = j_Jolt_New_BodyCreationSettings($box_shape, $position, var$7, var$8, jesa_Layers_MOVING);
             var$7 = $this.$mBodyInterface;
             je_EActivation_$callClinit();
-            var$7.$CreateAndAddBody($bodyCreationSettings, je_EActivation_EActivation_Activate);
+            var$7.$CreateAndAddBody($bodyCreationSettings, je_EActivation_Activate);
             $bodyCreationSettings.$dispose();
             $position.$dispose();
             $j = $j + 1 | 0;
@@ -19805,12 +19805,12 @@ jesatv_VehicleTest_createRubble = $this => {
             $position = j_Jolt_New_Vec3(var$5, 2.0 + var$6 * 0.20000000298023224, 10.0 + 0.5 * var$6);
             var$8 = jm_Quat_sIdentity();
             je_EMotionType_$callClinit();
-            var$9 = je_EMotionType_EMotionType_Dynamic;
+            var$9 = je_EMotionType_Dynamic;
             jesa_Layers_$callClinit();
             $bodyCreationSettings = j_Jolt_New_BodyCreationSettings($box_shape, $position, var$8, var$9, jesa_Layers_MOVING);
             var$8 = $this.$mBodyInterface;
             je_EActivation_$callClinit();
-            var$8.$CreateAndAddBody($bodyCreationSettings, je_EActivation_EActivation_Activate);
+            var$8.$CreateAndAddBody($bodyCreationSettings, je_EActivation_Activate);
             $bodyCreationSettings.$dispose();
             $position.$dispose();
             $j = $j + 1 | 0;
@@ -19837,12 +19837,12 @@ jesatv_VehicleTest_createRubble = $this => {
             $vec3 = j_Jolt_New_Vec3((-5.0) + 0.5 * $j, 2.0, 15.0 + 0.5 * $i);
             var$8 = jm_Quat_sIdentity();
             je_EMotionType_$callClinit();
-            var$9 = je_EMotionType_EMotionType_Dynamic;
+            var$9 = je_EMotionType_Dynamic;
             jesa_Layers_$callClinit();
             $bodyCreationSettings = j_Jolt_New_BodyCreationSettings0($convexHullShapeSettings, $vec3, var$8, var$9, jesa_Layers_MOVING);
             var$8 = $this.$mBodyInterface;
             je_EActivation_$callClinit();
-            var$8.$CreateAndAddBody($bodyCreationSettings, je_EActivation_EActivation_Activate);
+            var$8.$CreateAndAddBody($bodyCreationSettings, je_EActivation_Activate);
             $bodyCreationSettings.$dispose();
             $points.$dispose();
             $vec3.$dispose();
@@ -19946,16 +19946,16 @@ jesatv_VehicleConstraintTest_initialize = $this => {
     jesatv_VehicleConstraintTest_$callClinit();
     var$7 = jm_Quat_sRotation(var$7, jesatv_VehicleConstraintTest_sInitialRollAngle);
     je_EMotionType_$callClinit();
-    $car_body_settings = j_Jolt_New_BodyCreationSettings($car_shape, $position, var$7, je_EMotionType_EMotionType_Dynamic, jesa_Layers_MOVING);
+    $car_body_settings = j_Jolt_New_BodyCreationSettings($car_shape, $position, var$7, je_EMotionType_Dynamic, jesa_Layers_MOVING);
     je_EOverrideMassProperties_$callClinit();
-    $car_body_settings.$set_mOverrideMassProperties(je_EOverrideMassProperties_EOverrideMassProperties_CalculateInertia);
+    $car_body_settings.$set_mOverrideMassProperties(je_EOverrideMassProperties_CalculateInertia);
     ($car_body_settings.$get_mMassPropertiesOverride()).$set_mMass(1500.0);
     $this.$mCarBody = $this.$mBodyInterface.$CreateBody($car_body_settings);
     $car_body_settings.$dispose();
     var$7 = $this.$mBodyInterface;
     var$11 = $this.$mCarBody.$GetID();
     je_EActivation_$callClinit();
-    var$7.$AddBody(var$11, je_EActivation_EActivation_Activate);
+    var$7.$AddBody(var$11, je_EActivation_Activate);
     $vehicle = jpv_VehicleConstraintSettings__init_2();
     $vehicle.$set_mDrawConstraintSize(0.10000000149011612);
     $vehicle.$set_mMaxPitchRollAngle(jesatv_VehicleConstraintTest_sMaxRollAngle);
@@ -24783,9 +24783,9 @@ jesats_BoxShapeTest_initialize = $this => {
     var$2 = $this.$mBodyInterface;
     var$3 = $body1.$GetID();
     je_EActivation_$callClinit();
-    var$2.$AddBody(var$3, je_EActivation_EActivation_Activate);
+    var$2.$AddBody(var$3, je_EActivation_Activate);
     $body2 = jesats_BoxShapeTest_createBody($this, cbgm_Vector3__init_0(2.0, 3.0, 4.0), cbgm_Vector3__init_0(0.0, 10.0, 10.0), jm_Quat_sRotation(jm_Vec3_sAxisZ(), 0.7853981852531433));
-    $this.$mBodyInterface.$AddBody($body2.$GetID(), je_EActivation_EActivation_Activate);
+    $this.$mBodyInterface.$AddBody($body2.$GetID(), je_EActivation_Activate);
     $quatX3 = jm_Quat_sRotation(jm_Vec3_sAxisX(), 0.7853981852531433);
     $q1X = $quatX3.$GetX();
     $q1Y = $quatX3.$GetY();
@@ -24804,7 +24804,7 @@ jesats_BoxShapeTest_initialize = $this => {
     $quatX3.$SetZ($mul.$z0);
     $quatX3.$SetW($mul.$w);
     $body3 = jesats_BoxShapeTest_createBody($this, cbgm_Vector3__init_0(0.5, 0.75, 1.0), cbgm_Vector3__init_0(0.0, 10.0, 20.0), $quatX3);
-    $this.$mBodyInterface.$AddBody($body3.$GetID(), je_EActivation_EActivation_Activate);
+    $this.$mBodyInterface.$AddBody($body3.$GetID(), je_EActivation_Activate);
 },
 jesats_BoxShapeTest_createBody = ($this, $inHalfExtent, $inPosition, $inRotation) => {
     let $inHalfExtentJolt, $inPositionJolt, $bodyShape, var$7, $bodySettings, $body;
@@ -24813,7 +24813,7 @@ jesats_BoxShapeTest_createBody = ($this, $inHalfExtent, $inPosition, $inRotation
     $inPositionJolt = j_Jolt_New_Vec3($inPosition.$x, $inPosition.$y, $inPosition.$z);
     $bodyShape = jpcs_BoxShape__init_($inHalfExtentJolt);
     je_EMotionType_$callClinit();
-    var$7 = je_EMotionType_EMotionType_Dynamic;
+    var$7 = je_EMotionType_Dynamic;
     jesa_Layers_$callClinit();
     $bodySettings = j_Jolt_New_BodyCreationSettings($bodyShape, $inPositionJolt, $inRotation, var$7, jesa_Layers_MOVING);
     $body = $this.$mBodyInterface.$CreateBody($bodySettings);
@@ -27381,17 +27381,17 @@ jur_Lexer_getIndex = $this => {
     return $this.$curToc;
 },
 je_EMotorState = $rt_classWithoutFields(),
-je_EMotorState_EMotorState_Off = 0,
-je_EMotorState_EMotorState_Velocity = 0,
-je_EMotorState_EMotorState_Position = 0,
+je_EMotorState_Off = 0,
+je_EMotorState_Velocity = 0,
+je_EMotorState_Position = 0,
 je_EMotorState_$callClinit = () => {
     je_EMotorState_$callClinit = $rt_eraseClinit(je_EMotorState);
     je_EMotorState__clinit_();
 },
 je_EMotorState__clinit_ = () => {
-    je_EMotorState_EMotorState_Off = jolt.EMotorState_Off;
-    je_EMotorState_EMotorState_Velocity = jolt.EMotorState_Velocity;
-    je_EMotorState_EMotorState_Position = jolt.EMotorState_Position;
+    je_EMotorState_Off = jolt.EMotorState_Off;
+    je_EMotorState_Velocity = jolt.EMotorState_Velocity;
+    je_EMotorState_Position = jolt.EMotorState_Position;
 },
 jur_AbstractCharClass$LazyNonSpace = $rt_classWithoutFields(jur_AbstractCharClass$LazySpace),
 jur_AbstractCharClass$LazyNonSpace__init_ = $this => {
@@ -37304,17 +37304,17 @@ cbggg_Environment_add = ($this, $light) => {
     return $this;
 },
 je_EOverrideMassProperties = $rt_classWithoutFields(),
-je_EOverrideMassProperties_EOverrideMassProperties_CalculateMassAndInertia = 0,
-je_EOverrideMassProperties_EOverrideMassProperties_CalculateInertia = 0,
-je_EOverrideMassProperties_EOverrideMassProperties_MassAndInertiaProvided = 0,
+je_EOverrideMassProperties_CalculateMassAndInertia = 0,
+je_EOverrideMassProperties_CalculateInertia = 0,
+je_EOverrideMassProperties_MassAndInertiaProvided = 0,
 je_EOverrideMassProperties_$callClinit = () => {
     je_EOverrideMassProperties_$callClinit = $rt_eraseClinit(je_EOverrideMassProperties);
     je_EOverrideMassProperties__clinit_();
 },
 je_EOverrideMassProperties__clinit_ = () => {
-    je_EOverrideMassProperties_EOverrideMassProperties_CalculateMassAndInertia = jolt.EOverrideMassProperties_CalculateMassAndInertia;
-    je_EOverrideMassProperties_EOverrideMassProperties_CalculateInertia = jolt.EOverrideMassProperties_CalculateInertia;
-    je_EOverrideMassProperties_EOverrideMassProperties_MassAndInertiaProvided = jolt.EOverrideMassProperties_MassAndInertiaProvided;
+    je_EOverrideMassProperties_CalculateMassAndInertia = jolt.EOverrideMassProperties_CalculateMassAndInertia;
+    je_EOverrideMassProperties_CalculateInertia = jolt.EOverrideMassProperties_CalculateInertia;
+    je_EOverrideMassProperties_MassAndInertiaProvided = jolt.EOverrideMassProperties_MassAndInertiaProvided;
 };
 function cbg_AbstractInput() {
     let a = this; jl_Object.call(a);
@@ -42204,20 +42204,20 @@ jesatv_TankTest_initialize = $this => {
     $tank_body_shape = ((jpcs_OffsetCenterOfMassShapeSettings__init_2(j_Jolt_New_Vec3(0.0, (-0.5), 0.0), jpcs_BoxShape__init_(j_Jolt_New_Vec3(1.7000000476837158, 0.5, 3.200000047683716)))).$Create0()).$Get();
     var$6 = jm_Quat_sIdentity();
     je_EMotionType_$callClinit();
-    var$7 = je_EMotionType_EMotionType_Dynamic;
+    var$7 = je_EMotionType_Dynamic;
     jesa_Layers_$callClinit();
     $tank_body_settings = j_Jolt_New_BodyCreationSettings($tank_body_shape, $body_position, var$6, var$7, jesa_Layers_MOVING);
     ($tank_body_settings.$get_mCollisionGroup()).$SetGroupFilter($filter);
     ($tank_body_settings.$get_mCollisionGroup()).$SetGroupID(0);
     ($tank_body_settings.$get_mCollisionGroup()).$SetSubGroupID(0);
     je_EOverrideMassProperties_$callClinit();
-    $tank_body_settings.$set_mOverrideMassProperties(je_EOverrideMassProperties_EOverrideMassProperties_CalculateInertia);
+    $tank_body_settings.$set_mOverrideMassProperties(je_EOverrideMassProperties_CalculateInertia);
     ($tank_body_settings.$get_mMassPropertiesOverride()).$set_mMass(4000.0);
     $this.$mTankBody = $this.$mBodyInterface.$CreateBody($tank_body_settings);
     var$6 = $this.$mBodyInterface;
     var$9 = $this.$mTankBody.$GetID();
     je_EActivation_$callClinit();
-    var$6.$AddBody(var$9, je_EActivation_EActivation_Activate);
+    var$6.$AddBody(var$9, je_EActivation_Activate);
     $vehicle = jpv_VehicleConstraintSettings__init_2();
     $vehicle.$set_mDrawConstraintSize(0.10000000149011612);
     $vehicle.$set_mMaxPitchRollAngle(1.0471975803375244);
@@ -42248,14 +42248,14 @@ jesatv_TankTest_initialize = $this => {
     $this.$mPhysicsSystem.$AddConstraint($this.$mVehicleConstraint0);
     $this.$mPhysicsSystem.$AddStepListener($this.$mVehicleConstraint0);
     $turret_position = (j_Jolt_New_Vec3(0.0, 0.8999999761581421, 0.0)).$Add($body_position);
-    $turret_body_setings = j_Jolt_New_BodyCreationSettings(jpcs_BoxShape__init_(j_Jolt_New_Vec3(1.399999976158142, 0.4000000059604645, 2.0)), $turret_position, jm_Quat_sIdentity(), je_EMotionType_EMotionType_Dynamic, jesa_Layers_MOVING);
+    $turret_body_setings = j_Jolt_New_BodyCreationSettings(jpcs_BoxShape__init_(j_Jolt_New_Vec3(1.399999976158142, 0.4000000059604645, 2.0)), $turret_position, jm_Quat_sIdentity(), je_EMotionType_Dynamic, jesa_Layers_MOVING);
     ($turret_body_setings.$get_mCollisionGroup()).$SetGroupFilter($filter);
     ($turret_body_setings.$get_mCollisionGroup()).$SetGroupID(0);
     ($turret_body_setings.$get_mCollisionGroup()).$SetSubGroupID(0);
-    $turret_body_setings.$set_mOverrideMassProperties(je_EOverrideMassProperties_EOverrideMassProperties_CalculateInertia);
+    $turret_body_setings.$set_mOverrideMassProperties(je_EOverrideMassProperties_CalculateInertia);
     ($turret_body_setings.$get_mMassPropertiesOverride()).$set_mMass(2000.0);
     $this.$mTurretBody = $this.$mBodyInterface.$CreateBody($turret_body_setings);
-    $this.$mBodyInterface.$AddBody($this.$mTurretBody.$GetID(), je_EActivation_EActivation_Activate);
+    $this.$mBodyInterface.$AddBody($this.$mTurretBody.$GetID(), je_EActivation_Activate);
     $turret_hinge = jpc_HingeConstraintSettings__init_0();
     $turretPoint = $body_position.$AddVec3(j_Jolt_New_Vec3(0.0, 0.5, 0.0));
     $turret_hinge.$set_mPoint1($turretPoint);
@@ -42270,17 +42270,17 @@ jesatv_TankTest_initialize = $this => {
     $this.$mTurretHinge = jpc_HingeConstraint_T_01;
     var$6 = $this.$mTurretHinge;
     je_EMotorState_$callClinit();
-    var$6.$SetMotorState(je_EMotorState_EMotorState_Position);
+    var$6.$SetMotorState(je_EMotorState_Position);
     $this.$mPhysicsSystem.$AddConstraint($this.$mTurretHinge);
     $barrel_position = (j_Jolt_New_Vec3(0.0, 0.0, 3.299999952316284)).$Add($turret_position);
-    $barrel_body_setings = j_Jolt_New_BodyCreationSettings(jpcs_CylinderShape__init_2(1.5, 0.10000000149011612), $barrel_position, jm_Quat_sRotation(jm_Vec3_sAxisX(), 1.5707963705062866), je_EMotionType_EMotionType_Dynamic, jesa_Layers_MOVING);
+    $barrel_body_setings = j_Jolt_New_BodyCreationSettings(jpcs_CylinderShape__init_2(1.5, 0.10000000149011612), $barrel_position, jm_Quat_sRotation(jm_Vec3_sAxisX(), 1.5707963705062866), je_EMotionType_Dynamic, jesa_Layers_MOVING);
     ($barrel_body_setings.$get_mCollisionGroup()).$SetGroupFilter($filter);
     ($barrel_body_setings.$get_mCollisionGroup()).$SetGroupID(0);
     ($barrel_body_setings.$get_mCollisionGroup()).$SetSubGroupID(0);
-    $barrel_body_setings.$set_mOverrideMassProperties(je_EOverrideMassProperties_EOverrideMassProperties_CalculateInertia);
+    $barrel_body_setings.$set_mOverrideMassProperties(je_EOverrideMassProperties_CalculateInertia);
     ($barrel_body_setings.$get_mMassPropertiesOverride()).$set_mMass(200.0);
     $this.$mBarrelBody = $this.$mBodyInterface.$CreateBody($barrel_body_setings);
-    $this.$mBodyInterface.$AddBody($this.$mBarrelBody.$GetID(), je_EActivation_EActivation_Activate);
+    $this.$mBodyInterface.$AddBody($this.$mBarrelBody.$GetID(), je_EActivation_Activate);
     $barrel_hinge = jpc_HingeConstraintSettings__init_0();
     $barrelPoint = $barrel_position.$SubVec3(j_Jolt_New_Vec3(0.0, 0.0, 1.5));
     $barrel_hinge.$set_mPoint1($barrelPoint);
@@ -42295,7 +42295,7 @@ jesatv_TankTest_initialize = $this => {
     $barrel_hinge.$set_mMotorSettings(jpc_MotorSettings__init_1(10.0, 1.0));
     (ji_IDLBase_getNativeData(jpc_HingeConstraint_T_02)).$reset((ji_IDLBase_getNativeData($barrel_hinge.$Create($this.$mTurretBody, $this.$mBarrelBody))).$getCPointer(), 1);
     $this.$mBarrelHinge = jpc_HingeConstraint_T_02;
-    $this.$mBarrelHinge.$SetMotorState(je_EMotorState_EMotorState_Position);
+    $this.$mBarrelHinge.$SetMotorState(je_EMotorState_Position);
     $this.$mPhysicsSystem.$AddConstraint($this.$mBarrelHinge);
 },
 jesatv_TankTest_prePhysicsUpdate = ($this, $isPlaying) => {
