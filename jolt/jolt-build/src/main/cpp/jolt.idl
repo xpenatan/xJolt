@@ -1639,7 +1639,7 @@ CylinderShapeSettings implements ConvexShapeSettings;
 
 [NoDelete]
 interface CylinderShape {
-    void CylinderShape(float inHalfHeight, float inRadius, float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
+    void CylinderShape(float inHalfHeight, float inRadius, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
     float GetRadius();
     float GetHalfHeight();
 };
@@ -1969,6 +1969,8 @@ interface SpringSettings {
 // Motor settings
 interface MotorSettings {
     void MotorSettings();
+    void MotorSettings(float inFrequency, float inDamping);
+    void MotorSettings(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
 
     [Value] attribute SpringSettings mSpringSettings;
     attribute float mMinForceLimit;
@@ -2419,7 +2421,7 @@ interface GroupFilterJS {
 
 [NoDelete]
 interface GroupFilterTable {
-    void GroupFilterTable(unsigned long inNumGroups);
+    void GroupFilterTable(optional unsigned long inNumGroups);
     void DisableCollision(unsigned long inSubGroup1, unsigned long inSubGroup2);
     void EnableCollision(unsigned long inSubGroup1, unsigned long inSubGroup2);
     boolean IsCollisionEnabled(unsigned long inSubGroup1, unsigned long inSubGroup2);
@@ -3468,6 +3470,7 @@ interface VehicleConstraint {
     [Value] Vec3 GetWorldUp();
     Body GetVehicleBody();
     VehicleController GetController();
+    [Const, Ref] Wheels GetWheels();
     [Const] Wheel GetWheel(unsigned long inIdx);
     [Value] Mat44 GetWheelLocalTransform(unsigned long inWheelIndex, [Ref] Vec3 inWheelRight, [Ref] Vec3 inWheelUp);
     [Value] Mat44 GetWheelWorldTransform(unsigned long inWheelIndex, [Ref] Vec3 inWheelRight, [Ref] Vec3 inWheelUp);
@@ -3530,6 +3533,17 @@ interface Wheel {
     float GetSuspensionLambda();
     float GetLongitudinalLambda();
     float GetLateralLambda();
+};
+
+interface Wheels { //[-SUB_PACKAGE=physics.vehicle]
+    void Wheels();
+    boolean empty();
+    long size();
+    Wheel at(long inIndex);
+    void push_back(Wheel inValue);
+    void reserve(unsigned long inSize);
+    void resize(unsigned long inSize);
+    void clear();
 };
 
 [NoDelete]
