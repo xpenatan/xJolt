@@ -7,7 +7,7 @@
 
 gdx-jolt is a Java binding for the C++ library [Jolt Physics](https://github.com/jrouwe/JoltPhysics), utilizing JNI for desktop and mobile platforms, and Emscripten for web platforms. It provides a one-to-one correspondence with the C++ code, meaning it mirrors the exact same class and method names. Its primary focus is to support libGDX projects.
 
-The binding leverages [jParser](https://github.com/xpenatan/jParser), a custom compiler and WebIDL Java generator, which automatically generates 99% of all classes. Only a small number of essential classes are coded manually, making updates to new Jolt Physics versions quick and efficient.
+The binding leverages [jParser](https://github.com/xpenatan/jParser), a custom C/C++ build tool and WebIDL Java code generator, which automatically generates 99% of all classes. Only a small number of essential classes are coded manually, making updates to new Jolt Physics versions quick and efficient.
 
 ![image](https://github.com/user-attachments/assets/98ab1f09-6b00-4665-8082-40179f3fbf74)
 
