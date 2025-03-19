@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
 import jolt.enums.EActivation;
+import jolt.enums.EMotionType;
 import jolt.example.samples.app.Layers;
 import jolt.example.samples.app.math.Perlin;
 import jolt.Jolt;
@@ -20,9 +21,6 @@ import jolt.physics.collision.PhysicsMaterialList;
 import jolt.physics.collision.shape.BoxShape;
 import jolt.physics.collision.shape.MeshShapeSettings;
 import jolt.physics.collision.shape.ShapeResult;
-import static jolt.enums.EActivation.EActivation_Activate;
-import static jolt.enums.EActivation.EActivation_DontActivate;
-import static jolt.enums.EMotionType.EMotionType_Static;
 
 public abstract class Test {
 
@@ -76,9 +74,9 @@ public abstract class Test {
         Vec3 inPosition = Jolt.New_Vec3(0.0f, scale * -1.0f, 0.0f);
         Quat inRotation = Quat.sIdentity();
         BoxShape bodyShape = new BoxShape(inHalfExtent, 0.0f);
-        BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType_Static, Layers.NON_MOVING);
+        BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType.Static, Layers.NON_MOVING);
         Body body = mBodyInterface.CreateBody(bodySettings);
-        mBodyInterface.AddBody(body.GetID(), EActivation_DontActivate);
+        mBodyInterface.AddBody(body.GetID(), EActivation.DontActivate);
         bodySettings.dispose();
         inHalfExtent.dispose();
         inPosition.dispose();
@@ -151,7 +149,7 @@ public abstract class Test {
         var shape = shapeResult.Get();
         // Create body
         Vec3 vec3 = Jolt.New_Vec3(posX, posY, posZ);
-        var creationSettings = Jolt.New_BodyCreationSettings(shape, vec3, new Quat(0, 0, 0, 1), EMotionType_Static, Layers.NON_MOVING);
+        var creationSettings = Jolt.New_BodyCreationSettings(shape, vec3, new Quat(0, 0, 0, 1), EMotionType.Static, Layers.NON_MOVING);
         var body = mBodyInterface.CreateBody(creationSettings);
         creationSettings.dispose();
         vec3.dispose();
@@ -159,7 +157,7 @@ public abstract class Test {
     }
 
     void addToScene(Body body, int color) {
-        mBodyInterface.AddBody(body.GetID(), EActivation_Activate);
+        mBodyInterface.AddBody(body.GetID(), EActivation.Activate);
 
 //        addToThreeScene(body, color);
     }
@@ -209,9 +207,9 @@ public abstract class Test {
         }
 
         int NON_MOVING = 4;
-        BodyCreationSettings bodyCreationSettings = Jolt.New_BodyCreationSettings(new MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType_Static, NON_MOVING);
+        BodyCreationSettings bodyCreationSettings = Jolt.New_BodyCreationSettings(new MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType.Static, NON_MOVING);
         Body floor = mBodyInterface.CreateBody(bodyCreationSettings);
-        mBodyInterface.AddBody(floor.GetID(), EActivation.EActivation_DontActivate);
+        mBodyInterface.AddBody(floor.GetID(), EActivation.DontActivate);
         triangles.dispose();
         bodyCreationSettings.dispose();
         return floor;

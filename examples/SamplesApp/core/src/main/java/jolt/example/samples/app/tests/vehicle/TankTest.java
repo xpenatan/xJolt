@@ -97,14 +97,14 @@ public class TankTest extends VehicleTest {
         // Create tank body
         Vec3 body_position = Jolt.New_Vec3(0, 2, 0);
         Shape tank_body_shape = new OffsetCenterOfMassShapeSettings(Jolt.New_Vec3(0, -half_vehicle_height, 0), new BoxShape(Jolt.New_Vec3(half_vehicle_width, half_vehicle_height, half_vehicle_length))).Create().Get();
-        BodyCreationSettings tank_body_settings = Jolt.New_BodyCreationSettings(tank_body_shape, body_position, Quat.sIdentity(), EMotionType.EMotionType_Dynamic, Layers.MOVING);
+        BodyCreationSettings tank_body_settings = Jolt.New_BodyCreationSettings(tank_body_shape, body_position, Quat.sIdentity(), EMotionType.Dynamic, Layers.MOVING);
         tank_body_settings.get_mCollisionGroup().SetGroupFilter(filter);
         tank_body_settings.get_mCollisionGroup().SetGroupID(0);
         tank_body_settings.get_mCollisionGroup().SetSubGroupID(0);
-        tank_body_settings.set_mOverrideMassProperties(EOverrideMassProperties.EOverrideMassProperties_CalculateInertia);
+        tank_body_settings.set_mOverrideMassProperties(EOverrideMassProperties.CalculateInertia);
         tank_body_settings.get_mMassPropertiesOverride().set_mMass(4000.0f);
         mTankBody = mBodyInterface.CreateBody(tank_body_settings);
-        mBodyInterface.AddBody(mTankBody.GetID(), EActivation.EActivation_Activate);
+        mBodyInterface.AddBody(mTankBody.GetID(), EActivation.Activate);
 
         // Create vehicle constraint
         VehicleConstraintSettings vehicle = new VehicleConstraintSettings();
@@ -146,14 +146,14 @@ public class TankTest extends VehicleTest {
 
         // Create turret
         Vec3 turret_position = Jolt.New_Vec3(0, half_vehicle_height + half_turret_height, 0).Add(body_position);
-        BodyCreationSettings turret_body_setings = Jolt.New_BodyCreationSettings(new BoxShape(Jolt.New_Vec3(half_turret_width, half_turret_height, half_turret_length)), turret_position, Quat.sIdentity(), EMotionType.EMotionType_Dynamic, Layers.MOVING);
+        BodyCreationSettings turret_body_setings = Jolt.New_BodyCreationSettings(new BoxShape(Jolt.New_Vec3(half_turret_width, half_turret_height, half_turret_length)), turret_position, Quat.sIdentity(), EMotionType.Dynamic, Layers.MOVING);
         turret_body_setings.get_mCollisionGroup().SetGroupFilter(filter);
         turret_body_setings.get_mCollisionGroup().SetGroupID(0);
         turret_body_setings.get_mCollisionGroup().SetSubGroupID(0);
-        turret_body_setings.set_mOverrideMassProperties(EOverrideMassProperties.EOverrideMassProperties_CalculateInertia);
+        turret_body_setings.set_mOverrideMassProperties(EOverrideMassProperties.CalculateInertia);
         turret_body_setings.get_mMassPropertiesOverride().set_mMass(2000.0f);
         mTurretBody = mBodyInterface.CreateBody(turret_body_setings);
-        mBodyInterface.AddBody(mTurretBody.GetID(), EActivation.EActivation_Activate);
+        mBodyInterface.AddBody(mTurretBody.GetID(), EActivation.Activate);
 
         // Attach turret to body
         HingeConstraintSettings turret_hinge = new HingeConstraintSettings();
@@ -167,19 +167,19 @@ public class TankTest extends VehicleTest {
         turret_hinge.set_mMotorSettings(new MotorSettings(0.5f, 1.0f));
         HingeConstraint.T_01.getNativeData().reset(turret_hinge.Create(mTankBody, mTurretBody).getNativeData().getCPointer(), true);
         mTurretHinge = HingeConstraint.T_01;
-        mTurretHinge.SetMotorState(EMotorState.EMotorState_Position);
+        mTurretHinge.SetMotorState(EMotorState.Position);
         mPhysicsSystem.AddConstraint(mTurretHinge);
 
         // Create barrel
         Vec3 barrel_position = Jolt.New_Vec3(0, 0, half_turret_length + half_barrel_length - barrel_rotation_offset).Add(turret_position);
-        BodyCreationSettings barrel_body_setings = Jolt.New_BodyCreationSettings(new CylinderShape(half_barrel_length, barrel_radius), barrel_position, Quat.sRotation(Vec3.sAxisX(), 0.5f * MathUtils.PI), EMotionType.EMotionType_Dynamic, Layers.MOVING);
+        BodyCreationSettings barrel_body_setings = Jolt.New_BodyCreationSettings(new CylinderShape(half_barrel_length, barrel_radius), barrel_position, Quat.sRotation(Vec3.sAxisX(), 0.5f * MathUtils.PI), EMotionType.Dynamic, Layers.MOVING);
         barrel_body_setings.get_mCollisionGroup().SetGroupFilter(filter);
         barrel_body_setings.get_mCollisionGroup().SetGroupID(0);
         barrel_body_setings.get_mCollisionGroup().SetSubGroupID(0);
-        barrel_body_setings.set_mOverrideMassProperties(EOverrideMassProperties.EOverrideMassProperties_CalculateInertia);
+        barrel_body_setings.set_mOverrideMassProperties(EOverrideMassProperties.CalculateInertia);
         barrel_body_setings.get_mMassPropertiesOverride().set_mMass(200.0f);
         mBarrelBody = mBodyInterface.CreateBody(barrel_body_setings);
-        mBodyInterface.AddBody(mBarrelBody.GetID(), EActivation.EActivation_Activate);
+        mBodyInterface.AddBody(mBarrelBody.GetID(), EActivation.Activate);
 
         // Attach barrel to turret
         HingeConstraintSettings barrel_hinge = new HingeConstraintSettings();
@@ -196,7 +196,7 @@ public class TankTest extends VehicleTest {
         barrel_hinge.set_mMotorSettings(new MotorSettings(10.0f, 1.0f));
         HingeConstraint.T_02.getNativeData().reset(barrel_hinge.Create(mTurretBody, mBarrelBody).getNativeData().getCPointer(), true);
         mBarrelHinge = HingeConstraint.T_02;
-        mBarrelHinge.SetMotorState(EMotorState.EMotorState_Position);
+        mBarrelHinge.SetMotorState(EMotorState.Position);
         mPhysicsSystem.AddConstraint(mBarrelHinge);
     }
 

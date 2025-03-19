@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector3;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
+import jolt.enums.EOverrideMassProperties;
 import jolt.example.samples.app.Layers;
 import jolt.Jolt;
 import jolt.core.Color;
@@ -33,7 +34,6 @@ import jolt.physics.vehicle.WheelSettings;
 import jolt.physics.vehicle.WheelSettingsWV;
 import jolt.physics.vehicle.WheeledVehicleController;
 import jolt.physics.vehicle.WheeledVehicleControllerSettings;
-import static jolt.enums.EOverrideMassProperties.EOverrideMassProperties_CalculateInertia;
 
 public class VehicleConstraintTest extends VehicleTest {
 
@@ -109,12 +109,12 @@ public class VehicleConstraintTest extends VehicleTest {
         // Create vehicle body
         Vec3 position = Jolt.New_Vec3(0, 5, 0);
         Shape car_shape = new OffsetCenterOfMassShapeSettings(Jolt.New_Vec3(0, -half_vehicle_height, 0), new BoxShape(Jolt.New_Vec3(half_vehicle_width, half_vehicle_height, half_vehicle_length))).Create().Get();
-        BodyCreationSettings car_body_settings = Jolt.New_BodyCreationSettings(car_shape, position, Quat.sRotation(Vec3.sAxisZ(), sInitialRollAngle), EMotionType.EMotionType_Dynamic, Layers.MOVING);
-        car_body_settings.set_mOverrideMassProperties(EOverrideMassProperties_CalculateInertia);
+        BodyCreationSettings car_body_settings = Jolt.New_BodyCreationSettings(car_shape, position, Quat.sRotation(Vec3.sAxisZ(), sInitialRollAngle), EMotionType.Dynamic, Layers.MOVING);
+        car_body_settings.set_mOverrideMassProperties(EOverrideMassProperties.CalculateInertia);
         car_body_settings.get_mMassPropertiesOverride().set_mMass(1500.0f);
         mCarBody = mBodyInterface.CreateBody(car_body_settings);
         car_body_settings.dispose();
-        mBodyInterface.AddBody(mCarBody.GetID(), EActivation.EActivation_Activate);
+        mBodyInterface.AddBody(mCarBody.GetID(), EActivation.Activate);
 
         // Create vehicle constraint
         VehicleConstraintSettings vehicle = new VehicleConstraintSettings();

@@ -811,201 +811,201 @@ interface BodyInterface_AddState { //[-SUB_PACKAGE=physics.collision.broadphase]
 
 // ENUM
 
-enum EBodyType { //[-SUB_PACKAGE=enums]
-    "EBodyType_RigidBody",
-    "EBodyType_SoftBody"
+enum EBodyType {                                                //[-SUB_PACKAGE=enums]
+    "EBodyType_RigidBody",                                      //[-RENAME=RigidBody]
+    "EBodyType_SoftBody"                                        //[-RENAME=SoftBody]
 };
 
-enum EMotionType { //[-SUB_PACKAGE=enums]
-    "EMotionType_Static",
-    "EMotionType_Kinematic",
-    "EMotionType_Dynamic"
+enum EMotionType {                                              //[-SUB_PACKAGE=enums]
+    "EMotionType_Static",                                       //[-RENAME=Static]
+    "EMotionType_Kinematic",                                    //[-RENAME=Kinematic]
+    "EMotionType_Dynamic"                                       //[-RENAME=Dynamic]
 };
 
-enum EMotionQuality { //[-SUB_PACKAGE=enums]
-    "EMotionQuality_Discrete",
-    "EMotionQuality_LinearCast"
+enum EMotionQuality {                                           //[-SUB_PACKAGE=enums]
+    "EMotionQuality_Discrete",                                  //[-RENAME=Discrete]
+    "EMotionQuality_LinearCast"                                 //[-RENAME=LinearCast]
 };
 
-enum EActivation { //[-SUB_PACKAGE=enums]
-    "EActivation_Activate",
-    "EActivation_DontActivate"
+enum EActivation {                                              //[-SUB_PACKAGE=enums]
+    "EActivation_Activate",                                     //[-RENAME=Activate]
+    "EActivation_DontActivate"                                  //[-RENAME=DontActivate]
 };
 
-enum EShapeType { //[-SUB_PACKAGE=enums]
-    "EShapeType_Convex",
-    "EShapeType_Compound",
-    "EShapeType_Decorated",
-    "EShapeType_Mesh",
-    "EShapeType_HeightField",
-    "EShapeType_Plane",
-    "EShapeType_Empty"
+enum EShapeType {                                               //[-SUB_PACKAGE=enums]
+    "EShapeType_Convex",                                        //[-RENAME=Convex]
+    "EShapeType_Compound",                                      //[-RENAME=Compound]
+    "EShapeType_Decorated",                                     //[-RENAME=Decorated]
+    "EShapeType_Mesh",                                          //[-RENAME=Mesh]
+    "EShapeType_HeightField",                                   //[-RENAME=HeightField]
+    "EShapeType_Plane",                                         //[-RENAME=Plane]
+    "EShapeType_Empty"                                          //[-RENAME=Empty]
 };
 
-enum EShapeSubType { //[-SUB_PACKAGE=enums]
-    "EShapeSubType_Sphere",
-    "EShapeSubType_Box",
-    "EShapeSubType_Capsule",
-    "EShapeSubType_TaperedCapsule",
-    "EShapeSubType_Cylinder",
-    "EShapeSubType_TaperedCylinder",
-    "EShapeSubType_ConvexHull",
-    "EShapeSubType_StaticCompound",
-    "EShapeSubType_MutableCompound",
-    "EShapeSubType_RotatedTranslated",
-    "EShapeSubType_Scaled",
-    "EShapeSubType_OffsetCenterOfMass",
-    "EShapeSubType_Mesh",
-    "EShapeSubType_HeightField",
-    "EShapeSubType_Plane",
-    "EShapeSubType_Empty"
+enum EShapeSubType {                                            //[-SUB_PACKAGE=enums]
+    "EShapeSubType_Sphere",                                     //[-RENAME=Sphere]
+    "EShapeSubType_Box",                                        //[-RENAME=Box]
+    "EShapeSubType_Capsule",                                    //[-RENAME=Capsule]
+    "EShapeSubType_TaperedCapsule",                             //[-RENAME=TaperedCapsule]
+    "EShapeSubType_Cylinder",                                   //[-RENAME=Cylinder]
+    "EShapeSubType_TaperedCylinder",                            //[-RENAME=TaperedCylinder]
+    "EShapeSubType_ConvexHull",                                 //[-RENAME=ConvexHull]
+    "EShapeSubType_StaticCompound",                             //[-RENAME=StaticCompound]
+    "EShapeSubType_MutableCompound",                            //[-RENAME=MutableCompound]
+    "EShapeSubType_RotatedTranslated",                          //[-RENAME=RotatedTranslated]
+    "EShapeSubType_Scaled",                                     //[-RENAME=Scaled]
+    "EShapeSubType_OffsetCenterOfMass",                         //[-RENAME=OffsetCenterOfMass]
+    "EShapeSubType_Mesh",                                       //[-RENAME=Mesh]
+    "EShapeSubType_HeightField",                                //[-RENAME=HeightField]
+    "EShapeSubType_Plane",                                      //[-RENAME=Plane]
+    "EShapeSubType_Empty"                                       //[-RENAME=Empty]
 };
 
-enum EConstraintSpace { //[-SUB_PACKAGE=enums]
-    "EConstraintSpace_LocalToBodyCOM",
-    "EConstraintSpace_WorldSpace"
+enum EConstraintSpace {                                         //[-SUB_PACKAGE=enums]
+    "EConstraintSpace_LocalToBodyCOM",                          //[-RENAME=LocalToBodyCOM]
+    "EConstraintSpace_WorldSpace"                               //[-RENAME=WorldSpace]
 };
 
-enum ESpringMode { //[-SUB_PACKAGE=enums]
-    "ESpringMode_FrequencyAndDamping",
-    "ESpringMode_StiffnessAndDamping",
+enum ESpringMode {                                              //[-SUB_PACKAGE=enums]
+    "ESpringMode_FrequencyAndDamping",                          //[-RENAME=FrequencyAndDamping]
+    "ESpringMode_StiffnessAndDamping",                          //[-RENAME=StiffnessAndDamping]
 };
 
-enum EOverrideMassProperties { //[-SUB_PACKAGE=enums]
-    "EOverrideMassProperties_CalculateMassAndInertia",
-    "EOverrideMassProperties_CalculateInertia",
-    "EOverrideMassProperties_MassAndInertiaProvided"
+enum EOverrideMassProperties {                                  //[-SUB_PACKAGE=enums]
+    "EOverrideMassProperties_CalculateMassAndInertia",          //[-RENAME=CalculateMassAndInertia]
+    "EOverrideMassProperties_CalculateInertia",                 //[-RENAME=CalculateInertia]
+    "EOverrideMassProperties_MassAndInertiaProvided"            //[-RENAME=MassAndInertiaProvided]
 };
 
-enum EAllowedDOFs { //[-SUB_PACKAGE=enums]
-    "EAllowedDOFs_TranslationX",
-    "EAllowedDOFs_TranslationY",
-    "EAllowedDOFs_TranslationZ",
-    "EAllowedDOFs_RotationX",
-    "EAllowedDOFs_RotationY",
-    "EAllowedDOFs_RotationZ",
-    "EAllowedDOFs_Plane2D",
-    "EAllowedDOFs_All"
+enum EAllowedDOFs {                                             //[-SUB_PACKAGE=enums]
+    "EAllowedDOFs_TranslationX",                                //[-RENAME=TranslationX]
+    "EAllowedDOFs_TranslationY",                                //[-RENAME=TranslationY]
+    "EAllowedDOFs_TranslationZ",                                //[-RENAME=TranslationZ]
+    "EAllowedDOFs_RotationX",                                   //[-RENAME=RotationX]
+    "EAllowedDOFs_RotationY",                                   //[-RENAME=RotationY]
+    "EAllowedDOFs_RotationZ",                                   //[-RENAME=RotationZ]
+    "EAllowedDOFs_Plane2D",                                     //[-RENAME=Plane2D]
+    "EAllowedDOFs_All"                                          //[-RENAME=All]
 };
 
-enum EStateRecorderState { //[-SUB_PACKAGE=enums]
-    "EStateRecorderState_None",
-    "EStateRecorderState_Global",
-    "EStateRecorderState_Bodies",
-    "EStateRecorderState_Contacts",
-    "EStateRecorderState_Constraints",
-    "EStateRecorderState_All"
+enum EStateRecorderState {                                      //[-SUB_PACKAGE=enums]
+    "EStateRecorderState_None",                                 //[-RENAME=None]
+    "EStateRecorderState_Global",                               //[-RENAME=Global]
+    "EStateRecorderState_Bodies",                               //[-RENAME=Bodies]
+    "EStateRecorderState_Contacts",                             //[-RENAME=Contacts]
+    "EStateRecorderState_Constraints",                          //[-RENAME=Constraints]
+    "EStateRecorderState_All"                                   //[-RENAME=All]
 };
 
-enum EBackFaceMode { //[-SUB_PACKAGE=enums]
-    "EBackFaceMode_IgnoreBackFaces",
-    "EBackFaceMode_CollideWithBackFaces"
+enum EBackFaceMode {                                            //[-SUB_PACKAGE=enums]
+    "EBackFaceMode_IgnoreBackFaces",                            //[-RENAME=IgnoreBackFaces]
+    "EBackFaceMode_CollideWithBackFaces"                        //[-RENAME=CollideWithBackFaces]
 };
 
-enum EGroundState { //[-SUB_PACKAGE=enums]
-    "EGroundState_OnGround",
-    "EGroundState_OnSteepGround",
-    "EGroundState_NotSupported",
-    "EGroundState_InAir"
+enum EGroundState {                                             //[-SUB_PACKAGE=enums]
+    "EGroundState_OnGround",                                    //[-RENAME=OnGround]
+    "EGroundState_OnSteepGround",                               //[-RENAME=OnSteepGround]
+    "EGroundState_NotSupported",                                //[-RENAME=NotSupported]
+    "EGroundState_InAir"                                        //[-RENAME=InAir]
 };
 
-enum ValidateResult { //[-SUB_PACKAGE=enums]
-    "ValidateResult_AcceptAllContactsForThisBodyPair",
-    "ValidateResult_AcceptContact",
-    "ValidateResult_RejectContact",
-    "ValidateResult_RejectAllContactsForThisBodyPair"
+enum ValidateResult {                                           //[-SUB_PACKAGE=enums]
+    "ValidateResult_AcceptAllContactsForThisBodyPair",          //[-RENAME=AcceptAllContactsForThisBodyPair]
+    "ValidateResult_AcceptContact",                             //[-RENAME=AcceptContact]
+    "ValidateResult_RejectContact",                             //[-RENAME=RejectContact]
+    "ValidateResult_RejectAllContactsForThisBodyPair"           //[-RENAME=RejectAllContactsForThisBodyPair]
 };
 
-enum SoftBodyValidateResult { //[-SUB_PACKAGE=enums]
-    "SoftBodyValidateResult_AcceptContact",
-    "SoftBodyValidateResult_RejectContact",
+enum SoftBodyValidateResult {                                   //[-SUB_PACKAGE=enums]
+    "SoftBodyValidateResult_AcceptContact",                     //[-RENAME=AcceptContact]
+    "SoftBodyValidateResult_RejectContact",                     //[-RENAME=RejectContact]
 };
 
-enum EActiveEdgeMode { //[-SUB_PACKAGE=enums]
-    "EActiveEdgeMode_CollideOnlyWithActive",
-    "EActiveEdgeMode_CollideWithAll"
+enum EActiveEdgeMode {                                          //[-SUB_PACKAGE=enums]
+    "EActiveEdgeMode_CollideOnlyWithActive",                    //[-RENAME=CollideOnlyWithActive]
+    "EActiveEdgeMode_CollideWithAll"                            //[-RENAME=CollideWithAll]
 };
 
-enum ECollectFacesMode { //[-SUB_PACKAGE=enums]
-    "ECollectFacesMode_CollectFaces",
-    "ECollectFacesMode_NoFaces"
+enum ECollectFacesMode {                                        //[-SUB_PACKAGE=enums]
+    "ECollectFacesMode_CollectFaces",                           //[-RENAME=CollectFaces]
+    "ECollectFacesMode_NoFaces"                                 //[-RENAME=NoFaces]
 };
 
-enum SixDOFConstraintSettings_EAxis { //[-SUB_PACKAGE=enums]
-    "SixDOFConstraintSettings_EAxis_TranslationX",
-    "SixDOFConstraintSettings_EAxis_TranslationY",
-    "SixDOFConstraintSettings_EAxis_TranslationZ",
-    "SixDOFConstraintSettings_EAxis_RotationX",
-    "SixDOFConstraintSettings_EAxis_RotationY",
-    "SixDOFConstraintSettings_EAxis_RotationZ"
+enum SixDOFConstraintSettings_EAxis {                           //[-SUB_PACKAGE=enums]
+    "SixDOFConstraintSettings_EAxis_TranslationX",              //[-RENAME=TranslationX]
+    "SixDOFConstraintSettings_EAxis_TranslationY",              //[-RENAME=TranslationY]
+    "SixDOFConstraintSettings_EAxis_TranslationZ",              //[-RENAME=TranslationZ]
+    "SixDOFConstraintSettings_EAxis_RotationX",                 //[-RENAME=RotationX]
+    "SixDOFConstraintSettings_EAxis_RotationY",                 //[-RENAME=RotationY]
+    "SixDOFConstraintSettings_EAxis_RotationZ"                  //[-RENAME=RotationZ]
 };
 
-enum EConstraintType { //[-SUB_PACKAGE=enums]
-    "EConstraintType_Constraint",
-    "EConstraintType_TwoBodyConstraint",
+enum EConstraintType {                                          //[-SUB_PACKAGE=enums]
+    "EConstraintType_Constraint",                               //[-RENAME=Constraint]
+    "EConstraintType_TwoBodyConstraint",                        //[-RENAME=TwoBodyConstraint]
 };
 
-enum EConstraintSubType { //[-SUB_PACKAGE=enums]
-    "EConstraintSubType_Fixed",
-    "EConstraintSubType_Point",
-    "EConstraintSubType_Hinge",
-    "EConstraintSubType_Slider",
-    "EConstraintSubType_Distance",
-    "EConstraintSubType_Cone",
-    "EConstraintSubType_SwingTwist",
-    "EConstraintSubType_SixDOF",
-    "EConstraintSubType_Path",
-    "EConstraintSubType_Vehicle",
-    "EConstraintSubType_RackAndPinion",
-    "EConstraintSubType_Gear",
-    "EConstraintSubType_Pulley",
+enum EConstraintSubType {                                       //[-SUB_PACKAGE=enums]
+    "EConstraintSubType_Fixed",                                 //[-RENAME=Fixed]
+    "EConstraintSubType_Point",                                 //[-RENAME=Point]
+    "EConstraintSubType_Hinge",                                 //[-RENAME=Hinge]
+    "EConstraintSubType_Slider",                                //[-RENAME=Slider]
+    "EConstraintSubType_Distance",                              //[-RENAME=Distance]
+    "EConstraintSubType_Cone",                                  //[-RENAME=Cone]
+    "EConstraintSubType_SwingTwist",                            //[-RENAME=SwingTwist]
+    "EConstraintSubType_SixDOF",                                //[-RENAME=SixDOF]
+    "EConstraintSubType_Path",                                  //[-RENAME=Path]
+    "EConstraintSubType_Vehicle",                               //[-RENAME=Vehicle]
+    "EConstraintSubType_RackAndPinion",                         //[-RENAME=RackAndPinion]
+    "EConstraintSubType_Gear",                                  //[-RENAME=Gear]
+    "EConstraintSubType_Pulley",                                //[-RENAME=Pulley]
 };
 
-enum EMotorState { //[-SUB_PACKAGE=enums]
-    "EMotorState_Off",
-    "EMotorState_Velocity",
-    "EMotorState_Position"
+enum EMotorState {                                              //[-SUB_PACKAGE=enums]
+    "EMotorState_Off",                                          //[-RENAME=Off]
+    "EMotorState_Velocity",                                     //[-RENAME=Velocity]
+    "EMotorState_Position"                                      //[-RENAME=Position]
 };
 
-enum ETransmissionMode { //[-SUB_PACKAGE=enums]
-    "ETransmissionMode_Auto",
-    "ETransmissionMode_Manual",
+enum ETransmissionMode {                                        //[-SUB_PACKAGE=enums]
+    "ETransmissionMode_Auto",                                   //[-RENAME=Auto]
+    "ETransmissionMode_Manual",                                 //[-RENAME=Manual]
 };
 
-enum ETireFrictionDirection { //[-SUB_PACKAGE=enums]
-    "ETireFrictionDirection_Longitudinal",
-    "ETireFrictionDirection_Lateral",
+enum ETireFrictionDirection {                                   //[-SUB_PACKAGE=enums]
+    "ETireFrictionDirection_Longitudinal",                      //[-RENAME=Longitudinal]
+    "ETireFrictionDirection_Lateral",                           //[-RENAME=Lateral]
 };
 
-enum ESwingType { //[-SUB_PACKAGE=enums]
-    "ESwingType_Cone",
-    "ESwingType_Pyramid",
+enum ESwingType {                                               //[-SUB_PACKAGE=enums]
+    "ESwingType_Cone",                                          //[-RENAME=Cone]
+    "ESwingType_Pyramid",                                       //[-RENAME=Pyramid]
 };
 
-enum EPathRotationConstraintType { //[-SUB_PACKAGE=enums]
-    "EPathRotationConstraintType_Free",
-    "EPathRotationConstraintType_ConstrainAroundTangent",
-    "EPathRotationConstraintType_ConstrainAroundNormal",
-    "EPathRotationConstraintType_ConstrainAroundBinormal",
-    "EPathRotationConstraintType_ConstrainToPath",
-    "EPathRotationConstraintType_FullyConstrained"
+enum EPathRotationConstraintType {                              //[-SUB_PACKAGE=enums]
+    "EPathRotationConstraintType_Free",                         //[-RENAME=Free]
+    "EPathRotationConstraintType_ConstrainAroundTangent",       //[-RENAME=ConstrainAroundTangent]
+    "EPathRotationConstraintType_ConstrainAroundNormal",        //[-RENAME=ConstrainAroundNormal]
+    "EPathRotationConstraintType_ConstrainAroundBinormal",      //[-RENAME=ConstrainAroundBinormal]
+    "EPathRotationConstraintType_ConstrainToPath",              //[-RENAME=ConstrainToPath]
+    "EPathRotationConstraintType_FullyConstrained"              //[-RENAME=FullyConstrained]
 };
 
-enum SoftBodySharedSettings_EBendType { //[-SUB_PACKAGE=enums]
-    "SoftBodySharedSettings_EBendType_None",
-    "SoftBodySharedSettings_EBendType_Distance",
-    "SoftBodySharedSettings_EBendType_Dihedral"
+enum SoftBodySharedSettings_EBendType {                         //[-SUB_PACKAGE=enums]
+    "SoftBodySharedSettings_EBendType_None",                    //[-RENAME=None]
+    "SoftBodySharedSettings_EBendType_Distance",                //[-RENAME=Distance]
+    "SoftBodySharedSettings_EBendType_Dihedral"                 //[-RENAME=Dihedral]
 };
 
-enum SoftBodySharedSettings_ELRAType { //[-SUB_PACKAGE=enums]
-    "SoftBodySharedSettings_ELRAType_None",
-    "SoftBodySharedSettings_ELRAType_EuclideanDistance",
-    "SoftBodySharedSettings_ELRAType_GeodesicDistance"
+enum SoftBodySharedSettings_ELRAType {                          //[-SUB_PACKAGE=enums]
+    "SoftBodySharedSettings_ELRAType_None",                     //[-RENAME=None]
+    "SoftBodySharedSettings_ELRAType_EuclideanDistance",        //[-RENAME=EuclideanDistance]
+    "SoftBodySharedSettings_ELRAType_GeodesicDistance"          //[-RENAME=GeodesicDistance]
 };
 
-enum MeshShapeSettings_EBuildQuality { //[-SUB_PACKAGE=enums]
-    "MeshShapeSettings_EBuildQuality_FavorRuntimePerformance",
-    "MeshShapeSettings_EBuildQuality_FavorBuildSpeed"
+enum MeshShapeSettings_EBuildQuality {                          //[-SUB_PACKAGE=enums]
+    "MeshShapeSettings_EBuildQuality_FavorRuntimePerformance",  //[-RENAME=FavorRuntimePerformance]
+    "MeshShapeSettings_EBuildQuality_FavorBuildSpeed"           //[-RENAME=FavorBuildSpeed]
 };
 
 // ##################################################
