@@ -1,5 +1,6 @@
 package jolt.example.samples.app.tests.shapes;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import jolt.example.samples.app.Layers;
@@ -15,8 +16,6 @@ import static jolt.enums.EMotionType.EMotionType_Dynamic;
 
 public class BoxShapeTest extends Test {
 
-    public static float JPH_PI = 3.14159265358979323846f;
-
     @Override
     public void initialize() {
         // Floor
@@ -25,16 +24,16 @@ public class BoxShapeTest extends Test {
         Body body1 = createBody(new Vector3(20, 1, 1), new Vector3(0, 10, 0), Quat.sIdentity());
         mBodyInterface.AddBody(body1.GetID(), EActivation_Activate);
 
-        Body body2 = createBody(new Vector3(2, 3, 4), new Vector3(0, 10, 10), Quat.sRotation(Vec3.sAxisZ(), 0.25f * JPH_PI));
+        Body body2 = createBody(new Vector3(2, 3, 4), new Vector3(0, 10, 10), Quat.sRotation(Vec3.sAxisZ(), 0.25f * MathUtils.PI));
         mBodyInterface.AddBody(body2.GetID(), EActivation_Activate);
 
         // Methods that return a Value c++ object will be replaced every time its called. Save its value before calling again.
-        Quat quatX3 = Quat.sRotation(Vec3.sAxisX(), 0.25f * JPH_PI);
+        Quat quatX3 = Quat.sRotation(Vec3.sAxisX(), 0.25f * MathUtils.PI);
         float q1X = quatX3.GetX();
         float q1Y = quatX3.GetY();
         float q1Z = quatX3.GetZ();
         float q1W = quatX3.GetW();
-        Quat quatZ3 = Quat.sRotation(Vec3.sAxisZ(), 0.25f * JPH_PI);
+        Quat quatZ3 = Quat.sRotation(Vec3.sAxisZ(), 0.25f * MathUtils.PI);
         float q2X = quatZ3.GetX();
         float q2Y = quatZ3.GetY();
         float q2Z = quatZ3.GetZ();

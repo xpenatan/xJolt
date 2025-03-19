@@ -129,6 +129,7 @@ public class SamplesApp extends InputAdapter {
         test.setDebugRenderer(debugRenderer);
         test.initialize();
         test.initializeCamera(camera);
+        test.processInput();
     }
 
     private void DrawPhysics() {

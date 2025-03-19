@@ -17,7 +17,6 @@ import jolt.physics.collision.shape.BoxShape;
 import jolt.physics.collision.shape.ConvexHullShapeSettings;
 import jolt.physics.collision.shape.Shape;
 import jolt.physics.constraints.DistanceConstraintSettings;
-import static jolt.example.samples.app.tests.shapes.BoxShapeTest.JPH_PI;
 
 public abstract class VehicleTest extends Test {
 
@@ -150,8 +149,8 @@ public abstract class VehicleTest extends Test {
                 ArrayVec3 points = new ArrayVec3();
                 for (int k = 0; k < 20; ++k) {
                     float value = MathUtils.random(0.2f, 0.4f);
-                    float theta = JPH_PI * MathUtils.random(0.0f, 1.0f);
-                    float phi = 2.0f * JPH_PI * MathUtils.random(0.0f, 1.0f);
+                    float theta = MathUtils.PI * MathUtils.random(0.0f, 1.0f);
+                    float phi = 2.0f * MathUtils.PI * MathUtils.random(0.0f, 1.0f);
                     Vec3 vec3 = Vec3.sUnitSpherical(theta, phi);
                     Vec3 vec = Jolt.New_Vec3(vec3.GetX() * value, vec3.GetY() * value, vec3.GetZ() * value);
                     points.push_back(vec);

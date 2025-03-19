@@ -2,6 +2,7 @@ package jolt.example.samples.app.tests;
 
 import com.badlogic.gdx.utils.Array;
 import jolt.example.samples.app.tests.shapes.BoxShapeTest;
+import jolt.example.samples.app.tests.vehicle.TankTest;
 import jolt.example.samples.app.tests.vehicle.VehicleConstraintTest;
 
 public class Tests {
@@ -15,6 +16,7 @@ public class Tests {
         Array<JoltTestInstancer> tests = new Array<>();
         tests.add(new JoltTestInstancer(BoxShapeTest.class, BoxShapeTest::new, "Shapes", "Box Shape"));
         tests.add(new JoltTestInstancer(VehicleConstraintTest.class, VehicleConstraintTest::new, "Vehicle", "Car (VehicleConstraint)"));
+        tests.add(new JoltTestInstancer(TankTest.class, TankTest::new, "Vehicle", "Tank (VehicleConstraint)"));
         return tests;
     }
 
