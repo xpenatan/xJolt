@@ -88,6 +88,7 @@ using namespace std;
 //static_assert(sizeof(ObjectLayer) == 4);
 
 //// Types that need to be exposed to JavaScript
+using MutexMask = uint64;
 using JPHString = String;
 using ArrayVec3 = Array<Vec3>;
 using ArrayFloat = Array<float>;

@@ -1488,7 +1488,7 @@ interface Triangle {
     attribute unsigned long mUserData;
 };
 
-interface TriangleList {  //[-SUB_PACKAGE=math] //[-SUB_PACKAGE=geometry]
+interface TriangleList {  //[-SUB_PACKAGE=geometry]
     void TriangleList();
     boolean empty();
     long size();
@@ -2624,6 +2624,17 @@ StateRecorderImpl implements StateRecorder;
 
 interface BodyLockInterface {
     Body TryGetBody([Const, Ref] BodyID inBodyID);
+    SharedMutex LockRead([Const, Ref] BodyID inBodyID);
+    void UnlockRead(SharedMutex inMutex);
+    SharedMutex LockWrite([Const, Ref] BodyID inBodyID);
+    void UnlockWrite(SharedMutex inMutex);
+
+    // TODO MutexMask may not work
+    [Value] MutexMask GetMutexMask([Ref, Const] BodyID[] inBodies, long inNumber);
+    [BindTo="LockRead"] void LockRead_0([Ref] MutexMask inMutexMask);
+    [BindTo="UnlockRead"] void UnlockRead_0([Ref] MutexMask inMutexMask);
+    [BindTo="LockWrite"] void LockWrite_0([Ref] MutexMask inMutexMask);
+    [BindTo="UnlockWrite"] void UnlockWrite_0([Ref] MutexMask inMutexMask);
 };
 
 interface BodyLockInterfaceNoLock { //[-SUB_PACKAGE=physics.body]
@@ -2633,6 +2644,13 @@ BodyLockInterfaceNoLock implements BodyLockInterface;
 interface BodyLockInterfaceLocking { //[-SUB_PACKAGE=physics.body]
 };
 BodyLockInterfaceLocking implements BodyLockInterface;
+
+interface SharedMutex { //[-SUB_PACKAGE=core]
+};
+
+[NoDelete]
+interface MutexMask { //[-SUB_PACKAGE=core]
+};
 
 interface PhysicsSettings {
     void PhysicsSettings();
