@@ -71,6 +71,8 @@
 #include "Jolt/Skeleton/SkeletonPose.h"
 #include "Jolt/Skeleton/Skeleton.h"
 
+#include "IDLHelper.h"
+
 #include <iostream>
 //#include <malloc.h>
 #include <stdlib.h>
@@ -88,6 +90,7 @@ using namespace std;
 //static_assert(sizeof(ObjectLayer) == 4);
 
 //// Types that need to be exposed to JavaScript
+using IDLArrayBodyID = IDLArray<BodyID*>;
 using MutexMask = uint64;
 using JPHString = String;
 using ArrayVec3 = Array<Vec3>;

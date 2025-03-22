@@ -497,6 +497,16 @@ interface SoftBodyVertexTraits { //[-SUB_PACKAGE=physics.softbody]
 
 // ARRAY
 
+interface IDLArrayBodyID { //[-SUB_PACKAGE=physics.body]
+    void IDLArrayBodyID(long size);
+    void resize(long size);
+    void clear();
+    BodyID getValue(long index);
+    void setValue(long index, BodyID value);
+    long getSize();
+    any getPointer();
+};
+
 interface ArrayVec3 { //[-SUB_PACKAGE=math]
     void ArrayVec3();
     boolean empty();
