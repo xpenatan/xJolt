@@ -45781,6 +45781,7 @@ cbgggs_DefaultShader$Setters$3_set = ($this, $shader, $inputID, $renderable, $co
 };
 function jesatp_BoxSpawnTest() {
     let a = this; jesat_Test.call(a);
+    a.$resetDelaySeconds = 0;
     a.$timeNow = Long_ZERO;
     a.$time0 = Long_ZERO;
     a.$wasPlaying = 0;
@@ -45794,6 +45795,7 @@ function jesatp_BoxSpawnTest() {
 }
 let jesatp_BoxSpawnTest__init_ = $this => {
     jesat_Test__init_($this);
+    $this.$resetDelaySeconds = 8;
     $this.$totalCubes = 3000;
     $this.$cubeCount = 0;
     $this.$bodies = cbgu_Array__init_();
@@ -45812,11 +45814,13 @@ jesatp_BoxSpawnTest_initialize = $this => {
     jesatp_BoxSpawnTest_resetBoxes($this);
 },
 jesatp_BoxSpawnTest_prePhysicsUpdate = ($this, $isPlaying) => {
+    let $timeout;
     if ($isPlaying) {
         if (!$this.$wasPlaying)
             $this.$time0 = Long_add(jl_System_currentTimeMillis(), Long_sub($this.$time0, $this.$timeNow));
         $this.$timeNow = jl_System_currentTimeMillis();
-        if (Long_gt(Long_sub($this.$timeNow, $this.$time0), Long_fromInt(8000))) {
+        $timeout = Long_mul(Long_fromInt($this.$resetDelaySeconds), Long_fromInt(1000));
+        if (Long_gt(Long_sub($this.$timeNow, $this.$time0), $timeout)) {
             jesatp_BoxSpawnTest_resetBoxes($this);
             $this.$time0 = jl_System_currentTimeMillis();
         }
@@ -45910,12 +45914,15 @@ jesatp_BoxSpawnTest_dispose = $this => {
 jesatp_BoxSpawnTest_renderUI = $this => {
     let var$1, var$2;
     iih_IDLInt_$callClinit();
+    iih_IDLInt_TMP_1.$set16($this.$resetDelaySeconds);
+    if (i_ImGui_SliderInt($rt_s(776), iih_IDLInt_TMP_1, 1, 20))
+        $this.$resetDelaySeconds = iih_IDLInt_TMP_1.$getValue1();
     iih_IDLInt_TMP_1.$set16($this.$totalCubes);
-    if (i_ImGui_SliderInt($rt_s(776), iih_IDLInt_TMP_1, 9, 4000))
+    if (i_ImGui_SliderInt($rt_s(777), iih_IDLInt_TMP_1, 9, 4000))
         $this.$totalCubes = iih_IDLInt_TMP_1.$getValue1();
     var$1 = $this.$cubeCount;
     var$2 = jl_StringBuilder__init_();
-    jl_StringBuilder_append0(jl_StringBuilder_append(var$2, $rt_s(777)), var$1);
+    jl_StringBuilder_append0(jl_StringBuilder_append(var$2, $rt_s(778)), var$1);
     i_ImGui_Text(jl_StringBuilder_toString(var$2));
 },
 cbgggs_DefaultShader$Setters$2 = $rt_classWithoutFields(cbgggs_BaseShader$GlobalSetter),
@@ -46079,7 +46086,7 @@ cbgggu_DefaultTextureBinder__init_ = ($this, $method, $offset, $count) => {
         $this.$unitsLRU = $method == 1 ? $rt_createIntArray($count) : null;
         return;
     }
-    $rt_throw(cbgu_GdxRuntimeException__init_($rt_s(778)));
+    $rt_throw(cbgu_GdxRuntimeException__init_($rt_s(779)));
 },
 cbgggu_DefaultTextureBinder__init_2 = (var_0, var_1, var_2) => {
     let var_3 = new cbgggu_DefaultTextureBinder();
@@ -46389,21 +46396,21 @@ cgxgbta_AssetLoadImpl$5_onSuccess0 = ($this, $url, $result) => {
         if (var$14 != 5) {
             var$8 = new cbgu_GdxRuntimeException;
             var$15 = jl_StringBuilder__init_();
-            jl_StringBuilder_append(jl_StringBuilder_append1(jl_StringBuilder_append0(jl_StringBuilder_append(var$15, $rt_s(779)), var$14), 32), $line);
+            jl_StringBuilder_append(jl_StringBuilder_append1(jl_StringBuilder_append0(jl_StringBuilder_append(var$15, $rt_s(780)), var$14), 32), $line);
             cbgu_GdxRuntimeException__init_0(var$8, jl_StringBuilder_toString(var$15));
             $rt_throw(var$8);
         }
         $fileTypeStr = var$13[0];
         $assetTypeStr = var$13[1];
         $assetUrl = var$13[2].$trim();
-        $shouldOverwriteLocalData = var$13[4].$equals($rt_s(780));
+        $shouldOverwriteLocalData = var$13[4].$equals($rt_s(781));
         var$20 = $assetUrl.$trim();
         if (!var$20.$isEmpty()) {
             cbg_Files$FileType_$callClinit();
             $fileType = cbg_Files$FileType_Internal;
-            if ($fileTypeStr.$equals($rt_s(781)))
+            if ($fileTypeStr.$equals($rt_s(782)))
                 $fileType = cbg_Files$FileType_Classpath;
-            else if ($fileTypeStr.$equals($rt_s(782)))
+            else if ($fileTypeStr.$equals($rt_s(783)))
                 $fileType = cbg_Files$FileType_Local;
             cgxgbta_AssetType_$callClinit();
             $assetType = cgxgbta_AssetType_Binary;
@@ -47893,7 +47900,7 @@ $rt_stringPool(["Can\'t enter monitor from another thread synchronously", "bounc
 "#define numDirectionalLights ", "#define numPointLights ", "#define numSpotLights ", "#define fogFlag\n", "#define shadowMapFlag\n", "#define environmentCubemapFlag\n", "#define texCoord", "Flag\n", "#define boneWeight", "#define blendedFlag\n", "#define diffuseTextureFlag\n", "#define diffuseTextureCoord texCoord0\n", "#define specularTextureFlag\n", "#define specularTextureCoord texCoord0\n", "#define normalTextureFlag\n", "#define normalTextureCoord texCoord0\n", "#define emissiveTextureFlag\n", "#define emissiveTextureCoord texCoord0\n",
 "#define reflectionTextureFlag\n", "#define reflectionTextureCoord texCoord0\n", "#define ambientTextureFlag\n", "#define ambientTextureCoord texCoord0\n", "#define diffuseColorFlag\n", "#define specularColorFlag\n", "#define emissiveColorFlag\n", "#define reflectionColorFlag\n", "#define shininessFlag\n", "#define alphaTestFlag\n", "#define numBones ", "Unknown material attribute: ", "Asset download success: ", "Asset download failed: ", "Script download success: ", "Script download failed: ", "Total: ", " loaded: ",
 " URL: ", "<Unix MultiLine $>", "diffuseTexture", "specularTexture", "bumpTexture", "normalTexture", "ambientTexture", "emissiveTexture", "reflectionTexture", "u_projTrans", "u_viewTrans", "u_projViewTrans", "u_cameraPosition", "u_cameraDirection", "u_cameraUp", "u_cameraNearFar", "u_worldTrans", "u_viewWorldTrans", "u_projViewWorldTrans", "u_normalMatrix", "u_bones", "u_shininess", "u_opacity", "u_diffuseColor", "u_diffuseTexture", "u_diffuseUVTransform", "u_specularColor", "u_specularTexture", "u_specularUVTransform",
-"u_emissiveColor", "u_emissiveTexture", "u_emissiveUVTransform", "u_reflectionColor", "u_reflectionTexture", "u_reflectionUVTransform", "u_normalTexture", "u_normalUVTransform", "u_ambientTexture", "u_ambientUVTransform", "u_alphaTest", "u_ambientCubemap", "u_dirLights", "u_pointLights", "u_spotLights", "u_environmentCubemap", "ID: ", "Max Cubes", "Cubes: ", "Illegal arguments", "Invalid assets description file. ", "1", "c", "l"]);
+"u_emissiveColor", "u_emissiveTexture", "u_emissiveUVTransform", "u_reflectionColor", "u_reflectionTexture", "u_reflectionUVTransform", "u_normalTexture", "u_normalUVTransform", "u_ambientTexture", "u_ambientUVTransform", "u_alphaTest", "u_ambientCubemap", "u_dirLights", "u_pointLights", "u_spotLights", "u_environmentCubemap", "ID: ", "Delay Seconds", "Max Cubes", "Cubes: ", "Illegal arguments", "Invalid assets description file. ", "1", "c", "l"]);
 jl_String.prototype.toString = function() {
     return $rt_ustr(this);
 };
