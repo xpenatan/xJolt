@@ -133,8 +133,8 @@ public class SamplesApp extends InputAdapter {
         test = tests.getTest(testClass);
         test.setPhysicsSystem(joltInstance.getPhysicsSystem());
         test.setDebugRenderer(debugRenderer);
-        test.initialize();
         test.initializeCamera(camera);
+        test.initialize();
         test.processInput();
     }
 

@@ -1,28 +1,48 @@
 package jolt.example.samples.app.tests.playground;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.VertexAttributes;
+import com.badlogic.gdx.graphics.g3d.Environment;
+import com.badlogic.gdx.graphics.g3d.Material;
+import com.badlogic.gdx.graphics.g3d.Model;
+import com.badlogic.gdx.graphics.g3d.ModelBatch;
+import com.badlogic.gdx.graphics.g3d.ModelInstance;
+import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
+import com.badlogic.gdx.graphics.g3d.attributes.FloatAttribute;
+import com.badlogic.gdx.graphics.g3d.attributes.TextureAttribute;
+import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
+import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 import imgui.ImGui;
+import imgui.idl.helper.IDLBool;
+import imgui.idl.helper.IDLFloat;
 import imgui.idl.helper.IDLInt;
 import jolt.Jolt;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.example.samples.app.jolt.Layers;
 import jolt.example.samples.app.tests.Test;
+import jolt.gdx.DebugRenderer;
+import jolt.gdx.JoltGdx;
+import jolt.math.Mat44;
 import jolt.math.Quat;
 import jolt.math.Vec3;
 import jolt.physics.body.Body;
 import jolt.physics.body.BodyCreationSettings;
 import jolt.physics.body.BodyID;
 import jolt.physics.body.BodyInterface;
+import jolt.physics.body.IDLArrayBodyID;
+import jolt.physics.body.MassProperties;
 import jolt.physics.collision.shape.BoxShape;
 
 public class BoxSpawnTest extends Test {
 
-    private int resetDelaySeconds = 8;
+    private int resetDelaySeconds = 10;
 
     private long timeNow;
     private long time;
@@ -31,19 +51,38 @@ public class BoxSpawnTest extends Test {
     private int totalCubes = 3000;
     private int cubeCount = 0;
 
-    private Array<Body> bodies = new Array<>();
+    private Array<CubeData> cubes = new Array<>();
+    private CubeData groundData;
 
     private Vec3 tempVec3;
     private Quat tempQuat;
     private Quaternion tempQuaternion;
     private Matrix4 tempRotationMatrix;
+    private Model cubeModel;
+    private IDLArrayBodyID bodyArray;
+
+    private ModelBatch modelBatch;
+    private Environment environment;
+
+    private Texture checkerBoardTexture;
+    private Texture boxTexture;
+    private float boxRestitution = 0.8f;
+    private boolean randomRotation = false;
 
     public void initialize() {
         tempVec3 = Jolt.New_Vec3();
         tempQuat = new Quat();
         tempQuaternion = new Quaternion();
         tempRotationMatrix = new Matrix4();
-        createFloor();
+        bodyArray = new IDLArrayBodyID(1);
+
+        modelBatch = new ModelBatch();
+        environment = new Environment();
+        environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.6f, 0.6f, 0.6f, 1.f));
+        DirectionalLight set = new DirectionalLight().set(1.0f, 1.0f, 1.0f, -1f, -1f, -0.4f);
+        environment.add(set);
+
+        createModels();
         resetBoxes();
     }
 
@@ -63,29 +102,69 @@ public class BoxSpawnTest extends Test {
         wasPlaying = isPlaying;
     }
 
+    private void createModels() {
+        boxTexture = new Texture(Gdx.files.internal("data/badlogic.jpg"));
+        boxTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
+        final Material material = new Material(TextureAttribute.createDiffuse(boxTexture),
+                FloatAttribute.createShininess(4f));
+        ModelBuilder builder = new ModelBuilder();
+        cubeModel = builder.createBox(1, 1, 1, material, VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal | VertexAttributes.Usage.TextureCoordinates);
+
+        float groundWidth = 60f;
+        float groundHeight = 0.3f;
+        float groundDepth = 60f;
+        checkerBoardTexture = DebugRenderer.createCheckerBoardTexture();
+        final Material groundMaterial = new Material(
+                TextureAttribute.createDiffuse(checkerBoardTexture),
+                ColorAttribute.createDiffuse(1, 1, 1, 1)
+        );
+        int attributes = VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal | VertexAttributes.Usage.TextureCoordinates | VertexAttributes.Usage.ColorUnpacked;
+        Model groundBox = builder.createBox(groundWidth, groundHeight, groundDepth, groundMaterial, attributes);
+        groundData = createBox(groundBox, -2, -1, 0, -2, 0, 0, 0, 0, groundWidth, groundHeight, groundDepth, 0, 0, 1);
+    }
+
+    @Override
+    public void postPhysicsUpdate(boolean isPlaying, float deltaTime) {
+        for(int i = 0; i < cubes.size; i++) {
+            CubeData cubeData = cubes.get(i);
+            Body body = cubeData.body;
+            ModelInstance modelInstance = cubeData.modelInstance;
+            Mat44 mat44 = body.GetWorldTransform();
+            JoltGdx.mat44_to_matrix4(mat44, modelInstance.transform);
+        }
+
+        JoltGdx.mat44_to_matrix4(groundData.body.GetWorldTransform(), groundData.modelInstance.transform);
+
+        modelBatch.begin(camera);
+        modelBatch.render(groundData.modelInstance, environment);
+        for(int i = 0; i < cubes.size; i++) {
+            CubeData cubeData = cubes.get(i);
+            ModelInstance modelInstance = cubeData.modelInstance;
+            modelBatch.render(modelInstance, environment);
+        }
+        modelBatch.end();
+    }
+
     private void resetBoxes() {
         BodyInterface bodyInterface = mPhysicsSystem.GetBodyInterface();
-        for(Body body : bodies) {
+        for(CubeData cubeData : cubes) {
+            Body body = cubeData.body;
             BodyID bodyID = body.GetID();
             bodyInterface.RemoveBody(bodyID);
             bodyInterface.DestroyBody(bodyID);
         }
-        bodies.clear();
+        cubes.clear();
         mPhysicsSystem.OptimizeBroadPhase();
 
-        // Step 1: Initialize dimensions safely
-        int maxX = 1;
-        int maxY = 1;
-        int maxZ = 1;
-
         int base = (int) Math.round(Math.cbrt(totalCubes));
-        maxX = base;
-        maxY = base;
-        maxZ = base;
+        int maxX = base;
+        int maxY = base;
+        int maxZ = base;
 
         float multi = 1.3f;
         int offsetY = 20;
-        int offsetX = -3;
+        int offsetX = -8;
+        int offsetZ = -6;
         cubeCount = 0;
         for(int i = 0; i < maxX; i++) {
             for(int j = 0; j < maxY; j++) {
@@ -93,14 +172,20 @@ public class BoxSpawnTest extends Test {
                     if(cubeCount < totalCubes) {
                         float x = (i + offsetX) * multi;
                         float y = (j + offsetY) * multi;
-                        float z = k * multi;
-                        float axisX = MathUtils.random(0, 360);
-                        float axisY = MathUtils.random(0, 360);
-                        float axisZ = MathUtils.random(0, 360);
+                        float z = (k + offsetZ) * multi;
+                        float axisX = 1;
+                        float axisY = 1;
+                        float axisZ = 1;
+                        if(randomRotation) {
+                            axisX = MathUtils.random(0, 360);
+                            axisY = MathUtils.random(0, 360);
+                            axisZ = MathUtils.random(0, 360);
+                        }
                         float r = 1f;
                         float g = 1f;
                         float b = 1f;
-                        createBox("ID: " + cubeCount, true, 0.4f, x, y, z, axisX, axisY, axisZ, 1, 1, 1, r, g, b);
+                        CubeData box = createBox(cubeModel, cubeCount, 0.4f, x, y, z, axisX, axisY, axisZ, 1, 1, 1, r, g, b);
+                        cubes.add(box);
                         cubeCount++;
 
                         if(i == maxX-1 && j == maxY-1 && k == maxZ-1) {
@@ -117,10 +202,12 @@ public class BoxSpawnTest extends Test {
         }
     }
 
-
-    private void createBox(String userData, boolean add, float mass, float x, float y, float z, float axiX, float axiY, float axiZ, float x1, float y1, float z1, float colorR, float colorG, float colorB) {
+    private CubeData createBox(Model model, int userData, float mass, float x, float y, float z, float axiX, float axiY, float axiZ, float x1, float y1, float z1, float colorR, float colorG, float colorB) {
         tempVec3.Set(x1 / 2f, y1 / 2f, z1 / 2f);
         BoxShape bodyShape = new BoxShape(tempVec3);
+
+        int motionType = EMotionType.Dynamic;
+        int layer = Layers.MOVING;
 
         tempRotationMatrix.idt();
         tempRotationMatrix.rotate(Vector3.X, axiX);
@@ -130,30 +217,63 @@ public class BoxSpawnTest extends Test {
 
         tempVec3.Set(x, y, z);
         tempQuat.Set(tempQuaternion.x, tempQuaternion.y, tempQuaternion.z, tempQuaternion.w);
-        BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, tempVec3, tempQuat, EMotionType.Dynamic, Layers.MOVING);
+
+        MassProperties massProperties = bodyShape.GetMassProperties();
+        if(mass > 0.0f) {
+            massProperties.set_mMass(mass);
+        }
+        else if(mass < 0.0f) {
+            motionType = EMotionType.Static;
+            layer = Layers.NON_MOVING;
+        }
+
+        BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, tempVec3, tempQuat, motionType, layer);
+        bodySettings.set_mMassPropertiesOverride(massProperties);
+        bodySettings.set_mRestitution(boxRestitution);
         Body body = mBodyInterface.CreateBody(bodySettings);
+        body.SetUserData(userData);
         bodySettings.dispose();
-        bodies.add(body);
+
+        CubeData cubeData = new CubeData();
+        cubeData.body = body;
+        cubeData.modelInstance = new ModelInstance(model);
         mBodyInterface.AddBody(body.GetID(), EActivation.Activate);
+        return cubeData;
     }
 
     @Override
     public void dispose() {
         super.dispose();
+        checkerBoardTexture.dispose();
+        boxTexture.dispose();
+        cubeModel.dispose();
         tempVec3.dispose();
         tempQuat.dispose();
     }
 
     @Override
     public void renderUI() {
+        IDLBool.TMP_1.set(randomRotation);
+        if(ImGui.Checkbox("Random Rotation", IDLBool.TMP_1)) {
+            randomRotation = IDLBool.TMP_1.getValue();
+        }
+        IDLFloat.TMP_1.set(boxRestitution);
+        if(ImGui.SliderFloat("Box Restitution", IDLFloat.TMP_1, 0.0f, 1.0f, "%.1f")) {
+            boxRestitution = IDLFloat.TMP_1.getValue();
+        }
         IDLInt.TMP_1.set(resetDelaySeconds);
         if(ImGui.SliderInt("Delay Seconds", IDLInt.TMP_1, 1, 20)) {
             resetDelaySeconds = IDLInt.TMP_1.getValue();
         }
         IDLInt.TMP_1.set(totalCubes);
-        if(ImGui.SliderInt("Max Cubes", IDLInt.TMP_1, 9, 4000)) {
+        if(ImGui.SliderInt("Max Cubes", IDLInt.TMP_1, 9, 8000)) {
             totalCubes = IDLInt.TMP_1.getValue();
         }
         ImGui.Text("Cubes: " + cubeCount);
+    }
+
+    static class CubeData {
+        public Body body;
+        public ModelInstance modelInstance;
     }
 }

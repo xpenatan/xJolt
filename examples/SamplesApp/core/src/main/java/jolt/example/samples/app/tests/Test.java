@@ -28,6 +28,7 @@ public abstract class Test {
     protected BodyInterface mBodyInterface = null;
     protected DebugRenderer mDebugRenderer = null;
 
+    protected PerspectiveCamera camera;
     protected Matrix4 cameraPivot = new Matrix4();
 
     public void setPhysicsSystem(PhysicsSystem mPhysicsSystem) {
@@ -54,7 +55,8 @@ public abstract class Test {
 
     public void renderUI() {}
 
-    public void initializeCamera(PerspectiveCamera camera) {
+    public final void initializeCamera(PerspectiveCamera camera) {
+        this.camera = camera;
     }
 
     public void updateCamera(PerspectiveCamera camera) {

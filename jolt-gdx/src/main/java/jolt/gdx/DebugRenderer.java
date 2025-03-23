@@ -55,6 +55,21 @@ public class DebugRenderer extends DebugRendererEm {
     private ArrayList<ModelRenderer> modelRendererList = new ArrayList<>();
     private ArrayList<ModelRenderer> poolRenderer = new ArrayList<>();
 
+    public static Texture createCheckerBoardTexture() {
+        // Create a simple 2x2 checkerboard texture
+        Pixmap pixmap = new Pixmap(2, 2, Pixmap.Format.RGBA8888);
+        pixmap.setColor(0.3f, 0.3f, 0.3f, 1f); // Dark gray
+        pixmap.fillRectangle(0, 0, 1, 1); // Top-left
+        pixmap.fillRectangle(1, 1, 1, 1); // Bottom-right
+        pixmap.setColor(0.7f, 0.7f, 0.7f, 1f); // Light gray
+        pixmap.fillRectangle(1, 0, 1, 1); // Top-right
+        pixmap.fillRectangle(0, 1, 1, 1); // Bottom-left
+        Texture checkerboardTexture = new Texture(pixmap, true); // Enable mipmapping for smoothness
+        checkerboardTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
+        pixmap.dispose();
+        return checkerboardTexture;
+    }
+
     public DebugRenderer() {
         this(true);
     }
@@ -65,18 +80,7 @@ public class DebugRenderer extends DebugRendererEm {
         environment = new Environment();
         environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1.f));
         environment.add(new DirectionalLight().set(0.8f, 0.8f, 0.8f, -0.5f, -1.0f, -0.8f));
-
-        // Create a simple 2x2 checkerboard texture
-        Pixmap pixmap = new Pixmap(2, 2, Pixmap.Format.RGBA8888);
-        pixmap.setColor(0.3f, 0.3f, 0.3f, 1f); // Dark gray
-        pixmap.fillRectangle(0, 0, 1, 1); // Top-left
-        pixmap.fillRectangle(1, 1, 1, 1); // Bottom-right
-        pixmap.setColor(0.7f, 0.7f, 0.7f, 1f); // Light gray
-        pixmap.fillRectangle(1, 0, 1, 1); // Top-right
-        pixmap.fillRectangle(0, 1, 1, 1); // Bottom-left
-        checkerboardTexture = new Texture(pixmap, true); // Enable mipmapping for smoothness
-        checkerboardTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        pixmap.dispose();
+        checkerboardTexture = createCheckerBoardTexture();
     }
 
     @Override
