@@ -22,7 +22,7 @@ import jolt.physics.collision.shape.BoxShape;
 
 public class BoxSpawnTest extends Test {
 
-    private static final long DELAY_TIME = 8000;
+    private int resetDelaySeconds = 8;
 
     private long timeNow;
     private long time;
@@ -54,7 +54,8 @@ public class BoxSpawnTest extends Test {
                 time = System.currentTimeMillis() + (time - timeNow);
             }
             timeNow = System.currentTimeMillis();
-            if(timeNow - time > DELAY_TIME) {
+            long timeout = resetDelaySeconds * 1000;
+            if(timeNow - time > timeout) {
                 resetBoxes();
                 time = System.currentTimeMillis();
             }
@@ -145,6 +146,10 @@ public class BoxSpawnTest extends Test {
 
     @Override
     public void renderUI() {
+        IDLInt.TMP_1.set(resetDelaySeconds);
+        if(ImGui.SliderInt("Delay Seconds", IDLInt.TMP_1, 1, 20)) {
+            resetDelaySeconds = IDLInt.TMP_1.getValue();
+        }
         IDLInt.TMP_1.set(totalCubes);
         if(ImGui.SliderInt("Max Cubes", IDLInt.TMP_1, 9, 4000)) {
             totalCubes = IDLInt.TMP_1.getValue();
