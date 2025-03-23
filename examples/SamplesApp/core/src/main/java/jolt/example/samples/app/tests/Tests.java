@@ -37,7 +37,7 @@ public class Tests {
 
     public TestGroup getAllTests() {
         TestGroup root = new TestGroup();
-        root.name = "Tests";
+        root.name = "Samples";
         Array<TestGroup> allTests = root.children;
         for(JoltTestInstancer testInstancer : tests) {
             TestGroup parent = null;
