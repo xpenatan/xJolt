@@ -11,6 +11,7 @@ import imgui.ImGui;
 import imgui.ImGuiCond;
 import imgui.ImGuiTabBarFlags;
 import imgui.ImVec2;
+import jolt.example.samples.app.imgui.FPSRenderer;
 import jolt.example.samples.app.imgui.ImGuiSettingsRenderer;
 import jolt.example.samples.app.jolt.JoltInstance;
 import jolt.example.samples.app.tests.Test;
@@ -37,7 +38,10 @@ public class SamplesApp extends InputAdapter {
     private ImGuiSettingsRenderer settingsRenderer;
     private TestGroup allTests;
 
+    private FPSRenderer fpsRenderer;
+
     public void setup(InputMultiplexer input) {
+        fpsRenderer = new FPSRenderer();
         tests = new Tests();
         allTests = tests.getAllTests();
 
@@ -79,6 +83,8 @@ public class SamplesApp extends InputAdapter {
         Class<Test> newTest = null;
         ImGui.SetNextWindowSize(ImVec2.TMP_1.set(250, 400), ImGuiCond.ImGuiCond_FirstUseEver);
         ImGui.Begin("Settings");
+
+        fpsRenderer.render();
 
         newTest = settingsRenderer.render(allTests);
 
@@ -156,6 +162,7 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void dispose() {
+        fpsRenderer.dispose();
         settingsRenderer.dispose();
         clearBodies();
         debugRenderer.dispose();

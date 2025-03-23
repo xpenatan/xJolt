@@ -5,7 +5,7 @@ import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
-import jolt.example.samples.app.Layers;
+import jolt.example.samples.app.jolt.Layers;
 import jolt.example.samples.app.math.Perlin;
 import jolt.Jolt;
 import jolt.gdx.DebugRenderer;

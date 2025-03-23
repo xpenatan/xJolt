@@ -13,7 +13,7 @@ import imgui.ImGuiIO;
 import imgui.ImGuiStyle;
 import imgui.gdx.ImGuiGdxImpl;
 import imgui.gdx.ImGuiGdxInput;
-import jolt.example.samples.app.tests.vehicle.TankTest;
+import jolt.example.samples.app.tests.playground.BoxSpawnTest;
 
 public class GameScreen extends ScreenAdapter {
 
@@ -38,7 +38,7 @@ public class GameScreen extends ScreenAdapter {
         Gdx.input.setInputProcessor(inputMultiplexer);
         inputMultiplexer.addProcessor(input);
         samplesApp.setup(inputMultiplexer);
-        samplesApp.startTest(TankTest.class);
+        samplesApp.startTest(BoxSpawnTest.class);
 
         ImGuiStyle imGuiStyle = ImGui.GetStyle();
         imGuiStyle.Colors(ImGuiCol.ImGuiCol_WindowBg, 0.00f, 0.00f, 0.00f, 0.6f);

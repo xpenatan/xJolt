@@ -1,4 +1,4 @@
-package jolt.example.samples.app;
+package jolt.example.samples.app.jolt;
 
 public class Layers {
     // Object layers

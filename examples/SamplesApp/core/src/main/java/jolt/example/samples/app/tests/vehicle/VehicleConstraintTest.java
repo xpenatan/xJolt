@@ -9,7 +9,7 @@ import com.badlogic.gdx.math.Vector3;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.enums.EOverrideMassProperties;
-import jolt.example.samples.app.Layers;
+import jolt.example.samples.app.jolt.Layers;
 import jolt.Jolt;
 import jolt.core.Color;
 import jolt.math.Mat44;

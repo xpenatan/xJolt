@@ -3,7 +3,7 @@ package jolt.example.samples.app.tests.vehicle;
 import com.badlogic.gdx.math.MathUtils;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
-import jolt.example.samples.app.Layers;
+import jolt.example.samples.app.jolt.Layers;
 import jolt.example.samples.app.tests.Test;
 import jolt.Jolt;
 import jolt.math.ArrayVec3;

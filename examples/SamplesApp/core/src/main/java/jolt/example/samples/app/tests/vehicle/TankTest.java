@@ -9,7 +9,7 @@ import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.enums.EMotorState;
 import jolt.enums.EOverrideMassProperties;
-import jolt.example.samples.app.Layers;
+import jolt.example.samples.app.jolt.Layers;
 import jolt.math.Mat44;
 import jolt.math.Quat;
 import jolt.math.Vec3;
@@ -33,7 +33,6 @@ import jolt.physics.vehicle.VehicleController;
 import jolt.physics.vehicle.VehicleTrackSettings;
 import jolt.physics.vehicle.WheelSettings;
 import jolt.physics.vehicle.WheelSettingsTV;
-import jolt.physics.vehicle.WheeledVehicleController;
 import jolt.physics.vehicle.Wheels;
 
 public class TankTest extends VehicleTest {
