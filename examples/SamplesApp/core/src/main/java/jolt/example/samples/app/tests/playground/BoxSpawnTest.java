@@ -68,6 +68,7 @@ public class BoxSpawnTest extends Test {
     private Texture boxTexture;
     private float boxRestitution = 0.8f;
     private boolean randomRotation = false;
+    private boolean renderModels = true;
 
     public void initialize() {
         tempVec3 = Jolt.New_Vec3();
@@ -135,14 +136,16 @@ public class BoxSpawnTest extends Test {
 
         JoltGdx.mat44_to_matrix4(groundData.body.GetWorldTransform(), groundData.modelInstance.transform);
 
-        modelBatch.begin(camera);
-        modelBatch.render(groundData.modelInstance, environment);
-        for(int i = 0; i < cubes.size; i++) {
-            CubeData cubeData = cubes.get(i);
-            ModelInstance modelInstance = cubeData.modelInstance;
-            modelBatch.render(modelInstance, environment);
+        if(renderModels) {
+            modelBatch.begin(camera);
+            modelBatch.render(groundData.modelInstance, environment);
+            for(int i = 0; i < cubes.size; i++) {
+                CubeData cubeData = cubes.get(i);
+                ModelInstance modelInstance = cubeData.modelInstance;
+                modelBatch.render(modelInstance, environment);
+            }
+            modelBatch.end();
         }
-        modelBatch.end();
     }
 
     private void resetBoxes() {
@@ -253,6 +256,10 @@ public class BoxSpawnTest extends Test {
 
     @Override
     public void renderUI() {
+        IDLBool.TMP_1.set(renderModels);
+        if(ImGui.Checkbox("Render Models", IDLBool.TMP_1)) {
+            renderModels = IDLBool.TMP_1.getValue();
+        }
         IDLBool.TMP_1.set(randomRotation);
         if(ImGui.Checkbox("Random Rotation", IDLBool.TMP_1)) {
             randomRotation = IDLBool.TMP_1.getValue();
@@ -266,7 +273,7 @@ public class BoxSpawnTest extends Test {
             resetDelaySeconds = IDLInt.TMP_1.getValue();
         }
         IDLInt.TMP_1.set(totalCubes);
-        if(ImGui.SliderInt("Max Cubes", IDLInt.TMP_1, 9, 8000)) {
+        if(ImGui.SliderInt("Max Cubes", IDLInt.TMP_1, 9, 16000)) {
             totalCubes = IDLInt.TMP_1.getValue();
         }
         ImGui.Text("Cubes: " + cubeCount);
