@@ -54,7 +54,7 @@ public class BoxSpawnTest extends Test {
                 time = System.currentTimeMillis() + (time - timeNow);
             }
             timeNow = System.currentTimeMillis();
-            long timeout = resetDelaySeconds * 1000;
+            long timeout = resetDelaySeconds * 1000L;
             if(timeNow - time > timeout) {
                 resetBoxes();
                 time = System.currentTimeMillis();
