@@ -15660,7 +15660,7 @@ i_ImGui_CreateContext = () => {
     let $pointer;
     $pointer = i_ImGui_internal_native_CreateContext$js_body$_7();
     if (!$pointer)
-        return null;
+        $rt_throw(jl_RuntimeException__init_($rt_s(10)));
     if (i_ImGui_ImGuiContext_TEMP_STATIC_GEN_1 === null)
         i_ImGui_ImGuiContext_TEMP_STATIC_GEN_1 = i_ImGuiContext__init_(1, 1);
     (ii_IDLBase_getNativeData(i_ImGui_ImGuiContext_TEMP_STATIC_GEN_1)).$reset(Long_fromInt($pointer), 0);
@@ -15670,7 +15670,7 @@ i_ImGui_GetIO = () => {
     let $pointer;
     $pointer = i_ImGui_internal_native_GetIO$js_body$_17();
     if (!$pointer)
-        return null;
+        $rt_throw(jl_RuntimeException__init_($rt_s(10)));
     if (i_ImGui_ImGuiIO_TEMP_STATIC_GEN_0 === null)
         i_ImGui_ImGuiIO_TEMP_STATIC_GEN_0 = i_ImGuiIO__init_2(1, 1);
     (ii_IDLBase_getNativeData(i_ImGui_ImGuiIO_TEMP_STATIC_GEN_0)).$reset(Long_fromInt($pointer), 0);
@@ -15680,7 +15680,7 @@ i_ImGui_GetStyle = () => {
     let $pointer;
     $pointer = i_ImGui_internal_native_GetStyle$js_body$_19();
     if (!$pointer)
-        return null;
+        $rt_throw(jl_RuntimeException__init_($rt_s(10)));
     if (i_ImGui_ImGuiStyle_TEMP_STATIC_GEN_0 === null)
         i_ImGui_ImGuiStyle_TEMP_STATIC_GEN_0 = i_ImGuiStyle__init_0(1, 1);
     (ii_IDLBase_getNativeData(i_ImGui_ImGuiStyle_TEMP_STATIC_GEN_0)).$reset(Long_fromInt($pointer), 0);
@@ -15693,7 +15693,7 @@ i_ImGui_GetDrawData = () => {
     let $pointer;
     $pointer = i_ImGui_internal_native_GetDrawData$js_body$_27();
     if (!$pointer)
-        return null;
+        $rt_throw(jl_RuntimeException__init_($rt_s(10)));
     if (i_ImGui_ImDrawData_TEMP_STATIC_GEN_0 === null)
         i_ImGui_ImDrawData_TEMP_STATIC_GEN_0 = i_ImDrawData__init_0(1, 1);
     (ii_IDLBase_getNativeData(i_ImGui_ImDrawData_TEMP_STATIC_GEN_0)).$reset(Long_fromInt($pointer), 0);
@@ -15772,7 +15772,7 @@ i_ImGui_SaveIniSettingsToMemory = () => {
     let $pointer;
     $pointer = i_ImGui_internal_native_SaveIniSettingsToMemory$js_body$_1185();
     if (!$pointer)
-        return null;
+        $rt_throw(jl_RuntimeException__init_($rt_s(10)));
     if (i_ImGui_IDLString_TEMP_STATIC_GEN_0 === null)
         i_ImGui_IDLString_TEMP_STATIC_GEN_0 = iih_IDLString__init_(1, 1);
     (ii_IDLBase_getNativeData(i_ImGui_IDLString_TEMP_STATIC_GEN_0)).$reset(Long_fromInt($pointer), 0);
@@ -29986,7 +29986,7 @@ i_ImDrawCmd_get_ClipRect = $this => {
     let $pointer;
     $pointer = i_ImDrawCmd_internal_native_get_ClipRect$js_body$_15(Long_lo(((ii_IDLBase_getNativeData($this)).$getCPointer())));
     if (!$pointer)
-        return null;
+        $rt_throw(jl_RuntimeException__init_($rt_s(10)));
     if ($this.$ImVec4_TEMP_GEN_0 === null)
         $this.$ImVec4_TEMP_GEN_0 = i_ImVec4__init_3(1, 1);
     (ii_IDLBase_getNativeData($this.$ImVec4_TEMP_GEN_0)).$reset(Long_fromInt($pointer), 0);
@@ -35809,7 +35809,7 @@ i_ImGuiIO_get_Fonts = $this => {
     let $pointer;
     $pointer = i_ImGuiIO_internal_native_get_Fonts$js_body$_48(Long_lo(((ii_IDLBase_getNativeData($this)).$getCPointer())));
     if (!$pointer)
-        return null;
+        $rt_throw(jl_RuntimeException__init_($rt_s(10)));
     if ($this.$ImFontAtlas_TEMP_GEN_0 === null)
         $this.$ImFontAtlas_TEMP_GEN_0 = i_ImFontAtlas__init_0(1, 1);
     (ii_IDLBase_getNativeData($this.$ImFontAtlas_TEMP_GEN_0)).$reset(Long_fromInt($pointer), 0);
