@@ -4,12 +4,27 @@ import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.Vector4;
+import jolt.Jolt;
 import jolt.math.Mat44;
 import jolt.math.Quat;
 import jolt.math.Vec3;
 import jolt.math.Vec4;
 
 public class JoltGdx {
+
+    public static Vec3 TMP_VEC3_01;
+    public static Vec3 TMP_VEC3_02;
+    public static Vec3 TMP_VEC3_03;
+
+    public static Vec4 TMP_VEC4_01;
+    public static Vec4 TMP_VEC4_02;
+    public static Vec4 TMP_VEC4_03;
+
+    public static Quat TMP_QUAT_01;
+    public static Quat TMP_QUAT_02;
+
+    public static Mat44 TMP_MAT44_01;
+    public static Mat44 TMP_MAT44_02;
 
     private JoltGdx() {};
 
@@ -62,5 +77,31 @@ public class JoltGdx {
 
     public static void quaternion_to_quat(Quaternion in, Quat out) {
         out.Set(in.x, in.y, in.z, in.w);
+    }
+
+    public static void init() {
+        TMP_VEC3_01 = Jolt.New_Vec3();
+        TMP_VEC3_02 = Jolt.New_Vec3();
+        TMP_VEC3_03 = Jolt.New_Vec3();
+        TMP_VEC4_01 = Jolt.New_Vec4();
+        TMP_VEC4_02 = Jolt.New_Vec4();
+        TMP_VEC4_03 = Jolt.New_Vec4();
+        TMP_QUAT_01 = new Quat();
+        TMP_QUAT_02 = new Quat();
+        TMP_MAT44_01 = Jolt.New_Mat44();
+        TMP_MAT44_02 = Jolt.New_Mat44();
+    }
+
+    public static void dispose() {
+        TMP_VEC3_01.dispose();
+        TMP_VEC3_02.dispose();
+        TMP_VEC3_03.dispose();
+        TMP_VEC4_01.dispose();
+        TMP_VEC4_02.dispose();
+        TMP_VEC4_03.dispose();
+        TMP_QUAT_01.dispose();
+        TMP_QUAT_02.dispose();
+        TMP_MAT44_01.dispose();
+        TMP_MAT44_02.dispose();
     }
 }
