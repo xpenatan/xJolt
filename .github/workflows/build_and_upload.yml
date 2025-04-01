@@ -285,6 +285,10 @@ jobs:
           ref: ${{ github.ref }}
           fetch-depth: 0
 
+      - name: Pull latest changes
+        run: |
+          git pull origin ${{ github.ref_name }}  # Pulls the latest from the branch
+
       - name: Get version
         uses: madhead/read-java-properties@latest
         id: version
