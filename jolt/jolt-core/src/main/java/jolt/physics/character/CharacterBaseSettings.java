@@ -7,8 +7,8 @@ package jolt.physics.character;
 
 import jolt.idl.IDLBase;
 import jolt.math.Vec3;
-import jolt.Plane;
-import jolt.Shape;
+import jolt.geometry.Plane;
+import jolt.physics.collision.shape.Shape;
 
 public class CharacterBaseSettings extends IDLBase {
 

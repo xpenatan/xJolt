@@ -6,7 +6,6 @@
 package gen.jolt.math;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.Quat;
 
 public class ArrayQuat extends IDLBase {
 

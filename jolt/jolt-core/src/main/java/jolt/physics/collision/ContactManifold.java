@@ -7,7 +7,7 @@ package jolt.physics.collision;
 
 import jolt.idl.IDLBase;
 import jolt.math.Vec3;
-import jolt.SubShapeID;
+import jolt.physics.collision.shape.SubShapeID;
 
 public class ContactManifold extends IDLBase {
 

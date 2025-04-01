@@ -6,8 +6,8 @@
 package jolt.math;
 
 import jolt.physics.constraints.ConstraintSettings;
-import jolt.Body;
-import jolt.Constraint;
+import jolt.physics.body.Body;
+import jolt.physics.constraints.Constraint;
 
 public class TwoBodyConstraintSettings extends ConstraintSettings {
 

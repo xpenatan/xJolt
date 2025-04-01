@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.raddoll;
 
-import gen.jolt.BodyCreationSettings;
+import gen.jolt.physics.body.BodyCreationSettings;
 import gen.jolt.math.TwoBodyConstraintSettings;
 
 public class RagdollPart extends BodyCreationSettings {

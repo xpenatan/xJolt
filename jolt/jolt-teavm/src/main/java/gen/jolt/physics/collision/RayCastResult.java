@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.collision;
 
-import gen.jolt.SubShapeID;
+import gen.jolt.physics.collision.shape.SubShapeID;
 
 public class RayCastResult extends BroadPhaseCastResult {
 

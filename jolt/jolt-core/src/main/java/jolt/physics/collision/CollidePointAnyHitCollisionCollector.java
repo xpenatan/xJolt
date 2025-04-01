@@ -6,7 +6,6 @@
 package jolt.physics.collision;
 
 import jolt.physics.softbody.CollidePointCollector;
-import jolt.CollidePointResult;
 
 public class CollidePointAnyHitCollisionCollector extends CollidePointCollector {
 

@@ -7,11 +7,9 @@ package jolt.physics.character;
 
 import jolt.idl.IDLBase;
 import jolt.math.Vec3;
-import jolt.BodyID;
-import jolt.CharacterID;
-import jolt.SubShapeID;
-import jolt.CharacterVirtual;
-import jolt.PhysicsMaterial;
+import jolt.physics.body.BodyID;
+import jolt.physics.collision.shape.SubShapeID;
+import jolt.physics.collision.PhysicsMaterial;
 
 public class CharacterVirtualContact extends IDLBase {
 

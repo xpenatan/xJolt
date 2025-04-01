@@ -6,7 +6,6 @@
 package jolt.physics.vehicle;
 
 import jolt.idl.IDLBase;
-import jolt.Wheel;
 
 public class Wheels extends IDLBase {
 

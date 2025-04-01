@@ -6,9 +6,9 @@
 package jolt.physics.collision;
 
 import jolt.idl.IDLBase;
-import jolt.Shape;
+import jolt.physics.collision.shape.Shape;
 import jolt.math.Vec3;
-import jolt.Mat44;
+import jolt.math.Mat44;
 
 public class RShapeCast extends IDLBase {
 

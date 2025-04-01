@@ -5,8 +5,8 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.collision.shape;
 
-import gen.jolt.Plane;
-import gen.jolt.PhysicsMaterial;
+import gen.jolt.geometry.Plane;
+import gen.jolt.physics.collision.PhysicsMaterial;
 
 public class PlaneShapeSettings extends ShapeSettings {
 

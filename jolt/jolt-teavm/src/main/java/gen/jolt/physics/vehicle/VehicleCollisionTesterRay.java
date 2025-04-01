@@ -5,7 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.vehicle;
 
-import gen.jolt.VehicleCollisionTester;
 import gen.jolt.math.Vec3;
 
 public class VehicleCollisionTesterRay extends VehicleCollisionTester {

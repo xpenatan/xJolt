@@ -6,9 +6,9 @@
 package gen.jolt.renderer;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.Float3;
-import gen.jolt.Float2;
-import gen.jolt.Color;
+import gen.jolt.math.Float3;
+import gen.jolt.math.Float2;
+import gen.jolt.core.Color;
 
 public class DebugRendererVertex extends IDLBase {
 

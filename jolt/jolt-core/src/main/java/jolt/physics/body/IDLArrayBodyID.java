@@ -6,7 +6,6 @@
 package jolt.physics.body;
 
 import jolt.idl.IDLBase;
-import jolt.BodyID;
 
 public class IDLArrayBodyID extends IDLBase {
 

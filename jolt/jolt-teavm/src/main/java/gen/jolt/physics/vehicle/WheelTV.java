@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.vehicle;
 
-import gen.jolt.Wheel;
-
 public class WheelTV extends Wheel {
 
     private WheelSettingsTV WheelSettingsTV_TEMP_GEN_0;

@@ -6,7 +6,6 @@
 package gen.jolt.physics.vehicle;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.VehicleConstraint;
 
 public class VehicleController extends IDLBase {
 

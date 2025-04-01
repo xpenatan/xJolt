@@ -6,9 +6,9 @@
 package gen.jolt.physics.softbody;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.TransformedShape;
-import gen.jolt.Body;
-import gen.jolt.CollidePointResult;
+import gen.jolt.physics.collision.TransformedShape;
+import gen.jolt.physics.body.Body;
+import gen.jolt.physics.collision.CollidePointResult;
 
 public class CollidePointCollector extends IDLBase {
 

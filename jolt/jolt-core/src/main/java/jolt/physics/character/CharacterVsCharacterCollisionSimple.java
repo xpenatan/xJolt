@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.physics.character;
 
-import jolt.CharacterVirtual;
-
 public class CharacterVsCharacterCollisionSimple extends CharacterVsCharacterCollision {
 
     static public final CharacterVsCharacterCollisionSimple T_01 = new CharacterVsCharacterCollisionSimple((byte) 1, (char) 1);

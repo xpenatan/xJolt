@@ -6,7 +6,6 @@
 package gen.jolt.physics.vehicle;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.Wheel;
 
 public class Wheels extends IDLBase {
 

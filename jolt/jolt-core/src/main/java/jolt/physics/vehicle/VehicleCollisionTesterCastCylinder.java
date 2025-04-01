@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.physics.vehicle;
 
-import jolt.VehicleCollisionTester;
-
 public class VehicleCollisionTesterCastCylinder extends VehicleCollisionTester {
 
     static public final VehicleCollisionTesterCastCylinder T_01 = new VehicleCollisionTesterCastCylinder((byte) 1, (char) 1);

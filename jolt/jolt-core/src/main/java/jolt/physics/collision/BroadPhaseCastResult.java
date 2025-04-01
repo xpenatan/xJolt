@@ -6,7 +6,7 @@
 package jolt.physics.collision;
 
 import jolt.idl.IDLBase;
-import jolt.BodyID;
+import jolt.physics.body.BodyID;
 
 public class BroadPhaseCastResult extends IDLBase {
 

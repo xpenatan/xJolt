@@ -5,10 +5,9 @@
  *-------------------------------------------------------*/
 package jolt.physics.character;
 
-import jolt.CharacterID;
 import jolt.math.Vec3;
-import jolt.Shape;
-import jolt.BodyID;
+import jolt.physics.collision.shape.Shape;
+import jolt.physics.body.BodyID;
 
 public class CharacterVirtualSettings extends CharacterBaseSettings {
 

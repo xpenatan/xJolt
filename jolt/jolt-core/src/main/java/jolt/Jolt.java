@@ -6,9 +6,18 @@
 package jolt;
 
 import jolt.idl.IDLBase;
+import jolt.physics.PhysicsSystem;
+import jolt.core.Factory;
 import jolt.core.TempAllocatorImpl;
+import jolt.core.JobSystemThreadPool;
+import jolt.physics.body.BodyCreationSettings;
 import jolt.physics.collision.shape.ShapeSettings;
 import jolt.math.Vec3;
+import jolt.math.Quat;
+import jolt.physics.collision.shape.Shape;
+import jolt.math.Mat44;
+import jolt.math.Vec4;
+import jolt.math.Float3;
 
 public class Jolt extends IDLBase {
 

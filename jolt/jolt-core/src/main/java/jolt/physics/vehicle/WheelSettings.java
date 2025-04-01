@@ -7,7 +7,7 @@ package jolt.physics.vehicle;
 
 import jolt.idl.IDLBase;
 import jolt.math.Vec3;
-import jolt.SpringSettings;
+import jolt.physics.constraints.SpringSettings;
 
 public class WheelSettings extends IDLBase {
 

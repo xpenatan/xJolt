@@ -6,8 +6,8 @@
 package jolt.physics.softbody;
 
 import jolt.idl.IDLBase;
-import jolt.TransformedShape;
-import jolt.BodyID;
+import jolt.physics.collision.TransformedShape;
+import jolt.physics.body.BodyID;
 
 public class CollideShapeBodyCollector extends IDLBase {
 

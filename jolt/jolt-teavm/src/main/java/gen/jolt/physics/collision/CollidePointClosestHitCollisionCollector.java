@@ -6,7 +6,6 @@
 package gen.jolt.physics.collision;
 
 import gen.jolt.physics.softbody.CollidePointCollector;
-import gen.jolt.CollidePointResult;
 
 public class CollidePointClosestHitCollisionCollector extends CollidePointCollector {
 

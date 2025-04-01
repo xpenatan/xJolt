@@ -7,7 +7,6 @@ package gen.jolt.physics.constraints;
 
 import gen.jolt.math.TwoBodyConstraintSettings;
 import gen.jolt.math.Vec3;
-import gen.jolt.SpringSettings;
 
 public class DistanceConstraintSettings extends TwoBodyConstraintSettings {
 

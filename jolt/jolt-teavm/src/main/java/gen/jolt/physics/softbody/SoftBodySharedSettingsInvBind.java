@@ -6,7 +6,7 @@
 package gen.jolt.physics.softbody;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.Mat44;
+import gen.jolt.math.Mat44;
 
 public class SoftBodySharedSettingsInvBind extends IDLBase {
 

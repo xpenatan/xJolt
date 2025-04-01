@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.core;
 
-import gen.jolt.TempAllocator;
-
 public class TempAllocatorImpl extends TempAllocator {
 
     static public final TempAllocatorImpl T_01 = new TempAllocatorImpl((byte) 1, (char) 1);

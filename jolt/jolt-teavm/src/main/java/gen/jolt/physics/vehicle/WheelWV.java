@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.vehicle;
 
-import gen.jolt.Wheel;
-
 public class WheelWV extends Wheel {
 
     private WheelSettingsWV WheelSettingsWV_TEMP_GEN_0;

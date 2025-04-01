@@ -6,7 +6,6 @@
 package gen.jolt.math;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.Mat44;
 
 public class ArrayMat44 extends IDLBase {
 

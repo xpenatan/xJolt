@@ -7,8 +7,8 @@ package gen.jolt.physics.softbody;
 
 import gen.jolt.idl.IDLBase;
 import gen.jolt.math.Vec3;
-import gen.jolt.Quat;
-import gen.jolt.CollisionGroup;
+import gen.jolt.math.Quat;
+import gen.jolt.physics.collision.CollisionGroup;
 
 public class SoftBodyCreationSettings extends IDLBase {
 

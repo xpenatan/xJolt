@@ -6,6 +6,7 @@
 package gen.jolt;
 
 import gen.jolt.idl.IDLBase;
+import gen.jolt.physics.vehicle.WheeledVehicleController;
 
 public class WheeledVehicleControllerCallbacksEm extends IDLBase {
 

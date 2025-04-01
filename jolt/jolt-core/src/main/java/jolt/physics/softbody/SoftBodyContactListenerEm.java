@@ -5,8 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.softbody;
 
-import jolt.Body;
-import jolt.SoftBodyManifold;
+import jolt.physics.body.Body;
 
 public class SoftBodyContactListenerEm extends SoftBodyContactListener {
 

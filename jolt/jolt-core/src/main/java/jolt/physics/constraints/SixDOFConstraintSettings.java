@@ -7,8 +7,6 @@ package jolt.physics.constraints;
 
 import jolt.math.TwoBodyConstraintSettings;
 import jolt.math.Vec3;
-import jolt.SpringSettings;
-import jolt.MotorSettings;
 
 public class SixDOFConstraintSettings extends TwoBodyConstraintSettings {
 

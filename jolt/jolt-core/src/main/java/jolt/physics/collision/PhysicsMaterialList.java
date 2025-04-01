@@ -6,7 +6,6 @@
 package jolt.physics.collision;
 
 import jolt.idl.IDLBase;
-import jolt.PhysicsMaterial;
 
 public class PhysicsMaterialList extends IDLBase {
 

@@ -5,8 +5,8 @@
  *-------------------------------------------------------*/
 package jolt.physics.softbody;
 
-import jolt.Shape;
-import jolt.SubShapeID;
+import jolt.physics.collision.shape.Shape;
+import jolt.physics.collision.shape.SubShapeID;
 
 public class SoftBodyShape extends Shape {
 

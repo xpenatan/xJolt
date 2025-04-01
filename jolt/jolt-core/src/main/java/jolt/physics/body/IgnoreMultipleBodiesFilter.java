@@ -5,9 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.physics.body;
 
-import jolt.BodyFilter;
-import jolt.BodyID;
-
 public class IgnoreMultipleBodiesFilter extends BodyFilter {
 
     static public final IgnoreMultipleBodiesFilter T_01 = new IgnoreMultipleBodiesFilter((byte) 1, (char) 1);

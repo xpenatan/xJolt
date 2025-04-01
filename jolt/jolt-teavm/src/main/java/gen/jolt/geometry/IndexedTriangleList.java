@@ -6,7 +6,6 @@
 package gen.jolt.geometry;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.IndexedTriangle;
 
 public class IndexedTriangleList extends IDLBase {
 

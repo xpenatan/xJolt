@@ -6,11 +6,10 @@
 package jolt.physics.collision.shape;
 
 import jolt.idl.IDLBase;
-import jolt.Shape;
-import jolt.AABox;
+import jolt.geometry.AABox;
 import jolt.math.Vec3;
-import jolt.Quat;
-import jolt.PhysicsMaterial;
+import jolt.math.Quat;
+import jolt.physics.collision.PhysicsMaterial;
 
 public class ShapeGetTriangles extends IDLBase {
 

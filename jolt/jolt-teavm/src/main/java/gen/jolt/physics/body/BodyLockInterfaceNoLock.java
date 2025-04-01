@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.body;
 
-import gen.jolt.BodyLockInterface;
-
 public class BodyLockInterfaceNoLock extends BodyLockInterface {
 
     static public final BodyLockInterfaceNoLock T_01 = new BodyLockInterfaceNoLock((byte) 1, (char) 1);

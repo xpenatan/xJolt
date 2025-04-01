@@ -8,7 +8,6 @@
 package gen.jolt.math;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.Vec4;
 
 public class Vec3 extends IDLBase {
 

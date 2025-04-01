@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.collision.shape;
 
-import jolt.PhysicsMaterial;
+import jolt.physics.collision.PhysicsMaterial;
 
 public class SphereShapeSettings extends ConvexShapeSettings {
 

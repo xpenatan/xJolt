@@ -6,7 +6,6 @@
 package gen.jolt.physics.body;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.BodyID;
 
 public class BodyIDVector extends IDLBase {
 

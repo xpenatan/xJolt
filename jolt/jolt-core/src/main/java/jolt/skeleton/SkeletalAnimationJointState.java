@@ -6,9 +6,9 @@
 package jolt.skeleton;
 
 import jolt.idl.IDLBase;
-import jolt.Mat44;
+import jolt.math.Mat44;
 import jolt.math.Vec3;
-import jolt.Quat;
+import jolt.math.Quat;
 
 public class SkeletalAnimationJointState extends IDLBase {
 

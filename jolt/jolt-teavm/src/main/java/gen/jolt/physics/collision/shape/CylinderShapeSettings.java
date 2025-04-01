@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.collision.shape;
 
-import gen.jolt.PhysicsMaterial;
+import gen.jolt.physics.collision.PhysicsMaterial;
 
 public class CylinderShapeSettings extends ConvexShapeSettings {
 

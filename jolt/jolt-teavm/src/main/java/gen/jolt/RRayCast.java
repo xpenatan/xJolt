@@ -7,6 +7,7 @@ package gen.jolt;
 
 import gen.jolt.idl.IDLBase;
 import gen.jolt.math.Vec3;
+import gen.jolt.math.Mat44;
 
 public class RRayCast extends IDLBase {
 

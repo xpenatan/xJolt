@@ -7,7 +7,6 @@ package gen.jolt.physics.collision.shape;
 
 import gen.jolt.idl.IDLBase;
 import gen.jolt.idl.helper.IDLString;
-import gen.jolt.Shape;
 
 public class ShapeResult extends IDLBase {
 

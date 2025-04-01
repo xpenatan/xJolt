@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.vehicle;
 
-import gen.jolt.LinearCurve;
+import gen.jolt.core.LinearCurve;
 
 public class WheelSettingsWV extends WheelSettings {
 

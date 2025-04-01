@@ -5,8 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.vehicle;
 
-import jolt.PhysicsStepListener;
-import jolt.VehicleConstraint;
+import jolt.physics.PhysicsStepListener;
 
 public class VehicleConstraintStepListener extends PhysicsStepListener {
 

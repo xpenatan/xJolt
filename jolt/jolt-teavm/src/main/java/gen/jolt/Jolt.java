@@ -6,9 +6,18 @@
 package gen.jolt;
 
 import gen.jolt.idl.IDLBase;
+import gen.jolt.physics.PhysicsSystem;
+import gen.jolt.core.Factory;
 import gen.jolt.core.TempAllocatorImpl;
+import gen.jolt.core.JobSystemThreadPool;
+import gen.jolt.physics.body.BodyCreationSettings;
 import gen.jolt.physics.collision.shape.ShapeSettings;
 import gen.jolt.math.Vec3;
+import gen.jolt.math.Quat;
+import gen.jolt.physics.collision.shape.Shape;
+import gen.jolt.math.Mat44;
+import gen.jolt.math.Vec4;
+import gen.jolt.math.Float3;
 
 public class Jolt extends IDLBase {
 

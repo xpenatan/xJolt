@@ -6,7 +6,7 @@
 package jolt.physics.collision.shape;
 
 import jolt.math.Vec3;
-import jolt.Quat;
+import jolt.math.Quat;
 
 public class CompoundShapeSettings extends ShapeSettings {
 

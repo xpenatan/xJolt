@@ -6,7 +6,7 @@
 package gen.jolt.physics.softbody;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.Float3;
+import gen.jolt.math.Float3;
 
 public class SoftBodySharedSettingsVertex extends IDLBase {
 

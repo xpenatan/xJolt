@@ -6,8 +6,8 @@
 package gen.jolt.math;
 
 import gen.jolt.physics.constraints.ConstraintSettings;
-import gen.jolt.Body;
-import gen.jolt.Constraint;
+import gen.jolt.physics.body.Body;
+import gen.jolt.physics.constraints.Constraint;
 
 public class TwoBodyConstraintSettings extends ConstraintSettings {
 

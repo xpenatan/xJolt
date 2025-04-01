@@ -6,9 +6,8 @@
 package gen.jolt.physics.vehicle;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.VehicleConstraint;
-import gen.jolt.Body;
-import gen.jolt.SubShapeID;
+import gen.jolt.physics.body.Body;
+import gen.jolt.physics.collision.shape.SubShapeID;
 import gen.jolt.physics.PhysicsStepListenerContext;
 
 public class VehicleConstraintCallbacksEm extends IDLBase {

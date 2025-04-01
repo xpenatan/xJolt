@@ -6,10 +6,10 @@
 package gen.jolt.renderer;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.PhysicsSystem;
+import gen.jolt.physics.PhysicsSystem;
 import gen.jolt.physics.body.BodyManagerDrawSettings;
-import gen.jolt.Mat44;
-import gen.jolt.Color;
+import gen.jolt.math.Mat44;
+import gen.jolt.core.Color;
 import gen.jolt.math.Vec3;
 
 public class DebugRendererEm extends IDLBase {

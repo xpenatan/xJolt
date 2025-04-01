@@ -6,10 +6,8 @@
 package jolt.physics.constraints;
 
 import jolt.math.TwoBodyConstraintSettings;
-import jolt.PathConstraintPath;
 import jolt.math.Vec3;
-import jolt.Quat;
-import jolt.MotorSettings;
+import jolt.math.Quat;
 
 public class PathConstraintSettings extends TwoBodyConstraintSettings {
 

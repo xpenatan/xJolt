@@ -6,7 +6,6 @@
 package jolt.physics.collision.shape;
 
 import jolt.math.Vec3;
-import jolt.Shape;
 
 public class OffsetCenterOfMassShapeSettings extends DecoratedShapeSettings {
 

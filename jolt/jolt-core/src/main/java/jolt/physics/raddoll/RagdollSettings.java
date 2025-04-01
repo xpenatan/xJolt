@@ -6,9 +6,9 @@
 package jolt.physics.raddoll;
 
 import jolt.idl.IDLBase;
-import jolt.PhysicsSystem;
-import jolt.Ragdoll;
-import jolt.Skeleton;
+import jolt.physics.PhysicsSystem;
+import jolt.physics.ragdoll.Ragdoll;
+import jolt.skeleton.Skeleton;
 import jolt.math.Mat44MemRef;
 
 public class RagdollSettings extends IDLBase {

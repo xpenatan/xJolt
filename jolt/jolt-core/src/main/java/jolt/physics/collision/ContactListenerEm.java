@@ -5,10 +5,9 @@
  *-------------------------------------------------------*/
 package jolt.physics.collision;
 
-import jolt.ContactListener;
-import jolt.Body;
+import jolt.physics.body.Body;
 import jolt.math.Vec3;
-import jolt.SubShapeIDPair;
+import jolt.physics.collision.shape.SubShapeIDPair;
 
 public class ContactListenerEm extends ContactListener {
 

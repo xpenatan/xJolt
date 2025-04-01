@@ -6,7 +6,7 @@
 package gen.jolt.physics.softbody;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.TransformedShape;
+import gen.jolt.physics.collision.TransformedShape;
 import gen.jolt.physics.collision.BroadPhaseCastResult;
 
 public class CastShapeBodyCollector extends IDLBase {

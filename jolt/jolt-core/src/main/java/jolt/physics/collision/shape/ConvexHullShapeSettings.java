@@ -6,7 +6,7 @@
 package jolt.physics.collision.shape;
 
 import jolt.math.ArrayVec3;
-import jolt.PhysicsMaterial;
+import jolt.physics.collision.PhysicsMaterial;
 
 public class ConvexHullShapeSettings extends ConvexShapeSettings {
 

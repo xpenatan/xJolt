@@ -7,8 +7,7 @@ package gen.jolt.physics.collision.shape;
 
 import gen.jolt.idl.IDLBase;
 import gen.jolt.math.Vec3;
-import gen.jolt.Quat;
-import gen.jolt.Shape;
+import gen.jolt.math.Quat;
 
 public class CompoundShapeSubShape extends IDLBase {
 

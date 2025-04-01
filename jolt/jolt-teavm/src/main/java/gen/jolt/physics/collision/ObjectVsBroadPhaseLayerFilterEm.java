@@ -6,7 +6,7 @@
 package gen.jolt.physics.collision;
 
 import gen.jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilter;
-import gen.jolt.BroadPhaseLayer;
+import gen.jolt.physics.collision.broadphase.BroadPhaseLayer;
 
 public class ObjectVsBroadPhaseLayerFilterEm extends ObjectVsBroadPhaseLayerFilter {
 

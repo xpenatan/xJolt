@@ -5,13 +5,11 @@
  *-------------------------------------------------------*/
 package jolt.physics.character;
 
-import jolt.CharacterVirtual;
-import jolt.Body;
+import jolt.physics.body.Body;
 import jolt.math.Vec3;
-import jolt.BodyID;
-import jolt.SubShapeID;
-import jolt.CharacterID;
-import jolt.PhysicsMaterial;
+import jolt.physics.body.BodyID;
+import jolt.physics.collision.shape.SubShapeID;
+import jolt.physics.collision.PhysicsMaterial;
 
 public class CharacterContactListenerEm extends CharacterContactListener {
 

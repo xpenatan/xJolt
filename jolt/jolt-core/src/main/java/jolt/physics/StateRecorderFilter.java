@@ -6,9 +6,9 @@
 package jolt.physics;
 
 import jolt.idl.IDLBase;
-import jolt.Body;
-import jolt.Constraint;
-import jolt.BodyID;
+import jolt.physics.body.Body;
+import jolt.physics.constraints.Constraint;
+import jolt.physics.body.BodyID;
 
 public class StateRecorderFilter extends IDLBase {
 

@@ -6,7 +6,6 @@
 package jolt.geometry;
 
 import jolt.idl.IDLBase;
-import jolt.Triangle;
 
 public class TriangleList extends IDLBase {
 

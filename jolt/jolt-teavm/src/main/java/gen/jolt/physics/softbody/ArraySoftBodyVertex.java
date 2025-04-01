@@ -6,7 +6,6 @@
 package gen.jolt.physics.softbody;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.SoftBodyVertex;
 
 public class ArraySoftBodyVertex extends IDLBase {
 

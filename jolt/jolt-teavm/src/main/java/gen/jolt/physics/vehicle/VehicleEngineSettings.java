@@ -6,7 +6,7 @@
 package gen.jolt.physics.vehicle;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.LinearCurve;
+import gen.jolt.core.LinearCurve;
 
 public class VehicleEngineSettings extends IDLBase {
 

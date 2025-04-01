@@ -5,8 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.vehicle;
 
-import gen.jolt.PhysicsStepListener;
-import gen.jolt.VehicleConstraint;
+import gen.jolt.physics.PhysicsStepListener;
 
 public class VehicleConstraintStepListener extends PhysicsStepListener {
 

@@ -6,7 +6,6 @@
 package jolt.math;
 
 import jolt.idl.IDLBase;
-import jolt.Float3;
 
 public class VertexList extends IDLBase {
 

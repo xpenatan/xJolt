@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.physics.body;
 
-import jolt.BodyLockInterface;
-
 public class BodyLockInterfaceLocking extends BodyLockInterface {
 
     static public final BodyLockInterfaceLocking T_01 = new BodyLockInterfaceLocking((byte) 1, (char) 1);

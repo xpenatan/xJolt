@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.constraint;
 
-import jolt.PathConstraintPath;
+import jolt.physics.constraints.PathConstraintPath;
 import jolt.math.Vec3;
 
 public class PathConstraintPathEm extends PathConstraintPath {

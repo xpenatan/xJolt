@@ -7,8 +7,8 @@ package jolt.physics.collision;
 
 import jolt.idl.IDLBase;
 import jolt.math.Vec3;
-import jolt.SubShapeID;
-import jolt.BodyID;
+import jolt.physics.collision.shape.SubShapeID;
+import jolt.physics.body.BodyID;
 
 public class CollideShapeResult extends IDLBase {
 
