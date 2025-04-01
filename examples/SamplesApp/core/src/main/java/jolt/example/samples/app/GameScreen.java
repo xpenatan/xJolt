@@ -32,7 +32,7 @@ public class GameScreen extends ScreenAdapter {
 
         ImGui.CreateContext();
         ImGuiIO io = ImGui.GetIO();
-        io.set_ConfigFlags(ImGuiConfigFlags.ImGuiConfigFlags_DockingEnable);
+        io.set_ConfigFlags(ImGuiConfigFlags.DockingEnable);
         input = new ImGuiGdxInput();
         impl = new ImGuiGdxImpl();
         Gdx.input.setInputProcessor(inputMultiplexer);
@@ -41,7 +41,7 @@ public class GameScreen extends ScreenAdapter {
         samplesApp.startTest(BoxSpawnTest.class);
 
         ImGuiStyle imGuiStyle = ImGui.GetStyle();
-        imGuiStyle.Colors(ImGuiCol.ImGuiCol_WindowBg, 0.00f, 0.00f, 0.00f, 0.6f);
+        imGuiStyle.Colors(ImGuiCol.WindowBg, 0.00f, 0.00f, 0.00f, 0.6f);
     }
 
     @Override

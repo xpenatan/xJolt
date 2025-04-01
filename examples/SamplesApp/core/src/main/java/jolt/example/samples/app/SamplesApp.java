@@ -81,7 +81,7 @@ public class SamplesApp extends InputAdapter {
 
     public void renderUI() {
         Class<Test> newTest = null;
-        ImGui.SetNextWindowSize(ImVec2.TMP_1.set(250, 400), ImGuiCond.ImGuiCond_FirstUseEver);
+        ImGui.SetNextWindowSize(ImVec2.TMP_1.set(250, 400), ImGuiCond.FirstUseEver);
         ImGui.Begin("Settings");
 
         fpsRenderer.render();
@@ -98,7 +98,7 @@ public class SamplesApp extends InputAdapter {
             debugRenderer.setEnable(settingsRenderer.idlBool.getValue());
         }
 
-        if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.ImGuiTabBarFlags_FittingPolicyScroll | ImGuiTabBarFlags.ImGuiTabBarFlags_Reorderable)) {
+        if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.FittingPolicyScroll | ImGuiTabBarFlags.Reorderable)) {
             if(ImGui.BeginTabItem("Physics")) {
                 settingsRenderer.render(joltInstance);
                 ImGui.EndTabItem();
