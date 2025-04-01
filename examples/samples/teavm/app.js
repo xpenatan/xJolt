@@ -8123,25 +8123,25 @@ cgxgbtft_LocalDBStorage$readAllFilesAsync$lambda$_4_0_handleEvent$exported$0 = v
 },
 ii_IDLEnum = $rt_classWithoutFields(0),
 i_ImGuiFocusedFlags = $rt_classWithoutFields(),
-i_ImGuiFocusedFlags_ImGuiFocusedFlags_None = 0,
-i_ImGuiFocusedFlags_ImGuiFocusedFlags_ChildWindows = 0,
-i_ImGuiFocusedFlags_ImGuiFocusedFlags_RootWindow = 0,
-i_ImGuiFocusedFlags_ImGuiFocusedFlags_AnyWindow = 0,
-i_ImGuiFocusedFlags_ImGuiFocusedFlags_NoPopupHierarchy = 0,
+i_ImGuiFocusedFlags_None = 0,
+i_ImGuiFocusedFlags_ChildWindows = 0,
+i_ImGuiFocusedFlags_RootWindow = 0,
+i_ImGuiFocusedFlags_AnyWindow = 0,
+i_ImGuiFocusedFlags_NoPopupHierarchy = 0,
 i_ImGuiFocusedFlags_ImGuiFocusedFlags_DockHierarchy = 0,
-i_ImGuiFocusedFlags_ImGuiFocusedFlags_RootAndChildWindows = 0,
+i_ImGuiFocusedFlags_RootAndChildWindows = 0,
 i_ImGuiFocusedFlags_$callClinit = () => {
     i_ImGuiFocusedFlags_$callClinit = $rt_eraseClinit(i_ImGuiFocusedFlags);
     i_ImGuiFocusedFlags__clinit_();
 },
 i_ImGuiFocusedFlags__clinit_ = () => {
-    i_ImGuiFocusedFlags_ImGuiFocusedFlags_None = imgui.ImGuiFocusedFlags_None;
-    i_ImGuiFocusedFlags_ImGuiFocusedFlags_ChildWindows = imgui.ImGuiFocusedFlags_ChildWindows;
-    i_ImGuiFocusedFlags_ImGuiFocusedFlags_RootWindow = imgui.ImGuiFocusedFlags_RootWindow;
-    i_ImGuiFocusedFlags_ImGuiFocusedFlags_AnyWindow = imgui.ImGuiFocusedFlags_AnyWindow;
-    i_ImGuiFocusedFlags_ImGuiFocusedFlags_NoPopupHierarchy = imgui.ImGuiFocusedFlags_NoPopupHierarchy;
+    i_ImGuiFocusedFlags_None = imgui.ImGuiFocusedFlags_None;
+    i_ImGuiFocusedFlags_ChildWindows = imgui.ImGuiFocusedFlags_ChildWindows;
+    i_ImGuiFocusedFlags_RootWindow = imgui.ImGuiFocusedFlags_RootWindow;
+    i_ImGuiFocusedFlags_AnyWindow = imgui.ImGuiFocusedFlags_AnyWindow;
+    i_ImGuiFocusedFlags_NoPopupHierarchy = imgui.ImGuiFocusedFlags_NoPopupHierarchy;
     i_ImGuiFocusedFlags_ImGuiFocusedFlags_DockHierarchy = imgui.ImGuiFocusedFlags_DockHierarchy;
-    i_ImGuiFocusedFlags_ImGuiFocusedFlags_RootAndChildWindows = imgui.ImGuiFocusedFlags_RootAndChildWindows;
+    i_ImGuiFocusedFlags_RootAndChildWindows = imgui.ImGuiFocusedFlags_RootAndChildWindows;
 },
 otjf_JSSupplier = $rt_classWithoutFields(0),
 cgxgbta_AssetLoadImpl$downloadDroppedFile$lambda$_3_2 = $rt_classWithoutFields(),
@@ -10133,33 +10133,33 @@ jl_Float__clinit_ = () => {
     jl_Float_TYPE = $rt_cls($rt_floatcls);
 },
 i_ImGuiTabBarFlags = $rt_classWithoutFields(),
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_None = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_Reorderable = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_AutoSelectNewTabs = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_TabListPopupButton = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_NoCloseWithMiddleMouseButton = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_NoTabListScrollingButtons = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_NoTooltip = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_FittingPolicyResizeDown = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_FittingPolicyScroll = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_FittingPolicyMask_ = 0,
-i_ImGuiTabBarFlags_ImGuiTabBarFlags_FittingPolicyDefault_ = 0,
+i_ImGuiTabBarFlags_None = 0,
+i_ImGuiTabBarFlags_Reorderable = 0,
+i_ImGuiTabBarFlags_AutoSelectNewTabs = 0,
+i_ImGuiTabBarFlags_TabListPopupButton = 0,
+i_ImGuiTabBarFlags_NoCloseWithMiddleMouseButton = 0,
+i_ImGuiTabBarFlags_NoTabListScrollingButtons = 0,
+i_ImGuiTabBarFlags_NoTooltip = 0,
+i_ImGuiTabBarFlags_FittingPolicyResizeDown = 0,
+i_ImGuiTabBarFlags_FittingPolicyScroll = 0,
+i_ImGuiTabBarFlags_FittingPolicyMask_ = 0,
+i_ImGuiTabBarFlags_FittingPolicyDefault_ = 0,
 i_ImGuiTabBarFlags_$callClinit = () => {
     i_ImGuiTabBarFlags_$callClinit = $rt_eraseClinit(i_ImGuiTabBarFlags);
     i_ImGuiTabBarFlags__clinit_();
 },
 i_ImGuiTabBarFlags__clinit_ = () => {
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_None = imgui.ImGuiTabBarFlags_None;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_Reorderable = imgui.ImGuiTabBarFlags_Reorderable;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_AutoSelectNewTabs = imgui.ImGuiTabBarFlags_AutoSelectNewTabs;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_TabListPopupButton = imgui.ImGuiTabBarFlags_TabListPopupButton;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_NoCloseWithMiddleMouseButton = imgui.ImGuiTabBarFlags_NoCloseWithMiddleMouseButton;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_NoTabListScrollingButtons = imgui.ImGuiTabBarFlags_NoTabListScrollingButtons;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_NoTooltip = imgui.ImGuiTabBarFlags_NoTooltip;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_FittingPolicyResizeDown = imgui.ImGuiTabBarFlags_FittingPolicyResizeDown;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_FittingPolicyScroll = imgui.ImGuiTabBarFlags_FittingPolicyScroll;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_FittingPolicyMask_ = imgui.ImGuiTabBarFlags_FittingPolicyMask_;
-    i_ImGuiTabBarFlags_ImGuiTabBarFlags_FittingPolicyDefault_ = imgui.ImGuiTabBarFlags_FittingPolicyDefault_;
+    i_ImGuiTabBarFlags_None = imgui.ImGuiTabBarFlags_None;
+    i_ImGuiTabBarFlags_Reorderable = imgui.ImGuiTabBarFlags_Reorderable;
+    i_ImGuiTabBarFlags_AutoSelectNewTabs = imgui.ImGuiTabBarFlags_AutoSelectNewTabs;
+    i_ImGuiTabBarFlags_TabListPopupButton = imgui.ImGuiTabBarFlags_TabListPopupButton;
+    i_ImGuiTabBarFlags_NoCloseWithMiddleMouseButton = imgui.ImGuiTabBarFlags_NoCloseWithMiddleMouseButton;
+    i_ImGuiTabBarFlags_NoTabListScrollingButtons = imgui.ImGuiTabBarFlags_NoTabListScrollingButtons;
+    i_ImGuiTabBarFlags_NoTooltip = imgui.ImGuiTabBarFlags_NoTooltip;
+    i_ImGuiTabBarFlags_FittingPolicyResizeDown = imgui.ImGuiTabBarFlags_FittingPolicyResizeDown;
+    i_ImGuiTabBarFlags_FittingPolicyScroll = imgui.ImGuiTabBarFlags_FittingPolicyScroll;
+    i_ImGuiTabBarFlags_FittingPolicyMask_ = imgui.ImGuiTabBarFlags_FittingPolicyMask_;
+    i_ImGuiTabBarFlags_FittingPolicyDefault_ = imgui.ImGuiTabBarFlags_FittingPolicyDefault_;
 };
 function jur_CharSet() {
     jur_LeafSet.call(this);
@@ -13467,21 +13467,21 @@ cbgg_FPSLogger_log = $this => {
 cbgggmd_ModelMesh = $rt_classWithoutFields(),
 cbgssu_Selection = $rt_classWithoutFields(),
 i_ImGuiCond = $rt_classWithoutFields(),
-i_ImGuiCond_ImGuiCond_None = 0,
+i_ImGuiCond_None = 0,
 i_ImGuiCond_ImGuiCond_Always = 0,
 i_ImGuiCond_ImGuiCond_Once = 0,
-i_ImGuiCond_ImGuiCond_FirstUseEver = 0,
-i_ImGuiCond_ImGuiCond_Appearing = 0,
+i_ImGuiCond_FirstUseEver = 0,
+i_ImGuiCond_Appearing = 0,
 i_ImGuiCond_$callClinit = () => {
     i_ImGuiCond_$callClinit = $rt_eraseClinit(i_ImGuiCond);
     i_ImGuiCond__clinit_();
 },
 i_ImGuiCond__clinit_ = () => {
-    i_ImGuiCond_ImGuiCond_None = imgui.ImGuiCond_None;
+    i_ImGuiCond_None = imgui.ImGuiCond_None;
     i_ImGuiCond_ImGuiCond_Always = imgui.ImGuiCond_Always;
     i_ImGuiCond_ImGuiCond_Once = imgui.ImGuiCond_Once;
-    i_ImGuiCond_ImGuiCond_FirstUseEver = imgui.ImGuiCond_FirstUseEver;
-    i_ImGuiCond_ImGuiCond_Appearing = imgui.ImGuiCond_Appearing;
+    i_ImGuiCond_FirstUseEver = imgui.ImGuiCond_FirstUseEver;
+    i_ImGuiCond_Appearing = imgui.ImGuiCond_Appearing;
 },
 cbgggmd_ModelNode = $rt_classWithoutFields();
 function cbgu_ReflectionPool() {
@@ -14516,299 +14516,299 @@ jpv_VehicleTransmission_internal_native_deleteNative$js_body$_4 = var$1 => {
 },
 cbgggpr_ParticleControllerControllerRenderer = $rt_classWithoutFields(cbgggpr_ParticleControllerRenderer),
 i_ImGuiKey = $rt_classWithoutFields();
-let i_ImGuiKey_ImGuiKey_None = 0,
-i_ImGuiKey_ImGuiKey_Tab = 0,
-i_ImGuiKey_ImGuiKey_LeftArrow = 0,
-i_ImGuiKey_ImGuiKey_RightArrow = 0,
-i_ImGuiKey_ImGuiKey_UpArrow = 0,
-i_ImGuiKey_ImGuiKey_DownArrow = 0,
-i_ImGuiKey_ImGuiKey_PageUp = 0,
-i_ImGuiKey_ImGuiKey_PageDown = 0,
-i_ImGuiKey_ImGuiKey_Home = 0,
-i_ImGuiKey_ImGuiKey_End = 0,
-i_ImGuiKey_ImGuiKey_Insert = 0,
-i_ImGuiKey_ImGuiKey_Delete = 0,
-i_ImGuiKey_ImGuiKey_Backspace = 0,
-i_ImGuiKey_ImGuiKey_Space = 0,
-i_ImGuiKey_ImGuiKey_Enter = 0,
-i_ImGuiKey_ImGuiKey_Escape = 0,
-i_ImGuiKey_ImGuiKey_LeftCtrl = 0,
-i_ImGuiKey_ImGuiKey_LeftShift = 0,
-i_ImGuiKey_ImGuiKey_LeftAlt = 0,
-i_ImGuiKey_ImGuiKey_LeftSuper = 0,
-i_ImGuiKey_ImGuiKey_RightCtrl = 0,
-i_ImGuiKey_ImGuiKey_RightShift = 0,
-i_ImGuiKey_ImGuiKey_RightAlt = 0,
-i_ImGuiKey_ImGuiKey_RightSuper = 0,
-i_ImGuiKey_ImGuiKey_Menu = 0,
-i_ImGuiKey_ImGuiKey_0 = 0,
-i_ImGuiKey_ImGuiKey_1 = 0,
-i_ImGuiKey_ImGuiKey_2 = 0,
-i_ImGuiKey_ImGuiKey_3 = 0,
-i_ImGuiKey_ImGuiKey_4 = 0,
-i_ImGuiKey_ImGuiKey_5 = 0,
-i_ImGuiKey_ImGuiKey_6 = 0,
-i_ImGuiKey_ImGuiKey_7 = 0,
-i_ImGuiKey_ImGuiKey_8 = 0,
-i_ImGuiKey_ImGuiKey_9 = 0,
-i_ImGuiKey_ImGuiKey_A = 0,
-i_ImGuiKey_ImGuiKey_B = 0,
-i_ImGuiKey_ImGuiKey_C = 0,
-i_ImGuiKey_ImGuiKey_D = 0,
-i_ImGuiKey_ImGuiKey_E = 0,
-i_ImGuiKey_ImGuiKey_F = 0,
-i_ImGuiKey_ImGuiKey_G = 0,
-i_ImGuiKey_ImGuiKey_H = 0,
-i_ImGuiKey_ImGuiKey_I = 0,
-i_ImGuiKey_ImGuiKey_J = 0,
-i_ImGuiKey_ImGuiKey_K = 0,
-i_ImGuiKey_ImGuiKey_L = 0,
-i_ImGuiKey_ImGuiKey_M = 0,
-i_ImGuiKey_ImGuiKey_N = 0,
-i_ImGuiKey_ImGuiKey_O = 0;
-let i_ImGuiKey_ImGuiKey_P = 0,
-i_ImGuiKey_ImGuiKey_Q = 0,
-i_ImGuiKey_ImGuiKey_R = 0,
-i_ImGuiKey_ImGuiKey_S = 0,
-i_ImGuiKey_ImGuiKey_T = 0,
-i_ImGuiKey_ImGuiKey_U = 0,
-i_ImGuiKey_ImGuiKey_V = 0,
-i_ImGuiKey_ImGuiKey_W = 0,
-i_ImGuiKey_ImGuiKey_X = 0,
-i_ImGuiKey_ImGuiKey_Y = 0,
-i_ImGuiKey_ImGuiKey_Z = 0,
-i_ImGuiKey_ImGuiKey_F1 = 0,
-i_ImGuiKey_ImGuiKey_F2 = 0,
-i_ImGuiKey_ImGuiKey_F3 = 0,
-i_ImGuiKey_ImGuiKey_F4 = 0,
-i_ImGuiKey_ImGuiKey_F5 = 0,
-i_ImGuiKey_ImGuiKey_F6 = 0,
-i_ImGuiKey_ImGuiKey_F7 = 0,
-i_ImGuiKey_ImGuiKey_F8 = 0,
-i_ImGuiKey_ImGuiKey_F9 = 0,
-i_ImGuiKey_ImGuiKey_F10 = 0,
-i_ImGuiKey_ImGuiKey_F11 = 0,
-i_ImGuiKey_ImGuiKey_F12 = 0,
-i_ImGuiKey_ImGuiKey_Apostrophe = 0,
-i_ImGuiKey_ImGuiKey_Comma = 0,
-i_ImGuiKey_ImGuiKey_Minus = 0,
-i_ImGuiKey_ImGuiKey_Period = 0,
-i_ImGuiKey_ImGuiKey_Slash = 0,
-i_ImGuiKey_ImGuiKey_Semicolon = 0,
-i_ImGuiKey_ImGuiKey_Equal = 0,
-i_ImGuiKey_ImGuiKey_LeftBracket = 0,
-i_ImGuiKey_ImGuiKey_Backslash = 0,
-i_ImGuiKey_ImGuiKey_RightBracket = 0,
-i_ImGuiKey_ImGuiKey_GraveAccent = 0,
-i_ImGuiKey_ImGuiKey_CapsLock = 0,
-i_ImGuiKey_ImGuiKey_ScrollLock = 0,
-i_ImGuiKey_ImGuiKey_NumLock = 0,
-i_ImGuiKey_ImGuiKey_PrintScreen = 0,
-i_ImGuiKey_ImGuiKey_Pause = 0,
-i_ImGuiKey_ImGuiKey_Keypad0 = 0,
-i_ImGuiKey_ImGuiKey_Keypad1 = 0,
-i_ImGuiKey_ImGuiKey_Keypad2 = 0,
-i_ImGuiKey_ImGuiKey_Keypad3 = 0,
-i_ImGuiKey_ImGuiKey_Keypad4 = 0,
-i_ImGuiKey_ImGuiKey_Keypad5 = 0,
-i_ImGuiKey_ImGuiKey_Keypad6 = 0,
-i_ImGuiKey_ImGuiKey_Keypad7 = 0,
-i_ImGuiKey_ImGuiKey_Keypad8 = 0,
-i_ImGuiKey_ImGuiKey_Keypad9 = 0,
-i_ImGuiKey_ImGuiKey_KeypadDecimal = 0;
-let i_ImGuiKey_ImGuiKey_KeypadDivide = 0,
-i_ImGuiKey_ImGuiKey_KeypadMultiply = 0,
-i_ImGuiKey_ImGuiKey_KeypadSubtract = 0,
-i_ImGuiKey_ImGuiKey_KeypadAdd = 0,
-i_ImGuiKey_ImGuiKey_KeypadEnter = 0,
-i_ImGuiKey_ImGuiKey_KeypadEqual = 0,
-i_ImGuiKey_ImGuiKey_GamepadStart = 0,
-i_ImGuiKey_ImGuiKey_GamepadBack = 0,
-i_ImGuiKey_ImGuiKey_GamepadFaceLeft = 0,
-i_ImGuiKey_ImGuiKey_GamepadFaceRight = 0,
-i_ImGuiKey_ImGuiKey_GamepadFaceUp = 0,
-i_ImGuiKey_ImGuiKey_GamepadFaceDown = 0,
-i_ImGuiKey_ImGuiKey_GamepadDpadLeft = 0,
-i_ImGuiKey_ImGuiKey_GamepadDpadRight = 0,
-i_ImGuiKey_ImGuiKey_GamepadDpadUp = 0,
-i_ImGuiKey_ImGuiKey_GamepadDpadDown = 0,
-i_ImGuiKey_ImGuiKey_GamepadL1 = 0,
-i_ImGuiKey_ImGuiKey_GamepadR1 = 0,
-i_ImGuiKey_ImGuiKey_GamepadL2 = 0,
-i_ImGuiKey_ImGuiKey_GamepadR2 = 0,
+let i_ImGuiKey_None = 0,
+i_ImGuiKey_Tab = 0,
+i_ImGuiKey_LeftArrow = 0,
+i_ImGuiKey_RightArrow = 0,
+i_ImGuiKey_UpArrow = 0,
+i_ImGuiKey_DownArrow = 0,
+i_ImGuiKey_PageUp = 0,
+i_ImGuiKey_PageDown = 0,
+i_ImGuiKey_Home = 0,
+i_ImGuiKey_End = 0,
+i_ImGuiKey_Insert = 0,
+i_ImGuiKey_Delete = 0,
+i_ImGuiKey_Backspace = 0,
+i_ImGuiKey_Space = 0,
+i_ImGuiKey_Enter = 0,
+i_ImGuiKey_Escape = 0,
+i_ImGuiKey_LeftCtrl = 0,
+i_ImGuiKey_LeftShift = 0,
+i_ImGuiKey_LeftAlt = 0,
+i_ImGuiKey_LeftSuper = 0,
+i_ImGuiKey_RightCtrl = 0,
+i_ImGuiKey_RightShift = 0,
+i_ImGuiKey_RightAlt = 0,
+i_ImGuiKey_RightSuper = 0,
+i_ImGuiKey_Menu = 0,
+i_ImGuiKey_Num_0 = 0,
+i_ImGuiKey_Num_1 = 0,
+i_ImGuiKey_Num_2 = 0,
+i_ImGuiKey_Num_3 = 0,
+i_ImGuiKey_Num_4 = 0,
+i_ImGuiKey_Num_5 = 0,
+i_ImGuiKey_Num_6 = 0,
+i_ImGuiKey_Num_7 = 0,
+i_ImGuiKey_Num_8 = 0,
+i_ImGuiKey_Num_9 = 0,
+i_ImGuiKey_A = 0,
+i_ImGuiKey_B = 0,
+i_ImGuiKey_C = 0,
+i_ImGuiKey_D = 0,
+i_ImGuiKey_E = 0,
+i_ImGuiKey_F = 0,
+i_ImGuiKey_G = 0,
+i_ImGuiKey_H = 0,
+i_ImGuiKey_I = 0,
+i_ImGuiKey_J = 0,
+i_ImGuiKey_K = 0,
+i_ImGuiKey_L = 0,
+i_ImGuiKey_M = 0,
+i_ImGuiKey_N = 0,
+i_ImGuiKey_O = 0;
+let i_ImGuiKey_P = 0,
+i_ImGuiKey_Q = 0,
+i_ImGuiKey_R = 0,
+i_ImGuiKey_S = 0,
+i_ImGuiKey_T = 0,
+i_ImGuiKey_U = 0,
+i_ImGuiKey_V = 0,
+i_ImGuiKey_W = 0,
+i_ImGuiKey_X = 0,
+i_ImGuiKey_Y = 0,
+i_ImGuiKey_Z = 0,
+i_ImGuiKey_F1 = 0,
+i_ImGuiKey_F2 = 0,
+i_ImGuiKey_F3 = 0,
+i_ImGuiKey_F4 = 0,
+i_ImGuiKey_F5 = 0,
+i_ImGuiKey_F6 = 0,
+i_ImGuiKey_F7 = 0,
+i_ImGuiKey_F8 = 0,
+i_ImGuiKey_F9 = 0,
+i_ImGuiKey_F10 = 0,
+i_ImGuiKey_F11 = 0,
+i_ImGuiKey_F12 = 0,
+i_ImGuiKey_Apostrophe = 0,
+i_ImGuiKey_Comma = 0,
+i_ImGuiKey_Minus = 0,
+i_ImGuiKey_Period = 0,
+i_ImGuiKey_Slash = 0,
+i_ImGuiKey_Semicolon = 0,
+i_ImGuiKey_Equal = 0,
+i_ImGuiKey_LeftBracket = 0,
+i_ImGuiKey_Backslash = 0,
+i_ImGuiKey_RightBracket = 0,
+i_ImGuiKey_GraveAccent = 0,
+i_ImGuiKey_CapsLock = 0,
+i_ImGuiKey_ScrollLock = 0,
+i_ImGuiKey_NumLock = 0,
+i_ImGuiKey_PrintScreen = 0,
+i_ImGuiKey_Pause = 0,
+i_ImGuiKey_Keypad0 = 0,
+i_ImGuiKey_Keypad1 = 0,
+i_ImGuiKey_Keypad2 = 0,
+i_ImGuiKey_Keypad3 = 0,
+i_ImGuiKey_Keypad4 = 0,
+i_ImGuiKey_Keypad5 = 0,
+i_ImGuiKey_Keypad6 = 0,
+i_ImGuiKey_Keypad7 = 0,
+i_ImGuiKey_Keypad8 = 0,
+i_ImGuiKey_Keypad9 = 0,
+i_ImGuiKey_KeypadDecimal = 0;
+let i_ImGuiKey_KeypadDivide = 0,
+i_ImGuiKey_KeypadMultiply = 0,
+i_ImGuiKey_KeypadSubtract = 0,
+i_ImGuiKey_KeypadAdd = 0,
+i_ImGuiKey_KeypadEnter = 0,
+i_ImGuiKey_KeypadEqual = 0,
+i_ImGuiKey_GamepadStart = 0,
+i_ImGuiKey_GamepadBack = 0,
+i_ImGuiKey_GamepadFaceLeft = 0,
+i_ImGuiKey_GamepadFaceRight = 0,
+i_ImGuiKey_GamepadFaceUp = 0,
+i_ImGuiKey_GamepadFaceDown = 0,
+i_ImGuiKey_GamepadDpadLeft = 0,
+i_ImGuiKey_GamepadDpadRight = 0,
+i_ImGuiKey_GamepadDpadUp = 0,
+i_ImGuiKey_GamepadDpadDown = 0,
+i_ImGuiKey_GamepadL1 = 0,
+i_ImGuiKey_GamepadR1 = 0,
+i_ImGuiKey_GamepadL2 = 0,
+i_ImGuiKey_GamepadR2 = 0,
 i_ImGuiKey_ImGuiKey_GamepadL3 = 0,
-i_ImGuiKey_ImGuiKey_GamepadR3 = 0,
-i_ImGuiKey_ImGuiKey_GamepadLStickLeft = 0,
-i_ImGuiKey_ImGuiKey_GamepadLStickRight = 0,
-i_ImGuiKey_ImGuiKey_GamepadLStickUp = 0,
-i_ImGuiKey_ImGuiKey_GamepadLStickDown = 0,
-i_ImGuiKey_ImGuiKey_GamepadRStickLeft = 0,
-i_ImGuiKey_ImGuiKey_GamepadRStickRight = 0,
-i_ImGuiKey_ImGuiKey_GamepadRStickUp = 0,
-i_ImGuiKey_ImGuiKey_GamepadRStickDown = 0,
-i_ImGuiKey_ImGuiKey_MouseLeft = 0,
-i_ImGuiKey_ImGuiKey_MouseRight = 0,
-i_ImGuiKey_ImGuiKey_MouseMiddle = 0,
-i_ImGuiKey_ImGuiKey_MouseX1 = 0,
-i_ImGuiKey_ImGuiKey_MouseX2 = 0,
-i_ImGuiKey_ImGuiKey_MouseWheelX = 0,
-i_ImGuiKey_ImGuiKey_MouseWheelY = 0,
-i_ImGuiKey_ImGuiMod_None = 0,
-i_ImGuiKey_ImGuiMod_Ctrl = 0,
-i_ImGuiKey_ImGuiMod_Shift = 0,
-i_ImGuiKey_ImGuiMod_Alt = 0,
-i_ImGuiKey_ImGuiMod_Super = 0,
-i_ImGuiKey_ImGuiMod_Shortcut = 0,
-i_ImGuiKey_ImGuiMod_Mask_ = 0,
+i_ImGuiKey_GamepadR3 = 0,
+i_ImGuiKey_GamepadLStickLeft = 0,
+i_ImGuiKey_GamepadLStickRight = 0,
+i_ImGuiKey_GamepadLStickUp = 0,
+i_ImGuiKey_GamepadLStickDown = 0,
+i_ImGuiKey_GamepadRStickLeft = 0,
+i_ImGuiKey_GamepadRStickRight = 0,
+i_ImGuiKey_GamepadRStickUp = 0,
+i_ImGuiKey_GamepadRStickDown = 0,
+i_ImGuiKey_MouseLeft = 0,
+i_ImGuiKey_MouseRight = 0,
+i_ImGuiKey_MouseMiddle = 0,
+i_ImGuiKey_MouseX1 = 0,
+i_ImGuiKey_MouseX2 = 0,
+i_ImGuiKey_MouseWheelX = 0,
+i_ImGuiKey_MouseWheelY = 0,
+i_ImGuiKey_Mod_None = 0,
+i_ImGuiKey_Mod_Ctrl = 0,
+i_ImGuiKey_Mod_Shift = 0,
+i_ImGuiKey_Mod_Alt = 0,
+i_ImGuiKey_Mod_Super = 0,
+i_ImGuiKey_Mod_Shortcut = 0,
+i_ImGuiKey_Mod_Mask_ = 0,
 i_ImGuiKey_$callClinit = () => {
     i_ImGuiKey_$callClinit = $rt_eraseClinit(i_ImGuiKey);
     i_ImGuiKey__clinit_();
 },
 i_ImGuiKey__clinit_ = () => {
-    i_ImGuiKey_ImGuiKey_None = imgui.ImGuiKey_None;
-    i_ImGuiKey_ImGuiKey_Tab = imgui.ImGuiKey_Tab;
-    i_ImGuiKey_ImGuiKey_LeftArrow = imgui.ImGuiKey_LeftArrow;
-    i_ImGuiKey_ImGuiKey_RightArrow = imgui.ImGuiKey_RightArrow;
-    i_ImGuiKey_ImGuiKey_UpArrow = imgui.ImGuiKey_UpArrow;
-    i_ImGuiKey_ImGuiKey_DownArrow = imgui.ImGuiKey_DownArrow;
-    i_ImGuiKey_ImGuiKey_PageUp = imgui.ImGuiKey_PageUp;
-    i_ImGuiKey_ImGuiKey_PageDown = imgui.ImGuiKey_PageDown;
-    i_ImGuiKey_ImGuiKey_Home = imgui.ImGuiKey_Home;
-    i_ImGuiKey_ImGuiKey_End = imgui.ImGuiKey_End;
-    i_ImGuiKey_ImGuiKey_Insert = imgui.ImGuiKey_Insert;
-    i_ImGuiKey_ImGuiKey_Delete = imgui.ImGuiKey_Delete;
-    i_ImGuiKey_ImGuiKey_Backspace = imgui.ImGuiKey_Backspace;
-    i_ImGuiKey_ImGuiKey_Space = imgui.ImGuiKey_Space;
-    i_ImGuiKey_ImGuiKey_Enter = imgui.ImGuiKey_Enter;
-    i_ImGuiKey_ImGuiKey_Escape = imgui.ImGuiKey_Escape;
-    i_ImGuiKey_ImGuiKey_LeftCtrl = imgui.ImGuiKey_LeftCtrl;
-    i_ImGuiKey_ImGuiKey_LeftShift = imgui.ImGuiKey_LeftShift;
-    i_ImGuiKey_ImGuiKey_LeftAlt = imgui.ImGuiKey_LeftAlt;
-    i_ImGuiKey_ImGuiKey_LeftSuper = imgui.ImGuiKey_LeftSuper;
-    i_ImGuiKey_ImGuiKey_RightCtrl = imgui.ImGuiKey_RightCtrl;
-    i_ImGuiKey_ImGuiKey_RightShift = imgui.ImGuiKey_RightShift;
-    i_ImGuiKey_ImGuiKey_RightAlt = imgui.ImGuiKey_RightAlt;
-    i_ImGuiKey_ImGuiKey_RightSuper = imgui.ImGuiKey_RightSuper;
-    i_ImGuiKey_ImGuiKey_Menu = imgui.ImGuiKey_Menu;
-    i_ImGuiKey_ImGuiKey_0 = imgui.ImGuiKey_0;
-    i_ImGuiKey_ImGuiKey_1 = imgui.ImGuiKey_1;
-    i_ImGuiKey_ImGuiKey_2 = imgui.ImGuiKey_2;
-    i_ImGuiKey_ImGuiKey_3 = imgui.ImGuiKey_3;
-    i_ImGuiKey_ImGuiKey_4 = imgui.ImGuiKey_4;
-    i_ImGuiKey_ImGuiKey_5 = imgui.ImGuiKey_5;
-    i_ImGuiKey_ImGuiKey_6 = imgui.ImGuiKey_6;
-    i_ImGuiKey_ImGuiKey_7 = imgui.ImGuiKey_7;
-    i_ImGuiKey_ImGuiKey_8 = imgui.ImGuiKey_8;
-    i_ImGuiKey_ImGuiKey_9 = imgui.ImGuiKey_9;
-    i_ImGuiKey_ImGuiKey_A = imgui.ImGuiKey_A;
-    i_ImGuiKey_ImGuiKey_B = imgui.ImGuiKey_B;
-    i_ImGuiKey_ImGuiKey_C = imgui.ImGuiKey_C;
-    i_ImGuiKey_ImGuiKey_D = imgui.ImGuiKey_D;
-    i_ImGuiKey_ImGuiKey_E = imgui.ImGuiKey_E;
-    i_ImGuiKey_ImGuiKey_F = imgui.ImGuiKey_F;
-    i_ImGuiKey_ImGuiKey_G = imgui.ImGuiKey_G;
-    i_ImGuiKey_ImGuiKey_H = imgui.ImGuiKey_H;
-    i_ImGuiKey_ImGuiKey_I = imgui.ImGuiKey_I;
-    i_ImGuiKey_ImGuiKey_J = imgui.ImGuiKey_J;
-    i_ImGuiKey_ImGuiKey_K = imgui.ImGuiKey_K;
-    i_ImGuiKey_ImGuiKey_L = imgui.ImGuiKey_L;
-    i_ImGuiKey_ImGuiKey_M = imgui.ImGuiKey_M;
-    i_ImGuiKey_ImGuiKey_N = imgui.ImGuiKey_N;
-    i_ImGuiKey_ImGuiKey_O = imgui.ImGuiKey_O;
-    i_ImGuiKey_ImGuiKey_P = imgui.ImGuiKey_P;
-    i_ImGuiKey_ImGuiKey_Q = imgui.ImGuiKey_Q;
-    i_ImGuiKey_ImGuiKey_R = imgui.ImGuiKey_R;
-    i_ImGuiKey_ImGuiKey_S = imgui.ImGuiKey_S;
-    i_ImGuiKey_ImGuiKey_T = imgui.ImGuiKey_T;
-    i_ImGuiKey_ImGuiKey_U = imgui.ImGuiKey_U;
-    i_ImGuiKey_ImGuiKey_V = imgui.ImGuiKey_V;
-    i_ImGuiKey_ImGuiKey_W = imgui.ImGuiKey_W;
-    i_ImGuiKey_ImGuiKey_X = imgui.ImGuiKey_X;
-    i_ImGuiKey_ImGuiKey_Y = imgui.ImGuiKey_Y;
-    i_ImGuiKey_ImGuiKey_Z = imgui.ImGuiKey_Z;
-    i_ImGuiKey_ImGuiKey_F1 = imgui.ImGuiKey_F1;
-    i_ImGuiKey_ImGuiKey_F2 = imgui.ImGuiKey_F2;
-    i_ImGuiKey_ImGuiKey_F3 = imgui.ImGuiKey_F3;
-    i_ImGuiKey_ImGuiKey_F4 = imgui.ImGuiKey_F4;
-    i_ImGuiKey_ImGuiKey_F5 = imgui.ImGuiKey_F5;
-    i_ImGuiKey_ImGuiKey_F6 = imgui.ImGuiKey_F6;
-    i_ImGuiKey_ImGuiKey_F7 = imgui.ImGuiKey_F7;
-    i_ImGuiKey_ImGuiKey_F8 = imgui.ImGuiKey_F8;
-    i_ImGuiKey_ImGuiKey_F9 = imgui.ImGuiKey_F9;
-    i_ImGuiKey_ImGuiKey_F10 = imgui.ImGuiKey_F10;
-    i_ImGuiKey_ImGuiKey_F11 = imgui.ImGuiKey_F11;
-    i_ImGuiKey_ImGuiKey_F12 = imgui.ImGuiKey_F12;
-    i_ImGuiKey_ImGuiKey_Apostrophe = imgui.ImGuiKey_Apostrophe;
-    i_ImGuiKey_ImGuiKey_Comma = imgui.ImGuiKey_Comma;
-    i_ImGuiKey_ImGuiKey_Minus = imgui.ImGuiKey_Minus;
-    i_ImGuiKey_ImGuiKey_Period = imgui.ImGuiKey_Period;
-    i_ImGuiKey_ImGuiKey_Slash = imgui.ImGuiKey_Slash;
-    i_ImGuiKey_ImGuiKey_Semicolon = imgui.ImGuiKey_Semicolon;
-    i_ImGuiKey_ImGuiKey_Equal = imgui.ImGuiKey_Equal;
-    i_ImGuiKey_ImGuiKey_LeftBracket = imgui.ImGuiKey_LeftBracket;
-    i_ImGuiKey_ImGuiKey_Backslash = imgui.ImGuiKey_Backslash;
-    i_ImGuiKey_ImGuiKey_RightBracket = imgui.ImGuiKey_RightBracket;
-    i_ImGuiKey_ImGuiKey_GraveAccent = imgui.ImGuiKey_GraveAccent;
-    i_ImGuiKey_ImGuiKey_CapsLock = imgui.ImGuiKey_CapsLock;
-    i_ImGuiKey_ImGuiKey_ScrollLock = imgui.ImGuiKey_ScrollLock;
-    i_ImGuiKey_ImGuiKey_NumLock = imgui.ImGuiKey_NumLock;
-    i_ImGuiKey_ImGuiKey_PrintScreen = imgui.ImGuiKey_PrintScreen;
-    i_ImGuiKey_ImGuiKey_Pause = imgui.ImGuiKey_Pause;
-    i_ImGuiKey_ImGuiKey_Keypad0 = imgui.ImGuiKey_Keypad0;
-    i_ImGuiKey_ImGuiKey_Keypad1 = imgui.ImGuiKey_Keypad1;
-    i_ImGuiKey_ImGuiKey_Keypad2 = imgui.ImGuiKey_Keypad2;
-    i_ImGuiKey_ImGuiKey_Keypad3 = imgui.ImGuiKey_Keypad3;
-    i_ImGuiKey_ImGuiKey_Keypad4 = imgui.ImGuiKey_Keypad4;
-    i_ImGuiKey_ImGuiKey_Keypad5 = imgui.ImGuiKey_Keypad5;
-    i_ImGuiKey_ImGuiKey_Keypad6 = imgui.ImGuiKey_Keypad6;
-    i_ImGuiKey_ImGuiKey_Keypad7 = imgui.ImGuiKey_Keypad7;
-    i_ImGuiKey_ImGuiKey_Keypad8 = imgui.ImGuiKey_Keypad8;
-    i_ImGuiKey_ImGuiKey_Keypad9 = imgui.ImGuiKey_Keypad9;
-    i_ImGuiKey_ImGuiKey_KeypadDecimal = imgui.ImGuiKey_KeypadDecimal;
-    i_ImGuiKey_ImGuiKey_KeypadDivide = imgui.ImGuiKey_KeypadDivide;
-    i_ImGuiKey_ImGuiKey_KeypadMultiply = imgui.ImGuiKey_KeypadMultiply;
-    i_ImGuiKey_ImGuiKey_KeypadSubtract = imgui.ImGuiKey_KeypadSubtract;
-    i_ImGuiKey_ImGuiKey_KeypadAdd = imgui.ImGuiKey_KeypadAdd;
-    i_ImGuiKey_ImGuiKey_KeypadEnter = imgui.ImGuiKey_KeypadEnter;
-    i_ImGuiKey_ImGuiKey_KeypadEqual = imgui.ImGuiKey_KeypadEqual;
-    i_ImGuiKey_ImGuiKey_GamepadStart = imgui.ImGuiKey_GamepadStart;
-    i_ImGuiKey_ImGuiKey_GamepadBack = imgui.ImGuiKey_GamepadBack;
-    i_ImGuiKey_ImGuiKey_GamepadFaceLeft = imgui.ImGuiKey_GamepadFaceLeft;
-    i_ImGuiKey_ImGuiKey_GamepadFaceRight = imgui.ImGuiKey_GamepadFaceRight;
-    i_ImGuiKey_ImGuiKey_GamepadFaceUp = imgui.ImGuiKey_GamepadFaceUp;
-    i_ImGuiKey_ImGuiKey_GamepadFaceDown = imgui.ImGuiKey_GamepadFaceDown;
-    i_ImGuiKey_ImGuiKey_GamepadDpadLeft = imgui.ImGuiKey_GamepadDpadLeft;
-    i_ImGuiKey_ImGuiKey_GamepadDpadRight = imgui.ImGuiKey_GamepadDpadRight;
-    i_ImGuiKey_ImGuiKey_GamepadDpadUp = imgui.ImGuiKey_GamepadDpadUp;
-    i_ImGuiKey_ImGuiKey_GamepadDpadDown = imgui.ImGuiKey_GamepadDpadDown;
-    i_ImGuiKey_ImGuiKey_GamepadL1 = imgui.ImGuiKey_GamepadL1;
-    i_ImGuiKey_ImGuiKey_GamepadR1 = imgui.ImGuiKey_GamepadR1;
-    i_ImGuiKey_ImGuiKey_GamepadL2 = imgui.ImGuiKey_GamepadL2;
-    i_ImGuiKey_ImGuiKey_GamepadR2 = imgui.ImGuiKey_GamepadR2;
+    i_ImGuiKey_None = imgui.ImGuiKey_None;
+    i_ImGuiKey_Tab = imgui.ImGuiKey_Tab;
+    i_ImGuiKey_LeftArrow = imgui.ImGuiKey_LeftArrow;
+    i_ImGuiKey_RightArrow = imgui.ImGuiKey_RightArrow;
+    i_ImGuiKey_UpArrow = imgui.ImGuiKey_UpArrow;
+    i_ImGuiKey_DownArrow = imgui.ImGuiKey_DownArrow;
+    i_ImGuiKey_PageUp = imgui.ImGuiKey_PageUp;
+    i_ImGuiKey_PageDown = imgui.ImGuiKey_PageDown;
+    i_ImGuiKey_Home = imgui.ImGuiKey_Home;
+    i_ImGuiKey_End = imgui.ImGuiKey_End;
+    i_ImGuiKey_Insert = imgui.ImGuiKey_Insert;
+    i_ImGuiKey_Delete = imgui.ImGuiKey_Delete;
+    i_ImGuiKey_Backspace = imgui.ImGuiKey_Backspace;
+    i_ImGuiKey_Space = imgui.ImGuiKey_Space;
+    i_ImGuiKey_Enter = imgui.ImGuiKey_Enter;
+    i_ImGuiKey_Escape = imgui.ImGuiKey_Escape;
+    i_ImGuiKey_LeftCtrl = imgui.ImGuiKey_LeftCtrl;
+    i_ImGuiKey_LeftShift = imgui.ImGuiKey_LeftShift;
+    i_ImGuiKey_LeftAlt = imgui.ImGuiKey_LeftAlt;
+    i_ImGuiKey_LeftSuper = imgui.ImGuiKey_LeftSuper;
+    i_ImGuiKey_RightCtrl = imgui.ImGuiKey_RightCtrl;
+    i_ImGuiKey_RightShift = imgui.ImGuiKey_RightShift;
+    i_ImGuiKey_RightAlt = imgui.ImGuiKey_RightAlt;
+    i_ImGuiKey_RightSuper = imgui.ImGuiKey_RightSuper;
+    i_ImGuiKey_Menu = imgui.ImGuiKey_Menu;
+    i_ImGuiKey_Num_0 = imgui.ImGuiKey_0;
+    i_ImGuiKey_Num_1 = imgui.ImGuiKey_1;
+    i_ImGuiKey_Num_2 = imgui.ImGuiKey_2;
+    i_ImGuiKey_Num_3 = imgui.ImGuiKey_3;
+    i_ImGuiKey_Num_4 = imgui.ImGuiKey_4;
+    i_ImGuiKey_Num_5 = imgui.ImGuiKey_5;
+    i_ImGuiKey_Num_6 = imgui.ImGuiKey_6;
+    i_ImGuiKey_Num_7 = imgui.ImGuiKey_7;
+    i_ImGuiKey_Num_8 = imgui.ImGuiKey_8;
+    i_ImGuiKey_Num_9 = imgui.ImGuiKey_9;
+    i_ImGuiKey_A = imgui.ImGuiKey_A;
+    i_ImGuiKey_B = imgui.ImGuiKey_B;
+    i_ImGuiKey_C = imgui.ImGuiKey_C;
+    i_ImGuiKey_D = imgui.ImGuiKey_D;
+    i_ImGuiKey_E = imgui.ImGuiKey_E;
+    i_ImGuiKey_F = imgui.ImGuiKey_F;
+    i_ImGuiKey_G = imgui.ImGuiKey_G;
+    i_ImGuiKey_H = imgui.ImGuiKey_H;
+    i_ImGuiKey_I = imgui.ImGuiKey_I;
+    i_ImGuiKey_J = imgui.ImGuiKey_J;
+    i_ImGuiKey_K = imgui.ImGuiKey_K;
+    i_ImGuiKey_L = imgui.ImGuiKey_L;
+    i_ImGuiKey_M = imgui.ImGuiKey_M;
+    i_ImGuiKey_N = imgui.ImGuiKey_N;
+    i_ImGuiKey_O = imgui.ImGuiKey_O;
+    i_ImGuiKey_P = imgui.ImGuiKey_P;
+    i_ImGuiKey_Q = imgui.ImGuiKey_Q;
+    i_ImGuiKey_R = imgui.ImGuiKey_R;
+    i_ImGuiKey_S = imgui.ImGuiKey_S;
+    i_ImGuiKey_T = imgui.ImGuiKey_T;
+    i_ImGuiKey_U = imgui.ImGuiKey_U;
+    i_ImGuiKey_V = imgui.ImGuiKey_V;
+    i_ImGuiKey_W = imgui.ImGuiKey_W;
+    i_ImGuiKey_X = imgui.ImGuiKey_X;
+    i_ImGuiKey_Y = imgui.ImGuiKey_Y;
+    i_ImGuiKey_Z = imgui.ImGuiKey_Z;
+    i_ImGuiKey_F1 = imgui.ImGuiKey_F1;
+    i_ImGuiKey_F2 = imgui.ImGuiKey_F2;
+    i_ImGuiKey_F3 = imgui.ImGuiKey_F3;
+    i_ImGuiKey_F4 = imgui.ImGuiKey_F4;
+    i_ImGuiKey_F5 = imgui.ImGuiKey_F5;
+    i_ImGuiKey_F6 = imgui.ImGuiKey_F6;
+    i_ImGuiKey_F7 = imgui.ImGuiKey_F7;
+    i_ImGuiKey_F8 = imgui.ImGuiKey_F8;
+    i_ImGuiKey_F9 = imgui.ImGuiKey_F9;
+    i_ImGuiKey_F10 = imgui.ImGuiKey_F10;
+    i_ImGuiKey_F11 = imgui.ImGuiKey_F11;
+    i_ImGuiKey_F12 = imgui.ImGuiKey_F12;
+    i_ImGuiKey_Apostrophe = imgui.ImGuiKey_Apostrophe;
+    i_ImGuiKey_Comma = imgui.ImGuiKey_Comma;
+    i_ImGuiKey_Minus = imgui.ImGuiKey_Minus;
+    i_ImGuiKey_Period = imgui.ImGuiKey_Period;
+    i_ImGuiKey_Slash = imgui.ImGuiKey_Slash;
+    i_ImGuiKey_Semicolon = imgui.ImGuiKey_Semicolon;
+    i_ImGuiKey_Equal = imgui.ImGuiKey_Equal;
+    i_ImGuiKey_LeftBracket = imgui.ImGuiKey_LeftBracket;
+    i_ImGuiKey_Backslash = imgui.ImGuiKey_Backslash;
+    i_ImGuiKey_RightBracket = imgui.ImGuiKey_RightBracket;
+    i_ImGuiKey_GraveAccent = imgui.ImGuiKey_GraveAccent;
+    i_ImGuiKey_CapsLock = imgui.ImGuiKey_CapsLock;
+    i_ImGuiKey_ScrollLock = imgui.ImGuiKey_ScrollLock;
+    i_ImGuiKey_NumLock = imgui.ImGuiKey_NumLock;
+    i_ImGuiKey_PrintScreen = imgui.ImGuiKey_PrintScreen;
+    i_ImGuiKey_Pause = imgui.ImGuiKey_Pause;
+    i_ImGuiKey_Keypad0 = imgui.ImGuiKey_Keypad0;
+    i_ImGuiKey_Keypad1 = imgui.ImGuiKey_Keypad1;
+    i_ImGuiKey_Keypad2 = imgui.ImGuiKey_Keypad2;
+    i_ImGuiKey_Keypad3 = imgui.ImGuiKey_Keypad3;
+    i_ImGuiKey_Keypad4 = imgui.ImGuiKey_Keypad4;
+    i_ImGuiKey_Keypad5 = imgui.ImGuiKey_Keypad5;
+    i_ImGuiKey_Keypad6 = imgui.ImGuiKey_Keypad6;
+    i_ImGuiKey_Keypad7 = imgui.ImGuiKey_Keypad7;
+    i_ImGuiKey_Keypad8 = imgui.ImGuiKey_Keypad8;
+    i_ImGuiKey_Keypad9 = imgui.ImGuiKey_Keypad9;
+    i_ImGuiKey_KeypadDecimal = imgui.ImGuiKey_KeypadDecimal;
+    i_ImGuiKey_KeypadDivide = imgui.ImGuiKey_KeypadDivide;
+    i_ImGuiKey_KeypadMultiply = imgui.ImGuiKey_KeypadMultiply;
+    i_ImGuiKey_KeypadSubtract = imgui.ImGuiKey_KeypadSubtract;
+    i_ImGuiKey_KeypadAdd = imgui.ImGuiKey_KeypadAdd;
+    i_ImGuiKey_KeypadEnter = imgui.ImGuiKey_KeypadEnter;
+    i_ImGuiKey_KeypadEqual = imgui.ImGuiKey_KeypadEqual;
+    i_ImGuiKey_GamepadStart = imgui.ImGuiKey_GamepadStart;
+    i_ImGuiKey_GamepadBack = imgui.ImGuiKey_GamepadBack;
+    i_ImGuiKey_GamepadFaceLeft = imgui.ImGuiKey_GamepadFaceLeft;
+    i_ImGuiKey_GamepadFaceRight = imgui.ImGuiKey_GamepadFaceRight;
+    i_ImGuiKey_GamepadFaceUp = imgui.ImGuiKey_GamepadFaceUp;
+    i_ImGuiKey_GamepadFaceDown = imgui.ImGuiKey_GamepadFaceDown;
+    i_ImGuiKey_GamepadDpadLeft = imgui.ImGuiKey_GamepadDpadLeft;
+    i_ImGuiKey_GamepadDpadRight = imgui.ImGuiKey_GamepadDpadRight;
+    i_ImGuiKey_GamepadDpadUp = imgui.ImGuiKey_GamepadDpadUp;
+    i_ImGuiKey_GamepadDpadDown = imgui.ImGuiKey_GamepadDpadDown;
+    i_ImGuiKey_GamepadL1 = imgui.ImGuiKey_GamepadL1;
+    i_ImGuiKey_GamepadR1 = imgui.ImGuiKey_GamepadR1;
+    i_ImGuiKey_GamepadL2 = imgui.ImGuiKey_GamepadL2;
+    i_ImGuiKey_GamepadR2 = imgui.ImGuiKey_GamepadR2;
     i_ImGuiKey_ImGuiKey_GamepadL3 = imgui.ImGuiKey_GamepadL3;
-    i_ImGuiKey_ImGuiKey_GamepadR3 = imgui.ImGuiKey_GamepadR3;
-    i_ImGuiKey_ImGuiKey_GamepadLStickLeft = imgui.ImGuiKey_GamepadLStickLeft;
-    i_ImGuiKey_ImGuiKey_GamepadLStickRight = imgui.ImGuiKey_GamepadLStickRight;
-    i_ImGuiKey_ImGuiKey_GamepadLStickUp = imgui.ImGuiKey_GamepadLStickUp;
-    i_ImGuiKey_ImGuiKey_GamepadLStickDown = imgui.ImGuiKey_GamepadLStickDown;
-    i_ImGuiKey_ImGuiKey_GamepadRStickLeft = imgui.ImGuiKey_GamepadRStickLeft;
-    i_ImGuiKey_ImGuiKey_GamepadRStickRight = imgui.ImGuiKey_GamepadRStickRight;
-    i_ImGuiKey_ImGuiKey_GamepadRStickUp = imgui.ImGuiKey_GamepadRStickUp;
-    i_ImGuiKey_ImGuiKey_GamepadRStickDown = imgui.ImGuiKey_GamepadRStickDown;
-    i_ImGuiKey_ImGuiKey_MouseLeft = imgui.ImGuiKey_MouseLeft;
-    i_ImGuiKey_ImGuiKey_MouseRight = imgui.ImGuiKey_MouseRight;
-    i_ImGuiKey_ImGuiKey_MouseMiddle = imgui.ImGuiKey_MouseMiddle;
-    i_ImGuiKey_ImGuiKey_MouseX1 = imgui.ImGuiKey_MouseX1;
-    i_ImGuiKey_ImGuiKey_MouseX2 = imgui.ImGuiKey_MouseX2;
-    i_ImGuiKey_ImGuiKey_MouseWheelX = imgui.ImGuiKey_MouseWheelX;
-    i_ImGuiKey_ImGuiKey_MouseWheelY = imgui.ImGuiKey_MouseWheelY;
-    i_ImGuiKey_ImGuiMod_None = imgui.ImGuiMod_None;
-    i_ImGuiKey_ImGuiMod_Ctrl = imgui.ImGuiMod_Ctrl;
-    i_ImGuiKey_ImGuiMod_Shift = imgui.ImGuiMod_Shift;
-    i_ImGuiKey_ImGuiMod_Alt = imgui.ImGuiMod_Alt;
-    i_ImGuiKey_ImGuiMod_Super = imgui.ImGuiMod_Super;
-    i_ImGuiKey_ImGuiMod_Shortcut = imgui.ImGuiMod_Shortcut;
-    i_ImGuiKey_ImGuiMod_Mask_ = imgui.ImGuiMod_Mask_;
+    i_ImGuiKey_GamepadR3 = imgui.ImGuiKey_GamepadR3;
+    i_ImGuiKey_GamepadLStickLeft = imgui.ImGuiKey_GamepadLStickLeft;
+    i_ImGuiKey_GamepadLStickRight = imgui.ImGuiKey_GamepadLStickRight;
+    i_ImGuiKey_GamepadLStickUp = imgui.ImGuiKey_GamepadLStickUp;
+    i_ImGuiKey_GamepadLStickDown = imgui.ImGuiKey_GamepadLStickDown;
+    i_ImGuiKey_GamepadRStickLeft = imgui.ImGuiKey_GamepadRStickLeft;
+    i_ImGuiKey_GamepadRStickRight = imgui.ImGuiKey_GamepadRStickRight;
+    i_ImGuiKey_GamepadRStickUp = imgui.ImGuiKey_GamepadRStickUp;
+    i_ImGuiKey_GamepadRStickDown = imgui.ImGuiKey_GamepadRStickDown;
+    i_ImGuiKey_MouseLeft = imgui.ImGuiKey_MouseLeft;
+    i_ImGuiKey_MouseRight = imgui.ImGuiKey_MouseRight;
+    i_ImGuiKey_MouseMiddle = imgui.ImGuiKey_MouseMiddle;
+    i_ImGuiKey_MouseX1 = imgui.ImGuiKey_MouseX1;
+    i_ImGuiKey_MouseX2 = imgui.ImGuiKey_MouseX2;
+    i_ImGuiKey_MouseWheelX = imgui.ImGuiKey_MouseWheelX;
+    i_ImGuiKey_MouseWheelY = imgui.ImGuiKey_MouseWheelY;
+    i_ImGuiKey_Mod_None = imgui.ImGuiMod_None;
+    i_ImGuiKey_Mod_Ctrl = imgui.ImGuiMod_Ctrl;
+    i_ImGuiKey_Mod_Shift = imgui.ImGuiMod_Shift;
+    i_ImGuiKey_Mod_Alt = imgui.ImGuiMod_Alt;
+    i_ImGuiKey_Mod_Super = imgui.ImGuiMod_Super;
+    i_ImGuiKey_Mod_Shortcut = imgui.ImGuiMod_Shortcut;
+    i_ImGuiKey_Mod_Mask_ = imgui.ImGuiMod_Mask_;
 },
 jur_AbstractCharClass$LazyJavaLetterOrDigit = $rt_classWithoutFields(jur_AbstractCharClass$LazyCharClass),
 jur_AbstractCharClass$LazyJavaLetterOrDigit__init_ = $this => {
@@ -15180,7 +15180,7 @@ ig_ImGuiGdxInput_keyTyped = ($this, $character) => {
     if ($character != 127 && $character != 10)
         $io.$UpdateKeyTyped($character);
     i_ImGuiFocusedFlags_$callClinit();
-    if (!i_ImGui_IsWindowFocused(i_ImGuiFocusedFlags_ImGuiFocusedFlags_AnyWindow))
+    if (!i_ImGui_IsWindowFocused(i_ImGuiFocusedFlags_AnyWindow))
         return 0;
     return 1;
 },
@@ -15202,20 +15202,20 @@ ig_ImGuiGdxInput_keyDown = ($this, $keycode) => {
     $imGuiKey = ig_ImGuiGdxInput_getImGuiKey($keycode);
     if ($superKey) {
         i_ImGuiKey_$callClinit();
-        $io.$AddKeyEvent(i_ImGuiKey_ImGuiMod_Super, 1);
+        $io.$AddKeyEvent(i_ImGuiKey_Mod_Super, 1);
     } else if ($ctrlKey) {
         i_ImGuiKey_$callClinit();
-        $io.$AddKeyEvent(i_ImGuiKey_ImGuiMod_Ctrl, 1);
+        $io.$AddKeyEvent(i_ImGuiKey_Mod_Ctrl, 1);
     } else if ($shiftKey) {
         i_ImGuiKey_$callClinit();
-        $io.$AddKeyEvent(i_ImGuiKey_ImGuiMod_Shift, 1);
+        $io.$AddKeyEvent(i_ImGuiKey_Mod_Shift, 1);
     } else if ($altKey) {
         i_ImGuiKey_$callClinit();
-        $io.$AddKeyEvent(i_ImGuiKey_ImGuiMod_Alt, 1);
+        $io.$AddKeyEvent(i_ImGuiKey_Mod_Alt, 1);
     }
     $io.$AddKeyEvent($imGuiKey, 1);
     i_ImGuiFocusedFlags_$callClinit();
-    if (!i_ImGui_IsWindowFocused(i_ImGuiFocusedFlags_ImGuiFocusedFlags_AnyWindow))
+    if (!i_ImGui_IsWindowFocused(i_ImGuiFocusedFlags_AnyWindow))
         return 0;
     return 1;
 },
@@ -15237,20 +15237,20 @@ ig_ImGuiGdxInput_keyUp = ($this, $keycode) => {
     $imGuiKey = ig_ImGuiGdxInput_getImGuiKey($keycode);
     if ($superKey) {
         i_ImGuiKey_$callClinit();
-        $io.$AddKeyEvent(i_ImGuiKey_ImGuiMod_Super, 0);
+        $io.$AddKeyEvent(i_ImGuiKey_Mod_Super, 0);
     } else if ($ctrlKey) {
         i_ImGuiKey_$callClinit();
-        $io.$AddKeyEvent(i_ImGuiKey_ImGuiMod_Ctrl, 0);
+        $io.$AddKeyEvent(i_ImGuiKey_Mod_Ctrl, 0);
     } else if ($shiftKey) {
         i_ImGuiKey_$callClinit();
-        $io.$AddKeyEvent(i_ImGuiKey_ImGuiMod_Shift, 0);
+        $io.$AddKeyEvent(i_ImGuiKey_Mod_Shift, 0);
     } else if ($altKey) {
         i_ImGuiKey_$callClinit();
-        $io.$AddKeyEvent(i_ImGuiKey_ImGuiMod_Alt, 0);
+        $io.$AddKeyEvent(i_ImGuiKey_Mod_Alt, 0);
     }
     $io.$AddKeyEvent($imGuiKey, 0);
     i_ImGuiFocusedFlags_$callClinit();
-    if (!i_ImGui_IsWindowFocused(i_ImGuiFocusedFlags_ImGuiFocusedFlags_AnyWindow))
+    if (!i_ImGui_IsWindowFocused(i_ImGuiFocusedFlags_AnyWindow))
         return 0;
     return 1;
 },
@@ -15331,321 +15331,321 @@ ig_ImGuiGdxInput_getImGuiKey = $gdxKey => {
                 break a;
             case 7:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_0;
+                return i_ImGuiKey_Num_0;
             case 8:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_1;
+                return i_ImGuiKey_Num_1;
             case 9:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_2;
+                return i_ImGuiKey_Num_2;
             case 10:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_3;
+                return i_ImGuiKey_Num_3;
             case 11:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_4;
+                return i_ImGuiKey_Num_4;
             case 12:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_5;
+                return i_ImGuiKey_Num_5;
             case 13:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_6;
+                return i_ImGuiKey_Num_6;
             case 14:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_7;
+                return i_ImGuiKey_Num_7;
             case 15:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_8;
+                return i_ImGuiKey_Num_8;
             case 16:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_9;
+                return i_ImGuiKey_Num_9;
             case 19:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_UpArrow;
+                return i_ImGuiKey_UpArrow;
             case 20:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_DownArrow;
+                return i_ImGuiKey_DownArrow;
             case 21:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_LeftArrow;
+                return i_ImGuiKey_LeftArrow;
             case 22:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_RightArrow;
+                return i_ImGuiKey_RightArrow;
             case 29:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_A;
+                return i_ImGuiKey_A;
             case 30:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_B;
+                return i_ImGuiKey_B;
             case 31:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_C;
+                return i_ImGuiKey_C;
             case 32:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_D;
+                return i_ImGuiKey_D;
             case 33:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_E;
+                return i_ImGuiKey_E;
             case 34:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F;
+                return i_ImGuiKey_F;
             case 35:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_G;
+                return i_ImGuiKey_G;
             case 36:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_H;
+                return i_ImGuiKey_H;
             case 37:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_I;
+                return i_ImGuiKey_I;
             case 38:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_J;
+                return i_ImGuiKey_J;
             case 39:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_K;
+                return i_ImGuiKey_K;
             case 40:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_L;
+                return i_ImGuiKey_L;
             case 41:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_M;
+                return i_ImGuiKey_M;
             case 42:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_N;
+                return i_ImGuiKey_N;
             case 43:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_O;
+                return i_ImGuiKey_O;
             case 44:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_P;
+                return i_ImGuiKey_P;
             case 45:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Q;
+                return i_ImGuiKey_Q;
             case 46:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_R;
+                return i_ImGuiKey_R;
             case 47:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_S;
+                return i_ImGuiKey_S;
             case 48:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_T;
+                return i_ImGuiKey_T;
             case 49:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_U;
+                return i_ImGuiKey_U;
             case 50:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_V;
+                return i_ImGuiKey_V;
             case 51:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_W;
+                return i_ImGuiKey_W;
             case 52:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_X;
+                return i_ImGuiKey_X;
             case 53:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Y;
+                return i_ImGuiKey_Y;
             case 54:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Z;
+                return i_ImGuiKey_Z;
             case 55:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Comma;
+                return i_ImGuiKey_Comma;
             case 56:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Period;
+                return i_ImGuiKey_Period;
             case 57:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_LeftAlt;
+                return i_ImGuiKey_LeftAlt;
             case 58:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_RightAlt;
+                return i_ImGuiKey_RightAlt;
             case 59:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_LeftShift;
+                return i_ImGuiKey_LeftShift;
             case 60:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_RightShift;
+                return i_ImGuiKey_RightShift;
             case 61:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Tab;
+                return i_ImGuiKey_Tab;
             case 62:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Space;
+                return i_ImGuiKey_Space;
             case 63:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_LeftSuper;
+                return i_ImGuiKey_LeftSuper;
             case 66:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Enter;
+                return i_ImGuiKey_Enter;
             case 67:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Backspace;
+                return i_ImGuiKey_Backspace;
             case 68:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_GraveAccent;
+                return i_ImGuiKey_GraveAccent;
             case 69:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Minus;
+                return i_ImGuiKey_Minus;
             case 70:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Equal;
+                return i_ImGuiKey_Equal;
             case 71:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_LeftBracket;
+                return i_ImGuiKey_LeftBracket;
             case 72:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_RightBracket;
+                return i_ImGuiKey_RightBracket;
             case 73:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Backslash;
+                return i_ImGuiKey_Backslash;
             case 74:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Semicolon;
+                return i_ImGuiKey_Semicolon;
             case 75:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Apostrophe;
+                return i_ImGuiKey_Apostrophe;
             case 76:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Slash;
+                return i_ImGuiKey_Slash;
             case 82:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Menu;
+                return i_ImGuiKey_Menu;
             case 92:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_PageUp;
+                return i_ImGuiKey_PageUp;
             case 93:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_PageDown;
+                return i_ImGuiKey_PageDown;
             case 111:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Escape;
+                return i_ImGuiKey_Escape;
             case 112:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Delete;
+                return i_ImGuiKey_Delete;
             case 115:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_CapsLock;
+                return i_ImGuiKey_CapsLock;
             case 116:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_ScrollLock;
+                return i_ImGuiKey_ScrollLock;
             case 120:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_PrintScreen;
+                return i_ImGuiKey_PrintScreen;
             case 121:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Pause;
+                return i_ImGuiKey_Pause;
             case 123:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_End;
+                return i_ImGuiKey_End;
             case 124:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Insert;
+                return i_ImGuiKey_Insert;
             case 129:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_LeftCtrl;
+                return i_ImGuiKey_LeftCtrl;
             case 130:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_RightCtrl;
+                return i_ImGuiKey_RightCtrl;
             case 131:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F1;
+                return i_ImGuiKey_F1;
             case 132:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F2;
+                return i_ImGuiKey_F2;
             case 133:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F3;
+                return i_ImGuiKey_F3;
             case 134:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F4;
+                return i_ImGuiKey_F4;
             case 135:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F5;
+                return i_ImGuiKey_F5;
             case 136:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F6;
+                return i_ImGuiKey_F6;
             case 137:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F7;
+                return i_ImGuiKey_F7;
             case 138:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F8;
+                return i_ImGuiKey_F8;
             case 139:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F9;
+                return i_ImGuiKey_F9;
             case 140:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F10;
+                return i_ImGuiKey_F10;
             case 141:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F11;
+                return i_ImGuiKey_F11;
             case 142:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_F12;
+                return i_ImGuiKey_F12;
             case 143:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_NumLock;
+                return i_ImGuiKey_NumLock;
             case 144:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad0;
+                return i_ImGuiKey_Keypad0;
             case 145:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad1;
+                return i_ImGuiKey_Keypad1;
             case 146:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad2;
+                return i_ImGuiKey_Keypad2;
             case 147:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad3;
+                return i_ImGuiKey_Keypad3;
             case 148:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad4;
+                return i_ImGuiKey_Keypad4;
             case 149:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad5;
+                return i_ImGuiKey_Keypad5;
             case 150:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad6;
+                return i_ImGuiKey_Keypad6;
             case 151:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad7;
+                return i_ImGuiKey_Keypad7;
             case 152:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad8;
+                return i_ImGuiKey_Keypad8;
             case 153:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_Keypad9;
+                return i_ImGuiKey_Keypad9;
             case 154:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_KeypadDivide;
+                return i_ImGuiKey_KeypadDivide;
             case 155:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_KeypadMultiply;
+                return i_ImGuiKey_KeypadMultiply;
             case 156:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_KeypadSubtract;
+                return i_ImGuiKey_KeypadSubtract;
             case 157:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_KeypadAdd;
+                return i_ImGuiKey_KeypadAdd;
             case 158:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_KeypadDecimal;
+                return i_ImGuiKey_KeypadDecimal;
             case 160:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_KeypadEnter;
+                return i_ImGuiKey_KeypadEnter;
             case 161:
                 i_ImGuiKey_$callClinit();
-                return i_ImGuiKey_ImGuiKey_KeypadEqual;
+                return i_ImGuiKey_KeypadEqual;
             default:
                 break a;
         }
         i_ImGuiKey_$callClinit();
-        return i_ImGuiKey_ImGuiKey_Home;
+        return i_ImGuiKey_Home;
     }
     i_ImGuiKey_$callClinit();
-    return i_ImGuiKey_ImGuiKey_None;
+    return i_ImGuiKey_None;
 },
 i_ImGui = $rt_classWithoutFields(ii_IDLBase),
 i_ImGui_ImGuiContext_TEMP_STATIC_GEN_1 = null,
@@ -22400,9 +22400,6 @@ cgxgbt_TeaGL20_glTexImage2D = ($this, $target, $level, $internalformat, $width, 
     } else if (!($type != 5123 && $type != 33635 && $type != 32819)) {
         $byteOffset = $arrayBuffer.byteOffset + jn_Buffer_position($pixels) | 0;
         $arrayBuffer = cgxgbtdt_TypedArrays_createUint16Array($arrayBuffer.buffer, $byteOffset, jn_Buffer_remaining($pixels));
-    } else if ($type == 5126) {
-        $byteOffset = $arrayBuffer.byteOffset + jn_Buffer_position($pixels) | 0;
-        $arrayBuffer = cgxgbtdt_TypedArrays_createFloat32Array($arrayBuffer.buffer, $byteOffset, jn_Buffer_remaining($pixels));
     }
     $this.$gl.texImage2D($target, $level, $internalformat, $width, $height, $border, $format, $type, $arrayBuffer);
 },
@@ -33468,7 +33465,7 @@ jesa_GameScreen_show = $this => {
     i_ImGui_CreateContext();
     $io = i_ImGui_GetIO();
     i_ImGuiConfigFlags_$callClinit();
-    $io.$set_ConfigFlags(i_ImGuiConfigFlags_ImGuiConfigFlags_DockingEnable);
+    $io.$set_ConfigFlags(i_ImGuiConfigFlags_DockingEnable);
     $this.$input0 = ig_ImGuiGdxInput__init_0();
     $this.$impl = ig_ImGuiGdxImpl__init_1();
     cbg_Gdx_input.$setInputProcessor($this.$inputMultiplexer);
@@ -33477,7 +33474,7 @@ jesa_GameScreen_show = $this => {
     $this.$samplesApp.$startTest($rt_cls(jesatp_BoxSpawnTest));
     $imGuiStyle = i_ImGui_GetStyle();
     i_ImGuiCol_$callClinit();
-    $imGuiStyle.$Colors0(i_ImGuiCol_ImGuiCol_WindowBg, 0.0, 0.0, 0.0, 0.6000000238418579);
+    $imGuiStyle.$Colors0(i_ImGuiCol_WindowBg, 0.0, 0.0, 0.0, 0.6000000238418579);
 },
 jesa_GameScreen_render = ($this, $delta) => {
     let $drawData;
@@ -34331,121 +34328,121 @@ jur_CharClass$9_contains = ($this, $ch) => {
     return !$this.$val$clazz3.$contains1($ch) && !($this.$val$curAlt4 ^ $this.$this$019.$bits.$get9($ch)) ? 0 : 1;
 },
 i_ImGuiCol = $rt_classWithoutFields(),
-i_ImGuiCol_ImGuiCol_Text = 0,
-i_ImGuiCol_ImGuiCol_TextDisabled = 0,
-i_ImGuiCol_ImGuiCol_WindowBg = 0,
-i_ImGuiCol_ImGuiCol_ChildBg = 0,
-i_ImGuiCol_ImGuiCol_PopupBg = 0,
-i_ImGuiCol_ImGuiCol_Border = 0,
-i_ImGuiCol_ImGuiCol_BorderShadow = 0,
-i_ImGuiCol_ImGuiCol_FrameBg = 0,
-i_ImGuiCol_ImGuiCol_FrameBgHovered = 0,
-i_ImGuiCol_ImGuiCol_FrameBgActive = 0,
-i_ImGuiCol_ImGuiCol_TitleBg = 0,
-i_ImGuiCol_ImGuiCol_TitleBgActive = 0,
-i_ImGuiCol_ImGuiCol_TitleBgCollapsed = 0,
-i_ImGuiCol_ImGuiCol_MenuBarBg = 0,
-i_ImGuiCol_ImGuiCol_ScrollbarBg = 0,
-i_ImGuiCol_ImGuiCol_ScrollbarGrab = 0,
-i_ImGuiCol_ImGuiCol_ScrollbarGrabHovered = 0,
-i_ImGuiCol_ImGuiCol_ScrollbarGrabActive = 0,
-i_ImGuiCol_ImGuiCol_CheckMark = 0,
-i_ImGuiCol_ImGuiCol_SliderGrab = 0,
-i_ImGuiCol_ImGuiCol_SliderGrabActive = 0,
-i_ImGuiCol_ImGuiCol_Button = 0,
-i_ImGuiCol_ImGuiCol_ButtonHovered = 0,
-i_ImGuiCol_ImGuiCol_ButtonActive = 0,
-i_ImGuiCol_ImGuiCol_Header = 0,
-i_ImGuiCol_ImGuiCol_HeaderHovered = 0,
-i_ImGuiCol_ImGuiCol_HeaderActive = 0,
-i_ImGuiCol_ImGuiCol_Separator = 0,
-i_ImGuiCol_ImGuiCol_SeparatorHovered = 0,
-i_ImGuiCol_ImGuiCol_SeparatorActive = 0,
-i_ImGuiCol_ImGuiCol_ResizeGrip = 0,
-i_ImGuiCol_ImGuiCol_ResizeGripHovered = 0,
-i_ImGuiCol_ImGuiCol_ResizeGripActive = 0,
-i_ImGuiCol_ImGuiCol_Tab = 0,
+i_ImGuiCol_Text = 0,
+i_ImGuiCol_TextDisabled = 0,
+i_ImGuiCol_WindowBg = 0,
+i_ImGuiCol_ChildBg = 0,
+i_ImGuiCol_PopupBg = 0,
+i_ImGuiCol_Border = 0,
+i_ImGuiCol_BorderShadow = 0,
+i_ImGuiCol_FrameBg = 0,
+i_ImGuiCol_FrameBgHovered = 0,
+i_ImGuiCol_FrameBgActive = 0,
+i_ImGuiCol_TitleBg = 0,
+i_ImGuiCol_TitleBgActive = 0,
+i_ImGuiCol_TitleBgCollapsed = 0,
+i_ImGuiCol_MenuBarBg = 0,
+i_ImGuiCol_ScrollbarBg = 0,
+i_ImGuiCol_ScrollbarGrab = 0,
+i_ImGuiCol_ScrollbarGrabHovered = 0,
+i_ImGuiCol_ScrollbarGrabActive = 0,
+i_ImGuiCol_CheckMark = 0,
+i_ImGuiCol_SliderGrab = 0,
+i_ImGuiCol_SliderGrabActive = 0,
+i_ImGuiCol_Button = 0,
+i_ImGuiCol_ButtonHovered = 0,
+i_ImGuiCol_ButtonActive = 0,
+i_ImGuiCol_Header = 0,
+i_ImGuiCol_HeaderHovered = 0,
+i_ImGuiCol_HeaderActive = 0,
+i_ImGuiCol_Separator = 0,
+i_ImGuiCol_SeparatorHovered = 0,
+i_ImGuiCol_SeparatorActive = 0,
+i_ImGuiCol_ResizeGrip = 0,
+i_ImGuiCol_ResizeGripHovered = 0,
+i_ImGuiCol_ResizeGripActive = 0,
+i_ImGuiCol_Tab = 0,
 i_ImGuiCol_ImGuiCol_TabHovered = 0,
-i_ImGuiCol_ImGuiCol_TabActive = 0,
-i_ImGuiCol_ImGuiCol_TabUnfocused = 0,
-i_ImGuiCol_ImGuiCol_TabUnfocusedActive = 0,
-i_ImGuiCol_ImGuiCol_DockingPreview = 0,
-i_ImGuiCol_ImGuiCol_DockingEmptyBg = 0,
-i_ImGuiCol_ImGuiCol_PlotLines = 0,
-i_ImGuiCol_ImGuiCol_PlotLinesHovered = 0,
-i_ImGuiCol_ImGuiCol_PlotHistogram = 0,
-i_ImGuiCol_ImGuiCol_PlotHistogramHovered = 0,
-i_ImGuiCol_ImGuiCol_TableHeaderBg = 0,
-i_ImGuiCol_ImGuiCol_TableBorderStrong = 0;
-let i_ImGuiCol_ImGuiCol_TableBorderLight = 0,
-i_ImGuiCol_ImGuiCol_TableRowBg = 0,
-i_ImGuiCol_ImGuiCol_TableRowBgAlt = 0,
-i_ImGuiCol_ImGuiCol_TextSelectedBg = 0,
-i_ImGuiCol_ImGuiCol_DragDropTarget = 0,
-i_ImGuiCol_ImGuiCol_NavHighlight = 0,
-i_ImGuiCol_ImGuiCol_NavWindowingHighlight = 0,
-i_ImGuiCol_ImGuiCol_NavWindowingDimBg = 0,
-i_ImGuiCol_ImGuiCol_ModalWindowDimBg = 0,
+i_ImGuiCol_TabActive = 0,
+i_ImGuiCol_TabUnfocused = 0,
+i_ImGuiCol_TabUnfocusedActive = 0,
+i_ImGuiCol_DockingPreview = 0,
+i_ImGuiCol_DockingEmptyBg = 0,
+i_ImGuiCol_PlotLines = 0,
+i_ImGuiCol_PlotLinesHovered = 0,
+i_ImGuiCol_PlotHistogram = 0,
+i_ImGuiCol_PlotHistogramHovered = 0,
+i_ImGuiCol_TableHeaderBg = 0,
+i_ImGuiCol_TableBorderStrong = 0;
+let i_ImGuiCol_TableBorderLight = 0,
+i_ImGuiCol_TableRowBg = 0,
+i_ImGuiCol_TableRowBgAlt = 0,
+i_ImGuiCol_TextSelectedBg = 0,
+i_ImGuiCol_DragDropTarget = 0,
+i_ImGuiCol_NavHighlight = 0,
+i_ImGuiCol_NavWindowingHighlight = 0,
+i_ImGuiCol_NavWindowingDimBg = 0,
+i_ImGuiCol_ModalWindowDimBg = 0,
 i_ImGuiCol_$callClinit = () => {
     i_ImGuiCol_$callClinit = $rt_eraseClinit(i_ImGuiCol);
     i_ImGuiCol__clinit_();
 },
 i_ImGuiCol__clinit_ = () => {
-    i_ImGuiCol_ImGuiCol_Text = imgui.ImGuiCol_Text;
-    i_ImGuiCol_ImGuiCol_TextDisabled = imgui.ImGuiCol_TextDisabled;
-    i_ImGuiCol_ImGuiCol_WindowBg = imgui.ImGuiCol_WindowBg;
-    i_ImGuiCol_ImGuiCol_ChildBg = imgui.ImGuiCol_ChildBg;
-    i_ImGuiCol_ImGuiCol_PopupBg = imgui.ImGuiCol_PopupBg;
-    i_ImGuiCol_ImGuiCol_Border = imgui.ImGuiCol_Border;
-    i_ImGuiCol_ImGuiCol_BorderShadow = imgui.ImGuiCol_BorderShadow;
-    i_ImGuiCol_ImGuiCol_FrameBg = imgui.ImGuiCol_FrameBg;
-    i_ImGuiCol_ImGuiCol_FrameBgHovered = imgui.ImGuiCol_FrameBgHovered;
-    i_ImGuiCol_ImGuiCol_FrameBgActive = imgui.ImGuiCol_FrameBgActive;
-    i_ImGuiCol_ImGuiCol_TitleBg = imgui.ImGuiCol_TitleBg;
-    i_ImGuiCol_ImGuiCol_TitleBgActive = imgui.ImGuiCol_TitleBgActive;
-    i_ImGuiCol_ImGuiCol_TitleBgCollapsed = imgui.ImGuiCol_TitleBgCollapsed;
-    i_ImGuiCol_ImGuiCol_MenuBarBg = imgui.ImGuiCol_MenuBarBg;
-    i_ImGuiCol_ImGuiCol_ScrollbarBg = imgui.ImGuiCol_ScrollbarBg;
-    i_ImGuiCol_ImGuiCol_ScrollbarGrab = imgui.ImGuiCol_ScrollbarGrab;
-    i_ImGuiCol_ImGuiCol_ScrollbarGrabHovered = imgui.ImGuiCol_ScrollbarGrabHovered;
-    i_ImGuiCol_ImGuiCol_ScrollbarGrabActive = imgui.ImGuiCol_ScrollbarGrabActive;
-    i_ImGuiCol_ImGuiCol_CheckMark = imgui.ImGuiCol_CheckMark;
-    i_ImGuiCol_ImGuiCol_SliderGrab = imgui.ImGuiCol_SliderGrab;
-    i_ImGuiCol_ImGuiCol_SliderGrabActive = imgui.ImGuiCol_SliderGrabActive;
-    i_ImGuiCol_ImGuiCol_Button = imgui.ImGuiCol_Button;
-    i_ImGuiCol_ImGuiCol_ButtonHovered = imgui.ImGuiCol_ButtonHovered;
-    i_ImGuiCol_ImGuiCol_ButtonActive = imgui.ImGuiCol_ButtonActive;
-    i_ImGuiCol_ImGuiCol_Header = imgui.ImGuiCol_Header;
-    i_ImGuiCol_ImGuiCol_HeaderHovered = imgui.ImGuiCol_HeaderHovered;
-    i_ImGuiCol_ImGuiCol_HeaderActive = imgui.ImGuiCol_HeaderActive;
-    i_ImGuiCol_ImGuiCol_Separator = imgui.ImGuiCol_Separator;
-    i_ImGuiCol_ImGuiCol_SeparatorHovered = imgui.ImGuiCol_SeparatorHovered;
-    i_ImGuiCol_ImGuiCol_SeparatorActive = imgui.ImGuiCol_SeparatorActive;
-    i_ImGuiCol_ImGuiCol_ResizeGrip = imgui.ImGuiCol_ResizeGrip;
-    i_ImGuiCol_ImGuiCol_ResizeGripHovered = imgui.ImGuiCol_ResizeGripHovered;
-    i_ImGuiCol_ImGuiCol_ResizeGripActive = imgui.ImGuiCol_ResizeGripActive;
-    i_ImGuiCol_ImGuiCol_Tab = imgui.ImGuiCol_Tab;
+    i_ImGuiCol_Text = imgui.ImGuiCol_Text;
+    i_ImGuiCol_TextDisabled = imgui.ImGuiCol_TextDisabled;
+    i_ImGuiCol_WindowBg = imgui.ImGuiCol_WindowBg;
+    i_ImGuiCol_ChildBg = imgui.ImGuiCol_ChildBg;
+    i_ImGuiCol_PopupBg = imgui.ImGuiCol_PopupBg;
+    i_ImGuiCol_Border = imgui.ImGuiCol_Border;
+    i_ImGuiCol_BorderShadow = imgui.ImGuiCol_BorderShadow;
+    i_ImGuiCol_FrameBg = imgui.ImGuiCol_FrameBg;
+    i_ImGuiCol_FrameBgHovered = imgui.ImGuiCol_FrameBgHovered;
+    i_ImGuiCol_FrameBgActive = imgui.ImGuiCol_FrameBgActive;
+    i_ImGuiCol_TitleBg = imgui.ImGuiCol_TitleBg;
+    i_ImGuiCol_TitleBgActive = imgui.ImGuiCol_TitleBgActive;
+    i_ImGuiCol_TitleBgCollapsed = imgui.ImGuiCol_TitleBgCollapsed;
+    i_ImGuiCol_MenuBarBg = imgui.ImGuiCol_MenuBarBg;
+    i_ImGuiCol_ScrollbarBg = imgui.ImGuiCol_ScrollbarBg;
+    i_ImGuiCol_ScrollbarGrab = imgui.ImGuiCol_ScrollbarGrab;
+    i_ImGuiCol_ScrollbarGrabHovered = imgui.ImGuiCol_ScrollbarGrabHovered;
+    i_ImGuiCol_ScrollbarGrabActive = imgui.ImGuiCol_ScrollbarGrabActive;
+    i_ImGuiCol_CheckMark = imgui.ImGuiCol_CheckMark;
+    i_ImGuiCol_SliderGrab = imgui.ImGuiCol_SliderGrab;
+    i_ImGuiCol_SliderGrabActive = imgui.ImGuiCol_SliderGrabActive;
+    i_ImGuiCol_Button = imgui.ImGuiCol_Button;
+    i_ImGuiCol_ButtonHovered = imgui.ImGuiCol_ButtonHovered;
+    i_ImGuiCol_ButtonActive = imgui.ImGuiCol_ButtonActive;
+    i_ImGuiCol_Header = imgui.ImGuiCol_Header;
+    i_ImGuiCol_HeaderHovered = imgui.ImGuiCol_HeaderHovered;
+    i_ImGuiCol_HeaderActive = imgui.ImGuiCol_HeaderActive;
+    i_ImGuiCol_Separator = imgui.ImGuiCol_Separator;
+    i_ImGuiCol_SeparatorHovered = imgui.ImGuiCol_SeparatorHovered;
+    i_ImGuiCol_SeparatorActive = imgui.ImGuiCol_SeparatorActive;
+    i_ImGuiCol_ResizeGrip = imgui.ImGuiCol_ResizeGrip;
+    i_ImGuiCol_ResizeGripHovered = imgui.ImGuiCol_ResizeGripHovered;
+    i_ImGuiCol_ResizeGripActive = imgui.ImGuiCol_ResizeGripActive;
+    i_ImGuiCol_Tab = imgui.ImGuiCol_Tab;
     i_ImGuiCol_ImGuiCol_TabHovered = imgui.ImGuiCol_TabHovered;
-    i_ImGuiCol_ImGuiCol_TabActive = imgui.ImGuiCol_TabActive;
-    i_ImGuiCol_ImGuiCol_TabUnfocused = imgui.ImGuiCol_TabUnfocused;
-    i_ImGuiCol_ImGuiCol_TabUnfocusedActive = imgui.ImGuiCol_TabUnfocusedActive;
-    i_ImGuiCol_ImGuiCol_DockingPreview = imgui.ImGuiCol_DockingPreview;
-    i_ImGuiCol_ImGuiCol_DockingEmptyBg = imgui.ImGuiCol_DockingEmptyBg;
-    i_ImGuiCol_ImGuiCol_PlotLines = imgui.ImGuiCol_PlotLines;
-    i_ImGuiCol_ImGuiCol_PlotLinesHovered = imgui.ImGuiCol_PlotLinesHovered;
-    i_ImGuiCol_ImGuiCol_PlotHistogram = imgui.ImGuiCol_PlotHistogram;
-    i_ImGuiCol_ImGuiCol_PlotHistogramHovered = imgui.ImGuiCol_PlotHistogramHovered;
-    i_ImGuiCol_ImGuiCol_TableHeaderBg = imgui.ImGuiCol_TableHeaderBg;
-    i_ImGuiCol_ImGuiCol_TableBorderStrong = imgui.ImGuiCol_TableBorderStrong;
-    i_ImGuiCol_ImGuiCol_TableBorderLight = imgui.ImGuiCol_TableBorderLight;
-    i_ImGuiCol_ImGuiCol_TableRowBg = imgui.ImGuiCol_TableRowBg;
-    i_ImGuiCol_ImGuiCol_TableRowBgAlt = imgui.ImGuiCol_TableRowBgAlt;
-    i_ImGuiCol_ImGuiCol_TextSelectedBg = imgui.ImGuiCol_TextSelectedBg;
-    i_ImGuiCol_ImGuiCol_DragDropTarget = imgui.ImGuiCol_DragDropTarget;
-    i_ImGuiCol_ImGuiCol_NavHighlight = imgui.ImGuiCol_NavHighlight;
-    i_ImGuiCol_ImGuiCol_NavWindowingHighlight = imgui.ImGuiCol_NavWindowingHighlight;
-    i_ImGuiCol_ImGuiCol_NavWindowingDimBg = imgui.ImGuiCol_NavWindowingDimBg;
-    i_ImGuiCol_ImGuiCol_ModalWindowDimBg = imgui.ImGuiCol_ModalWindowDimBg;
+    i_ImGuiCol_TabActive = imgui.ImGuiCol_TabActive;
+    i_ImGuiCol_TabUnfocused = imgui.ImGuiCol_TabUnfocused;
+    i_ImGuiCol_TabUnfocusedActive = imgui.ImGuiCol_TabUnfocusedActive;
+    i_ImGuiCol_DockingPreview = imgui.ImGuiCol_DockingPreview;
+    i_ImGuiCol_DockingEmptyBg = imgui.ImGuiCol_DockingEmptyBg;
+    i_ImGuiCol_PlotLines = imgui.ImGuiCol_PlotLines;
+    i_ImGuiCol_PlotLinesHovered = imgui.ImGuiCol_PlotLinesHovered;
+    i_ImGuiCol_PlotHistogram = imgui.ImGuiCol_PlotHistogram;
+    i_ImGuiCol_PlotHistogramHovered = imgui.ImGuiCol_PlotHistogramHovered;
+    i_ImGuiCol_TableHeaderBg = imgui.ImGuiCol_TableHeaderBg;
+    i_ImGuiCol_TableBorderStrong = imgui.ImGuiCol_TableBorderStrong;
+    i_ImGuiCol_TableBorderLight = imgui.ImGuiCol_TableBorderLight;
+    i_ImGuiCol_TableRowBg = imgui.ImGuiCol_TableRowBg;
+    i_ImGuiCol_TableRowBgAlt = imgui.ImGuiCol_TableRowBgAlt;
+    i_ImGuiCol_TextSelectedBg = imgui.ImGuiCol_TextSelectedBg;
+    i_ImGuiCol_DragDropTarget = imgui.ImGuiCol_DragDropTarget;
+    i_ImGuiCol_NavHighlight = imgui.ImGuiCol_NavHighlight;
+    i_ImGuiCol_NavWindowingHighlight = imgui.ImGuiCol_NavWindowingHighlight;
+    i_ImGuiCol_NavWindowingDimBg = imgui.ImGuiCol_NavWindowingDimBg;
+    i_ImGuiCol_ModalWindowDimBg = imgui.ImGuiCol_ModalWindowDimBg;
 },
 jl_Character = $rt_classWithoutFields(),
 jl_Character_TYPE = null,
@@ -37051,9 +37048,6 @@ jur_RelAltGroupQuantifierSet_matches = ($this, $stringIndex, $testString, $match
     return $nextIndex;
 },
 cgxgbtdt_TypedArrays = $rt_classWithoutFields(),
-cgxgbtdt_TypedArrays_createFloat32Array = ($arrayBuffer, $offset, $length) => {
-    return new Float32Array($arrayBuffer, $offset, $length);
-},
 cgxgbtdt_TypedArrays_createInt8Array = $arrayBuffer => {
     return new Int8Array($arrayBuffer);
 },
@@ -37244,9 +37238,9 @@ cbgssu_Value$3__init_0 = () => {
     cbgssu_Value$3__init_(var_0);
     return var_0;
 },
-cbg_ApplicationLogger = $rt_classWithoutFields(0);
-let cgxgbt_TeaApplicationLogger = $rt_classWithoutFields(),
-cgxgbt_TeaApplicationLogger__init_ = $this => {
+cbg_ApplicationLogger = $rt_classWithoutFields(0),
+cgxgbt_TeaApplicationLogger = $rt_classWithoutFields();
+let cgxgbt_TeaApplicationLogger__init_ = $this => {
     jl_Object__init_($this);
 },
 cgxgbt_TeaApplicationLogger__init_0 = () => {
@@ -37437,7 +37431,7 @@ jesa_SamplesApp_renderUI = $this => {
     i_ImVec2_$callClinit();
     var$1 = i_ImVec2_TMP_1.$set9(250.0, 400.0);
     i_ImGuiCond_$callClinit();
-    i_ImGui_SetNextWindowSize(var$1, i_ImGuiCond_ImGuiCond_FirstUseEver);
+    i_ImGui_SetNextWindowSize(var$1, i_ImGuiCond_FirstUseEver);
     i_ImGui_Begin($rt_s(575));
     $this.$fpsRenderer.$render4();
     var$1 = $this.$settingsRenderer.$render5($this.$allTests);
@@ -37448,7 +37442,7 @@ jesa_SamplesApp_renderUI = $this => {
     if (i_ImGui_Checkbox($rt_s(577), $this.$settingsRenderer.$idlBool))
         $this.$debugRenderer.$setEnable($this.$settingsRenderer.$idlBool.$getValue0());
     i_ImGuiTabBarFlags_$callClinit();
-    if (i_ImGui_BeginTabBar($rt_s(578), i_ImGuiTabBarFlags_ImGuiTabBarFlags_FittingPolicyScroll | i_ImGuiTabBarFlags_ImGuiTabBarFlags_Reorderable)) {
+    if (i_ImGui_BeginTabBar($rt_s(578), i_ImGuiTabBarFlags_FittingPolicyScroll | i_ImGuiTabBarFlags_Reorderable)) {
         if (i_ImGui_BeginTabItem($rt_s(579))) {
             $this.$settingsRenderer.$render6($this.$joltInstance);
             i_ImGui_EndTabItem();
@@ -37963,33 +37957,33 @@ i_ImGuiLoader_init = $listener => {
     cgxjl_JParserLibraryLoader_load($rt_s(581), $listener);
 },
 i_ImGuiConfigFlags = $rt_classWithoutFields(),
-i_ImGuiConfigFlags_ImGuiConfigFlags_None = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_NavEnableKeyboard = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_NavEnableGamepad = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_NavEnableSetMousePos = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_NavNoCaptureKeyboard = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_NoMouse = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_NoMouseCursorChange = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_DockingEnable = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_ViewportsEnable = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_DpiEnableScaleViewports = 0,
-i_ImGuiConfigFlags_ImGuiConfigFlags_DpiEnableScaleFonts = 0,
+i_ImGuiConfigFlags_None = 0,
+i_ImGuiConfigFlags_NavEnableKeyboard = 0,
+i_ImGuiConfigFlags_NavEnableGamepad = 0,
+i_ImGuiConfigFlags_NavEnableSetMousePos = 0,
+i_ImGuiConfigFlags_NavNoCaptureKeyboard = 0,
+i_ImGuiConfigFlags_NoMouse = 0,
+i_ImGuiConfigFlags_NoMouseCursorChange = 0,
+i_ImGuiConfigFlags_DockingEnable = 0,
+i_ImGuiConfigFlags_ViewportsEnable = 0,
+i_ImGuiConfigFlags_DpiEnableScaleViewports = 0,
+i_ImGuiConfigFlags_DpiEnableScaleFonts = 0,
 i_ImGuiConfigFlags_$callClinit = () => {
     i_ImGuiConfigFlags_$callClinit = $rt_eraseClinit(i_ImGuiConfigFlags);
     i_ImGuiConfigFlags__clinit_();
 },
 i_ImGuiConfigFlags__clinit_ = () => {
-    i_ImGuiConfigFlags_ImGuiConfigFlags_None = imgui.ImGuiConfigFlags_None;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_NavEnableKeyboard = imgui.ImGuiConfigFlags_NavEnableKeyboard;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_NavEnableGamepad = imgui.ImGuiConfigFlags_NavEnableGamepad;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_NavEnableSetMousePos = imgui.ImGuiConfigFlags_NavEnableSetMousePos;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_NavNoCaptureKeyboard = imgui.ImGuiConfigFlags_NavNoCaptureKeyboard;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_NoMouse = imgui.ImGuiConfigFlags_NoMouse;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_NoMouseCursorChange = imgui.ImGuiConfigFlags_NoMouseCursorChange;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_DockingEnable = imgui.ImGuiConfigFlags_DockingEnable;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_ViewportsEnable = imgui.ImGuiConfigFlags_ViewportsEnable;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_DpiEnableScaleViewports = imgui.ImGuiConfigFlags_DpiEnableScaleViewports;
-    i_ImGuiConfigFlags_ImGuiConfigFlags_DpiEnableScaleFonts = imgui.ImGuiConfigFlags_DpiEnableScaleFonts;
+    i_ImGuiConfigFlags_None = imgui.ImGuiConfigFlags_None;
+    i_ImGuiConfigFlags_NavEnableKeyboard = imgui.ImGuiConfigFlags_NavEnableKeyboard;
+    i_ImGuiConfigFlags_NavEnableGamepad = imgui.ImGuiConfigFlags_NavEnableGamepad;
+    i_ImGuiConfigFlags_NavEnableSetMousePos = imgui.ImGuiConfigFlags_NavEnableSetMousePos;
+    i_ImGuiConfigFlags_NavNoCaptureKeyboard = imgui.ImGuiConfigFlags_NavNoCaptureKeyboard;
+    i_ImGuiConfigFlags_NoMouse = imgui.ImGuiConfigFlags_NoMouse;
+    i_ImGuiConfigFlags_NoMouseCursorChange = imgui.ImGuiConfigFlags_NoMouseCursorChange;
+    i_ImGuiConfigFlags_DockingEnable = imgui.ImGuiConfigFlags_DockingEnable;
+    i_ImGuiConfigFlags_ViewportsEnable = imgui.ImGuiConfigFlags_ViewportsEnable;
+    i_ImGuiConfigFlags_DpiEnableScaleViewports = imgui.ImGuiConfigFlags_DpiEnableScaleViewports;
+    i_ImGuiConfigFlags_DpiEnableScaleFonts = imgui.ImGuiConfigFlags_DpiEnableScaleFonts;
 };
 function cbggga_DepthTestAttribute() {
     let a = this; cbggg_Attribute.call(a);
@@ -41896,7 +41890,7 @@ cgxgbt_TeaApplication__init_ = ($this, $appListener, $config) => {
     $this.$initState = cgxgbt_TeaApplication$AppState_INIT;
     $this.$lastWidth = (-1);
     $this.$lastHeight = 1;
-    $this.$logLevel = 2;
+    $this.$logLevel = 1;
     $this.$prefs = cbgu_ObjectMap__init_();
     $this.$runnables = cbgu_Array__init_();
     $this.$runnablesHelper = cbgu_Array__init_();
