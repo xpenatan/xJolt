@@ -245,6 +245,15 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
+      - name: Download sources
+        run: ./gradlew download_all_sources
+
+      - name: Delete generated files
+        run: |
+          rm -rf jolt/jolt-core/src/main/java/* 
+          rm -rf jolt/jolt-teavm/src/main/java/*
+          echo "Deleted generated files"
+
       - name: Generate Jolt classes
         run: ./gradlew :jolt:jolt-build:build_project
 
