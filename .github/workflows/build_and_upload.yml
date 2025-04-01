@@ -279,8 +279,11 @@ jobs:
         with:
           access_token: ${{ github.token }}
 
-      - name: Checkout code
+      - name: Checkout repository with latest changes
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+          fetch-depth: 0
 
       - name: Get version
         uses: madhead/read-java-properties@latest
