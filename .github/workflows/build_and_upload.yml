@@ -327,9 +327,6 @@ jobs:
       - name: Download sources
         run: ./gradlew download_all_sources
 
-      - name: Generate Jolt classes
-        run: ./gradlew :jolt:jolt-build:build_project
-
       - name: Upload to repository
         uses: nick-fields/retry@v3
         if: ${{ inputs.shouldUpload }}
