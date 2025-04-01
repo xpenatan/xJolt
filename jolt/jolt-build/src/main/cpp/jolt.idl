@@ -2640,11 +2640,11 @@ interface BodyLockInterface {
     void UnlockWrite(SharedMutex inMutex);
 
     // TODO MutexMask may not work
-    [Value] MutexMask GetMutexMask([Ref, Const] BodyID[] inBodies, long inNumber);
-    [BindTo="LockRead"] void LockRead_0([Ref] MutexMask inMutexMask);
-    [BindTo="UnlockRead"] void UnlockRead_0([Ref] MutexMask inMutexMask);
-    [BindTo="LockWrite"] void LockWrite_0([Ref] MutexMask inMutexMask);
-    [BindTo="UnlockWrite"] void UnlockWrite_0([Ref] MutexMask inMutexMask);
+//    [Value] MutexMask GetMutexMask([Ref, Const] BodyID[] inBodies, long inNumber);
+//    [BindTo="LockRead"] void LockRead_0([Ref] MutexMask inMutexMask);
+//    [BindTo="UnlockRead"] void UnlockRead_0([Ref] MutexMask inMutexMask);
+//    [BindTo="LockWrite"] void LockWrite_0([Ref] MutexMask inMutexMask);
+//    [BindTo="UnlockWrite"] void UnlockWrite_0([Ref] MutexMask inMutexMask);
 };
 
 interface BodyLockInterfaceNoLock { //[-SUB_PACKAGE=physics.body]
