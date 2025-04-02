@@ -196,6 +196,13 @@ public class BoxSpawnTest extends Test {
 
     @Override
     public void postPhysicsUpdate(boolean isPlaying, float deltaTime) {
+        if(renderModels) {
+            updateModels();
+            renderModels();
+        }
+    }
+
+    private void updateModels() {
         for(int i = 0; i < cubes.size; i++) {
             int targetIndex = i * 16;
             CubeData cubeData = cubes.get(i);
@@ -214,27 +221,27 @@ public class BoxSpawnTest extends Test {
                 mesh.updateInstanceData(targetIndex, instanceTransform.getValues());
             }
         }
+    }
 
+    private void renderModels() {
         JoltGdx.mat44_to_matrix4(groundData.body.GetWorldTransform(), groundData.modelInstance.transform);
 
-        if(renderModels) {
-            Array<RenderableProvider> renderableProviders = sceneManager.getRenderableProviders();
-            for(int i = 0; i < cubes.size; i++) {
-                CubeData cubeData = cubes.get(i);
-                ModelInstance modelInstance = cubeData.modelInstance;
-                if(modelInstance != null) {
-                    renderableProviders.add(modelInstance);
-                }
+        Array<RenderableProvider> renderableProviders = sceneManager.getRenderableProviders();
+        for(int i = 0; i < cubes.size; i++) {
+            CubeData cubeData = cubes.get(i);
+            ModelInstance modelInstance = cubeData.modelInstance;
+            if(modelInstance != null) {
+                renderableProviders.add(modelInstance);
             }
-            renderableProviders.add(groundData.modelInstance);
-            if(hardwareCubeModelInstance != null) {
-                renderableProviders.add(hardwareCubeModelInstance);
-            }
-            sceneManager.setCamera(camera);
-            sceneManager.update(Gdx.graphics.getDeltaTime());
-            sceneManager.render();
-            renderableProviders.clear();
         }
+        renderableProviders.add(groundData.modelInstance);
+        if(hardwareCubeModelInstance != null) {
+            renderableProviders.add(hardwareCubeModelInstance);
+        }
+        sceneManager.setCamera(camera);
+        sceneManager.update(Gdx.graphics.getDeltaTime());
+        sceneManager.render();
+        renderableProviders.clear();
     }
 
     private void resetBoxes() {
