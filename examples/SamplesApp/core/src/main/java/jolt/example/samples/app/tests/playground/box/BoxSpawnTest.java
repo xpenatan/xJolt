@@ -363,6 +363,7 @@ public class BoxSpawnTest extends Test {
         checkerBoardTexture.dispose();
         boxTexture.dispose();
         cubeModel.dispose();
+        cubeModelInstanced.dispose();
         tempVec3.dispose();
         tempQuat.dispose();
 
