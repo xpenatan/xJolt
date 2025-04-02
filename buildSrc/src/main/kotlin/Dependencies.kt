@@ -11,7 +11,7 @@ object LibExt {
     const val teaVMVersion = "0.11.0"
 
     //Example dependencies
-    const val gdxTeaVMVersion = "1.1.0"
+    const val gdxTeaVMVersion = "-SNAPSHOT"
     const val gdxImGuiVersion = "-SNAPSHOT"
     const val jUnitVersion = "4.12"
 

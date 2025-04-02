@@ -1,7 +1,7 @@
 package jolt.example.samples.app.tests;
 
 import com.badlogic.gdx.utils.Array;
-import jolt.example.samples.app.tests.playground.BoxSpawnTest;
+import jolt.example.samples.app.tests.playground.box.BoxSpawnTest;
 import jolt.example.samples.app.tests.shapes.BoxShapeTest;
 import jolt.example.samples.app.tests.vehicle.TankTest;
 import jolt.example.samples.app.tests.vehicle.VehicleConstraintTest;

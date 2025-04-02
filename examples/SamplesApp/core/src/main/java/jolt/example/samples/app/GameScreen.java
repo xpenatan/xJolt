@@ -13,7 +13,7 @@ import imgui.ImGuiIO;
 import imgui.ImGuiStyle;
 import imgui.gdx.ImGuiGdxImpl;
 import imgui.gdx.ImGuiGdxInput;
-import jolt.example.samples.app.tests.playground.BoxSpawnTest;
+import jolt.example.samples.app.tests.playground.box.BoxSpawnTest;
 
 public class GameScreen extends ScreenAdapter {
 

@@ -1,32 +1,38 @@
-package jolt.example.samples.app.tests.playground;
+package jolt.example.samples.app.tests.playground.box;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Cubemap;
+import com.badlogic.gdx.graphics.Mesh;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.VertexAttribute;
 import com.badlogic.gdx.graphics.VertexAttributes;
-import com.badlogic.gdx.graphics.g3d.Environment;
 import com.badlogic.gdx.graphics.g3d.Material;
 import com.badlogic.gdx.graphics.g3d.Model;
-import com.badlogic.gdx.graphics.g3d.ModelBatch;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
+import com.badlogic.gdx.graphics.g3d.RenderableProvider;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.attributes.FloatAttribute;
-import com.badlogic.gdx.graphics.g3d.attributes.TextureAttribute;
-import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.BufferUtils;
 import imgui.ImGui;
 import imgui.idl.helper.IDLBool;
 import imgui.idl.helper.IDLFloat;
 import imgui.idl.helper.IDLInt;
+import java.nio.Buffer;
+import java.nio.FloatBuffer;
 import jolt.Jolt;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.example.samples.app.jolt.Layers;
 import jolt.example.samples.app.tests.Test;
+import jolt.example.samples.app.tests.playground.box.shader.MyPBRDepthShaderProvider;
+import jolt.example.samples.app.tests.playground.box.shader.MyPBRShaderProvider;
 import jolt.gdx.DebugRenderer;
 import jolt.gdx.JoltGdx;
 import jolt.math.Mat44;
@@ -36,13 +42,18 @@ import jolt.physics.body.Body;
 import jolt.physics.body.BodyCreationSettings;
 import jolt.physics.body.BodyID;
 import jolt.physics.body.BodyInterface;
-import jolt.physics.body.IDLArrayBodyID;
 import jolt.physics.body.MassProperties;
 import jolt.physics.collision.shape.BoxShape;
+import net.mgsx.gltf.scene3d.attributes.PBRCubemapAttribute;
+import net.mgsx.gltf.scene3d.attributes.PBRTextureAttribute;
+import net.mgsx.gltf.scene3d.lights.DirectionalLightEx;
+import net.mgsx.gltf.scene3d.scene.SceneManager;
+import net.mgsx.gltf.scene3d.scene.SceneSkybox;
+import net.mgsx.gltf.scene3d.utils.IBLBuilder;
 
 public class BoxSpawnTest extends Test {
 
-    private int resetDelaySeconds = 10;
+    private int resetDelaySeconds = 14;
 
     private long timeNow;
     private long time;
@@ -59,32 +70,63 @@ public class BoxSpawnTest extends Test {
     private Quaternion tempQuaternion;
     private Matrix4 tempRotationMatrix;
     private Model cubeModel;
-    private IDLArrayBodyID bodyArray;
+    private Model cubeModelInstanced;
+    private ModelInstance hardwareCubeModelInstance;
+    private Matrix4 instanceTransform = new Matrix4();
+    private FloatBuffer offsets;
 
-    private ModelBatch modelBatch;
-    private Environment environment;
+    private SceneManager sceneManager;
+    private Cubemap diffuseCubemap;
+    private Cubemap environmentCubemap;
+    private Cubemap specularCubemap;
+    private Texture brdfLUT;
+    private SceneSkybox skybox;
 
     private Texture checkerBoardTexture;
     private Texture boxTexture;
     private float boxRestitution = 0.8f;
     private boolean randomRotation = false;
     private boolean renderModels = true;
+    private boolean hardwareModelInstance = false;
 
     public void initialize() {
+        mDebugRenderer.setEnable(false);
         tempVec3 = Jolt.New_Vec3();
         tempQuat = new Quat();
         tempQuaternion = new Quaternion();
         tempRotationMatrix = new Matrix4();
-        bodyArray = new IDLArrayBodyID(1);
 
-        modelBatch = new ModelBatch();
-        environment = new Environment();
-        environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.6f, 0.6f, 0.6f, 1.f));
-        DirectionalLight set = new DirectionalLight().set(1.0f, 1.0f, 1.0f, -1f, -1f, -0.4f);
-        environment.add(set);
+        sceneManager = new SceneManager( new MyPBRShaderProvider(), new MyPBRDepthShaderProvider() );
+        DirectionalLightEx light = new DirectionalLightEx();
+        light.direction.set(-0.9f, -1, -1);
+        light.direction.nor();
+        light.color.set(Color.WHITE);
+        light.intensity = 8.8f;
+        sceneManager.environment.add(light);
+
+        sceneManager.setAmbientLight(0.5f);
+
+        // setup quick IBL (image based lighting)
+        IBLBuilder iblBuilder = IBLBuilder.createOutdoor(light);
+        environmentCubemap = iblBuilder.buildEnvMap(1024);
+        diffuseCubemap = iblBuilder.buildIrradianceMap(256);
+        specularCubemap = iblBuilder.buildRadianceMap(10);
+        iblBuilder.dispose();
+
+        // This texture is provided by the library, no need to have it in your assets.
+        brdfLUT = new Texture(Gdx.files.classpath("net/mgsx/gltf/shaders/brdfLUT.png"));
+
+        sceneManager.environment.set(new PBRTextureAttribute(PBRTextureAttribute.BRDFLUTTexture, brdfLUT));
+        sceneManager.environment.set(PBRCubemapAttribute.createSpecularEnv(specularCubemap));
+        sceneManager.environment.set(PBRCubemapAttribute.createDiffuseEnv(diffuseCubemap));
+
+        // setup skybox
+        skybox = new SceneSkybox(environmentCubemap);
+        sceneManager.setSkyBox(skybox);
 
         createModels();
         resetBoxes();
+        setupHardwareInstance();
     }
 
     @Override
@@ -97,6 +139,7 @@ public class BoxSpawnTest extends Test {
             long timeout = resetDelaySeconds * 1000L;
             if(timeNow - time > timeout) {
                 resetBoxes();
+                setupHardwareInstance();
                 time = System.currentTimeMillis();
             }
         }
@@ -106,49 +149,103 @@ public class BoxSpawnTest extends Test {
     private void createModels() {
         boxTexture = new Texture(Gdx.files.internal("data/badlogic.jpg"));
         boxTexture.setFilter(Texture.TextureFilter.Linear, Texture.TextureFilter.Linear);
-        final Material material = new Material(TextureAttribute.createDiffuse(boxTexture),
+        final Material material = new Material(PBRTextureAttribute.createBaseColorTexture(boxTexture),
                 FloatAttribute.createShininess(4f));
         ModelBuilder builder = new ModelBuilder();
         cubeModel = builder.createBox(1, 1, 1, material, VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal | VertexAttributes.Usage.TextureCoordinates);
+        cubeModelInstanced = builder.createBox(1, 1, 1, material, VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal | VertexAttributes.Usage.TextureCoordinates);
 
         float groundWidth = 60f;
         float groundHeight = 0.3f;
         float groundDepth = 60f;
         checkerBoardTexture = DebugRenderer.createCheckerBoardTexture();
         final Material groundMaterial = new Material(
-                TextureAttribute.createDiffuse(checkerBoardTexture),
+                PBRTextureAttribute.createBaseColorTexture(checkerBoardTexture),
                 ColorAttribute.createDiffuse(1, 1, 1, 1)
         );
         int attributes = VertexAttributes.Usage.Position | VertexAttributes.Usage.Normal | VertexAttributes.Usage.TextureCoordinates | VertexAttributes.Usage.ColorUnpacked;
         Model groundBox = builder.createBox(groundWidth, groundHeight, groundDepth, groundMaterial, attributes);
-        groundData = createBox(groundBox, -2, -1, 0, -2, 0, 0, 0, 0, groundWidth, groundHeight, groundDepth, 0, 0, 1);
+        groundData = createBox(new ModelInstance(groundBox), -2, -1, 0, -2, 0, 0, 0, 0, groundWidth, groundHeight, groundDepth, 0, 0, 1);
+    }
+
+    private void setupHardwareInstance() {
+        if(!hardwareModelInstance) {
+            return;
+        }
+        int instanceCount = cubes.size;
+        hardwareCubeModelInstance = new ModelInstance(cubeModelInstanced);
+        for(int i = 0; i < hardwareCubeModelInstance.nodes.first().parts.size; i++) {
+            Mesh mesh = hardwareCubeModelInstance.nodes.first().parts.get(i).meshPart.mesh;
+            mesh.enableInstancedRendering(true, instanceCount,
+                    new VertexAttribute(VertexAttributes.Usage.Generic, 4, "i_worldTrans", 0),
+                    new VertexAttribute(VertexAttributes.Usage.Generic, 4, "i_worldTrans", 1),
+                    new VertexAttribute(VertexAttributes.Usage.Generic, 4, "i_worldTrans", 2),
+                    new VertexAttribute(VertexAttributes.Usage.Generic, 4, "i_worldTrans", 3) );
+
+            offsets = BufferUtils.newFloatBuffer(instanceCount * 16);
+            for(int j = 0; j < instanceCount; j++) {
+                float angle = 0;
+                instanceTransform.setToRotationRad(Vector3.Y, angle);
+                instanceTransform.setTranslation(0, 0, 0);
+                offsets.put(instanceTransform.tra().getValues());
+            }
+            ((Buffer)offsets).position(0);
+            mesh.setInstanceData(offsets);
+        }
     }
 
     @Override
     public void postPhysicsUpdate(boolean isPlaying, float deltaTime) {
         for(int i = 0; i < cubes.size; i++) {
+            int targetIndex = i * 16;
             CubeData cubeData = cubes.get(i);
             Body body = cubeData.body;
-            ModelInstance modelInstance = cubeData.modelInstance;
             Mat44 mat44 = body.GetWorldTransform();
-            JoltGdx.mat44_to_matrix4(mat44, modelInstance.transform);
+            instanceTransform.idt();
+            JoltGdx.mat44_to_matrix4(mat44, instanceTransform);
+
+            if(cubeData.modelInstance != null) {
+                cubeData.modelInstance.transform.set(instanceTransform);
+            }
+            else {
+                offsets.position(targetIndex);
+                offsets.put(instanceTransform.tra().getValues());
+                Mesh mesh = hardwareCubeModelInstance.nodes.first().parts.first().meshPart.mesh;
+                mesh.updateInstanceData(targetIndex, instanceTransform.getValues());
+            }
         }
 
         JoltGdx.mat44_to_matrix4(groundData.body.GetWorldTransform(), groundData.modelInstance.transform);
 
         if(renderModels) {
-            modelBatch.begin(camera);
-            modelBatch.render(groundData.modelInstance, environment);
+            Array<RenderableProvider> renderableProviders = sceneManager.getRenderableProviders();
             for(int i = 0; i < cubes.size; i++) {
                 CubeData cubeData = cubes.get(i);
                 ModelInstance modelInstance = cubeData.modelInstance;
-                modelBatch.render(modelInstance, environment);
+                if(modelInstance != null) {
+                    renderableProviders.add(modelInstance);
+                }
             }
-            modelBatch.end();
+            renderableProviders.add(groundData.modelInstance);
+            if(hardwareCubeModelInstance != null) {
+                renderableProviders.add(hardwareCubeModelInstance);
+            }
+            sceneManager.setCamera(camera);
+            sceneManager.update(Gdx.graphics.getDeltaTime());
+            sceneManager.render();
+            renderableProviders.clear();
         }
     }
 
     private void resetBoxes() {
+        if(hardwareCubeModelInstance != null) {
+            for(int i = 0; i < hardwareCubeModelInstance.nodes.first().parts.size; i++) {
+                Mesh mesh = hardwareCubeModelInstance.nodes.first().parts.get(i).meshPart.mesh;
+                mesh.disableInstancedRendering();
+            }
+        }
+
+        hardwareCubeModelInstance = null;
         BodyInterface bodyInterface = mPhysicsSystem.GetBodyInterface();
         for(CubeData cubeData : cubes) {
             Body body = cubeData.body;
@@ -187,7 +284,12 @@ public class BoxSpawnTest extends Test {
                         float r = 1f;
                         float g = 1f;
                         float b = 1f;
-                        CubeData box = createBox(cubeModel, cubeCount, 0.4f, x, y, z, axisX, axisY, axisZ, 1, 1, 1, r, g, b);
+                        ModelInstance instance = null;
+                        if(!hardwareModelInstance) {
+                            instance = new ModelInstance(cubeModel);
+                        }
+
+                        CubeData box = createBox(instance, cubeCount, 0.4f, x, y, z, axisX, axisY, axisZ, 1, 1, 1, r, g, b);
                         cubes.add(box);
                         cubeCount++;
 
@@ -205,7 +307,7 @@ public class BoxSpawnTest extends Test {
         }
     }
 
-    private CubeData createBox(Model model, int userData, float mass, float x, float y, float z, float axiX, float axiY, float axiZ, float x1, float y1, float z1, float colorR, float colorG, float colorB) {
+    private CubeData createBox(ModelInstance modelInstance, int userData, float mass, float x, float y, float z, float axiX, float axiY, float axiZ, float x1, float y1, float z1, float colorR, float colorG, float colorB) {
         tempVec3.Set(x1 / 2f, y1 / 2f, z1 / 2f);
         BoxShape bodyShape = new BoxShape(tempVec3);
 
@@ -239,7 +341,7 @@ public class BoxSpawnTest extends Test {
 
         CubeData cubeData = new CubeData();
         cubeData.body = body;
-        cubeData.modelInstance = new ModelInstance(model);
+        cubeData.modelInstance = modelInstance;
         mBodyInterface.AddBody(body.GetID(), EActivation.Activate);
         return cubeData;
     }
@@ -252,10 +354,21 @@ public class BoxSpawnTest extends Test {
         cubeModel.dispose();
         tempVec3.dispose();
         tempQuat.dispose();
+
+        sceneManager.dispose();
+        environmentCubemap.dispose();
+        diffuseCubemap.dispose();
+        specularCubemap.dispose();
+        brdfLUT.dispose();
+        skybox.dispose();
     }
 
     @Override
     public void renderUI() {
+        IDLBool.TMP_1.set(hardwareModelInstance);
+        if(ImGui.Checkbox("Hardware Model Instance", IDLBool.TMP_1)) {
+            hardwareModelInstance = IDLBool.TMP_1.getValue();
+        }
         IDLBool.TMP_1.set(renderModels);
         if(ImGui.Checkbox("Render Models", IDLBool.TMP_1)) {
             renderModels = IDLBool.TMP_1.getValue();
