@@ -127,6 +127,7 @@ public class BoxSpawnTest extends Test {
         createModels();
         resetBoxes();
         setupHardwareInstance();
+        updateModels();
     }
 
     @Override
@@ -196,8 +197,11 @@ public class BoxSpawnTest extends Test {
 
     @Override
     public void postPhysicsUpdate(boolean isPlaying, float deltaTime) {
-        if(renderModels) {
+        if(isPlaying) {
             updateModels();
+        }
+
+        if(renderModels) {
             renderModels();
         }
     }
