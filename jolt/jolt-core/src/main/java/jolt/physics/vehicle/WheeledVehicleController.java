@@ -131,7 +131,7 @@ return nativeObject->GetHandBrakeInput();
     public VehicleEngine GetEngine() {
         long pointer = internal_native_GetEngine((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleEngine_TEMP_GEN_0 == null)
             VehicleEngine_TEMP_GEN_0 = new VehicleEngine((byte) 1, (char) 1);
         VehicleEngine_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -147,7 +147,7 @@ return (jlong)&nativeObject->GetEngine();
     public VehicleTransmission GetTransmission() {
         long pointer = internal_native_GetTransmission((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleTransmission_TEMP_GEN_0 == null)
             VehicleTransmission_TEMP_GEN_0 = new VehicleTransmission((byte) 1, (char) 1);
         VehicleTransmission_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -163,7 +163,7 @@ return (jlong)&nativeObject->GetTransmission();
     public ArrayVehicleDifferentialSettings GetDifferentials() {
         long pointer = internal_native_GetDifferentials((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayVehicleDifferentialSettings_TEMP_GEN_0 == null)
             ArrayVehicleDifferentialSettings_TEMP_GEN_0 = new ArrayVehicleDifferentialSettings((byte) 1, (char) 1);
         ArrayVehicleDifferentialSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);

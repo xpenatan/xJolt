@@ -66,7 +66,7 @@ nativeObject->mDrivenWheel = mDrivenWheel;
     public ArrayUint get_mWheels() {
         long pointer = internal_native_get_mWheels((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayUint_TEMP_GEN_0 == null)
             ArrayUint_TEMP_GEN_0 = new ArrayUint((byte) 1, (char) 1);
         ArrayUint_TEMP_GEN_0.getNativeData().reset(pointer, false);

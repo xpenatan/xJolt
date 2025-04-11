@@ -108,7 +108,7 @@ nativeObject->mAutoDetectPoint = mAutoDetectPoint;
     public Vec3 get_mPoint1() {
         long pointer = internal_native_get_mPoint1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -134,7 +134,7 @@ nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
     public Vec3 get_mAxisX1() {
         long pointer = internal_native_get_mAxisX1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -160,7 +160,7 @@ nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
     public Vec3 get_mAxisY1() {
         long pointer = internal_native_get_mAxisY1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -186,7 +186,7 @@ nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
     public Vec3 get_mPoint2() {
         long pointer = internal_native_get_mPoint2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -212,7 +212,7 @@ nativeObject->mPoint2 = *((Vec3*)mPoint2_addr);
     public Vec3 get_mAxisX2() {
         long pointer = internal_native_get_mAxisX2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -238,7 +238,7 @@ nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
     public Vec3 get_mAxisY2() {
         long pointer = internal_native_get_mAxisY2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);

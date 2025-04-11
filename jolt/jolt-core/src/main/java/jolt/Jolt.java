@@ -61,7 +61,7 @@ delete nativeObject;
     public static PhysicsSystem New_PhysicsSystem() {
         long pointer = internal_native_New_PhysicsSystem();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         PhysicsSystem PhysicsSystem_NEW = new PhysicsSystem((byte) 1, (char) 1);
         PhysicsSystem_NEW.getNativeData().reset(pointer, true);
         return PhysicsSystem_NEW;
@@ -75,7 +75,7 @@ return (jlong)Jolt::New_PhysicsSystem();
     public static Factory New_Factory() {
         long pointer = internal_native_New_Factory();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Factory Factory_NEW = new Factory((byte) 1, (char) 1);
         Factory_NEW.getNativeData().reset(pointer, true);
         return Factory_NEW;
@@ -89,7 +89,7 @@ return (jlong)Jolt::New_Factory();
     public static TempAllocatorImpl New_TempAllocatorImpl(int inSize) {
         long pointer = internal_native_New_TempAllocatorImpl(inSize);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         TempAllocatorImpl TempAllocatorImpl_NEW = new TempAllocatorImpl((byte) 1, (char) 1);
         TempAllocatorImpl_NEW.getNativeData().reset(pointer, true);
         return TempAllocatorImpl_NEW;
@@ -103,7 +103,7 @@ return (jlong)Jolt::New_TempAllocatorImpl(inSize);
     public static JobSystemThreadPool New_JobSystemThreadPool(int inNumThreads, int inMaxJobs, int inMaxBarriers) {
         long pointer = internal_native_New_JobSystemThreadPool(inNumThreads, inMaxJobs, inMaxBarriers);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         JobSystemThreadPool JobSystemThreadPool_NEW = new JobSystemThreadPool((byte) 1, (char) 1);
         JobSystemThreadPool_NEW.getNativeData().reset(pointer, true);
         return JobSystemThreadPool_NEW;
@@ -117,7 +117,7 @@ return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads, inMaxJobs, inMaxB
     public static JobSystemThreadPool New_JobSystemThreadPool(int inNumThreads, int inMaxJobs) {
         long pointer = internal_native_New_JobSystemThreadPool(inNumThreads, inMaxJobs);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_0 == null)
             JobSystemThreadPool_TEMP_STATIC_GEN_0 = new JobSystemThreadPool((byte) 1, (char) 1);
         JobSystemThreadPool_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -132,7 +132,7 @@ return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads, inMaxJobs);
     public static JobSystemThreadPool New_JobSystemThreadPool(int inNumThreads) {
         long pointer = internal_native_New_JobSystemThreadPool(inNumThreads);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_1 == null)
             JobSystemThreadPool_TEMP_STATIC_GEN_1 = new JobSystemThreadPool((byte) 1, (char) 1);
         JobSystemThreadPool_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
@@ -147,7 +147,7 @@ return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads);
     public static JobSystemThreadPool New_JobSystemThreadPool() {
         long pointer = internal_native_New_JobSystemThreadPool();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_2 == null)
             JobSystemThreadPool_TEMP_STATIC_GEN_2 = new JobSystemThreadPool((byte) 1, (char) 1);
         JobSystemThreadPool_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
@@ -162,7 +162,7 @@ return (jlong)Jolt::New_JobSystemThreadPool();
     public static BodyCreationSettings New_BodyCreationSettings() {
         long pointer = internal_native_New_BodyCreationSettings_0();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
         BodyCreationSettings_NEW.getNativeData().reset(pointer, true);
         return BodyCreationSettings_NEW;
@@ -176,7 +176,7 @@ return (jlong)Jolt::New_BodyCreationSettings();
     public static BodyCreationSettings New_BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, int inMotionType, int inObjectLayer) {
         long pointer = internal_native_New_BodyCreationSettings_1((long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inMotionType, inObjectLayer);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
         BodyCreationSettings_NEW.getNativeData().reset(pointer, true);
         return BodyCreationSettings_NEW;
@@ -190,7 +190,7 @@ return (jlong)Jolt::New_BodyCreationSettings((ShapeSettings* )inShape_addr, *((V
     public static BodyCreationSettings New_BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, int inMotionType, int inObjectLayer) {
         long pointer = internal_native_New_BodyCreationSettings_2((long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inMotionType, inObjectLayer);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
         BodyCreationSettings_NEW.getNativeData().reset(pointer, true);
         return BodyCreationSettings_NEW;
@@ -204,7 +204,7 @@ return (jlong)Jolt::New_BodyCreationSettings((Shape* )inShape_addr, *((Vec3* )in
     public static Mat44 New_Mat44() {
         long pointer = internal_native_New_Mat44_0();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Mat44 Mat44_NEW = new Mat44((byte) 1, (char) 1);
         Mat44_NEW.getNativeData().reset(pointer, true);
         return Mat44_NEW;
@@ -218,7 +218,7 @@ return (jlong)Jolt::New_Mat44();
     public static Mat44 New_Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec4 inC4) {
         long pointer = internal_native_New_Mat44_1((long) (inC1 != null ? inC1.getNativeData().getCPointer() : 0), (long) (inC2 != null ? inC2.getNativeData().getCPointer() : 0), (long) (inC3 != null ? inC3.getNativeData().getCPointer() : 0), (long) (inC4 != null ? inC4.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Mat44 Mat44_NEW = new Mat44((byte) 1, (char) 1);
         Mat44_NEW.getNativeData().reset(pointer, true);
         return Mat44_NEW;
@@ -232,7 +232,7 @@ return (jlong)Jolt::New_Mat44(*((Vec4* )inC1_addr), *((Vec4* )inC2_addr), *((Vec
     public static Mat44 New_Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec3 inC4) {
         long pointer = internal_native_New_Mat44_2((long) (inC1 != null ? inC1.getNativeData().getCPointer() : 0), (long) (inC2 != null ? inC2.getNativeData().getCPointer() : 0), (long) (inC3 != null ? inC3.getNativeData().getCPointer() : 0), (long) (inC4 != null ? inC4.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Mat44 Mat44_NEW = new Mat44((byte) 1, (char) 1);
         Mat44_NEW.getNativeData().reset(pointer, true);
         return Mat44_NEW;
@@ -246,7 +246,7 @@ return (jlong)Jolt::New_Mat44(*((Vec4* )inC1_addr), *((Vec4* )inC2_addr), *((Vec
     public static Vec3 New_Vec3() {
         long pointer = internal_native_New_Vec3_0();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Vec3 Vec3_NEW = new Vec3((byte) 1, (char) 1);
         Vec3_NEW.getNativeData().reset(pointer, true);
         return Vec3_NEW;
@@ -260,7 +260,7 @@ return (jlong)Jolt::New_Vec3();
     public static Vec3 New_Vec3(float inX, float inY, float inZ) {
         long pointer = internal_native_New_Vec3_1(inX, inY, inZ);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Vec3 Vec3_NEW = new Vec3((byte) 1, (char) 1);
         Vec3_NEW.getNativeData().reset(pointer, true);
         return Vec3_NEW;
@@ -274,7 +274,7 @@ return (jlong)Jolt::New_Vec3((float)inX, (float)inY, (float)inZ);
     public static Vec3 New_Vec3(Vec3 inRHS) {
         long pointer = internal_native_New_Vec3_2((long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Vec3 Vec3_NEW = new Vec3((byte) 1, (char) 1);
         Vec3_NEW.getNativeData().reset(pointer, true);
         return Vec3_NEW;
@@ -288,7 +288,7 @@ return (jlong)Jolt::New_Vec3(*((Vec3* )inRHS_addr));
     public static Vec3 New_Vec3(Float3 inV) {
         long pointer = internal_native_New_Vec3_3((long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Vec3 Vec3_NEW = new Vec3((byte) 1, (char) 1);
         Vec3_NEW.getNativeData().reset(pointer, true);
         return Vec3_NEW;
@@ -302,7 +302,7 @@ return (jlong)Jolt::New_Vec3(*((Float3* )inV_addr));
     public static Vec4 New_Vec4() {
         long pointer = internal_native_New_Vec4_0();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Vec4 Vec4_NEW = new Vec4((byte) 1, (char) 1);
         Vec4_NEW.getNativeData().reset(pointer, true);
         return Vec4_NEW;
@@ -316,7 +316,7 @@ return (jlong)Jolt::New_Vec4();
     public static Vec4 New_Vec4(float inX, float inY, float inZ, float inW) {
         long pointer = internal_native_New_Vec4_1(inX, inY, inZ, inW);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Vec4 Vec4_NEW = new Vec4((byte) 1, (char) 1);
         Vec4_NEW.getNativeData().reset(pointer, true);
         return Vec4_NEW;
@@ -330,7 +330,7 @@ return (jlong)Jolt::New_Vec4((float)inX, (float)inY, (float)inZ, (float)inW);
     public static Vec4 New_Vec4(Vec4 inV) {
         long pointer = internal_native_New_Vec4_2((long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Vec4 Vec4_NEW = new Vec4((byte) 1, (char) 1);
         Vec4_NEW.getNativeData().reset(pointer, true);
         return Vec4_NEW;
@@ -344,7 +344,7 @@ return (jlong)Jolt::New_Vec4(*((Vec4* )inV_addr));
     public static Vec4 New_Vec4(Vec3 inV, float inW) {
         long pointer = internal_native_New_Vec4_3((long) (inV != null ? inV.getNativeData().getCPointer() : 0), inW);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Vec4 Vec4_NEW = new Vec4((byte) 1, (char) 1);
         Vec4_NEW.getNativeData().reset(pointer, true);
         return Vec4_NEW;

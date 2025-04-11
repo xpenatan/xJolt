@@ -62,7 +62,7 @@ nativeObject->FromMatrix(*((Mat44* )inMatrix_addr));
     public Mat44 ToMatrix() {
         long pointer = internal_native_ToMatrix((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -79,7 +79,7 @@ return (jlong)&copy_addr;*/
     public Vec3 get_mTranslation() {
         long pointer = internal_native_get_mTranslation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -105,7 +105,7 @@ nativeObject->mTranslation = *((Vec3*)mTranslation_addr);
     public Quat get_mRotation() {
         long pointer = internal_native_get_mRotation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);

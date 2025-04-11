@@ -54,7 +54,7 @@ delete nativeObject;
     public Float3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = new Float3((byte) 1, (char) 1);
         Float3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -70,7 +70,7 @@ return (jlong)&nativeObject->mPosition;
     public Float3 get_mNormal() {
         long pointer = internal_native_get_mNormal((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = new Float3((byte) 1, (char) 1);
         Float3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -86,7 +86,7 @@ return (jlong)&nativeObject->mNormal;
     public Float2 get_mUV() {
         long pointer = internal_native_get_mUV((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float2_TEMP_GEN_0 == null)
             Float2_TEMP_GEN_0 = new Float2((byte) 1, (char) 1);
         Float2_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -102,7 +102,7 @@ return (jlong)&nativeObject->mUV;
     public Color get_mColor() {
         long pointer = internal_native_get_mColor((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Color_TEMP_GEN_0 == null)
             Color_TEMP_GEN_0 = new Color((byte) 1, (char) 1);
         Color_TEMP_GEN_0.getNativeData().reset(pointer, false);

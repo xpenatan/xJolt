@@ -77,7 +77,7 @@ return nativeObject->HadHit();
     public ArrayCollidePointResult get_mHits() {
         long pointer = internal_native_get_mHits((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayCollidePointResult_TEMP_GEN_0 == null)
             ArrayCollidePointResult_TEMP_GEN_0 = new ArrayCollidePointResult((byte) 1, (char) 1);
         ArrayCollidePointResult_TEMP_GEN_0.getNativeData().reset(pointer, false);

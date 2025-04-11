@@ -36,7 +36,7 @@ return nativeObject->GetNumSubShapes();
     public CompoundShapeSubShape GetSubShape(int inIdx) {
         long pointer = internal_native_GetSubShape((long) getNativeData().getCPointer(), inIdx);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CompoundShapeSubShape_TEMP_GEN_0 == null)
             CompoundShapeSubShape_TEMP_GEN_0 = new CompoundShapeSubShape((byte) 1, (char) 1);
         CompoundShapeSubShape_TEMP_GEN_0.getNativeData().reset(pointer, false);

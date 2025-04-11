@@ -184,7 +184,7 @@ nativeObject->Optimize();
     public SoftBodySharedSettings Clone() {
         long pointer = internal_native_Clone((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         SoftBodySharedSettings SoftBodySharedSettings_NEW = new SoftBodySharedSettings((byte) 1, (char) 1);
         SoftBodySharedSettings_NEW.getNativeData().reset(pointer, false);
         return SoftBodySharedSettings_NEW;
@@ -200,7 +200,7 @@ return (jlong)obj;
     public ArraySoftBodySharedSettingsVertex get_mVertices() {
         long pointer = internal_native_get_mVertices((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 = new ArraySoftBodySharedSettingsVertex((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -226,7 +226,7 @@ nativeObject->mVertices = *((ArraySoftBodySharedSettingsVertex*)mVertices_addr);
     public ArraySoftBodySharedSettingsFace get_mFaces() {
         long pointer = internal_native_get_mFaces((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = new ArraySoftBodySharedSettingsFace((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -252,7 +252,7 @@ nativeObject->mFaces = *((ArraySoftBodySharedSettingsFace*)mFaces_addr);
     public ArraySoftBodySharedSettingsEdge get_mEdgeConstraints() {
         long pointer = internal_native_get_mEdgeConstraints((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 = new ArraySoftBodySharedSettingsEdge((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsEdge_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -278,7 +278,7 @@ nativeObject->mEdgeConstraints = *((ArraySoftBodySharedSettingsEdge*)mEdgeConstr
     public ArraySoftBodySharedSettingsDihedralBend get_mDihedralBendConstraints() {
         long pointer = internal_native_get_mDihedralBendConstraints((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = new ArraySoftBodySharedSettingsDihedralBend((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -304,7 +304,7 @@ nativeObject->mDihedralBendConstraints = *((ArraySoftBodySharedSettingsDihedralB
     public ArraySoftBodySharedSettingsVolume get_mVolumeConstraints() {
         long pointer = internal_native_get_mVolumeConstraints((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 = new ArraySoftBodySharedSettingsVolume((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsVolume_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -330,7 +330,7 @@ nativeObject->mVolumeConstraints = *((ArraySoftBodySharedSettingsVolume*)mVolume
     public ArraySoftBodySharedSettingsSkinned get_mSkinnedConstraints() {
         long pointer = internal_native_get_mSkinnedConstraints((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 = new ArraySoftBodySharedSettingsSkinned((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -356,7 +356,7 @@ nativeObject->mSkinnedConstraints = *((ArraySoftBodySharedSettingsSkinned*)mSkin
     public ArraySoftBodySharedSettingsInvBind get_mInvBindMatrices() {
         long pointer = internal_native_get_mInvBindMatrices((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 = new ArraySoftBodySharedSettingsInvBind((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -382,7 +382,7 @@ nativeObject->mInvBindMatrices = *((ArraySoftBodySharedSettingsInvBind*)mInvBind
     public ArraySoftBodySharedSettingsLRA get_mLRAConstraints() {
         long pointer = internal_native_get_mLRAConstraints((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 = new ArraySoftBodySharedSettingsLRA((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsLRA_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -408,7 +408,7 @@ nativeObject->mLRAConstraints = *((ArraySoftBodySharedSettingsLRA*)mLRAConstrain
     public PhysicsMaterialList get_mMaterials() {
         long pointer = internal_native_get_mMaterials((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
         PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);

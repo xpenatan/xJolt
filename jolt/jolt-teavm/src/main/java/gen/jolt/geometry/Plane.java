@@ -68,7 +68,7 @@ jolt.destroy(jsObj);
     public Vec3 GetNormal() {
         int pointer = internal_native_GetNormal((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -121,7 +121,7 @@ jsObj.SetConstant(inConstant);
     public Plane sFromPointAndNormal(Vec3 inPoint, Vec3 inNormal) {
         int pointer = internal_native_sFromPointAndNormal((int) (long) getNativeData().getCPointer(), (int) (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), (int) (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -140,7 +140,7 @@ return jolt.getPointer(returnedJSObj);
     public Plane sFromPointsCCW(Vec3 inPoint1, Vec3 inPoint2, Vec3 inPoint3) {
         int pointer = internal_native_sFromPointsCCW((int) (long) getNativeData().getCPointer(), (int) (long) (inPoint1 != null ? inPoint1.getNativeData().getCPointer() : 0), (int) (long) (inPoint2 != null ? inPoint2.getNativeData().getCPointer() : 0), (int) (long) (inPoint3 != null ? inPoint3.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_1 == null)
             Plane_TEMP_GEN_1 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -159,7 +159,7 @@ return jolt.getPointer(returnedJSObj);
     public Plane Offset(float inDistance) {
         int pointer = internal_native_Offset((int) (long) getNativeData().getCPointer(), inDistance);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_2 == null)
             Plane_TEMP_GEN_2 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -178,7 +178,7 @@ return jolt.getPointer(returnedJSObj);
     public Plane GetTransformed(Mat44 inTransform) {
         int pointer = internal_native_GetTransformed((int) (long) getNativeData().getCPointer(), (int) (long) (inTransform != null ? inTransform.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_3 == null)
             Plane_TEMP_GEN_3 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_3.getNativeData().reset(pointer, false);

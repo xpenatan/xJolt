@@ -111,7 +111,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sZero() {
         long pointer = internal_native_sZero();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -129,7 +129,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sOne() {
         long pointer = internal_native_sOne();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_1 == null)
             Vec3_TEMP_STATIC_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
@@ -147,7 +147,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sAxisX() {
         long pointer = internal_native_sAxisX();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
@@ -165,7 +165,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sAxisY() {
         long pointer = internal_native_sAxisY();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_3 == null)
             Vec3_TEMP_STATIC_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
@@ -183,7 +183,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sAxisZ() {
         long pointer = internal_native_sAxisZ();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_4 == null)
             Vec3_TEMP_STATIC_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
@@ -201,7 +201,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sReplicate(float inValue) {
         long pointer = internal_native_sReplicate(inValue);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_5 == null)
             Vec3_TEMP_STATIC_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_5.getNativeData().reset(pointer, false);
@@ -219,7 +219,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sMin(Vec3 inLHS, Vec3 inRHS) {
         long pointer = internal_native_sMin((long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_6 == null)
             Vec3_TEMP_STATIC_GEN_6 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_6.getNativeData().reset(pointer, false);
@@ -237,7 +237,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sMax(Vec3 inLHS, Vec3 inRHS) {
         long pointer = internal_native_sMax((long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_7 == null)
             Vec3_TEMP_STATIC_GEN_7 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_7.getNativeData().reset(pointer, false);
@@ -255,7 +255,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sClamp(Vec3 inValue, Vec3 inMin, Vec3 inMax) {
         long pointer = internal_native_sClamp((long) (inValue != null ? inValue.getNativeData().getCPointer() : 0), (long) (inMin != null ? inMin.getNativeData().getCPointer() : 0), (long) (inMax != null ? inMax.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_8 == null)
             Vec3_TEMP_STATIC_GEN_8 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_8.getNativeData().reset(pointer, false);
@@ -273,7 +273,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sFusedMultiplyAdd(Vec3 inMul1, Vec3 inMul2, Vec3 inAdd) {
         long pointer = internal_native_sFusedMultiplyAdd((long) (inMul1 != null ? inMul1.getNativeData().getCPointer() : 0), (long) (inMul2 != null ? inMul2.getNativeData().getCPointer() : 0), (long) (inAdd != null ? inAdd.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_9 == null)
             Vec3_TEMP_STATIC_GEN_9 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_9.getNativeData().reset(pointer, false);
@@ -291,7 +291,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sOr(Vec3 inV1, Vec3 inV2) {
         long pointer = internal_native_sOr((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_10 == null)
             Vec3_TEMP_STATIC_GEN_10 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_10.getNativeData().reset(pointer, false);
@@ -309,7 +309,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sXor(Vec3 inV1, Vec3 inV2) {
         long pointer = internal_native_sXor((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_11 == null)
             Vec3_TEMP_STATIC_GEN_11 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_11.getNativeData().reset(pointer, false);
@@ -327,7 +327,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sAnd(Vec3 inV1, Vec3 inV2) {
         long pointer = internal_native_sAnd((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_12 == null)
             Vec3_TEMP_STATIC_GEN_12 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_12.getNativeData().reset(pointer, false);
@@ -345,7 +345,7 @@ public class Vec3 extends IDLBase {
     public static Vec3 sUnitSpherical(float inTheta, float inPhi) {
         long pointer = internal_native_sUnitSpherical(inTheta, inPhi);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_13 == null)
             Vec3_TEMP_STATIC_GEN_13 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_13.getNativeData().reset(pointer, false);
@@ -418,7 +418,7 @@ public class Vec3 extends IDLBase {
     public Vec3 Normalized() {
         long pointer = internal_native_Normalized((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -437,7 +437,7 @@ public class Vec3 extends IDLBase {
     public Vec3 NormalizedOr(Vec3 inZeroValue) {
         long pointer = internal_native_NormalizedOr((long) getNativeData().getCPointer(), (long) (inZeroValue != null ? inZeroValue.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -456,7 +456,7 @@ public class Vec3 extends IDLBase {
     public Vec3 GetNormalizedPerpendicular() {
         long pointer = internal_native_GetNormalizedPerpendicular((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -651,7 +651,7 @@ public class Vec3 extends IDLBase {
     public Vec3 Abs() {
         long pointer = internal_native_Abs((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -670,7 +670,7 @@ public class Vec3 extends IDLBase {
     public Vec3 Reciprocal() {
         long pointer = internal_native_Reciprocal((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -689,7 +689,7 @@ public class Vec3 extends IDLBase {
     public Vec3 Cross(Vec3 inRHS) {
         long pointer = internal_native_Cross((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -719,7 +719,7 @@ public class Vec3 extends IDLBase {
     public Vec3 DotV(Vec3 inRHS) {
         long pointer = internal_native_DotV((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -738,7 +738,7 @@ public class Vec3 extends IDLBase {
     public Vec4 DotV4(Vec3 inRHS) {
         long pointer = internal_native_DotV4((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -805,7 +805,7 @@ public class Vec3 extends IDLBase {
     public Vec3 MulVec3(Vec3 inV) {
         long pointer = internal_native_MulVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_7.getNativeData().reset(pointer, false);
@@ -824,7 +824,7 @@ public class Vec3 extends IDLBase {
     public Vec3 MulFloat(float inV) {
         long pointer = internal_native_MulFloat((long) getNativeData().getCPointer(), inV);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_8.getNativeData().reset(pointer, false);
@@ -843,7 +843,7 @@ public class Vec3 extends IDLBase {
     public Vec3 DivVec3(Vec3 inV) {
         long pointer = internal_native_DivVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_9 == null)
             Vec3_TEMP_GEN_9 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_9.getNativeData().reset(pointer, false);
@@ -862,7 +862,7 @@ public class Vec3 extends IDLBase {
     public Vec3 DivFloat(float inV) {
         long pointer = internal_native_DivFloat((long) getNativeData().getCPointer(), inV);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_10 == null)
             Vec3_TEMP_GEN_10 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_10.getNativeData().reset(pointer, false);
@@ -881,7 +881,7 @@ public class Vec3 extends IDLBase {
     public Vec3 AddVec3(Vec3 inV) {
         long pointer = internal_native_AddVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_11 == null)
             Vec3_TEMP_GEN_11 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_11.getNativeData().reset(pointer, false);
@@ -900,7 +900,7 @@ public class Vec3 extends IDLBase {
     public Vec3 SubVec3(Vec3 inV) {
         long pointer = internal_native_SubVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_12 == null)
             Vec3_TEMP_GEN_12 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_12.getNativeData().reset(pointer, false);
@@ -919,7 +919,7 @@ public class Vec3 extends IDLBase {
     public Vec4 SplatX() {
         long pointer = internal_native_SplatX((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_1 == null)
             Vec4_TEMP_GEN_1 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -938,7 +938,7 @@ public class Vec3 extends IDLBase {
     public Vec4 SplatY() {
         long pointer = internal_native_SplatY((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_2 == null)
             Vec4_TEMP_GEN_2 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -957,7 +957,7 @@ public class Vec3 extends IDLBase {
     public Vec4 SplatZ() {
         long pointer = internal_native_SplatZ((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_3 == null)
             Vec4_TEMP_GEN_3 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -998,7 +998,7 @@ public class Vec3 extends IDLBase {
     public Vec3 Sqrt() {
         long pointer = internal_native_Sqrt((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_13 == null)
             Vec3_TEMP_GEN_13 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_13.getNativeData().reset(pointer, false);
@@ -1017,7 +1017,7 @@ public class Vec3 extends IDLBase {
     public Vec3 GetSign() {
         long pointer = internal_native_GetSign((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_14 == null)
             Vec3_TEMP_GEN_14 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_14.getNativeData().reset(pointer, false);

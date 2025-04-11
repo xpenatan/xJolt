@@ -92,7 +92,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
     public Vec3 get_mPoint1() {
         long pointer = internal_native_get_mPoint1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -118,7 +118,7 @@ nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
     public Vec3 get_mHingeAxis1() {
         long pointer = internal_native_get_mHingeAxis1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -144,7 +144,7 @@ nativeObject->mHingeAxis1 = *((Vec3*)mHingeAxis1_addr);
     public Vec3 get_mNormalAxis1() {
         long pointer = internal_native_get_mNormalAxis1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -170,7 +170,7 @@ nativeObject->mNormalAxis1 = *((Vec3*)mNormalAxis1_addr);
     public Vec3 get_mPoint2() {
         long pointer = internal_native_get_mPoint2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -196,7 +196,7 @@ nativeObject->mPoint2 = *((Vec3*)mPoint2_addr);
     public Vec3 get_mHingeAxis2() {
         long pointer = internal_native_get_mHingeAxis2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -222,7 +222,7 @@ nativeObject->mHingeAxis2 = *((Vec3*)mHingeAxis2_addr);
     public Vec3 get_mNormalAxis2() {
         long pointer = internal_native_get_mNormalAxis2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -288,7 +288,7 @@ nativeObject->mLimitsMax = mLimitsMax;
     public SpringSettings get_mLimitsSpringSettings() {
         long pointer = internal_native_get_mLimitsSpringSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
         SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -334,7 +334,7 @@ nativeObject->mMaxFrictionTorque = mMaxFrictionTorque;
     public MotorSettings get_mMotorSettings() {
         long pointer = internal_native_get_mMotorSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
         MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);

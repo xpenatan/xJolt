@@ -74,7 +74,7 @@ jolt.destroy(jsObj);
     public static Vec4 sZero() {
         int pointer = internal_native_sZero();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_STATIC_GEN_0 == null)
             Vec4_TEMP_STATIC_GEN_0 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -92,7 +92,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec4 sOne() {
         int pointer = internal_native_sOne();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_STATIC_GEN_1 == null)
             Vec4_TEMP_STATIC_GEN_1 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
@@ -110,7 +110,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec4 sReplicate(float inV) {
         int pointer = internal_native_sReplicate(inV);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_STATIC_GEN_2 == null)
             Vec4_TEMP_STATIC_GEN_2 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
@@ -128,7 +128,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec4 sMin(Vec4 inLHS, Vec4 inRHS) {
         int pointer = internal_native_sMin((int) (long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (int) (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_STATIC_GEN_3 == null)
             Vec4_TEMP_STATIC_GEN_3 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
@@ -146,7 +146,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec4 sMax(Vec4 inLHS, Vec4 inRHS) {
         int pointer = internal_native_sMax((int) (long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (int) (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_STATIC_GEN_4 == null)
             Vec4_TEMP_STATIC_GEN_4 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
@@ -164,7 +164,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec4 sFusedMultiplyAdd(Vec4 inMul1, Vec4 inMul2, Vec4 inAdd) {
         int pointer = internal_native_sFusedMultiplyAdd((int) (long) (inMul1 != null ? inMul1.getNativeData().getCPointer() : 0), (int) (long) (inMul2 != null ? inMul2.getNativeData().getCPointer() : 0), (int) (long) (inAdd != null ? inAdd.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_STATIC_GEN_5 == null)
             Vec4_TEMP_STATIC_GEN_5 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_STATIC_GEN_5.getNativeData().reset(pointer, false);
@@ -182,7 +182,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec4 sOr(Vec4 inV1, Vec4 inV2) {
         int pointer = internal_native_sOr((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_STATIC_GEN_6 == null)
             Vec4_TEMP_STATIC_GEN_6 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_STATIC_GEN_6.getNativeData().reset(pointer, false);
@@ -200,7 +200,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec4 sXor(Vec4 inV1, Vec4 inV2) {
         int pointer = internal_native_sXor((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_STATIC_GEN_7 == null)
             Vec4_TEMP_STATIC_GEN_7 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_STATIC_GEN_7.getNativeData().reset(pointer, false);
@@ -218,7 +218,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec4 sAnd(Vec4 inV1, Vec4 inV2) {
         int pointer = internal_native_sAnd((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_STATIC_GEN_8 == null)
             Vec4_TEMP_STATIC_GEN_8 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_STATIC_GEN_8.getNativeData().reset(pointer, false);
@@ -455,7 +455,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 MulVec4(Vec4 inV) {
         int pointer = internal_native_MulVec4((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -474,7 +474,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 MulFloat(float inV) {
         int pointer = internal_native_MulFloat((int) (long) getNativeData().getCPointer(), inV);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_1 == null)
             Vec4_TEMP_GEN_1 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -493,7 +493,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 DivVec4(Vec4 inV) {
         int pointer = internal_native_DivVec4((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_2 == null)
             Vec4_TEMP_GEN_2 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -512,7 +512,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 DivFloat(float inV) {
         int pointer = internal_native_DivFloat((int) (long) getNativeData().getCPointer(), inV);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_3 == null)
             Vec4_TEMP_GEN_3 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -531,7 +531,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 AddVec4(Vec4 inV) {
         int pointer = internal_native_AddVec4((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_4 == null)
             Vec4_TEMP_GEN_4 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -550,7 +550,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 SubVec4(Vec4 inV) {
         int pointer = internal_native_SubVec4((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_5 == null)
             Vec4_TEMP_GEN_5 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_5.getNativeData().reset(pointer, false);

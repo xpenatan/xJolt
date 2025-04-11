@@ -93,7 +93,7 @@ jolt.destroy(jsObj);
     public Body CreateBody(BodyCreationSettings inSettings) {
         int pointer = internal_native_CreateBody((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Body Body_NEW = new Body((byte) 1, (char) 1);
         Body_NEW.getNativeData().reset(pointer, false);
         return Body_NEW;
@@ -111,7 +111,7 @@ return jolt.getPointer(returnedJSObj);
     public Body CreateSoftBody(SoftBodyCreationSettings inSettings) {
         int pointer = internal_native_CreateSoftBody((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Body Body_NEW = new Body((byte) 1, (char) 1);
         Body_NEW.getNativeData().reset(pointer, false);
         return Body_NEW;
@@ -129,7 +129,7 @@ return jolt.getPointer(returnedJSObj);
     public Body CreateBodyWithID(BodyID inBodyID, BodyCreationSettings inSettings) {
         int pointer = internal_native_CreateBodyWithID((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Body Body_NEW = new Body((byte) 1, (char) 1);
         Body_NEW.getNativeData().reset(pointer, false);
         return Body_NEW;
@@ -147,7 +147,7 @@ return jolt.getPointer(returnedJSObj);
     public Body CreateSoftBodyWithID(BodyID inBodyID, SoftBodyCreationSettings inSettings) {
         int pointer = internal_native_CreateSoftBodyWithID((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Body Body_NEW = new Body((byte) 1, (char) 1);
         Body_NEW.getNativeData().reset(pointer, false);
         return Body_NEW;
@@ -165,7 +165,7 @@ return jolt.getPointer(returnedJSObj);
     public Body CreateBodyWithoutID(BodyCreationSettings inSettings) {
         int pointer = internal_native_CreateBodyWithoutID((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Body Body_NEW = new Body((byte) 1, (char) 1);
         Body_NEW.getNativeData().reset(pointer, false);
         return Body_NEW;
@@ -183,7 +183,7 @@ return jolt.getPointer(returnedJSObj);
     public Body CreateSoftBodyWithoutID(SoftBodyCreationSettings inSettings) {
         int pointer = internal_native_CreateSoftBodyWithoutID((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         Body Body_NEW = new Body((byte) 1, (char) 1);
         Body_NEW.getNativeData().reset(pointer, false);
         return Body_NEW;
@@ -236,7 +236,7 @@ return returnedJSObj;
     public Body UnassignBodyID(BodyID inBodyID) {
         int pointer = internal_native_UnassignBodyID((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = new Body((byte) 1, (char) 1);
         Body_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -322,7 +322,7 @@ return returnedJSObj;
     public BodyID CreateAndAddBody(BodyCreationSettings inSettings, int inActivationMode) {
         int pointer = internal_native_CreateAndAddBody((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), inActivationMode);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -341,7 +341,7 @@ return jolt.getPointer(returnedJSObj);
     public BodyID CreateAndAddSoftBody(SoftBodyCreationSettings inSettings, int inActivationMode) {
         int pointer = internal_native_CreateAndAddSoftBody((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), inActivationMode);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_1 == null)
             BodyID_TEMP_GEN_1 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -360,7 +360,7 @@ return jolt.getPointer(returnedJSObj);
     public BodyInterface_AddState AddBodiesPrepare(BodyIDMemRef ioBodies, int inNumber) {
         int pointer = internal_native_AddBodiesPrepare((int) (long) getNativeData().getCPointer(), (int) (long) (ioBodies != null ? ioBodies.getNativeData().getCPointer() : 0), inNumber);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyInterface_AddState_TEMP_GEN_0 == null)
             BodyInterface_AddState_TEMP_GEN_0 = new BodyInterface_AddState((byte) 1, (char) 1);
         BodyInterface_AddState_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -412,7 +412,7 @@ jsObj.RemoveBodies(ioBodies_addr, inNumber);
     public TwoBodyConstraint CreateConstraint(TwoBodyConstraintSettings inSettings, BodyID inBodyID1, BodyID inBodyID2) {
         int pointer = internal_native_CreateConstraint((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (int) (long) (inBodyID1 != null ? inBodyID1.getNativeData().getCPointer() : 0), (int) (long) (inBodyID2 != null ? inBodyID2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (TwoBodyConstraint_TEMP_GEN_0 == null)
             TwoBodyConstraint_TEMP_GEN_0 = new TwoBodyConstraint((byte) 1, (char) 1);
         TwoBodyConstraint_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -442,7 +442,7 @@ jsObj.ActivateConstraint(inConstraint_addr);
     public Shape GetShape(BodyID inBodyID) {
         int pointer = internal_native_GetShape((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
         Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -550,7 +550,7 @@ jsObj.SetPosition(inBodyID_addr, inPosition_addr, inActivationMode);
     public Vec3 GetPosition(BodyID inBodyID) {
         int pointer = internal_native_GetPosition((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -580,7 +580,7 @@ jsObj.SetRotation(inBodyID_addr, inRotation_addr, inActivationMode);
     public Quat GetRotation(BodyID inBodyID) {
         int pointer = internal_native_GetRotation((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -599,7 +599,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetWorldTransform(BodyID inBodyID) {
         int pointer = internal_native_GetWorldTransform((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -618,7 +618,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetCenterOfMassTransform(BodyID inBodyID) {
         int pointer = internal_native_GetCenterOfMassTransform((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -670,7 +670,7 @@ jsObj.SetLinearVelocity(inBodyID_addr, inLinearVelocity_addr);
     public Vec3 GetLinearVelocity(BodyID inBodyID) {
         int pointer = internal_native_GetLinearVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -722,7 +722,7 @@ jsObj.SetAngularVelocity(inBodyID_addr, inAngularVelocity_addr);
     public Vec3 GetAngularVelocity(BodyID inBodyID) {
         int pointer = internal_native_GetAngularVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -741,7 +741,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetPointVelocity(BodyID inBodyID, Vec3 inPoint) {
         int pointer = internal_native_GetPointVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -918,7 +918,7 @@ return returnedJSObj;
     public Mat44 GetInverseInertia(BodyID inBodyID) {
         int pointer = internal_native_GetInverseInertia((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -1040,7 +1040,7 @@ jsObj.SetCollisionGroup(inBodyID_addr, inCollisionGroup_addr);
     public CollisionGroup GetCollisionGroup(BodyID inBodyID) {
         int pointer = internal_native_GetCollisionGroup((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = new CollisionGroup((byte) 1, (char) 1);
         CollisionGroup_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -1148,7 +1148,7 @@ jsObj.AddAngularImpulse(inBodyID_addr, inAngularImpulse_addr);
     public TransformedShape GetTransformedShape(BodyID inBodyID) {
         int pointer = internal_native_GetTransformedShape((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = new TransformedShape((byte) 1, (char) 1);
         TransformedShape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -1190,7 +1190,7 @@ jsObj.SetUserData(inBodyID_addr, inUserData);
     public PhysicsMaterial GetMaterial(BodyID inBodyID, SubShapeID inSubShapeID) {
         int pointer = internal_native_GetMaterial((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = new PhysicsMaterial((byte) 1, (char) 1);
         PhysicsMaterial_TEMP_GEN_0.getNativeData().reset(pointer, false);

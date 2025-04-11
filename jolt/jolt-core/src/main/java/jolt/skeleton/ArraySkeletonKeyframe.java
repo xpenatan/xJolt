@@ -75,7 +75,7 @@ return nativeObject->size();
     public SkeletalAnimationKeyframe at(int inIndex) {
         long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SkeletalAnimationKeyframe_TEMP_GEN_0 == null)
             SkeletalAnimationKeyframe_TEMP_GEN_0 = new SkeletalAnimationKeyframe((byte) 1, (char) 1);
         SkeletalAnimationKeyframe_TEMP_GEN_0.getNativeData().reset(pointer, false);

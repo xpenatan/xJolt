@@ -76,7 +76,7 @@ nativeObject->SetSkeleton((Skeleton* )inSkeleton_addr);
     public Skeleton GetSkeleton() {
         long pointer = internal_native_GetSkeleton((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Skeleton_TEMP_GEN_0 == null)
             Skeleton_TEMP_GEN_0 = new Skeleton((byte) 1, (char) 1);
         Skeleton_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -103,7 +103,7 @@ nativeObject->SetRootOffset(*((Vec3* )inOffset_addr));
     public Vec3 GetRootOffset() {
         long pointer = internal_native_GetRootOffset((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -130,7 +130,7 @@ return nativeObject->GetJointCount();
     public SkeletalAnimationJointState GetJoint(int inJoint) {
         long pointer = internal_native_GetJoint((long) getNativeData().getCPointer(), inJoint);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SkeletalAnimationJointState_TEMP_GEN_0 == null)
             SkeletalAnimationJointState_TEMP_GEN_0 = new SkeletalAnimationJointState((byte) 1, (char) 1);
         SkeletalAnimationJointState_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -146,7 +146,7 @@ return (jlong)&nativeObject->GetJoint((int)inJoint);
     public ArrayMat44 GetJointMatrices() {
         long pointer = internal_native_GetJointMatrices((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayMat44_TEMP_GEN_0 == null)
             ArrayMat44_TEMP_GEN_0 = new ArrayMat44((byte) 1, (char) 1);
         ArrayMat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -162,7 +162,7 @@ return (jlong)&nativeObject->GetJointMatrices();
     public Mat44 GetJointMatrix(int inJoint) {
         long pointer = internal_native_GetJointMatrix((long) getNativeData().getCPointer(), inJoint);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);

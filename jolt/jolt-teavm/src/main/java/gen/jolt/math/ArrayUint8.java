@@ -103,7 +103,7 @@ jsObj.clear();
     public Uint8MemRef data() {
         int pointer = internal_native_data((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Uint8MemRef_TEMP_GEN_0 == null)
             Uint8MemRef_TEMP_GEN_0 = new Uint8MemRef((byte) 1, (char) 1);
         Uint8MemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);

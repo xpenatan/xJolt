@@ -58,7 +58,7 @@ jsObj.SetContext(inContext_addr);
     public TransformedShape GetContext() {
         int pointer = internal_native_GetContext((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = new TransformedShape((byte) 1, (char) 1);
         TransformedShape_TEMP_GEN_0.getNativeData().reset(pointer, false);

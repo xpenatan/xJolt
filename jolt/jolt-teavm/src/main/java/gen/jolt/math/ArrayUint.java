@@ -126,7 +126,7 @@ jsObj.clear();
     public UintMemRef data() {
         int pointer = internal_native_data((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (UintMemRef_TEMP_GEN_0 == null)
             UintMemRef_TEMP_GEN_0 = new UintMemRef((byte) 1, (char) 1);
         UintMemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);

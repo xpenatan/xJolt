@@ -66,7 +66,7 @@ jolt.destroy(jsObj);
     public SoftBodySharedSettings GetSettings() {
         int pointer = internal_native_GetSettings((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodySharedSettings_TEMP_GEN_0 == null)
             SoftBodySharedSettings_TEMP_GEN_0 = new SoftBodySharedSettings((byte) 1, (char) 1);
         SoftBodySharedSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -85,7 +85,7 @@ return jolt.getPointer(returnedJSObj);
     public ArraySoftBodyVertex GetVertices() {
         int pointer = internal_native_GetVertices((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
             ArraySoftBodyVertex_TEMP_GEN_0 = new ArraySoftBodyVertex((byte) 1, (char) 1);
         ArraySoftBodyVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -104,7 +104,7 @@ return jolt.getPointer(returnedJSObj);
     public SoftBodyVertex GetVertex(int inIndex) {
         int pointer = internal_native_GetVertex((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodyVertex_TEMP_GEN_0 == null)
             SoftBodyVertex_TEMP_GEN_0 = new SoftBodyVertex((byte) 1, (char) 1);
         SoftBodyVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -123,7 +123,7 @@ return jolt.getPointer(returnedJSObj);
     public PhysicsMaterialList GetMaterials() {
         int pointer = internal_native_GetMaterials((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
         PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -142,7 +142,7 @@ return jolt.getPointer(returnedJSObj);
     public ArraySoftBodySharedSettingsFace GetFaces() {
         int pointer = internal_native_GetFaces((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = new ArraySoftBodySharedSettingsFace((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -161,7 +161,7 @@ return jolt.getPointer(returnedJSObj);
     public SoftBodySharedSettingsFace GetFace(int inIndex) {
         int pointer = internal_native_GetFace((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             SoftBodySharedSettingsFace_TEMP_GEN_0 = new SoftBodySharedSettingsFace((byte) 1, (char) 1);
         SoftBodySharedSettingsFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -295,7 +295,7 @@ jsObj.SetSkinnedMaxDistanceMultiplier(inSkinnedMaxDistanceMultiplier);
     public AABox GetLocalBounds() {
         int pointer = internal_native_GetLocalBounds((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);

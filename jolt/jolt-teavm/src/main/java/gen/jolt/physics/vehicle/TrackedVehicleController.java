@@ -144,7 +144,7 @@ return returnedJSObj;
     public VehicleEngine GetEngine() {
         int pointer = internal_native_GetEngine((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleEngine_TEMP_GEN_0 == null)
             VehicleEngine_TEMP_GEN_0 = new VehicleEngine((byte) 1, (char) 1);
         VehicleEngine_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -163,7 +163,7 @@ return jolt.getPointer(returnedJSObj);
     public VehicleTransmission GetTransmission() {
         int pointer = internal_native_GetTransmission((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleTransmission_TEMP_GEN_0 == null)
             VehicleTransmission_TEMP_GEN_0 = new VehicleTransmission((byte) 1, (char) 1);
         VehicleTransmission_TEMP_GEN_0.getNativeData().reset(pointer, false);

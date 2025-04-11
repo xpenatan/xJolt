@@ -75,7 +75,7 @@ nativeObject->clear();
     public BodyID getValue(int index) {
         long pointer = internal_native_getValue((long) getNativeData().getCPointer(), index);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);

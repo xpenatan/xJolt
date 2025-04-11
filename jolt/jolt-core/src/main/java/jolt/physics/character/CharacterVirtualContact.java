@@ -75,7 +75,7 @@ return nativeObject->IsSameBody(*((CharacterVirtualContact* )inOther_addr));
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -101,7 +101,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public Vec3 get_mLinearVelocity() {
         long pointer = internal_native_get_mLinearVelocity((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -127,7 +127,7 @@ nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
     public Vec3 get_mContactNormal() {
         long pointer = internal_native_get_mContactNormal((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -153,7 +153,7 @@ nativeObject->mContactNormal = *((Vec3*)mContactNormal_addr);
     public Vec3 get_mSurfaceNormal() {
         long pointer = internal_native_get_mSurfaceNormal((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -219,7 +219,7 @@ nativeObject->mFraction = mFraction;
     public BodyID get_mBodyB() {
         long pointer = internal_native_get_mBodyB((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -245,7 +245,7 @@ nativeObject->mBodyB = *((BodyID*)mBodyB_addr);
     public CharacterID get_mCharacterIDB() {
         long pointer = internal_native_get_mCharacterIDB((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = new CharacterID((byte) 1, (char) 1);
         CharacterID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -271,7 +271,7 @@ nativeObject->mCharacterIDB = *((CharacterID*)mCharacterIDB_addr);
     public SubShapeID get_mSubShapeIDB() {
         long pointer = internal_native_get_mSubShapeIDB((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -337,7 +337,7 @@ nativeObject->mIsSensorB = mIsSensorB;
     public CharacterVirtual get_mCharacterB() {
         long pointer = internal_native_get_mCharacterB((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CharacterVirtual_TEMP_GEN_0 == null)
             CharacterVirtual_TEMP_GEN_0 = new CharacterVirtual((byte) 1, (char) 1);
         CharacterVirtual_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -384,7 +384,7 @@ nativeObject->mUserData = mUserData;
     public PhysicsMaterial get_mMaterial() {
         long pointer = internal_native_get_mMaterial((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = new PhysicsMaterial((byte) 1, (char) 1);
         PhysicsMaterial_TEMP_GEN_0.getNativeData().reset(pointer, false);

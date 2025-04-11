@@ -81,7 +81,7 @@ nativeObject->Release();
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -107,7 +107,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public Vec3 get_mSuspensionForcePoint() {
         long pointer = internal_native_get_mSuspensionForcePoint((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -133,7 +133,7 @@ nativeObject->mSuspensionForcePoint = *((Vec3*)mSuspensionForcePoint_addr);
     public Vec3 get_mSuspensionDirection() {
         long pointer = internal_native_get_mSuspensionDirection((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -159,7 +159,7 @@ nativeObject->mSuspensionDirection = *((Vec3*)mSuspensionDirection_addr);
     public Vec3 get_mSteeringAxis() {
         long pointer = internal_native_get_mSteeringAxis((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -185,7 +185,7 @@ nativeObject->mSteeringAxis = *((Vec3*)mSteeringAxis_addr);
     public Vec3 get_mWheelUp() {
         long pointer = internal_native_get_mWheelUp((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -211,7 +211,7 @@ nativeObject->mWheelUp = *((Vec3*)mWheelUp_addr);
     public Vec3 get_mWheelForward() {
         long pointer = internal_native_get_mWheelForward((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -237,7 +237,7 @@ nativeObject->mWheelForward = *((Vec3*)mWheelForward_addr);
     public SpringSettings get_mSuspensionSpring() {
         long pointer = internal_native_get_mSuspensionSpring((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
         SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);

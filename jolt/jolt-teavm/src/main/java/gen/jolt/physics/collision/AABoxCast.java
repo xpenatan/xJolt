@@ -62,7 +62,7 @@ jolt.destroy(jsObj);
     public AABox get_mBox() {
         int pointer = internal_native_get_mBox((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -92,7 +92,7 @@ jsObj.set_mBox(mBox_addr);
     public Vec3 get_mDirection() {
         int pointer = internal_native_get_mDirection((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);

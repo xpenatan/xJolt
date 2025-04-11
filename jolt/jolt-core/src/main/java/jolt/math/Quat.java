@@ -107,7 +107,7 @@ delete nativeObject;
     public static Quat sZero() {
         long pointer = internal_native_sZero();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_0 == null)
             Quat_TEMP_STATIC_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -123,7 +123,7 @@ return (jlong)&copy_addr;*/
     public static Quat sIdentity() {
         long pointer = internal_native_sIdentity();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_1 == null)
             Quat_TEMP_STATIC_GEN_1 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
@@ -139,7 +139,7 @@ return (jlong)&copy_addr;*/
     public static Quat sRotation(Vec3 inRotation, float inAngle) {
         long pointer = internal_native_sRotation((long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inAngle);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_2 == null)
             Quat_TEMP_STATIC_GEN_2 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
@@ -155,7 +155,7 @@ return (jlong)&copy_addr;*/
     public static Quat sFromTo(Vec3 inFrom, Vec3 inTo) {
         long pointer = internal_native_sFromTo((long) (inFrom != null ? inFrom.getNativeData().getCPointer() : 0), (long) (inTo != null ? inTo.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_3 == null)
             Quat_TEMP_STATIC_GEN_3 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
@@ -189,7 +189,7 @@ return ((*nativeObject != *((Quat* )inQ_addr)));*/
     public Quat MulQuat(Quat inQ) {
         long pointer = internal_native_MulQuat((long) getNativeData().getCPointer(), (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -206,7 +206,7 @@ return (jlong)&copy_addr;*/
     public Vec3 MulVec3(Vec3 inV) {
         long pointer = internal_native_MulVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -223,7 +223,7 @@ return (jlong)&copy_addr;*/
     public Quat MulFloat(float inV) {
         long pointer = internal_native_MulFloat((long) getNativeData().getCPointer(), inV);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_1 == null)
             Quat_TEMP_GEN_1 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -300,7 +300,7 @@ return nativeObject->LengthSq();
     public Quat Normalized() {
         long pointer = internal_native_Normalized((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_2 == null)
             Quat_TEMP_GEN_2 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -317,7 +317,7 @@ return (jlong)&copy_addr;*/
     public static Quat sEulerAngles(Vec3 inInput) {
         long pointer = internal_native_sEulerAngles((long) (inInput != null ? inInput.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_4 == null)
             Quat_TEMP_STATIC_GEN_4 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
@@ -333,7 +333,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetEulerAngles() {
         long pointer = internal_native_GetEulerAngles((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -390,7 +390,7 @@ return nativeObject->GetW();
     public Vec3 GetXYZ() {
         long pointer = internal_native_GetXYZ((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -457,7 +457,7 @@ nativeObject->Set((float)inX, (float)inY, (float)inZ, (float)inW);
     public Vec3 InverseRotate(Vec3 inV) {
         long pointer = internal_native_InverseRotate((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -474,7 +474,7 @@ return (jlong)&copy_addr;*/
     public Vec3 RotateAxisX() {
         long pointer = internal_native_RotateAxisX((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -491,7 +491,7 @@ return (jlong)&copy_addr;*/
     public Vec3 RotateAxisY() {
         long pointer = internal_native_RotateAxisY((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -508,7 +508,7 @@ return (jlong)&copy_addr;*/
     public Vec3 RotateAxisZ() {
         long pointer = internal_native_RotateAxisZ((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -535,7 +535,7 @@ return nativeObject->Dot(*((Quat* )inQ_addr));
     public Quat Conjugated() {
         long pointer = internal_native_Conjugated((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_3 == null)
             Quat_TEMP_GEN_3 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -552,7 +552,7 @@ return (jlong)&copy_addr;*/
     public Quat Inversed() {
         long pointer = internal_native_Inversed((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_4 == null)
             Quat_TEMP_GEN_4 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -569,7 +569,7 @@ return (jlong)&copy_addr;*/
     public Quat EnsureWPositive() {
         long pointer = internal_native_EnsureWPositive((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_5 == null)
             Quat_TEMP_GEN_5 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -586,7 +586,7 @@ return (jlong)&copy_addr;*/
     public Quat GetPerpendicular() {
         long pointer = internal_native_GetPerpendicular((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_6 == null)
             Quat_TEMP_GEN_6 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -613,7 +613,7 @@ return nativeObject->GetRotationAngle(*((Vec3* )inAxis_addr));
     public Quat GetTwist(Vec3 inAxis) {
         long pointer = internal_native_GetTwist((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_7 == null)
             Quat_TEMP_GEN_7 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_7.getNativeData().reset(pointer, false);
@@ -640,7 +640,7 @@ nativeObject->GetSwingTwist(*((Quat* )outSwing_addr), *((Quat* )outTwist_addr));
     public Quat LERP(Quat inDestination, float inFraction) {
         long pointer = internal_native_LERP((long) getNativeData().getCPointer(), (long) (inDestination != null ? inDestination.getNativeData().getCPointer() : 0), inFraction);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_8 == null)
             Quat_TEMP_GEN_8 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_8.getNativeData().reset(pointer, false);
@@ -657,7 +657,7 @@ return (jlong)&copy_addr;*/
     public Quat SLERP(Quat inDestination, float inFraction) {
         long pointer = internal_native_SLERP((long) getNativeData().getCPointer(), (long) (inDestination != null ? inDestination.getNativeData().getCPointer() : 0), inFraction);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_9 == null)
             Quat_TEMP_GEN_9 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_9.getNativeData().reset(pointer, false);

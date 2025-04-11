@@ -106,7 +106,7 @@ nativeObject->mMaxRPM = mMaxRPM;
     public LinearCurve get_mNormalizedTorque() {
         long pointer = internal_native_get_mNormalizedTorque((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = new LinearCurve((byte) 1, (char) 1);
         LinearCurve_TEMP_GEN_0.getNativeData().reset(pointer, false);

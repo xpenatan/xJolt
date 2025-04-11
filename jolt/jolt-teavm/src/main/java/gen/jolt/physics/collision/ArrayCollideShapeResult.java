@@ -70,7 +70,7 @@ return returnedJSObj;
     public CollideShapeResult at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CollideShapeResult_TEMP_GEN_0 == null)
             CollideShapeResult_TEMP_GEN_0 = new CollideShapeResult((byte) 1, (char) 1);
         CollideShapeResult_TEMP_GEN_0.getNativeData().reset(pointer, false);

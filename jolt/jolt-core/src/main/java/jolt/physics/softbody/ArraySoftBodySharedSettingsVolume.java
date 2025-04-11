@@ -65,7 +65,7 @@ return nativeObject->size();
     public SoftBodySharedSettingsVolume at(int inIndex) {
         long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodySharedSettingsVolume_TEMP_GEN_0 == null)
             SoftBodySharedSettingsVolume_TEMP_GEN_0 = new SoftBodySharedSettingsVolume((byte) 1, (char) 1);
         SoftBodySharedSettingsVolume_TEMP_GEN_0.getNativeData().reset(pointer, false);

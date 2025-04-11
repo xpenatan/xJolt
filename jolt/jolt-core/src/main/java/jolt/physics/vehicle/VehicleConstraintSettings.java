@@ -48,7 +48,7 @@ return (jlong)new VehicleConstraintSettings();
     public Vec3 get_mUp() {
         long pointer = internal_native_get_mUp((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -74,7 +74,7 @@ nativeObject->mUp = *((Vec3*)mUp_addr);
     public Vec3 get_mForward() {
         long pointer = internal_native_get_mForward((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -120,7 +120,7 @@ nativeObject->mMaxPitchRollAngle = mMaxPitchRollAngle;
     public ArrayWheelSettings get_mWheels() {
         long pointer = internal_native_get_mWheels((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayWheelSettings_TEMP_GEN_0 == null)
             ArrayWheelSettings_TEMP_GEN_0 = new ArrayWheelSettings((byte) 1, (char) 1);
         ArrayWheelSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -146,7 +146,7 @@ nativeObject->mWheels = *((ArrayWheelSettings*)mWheels_addr);
     public ArrayVehicleAntiRollBar get_mAntiRollBars() {
         long pointer = internal_native_get_mAntiRollBars((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayVehicleAntiRollBar_TEMP_GEN_0 == null)
             ArrayVehicleAntiRollBar_TEMP_GEN_0 = new ArrayVehicleAntiRollBar((byte) 1, (char) 1);
         ArrayVehicleAntiRollBar_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -172,7 +172,7 @@ nativeObject->mAntiRollBars = *((ArrayVehicleAntiRollBar*)mAntiRollBars_addr);
     public VehicleControllerSettings get_mController() {
         long pointer = internal_native_get_mController((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleControllerSettings_TEMP_GEN_0 == null)
             VehicleControllerSettings_TEMP_GEN_0 = new VehicleControllerSettings((byte) 1, (char) 1);
         VehicleControllerSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);

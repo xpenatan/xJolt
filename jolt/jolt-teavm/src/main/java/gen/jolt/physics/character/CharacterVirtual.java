@@ -76,7 +76,7 @@ return jolt.getPointer(jsObj);
     public CharacterID GetID() {
         int pointer = internal_native_GetID((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = new CharacterID((byte) 1, (char) 1);
         CharacterID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -117,7 +117,7 @@ jsObj.SetCharacterVsCharacterCollision(inCharacterVsCharacterCollision_addr);
     public CharacterContactListener GetListener() {
         int pointer = internal_native_GetListener((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CharacterContactListener_TEMP_GEN_0 == null)
             CharacterContactListener_TEMP_GEN_0 = new CharacterContactListener((byte) 1, (char) 1);
         CharacterContactListener_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -136,7 +136,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetLinearVelocity() {
         int pointer = internal_native_GetLinearVelocity((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -166,7 +166,7 @@ jsObj.SetLinearVelocity(inLinearVelocity_addr);
     public Vec3 GetPosition() {
         int pointer = internal_native_GetPosition((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -196,7 +196,7 @@ jsObj.SetPosition(inPosition_addr);
     public Quat GetRotation() {
         int pointer = internal_native_GetRotation((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -226,7 +226,7 @@ jsObj.SetRotation(inRotation_addr);
     public Vec3 GetCenterOfMassPosition() {
         int pointer = internal_native_GetCenterOfMassPosition((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -245,7 +245,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetWorldTransform() {
         int pointer = internal_native_GetWorldTransform((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -264,7 +264,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetCenterOfMassTransform() {
         int pointer = internal_native_GetCenterOfMassTransform((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -422,7 +422,7 @@ return returnedJSObj;
     public Vec3 GetShapeOffset() {
         int pointer = internal_native_GetShapeOffset((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -475,7 +475,7 @@ jsObj.SetUserData(inUserData);
     public BodyID GetInnerBodyID() {
         int pointer = internal_native_GetInnerBodyID((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -516,7 +516,7 @@ jsObj.FinishTrackingContactChanges();
     public Vec3 CancelVelocityTowardsSteepSlopes(Vec3 inDesiredVelocity) {
         int pointer = internal_native_CancelVelocityTowardsSteepSlopes((int) (long) getNativeData().getCPointer(), (int) (long) (inDesiredVelocity != null ? inDesiredVelocity.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -638,7 +638,7 @@ jsObj.SetInnerBodyShape(inShape_addr);
     public TransformedShape GetTransformedShape() {
         int pointer = internal_native_GetTransformedShape((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = new TransformedShape((byte) 1, (char) 1);
         TransformedShape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -693,7 +693,7 @@ return returnedJSObj;
     public ArrayCharacterVirtualContact GetActiveContacts() {
         int pointer = internal_native_GetActiveContacts((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayCharacterVirtualContact_TEMP_GEN_0 == null)
             ArrayCharacterVirtualContact_TEMP_GEN_0 = new ArrayCharacterVirtualContact((byte) 1, (char) 1);
         ArrayCharacterVirtualContact_TEMP_GEN_0.getNativeData().reset(pointer, false);

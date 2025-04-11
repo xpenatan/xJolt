@@ -67,7 +67,7 @@ nativeObject->Sample((float)inTime, *((SkeletonPose* )ioPose_addr));
     public ArraySkeletonAnimatedJoint GetAnimatedJoints() {
         long pointer = internal_native_GetAnimatedJoints((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySkeletonAnimatedJoint_TEMP_GEN_0 == null)
             ArraySkeletonAnimatedJoint_TEMP_GEN_0 = new ArraySkeletonAnimatedJoint((byte) 1, (char) 1);
         ArraySkeletonAnimatedJoint_TEMP_GEN_0.getNativeData().reset(pointer, false);

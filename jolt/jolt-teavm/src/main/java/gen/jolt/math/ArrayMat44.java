@@ -72,7 +72,7 @@ return returnedJSObj;
     public Mat44 at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -135,7 +135,7 @@ jsObj.clear();
     public Mat44MemRef data() {
         int pointer = internal_native_data((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44MemRef_TEMP_GEN_0 == null)
             Mat44MemRef_TEMP_GEN_0 = new Mat44MemRef((byte) 1, (char) 1);
         Mat44MemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);

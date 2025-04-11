@@ -62,7 +62,7 @@ delete nativeObject;
     public BodyID GetBody1ID() {
         long pointer = internal_native_GetBody1ID((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -78,7 +78,7 @@ return (jlong)&nativeObject->GetBody1ID();
     public SubShapeID GetSubShapeID1() {
         long pointer = internal_native_GetSubShapeID1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -94,7 +94,7 @@ return (jlong)&nativeObject->GetSubShapeID1();
     public BodyID GetBody2ID() {
         long pointer = internal_native_GetBody2ID((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_1 == null)
             BodyID_TEMP_GEN_1 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -110,7 +110,7 @@ return (jlong)&nativeObject->GetBody2ID();
     public SubShapeID GetSubShapeID2() {
         long pointer = internal_native_GetSubShapeID2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_1.getNativeData().reset(pointer, false);

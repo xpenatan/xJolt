@@ -39,7 +39,7 @@ jsObj.SetPath(inPath_addr, inPathFraction);
     public PathConstraintPath GetPath() {
         int pointer = internal_native_GetPath((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = new PathConstraintPath((byte) 1, (char) 1);
         PathConstraintPath_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -93,7 +93,7 @@ return returnedJSObj;
     public MotorSettings GetPositionMotorSettings() {
         int pointer = internal_native_GetPositionMotorSettings((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
         MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);

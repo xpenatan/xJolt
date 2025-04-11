@@ -54,7 +54,7 @@ jolt.destroy(jsObj);
     public Body TryGetBody(BodyID inBodyID) {
         int pointer = internal_native_TryGetBody((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = new Body((byte) 1, (char) 1);
         Body_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -73,7 +73,7 @@ return jolt.getPointer(returnedJSObj);
     public SharedMutex LockRead(BodyID inBodyID) {
         int pointer = internal_native_LockRead((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SharedMutex_TEMP_GEN_0 == null)
             SharedMutex_TEMP_GEN_0 = new SharedMutex((byte) 1, (char) 1);
         SharedMutex_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -103,7 +103,7 @@ jsObj.UnlockRead(inMutex_addr);
     public SharedMutex LockWrite(BodyID inBodyID) {
         int pointer = internal_native_LockWrite((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SharedMutex_TEMP_GEN_1 == null)
             SharedMutex_TEMP_GEN_1 = new SharedMutex((byte) 1, (char) 1);
         SharedMutex_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -133,7 +133,7 @@ jsObj.UnlockWrite(inMutex_addr);
     public MutexMask GetMutexMask(IDLArrayBodyID inBodies, int inNumber) {
         int pointer = internal_native_GetMutexMask((int) (long) getNativeData().getCPointer(), (int) (long) (inBodies != null ? inBodies.getPointer() : 0), inNumber);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MutexMask_TEMP_GEN_0 == null)
             MutexMask_TEMP_GEN_0 = new MutexMask((byte) 1, (char) 1);
         MutexMask_TEMP_GEN_0.getNativeData().reset(pointer, false);

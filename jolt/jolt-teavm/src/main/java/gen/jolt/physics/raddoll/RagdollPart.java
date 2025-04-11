@@ -48,7 +48,7 @@ jolt.destroy(jsObj);
     public TwoBodyConstraintSettings get_mToParent() {
         int pointer = internal_native_get_mToParent((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
             TwoBodyConstraintSettings_TEMP_GEN_0 = new TwoBodyConstraintSettings((byte) 1, (char) 1);
         TwoBodyConstraintSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);

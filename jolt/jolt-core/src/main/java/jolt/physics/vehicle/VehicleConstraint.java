@@ -102,7 +102,7 @@ return nativeObject->IsGravityOverridden();
     public Vec3 GetGravityOverride() {
         long pointer = internal_native_GetGravityOverride((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -129,7 +129,7 @@ nativeObject->ResetGravityOverride();
     public Vec3 GetLocalUp() {
         long pointer = internal_native_GetLocalUp((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -146,7 +146,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetLocalForward() {
         long pointer = internal_native_GetLocalForward((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -163,7 +163,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetWorldUp() {
         long pointer = internal_native_GetWorldUp((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -180,7 +180,7 @@ return (jlong)&copy_addr;*/
     public Body GetVehicleBody() {
         long pointer = internal_native_GetVehicleBody((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = new Body((byte) 1, (char) 1);
         Body_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -197,7 +197,7 @@ return (jlong)obj;
     public VehicleController GetController() {
         long pointer = internal_native_GetController((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleController_TEMP_GEN_0 == null)
             VehicleController_TEMP_GEN_0 = new VehicleController((byte) 1, (char) 1);
         VehicleController_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -214,7 +214,7 @@ return (jlong)obj;
     public Wheels GetWheels() {
         long pointer = internal_native_GetWheels((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Wheels_TEMP_GEN_0 == null)
             Wheels_TEMP_GEN_0 = new Wheels((byte) 1, (char) 1);
         Wheels_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -230,7 +230,7 @@ return (jlong)&nativeObject->GetWheels();
     public Wheel GetWheel(int inIdx) {
         long pointer = internal_native_GetWheel((long) getNativeData().getCPointer(), inIdx);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Wheel_TEMP_GEN_0 == null)
             Wheel_TEMP_GEN_0 = new Wheel((byte) 1, (char) 1);
         Wheel_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -247,7 +247,7 @@ return (jlong)obj;
     public Mat44 GetWheelLocalTransform(int inWheelIndex, Vec3 inWheelRight, Vec3 inWheelUp) {
         long pointer = internal_native_GetWheelLocalTransform((long) getNativeData().getCPointer(), inWheelIndex, (long) (inWheelRight != null ? inWheelRight.getNativeData().getCPointer() : 0), (long) (inWheelUp != null ? inWheelUp.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -264,7 +264,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetWheelWorldTransform(int inWheelIndex, Vec3 inWheelRight, Vec3 inWheelUp) {
         long pointer = internal_native_GetWheelWorldTransform((long) getNativeData().getCPointer(), inWheelIndex, (long) (inWheelRight != null ? inWheelRight.getNativeData().getCPointer() : 0), (long) (inWheelUp != null ? inWheelUp.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -281,7 +281,7 @@ return (jlong)&copy_addr;*/
     public ArrayVehicleAntiRollBar GetAntiRollBars() {
         long pointer = internal_native_GetAntiRollBars((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayVehicleAntiRollBar_TEMP_GEN_0 == null)
             ArrayVehicleAntiRollBar_TEMP_GEN_0 = new ArrayVehicleAntiRollBar((byte) 1, (char) 1);
         ArrayVehicleAntiRollBar_TEMP_GEN_0.getNativeData().reset(pointer, false);

@@ -82,7 +82,7 @@ return returnedJSObj;
     public PhysicsMaterial at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = new PhysicsMaterial((byte) 1, (char) 1);
         PhysicsMaterial_TEMP_GEN_0.getNativeData().reset(pointer, false);

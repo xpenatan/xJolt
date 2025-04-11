@@ -68,7 +68,7 @@ jsObj.Release();
     public Vec3 get_mUp() {
         int pointer = internal_native_get_mUp((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -98,7 +98,7 @@ jsObj.set_mUp(mUp_addr);
     public Plane get_mSupportingVolume() {
         int pointer = internal_native_get_mSupportingVolume((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -172,7 +172,7 @@ jsObj.set_mEnhancedInternalEdgeRemoval(mEnhancedInternalEdgeRemoval);
     public Shape get_mShape() {
         int pointer = internal_native_get_mShape((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
         Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);

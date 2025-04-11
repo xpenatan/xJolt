@@ -112,7 +112,7 @@ jolt.destroy(jsObj);
     public static Quat sZero() {
         int pointer = internal_native_sZero();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_0 == null)
             Quat_TEMP_STATIC_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -130,7 +130,7 @@ return jolt.getPointer(returnedJSObj);
     public static Quat sIdentity() {
         int pointer = internal_native_sIdentity();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_1 == null)
             Quat_TEMP_STATIC_GEN_1 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
@@ -148,7 +148,7 @@ return jolt.getPointer(returnedJSObj);
     public static Quat sRotation(Vec3 inRotation, float inAngle) {
         int pointer = internal_native_sRotation((int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inAngle);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_2 == null)
             Quat_TEMP_STATIC_GEN_2 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
@@ -166,7 +166,7 @@ return jolt.getPointer(returnedJSObj);
     public static Quat sFromTo(Vec3 inFrom, Vec3 inTo) {
         int pointer = internal_native_sFromTo((int) (long) (inFrom != null ? inFrom.getNativeData().getCPointer() : 0), (int) (long) (inTo != null ? inTo.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_3 == null)
             Quat_TEMP_STATIC_GEN_3 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
@@ -208,7 +208,7 @@ return returnedJSObj;
     public Quat MulQuat(Quat inQ) {
         int pointer = internal_native_MulQuat((int) (long) getNativeData().getCPointer(), (int) (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -227,7 +227,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 MulVec3(Vec3 inV) {
         int pointer = internal_native_MulVec3((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -246,7 +246,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat MulFloat(float inV) {
         int pointer = internal_native_MulFloat((int) (long) getNativeData().getCPointer(), inV);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_1 == null)
             Quat_TEMP_GEN_1 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -337,7 +337,7 @@ return returnedJSObj;
     public Quat Normalized() {
         int pointer = internal_native_Normalized((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_2 == null)
             Quat_TEMP_GEN_2 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -356,7 +356,7 @@ return jolt.getPointer(returnedJSObj);
     public static Quat sEulerAngles(Vec3 inInput) {
         int pointer = internal_native_sEulerAngles((int) (long) (inInput != null ? inInput.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_STATIC_GEN_4 == null)
             Quat_TEMP_STATIC_GEN_4 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
@@ -374,7 +374,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetEulerAngles() {
         int pointer = internal_native_GetEulerAngles((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -441,7 +441,7 @@ return returnedJSObj;
     public Vec3 GetXYZ() {
         int pointer = internal_native_GetXYZ((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -515,7 +515,7 @@ jsObj.Set(inX, inY, inZ, inW);
     public Vec3 InverseRotate(Vec3 inV) {
         int pointer = internal_native_InverseRotate((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -534,7 +534,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 RotateAxisX() {
         int pointer = internal_native_RotateAxisX((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -553,7 +553,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 RotateAxisY() {
         int pointer = internal_native_RotateAxisY((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -572,7 +572,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 RotateAxisZ() {
         int pointer = internal_native_RotateAxisZ((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -603,7 +603,7 @@ return returnedJSObj;
     public Quat Conjugated() {
         int pointer = internal_native_Conjugated((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_3 == null)
             Quat_TEMP_GEN_3 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -622,7 +622,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat Inversed() {
         int pointer = internal_native_Inversed((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_4 == null)
             Quat_TEMP_GEN_4 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -641,7 +641,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat EnsureWPositive() {
         int pointer = internal_native_EnsureWPositive((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_5 == null)
             Quat_TEMP_GEN_5 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -660,7 +660,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat GetPerpendicular() {
         int pointer = internal_native_GetPerpendicular((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_6 == null)
             Quat_TEMP_GEN_6 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -691,7 +691,7 @@ return returnedJSObj;
     public Quat GetTwist(Vec3 inAxis) {
         int pointer = internal_native_GetTwist((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_7 == null)
             Quat_TEMP_GEN_7 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_7.getNativeData().reset(pointer, false);
@@ -721,7 +721,7 @@ jsObj.GetSwingTwist(outSwing_addr, outTwist_addr);
     public Quat LERP(Quat inDestination, float inFraction) {
         int pointer = internal_native_LERP((int) (long) getNativeData().getCPointer(), (int) (long) (inDestination != null ? inDestination.getNativeData().getCPointer() : 0), inFraction);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_8 == null)
             Quat_TEMP_GEN_8 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_8.getNativeData().reset(pointer, false);
@@ -740,7 +740,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat SLERP(Quat inDestination, float inFraction) {
         int pointer = internal_native_SLERP((int) (long) getNativeData().getCPointer(), (int) (long) (inDestination != null ? inDestination.getNativeData().getCPointer() : 0), inFraction);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_9 == null)
             Quat_TEMP_GEN_9 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_9.getNativeData().reset(pointer, false);

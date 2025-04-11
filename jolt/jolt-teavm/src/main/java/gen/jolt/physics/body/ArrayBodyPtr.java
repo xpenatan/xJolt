@@ -72,7 +72,7 @@ return returnedJSObj;
     public Body at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = new Body((byte) 1, (char) 1);
         Body_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -135,7 +135,7 @@ jsObj.clear();
     public BodyPtrMemRef data() {
         int pointer = internal_native_data((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyPtrMemRef_TEMP_GEN_0 == null)
             BodyPtrMemRef_TEMP_GEN_0 = new BodyPtrMemRef((byte) 1, (char) 1);
         BodyPtrMemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);

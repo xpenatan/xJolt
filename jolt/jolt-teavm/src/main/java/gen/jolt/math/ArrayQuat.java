@@ -72,7 +72,7 @@ return returnedJSObj;
     public Quat at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -135,7 +135,7 @@ jsObj.clear();
     public QuatMemRef data() {
         int pointer = internal_native_data((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (QuatMemRef_TEMP_GEN_0 == null)
             QuatMemRef_TEMP_GEN_0 = new QuatMemRef((byte) 1, (char) 1);
         QuatMemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);

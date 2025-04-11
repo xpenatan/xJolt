@@ -69,7 +69,7 @@ delete nativeObject;
     public ShapeSettings GetShapeSettings() {
         long pointer = internal_native_GetShapeSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ShapeSettings_TEMP_GEN_0 == null)
             ShapeSettings_TEMP_GEN_0 = new ShapeSettings((byte) 1, (char) 1);
         ShapeSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -96,7 +96,7 @@ nativeObject->SetShapeSettings((ShapeSettings* )inShape_addr);
     public ShapeResult ConvertShapeSettings() {
         long pointer = internal_native_ConvertShapeSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = new ShapeResult((byte) 1, (char) 1);
         ShapeResult_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -113,7 +113,7 @@ return (jlong)&copy_addr;*/
     public Shape GetShape() {
         long pointer = internal_native_GetShape((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
         Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -150,7 +150,7 @@ return nativeObject->HasMassProperties();
     public MassProperties GetMassProperties() {
         long pointer = internal_native_GetMassProperties((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MassProperties_TEMP_GEN_0 == null)
             MassProperties_TEMP_GEN_0 = new MassProperties((byte) 1, (char) 1);
         MassProperties_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -167,7 +167,7 @@ return (jlong)&copy_addr;*/
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -193,7 +193,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public Quat get_mRotation() {
         long pointer = internal_native_get_mRotation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -219,7 +219,7 @@ nativeObject->mRotation = *((Quat*)mRotation_addr);
     public Vec3 get_mLinearVelocity() {
         long pointer = internal_native_get_mLinearVelocity((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -245,7 +245,7 @@ nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
     public Vec3 get_mAngularVelocity() {
         long pointer = internal_native_get_mAngularVelocity((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -311,7 +311,7 @@ nativeObject->mObjectLayer = mObjectLayer;
     public CollisionGroup get_mCollisionGroup() {
         long pointer = internal_native_get_mCollisionGroup((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = new CollisionGroup((byte) 1, (char) 1);
         CollisionGroup_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -757,7 +757,7 @@ nativeObject->mInertiaMultiplier = mInertiaMultiplier;
     public MassProperties get_mMassPropertiesOverride() {
         long pointer = internal_native_get_mMassPropertiesOverride((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MassProperties_TEMP_GEN_1 == null)
             MassProperties_TEMP_GEN_1 = new MassProperties((byte) 1, (char) 1);
         MassProperties_TEMP_GEN_1.getNativeData().reset(pointer, false);

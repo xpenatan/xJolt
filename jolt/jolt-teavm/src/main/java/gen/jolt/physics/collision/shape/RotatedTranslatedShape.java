@@ -31,7 +31,7 @@ public class RotatedTranslatedShape extends DecoratedShape {
     public Quat GetRotation() {
         int pointer = internal_native_GetRotation((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -50,7 +50,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetPosition() {
         int pointer = internal_native_GetPosition((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);

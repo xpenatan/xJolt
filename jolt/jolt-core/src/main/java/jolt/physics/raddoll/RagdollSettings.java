@@ -57,7 +57,7 @@ return nativeObject->Stabilize();
     public Ragdoll CreateRagdoll(int inCollisionGroup, int inUserData, PhysicsSystem inSystem) {
         long pointer = internal_native_CreateRagdoll((long) getNativeData().getCPointer(), inCollisionGroup, inUserData, (long) (inSystem != null ? inSystem.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Ragdoll_TEMP_GEN_0 == null)
             Ragdoll_TEMP_GEN_0 = new Ragdoll((byte) 1, (char) 1);
         Ragdoll_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -74,7 +74,7 @@ return (jlong)obj;
     public Skeleton GetSkeleton() {
         long pointer = internal_native_GetSkeleton((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Skeleton_TEMP_GEN_0 == null)
             Skeleton_TEMP_GEN_0 = new Skeleton((byte) 1, (char) 1);
         Skeleton_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -141,7 +141,7 @@ nativeObject->CalculateConstraintIndexToBodyIdxPair();
     public ArrayRagdollPart get_mParts() {
         long pointer = internal_native_get_mParts((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayRagdollPart_TEMP_GEN_0 == null)
             ArrayRagdollPart_TEMP_GEN_0 = new ArrayRagdollPart((byte) 1, (char) 1);
         ArrayRagdollPart_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -167,7 +167,7 @@ nativeObject->mParts = *((ArrayRagdollPart*)mParts_addr);
     public ArrayRagdollAdditionalConstraint get_mAdditionalConstraints() {
         long pointer = internal_native_get_mAdditionalConstraints((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayRagdollAdditionalConstraint_TEMP_GEN_0 == null)
             ArrayRagdollAdditionalConstraint_TEMP_GEN_0 = new ArrayRagdollAdditionalConstraint((byte) 1, (char) 1);
         ArrayRagdollAdditionalConstraint_TEMP_GEN_0.getNativeData().reset(pointer, false);

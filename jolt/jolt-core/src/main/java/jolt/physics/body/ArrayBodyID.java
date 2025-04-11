@@ -67,7 +67,7 @@ return nativeObject->size();
     public BodyID at(int inIndex) {
         long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -123,7 +123,7 @@ nativeObject->clear();
     public BodyIDMemRef data() {
         long pointer = internal_native_data((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyIDMemRef_TEMP_GEN_0 == null)
             BodyIDMemRef_TEMP_GEN_0 = new BodyIDMemRef((byte) 1, (char) 1);
         BodyIDMemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);

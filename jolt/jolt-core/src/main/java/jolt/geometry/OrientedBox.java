@@ -69,7 +69,7 @@ delete nativeObject;
     public Mat44 get_mOrientation() {
         long pointer = internal_native_get_mOrientation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -95,7 +95,7 @@ nativeObject->mOrientation = *((Mat44*)mOrientation_addr);
     public Vec3 get_mHalfExtents() {
         long pointer = internal_native_get_mHalfExtents((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);

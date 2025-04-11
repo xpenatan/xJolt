@@ -83,7 +83,7 @@ return returnedJSObj;
     public ArrayCollidePointResult get_mHits() {
         int pointer = internal_native_get_mHits((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayCollidePointResult_TEMP_GEN_0 == null)
             ArrayCollidePointResult_TEMP_GEN_0 = new ArrayCollidePointResult((byte) 1, (char) 1);
         ArrayCollidePointResult_TEMP_GEN_0.getNativeData().reset(pointer, false);

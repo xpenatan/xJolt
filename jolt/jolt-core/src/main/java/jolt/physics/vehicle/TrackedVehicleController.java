@@ -129,7 +129,7 @@ return nativeObject->GetBrakeInput();
     public VehicleEngine GetEngine() {
         long pointer = internal_native_GetEngine((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleEngine_TEMP_GEN_0 == null)
             VehicleEngine_TEMP_GEN_0 = new VehicleEngine((byte) 1, (char) 1);
         VehicleEngine_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -145,7 +145,7 @@ return (jlong)&nativeObject->GetEngine();
     public VehicleTransmission GetTransmission() {
         long pointer = internal_native_GetTransmission((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleTransmission_TEMP_GEN_0 == null)
             VehicleTransmission_TEMP_GEN_0 = new VehicleTransmission((byte) 1, (char) 1);
         VehicleTransmission_TEMP_GEN_0.getNativeData().reset(pointer, false);

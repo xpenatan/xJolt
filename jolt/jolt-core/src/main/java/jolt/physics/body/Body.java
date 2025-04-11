@@ -74,7 +74,7 @@ public class Body extends IDLBase {
     public BodyID GetID() {
         long pointer = internal_native_GetID((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -290,7 +290,7 @@ return nativeObject->GetObjectLayer();
     public CollisionGroup GetCollisionGroup() {
         long pointer = internal_native_GetCollisionGroup((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = new CollisionGroup((byte) 1, (char) 1);
         CollisionGroup_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -376,7 +376,7 @@ nativeObject->SetRestitution((float)inRestitution);
     public Vec3 GetLinearVelocity() {
         long pointer = internal_native_GetLinearVelocity((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -413,7 +413,7 @@ nativeObject->SetLinearVelocityClamped(*((Vec3* )inVelocity_addr));
     public Vec3 GetAngularVelocity() {
         long pointer = internal_native_GetAngularVelocity((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -480,7 +480,7 @@ nativeObject->AddTorque(*((Vec3* )inTorque_addr));
     public Vec3 GetAccumulatedForce() {
         long pointer = internal_native_GetAccumulatedForce((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -497,7 +497,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetAccumulatedTorque() {
         long pointer = internal_native_GetAccumulatedTorque((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -604,7 +604,7 @@ return nativeObject->IsInBroadPhase();
     public Mat44 GetInverseInertia() {
         long pointer = internal_native_GetInverseInertia((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -621,7 +621,7 @@ return (jlong)&copy_addr;*/
     public Shape GetShape() {
         long pointer = internal_native_GetShape((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
         Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -638,7 +638,7 @@ return (jlong)obj;
     public Vec3 GetPosition() {
         long pointer = internal_native_GetPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -655,7 +655,7 @@ return (jlong)&copy_addr;*/
     public Quat GetRotation() {
         long pointer = internal_native_GetRotation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -672,7 +672,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetWorldTransform() {
         long pointer = internal_native_GetWorldTransform((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -689,7 +689,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetCenterOfMassPosition() {
         long pointer = internal_native_GetCenterOfMassPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -706,7 +706,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetCenterOfMassTransform() {
         long pointer = internal_native_GetCenterOfMassTransform((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -723,7 +723,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetInverseCenterOfMassTransform() {
         long pointer = internal_native_GetInverseCenterOfMassTransform((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_3 == null)
             Mat44_TEMP_GEN_3 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -740,7 +740,7 @@ return (jlong)&copy_addr;*/
     public AABox GetWorldSpaceBounds() {
         long pointer = internal_native_GetWorldSpaceBounds((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -757,7 +757,7 @@ return (jlong)&copy_addr;*/
     public TransformedShape GetTransformedShape() {
         long pointer = internal_native_GetTransformedShape((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = new TransformedShape((byte) 1, (char) 1);
         TransformedShape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -774,7 +774,7 @@ return (jlong)&copy_addr;*/
     public BodyCreationSettings GetBodyCreationSettings() {
         long pointer = internal_native_GetBodyCreationSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyCreationSettings_TEMP_GEN_0 == null)
             BodyCreationSettings_TEMP_GEN_0 = new BodyCreationSettings((byte) 1, (char) 1);
         BodyCreationSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -791,7 +791,7 @@ return (jlong)&copy_addr;*/
     public SoftBodyCreationSettings GetSoftBodyCreationSettings() {
         long pointer = internal_native_GetSoftBodyCreationSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodyCreationSettings_TEMP_GEN_0 == null)
             SoftBodyCreationSettings_TEMP_GEN_0 = new SoftBodyCreationSettings((byte) 1, (char) 1);
         SoftBodyCreationSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -808,7 +808,7 @@ return (jlong)&copy_addr;*/
     public MotionProperties GetMotionProperties() {
         long pointer = internal_native_GetMotionProperties((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MotionProperties_TEMP_GEN_0 == null)
             MotionProperties_TEMP_GEN_0 = new MotionProperties((byte) 1, (char) 1);
         MotionProperties_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -825,7 +825,7 @@ return (jlong)obj;
     public Vec3 GetWorldSpaceSurfaceNormal(SubShapeID inSubShapeID, Vec3 inPosition) {
         long pointer = internal_native_GetWorldSpaceSurfaceNormal((long) getNativeData().getCPointer(), (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);

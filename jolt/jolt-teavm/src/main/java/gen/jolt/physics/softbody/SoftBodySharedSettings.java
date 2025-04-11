@@ -200,7 +200,7 @@ jsObj.Optimize();
     public SoftBodySharedSettings Clone() {
         int pointer = internal_native_Clone((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         SoftBodySharedSettings SoftBodySharedSettings_NEW = new SoftBodySharedSettings((byte) 1, (char) 1);
         SoftBodySharedSettings_NEW.getNativeData().reset(pointer, false);
         return SoftBodySharedSettings_NEW;
@@ -218,7 +218,7 @@ return jolt.getPointer(returnedJSObj);
     public ArraySoftBodySharedSettingsVertex get_mVertices() {
         int pointer = internal_native_get_mVertices((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 = new ArraySoftBodySharedSettingsVertex((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -248,7 +248,7 @@ jsObj.set_mVertices(mVertices_addr);
     public ArraySoftBodySharedSettingsFace get_mFaces() {
         int pointer = internal_native_get_mFaces((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = new ArraySoftBodySharedSettingsFace((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -278,7 +278,7 @@ jsObj.set_mFaces(mFaces_addr);
     public ArraySoftBodySharedSettingsEdge get_mEdgeConstraints() {
         int pointer = internal_native_get_mEdgeConstraints((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 = new ArraySoftBodySharedSettingsEdge((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsEdge_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -308,7 +308,7 @@ jsObj.set_mEdgeConstraints(mEdgeConstraints_addr);
     public ArraySoftBodySharedSettingsDihedralBend get_mDihedralBendConstraints() {
         int pointer = internal_native_get_mDihedralBendConstraints((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = new ArraySoftBodySharedSettingsDihedralBend((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -338,7 +338,7 @@ jsObj.set_mDihedralBendConstraints(mDihedralBendConstraints_addr);
     public ArraySoftBodySharedSettingsVolume get_mVolumeConstraints() {
         int pointer = internal_native_get_mVolumeConstraints((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 = new ArraySoftBodySharedSettingsVolume((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsVolume_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -368,7 +368,7 @@ jsObj.set_mVolumeConstraints(mVolumeConstraints_addr);
     public ArraySoftBodySharedSettingsSkinned get_mSkinnedConstraints() {
         int pointer = internal_native_get_mSkinnedConstraints((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 = new ArraySoftBodySharedSettingsSkinned((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -398,7 +398,7 @@ jsObj.set_mSkinnedConstraints(mSkinnedConstraints_addr);
     public ArraySoftBodySharedSettingsInvBind get_mInvBindMatrices() {
         int pointer = internal_native_get_mInvBindMatrices((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 = new ArraySoftBodySharedSettingsInvBind((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -428,7 +428,7 @@ jsObj.set_mInvBindMatrices(mInvBindMatrices_addr);
     public ArraySoftBodySharedSettingsLRA get_mLRAConstraints() {
         int pointer = internal_native_get_mLRAConstraints((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 = new ArraySoftBodySharedSettingsLRA((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsLRA_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -458,7 +458,7 @@ jsObj.set_mLRAConstraints(mLRAConstraints_addr);
     public PhysicsMaterialList get_mMaterials() {
         int pointer = internal_native_get_mMaterials((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
         PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);

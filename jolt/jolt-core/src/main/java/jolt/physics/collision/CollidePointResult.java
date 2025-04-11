@@ -59,7 +59,7 @@ delete nativeObject;
     public BodyID get_mBodyID() {
         long pointer = internal_native_get_mBodyID((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -85,7 +85,7 @@ nativeObject->mBodyID = *((BodyID*)mBodyID_addr);
     public SubShapeID get_mSubShapeID2() {
         long pointer = internal_native_get_mSubShapeID2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_0.getNativeData().reset(pointer, false);

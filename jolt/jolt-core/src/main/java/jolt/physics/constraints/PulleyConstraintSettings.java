@@ -84,7 +84,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
     public Vec3 get_mBodyPoint1() {
         long pointer = internal_native_get_mBodyPoint1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -110,7 +110,7 @@ nativeObject->mBodyPoint1 = *((Vec3*)mBodyPoint1_addr);
     public Vec3 get_mFixedPoint1() {
         long pointer = internal_native_get_mFixedPoint1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -136,7 +136,7 @@ nativeObject->mFixedPoint1 = *((Vec3*)mFixedPoint1_addr);
     public Vec3 get_mBodyPoint2() {
         long pointer = internal_native_get_mBodyPoint2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -162,7 +162,7 @@ nativeObject->mBodyPoint2 = *((Vec3*)mBodyPoint2_addr);
     public Vec3 get_mFixedPoint2() {
         long pointer = internal_native_get_mFixedPoint2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);

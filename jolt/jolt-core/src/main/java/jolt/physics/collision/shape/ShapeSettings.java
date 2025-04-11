@@ -57,7 +57,7 @@ nativeObject->Release();
     public ShapeResult Create() {
         long pointer = internal_native_Create((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = new ShapeResult((byte) 1, (char) 1);
         ShapeResult_TEMP_GEN_0.getNativeData().reset(pointer, false);
