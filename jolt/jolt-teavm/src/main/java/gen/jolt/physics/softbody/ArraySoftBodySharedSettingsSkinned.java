@@ -70,7 +70,7 @@ return returnedJSObj;
     public SoftBodySharedSettingsSkinned at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodySharedSettingsSkinned_TEMP_GEN_0 == null)
             SoftBodySharedSettingsSkinned_TEMP_GEN_0 = new SoftBodySharedSettingsSkinned((byte) 1, (char) 1);
         SoftBodySharedSettingsSkinned_TEMP_GEN_0.getNativeData().reset(pointer, false);

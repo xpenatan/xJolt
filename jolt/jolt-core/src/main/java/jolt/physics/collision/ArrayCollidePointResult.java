@@ -65,7 +65,7 @@ return nativeObject->size();
     public CollidePointResult at(int inIndex) {
         long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CollidePointResult_TEMP_GEN_0 == null)
             CollidePointResult_TEMP_GEN_0 = new CollidePointResult((byte) 1, (char) 1);
         CollidePointResult_TEMP_GEN_0.getNativeData().reset(pointer, false);

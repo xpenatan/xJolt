@@ -47,7 +47,7 @@ return (jlong)new CharacterVirtualSettings();
     public CharacterID get_mID() {
         long pointer = internal_native_get_mID((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = new CharacterID((byte) 1, (char) 1);
         CharacterID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -113,7 +113,7 @@ nativeObject->mMaxStrength = mMaxStrength;
     public Vec3 get_mShapeOffset() {
         long pointer = internal_native_get_mShapeOffset((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -339,7 +339,7 @@ nativeObject->mPenetrationRecoverySpeed = mPenetrationRecoverySpeed;
     public Shape get_mInnerBodyShape() {
         long pointer = internal_native_get_mInnerBodyShape((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
         Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -366,7 +366,7 @@ nativeObject->mInnerBodyShape = (Shape*)mInnerBodyShape_addr;
     public BodyID get_mInnerBodyIDOverride() {
         long pointer = internal_native_get_mInnerBodyIDOverride((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);

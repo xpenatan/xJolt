@@ -82,7 +82,7 @@ return returnedJSObj;
     public Float3 at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = new Float3((byte) 1, (char) 1);
         Float3_TEMP_GEN_0.getNativeData().reset(pointer, false);

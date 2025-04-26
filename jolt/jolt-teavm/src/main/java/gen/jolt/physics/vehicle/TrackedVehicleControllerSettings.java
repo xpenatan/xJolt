@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
     public VehicleEngineSettings get_mEngine() {
         int pointer = internal_native_get_mEngine((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleEngineSettings_TEMP_GEN_0 == null)
             VehicleEngineSettings_TEMP_GEN_0 = new VehicleEngineSettings((byte) 1, (char) 1);
         VehicleEngineSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -73,7 +73,7 @@ jsObj.set_mEngine(mEngine_addr);
     public VehicleTransmissionSettings get_mTransmission() {
         int pointer = internal_native_get_mTransmission((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleTransmissionSettings_TEMP_GEN_0 == null)
             VehicleTransmissionSettings_TEMP_GEN_0 = new VehicleTransmissionSettings((byte) 1, (char) 1);
         VehicleTransmissionSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -103,7 +103,7 @@ jsObj.set_mTransmission(mTransmission_addr);
     public VehicleTrackSettings get_mTracks(int index) {
         int pointer = internal_native_get_mTracks((int) (long) getNativeData().getCPointer(), index);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleTrackSettings_TEMP_GEN_0 == null)
             VehicleTrackSettings_TEMP_GEN_0 = new VehicleTrackSettings((byte) 1, (char) 1);
         VehicleTrackSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);

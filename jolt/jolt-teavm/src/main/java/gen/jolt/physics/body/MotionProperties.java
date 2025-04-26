@@ -107,7 +107,7 @@ return returnedJSObj;
     public Vec3 GetLinearVelocity() {
         int pointer = internal_native_GetLinearVelocity((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -148,7 +148,7 @@ jsObj.SetLinearVelocityClamped(inVelocity_addr);
     public Vec3 GetAngularVelocity() {
         int pointer = internal_native_GetAngularVelocity((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -383,7 +383,7 @@ jsObj.SetInverseMass(inInvM);
     public Vec3 GetInverseInertiaDiagonal() {
         int pointer = internal_native_GetInverseInertiaDiagonal((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -402,7 +402,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat GetInertiaRotation() {
         int pointer = internal_native_GetInertiaRotation((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -432,7 +432,7 @@ jsObj.SetInverseInertia(inInvI_addr, inRotation_addr);
     public Mat44 GetLocalSpaceInverseInertia() {
         int pointer = internal_native_GetLocalSpaceInverseInertia((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -451,7 +451,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetInverseInertiaForRotation(Mat44 inRotation) {
         int pointer = internal_native_GetInverseInertiaForRotation((int) (long) getNativeData().getCPointer(), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -470,7 +470,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 MultiplyWorldSpaceInverseInertiaByVector(Quat inRotation, Vec3 inV) {
         int pointer = internal_native_MultiplyWorldSpaceInverseInertiaByVector((int) (long) getNativeData().getCPointer(), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -489,7 +489,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetPointVelocityCOM(Vec3 inPointRelativeToCOM) {
         int pointer = internal_native_GetPointVelocityCOM((int) (long) getNativeData().getCPointer(), (int) (long) (inPointRelativeToCOM != null ? inPointRelativeToCOM.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -508,7 +508,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetAccumulatedForce() {
         int pointer = internal_native_GetAccumulatedForce((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -527,7 +527,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetAccumulatedTorque() {
         int pointer = internal_native_GetAccumulatedTorque((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -579,7 +579,7 @@ jsObj.ResetMotion();
     public Vec3 LockTranslation(Vec3 inV) {
         int pointer = internal_native_LockTranslation((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_7.getNativeData().reset(pointer, false);
@@ -598,7 +598,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 LockAngular(Vec3 inV) {
         int pointer = internal_native_LockAngular((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_8.getNativeData().reset(pointer, false);

@@ -72,7 +72,7 @@ delete nativeObject;
     public Vec3 get_mContactPointOn1() {
         long pointer = internal_native_get_mContactPointOn1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -98,7 +98,7 @@ nativeObject->mContactPointOn1 = *((Vec3*)mContactPointOn1_addr);
     public Vec3 get_mContactPointOn2() {
         long pointer = internal_native_get_mContactPointOn2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -124,7 +124,7 @@ nativeObject->mContactPointOn2 = *((Vec3*)mContactPointOn2_addr);
     public Vec3 get_mPenetrationAxis() {
         long pointer = internal_native_get_mPenetrationAxis((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -170,7 +170,7 @@ nativeObject->mPenetrationDepth = mPenetrationDepth;
     public SubShapeID get_mSubShapeID1() {
         long pointer = internal_native_get_mSubShapeID1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -196,7 +196,7 @@ nativeObject->mSubShapeID1 = *((SubShapeID*)mSubShapeID1_addr);
     public SubShapeID get_mSubShapeID2() {
         long pointer = internal_native_get_mSubShapeID2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -222,7 +222,7 @@ nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
     public BodyID get_mBodyID2() {
         long pointer = internal_native_get_mBodyID2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -248,7 +248,7 @@ nativeObject->mBodyID2 = *((BodyID*)mBodyID2_addr);
     public CollideShapeResultFace get_mShape1Face() {
         long pointer = internal_native_get_mShape1Face((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CollideShapeResultFace_TEMP_GEN_0 == null)
             CollideShapeResultFace_TEMP_GEN_0 = new CollideShapeResultFace((byte) 1, (char) 1);
         CollideShapeResultFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -274,7 +274,7 @@ nativeObject->mShape1Face = *((CollideShapeResultFace*)mShape1Face_addr);
     public CollideShapeResultFace get_mShape2Face() {
         long pointer = internal_native_get_mShape2Face((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CollideShapeResultFace_TEMP_GEN_1 == null)
             CollideShapeResultFace_TEMP_GEN_1 = new CollideShapeResultFace((byte) 1, (char) 1);
         CollideShapeResultFace_TEMP_GEN_1.getNativeData().reset(pointer, false);

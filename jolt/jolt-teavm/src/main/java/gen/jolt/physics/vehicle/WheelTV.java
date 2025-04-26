@@ -58,7 +58,7 @@ jolt.destroy(jsObj);
     public WheelSettingsTV GetSettings() {
         int pointer = internal_native_GetSettings((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (WheelSettingsTV_TEMP_GEN_0 == null)
             WheelSettingsTV_TEMP_GEN_0 = new WheelSettingsTV((byte) 1, (char) 1);
         WheelSettingsTV_TEMP_GEN_0.getNativeData().reset(pointer, false);

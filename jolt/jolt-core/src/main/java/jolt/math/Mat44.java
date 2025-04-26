@@ -135,7 +135,7 @@ delete nativeObject;
     public static Mat44 sZero() {
         long pointer = internal_native_sZero();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_0 == null)
             Mat44_TEMP_STATIC_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -151,7 +151,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sIdentity() {
         long pointer = internal_native_sIdentity();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_1 == null)
             Mat44_TEMP_STATIC_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
@@ -167,7 +167,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sRotationX(float inX) {
         long pointer = internal_native_sRotationX(inX);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_2 == null)
             Mat44_TEMP_STATIC_GEN_2 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
@@ -183,7 +183,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sRotationY(float inY) {
         long pointer = internal_native_sRotationY(inY);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_3 == null)
             Mat44_TEMP_STATIC_GEN_3 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
@@ -199,7 +199,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sRotationZ(float inZ) {
         long pointer = internal_native_sRotationZ(inZ);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_4 == null)
             Mat44_TEMP_STATIC_GEN_4 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
@@ -215,7 +215,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sRotation(Quat inQ) {
         long pointer = internal_native_sRotation((long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_5 == null)
             Mat44_TEMP_STATIC_GEN_5 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_5.getNativeData().reset(pointer, false);
@@ -231,7 +231,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sRotationAxisAngle(Vec3 inAxis, float inAngle) {
         long pointer = internal_native_sRotationAxisAngle((long) (inAxis != null ? inAxis.getNativeData().getCPointer() : 0), inAngle);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_6 == null)
             Mat44_TEMP_STATIC_GEN_6 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_6.getNativeData().reset(pointer, false);
@@ -247,7 +247,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sTranslation(Vec3 inTranslation) {
         long pointer = internal_native_sTranslation((long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_7 == null)
             Mat44_TEMP_STATIC_GEN_7 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_7.getNativeData().reset(pointer, false);
@@ -263,7 +263,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sRotationTranslation(Quat inRotation, Vec3 inTranslation) {
         long pointer = internal_native_sRotationTranslation((long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_8 == null)
             Mat44_TEMP_STATIC_GEN_8 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_8.getNativeData().reset(pointer, false);
@@ -279,7 +279,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sInverseRotationTranslation(Quat inRotation, Vec3 inTranslation) {
         long pointer = internal_native_sInverseRotationTranslation((long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_9 == null)
             Mat44_TEMP_STATIC_GEN_9 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_9.getNativeData().reset(pointer, false);
@@ -295,7 +295,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sScale(float inScale) {
         long pointer = internal_native_sScale(inScale);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_10 == null)
             Mat44_TEMP_STATIC_GEN_10 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_10.getNativeData().reset(pointer, false);
@@ -311,7 +311,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sScaleVec3(Vec3 inScale) {
         long pointer = internal_native_sScaleVec3((long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_11 == null)
             Mat44_TEMP_STATIC_GEN_11 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_11.getNativeData().reset(pointer, false);
@@ -327,7 +327,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sOuterProduct(Vec3 inV1, Vec3 inV2) {
         long pointer = internal_native_sOuterProduct((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_12 == null)
             Mat44_TEMP_STATIC_GEN_12 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_12.getNativeData().reset(pointer, false);
@@ -343,7 +343,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sCrossProduct(Vec3 inV) {
         long pointer = internal_native_sCrossProduct((long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_13 == null)
             Mat44_TEMP_STATIC_GEN_13 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_13.getNativeData().reset(pointer, false);
@@ -359,7 +359,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sQuatLeftMultiply(Quat inQ) {
         long pointer = internal_native_sQuatLeftMultiply((long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_14 == null)
             Mat44_TEMP_STATIC_GEN_14 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_14.getNativeData().reset(pointer, false);
@@ -375,7 +375,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sQuatRightMultiply(Quat inQ) {
         long pointer = internal_native_sQuatRightMultiply((long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_15 == null)
             Mat44_TEMP_STATIC_GEN_15 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_15.getNativeData().reset(pointer, false);
@@ -391,7 +391,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sLookAt(Vec3 inPos, Vec3 inTarget, Vec3 inUp) {
         long pointer = internal_native_sLookAt((long) (inPos != null ? inPos.getNativeData().getCPointer() : 0), (long) (inTarget != null ? inTarget.getNativeData().getCPointer() : 0), (long) (inUp != null ? inUp.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_16 == null)
             Mat44_TEMP_STATIC_GEN_16 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_16.getNativeData().reset(pointer, false);
@@ -407,7 +407,7 @@ return (jlong)&copy_addr;*/
     public static Mat44 sPerspective(float inFovY, float inAspect, float inNear, float inFar) {
         long pointer = internal_native_sPerspective(inFovY, inAspect, inNear, inFar);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_17 == null)
             Mat44_TEMP_STATIC_GEN_17 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_17.getNativeData().reset(pointer, false);
@@ -423,7 +423,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetAxisX() {
         long pointer = internal_native_GetAxisX((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -440,7 +440,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetAxisY() {
         long pointer = internal_native_GetAxisY((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -457,7 +457,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetAxisZ() {
         long pointer = internal_native_GetAxisZ((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -474,7 +474,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetDiagonal3() {
         long pointer = internal_native_GetDiagonal3((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -491,7 +491,7 @@ return (jlong)&copy_addr;*/
     public Vec4 GetDiagonal4() {
         long pointer = internal_native_GetDiagonal4((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -508,7 +508,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetRotation() {
         long pointer = internal_native_GetRotation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -525,7 +525,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetRotationSafe() {
         long pointer = internal_native_GetRotationSafe((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -542,7 +542,7 @@ return (jlong)&copy_addr;*/
     public Quat GetQuaternion() {
         long pointer = internal_native_GetQuaternion((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -559,7 +559,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetTranslation() {
         long pointer = internal_native_GetTranslation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -614,7 +614,7 @@ return nativeObject->IsClose(*((Mat44* )inM_addr));
     public Vec3 MulVec3(Vec3 inV) {
         long pointer = internal_native_MulVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -631,7 +631,7 @@ return (jlong)&copy_addr;*/
     public Vec3 Multiply3x3(Vec3 inV) {
         long pointer = internal_native_Multiply3x3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -648,7 +648,7 @@ return (jlong)&copy_addr;*/
     public Vec3 Multiply3x3Transposed(Vec3 inV) {
         long pointer = internal_native_Multiply3x3Transposed((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_7.getNativeData().reset(pointer, false);
@@ -665,7 +665,7 @@ return (jlong)&copy_addr;*/
     public Mat44 Multiply3x3LeftTransposed(Mat44 inM) {
         long pointer = internal_native_Multiply3x3LeftTransposed((long) getNativeData().getCPointer(), (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -682,7 +682,7 @@ return (jlong)&copy_addr;*/
     public Mat44 Multiply3x3RightTransposed(Mat44 inM) {
         long pointer = internal_native_Multiply3x3RightTransposed((long) getNativeData().getCPointer(), (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_3 == null)
             Mat44_TEMP_GEN_3 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -699,7 +699,7 @@ return (jlong)&copy_addr;*/
     public Mat44 Transposed() {
         long pointer = internal_native_Transposed((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_4 == null)
             Mat44_TEMP_GEN_4 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -716,7 +716,7 @@ return (jlong)&copy_addr;*/
     public Mat44 Transposed3x3() {
         long pointer = internal_native_Transposed3x3((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_5 == null)
             Mat44_TEMP_GEN_5 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -733,7 +733,7 @@ return (jlong)&copy_addr;*/
     public Mat44 Inversed() {
         long pointer = internal_native_Inversed((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_6 == null)
             Mat44_TEMP_GEN_6 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -750,7 +750,7 @@ return (jlong)&copy_addr;*/
     public Mat44 InversedRotationTranslation() {
         long pointer = internal_native_InversedRotationTranslation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_7 == null)
             Mat44_TEMP_GEN_7 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_7.getNativeData().reset(pointer, false);
@@ -767,7 +767,7 @@ return (jlong)&copy_addr;*/
     public Mat44 Adjointed3x3() {
         long pointer = internal_native_Adjointed3x3((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_8 == null)
             Mat44_TEMP_GEN_8 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_8.getNativeData().reset(pointer, false);
@@ -804,7 +804,7 @@ return nativeObject->GetDeterminant3x3();
     public Mat44 Inversed3x3() {
         long pointer = internal_native_Inversed3x3((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_9 == null)
             Mat44_TEMP_GEN_9 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_9.getNativeData().reset(pointer, false);
@@ -821,7 +821,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetDirectionPreservingMatrix() {
         long pointer = internal_native_GetDirectionPreservingMatrix((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_10 == null)
             Mat44_TEMP_GEN_10 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_10.getNativeData().reset(pointer, false);
@@ -838,7 +838,7 @@ return (jlong)&copy_addr;*/
     public Mat44 PreTranslated(Vec3 inTranslation) {
         long pointer = internal_native_PreTranslated((long) getNativeData().getCPointer(), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_11 == null)
             Mat44_TEMP_GEN_11 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_11.getNativeData().reset(pointer, false);
@@ -855,7 +855,7 @@ return (jlong)&copy_addr;*/
     public Mat44 PostTranslated(Vec3 inTranslation) {
         long pointer = internal_native_PostTranslated((long) getNativeData().getCPointer(), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_12 == null)
             Mat44_TEMP_GEN_12 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_12.getNativeData().reset(pointer, false);
@@ -872,7 +872,7 @@ return (jlong)&copy_addr;*/
     public Mat44 PreScaled(Vec3 inScale) {
         long pointer = internal_native_PreScaled((long) getNativeData().getCPointer(), (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_13 == null)
             Mat44_TEMP_GEN_13 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_13.getNativeData().reset(pointer, false);
@@ -889,7 +889,7 @@ return (jlong)&copy_addr;*/
     public Mat44 PostScaled(Vec3 inScale) {
         long pointer = internal_native_PostScaled((long) getNativeData().getCPointer(), (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_14 == null)
             Mat44_TEMP_GEN_14 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_14.getNativeData().reset(pointer, false);
@@ -906,7 +906,7 @@ return (jlong)&copy_addr;*/
     public Mat44 Decompose(Vec3 outScale) {
         long pointer = internal_native_Decompose((long) getNativeData().getCPointer(), (long) (outScale != null ? outScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_15 == null)
             Mat44_TEMP_GEN_15 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_15.getNativeData().reset(pointer, false);
@@ -1003,7 +1003,7 @@ nativeObject->SetTranslation(*((Vec3* )inV_addr));
     public Vec3 GetColumn3(int inCol) {
         long pointer = internal_native_GetColumn3((long) getNativeData().getCPointer(), inCol);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_8.getNativeData().reset(pointer, false);
@@ -1020,7 +1020,7 @@ return (jlong)&copy_addr;*/
     public Vec4 GetColumn4(int inCol) {
         long pointer = internal_native_GetColumn4((long) getNativeData().getCPointer(), inCol);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_1 == null)
             Vec4_TEMP_GEN_1 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_1.getNativeData().reset(pointer, false);

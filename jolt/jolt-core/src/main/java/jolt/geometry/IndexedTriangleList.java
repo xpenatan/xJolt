@@ -75,7 +75,7 @@ return nativeObject->size();
     public IndexedTriangle at(int inIndex) {
         long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (IndexedTriangle_TEMP_GEN_0 == null)
             IndexedTriangle_TEMP_GEN_0 = new IndexedTriangle((byte) 1, (char) 1);
         IndexedTriangle_TEMP_GEN_0.getNativeData().reset(pointer, false);

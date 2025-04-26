@@ -52,7 +52,7 @@ return jolt.getPointer(jsObj);
     public Vec3 get_mOffset() {
         int pointer = internal_native_get_mOffset((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -82,7 +82,7 @@ jsObj.set_mOffset(mOffset_addr);
     public Vec3 get_mScale() {
         int pointer = internal_native_get_mScale((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -244,7 +244,7 @@ jsObj.set_mBitsPerSample(mBitsPerSample);
     public ArrayFloat get_mHeightSamples() {
         int pointer = internal_native_get_mHeightSamples((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayFloat_TEMP_GEN_0 == null)
             ArrayFloat_TEMP_GEN_0 = new ArrayFloat((byte) 1, (char) 1);
         ArrayFloat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -274,7 +274,7 @@ jsObj.set_mHeightSamples(mHeightSamples_addr);
     public ArrayUint8 get_mMaterialIndices() {
         int pointer = internal_native_get_mMaterialIndices((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayUint8_TEMP_GEN_0 == null)
             ArrayUint8_TEMP_GEN_0 = new ArrayUint8((byte) 1, (char) 1);
         ArrayUint8_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -304,7 +304,7 @@ jsObj.set_mMaterialIndices(mMaterialIndices_addr);
     public PhysicsMaterialList get_mMaterials() {
         int pointer = internal_native_get_mMaterials((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
         PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);

@@ -136,7 +136,7 @@ jolt.destroy(jsObj);
     public static Mat44 sZero() {
         int pointer = internal_native_sZero();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_0 == null)
             Mat44_TEMP_STATIC_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -154,7 +154,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sIdentity() {
         int pointer = internal_native_sIdentity();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_1 == null)
             Mat44_TEMP_STATIC_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
@@ -172,7 +172,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sRotationX(float inX) {
         int pointer = internal_native_sRotationX(inX);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_2 == null)
             Mat44_TEMP_STATIC_GEN_2 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
@@ -190,7 +190,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sRotationY(float inY) {
         int pointer = internal_native_sRotationY(inY);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_3 == null)
             Mat44_TEMP_STATIC_GEN_3 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
@@ -208,7 +208,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sRotationZ(float inZ) {
         int pointer = internal_native_sRotationZ(inZ);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_4 == null)
             Mat44_TEMP_STATIC_GEN_4 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
@@ -226,7 +226,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sRotation(Quat inQ) {
         int pointer = internal_native_sRotation((int) (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_5 == null)
             Mat44_TEMP_STATIC_GEN_5 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_5.getNativeData().reset(pointer, false);
@@ -244,7 +244,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sRotationAxisAngle(Vec3 inAxis, float inAngle) {
         int pointer = internal_native_sRotationAxisAngle((int) (long) (inAxis != null ? inAxis.getNativeData().getCPointer() : 0), inAngle);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_6 == null)
             Mat44_TEMP_STATIC_GEN_6 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_6.getNativeData().reset(pointer, false);
@@ -262,7 +262,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sTranslation(Vec3 inTranslation) {
         int pointer = internal_native_sTranslation((int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_7 == null)
             Mat44_TEMP_STATIC_GEN_7 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_7.getNativeData().reset(pointer, false);
@@ -280,7 +280,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sRotationTranslation(Quat inRotation, Vec3 inTranslation) {
         int pointer = internal_native_sRotationTranslation((int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_8 == null)
             Mat44_TEMP_STATIC_GEN_8 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_8.getNativeData().reset(pointer, false);
@@ -298,7 +298,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sInverseRotationTranslation(Quat inRotation, Vec3 inTranslation) {
         int pointer = internal_native_sInverseRotationTranslation((int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_9 == null)
             Mat44_TEMP_STATIC_GEN_9 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_9.getNativeData().reset(pointer, false);
@@ -316,7 +316,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sScale(float inScale) {
         int pointer = internal_native_sScale(inScale);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_10 == null)
             Mat44_TEMP_STATIC_GEN_10 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_10.getNativeData().reset(pointer, false);
@@ -334,7 +334,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sScaleVec3(Vec3 inScale) {
         int pointer = internal_native_sScaleVec3((int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_11 == null)
             Mat44_TEMP_STATIC_GEN_11 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_11.getNativeData().reset(pointer, false);
@@ -352,7 +352,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sOuterProduct(Vec3 inV1, Vec3 inV2) {
         int pointer = internal_native_sOuterProduct((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_12 == null)
             Mat44_TEMP_STATIC_GEN_12 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_12.getNativeData().reset(pointer, false);
@@ -370,7 +370,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sCrossProduct(Vec3 inV) {
         int pointer = internal_native_sCrossProduct((int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_13 == null)
             Mat44_TEMP_STATIC_GEN_13 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_13.getNativeData().reset(pointer, false);
@@ -388,7 +388,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sQuatLeftMultiply(Quat inQ) {
         int pointer = internal_native_sQuatLeftMultiply((int) (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_14 == null)
             Mat44_TEMP_STATIC_GEN_14 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_14.getNativeData().reset(pointer, false);
@@ -406,7 +406,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sQuatRightMultiply(Quat inQ) {
         int pointer = internal_native_sQuatRightMultiply((int) (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_15 == null)
             Mat44_TEMP_STATIC_GEN_15 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_15.getNativeData().reset(pointer, false);
@@ -424,7 +424,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sLookAt(Vec3 inPos, Vec3 inTarget, Vec3 inUp) {
         int pointer = internal_native_sLookAt((int) (long) (inPos != null ? inPos.getNativeData().getCPointer() : 0), (int) (long) (inTarget != null ? inTarget.getNativeData().getCPointer() : 0), (int) (long) (inUp != null ? inUp.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_16 == null)
             Mat44_TEMP_STATIC_GEN_16 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_16.getNativeData().reset(pointer, false);
@@ -442,7 +442,7 @@ return jolt.getPointer(returnedJSObj);
     public static Mat44 sPerspective(float inFovY, float inAspect, float inNear, float inFar) {
         int pointer = internal_native_sPerspective(inFovY, inAspect, inNear, inFar);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_STATIC_GEN_17 == null)
             Mat44_TEMP_STATIC_GEN_17 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_STATIC_GEN_17.getNativeData().reset(pointer, false);
@@ -460,7 +460,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetAxisX() {
         int pointer = internal_native_GetAxisX((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -479,7 +479,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetAxisY() {
         int pointer = internal_native_GetAxisY((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -498,7 +498,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetAxisZ() {
         int pointer = internal_native_GetAxisZ((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -517,7 +517,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetDiagonal3() {
         int pointer = internal_native_GetDiagonal3((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -536,7 +536,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 GetDiagonal4() {
         int pointer = internal_native_GetDiagonal4((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -555,7 +555,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetRotation() {
         int pointer = internal_native_GetRotation((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -574,7 +574,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetRotationSafe() {
         int pointer = internal_native_GetRotationSafe((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -593,7 +593,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat GetQuaternion() {
         int pointer = internal_native_GetQuaternion((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -612,7 +612,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetTranslation() {
         int pointer = internal_native_GetTranslation((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -679,7 +679,7 @@ return returnedJSObj;
     public Vec3 MulVec3(Vec3 inV) {
         int pointer = internal_native_MulVec3((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -698,7 +698,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 Multiply3x3(Vec3 inV) {
         int pointer = internal_native_Multiply3x3((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -717,7 +717,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 Multiply3x3Transposed(Vec3 inV) {
         int pointer = internal_native_Multiply3x3Transposed((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_7.getNativeData().reset(pointer, false);
@@ -736,7 +736,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 Multiply3x3LeftTransposed(Mat44 inM) {
         int pointer = internal_native_Multiply3x3LeftTransposed((int) (long) getNativeData().getCPointer(), (int) (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -755,7 +755,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 Multiply3x3RightTransposed(Mat44 inM) {
         int pointer = internal_native_Multiply3x3RightTransposed((int) (long) getNativeData().getCPointer(), (int) (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_3 == null)
             Mat44_TEMP_GEN_3 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -774,7 +774,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 Transposed() {
         int pointer = internal_native_Transposed((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_4 == null)
             Mat44_TEMP_GEN_4 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -793,7 +793,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 Transposed3x3() {
         int pointer = internal_native_Transposed3x3((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_5 == null)
             Mat44_TEMP_GEN_5 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_5.getNativeData().reset(pointer, false);
@@ -812,7 +812,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 Inversed() {
         int pointer = internal_native_Inversed((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_6 == null)
             Mat44_TEMP_GEN_6 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_6.getNativeData().reset(pointer, false);
@@ -831,7 +831,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 InversedRotationTranslation() {
         int pointer = internal_native_InversedRotationTranslation((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_7 == null)
             Mat44_TEMP_GEN_7 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_7.getNativeData().reset(pointer, false);
@@ -850,7 +850,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 Adjointed3x3() {
         int pointer = internal_native_Adjointed3x3((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_8 == null)
             Mat44_TEMP_GEN_8 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_8.getNativeData().reset(pointer, false);
@@ -893,7 +893,7 @@ return returnedJSObj;
     public Mat44 Inversed3x3() {
         int pointer = internal_native_Inversed3x3((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_9 == null)
             Mat44_TEMP_GEN_9 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_9.getNativeData().reset(pointer, false);
@@ -912,7 +912,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetDirectionPreservingMatrix() {
         int pointer = internal_native_GetDirectionPreservingMatrix((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_10 == null)
             Mat44_TEMP_GEN_10 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_10.getNativeData().reset(pointer, false);
@@ -931,7 +931,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 PreTranslated(Vec3 inTranslation) {
         int pointer = internal_native_PreTranslated((int) (long) getNativeData().getCPointer(), (int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_11 == null)
             Mat44_TEMP_GEN_11 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_11.getNativeData().reset(pointer, false);
@@ -950,7 +950,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 PostTranslated(Vec3 inTranslation) {
         int pointer = internal_native_PostTranslated((int) (long) getNativeData().getCPointer(), (int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_12 == null)
             Mat44_TEMP_GEN_12 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_12.getNativeData().reset(pointer, false);
@@ -969,7 +969,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 PreScaled(Vec3 inScale) {
         int pointer = internal_native_PreScaled((int) (long) getNativeData().getCPointer(), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_13 == null)
             Mat44_TEMP_GEN_13 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_13.getNativeData().reset(pointer, false);
@@ -988,7 +988,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 PostScaled(Vec3 inScale) {
         int pointer = internal_native_PostScaled((int) (long) getNativeData().getCPointer(), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_14 == null)
             Mat44_TEMP_GEN_14 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_14.getNativeData().reset(pointer, false);
@@ -1007,7 +1007,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 Decompose(Vec3 outScale) {
         int pointer = internal_native_Decompose((int) (long) getNativeData().getCPointer(), (int) (long) (outScale != null ? outScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_15 == null)
             Mat44_TEMP_GEN_15 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_15.getNativeData().reset(pointer, false);
@@ -1114,7 +1114,7 @@ jsObj.SetTranslation(inV_addr);
     public Vec3 GetColumn3(int inCol) {
         int pointer = internal_native_GetColumn3((int) (long) getNativeData().getCPointer(), inCol);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_8.getNativeData().reset(pointer, false);
@@ -1133,7 +1133,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 GetColumn4(int inCol) {
         int pointer = internal_native_GetColumn4((int) (long) getNativeData().getCPointer(), inCol);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec4_TEMP_GEN_1 == null)
             Vec4_TEMP_GEN_1 = new Vec4((byte) 1, (char) 1);
         Vec4_TEMP_GEN_1.getNativeData().reset(pointer, false);

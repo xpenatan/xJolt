@@ -54,7 +54,7 @@ jolt.destroy(jsObj);
     public ArraySoftBodyVertex GetVertices() {
         int pointer = internal_native_GetVertices((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
             ArraySoftBodyVertex_TEMP_GEN_0 = new ArraySoftBodyVertex((byte) 1, (char) 1);
         ArraySoftBodyVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -85,7 +85,7 @@ return returnedJSObj;
     public Vec3 GetLocalContactPoint(SoftBodyVertex inVertex) {
         int pointer = internal_native_GetLocalContactPoint((int) (long) getNativeData().getCPointer(), (int) (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -104,7 +104,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetContactNormal(SoftBodyVertex inVertex) {
         int pointer = internal_native_GetContactNormal((int) (long) getNativeData().getCPointer(), (int) (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -123,7 +123,7 @@ return jolt.getPointer(returnedJSObj);
     public BodyID GetContactBodyID(SoftBodyVertex inVertex) {
         int pointer = internal_native_GetContactBodyID((int) (long) getNativeData().getCPointer(), (int) (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);

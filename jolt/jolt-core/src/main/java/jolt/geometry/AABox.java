@@ -90,7 +90,7 @@ delete nativeObject;
     public static AABox sBiggest() {
         long pointer = internal_native_sBiggest();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_STATIC_GEN_0 == null)
             AABox_TEMP_STATIC_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -106,7 +106,7 @@ return (jlong)&copy_addr;*/
     public static AABox sFromTwoPoints(Vec3 inP1, Vec3 inP2) {
         long pointer = internal_native_sFromTwoPoints((long) (inP1 != null ? inP1.getNativeData().getCPointer() : 0), (long) (inP2 != null ? inP2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_STATIC_GEN_1 == null)
             AABox_TEMP_STATIC_GEN_1 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
@@ -122,7 +122,7 @@ return (jlong)&copy_addr;*/
     public static AABox sFromTriangle(VertexList inVertices, IndexedTriangle inTriangle) {
         long pointer = internal_native_sFromTriangle((long) (inVertices != null ? inVertices.getNativeData().getCPointer() : 0), (long) (inTriangle != null ? inTriangle.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_STATIC_GEN_2 == null)
             AABox_TEMP_STATIC_GEN_2 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
@@ -216,7 +216,7 @@ nativeObject->Encapsulate(*((VertexList* )inVertices_addr), *((IndexedTriangle* 
     public AABox Intersect(AABox inOther) {
         long pointer = internal_native_Intersect((long) getNativeData().getCPointer(), (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -253,7 +253,7 @@ nativeObject->ExpandBy(*((Vec3* )inV_addr));
     public Vec3 GetCenter() {
         long pointer = internal_native_GetCenter((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -270,7 +270,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetExtent() {
         long pointer = internal_native_GetExtent((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -287,7 +287,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetSize() {
         long pointer = internal_native_GetSize((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -364,7 +364,7 @@ nativeObject->Translate(*((Vec3* )inOther_addr));
     public AABox TransformedMat44(Mat44 inOther) {
         long pointer = internal_native_TransformedMat44((long) getNativeData().getCPointer(), (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -381,7 +381,7 @@ return (jlong)&copy_addr;*/
     public AABox Scaled(Vec3 inScale) {
         long pointer = internal_native_Scaled((long) getNativeData().getCPointer(), (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_2 == null)
             AABox_TEMP_GEN_2 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -398,7 +398,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetClosestPoint(Vec3 inV) {
         long pointer = internal_native_GetClosestPoint((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -425,7 +425,7 @@ return nativeObject->GetSqDistanceTo(*((Vec3* )inV_addr));
     public Vec3 get_mMin() {
         long pointer = internal_native_get_mMin((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -451,7 +451,7 @@ nativeObject->mMin = *((Vec3*)mMin_addr);
     public Vec3 get_mMax() {
         long pointer = internal_native_get_mMax((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);

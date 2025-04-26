@@ -65,7 +65,7 @@ delete nativeObject;
     public SoftBodySharedSettings GetSettings() {
         long pointer = internal_native_GetSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodySharedSettings_TEMP_GEN_0 == null)
             SoftBodySharedSettings_TEMP_GEN_0 = new SoftBodySharedSettings((byte) 1, (char) 1);
         SoftBodySharedSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -82,7 +82,7 @@ return (jlong)obj;
     public ArraySoftBodyVertex GetVertices() {
         long pointer = internal_native_GetVertices((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
             ArraySoftBodyVertex_TEMP_GEN_0 = new ArraySoftBodyVertex((byte) 1, (char) 1);
         ArraySoftBodyVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -98,7 +98,7 @@ return (jlong)&nativeObject->GetVertices();
     public SoftBodyVertex GetVertex(int inIndex) {
         long pointer = internal_native_GetVertex((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodyVertex_TEMP_GEN_0 == null)
             SoftBodyVertex_TEMP_GEN_0 = new SoftBodyVertex((byte) 1, (char) 1);
         SoftBodyVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -114,7 +114,7 @@ return (jlong)&nativeObject->GetVertex(inIndex);
     public PhysicsMaterialList GetMaterials() {
         long pointer = internal_native_GetMaterials((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
         PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -130,7 +130,7 @@ return (jlong)&nativeObject->GetMaterials();
     public ArraySoftBodySharedSettingsFace GetFaces() {
         long pointer = internal_native_GetFaces((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = new ArraySoftBodySharedSettingsFace((byte) 1, (char) 1);
         ArraySoftBodySharedSettingsFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -146,7 +146,7 @@ return (jlong)&nativeObject->GetFaces();
     public SoftBodySharedSettingsFace GetFace(int inIndex) {
         long pointer = internal_native_GetFace((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             SoftBodySharedSettingsFace_TEMP_GEN_0 = new SoftBodySharedSettingsFace((byte) 1, (char) 1);
         SoftBodySharedSettingsFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -262,7 +262,7 @@ nativeObject->SetSkinnedMaxDistanceMultiplier((float)inSkinnedMaxDistanceMultipl
     public AABox GetLocalBounds() {
         long pointer = internal_native_GetLocalBounds((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);

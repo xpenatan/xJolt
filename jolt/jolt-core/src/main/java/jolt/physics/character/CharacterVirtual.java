@@ -74,7 +74,7 @@ return (jlong)new CharacterVirtual((CharacterVirtualSettings* )inSettings_addr, 
     public CharacterID GetID() {
         long pointer = internal_native_GetID((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = new CharacterID((byte) 1, (char) 1);
         CharacterID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -110,7 +110,7 @@ nativeObject->SetCharacterVsCharacterCollision((CharacterVsCharacterCollision* )
     public CharacterContactListener GetListener() {
         long pointer = internal_native_GetListener((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CharacterContactListener_TEMP_GEN_0 == null)
             CharacterContactListener_TEMP_GEN_0 = new CharacterContactListener((byte) 1, (char) 1);
         CharacterContactListener_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -127,7 +127,7 @@ return (jlong)obj;
     public Vec3 GetLinearVelocity() {
         long pointer = internal_native_GetLinearVelocity((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -154,7 +154,7 @@ nativeObject->SetLinearVelocity(*((Vec3* )inLinearVelocity_addr));
     public Vec3 GetPosition() {
         long pointer = internal_native_GetPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -181,7 +181,7 @@ nativeObject->SetPosition(*((Vec3* )inPosition_addr));
     public Quat GetRotation() {
         long pointer = internal_native_GetRotation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -208,7 +208,7 @@ nativeObject->SetRotation(*((Quat* )inRotation_addr));
     public Vec3 GetCenterOfMassPosition() {
         long pointer = internal_native_GetCenterOfMassPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -225,7 +225,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetWorldTransform() {
         long pointer = internal_native_GetWorldTransform((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -242,7 +242,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetCenterOfMassTransform() {
         long pointer = internal_native_GetCenterOfMassTransform((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -379,7 +379,7 @@ return nativeObject->GetMaxHitsExceeded();
     public Vec3 GetShapeOffset() {
         long pointer = internal_native_GetShapeOffset((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -426,7 +426,7 @@ nativeObject->SetUserData(inUserData);
     public BodyID GetInnerBodyID() {
         long pointer = internal_native_GetInnerBodyID((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -463,7 +463,7 @@ nativeObject->FinishTrackingContactChanges();
     public Vec3 CancelVelocityTowardsSteepSlopes(Vec3 inDesiredVelocity) {
         long pointer = internal_native_CancelVelocityTowardsSteepSlopes((long) getNativeData().getCPointer(), (long) (inDesiredVelocity != null ? inDesiredVelocity.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -570,7 +570,7 @@ nativeObject->SetInnerBodyShape((Shape* )inShape_addr);
     public TransformedShape GetTransformedShape() {
         long pointer = internal_native_GetTransformedShape((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = new TransformedShape((byte) 1, (char) 1);
         TransformedShape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -617,7 +617,7 @@ return nativeObject->HasCollidedWith((CharacterVirtual* )inCharacter_addr);
     public ArrayCharacterVirtualContact GetActiveContacts() {
         long pointer = internal_native_GetActiveContacts((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ArrayCharacterVirtualContact_TEMP_GEN_0 == null)
             ArrayCharacterVirtualContact_TEMP_GEN_0 = new ArrayCharacterVirtualContact((byte) 1, (char) 1);
         ArrayCharacterVirtualContact_TEMP_GEN_0.getNativeData().reset(pointer, false);

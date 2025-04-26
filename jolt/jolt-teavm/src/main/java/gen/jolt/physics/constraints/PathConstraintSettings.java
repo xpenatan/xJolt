@@ -68,7 +68,7 @@ jolt.destroy(jsObj);
     public PathConstraintPath get_mPath() {
         int pointer = internal_native_get_mPath((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = new PathConstraintPath((byte) 1, (char) 1);
         PathConstraintPath_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -98,7 +98,7 @@ jsObj.set_mPath(mPath_addr);
     public Vec3 get_mPathPosition() {
         int pointer = internal_native_get_mPathPosition((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -128,7 +128,7 @@ jsObj.set_mPathPosition(mPathPosition_addr);
     public Quat get_mPathRotation() {
         int pointer = internal_native_get_mPathRotation((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -224,7 +224,7 @@ jsObj.set_mRotationConstraintType(mRotationConstraintType);
     public MotorSettings get_mPositionMotorSettings() {
         int pointer = internal_native_get_mPositionMotorSettings((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
         MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);

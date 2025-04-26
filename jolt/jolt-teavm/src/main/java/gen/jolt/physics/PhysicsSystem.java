@@ -125,7 +125,7 @@ jsObj.SetGravity(inGravity_addr);
     public Vec3 GetGravity() {
         int pointer = internal_native_GetGravity((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -144,7 +144,7 @@ return jolt.getPointer(returnedJSObj);
     public PhysicsSettings GetPhysicsSettings() {
         int pointer = internal_native_GetPhysicsSettings((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsSettings_TEMP_GEN_0 == null)
             PhysicsSettings_TEMP_GEN_0 = new PhysicsSettings((byte) 1, (char) 1);
         PhysicsSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -232,7 +232,7 @@ jsObj.GetActiveBodies(inBodyType, outBodies_addr);
     public AABox GetBounds() {
         int pointer = internal_native_GetBounds((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -284,7 +284,7 @@ jsObj.SetContactListener(inListener_addr);
     public ContactListener GetContactListener() {
         int pointer = internal_native_GetContactListener((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ContactListener_TEMP_GEN_0 == null)
             ContactListener_TEMP_GEN_0 = new ContactListener((byte) 1, (char) 1);
         ContactListener_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -314,7 +314,7 @@ jsObj.SetSoftBodyContactListener(inListener_addr);
     public SoftBodyContactListener GetSoftBodyContactListener() {
         int pointer = internal_native_GetSoftBodyContactListener((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodyContactListener_TEMP_GEN_0 == null)
             SoftBodyContactListener_TEMP_GEN_0 = new SoftBodyContactListener((byte) 1, (char) 1);
         SoftBodyContactListener_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -344,7 +344,7 @@ jsObj.OptimizeBroadPhase();
     public BodyInterface GetBodyInterface() {
         int pointer = internal_native_GetBodyInterface((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyInterface_TEMP_GEN_0 == null)
             BodyInterface_TEMP_GEN_0 = new BodyInterface((byte) 1, (char) 1);
         BodyInterface_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -363,7 +363,7 @@ return jolt.getPointer(returnedJSObj);
     public BodyInterface GetBodyInterfaceNoLock() {
         int pointer = internal_native_GetBodyInterfaceNoLock((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyInterface_TEMP_GEN_1 == null)
             BodyInterface_TEMP_GEN_1 = new BodyInterface((byte) 1, (char) 1);
         BodyInterface_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -382,7 +382,7 @@ return jolt.getPointer(returnedJSObj);
     public BodyLockInterfaceNoLock GetBodyLockInterfaceNoLock() {
         int pointer = internal_native_GetBodyLockInterfaceNoLock((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyLockInterfaceNoLock_TEMP_GEN_0 == null)
             BodyLockInterfaceNoLock_TEMP_GEN_0 = new BodyLockInterfaceNoLock((byte) 1, (char) 1);
         BodyLockInterfaceNoLock_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -401,7 +401,7 @@ return jolt.getPointer(returnedJSObj);
     public BodyLockInterfaceLocking GetBodyLockInterface() {
         int pointer = internal_native_GetBodyLockInterface((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyLockInterfaceLocking_TEMP_GEN_0 == null)
             BodyLockInterfaceLocking_TEMP_GEN_0 = new BodyLockInterfaceLocking((byte) 1, (char) 1);
         BodyLockInterfaceLocking_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -420,7 +420,7 @@ return jolt.getPointer(returnedJSObj);
     public BroadPhaseQuery GetBroadPhaseQuery() {
         int pointer = internal_native_GetBroadPhaseQuery((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BroadPhaseQuery_TEMP_GEN_0 == null)
             BroadPhaseQuery_TEMP_GEN_0 = new BroadPhaseQuery((byte) 1, (char) 1);
         BroadPhaseQuery_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -439,7 +439,7 @@ return jolt.getPointer(returnedJSObj);
     public NarrowPhaseQuery GetNarrowPhaseQuery() {
         int pointer = internal_native_GetNarrowPhaseQuery((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (NarrowPhaseQuery_TEMP_GEN_0 == null)
             NarrowPhaseQuery_TEMP_GEN_0 = new NarrowPhaseQuery((byte) 1, (char) 1);
         NarrowPhaseQuery_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -458,7 +458,7 @@ return jolt.getPointer(returnedJSObj);
     public NarrowPhaseQuery GetNarrowPhaseQueryNoLock() {
         int pointer = internal_native_GetNarrowPhaseQueryNoLock((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (NarrowPhaseQuery_TEMP_GEN_1 == null)
             NarrowPhaseQuery_TEMP_GEN_1 = new NarrowPhaseQuery((byte) 1, (char) 1);
         NarrowPhaseQuery_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -589,7 +589,7 @@ jsObj.SetBodyActivationListener(inListener_addr);
     public BodyActivationListener GetBodyActivationListener() {
         int pointer = internal_native_GetBodyActivationListener((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyActivationListener_TEMP_GEN_0 == null)
             BodyActivationListener_TEMP_GEN_0 = new BodyActivationListener((byte) 1, (char) 1);
         BodyActivationListener_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -631,7 +631,7 @@ jsObj.SetSimShapeFilter(inShapeFilter_addr);
     public SimShapeFilter GetSimShapeFilter() {
         int pointer = internal_native_GetSimShapeFilter((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SimShapeFilter_TEMP_GEN_0 == null)
             SimShapeFilter_TEMP_GEN_0 = new SimShapeFilter((byte) 1, (char) 1);
         SimShapeFilter_TEMP_GEN_0.getNativeData().reset(pointer, false);

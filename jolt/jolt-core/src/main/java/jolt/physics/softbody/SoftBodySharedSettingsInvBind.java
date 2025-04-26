@@ -66,7 +66,7 @@ nativeObject->mJointIndex = mJointIndex;
     public Mat44 get_mInvBind() {
         long pointer = internal_native_get_mInvBind((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);

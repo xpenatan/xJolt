@@ -90,7 +90,7 @@ nativeObject->SetMaterial((PhysicsMaterial* )inMaterial_addr);
     public Plane GetPlane() {
         long pointer = internal_native_GetPlane((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_0.getNativeData().reset(pointer, false);

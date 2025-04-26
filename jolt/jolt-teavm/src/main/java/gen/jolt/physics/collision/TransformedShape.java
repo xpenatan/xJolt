@@ -142,7 +142,7 @@ jsObj.CollectTransformedShapes(inBox_addr, ioCollector_addr, inShapeFilter_addr)
     public Vec3 GetShapeScale() {
         int pointer = internal_native_GetShapeScale((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -172,7 +172,7 @@ jsObj.SetShapeScale(inScale_addr);
     public Mat44 GetCenterOfMassTransform() {
         int pointer = internal_native_GetCenterOfMassTransform((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -191,7 +191,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetInverseCenterOfMassTransform() {
         int pointer = internal_native_GetInverseCenterOfMassTransform((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -232,7 +232,7 @@ jsObj.SetWorldTransform(inTransform_addr);
     public Mat44 GetWorldTransform() {
         int pointer = internal_native_GetWorldTransform((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -251,7 +251,7 @@ return jolt.getPointer(returnedJSObj);
     public AABox GetWorldSpaceBounds() {
         int pointer = internal_native_GetWorldSpaceBounds((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -270,7 +270,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetWorldSpaceSurfaceNormal(SubShapeID inSubShapeID, Vec3 inPosition) {
         int pointer = internal_native_GetWorldSpaceSurfaceNormal((int) (long) getNativeData().getCPointer(), (int) (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -289,7 +289,7 @@ return jolt.getPointer(returnedJSObj);
     public PhysicsMaterial GetMaterial(SubShapeID inSubShapeID) {
         int pointer = internal_native_GetMaterial((int) (long) getNativeData().getCPointer(), (int) (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = new PhysicsMaterial((byte) 1, (char) 1);
         PhysicsMaterial_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -308,7 +308,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 get_mShapePositionCOM() {
         int pointer = internal_native_get_mShapePositionCOM((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -338,7 +338,7 @@ jsObj.set_mShapePositionCOM(mShapePositionCOM_addr);
     public Quat get_mShapeRotation() {
         int pointer = internal_native_get_mShapeRotation((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -368,7 +368,7 @@ jsObj.set_mShapeRotation(mShapeRotation_addr);
     public Shape get_mShape() {
         int pointer = internal_native_get_mShape((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
         Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -398,7 +398,7 @@ jsObj.set_mShape(mShape_addr);
     public Float3 get_mShapeScale() {
         int pointer = internal_native_get_mShapeScale((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = new Float3((byte) 1, (char) 1);
         Float3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -428,7 +428,7 @@ jsObj.set_mShapeScale(mShapeScale_addr);
     public BodyID get_mBodyID() {
         int pointer = internal_native_get_mBodyID((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);

@@ -35,7 +35,7 @@ public class TwoBodyConstraint extends Constraint {
     public Body GetBody1() {
         int pointer = internal_native_GetBody1((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = new Body((byte) 1, (char) 1);
         Body_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -54,7 +54,7 @@ return jolt.getPointer(returnedJSObj);
     public Body GetBody2() {
         int pointer = internal_native_GetBody2((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Body_TEMP_GEN_1 == null)
             Body_TEMP_GEN_1 = new Body((byte) 1, (char) 1);
         Body_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -73,7 +73,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetConstraintToBody1Matrix() {
         int pointer = internal_native_GetConstraintToBody1Matrix((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -92,7 +92,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetConstraintToBody2Matrix() {
         int pointer = internal_native_GetConstraintToBody2Matrix((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);

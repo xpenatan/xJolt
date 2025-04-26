@@ -70,7 +70,7 @@ return returnedJSObj;
     public SoftBodySharedSettingsVertex at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
             SoftBodySharedSettingsVertex_TEMP_GEN_0 = new SoftBodySharedSettingsVertex((byte) 1, (char) 1);
         SoftBodySharedSettingsVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);

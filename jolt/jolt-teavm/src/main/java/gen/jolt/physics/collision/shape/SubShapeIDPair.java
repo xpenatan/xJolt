@@ -65,7 +65,7 @@ jolt.destroy(jsObj);
     public BodyID GetBody1ID() {
         int pointer = internal_native_GetBody1ID((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -84,7 +84,7 @@ return jolt.getPointer(returnedJSObj);
     public SubShapeID GetSubShapeID1() {
         int pointer = internal_native_GetSubShapeID1((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -103,7 +103,7 @@ return jolt.getPointer(returnedJSObj);
     public BodyID GetBody2ID() {
         int pointer = internal_native_GetBody2ID((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_1 == null)
             BodyID_TEMP_GEN_1 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -122,7 +122,7 @@ return jolt.getPointer(returnedJSObj);
     public SubShapeID GetSubShapeID2() {
         int pointer = internal_native_GetSubShapeID2((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_1.getNativeData().reset(pointer, false);

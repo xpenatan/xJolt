@@ -45,7 +45,7 @@ delete nativeObject;
     public DebugRendererVertex get_mV(int index) {
         long pointer = internal_native_get_mV((long) getNativeData().getCPointer(), index);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (DebugRendererVertex_TEMP_GEN_0 == null)
             DebugRendererVertex_TEMP_GEN_0 = new DebugRendererVertex((byte) 1, (char) 1);
         DebugRendererVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);

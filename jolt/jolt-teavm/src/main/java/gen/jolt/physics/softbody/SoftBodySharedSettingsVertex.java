@@ -61,7 +61,7 @@ jolt.destroy(jsObj);
     public Float3 get_mPosition() {
         int pointer = internal_native_get_mPosition((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = new Float3((byte) 1, (char) 1);
         Float3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -91,7 +91,7 @@ jsObj.set_mPosition(mPosition_addr);
     public Float3 get_mVelocity() {
         int pointer = internal_native_get_mVelocity((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = new Float3((byte) 1, (char) 1);
         Float3_TEMP_GEN_1.getNativeData().reset(pointer, false);

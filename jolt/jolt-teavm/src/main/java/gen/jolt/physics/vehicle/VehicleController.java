@@ -27,7 +27,7 @@ public class VehicleController extends IDLBase {
     public VehicleConstraint GetConstraint() {
         int pointer = internal_native_GetConstraint((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleConstraint_TEMP_GEN_0 == null)
             VehicleConstraint_TEMP_GEN_0 = new VehicleConstraint((byte) 1, (char) 1);
         VehicleConstraint_TEMP_GEN_0.getNativeData().reset(pointer, false);

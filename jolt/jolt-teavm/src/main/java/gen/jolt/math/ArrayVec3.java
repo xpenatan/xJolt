@@ -84,7 +84,7 @@ return returnedJSObj;
     public Vec3 at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -147,7 +147,7 @@ jsObj.clear();
     public Vec3MemRef data() {
         int pointer = internal_native_data((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3MemRef_TEMP_GEN_0 == null)
             Vec3MemRef_TEMP_GEN_0 = new Vec3MemRef((byte) 1, (char) 1);
         Vec3MemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);

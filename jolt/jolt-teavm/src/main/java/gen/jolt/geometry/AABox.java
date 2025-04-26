@@ -95,7 +95,7 @@ jolt.destroy(jsObj);
     public static AABox sBiggest() {
         int pointer = internal_native_sBiggest();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_STATIC_GEN_0 == null)
             AABox_TEMP_STATIC_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -113,7 +113,7 @@ return jolt.getPointer(returnedJSObj);
     public static AABox sFromTwoPoints(Vec3 inP1, Vec3 inP2) {
         int pointer = internal_native_sFromTwoPoints((int) (long) (inP1 != null ? inP1.getNativeData().getCPointer() : 0), (int) (long) (inP2 != null ? inP2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_STATIC_GEN_1 == null)
             AABox_TEMP_STATIC_GEN_1 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
@@ -131,7 +131,7 @@ return jolt.getPointer(returnedJSObj);
     public static AABox sFromTriangle(VertexList inVertices, IndexedTriangle inTriangle) {
         int pointer = internal_native_sFromTriangle((int) (long) (inVertices != null ? inVertices.getNativeData().getCPointer() : 0), (int) (long) (inTriangle != null ? inTriangle.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_STATIC_GEN_2 == null)
             AABox_TEMP_STATIC_GEN_2 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
@@ -240,7 +240,7 @@ jsObj.EncapsulateIndexedTriangle(inVertices_addr, inTriangle_addr);
     public AABox Intersect(AABox inOther) {
         int pointer = internal_native_Intersect((int) (long) getNativeData().getCPointer(), (int) (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -281,7 +281,7 @@ jsObj.ExpandBy(inV_addr);
     public Vec3 GetCenter() {
         int pointer = internal_native_GetCenter((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -300,7 +300,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetExtent() {
         int pointer = internal_native_GetExtent((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -319,7 +319,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetSize() {
         int pointer = internal_native_GetSize((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -409,7 +409,7 @@ jsObj.TranslateVec3(inOther_addr);
     public AABox TransformedMat44(Mat44 inOther) {
         int pointer = internal_native_TransformedMat44((int) (long) getNativeData().getCPointer(), (int) (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -428,7 +428,7 @@ return jolt.getPointer(returnedJSObj);
     public AABox Scaled(Vec3 inScale) {
         int pointer = internal_native_Scaled((int) (long) getNativeData().getCPointer(), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_2 == null)
             AABox_TEMP_GEN_2 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -447,7 +447,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetClosestPoint(Vec3 inV) {
         int pointer = internal_native_GetClosestPoint((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -478,7 +478,7 @@ return returnedJSObj;
     public Vec3 get_mMin() {
         int pointer = internal_native_get_mMin((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
@@ -508,7 +508,7 @@ jsObj.set_mMin(mMin_addr);
     public Vec3 get_mMax() {
         int pointer = internal_native_get_mMax((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);

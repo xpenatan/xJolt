@@ -65,7 +65,7 @@ return nativeObject->size();
     public SoftBodySharedSettingsInvBind at(int inIndex) {
         long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodySharedSettingsInvBind_TEMP_GEN_0 == null)
             SoftBodySharedSettingsInvBind_TEMP_GEN_0 = new SoftBodySharedSettingsInvBind((byte) 1, (char) 1);
         SoftBodySharedSettingsInvBind_TEMP_GEN_0.getNativeData().reset(pointer, false);

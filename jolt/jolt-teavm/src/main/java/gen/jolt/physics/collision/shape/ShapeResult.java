@@ -73,7 +73,7 @@ return returnedJSObj;
     public IDLString GetError() {
         int pointer = internal_native_GetError((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = new IDLString((byte) 1, (char) 1);
         IDLString_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -92,7 +92,7 @@ return jolt.getPointer(returnedJSObj);
     public Shape Get() {
         int pointer = internal_native_Get((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
         Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);

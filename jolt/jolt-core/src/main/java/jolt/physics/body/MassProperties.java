@@ -79,7 +79,7 @@ nativeObject->ScaleToMass((float)inMass);
     public static Vec3 sGetEquivalentSolidBoxSize(float inMass, Vec3 inInertiaDiagonal) {
         long pointer = internal_native_sGetEquivalentSolidBoxSize(inMass, (long) (inInertiaDiagonal != null ? inInertiaDiagonal.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
@@ -145,7 +145,7 @@ nativeObject->mMass = mMass;
     public Mat44 get_mInertia() {
         long pointer = internal_native_get_mInertia((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
         Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);

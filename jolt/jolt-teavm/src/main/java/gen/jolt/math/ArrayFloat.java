@@ -126,7 +126,7 @@ jsObj.clear();
     public FloatMemRef data() {
         int pointer = internal_native_data((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (FloatMemRef_TEMP_GEN_0 == null)
             FloatMemRef_TEMP_GEN_0 = new FloatMemRef((byte) 1, (char) 1);
         FloatMemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);

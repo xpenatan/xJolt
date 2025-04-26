@@ -69,7 +69,7 @@ delete nativeObject;
     public WheelSettings GetSettings() {
         long pointer = internal_native_GetSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (WheelSettings_TEMP_GEN_0 == null)
             WheelSettings_TEMP_GEN_0 = new WheelSettings((byte) 1, (char) 1);
         WheelSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -156,7 +156,7 @@ return nativeObject->HasContact();
     public BodyID GetContactBodyID() {
         long pointer = internal_native_GetContactBodyID((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
         BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -173,7 +173,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactPosition() {
         long pointer = internal_native_GetContactPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -190,7 +190,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactPointVelocity() {
         long pointer = internal_native_GetContactPointVelocity((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -207,7 +207,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactNormal() {
         long pointer = internal_native_GetContactNormal((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -224,7 +224,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactLongitudinal() {
         long pointer = internal_native_GetContactLongitudinal((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -241,7 +241,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactLateral() {
         long pointer = internal_native_GetContactLateral((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);

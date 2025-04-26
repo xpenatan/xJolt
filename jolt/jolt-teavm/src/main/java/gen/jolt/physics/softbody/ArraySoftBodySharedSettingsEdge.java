@@ -70,7 +70,7 @@ return returnedJSObj;
     public SoftBodySharedSettingsEdge at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodySharedSettingsEdge_TEMP_GEN_0 == null)
             SoftBodySharedSettingsEdge_TEMP_GEN_0 = new SoftBodySharedSettingsEdge((byte) 1, (char) 1);
         SoftBodySharedSettingsEdge_TEMP_GEN_0.getNativeData().reset(pointer, false);

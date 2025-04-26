@@ -81,7 +81,7 @@ jsObj.SetGroupFilter(inFilter_addr);
     public GroupFilter GetGroupFilter() {
         int pointer = internal_native_GetGroupFilter((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (GroupFilter_TEMP_GEN_0 == null)
             GroupFilter_TEMP_GEN_0 = new GroupFilter((byte) 1, (char) 1);
         GroupFilter_TEMP_GEN_0.getNativeData().reset(pointer, false);

@@ -46,7 +46,7 @@ jolt.destroy(jsObj);
     public static Factory get_sInstance() {
         int pointer = internal_native_get_sInstance();
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Factory_TEMP_STATIC_GEN_0 == null)
             Factory_TEMP_STATIC_GEN_0 = new Factory((byte) 1, (char) 1);
         Factory_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);

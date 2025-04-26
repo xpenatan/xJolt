@@ -89,7 +89,7 @@ nativeObject->Sanitize();
     public VertexList get_mTriangleVertices() {
         long pointer = internal_native_get_mTriangleVertices((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VertexList_TEMP_GEN_0 == null)
             VertexList_TEMP_GEN_0 = new VertexList((byte) 1, (char) 1);
         VertexList_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -115,7 +115,7 @@ nativeObject->mTriangleVertices = *((VertexList*)mTriangleVertices_addr);
     public IndexedTriangleList get_mIndexedTriangles() {
         long pointer = internal_native_get_mIndexedTriangles((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (IndexedTriangleList_TEMP_GEN_0 == null)
             IndexedTriangleList_TEMP_GEN_0 = new IndexedTriangleList((byte) 1, (char) 1);
         IndexedTriangleList_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -141,7 +141,7 @@ nativeObject->mIndexedTriangles = *((IndexedTriangleList*)mIndexedTriangles_addr
     public PhysicsMaterialList get_mMaterials() {
         long pointer = internal_native_get_mMaterials((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
         PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);

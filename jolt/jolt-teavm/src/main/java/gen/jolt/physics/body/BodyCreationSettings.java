@@ -70,7 +70,7 @@ jolt.destroy(jsObj);
     public ShapeSettings GetShapeSettings() {
         int pointer = internal_native_GetShapeSettings((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ShapeSettings_TEMP_GEN_0 == null)
             ShapeSettings_TEMP_GEN_0 = new ShapeSettings((byte) 1, (char) 1);
         ShapeSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -100,7 +100,7 @@ jsObj.SetShapeSettings(inShape_addr);
     public ShapeResult ConvertShapeSettings() {
         int pointer = internal_native_ConvertShapeSettings((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = new ShapeResult((byte) 1, (char) 1);
         ShapeResult_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -119,7 +119,7 @@ return jolt.getPointer(returnedJSObj);
     public Shape GetShape() {
         int pointer = internal_native_GetShape((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
         Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -161,7 +161,7 @@ return returnedJSObj;
     public MassProperties GetMassProperties() {
         int pointer = internal_native_GetMassProperties((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MassProperties_TEMP_GEN_0 == null)
             MassProperties_TEMP_GEN_0 = new MassProperties((byte) 1, (char) 1);
         MassProperties_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -180,7 +180,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 get_mPosition() {
         int pointer = internal_native_get_mPosition((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -210,7 +210,7 @@ jsObj.set_mPosition(mPosition_addr);
     public Quat get_mRotation() {
         int pointer = internal_native_get_mRotation((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -240,7 +240,7 @@ jsObj.set_mRotation(mRotation_addr);
     public Vec3 get_mLinearVelocity() {
         int pointer = internal_native_get_mLinearVelocity((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -270,7 +270,7 @@ jsObj.set_mLinearVelocity(mLinearVelocity_addr);
     public Vec3 get_mAngularVelocity() {
         int pointer = internal_native_get_mAngularVelocity((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -344,7 +344,7 @@ jsObj.set_mObjectLayer(mObjectLayer);
     public CollisionGroup get_mCollisionGroup() {
         int pointer = internal_native_get_mCollisionGroup((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = new CollisionGroup((byte) 1, (char) 1);
         CollisionGroup_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -836,7 +836,7 @@ jsObj.set_mInertiaMultiplier(mInertiaMultiplier);
     public MassProperties get_mMassPropertiesOverride() {
         int pointer = internal_native_get_mMassPropertiesOverride((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MassProperties_TEMP_GEN_1 == null)
             MassProperties_TEMP_GEN_1 = new MassProperties((byte) 1, (char) 1);
         MassProperties_TEMP_GEN_1.getNativeData().reset(pointer, false);

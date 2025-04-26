@@ -65,7 +65,7 @@ delete nativeObject;
     public Vec3 GetNormal() {
         long pointer = internal_native_GetNormal((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -112,7 +112,7 @@ nativeObject->SetConstant((float)inConstant);
     public Plane sFromPointAndNormal(Vec3 inPoint, Vec3 inNormal) {
         long pointer = internal_native_sFromPointAndNormal((long) getNativeData().getCPointer(), (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -129,7 +129,7 @@ return (jlong)&copy_addr;*/
     public Plane sFromPointsCCW(Vec3 inPoint1, Vec3 inPoint2, Vec3 inPoint3) {
         long pointer = internal_native_sFromPointsCCW((long) getNativeData().getCPointer(), (long) (inPoint1 != null ? inPoint1.getNativeData().getCPointer() : 0), (long) (inPoint2 != null ? inPoint2.getNativeData().getCPointer() : 0), (long) (inPoint3 != null ? inPoint3.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_1 == null)
             Plane_TEMP_GEN_1 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -146,7 +146,7 @@ return (jlong)&copy_addr;*/
     public Plane Offset(float inDistance) {
         long pointer = internal_native_Offset((long) getNativeData().getCPointer(), inDistance);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_2 == null)
             Plane_TEMP_GEN_2 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -163,7 +163,7 @@ return (jlong)&copy_addr;*/
     public Plane GetTransformed(Mat44 inTransform) {
         long pointer = internal_native_GetTransformed((long) getNativeData().getCPointer(), (long) (inTransform != null ? inTransform.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Plane_TEMP_GEN_3 == null)
             Plane_TEMP_GEN_3 = new Plane((byte) 1, (char) 1);
         Plane_TEMP_GEN_3.getNativeData().reset(pointer, false);

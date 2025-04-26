@@ -109,7 +109,7 @@ jsObj.set_mMaxSteerAngle(mMaxSteerAngle);
     public LinearCurve get_mLongitudinalFriction() {
         int pointer = internal_native_get_mLongitudinalFriction((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = new LinearCurve((byte) 1, (char) 1);
         LinearCurve_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -139,7 +139,7 @@ jsObj.set_mLongitudinalFriction(mLongitudinalFriction_addr);
     public LinearCurve get_mLateralFriction() {
         int pointer = internal_native_get_mLateralFriction((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (LinearCurve_TEMP_GEN_1 == null)
             LinearCurve_TEMP_GEN_1 = new LinearCurve((byte) 1, (char) 1);
         LinearCurve_TEMP_GEN_1.getNativeData().reset(pointer, false);

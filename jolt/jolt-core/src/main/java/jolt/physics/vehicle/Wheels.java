@@ -75,7 +75,7 @@ return nativeObject->size();
     public Wheel at(int inIndex) {
         long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Wheel_TEMP_GEN_0 == null)
             Wheel_TEMP_GEN_0 = new Wheel((byte) 1, (char) 1);
         Wheel_TEMP_GEN_0.getNativeData().reset(pointer, false);

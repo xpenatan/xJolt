@@ -55,7 +55,7 @@ jolt.destroy(jsObj);
     public Float3 get_mPosition() {
         int pointer = internal_native_get_mPosition((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = new Float3((byte) 1, (char) 1);
         Float3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -74,7 +74,7 @@ return jolt.getPointer(returnedJSObj);
     public Float3 get_mNormal() {
         int pointer = internal_native_get_mNormal((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = new Float3((byte) 1, (char) 1);
         Float3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -93,7 +93,7 @@ return jolt.getPointer(returnedJSObj);
     public Float2 get_mUV() {
         int pointer = internal_native_get_mUV((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Float2_TEMP_GEN_0 == null)
             Float2_TEMP_GEN_0 = new Float2((byte) 1, (char) 1);
         Float2_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -112,7 +112,7 @@ return jolt.getPointer(returnedJSObj);
     public Color get_mColor() {
         int pointer = internal_native_get_mColor((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Color_TEMP_GEN_0 == null)
             Color_TEMP_GEN_0 = new Color((byte) 1, (char) 1);
         Color_TEMP_GEN_0.getNativeData().reset(pointer, false);

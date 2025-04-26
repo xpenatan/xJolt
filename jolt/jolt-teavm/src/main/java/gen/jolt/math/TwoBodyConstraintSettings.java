@@ -30,7 +30,7 @@ public class TwoBodyConstraintSettings extends ConstraintSettings {
     public Constraint Create(Body inBody1, Body inBody2) {
         int pointer = internal_native_Create((int) (long) getNativeData().getCPointer(), (int) (long) (inBody1 != null ? inBody1.getNativeData().getCPointer() : 0), (int) (long) (inBody2 != null ? inBody2.getNativeData().getCPointer() : 0));
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Constraint_TEMP_GEN_0 == null)
             Constraint_TEMP_GEN_0 = new Constraint((byte) 1, (char) 1);
         Constraint_TEMP_GEN_0.getNativeData().reset(pointer, false);

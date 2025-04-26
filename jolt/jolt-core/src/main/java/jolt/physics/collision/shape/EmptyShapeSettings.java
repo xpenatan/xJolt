@@ -57,7 +57,7 @@ delete nativeObject;
     public Vec3 get_mCenterOfMass() {
         long pointer = internal_native_get_mCenterOfMass((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);

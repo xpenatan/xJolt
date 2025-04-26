@@ -121,7 +121,7 @@ nativeObject->SetGravity(*((Vec3* )inGravity_addr));
     public Vec3 GetGravity() {
         long pointer = internal_native_GetGravity((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -138,7 +138,7 @@ return (jlong)&copy_addr;*/
     public PhysicsSettings GetPhysicsSettings() {
         long pointer = internal_native_GetPhysicsSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PhysicsSettings_TEMP_GEN_0 == null)
             PhysicsSettings_TEMP_GEN_0 = new PhysicsSettings((byte) 1, (char) 1);
         PhysicsSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -214,7 +214,7 @@ nativeObject->GetActiveBodies((::EBodyType)inBodyType, *((BodyIDVector* )outBodi
     public AABox GetBounds() {
         long pointer = internal_native_GetBounds((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
         AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -261,7 +261,7 @@ nativeObject->SetContactListener((ContactListener* )inListener_addr);
     public ContactListener GetContactListener() {
         long pointer = internal_native_GetContactListener((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ContactListener_TEMP_GEN_0 == null)
             ContactListener_TEMP_GEN_0 = new ContactListener((byte) 1, (char) 1);
         ContactListener_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -288,7 +288,7 @@ nativeObject->SetSoftBodyContactListener((SoftBodyContactListener* )inListener_a
     public SoftBodyContactListener GetSoftBodyContactListener() {
         long pointer = internal_native_GetSoftBodyContactListener((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SoftBodyContactListener_TEMP_GEN_0 == null)
             SoftBodyContactListener_TEMP_GEN_0 = new SoftBodyContactListener((byte) 1, (char) 1);
         SoftBodyContactListener_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -315,7 +315,7 @@ nativeObject->OptimizeBroadPhase();
     public BodyInterface GetBodyInterface() {
         long pointer = internal_native_GetBodyInterface((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyInterface_TEMP_GEN_0 == null)
             BodyInterface_TEMP_GEN_0 = new BodyInterface((byte) 1, (char) 1);
         BodyInterface_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -331,7 +331,7 @@ return (jlong)&nativeObject->GetBodyInterface();
     public BodyInterface GetBodyInterfaceNoLock() {
         long pointer = internal_native_GetBodyInterfaceNoLock((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyInterface_TEMP_GEN_1 == null)
             BodyInterface_TEMP_GEN_1 = new BodyInterface((byte) 1, (char) 1);
         BodyInterface_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -347,7 +347,7 @@ return (jlong)&nativeObject->GetBodyInterfaceNoLock();
     public BodyLockInterfaceNoLock GetBodyLockInterfaceNoLock() {
         long pointer = internal_native_GetBodyLockInterfaceNoLock((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyLockInterfaceNoLock_TEMP_GEN_0 == null)
             BodyLockInterfaceNoLock_TEMP_GEN_0 = new BodyLockInterfaceNoLock((byte) 1, (char) 1);
         BodyLockInterfaceNoLock_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -363,7 +363,7 @@ return (jlong)&nativeObject->GetBodyLockInterfaceNoLock();
     public BodyLockInterfaceLocking GetBodyLockInterface() {
         long pointer = internal_native_GetBodyLockInterface((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyLockInterfaceLocking_TEMP_GEN_0 == null)
             BodyLockInterfaceLocking_TEMP_GEN_0 = new BodyLockInterfaceLocking((byte) 1, (char) 1);
         BodyLockInterfaceLocking_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -379,7 +379,7 @@ return (jlong)&nativeObject->GetBodyLockInterface();
     public BroadPhaseQuery GetBroadPhaseQuery() {
         long pointer = internal_native_GetBroadPhaseQuery((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BroadPhaseQuery_TEMP_GEN_0 == null)
             BroadPhaseQuery_TEMP_GEN_0 = new BroadPhaseQuery((byte) 1, (char) 1);
         BroadPhaseQuery_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -395,7 +395,7 @@ return (jlong)&nativeObject->GetBroadPhaseQuery();
     public NarrowPhaseQuery GetNarrowPhaseQuery() {
         long pointer = internal_native_GetNarrowPhaseQuery((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (NarrowPhaseQuery_TEMP_GEN_0 == null)
             NarrowPhaseQuery_TEMP_GEN_0 = new NarrowPhaseQuery((byte) 1, (char) 1);
         NarrowPhaseQuery_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -411,7 +411,7 @@ return (jlong)&nativeObject->GetNarrowPhaseQuery();
     public NarrowPhaseQuery GetNarrowPhaseQueryNoLock() {
         long pointer = internal_native_GetNarrowPhaseQueryNoLock((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (NarrowPhaseQuery_TEMP_GEN_1 == null)
             NarrowPhaseQuery_TEMP_GEN_1 = new NarrowPhaseQuery((byte) 1, (char) 1);
         NarrowPhaseQuery_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -527,7 +527,7 @@ nativeObject->SetBodyActivationListener((BodyActivationListener* )inListener_add
     public BodyActivationListener GetBodyActivationListener() {
         long pointer = internal_native_GetBodyActivationListener((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (BodyActivationListener_TEMP_GEN_0 == null)
             BodyActivationListener_TEMP_GEN_0 = new BodyActivationListener((byte) 1, (char) 1);
         BodyActivationListener_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -564,7 +564,7 @@ nativeObject->SetSimShapeFilter((SimShapeFilter* )inShapeFilter_addr);
     public SimShapeFilter GetSimShapeFilter() {
         long pointer = internal_native_GetSimShapeFilter((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SimShapeFilter_TEMP_GEN_0 == null)
             SimShapeFilter_TEMP_GEN_0 = new SimShapeFilter((byte) 1, (char) 1);
         SimShapeFilter_TEMP_GEN_0.getNativeData().reset(pointer, false);

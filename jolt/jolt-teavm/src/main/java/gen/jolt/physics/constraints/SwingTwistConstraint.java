@@ -49,7 +49,7 @@ public class SwingTwistConstraint extends TwoBodyConstraint {
     public Vec3 GetLocalSpacePosition1() {
         int pointer = internal_native_GetLocalSpacePosition1((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -68,7 +68,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetLocalSpacePosition2() {
         int pointer = internal_native_GetLocalSpacePosition2((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -87,7 +87,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat GetConstraintToBody1() {
         int pointer = internal_native_GetConstraintToBody1((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -106,7 +106,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat GetConstraintToBody2() {
         int pointer = internal_native_GetConstraintToBody2((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_1 == null)
             Quat_TEMP_GEN_1 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -217,7 +217,7 @@ jsObj.SetTwistMaxAngle(inAngle);
     public MotorSettings GetSwingMotorSettings() {
         int pointer = internal_native_GetSwingMotorSettings((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
         MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -236,7 +236,7 @@ return jolt.getPointer(returnedJSObj);
     public MotorSettings GetTwistMotorSettings() {
         int pointer = internal_native_GetTwistMotorSettings((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MotorSettings_TEMP_GEN_1 == null)
             MotorSettings_TEMP_GEN_1 = new MotorSettings((byte) 1, (char) 1);
         MotorSettings_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -335,7 +335,7 @@ jsObj.SetTargetAngularVelocityCS(inAngularVelocity_addr);
     public Vec3 GetTargetAngularVelocityCS() {
         int pointer = internal_native_GetTargetAngularVelocityCS((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -365,7 +365,7 @@ jsObj.SetTargetOrientationCS(inOrientation_addr);
     public Quat GetTargetOrientationCS() {
         int pointer = internal_native_GetTargetOrientationCS((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_2 == null)
             Quat_TEMP_GEN_2 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -395,7 +395,7 @@ jsObj.SetTargetOrientationBS(inOrientation_addr);
     public Quat GetRotationInConstraintSpace() {
         int pointer = internal_native_GetRotationInConstraintSpace((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_3 == null)
             Quat_TEMP_GEN_3 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -414,7 +414,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetTotalLambdaPosition() {
         int pointer = internal_native_GetTotalLambdaPosition((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -469,7 +469,7 @@ return returnedJSObj;
     public Vec3 GetTotalLambdaMotor() {
         int pointer = internal_native_GetTotalLambdaMotor((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);

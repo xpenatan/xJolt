@@ -124,7 +124,7 @@ jsObj.IsNormalized();
     public Vector2 Normalized() {
         int pointer = internal_native_Normalized((int) (long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = new Vector2((byte) 1, (char) 1);
         Vector2_TEMP_GEN_0.getNativeData().reset(pointer, false);

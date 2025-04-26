@@ -65,7 +65,7 @@ delete nativeObject;
     public PathConstraintPath get_mPath() {
         long pointer = internal_native_get_mPath((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = new PathConstraintPath((byte) 1, (char) 1);
         PathConstraintPath_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -92,7 +92,7 @@ nativeObject->mPath = (PathConstraintPath*)mPath_addr;
     public Vec3 get_mPathPosition() {
         long pointer = internal_native_get_mPathPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -118,7 +118,7 @@ nativeObject->mPathPosition = *((Vec3*)mPathPosition_addr);
     public Quat get_mPathRotation() {
         long pointer = internal_native_get_mPathRotation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
         Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -204,7 +204,7 @@ nativeObject->mRotationConstraintType = (::EPathRotationConstraintType)mRotation
     public MotorSettings get_mPositionMotorSettings() {
         long pointer = internal_native_get_mPositionMotorSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
         MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);

@@ -65,7 +65,7 @@ return nativeObject->GetMaxFrictionTorque();
     public MotorSettings GetMotorSettings() {
         long pointer = internal_native_GetMotorSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
         MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -181,7 +181,7 @@ return nativeObject->HasLimits();
     public SpringSettings GetLimitsSpringSettings() {
         long pointer = internal_native_GetLimitsSpringSettings((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
         SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -207,7 +207,7 @@ nativeObject->SetLimitsSpringSettings(*((SpringSettings* )inLimitsSpringSettings
     public Vec3 GetTotalLambdaPosition() {
         long pointer = internal_native_GetTotalLambdaPosition((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -224,7 +224,7 @@ return (jlong)&copy_addr;*/
     public Vector2 GetTotalLambdaRotation() {
         long pointer = internal_native_GetTotalLambdaRotation((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = new Vector2((byte) 1, (char) 1);
         Vector2_TEMP_GEN_0.getNativeData().reset(pointer, false);

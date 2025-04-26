@@ -73,7 +73,7 @@ delete nativeObject;
     public ContactManifold SwapShapes() {
         long pointer = internal_native_SwapShapes((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ContactManifold_TEMP_GEN_0 == null)
             ContactManifold_TEMP_GEN_0 = new ContactManifold((byte) 1, (char) 1);
         ContactManifold_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -90,7 +90,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetWorldSpaceContactPointOn1(int inIndex) {
         long pointer = internal_native_GetWorldSpaceContactPointOn1((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -107,7 +107,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetWorldSpaceContactPointOn2(int inIndex) {
         long pointer = internal_native_GetWorldSpaceContactPointOn2((long) getNativeData().getCPointer(), inIndex);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -124,7 +124,7 @@ return (jlong)&copy_addr;*/
     public Vec3 get_mBaseOffset() {
         long pointer = internal_native_get_mBaseOffset((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
@@ -150,7 +150,7 @@ nativeObject->mBaseOffset = *((Vec3*)mBaseOffset_addr);
     public Vec3 get_mWorldSpaceNormal() {
         long pointer = internal_native_get_mWorldSpaceNormal((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
         Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
@@ -196,7 +196,7 @@ nativeObject->mPenetrationDepth = mPenetrationDepth;
     public SubShapeID get_mSubShapeID1() {
         long pointer = internal_native_get_mSubShapeID1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -222,7 +222,7 @@ nativeObject->mSubShapeID1 = *((SubShapeID*)mSubShapeID1_addr);
     public SubShapeID get_mSubShapeID2() {
         long pointer = internal_native_get_mSubShapeID2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_GEN_1.getNativeData().reset(pointer, false);
@@ -248,7 +248,7 @@ nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
     public ContactPoints get_mRelativeContactPointsOn1() {
         long pointer = internal_native_get_mRelativeContactPointsOn1((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ContactPoints_TEMP_GEN_0 == null)
             ContactPoints_TEMP_GEN_0 = new ContactPoints((byte) 1, (char) 1);
         ContactPoints_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -274,7 +274,7 @@ nativeObject->mRelativeContactPointsOn1 = *((ContactPoints*)mRelativeContactPoin
     public ContactPoints get_mRelativeContactPointsOn2() {
         long pointer = internal_native_get_mRelativeContactPointsOn2((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (ContactPoints_TEMP_GEN_1 == null)
             ContactPoints_TEMP_GEN_1 = new ContactPoints((byte) 1, (char) 1);
         ContactPoints_TEMP_GEN_1.getNativeData().reset(pointer, false);

@@ -41,7 +41,7 @@ return (jlong)new TrackedVehicleControllerSettings();
     public VehicleEngineSettings get_mEngine() {
         long pointer = internal_native_get_mEngine((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleEngineSettings_TEMP_GEN_0 == null)
             VehicleEngineSettings_TEMP_GEN_0 = new VehicleEngineSettings((byte) 1, (char) 1);
         VehicleEngineSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -67,7 +67,7 @@ nativeObject->mEngine = *((VehicleEngineSettings*)mEngine_addr);
     public VehicleTransmissionSettings get_mTransmission() {
         long pointer = internal_native_get_mTransmission((long) getNativeData().getCPointer());
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleTransmissionSettings_TEMP_GEN_0 == null)
             VehicleTransmissionSettings_TEMP_GEN_0 = new VehicleTransmissionSettings((byte) 1, (char) 1);
         VehicleTransmissionSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
@@ -93,7 +93,7 @@ nativeObject->mTransmission = *((VehicleTransmissionSettings*)mTransmission_addr
     public VehicleTrackSettings get_mTracks(int index) {
         long pointer = internal_native_get_mTracks((long) getNativeData().getCPointer(), index);
         if (pointer == 0)
-            throw new RuntimeException("Pointer is null");
+            return null;
         if (VehicleTrackSettings_TEMP_GEN_0 == null)
             VehicleTrackSettings_TEMP_GEN_0 = new VehicleTrackSettings((byte) 1, (char) 1);
         VehicleTrackSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
