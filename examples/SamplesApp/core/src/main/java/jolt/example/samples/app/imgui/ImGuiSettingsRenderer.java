@@ -25,7 +25,7 @@ public class ImGuiSettingsRenderer {
     private int maxThreads;
 
     public ImGuiSettingsRenderer() {
-        maxThreads = Runtime.getRuntime().availableProcessors();
+//        maxThreads = Runtime.getRuntime().availableProcessors();
         idlBool = new IDLBool();
         idlInt = new IDLInt();
         mDrawSoftBodyConstraintColorArray = new Array<>();
