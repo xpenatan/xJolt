@@ -98,7 +98,7 @@ public class SamplesApp extends InputAdapter {
             debugRenderer.setEnable(settingsRenderer.idlBool.getValue());
         }
 
-        if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.FittingPolicyScroll | ImGuiTabBarFlags.Reorderable)) {
+        if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.FittingPolicyScroll.or(ImGuiTabBarFlags.Reorderable))) {
             if(ImGui.BeginTabItem("Physics")) {
                 settingsRenderer.render(joltInstance);
                 ImGui.EndTabItem();

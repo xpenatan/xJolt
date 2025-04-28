@@ -322,7 +322,7 @@ public class BoxSpawnTest extends Test {
         tempVec3.Set(x1 / 2f, y1 / 2f, z1 / 2f);
         BoxShape bodyShape = new BoxShape(tempVec3);
 
-        int motionType = EMotionType.Dynamic;
+        EMotionType motionType = EMotionType.Dynamic;
         int layer = Layers.MOVING;
 
         tempRotationMatrix.idt();

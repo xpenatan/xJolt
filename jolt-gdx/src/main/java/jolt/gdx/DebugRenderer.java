@@ -28,6 +28,7 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import java.util.ArrayList;
 import jolt.core.Color;
 import jolt.enums.ECastShadow;
+import jolt.enums.ECullMode;
 import jolt.enums.EDrawMode;
 import jolt.math.Float2;
 import jolt.math.Float3;
@@ -84,7 +85,7 @@ public class DebugRenderer extends DebugRendererEm {
     }
 
     @Override
-    protected void DrawMesh(int id, Mat44 inModelMatrix, DebugArrayTriangle triangleArray, Color inModelColor, int inCullMode, int inDrawMode) {
+    protected void DrawMesh(int id, Mat44 inModelMatrix, DebugArrayTriangle triangleArray, Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
         if (!enable || triangleArray.size() == 0) {
             return;
         }
@@ -225,7 +226,7 @@ public class DebugRenderer extends DebugRendererEm {
     }
 
     @Override
-    public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, int inCastShadow) {
+    public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow) {
         if (mDrawShapeWireframe) {
             super.DrawCylinder(inMatrix, inHalfHeight, inRadius, inColor, ECastShadow.ECastShadow_Off, EDrawMode.EDrawMode_Wireframe);
         } else {
@@ -234,7 +235,7 @@ public class DebugRenderer extends DebugRendererEm {
     }
 
     @Override
-    public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, int inCastShadow, int inDrawMode) {
+    public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow, EDrawMode inDrawMode) {
         if (mDrawShapeWireframe) {
             super.DrawCylinder(inMatrix, inHalfHeight, inRadius, inColor, ECastShadow.ECastShadow_Off, EDrawMode.EDrawMode_Wireframe);
         } else {

@@ -17,8 +17,8 @@ public class ImGuiSettingsRenderer {
     public IDLBool idlBool;
     private IDLInt idlInt;
 
-    private int mDrawSoftBodyConstraintColor;
-    private int mDrawShapeColor;
+    private ESoftBodyConstraintColor mDrawSoftBodyConstraintColor;
+    private EShapeColor mDrawShapeColor;
     private Array<IntStringPair> mDrawSoftBodyConstraintColorArray;
     private Array<IntStringPair> mDrawShapeColorArray;
 
@@ -29,16 +29,16 @@ public class ImGuiSettingsRenderer {
         idlBool = new IDLBool();
         idlInt = new IDLInt();
         mDrawSoftBodyConstraintColorArray = new Array<>();
-        mDrawSoftBodyConstraintColorArray.add(new IntStringPair("ConstraintType", ESoftBodyConstraintColor.ESoftBodyConstraintColor_ConstraintType));
-        mDrawSoftBodyConstraintColorArray.add(new IntStringPair("ConstraintGroup", ESoftBodyConstraintColor.ESoftBodyConstraintColor_ConstraintGroup));
-        mDrawSoftBodyConstraintColorArray.add(new IntStringPair("ConstraintOrder", ESoftBodyConstraintColor.ESoftBodyConstraintColor_ConstraintOrder));
+        mDrawSoftBodyConstraintColorArray.add(new IntStringPair("ConstraintType", ESoftBodyConstraintColor.ESoftBodyConstraintColor_ConstraintType.getValue()));
+        mDrawSoftBodyConstraintColorArray.add(new IntStringPair("ConstraintGroup", ESoftBodyConstraintColor.ESoftBodyConstraintColor_ConstraintGroup.getValue()));
+        mDrawSoftBodyConstraintColorArray.add(new IntStringPair("ConstraintOrder", ESoftBodyConstraintColor.ESoftBodyConstraintColor_ConstraintOrder.getValue()));
         mDrawShapeColorArray = new Array<>();
-        mDrawShapeColorArray.add(new IntStringPair("InstanceColor", EShapeColor.EShapeColor_InstanceColor));
-        mDrawShapeColorArray.add(new IntStringPair("ShapeTypeColor", EShapeColor.EShapeColor_ShapeTypeColor));
-        mDrawShapeColorArray.add(new IntStringPair("MotionTypeColor", EShapeColor.EShapeColor_MotionTypeColor));
-        mDrawShapeColorArray.add(new IntStringPair("SleepColor", EShapeColor.EShapeColor_SleepColor));
-        mDrawShapeColorArray.add(new IntStringPair("IslandColor", EShapeColor.EShapeColor_IslandColor));
-        mDrawShapeColorArray.add(new IntStringPair("MaterialColor", EShapeColor.EShapeColor_MaterialColor));
+        mDrawShapeColorArray.add(new IntStringPair("InstanceColor", EShapeColor.EShapeColor_InstanceColor.getValue()));
+        mDrawShapeColorArray.add(new IntStringPair("ShapeTypeColor", EShapeColor.EShapeColor_ShapeTypeColor.getValue()));
+        mDrawShapeColorArray.add(new IntStringPair("MotionTypeColor", EShapeColor.EShapeColor_MotionTypeColor.getValue()));
+        mDrawShapeColorArray.add(new IntStringPair("SleepColor", EShapeColor.EShapeColor_SleepColor.getValue()));
+        mDrawShapeColorArray.add(new IntStringPair("IslandColor", EShapeColor.EShapeColor_IslandColor.getValue()));
+        mDrawShapeColorArray.add(new IntStringPair("MaterialColor", EShapeColor.EShapeColor_MaterialColor.getValue()));
     }
 
     public void dispose() {
@@ -56,13 +56,13 @@ public class ImGuiSettingsRenderer {
             settings.set_mDrawShapeWireframe(idlBool.getValue());
         }
         mDrawShapeColor = settings.get_mDrawShapeColor();
-        IntStringPair colorPair = mDrawShapeColorArray.get(mDrawShapeColor);
+        IntStringPair colorPair = mDrawShapeColorArray.get(mDrawShapeColor.getValue());
         if (ImGui.BeginCombo("##mDrawShapeColor", colorPair.name)) {
             for(int i = 0; i < mDrawShapeColorArray.size; i++) {
                 IntStringPair item = mDrawShapeColorArray.get(i);
-                boolean selected = i == this.mDrawShapeColor;
+                boolean selected = i == this.mDrawShapeColor.getValue();
                 if(ImGui.Selectable(item.name, selected)) {
-                    this.mDrawShapeColor = i;
+                    this.mDrawShapeColor = EShapeColor.MAP.get(i);
                     settings.set_mDrawShapeColor(mDrawShapeColor);
                 }
             }
@@ -137,13 +137,13 @@ public class ImGuiSettingsRenderer {
             settings.set_mDrawSoftBodyPredictedBounds(idlBool.getValue());
         }
         mDrawSoftBodyConstraintColor = settings.get_mDrawSoftBodyConstraintColor();
-        IntStringPair selectedText = mDrawSoftBodyConstraintColorArray.get(mDrawSoftBodyConstraintColor);
+        IntStringPair selectedText = mDrawSoftBodyConstraintColorArray.get(mDrawSoftBodyConstraintColor.getValue());
         if (ImGui.BeginCombo("##mDrawSoftBodyConstraintColor", selectedText.name)) {
             for(int i = 0; i < mDrawSoftBodyConstraintColorArray.size; i++) {
                 IntStringPair item = mDrawSoftBodyConstraintColorArray.get(i);
-                boolean selected = i == this.mDrawSoftBodyConstraintColor;
+                boolean selected = i == this.mDrawSoftBodyConstraintColor.getValue();
                 if(ImGui.Selectable(item.name, selected)) {
-                    this.mDrawSoftBodyConstraintColor = i;
+                    this.mDrawSoftBodyConstraintColor = ESoftBodyConstraintColor.MAP.get(i);
                     settings.set_mDrawSoftBodyConstraintColor(mDrawSoftBodyConstraintColor);
                 }
             }
