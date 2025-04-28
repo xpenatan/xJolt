@@ -171,15 +171,15 @@ return nativeObject->GetNumBodies();
 */
     private static native int internal_native_GetNumBodies(long this_addr);
 
-    public int GetNumActiveBodies(int inBodyType) {
-        return internal_native_GetNumActiveBodies((long) getNativeData().getCPointer(), inBodyType);
+    public int GetNumActiveBodies(EBodyType inBodyType) {
+        return internal_native_GetNumActiveBodies((long) getNativeData().getCPointer(), (long) (inBodyType != null ? inBodyType.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return nativeObject->GetNumActiveBodies((::EBodyType)inBodyType);
 */
-    private static native int internal_native_GetNumActiveBodies(long this_addr, int inBodyType);
+    private static native int internal_native_GetNumActiveBodies(long this_addr, long inBodyType);
 
     public int GetMaxBodies() {
         return internal_native_GetMaxBodies((long) getNativeData().getCPointer());
@@ -201,15 +201,15 @@ nativeObject->GetBodies(*((BodyIDVector* )outBodies_addr));
 */
     private static native void internal_native_GetBodies(long this_addr, long outBodies_addr);
 
-    public void GetActiveBodies(int inBodyType, BodyIDVector outBodies) {
-        internal_native_GetActiveBodies((long) getNativeData().getCPointer(), inBodyType, (long) (outBodies != null ? outBodies.getNativeData().getCPointer() : 0));
+    public void GetActiveBodies(EBodyType inBodyType, BodyIDVector outBodies) {
+        internal_native_GetActiveBodies((long) getNativeData().getCPointer(), (long) (inBodyType != null ? inBodyType.getValue() : 0), (long) (outBodies != null ? outBodies.getNativeData().getCPointer() : 0));
     }
 
     /*[-JNI;-NATIVE]
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->GetActiveBodies((::EBodyType)inBodyType, *((BodyIDVector* )outBodies_addr));
 */
-    private static native void internal_native_GetActiveBodies(long this_addr, int inBodyType, long outBodies_addr);
+    private static native void internal_native_GetActiveBodies(long this_addr, long inBodyType, long outBodies_addr);
 
     public AABox GetBounds() {
         long pointer = internal_native_GetBounds((long) getNativeData().getCPointer());
@@ -424,25 +424,25 @@ return (jlong)&nativeObject->GetNarrowPhaseQueryNoLock();
 */
     private static native long internal_native_GetNarrowPhaseQueryNoLock(long this_addr);
 
-    public void SaveState(StateRecorder inStream, int inState, StateRecorderFilter inFilter) {
-        internal_native_SaveState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), inState, (long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0));
+    public void SaveState(StateRecorder inStream, EStateRecorderState inState, StateRecorderFilter inFilter) {
+        internal_native_SaveState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), (long) (inState != null ? inState.getValue() : 0), (long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0));
     }
 
     /*[-JNI;-NATIVE]
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SaveState(*((StateRecorder* )inStream_addr), (::EStateRecorderState)inState, (StateRecorderFilter* )inFilter_addr);
 */
-    private static native void internal_native_SaveState(long this_addr, long inStream_addr, int inState, long inFilter_addr);
+    private static native void internal_native_SaveState(long this_addr, long inStream_addr, long inState, long inFilter_addr);
 
-    public void SaveState(StateRecorder inStream, int inState) {
-        internal_native_SaveState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), inState);
+    public void SaveState(StateRecorder inStream, EStateRecorderState inState) {
+        internal_native_SaveState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SaveState(*((StateRecorder* )inStream_addr), (::EStateRecorderState)inState);
 */
-    private static native void internal_native_SaveState(long this_addr, long inStream_addr, int inState);
+    private static native void internal_native_SaveState(long this_addr, long inStream_addr, long inState);
 
     public void SaveState(StateRecorder inStream) {
         internal_native_SaveState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0));
@@ -610,7 +610,7 @@ return (jlong)obj;
         return internal_native_GetNumBodies(this_addr);
     }
 
-    public static int native_GetNumActiveBodies(long this_addr, int inBodyType) {
+    public static int native_GetNumActiveBodies(long this_addr, long inBodyType) {
         return internal_native_GetNumActiveBodies(this_addr, inBodyType);
     }
 
@@ -622,7 +622,7 @@ return (jlong)obj;
         internal_native_GetBodies(this_addr, outBodies_addr);
     }
 
-    public static void native_GetActiveBodies(long this_addr, int inBodyType, long outBodies_addr) {
+    public static void native_GetActiveBodies(long this_addr, long inBodyType, long outBodies_addr) {
         internal_native_GetActiveBodies(this_addr, inBodyType, outBodies_addr);
     }
 
@@ -686,11 +686,11 @@ return (jlong)obj;
         return internal_native_GetNarrowPhaseQueryNoLock(this_addr);
     }
 
-    public static void native_SaveState(long this_addr, long inStream_addr, int inState, long inFilter_addr) {
+    public static void native_SaveState(long this_addr, long inStream_addr, long inState, long inFilter_addr) {
         internal_native_SaveState(this_addr, inStream_addr, inState, inFilter_addr);
     }
 
-    public static void native_SaveState(long this_addr, long inStream_addr, int inState) {
+    public static void native_SaveState(long this_addr, long inStream_addr, long inState) {
         internal_native_SaveState(this_addr, inStream_addr, inState);
     }
 

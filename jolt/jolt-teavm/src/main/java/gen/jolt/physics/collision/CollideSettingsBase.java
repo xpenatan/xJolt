@@ -44,8 +44,9 @@ jolt.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);jolt.destroy(jsObj);")
     private static native void internal_native_deleteNative(int this_addr);
 
-    public int get_mActiveEdgeMode() {
-        return internal_native_get_mActiveEdgeMode((int) (long) getNativeData().getCPointer());
+    public EActiveEdgeMode get_mActiveEdgeMode() {
+        int value = internal_native_get_mActiveEdgeMode((int) (long) getNativeData().getCPointer());
+        return EActiveEdgeMode.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -55,8 +56,8 @@ return jsObj.get_mActiveEdgeMode();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);return jsObj.get_mActiveEdgeMode();")
     private static native int internal_native_get_mActiveEdgeMode(int this_addr);
 
-    public void set_mActiveEdgeMode(int mActiveEdgeMode) {
-        internal_native_set_mActiveEdgeMode((int) (long) getNativeData().getCPointer(), mActiveEdgeMode);
+    public void set_mActiveEdgeMode(EActiveEdgeMode mActiveEdgeMode) {
+        internal_native_set_mActiveEdgeMode((int) (long) getNativeData().getCPointer(), (int) (long) (mActiveEdgeMode != null ? mActiveEdgeMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,8 +67,9 @@ jsObj.set_mActiveEdgeMode(mActiveEdgeMode);
     @org.teavm.jso.JSBody(params = {"this_addr", "mActiveEdgeMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);jsObj.set_mActiveEdgeMode(mActiveEdgeMode);")
     private static native void internal_native_set_mActiveEdgeMode(int this_addr, int mActiveEdgeMode);
 
-    public int get_mCollectFacesMode() {
-        return internal_native_get_mCollectFacesMode((int) (long) getNativeData().getCPointer());
+    public ECollectFacesMode get_mCollectFacesMode() {
+        int value = internal_native_get_mCollectFacesMode((int) (long) getNativeData().getCPointer());
+        return ECollectFacesMode.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -77,8 +79,8 @@ return jsObj.get_mCollectFacesMode();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);return jsObj.get_mCollectFacesMode();")
     private static native int internal_native_get_mCollectFacesMode(int this_addr);
 
-    public void set_mCollectFacesMode(int mCollectFacesMode) {
-        internal_native_set_mCollectFacesMode((int) (long) getNativeData().getCPointer(), mCollectFacesMode);
+    public void set_mCollectFacesMode(ECollectFacesMode mCollectFacesMode) {
+        internal_native_set_mCollectFacesMode((int) (long) getNativeData().getCPointer(), (int) (long) (mCollectFacesMode != null ? mCollectFacesMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -166,20 +168,20 @@ jsObj.set_mActiveEdgeMovementDirection(mActiveEdgeMovementDirection_addr);
         internal_native_deleteNative((int) this_addr);
     }
 
-    public static int native_get_mActiveEdgeMode(long this_addr) {
+    public static long native_get_mActiveEdgeMode(long this_addr) {
         return internal_native_get_mActiveEdgeMode((int) this_addr);
     }
 
-    public static void native_set_mActiveEdgeMode(long this_addr, int mActiveEdgeMode) {
-        internal_native_set_mActiveEdgeMode((int) this_addr, mActiveEdgeMode);
+    public static void native_set_mActiveEdgeMode(long this_addr, long mActiveEdgeMode) {
+        internal_native_set_mActiveEdgeMode((int) this_addr, (int) mActiveEdgeMode);
     }
 
-    public static int native_get_mCollectFacesMode(long this_addr) {
+    public static long native_get_mCollectFacesMode(long this_addr) {
         return internal_native_get_mCollectFacesMode((int) this_addr);
     }
 
-    public static void native_set_mCollectFacesMode(long this_addr, int mCollectFacesMode) {
-        internal_native_set_mCollectFacesMode((int) this_addr, mCollectFacesMode);
+    public static void native_set_mCollectFacesMode(long this_addr, long mCollectFacesMode) {
+        internal_native_set_mCollectFacesMode((int) this_addr, (int) mCollectFacesMode);
     }
 
     public static float native_get_mCollisionTolerance(long this_addr) {

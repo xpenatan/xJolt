@@ -43,8 +43,9 @@ delete nativeObject;
 */
     private static native void internal_native_deleteNative(long this_addr);
 
-    public int get_mActiveEdgeMode() {
-        return internal_native_get_mActiveEdgeMode((long) getNativeData().getCPointer());
+    public EActiveEdgeMode get_mActiveEdgeMode() {
+        int value = internal_native_get_mActiveEdgeMode((long) getNativeData().getCPointer());
+        return EActiveEdgeMode.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,18 +54,19 @@ return (jint)nativeObject->mActiveEdgeMode;
 */
     private static native int internal_native_get_mActiveEdgeMode(long this_addr);
 
-    public void set_mActiveEdgeMode(int mActiveEdgeMode) {
-        internal_native_set_mActiveEdgeMode((long) getNativeData().getCPointer(), mActiveEdgeMode);
+    public void set_mActiveEdgeMode(EActiveEdgeMode mActiveEdgeMode) {
+        internal_native_set_mActiveEdgeMode((long) getNativeData().getCPointer(), (long) (mActiveEdgeMode != null ? mActiveEdgeMode.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 nativeObject->mActiveEdgeMode = (::EActiveEdgeMode)mActiveEdgeMode;
 */
-    private static native void internal_native_set_mActiveEdgeMode(long this_addr, int mActiveEdgeMode);
+    private static native void internal_native_set_mActiveEdgeMode(long this_addr, long mActiveEdgeMode);
 
-    public int get_mCollectFacesMode() {
-        return internal_native_get_mCollectFacesMode((long) getNativeData().getCPointer());
+    public ECollectFacesMode get_mCollectFacesMode() {
+        int value = internal_native_get_mCollectFacesMode((long) getNativeData().getCPointer());
+        return ECollectFacesMode.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -73,15 +75,15 @@ return (jint)nativeObject->mCollectFacesMode;
 */
     private static native int internal_native_get_mCollectFacesMode(long this_addr);
 
-    public void set_mCollectFacesMode(int mCollectFacesMode) {
-        internal_native_set_mCollectFacesMode((long) getNativeData().getCPointer(), mCollectFacesMode);
+    public void set_mCollectFacesMode(ECollectFacesMode mCollectFacesMode) {
+        internal_native_set_mCollectFacesMode((long) getNativeData().getCPointer(), (long) (mCollectFacesMode != null ? mCollectFacesMode.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 nativeObject->mCollectFacesMode = (::ECollectFacesMode)mCollectFacesMode;
 */
-    private static native void internal_native_set_mCollectFacesMode(long this_addr, int mCollectFacesMode);
+    private static native void internal_native_set_mCollectFacesMode(long this_addr, long mCollectFacesMode);
 
     public float get_mCollisionTolerance() {
         return internal_native_get_mCollisionTolerance((long) getNativeData().getCPointer());
@@ -153,19 +155,19 @@ nativeObject->mActiveEdgeMovementDirection = *((Vec3*)mActiveEdgeMovementDirecti
         internal_native_deleteNative(this_addr);
     }
 
-    public static int native_get_mActiveEdgeMode(long this_addr) {
+    public static long native_get_mActiveEdgeMode(long this_addr) {
         return internal_native_get_mActiveEdgeMode(this_addr);
     }
 
-    public static void native_set_mActiveEdgeMode(long this_addr, int mActiveEdgeMode) {
+    public static void native_set_mActiveEdgeMode(long this_addr, long mActiveEdgeMode) {
         internal_native_set_mActiveEdgeMode(this_addr, mActiveEdgeMode);
     }
 
-    public static int native_get_mCollectFacesMode(long this_addr) {
+    public static long native_get_mCollectFacesMode(long this_addr) {
         return internal_native_get_mCollectFacesMode(this_addr);
     }
 
-    public static void native_set_mCollectFacesMode(long this_addr, int mCollectFacesMode) {
+    public static void native_set_mCollectFacesMode(long this_addr, long mCollectFacesMode) {
         internal_native_set_mCollectFacesMode(this_addr, mCollectFacesMode);
     }
 

@@ -68,8 +68,9 @@ jolt.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);jolt.destroy(jsObj);")
     private static native void internal_native_deleteNative(int this_addr);
 
-    public int GetMotionQuality() {
-        return internal_native_GetMotionQuality((int) (long) getNativeData().getCPointer());
+    public EMotionQuality GetMotionQuality() {
+        int value = internal_native_GetMotionQuality((int) (long) getNativeData().getCPointer());
+        return EMotionQuality.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -80,8 +81,9 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetMotionQuality();return returnedJSObj;")
     private static native int internal_native_GetMotionQuality(int this_addr);
 
-    public int GetAllowedDOFs() {
-        return internal_native_GetAllowedDOFs((int) (long) getNativeData().getCPointer());
+    public EAllowedDOFs GetAllowedDOFs() {
+        int value = internal_native_GetAllowedDOFs((int) (long) getNativeData().getCPointer());
+        return EAllowedDOFs.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -334,8 +336,8 @@ jsObj.SetGravityFactor(inFactor);
     @org.teavm.jso.JSBody(params = {"this_addr", "inFactor"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);jsObj.SetGravityFactor(inFactor);")
     private static native void internal_native_SetGravityFactor(int this_addr, float inFactor);
 
-    public void SetMassProperties(int inAllowedDOFs, MassProperties inMassProperties) {
-        internal_native_SetMassProperties((int) (long) getNativeData().getCPointer(), inAllowedDOFs, (int) (long) (inMassProperties != null ? inMassProperties.getNativeData().getCPointer() : 0));
+    public void SetMassProperties(EAllowedDOFs inAllowedDOFs, MassProperties inMassProperties) {
+        internal_native_SetMassProperties((int) (long) getNativeData().getCPointer(), (int) (long) (inAllowedDOFs != null ? inAllowedDOFs.getValue() : 0), (int) (long) (inMassProperties != null ? inMassProperties.getNativeData().getCPointer() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -664,11 +666,11 @@ return returnedJSObj;
         internal_native_deleteNative((int) this_addr);
     }
 
-    public static int native_GetMotionQuality(long this_addr) {
+    public static long native_GetMotionQuality(long this_addr) {
         return internal_native_GetMotionQuality((int) this_addr);
     }
 
-    public static int native_GetAllowedDOFs(long this_addr) {
+    public static long native_GetAllowedDOFs(long this_addr) {
         return internal_native_GetAllowedDOFs((int) this_addr);
     }
 
@@ -752,8 +754,8 @@ return returnedJSObj;
         internal_native_SetGravityFactor((int) this_addr, inFactor);
     }
 
-    public static void native_SetMassProperties(long this_addr, int inAllowedDOFs, long inMassProperties_addr) {
-        internal_native_SetMassProperties((int) this_addr, inAllowedDOFs, (int) inMassProperties_addr);
+    public static void native_SetMassProperties(long this_addr, long inAllowedDOFs, long inMassProperties_addr) {
+        internal_native_SetMassProperties((int) this_addr, (int) inAllowedDOFs, (int) inMassProperties_addr);
     }
 
     public static float native_GetInverseMass(long this_addr) {

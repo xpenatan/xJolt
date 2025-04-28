@@ -275,8 +275,8 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SwingTwistConstraint);var returnedJSObj = jsObj.GetMaxFrictionTorque();return returnedJSObj;")
     private static native float internal_native_GetMaxFrictionTorque(int this_addr);
 
-    public void SetSwingMotorState(int inState) {
-        internal_native_SetSwingMotorState((int) (long) getNativeData().getCPointer(), inState);
+    public void SetSwingMotorState(EMotorState inState) {
+        internal_native_SetSwingMotorState((int) (long) getNativeData().getCPointer(), (int) (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -286,8 +286,9 @@ jsObj.SetSwingMotorState(inState);
     @org.teavm.jso.JSBody(params = {"this_addr", "inState"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SwingTwistConstraint);jsObj.SetSwingMotorState(inState);")
     private static native void internal_native_SetSwingMotorState(int this_addr, int inState);
 
-    public int GetSwingMotorState() {
-        return internal_native_GetSwingMotorState((int) (long) getNativeData().getCPointer());
+    public EMotorState GetSwingMotorState() {
+        int value = internal_native_GetSwingMotorState((int) (long) getNativeData().getCPointer());
+        return EMotorState.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -298,8 +299,8 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SwingTwistConstraint);var returnedJSObj = jsObj.GetSwingMotorState();return returnedJSObj;")
     private static native int internal_native_GetSwingMotorState(int this_addr);
 
-    public void SetTwistMotorState(int inState) {
-        internal_native_SetTwistMotorState((int) (long) getNativeData().getCPointer(), inState);
+    public void SetTwistMotorState(EMotorState inState) {
+        internal_native_SetTwistMotorState((int) (long) getNativeData().getCPointer(), (int) (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -309,8 +310,9 @@ jsObj.SetTwistMotorState(inState);
     @org.teavm.jso.JSBody(params = {"this_addr", "inState"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SwingTwistConstraint);jsObj.SetTwistMotorState(inState);")
     private static native void internal_native_SetTwistMotorState(int this_addr, int inState);
 
-    public int GetTwistMotorState() {
-        return internal_native_GetTwistMotorState((int) (long) getNativeData().getCPointer());
+    public EMotorState GetTwistMotorState() {
+        int value = internal_native_GetTwistMotorState((int) (long) getNativeData().getCPointer());
+        return EMotorState.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -549,19 +551,19 @@ return jolt.getPointer(returnedJSObj);
         return internal_native_GetMaxFrictionTorque((int) this_addr);
     }
 
-    public static void native_SetSwingMotorState(long this_addr, int inState) {
-        internal_native_SetSwingMotorState((int) this_addr, inState);
+    public static void native_SetSwingMotorState(long this_addr, long inState) {
+        internal_native_SetSwingMotorState((int) this_addr, (int) inState);
     }
 
-    public static int native_GetSwingMotorState(long this_addr) {
+    public static long native_GetSwingMotorState(long this_addr) {
         return internal_native_GetSwingMotorState((int) this_addr);
     }
 
-    public static void native_SetTwistMotorState(long this_addr, int inState) {
-        internal_native_SetTwistMotorState((int) this_addr, inState);
+    public static void native_SetTwistMotorState(long this_addr, long inState) {
+        internal_native_SetTwistMotorState((int) this_addr, (int) inState);
     }
 
-    public static int native_GetTwistMotorState(long this_addr) {
+    public static long native_GetTwistMotorState(long this_addr) {
         return internal_native_GetTwistMotorState((int) this_addr);
     }
 

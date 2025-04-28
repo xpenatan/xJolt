@@ -87,8 +87,8 @@ jsObj.Release();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);jsObj.Release();")
     private static native void internal_native_Release(int this_addr);
 
-    public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, int inBendType, float inAngleTolerance) {
-        internal_native_CreateConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, inBendType, inAngleTolerance);
+    public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType, float inAngleTolerance) {
+        internal_native_CreateConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, (int) (long) (inBendType != null ? inBendType.getValue() : 0), inAngleTolerance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -98,8 +98,8 @@ jsObj.CreateConstraints(inVertexAttributes_addr, inVertexAttributesLength, inBen
     @org.teavm.jso.JSBody(params = {"this_addr", "inVertexAttributes_addr", "inVertexAttributesLength", "inBendType", "inAngleTolerance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);jsObj.CreateConstraints(inVertexAttributes_addr, inVertexAttributesLength, inBendType, inAngleTolerance);")
     private static native void internal_native_CreateConstraints(int this_addr, int inVertexAttributes_addr, int inVertexAttributesLength, int inBendType, float inAngleTolerance);
 
-    public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, int inBendType) {
-        internal_native_CreateConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, inBendType);
+    public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType) {
+        internal_native_CreateConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, (int) (long) (inBendType != null ? inBendType.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -523,12 +523,12 @@ jsObj.set_mVertexRadius(mVertexRadius);
         internal_native_Release((int) this_addr);
     }
 
-    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, int inBendType, float inAngleTolerance) {
-        internal_native_CreateConstraints((int) this_addr, (int) inVertexAttributes_addr, inVertexAttributesLength, inBendType, inAngleTolerance);
+    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType, float inAngleTolerance) {
+        internal_native_CreateConstraints((int) this_addr, (int) inVertexAttributes_addr, inVertexAttributesLength, (int) inBendType, inAngleTolerance);
     }
 
-    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, int inBendType) {
-        internal_native_CreateConstraints((int) this_addr, (int) inVertexAttributes_addr, inVertexAttributesLength, inBendType);
+    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType) {
+        internal_native_CreateConstraints((int) this_addr, (int) inVertexAttributes_addr, inVertexAttributesLength, (int) inBendType);
     }
 
     public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength) {

@@ -136,8 +136,9 @@ nativeObject->mShapeOffset = *((Vec3*)mShapeOffset_addr);
 */
     private static native void internal_native_set_mShapeOffset(long this_addr, long mShapeOffset_addr);
 
-    public int get_mBackFaceMode() {
-        return internal_native_get_mBackFaceMode((long) getNativeData().getCPointer());
+    public EBackFaceMode get_mBackFaceMode() {
+        int value = internal_native_get_mBackFaceMode((long) getNativeData().getCPointer());
+        return EBackFaceMode.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -146,15 +147,15 @@ return (jint)nativeObject->mBackFaceMode;
 */
     private static native int internal_native_get_mBackFaceMode(long this_addr);
 
-    public void set_mBackFaceMode(int mBackFaceMode) {
-        internal_native_set_mBackFaceMode((long) getNativeData().getCPointer(), mBackFaceMode);
+    public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
+        internal_native_set_mBackFaceMode((long) getNativeData().getCPointer(), (long) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mBackFaceMode = (::EBackFaceMode)mBackFaceMode;
 */
-    private static native void internal_native_set_mBackFaceMode(long this_addr, int mBackFaceMode);
+    private static native void internal_native_set_mBackFaceMode(long this_addr, long mBackFaceMode);
 
     public float get_mPredictiveContactDistance() {
         return internal_native_get_mPredictiveContactDistance((long) getNativeData().getCPointer());
@@ -445,11 +446,11 @@ nativeObject->mInnerBodyLayer = mInnerBodyLayer;
         internal_native_set_mShapeOffset(this_addr, mShapeOffset_addr);
     }
 
-    public static int native_get_mBackFaceMode(long this_addr) {
+    public static long native_get_mBackFaceMode(long this_addr) {
         return internal_native_get_mBackFaceMode(this_addr);
     }
 
-    public static void native_set_mBackFaceMode(long this_addr, int mBackFaceMode) {
+    public static void native_set_mBackFaceMode(long this_addr, long mBackFaceMode) {
         internal_native_set_mBackFaceMode(this_addr, mBackFaceMode);
     }
 

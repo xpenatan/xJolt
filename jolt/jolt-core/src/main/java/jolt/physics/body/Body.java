@@ -157,8 +157,9 @@ return nativeObject->CanBeKinematicOrDynamic();
 */
     private static native boolean internal_native_CanBeKinematicOrDynamic(long this_addr);
 
-    public int GetBodyType() {
-        return internal_native_GetBodyType((long) getNativeData().getCPointer());
+    public EBodyType GetBodyType() {
+        int value = internal_native_GetBodyType((long) getNativeData().getCPointer());
+        return EBodyType.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -167,8 +168,9 @@ return (int)nativeObject->GetBodyType();
 */
     private static native int internal_native_GetBodyType(long this_addr);
 
-    public int GetMotionType() {
-        return internal_native_GetMotionType((long) getNativeData().getCPointer());
+    public EMotionType GetMotionType() {
+        int value = internal_native_GetMotionType((long) getNativeData().getCPointer());
+        return EMotionType.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -901,11 +903,11 @@ nativeObject->SetCollisionGroup(*((CollisionGroup* )inGroup_addr));
         return internal_native_CanBeKinematicOrDynamic(this_addr);
     }
 
-    public static int native_GetBodyType(long this_addr) {
+    public static long native_GetBodyType(long this_addr) {
         return internal_native_GetBodyType(this_addr);
     }
 
-    public static int native_GetMotionType(long this_addr) {
+    public static long native_GetMotionType(long this_addr) {
         return internal_native_GetMotionType(this_addr);
     }
 

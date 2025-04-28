@@ -5,18 +5,46 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class ESpringMode implements IDLEnum {
+public enum ESpringMode implements IDLEnum<ESpringMode> {
 
-    public static final int FrequencyAndDamping = ESpringMode_FrequencyAndDamping_NATIVE();
+    CUSTOM(0), FrequencyAndDamping(ESpringMode_FrequencyAndDamping_NATIVE()), StiffnessAndDamping(ESpringMode_StiffnessAndDamping_NATIVE());
+
+    private int value;
+
+    private ESpringMode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ESpringMode getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, ESpringMode> MAP = new HashMap<>();
+
+    static {
+        for (ESpringMode value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)ESpringMode_FrequencyAndDamping;
 */
     private static native int ESpringMode_FrequencyAndDamping_NATIVE();
-
-    public static final int StiffnessAndDamping = ESpringMode_StiffnessAndDamping_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)ESpringMode_StiffnessAndDamping;

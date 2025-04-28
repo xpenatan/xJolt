@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class ECollectFacesMode implements IDLEnum {
+public enum ECollectFacesMode implements IDLEnum<ECollectFacesMode> {
 
-    public static final int CollectFaces = ECollectFacesMode_CollectFaces_NATIVE();
+    CUSTOM(0), CollectFaces(ECollectFacesMode_CollectFaces_NATIVE()), NoFaces(ECollectFacesMode_NoFaces_NATIVE());
+
+    private int value;
+
+    private ECollectFacesMode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ECollectFacesMode getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, ECollectFacesMode> MAP = new HashMap<>();
+
+    static {
+        for (ECollectFacesMode value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.ECollectFacesMode_CollectFaces;
 */
     @org.teavm.jso.JSBody(script = "return jolt.ECollectFacesMode_CollectFaces;")
     private static native int ECollectFacesMode_CollectFaces_NATIVE();
-
-    public static final int NoFaces = ECollectFacesMode_NoFaces_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.ECollectFacesMode_NoFaces;

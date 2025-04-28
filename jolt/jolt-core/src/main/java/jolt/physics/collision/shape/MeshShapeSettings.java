@@ -224,8 +224,9 @@ nativeObject->mPerTriangleUserData = mPerTriangleUserData;
 */
     private static native void internal_native_set_mPerTriangleUserData(long this_addr, boolean mPerTriangleUserData);
 
-    public int get_mBuildQuality() {
-        return internal_native_get_mBuildQuality((long) getNativeData().getCPointer());
+    public MeshShapeSettings_EBuildQuality get_mBuildQuality() {
+        int value = internal_native_get_mBuildQuality((long) getNativeData().getCPointer());
+        return MeshShapeSettings_EBuildQuality.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -234,15 +235,15 @@ return (jint)nativeObject->mBuildQuality;
 */
     private static native int internal_native_get_mBuildQuality(long this_addr);
 
-    public void set_mBuildQuality(int mBuildQuality) {
-        internal_native_set_mBuildQuality((long) getNativeData().getCPointer(), mBuildQuality);
+    public void set_mBuildQuality(MeshShapeSettings_EBuildQuality mBuildQuality) {
+        internal_native_set_mBuildQuality((long) getNativeData().getCPointer(), (long) (mBuildQuality != null ? mBuildQuality.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 MeshShapeSettings* nativeObject = (MeshShapeSettings*)this_addr;
 nativeObject->mBuildQuality = (::MeshShapeSettings_EBuildQuality)mBuildQuality;
 */
-    private static native void internal_native_set_mBuildQuality(long this_addr, int mBuildQuality);
+    private static native void internal_native_set_mBuildQuality(long this_addr, long mBuildQuality);
 
     public static long native_create() {
         return internal_native_create();
@@ -312,11 +313,11 @@ nativeObject->mBuildQuality = (::MeshShapeSettings_EBuildQuality)mBuildQuality;
         internal_native_set_mPerTriangleUserData(this_addr, mPerTriangleUserData);
     }
 
-    public static int native_get_mBuildQuality(long this_addr) {
+    public static long native_get_mBuildQuality(long this_addr) {
         return internal_native_get_mBuildQuality(this_addr);
     }
 
-    public static void native_set_mBuildQuality(long this_addr, int mBuildQuality) {
+    public static void native_set_mBuildQuality(long this_addr, long mBuildQuality) {
         internal_native_set_mBuildQuality(this_addr, mBuildQuality);
     }
 }

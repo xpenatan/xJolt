@@ -5,46 +5,72 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class EShapeColor implements IDLEnum {
+public enum EShapeColor implements IDLEnum<EShapeColor> {
 
-    public static final int EShapeColor_InstanceColor = EShapeColor_InstanceColor_NATIVE();
+    CUSTOM(0),
+    EShapeColor_InstanceColor(EShapeColor_InstanceColor_NATIVE()),
+    EShapeColor_ShapeTypeColor(EShapeColor_ShapeTypeColor_NATIVE()),
+    EShapeColor_MotionTypeColor(EShapeColor_MotionTypeColor_NATIVE()),
+    EShapeColor_SleepColor(EShapeColor_SleepColor_NATIVE()),
+    EShapeColor_IslandColor(EShapeColor_IslandColor_NATIVE()),
+    EShapeColor_MaterialColor(EShapeColor_MaterialColor_NATIVE());
+
+    private int value;
+
+    private EShapeColor(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EShapeColor getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EShapeColor> MAP = new HashMap<>();
+
+    static {
+        for (EShapeColor value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)EShapeColor_InstanceColor;
 */
     private static native int EShapeColor_InstanceColor_NATIVE();
 
-    public static final int EShapeColor_ShapeTypeColor = EShapeColor_ShapeTypeColor_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EShapeColor_ShapeTypeColor;
 */
     private static native int EShapeColor_ShapeTypeColor_NATIVE();
-
-    public static final int EShapeColor_MotionTypeColor = EShapeColor_MotionTypeColor_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EShapeColor_MotionTypeColor;
 */
     private static native int EShapeColor_MotionTypeColor_NATIVE();
 
-    public static final int EShapeColor_SleepColor = EShapeColor_SleepColor_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EShapeColor_SleepColor;
 */
     private static native int EShapeColor_SleepColor_NATIVE();
 
-    public static final int EShapeColor_IslandColor = EShapeColor_IslandColor_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EShapeColor_IslandColor;
 */
     private static native int EShapeColor_IslandColor_NATIVE();
-
-    public static final int EShapeColor_MaterialColor = EShapeColor_MaterialColor_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EShapeColor_MaterialColor;

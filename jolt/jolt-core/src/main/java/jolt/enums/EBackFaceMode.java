@@ -5,18 +5,46 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class EBackFaceMode implements IDLEnum {
+public enum EBackFaceMode implements IDLEnum<EBackFaceMode> {
 
-    public static final int IgnoreBackFaces = EBackFaceMode_IgnoreBackFaces_NATIVE();
+    CUSTOM(0), IgnoreBackFaces(EBackFaceMode_IgnoreBackFaces_NATIVE()), CollideWithBackFaces(EBackFaceMode_CollideWithBackFaces_NATIVE());
+
+    private int value;
+
+    private EBackFaceMode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EBackFaceMode getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EBackFaceMode> MAP = new HashMap<>();
+
+    static {
+        for (EBackFaceMode value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)EBackFaceMode_IgnoreBackFaces;
 */
     private static native int EBackFaceMode_IgnoreBackFaces_NATIVE();
-
-    public static final int CollideWithBackFaces = EBackFaceMode_CollideWithBackFaces_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EBackFaceMode_CollideWithBackFaces;

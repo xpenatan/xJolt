@@ -52,8 +52,9 @@ delete nativeObject;
 */
     private static native void internal_native_deleteNative(long this_addr);
 
-    public int get_mBackFaceModeTriangles() {
-        return internal_native_get_mBackFaceModeTriangles((long) getNativeData().getCPointer());
+    public EBackFaceMode get_mBackFaceModeTriangles() {
+        int value = internal_native_get_mBackFaceModeTriangles((long) getNativeData().getCPointer());
+        return EBackFaceMode.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -62,18 +63,19 @@ return (jint)nativeObject->mBackFaceModeTriangles;
 */
     private static native int internal_native_get_mBackFaceModeTriangles(long this_addr);
 
-    public void set_mBackFaceModeTriangles(int mBackFaceModeTriangles) {
-        internal_native_set_mBackFaceModeTriangles((long) getNativeData().getCPointer(), mBackFaceModeTriangles);
+    public void set_mBackFaceModeTriangles(EBackFaceMode mBackFaceModeTriangles) {
+        internal_native_set_mBackFaceModeTriangles((long) getNativeData().getCPointer(), (long) (mBackFaceModeTriangles != null ? mBackFaceModeTriangles.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 nativeObject->mBackFaceModeTriangles = (::EBackFaceMode)mBackFaceModeTriangles;
 */
-    private static native void internal_native_set_mBackFaceModeTriangles(long this_addr, int mBackFaceModeTriangles);
+    private static native void internal_native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles);
 
-    public int get_mBackFaceModeConvex() {
-        return internal_native_get_mBackFaceModeConvex((long) getNativeData().getCPointer());
+    public EBackFaceMode get_mBackFaceModeConvex() {
+        int value = internal_native_get_mBackFaceModeConvex((long) getNativeData().getCPointer());
+        return EBackFaceMode.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -82,15 +84,15 @@ return (jint)nativeObject->mBackFaceModeConvex;
 */
     private static native int internal_native_get_mBackFaceModeConvex(long this_addr);
 
-    public void set_mBackFaceModeConvex(int mBackFaceModeConvex) {
-        internal_native_set_mBackFaceModeConvex((long) getNativeData().getCPointer(), mBackFaceModeConvex);
+    public void set_mBackFaceModeConvex(EBackFaceMode mBackFaceModeConvex) {
+        internal_native_set_mBackFaceModeConvex((long) getNativeData().getCPointer(), (long) (mBackFaceModeConvex != null ? mBackFaceModeConvex.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 nativeObject->mBackFaceModeConvex = (::EBackFaceMode)mBackFaceModeConvex;
 */
-    private static native void internal_native_set_mBackFaceModeConvex(long this_addr, int mBackFaceModeConvex);
+    private static native void internal_native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex);
 
     public boolean get_mUseShrunkenShapeAndConvexRadius() {
         return internal_native_get_mUseShrunkenShapeAndConvexRadius((long) getNativeData().getCPointer());
@@ -140,19 +142,19 @@ nativeObject->mReturnDeepestPoint = mReturnDeepestPoint;
         internal_native_deleteNative(this_addr);
     }
 
-    public static int native_get_mBackFaceModeTriangles(long this_addr) {
+    public static long native_get_mBackFaceModeTriangles(long this_addr) {
         return internal_native_get_mBackFaceModeTriangles(this_addr);
     }
 
-    public static void native_set_mBackFaceModeTriangles(long this_addr, int mBackFaceModeTriangles) {
+    public static void native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles) {
         internal_native_set_mBackFaceModeTriangles(this_addr, mBackFaceModeTriangles);
     }
 
-    public static int native_get_mBackFaceModeConvex(long this_addr) {
+    public static long native_get_mBackFaceModeConvex(long this_addr) {
         return internal_native_get_mBackFaceModeConvex(this_addr);
     }
 
-    public static void native_set_mBackFaceModeConvex(long this_addr, int mBackFaceModeConvex) {
+    public static void native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex) {
         internal_native_set_mBackFaceModeConvex(this_addr, mBackFaceModeConvex);
     }
 

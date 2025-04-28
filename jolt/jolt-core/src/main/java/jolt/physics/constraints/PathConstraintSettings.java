@@ -181,8 +181,9 @@ nativeObject->mMaxFrictionForce = mMaxFrictionForce;
 */
     private static native void internal_native_set_mMaxFrictionForce(long this_addr, float mMaxFrictionForce);
 
-    public int get_mRotationConstraintType() {
-        return internal_native_get_mRotationConstraintType((long) getNativeData().getCPointer());
+    public EPathRotationConstraintType get_mRotationConstraintType() {
+        int value = internal_native_get_mRotationConstraintType((long) getNativeData().getCPointer());
+        return EPathRotationConstraintType.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -191,15 +192,15 @@ return (jint)nativeObject->mRotationConstraintType;
 */
     private static native int internal_native_get_mRotationConstraintType(long this_addr);
 
-    public void set_mRotationConstraintType(int mRotationConstraintType) {
-        internal_native_set_mRotationConstraintType((long) getNativeData().getCPointer(), mRotationConstraintType);
+    public void set_mRotationConstraintType(EPathRotationConstraintType mRotationConstraintType) {
+        internal_native_set_mRotationConstraintType((long) getNativeData().getCPointer(), (long) (mRotationConstraintType != null ? mRotationConstraintType.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 nativeObject->mRotationConstraintType = (::EPathRotationConstraintType)mRotationConstraintType;
 */
-    private static native void internal_native_set_mRotationConstraintType(long this_addr, int mRotationConstraintType);
+    private static native void internal_native_set_mRotationConstraintType(long this_addr, long mRotationConstraintType);
 
     public MotorSettings get_mPositionMotorSettings() {
         long pointer = internal_native_get_mPositionMotorSettings((long) getNativeData().getCPointer());
@@ -275,11 +276,11 @@ nativeObject->mPositionMotorSettings = *((MotorSettings*)mPositionMotorSettings_
         internal_native_set_mMaxFrictionForce(this_addr, mMaxFrictionForce);
     }
 
-    public static int native_get_mRotationConstraintType(long this_addr) {
+    public static long native_get_mRotationConstraintType(long this_addr) {
         return internal_native_get_mRotationConstraintType(this_addr);
     }
 
-    public static void native_set_mRotationConstraintType(long this_addr, int mRotationConstraintType) {
+    public static void native_set_mRotationConstraintType(long this_addr, long mRotationConstraintType) {
         internal_native_set_mRotationConstraintType(this_addr, mRotationConstraintType);
     }
 

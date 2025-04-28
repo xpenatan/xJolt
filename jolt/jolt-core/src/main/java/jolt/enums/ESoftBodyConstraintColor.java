@@ -5,25 +5,51 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class ESoftBodyConstraintColor implements IDLEnum {
+public enum ESoftBodyConstraintColor implements IDLEnum<ESoftBodyConstraintColor> {
 
-    public static final int ESoftBodyConstraintColor_ConstraintType = ESoftBodyConstraintColor_ConstraintType_NATIVE();
+    CUSTOM(0), ESoftBodyConstraintColor_ConstraintType(ESoftBodyConstraintColor_ConstraintType_NATIVE()), ESoftBodyConstraintColor_ConstraintGroup(ESoftBodyConstraintColor_ConstraintGroup_NATIVE()), ESoftBodyConstraintColor_ConstraintOrder(ESoftBodyConstraintColor_ConstraintOrder_NATIVE());
+
+    private int value;
+
+    private ESoftBodyConstraintColor(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ESoftBodyConstraintColor getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, ESoftBodyConstraintColor> MAP = new HashMap<>();
+
+    static {
+        for (ESoftBodyConstraintColor value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)ESoftBodyConstraintColor_ConstraintType;
 */
     private static native int ESoftBodyConstraintColor_ConstraintType_NATIVE();
 
-    public static final int ESoftBodyConstraintColor_ConstraintGroup = ESoftBodyConstraintColor_ConstraintGroup_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)ESoftBodyConstraintColor_ConstraintGroup;
 */
     private static native int ESoftBodyConstraintColor_ConstraintGroup_NATIVE();
-
-    public static final int ESoftBodyConstraintColor_ConstraintOrder = ESoftBodyConstraintColor_ConstraintOrder_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)ESoftBodyConstraintColor_ConstraintOrder;

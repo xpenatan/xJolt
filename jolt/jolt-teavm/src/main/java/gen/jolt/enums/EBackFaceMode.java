@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EBackFaceMode implements IDLEnum {
+public enum EBackFaceMode implements IDLEnum<EBackFaceMode> {
 
-    public static final int IgnoreBackFaces = EBackFaceMode_IgnoreBackFaces_NATIVE();
+    CUSTOM(0), IgnoreBackFaces(EBackFaceMode_IgnoreBackFaces_NATIVE()), CollideWithBackFaces(EBackFaceMode_CollideWithBackFaces_NATIVE());
+
+    private int value;
+
+    private EBackFaceMode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EBackFaceMode getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EBackFaceMode> MAP = new HashMap<>();
+
+    static {
+        for (EBackFaceMode value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EBackFaceMode_IgnoreBackFaces;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EBackFaceMode_IgnoreBackFaces;")
     private static native int EBackFaceMode_IgnoreBackFaces_NATIVE();
-
-    public static final int CollideWithBackFaces = EBackFaceMode_CollideWithBackFaces_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EBackFaceMode_CollideWithBackFaces;

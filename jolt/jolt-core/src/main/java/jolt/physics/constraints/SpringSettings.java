@@ -60,8 +60,9 @@ return nativeObject->HasStiffness();
 */
     private static native boolean internal_native_HasStiffness(long this_addr);
 
-    public int get_mMode() {
-        return internal_native_get_mMode((long) getNativeData().getCPointer());
+    public ESpringMode get_mMode() {
+        int value = internal_native_get_mMode((long) getNativeData().getCPointer());
+        return ESpringMode.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -70,15 +71,15 @@ return (jint)nativeObject->mMode;
 */
     private static native int internal_native_get_mMode(long this_addr);
 
-    public void set_mMode(int mMode) {
-        internal_native_set_mMode((long) getNativeData().getCPointer(), mMode);
+    public void set_mMode(ESpringMode mMode) {
+        internal_native_set_mMode((long) getNativeData().getCPointer(), (long) (mMode != null ? mMode.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 nativeObject->mMode = (::ESpringMode)mMode;
 */
-    private static native void internal_native_set_mMode(long this_addr, int mMode);
+    private static native void internal_native_set_mMode(long this_addr, long mMode);
 
     public float get_mFrequency() {
         return internal_native_get_mFrequency((long) getNativeData().getCPointer());
@@ -152,11 +153,11 @@ nativeObject->mDamping = mDamping;
         return internal_native_HasStiffness(this_addr);
     }
 
-    public static int native_get_mMode(long this_addr) {
+    public static long native_get_mMode(long this_addr) {
         return internal_native_get_mMode(this_addr);
     }
 
-    public static void native_set_mMode(long this_addr, int mMode) {
+    public static void native_set_mMode(long this_addr, long mMode) {
         internal_native_set_mMode(this_addr, mMode);
     }
 

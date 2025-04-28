@@ -5,95 +5,114 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class EConstraintSubType implements IDLEnum {
+public enum EConstraintSubType implements IDLEnum<EConstraintSubType> {
 
-    public static final int Fixed = EConstraintSubType_Fixed_NATIVE();
+    CUSTOM(0),
+    Fixed(EConstraintSubType_Fixed_NATIVE()),
+    Point(EConstraintSubType_Point_NATIVE()),
+    Hinge(EConstraintSubType_Hinge_NATIVE()),
+    Slider(EConstraintSubType_Slider_NATIVE()),
+    Distance(EConstraintSubType_Distance_NATIVE()),
+    Cone(EConstraintSubType_Cone_NATIVE()),
+    SwingTwist(EConstraintSubType_SwingTwist_NATIVE()),
+    SixDOF(EConstraintSubType_SixDOF_NATIVE()),
+    Path(EConstraintSubType_Path_NATIVE()),
+    Vehicle(EConstraintSubType_Vehicle_NATIVE()),
+    RackAndPinion(EConstraintSubType_RackAndPinion_NATIVE()),
+    Gear(EConstraintSubType_Gear_NATIVE()),
+    Pulley(EConstraintSubType_Pulley_NATIVE());
+
+    private int value;
+
+    private EConstraintSubType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EConstraintSubType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EConstraintSubType> MAP = new HashMap<>();
+
+    static {
+        for (EConstraintSubType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Fixed;
 */
     private static native int EConstraintSubType_Fixed_NATIVE();
 
-    public static final int Point = EConstraintSubType_Point_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Point;
 */
     private static native int EConstraintSubType_Point_NATIVE();
-
-    public static final int Hinge = EConstraintSubType_Hinge_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Hinge;
 */
     private static native int EConstraintSubType_Hinge_NATIVE();
 
-    public static final int Slider = EConstraintSubType_Slider_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Slider;
 */
     private static native int EConstraintSubType_Slider_NATIVE();
-
-    public static final int Distance = EConstraintSubType_Distance_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Distance;
 */
     private static native int EConstraintSubType_Distance_NATIVE();
 
-    public static final int Cone = EConstraintSubType_Cone_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Cone;
 */
     private static native int EConstraintSubType_Cone_NATIVE();
-
-    public static final int SwingTwist = EConstraintSubType_SwingTwist_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_SwingTwist;
 */
     private static native int EConstraintSubType_SwingTwist_NATIVE();
 
-    public static final int SixDOF = EConstraintSubType_SixDOF_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_SixDOF;
 */
     private static native int EConstraintSubType_SixDOF_NATIVE();
-
-    public static final int Path = EConstraintSubType_Path_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Path;
 */
     private static native int EConstraintSubType_Path_NATIVE();
 
-    public static final int Vehicle = EConstraintSubType_Vehicle_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Vehicle;
 */
     private static native int EConstraintSubType_Vehicle_NATIVE();
-
-    public static final int RackAndPinion = EConstraintSubType_RackAndPinion_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_RackAndPinion;
 */
     private static native int EConstraintSubType_RackAndPinion_NATIVE();
 
-    public static final int Gear = EConstraintSubType_Gear_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Gear;
 */
     private static native int EConstraintSubType_Gear_NATIVE();
-
-    public static final int Pulley = EConstraintSubType_Pulley_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EConstraintSubType_Pulley;

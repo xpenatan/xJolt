@@ -5,25 +5,51 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class EOverrideMassProperties implements IDLEnum {
+public enum EOverrideMassProperties implements IDLEnum<EOverrideMassProperties> {
 
-    public static final int CalculateMassAndInertia = EOverrideMassProperties_CalculateMassAndInertia_NATIVE();
+    CUSTOM(0), CalculateMassAndInertia(EOverrideMassProperties_CalculateMassAndInertia_NATIVE()), CalculateInertia(EOverrideMassProperties_CalculateInertia_NATIVE()), MassAndInertiaProvided(EOverrideMassProperties_MassAndInertiaProvided_NATIVE());
+
+    private int value;
+
+    private EOverrideMassProperties(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EOverrideMassProperties getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EOverrideMassProperties> MAP = new HashMap<>();
+
+    static {
+        for (EOverrideMassProperties value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)EOverrideMassProperties_CalculateMassAndInertia;
 */
     private static native int EOverrideMassProperties_CalculateMassAndInertia_NATIVE();
 
-    public static final int CalculateInertia = EOverrideMassProperties_CalculateInertia_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EOverrideMassProperties_CalculateInertia;
 */
     private static native int EOverrideMassProperties_CalculateInertia_NATIVE();
-
-    public static final int MassAndInertiaProvided = EOverrideMassProperties_MassAndInertiaProvided_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EOverrideMassProperties_MassAndInertiaProvided;

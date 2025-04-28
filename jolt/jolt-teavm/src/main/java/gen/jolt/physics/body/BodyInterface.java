@@ -285,8 +285,8 @@ jsObj.DestroyBodies(inBodyIDs_addr, inNumber);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyIDs_addr", "inNumber"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.DestroyBodies(inBodyIDs_addr, inNumber);")
     private static native void internal_native_DestroyBodies(int this_addr, int inBodyIDs_addr, int inNumber);
 
-    public void AddBody(BodyID inBodyID, int inActivationMode) {
-        internal_native_AddBody((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), inActivationMode);
+    public void AddBody(BodyID inBodyID, EActivation inActivationMode) {
+        internal_native_AddBody((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -319,8 +319,8 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);var returnedJSObj = jsObj.IsAdded(inBodyID_addr);return returnedJSObj;")
     private static native boolean internal_native_IsAdded(int this_addr, int inBodyID_addr);
 
-    public BodyID CreateAndAddBody(BodyCreationSettings inSettings, int inActivationMode) {
-        int pointer = internal_native_CreateAndAddBody((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), inActivationMode);
+    public BodyID CreateAndAddBody(BodyCreationSettings inSettings, EActivation inActivationMode) {
+        int pointer = internal_native_CreateAndAddBody((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
@@ -338,8 +338,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr", "inSettings_addr", "inActivationMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);var returnedJSObj = jsObj.CreateAndAddBody(inSettings_addr, inActivationMode);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_CreateAndAddBody(int this_addr, int inSettings_addr, int inActivationMode);
 
-    public BodyID CreateAndAddSoftBody(SoftBodyCreationSettings inSettings, int inActivationMode) {
-        int pointer = internal_native_CreateAndAddSoftBody((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), inActivationMode);
+    public BodyID CreateAndAddSoftBody(SoftBodyCreationSettings inSettings, EActivation inActivationMode) {
+        int pointer = internal_native_CreateAndAddSoftBody((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_1 == null)
@@ -376,8 +376,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr", "ioBodies_addr", "inNumber"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);var returnedJSObj = jsObj.AddBodiesPrepare(ioBodies_addr, inNumber);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_AddBodiesPrepare(int this_addr, int ioBodies_addr, int inNumber);
 
-    public void AddBodiesFinalize(BodyIDMemRef ioBodies, int inNumber, BodyInterface_AddState inAddState, int inActivationMode) {
-        internal_native_AddBodiesFinalize((int) (long) getNativeData().getCPointer(), (int) (long) (ioBodies != null ? ioBodies.getNativeData().getCPointer() : 0), inNumber, (int) (long) (inAddState != null ? inAddState.getNativeData().getCPointer() : 0), inActivationMode);
+    public void AddBodiesFinalize(BodyIDMemRef ioBodies, int inNumber, BodyInterface_AddState inAddState, EActivation inActivationMode) {
+        internal_native_AddBodiesFinalize((int) (long) getNativeData().getCPointer(), (int) (long) (ioBodies != null ? ioBodies.getNativeData().getCPointer() : 0), inNumber, (int) (long) (inAddState != null ? inAddState.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -458,8 +458,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);var returnedJSObj = jsObj.GetShape(inBodyID_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_GetShape(int this_addr, int inBodyID_addr);
 
-    public void SetShape(BodyID inBodyID, Shape inShape, boolean inUpdateMassProperties, int inActivationMode) {
-        internal_native_SetShape((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), inUpdateMassProperties, inActivationMode);
+    public void SetShape(BodyID inBodyID, Shape inShape, boolean inUpdateMassProperties, EActivation inActivationMode) {
+        internal_native_SetShape((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), inUpdateMassProperties, (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -469,8 +469,8 @@ jsObj.SetShape(inBodyID_addr, inShape_addr, inUpdateMassProperties, inActivation
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr", "inShape_addr", "inUpdateMassProperties", "inActivationMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.SetShape(inBodyID_addr, inShape_addr, inUpdateMassProperties, inActivationMode);")
     private static native void internal_native_SetShape(int this_addr, int inBodyID_addr, int inShape_addr, boolean inUpdateMassProperties, int inActivationMode);
 
-    public void NotifyShapeChanged(BodyID inBodyID, Vec3 inPreviousCenterOfMass, boolean inUpdateMassProperties, int inActivationMode) {
-        internal_native_NotifyShapeChanged((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inPreviousCenterOfMass != null ? inPreviousCenterOfMass.getNativeData().getCPointer() : 0), inUpdateMassProperties, inActivationMode);
+    public void NotifyShapeChanged(BodyID inBodyID, Vec3 inPreviousCenterOfMass, boolean inUpdateMassProperties, EActivation inActivationMode) {
+        internal_native_NotifyShapeChanged((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inPreviousCenterOfMass != null ? inPreviousCenterOfMass.getNativeData().getCPointer() : 0), inUpdateMassProperties, (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -503,8 +503,8 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);var returnedJSObj = jsObj.GetObjectLayer(inBodyID_addr);return returnedJSObj;")
     private static native int internal_native_GetObjectLayer(int this_addr, int inBodyID_addr);
 
-    public void SetPositionAndRotation(BodyID inBodyID, Vec3 inPosition, Quat inRotation, int inActivationMode) {
-        internal_native_SetPositionAndRotation((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inActivationMode);
+    public void SetPositionAndRotation(BodyID inBodyID, Vec3 inPosition, Quat inRotation, EActivation inActivationMode) {
+        internal_native_SetPositionAndRotation((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -514,8 +514,8 @@ jsObj.SetPositionAndRotation(inBodyID_addr, inPosition_addr, inRotation_addr, in
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr", "inPosition_addr", "inRotation_addr", "inActivationMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.SetPositionAndRotation(inBodyID_addr, inPosition_addr, inRotation_addr, inActivationMode);")
     private static native void internal_native_SetPositionAndRotation(int this_addr, int inBodyID_addr, int inPosition_addr, int inRotation_addr, int inActivationMode);
 
-    public void SetPositionAndRotationWhenChanged(BodyID inBodyID, Vec3 inPosition, Quat inRotation, int inActivationMode) {
-        internal_native_SetPositionAndRotationWhenChanged((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inActivationMode);
+    public void SetPositionAndRotationWhenChanged(BodyID inBodyID, Vec3 inPosition, Quat inRotation, EActivation inActivationMode) {
+        internal_native_SetPositionAndRotationWhenChanged((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -536,8 +536,8 @@ jsObj.GetPositionAndRotation(inBodyID_addr, outPosition_addr, outRotation_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr", "outPosition_addr", "outRotation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.GetPositionAndRotation(inBodyID_addr, outPosition_addr, outRotation_addr);")
     private static native void internal_native_GetPositionAndRotation(int this_addr, int inBodyID_addr, int outPosition_addr, int outRotation_addr);
 
-    public void SetPosition(BodyID inBodyID, Vec3 inPosition, int inActivationMode) {
-        internal_native_SetPosition((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), inActivationMode);
+    public void SetPosition(BodyID inBodyID, Vec3 inPosition, EActivation inActivationMode) {
+        internal_native_SetPosition((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -566,8 +566,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);var returnedJSObj = jsObj.GetPosition(inBodyID_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_GetPosition(int this_addr, int inBodyID_addr);
 
-    public void SetRotation(BodyID inBodyID, Quat inRotation, int inActivationMode) {
-        internal_native_SetRotation((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inActivationMode);
+    public void SetRotation(BodyID inBodyID, Quat inRotation, EActivation inActivationMode) {
+        internal_native_SetRotation((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -857,8 +857,9 @@ jsObj.ResetSleepTimer(inBodyID_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.ResetSleepTimer(inBodyID_addr);")
     private static native void internal_native_ResetSleepTimer(int this_addr, int inBodyID_addr);
 
-    public int GetBodyType(BodyID inBodyID) {
-        return internal_native_GetBodyType((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+    public EBodyType GetBodyType(BodyID inBodyID) {
+        int value = internal_native_GetBodyType((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+        return EBodyType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -869,8 +870,8 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);var returnedJSObj = jsObj.GetBodyType(inBodyID_addr);return returnedJSObj;")
     private static native int internal_native_GetBodyType(int this_addr, int inBodyID_addr);
 
-    public void SetMotionType(BodyID inBodyID, int inMotionType, int inActivationMode) {
-        internal_native_SetMotionType((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), inMotionType, inActivationMode);
+    public void SetMotionType(BodyID inBodyID, EMotionType inMotionType, EActivation inActivationMode) {
+        internal_native_SetMotionType((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inMotionType != null ? inMotionType.getValue() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -880,8 +881,9 @@ jsObj.SetMotionType(inBodyID_addr, inMotionType, inActivationMode);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr", "inMotionType", "inActivationMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.SetMotionType(inBodyID_addr, inMotionType, inActivationMode);")
     private static native void internal_native_SetMotionType(int this_addr, int inBodyID_addr, int inMotionType, int inActivationMode);
 
-    public int GetMotionType(BodyID inBodyID) {
-        return internal_native_GetMotionType((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+    public EMotionType GetMotionType(BodyID inBodyID) {
+        int value = internal_native_GetMotionType((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+        return EMotionType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -892,8 +894,8 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);var returnedJSObj = jsObj.GetMotionType(inBodyID_addr);return returnedJSObj;")
     private static native int internal_native_GetMotionType(int this_addr, int inBodyID_addr);
 
-    public void SetMotionQuality(BodyID inBodyID, int inMotionQuality) {
-        internal_native_SetMotionQuality((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), inMotionQuality);
+    public void SetMotionQuality(BodyID inBodyID, EMotionQuality inMotionQuality) {
+        internal_native_SetMotionQuality((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inMotionQuality != null ? inMotionQuality.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -903,8 +905,9 @@ jsObj.SetMotionQuality(inBodyID_addr, inMotionQuality);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr", "inMotionQuality"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.SetMotionQuality(inBodyID_addr, inMotionQuality);")
     private static native void internal_native_SetMotionQuality(int this_addr, int inBodyID_addr, int inMotionQuality);
 
-    public int GetMotionQuality(BodyID inBodyID) {
-        return internal_native_GetMotionQuality((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+    public EMotionQuality GetMotionQuality(BodyID inBodyID) {
+        int value = internal_native_GetMotionQuality((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+        return EMotionQuality.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1056,8 +1059,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);var returnedJSObj = jsObj.GetCollisionGroup(inBodyID_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_GetCollisionGroup(int this_addr, int inBodyID_addr);
 
-    public void AddForce(BodyID inBodyID, Vec3 inForce, int inActivationMode) {
-        internal_native_AddForce((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inForce != null ? inForce.getNativeData().getCPointer() : 0), inActivationMode);
+    public void AddForce(BodyID inBodyID, Vec3 inForce, EActivation inActivationMode) {
+        internal_native_AddForce((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inForce != null ? inForce.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1067,8 +1070,8 @@ jsObj.AddForce(inBodyID_addr, inForce_addr, inActivationMode);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr", "inForce_addr", "inActivationMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.AddForce(inBodyID_addr, inForce_addr, inActivationMode);")
     private static native void internal_native_AddForce(int this_addr, int inBodyID_addr, int inForce_addr, int inActivationMode);
 
-    public void AddForce(BodyID inBodyID, Vec3 inForce, Vec3 inPoint, int inActivationMode) {
-        internal_native_AddForce((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inForce != null ? inForce.getNativeData().getCPointer() : 0), (int) (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), inActivationMode);
+    public void AddForce(BodyID inBodyID, Vec3 inForce, Vec3 inPoint, EActivation inActivationMode) {
+        internal_native_AddForce((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inForce != null ? inForce.getNativeData().getCPointer() : 0), (int) (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1078,8 +1081,8 @@ jsObj.AddForce(inBodyID_addr, inForce_addr, inPoint_addr, inActivationMode);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr", "inForce_addr", "inPoint_addr", "inActivationMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.AddForce(inBodyID_addr, inForce_addr, inPoint_addr, inActivationMode);")
     private static native void internal_native_AddForce(int this_addr, int inBodyID_addr, int inForce_addr, int inPoint_addr, int inActivationMode);
 
-    public void AddTorque(BodyID inBodyID, Vec3 inTorque, int inActivationMode) {
-        internal_native_AddTorque((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inTorque != null ? inTorque.getNativeData().getCPointer() : 0), inActivationMode);
+    public void AddTorque(BodyID inBodyID, Vec3 inTorque, EActivation inActivationMode) {
+        internal_native_AddTorque((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inTorque != null ? inTorque.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1089,8 +1092,8 @@ jsObj.AddTorque(inBodyID_addr, inTorque_addr, inActivationMode);
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr", "inTorque_addr", "inActivationMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyInterface);jsObj.AddTorque(inBodyID_addr, inTorque_addr, inActivationMode);")
     private static native void internal_native_AddTorque(int this_addr, int inBodyID_addr, int inTorque_addr, int inActivationMode);
 
-    public void AddForceAndTorque(BodyID inBodyID, Vec3 inForce, Vec3 inTorque, int inActivationMode) {
-        internal_native_AddForceAndTorque((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inForce != null ? inForce.getNativeData().getCPointer() : 0), (int) (long) (inTorque != null ? inTorque.getNativeData().getCPointer() : 0), inActivationMode);
+    public void AddForceAndTorque(BodyID inBodyID, Vec3 inForce, Vec3 inTorque, EActivation inActivationMode) {
+        internal_native_AddForceAndTorque((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0), (int) (long) (inForce != null ? inForce.getNativeData().getCPointer() : 0), (int) (long) (inTorque != null ? inTorque.getNativeData().getCPointer() : 0), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1273,8 +1276,8 @@ jsObj.InvalidateContactCache(inBodyID_addr);
         internal_native_DestroyBodies((int) this_addr, (int) inBodyIDs_addr, inNumber);
     }
 
-    public static void native_AddBody(long this_addr, long inBodyID_addr, int inActivationMode) {
-        internal_native_AddBody((int) this_addr, (int) inBodyID_addr, inActivationMode);
+    public static void native_AddBody(long this_addr, long inBodyID_addr, long inActivationMode) {
+        internal_native_AddBody((int) this_addr, (int) inBodyID_addr, (int) inActivationMode);
     }
 
     public static void native_RemoveBody(long this_addr, long inBodyID_addr) {
@@ -1285,20 +1288,20 @@ jsObj.InvalidateContactCache(inBodyID_addr);
         return internal_native_IsAdded((int) this_addr, (int) inBodyID_addr);
     }
 
-    public static long native_CreateAndAddBody(long this_addr, long inSettings_addr, int inActivationMode) {
-        return internal_native_CreateAndAddBody((int) this_addr, (int) inSettings_addr, inActivationMode);
+    public static long native_CreateAndAddBody(long this_addr, long inSettings_addr, long inActivationMode) {
+        return internal_native_CreateAndAddBody((int) this_addr, (int) inSettings_addr, (int) inActivationMode);
     }
 
-    public static long native_CreateAndAddSoftBody(long this_addr, long inSettings_addr, int inActivationMode) {
-        return internal_native_CreateAndAddSoftBody((int) this_addr, (int) inSettings_addr, inActivationMode);
+    public static long native_CreateAndAddSoftBody(long this_addr, long inSettings_addr, long inActivationMode) {
+        return internal_native_CreateAndAddSoftBody((int) this_addr, (int) inSettings_addr, (int) inActivationMode);
     }
 
     public static long native_AddBodiesPrepare(long this_addr, long ioBodies_addr, int inNumber) {
         return internal_native_AddBodiesPrepare((int) this_addr, (int) ioBodies_addr, inNumber);
     }
 
-    public static void native_AddBodiesFinalize(long this_addr, long ioBodies_addr, int inNumber, long inAddState_addr, int inActivationMode) {
-        internal_native_AddBodiesFinalize((int) this_addr, (int) ioBodies_addr, inNumber, (int) inAddState_addr, inActivationMode);
+    public static void native_AddBodiesFinalize(long this_addr, long ioBodies_addr, int inNumber, long inAddState_addr, long inActivationMode) {
+        internal_native_AddBodiesFinalize((int) this_addr, (int) ioBodies_addr, inNumber, (int) inAddState_addr, (int) inActivationMode);
     }
 
     public static void native_AddBodiesAbort(long this_addr, long ioBodies_addr, int inNumber, long inAddState_addr) {
@@ -1321,12 +1324,12 @@ jsObj.InvalidateContactCache(inBodyID_addr);
         return internal_native_GetShape((int) this_addr, (int) inBodyID_addr);
     }
 
-    public static void native_SetShape(long this_addr, long inBodyID_addr, long inShape_addr, boolean inUpdateMassProperties, int inActivationMode) {
-        internal_native_SetShape((int) this_addr, (int) inBodyID_addr, (int) inShape_addr, inUpdateMassProperties, inActivationMode);
+    public static void native_SetShape(long this_addr, long inBodyID_addr, long inShape_addr, boolean inUpdateMassProperties, long inActivationMode) {
+        internal_native_SetShape((int) this_addr, (int) inBodyID_addr, (int) inShape_addr, inUpdateMassProperties, (int) inActivationMode);
     }
 
-    public static void native_NotifyShapeChanged(long this_addr, long inBodyID_addr, long inPreviousCenterOfMass_addr, boolean inUpdateMassProperties, int inActivationMode) {
-        internal_native_NotifyShapeChanged((int) this_addr, (int) inBodyID_addr, (int) inPreviousCenterOfMass_addr, inUpdateMassProperties, inActivationMode);
+    public static void native_NotifyShapeChanged(long this_addr, long inBodyID_addr, long inPreviousCenterOfMass_addr, boolean inUpdateMassProperties, long inActivationMode) {
+        internal_native_NotifyShapeChanged((int) this_addr, (int) inBodyID_addr, (int) inPreviousCenterOfMass_addr, inUpdateMassProperties, (int) inActivationMode);
     }
 
     public static void native_SetObjectLayer(long this_addr, long inBodyID_addr, int inLayer) {
@@ -1337,28 +1340,28 @@ jsObj.InvalidateContactCache(inBodyID_addr);
         return internal_native_GetObjectLayer((int) this_addr, (int) inBodyID_addr);
     }
 
-    public static void native_SetPositionAndRotation(long this_addr, long inBodyID_addr, long inPosition_addr, long inRotation_addr, int inActivationMode) {
-        internal_native_SetPositionAndRotation((int) this_addr, (int) inBodyID_addr, (int) inPosition_addr, (int) inRotation_addr, inActivationMode);
+    public static void native_SetPositionAndRotation(long this_addr, long inBodyID_addr, long inPosition_addr, long inRotation_addr, long inActivationMode) {
+        internal_native_SetPositionAndRotation((int) this_addr, (int) inBodyID_addr, (int) inPosition_addr, (int) inRotation_addr, (int) inActivationMode);
     }
 
-    public static void native_SetPositionAndRotationWhenChanged(long this_addr, long inBodyID_addr, long inPosition_addr, long inRotation_addr, int inActivationMode) {
-        internal_native_SetPositionAndRotationWhenChanged((int) this_addr, (int) inBodyID_addr, (int) inPosition_addr, (int) inRotation_addr, inActivationMode);
+    public static void native_SetPositionAndRotationWhenChanged(long this_addr, long inBodyID_addr, long inPosition_addr, long inRotation_addr, long inActivationMode) {
+        internal_native_SetPositionAndRotationWhenChanged((int) this_addr, (int) inBodyID_addr, (int) inPosition_addr, (int) inRotation_addr, (int) inActivationMode);
     }
 
     public static void native_GetPositionAndRotation(long this_addr, long inBodyID_addr, long outPosition_addr, long outRotation_addr) {
         internal_native_GetPositionAndRotation((int) this_addr, (int) inBodyID_addr, (int) outPosition_addr, (int) outRotation_addr);
     }
 
-    public static void native_SetPosition(long this_addr, long inBodyID_addr, long inPosition_addr, int inActivationMode) {
-        internal_native_SetPosition((int) this_addr, (int) inBodyID_addr, (int) inPosition_addr, inActivationMode);
+    public static void native_SetPosition(long this_addr, long inBodyID_addr, long inPosition_addr, long inActivationMode) {
+        internal_native_SetPosition((int) this_addr, (int) inBodyID_addr, (int) inPosition_addr, (int) inActivationMode);
     }
 
     public static long native_GetPosition(long this_addr, long inBodyID_addr) {
         return internal_native_GetPosition((int) this_addr, (int) inBodyID_addr);
     }
 
-    public static void native_SetRotation(long this_addr, long inBodyID_addr, long inRotation_addr, int inActivationMode) {
-        internal_native_SetRotation((int) this_addr, (int) inBodyID_addr, (int) inRotation_addr, inActivationMode);
+    public static void native_SetRotation(long this_addr, long inBodyID_addr, long inRotation_addr, long inActivationMode) {
+        internal_native_SetRotation((int) this_addr, (int) inBodyID_addr, (int) inRotation_addr, (int) inActivationMode);
     }
 
     public static long native_GetRotation(long this_addr, long inBodyID_addr) {
@@ -1445,23 +1448,23 @@ jsObj.InvalidateContactCache(inBodyID_addr);
         internal_native_ResetSleepTimer((int) this_addr, (int) inBodyID_addr);
     }
 
-    public static int native_GetBodyType(long this_addr, long inBodyID_addr) {
+    public static long native_GetBodyType(long this_addr, long inBodyID_addr) {
         return internal_native_GetBodyType((int) this_addr, (int) inBodyID_addr);
     }
 
-    public static void native_SetMotionType(long this_addr, long inBodyID_addr, int inMotionType, int inActivationMode) {
-        internal_native_SetMotionType((int) this_addr, (int) inBodyID_addr, inMotionType, inActivationMode);
+    public static void native_SetMotionType(long this_addr, long inBodyID_addr, long inMotionType, long inActivationMode) {
+        internal_native_SetMotionType((int) this_addr, (int) inBodyID_addr, (int) inMotionType, (int) inActivationMode);
     }
 
-    public static int native_GetMotionType(long this_addr, long inBodyID_addr) {
+    public static long native_GetMotionType(long this_addr, long inBodyID_addr) {
         return internal_native_GetMotionType((int) this_addr, (int) inBodyID_addr);
     }
 
-    public static void native_SetMotionQuality(long this_addr, long inBodyID_addr, int inMotionQuality) {
-        internal_native_SetMotionQuality((int) this_addr, (int) inBodyID_addr, inMotionQuality);
+    public static void native_SetMotionQuality(long this_addr, long inBodyID_addr, long inMotionQuality) {
+        internal_native_SetMotionQuality((int) this_addr, (int) inBodyID_addr, (int) inMotionQuality);
     }
 
-    public static int native_GetMotionQuality(long this_addr, long inBodyID_addr) {
+    public static long native_GetMotionQuality(long this_addr, long inBodyID_addr) {
         return internal_native_GetMotionQuality((int) this_addr, (int) inBodyID_addr);
     }
 
@@ -1509,20 +1512,20 @@ jsObj.InvalidateContactCache(inBodyID_addr);
         return internal_native_GetCollisionGroup((int) this_addr, (int) inBodyID_addr);
     }
 
-    public static void native_AddForce(long this_addr, long inBodyID_addr, long inForce_addr, int inActivationMode) {
-        internal_native_AddForce((int) this_addr, (int) inBodyID_addr, (int) inForce_addr, inActivationMode);
+    public static void native_AddForce(long this_addr, long inBodyID_addr, long inForce_addr, long inActivationMode) {
+        internal_native_AddForce((int) this_addr, (int) inBodyID_addr, (int) inForce_addr, (int) inActivationMode);
     }
 
-    public static void native_AddForce(long this_addr, long inBodyID_addr, long inForce_addr, long inPoint_addr, int inActivationMode) {
-        internal_native_AddForce((int) this_addr, (int) inBodyID_addr, (int) inForce_addr, (int) inPoint_addr, inActivationMode);
+    public static void native_AddForce(long this_addr, long inBodyID_addr, long inForce_addr, long inPoint_addr, long inActivationMode) {
+        internal_native_AddForce((int) this_addr, (int) inBodyID_addr, (int) inForce_addr, (int) inPoint_addr, (int) inActivationMode);
     }
 
-    public static void native_AddTorque(long this_addr, long inBodyID_addr, long inTorque_addr, int inActivationMode) {
-        internal_native_AddTorque((int) this_addr, (int) inBodyID_addr, (int) inTorque_addr, inActivationMode);
+    public static void native_AddTorque(long this_addr, long inBodyID_addr, long inTorque_addr, long inActivationMode) {
+        internal_native_AddTorque((int) this_addr, (int) inBodyID_addr, (int) inTorque_addr, (int) inActivationMode);
     }
 
-    public static void native_AddForceAndTorque(long this_addr, long inBodyID_addr, long inForce_addr, long inTorque_addr, int inActivationMode) {
-        internal_native_AddForceAndTorque((int) this_addr, (int) inBodyID_addr, (int) inForce_addr, (int) inTorque_addr, inActivationMode);
+    public static void native_AddForceAndTorque(long this_addr, long inBodyID_addr, long inForce_addr, long inTorque_addr, long inActivationMode) {
+        internal_native_AddForceAndTorque((int) this_addr, (int) inBodyID_addr, (int) inForce_addr, (int) inTorque_addr, (int) inActivationMode);
     }
 
     public static boolean native_ApplyBuoyancyImpulse(long this_addr, long inBodyID_addr, long inSurfacePosition_addr, long inSurfaceNormal_addr, float inBuoyancy, float inLinearDrag, float inAngularDrag, long inFluidVelocity_addr, long inGravity_addr, float inDeltaTime) {

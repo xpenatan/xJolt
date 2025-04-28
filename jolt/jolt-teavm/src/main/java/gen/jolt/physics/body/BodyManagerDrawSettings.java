@@ -163,8 +163,9 @@ jsObj.set_mDrawShapeWireframe(mDrawShapeWireframe);
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawShapeWireframe"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawShapeWireframe(mDrawShapeWireframe);")
     private static native void internal_native_set_mDrawShapeWireframe(int this_addr, boolean mDrawShapeWireframe);
 
-    public int get_mDrawShapeColor() {
-        return internal_native_get_mDrawShapeColor((int) (long) getNativeData().getCPointer());
+    public EShapeColor get_mDrawShapeColor() {
+        int value = internal_native_get_mDrawShapeColor((int) (long) getNativeData().getCPointer());
+        return EShapeColor.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -174,8 +175,8 @@ return jsObj.get_mDrawShapeColor();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawShapeColor();")
     private static native int internal_native_get_mDrawShapeColor(int this_addr);
 
-    public void set_mDrawShapeColor(int mDrawShapeColor) {
-        internal_native_set_mDrawShapeColor((int) (long) getNativeData().getCPointer(), mDrawShapeColor);
+    public void set_mDrawShapeColor(EShapeColor mDrawShapeColor) {
+        internal_native_set_mDrawShapeColor((int) (long) getNativeData().getCPointer(), (int) (long) (mDrawShapeColor != null ? mDrawShapeColor.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -493,8 +494,9 @@ jsObj.set_mDrawSoftBodyPredictedBounds(mDrawSoftBodyPredictedBounds);
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodyPredictedBounds"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodyPredictedBounds(mDrawSoftBodyPredictedBounds);")
     private static native void internal_native_set_mDrawSoftBodyPredictedBounds(int this_addr, boolean mDrawSoftBodyPredictedBounds);
 
-    public int get_mDrawSoftBodyConstraintColor() {
-        return internal_native_get_mDrawSoftBodyConstraintColor((int) (long) getNativeData().getCPointer());
+    public ESoftBodyConstraintColor get_mDrawSoftBodyConstraintColor() {
+        int value = internal_native_get_mDrawSoftBodyConstraintColor((int) (long) getNativeData().getCPointer());
+        return ESoftBodyConstraintColor.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -504,8 +506,8 @@ return jsObj.get_mDrawSoftBodyConstraintColor();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodyConstraintColor();")
     private static native int internal_native_get_mDrawSoftBodyConstraintColor(int this_addr);
 
-    public void set_mDrawSoftBodyConstraintColor(int mDrawSoftBodyConstraintColor) {
-        internal_native_set_mDrawSoftBodyConstraintColor((int) (long) getNativeData().getCPointer(), mDrawSoftBodyConstraintColor);
+    public void set_mDrawSoftBodyConstraintColor(ESoftBodyConstraintColor mDrawSoftBodyConstraintColor) {
+        internal_native_set_mDrawSoftBodyConstraintColor((int) (long) getNativeData().getCPointer(), (int) (long) (mDrawSoftBodyConstraintColor != null ? mDrawSoftBodyConstraintColor.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -563,12 +565,12 @@ jsObj.set_mDrawSoftBodyConstraintColor(mDrawSoftBodyConstraintColor);
         internal_native_set_mDrawShapeWireframe((int) this_addr, mDrawShapeWireframe);
     }
 
-    public static int native_get_mDrawShapeColor(long this_addr) {
+    public static long native_get_mDrawShapeColor(long this_addr) {
         return internal_native_get_mDrawShapeColor((int) this_addr);
     }
 
-    public static void native_set_mDrawShapeColor(long this_addr, int mDrawShapeColor) {
-        internal_native_set_mDrawShapeColor((int) this_addr, mDrawShapeColor);
+    public static void native_set_mDrawShapeColor(long this_addr, long mDrawShapeColor) {
+        internal_native_set_mDrawShapeColor((int) this_addr, (int) mDrawShapeColor);
     }
 
     public static boolean native_get_mDrawBoundingBox(long this_addr) {
@@ -683,11 +685,11 @@ jsObj.set_mDrawSoftBodyConstraintColor(mDrawSoftBodyConstraintColor);
         internal_native_set_mDrawSoftBodyPredictedBounds((int) this_addr, mDrawSoftBodyPredictedBounds);
     }
 
-    public static int native_get_mDrawSoftBodyConstraintColor(long this_addr) {
+    public static long native_get_mDrawSoftBodyConstraintColor(long this_addr) {
         return internal_native_get_mDrawSoftBodyConstraintColor((int) this_addr);
     }
 
-    public static void native_set_mDrawSoftBodyConstraintColor(long this_addr, int mDrawSoftBodyConstraintColor) {
-        internal_native_set_mDrawSoftBodyConstraintColor((int) this_addr, mDrawSoftBodyConstraintColor);
+    public static void native_set_mDrawSoftBodyConstraintColor(long this_addr, long mDrawSoftBodyConstraintColor) {
+        internal_native_set_mDrawSoftBodyConstraintColor((int) this_addr, (int) mDrawSoftBodyConstraintColor);
     }
 }

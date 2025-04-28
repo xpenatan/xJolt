@@ -5,18 +5,46 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class MeshShapeSettings_EBuildQuality implements IDLEnum {
+public enum MeshShapeSettings_EBuildQuality implements IDLEnum<MeshShapeSettings_EBuildQuality> {
 
-    public static final int FavorRuntimePerformance = MeshShapeSettings_EBuildQuality_FavorRuntimePerformance_NATIVE();
+    CUSTOM(0), FavorRuntimePerformance(MeshShapeSettings_EBuildQuality_FavorRuntimePerformance_NATIVE()), FavorBuildSpeed(MeshShapeSettings_EBuildQuality_FavorBuildSpeed_NATIVE());
+
+    private int value;
+
+    private MeshShapeSettings_EBuildQuality(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public MeshShapeSettings_EBuildQuality getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, MeshShapeSettings_EBuildQuality> MAP = new HashMap<>();
+
+    static {
+        for (MeshShapeSettings_EBuildQuality value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)MeshShapeSettings_EBuildQuality_FavorRuntimePerformance;
 */
     private static native int MeshShapeSettings_EBuildQuality_FavorRuntimePerformance_NATIVE();
-
-    public static final int FavorBuildSpeed = MeshShapeSettings_EBuildQuality_FavorBuildSpeed_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)MeshShapeSettings_EBuildQuality_FavorBuildSpeed;

@@ -174,8 +174,9 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Body);var returnedJSObj = jsObj.CanBeKinematicOrDynamic();return returnedJSObj;")
     private static native boolean internal_native_CanBeKinematicOrDynamic(int this_addr);
 
-    public int GetBodyType() {
-        return internal_native_GetBodyType((int) (long) getNativeData().getCPointer());
+    public EBodyType GetBodyType() {
+        int value = internal_native_GetBodyType((int) (long) getNativeData().getCPointer());
+        return EBodyType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -186,8 +187,9 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Body);var returnedJSObj = jsObj.GetBodyType();return returnedJSObj;")
     private static native int internal_native_GetBodyType(int this_addr);
 
-    public int GetMotionType() {
-        return internal_native_GetMotionType((int) (long) getNativeData().getCPointer());
+    public EMotionType GetMotionType() {
+        int value = internal_native_GetMotionType((int) (long) getNativeData().getCPointer());
+        return EMotionType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1010,11 +1012,11 @@ jsObj.SetCollisionGroup(inGroup_addr);
         return internal_native_CanBeKinematicOrDynamic((int) this_addr);
     }
 
-    public static int native_GetBodyType(long this_addr) {
+    public static long native_GetBodyType(long this_addr) {
         return internal_native_GetBodyType((int) this_addr);
     }
 
-    public static int native_GetMotionType(long this_addr) {
+    public static long native_GetMotionType(long this_addr) {
         return internal_native_GetMotionType((int) this_addr);
     }
 

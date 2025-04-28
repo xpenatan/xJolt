@@ -146,8 +146,9 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_GetShape(int this_addr);
 
-    public int GetGroundState() {
-        return internal_native_GetGroundState((int) (long) getNativeData().getCPointer());
+    public EGroundState GetGroundState() {
+        int value = internal_native_GetGroundState((int) (long) getNativeData().getCPointer());
+        return EGroundState.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -309,7 +310,7 @@ return jolt.getPointer(returnedJSObj);
         return internal_native_GetShape((int) this_addr);
     }
 
-    public static int native_GetGroundState(long this_addr) {
+    public static long native_GetGroundState(long this_addr) {
         return internal_native_GetGroundState((int) this_addr);
     }
 

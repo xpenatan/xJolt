@@ -64,8 +64,9 @@ jolt.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jolt.destroy(jsObj);")
     private static native void internal_native_deleteNative(int this_addr);
 
-    public int get_mSpace() {
-        return internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
+    public EConstraintSpace get_mSpace() {
+        int value = internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
+        return EConstraintSpace.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -75,8 +76,8 @@ return jsObj.get_mSpace();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);return jsObj.get_mSpace();")
     private static native int internal_native_get_mSpace(int this_addr);
 
-    public void set_mSpace(int mSpace) {
-        internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), mSpace);
+    public void set_mSpace(EConstraintSpace mSpace) {
+        internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), (int) (long) (mSpace != null ? mSpace.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -280,12 +281,12 @@ jsObj.set_mMaxLength(mMaxLength);
         internal_native_deleteNative((int) this_addr);
     }
 
-    public static int native_get_mSpace(long this_addr) {
+    public static long native_get_mSpace(long this_addr) {
         return internal_native_get_mSpace((int) this_addr);
     }
 
-    public static void native_set_mSpace(long this_addr, int mSpace) {
-        internal_native_set_mSpace((int) this_addr, mSpace);
+    public static void native_set_mSpace(long this_addr, long mSpace) {
+        internal_native_set_mSpace((int) this_addr, (int) mSpace);
     }
 
     public static long native_get_mBodyPoint1(long this_addr) {

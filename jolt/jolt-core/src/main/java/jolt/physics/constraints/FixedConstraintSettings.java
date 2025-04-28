@@ -65,8 +65,9 @@ delete nativeObject;
 */
     private static native void internal_native_deleteNative(long this_addr);
 
-    public int get_mSpace() {
-        return internal_native_get_mSpace((long) getNativeData().getCPointer());
+    public EConstraintSpace get_mSpace() {
+        int value = internal_native_get_mSpace((long) getNativeData().getCPointer());
+        return EConstraintSpace.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -75,15 +76,15 @@ return (jint)nativeObject->mSpace;
 */
     private static native int internal_native_get_mSpace(long this_addr);
 
-    public void set_mSpace(int mSpace) {
-        internal_native_set_mSpace((long) getNativeData().getCPointer(), mSpace);
+    public void set_mSpace(EConstraintSpace mSpace) {
+        internal_native_set_mSpace((long) getNativeData().getCPointer(), (long) (mSpace != null ? mSpace.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    private static native void internal_native_set_mSpace(long this_addr, int mSpace);
+    private static native void internal_native_set_mSpace(long this_addr, long mSpace);
 
     public boolean get_mAutoDetectPoint() {
         return internal_native_get_mAutoDetectPoint((long) getNativeData().getCPointer());
@@ -269,11 +270,11 @@ nativeObject->mAxisY2 = *((Vec3*)mAxisY2_addr);
         internal_native_deleteNative(this_addr);
     }
 
-    public static int native_get_mSpace(long this_addr) {
+    public static long native_get_mSpace(long this_addr) {
         return internal_native_get_mSpace(this_addr);
     }
 
-    public static void native_set_mSpace(long this_addr, int mSpace) {
+    public static void native_set_mSpace(long this_addr, long mSpace) {
         internal_native_set_mSpace(this_addr, mSpace);
     }
 

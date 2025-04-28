@@ -198,8 +198,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Jolt.prototype.New_BodyCreationSettings_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_New_BodyCreationSettings_0();
 
-    public static BodyCreationSettings New_BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, int inMotionType, int inObjectLayer) {
-        int pointer = internal_native_New_BodyCreationSettings_1((int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inMotionType, inObjectLayer);
+    public static BodyCreationSettings New_BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
+        int pointer = internal_native_New_BodyCreationSettings_1((int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
         if (pointer == 0)
             return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
@@ -215,8 +215,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inPosition_addr", "inRotation_addr", "inMotionType", "inObjectLayer"}, script = "var returnedJSObj = jolt.Jolt.prototype.New_BodyCreationSettings_1(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_New_BodyCreationSettings_1(int inShape_addr, int inPosition_addr, int inRotation_addr, int inMotionType, int inObjectLayer);
 
-    public static BodyCreationSettings New_BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, int inMotionType, int inObjectLayer) {
-        int pointer = internal_native_New_BodyCreationSettings_2((int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inMotionType, inObjectLayer);
+    public static BodyCreationSettings New_BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
+        int pointer = internal_native_New_BodyCreationSettings_2((int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
         if (pointer == 0)
             return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
@@ -495,12 +495,12 @@ jolt.Jolt.prototype.ClearWorld(physicsSystem_addr);
         return internal_native_New_BodyCreationSettings_0();
     }
 
-    public static long native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, int inMotionType, int inObjectLayer) {
-        return internal_native_New_BodyCreationSettings_1((int) inShape_addr, (int) inPosition_addr, (int) inRotation_addr, inMotionType, inObjectLayer);
+    public static long native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer) {
+        return internal_native_New_BodyCreationSettings_1((int) inShape_addr, (int) inPosition_addr, (int) inRotation_addr, (int) inMotionType, inObjectLayer);
     }
 
-    public static long native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, int inMotionType, int inObjectLayer) {
-        return internal_native_New_BodyCreationSettings_2((int) inShape_addr, (int) inPosition_addr, (int) inRotation_addr, inMotionType, inObjectLayer);
+    public static long native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer) {
+        return internal_native_New_BodyCreationSettings_2((int) inShape_addr, (int) inPosition_addr, (int) inRotation_addr, (int) inMotionType, inObjectLayer);
     }
 
     public static long native_New_Mat44_0() {

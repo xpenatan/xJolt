@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class ETireFrictionDirection implements IDLEnum {
+public enum ETireFrictionDirection implements IDLEnum<ETireFrictionDirection> {
 
-    public static final int Longitudinal = ETireFrictionDirection_Longitudinal_NATIVE();
+    CUSTOM(0), Longitudinal(ETireFrictionDirection_Longitudinal_NATIVE()), Lateral(ETireFrictionDirection_Lateral_NATIVE());
+
+    private int value;
+
+    private ETireFrictionDirection(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ETireFrictionDirection getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, ETireFrictionDirection> MAP = new HashMap<>();
+
+    static {
+        for (ETireFrictionDirection value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.ETireFrictionDirection_Longitudinal;
 */
     @org.teavm.jso.JSBody(script = "return jolt.ETireFrictionDirection_Longitudinal;")
     private static native int ETireFrictionDirection_Longitudinal_NATIVE();
-
-    public static final int Lateral = ETireFrictionDirection_Lateral_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.ETireFrictionDirection_Lateral;

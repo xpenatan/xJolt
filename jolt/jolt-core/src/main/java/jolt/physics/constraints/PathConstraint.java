@@ -98,18 +98,19 @@ return (jlong)&nativeObject->GetPositionMotorSettings();
 */
     private static native long internal_native_GetPositionMotorSettings(long this_addr);
 
-    public void SetPositionMotorState(int inState) {
-        internal_native_SetPositionMotorState((long) getNativeData().getCPointer(), inState);
+    public void SetPositionMotorState(EMotorState inState) {
+        internal_native_SetPositionMotorState((long) getNativeData().getCPointer(), (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 nativeObject->SetPositionMotorState((::EMotorState)inState);
 */
-    private static native void internal_native_SetPositionMotorState(long this_addr, int inState);
+    private static native void internal_native_SetPositionMotorState(long this_addr, long inState);
 
-    public int GetPositionMotorState() {
-        return internal_native_GetPositionMotorState((long) getNativeData().getCPointer());
+    public EMotorState GetPositionMotorState() {
+        int value = internal_native_GetPositionMotorState((long) getNativeData().getCPointer());
+        return EMotorState.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -182,11 +183,11 @@ return nativeObject->GetTargetPathFraction();
         return internal_native_GetPositionMotorSettings(this_addr);
     }
 
-    public static void native_SetPositionMotorState(long this_addr, int inState) {
+    public static void native_SetPositionMotorState(long this_addr, long inState) {
         internal_native_SetPositionMotorState(this_addr, inState);
     }
 
-    public static int native_GetPositionMotorState(long this_addr) {
+    public static long native_GetPositionMotorState(long this_addr) {
         return internal_native_GetPositionMotorState(this_addr);
     }
 

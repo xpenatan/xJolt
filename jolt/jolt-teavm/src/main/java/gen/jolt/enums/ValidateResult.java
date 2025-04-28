@@ -5,11 +5,41 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class ValidateResult implements IDLEnum {
+public enum ValidateResult implements IDLEnum<ValidateResult> {
 
-    public static final int AcceptAllContactsForThisBodyPair = ValidateResult_AcceptAllContactsForThisBodyPair_NATIVE();
+    CUSTOM(0), AcceptAllContactsForThisBodyPair(ValidateResult_AcceptAllContactsForThisBodyPair_NATIVE()), AcceptContact(ValidateResult_AcceptContact_NATIVE()), RejectContact(ValidateResult_RejectContact_NATIVE()), RejectAllContactsForThisBodyPair(ValidateResult_RejectAllContactsForThisBodyPair_NATIVE());
+
+    private int value;
+
+    private ValidateResult(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ValidateResult getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, ValidateResult> MAP = new HashMap<>();
+
+    static {
+        for (ValidateResult value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.ValidateResult_AcceptAllContactsForThisBodyPair;
@@ -17,23 +47,17 @@ return jolt.ValidateResult_AcceptAllContactsForThisBodyPair;
     @org.teavm.jso.JSBody(script = "return jolt.ValidateResult_AcceptAllContactsForThisBodyPair;")
     private static native int ValidateResult_AcceptAllContactsForThisBodyPair_NATIVE();
 
-    public static final int AcceptContact = ValidateResult_AcceptContact_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.ValidateResult_AcceptContact;
 */
     @org.teavm.jso.JSBody(script = "return jolt.ValidateResult_AcceptContact;")
     private static native int ValidateResult_AcceptContact_NATIVE();
 
-    public static final int RejectContact = ValidateResult_RejectContact_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.ValidateResult_RejectContact;
 */
     @org.teavm.jso.JSBody(script = "return jolt.ValidateResult_RejectContact;")
     private static native int ValidateResult_RejectContact_NATIVE();
-
-    public static final int RejectAllContactsForThisBodyPair = ValidateResult_RejectAllContactsForThisBodyPair_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.ValidateResult_RejectAllContactsForThisBodyPair;

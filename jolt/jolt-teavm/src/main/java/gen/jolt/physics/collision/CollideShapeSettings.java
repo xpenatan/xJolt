@@ -56,8 +56,9 @@ jsObj.set_mMaxSeparationDistance(mMaxSeparationDistance);
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxSeparationDistance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);jsObj.set_mMaxSeparationDistance(mMaxSeparationDistance);")
     private static native void internal_native_set_mMaxSeparationDistance(int this_addr, float mMaxSeparationDistance);
 
-    public int get_mBackFaceMode() {
-        return internal_native_get_mBackFaceMode((int) (long) getNativeData().getCPointer());
+    public EBackFaceMode get_mBackFaceMode() {
+        int value = internal_native_get_mBackFaceMode((int) (long) getNativeData().getCPointer());
+        return EBackFaceMode.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,8 +68,8 @@ return jsObj.get_mBackFaceMode();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);return jsObj.get_mBackFaceMode();")
     private static native int internal_native_get_mBackFaceMode(int this_addr);
 
-    public void set_mBackFaceMode(int mBackFaceMode) {
-        internal_native_set_mBackFaceMode((int) (long) getNativeData().getCPointer(), mBackFaceMode);
+    public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
+        internal_native_set_mBackFaceMode((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -90,11 +91,11 @@ jsObj.set_mBackFaceMode(mBackFaceMode);
         internal_native_set_mMaxSeparationDistance((int) this_addr, mMaxSeparationDistance);
     }
 
-    public static int native_get_mBackFaceMode(long this_addr) {
+    public static long native_get_mBackFaceMode(long this_addr) {
         return internal_native_get_mBackFaceMode((int) this_addr);
     }
 
-    public static void native_set_mBackFaceMode(long this_addr, int mBackFaceMode) {
-        internal_native_set_mBackFaceMode((int) this_addr, mBackFaceMode);
+    public static void native_set_mBackFaceMode(long this_addr, long mBackFaceMode) {
+        internal_native_set_mBackFaceMode((int) this_addr, (int) mBackFaceMode);
     }
 }

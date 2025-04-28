@@ -109,8 +109,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraint);var returnedJSObj = jsObj.GetPositionMotorSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_GetPositionMotorSettings(int this_addr);
 
-    public void SetPositionMotorState(int inState) {
-        internal_native_SetPositionMotorState((int) (long) getNativeData().getCPointer(), inState);
+    public void SetPositionMotorState(EMotorState inState) {
+        internal_native_SetPositionMotorState((int) (long) getNativeData().getCPointer(), (int) (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -120,8 +120,9 @@ jsObj.SetPositionMotorState(inState);
     @org.teavm.jso.JSBody(params = {"this_addr", "inState"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraint);jsObj.SetPositionMotorState(inState);")
     private static native void internal_native_SetPositionMotorState(int this_addr, int inState);
 
-    public int GetPositionMotorState() {
-        return internal_native_GetPositionMotorState((int) (long) getNativeData().getCPointer());
+    public EMotorState GetPositionMotorState() {
+        int value = internal_native_GetPositionMotorState((int) (long) getNativeData().getCPointer());
+        return EMotorState.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -202,11 +203,11 @@ return returnedJSObj;
         return internal_native_GetPositionMotorSettings((int) this_addr);
     }
 
-    public static void native_SetPositionMotorState(long this_addr, int inState) {
-        internal_native_SetPositionMotorState((int) this_addr, inState);
+    public static void native_SetPositionMotorState(long this_addr, long inState) {
+        internal_native_SetPositionMotorState((int) this_addr, (int) inState);
     }
 
-    public static int native_GetPositionMotorState(long this_addr) {
+    public static long native_GetPositionMotorState(long this_addr) {
         return internal_native_GetPositionMotorState((int) this_addr);
     }
 

@@ -119,8 +119,9 @@ jsObj.set_mBendCompliance(mBendCompliance);
     @org.teavm.jso.JSBody(params = {"this_addr", "mBendCompliance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVertexAttributes);jsObj.set_mBendCompliance(mBendCompliance);")
     private static native void internal_native_set_mBendCompliance(int this_addr, float mBendCompliance);
 
-    public int get_mLRAType() {
-        return internal_native_get_mLRAType((int) (long) getNativeData().getCPointer());
+    public SoftBodySharedSettings_ELRAType get_mLRAType() {
+        int value = internal_native_get_mLRAType((int) (long) getNativeData().getCPointer());
+        return SoftBodySharedSettings_ELRAType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -130,8 +131,8 @@ return jsObj.get_mLRAType();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVertexAttributes);return jsObj.get_mLRAType();")
     private static native int internal_native_get_mLRAType(int this_addr);
 
-    public void set_mLRAType(int mLRAType) {
-        internal_native_set_mLRAType((int) (long) getNativeData().getCPointer(), mLRAType);
+    public void set_mLRAType(SoftBodySharedSettings_ELRAType mLRAType) {
+        internal_native_set_mLRAType((int) (long) getNativeData().getCPointer(), (int) (long) (mLRAType != null ? mLRAType.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -195,12 +196,12 @@ jsObj.set_mLRAMaxDistanceMultiplier(mLRAMaxDistanceMultiplier);
         internal_native_set_mBendCompliance((int) this_addr, mBendCompliance);
     }
 
-    public static int native_get_mLRAType(long this_addr) {
+    public static long native_get_mLRAType(long this_addr) {
         return internal_native_get_mLRAType((int) this_addr);
     }
 
-    public static void native_set_mLRAType(long this_addr, int mLRAType) {
-        internal_native_set_mLRAType((int) this_addr, mLRAType);
+    public static void native_set_mLRAType(long this_addr, long mLRAType) {
+        internal_native_set_mLRAType((int) this_addr, (int) mLRAType);
     }
 
     public static float native_get_mLRAMaxDistanceMultiplier(long this_addr) {

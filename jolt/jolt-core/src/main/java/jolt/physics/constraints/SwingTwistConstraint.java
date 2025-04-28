@@ -246,18 +246,19 @@ return nativeObject->GetMaxFrictionTorque();
 */
     private static native float internal_native_GetMaxFrictionTorque(long this_addr);
 
-    public void SetSwingMotorState(int inState) {
-        internal_native_SetSwingMotorState((long) getNativeData().getCPointer(), inState);
+    public void SetSwingMotorState(EMotorState inState) {
+        internal_native_SetSwingMotorState((long) getNativeData().getCPointer(), (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetSwingMotorState((::EMotorState)inState);
 */
-    private static native void internal_native_SetSwingMotorState(long this_addr, int inState);
+    private static native void internal_native_SetSwingMotorState(long this_addr, long inState);
 
-    public int GetSwingMotorState() {
-        return internal_native_GetSwingMotorState((long) getNativeData().getCPointer());
+    public EMotorState GetSwingMotorState() {
+        int value = internal_native_GetSwingMotorState((long) getNativeData().getCPointer());
+        return EMotorState.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -266,18 +267,19 @@ return (int)nativeObject->GetSwingMotorState();
 */
     private static native int internal_native_GetSwingMotorState(long this_addr);
 
-    public void SetTwistMotorState(int inState) {
-        internal_native_SetTwistMotorState((long) getNativeData().getCPointer(), inState);
+    public void SetTwistMotorState(EMotorState inState) {
+        internal_native_SetTwistMotorState((long) getNativeData().getCPointer(), (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetTwistMotorState((::EMotorState)inState);
 */
-    private static native void internal_native_SetTwistMotorState(long this_addr, int inState);
+    private static native void internal_native_SetTwistMotorState(long this_addr, long inState);
 
-    public int GetTwistMotorState() {
-        return internal_native_GetTwistMotorState((long) getNativeData().getCPointer());
+    public EMotorState GetTwistMotorState() {
+        int value = internal_native_GetTwistMotorState((long) getNativeData().getCPointer());
+        return EMotorState.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -495,19 +497,19 @@ return (jlong)&copy_addr;*/
         return internal_native_GetMaxFrictionTorque(this_addr);
     }
 
-    public static void native_SetSwingMotorState(long this_addr, int inState) {
+    public static void native_SetSwingMotorState(long this_addr, long inState) {
         internal_native_SetSwingMotorState(this_addr, inState);
     }
 
-    public static int native_GetSwingMotorState(long this_addr) {
+    public static long native_GetSwingMotorState(long this_addr) {
         return internal_native_GetSwingMotorState(this_addr);
     }
 
-    public static void native_SetTwistMotorState(long this_addr, int inState) {
+    public static void native_SetTwistMotorState(long this_addr, long inState) {
         internal_native_SetTwistMotorState(this_addr, inState);
     }
 
-    public static int native_GetTwistMotorState(long this_addr) {
+    public static long native_GetTwistMotorState(long this_addr) {
         return internal_native_GetTwistMotorState(this_addr);
     }
 

@@ -55,8 +55,8 @@ return jolt.getPointer(jsObj);
     public Ragdoll(byte b, char c) {
     }
 
-    public void AddToPhysicsSystem(int inActivationMode, boolean inLockBodies) {
-        internal_native_AddToPhysicsSystem((int) (long) getNativeData().getCPointer(), inActivationMode, inLockBodies);
+    public void AddToPhysicsSystem(EActivation inActivationMode, boolean inLockBodies) {
+        internal_native_AddToPhysicsSystem((int) (long) getNativeData().getCPointer(), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0), inLockBodies);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,8 +66,8 @@ jsObj.AddToPhysicsSystem(inActivationMode, inLockBodies);
     @org.teavm.jso.JSBody(params = {"this_addr", "inActivationMode", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.AddToPhysicsSystem(inActivationMode, inLockBodies);")
     private static native void internal_native_AddToPhysicsSystem(int this_addr, int inActivationMode, boolean inLockBodies);
 
-    public void AddToPhysicsSystem(int inActivationMode) {
-        internal_native_AddToPhysicsSystem((int) (long) getNativeData().getCPointer(), inActivationMode);
+    public void AddToPhysicsSystem(EActivation inActivationMode) {
+        internal_native_AddToPhysicsSystem((int) (long) getNativeData().getCPointer(), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -507,12 +507,12 @@ return jolt.getPointer(returnedJSObj);
         return internal_native_create_PhysicsSystem((int) inSystem_addr);
     }
 
-    public static void native_AddToPhysicsSystem(long this_addr, int inActivationMode, boolean inLockBodies) {
-        internal_native_AddToPhysicsSystem((int) this_addr, inActivationMode, inLockBodies);
+    public static void native_AddToPhysicsSystem(long this_addr, long inActivationMode, boolean inLockBodies) {
+        internal_native_AddToPhysicsSystem((int) this_addr, (int) inActivationMode, inLockBodies);
     }
 
-    public static void native_AddToPhysicsSystem(long this_addr, int inActivationMode) {
-        internal_native_AddToPhysicsSystem((int) this_addr, inActivationMode);
+    public static void native_AddToPhysicsSystem(long this_addr, long inActivationMode) {
+        internal_native_AddToPhysicsSystem((int) this_addr, (int) inActivationMode);
     }
 
     public static void native_RemoveFromPhysicsSystem(long this_addr, boolean inLockBodies) {

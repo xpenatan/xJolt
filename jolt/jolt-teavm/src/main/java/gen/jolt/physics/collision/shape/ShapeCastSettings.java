@@ -55,8 +55,9 @@ jolt.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);jolt.destroy(jsObj);")
     private static native void internal_native_deleteNative(int this_addr);
 
-    public int get_mBackFaceModeTriangles() {
-        return internal_native_get_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer());
+    public EBackFaceMode get_mBackFaceModeTriangles() {
+        int value = internal_native_get_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer());
+        return EBackFaceMode.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,8 +67,8 @@ return jsObj.get_mBackFaceModeTriangles();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);return jsObj.get_mBackFaceModeTriangles();")
     private static native int internal_native_get_mBackFaceModeTriangles(int this_addr);
 
-    public void set_mBackFaceModeTriangles(int mBackFaceModeTriangles) {
-        internal_native_set_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer(), mBackFaceModeTriangles);
+    public void set_mBackFaceModeTriangles(EBackFaceMode mBackFaceModeTriangles) {
+        internal_native_set_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceModeTriangles != null ? mBackFaceModeTriangles.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -77,8 +78,9 @@ jsObj.set_mBackFaceModeTriangles(mBackFaceModeTriangles);
     @org.teavm.jso.JSBody(params = {"this_addr", "mBackFaceModeTriangles"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);jsObj.set_mBackFaceModeTriangles(mBackFaceModeTriangles);")
     private static native void internal_native_set_mBackFaceModeTriangles(int this_addr, int mBackFaceModeTriangles);
 
-    public int get_mBackFaceModeConvex() {
-        return internal_native_get_mBackFaceModeConvex((int) (long) getNativeData().getCPointer());
+    public EBackFaceMode get_mBackFaceModeConvex() {
+        int value = internal_native_get_mBackFaceModeConvex((int) (long) getNativeData().getCPointer());
+        return EBackFaceMode.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -88,8 +90,8 @@ return jsObj.get_mBackFaceModeConvex();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);return jsObj.get_mBackFaceModeConvex();")
     private static native int internal_native_get_mBackFaceModeConvex(int this_addr);
 
-    public void set_mBackFaceModeConvex(int mBackFaceModeConvex) {
-        internal_native_set_mBackFaceModeConvex((int) (long) getNativeData().getCPointer(), mBackFaceModeConvex);
+    public void set_mBackFaceModeConvex(EBackFaceMode mBackFaceModeConvex) {
+        internal_native_set_mBackFaceModeConvex((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceModeConvex != null ? mBackFaceModeConvex.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -151,20 +153,20 @@ jsObj.set_mReturnDeepestPoint(mReturnDeepestPoint);
         internal_native_deleteNative((int) this_addr);
     }
 
-    public static int native_get_mBackFaceModeTriangles(long this_addr) {
+    public static long native_get_mBackFaceModeTriangles(long this_addr) {
         return internal_native_get_mBackFaceModeTriangles((int) this_addr);
     }
 
-    public static void native_set_mBackFaceModeTriangles(long this_addr, int mBackFaceModeTriangles) {
-        internal_native_set_mBackFaceModeTriangles((int) this_addr, mBackFaceModeTriangles);
+    public static void native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles) {
+        internal_native_set_mBackFaceModeTriangles((int) this_addr, (int) mBackFaceModeTriangles);
     }
 
-    public static int native_get_mBackFaceModeConvex(long this_addr) {
+    public static long native_get_mBackFaceModeConvex(long this_addr) {
         return internal_native_get_mBackFaceModeConvex((int) this_addr);
     }
 
-    public static void native_set_mBackFaceModeConvex(long this_addr, int mBackFaceModeConvex) {
-        internal_native_set_mBackFaceModeConvex((int) this_addr, mBackFaceModeConvex);
+    public static void native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex) {
+        internal_native_set_mBackFaceModeConvex((int) this_addr, (int) mBackFaceModeConvex);
     }
 
     public static boolean native_get_mUseShrunkenShapeAndConvexRadius(long this_addr) {

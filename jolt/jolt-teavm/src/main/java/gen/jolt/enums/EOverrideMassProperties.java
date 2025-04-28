@@ -5,11 +5,41 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EOverrideMassProperties implements IDLEnum {
+public enum EOverrideMassProperties implements IDLEnum<EOverrideMassProperties> {
 
-    public static final int CalculateMassAndInertia = EOverrideMassProperties_CalculateMassAndInertia_NATIVE();
+    CUSTOM(0), CalculateMassAndInertia(EOverrideMassProperties_CalculateMassAndInertia_NATIVE()), CalculateInertia(EOverrideMassProperties_CalculateInertia_NATIVE()), MassAndInertiaProvided(EOverrideMassProperties_MassAndInertiaProvided_NATIVE());
+
+    private int value;
+
+    private EOverrideMassProperties(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EOverrideMassProperties getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EOverrideMassProperties> MAP = new HashMap<>();
+
+    static {
+        for (EOverrideMassProperties value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EOverrideMassProperties_CalculateMassAndInertia;
@@ -17,15 +47,11 @@ return jolt.EOverrideMassProperties_CalculateMassAndInertia;
     @org.teavm.jso.JSBody(script = "return jolt.EOverrideMassProperties_CalculateMassAndInertia;")
     private static native int EOverrideMassProperties_CalculateMassAndInertia_NATIVE();
 
-    public static final int CalculateInertia = EOverrideMassProperties_CalculateInertia_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EOverrideMassProperties_CalculateInertia;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EOverrideMassProperties_CalculateInertia;")
     private static native int EOverrideMassProperties_CalculateInertia_NATIVE();
-
-    public static final int MassAndInertiaProvided = EOverrideMassProperties_MassAndInertiaProvided_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EOverrideMassProperties_MassAndInertiaProvided;

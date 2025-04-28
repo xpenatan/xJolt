@@ -110,8 +110,9 @@ nativeObject->mBendCompliance = mBendCompliance;
 */
     private static native void internal_native_set_mBendCompliance(long this_addr, float mBendCompliance);
 
-    public int get_mLRAType() {
-        return internal_native_get_mLRAType((long) getNativeData().getCPointer());
+    public SoftBodySharedSettings_ELRAType get_mLRAType() {
+        int value = internal_native_get_mLRAType((long) getNativeData().getCPointer());
+        return SoftBodySharedSettings_ELRAType.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -120,15 +121,15 @@ return (jint)nativeObject->mLRAType;
 */
     private static native int internal_native_get_mLRAType(long this_addr);
 
-    public void set_mLRAType(int mLRAType) {
-        internal_native_set_mLRAType((long) getNativeData().getCPointer(), mLRAType);
+    public void set_mLRAType(SoftBodySharedSettings_ELRAType mLRAType) {
+        internal_native_set_mLRAType((long) getNativeData().getCPointer(), (long) (mLRAType != null ? mLRAType.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 nativeObject->mLRAType = (::SoftBodySharedSettings_ELRAType)mLRAType;
 */
-    private static native void internal_native_set_mLRAType(long this_addr, int mLRAType);
+    private static native void internal_native_set_mLRAType(long this_addr, long mLRAType);
 
     public float get_mLRAMaxDistanceMultiplier() {
         return internal_native_get_mLRAMaxDistanceMultiplier((long) getNativeData().getCPointer());
@@ -182,11 +183,11 @@ nativeObject->mLRAMaxDistanceMultiplier = mLRAMaxDistanceMultiplier;
         internal_native_set_mBendCompliance(this_addr, mBendCompliance);
     }
 
-    public static int native_get_mLRAType(long this_addr) {
+    public static long native_get_mLRAType(long this_addr) {
         return internal_native_get_mLRAType(this_addr);
     }
 
-    public static void native_set_mLRAType(long this_addr, int mLRAType) {
+    public static void native_set_mLRAType(long this_addr, long mLRAType) {
         internal_native_set_mLRAType(this_addr, mLRAType);
     }
 

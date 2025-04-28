@@ -173,8 +173,8 @@ return (jlong)Jolt::New_BodyCreationSettings();
 */
     private static native long internal_native_New_BodyCreationSettings_0();
 
-    public static BodyCreationSettings New_BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, int inMotionType, int inObjectLayer) {
-        long pointer = internal_native_New_BodyCreationSettings_1((long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inMotionType, inObjectLayer);
+    public static BodyCreationSettings New_BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
+        long pointer = internal_native_New_BodyCreationSettings_1((long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
         if (pointer == 0)
             return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
@@ -185,10 +185,10 @@ return (jlong)Jolt::New_BodyCreationSettings();
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_BodyCreationSettings((ShapeSettings* )inShape_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EMotionType)inMotionType, inObjectLayer);
 */
-    private static native long internal_native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, int inMotionType, int inObjectLayer);
+    private static native long internal_native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer);
 
-    public static BodyCreationSettings New_BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, int inMotionType, int inObjectLayer) {
-        long pointer = internal_native_New_BodyCreationSettings_2((long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inMotionType, inObjectLayer);
+    public static BodyCreationSettings New_BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
+        long pointer = internal_native_New_BodyCreationSettings_2((long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
         if (pointer == 0)
             return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
@@ -199,7 +199,7 @@ return (jlong)Jolt::New_BodyCreationSettings((ShapeSettings* )inShape_addr, *((V
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_BodyCreationSettings((Shape* )inShape_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EMotionType)inMotionType, inObjectLayer);
 */
-    private static native long internal_native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, int inMotionType, int inObjectLayer);
+    private static native long internal_native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer);
 
     public static Mat44 New_Mat44() {
         long pointer = internal_native_New_Mat44_0();
@@ -427,11 +427,11 @@ Jolt::ClearWorld(*((PhysicsSystem* )physicsSystem_addr));
         return internal_native_New_BodyCreationSettings_0();
     }
 
-    public static long native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, int inMotionType, int inObjectLayer) {
+    public static long native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer) {
         return internal_native_New_BodyCreationSettings_1(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
     }
 
-    public static long native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, int inMotionType, int inObjectLayer) {
+    public static long native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer) {
         return internal_native_New_BodyCreationSettings_2(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
     }
 

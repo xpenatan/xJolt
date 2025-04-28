@@ -86,8 +86,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SliderConstraint);var returnedJSObj = jsObj.GetMotorSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_GetMotorSettings(int this_addr);
 
-    public void SetMotorState(int inState) {
-        internal_native_SetMotorState((int) (long) getNativeData().getCPointer(), inState);
+    public void SetMotorState(EMotorState inState) {
+        internal_native_SetMotorState((int) (long) getNativeData().getCPointer(), (int) (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,8 +97,9 @@ jsObj.SetMotorState(inState);
     @org.teavm.jso.JSBody(params = {"this_addr", "inState"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SliderConstraint);jsObj.SetMotorState(inState);")
     private static native void internal_native_SetMotorState(int this_addr, int inState);
 
-    public int GetMotorState() {
-        return internal_native_GetMotorState((int) (long) getNativeData().getCPointer());
+    public EMotorState GetMotorState() {
+        int value = internal_native_GetMotorState((int) (long) getNativeData().getCPointer());
+        return EMotorState.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -310,11 +311,11 @@ return returnedJSObj;
         return internal_native_GetMotorSettings((int) this_addr);
     }
 
-    public static void native_SetMotorState(long this_addr, int inState) {
-        internal_native_SetMotorState((int) this_addr, inState);
+    public static void native_SetMotorState(long this_addr, long inState) {
+        internal_native_SetMotorState((int) this_addr, (int) inState);
     }
 
-    public static int native_GetMotorState(long this_addr) {
+    public static long native_GetMotorState(long this_addr) {
         return internal_native_GetMotorState((int) this_addr);
     }
 

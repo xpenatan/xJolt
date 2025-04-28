@@ -78,18 +78,19 @@ return (jlong)&nativeObject->GetMotorSettings();
 */
     private static native long internal_native_GetMotorSettings(long this_addr);
 
-    public void SetMotorState(int inState) {
-        internal_native_SetMotorState((long) getNativeData().getCPointer(), inState);
+    public void SetMotorState(EMotorState inState) {
+        internal_native_SetMotorState((long) getNativeData().getCPointer(), (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 HingeConstraint* nativeObject = (HingeConstraint*)this_addr;
 nativeObject->SetMotorState((::EMotorState)inState);
 */
-    private static native void internal_native_SetMotorState(long this_addr, int inState);
+    private static native void internal_native_SetMotorState(long this_addr, long inState);
 
-    public int GetMotorState() {
-        return internal_native_GetMotorState((long) getNativeData().getCPointer());
+    public EMotorState GetMotorState() {
+        int value = internal_native_GetMotorState((long) getNativeData().getCPointer());
+        return EMotorState.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -274,11 +275,11 @@ return nativeObject->GetTotalLambdaMotor();
         return internal_native_GetMotorSettings(this_addr);
     }
 
-    public static void native_SetMotorState(long this_addr, int inState) {
+    public static void native_SetMotorState(long this_addr, long inState) {
         internal_native_SetMotorState(this_addr, inState);
     }
 
-    public static int native_GetMotorState(long this_addr) {
+    public static long native_GetMotorState(long this_addr) {
         return internal_native_GetMotorState(this_addr);
     }
 

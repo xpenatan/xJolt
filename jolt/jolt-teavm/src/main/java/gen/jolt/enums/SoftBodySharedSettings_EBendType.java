@@ -5,11 +5,41 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class SoftBodySharedSettings_EBendType implements IDLEnum {
+public enum SoftBodySharedSettings_EBendType implements IDLEnum<SoftBodySharedSettings_EBendType> {
 
-    public static final int None = SoftBodySharedSettings_EBendType_None_NATIVE();
+    CUSTOM(0), None(SoftBodySharedSettings_EBendType_None_NATIVE()), Distance(SoftBodySharedSettings_EBendType_Distance_NATIVE()), Dihedral(SoftBodySharedSettings_EBendType_Dihedral_NATIVE());
+
+    private int value;
+
+    private SoftBodySharedSettings_EBendType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public SoftBodySharedSettings_EBendType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, SoftBodySharedSettings_EBendType> MAP = new HashMap<>();
+
+    static {
+        for (SoftBodySharedSettings_EBendType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.SoftBodySharedSettings_EBendType_None;
@@ -17,15 +47,11 @@ return jolt.SoftBodySharedSettings_EBendType_None;
     @org.teavm.jso.JSBody(script = "return jolt.SoftBodySharedSettings_EBendType_None;")
     private static native int SoftBodySharedSettings_EBendType_None_NATIVE();
 
-    public static final int Distance = SoftBodySharedSettings_EBendType_Distance_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.SoftBodySharedSettings_EBendType_Distance;
 */
     @org.teavm.jso.JSBody(script = "return jolt.SoftBodySharedSettings_EBendType_Distance;")
     private static native int SoftBodySharedSettings_EBendType_Distance_NATIVE();
-
-    public static final int Dihedral = SoftBodySharedSettings_EBendType_Dihedral_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.SoftBodySharedSettings_EBendType_Dihedral;

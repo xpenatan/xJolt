@@ -117,25 +117,25 @@ nativeObject->DrawBodies((PhysicsSystem* )system_addr);
 */
     private static native void internal_native_DrawBodies(long this_addr, long system_addr);
 
-    public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, int inCastShadow, int inDrawMode) {
-        internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), inCastShadow, inDrawMode);
+    public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow, EDrawMode inDrawMode) {
+        internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (long) (inCastShadow != null ? inCastShadow.getValue() : 0), (long) (inDrawMode != null ? inDrawMode.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 DebugRendererEm* nativeObject = (DebugRendererEm*)this_addr;
 nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (float)inRadius, *((Color* )inColor_addr), (::ECastShadow)inCastShadow, (::EDrawMode)inDrawMode);
 */
-    private static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, int inCastShadow, int inDrawMode);
+    private static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow, long inDrawMode);
 
-    public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, int inCastShadow) {
-        internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), inCastShadow);
+    public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow) {
+        internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (long) (inCastShadow != null ? inCastShadow.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 DebugRendererEm* nativeObject = (DebugRendererEm*)this_addr;
 nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (float)inRadius, *((Color* )inColor_addr), (::ECastShadow)inCastShadow);
 */
-    private static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, int inCastShadow);
+    private static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor) {
         internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0));
@@ -157,7 +157,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
         internal_native_setupCallback(getNativeData().getCPointer());
     }
 
-    protected void DrawMesh(int id, Mat44 inModelMatrix, DebugArrayTriangle triangleArray, Color inModelColor, int inCullMode, int inDrawMode) {
+    protected void DrawMesh(int id, Mat44 inModelMatrix, DebugArrayTriangle triangleArray, Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
     }
 
     private void internal_DrawMesh(int id, long inModelMatrix, long triangleArray, long inModelColor, int inCullMode, int inDrawMode) {
@@ -170,7 +170,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
         if (Color_TEMP_STATIC_GEN_0 == null)
             Color_TEMP_STATIC_GEN_0 = new Color((byte) 1, (char) 1);
         Color_TEMP_STATIC_GEN_0.getNativeData().reset(inModelColor, false);
-        DrawMesh(id, Mat44_TEMP_STATIC_GEN_0, DebugArrayTriangle_TEMP_STATIC_GEN_0, Color_TEMP_STATIC_GEN_0, inCullMode, inDrawMode);
+        DrawMesh(id, Mat44_TEMP_STATIC_GEN_0, DebugArrayTriangle_TEMP_STATIC_GEN_0, Color_TEMP_STATIC_GEN_0, ECullMode.MAP.get(inCullMode), EDrawMode.MAP.get(inDrawMode));
     }
 
     protected void DrawLine(Vec3 inFrom, Vec3 inTo, Color inColor) {
@@ -189,7 +189,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
         DrawLine(Vec3_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_1, Color_TEMP_STATIC_GEN_1);
     }
 
-    protected void DrawTriangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, Color inColor, int inCastShadow) {
+    protected void DrawTriangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, Color inColor, ECastShadow inCastShadow) {
     }
 
     private void internal_DrawTriangle(long inV1, long inV2, long inV3, long inColor, int inCastShadow) {
@@ -205,7 +205,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
         if (Color_TEMP_STATIC_GEN_2 == null)
             Color_TEMP_STATIC_GEN_2 = new Color((byte) 1, (char) 1);
         Color_TEMP_STATIC_GEN_2.getNativeData().reset(inColor, false);
-        DrawTriangle(Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Color_TEMP_STATIC_GEN_2, inCastShadow);
+        DrawTriangle(Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Color_TEMP_STATIC_GEN_2, ECastShadow.MAP.get(inCastShadow));
     }
 
     protected void DrawText3D(Vec3 inPosition, long inString, int inStringLen, Color inColor, float inHeight) {
@@ -244,11 +244,11 @@ nativeObject->setupCallback(env, object);
         internal_native_DrawBodies(this_addr, system_addr);
     }
 
-    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, int inCastShadow, int inDrawMode) {
+    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow, long inDrawMode) {
         internal_native_DrawCylinder(this_addr, inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastShadow, inDrawMode);
     }
 
-    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, int inCastShadow) {
+    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow) {
         internal_native_DrawCylinder(this_addr, inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastShadow);
     }
 

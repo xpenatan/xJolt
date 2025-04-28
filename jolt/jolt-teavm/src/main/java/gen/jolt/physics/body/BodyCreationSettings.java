@@ -371,8 +371,9 @@ jsObj.set_mCollisionGroup(mCollisionGroup_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "mCollisionGroup_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyCreationSettings);jsObj.set_mCollisionGroup(mCollisionGroup_addr);")
     private static native void internal_native_set_mCollisionGroup(int this_addr, int mCollisionGroup_addr);
 
-    public int get_mMotionType() {
-        return internal_native_get_mMotionType((int) (long) getNativeData().getCPointer());
+    public EMotionType get_mMotionType() {
+        int value = internal_native_get_mMotionType((int) (long) getNativeData().getCPointer());
+        return EMotionType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -382,8 +383,8 @@ return jsObj.get_mMotionType();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyCreationSettings);return jsObj.get_mMotionType();")
     private static native int internal_native_get_mMotionType(int this_addr);
 
-    public void set_mMotionType(int mMotionType) {
-        internal_native_set_mMotionType((int) (long) getNativeData().getCPointer(), mMotionType);
+    public void set_mMotionType(EMotionType mMotionType) {
+        internal_native_set_mMotionType((int) (long) getNativeData().getCPointer(), (int) (long) (mMotionType != null ? mMotionType.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -393,8 +394,9 @@ jsObj.set_mMotionType(mMotionType);
     @org.teavm.jso.JSBody(params = {"this_addr", "mMotionType"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyCreationSettings);jsObj.set_mMotionType(mMotionType);")
     private static native void internal_native_set_mMotionType(int this_addr, int mMotionType);
 
-    public int get_mAllowedDOFs() {
-        return internal_native_get_mAllowedDOFs((int) (long) getNativeData().getCPointer());
+    public EAllowedDOFs get_mAllowedDOFs() {
+        int value = internal_native_get_mAllowedDOFs((int) (long) getNativeData().getCPointer());
+        return EAllowedDOFs.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -404,8 +406,8 @@ return jsObj.get_mAllowedDOFs();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyCreationSettings);return jsObj.get_mAllowedDOFs();")
     private static native int internal_native_get_mAllowedDOFs(int this_addr);
 
-    public void set_mAllowedDOFs(int mAllowedDOFs) {
-        internal_native_set_mAllowedDOFs((int) (long) getNativeData().getCPointer(), mAllowedDOFs);
+    public void set_mAllowedDOFs(EAllowedDOFs mAllowedDOFs) {
+        internal_native_set_mAllowedDOFs((int) (long) getNativeData().getCPointer(), (int) (long) (mAllowedDOFs != null ? mAllowedDOFs.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -525,8 +527,9 @@ jsObj.set_mApplyGyroscopicForce(mApplyGyroscopicForce);
     @org.teavm.jso.JSBody(params = {"this_addr", "mApplyGyroscopicForce"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyCreationSettings);jsObj.set_mApplyGyroscopicForce(mApplyGyroscopicForce);")
     private static native void internal_native_set_mApplyGyroscopicForce(int this_addr, boolean mApplyGyroscopicForce);
 
-    public int get_mMotionQuality() {
-        return internal_native_get_mMotionQuality((int) (long) getNativeData().getCPointer());
+    public EMotionQuality get_mMotionQuality() {
+        int value = internal_native_get_mMotionQuality((int) (long) getNativeData().getCPointer());
+        return EMotionQuality.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -536,8 +539,8 @@ return jsObj.get_mMotionQuality();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyCreationSettings);return jsObj.get_mMotionQuality();")
     private static native int internal_native_get_mMotionQuality(int this_addr);
 
-    public void set_mMotionQuality(int mMotionQuality) {
-        internal_native_set_mMotionQuality((int) (long) getNativeData().getCPointer(), mMotionQuality);
+    public void set_mMotionQuality(EMotionQuality mMotionQuality) {
+        internal_native_set_mMotionQuality((int) (long) getNativeData().getCPointer(), (int) (long) (mMotionQuality != null ? mMotionQuality.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -789,8 +792,9 @@ jsObj.set_mNumPositionStepsOverride(mNumPositionStepsOverride);
     @org.teavm.jso.JSBody(params = {"this_addr", "mNumPositionStepsOverride"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyCreationSettings);jsObj.set_mNumPositionStepsOverride(mNumPositionStepsOverride);")
     private static native void internal_native_set_mNumPositionStepsOverride(int this_addr, int mNumPositionStepsOverride);
 
-    public int get_mOverrideMassProperties() {
-        return internal_native_get_mOverrideMassProperties((int) (long) getNativeData().getCPointer());
+    public EOverrideMassProperties get_mOverrideMassProperties() {
+        int value = internal_native_get_mOverrideMassProperties((int) (long) getNativeData().getCPointer());
+        return EOverrideMassProperties.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -800,8 +804,8 @@ return jsObj.get_mOverrideMassProperties();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyCreationSettings);return jsObj.get_mOverrideMassProperties();")
     private static native int internal_native_get_mOverrideMassProperties(int this_addr);
 
-    public void set_mOverrideMassProperties(int mOverrideMassProperties) {
-        internal_native_set_mOverrideMassProperties((int) (long) getNativeData().getCPointer(), mOverrideMassProperties);
+    public void set_mOverrideMassProperties(EOverrideMassProperties mOverrideMassProperties) {
+        internal_native_set_mOverrideMassProperties((int) (long) getNativeData().getCPointer(), (int) (long) (mOverrideMassProperties != null ? mOverrideMassProperties.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -951,20 +955,20 @@ jsObj.set_mMassPropertiesOverride(mMassPropertiesOverride_addr);
         internal_native_set_mCollisionGroup((int) this_addr, (int) mCollisionGroup_addr);
     }
 
-    public static int native_get_mMotionType(long this_addr) {
+    public static long native_get_mMotionType(long this_addr) {
         return internal_native_get_mMotionType((int) this_addr);
     }
 
-    public static void native_set_mMotionType(long this_addr, int mMotionType) {
-        internal_native_set_mMotionType((int) this_addr, mMotionType);
+    public static void native_set_mMotionType(long this_addr, long mMotionType) {
+        internal_native_set_mMotionType((int) this_addr, (int) mMotionType);
     }
 
-    public static int native_get_mAllowedDOFs(long this_addr) {
+    public static long native_get_mAllowedDOFs(long this_addr) {
         return internal_native_get_mAllowedDOFs((int) this_addr);
     }
 
-    public static void native_set_mAllowedDOFs(long this_addr, int mAllowedDOFs) {
-        internal_native_set_mAllowedDOFs((int) this_addr, mAllowedDOFs);
+    public static void native_set_mAllowedDOFs(long this_addr, long mAllowedDOFs) {
+        internal_native_set_mAllowedDOFs((int) this_addr, (int) mAllowedDOFs);
     }
 
     public static boolean native_get_mAllowDynamicOrKinematic(long this_addr) {
@@ -1007,12 +1011,12 @@ jsObj.set_mMassPropertiesOverride(mMassPropertiesOverride_addr);
         internal_native_set_mApplyGyroscopicForce((int) this_addr, mApplyGyroscopicForce);
     }
 
-    public static int native_get_mMotionQuality(long this_addr) {
+    public static long native_get_mMotionQuality(long this_addr) {
         return internal_native_get_mMotionQuality((int) this_addr);
     }
 
-    public static void native_set_mMotionQuality(long this_addr, int mMotionQuality) {
-        internal_native_set_mMotionQuality((int) this_addr, mMotionQuality);
+    public static void native_set_mMotionQuality(long this_addr, long mMotionQuality) {
+        internal_native_set_mMotionQuality((int) this_addr, (int) mMotionQuality);
     }
 
     public static boolean native_get_mEnhancedInternalEdgeRemoval(long this_addr) {
@@ -1103,12 +1107,12 @@ jsObj.set_mMassPropertiesOverride(mMassPropertiesOverride_addr);
         internal_native_set_mNumPositionStepsOverride((int) this_addr, mNumPositionStepsOverride);
     }
 
-    public static int native_get_mOverrideMassProperties(long this_addr) {
+    public static long native_get_mOverrideMassProperties(long this_addr) {
         return internal_native_get_mOverrideMassProperties((int) this_addr);
     }
 
-    public static void native_set_mOverrideMassProperties(long this_addr, int mOverrideMassProperties) {
-        internal_native_set_mOverrideMassProperties((int) this_addr, mOverrideMassProperties);
+    public static void native_set_mOverrideMassProperties(long this_addr, long mOverrideMassProperties) {
+        internal_native_set_mOverrideMassProperties((int) this_addr, (int) mOverrideMassProperties);
     }
 
     public static float native_get_mInertiaMultiplier(long this_addr) {

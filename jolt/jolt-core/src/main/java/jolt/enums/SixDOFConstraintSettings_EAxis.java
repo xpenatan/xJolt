@@ -5,46 +5,72 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class SixDOFConstraintSettings_EAxis implements IDLEnum {
+public enum SixDOFConstraintSettings_EAxis implements IDLEnum<SixDOFConstraintSettings_EAxis> {
 
-    public static final int TranslationX = SixDOFConstraintSettings_EAxis_TranslationX_NATIVE();
+    CUSTOM(0),
+    TranslationX(SixDOFConstraintSettings_EAxis_TranslationX_NATIVE()),
+    TranslationY(SixDOFConstraintSettings_EAxis_TranslationY_NATIVE()),
+    TranslationZ(SixDOFConstraintSettings_EAxis_TranslationZ_NATIVE()),
+    RotationX(SixDOFConstraintSettings_EAxis_RotationX_NATIVE()),
+    RotationY(SixDOFConstraintSettings_EAxis_RotationY_NATIVE()),
+    RotationZ(SixDOFConstraintSettings_EAxis_RotationZ_NATIVE());
+
+    private int value;
+
+    private SixDOFConstraintSettings_EAxis(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public SixDOFConstraintSettings_EAxis getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, SixDOFConstraintSettings_EAxis> MAP = new HashMap<>();
+
+    static {
+        for (SixDOFConstraintSettings_EAxis value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)SixDOFConstraintSettings_EAxis_TranslationX;
 */
     private static native int SixDOFConstraintSettings_EAxis_TranslationX_NATIVE();
 
-    public static final int TranslationY = SixDOFConstraintSettings_EAxis_TranslationY_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)SixDOFConstraintSettings_EAxis_TranslationY;
 */
     private static native int SixDOFConstraintSettings_EAxis_TranslationY_NATIVE();
-
-    public static final int TranslationZ = SixDOFConstraintSettings_EAxis_TranslationZ_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)SixDOFConstraintSettings_EAxis_TranslationZ;
 */
     private static native int SixDOFConstraintSettings_EAxis_TranslationZ_NATIVE();
 
-    public static final int RotationX = SixDOFConstraintSettings_EAxis_RotationX_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)SixDOFConstraintSettings_EAxis_RotationX;
 */
     private static native int SixDOFConstraintSettings_EAxis_RotationX_NATIVE();
 
-    public static final int RotationY = SixDOFConstraintSettings_EAxis_RotationY_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)SixDOFConstraintSettings_EAxis_RotationY;
 */
     private static native int SixDOFConstraintSettings_EAxis_RotationY_NATIVE();
-
-    public static final int RotationZ = SixDOFConstraintSettings_EAxis_RotationZ_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)SixDOFConstraintSettings_EAxis_RotationZ;

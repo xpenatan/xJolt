@@ -5,32 +5,56 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class EGroundState implements IDLEnum {
+public enum EGroundState implements IDLEnum<EGroundState> {
 
-    public static final int OnGround = EGroundState_OnGround_NATIVE();
+    CUSTOM(0), OnGround(EGroundState_OnGround_NATIVE()), OnSteepGround(EGroundState_OnSteepGround_NATIVE()), NotSupported(EGroundState_NotSupported_NATIVE()), InAir(EGroundState_InAir_NATIVE());
+
+    private int value;
+
+    private EGroundState(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EGroundState getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EGroundState> MAP = new HashMap<>();
+
+    static {
+        for (EGroundState value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)EGroundState_OnGround;
 */
     private static native int EGroundState_OnGround_NATIVE();
 
-    public static final int OnSteepGround = EGroundState_OnSteepGround_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EGroundState_OnSteepGround;
 */
     private static native int EGroundState_OnSteepGround_NATIVE();
 
-    public static final int NotSupported = EGroundState_NotSupported_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EGroundState_NotSupported;
 */
     private static native int EGroundState_NotSupported_NATIVE();
-
-    public static final int InAir = EGroundState_InAir_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EGroundState_InAir;

@@ -5,11 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EStateRecorderState implements IDLEnum {
+public enum EStateRecorderState implements IDLEnum<EStateRecorderState> {
 
-    public static final int None = EStateRecorderState_None_NATIVE();
+    CUSTOM(0),
+    None(EStateRecorderState_None_NATIVE()),
+    Global(EStateRecorderState_Global_NATIVE()),
+    Bodies(EStateRecorderState_Bodies_NATIVE()),
+    Contacts(EStateRecorderState_Contacts_NATIVE()),
+    Constraints(EStateRecorderState_Constraints_NATIVE()),
+    All(EStateRecorderState_All_NATIVE());
+
+    private int value;
+
+    private EStateRecorderState(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EStateRecorderState getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EStateRecorderState> MAP = new HashMap<>();
+
+    static {
+        for (EStateRecorderState value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EStateRecorderState_None;
@@ -17,15 +53,11 @@ return jolt.EStateRecorderState_None;
     @org.teavm.jso.JSBody(script = "return jolt.EStateRecorderState_None;")
     private static native int EStateRecorderState_None_NATIVE();
 
-    public static final int Global = EStateRecorderState_Global_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EStateRecorderState_Global;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EStateRecorderState_Global;")
     private static native int EStateRecorderState_Global_NATIVE();
-
-    public static final int Bodies = EStateRecorderState_Bodies_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EStateRecorderState_Bodies;
@@ -33,23 +65,17 @@ return jolt.EStateRecorderState_Bodies;
     @org.teavm.jso.JSBody(script = "return jolt.EStateRecorderState_Bodies;")
     private static native int EStateRecorderState_Bodies_NATIVE();
 
-    public static final int Contacts = EStateRecorderState_Contacts_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EStateRecorderState_Contacts;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EStateRecorderState_Contacts;")
     private static native int EStateRecorderState_Contacts_NATIVE();
 
-    public static final int Constraints = EStateRecorderState_Constraints_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EStateRecorderState_Constraints;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EStateRecorderState_Constraints;")
     private static native int EStateRecorderState_Constraints_NATIVE();
-
-    public static final int All = EStateRecorderState_All_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EStateRecorderState_All;

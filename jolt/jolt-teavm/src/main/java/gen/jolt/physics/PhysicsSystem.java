@@ -183,8 +183,8 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);var returnedJSObj = jsObj.GetNumBodies();return returnedJSObj;")
     private static native int internal_native_GetNumBodies(int this_addr);
 
-    public int GetNumActiveBodies(int inBodyType) {
-        return internal_native_GetNumActiveBodies((int) (long) getNativeData().getCPointer(), inBodyType);
+    public int GetNumActiveBodies(EBodyType inBodyType) {
+        return internal_native_GetNumActiveBodies((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyType != null ? inBodyType.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -218,8 +218,8 @@ jsObj.GetBodies(outBodies_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "outBodies_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.GetBodies(outBodies_addr);")
     private static native void internal_native_GetBodies(int this_addr, int outBodies_addr);
 
-    public void GetActiveBodies(int inBodyType, BodyIDVector outBodies) {
-        internal_native_GetActiveBodies((int) (long) getNativeData().getCPointer(), inBodyType, (int) (long) (outBodies != null ? outBodies.getNativeData().getCPointer() : 0));
+    public void GetActiveBodies(EBodyType inBodyType, BodyIDVector outBodies) {
+        internal_native_GetActiveBodies((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyType != null ? inBodyType.getValue() : 0), (int) (long) (outBodies != null ? outBodies.getNativeData().getCPointer() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -474,8 +474,8 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);var returnedJSObj = jsObj.GetNarrowPhaseQueryNoLock();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     private static native int internal_native_GetNarrowPhaseQueryNoLock(int this_addr);
 
-    public void SaveState(StateRecorder inStream, int inState, StateRecorderFilter inFilter) {
-        internal_native_SaveState((int) (long) getNativeData().getCPointer(), (int) (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), inState, (int) (long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0));
+    public void SaveState(StateRecorder inStream, EStateRecorderState inState, StateRecorderFilter inFilter) {
+        internal_native_SaveState((int) (long) getNativeData().getCPointer(), (int) (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), (int) (long) (inState != null ? inState.getValue() : 0), (int) (long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -485,8 +485,8 @@ jsObj.SaveState(inStream_addr, inState, inFilter_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "inStream_addr", "inState", "inFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.SaveState(inStream_addr, inState, inFilter_addr);")
     private static native void internal_native_SaveState(int this_addr, int inStream_addr, int inState, int inFilter_addr);
 
-    public void SaveState(StateRecorder inStream, int inState) {
-        internal_native_SaveState((int) (long) getNativeData().getCPointer(), (int) (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), inState);
+    public void SaveState(StateRecorder inStream, EStateRecorderState inState) {
+        internal_native_SaveState((int) (long) getNativeData().getCPointer(), (int) (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), (int) (long) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -679,8 +679,8 @@ return jolt.getPointer(returnedJSObj);
         return internal_native_GetNumBodies((int) this_addr);
     }
 
-    public static int native_GetNumActiveBodies(long this_addr, int inBodyType) {
-        return internal_native_GetNumActiveBodies((int) this_addr, inBodyType);
+    public static int native_GetNumActiveBodies(long this_addr, long inBodyType) {
+        return internal_native_GetNumActiveBodies((int) this_addr, (int) inBodyType);
     }
 
     public static int native_GetMaxBodies(long this_addr) {
@@ -691,8 +691,8 @@ return jolt.getPointer(returnedJSObj);
         internal_native_GetBodies((int) this_addr, (int) outBodies_addr);
     }
 
-    public static void native_GetActiveBodies(long this_addr, int inBodyType, long outBodies_addr) {
-        internal_native_GetActiveBodies((int) this_addr, inBodyType, (int) outBodies_addr);
+    public static void native_GetActiveBodies(long this_addr, long inBodyType, long outBodies_addr) {
+        internal_native_GetActiveBodies((int) this_addr, (int) inBodyType, (int) outBodies_addr);
     }
 
     public static long native_GetBounds(long this_addr) {
@@ -755,12 +755,12 @@ return jolt.getPointer(returnedJSObj);
         return internal_native_GetNarrowPhaseQueryNoLock((int) this_addr);
     }
 
-    public static void native_SaveState(long this_addr, long inStream_addr, int inState, long inFilter_addr) {
-        internal_native_SaveState((int) this_addr, (int) inStream_addr, inState, (int) inFilter_addr);
+    public static void native_SaveState(long this_addr, long inStream_addr, long inState, long inFilter_addr) {
+        internal_native_SaveState((int) this_addr, (int) inStream_addr, (int) inState, (int) inFilter_addr);
     }
 
-    public static void native_SaveState(long this_addr, long inStream_addr, int inState) {
-        internal_native_SaveState((int) this_addr, (int) inStream_addr, inState);
+    public static void native_SaveState(long this_addr, long inStream_addr, long inState) {
+        internal_native_SaveState((int) this_addr, (int) inStream_addr, (int) inState);
     }
 
     public static void native_SaveState(long this_addr, long inStream_addr) {

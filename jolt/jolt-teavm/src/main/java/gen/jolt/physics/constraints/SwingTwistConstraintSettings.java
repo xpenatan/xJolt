@@ -72,8 +72,9 @@ jolt.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SwingTwistConstraintSettings);jolt.destroy(jsObj);")
     private static native void internal_native_deleteNative(int this_addr);
 
-    public int get_mSpace() {
-        return internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
+    public EConstraintSpace get_mSpace() {
+        int value = internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
+        return EConstraintSpace.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -83,8 +84,8 @@ return jsObj.get_mSpace();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SwingTwistConstraintSettings);return jsObj.get_mSpace();")
     private static native int internal_native_get_mSpace(int this_addr);
 
-    public void set_mSpace(int mSpace) {
-        internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), mSpace);
+    public void set_mSpace(EConstraintSpace mSpace) {
+        internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), (int) (long) (mSpace != null ? mSpace.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -274,8 +275,9 @@ jsObj.set_mPlaneAxis2(mPlaneAxis2_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "mPlaneAxis2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SwingTwistConstraintSettings);jsObj.set_mPlaneAxis2(mPlaneAxis2_addr);")
     private static native void internal_native_set_mPlaneAxis2(int this_addr, int mPlaneAxis2_addr);
 
-    public int get_mSwingType() {
-        return internal_native_get_mSwingType((int) (long) getNativeData().getCPointer());
+    public ESwingType get_mSwingType() {
+        int value = internal_native_get_mSwingType((int) (long) getNativeData().getCPointer());
+        return ESwingType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -285,8 +287,8 @@ return jsObj.get_mSwingType();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SwingTwistConstraintSettings);return jsObj.get_mSwingType();")
     private static native int internal_native_get_mSwingType(int this_addr);
 
-    public void set_mSwingType(int mSwingType) {
-        internal_native_set_mSwingType((int) (long) getNativeData().getCPointer(), mSwingType);
+    public void set_mSwingType(ESwingType mSwingType) {
+        internal_native_set_mSwingType((int) (long) getNativeData().getCPointer(), (int) (long) (mSwingType != null ? mSwingType.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -474,12 +476,12 @@ jsObj.set_mTwistMotorSettings(mTwistMotorSettings_addr);
         internal_native_deleteNative((int) this_addr);
     }
 
-    public static int native_get_mSpace(long this_addr) {
+    public static long native_get_mSpace(long this_addr) {
         return internal_native_get_mSpace((int) this_addr);
     }
 
-    public static void native_set_mSpace(long this_addr, int mSpace) {
-        internal_native_set_mSpace((int) this_addr, mSpace);
+    public static void native_set_mSpace(long this_addr, long mSpace) {
+        internal_native_set_mSpace((int) this_addr, (int) mSpace);
     }
 
     public static long native_get_mPosition1(long this_addr) {
@@ -530,12 +532,12 @@ jsObj.set_mTwistMotorSettings(mTwistMotorSettings_addr);
         internal_native_set_mPlaneAxis2((int) this_addr, (int) mPlaneAxis2_addr);
     }
 
-    public static int native_get_mSwingType(long this_addr) {
+    public static long native_get_mSwingType(long this_addr) {
         return internal_native_get_mSwingType((int) this_addr);
     }
 
-    public static void native_set_mSwingType(long this_addr, int mSwingType) {
-        internal_native_set_mSwingType((int) this_addr, mSwingType);
+    public static void native_set_mSwingType(long this_addr, long mSwingType) {
+        internal_native_set_mSwingType((int) this_addr, (int) mSwingType);
     }
 
     public static float native_get_mNormalHalfConeAngle(long this_addr) {

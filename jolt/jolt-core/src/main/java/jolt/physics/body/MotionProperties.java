@@ -67,8 +67,9 @@ delete nativeObject;
 */
     private static native void internal_native_deleteNative(long this_addr);
 
-    public int GetMotionQuality() {
-        return internal_native_GetMotionQuality((long) getNativeData().getCPointer());
+    public EMotionQuality GetMotionQuality() {
+        int value = internal_native_GetMotionQuality((long) getNativeData().getCPointer());
+        return EMotionQuality.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -77,8 +78,9 @@ return (int)nativeObject->GetMotionQuality();
 */
     private static native int internal_native_GetMotionQuality(long this_addr);
 
-    public int GetAllowedDOFs() {
-        return internal_native_GetAllowedDOFs((long) getNativeData().getCPointer());
+    public EAllowedDOFs GetAllowedDOFs() {
+        int value = internal_native_GetAllowedDOFs((long) getNativeData().getCPointer());
+        return EAllowedDOFs.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -301,15 +303,15 @@ nativeObject->SetGravityFactor((float)inFactor);
 */
     private static native void internal_native_SetGravityFactor(long this_addr, float inFactor);
 
-    public void SetMassProperties(int inAllowedDOFs, MassProperties inMassProperties) {
-        internal_native_SetMassProperties((long) getNativeData().getCPointer(), inAllowedDOFs, (long) (inMassProperties != null ? inMassProperties.getNativeData().getCPointer() : 0));
+    public void SetMassProperties(EAllowedDOFs inAllowedDOFs, MassProperties inMassProperties) {
+        internal_native_SetMassProperties((long) getNativeData().getCPointer(), (long) (inAllowedDOFs != null ? inAllowedDOFs.getValue() : 0), (long) (inMassProperties != null ? inMassProperties.getNativeData().getCPointer() : 0));
     }
 
     /*[-JNI;-NATIVE]
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetMassProperties((::EAllowedDOFs)inAllowedDOFs, *((MassProperties* )inMassProperties_addr));
 */
-    private static native void internal_native_SetMassProperties(long this_addr, int inAllowedDOFs, long inMassProperties_addr);
+    private static native void internal_native_SetMassProperties(long this_addr, long inAllowedDOFs, long inMassProperties_addr);
 
     public float GetInverseMass() {
         return internal_native_GetInverseMass((long) getNativeData().getCPointer());
@@ -595,11 +597,11 @@ return nativeObject->GetNumPositionStepsOverride();
         internal_native_deleteNative(this_addr);
     }
 
-    public static int native_GetMotionQuality(long this_addr) {
+    public static long native_GetMotionQuality(long this_addr) {
         return internal_native_GetMotionQuality(this_addr);
     }
 
-    public static int native_GetAllowedDOFs(long this_addr) {
+    public static long native_GetAllowedDOFs(long this_addr) {
         return internal_native_GetAllowedDOFs(this_addr);
     }
 
@@ -683,7 +685,7 @@ return nativeObject->GetNumPositionStepsOverride();
         internal_native_SetGravityFactor(this_addr, inFactor);
     }
 
-    public static void native_SetMassProperties(long this_addr, int inAllowedDOFs, long inMassProperties_addr) {
+    public static void native_SetMassProperties(long this_addr, long inAllowedDOFs, long inMassProperties_addr) {
         internal_native_SetMassProperties(this_addr, inAllowedDOFs, inMassProperties_addr);
     }
 

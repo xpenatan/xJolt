@@ -150,8 +150,9 @@ jsObj.set_mShapeOffset(mShapeOffset_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "mShapeOffset_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtualSettings);jsObj.set_mShapeOffset(mShapeOffset_addr);")
     private static native void internal_native_set_mShapeOffset(int this_addr, int mShapeOffset_addr);
 
-    public int get_mBackFaceMode() {
-        return internal_native_get_mBackFaceMode((int) (long) getNativeData().getCPointer());
+    public EBackFaceMode get_mBackFaceMode() {
+        int value = internal_native_get_mBackFaceMode((int) (long) getNativeData().getCPointer());
+        return EBackFaceMode.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -161,8 +162,8 @@ return jsObj.get_mBackFaceMode();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtualSettings);return jsObj.get_mBackFaceMode();")
     private static native int internal_native_get_mBackFaceMode(int this_addr);
 
-    public void set_mBackFaceMode(int mBackFaceMode) {
-        internal_native_set_mBackFaceMode((int) (long) getNativeData().getCPointer(), mBackFaceMode);
+    public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
+        internal_native_set_mBackFaceMode((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -488,12 +489,12 @@ jsObj.set_mInnerBodyLayer(mInnerBodyLayer);
         internal_native_set_mShapeOffset((int) this_addr, (int) mShapeOffset_addr);
     }
 
-    public static int native_get_mBackFaceMode(long this_addr) {
+    public static long native_get_mBackFaceMode(long this_addr) {
         return internal_native_get_mBackFaceMode((int) this_addr);
     }
 
-    public static void native_set_mBackFaceMode(long this_addr, int mBackFaceMode) {
-        internal_native_set_mBackFaceMode((int) this_addr, mBackFaceMode);
+    public static void native_set_mBackFaceMode(long this_addr, long mBackFaceMode) {
+        internal_native_set_mBackFaceMode((int) this_addr, (int) mBackFaceMode);
     }
 
     public static float native_get_mPredictiveContactDistance(long this_addr) {

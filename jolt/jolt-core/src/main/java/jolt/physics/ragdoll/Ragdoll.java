@@ -53,25 +53,25 @@ return (jlong)new Ragdoll((PhysicsSystem* )inSystem_addr);
     public Ragdoll(byte b, char c) {
     }
 
-    public void AddToPhysicsSystem(int inActivationMode, boolean inLockBodies) {
-        internal_native_AddToPhysicsSystem((long) getNativeData().getCPointer(), inActivationMode, inLockBodies);
+    public void AddToPhysicsSystem(EActivation inActivationMode, boolean inLockBodies) {
+        internal_native_AddToPhysicsSystem((long) getNativeData().getCPointer(), (long) (inActivationMode != null ? inActivationMode.getValue() : 0), inLockBodies);
     }
 
     /*[-JNI;-NATIVE]
 Ragdoll* nativeObject = (Ragdoll*)this_addr;
 nativeObject->AddToPhysicsSystem((::EActivation)inActivationMode, inLockBodies);
 */
-    private static native void internal_native_AddToPhysicsSystem(long this_addr, int inActivationMode, boolean inLockBodies);
+    private static native void internal_native_AddToPhysicsSystem(long this_addr, long inActivationMode, boolean inLockBodies);
 
-    public void AddToPhysicsSystem(int inActivationMode) {
-        internal_native_AddToPhysicsSystem((long) getNativeData().getCPointer(), inActivationMode);
+    public void AddToPhysicsSystem(EActivation inActivationMode) {
+        internal_native_AddToPhysicsSystem((long) getNativeData().getCPointer(), (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 Ragdoll* nativeObject = (Ragdoll*)this_addr;
 nativeObject->AddToPhysicsSystem((::EActivation)inActivationMode);
 */
-    private static native void internal_native_AddToPhysicsSystem(long this_addr, int inActivationMode);
+    private static native void internal_native_AddToPhysicsSystem(long this_addr, long inActivationMode);
 
     public void RemoveFromPhysicsSystem(boolean inLockBodies) {
         internal_native_RemoveFromPhysicsSystem((long) getNativeData().getCPointer(), inLockBodies);
@@ -458,11 +458,11 @@ return (jlong)obj;
         return internal_native_create_PhysicsSystem(inSystem_addr);
     }
 
-    public static void native_AddToPhysicsSystem(long this_addr, int inActivationMode, boolean inLockBodies) {
+    public static void native_AddToPhysicsSystem(long this_addr, long inActivationMode, boolean inLockBodies) {
         internal_native_AddToPhysicsSystem(this_addr, inActivationMode, inLockBodies);
     }
 
-    public static void native_AddToPhysicsSystem(long this_addr, int inActivationMode) {
+    public static void native_AddToPhysicsSystem(long this_addr, long inActivationMode) {
         internal_native_AddToPhysicsSystem(this_addr, inActivationMode);
     }
 

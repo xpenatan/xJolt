@@ -134,8 +134,9 @@ return (jlong)obj;
 */
     private static native long internal_native_GetShape(long this_addr);
 
-    public int GetGroundState() {
-        return internal_native_GetGroundState((long) getNativeData().getCPointer());
+    public EGroundState GetGroundState() {
+        int value = internal_native_GetGroundState((long) getNativeData().getCPointer());
+        return EGroundState.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -281,7 +282,7 @@ return (jlong)&copy_addr;*/
         return internal_native_GetShape(this_addr);
     }
 
-    public static int native_GetGroundState(long this_addr) {
+    public static long native_GetGroundState(long this_addr) {
         return internal_native_GetGroundState(this_addr);
     }
 

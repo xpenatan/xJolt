@@ -150,8 +150,9 @@ nativeObject->mDrawShapeWireframe = mDrawShapeWireframe;
 */
     private static native void internal_native_set_mDrawShapeWireframe(long this_addr, boolean mDrawShapeWireframe);
 
-    public int get_mDrawShapeColor() {
-        return internal_native_get_mDrawShapeColor((long) getNativeData().getCPointer());
+    public EShapeColor get_mDrawShapeColor() {
+        int value = internal_native_get_mDrawShapeColor((long) getNativeData().getCPointer());
+        return EShapeColor.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -160,15 +161,15 @@ return (jint)nativeObject->mDrawShapeColor;
 */
     private static native int internal_native_get_mDrawShapeColor(long this_addr);
 
-    public void set_mDrawShapeColor(int mDrawShapeColor) {
-        internal_native_set_mDrawShapeColor((long) getNativeData().getCPointer(), mDrawShapeColor);
+    public void set_mDrawShapeColor(EShapeColor mDrawShapeColor) {
+        internal_native_set_mDrawShapeColor((long) getNativeData().getCPointer(), (long) (mDrawShapeColor != null ? mDrawShapeColor.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 BodyManagerDrawSettings* nativeObject = (BodyManagerDrawSettings*)this_addr;
 nativeObject->mDrawShapeColor = (::EShapeColor)mDrawShapeColor;
 */
-    private static native void internal_native_set_mDrawShapeColor(long this_addr, int mDrawShapeColor);
+    private static native void internal_native_set_mDrawShapeColor(long this_addr, long mDrawShapeColor);
 
     public boolean get_mDrawBoundingBox() {
         return internal_native_get_mDrawBoundingBox((long) getNativeData().getCPointer());
@@ -450,8 +451,9 @@ nativeObject->mDrawSoftBodyPredictedBounds = mDrawSoftBodyPredictedBounds;
 */
     private static native void internal_native_set_mDrawSoftBodyPredictedBounds(long this_addr, boolean mDrawSoftBodyPredictedBounds);
 
-    public int get_mDrawSoftBodyConstraintColor() {
-        return internal_native_get_mDrawSoftBodyConstraintColor((long) getNativeData().getCPointer());
+    public ESoftBodyConstraintColor get_mDrawSoftBodyConstraintColor() {
+        int value = internal_native_get_mDrawSoftBodyConstraintColor((long) getNativeData().getCPointer());
+        return ESoftBodyConstraintColor.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -460,15 +462,15 @@ return (jint)nativeObject->mDrawSoftBodyConstraintColor;
 */
     private static native int internal_native_get_mDrawSoftBodyConstraintColor(long this_addr);
 
-    public void set_mDrawSoftBodyConstraintColor(int mDrawSoftBodyConstraintColor) {
-        internal_native_set_mDrawSoftBodyConstraintColor((long) getNativeData().getCPointer(), mDrawSoftBodyConstraintColor);
+    public void set_mDrawSoftBodyConstraintColor(ESoftBodyConstraintColor mDrawSoftBodyConstraintColor) {
+        internal_native_set_mDrawSoftBodyConstraintColor((long) getNativeData().getCPointer(), (long) (mDrawSoftBodyConstraintColor != null ? mDrawSoftBodyConstraintColor.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 BodyManagerDrawSettings* nativeObject = (BodyManagerDrawSettings*)this_addr;
 nativeObject->mDrawSoftBodyConstraintColor = (::ESoftBodyConstraintColor)mDrawSoftBodyConstraintColor;
 */
-    private static native void internal_native_set_mDrawSoftBodyConstraintColor(long this_addr, int mDrawSoftBodyConstraintColor);
+    private static native void internal_native_set_mDrawSoftBodyConstraintColor(long this_addr, long mDrawSoftBodyConstraintColor);
 
     public static long native_create() {
         return internal_native_create();
@@ -518,11 +520,11 @@ nativeObject->mDrawSoftBodyConstraintColor = (::ESoftBodyConstraintColor)mDrawSo
         internal_native_set_mDrawShapeWireframe(this_addr, mDrawShapeWireframe);
     }
 
-    public static int native_get_mDrawShapeColor(long this_addr) {
+    public static long native_get_mDrawShapeColor(long this_addr) {
         return internal_native_get_mDrawShapeColor(this_addr);
     }
 
-    public static void native_set_mDrawShapeColor(long this_addr, int mDrawShapeColor) {
+    public static void native_set_mDrawShapeColor(long this_addr, long mDrawShapeColor) {
         internal_native_set_mDrawShapeColor(this_addr, mDrawShapeColor);
     }
 
@@ -638,11 +640,11 @@ nativeObject->mDrawSoftBodyConstraintColor = (::ESoftBodyConstraintColor)mDrawSo
         internal_native_set_mDrawSoftBodyPredictedBounds(this_addr, mDrawSoftBodyPredictedBounds);
     }
 
-    public static int native_get_mDrawSoftBodyConstraintColor(long this_addr) {
+    public static long native_get_mDrawSoftBodyConstraintColor(long this_addr) {
         return internal_native_get_mDrawSoftBodyConstraintColor(this_addr);
     }
 
-    public static void native_set_mDrawSoftBodyConstraintColor(long this_addr, int mDrawSoftBodyConstraintColor) {
+    public static void native_set_mDrawSoftBodyConstraintColor(long this_addr, long mDrawSoftBodyConstraintColor) {
         internal_native_set_mDrawSoftBodyConstraintColor(this_addr, mDrawSoftBodyConstraintColor);
     }
 }

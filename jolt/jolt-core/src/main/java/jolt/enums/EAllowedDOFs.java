@@ -5,60 +5,84 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class EAllowedDOFs implements IDLEnum {
+public enum EAllowedDOFs implements IDLEnum<EAllowedDOFs> {
 
-    public static final int TranslationX = EAllowedDOFs_TranslationX_NATIVE();
+    CUSTOM(0),
+    TranslationX(EAllowedDOFs_TranslationX_NATIVE()),
+    TranslationY(EAllowedDOFs_TranslationY_NATIVE()),
+    TranslationZ(EAllowedDOFs_TranslationZ_NATIVE()),
+    RotationX(EAllowedDOFs_RotationX_NATIVE()),
+    RotationY(EAllowedDOFs_RotationY_NATIVE()),
+    RotationZ(EAllowedDOFs_RotationZ_NATIVE()),
+    Plane2D(EAllowedDOFs_Plane2D_NATIVE()),
+    All(EAllowedDOFs_All_NATIVE());
+
+    private int value;
+
+    private EAllowedDOFs(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EAllowedDOFs getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EAllowedDOFs> MAP = new HashMap<>();
+
+    static {
+        for (EAllowedDOFs value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)EAllowedDOFs_TranslationX;
 */
     private static native int EAllowedDOFs_TranslationX_NATIVE();
 
-    public static final int TranslationY = EAllowedDOFs_TranslationY_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EAllowedDOFs_TranslationY;
 */
     private static native int EAllowedDOFs_TranslationY_NATIVE();
-
-    public static final int TranslationZ = EAllowedDOFs_TranslationZ_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EAllowedDOFs_TranslationZ;
 */
     private static native int EAllowedDOFs_TranslationZ_NATIVE();
 
-    public static final int RotationX = EAllowedDOFs_RotationX_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EAllowedDOFs_RotationX;
 */
     private static native int EAllowedDOFs_RotationX_NATIVE();
-
-    public static final int RotationY = EAllowedDOFs_RotationY_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EAllowedDOFs_RotationY;
 */
     private static native int EAllowedDOFs_RotationY_NATIVE();
 
-    public static final int RotationZ = EAllowedDOFs_RotationZ_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EAllowedDOFs_RotationZ;
 */
     private static native int EAllowedDOFs_RotationZ_NATIVE();
 
-    public static final int Plane2D = EAllowedDOFs_Plane2D_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EAllowedDOFs_Plane2D;
 */
     private static native int EAllowedDOFs_Plane2D_NATIVE();
-
-    public static final int All = EAllowedDOFs_All_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EAllowedDOFs_All;

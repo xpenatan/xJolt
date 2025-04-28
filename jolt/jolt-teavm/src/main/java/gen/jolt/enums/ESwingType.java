@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class ESwingType implements IDLEnum {
+public enum ESwingType implements IDLEnum<ESwingType> {
 
-    public static final int Cone = ESwingType_Cone_NATIVE();
+    CUSTOM(0), Cone(ESwingType_Cone_NATIVE()), Pyramid(ESwingType_Pyramid_NATIVE());
+
+    private int value;
+
+    private ESwingType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ESwingType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, ESwingType> MAP = new HashMap<>();
+
+    static {
+        for (ESwingType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.ESwingType_Cone;
 */
     @org.teavm.jso.JSBody(script = "return jolt.ESwingType_Cone;")
     private static native int ESwingType_Cone_NATIVE();
-
-    public static final int Pyramid = ESwingType_Pyramid_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.ESwingType_Pyramid;

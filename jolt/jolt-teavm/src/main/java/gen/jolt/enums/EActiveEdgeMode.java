@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EActiveEdgeMode implements IDLEnum {
+public enum EActiveEdgeMode implements IDLEnum<EActiveEdgeMode> {
 
-    public static final int CollideOnlyWithActive = EActiveEdgeMode_CollideOnlyWithActive_NATIVE();
+    CUSTOM(0), CollideOnlyWithActive(EActiveEdgeMode_CollideOnlyWithActive_NATIVE()), CollideWithAll(EActiveEdgeMode_CollideWithAll_NATIVE());
+
+    private int value;
+
+    private EActiveEdgeMode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EActiveEdgeMode getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EActiveEdgeMode> MAP = new HashMap<>();
+
+    static {
+        for (EActiveEdgeMode value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EActiveEdgeMode_CollideOnlyWithActive;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EActiveEdgeMode_CollideOnlyWithActive;")
     private static native int EActiveEdgeMode_CollideOnlyWithActive_NATIVE();
-
-    public static final int CollideWithAll = EActiveEdgeMode_CollideWithAll_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EActiveEdgeMode_CollideWithAll;

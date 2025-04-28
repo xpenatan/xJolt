@@ -251,8 +251,9 @@ jsObj.set_mPerTriangleUserData(mPerTriangleUserData);
     @org.teavm.jso.JSBody(params = {"this_addr", "mPerTriangleUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jsObj.set_mPerTriangleUserData(mPerTriangleUserData);")
     private static native void internal_native_set_mPerTriangleUserData(int this_addr, boolean mPerTriangleUserData);
 
-    public int get_mBuildQuality() {
-        return internal_native_get_mBuildQuality((int) (long) getNativeData().getCPointer());
+    public MeshShapeSettings_EBuildQuality get_mBuildQuality() {
+        int value = internal_native_get_mBuildQuality((int) (long) getNativeData().getCPointer());
+        return MeshShapeSettings_EBuildQuality.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -262,8 +263,8 @@ return jsObj.get_mBuildQuality();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);return jsObj.get_mBuildQuality();")
     private static native int internal_native_get_mBuildQuality(int this_addr);
 
-    public void set_mBuildQuality(int mBuildQuality) {
-        internal_native_set_mBuildQuality((int) (long) getNativeData().getCPointer(), mBuildQuality);
+    public void set_mBuildQuality(MeshShapeSettings_EBuildQuality mBuildQuality) {
+        internal_native_set_mBuildQuality((int) (long) getNativeData().getCPointer(), (int) (long) (mBuildQuality != null ? mBuildQuality.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -341,11 +342,11 @@ jsObj.set_mBuildQuality(mBuildQuality);
         internal_native_set_mPerTriangleUserData((int) this_addr, mPerTriangleUserData);
     }
 
-    public static int native_get_mBuildQuality(long this_addr) {
+    public static long native_get_mBuildQuality(long this_addr) {
         return internal_native_get_mBuildQuality((int) this_addr);
     }
 
-    public static void native_set_mBuildQuality(long this_addr, int mBuildQuality) {
-        internal_native_set_mBuildQuality((int) this_addr, mBuildQuality);
+    public static void native_set_mBuildQuality(long this_addr, long mBuildQuality) {
+        internal_native_set_mBuildQuality((int) this_addr, (int) mBuildQuality);
     }
 }

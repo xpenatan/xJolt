@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EConstraintType implements IDLEnum {
+public enum EConstraintType implements IDLEnum<EConstraintType> {
 
-    public static final int Constraint = EConstraintType_Constraint_NATIVE();
+    CUSTOM(0), Constraint(EConstraintType_Constraint_NATIVE()), TwoBodyConstraint(EConstraintType_TwoBodyConstraint_NATIVE());
+
+    private int value;
+
+    private EConstraintType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EConstraintType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EConstraintType> MAP = new HashMap<>();
+
+    static {
+        for (EConstraintType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EConstraintType_Constraint;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EConstraintType_Constraint;")
     private static native int EConstraintType_Constraint_NATIVE();
-
-    public static final int TwoBodyConstraint = EConstraintType_TwoBodyConstraint_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EConstraintType_TwoBodyConstraint;

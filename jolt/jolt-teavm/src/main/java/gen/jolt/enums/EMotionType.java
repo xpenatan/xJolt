@@ -5,11 +5,41 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EMotionType implements IDLEnum {
+public enum EMotionType implements IDLEnum<EMotionType> {
 
-    public static final int Static = EMotionType_Static_NATIVE();
+    CUSTOM(0), Static(EMotionType_Static_NATIVE()), Kinematic(EMotionType_Kinematic_NATIVE()), Dynamic(EMotionType_Dynamic_NATIVE());
+
+    private int value;
+
+    private EMotionType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EMotionType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EMotionType> MAP = new HashMap<>();
+
+    static {
+        for (EMotionType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EMotionType_Static;
@@ -17,15 +47,11 @@ return jolt.EMotionType_Static;
     @org.teavm.jso.JSBody(script = "return jolt.EMotionType_Static;")
     private static native int EMotionType_Static_NATIVE();
 
-    public static final int Kinematic = EMotionType_Kinematic_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EMotionType_Kinematic;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EMotionType_Kinematic;")
     private static native int EMotionType_Kinematic_NATIVE();
-
-    public static final int Dynamic = EMotionType_Dynamic_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EMotionType_Dynamic;

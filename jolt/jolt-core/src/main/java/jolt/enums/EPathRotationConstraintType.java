@@ -5,46 +5,72 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class EPathRotationConstraintType implements IDLEnum {
+public enum EPathRotationConstraintType implements IDLEnum<EPathRotationConstraintType> {
 
-    public static final int Free = EPathRotationConstraintType_Free_NATIVE();
+    CUSTOM(0),
+    Free(EPathRotationConstraintType_Free_NATIVE()),
+    ConstrainAroundTangent(EPathRotationConstraintType_ConstrainAroundTangent_NATIVE()),
+    ConstrainAroundNormal(EPathRotationConstraintType_ConstrainAroundNormal_NATIVE()),
+    ConstrainAroundBinormal(EPathRotationConstraintType_ConstrainAroundBinormal_NATIVE()),
+    ConstrainToPath(EPathRotationConstraintType_ConstrainToPath_NATIVE()),
+    FullyConstrained(EPathRotationConstraintType_FullyConstrained_NATIVE());
+
+    private int value;
+
+    private EPathRotationConstraintType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EPathRotationConstraintType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EPathRotationConstraintType> MAP = new HashMap<>();
+
+    static {
+        for (EPathRotationConstraintType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)EPathRotationConstraintType_Free;
 */
     private static native int EPathRotationConstraintType_Free_NATIVE();
 
-    public static final int ConstrainAroundTangent = EPathRotationConstraintType_ConstrainAroundTangent_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EPathRotationConstraintType_ConstrainAroundTangent;
 */
     private static native int EPathRotationConstraintType_ConstrainAroundTangent_NATIVE();
-
-    public static final int ConstrainAroundNormal = EPathRotationConstraintType_ConstrainAroundNormal_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EPathRotationConstraintType_ConstrainAroundNormal;
 */
     private static native int EPathRotationConstraintType_ConstrainAroundNormal_NATIVE();
 
-    public static final int ConstrainAroundBinormal = EPathRotationConstraintType_ConstrainAroundBinormal_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EPathRotationConstraintType_ConstrainAroundBinormal;
 */
     private static native int EPathRotationConstraintType_ConstrainAroundBinormal_NATIVE();
 
-    public static final int ConstrainToPath = EPathRotationConstraintType_ConstrainToPath_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)EPathRotationConstraintType_ConstrainToPath;
 */
     private static native int EPathRotationConstraintType_ConstrainToPath_NATIVE();
-
-    public static final int FullyConstrained = EPathRotationConstraintType_FullyConstrained_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EPathRotationConstraintType_FullyConstrained;

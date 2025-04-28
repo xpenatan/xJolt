@@ -5,11 +5,41 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class ECullMode implements IDLEnum {
+public enum ECullMode implements IDLEnum<ECullMode> {
 
-    public static final int ECullMode_CullBackFace = ECullMode_CullBackFace_NATIVE();
+    CUSTOM(0), ECullMode_CullBackFace(ECullMode_CullBackFace_NATIVE()), ECullMode_CullFrontFace(ECullMode_CullFrontFace_NATIVE()), ECullMode_Off(ECullMode_Off_NATIVE());
+
+    private int value;
+
+    private ECullMode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ECullMode getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, ECullMode> MAP = new HashMap<>();
+
+    static {
+        for (ECullMode value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.ECullMode_CullBackFace;
@@ -17,15 +47,11 @@ return jolt.ECullMode_CullBackFace;
     @org.teavm.jso.JSBody(script = "return jolt.ECullMode_CullBackFace;")
     private static native int ECullMode_CullBackFace_NATIVE();
 
-    public static final int ECullMode_CullFrontFace = ECullMode_CullFrontFace_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.ECullMode_CullFrontFace;
 */
     @org.teavm.jso.JSBody(script = "return jolt.ECullMode_CullFrontFace;")
     private static native int ECullMode_CullFrontFace_NATIVE();
-
-    public static final int ECullMode_Off = ECullMode_Off_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.ECullMode_Off;

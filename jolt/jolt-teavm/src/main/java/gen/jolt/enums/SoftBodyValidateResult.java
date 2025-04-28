@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class SoftBodyValidateResult implements IDLEnum {
+public enum SoftBodyValidateResult implements IDLEnum<SoftBodyValidateResult> {
 
-    public static final int AcceptContact = SoftBodyValidateResult_AcceptContact_NATIVE();
+    CUSTOM(0), AcceptContact(SoftBodyValidateResult_AcceptContact_NATIVE()), RejectContact(SoftBodyValidateResult_RejectContact_NATIVE());
+
+    private int value;
+
+    private SoftBodyValidateResult(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public SoftBodyValidateResult getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, SoftBodyValidateResult> MAP = new HashMap<>();
+
+    static {
+        for (SoftBodyValidateResult value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.SoftBodyValidateResult_AcceptContact;
 */
     @org.teavm.jso.JSBody(script = "return jolt.SoftBodyValidateResult_AcceptContact;")
     private static native int SoftBodyValidateResult_AcceptContact_NATIVE();
-
-    public static final int RejectContact = SoftBodyValidateResult_RejectContact_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.SoftBodyValidateResult_RejectContact;

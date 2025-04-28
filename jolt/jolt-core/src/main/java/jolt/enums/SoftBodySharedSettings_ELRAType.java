@@ -5,25 +5,51 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class SoftBodySharedSettings_ELRAType implements IDLEnum {
+public enum SoftBodySharedSettings_ELRAType implements IDLEnum<SoftBodySharedSettings_ELRAType> {
 
-    public static final int None = SoftBodySharedSettings_ELRAType_None_NATIVE();
+    CUSTOM(0), None(SoftBodySharedSettings_ELRAType_None_NATIVE()), EuclideanDistance(SoftBodySharedSettings_ELRAType_EuclideanDistance_NATIVE()), GeodesicDistance(SoftBodySharedSettings_ELRAType_GeodesicDistance_NATIVE());
+
+    private int value;
+
+    private SoftBodySharedSettings_ELRAType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public SoftBodySharedSettings_ELRAType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, SoftBodySharedSettings_ELRAType> MAP = new HashMap<>();
+
+    static {
+        for (SoftBodySharedSettings_ELRAType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)SoftBodySharedSettings_ELRAType_None;
 */
     private static native int SoftBodySharedSettings_ELRAType_None_NATIVE();
 
-    public static final int EuclideanDistance = SoftBodySharedSettings_ELRAType_EuclideanDistance_NATIVE();
-
     /*[-JNI;-NATIVE]
 return (jlong)SoftBodySharedSettings_ELRAType_EuclideanDistance;
 */
     private static native int SoftBodySharedSettings_ELRAType_EuclideanDistance_NATIVE();
-
-    public static final int GeodesicDistance = SoftBodySharedSettings_ELRAType_GeodesicDistance_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)SoftBodySharedSettings_ELRAType_GeodesicDistance;

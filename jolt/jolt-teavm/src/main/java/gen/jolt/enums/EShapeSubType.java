@@ -5,11 +5,57 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EShapeSubType implements IDLEnum {
+public enum EShapeSubType implements IDLEnum<EShapeSubType> {
 
-    public static final int Sphere = EShapeSubType_Sphere_NATIVE();
+    CUSTOM(0),
+    Sphere(EShapeSubType_Sphere_NATIVE()),
+    Box(EShapeSubType_Box_NATIVE()),
+    Capsule(EShapeSubType_Capsule_NATIVE()),
+    TaperedCapsule(EShapeSubType_TaperedCapsule_NATIVE()),
+    Cylinder(EShapeSubType_Cylinder_NATIVE()),
+    TaperedCylinder(EShapeSubType_TaperedCylinder_NATIVE()),
+    ConvexHull(EShapeSubType_ConvexHull_NATIVE()),
+    StaticCompound(EShapeSubType_StaticCompound_NATIVE()),
+    MutableCompound(EShapeSubType_MutableCompound_NATIVE()),
+    RotatedTranslated(EShapeSubType_RotatedTranslated_NATIVE()),
+    Scaled(EShapeSubType_Scaled_NATIVE()),
+    OffsetCenterOfMass(EShapeSubType_OffsetCenterOfMass_NATIVE()),
+    Mesh(EShapeSubType_Mesh_NATIVE()),
+    HeightField(EShapeSubType_HeightField_NATIVE()),
+    Plane(EShapeSubType_Plane_NATIVE()),
+    Empty(EShapeSubType_Empty_NATIVE());
+
+    private int value;
+
+    private EShapeSubType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EShapeSubType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EShapeSubType> MAP = new HashMap<>();
+
+    static {
+        for (EShapeSubType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_Sphere;
@@ -17,15 +63,11 @@ return jolt.EShapeSubType_Sphere;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_Sphere;")
     private static native int EShapeSubType_Sphere_NATIVE();
 
-    public static final int Box = EShapeSubType_Box_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_Box;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_Box;")
     private static native int EShapeSubType_Box_NATIVE();
-
-    public static final int Capsule = EShapeSubType_Capsule_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_Capsule;
@@ -33,15 +75,11 @@ return jolt.EShapeSubType_Capsule;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_Capsule;")
     private static native int EShapeSubType_Capsule_NATIVE();
 
-    public static final int TaperedCapsule = EShapeSubType_TaperedCapsule_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_TaperedCapsule;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_TaperedCapsule;")
     private static native int EShapeSubType_TaperedCapsule_NATIVE();
-
-    public static final int Cylinder = EShapeSubType_Cylinder_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_Cylinder;
@@ -49,15 +87,11 @@ return jolt.EShapeSubType_Cylinder;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_Cylinder;")
     private static native int EShapeSubType_Cylinder_NATIVE();
 
-    public static final int TaperedCylinder = EShapeSubType_TaperedCylinder_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_TaperedCylinder;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_TaperedCylinder;")
     private static native int EShapeSubType_TaperedCylinder_NATIVE();
-
-    public static final int ConvexHull = EShapeSubType_ConvexHull_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_ConvexHull;
@@ -65,15 +99,11 @@ return jolt.EShapeSubType_ConvexHull;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_ConvexHull;")
     private static native int EShapeSubType_ConvexHull_NATIVE();
 
-    public static final int StaticCompound = EShapeSubType_StaticCompound_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_StaticCompound;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_StaticCompound;")
     private static native int EShapeSubType_StaticCompound_NATIVE();
-
-    public static final int MutableCompound = EShapeSubType_MutableCompound_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_MutableCompound;
@@ -81,15 +111,11 @@ return jolt.EShapeSubType_MutableCompound;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_MutableCompound;")
     private static native int EShapeSubType_MutableCompound_NATIVE();
 
-    public static final int RotatedTranslated = EShapeSubType_RotatedTranslated_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_RotatedTranslated;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_RotatedTranslated;")
     private static native int EShapeSubType_RotatedTranslated_NATIVE();
-
-    public static final int Scaled = EShapeSubType_Scaled_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_Scaled;
@@ -97,15 +123,11 @@ return jolt.EShapeSubType_Scaled;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_Scaled;")
     private static native int EShapeSubType_Scaled_NATIVE();
 
-    public static final int OffsetCenterOfMass = EShapeSubType_OffsetCenterOfMass_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_OffsetCenterOfMass;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_OffsetCenterOfMass;")
     private static native int EShapeSubType_OffsetCenterOfMass_NATIVE();
-
-    public static final int Mesh = EShapeSubType_Mesh_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_Mesh;
@@ -113,23 +135,17 @@ return jolt.EShapeSubType_Mesh;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_Mesh;")
     private static native int EShapeSubType_Mesh_NATIVE();
 
-    public static final int HeightField = EShapeSubType_HeightField_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_HeightField;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_HeightField;")
     private static native int EShapeSubType_HeightField_NATIVE();
 
-    public static final int Plane = EShapeSubType_Plane_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_Plane;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeSubType_Plane;")
     private static native int EShapeSubType_Plane_NATIVE();
-
-    public static final int Empty = EShapeSubType_Empty_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeSubType_Empty;

@@ -334,8 +334,9 @@ nativeObject->mCollisionGroup = *((CollisionGroup*)mCollisionGroup_addr);
 */
     private static native void internal_native_set_mCollisionGroup(long this_addr, long mCollisionGroup_addr);
 
-    public int get_mMotionType() {
-        return internal_native_get_mMotionType((long) getNativeData().getCPointer());
+    public EMotionType get_mMotionType() {
+        int value = internal_native_get_mMotionType((long) getNativeData().getCPointer());
+        return EMotionType.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -344,18 +345,19 @@ return (jint)nativeObject->mMotionType;
 */
     private static native int internal_native_get_mMotionType(long this_addr);
 
-    public void set_mMotionType(int mMotionType) {
-        internal_native_set_mMotionType((long) getNativeData().getCPointer(), mMotionType);
+    public void set_mMotionType(EMotionType mMotionType) {
+        internal_native_set_mMotionType((long) getNativeData().getCPointer(), (long) (mMotionType != null ? mMotionType.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mMotionType = (::EMotionType)mMotionType;
 */
-    private static native void internal_native_set_mMotionType(long this_addr, int mMotionType);
+    private static native void internal_native_set_mMotionType(long this_addr, long mMotionType);
 
-    public int get_mAllowedDOFs() {
-        return internal_native_get_mAllowedDOFs((long) getNativeData().getCPointer());
+    public EAllowedDOFs get_mAllowedDOFs() {
+        int value = internal_native_get_mAllowedDOFs((long) getNativeData().getCPointer());
+        return EAllowedDOFs.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -364,15 +366,15 @@ return (jint)nativeObject->mAllowedDOFs;
 */
     private static native int internal_native_get_mAllowedDOFs(long this_addr);
 
-    public void set_mAllowedDOFs(int mAllowedDOFs) {
-        internal_native_set_mAllowedDOFs((long) getNativeData().getCPointer(), mAllowedDOFs);
+    public void set_mAllowedDOFs(EAllowedDOFs mAllowedDOFs) {
+        internal_native_set_mAllowedDOFs((long) getNativeData().getCPointer(), (long) (mAllowedDOFs != null ? mAllowedDOFs.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mAllowedDOFs = (::EAllowedDOFs)mAllowedDOFs;
 */
-    private static native void internal_native_set_mAllowedDOFs(long this_addr, int mAllowedDOFs);
+    private static native void internal_native_set_mAllowedDOFs(long this_addr, long mAllowedDOFs);
 
     public boolean get_mAllowDynamicOrKinematic() {
         return internal_native_get_mAllowDynamicOrKinematic((long) getNativeData().getCPointer());
@@ -474,8 +476,9 @@ nativeObject->mApplyGyroscopicForce = mApplyGyroscopicForce;
 */
     private static native void internal_native_set_mApplyGyroscopicForce(long this_addr, boolean mApplyGyroscopicForce);
 
-    public int get_mMotionQuality() {
-        return internal_native_get_mMotionQuality((long) getNativeData().getCPointer());
+    public EMotionQuality get_mMotionQuality() {
+        int value = internal_native_get_mMotionQuality((long) getNativeData().getCPointer());
+        return EMotionQuality.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -484,15 +487,15 @@ return (jint)nativeObject->mMotionQuality;
 */
     private static native int internal_native_get_mMotionQuality(long this_addr);
 
-    public void set_mMotionQuality(int mMotionQuality) {
-        internal_native_set_mMotionQuality((long) getNativeData().getCPointer(), mMotionQuality);
+    public void set_mMotionQuality(EMotionQuality mMotionQuality) {
+        internal_native_set_mMotionQuality((long) getNativeData().getCPointer(), (long) (mMotionQuality != null ? mMotionQuality.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mMotionQuality = (::EMotionQuality)mMotionQuality;
 */
-    private static native void internal_native_set_mMotionQuality(long this_addr, int mMotionQuality);
+    private static native void internal_native_set_mMotionQuality(long this_addr, long mMotionQuality);
 
     public boolean get_mEnhancedInternalEdgeRemoval() {
         return internal_native_get_mEnhancedInternalEdgeRemoval((long) getNativeData().getCPointer());
@@ -714,8 +717,9 @@ nativeObject->mNumPositionStepsOverride = mNumPositionStepsOverride;
 */
     private static native void internal_native_set_mNumPositionStepsOverride(long this_addr, int mNumPositionStepsOverride);
 
-    public int get_mOverrideMassProperties() {
-        return internal_native_get_mOverrideMassProperties((long) getNativeData().getCPointer());
+    public EOverrideMassProperties get_mOverrideMassProperties() {
+        int value = internal_native_get_mOverrideMassProperties((long) getNativeData().getCPointer());
+        return EOverrideMassProperties.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -724,15 +728,15 @@ return (jint)nativeObject->mOverrideMassProperties;
 */
     private static native int internal_native_get_mOverrideMassProperties(long this_addr);
 
-    public void set_mOverrideMassProperties(int mOverrideMassProperties) {
-        internal_native_set_mOverrideMassProperties((long) getNativeData().getCPointer(), mOverrideMassProperties);
+    public void set_mOverrideMassProperties(EOverrideMassProperties mOverrideMassProperties) {
+        internal_native_set_mOverrideMassProperties((long) getNativeData().getCPointer(), (long) (mOverrideMassProperties != null ? mOverrideMassProperties.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mOverrideMassProperties = (::EOverrideMassProperties)mOverrideMassProperties;
 */
-    private static native void internal_native_set_mOverrideMassProperties(long this_addr, int mOverrideMassProperties);
+    private static native void internal_native_set_mOverrideMassProperties(long this_addr, long mOverrideMassProperties);
 
     public float get_mInertiaMultiplier() {
         return internal_native_get_mInertiaMultiplier((long) getNativeData().getCPointer());
@@ -868,19 +872,19 @@ nativeObject->mMassPropertiesOverride = *((MassProperties*)mMassPropertiesOverri
         internal_native_set_mCollisionGroup(this_addr, mCollisionGroup_addr);
     }
 
-    public static int native_get_mMotionType(long this_addr) {
+    public static long native_get_mMotionType(long this_addr) {
         return internal_native_get_mMotionType(this_addr);
     }
 
-    public static void native_set_mMotionType(long this_addr, int mMotionType) {
+    public static void native_set_mMotionType(long this_addr, long mMotionType) {
         internal_native_set_mMotionType(this_addr, mMotionType);
     }
 
-    public static int native_get_mAllowedDOFs(long this_addr) {
+    public static long native_get_mAllowedDOFs(long this_addr) {
         return internal_native_get_mAllowedDOFs(this_addr);
     }
 
-    public static void native_set_mAllowedDOFs(long this_addr, int mAllowedDOFs) {
+    public static void native_set_mAllowedDOFs(long this_addr, long mAllowedDOFs) {
         internal_native_set_mAllowedDOFs(this_addr, mAllowedDOFs);
     }
 
@@ -924,11 +928,11 @@ nativeObject->mMassPropertiesOverride = *((MassProperties*)mMassPropertiesOverri
         internal_native_set_mApplyGyroscopicForce(this_addr, mApplyGyroscopicForce);
     }
 
-    public static int native_get_mMotionQuality(long this_addr) {
+    public static long native_get_mMotionQuality(long this_addr) {
         return internal_native_get_mMotionQuality(this_addr);
     }
 
-    public static void native_set_mMotionQuality(long this_addr, int mMotionQuality) {
+    public static void native_set_mMotionQuality(long this_addr, long mMotionQuality) {
         internal_native_set_mMotionQuality(this_addr, mMotionQuality);
     }
 
@@ -1020,11 +1024,11 @@ nativeObject->mMassPropertiesOverride = *((MassProperties*)mMassPropertiesOverri
         internal_native_set_mNumPositionStepsOverride(this_addr, mNumPositionStepsOverride);
     }
 
-    public static int native_get_mOverrideMassProperties(long this_addr) {
+    public static long native_get_mOverrideMassProperties(long this_addr) {
         return internal_native_get_mOverrideMassProperties(this_addr);
     }
 
-    public static void native_set_mOverrideMassProperties(long this_addr, int mOverrideMassProperties) {
+    public static void native_set_mOverrideMassProperties(long this_addr, long mOverrideMassProperties) {
         internal_native_set_mOverrideMassProperties(this_addr, mOverrideMassProperties);
     }
 

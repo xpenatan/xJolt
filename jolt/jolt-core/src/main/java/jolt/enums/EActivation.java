@@ -5,18 +5,46 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class EActivation implements IDLEnum {
+public enum EActivation implements IDLEnum<EActivation> {
 
-    public static final int Activate = EActivation_Activate_NATIVE();
+    CUSTOM(0), Activate(EActivation_Activate_NATIVE()), DontActivate(EActivation_DontActivate_NATIVE());
+
+    private int value;
+
+    private EActivation(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EActivation getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EActivation> MAP = new HashMap<>();
+
+    static {
+        for (EActivation value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)EActivation_Activate;
 */
     private static native int EActivation_Activate_NATIVE();
-
-    public static final int DontActivate = EActivation_DontActivate_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EActivation_DontActivate;

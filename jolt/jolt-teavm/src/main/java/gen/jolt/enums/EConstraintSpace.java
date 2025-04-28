@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EConstraintSpace implements IDLEnum {
+public enum EConstraintSpace implements IDLEnum<EConstraintSpace> {
 
-    public static final int LocalToBodyCOM = EConstraintSpace_LocalToBodyCOM_NATIVE();
+    CUSTOM(0), LocalToBodyCOM(EConstraintSpace_LocalToBodyCOM_NATIVE()), WorldSpace(EConstraintSpace_WorldSpace_NATIVE());
+
+    private int value;
+
+    private EConstraintSpace(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EConstraintSpace getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EConstraintSpace> MAP = new HashMap<>();
+
+    static {
+        for (EConstraintSpace value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EConstraintSpace_LocalToBodyCOM;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EConstraintSpace_LocalToBodyCOM;")
     private static native int EConstraintSpace_LocalToBodyCOM_NATIVE();
-
-    public static final int WorldSpace = EConstraintSpace_WorldSpace_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EConstraintSpace_WorldSpace;

@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EMotionQuality implements IDLEnum {
+public enum EMotionQuality implements IDLEnum<EMotionQuality> {
 
-    public static final int Discrete = EMotionQuality_Discrete_NATIVE();
+    CUSTOM(0), Discrete(EMotionQuality_Discrete_NATIVE()), LinearCast(EMotionQuality_LinearCast_NATIVE());
+
+    private int value;
+
+    private EMotionQuality(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EMotionQuality getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EMotionQuality> MAP = new HashMap<>();
+
+    static {
+        for (EMotionQuality value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EMotionQuality_Discrete;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EMotionQuality_Discrete;")
     private static native int EMotionQuality_Discrete_NATIVE();
-
-    public static final int LinearCast = EMotionQuality_LinearCast_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EMotionQuality_LinearCast;

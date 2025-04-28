@@ -5,18 +5,46 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class EBodyType implements IDLEnum {
+public enum EBodyType implements IDLEnum<EBodyType> {
 
-    public static final int RigidBody = EBodyType_RigidBody_NATIVE();
+    CUSTOM(0), RigidBody(EBodyType_RigidBody_NATIVE()), SoftBody(EBodyType_SoftBody_NATIVE());
+
+    private int value;
+
+    private EBodyType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EBodyType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EBodyType> MAP = new HashMap<>();
+
+    static {
+        for (EBodyType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)EBodyType_RigidBody;
 */
     private static native int EBodyType_RigidBody_NATIVE();
-
-    public static final int SoftBody = EBodyType_SoftBody_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)EBodyType_SoftBody;

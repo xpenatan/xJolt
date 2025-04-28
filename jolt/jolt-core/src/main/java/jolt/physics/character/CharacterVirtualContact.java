@@ -294,8 +294,9 @@ nativeObject->mSubShapeIDB = *((SubShapeID*)mSubShapeIDB_addr);
 */
     private static native void internal_native_set_mSubShapeIDB(long this_addr, long mSubShapeIDB_addr);
 
-    public int get_mMotionTypeB() {
-        return internal_native_get_mMotionTypeB((long) getNativeData().getCPointer());
+    public EMotionType get_mMotionTypeB() {
+        int value = internal_native_get_mMotionTypeB((long) getNativeData().getCPointer());
+        return EMotionType.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -304,15 +305,15 @@ return (jint)nativeObject->mMotionTypeB;
 */
     private static native int internal_native_get_mMotionTypeB(long this_addr);
 
-    public void set_mMotionTypeB(int mMotionTypeB) {
-        internal_native_set_mMotionTypeB((long) getNativeData().getCPointer(), mMotionTypeB);
+    public void set_mMotionTypeB(EMotionType mMotionTypeB) {
+        internal_native_set_mMotionTypeB((long) getNativeData().getCPointer(), (long) (mMotionTypeB != null ? mMotionTypeB.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mMotionTypeB = (::EMotionType)mMotionTypeB;
 */
-    private static native void internal_native_set_mMotionTypeB(long this_addr, int mMotionTypeB);
+    private static native void internal_native_set_mMotionTypeB(long this_addr, long mMotionTypeB);
 
     public boolean get_mIsSensorB() {
         return internal_native_get_mIsSensorB((long) getNativeData().getCPointer());
@@ -548,11 +549,11 @@ nativeObject->mCanPushCharacter = mCanPushCharacter;
         internal_native_set_mSubShapeIDB(this_addr, mSubShapeIDB_addr);
     }
 
-    public static int native_get_mMotionTypeB(long this_addr) {
+    public static long native_get_mMotionTypeB(long this_addr) {
         return internal_native_get_mMotionTypeB(this_addr);
     }
 
-    public static void native_set_mMotionTypeB(long this_addr, int mMotionTypeB) {
+    public static void native_set_mMotionTypeB(long this_addr, long mMotionTypeB) {
         internal_native_set_mMotionTypeB(this_addr, mMotionTypeB);
     }
 

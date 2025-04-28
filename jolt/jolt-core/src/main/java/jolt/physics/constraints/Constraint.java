@@ -52,8 +52,9 @@ nativeObject->Release();
 */
     private static native void internal_native_Release(long this_addr);
 
-    public int GetType() {
-        return internal_native_GetType((long) getNativeData().getCPointer());
+    public EConstraintType GetType() {
+        int value = internal_native_GetType((long) getNativeData().getCPointer());
+        return EConstraintType.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -62,8 +63,9 @@ return (int)nativeObject->GetType();
 */
     private static native int internal_native_GetType(long this_addr);
 
-    public int GetSubType() {
-        return internal_native_GetSubType((long) getNativeData().getCPointer());
+    public EConstraintSubType GetSubType() {
+        int value = internal_native_GetSubType((long) getNativeData().getCPointer());
+        return EConstraintSubType.MAP.get(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -204,11 +206,11 @@ nativeObject->ResetWarmStart();
         internal_native_Release(this_addr);
     }
 
-    public static int native_GetType(long this_addr) {
+    public static long native_GetType(long this_addr) {
         return internal_native_GetType(this_addr);
     }
 
-    public static int native_GetSubType(long this_addr) {
+    public static long native_GetSubType(long this_addr) {
         return internal_native_GetSubType(this_addr);
     }
 

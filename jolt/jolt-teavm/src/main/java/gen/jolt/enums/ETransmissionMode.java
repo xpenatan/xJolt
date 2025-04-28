@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class ETransmissionMode implements IDLEnum {
+public enum ETransmissionMode implements IDLEnum<ETransmissionMode> {
 
-    public static final int Auto = ETransmissionMode_Auto_NATIVE();
+    CUSTOM(0), Auto(ETransmissionMode_Auto_NATIVE()), Manual(ETransmissionMode_Manual_NATIVE());
+
+    private int value;
+
+    private ETransmissionMode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ETransmissionMode getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, ETransmissionMode> MAP = new HashMap<>();
+
+    static {
+        for (ETransmissionMode value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.ETransmissionMode_Auto;
 */
     @org.teavm.jso.JSBody(script = "return jolt.ETransmissionMode_Auto;")
     private static native int ETransmissionMode_Auto_NATIVE();
-
-    public static final int Manual = ETransmissionMode_Manual_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.ETransmissionMode_Manual;

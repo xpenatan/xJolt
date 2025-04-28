@@ -99,7 +99,7 @@ jsObj.SetVehicleConstraint(inConstraint_addr);
         internal_native_setupCallback((int) getNativeData().getCPointer(), GetCombinedFriction, OnPreStepCallback, OnPostCollideCallback, OnPostStepCallback);
     }
 
-    protected float GetCombinedFriction(int inWheelIndex, int inTireFrictionDirection, float inTireFriction, Body inBody2, SubShapeID inSubShapeID2) {
+    protected float GetCombinedFriction(int inWheelIndex, ETireFrictionDirection inTireFrictionDirection, float inTireFriction, Body inBody2, SubShapeID inSubShapeID2) {
         return 0;
     }
 
@@ -110,7 +110,7 @@ jsObj.SetVehicleConstraint(inConstraint_addr);
         if (SubShapeID_TEMP_STATIC_GEN_0 == null)
             SubShapeID_TEMP_STATIC_GEN_0 = new SubShapeID((byte) 1, (char) 1);
         SubShapeID_TEMP_STATIC_GEN_0.getNativeData().reset(inSubShapeID2, false);
-        return GetCombinedFriction(inWheelIndex, inTireFrictionDirection, inTireFriction, Body_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_0);
+        return GetCombinedFriction(inWheelIndex, ETireFrictionDirection.MAP.get(inTireFrictionDirection), inTireFriction, Body_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_0);
     }
 
     protected void OnPreStepCallback(VehicleConstraint inVehicle, PhysicsStepListenerContext inContext) {

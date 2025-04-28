@@ -329,8 +329,9 @@ jsObj.set_mSubShapeIDB(mSubShapeIDB_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "mSubShapeIDB_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtualContact);jsObj.set_mSubShapeIDB(mSubShapeIDB_addr);")
     private static native void internal_native_set_mSubShapeIDB(int this_addr, int mSubShapeIDB_addr);
 
-    public int get_mMotionTypeB() {
-        return internal_native_get_mMotionTypeB((int) (long) getNativeData().getCPointer());
+    public EMotionType get_mMotionTypeB() {
+        int value = internal_native_get_mMotionTypeB((int) (long) getNativeData().getCPointer());
+        return EMotionType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -340,8 +341,8 @@ return jsObj.get_mMotionTypeB();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtualContact);return jsObj.get_mMotionTypeB();")
     private static native int internal_native_get_mMotionTypeB(int this_addr);
 
-    public void set_mMotionTypeB(int mMotionTypeB) {
-        internal_native_set_mMotionTypeB((int) (long) getNativeData().getCPointer(), mMotionTypeB);
+    public void set_mMotionTypeB(EMotionType mMotionTypeB) {
+        internal_native_set_mMotionTypeB((int) (long) getNativeData().getCPointer(), (int) (long) (mMotionTypeB != null ? mMotionTypeB.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -601,12 +602,12 @@ jsObj.set_mCanPushCharacter(mCanPushCharacter);
         internal_native_set_mSubShapeIDB((int) this_addr, (int) mSubShapeIDB_addr);
     }
 
-    public static int native_get_mMotionTypeB(long this_addr) {
+    public static long native_get_mMotionTypeB(long this_addr) {
         return internal_native_get_mMotionTypeB((int) this_addr);
     }
 
-    public static void native_set_mMotionTypeB(long this_addr, int mMotionTypeB) {
-        internal_native_set_mMotionTypeB((int) this_addr, mMotionTypeB);
+    public static void native_set_mMotionTypeB(long this_addr, long mMotionTypeB) {
+        internal_native_set_mMotionTypeB((int) this_addr, (int) mMotionTypeB);
     }
 
     public static boolean native_get_mIsSensorB(long this_addr) {

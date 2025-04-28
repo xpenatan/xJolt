@@ -5,11 +5,48 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EShapeType implements IDLEnum {
+public enum EShapeType implements IDLEnum<EShapeType> {
 
-    public static final int Convex = EShapeType_Convex_NATIVE();
+    CUSTOM(0),
+    Convex(EShapeType_Convex_NATIVE()),
+    Compound(EShapeType_Compound_NATIVE()),
+    Decorated(EShapeType_Decorated_NATIVE()),
+    Mesh(EShapeType_Mesh_NATIVE()),
+    HeightField(EShapeType_HeightField_NATIVE()),
+    Plane(EShapeType_Plane_NATIVE()),
+    Empty(EShapeType_Empty_NATIVE());
+
+    private int value;
+
+    private EShapeType(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EShapeType getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EShapeType> MAP = new HashMap<>();
+
+    static {
+        for (EShapeType value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeType_Convex;
@@ -17,15 +54,11 @@ return jolt.EShapeType_Convex;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeType_Convex;")
     private static native int EShapeType_Convex_NATIVE();
 
-    public static final int Compound = EShapeType_Compound_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeType_Compound;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeType_Compound;")
     private static native int EShapeType_Compound_NATIVE();
-
-    public static final int Decorated = EShapeType_Decorated_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeType_Decorated;
@@ -33,15 +66,11 @@ return jolt.EShapeType_Decorated;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeType_Decorated;")
     private static native int EShapeType_Decorated_NATIVE();
 
-    public static final int Mesh = EShapeType_Mesh_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeType_Mesh;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeType_Mesh;")
     private static native int EShapeType_Mesh_NATIVE();
-
-    public static final int HeightField = EShapeType_HeightField_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeType_HeightField;
@@ -49,15 +78,11 @@ return jolt.EShapeType_HeightField;
     @org.teavm.jso.JSBody(script = "return jolt.EShapeType_HeightField;")
     private static native int EShapeType_HeightField_NATIVE();
 
-    public static final int Plane = EShapeType_Plane_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeType_Plane;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EShapeType_Plane;")
     private static native int EShapeType_Plane_NATIVE();
-
-    public static final int Empty = EShapeType_Empty_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EShapeType_Empty;

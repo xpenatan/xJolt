@@ -5,18 +5,46 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import jolt.idl.IDLEnum;
 
-public class ECastShadow implements IDLEnum {
+public enum ECastShadow implements IDLEnum<ECastShadow> {
 
-    public static final int ECastShadow_On = ECastShadow_On_NATIVE();
+    CUSTOM(0), ECastShadow_On(ECastShadow_On_NATIVE()), ECastShadow_Off(ECastShadow_Off_NATIVE());
+
+    private int value;
+
+    private ECastShadow(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public ECastShadow getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, ECastShadow> MAP = new HashMap<>();
+
+    static {
+        for (ECastShadow value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-JNI;-NATIVE]
 return (jlong)ECastShadow_On;
 */
     private static native int ECastShadow_On_NATIVE();
-
-    public static final int ECastShadow_Off = ECastShadow_Off_NATIVE();
 
     /*[-JNI;-NATIVE]
 return (jlong)ECastShadow_Off;

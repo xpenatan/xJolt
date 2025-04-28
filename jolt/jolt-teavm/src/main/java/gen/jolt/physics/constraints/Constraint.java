@@ -56,8 +56,9 @@ jsObj.Release();
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.Release();")
     private static native void internal_native_Release(int this_addr);
 
-    public int GetType() {
-        return internal_native_GetType((int) (long) getNativeData().getCPointer());
+    public EConstraintType GetType() {
+        int value = internal_native_GetType((int) (long) getNativeData().getCPointer());
+        return EConstraintType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -68,8 +69,9 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetType();return returnedJSObj;")
     private static native int internal_native_GetType(int this_addr);
 
-    public int GetSubType() {
-        return internal_native_GetSubType((int) (long) getNativeData().getCPointer());
+    public EConstraintSubType GetSubType() {
+        int value = internal_native_GetSubType((int) (long) getNativeData().getCPointer());
+        return EConstraintSubType.MAP.get(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -230,11 +232,11 @@ jsObj.ResetWarmStart();
         internal_native_Release((int) this_addr);
     }
 
-    public static int native_GetType(long this_addr) {
+    public static long native_GetType(long this_addr) {
         return internal_native_GetType((int) this_addr);
     }
 
-    public static int native_GetSubType(long this_addr) {
+    public static long native_GetSubType(long this_addr) {
         return internal_native_GetSubType((int) this_addr);
     }
 

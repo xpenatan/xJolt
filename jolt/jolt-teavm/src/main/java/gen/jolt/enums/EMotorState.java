@@ -5,11 +5,41 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EMotorState implements IDLEnum {
+public enum EMotorState implements IDLEnum<EMotorState> {
 
-    public static final int Off = EMotorState_Off_NATIVE();
+    CUSTOM(0), Off(EMotorState_Off_NATIVE()), Velocity(EMotorState_Velocity_NATIVE()), Position(EMotorState_Position_NATIVE());
+
+    private int value;
+
+    private EMotorState(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EMotorState getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EMotorState> MAP = new HashMap<>();
+
+    static {
+        for (EMotorState value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EMotorState_Off;
@@ -17,15 +47,11 @@ return jolt.EMotorState_Off;
     @org.teavm.jso.JSBody(script = "return jolt.EMotorState_Off;")
     private static native int EMotorState_Off_NATIVE();
 
-    public static final int Velocity = EMotorState_Velocity_NATIVE();
-
     /*[-TEAVM;-NATIVE]
 return jolt.EMotorState_Velocity;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EMotorState_Velocity;")
     private static native int EMotorState_Velocity_NATIVE();
-
-    public static final int Position = EMotorState_Position_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EMotorState_Position;

@@ -5,19 +5,47 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
+import java.util.Map;
+import java.util.HashMap;
 import gen.jolt.idl.IDLEnum;
 
-public class EDrawMode implements IDLEnum {
+public enum EDrawMode implements IDLEnum<EDrawMode> {
 
-    public static final int EDrawMode_Solid = EDrawMode_Solid_NATIVE();
+    CUSTOM(0), EDrawMode_Solid(EDrawMode_Solid_NATIVE()), EDrawMode_Wireframe(EDrawMode_Wireframe_NATIVE());
+
+    private int value;
+
+    private EDrawMode(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    public EDrawMode getCustom() {
+        return CUSTOM;
+    }
+
+    public static final Map<Integer, EDrawMode> MAP = new HashMap<>();
+
+    static {
+        for (EDrawMode value : values()) {
+            if (value != CUSTOM) {
+                MAP.put(value.value, value);
+            }
+        }
+    }
 
     /*[-TEAVM;-NATIVE]
 return jolt.EDrawMode_Solid;
 */
     @org.teavm.jso.JSBody(script = "return jolt.EDrawMode_Solid;")
     private static native int EDrawMode_Solid_NATIVE();
-
-    public static final int EDrawMode_Wireframe = EDrawMode_Wireframe_NATIVE();
 
     /*[-TEAVM;-NATIVE]
 return jolt.EDrawMode_Wireframe;

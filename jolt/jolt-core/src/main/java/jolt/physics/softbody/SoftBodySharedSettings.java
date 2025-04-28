@@ -81,25 +81,25 @@ nativeObject->Release();
 */
     private static native void internal_native_Release(long this_addr);
 
-    public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, int inBendType, float inAngleTolerance) {
-        internal_native_CreateConstraints((long) getNativeData().getCPointer(), (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, inBendType, inAngleTolerance);
+    public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType, float inAngleTolerance) {
+        internal_native_CreateConstraints((long) getNativeData().getCPointer(), (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, (long) (inBendType != null ? inBendType.getValue() : 0), inAngleTolerance);
     }
 
     /*[-JNI;-NATIVE]
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CreateConstraints((SoftBodySharedSettingsVertexAttributes* )inVertexAttributes_addr, inVertexAttributesLength, (::SoftBodySharedSettings_EBendType)inBendType, (float)inAngleTolerance);
 */
-    private static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, int inBendType, float inAngleTolerance);
+    private static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType, float inAngleTolerance);
 
-    public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, int inBendType) {
-        internal_native_CreateConstraints((long) getNativeData().getCPointer(), (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, inBendType);
+    public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType) {
+        internal_native_CreateConstraints((long) getNativeData().getCPointer(), (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, (long) (inBendType != null ? inBendType.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CreateConstraints((SoftBodySharedSettingsVertexAttributes* )inVertexAttributes_addr, inVertexAttributesLength, (::SoftBodySharedSettings_EBendType)inBendType);
 */
-    private static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, int inBendType);
+    private static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType);
 
     public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength) {
         internal_native_CreateConstraints((long) getNativeData().getCPointer(), (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength);
@@ -467,11 +467,11 @@ nativeObject->mVertexRadius = mVertexRadius;
         internal_native_Release(this_addr);
     }
 
-    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, int inBendType, float inAngleTolerance) {
+    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType, float inAngleTolerance) {
         internal_native_CreateConstraints(this_addr, inVertexAttributes_addr, inVertexAttributesLength, inBendType, inAngleTolerance);
     }
 
-    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, int inBendType) {
+    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType) {
         internal_native_CreateConstraints(this_addr, inVertexAttributes_addr, inVertexAttributesLength, inBendType);
     }
 
