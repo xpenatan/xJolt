@@ -6,6 +6,8 @@
 package jolt.physics.body;
 
 import jolt.idl.IDLBase;
+import jolt.enums.EMotionQuality;
+import jolt.enums.EAllowedDOFs;
 import jolt.math.Vec3;
 import jolt.math.Quat;
 import jolt.math.Mat44;

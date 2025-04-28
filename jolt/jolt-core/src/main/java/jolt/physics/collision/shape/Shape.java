@@ -6,6 +6,8 @@
 package jolt.physics.collision.shape;
 
 import jolt.idl.IDLBase;
+import jolt.enums.EShapeType;
+import jolt.enums.EShapeSubType;
 import jolt.geometry.AABox;
 import jolt.math.Mat44;
 import jolt.math.Vec3;

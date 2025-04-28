@@ -6,6 +6,7 @@
 package jolt.physics.vehicle;
 
 import jolt.idl.IDLBase;
+import jolt.enums.ETireFrictionDirection;
 import jolt.physics.body.Body;
 import jolt.physics.collision.shape.SubShapeID;
 import jolt.physics.PhysicsStepListenerContext;

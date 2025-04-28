@@ -6,6 +6,7 @@
 package gen.jolt.physics.softbody;
 
 import gen.jolt.idl.IDLBase;
+import gen.jolt.enums.SoftBodySharedSettings_ELRAType;
 
 public class SoftBodySharedSettingsVertexAttributes extends IDLBase {
 

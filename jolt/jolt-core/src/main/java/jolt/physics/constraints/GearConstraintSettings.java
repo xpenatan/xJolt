@@ -6,6 +6,7 @@
 package jolt.physics.constraints;
 
 import jolt.math.TwoBodyConstraintSettings;
+import jolt.enums.EConstraintSpace;
 import jolt.math.Vec3;
 
 public class GearConstraintSettings extends TwoBodyConstraintSettings {

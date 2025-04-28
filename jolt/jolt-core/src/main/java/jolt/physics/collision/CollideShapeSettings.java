@@ -5,6 +5,8 @@
  *-------------------------------------------------------*/
 package jolt.physics.collision;
 
+import jolt.enums.EBackFaceMode;
+
 public class CollideShapeSettings extends CollideSettingsBase {
 
     static public final CollideShapeSettings T_01 = new CollideShapeSettings((byte) 1, (char) 1);

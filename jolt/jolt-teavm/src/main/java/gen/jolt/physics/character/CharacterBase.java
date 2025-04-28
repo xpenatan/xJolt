@@ -8,6 +8,7 @@ package gen.jolt.physics.character;
 import gen.jolt.idl.IDLBase;
 import gen.jolt.math.Vec3;
 import gen.jolt.physics.collision.shape.Shape;
+import gen.jolt.enums.EGroundState;
 import gen.jolt.physics.collision.PhysicsMaterial;
 import gen.jolt.physics.body.BodyID;
 

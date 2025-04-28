@@ -12,6 +12,10 @@ import jolt.physics.collision.shape.Shape;
 import jolt.math.Vec3;
 import jolt.math.Quat;
 import jolt.physics.collision.CollisionGroup;
+import jolt.enums.EMotionType;
+import jolt.enums.EAllowedDOFs;
+import jolt.enums.EMotionQuality;
+import jolt.enums.EOverrideMassProperties;
 
 public class BodyCreationSettings extends IDLBase {
 

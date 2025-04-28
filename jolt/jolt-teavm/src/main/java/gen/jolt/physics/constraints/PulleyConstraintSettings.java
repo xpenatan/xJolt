@@ -6,6 +6,7 @@
 package gen.jolt.physics.constraints;
 
 import gen.jolt.math.TwoBodyConstraintSettings;
+import gen.jolt.enums.EConstraintSpace;
 import gen.jolt.math.Vec3;
 
 public class PulleyConstraintSettings extends TwoBodyConstraintSettings {

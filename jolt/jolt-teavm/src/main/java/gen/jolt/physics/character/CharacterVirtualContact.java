@@ -9,6 +9,7 @@ import gen.jolt.idl.IDLBase;
 import gen.jolt.math.Vec3;
 import gen.jolt.physics.body.BodyID;
 import gen.jolt.physics.collision.shape.SubShapeID;
+import gen.jolt.enums.EMotionType;
 import gen.jolt.physics.collision.PhysicsMaterial;
 
 public class CharacterVirtualContact extends IDLBase {

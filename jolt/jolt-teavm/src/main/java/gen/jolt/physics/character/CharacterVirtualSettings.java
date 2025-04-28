@@ -6,6 +6,7 @@
 package gen.jolt.physics.character;
 
 import gen.jolt.math.Vec3;
+import gen.jolt.enums.EBackFaceMode;
 import gen.jolt.physics.collision.shape.Shape;
 import gen.jolt.physics.body.BodyID;
 

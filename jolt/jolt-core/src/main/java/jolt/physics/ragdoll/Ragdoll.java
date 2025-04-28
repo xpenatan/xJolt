@@ -7,6 +7,7 @@ package jolt.physics.ragdoll;
 
 import jolt.idl.IDLBase;
 import jolt.physics.PhysicsSystem;
+import jolt.enums.EActivation;
 import jolt.skeleton.SkeletonPose;
 import jolt.math.Vec3;
 import jolt.math.Quat;

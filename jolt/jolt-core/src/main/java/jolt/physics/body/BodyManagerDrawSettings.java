@@ -6,6 +6,8 @@
 package jolt.physics.body;
 
 import jolt.idl.IDLBase;
+import jolt.enums.EShapeColor;
+import jolt.enums.ESoftBodyConstraintColor;
 
 public class BodyManagerDrawSettings extends IDLBase {
 

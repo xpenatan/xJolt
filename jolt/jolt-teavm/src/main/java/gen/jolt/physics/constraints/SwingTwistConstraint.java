@@ -7,6 +7,7 @@ package gen.jolt.physics.constraints;
 
 import gen.jolt.math.Vec3;
 import gen.jolt.math.Quat;
+import gen.jolt.enums.EMotorState;
 
 public class SwingTwistConstraint extends TwoBodyConstraint {
 
