@@ -5,6 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.constraints;
 
+import gen.jolt.enums.EMotorState;
 import gen.jolt.math.Vec3;
 import gen.jolt.math.Vector2;
 

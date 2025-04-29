@@ -6,6 +6,8 @@
 package jolt.physics.body;
 
 import jolt.idl.IDLBase;
+import jolt.enums.EBodyType;
+import jolt.enums.EMotionType;
 import jolt.physics.collision.CollisionGroup;
 import jolt.math.Vec3;
 import jolt.math.Quat;

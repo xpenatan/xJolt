@@ -6,6 +6,8 @@
 package jolt.physics.constraints;
 
 import jolt.idl.IDLBase;
+import jolt.enums.EConstraintType;
+import jolt.enums.EConstraintSubType;
 
 public class Constraint extends IDLBase {
 

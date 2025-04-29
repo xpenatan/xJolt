@@ -6,6 +6,7 @@
 package gen.jolt.physics.constraints;
 
 import gen.jolt.idl.IDLBase;
+import gen.jolt.enums.ESpringMode;
 
 public class SpringSettings extends IDLBase {
 

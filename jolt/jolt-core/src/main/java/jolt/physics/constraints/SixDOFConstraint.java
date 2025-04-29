@@ -6,7 +6,9 @@
 package jolt.physics.constraints;
 
 import jolt.math.Vec3;
+import jolt.enums.SixDOFConstraintSettings_EAxis;
 import jolt.math.Quat;
+import jolt.enums.EMotorState;
 
 public class SixDOFConstraint extends TwoBodyConstraint {
 

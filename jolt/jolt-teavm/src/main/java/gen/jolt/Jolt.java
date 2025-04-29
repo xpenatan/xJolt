@@ -14,6 +14,7 @@ import gen.jolt.physics.body.BodyCreationSettings;
 import gen.jolt.physics.collision.shape.ShapeSettings;
 import gen.jolt.math.Vec3;
 import gen.jolt.math.Quat;
+import gen.jolt.enums.EMotionType;
 import gen.jolt.physics.collision.shape.Shape;
 import gen.jolt.math.Mat44;
 import gen.jolt.math.Vec4;

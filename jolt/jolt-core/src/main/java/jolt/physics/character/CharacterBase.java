@@ -8,6 +8,7 @@ package jolt.physics.character;
 import jolt.idl.IDLBase;
 import jolt.math.Vec3;
 import jolt.physics.collision.shape.Shape;
+import jolt.enums.EGroundState;
 import jolt.physics.collision.PhysicsMaterial;
 import jolt.physics.body.BodyID;
 

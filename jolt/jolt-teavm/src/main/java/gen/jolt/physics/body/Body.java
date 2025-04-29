@@ -6,6 +6,8 @@
 package gen.jolt.physics.body;
 
 import gen.jolt.idl.IDLBase;
+import gen.jolt.enums.EBodyType;
+import gen.jolt.enums.EMotionType;
 import gen.jolt.physics.collision.CollisionGroup;
 import gen.jolt.math.Vec3;
 import gen.jolt.math.Quat;

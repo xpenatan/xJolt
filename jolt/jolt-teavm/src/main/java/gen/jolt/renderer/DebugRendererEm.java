@@ -10,6 +10,9 @@ import gen.jolt.physics.PhysicsSystem;
 import gen.jolt.physics.body.BodyManagerDrawSettings;
 import gen.jolt.math.Mat44;
 import gen.jolt.core.Color;
+import gen.jolt.enums.ECastShadow;
+import gen.jolt.enums.EDrawMode;
+import gen.jolt.enums.ECullMode;
 import gen.jolt.math.Vec3;
 
 public class DebugRendererEm extends IDLBase {

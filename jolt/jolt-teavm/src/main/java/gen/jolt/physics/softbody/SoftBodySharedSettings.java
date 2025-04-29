@@ -6,6 +6,7 @@
 package gen.jolt.physics.softbody;
 
 import gen.jolt.idl.IDLBase;
+import gen.jolt.enums.SoftBodySharedSettings_EBendType;
 import gen.jolt.physics.collision.PhysicsMaterialList;
 
 public class SoftBodySharedSettings extends IDLBase {

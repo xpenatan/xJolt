@@ -5,6 +5,8 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.constraints;
 
+import gen.jolt.enums.EMotorState;
+
 public class PathConstraint extends TwoBodyConstraint {
 
     private PathConstraintPath PathConstraintPath_TEMP_GEN_0;

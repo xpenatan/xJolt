@@ -6,6 +6,7 @@
 package jolt.physics.vehicle;
 
 import jolt.idl.IDLBase;
+import jolt.enums.ETransmissionMode;
 import jolt.math.ArrayFloat;
 
 public class VehicleTransmissionSettings extends IDLBase {

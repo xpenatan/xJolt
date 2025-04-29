@@ -7,6 +7,7 @@ package gen.jolt.physics.body;
 
 import gen.jolt.idl.IDLBase;
 import gen.jolt.physics.softbody.SoftBodyCreationSettings;
+import gen.jolt.enums.EActivation;
 import gen.jolt.physics.collision.broadphase.BodyInterface_AddState;
 import gen.jolt.math.TwoBodyConstraintSettings;
 import gen.jolt.physics.constraints.TwoBodyConstraint;
@@ -17,6 +18,9 @@ import gen.jolt.math.Mat44;
 import gen.jolt.geometry.AABox;
 import gen.jolt.physics.collision.broadphase.BroadPhaseLayerFilter;
 import gen.jolt.physics.collision.ObjectLayerFilter;
+import gen.jolt.enums.EBodyType;
+import gen.jolt.enums.EMotionType;
+import gen.jolt.enums.EMotionQuality;
 import gen.jolt.physics.collision.CollisionGroup;
 import gen.jolt.physics.collision.TransformedShape;
 import gen.jolt.physics.collision.shape.SubShapeID;

@@ -6,6 +6,8 @@
 package jolt.physics.collision;
 
 import jolt.idl.IDLBase;
+import jolt.enums.EActiveEdgeMode;
+import jolt.enums.ECollectFacesMode;
 import jolt.math.Vec3;
 
 public class CollideSettingsBase extends IDLBase {

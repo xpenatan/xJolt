@@ -8,6 +8,7 @@ package gen.jolt.physics.constraints;
 import gen.jolt.math.TwoBodyConstraintSettings;
 import gen.jolt.math.Vec3;
 import gen.jolt.math.Quat;
+import gen.jolt.enums.EPathRotationConstraintType;
 
 public class PathConstraintSettings extends TwoBodyConstraintSettings {
 

@@ -6,6 +6,7 @@
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.physics.collision.CollideSettingsBase;
+import gen.jolt.enums.EBackFaceMode;
 
 public class ShapeCastSettings extends CollideSettingsBase {
 

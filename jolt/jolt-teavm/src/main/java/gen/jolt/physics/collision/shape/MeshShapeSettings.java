@@ -9,6 +9,7 @@ import gen.jolt.geometry.TriangleList;
 import gen.jolt.physics.collision.PhysicsMaterialList;
 import gen.jolt.math.VertexList;
 import gen.jolt.geometry.IndexedTriangleList;
+import gen.jolt.enums.MeshShapeSettings_EBuildQuality;
 
 public class MeshShapeSettings extends ShapeSettings {
 

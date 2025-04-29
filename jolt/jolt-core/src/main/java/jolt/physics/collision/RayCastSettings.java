@@ -6,6 +6,7 @@
 package jolt.physics.collision;
 
 import jolt.idl.IDLBase;
+import jolt.enums.EBackFaceMode;
 
 public class RayCastSettings extends IDLBase {
 

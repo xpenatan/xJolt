@@ -6,7 +6,10 @@
 package gen.jolt.physics.constraints;
 
 import gen.jolt.math.TwoBodyConstraintSettings;
+import gen.jolt.enums.SixDOFConstraintSettings_EAxis;
+import gen.jolt.enums.EConstraintSpace;
 import gen.jolt.math.Vec3;
+import gen.jolt.enums.ESwingType;
 
 public class SixDOFConstraintSettings extends TwoBodyConstraintSettings {
 

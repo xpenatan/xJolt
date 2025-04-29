@@ -6,7 +6,9 @@
 package jolt.physics.constraints;
 
 import jolt.math.TwoBodyConstraintSettings;
+import jolt.enums.EConstraintSpace;
 import jolt.math.Vec3;
+import jolt.enums.ESwingType;
 
 public class SwingTwistConstraintSettings extends TwoBodyConstraintSettings {
 
