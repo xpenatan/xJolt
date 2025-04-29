@@ -129,13 +129,3 @@ configure(libProjects) {
         }
     }
 }
-
-tasks.register("download_all_sources") {
-    group = "jolt"
-    description = "Download all sources"
-
-    val source1 = ":jolt:jolt-build:download_source"
-
-    val list = listOf(source1)
-    dependsOn(list)
-}
