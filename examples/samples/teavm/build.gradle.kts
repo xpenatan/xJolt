@@ -8,7 +8,7 @@ gretty {
 }
 
 dependencies {
-    implementation(project(":examples:SamplesApp:core"))
+    implementation(project(":examples:samples:core"))
 
     if(LibExt.exampleUseRepoLibs) {
         implementation("com.github.xpenatan.gdx-jolt:jolt-teavm:-SNAPSHOT")
@@ -24,18 +24,18 @@ dependencies {
 
 val mainClassName = "jolt.example.samples.app.Build"
 
-tasks.register<JavaExec>("SamplesApp-build") {
-    group = "example-teavm"
+tasks.register<JavaExec>("jolt_samples_build") {
+    group = "jolt_examples_teavm"
     description = "Build SamplesApp example"
     mainClass.set(mainClassName)
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register("SamplesApp-run-teavm") {
-    group = "example-teavm"
+tasks.register("jolt_samples_run_teavm") {
+    group = "jolt_examples_teavm"
     description = "Run teavm app"
-    val list = listOf("SamplesApp-build", "jettyRun")
+    val list = listOf("jolt_samples_build", "jettyRun")
     dependsOn(list)
 
-    tasks.findByName("jettyRun")?.mustRunAfter("SamplesApp-build")
+    tasks.findByName("jettyRun")?.mustRunAfter("jolt_samples_build")
 }

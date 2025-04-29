@@ -22,7 +22,7 @@ val zippedPath = "${buildDir}/jolt-source.zip"
 val sourcePath = "${buildDir}/jolt-source"
 val sourceDestination = "${buildDir}/jolt/"
 
-tasks.register<Download>("download_source") {
+tasks.register<Download>("jolt_download_source") {
     group = "jolt"
     description = "Download jolt source"
     src("https://github.com/jrouwe/JoltPhysics/archive/refs/tags/v5.3.0.zip")
@@ -43,7 +43,7 @@ tasks.register<Download>("download_source") {
     }
 }
 
-tasks.register<JavaExec>("build_project") {
+tasks.register<JavaExec>("jolt_build_project") {
     group = "jolt"
     description = "Generate native project"
     mainClass.set(mainClassName)
@@ -51,7 +51,7 @@ tasks.register<JavaExec>("build_project") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("build_project_all") {
+tasks.register<JavaExec>("jolt_build_project_all") {
     group = "jolt"
     description = "Generate native project"
     mainClass.set(mainClassName)
@@ -59,7 +59,7 @@ tasks.register<JavaExec>("build_project_all") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("build_project_teavm") {
+tasks.register<JavaExec>("jolt_build_project_teavm") {
     group = "jolt"
     description = "Generate native project"
     mainClass.set(mainClassName)
@@ -67,7 +67,7 @@ tasks.register<JavaExec>("build_project_teavm") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("build_project_windows64") {
+tasks.register<JavaExec>("jolt_build_project_windows64") {
     group = "jolt"
     description = "Generate native project"
     mainClass.set(mainClassName)
@@ -75,7 +75,7 @@ tasks.register<JavaExec>("build_project_windows64") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("build_project_linux64") {
+tasks.register<JavaExec>("jolt_build_project_linux64") {
     group = "jolt"
     description = "Generate native project"
     mainClass.set(mainClassName)
@@ -83,7 +83,7 @@ tasks.register<JavaExec>("build_project_linux64") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("build_project_mac64") {
+tasks.register<JavaExec>("jolt_build_project_mac64") {
     group = "jolt"
     description = "Generate native project"
     mainClass.set(mainClassName)
@@ -91,7 +91,7 @@ tasks.register<JavaExec>("build_project_mac64") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("build_project_macArm") {
+tasks.register<JavaExec>("jolt_build_project_macArm") {
     group = "jolt"
     description = "Generate native project"
     mainClass.set(mainClassName)
@@ -99,7 +99,7 @@ tasks.register<JavaExec>("build_project_macArm") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("build_project_android") {
+tasks.register<JavaExec>("jolt_build_project_android") {
     group = "jolt"
     description = "Generate native project"
     mainClass.set(mainClassName)
@@ -107,7 +107,7 @@ tasks.register<JavaExec>("build_project_android") {
     classpath = sourceSets["main"].runtimeClasspath
 }
 
-tasks.register<JavaExec>("build_project_ios") {
+tasks.register<JavaExec>("jolt_build_project_ios") {
     group = "jolt"
     description = "Generate native project"
     mainClass.set(mainClassName)

@@ -41,7 +41,7 @@ allprojects  {
 //    }
 }
 
-configure(allprojects - project(":jolt:jolt-android") - project(":examples:SamplesApp:android")) {
+configure(allprojects - project(":jolt:jolt-android") - project(":examples:samples:android")) {
     apply {
         plugin("java")
         plugin("java-library")

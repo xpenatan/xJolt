@@ -1,5 +1,5 @@
 dependencies {
-    implementation(project(":examples:SamplesApp:base"))
+    implementation(project(":examples:samples:base"))
     implementation("com.github.xpenatan.gdx-gltf:core:dev-SNAPSHOT")
 
     if(LibExt.exampleUseRepoLibs) {

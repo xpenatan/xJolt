@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="jolt_SamplesApp_run_desktop" type="GradleRunConfiguration" factoryName="Gradle" folderName="Examples">
+  <configuration default="false" name="jolt_samples_run_teavm" type="GradleRunConfiguration" factoryName="Gradle" folderName="jolt_examples">
     <ExternalSystemSettings>
       <option name="executionName" />
-      <option name="externalProjectPath" value="$PROJECT_DIR$/examples/SamplesApp/desktop" />
+      <option name="externalProjectPath" value="$PROJECT_DIR$/examples/samples/teavm" />
       <option name="externalSystemIdString" value="GRADLE" />
       <option name="scriptParameters" value="" />
       <option name="taskDescriptions">
@@ -10,7 +10,7 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value="SamplesApp-run-desktop" />
+          <option value="jolt_samples_run_teavm" />
         </list>
       </option>
       <option name="vmOptions" />
