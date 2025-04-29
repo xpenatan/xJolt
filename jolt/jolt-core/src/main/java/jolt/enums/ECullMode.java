@@ -23,8 +23,12 @@ public enum ECullMode implements IDLEnum<ECullMode> {
         return value;
     }
 
-    public void setValue(int value) {
+    public ECullMode setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public ECullMode getCustom() {

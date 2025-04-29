@@ -29,8 +29,12 @@ public enum EPathRotationConstraintType implements IDLEnum<EPathRotationConstrai
         return value;
     }
 
-    public void setValue(int value) {
+    public EPathRotationConstraintType setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EPathRotationConstraintType getCustom() {

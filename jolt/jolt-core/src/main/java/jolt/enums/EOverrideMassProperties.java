@@ -23,8 +23,12 @@ public enum EOverrideMassProperties implements IDLEnum<EOverrideMassProperties> 
         return value;
     }
 
-    public void setValue(int value) {
+    public EOverrideMassProperties setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EOverrideMassProperties getCustom() {

@@ -39,8 +39,12 @@ public enum EShapeSubType implements IDLEnum<EShapeSubType> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EShapeSubType setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EShapeSubType getCustom() {

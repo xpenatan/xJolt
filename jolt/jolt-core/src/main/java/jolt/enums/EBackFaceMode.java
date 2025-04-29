@@ -23,8 +23,12 @@ public enum EBackFaceMode implements IDLEnum<EBackFaceMode> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EBackFaceMode setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EBackFaceMode getCustom() {

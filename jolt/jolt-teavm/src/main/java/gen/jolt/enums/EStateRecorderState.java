@@ -29,8 +29,12 @@ public enum EStateRecorderState implements IDLEnum<EStateRecorderState> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EStateRecorderState setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EStateRecorderState getCustom() {

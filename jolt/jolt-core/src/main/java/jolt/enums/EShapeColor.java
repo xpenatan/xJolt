@@ -29,8 +29,12 @@ public enum EShapeColor implements IDLEnum<EShapeColor> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EShapeColor setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EShapeColor getCustom() {

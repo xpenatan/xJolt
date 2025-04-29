@@ -29,8 +29,12 @@ public enum SixDOFConstraintSettings_EAxis implements IDLEnum<SixDOFConstraintSe
         return value;
     }
 
-    public void setValue(int value) {
+    public SixDOFConstraintSettings_EAxis setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public SixDOFConstraintSettings_EAxis getCustom() {

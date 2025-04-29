@@ -23,8 +23,12 @@ public enum ETransmissionMode implements IDLEnum<ETransmissionMode> {
         return value;
     }
 
-    public void setValue(int value) {
+    public ETransmissionMode setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public ETransmissionMode getCustom() {

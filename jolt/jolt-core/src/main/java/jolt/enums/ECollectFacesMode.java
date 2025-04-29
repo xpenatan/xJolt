@@ -23,8 +23,12 @@ public enum ECollectFacesMode implements IDLEnum<ECollectFacesMode> {
         return value;
     }
 
-    public void setValue(int value) {
+    public ECollectFacesMode setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public ECollectFacesMode getCustom() {

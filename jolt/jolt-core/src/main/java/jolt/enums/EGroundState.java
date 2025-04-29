@@ -23,8 +23,12 @@ public enum EGroundState implements IDLEnum<EGroundState> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EGroundState setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EGroundState getCustom() {

@@ -23,8 +23,12 @@ public enum EActivation implements IDLEnum<EActivation> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EActivation setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EActivation getCustom() {

@@ -23,8 +23,12 @@ public enum SoftBodyValidateResult implements IDLEnum<SoftBodyValidateResult> {
         return value;
     }
 
-    public void setValue(int value) {
+    public SoftBodyValidateResult setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public SoftBodyValidateResult getCustom() {

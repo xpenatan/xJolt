@@ -23,8 +23,12 @@ public enum ESwingType implements IDLEnum<ESwingType> {
         return value;
     }
 
-    public void setValue(int value) {
+    public ESwingType setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public ESwingType getCustom() {

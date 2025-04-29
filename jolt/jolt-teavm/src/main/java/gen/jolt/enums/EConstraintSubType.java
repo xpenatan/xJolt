@@ -36,8 +36,12 @@ public enum EConstraintSubType implements IDLEnum<EConstraintSubType> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EConstraintSubType setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EConstraintSubType getCustom() {

@@ -23,8 +23,12 @@ public enum SoftBodySharedSettings_EBendType implements IDLEnum<SoftBodySharedSe
         return value;
     }
 
-    public void setValue(int value) {
+    public SoftBodySharedSettings_EBendType setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public SoftBodySharedSettings_EBendType getCustom() {
