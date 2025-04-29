@@ -51,7 +51,7 @@ jobs:
         run: ./gradlew download_all_sources
 
       - name: Build project
-        run: ./gradlew :jolt:jolt-build:build_project_windows64
+        run: ./gradlew :jolt:jolt-build:jolt_build_project_windows64
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -89,7 +89,7 @@ jobs:
         run: ./gradlew download_all_sources
 
       - name: Build project
-        run: ./gradlew :jolt:jolt-build:build_project_linux64
+        run: ./gradlew :jolt:jolt-build:jolt_build_project_linux64
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -123,7 +123,7 @@ jobs:
         run: ./gradlew download_all_sources
 
       - name: Build project
-        run: ./gradlew :jolt:jolt-build:build_project_mac64 :jolt:jolt-build:build_project_macArm
+        run: ./gradlew :jolt:jolt-build:jolt_build_project_mac64 :jolt:jolt-build:jolt_build_project_macArm
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -166,7 +166,7 @@ jobs:
         run: ./gradlew download_all_sources
 
       - name: Build project
-        run: ./gradlew :jolt:jolt-build:build_project_teavm
+        run: ./gradlew :jolt:jolt-build:jolt_build_project_teavm
 
       - name: Upload natives
         uses: actions/upload-artifact@v4
@@ -208,10 +208,10 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew download_all_sources
+        run: ./gradlew :jolt:jolt-build:jolt_download_source
 
       - name: Build project
-        run: ./gradlew :jolt:jolt-build:build_project_android
+        run: ./gradlew :jolt:jolt-build:jolt_build_project_android
         env:
           NDK_HOME: ${{ steps.setup-ndk.outputs.ndk-path }}
 
@@ -255,7 +255,7 @@ jobs:
           echo "Deleted generated files"
 
       - name: Generate Jolt classes
-        run: ./gradlew :jolt:jolt-build:build_project
+        run: ./gradlew :jolt:jolt-build:jolt_build_project
 
       - name: Configure Git
         run: |
@@ -265,7 +265,7 @@ jobs:
       - name: Commit generated code
         run: |
           git add .
-          git commit -m "Commit generated code from :jolt:jolt-build:build_project" || echo "No changes to commit"
+          git commit -m "Commit generated code from :jolt:jolt-build:jolt_build_project" || echo "No changes to commit"
           git push origin HEAD
 
   upload_natives:
