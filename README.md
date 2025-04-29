@@ -82,14 +82,14 @@ To try the samples with your build, change `LibExt.exampleUseRepoLibs` to false 
 ## How to build from source
 
 ```
-./gradlew download_all_sources
+./gradlew :jolt:jolt-build:jolt_download_source
 
 ### Build all targets if your machine can handle:
-./gradlew :jolt:jolt-build:build_project_all
+./gradlew :jolt:jolt-build:jolt_build_project_all
 
 ### Or a single platform target:
-./gradlew :jolt:jolt-build:build_project_windows64
-./gradlew :jolt:jolt-build:build_project_linux64
-./gradlew :jolt:jolt-build:build_project_mac64 :jolt:jolt-build:build_project_macArm
-./gradlew :jolt:jolt-build:build_project_teavm
+./gradlew :jolt:jolt-build:jolt_build_project_windows64
+./gradlew :jolt:jolt-build:jolt_build_project_linux64
+./gradlew :jolt:jolt-build:jolt_build_project_mac64 :jolt:jolt-build:build_project_macArm
+./gradlew :jolt:jolt-build:jolt_build_project_teavm
 ```

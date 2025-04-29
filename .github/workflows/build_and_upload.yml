@@ -48,7 +48,7 @@ jobs:
           value: $env:PATH;C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build
 
       - name: Download sources
-        run: ./gradlew download_all_sources
+        run: ./gradlew :jolt:jolt-build:jolt_download_source
 
       - name: Build project
         run: ./gradlew :jolt:jolt-build:jolt_build_project_windows64
@@ -86,7 +86,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew download_all_sources
+        run: ./gradlew :jolt:jolt-build:jolt_download_source
 
       - name: Build project
         run: ./gradlew :jolt:jolt-build:jolt_build_project_linux64
@@ -120,7 +120,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew download_all_sources
+        run: ./gradlew :jolt:jolt-build:jolt_download_source
 
       - name: Build project
         run: ./gradlew :jolt:jolt-build:jolt_build_project_mac64 :jolt:jolt-build:jolt_build_project_macArm
@@ -163,7 +163,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew download_all_sources
+        run: ./gradlew :jolt:jolt-build:jolt_download_source
 
       - name: Build project
         run: ./gradlew :jolt:jolt-build:jolt_build_project_teavm
@@ -246,7 +246,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Download sources
-        run: ./gradlew download_all_sources
+        run: ./gradlew :jolt:jolt-build:jolt_download_source
 
       - name: Delete generated files
         run: |
