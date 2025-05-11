@@ -33,8 +33,7 @@ The binding leverages [jParser](https://github.com/xpenatan/jParser), a custom C
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-    maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+    maven { url "https://central.sonatype.com/repository/maven-snapshots/" }
 }
 
 // Core module
