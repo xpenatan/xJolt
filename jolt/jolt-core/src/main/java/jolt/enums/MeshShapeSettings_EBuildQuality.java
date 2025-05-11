@@ -23,8 +23,12 @@ public enum MeshShapeSettings_EBuildQuality implements IDLEnum<MeshShapeSettings
         return value;
     }
 
-    public void setValue(int value) {
+    public MeshShapeSettings_EBuildQuality setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public MeshShapeSettings_EBuildQuality getCustom() {

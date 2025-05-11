@@ -14,7 +14,7 @@ public interface IDLEnum<T extends IDLEnum<T>> {
 
     int getValue();
 
-    void setValue(int value);
+    T setValue(int value);
 
     T getCustom();
 

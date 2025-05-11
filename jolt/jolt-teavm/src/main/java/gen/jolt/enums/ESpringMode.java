@@ -23,8 +23,12 @@ public enum ESpringMode implements IDLEnum<ESpringMode> {
         return value;
     }
 
-    public void setValue(int value) {
+    public ESpringMode setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public ESpringMode getCustom() {

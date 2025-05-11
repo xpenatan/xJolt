@@ -23,8 +23,12 @@ public enum EConstraintSpace implements IDLEnum<EConstraintSpace> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EConstraintSpace setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EConstraintSpace getCustom() {

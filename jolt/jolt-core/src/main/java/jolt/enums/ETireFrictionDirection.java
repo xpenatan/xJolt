@@ -23,8 +23,12 @@ public enum ETireFrictionDirection implements IDLEnum<ETireFrictionDirection> {
         return value;
     }
 
-    public void setValue(int value) {
+    public ETireFrictionDirection setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public ETireFrictionDirection getCustom() {

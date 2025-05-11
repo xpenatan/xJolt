@@ -23,8 +23,12 @@ public enum ECastShadow implements IDLEnum<ECastShadow> {
         return value;
     }
 
-    public void setValue(int value) {
+    public ECastShadow setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public ECastShadow getCustom() {

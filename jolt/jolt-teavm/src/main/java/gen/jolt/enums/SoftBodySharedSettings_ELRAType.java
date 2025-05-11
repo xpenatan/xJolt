@@ -23,8 +23,12 @@ public enum SoftBodySharedSettings_ELRAType implements IDLEnum<SoftBodySharedSet
         return value;
     }
 
-    public void setValue(int value) {
+    public SoftBodySharedSettings_ELRAType setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public SoftBodySharedSettings_ELRAType getCustom() {

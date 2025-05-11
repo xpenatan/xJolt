@@ -30,8 +30,12 @@ public enum EShapeType implements IDLEnum<EShapeType> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EShapeType setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EShapeType getCustom() {

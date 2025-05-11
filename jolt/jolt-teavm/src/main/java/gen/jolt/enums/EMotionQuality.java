@@ -23,8 +23,12 @@ public enum EMotionQuality implements IDLEnum<EMotionQuality> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EMotionQuality setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EMotionQuality getCustom() {

@@ -23,8 +23,12 @@ public enum EActiveEdgeMode implements IDLEnum<EActiveEdgeMode> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EActiveEdgeMode setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EActiveEdgeMode getCustom() {

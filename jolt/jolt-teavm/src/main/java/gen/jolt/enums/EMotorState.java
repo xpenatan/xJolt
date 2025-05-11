@@ -23,8 +23,12 @@ public enum EMotorState implements IDLEnum<EMotorState> {
         return value;
     }
 
-    public void setValue(int value) {
+    public EMotorState setValue(int value) {
+        if (this != CUSTOM) {
+            throw new RuntimeException("Cannot change none CUSTOM value");
+        }
         this.value = value;
+        return this;
     }
 
     public EMotorState getCustom() {
