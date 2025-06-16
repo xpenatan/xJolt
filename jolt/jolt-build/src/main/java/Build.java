@@ -8,8 +8,8 @@ import com.github.xpenatan.jparser.builder.tool.BuildToolListener;
 import com.github.xpenatan.jparser.builder.tool.BuildToolOptions;
 import com.github.xpenatan.jparser.builder.tool.BuilderTool;
 import com.github.xpenatan.jparser.idl.IDLHelper;
-import com.github.xpenatan.jparser.idl.IDLPackageRenaming;
 import com.github.xpenatan.jparser.idl.IDLReader;
+import com.github.xpenatan.jparser.idl.IDLRenaming;
 import java.util.ArrayList;
 
 public class Build {
@@ -55,7 +55,7 @@ public class Build {
 //                    targets.add(getIOSTarget(op));
 //                }
             }
-        }, new IDLPackageRenaming() {
+        }, new IDLRenaming() {
             @Override
             public String obtainNewPackage(String className, String classPackage) {
                 // This remove duplicate jolt name in package.
