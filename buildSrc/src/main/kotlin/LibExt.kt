@@ -1,14 +1,14 @@
 import java.io.File
-import java.util.*
+import java.util.Properties
 
 object LibExt {
     const val groupId = "com.github.xpenatan.gdx-jolt"
     val libVersion: String = getVersion()
 
     //Library dependencies
-    const val gdxVersion = "1.13.1"
+    const val gdxVersion = "1.13.5"
     const val jParserVersion = "-SNAPSHOT"
-    const val teaVMVersion = "0.11.0"
+    const val teaVMVersion = "0.12.1"
 
     //Example dependencies
     const val gdxTeaVMVersion = "-SNAPSHOT"

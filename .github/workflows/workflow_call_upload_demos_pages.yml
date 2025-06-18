@@ -41,5 +41,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./examples/SamplesApp/teavm/build/dist/webapp
+          publish_dir: ./examples/samples/teavm/build/dist/webapp
           destination_dir: ./examples/samples
