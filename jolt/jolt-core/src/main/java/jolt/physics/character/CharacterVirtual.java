@@ -61,7 +61,7 @@ public class CharacterVirtual extends CharacterBase {
     /*[-JNI;-NATIVE]
 return (jlong)new CharacterVirtual((CharacterVirtualSettings* )inSettings_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (PhysicsSystem* )inSystem_addr);
 */
-    private static native long internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(long inSettings_addr, long inPosition_addr, long inRotation_addr, long inSystem_addr);
+    public static native long internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(long inSettings_addr, long inPosition_addr, long inRotation_addr, long inSystem_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -85,7 +85,7 @@ return (jlong)new CharacterVirtual((CharacterVirtualSettings* )inSettings_addr, 
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return (jlong)&nativeObject->GetID();
 */
-    private static native long internal_native_GetID(long this_addr);
+    public static native long internal_native_GetID(long this_addr);
 
     public void SetListener(CharacterContactListener inListener) {
         internal_native_SetListener((long) getNativeData().getCPointer(), (long) (inListener != null ? inListener.getNativeData().getCPointer() : 0));
@@ -95,7 +95,7 @@ return (jlong)&nativeObject->GetID();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetListener((CharacterContactListener* )inListener_addr);
 */
-    private static native void internal_native_SetListener(long this_addr, long inListener_addr);
+    public static native void internal_native_SetListener(long this_addr, long inListener_addr);
 
     public void SetCharacterVsCharacterCollision(CharacterVsCharacterCollision inCharacterVsCharacterCollision) {
         internal_native_SetCharacterVsCharacterCollision((long) getNativeData().getCPointer(), (long) (inCharacterVsCharacterCollision != null ? inCharacterVsCharacterCollision.getNativeData().getCPointer() : 0));
@@ -105,7 +105,7 @@ nativeObject->SetListener((CharacterContactListener* )inListener_addr);
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetCharacterVsCharacterCollision((CharacterVsCharacterCollision* )inCharacterVsCharacterCollision_addr);
 */
-    private static native void internal_native_SetCharacterVsCharacterCollision(long this_addr, long inCharacterVsCharacterCollision_addr);
+    public static native void internal_native_SetCharacterVsCharacterCollision(long this_addr, long inCharacterVsCharacterCollision_addr);
 
     public CharacterContactListener GetListener() {
         long pointer = internal_native_GetListener((long) getNativeData().getCPointer());
@@ -122,7 +122,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 CharacterContactListener* obj = nativeObject->GetListener();
 return (jlong)obj;
 */
-    private static native long internal_native_GetListener(long this_addr);
+    public static native long internal_native_GetListener(long this_addr);
 
     public Vec3 GetLinearVelocity() {
         long pointer = internal_native_GetLinearVelocity((long) getNativeData().getCPointer());
@@ -139,7 +139,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLinearVelocity();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetLinearVelocity(long this_addr);
+    public static native long internal_native_GetLinearVelocity(long this_addr);
 
     public void SetLinearVelocity(Vec3 inLinearVelocity) {
         internal_native_SetLinearVelocity((long) getNativeData().getCPointer(), (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0));
@@ -149,7 +149,7 @@ return (jlong)&copy_addr;*/
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetLinearVelocity(*((Vec3* )inLinearVelocity_addr));
 */
-    private static native void internal_native_SetLinearVelocity(long this_addr, long inLinearVelocity_addr);
+    public static native void internal_native_SetLinearVelocity(long this_addr, long inLinearVelocity_addr);
 
     public Vec3 GetPosition() {
         long pointer = internal_native_GetPosition((long) getNativeData().getCPointer());
@@ -166,7 +166,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPosition();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetPosition(long this_addr);
+    public static native long internal_native_GetPosition(long this_addr);
 
     public void SetPosition(Vec3 inPosition) {
         internal_native_SetPosition((long) getNativeData().getCPointer(), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0));
@@ -176,7 +176,7 @@ return (jlong)&copy_addr;*/
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetPosition(*((Vec3* )inPosition_addr));
 */
-    private static native void internal_native_SetPosition(long this_addr, long inPosition_addr);
+    public static native void internal_native_SetPosition(long this_addr, long inPosition_addr);
 
     public Quat GetRotation() {
         long pointer = internal_native_GetRotation((long) getNativeData().getCPointer());
@@ -193,7 +193,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetRotation();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetRotation(long this_addr);
+    public static native long internal_native_GetRotation(long this_addr);
 
     public void SetRotation(Quat inRotation) {
         internal_native_SetRotation((long) getNativeData().getCPointer(), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0));
@@ -203,7 +203,7 @@ return (jlong)&copy_addr;*/
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetRotation(*((Quat* )inRotation_addr));
 */
-    private static native void internal_native_SetRotation(long this_addr, long inRotation_addr);
+    public static native void internal_native_SetRotation(long this_addr, long inRotation_addr);
 
     public Vec3 GetCenterOfMassPosition() {
         long pointer = internal_native_GetCenterOfMassPosition((long) getNativeData().getCPointer());
@@ -220,7 +220,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetCenterOfMassPosition();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetCenterOfMassPosition(long this_addr);
+    public static native long internal_native_GetCenterOfMassPosition(long this_addr);
 
     public Mat44 GetWorldTransform() {
         long pointer = internal_native_GetWorldTransform((long) getNativeData().getCPointer());
@@ -237,7 +237,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetWorldTransform();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetWorldTransform(long this_addr);
+    public static native long internal_native_GetWorldTransform(long this_addr);
 
     public Mat44 GetCenterOfMassTransform() {
         long pointer = internal_native_GetCenterOfMassTransform((long) getNativeData().getCPointer());
@@ -254,7 +254,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetCenterOfMassTransform();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetCenterOfMassTransform(long this_addr);
+    public static native long internal_native_GetCenterOfMassTransform(long this_addr);
 
     public float GetMass() {
         return internal_native_GetMass((long) getNativeData().getCPointer());
@@ -264,7 +264,7 @@ return (jlong)&copy_addr;*/
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->GetMass();
 */
-    private static native float internal_native_GetMass(long this_addr);
+    public static native float internal_native_GetMass(long this_addr);
 
     public void SetMass(float inMass) {
         internal_native_SetMass((long) getNativeData().getCPointer(), inMass);
@@ -274,7 +274,7 @@ return nativeObject->GetMass();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetMass((float)inMass);
 */
-    private static native void internal_native_SetMass(long this_addr, float inMass);
+    public static native void internal_native_SetMass(long this_addr, float inMass);
 
     public float GetMaxStrength() {
         return internal_native_GetMaxStrength((long) getNativeData().getCPointer());
@@ -284,7 +284,7 @@ nativeObject->SetMass((float)inMass);
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->GetMaxStrength();
 */
-    private static native float internal_native_GetMaxStrength(long this_addr);
+    public static native float internal_native_GetMaxStrength(long this_addr);
 
     public void SetMaxStrength(float inMaxStrength) {
         internal_native_SetMaxStrength((long) getNativeData().getCPointer(), inMaxStrength);
@@ -294,7 +294,7 @@ return nativeObject->GetMaxStrength();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetMaxStrength((float)inMaxStrength);
 */
-    private static native void internal_native_SetMaxStrength(long this_addr, float inMaxStrength);
+    public static native void internal_native_SetMaxStrength(long this_addr, float inMaxStrength);
 
     public float GetPenetrationRecoverySpeed() {
         return internal_native_GetPenetrationRecoverySpeed((long) getNativeData().getCPointer());
@@ -304,7 +304,7 @@ nativeObject->SetMaxStrength((float)inMaxStrength);
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->GetPenetrationRecoverySpeed();
 */
-    private static native float internal_native_GetPenetrationRecoverySpeed(long this_addr);
+    public static native float internal_native_GetPenetrationRecoverySpeed(long this_addr);
 
     public void SetPenetrationRecoverySpeed(float inSpeed) {
         internal_native_SetPenetrationRecoverySpeed((long) getNativeData().getCPointer(), inSpeed);
@@ -314,7 +314,7 @@ return nativeObject->GetPenetrationRecoverySpeed();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetPenetrationRecoverySpeed((float)inSpeed);
 */
-    private static native void internal_native_SetPenetrationRecoverySpeed(long this_addr, float inSpeed);
+    public static native void internal_native_SetPenetrationRecoverySpeed(long this_addr, float inSpeed);
 
     public float GetCharacterPadding() {
         return internal_native_GetCharacterPadding((long) getNativeData().getCPointer());
@@ -324,7 +324,7 @@ nativeObject->SetPenetrationRecoverySpeed((float)inSpeed);
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->GetCharacterPadding();
 */
-    private static native float internal_native_GetCharacterPadding(long this_addr);
+    public static native float internal_native_GetCharacterPadding(long this_addr);
 
     public int GetMaxNumHits() {
         return internal_native_GetMaxNumHits((long) getNativeData().getCPointer());
@@ -334,7 +334,7 @@ return nativeObject->GetCharacterPadding();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->GetMaxNumHits();
 */
-    private static native int internal_native_GetMaxNumHits(long this_addr);
+    public static native int internal_native_GetMaxNumHits(long this_addr);
 
     public void SetMaxNumHits(int inMaxHits) {
         internal_native_SetMaxNumHits((long) getNativeData().getCPointer(), inMaxHits);
@@ -344,7 +344,7 @@ return nativeObject->GetMaxNumHits();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetMaxNumHits(inMaxHits);
 */
-    private static native void internal_native_SetMaxNumHits(long this_addr, int inMaxHits);
+    public static native void internal_native_SetMaxNumHits(long this_addr, int inMaxHits);
 
     public float GetHitReductionCosMaxAngle() {
         return internal_native_GetHitReductionCosMaxAngle((long) getNativeData().getCPointer());
@@ -354,7 +354,7 @@ nativeObject->SetMaxNumHits(inMaxHits);
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->GetHitReductionCosMaxAngle();
 */
-    private static native float internal_native_GetHitReductionCosMaxAngle(long this_addr);
+    public static native float internal_native_GetHitReductionCosMaxAngle(long this_addr);
 
     public void SetHitReductionCosMaxAngle(float inCosMaxAngle) {
         internal_native_SetHitReductionCosMaxAngle((long) getNativeData().getCPointer(), inCosMaxAngle);
@@ -364,7 +364,7 @@ return nativeObject->GetHitReductionCosMaxAngle();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetHitReductionCosMaxAngle((float)inCosMaxAngle);
 */
-    private static native void internal_native_SetHitReductionCosMaxAngle(long this_addr, float inCosMaxAngle);
+    public static native void internal_native_SetHitReductionCosMaxAngle(long this_addr, float inCosMaxAngle);
 
     public boolean GetMaxHitsExceeded() {
         return internal_native_GetMaxHitsExceeded((long) getNativeData().getCPointer());
@@ -374,7 +374,7 @@ nativeObject->SetHitReductionCosMaxAngle((float)inCosMaxAngle);
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->GetMaxHitsExceeded();
 */
-    private static native boolean internal_native_GetMaxHitsExceeded(long this_addr);
+    public static native boolean internal_native_GetMaxHitsExceeded(long this_addr);
 
     public Vec3 GetShapeOffset() {
         long pointer = internal_native_GetShapeOffset((long) getNativeData().getCPointer());
@@ -391,7 +391,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetShapeOffset();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetShapeOffset(long this_addr);
+    public static native long internal_native_GetShapeOffset(long this_addr);
 
     public void SetShapeOffset(Vec3 inShapeOffset) {
         internal_native_SetShapeOffset((long) getNativeData().getCPointer(), (long) (inShapeOffset != null ? inShapeOffset.getNativeData().getCPointer() : 0));
@@ -401,7 +401,7 @@ return (jlong)&copy_addr;*/
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetShapeOffset(*((Vec3* )inShapeOffset_addr));
 */
-    private static native void internal_native_SetShapeOffset(long this_addr, long inShapeOffset_addr);
+    public static native void internal_native_SetShapeOffset(long this_addr, long inShapeOffset_addr);
 
     public long GetUserData() {
         return internal_native_GetUserData((long) getNativeData().getCPointer());
@@ -411,7 +411,7 @@ nativeObject->SetShapeOffset(*((Vec3* )inShapeOffset_addr));
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->GetUserData();
 */
-    private static native long internal_native_GetUserData(long this_addr);
+    public static native long internal_native_GetUserData(long this_addr);
 
     public void SetUserData(long inUserData) {
         internal_native_SetUserData((long) getNativeData().getCPointer(), inUserData);
@@ -421,7 +421,7 @@ return nativeObject->GetUserData();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetUserData(inUserData);
 */
-    private static native void internal_native_SetUserData(long this_addr, long inUserData);
+    public static native void internal_native_SetUserData(long this_addr, long inUserData);
 
     public BodyID GetInnerBodyID() {
         long pointer = internal_native_GetInnerBodyID((long) getNativeData().getCPointer());
@@ -438,7 +438,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->GetInnerBodyID();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetInnerBodyID(long this_addr);
+    public static native long internal_native_GetInnerBodyID(long this_addr);
 
     public void StartTrackingContactChanges() {
         internal_native_StartTrackingContactChanges((long) getNativeData().getCPointer());
@@ -448,7 +448,7 @@ return (jlong)&copy_addr;*/
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->StartTrackingContactChanges();
 */
-    private static native void internal_native_StartTrackingContactChanges(long this_addr);
+    public static native void internal_native_StartTrackingContactChanges(long this_addr);
 
     public void FinishTrackingContactChanges() {
         internal_native_FinishTrackingContactChanges((long) getNativeData().getCPointer());
@@ -458,7 +458,7 @@ nativeObject->StartTrackingContactChanges();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->FinishTrackingContactChanges();
 */
-    private static native void internal_native_FinishTrackingContactChanges(long this_addr);
+    public static native void internal_native_FinishTrackingContactChanges(long this_addr);
 
     public Vec3 CancelVelocityTowardsSteepSlopes(Vec3 inDesiredVelocity) {
         long pointer = internal_native_CancelVelocityTowardsSteepSlopes((long) getNativeData().getCPointer(), (long) (inDesiredVelocity != null ? inDesiredVelocity.getNativeData().getCPointer() : 0));
@@ -475,7 +475,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->CancelVelocityTowardsSteepSlopes(*((Vec3* )inDesiredVelocity_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_CancelVelocityTowardsSteepSlopes(long this_addr, long inDesiredVelocity_addr);
+    public static native long internal_native_CancelVelocityTowardsSteepSlopes(long this_addr, long inDesiredVelocity_addr);
 
     public void Update(float inDeltaTime, Vec3 inGravity, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
         internal_native_Update((long) getNativeData().getCPointer(), inDeltaTime, (long) (inGravity != null ? inGravity.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
@@ -485,7 +485,7 @@ return (jlong)&copy_addr;*/
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->Update((float)inDeltaTime, *((Vec3* )inGravity_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr), *((BodyFilter* )inBodyFilter_addr), *((ShapeFilter* )inShapeFilter_addr), *((TempAllocator* )inAllocator_addr));
 */
-    private static native void internal_native_Update(long this_addr, float inDeltaTime, long inGravity_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
+    public static native void internal_native_Update(long this_addr, float inDeltaTime, long inGravity_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public boolean CanWalkStairs(Vec3 inLinearVelocity) {
         return internal_native_CanWalkStairs((long) getNativeData().getCPointer(), (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0));
@@ -495,7 +495,7 @@ nativeObject->Update((float)inDeltaTime, *((Vec3* )inGravity_addr), *((BroadPhas
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->CanWalkStairs(*((Vec3* )inLinearVelocity_addr));
 */
-    private static native boolean internal_native_CanWalkStairs(long this_addr, long inLinearVelocity_addr);
+    public static native boolean internal_native_CanWalkStairs(long this_addr, long inLinearVelocity_addr);
 
     public boolean WalkStairs(float inDeltaTime, Vec3 inStepUp, Vec3 inStepForward, Vec3 inStepForwardTest, Vec3 inStepDownExtra, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
         return internal_native_WalkStairs((long) getNativeData().getCPointer(), inDeltaTime, (long) (inStepUp != null ? inStepUp.getNativeData().getCPointer() : 0), (long) (inStepForward != null ? inStepForward.getNativeData().getCPointer() : 0), (long) (inStepForwardTest != null ? inStepForwardTest.getNativeData().getCPointer() : 0), (long) (inStepDownExtra != null ? inStepDownExtra.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
@@ -505,7 +505,7 @@ return nativeObject->CanWalkStairs(*((Vec3* )inLinearVelocity_addr));
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->WalkStairs((float)inDeltaTime, *((Vec3* )inStepUp_addr), *((Vec3* )inStepForward_addr), *((Vec3* )inStepForwardTest_addr), *((Vec3* )inStepDownExtra_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr), *((BodyFilter* )inBodyFilter_addr), *((ShapeFilter* )inShapeFilter_addr), *((TempAllocator* )inAllocator_addr));
 */
-    private static native boolean internal_native_WalkStairs(long this_addr, float inDeltaTime, long inStepUp_addr, long inStepForward_addr, long inStepForwardTest_addr, long inStepDownExtra_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
+    public static native boolean internal_native_WalkStairs(long this_addr, float inDeltaTime, long inStepUp_addr, long inStepForward_addr, long inStepForwardTest_addr, long inStepDownExtra_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public boolean StickToFloor(Vec3 inStepDown, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
         return internal_native_StickToFloor((long) getNativeData().getCPointer(), (long) (inStepDown != null ? inStepDown.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
@@ -515,7 +515,7 @@ return nativeObject->WalkStairs((float)inDeltaTime, *((Vec3* )inStepUp_addr), *(
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->StickToFloor(*((Vec3* )inStepDown_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr), *((BodyFilter* )inBodyFilter_addr), *((ShapeFilter* )inShapeFilter_addr), *((TempAllocator* )inAllocator_addr));
 */
-    private static native boolean internal_native_StickToFloor(long this_addr, long inStepDown_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
+    public static native boolean internal_native_StickToFloor(long this_addr, long inStepDown_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public void ExtendedUpdate(float inDeltaTime, Vec3 inGravity, ExtendedUpdateSettings inSettings, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
         internal_native_ExtendedUpdate((long) getNativeData().getCPointer(), inDeltaTime, (long) (inGravity != null ? inGravity.getNativeData().getCPointer() : 0), (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
@@ -525,7 +525,7 @@ return nativeObject->StickToFloor(*((Vec3* )inStepDown_addr), *((BroadPhaseLayer
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->ExtendedUpdate((float)inDeltaTime, *((Vec3* )inGravity_addr), *((CharacterVirtual::ExtendedUpdateSettings* )inSettings_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr), *((BodyFilter* )inBodyFilter_addr), *((ShapeFilter* )inShapeFilter_addr), *((TempAllocator* )inAllocator_addr));
 */
-    private static native void internal_native_ExtendedUpdate(long this_addr, float inDeltaTime, long inGravity_addr, long inSettings_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
+    public static native void internal_native_ExtendedUpdate(long this_addr, float inDeltaTime, long inGravity_addr, long inSettings_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public void RefreshContacts(BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
         internal_native_RefreshContacts((long) getNativeData().getCPointer(), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
@@ -535,7 +535,7 @@ nativeObject->ExtendedUpdate((float)inDeltaTime, *((Vec3* )inGravity_addr), *((C
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->RefreshContacts(*((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr), *((BodyFilter* )inBodyFilter_addr), *((ShapeFilter* )inShapeFilter_addr), *((TempAllocator* )inAllocator_addr));
 */
-    private static native void internal_native_RefreshContacts(long this_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
+    public static native void internal_native_RefreshContacts(long this_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public void UpdateGroundVelocity() {
         internal_native_UpdateGroundVelocity((long) getNativeData().getCPointer());
@@ -545,7 +545,7 @@ nativeObject->RefreshContacts(*((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->UpdateGroundVelocity();
 */
-    private static native void internal_native_UpdateGroundVelocity(long this_addr);
+    public static native void internal_native_UpdateGroundVelocity(long this_addr);
 
     public boolean SetShape(Shape inShape, float inMaxPenetrationDepth, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
         return internal_native_SetShape((long) getNativeData().getCPointer(), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), inMaxPenetrationDepth, (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
@@ -555,7 +555,7 @@ nativeObject->UpdateGroundVelocity();
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->SetShape((Shape* )inShape_addr, (float)inMaxPenetrationDepth, *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr), *((BodyFilter* )inBodyFilter_addr), *((ShapeFilter* )inShapeFilter_addr), *((TempAllocator* )inAllocator_addr));
 */
-    private static native boolean internal_native_SetShape(long this_addr, long inShape_addr, float inMaxPenetrationDepth, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
+    public static native boolean internal_native_SetShape(long this_addr, long inShape_addr, float inMaxPenetrationDepth, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public void SetInnerBodyShape(Shape inShape) {
         internal_native_SetInnerBodyShape((long) getNativeData().getCPointer(), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0));
@@ -565,7 +565,7 @@ return nativeObject->SetShape((Shape* )inShape_addr, (float)inMaxPenetrationDept
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 nativeObject->SetInnerBodyShape((Shape* )inShape_addr);
 */
-    private static native void internal_native_SetInnerBodyShape(long this_addr, long inShape_addr);
+    public static native void internal_native_SetInnerBodyShape(long this_addr, long inShape_addr);
 
     public TransformedShape GetTransformedShape() {
         long pointer = internal_native_GetTransformedShape((long) getNativeData().getCPointer());
@@ -582,7 +582,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static TransformedShape copy_addr;
 copy_addr = nativeObject->GetTransformedShape();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetTransformedShape(long this_addr);
+    public static native long internal_native_GetTransformedShape(long this_addr);
 
     public boolean HasCollidedWith(BodyID inBodyID) {
         return internal_native_HasCollidedWith((long) getNativeData().getCPointer(), (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
@@ -592,7 +592,7 @@ return (jlong)&copy_addr;*/
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->HasCollidedWith(*((BodyID* )inBodyID_addr));
 */
-    private static native boolean internal_native_HasCollidedWith(long this_addr, long inBodyID_addr);
+    public static native boolean internal_native_HasCollidedWith(long this_addr, long inBodyID_addr);
 
     public boolean HasCollidedWithCharacterID(CharacterID inCharacterID) {
         return internal_native_HasCollidedWithCharacterID((long) getNativeData().getCPointer(), (long) (inCharacterID != null ? inCharacterID.getNativeData().getCPointer() : 0));
@@ -602,7 +602,7 @@ return nativeObject->HasCollidedWith(*((BodyID* )inBodyID_addr));
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->HasCollidedWith(*((CharacterID* )inCharacterID_addr));
 */
-    private static native boolean internal_native_HasCollidedWithCharacterID(long this_addr, long inCharacterID_addr);
+    public static native boolean internal_native_HasCollidedWithCharacterID(long this_addr, long inCharacterID_addr);
 
     public boolean HasCollidedWithCharacter(CharacterVirtual inCharacter) {
         return internal_native_HasCollidedWithCharacter((long) getNativeData().getCPointer(), (long) (inCharacter != null ? inCharacter.getNativeData().getCPointer() : 0));
@@ -612,7 +612,7 @@ return nativeObject->HasCollidedWith(*((CharacterID* )inCharacterID_addr));
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return nativeObject->HasCollidedWith((CharacterVirtual* )inCharacter_addr);
 */
-    private static native boolean internal_native_HasCollidedWithCharacter(long this_addr, long inCharacter_addr);
+    public static native boolean internal_native_HasCollidedWithCharacter(long this_addr, long inCharacter_addr);
 
     public ArrayCharacterVirtualContact GetActiveContacts() {
         long pointer = internal_native_GetActiveContacts((long) getNativeData().getCPointer());
@@ -629,197 +629,5 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static ArrayCharacterVirtualContact copy_addr;
 copy_addr = nativeObject->GetActiveContacts();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetActiveContacts(long this_addr);
-
-    public static long native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(long inSettings_addr, long inPosition_addr, long inRotation_addr, long inSystem_addr) {
-        return internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(inSettings_addr, inPosition_addr, inRotation_addr, inSystem_addr);
-    }
-
-    public static long native_GetID(long this_addr) {
-        return internal_native_GetID(this_addr);
-    }
-
-    public static void native_SetListener(long this_addr, long inListener_addr) {
-        internal_native_SetListener(this_addr, inListener_addr);
-    }
-
-    public static void native_SetCharacterVsCharacterCollision(long this_addr, long inCharacterVsCharacterCollision_addr) {
-        internal_native_SetCharacterVsCharacterCollision(this_addr, inCharacterVsCharacterCollision_addr);
-    }
-
-    public static long native_GetListener(long this_addr) {
-        return internal_native_GetListener(this_addr);
-    }
-
-    public static long native_GetLinearVelocity(long this_addr) {
-        return internal_native_GetLinearVelocity(this_addr);
-    }
-
-    public static void native_SetLinearVelocity(long this_addr, long inLinearVelocity_addr) {
-        internal_native_SetLinearVelocity(this_addr, inLinearVelocity_addr);
-    }
-
-    public static long native_GetPosition(long this_addr) {
-        return internal_native_GetPosition(this_addr);
-    }
-
-    public static void native_SetPosition(long this_addr, long inPosition_addr) {
-        internal_native_SetPosition(this_addr, inPosition_addr);
-    }
-
-    public static long native_GetRotation(long this_addr) {
-        return internal_native_GetRotation(this_addr);
-    }
-
-    public static void native_SetRotation(long this_addr, long inRotation_addr) {
-        internal_native_SetRotation(this_addr, inRotation_addr);
-    }
-
-    public static long native_GetCenterOfMassPosition(long this_addr) {
-        return internal_native_GetCenterOfMassPosition(this_addr);
-    }
-
-    public static long native_GetWorldTransform(long this_addr) {
-        return internal_native_GetWorldTransform(this_addr);
-    }
-
-    public static long native_GetCenterOfMassTransform(long this_addr) {
-        return internal_native_GetCenterOfMassTransform(this_addr);
-    }
-
-    public static float native_GetMass(long this_addr) {
-        return internal_native_GetMass(this_addr);
-    }
-
-    public static void native_SetMass(long this_addr, float inMass) {
-        internal_native_SetMass(this_addr, inMass);
-    }
-
-    public static float native_GetMaxStrength(long this_addr) {
-        return internal_native_GetMaxStrength(this_addr);
-    }
-
-    public static void native_SetMaxStrength(long this_addr, float inMaxStrength) {
-        internal_native_SetMaxStrength(this_addr, inMaxStrength);
-    }
-
-    public static float native_GetPenetrationRecoverySpeed(long this_addr) {
-        return internal_native_GetPenetrationRecoverySpeed(this_addr);
-    }
-
-    public static void native_SetPenetrationRecoverySpeed(long this_addr, float inSpeed) {
-        internal_native_SetPenetrationRecoverySpeed(this_addr, inSpeed);
-    }
-
-    public static float native_GetCharacterPadding(long this_addr) {
-        return internal_native_GetCharacterPadding(this_addr);
-    }
-
-    public static int native_GetMaxNumHits(long this_addr) {
-        return internal_native_GetMaxNumHits(this_addr);
-    }
-
-    public static void native_SetMaxNumHits(long this_addr, int inMaxHits) {
-        internal_native_SetMaxNumHits(this_addr, inMaxHits);
-    }
-
-    public static float native_GetHitReductionCosMaxAngle(long this_addr) {
-        return internal_native_GetHitReductionCosMaxAngle(this_addr);
-    }
-
-    public static void native_SetHitReductionCosMaxAngle(long this_addr, float inCosMaxAngle) {
-        internal_native_SetHitReductionCosMaxAngle(this_addr, inCosMaxAngle);
-    }
-
-    public static boolean native_GetMaxHitsExceeded(long this_addr) {
-        return internal_native_GetMaxHitsExceeded(this_addr);
-    }
-
-    public static long native_GetShapeOffset(long this_addr) {
-        return internal_native_GetShapeOffset(this_addr);
-    }
-
-    public static void native_SetShapeOffset(long this_addr, long inShapeOffset_addr) {
-        internal_native_SetShapeOffset(this_addr, inShapeOffset_addr);
-    }
-
-    public static long native_GetUserData(long this_addr) {
-        return internal_native_GetUserData(this_addr);
-    }
-
-    public static void native_SetUserData(long this_addr, long inUserData) {
-        internal_native_SetUserData(this_addr, inUserData);
-    }
-
-    public static long native_GetInnerBodyID(long this_addr) {
-        return internal_native_GetInnerBodyID(this_addr);
-    }
-
-    public static void native_StartTrackingContactChanges(long this_addr) {
-        internal_native_StartTrackingContactChanges(this_addr);
-    }
-
-    public static void native_FinishTrackingContactChanges(long this_addr) {
-        internal_native_FinishTrackingContactChanges(this_addr);
-    }
-
-    public static long native_CancelVelocityTowardsSteepSlopes(long this_addr, long inDesiredVelocity_addr) {
-        return internal_native_CancelVelocityTowardsSteepSlopes(this_addr, inDesiredVelocity_addr);
-    }
-
-    public static void native_Update(long this_addr, float inDeltaTime, long inGravity_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr) {
-        internal_native_Update(this_addr, inDeltaTime, inGravity_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr, inAllocator_addr);
-    }
-
-    public static boolean native_CanWalkStairs(long this_addr, long inLinearVelocity_addr) {
-        return internal_native_CanWalkStairs(this_addr, inLinearVelocity_addr);
-    }
-
-    public static boolean native_WalkStairs(long this_addr, float inDeltaTime, long inStepUp_addr, long inStepForward_addr, long inStepForwardTest_addr, long inStepDownExtra_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr) {
-        return internal_native_WalkStairs(this_addr, inDeltaTime, inStepUp_addr, inStepForward_addr, inStepForwardTest_addr, inStepDownExtra_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr, inAllocator_addr);
-    }
-
-    public static boolean native_StickToFloor(long this_addr, long inStepDown_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr) {
-        return internal_native_StickToFloor(this_addr, inStepDown_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr, inAllocator_addr);
-    }
-
-    public static void native_ExtendedUpdate(long this_addr, float inDeltaTime, long inGravity_addr, long inSettings_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr) {
-        internal_native_ExtendedUpdate(this_addr, inDeltaTime, inGravity_addr, inSettings_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr, inAllocator_addr);
-    }
-
-    public static void native_RefreshContacts(long this_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr) {
-        internal_native_RefreshContacts(this_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr, inAllocator_addr);
-    }
-
-    public static void native_UpdateGroundVelocity(long this_addr) {
-        internal_native_UpdateGroundVelocity(this_addr);
-    }
-
-    public static boolean native_SetShape(long this_addr, long inShape_addr, float inMaxPenetrationDepth, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr) {
-        return internal_native_SetShape(this_addr, inShape_addr, inMaxPenetrationDepth, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr, inAllocator_addr);
-    }
-
-    public static void native_SetInnerBodyShape(long this_addr, long inShape_addr) {
-        internal_native_SetInnerBodyShape(this_addr, inShape_addr);
-    }
-
-    public static long native_GetTransformedShape(long this_addr) {
-        return internal_native_GetTransformedShape(this_addr);
-    }
-
-    public static boolean native_HasCollidedWith(long this_addr, long inBodyID_addr) {
-        return internal_native_HasCollidedWith(this_addr, inBodyID_addr);
-    }
-
-    public static boolean native_HasCollidedWithCharacterID(long this_addr, long inCharacterID_addr) {
-        return internal_native_HasCollidedWithCharacterID(this_addr, inCharacterID_addr);
-    }
-
-    public static boolean native_HasCollidedWithCharacter(long this_addr, long inCharacter_addr) {
-        return internal_native_HasCollidedWithCharacter(this_addr, inCharacter_addr);
-    }
-
-    public static long native_GetActiveContacts(long this_addr) {
-        return internal_native_GetActiveContacts(this_addr);
-    }
+    public static native long internal_native_GetActiveContacts(long this_addr);
 }

@@ -29,7 +29,7 @@ public class PlaneShapeSettings extends ShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new PlaneShapeSettings(*((Plane* )inPlane_addr), (PhysicsMaterial* )inMaterial_addr, (float)inHalfExtent);
 */
-    private static native long internal_native_create_Plane_PhysicsMaterial_float(long inPlane_addr, long inMaterial_addr, float inHalfExtent);
+    public static native long internal_native_create_Plane_PhysicsMaterial_float(long inPlane_addr, long inMaterial_addr, float inHalfExtent);
 
     public PlaneShapeSettings(Plane inPlane, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -40,7 +40,7 @@ return (jlong)new PlaneShapeSettings(*((Plane* )inPlane_addr), (PhysicsMaterial*
     /*[-JNI;-NATIVE]
 return (jlong)new PlaneShapeSettings(*((Plane* )inPlane_addr), (PhysicsMaterial* )inMaterial_addr);
 */
-    private static native long internal_native_create_Plane_PhysicsMaterial(long inPlane_addr, long inMaterial_addr);
+    public static native long internal_native_create_Plane_PhysicsMaterial(long inPlane_addr, long inMaterial_addr);
 
     public PlaneShapeSettings(Plane inPlane) {
         super((byte) 1, (char) 1);
@@ -51,7 +51,7 @@ return (jlong)new PlaneShapeSettings(*((Plane* )inPlane_addr), (PhysicsMaterial*
     /*[-JNI;-NATIVE]
 return (jlong)new PlaneShapeSettings(*((Plane* )inPlane_addr));
 */
-    private static native long internal_native_create_Plane(long inPlane_addr);
+    public static native long internal_native_create_Plane(long inPlane_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -77,7 +77,7 @@ return (jlong)new PlaneShapeSettings(*((Plane* )inPlane_addr));
 PlaneShapeSettings* nativeObject = (PlaneShapeSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Plane get_mPlane() {
         long pointer = internal_native_get_mPlane((long) getNativeData().getCPointer());
@@ -93,7 +93,7 @@ delete nativeObject;
 PlaneShapeSettings* nativeObject = (PlaneShapeSettings*)this_addr;
 return (jlong)&nativeObject->mPlane;
 */
-    private static native long internal_native_get_mPlane(long this_addr);
+    public static native long internal_native_get_mPlane(long this_addr);
 
     public void set_mPlane(Plane mPlane) {
         internal_native_set_mPlane((long) getNativeData().getCPointer(), (long) (mPlane != null ? mPlane.getNativeData().getCPointer() : 0));
@@ -103,7 +103,7 @@ return (jlong)&nativeObject->mPlane;
 PlaneShapeSettings* nativeObject = (PlaneShapeSettings*)this_addr;
 nativeObject->mPlane = *((Plane*)mPlane_addr);
 */
-    private static native void internal_native_set_mPlane(long this_addr, long mPlane_addr);
+    public static native void internal_native_set_mPlane(long this_addr, long mPlane_addr);
 
     public PhysicsMaterial get_mMaterial() {
         long pointer = internal_native_get_mMaterial((long) getNativeData().getCPointer());
@@ -120,7 +120,7 @@ PlaneShapeSettings* nativeObject = (PlaneShapeSettings*)this_addr;
 const PhysicsMaterial* attr = nativeObject->mMaterial;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mMaterial(long this_addr);
+    public static native long internal_native_get_mMaterial(long this_addr);
 
     public void set_mMaterial(PhysicsMaterial mMaterial) {
         internal_native_set_mMaterial((long) getNativeData().getCPointer(), (long) (mMaterial != null ? mMaterial.getNativeData().getCPointer() : 0));
@@ -130,7 +130,7 @@ return (jlong)attr;
 PlaneShapeSettings* nativeObject = (PlaneShapeSettings*)this_addr;
 nativeObject->mMaterial = (PhysicsMaterial*)mMaterial_addr;
 */
-    private static native void internal_native_set_mMaterial(long this_addr, long mMaterial_addr);
+    public static native void internal_native_set_mMaterial(long this_addr, long mMaterial_addr);
 
     public float get_mHalfExtent() {
         return internal_native_get_mHalfExtent((long) getNativeData().getCPointer());
@@ -140,7 +140,7 @@ nativeObject->mMaterial = (PhysicsMaterial*)mMaterial_addr;
 PlaneShapeSettings* nativeObject = (PlaneShapeSettings*)this_addr;
 return nativeObject->mHalfExtent;
 */
-    private static native float internal_native_get_mHalfExtent(long this_addr);
+    public static native float internal_native_get_mHalfExtent(long this_addr);
 
     public void set_mHalfExtent(float mHalfExtent) {
         internal_native_set_mHalfExtent((long) getNativeData().getCPointer(), mHalfExtent);
@@ -150,45 +150,5 @@ return nativeObject->mHalfExtent;
 PlaneShapeSettings* nativeObject = (PlaneShapeSettings*)this_addr;
 nativeObject->mHalfExtent = mHalfExtent;
 */
-    private static native void internal_native_set_mHalfExtent(long this_addr, float mHalfExtent);
-
-    public static long native_create_Plane_PhysicsMaterial_float(long inPlane_addr, long inMaterial_addr, float inHalfExtent) {
-        return internal_native_create_Plane_PhysicsMaterial_float(inPlane_addr, inMaterial_addr, inHalfExtent);
-    }
-
-    public static long native_create_Plane_PhysicsMaterial(long inPlane_addr, long inMaterial_addr) {
-        return internal_native_create_Plane_PhysicsMaterial(inPlane_addr, inMaterial_addr);
-    }
-
-    public static long native_create_Plane(long inPlane_addr) {
-        return internal_native_create_Plane(inPlane_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mPlane(long this_addr) {
-        return internal_native_get_mPlane(this_addr);
-    }
-
-    public static void native_set_mPlane(long this_addr, long mPlane_addr) {
-        internal_native_set_mPlane(this_addr, mPlane_addr);
-    }
-
-    public static long native_get_mMaterial(long this_addr) {
-        return internal_native_get_mMaterial(this_addr);
-    }
-
-    public static void native_set_mMaterial(long this_addr, long mMaterial_addr) {
-        internal_native_set_mMaterial(this_addr, mMaterial_addr);
-    }
-
-    public static float native_get_mHalfExtent(long this_addr) {
-        return internal_native_get_mHalfExtent(this_addr);
-    }
-
-    public static void native_set_mHalfExtent(long this_addr, float mHalfExtent) {
-        internal_native_set_mHalfExtent(this_addr, mHalfExtent);
-    }
+    public static native void internal_native_set_mHalfExtent(long this_addr, float mHalfExtent);
 }

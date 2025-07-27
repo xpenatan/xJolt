@@ -26,7 +26,7 @@ public class TrackedVehicleController extends VehicleController {
     /*[-JNI;-NATIVE]
 return (jlong)new TrackedVehicleController(*((TrackedVehicleControllerSettings* )inSettings_addr), *((VehicleConstraint* )inConstraint_addr));
 */
-    private static native long internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr);
+    public static native long internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -44,7 +44,7 @@ return (jlong)new TrackedVehicleController(*((TrackedVehicleControllerSettings* 
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 nativeObject->SetDriverInput((float)inForward, (float)inLeftRatio, (float)inRightRatio, (float)inBrake);
 */
-    private static native void internal_native_SetDriverInput(long this_addr, float inForward, float inLeftRatio, float inRightRatio, float inBrake);
+    public static native void internal_native_SetDriverInput(long this_addr, float inForward, float inLeftRatio, float inRightRatio, float inBrake);
 
     public void SetForwardInput(float inForward) {
         internal_native_SetForwardInput((long) getNativeData().getCPointer(), inForward);
@@ -54,7 +54,7 @@ nativeObject->SetDriverInput((float)inForward, (float)inLeftRatio, (float)inRigh
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 nativeObject->SetForwardInput((float)inForward);
 */
-    private static native void internal_native_SetForwardInput(long this_addr, float inForward);
+    public static native void internal_native_SetForwardInput(long this_addr, float inForward);
 
     public float GetForwardInput() {
         return internal_native_GetForwardInput((long) getNativeData().getCPointer());
@@ -64,7 +64,7 @@ nativeObject->SetForwardInput((float)inForward);
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 return nativeObject->GetForwardInput();
 */
-    private static native float internal_native_GetForwardInput(long this_addr);
+    public static native float internal_native_GetForwardInput(long this_addr);
 
     public void SetLeftRatio(float inLeftRatio) {
         internal_native_SetLeftRatio((long) getNativeData().getCPointer(), inLeftRatio);
@@ -74,7 +74,7 @@ return nativeObject->GetForwardInput();
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 nativeObject->SetLeftRatio((float)inLeftRatio);
 */
-    private static native void internal_native_SetLeftRatio(long this_addr, float inLeftRatio);
+    public static native void internal_native_SetLeftRatio(long this_addr, float inLeftRatio);
 
     public float GetLeftRatio() {
         return internal_native_GetLeftRatio((long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ nativeObject->SetLeftRatio((float)inLeftRatio);
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 return nativeObject->GetLeftRatio();
 */
-    private static native float internal_native_GetLeftRatio(long this_addr);
+    public static native float internal_native_GetLeftRatio(long this_addr);
 
     public void SetRightRatio(float inRightRatio) {
         internal_native_SetRightRatio((long) getNativeData().getCPointer(), inRightRatio);
@@ -94,7 +94,7 @@ return nativeObject->GetLeftRatio();
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 nativeObject->SetRightRatio((float)inRightRatio);
 */
-    private static native void internal_native_SetRightRatio(long this_addr, float inRightRatio);
+    public static native void internal_native_SetRightRatio(long this_addr, float inRightRatio);
 
     public float GetRightRatio() {
         return internal_native_GetRightRatio((long) getNativeData().getCPointer());
@@ -104,7 +104,7 @@ nativeObject->SetRightRatio((float)inRightRatio);
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 return nativeObject->GetRightRatio();
 */
-    private static native float internal_native_GetRightRatio(long this_addr);
+    public static native float internal_native_GetRightRatio(long this_addr);
 
     public void SetBrakeInput(float inBrake) {
         internal_native_SetBrakeInput((long) getNativeData().getCPointer(), inBrake);
@@ -114,7 +114,7 @@ return nativeObject->GetRightRatio();
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 nativeObject->SetBrakeInput((float)inBrake);
 */
-    private static native void internal_native_SetBrakeInput(long this_addr, float inBrake);
+    public static native void internal_native_SetBrakeInput(long this_addr, float inBrake);
 
     public float GetBrakeInput() {
         return internal_native_GetBrakeInput((long) getNativeData().getCPointer());
@@ -124,7 +124,7 @@ nativeObject->SetBrakeInput((float)inBrake);
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 return nativeObject->GetBrakeInput();
 */
-    private static native float internal_native_GetBrakeInput(long this_addr);
+    public static native float internal_native_GetBrakeInput(long this_addr);
 
     public VehicleEngine GetEngine() {
         long pointer = internal_native_GetEngine((long) getNativeData().getCPointer());
@@ -140,7 +140,7 @@ return nativeObject->GetBrakeInput();
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 return (jlong)&nativeObject->GetEngine();
 */
-    private static native long internal_native_GetEngine(long this_addr);
+    public static native long internal_native_GetEngine(long this_addr);
 
     public VehicleTransmission GetTransmission() {
         long pointer = internal_native_GetTransmission((long) getNativeData().getCPointer());
@@ -156,53 +156,5 @@ return (jlong)&nativeObject->GetEngine();
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 return (jlong)&nativeObject->GetTransmission();
 */
-    private static native long internal_native_GetTransmission(long this_addr);
-
-    public static long native_create_TrackedVehicleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr) {
-        return internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint(inSettings_addr, inConstraint_addr);
-    }
-
-    public static void native_SetDriverInput(long this_addr, float inForward, float inLeftRatio, float inRightRatio, float inBrake) {
-        internal_native_SetDriverInput(this_addr, inForward, inLeftRatio, inRightRatio, inBrake);
-    }
-
-    public static void native_SetForwardInput(long this_addr, float inForward) {
-        internal_native_SetForwardInput(this_addr, inForward);
-    }
-
-    public static float native_GetForwardInput(long this_addr) {
-        return internal_native_GetForwardInput(this_addr);
-    }
-
-    public static void native_SetLeftRatio(long this_addr, float inLeftRatio) {
-        internal_native_SetLeftRatio(this_addr, inLeftRatio);
-    }
-
-    public static float native_GetLeftRatio(long this_addr) {
-        return internal_native_GetLeftRatio(this_addr);
-    }
-
-    public static void native_SetRightRatio(long this_addr, float inRightRatio) {
-        internal_native_SetRightRatio(this_addr, inRightRatio);
-    }
-
-    public static float native_GetRightRatio(long this_addr) {
-        return internal_native_GetRightRatio(this_addr);
-    }
-
-    public static void native_SetBrakeInput(long this_addr, float inBrake) {
-        internal_native_SetBrakeInput(this_addr, inBrake);
-    }
-
-    public static float native_GetBrakeInput(long this_addr) {
-        return internal_native_GetBrakeInput(this_addr);
-    }
-
-    public static long native_GetEngine(long this_addr) {
-        return internal_native_GetEngine(this_addr);
-    }
-
-    public static long native_GetTransmission(long this_addr) {
-        return internal_native_GetTransmission(this_addr);
-    }
+    public static native long internal_native_GetTransmission(long this_addr);
 }

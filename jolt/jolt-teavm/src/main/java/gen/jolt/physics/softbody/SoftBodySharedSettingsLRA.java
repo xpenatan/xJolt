@@ -25,7 +25,7 @@ var jsObj = new jolt.SoftBodySharedSettingsLRA(inVertex1, inVertex2, inMaxDistan
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inVertex1", "inVertex2", "inMaxDistance"}, script = "var jsObj = new jolt.SoftBodySharedSettingsLRA(inVertex1, inVertex2, inMaxDistance);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_int_float(int inVertex1, int inVertex2, float inMaxDistance);
+    public static native int internal_native_create_int_int_float(int inVertex1, int inVertex2, float inMaxDistance);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mVertex(int index) {
         return internal_native_get_mVertex((int) (long) getNativeData().getCPointer(), index);
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);
 return jsObj.get_mVertex(index);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);return jsObj.get_mVertex(index);")
-    private static native int internal_native_get_mVertex(int this_addr, int index);
+    public static native int internal_native_get_mVertex(int this_addr, int index);
 
     public void set_mVertex(int index, int mVertex) {
         internal_native_set_mVertex((int) (long) getNativeData().getCPointer(), index, mVertex);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);
 jsObj.set_mVertex(index, mVertex);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mVertex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);jsObj.set_mVertex(index, mVertex);")
-    private static native void internal_native_set_mVertex(int this_addr, int index, int mVertex);
+    public static native void internal_native_set_mVertex(int this_addr, int index, int mVertex);
 
     public float get_mMaxDistance() {
         return internal_native_get_mMaxDistance((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);
 return jsObj.get_mMaxDistance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);return jsObj.get_mMaxDistance();")
-    private static native float internal_native_get_mMaxDistance(int this_addr);
+    public static native float internal_native_get_mMaxDistance(int this_addr);
 
     public void set_mMaxDistance(float mMaxDistance) {
         internal_native_set_mMaxDistance((int) (long) getNativeData().getCPointer(), mMaxDistance);
@@ -95,29 +95,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);
 jsObj.set_mMaxDistance(mMaxDistance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxDistance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsLRA);jsObj.set_mMaxDistance(mMaxDistance);")
-    private static native void internal_native_set_mMaxDistance(int this_addr, float mMaxDistance);
-
-    public static long native_create_int_int_float(int inVertex1, int inVertex2, float inMaxDistance) {
-        return internal_native_create_int_int_float(inVertex1, inVertex2, inMaxDistance);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_get_mVertex(long this_addr, int index) {
-        return internal_native_get_mVertex((int) this_addr, index);
-    }
-
-    public static void native_set_mVertex(long this_addr, int index, int mVertex) {
-        internal_native_set_mVertex((int) this_addr, index, mVertex);
-    }
-
-    public static float native_get_mMaxDistance(long this_addr) {
-        return internal_native_get_mMaxDistance((int) this_addr);
-    }
-
-    public static void native_set_mMaxDistance(long this_addr, float mMaxDistance) {
-        internal_native_set_mMaxDistance((int) this_addr, mMaxDistance);
-    }
+    public static native void internal_native_set_mMaxDistance(int this_addr, float mMaxDistance);
 }

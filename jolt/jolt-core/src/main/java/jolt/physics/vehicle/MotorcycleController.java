@@ -22,7 +22,7 @@ public class MotorcycleController extends WheeledVehicleController {
     /*[-JNI;-NATIVE]
 return (jlong)new MotorcycleController(*((MotorcycleControllerSettings* )inSettings_addr), *((VehicleConstraint* )inConstraint_addr));
 */
-    private static native long internal_native_create_MotorcycleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr);
+    public static native long internal_native_create_MotorcycleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new MotorcycleController(*((MotorcycleControllerSettings* )inSetti
 MotorcycleController* nativeObject = (MotorcycleController*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float GetWheelBase() {
         return internal_native_GetWheelBase((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 MotorcycleController* nativeObject = (MotorcycleController*)this_addr;
 return nativeObject->GetWheelBase();
 */
-    private static native float internal_native_GetWheelBase(long this_addr);
+    public static native float internal_native_GetWheelBase(long this_addr);
 
     public void EnableLeanController(boolean inEnable) {
         internal_native_EnableLeanController((long) getNativeData().getCPointer(), inEnable);
@@ -68,7 +68,7 @@ return nativeObject->GetWheelBase();
 MotorcycleController* nativeObject = (MotorcycleController*)this_addr;
 nativeObject->EnableLeanController(inEnable);
 */
-    private static native void internal_native_EnableLeanController(long this_addr, boolean inEnable);
+    public static native void internal_native_EnableLeanController(long this_addr, boolean inEnable);
 
     public boolean IsLeanControllerEnabled() {
         return internal_native_IsLeanControllerEnabled((long) getNativeData().getCPointer());
@@ -78,25 +78,5 @@ nativeObject->EnableLeanController(inEnable);
 MotorcycleController* nativeObject = (MotorcycleController*)this_addr;
 return nativeObject->IsLeanControllerEnabled();
 */
-    private static native boolean internal_native_IsLeanControllerEnabled(long this_addr);
-
-    public static long native_create_MotorcycleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr) {
-        return internal_native_create_MotorcycleControllerSettings_VehicleConstraint(inSettings_addr, inConstraint_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_GetWheelBase(long this_addr) {
-        return internal_native_GetWheelBase(this_addr);
-    }
-
-    public static void native_EnableLeanController(long this_addr, boolean inEnable) {
-        internal_native_EnableLeanController(this_addr, inEnable);
-    }
-
-    public static boolean native_IsLeanControllerEnabled(long this_addr) {
-        return internal_native_IsLeanControllerEnabled(this_addr);
-    }
+    public static native boolean internal_native_IsLeanControllerEnabled(long this_addr);
 }

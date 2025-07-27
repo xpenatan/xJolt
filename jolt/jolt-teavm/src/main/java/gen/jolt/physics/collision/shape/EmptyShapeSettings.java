@@ -28,7 +28,7 @@ var jsObj = new jolt.EmptyShapeSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.EmptyShapeSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,7 +55,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.EmptyShapeSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.EmptyShapeSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mCenterOfMass() {
         int pointer = internal_native_get_mCenterOfMass((int) (long) getNativeData().getCPointer());
@@ -74,7 +74,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.EmptyShapeSettings);var returnedJSObj = jsObj.get_mCenterOfMass();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mCenterOfMass(int this_addr);
+    public static native int internal_native_get_mCenterOfMass(int this_addr);
 
     public void set_mCenterOfMass(Vec3 mCenterOfMass) {
         internal_native_set_mCenterOfMass((int) (long) getNativeData().getCPointer(), (int) (long) (mCenterOfMass != null ? mCenterOfMass.getNativeData().getCPointer() : 0));
@@ -85,21 +85,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.EmptyShapeSettings);
 jsObj.set_mCenterOfMass(mCenterOfMass_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCenterOfMass_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.EmptyShapeSettings);jsObj.set_mCenterOfMass(mCenterOfMass_addr);")
-    private static native void internal_native_set_mCenterOfMass(int this_addr, int mCenterOfMass_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mCenterOfMass(long this_addr) {
-        return internal_native_get_mCenterOfMass((int) this_addr);
-    }
-
-    public static void native_set_mCenterOfMass(long this_addr, long mCenterOfMass_addr) {
-        internal_native_set_mCenterOfMass((int) this_addr, (int) mCenterOfMass_addr);
-    }
+    public static native void internal_native_set_mCenterOfMass(int this_addr, int mCenterOfMass_addr);
 }

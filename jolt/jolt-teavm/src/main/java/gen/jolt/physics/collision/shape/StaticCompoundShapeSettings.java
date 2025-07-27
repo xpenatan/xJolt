@@ -24,7 +24,7 @@ var jsObj = new jolt.StaticCompoundShapeSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.StaticCompoundShapeSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -32,9 +32,5 @@ return jolt.getPointer(jsObj);
     @Deprecated()
     public StaticCompoundShapeSettings(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

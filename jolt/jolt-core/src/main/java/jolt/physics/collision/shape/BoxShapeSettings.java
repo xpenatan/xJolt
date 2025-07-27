@@ -27,7 +27,7 @@ public class BoxShapeSettings extends ConvexShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new BoxShapeSettings(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    private static native long internal_native_create_Vec3_float_PhysicsMaterial(long inHalfExtent_addr, float inConvexRadius, long inMaterial_addr);
+    public static native long internal_native_create_Vec3_float_PhysicsMaterial(long inHalfExtent_addr, float inConvexRadius, long inMaterial_addr);
 
     public BoxShapeSettings(Vec3 inHalfExtent, float inConvexRadius) {
         super((byte) 1, (char) 1);
@@ -38,7 +38,7 @@ return (jlong)new BoxShapeSettings(*((Vec3* )inHalfExtent_addr), (float)inConvex
     /*[-JNI;-NATIVE]
 return (jlong)new BoxShapeSettings(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius);
 */
-    private static native long internal_native_create_Vec3_float(long inHalfExtent_addr, float inConvexRadius);
+    public static native long internal_native_create_Vec3_float(long inHalfExtent_addr, float inConvexRadius);
 
     public BoxShapeSettings(Vec3 inHalfExtent) {
         super((byte) 1, (char) 1);
@@ -49,7 +49,7 @@ return (jlong)new BoxShapeSettings(*((Vec3* )inHalfExtent_addr), (float)inConvex
     /*[-JNI;-NATIVE]
 return (jlong)new BoxShapeSettings(*((Vec3* )inHalfExtent_addr));
 */
-    private static native long internal_native_create_Vec3(long inHalfExtent_addr);
+    public static native long internal_native_create_Vec3(long inHalfExtent_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -73,7 +73,7 @@ return (jlong)new BoxShapeSettings(*((Vec3* )inHalfExtent_addr));
 BoxShapeSettings* nativeObject = (BoxShapeSettings*)this_addr;
 return (jlong)&nativeObject->mHalfExtent;
 */
-    private static native long internal_native_get_mHalfExtent(long this_addr);
+    public static native long internal_native_get_mHalfExtent(long this_addr);
 
     public void set_mHalfExtent(Vec3 mHalfExtent) {
         internal_native_set_mHalfExtent((long) getNativeData().getCPointer(), (long) (mHalfExtent != null ? mHalfExtent.getNativeData().getCPointer() : 0));
@@ -83,7 +83,7 @@ return (jlong)&nativeObject->mHalfExtent;
 BoxShapeSettings* nativeObject = (BoxShapeSettings*)this_addr;
 nativeObject->mHalfExtent = *((Vec3*)mHalfExtent_addr);
 */
-    private static native void internal_native_set_mHalfExtent(long this_addr, long mHalfExtent_addr);
+    public static native void internal_native_set_mHalfExtent(long this_addr, long mHalfExtent_addr);
 
     public float get_mConvexRadius() {
         return internal_native_get_mConvexRadius((long) getNativeData().getCPointer());
@@ -93,7 +93,7 @@ nativeObject->mHalfExtent = *((Vec3*)mHalfExtent_addr);
 BoxShapeSettings* nativeObject = (BoxShapeSettings*)this_addr;
 return nativeObject->mConvexRadius;
 */
-    private static native float internal_native_get_mConvexRadius(long this_addr);
+    public static native float internal_native_get_mConvexRadius(long this_addr);
 
     public void set_mConvexRadius(float mConvexRadius) {
         internal_native_set_mConvexRadius((long) getNativeData().getCPointer(), mConvexRadius);
@@ -103,33 +103,5 @@ return nativeObject->mConvexRadius;
 BoxShapeSettings* nativeObject = (BoxShapeSettings*)this_addr;
 nativeObject->mConvexRadius = mConvexRadius;
 */
-    private static native void internal_native_set_mConvexRadius(long this_addr, float mConvexRadius);
-
-    public static long native_create_Vec3_float_PhysicsMaterial(long inHalfExtent_addr, float inConvexRadius, long inMaterial_addr) {
-        return internal_native_create_Vec3_float_PhysicsMaterial(inHalfExtent_addr, inConvexRadius, inMaterial_addr);
-    }
-
-    public static long native_create_Vec3_float(long inHalfExtent_addr, float inConvexRadius) {
-        return internal_native_create_Vec3_float(inHalfExtent_addr, inConvexRadius);
-    }
-
-    public static long native_create_Vec3(long inHalfExtent_addr) {
-        return internal_native_create_Vec3(inHalfExtent_addr);
-    }
-
-    public static long native_get_mHalfExtent(long this_addr) {
-        return internal_native_get_mHalfExtent(this_addr);
-    }
-
-    public static void native_set_mHalfExtent(long this_addr, long mHalfExtent_addr) {
-        internal_native_set_mHalfExtent(this_addr, mHalfExtent_addr);
-    }
-
-    public static float native_get_mConvexRadius(long this_addr) {
-        return internal_native_get_mConvexRadius(this_addr);
-    }
-
-    public static void native_set_mConvexRadius(long this_addr, float mConvexRadius) {
-        internal_native_set_mConvexRadius(this_addr, mConvexRadius);
-    }
+    public static native void internal_native_set_mConvexRadius(long this_addr, float mConvexRadius);
 }

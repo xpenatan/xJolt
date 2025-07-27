@@ -41,7 +41,7 @@ public class VehicleEngineSettings extends IDLBase {
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mMaxTorque() {
         return internal_native_get_mMaxTorque((long) getNativeData().getCPointer());
@@ -51,7 +51,7 @@ delete nativeObject;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 return nativeObject->mMaxTorque;
 */
-    private static native float internal_native_get_mMaxTorque(long this_addr);
+    public static native float internal_native_get_mMaxTorque(long this_addr);
 
     public void set_mMaxTorque(float mMaxTorque) {
         internal_native_set_mMaxTorque((long) getNativeData().getCPointer(), mMaxTorque);
@@ -61,7 +61,7 @@ return nativeObject->mMaxTorque;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 nativeObject->mMaxTorque = mMaxTorque;
 */
-    private static native void internal_native_set_mMaxTorque(long this_addr, float mMaxTorque);
+    public static native void internal_native_set_mMaxTorque(long this_addr, float mMaxTorque);
 
     public float get_mMinRPM() {
         return internal_native_get_mMinRPM((long) getNativeData().getCPointer());
@@ -71,7 +71,7 @@ nativeObject->mMaxTorque = mMaxTorque;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 return nativeObject->mMinRPM;
 */
-    private static native float internal_native_get_mMinRPM(long this_addr);
+    public static native float internal_native_get_mMinRPM(long this_addr);
 
     public void set_mMinRPM(float mMinRPM) {
         internal_native_set_mMinRPM((long) getNativeData().getCPointer(), mMinRPM);
@@ -81,7 +81,7 @@ return nativeObject->mMinRPM;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 nativeObject->mMinRPM = mMinRPM;
 */
-    private static native void internal_native_set_mMinRPM(long this_addr, float mMinRPM);
+    public static native void internal_native_set_mMinRPM(long this_addr, float mMinRPM);
 
     public float get_mMaxRPM() {
         return internal_native_get_mMaxRPM((long) getNativeData().getCPointer());
@@ -91,7 +91,7 @@ nativeObject->mMinRPM = mMinRPM;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 return nativeObject->mMaxRPM;
 */
-    private static native float internal_native_get_mMaxRPM(long this_addr);
+    public static native float internal_native_get_mMaxRPM(long this_addr);
 
     public void set_mMaxRPM(float mMaxRPM) {
         internal_native_set_mMaxRPM((long) getNativeData().getCPointer(), mMaxRPM);
@@ -101,7 +101,7 @@ return nativeObject->mMaxRPM;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 nativeObject->mMaxRPM = mMaxRPM;
 */
-    private static native void internal_native_set_mMaxRPM(long this_addr, float mMaxRPM);
+    public static native void internal_native_set_mMaxRPM(long this_addr, float mMaxRPM);
 
     public LinearCurve get_mNormalizedTorque() {
         long pointer = internal_native_get_mNormalizedTorque((long) getNativeData().getCPointer());
@@ -117,7 +117,7 @@ nativeObject->mMaxRPM = mMaxRPM;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 return (jlong)&nativeObject->mNormalizedTorque;
 */
-    private static native long internal_native_get_mNormalizedTorque(long this_addr);
+    public static native long internal_native_get_mNormalizedTorque(long this_addr);
 
     public void set_mNormalizedTorque(LinearCurve mNormalizedTorque) {
         internal_native_set_mNormalizedTorque((long) getNativeData().getCPointer(), (long) (mNormalizedTorque != null ? mNormalizedTorque.getNativeData().getCPointer() : 0));
@@ -127,7 +127,7 @@ return (jlong)&nativeObject->mNormalizedTorque;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 nativeObject->mNormalizedTorque = *((LinearCurve*)mNormalizedTorque_addr);
 */
-    private static native void internal_native_set_mNormalizedTorque(long this_addr, long mNormalizedTorque_addr);
+    public static native void internal_native_set_mNormalizedTorque(long this_addr, long mNormalizedTorque_addr);
 
     public float get_mInertia() {
         return internal_native_get_mInertia((long) getNativeData().getCPointer());
@@ -137,7 +137,7 @@ nativeObject->mNormalizedTorque = *((LinearCurve*)mNormalizedTorque_addr);
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 return nativeObject->mInertia;
 */
-    private static native float internal_native_get_mInertia(long this_addr);
+    public static native float internal_native_get_mInertia(long this_addr);
 
     public void set_mInertia(float mInertia) {
         internal_native_set_mInertia((long) getNativeData().getCPointer(), mInertia);
@@ -147,7 +147,7 @@ return nativeObject->mInertia;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 nativeObject->mInertia = mInertia;
 */
-    private static native void internal_native_set_mInertia(long this_addr, float mInertia);
+    public static native void internal_native_set_mInertia(long this_addr, float mInertia);
 
     public float get_mAngularDamping() {
         return internal_native_get_mAngularDamping((long) getNativeData().getCPointer());
@@ -157,7 +157,7 @@ nativeObject->mInertia = mInertia;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 return nativeObject->mAngularDamping;
 */
-    private static native float internal_native_get_mAngularDamping(long this_addr);
+    public static native float internal_native_get_mAngularDamping(long this_addr);
 
     public void set_mAngularDamping(float mAngularDamping) {
         internal_native_set_mAngularDamping((long) getNativeData().getCPointer(), mAngularDamping);
@@ -167,57 +167,5 @@ return nativeObject->mAngularDamping;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 nativeObject->mAngularDamping = mAngularDamping;
 */
-    private static native void internal_native_set_mAngularDamping(long this_addr, float mAngularDamping);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_get_mMaxTorque(long this_addr) {
-        return internal_native_get_mMaxTorque(this_addr);
-    }
-
-    public static void native_set_mMaxTorque(long this_addr, float mMaxTorque) {
-        internal_native_set_mMaxTorque(this_addr, mMaxTorque);
-    }
-
-    public static float native_get_mMinRPM(long this_addr) {
-        return internal_native_get_mMinRPM(this_addr);
-    }
-
-    public static void native_set_mMinRPM(long this_addr, float mMinRPM) {
-        internal_native_set_mMinRPM(this_addr, mMinRPM);
-    }
-
-    public static float native_get_mMaxRPM(long this_addr) {
-        return internal_native_get_mMaxRPM(this_addr);
-    }
-
-    public static void native_set_mMaxRPM(long this_addr, float mMaxRPM) {
-        internal_native_set_mMaxRPM(this_addr, mMaxRPM);
-    }
-
-    public static long native_get_mNormalizedTorque(long this_addr) {
-        return internal_native_get_mNormalizedTorque(this_addr);
-    }
-
-    public static void native_set_mNormalizedTorque(long this_addr, long mNormalizedTorque_addr) {
-        internal_native_set_mNormalizedTorque(this_addr, mNormalizedTorque_addr);
-    }
-
-    public static float native_get_mInertia(long this_addr) {
-        return internal_native_get_mInertia(this_addr);
-    }
-
-    public static void native_set_mInertia(long this_addr, float mInertia) {
-        internal_native_set_mInertia(this_addr, mInertia);
-    }
-
-    public static float native_get_mAngularDamping(long this_addr) {
-        return internal_native_get_mAngularDamping(this_addr);
-    }
-
-    public static void native_set_mAngularDamping(long this_addr, float mAngularDamping) {
-        internal_native_set_mAngularDamping(this_addr, mAngularDamping);
-    }
+    public static native void internal_native_set_mAngularDamping(long this_addr, float mAngularDamping);
 }

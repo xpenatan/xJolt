@@ -37,7 +37,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyActivationListenerJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyActivationListenerJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public BodyActivationListener() {
         int addr = internal_native_create();
@@ -86,10 +86,10 @@ var jsObj = new jolt.BodyActivationListenerJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.BodyActivationListenerJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "OnBodyActivated", "OnBodyDeactivated" }, script = "var BodyActivationListenerJS = jolt.wrapPointer(this_addr, jolt.BodyActivationListenerJS); BodyActivationListenerJS.OnBodyActivated = OnBodyActivated; BodyActivationListenerJS.OnBodyDeactivated = OnBodyDeactivated;")
-    private static native void internal_native_setupCallback(int this_addr, OnBodyActivated OnBodyActivated, OnBodyDeactivated OnBodyDeactivated);
+    public static native void internal_native_setupCallback(int this_addr, OnBodyActivated OnBodyActivated, OnBodyDeactivated OnBodyDeactivated);
 
     @org.teavm.jso.JSFunctor()
     public interface OnBodyActivated extends org.teavm.jso.JSObject {
@@ -101,13 +101,5 @@ return jolt.getPointer(jsObj);
     public interface OnBodyDeactivated extends org.teavm.jso.JSObject {
 
         void OnBodyDeactivated(int inBodyID, int inBodyUserData);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

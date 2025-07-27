@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorder);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorder);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void SetValidating(boolean inValidating) {
         internal_native_SetValidating((int) (long) getNativeData().getCPointer(), inValidating);
@@ -50,7 +50,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorder);
 jsObj.SetValidating(inValidating);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inValidating"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorder);jsObj.SetValidating(inValidating);")
-    private static native void internal_native_SetValidating(int this_addr, boolean inValidating);
+    public static native void internal_native_SetValidating(int this_addr, boolean inValidating);
 
     public boolean IsValidating() {
         return internal_native_IsValidating((int) (long) getNativeData().getCPointer());
@@ -62,17 +62,5 @@ var returnedJSObj = jsObj.IsValidating();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorder);var returnedJSObj = jsObj.IsValidating();return returnedJSObj;")
-    private static native boolean internal_native_IsValidating(int this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_SetValidating(long this_addr, boolean inValidating) {
-        internal_native_SetValidating((int) this_addr, inValidating);
-    }
-
-    public static boolean native_IsValidating(long this_addr) {
-        return internal_native_IsValidating((int) this_addr);
-    }
+    public static native boolean internal_native_IsValidating(int this_addr);
 }

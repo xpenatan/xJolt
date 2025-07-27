@@ -30,7 +30,7 @@ var jsObj = new jolt.WheelSettingsWV();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.WheelSettingsWV();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -49,7 +49,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 return jsObj.get_mInertia();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);return jsObj.get_mInertia();")
-    private static native float internal_native_get_mInertia(int this_addr);
+    public static native float internal_native_get_mInertia(int this_addr);
 
     public void set_mInertia(float mInertia) {
         internal_native_set_mInertia((int) (long) getNativeData().getCPointer(), mInertia);
@@ -60,7 +60,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 jsObj.set_mInertia(mInertia);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInertia"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);jsObj.set_mInertia(mInertia);")
-    private static native void internal_native_set_mInertia(int this_addr, float mInertia);
+    public static native void internal_native_set_mInertia(int this_addr, float mInertia);
 
     public float get_mAngularDamping() {
         return internal_native_get_mAngularDamping((int) (long) getNativeData().getCPointer());
@@ -71,7 +71,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 return jsObj.get_mAngularDamping();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);return jsObj.get_mAngularDamping();")
-    private static native float internal_native_get_mAngularDamping(int this_addr);
+    public static native float internal_native_get_mAngularDamping(int this_addr);
 
     public void set_mAngularDamping(float mAngularDamping) {
         internal_native_set_mAngularDamping((int) (long) getNativeData().getCPointer(), mAngularDamping);
@@ -82,7 +82,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 jsObj.set_mAngularDamping(mAngularDamping);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mAngularDamping"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);jsObj.set_mAngularDamping(mAngularDamping);")
-    private static native void internal_native_set_mAngularDamping(int this_addr, float mAngularDamping);
+    public static native void internal_native_set_mAngularDamping(int this_addr, float mAngularDamping);
 
     public float get_mMaxSteerAngle() {
         return internal_native_get_mMaxSteerAngle((int) (long) getNativeData().getCPointer());
@@ -93,7 +93,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 return jsObj.get_mMaxSteerAngle();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);return jsObj.get_mMaxSteerAngle();")
-    private static native float internal_native_get_mMaxSteerAngle(int this_addr);
+    public static native float internal_native_get_mMaxSteerAngle(int this_addr);
 
     public void set_mMaxSteerAngle(float mMaxSteerAngle) {
         internal_native_set_mMaxSteerAngle((int) (long) getNativeData().getCPointer(), mMaxSteerAngle);
@@ -104,7 +104,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 jsObj.set_mMaxSteerAngle(mMaxSteerAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxSteerAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);jsObj.set_mMaxSteerAngle(mMaxSteerAngle);")
-    private static native void internal_native_set_mMaxSteerAngle(int this_addr, float mMaxSteerAngle);
+    public static native void internal_native_set_mMaxSteerAngle(int this_addr, float mMaxSteerAngle);
 
     public LinearCurve get_mLongitudinalFriction() {
         int pointer = internal_native_get_mLongitudinalFriction((int) (long) getNativeData().getCPointer());
@@ -123,7 +123,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);var returnedJSObj = jsObj.get_mLongitudinalFriction();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mLongitudinalFriction(int this_addr);
+    public static native int internal_native_get_mLongitudinalFriction(int this_addr);
 
     public void set_mLongitudinalFriction(LinearCurve mLongitudinalFriction) {
         internal_native_set_mLongitudinalFriction((int) (long) getNativeData().getCPointer(), (int) (long) (mLongitudinalFriction != null ? mLongitudinalFriction.getNativeData().getCPointer() : 0));
@@ -134,7 +134,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 jsObj.set_mLongitudinalFriction(mLongitudinalFriction_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLongitudinalFriction_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);jsObj.set_mLongitudinalFriction(mLongitudinalFriction_addr);")
-    private static native void internal_native_set_mLongitudinalFriction(int this_addr, int mLongitudinalFriction_addr);
+    public static native void internal_native_set_mLongitudinalFriction(int this_addr, int mLongitudinalFriction_addr);
 
     public LinearCurve get_mLateralFriction() {
         int pointer = internal_native_get_mLateralFriction((int) (long) getNativeData().getCPointer());
@@ -153,7 +153,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);var returnedJSObj = jsObj.get_mLateralFriction();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mLateralFriction(int this_addr);
+    public static native int internal_native_get_mLateralFriction(int this_addr);
 
     public void set_mLateralFriction(LinearCurve mLateralFriction) {
         internal_native_set_mLateralFriction((int) (long) getNativeData().getCPointer(), (int) (long) (mLateralFriction != null ? mLateralFriction.getNativeData().getCPointer() : 0));
@@ -164,7 +164,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 jsObj.set_mLateralFriction(mLateralFriction_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLateralFriction_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);jsObj.set_mLateralFriction(mLateralFriction_addr);")
-    private static native void internal_native_set_mLateralFriction(int this_addr, int mLateralFriction_addr);
+    public static native void internal_native_set_mLateralFriction(int this_addr, int mLateralFriction_addr);
 
     public float get_mMaxBrakeTorque() {
         return internal_native_get_mMaxBrakeTorque((int) (long) getNativeData().getCPointer());
@@ -175,7 +175,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 return jsObj.get_mMaxBrakeTorque();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);return jsObj.get_mMaxBrakeTorque();")
-    private static native float internal_native_get_mMaxBrakeTorque(int this_addr);
+    public static native float internal_native_get_mMaxBrakeTorque(int this_addr);
 
     public void set_mMaxBrakeTorque(float mMaxBrakeTorque) {
         internal_native_set_mMaxBrakeTorque((int) (long) getNativeData().getCPointer(), mMaxBrakeTorque);
@@ -186,7 +186,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 jsObj.set_mMaxBrakeTorque(mMaxBrakeTorque);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxBrakeTorque"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);jsObj.set_mMaxBrakeTorque(mMaxBrakeTorque);")
-    private static native void internal_native_set_mMaxBrakeTorque(int this_addr, float mMaxBrakeTorque);
+    public static native void internal_native_set_mMaxBrakeTorque(int this_addr, float mMaxBrakeTorque);
 
     public float get_mMaxHandBrakeTorque() {
         return internal_native_get_mMaxHandBrakeTorque((int) (long) getNativeData().getCPointer());
@@ -197,7 +197,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 return jsObj.get_mMaxHandBrakeTorque();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);return jsObj.get_mMaxHandBrakeTorque();")
-    private static native float internal_native_get_mMaxHandBrakeTorque(int this_addr);
+    public static native float internal_native_get_mMaxHandBrakeTorque(int this_addr);
 
     public void set_mMaxHandBrakeTorque(float mMaxHandBrakeTorque) {
         internal_native_set_mMaxHandBrakeTorque((int) (long) getNativeData().getCPointer(), mMaxHandBrakeTorque);
@@ -208,65 +208,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);
 jsObj.set_mMaxHandBrakeTorque(mMaxHandBrakeTorque);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxHandBrakeTorque"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);jsObj.set_mMaxHandBrakeTorque(mMaxHandBrakeTorque);")
-    private static native void internal_native_set_mMaxHandBrakeTorque(int this_addr, float mMaxHandBrakeTorque);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static float native_get_mInertia(long this_addr) {
-        return internal_native_get_mInertia((int) this_addr);
-    }
-
-    public static void native_set_mInertia(long this_addr, float mInertia) {
-        internal_native_set_mInertia((int) this_addr, mInertia);
-    }
-
-    public static float native_get_mAngularDamping(long this_addr) {
-        return internal_native_get_mAngularDamping((int) this_addr);
-    }
-
-    public static void native_set_mAngularDamping(long this_addr, float mAngularDamping) {
-        internal_native_set_mAngularDamping((int) this_addr, mAngularDamping);
-    }
-
-    public static float native_get_mMaxSteerAngle(long this_addr) {
-        return internal_native_get_mMaxSteerAngle((int) this_addr);
-    }
-
-    public static void native_set_mMaxSteerAngle(long this_addr, float mMaxSteerAngle) {
-        internal_native_set_mMaxSteerAngle((int) this_addr, mMaxSteerAngle);
-    }
-
-    public static long native_get_mLongitudinalFriction(long this_addr) {
-        return internal_native_get_mLongitudinalFriction((int) this_addr);
-    }
-
-    public static void native_set_mLongitudinalFriction(long this_addr, long mLongitudinalFriction_addr) {
-        internal_native_set_mLongitudinalFriction((int) this_addr, (int) mLongitudinalFriction_addr);
-    }
-
-    public static long native_get_mLateralFriction(long this_addr) {
-        return internal_native_get_mLateralFriction((int) this_addr);
-    }
-
-    public static void native_set_mLateralFriction(long this_addr, long mLateralFriction_addr) {
-        internal_native_set_mLateralFriction((int) this_addr, (int) mLateralFriction_addr);
-    }
-
-    public static float native_get_mMaxBrakeTorque(long this_addr) {
-        return internal_native_get_mMaxBrakeTorque((int) this_addr);
-    }
-
-    public static void native_set_mMaxBrakeTorque(long this_addr, float mMaxBrakeTorque) {
-        internal_native_set_mMaxBrakeTorque((int) this_addr, mMaxBrakeTorque);
-    }
-
-    public static float native_get_mMaxHandBrakeTorque(long this_addr) {
-        return internal_native_get_mMaxHandBrakeTorque((int) this_addr);
-    }
-
-    public static void native_set_mMaxHandBrakeTorque(long this_addr, float mMaxHandBrakeTorque) {
-        internal_native_set_mMaxHandBrakeTorque((int) this_addr, mMaxHandBrakeTorque);
-    }
+    public static native void internal_native_set_mMaxHandBrakeTorque(int this_addr, float mMaxHandBrakeTorque);
 }

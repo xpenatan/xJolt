@@ -30,7 +30,7 @@ var jsObj = new jolt.ContactSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ContactSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -56,7 +56,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mCombinedFriction() {
         return internal_native_get_mCombinedFriction((int) (long) getNativeData().getCPointer());
@@ -67,7 +67,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 return jsObj.get_mCombinedFriction();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);return jsObj.get_mCombinedFriction();")
-    private static native float internal_native_get_mCombinedFriction(int this_addr);
+    public static native float internal_native_get_mCombinedFriction(int this_addr);
 
     public void set_mCombinedFriction(float mCombinedFriction) {
         internal_native_set_mCombinedFriction((int) (long) getNativeData().getCPointer(), mCombinedFriction);
@@ -78,7 +78,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jsObj.set_mCombinedFriction(mCombinedFriction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCombinedFriction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jsObj.set_mCombinedFriction(mCombinedFriction);")
-    private static native void internal_native_set_mCombinedFriction(int this_addr, float mCombinedFriction);
+    public static native void internal_native_set_mCombinedFriction(int this_addr, float mCombinedFriction);
 
     public float get_mCombinedRestitution() {
         return internal_native_get_mCombinedRestitution((int) (long) getNativeData().getCPointer());
@@ -89,7 +89,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 return jsObj.get_mCombinedRestitution();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);return jsObj.get_mCombinedRestitution();")
-    private static native float internal_native_get_mCombinedRestitution(int this_addr);
+    public static native float internal_native_get_mCombinedRestitution(int this_addr);
 
     public void set_mCombinedRestitution(float mCombinedRestitution) {
         internal_native_set_mCombinedRestitution((int) (long) getNativeData().getCPointer(), mCombinedRestitution);
@@ -100,7 +100,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jsObj.set_mCombinedRestitution(mCombinedRestitution);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCombinedRestitution"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jsObj.set_mCombinedRestitution(mCombinedRestitution);")
-    private static native void internal_native_set_mCombinedRestitution(int this_addr, float mCombinedRestitution);
+    public static native void internal_native_set_mCombinedRestitution(int this_addr, float mCombinedRestitution);
 
     public float get_mInvMassScale1() {
         return internal_native_get_mInvMassScale1((int) (long) getNativeData().getCPointer());
@@ -111,7 +111,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 return jsObj.get_mInvMassScale1();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);return jsObj.get_mInvMassScale1();")
-    private static native float internal_native_get_mInvMassScale1(int this_addr);
+    public static native float internal_native_get_mInvMassScale1(int this_addr);
 
     public void set_mInvMassScale1(float mInvMassScale1) {
         internal_native_set_mInvMassScale1((int) (long) getNativeData().getCPointer(), mInvMassScale1);
@@ -122,7 +122,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jsObj.set_mInvMassScale1(mInvMassScale1);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvMassScale1"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jsObj.set_mInvMassScale1(mInvMassScale1);")
-    private static native void internal_native_set_mInvMassScale1(int this_addr, float mInvMassScale1);
+    public static native void internal_native_set_mInvMassScale1(int this_addr, float mInvMassScale1);
 
     public float get_mInvInertiaScale1() {
         return internal_native_get_mInvInertiaScale1((int) (long) getNativeData().getCPointer());
@@ -133,7 +133,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 return jsObj.get_mInvInertiaScale1();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);return jsObj.get_mInvInertiaScale1();")
-    private static native float internal_native_get_mInvInertiaScale1(int this_addr);
+    public static native float internal_native_get_mInvInertiaScale1(int this_addr);
 
     public void set_mInvInertiaScale1(float mInvInertiaScale1) {
         internal_native_set_mInvInertiaScale1((int) (long) getNativeData().getCPointer(), mInvInertiaScale1);
@@ -144,7 +144,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jsObj.set_mInvInertiaScale1(mInvInertiaScale1);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvInertiaScale1"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jsObj.set_mInvInertiaScale1(mInvInertiaScale1);")
-    private static native void internal_native_set_mInvInertiaScale1(int this_addr, float mInvInertiaScale1);
+    public static native void internal_native_set_mInvInertiaScale1(int this_addr, float mInvInertiaScale1);
 
     public float get_mInvMassScale2() {
         return internal_native_get_mInvMassScale2((int) (long) getNativeData().getCPointer());
@@ -155,7 +155,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 return jsObj.get_mInvMassScale2();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);return jsObj.get_mInvMassScale2();")
-    private static native float internal_native_get_mInvMassScale2(int this_addr);
+    public static native float internal_native_get_mInvMassScale2(int this_addr);
 
     public void set_mInvMassScale2(float mInvMassScale2) {
         internal_native_set_mInvMassScale2((int) (long) getNativeData().getCPointer(), mInvMassScale2);
@@ -166,7 +166,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jsObj.set_mInvMassScale2(mInvMassScale2);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvMassScale2"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jsObj.set_mInvMassScale2(mInvMassScale2);")
-    private static native void internal_native_set_mInvMassScale2(int this_addr, float mInvMassScale2);
+    public static native void internal_native_set_mInvMassScale2(int this_addr, float mInvMassScale2);
 
     public float get_mInvInertiaScale2() {
         return internal_native_get_mInvInertiaScale2((int) (long) getNativeData().getCPointer());
@@ -177,7 +177,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 return jsObj.get_mInvInertiaScale2();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);return jsObj.get_mInvInertiaScale2();")
-    private static native float internal_native_get_mInvInertiaScale2(int this_addr);
+    public static native float internal_native_get_mInvInertiaScale2(int this_addr);
 
     public void set_mInvInertiaScale2(float mInvInertiaScale2) {
         internal_native_set_mInvInertiaScale2((int) (long) getNativeData().getCPointer(), mInvInertiaScale2);
@@ -188,7 +188,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jsObj.set_mInvInertiaScale2(mInvInertiaScale2);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvInertiaScale2"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jsObj.set_mInvInertiaScale2(mInvInertiaScale2);")
-    private static native void internal_native_set_mInvInertiaScale2(int this_addr, float mInvInertiaScale2);
+    public static native void internal_native_set_mInvInertiaScale2(int this_addr, float mInvInertiaScale2);
 
     public boolean get_mIsSensor() {
         return internal_native_get_mIsSensor((int) (long) getNativeData().getCPointer());
@@ -199,7 +199,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 return jsObj.get_mIsSensor();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);return jsObj.get_mIsSensor();")
-    private static native boolean internal_native_get_mIsSensor(int this_addr);
+    public static native boolean internal_native_get_mIsSensor(int this_addr);
 
     public void set_mIsSensor(boolean mIsSensor) {
         internal_native_set_mIsSensor((int) (long) getNativeData().getCPointer(), mIsSensor);
@@ -210,7 +210,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jsObj.set_mIsSensor(mIsSensor);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mIsSensor"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jsObj.set_mIsSensor(mIsSensor);")
-    private static native void internal_native_set_mIsSensor(int this_addr, boolean mIsSensor);
+    public static native void internal_native_set_mIsSensor(int this_addr, boolean mIsSensor);
 
     public Vec3 get_mRelativeLinearSurfaceVelocity() {
         int pointer = internal_native_get_mRelativeLinearSurfaceVelocity((int) (long) getNativeData().getCPointer());
@@ -229,7 +229,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);var returnedJSObj = jsObj.get_mRelativeLinearSurfaceVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mRelativeLinearSurfaceVelocity(int this_addr);
+    public static native int internal_native_get_mRelativeLinearSurfaceVelocity(int this_addr);
 
     public void set_mRelativeLinearSurfaceVelocity(Vec3 mRelativeLinearSurfaceVelocity) {
         internal_native_set_mRelativeLinearSurfaceVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (mRelativeLinearSurfaceVelocity != null ? mRelativeLinearSurfaceVelocity.getNativeData().getCPointer() : 0));
@@ -240,7 +240,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jsObj.set_mRelativeLinearSurfaceVelocity(mRelativeLinearSurfaceVelocity_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRelativeLinearSurfaceVelocity_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jsObj.set_mRelativeLinearSurfaceVelocity(mRelativeLinearSurfaceVelocity_addr);")
-    private static native void internal_native_set_mRelativeLinearSurfaceVelocity(int this_addr, int mRelativeLinearSurfaceVelocity_addr);
+    public static native void internal_native_set_mRelativeLinearSurfaceVelocity(int this_addr, int mRelativeLinearSurfaceVelocity_addr);
 
     public Vec3 get_mRelativeAngularSurfaceVelocity() {
         int pointer = internal_native_get_mRelativeAngularSurfaceVelocity((int) (long) getNativeData().getCPointer());
@@ -259,7 +259,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);var returnedJSObj = jsObj.get_mRelativeAngularSurfaceVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mRelativeAngularSurfaceVelocity(int this_addr);
+    public static native int internal_native_get_mRelativeAngularSurfaceVelocity(int this_addr);
 
     public void set_mRelativeAngularSurfaceVelocity(Vec3 mRelativeAngularSurfaceVelocity) {
         internal_native_set_mRelativeAngularSurfaceVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (mRelativeAngularSurfaceVelocity != null ? mRelativeAngularSurfaceVelocity.getNativeData().getCPointer() : 0));
@@ -270,85 +270,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);
 jsObj.set_mRelativeAngularSurfaceVelocity(mRelativeAngularSurfaceVelocity_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRelativeAngularSurfaceVelocity_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);jsObj.set_mRelativeAngularSurfaceVelocity(mRelativeAngularSurfaceVelocity_addr);")
-    private static native void internal_native_set_mRelativeAngularSurfaceVelocity(int this_addr, int mRelativeAngularSurfaceVelocity_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_mCombinedFriction(long this_addr) {
-        return internal_native_get_mCombinedFriction((int) this_addr);
-    }
-
-    public static void native_set_mCombinedFriction(long this_addr, float mCombinedFriction) {
-        internal_native_set_mCombinedFriction((int) this_addr, mCombinedFriction);
-    }
-
-    public static float native_get_mCombinedRestitution(long this_addr) {
-        return internal_native_get_mCombinedRestitution((int) this_addr);
-    }
-
-    public static void native_set_mCombinedRestitution(long this_addr, float mCombinedRestitution) {
-        internal_native_set_mCombinedRestitution((int) this_addr, mCombinedRestitution);
-    }
-
-    public static float native_get_mInvMassScale1(long this_addr) {
-        return internal_native_get_mInvMassScale1((int) this_addr);
-    }
-
-    public static void native_set_mInvMassScale1(long this_addr, float mInvMassScale1) {
-        internal_native_set_mInvMassScale1((int) this_addr, mInvMassScale1);
-    }
-
-    public static float native_get_mInvInertiaScale1(long this_addr) {
-        return internal_native_get_mInvInertiaScale1((int) this_addr);
-    }
-
-    public static void native_set_mInvInertiaScale1(long this_addr, float mInvInertiaScale1) {
-        internal_native_set_mInvInertiaScale1((int) this_addr, mInvInertiaScale1);
-    }
-
-    public static float native_get_mInvMassScale2(long this_addr) {
-        return internal_native_get_mInvMassScale2((int) this_addr);
-    }
-
-    public static void native_set_mInvMassScale2(long this_addr, float mInvMassScale2) {
-        internal_native_set_mInvMassScale2((int) this_addr, mInvMassScale2);
-    }
-
-    public static float native_get_mInvInertiaScale2(long this_addr) {
-        return internal_native_get_mInvInertiaScale2((int) this_addr);
-    }
-
-    public static void native_set_mInvInertiaScale2(long this_addr, float mInvInertiaScale2) {
-        internal_native_set_mInvInertiaScale2((int) this_addr, mInvInertiaScale2);
-    }
-
-    public static boolean native_get_mIsSensor(long this_addr) {
-        return internal_native_get_mIsSensor((int) this_addr);
-    }
-
-    public static void native_set_mIsSensor(long this_addr, boolean mIsSensor) {
-        internal_native_set_mIsSensor((int) this_addr, mIsSensor);
-    }
-
-    public static long native_get_mRelativeLinearSurfaceVelocity(long this_addr) {
-        return internal_native_get_mRelativeLinearSurfaceVelocity((int) this_addr);
-    }
-
-    public static void native_set_mRelativeLinearSurfaceVelocity(long this_addr, long mRelativeLinearSurfaceVelocity_addr) {
-        internal_native_set_mRelativeLinearSurfaceVelocity((int) this_addr, (int) mRelativeLinearSurfaceVelocity_addr);
-    }
-
-    public static long native_get_mRelativeAngularSurfaceVelocity(long this_addr) {
-        return internal_native_get_mRelativeAngularSurfaceVelocity((int) this_addr);
-    }
-
-    public static void native_set_mRelativeAngularSurfaceVelocity(long this_addr, long mRelativeAngularSurfaceVelocity_addr) {
-        internal_native_set_mRelativeAngularSurfaceVelocity((int) this_addr, (int) mRelativeAngularSurfaceVelocity_addr);
-    }
+    public static native void internal_native_set_mRelativeAngularSurfaceVelocity(int this_addr, int mRelativeAngularSurfaceVelocity_addr);
 }

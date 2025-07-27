@@ -26,7 +26,7 @@ public class EmptyShapeSettings extends ShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new EmptyShapeSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -52,7 +52,7 @@ return (jlong)new EmptyShapeSettings();
 EmptyShapeSettings* nativeObject = (EmptyShapeSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mCenterOfMass() {
         long pointer = internal_native_get_mCenterOfMass((long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ delete nativeObject;
 EmptyShapeSettings* nativeObject = (EmptyShapeSettings*)this_addr;
 return (jlong)&nativeObject->mCenterOfMass;
 */
-    private static native long internal_native_get_mCenterOfMass(long this_addr);
+    public static native long internal_native_get_mCenterOfMass(long this_addr);
 
     public void set_mCenterOfMass(Vec3 mCenterOfMass) {
         internal_native_set_mCenterOfMass((long) getNativeData().getCPointer(), (long) (mCenterOfMass != null ? mCenterOfMass.getNativeData().getCPointer() : 0));
@@ -78,21 +78,5 @@ return (jlong)&nativeObject->mCenterOfMass;
 EmptyShapeSettings* nativeObject = (EmptyShapeSettings*)this_addr;
 nativeObject->mCenterOfMass = *((Vec3*)mCenterOfMass_addr);
 */
-    private static native void internal_native_set_mCenterOfMass(long this_addr, long mCenterOfMass_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mCenterOfMass(long this_addr) {
-        return internal_native_get_mCenterOfMass(this_addr);
-    }
-
-    public static void native_set_mCenterOfMass(long this_addr, long mCenterOfMass_addr) {
-        internal_native_set_mCenterOfMass(this_addr, mCenterOfMass_addr);
-    }
+    public static native void internal_native_set_mCenterOfMass(long this_addr, long mCenterOfMass_addr);
 }

@@ -23,7 +23,7 @@ public class PhysicsSettings extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new PhysicsSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new PhysicsSettings();
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mMaxInFlightBodyPairs() {
         return internal_native_get_mMaxInFlightBodyPairs((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mMaxInFlightBodyPairs;
 */
-    private static native int internal_native_get_mMaxInFlightBodyPairs(long this_addr);
+    public static native int internal_native_get_mMaxInFlightBodyPairs(long this_addr);
 
     public void set_mMaxInFlightBodyPairs(int mMaxInFlightBodyPairs) {
         internal_native_set_mMaxInFlightBodyPairs((long) getNativeData().getCPointer(), mMaxInFlightBodyPairs);
@@ -68,7 +68,7 @@ return nativeObject->mMaxInFlightBodyPairs;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mMaxInFlightBodyPairs = mMaxInFlightBodyPairs;
 */
-    private static native void internal_native_set_mMaxInFlightBodyPairs(long this_addr, int mMaxInFlightBodyPairs);
+    public static native void internal_native_set_mMaxInFlightBodyPairs(long this_addr, int mMaxInFlightBodyPairs);
 
     public int get_mStepListenersBatchSize() {
         return internal_native_get_mStepListenersBatchSize((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ nativeObject->mMaxInFlightBodyPairs = mMaxInFlightBodyPairs;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mStepListenersBatchSize;
 */
-    private static native int internal_native_get_mStepListenersBatchSize(long this_addr);
+    public static native int internal_native_get_mStepListenersBatchSize(long this_addr);
 
     public void set_mStepListenersBatchSize(int mStepListenersBatchSize) {
         internal_native_set_mStepListenersBatchSize((long) getNativeData().getCPointer(), mStepListenersBatchSize);
@@ -88,7 +88,7 @@ return nativeObject->mStepListenersBatchSize;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mStepListenersBatchSize = mStepListenersBatchSize;
 */
-    private static native void internal_native_set_mStepListenersBatchSize(long this_addr, int mStepListenersBatchSize);
+    public static native void internal_native_set_mStepListenersBatchSize(long this_addr, int mStepListenersBatchSize);
 
     public int get_mStepListenerBatchesPerJob() {
         return internal_native_get_mStepListenerBatchesPerJob((long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ nativeObject->mStepListenersBatchSize = mStepListenersBatchSize;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mStepListenerBatchesPerJob;
 */
-    private static native int internal_native_get_mStepListenerBatchesPerJob(long this_addr);
+    public static native int internal_native_get_mStepListenerBatchesPerJob(long this_addr);
 
     public void set_mStepListenerBatchesPerJob(int mStepListenerBatchesPerJob) {
         internal_native_set_mStepListenerBatchesPerJob((long) getNativeData().getCPointer(), mStepListenerBatchesPerJob);
@@ -108,7 +108,7 @@ return nativeObject->mStepListenerBatchesPerJob;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mStepListenerBatchesPerJob = mStepListenerBatchesPerJob;
 */
-    private static native void internal_native_set_mStepListenerBatchesPerJob(long this_addr, int mStepListenerBatchesPerJob);
+    public static native void internal_native_set_mStepListenerBatchesPerJob(long this_addr, int mStepListenerBatchesPerJob);
 
     public float get_mBaumgarte() {
         return internal_native_get_mBaumgarte((long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ nativeObject->mStepListenerBatchesPerJob = mStepListenerBatchesPerJob;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mBaumgarte;
 */
-    private static native float internal_native_get_mBaumgarte(long this_addr);
+    public static native float internal_native_get_mBaumgarte(long this_addr);
 
     public void set_mBaumgarte(float mBaumgarte) {
         internal_native_set_mBaumgarte((long) getNativeData().getCPointer(), mBaumgarte);
@@ -128,7 +128,7 @@ return nativeObject->mBaumgarte;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mBaumgarte = mBaumgarte;
 */
-    private static native void internal_native_set_mBaumgarte(long this_addr, float mBaumgarte);
+    public static native void internal_native_set_mBaumgarte(long this_addr, float mBaumgarte);
 
     public float get_mSpeculativeContactDistance() {
         return internal_native_get_mSpeculativeContactDistance((long) getNativeData().getCPointer());
@@ -138,7 +138,7 @@ nativeObject->mBaumgarte = mBaumgarte;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mSpeculativeContactDistance;
 */
-    private static native float internal_native_get_mSpeculativeContactDistance(long this_addr);
+    public static native float internal_native_get_mSpeculativeContactDistance(long this_addr);
 
     public void set_mSpeculativeContactDistance(float mSpeculativeContactDistance) {
         internal_native_set_mSpeculativeContactDistance((long) getNativeData().getCPointer(), mSpeculativeContactDistance);
@@ -148,7 +148,7 @@ return nativeObject->mSpeculativeContactDistance;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mSpeculativeContactDistance = mSpeculativeContactDistance;
 */
-    private static native void internal_native_set_mSpeculativeContactDistance(long this_addr, float mSpeculativeContactDistance);
+    public static native void internal_native_set_mSpeculativeContactDistance(long this_addr, float mSpeculativeContactDistance);
 
     public float get_mPenetrationSlop() {
         return internal_native_get_mPenetrationSlop((long) getNativeData().getCPointer());
@@ -158,7 +158,7 @@ nativeObject->mSpeculativeContactDistance = mSpeculativeContactDistance;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mPenetrationSlop;
 */
-    private static native float internal_native_get_mPenetrationSlop(long this_addr);
+    public static native float internal_native_get_mPenetrationSlop(long this_addr);
 
     public void set_mPenetrationSlop(float mPenetrationSlop) {
         internal_native_set_mPenetrationSlop((long) getNativeData().getCPointer(), mPenetrationSlop);
@@ -168,7 +168,7 @@ return nativeObject->mPenetrationSlop;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mPenetrationSlop = mPenetrationSlop;
 */
-    private static native void internal_native_set_mPenetrationSlop(long this_addr, float mPenetrationSlop);
+    public static native void internal_native_set_mPenetrationSlop(long this_addr, float mPenetrationSlop);
 
     public float get_mLinearCastThreshold() {
         return internal_native_get_mLinearCastThreshold((long) getNativeData().getCPointer());
@@ -178,7 +178,7 @@ nativeObject->mPenetrationSlop = mPenetrationSlop;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mLinearCastThreshold;
 */
-    private static native float internal_native_get_mLinearCastThreshold(long this_addr);
+    public static native float internal_native_get_mLinearCastThreshold(long this_addr);
 
     public void set_mLinearCastThreshold(float mLinearCastThreshold) {
         internal_native_set_mLinearCastThreshold((long) getNativeData().getCPointer(), mLinearCastThreshold);
@@ -188,7 +188,7 @@ return nativeObject->mLinearCastThreshold;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mLinearCastThreshold = mLinearCastThreshold;
 */
-    private static native void internal_native_set_mLinearCastThreshold(long this_addr, float mLinearCastThreshold);
+    public static native void internal_native_set_mLinearCastThreshold(long this_addr, float mLinearCastThreshold);
 
     public float get_mLinearCastMaxPenetration() {
         return internal_native_get_mLinearCastMaxPenetration((long) getNativeData().getCPointer());
@@ -198,7 +198,7 @@ nativeObject->mLinearCastThreshold = mLinearCastThreshold;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mLinearCastMaxPenetration;
 */
-    private static native float internal_native_get_mLinearCastMaxPenetration(long this_addr);
+    public static native float internal_native_get_mLinearCastMaxPenetration(long this_addr);
 
     public void set_mLinearCastMaxPenetration(float mLinearCastMaxPenetration) {
         internal_native_set_mLinearCastMaxPenetration((long) getNativeData().getCPointer(), mLinearCastMaxPenetration);
@@ -208,7 +208,7 @@ return nativeObject->mLinearCastMaxPenetration;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mLinearCastMaxPenetration = mLinearCastMaxPenetration;
 */
-    private static native void internal_native_set_mLinearCastMaxPenetration(long this_addr, float mLinearCastMaxPenetration);
+    public static native void internal_native_set_mLinearCastMaxPenetration(long this_addr, float mLinearCastMaxPenetration);
 
     public float get_mManifoldTolerance() {
         return internal_native_get_mManifoldTolerance((long) getNativeData().getCPointer());
@@ -218,7 +218,7 @@ nativeObject->mLinearCastMaxPenetration = mLinearCastMaxPenetration;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mManifoldTolerance;
 */
-    private static native float internal_native_get_mManifoldTolerance(long this_addr);
+    public static native float internal_native_get_mManifoldTolerance(long this_addr);
 
     public void set_mManifoldTolerance(float mManifoldTolerance) {
         internal_native_set_mManifoldTolerance((long) getNativeData().getCPointer(), mManifoldTolerance);
@@ -228,7 +228,7 @@ return nativeObject->mManifoldTolerance;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mManifoldTolerance = mManifoldTolerance;
 */
-    private static native void internal_native_set_mManifoldTolerance(long this_addr, float mManifoldTolerance);
+    public static native void internal_native_set_mManifoldTolerance(long this_addr, float mManifoldTolerance);
 
     public float get_mMaxPenetrationDistance() {
         return internal_native_get_mMaxPenetrationDistance((long) getNativeData().getCPointer());
@@ -238,7 +238,7 @@ nativeObject->mManifoldTolerance = mManifoldTolerance;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mMaxPenetrationDistance;
 */
-    private static native float internal_native_get_mMaxPenetrationDistance(long this_addr);
+    public static native float internal_native_get_mMaxPenetrationDistance(long this_addr);
 
     public void set_mMaxPenetrationDistance(float mMaxPenetrationDistance) {
         internal_native_set_mMaxPenetrationDistance((long) getNativeData().getCPointer(), mMaxPenetrationDistance);
@@ -248,7 +248,7 @@ return nativeObject->mMaxPenetrationDistance;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mMaxPenetrationDistance = mMaxPenetrationDistance;
 */
-    private static native void internal_native_set_mMaxPenetrationDistance(long this_addr, float mMaxPenetrationDistance);
+    public static native void internal_native_set_mMaxPenetrationDistance(long this_addr, float mMaxPenetrationDistance);
 
     public float get_mBodyPairCacheMaxDeltaPositionSq() {
         return internal_native_get_mBodyPairCacheMaxDeltaPositionSq((long) getNativeData().getCPointer());
@@ -258,7 +258,7 @@ nativeObject->mMaxPenetrationDistance = mMaxPenetrationDistance;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mBodyPairCacheMaxDeltaPositionSq;
 */
-    private static native float internal_native_get_mBodyPairCacheMaxDeltaPositionSq(long this_addr);
+    public static native float internal_native_get_mBodyPairCacheMaxDeltaPositionSq(long this_addr);
 
     public void set_mBodyPairCacheMaxDeltaPositionSq(float mBodyPairCacheMaxDeltaPositionSq) {
         internal_native_set_mBodyPairCacheMaxDeltaPositionSq((long) getNativeData().getCPointer(), mBodyPairCacheMaxDeltaPositionSq);
@@ -268,7 +268,7 @@ return nativeObject->mBodyPairCacheMaxDeltaPositionSq;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mBodyPairCacheMaxDeltaPositionSq = mBodyPairCacheMaxDeltaPositionSq;
 */
-    private static native void internal_native_set_mBodyPairCacheMaxDeltaPositionSq(long this_addr, float mBodyPairCacheMaxDeltaPositionSq);
+    public static native void internal_native_set_mBodyPairCacheMaxDeltaPositionSq(long this_addr, float mBodyPairCacheMaxDeltaPositionSq);
 
     public float get_mBodyPairCacheCosMaxDeltaRotationDiv2() {
         return internal_native_get_mBodyPairCacheCosMaxDeltaRotationDiv2((long) getNativeData().getCPointer());
@@ -278,7 +278,7 @@ nativeObject->mBodyPairCacheMaxDeltaPositionSq = mBodyPairCacheMaxDeltaPositionS
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mBodyPairCacheCosMaxDeltaRotationDiv2;
 */
-    private static native float internal_native_get_mBodyPairCacheCosMaxDeltaRotationDiv2(long this_addr);
+    public static native float internal_native_get_mBodyPairCacheCosMaxDeltaRotationDiv2(long this_addr);
 
     public void set_mBodyPairCacheCosMaxDeltaRotationDiv2(float mBodyPairCacheCosMaxDeltaRotationDiv2) {
         internal_native_set_mBodyPairCacheCosMaxDeltaRotationDiv2((long) getNativeData().getCPointer(), mBodyPairCacheCosMaxDeltaRotationDiv2);
@@ -288,7 +288,7 @@ return nativeObject->mBodyPairCacheCosMaxDeltaRotationDiv2;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mBodyPairCacheCosMaxDeltaRotationDiv2 = mBodyPairCacheCosMaxDeltaRotationDiv2;
 */
-    private static native void internal_native_set_mBodyPairCacheCosMaxDeltaRotationDiv2(long this_addr, float mBodyPairCacheCosMaxDeltaRotationDiv2);
+    public static native void internal_native_set_mBodyPairCacheCosMaxDeltaRotationDiv2(long this_addr, float mBodyPairCacheCosMaxDeltaRotationDiv2);
 
     public float get_mContactNormalCosMaxDeltaRotation() {
         return internal_native_get_mContactNormalCosMaxDeltaRotation((long) getNativeData().getCPointer());
@@ -298,7 +298,7 @@ nativeObject->mBodyPairCacheCosMaxDeltaRotationDiv2 = mBodyPairCacheCosMaxDeltaR
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mContactNormalCosMaxDeltaRotation;
 */
-    private static native float internal_native_get_mContactNormalCosMaxDeltaRotation(long this_addr);
+    public static native float internal_native_get_mContactNormalCosMaxDeltaRotation(long this_addr);
 
     public void set_mContactNormalCosMaxDeltaRotation(float mContactNormalCosMaxDeltaRotation) {
         internal_native_set_mContactNormalCosMaxDeltaRotation((long) getNativeData().getCPointer(), mContactNormalCosMaxDeltaRotation);
@@ -308,7 +308,7 @@ return nativeObject->mContactNormalCosMaxDeltaRotation;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mContactNormalCosMaxDeltaRotation = mContactNormalCosMaxDeltaRotation;
 */
-    private static native void internal_native_set_mContactNormalCosMaxDeltaRotation(long this_addr, float mContactNormalCosMaxDeltaRotation);
+    public static native void internal_native_set_mContactNormalCosMaxDeltaRotation(long this_addr, float mContactNormalCosMaxDeltaRotation);
 
     public float get_mContactPointPreserveLambdaMaxDistSq() {
         return internal_native_get_mContactPointPreserveLambdaMaxDistSq((long) getNativeData().getCPointer());
@@ -318,7 +318,7 @@ nativeObject->mContactNormalCosMaxDeltaRotation = mContactNormalCosMaxDeltaRotat
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mContactPointPreserveLambdaMaxDistSq;
 */
-    private static native float internal_native_get_mContactPointPreserveLambdaMaxDistSq(long this_addr);
+    public static native float internal_native_get_mContactPointPreserveLambdaMaxDistSq(long this_addr);
 
     public void set_mContactPointPreserveLambdaMaxDistSq(float mContactPointPreserveLambdaMaxDistSq) {
         internal_native_set_mContactPointPreserveLambdaMaxDistSq((long) getNativeData().getCPointer(), mContactPointPreserveLambdaMaxDistSq);
@@ -328,7 +328,7 @@ return nativeObject->mContactPointPreserveLambdaMaxDistSq;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mContactPointPreserveLambdaMaxDistSq = mContactPointPreserveLambdaMaxDistSq;
 */
-    private static native void internal_native_set_mContactPointPreserveLambdaMaxDistSq(long this_addr, float mContactPointPreserveLambdaMaxDistSq);
+    public static native void internal_native_set_mContactPointPreserveLambdaMaxDistSq(long this_addr, float mContactPointPreserveLambdaMaxDistSq);
 
     public int get_mNumVelocitySteps() {
         return internal_native_get_mNumVelocitySteps((long) getNativeData().getCPointer());
@@ -338,7 +338,7 @@ nativeObject->mContactPointPreserveLambdaMaxDistSq = mContactPointPreserveLambda
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mNumVelocitySteps;
 */
-    private static native int internal_native_get_mNumVelocitySteps(long this_addr);
+    public static native int internal_native_get_mNumVelocitySteps(long this_addr);
 
     public void set_mNumVelocitySteps(int mNumVelocitySteps) {
         internal_native_set_mNumVelocitySteps((long) getNativeData().getCPointer(), mNumVelocitySteps);
@@ -348,7 +348,7 @@ return nativeObject->mNumVelocitySteps;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mNumVelocitySteps = mNumVelocitySteps;
 */
-    private static native void internal_native_set_mNumVelocitySteps(long this_addr, int mNumVelocitySteps);
+    public static native void internal_native_set_mNumVelocitySteps(long this_addr, int mNumVelocitySteps);
 
     public int get_mNumPositionSteps() {
         return internal_native_get_mNumPositionSteps((long) getNativeData().getCPointer());
@@ -358,7 +358,7 @@ nativeObject->mNumVelocitySteps = mNumVelocitySteps;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mNumPositionSteps;
 */
-    private static native int internal_native_get_mNumPositionSteps(long this_addr);
+    public static native int internal_native_get_mNumPositionSteps(long this_addr);
 
     public void set_mNumPositionSteps(int mNumPositionSteps) {
         internal_native_set_mNumPositionSteps((long) getNativeData().getCPointer(), mNumPositionSteps);
@@ -368,7 +368,7 @@ return nativeObject->mNumPositionSteps;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mNumPositionSteps = mNumPositionSteps;
 */
-    private static native void internal_native_set_mNumPositionSteps(long this_addr, int mNumPositionSteps);
+    public static native void internal_native_set_mNumPositionSteps(long this_addr, int mNumPositionSteps);
 
     public float get_mMinVelocityForRestitution() {
         return internal_native_get_mMinVelocityForRestitution((long) getNativeData().getCPointer());
@@ -378,7 +378,7 @@ nativeObject->mNumPositionSteps = mNumPositionSteps;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mMinVelocityForRestitution;
 */
-    private static native float internal_native_get_mMinVelocityForRestitution(long this_addr);
+    public static native float internal_native_get_mMinVelocityForRestitution(long this_addr);
 
     public void set_mMinVelocityForRestitution(float mMinVelocityForRestitution) {
         internal_native_set_mMinVelocityForRestitution((long) getNativeData().getCPointer(), mMinVelocityForRestitution);
@@ -388,7 +388,7 @@ return nativeObject->mMinVelocityForRestitution;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mMinVelocityForRestitution = mMinVelocityForRestitution;
 */
-    private static native void internal_native_set_mMinVelocityForRestitution(long this_addr, float mMinVelocityForRestitution);
+    public static native void internal_native_set_mMinVelocityForRestitution(long this_addr, float mMinVelocityForRestitution);
 
     public float get_mTimeBeforeSleep() {
         return internal_native_get_mTimeBeforeSleep((long) getNativeData().getCPointer());
@@ -398,7 +398,7 @@ nativeObject->mMinVelocityForRestitution = mMinVelocityForRestitution;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mTimeBeforeSleep;
 */
-    private static native float internal_native_get_mTimeBeforeSleep(long this_addr);
+    public static native float internal_native_get_mTimeBeforeSleep(long this_addr);
 
     public void set_mTimeBeforeSleep(float mTimeBeforeSleep) {
         internal_native_set_mTimeBeforeSleep((long) getNativeData().getCPointer(), mTimeBeforeSleep);
@@ -408,7 +408,7 @@ return nativeObject->mTimeBeforeSleep;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mTimeBeforeSleep = mTimeBeforeSleep;
 */
-    private static native void internal_native_set_mTimeBeforeSleep(long this_addr, float mTimeBeforeSleep);
+    public static native void internal_native_set_mTimeBeforeSleep(long this_addr, float mTimeBeforeSleep);
 
     public float get_mPointVelocitySleepThreshold() {
         return internal_native_get_mPointVelocitySleepThreshold((long) getNativeData().getCPointer());
@@ -418,7 +418,7 @@ nativeObject->mTimeBeforeSleep = mTimeBeforeSleep;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mPointVelocitySleepThreshold;
 */
-    private static native float internal_native_get_mPointVelocitySleepThreshold(long this_addr);
+    public static native float internal_native_get_mPointVelocitySleepThreshold(long this_addr);
 
     public void set_mPointVelocitySleepThreshold(float mPointVelocitySleepThreshold) {
         internal_native_set_mPointVelocitySleepThreshold((long) getNativeData().getCPointer(), mPointVelocitySleepThreshold);
@@ -428,7 +428,7 @@ return nativeObject->mPointVelocitySleepThreshold;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mPointVelocitySleepThreshold = mPointVelocitySleepThreshold;
 */
-    private static native void internal_native_set_mPointVelocitySleepThreshold(long this_addr, float mPointVelocitySleepThreshold);
+    public static native void internal_native_set_mPointVelocitySleepThreshold(long this_addr, float mPointVelocitySleepThreshold);
 
     public boolean get_mDeterministicSimulation() {
         return internal_native_get_mDeterministicSimulation((long) getNativeData().getCPointer());
@@ -438,7 +438,7 @@ nativeObject->mPointVelocitySleepThreshold = mPointVelocitySleepThreshold;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mDeterministicSimulation;
 */
-    private static native boolean internal_native_get_mDeterministicSimulation(long this_addr);
+    public static native boolean internal_native_get_mDeterministicSimulation(long this_addr);
 
     public void set_mDeterministicSimulation(boolean mDeterministicSimulation) {
         internal_native_set_mDeterministicSimulation((long) getNativeData().getCPointer(), mDeterministicSimulation);
@@ -448,7 +448,7 @@ return nativeObject->mDeterministicSimulation;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mDeterministicSimulation = mDeterministicSimulation;
 */
-    private static native void internal_native_set_mDeterministicSimulation(long this_addr, boolean mDeterministicSimulation);
+    public static native void internal_native_set_mDeterministicSimulation(long this_addr, boolean mDeterministicSimulation);
 
     public boolean get_mConstraintWarmStart() {
         return internal_native_get_mConstraintWarmStart((long) getNativeData().getCPointer());
@@ -458,7 +458,7 @@ nativeObject->mDeterministicSimulation = mDeterministicSimulation;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mConstraintWarmStart;
 */
-    private static native boolean internal_native_get_mConstraintWarmStart(long this_addr);
+    public static native boolean internal_native_get_mConstraintWarmStart(long this_addr);
 
     public void set_mConstraintWarmStart(boolean mConstraintWarmStart) {
         internal_native_set_mConstraintWarmStart((long) getNativeData().getCPointer(), mConstraintWarmStart);
@@ -468,7 +468,7 @@ return nativeObject->mConstraintWarmStart;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mConstraintWarmStart = mConstraintWarmStart;
 */
-    private static native void internal_native_set_mConstraintWarmStart(long this_addr, boolean mConstraintWarmStart);
+    public static native void internal_native_set_mConstraintWarmStart(long this_addr, boolean mConstraintWarmStart);
 
     public boolean get_mUseBodyPairContactCache() {
         return internal_native_get_mUseBodyPairContactCache((long) getNativeData().getCPointer());
@@ -478,7 +478,7 @@ nativeObject->mConstraintWarmStart = mConstraintWarmStart;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mUseBodyPairContactCache;
 */
-    private static native boolean internal_native_get_mUseBodyPairContactCache(long this_addr);
+    public static native boolean internal_native_get_mUseBodyPairContactCache(long this_addr);
 
     public void set_mUseBodyPairContactCache(boolean mUseBodyPairContactCache) {
         internal_native_set_mUseBodyPairContactCache((long) getNativeData().getCPointer(), mUseBodyPairContactCache);
@@ -488,7 +488,7 @@ return nativeObject->mUseBodyPairContactCache;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mUseBodyPairContactCache = mUseBodyPairContactCache;
 */
-    private static native void internal_native_set_mUseBodyPairContactCache(long this_addr, boolean mUseBodyPairContactCache);
+    public static native void internal_native_set_mUseBodyPairContactCache(long this_addr, boolean mUseBodyPairContactCache);
 
     public boolean get_mUseManifoldReduction() {
         return internal_native_get_mUseManifoldReduction((long) getNativeData().getCPointer());
@@ -498,7 +498,7 @@ nativeObject->mUseBodyPairContactCache = mUseBodyPairContactCache;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mUseManifoldReduction;
 */
-    private static native boolean internal_native_get_mUseManifoldReduction(long this_addr);
+    public static native boolean internal_native_get_mUseManifoldReduction(long this_addr);
 
     public void set_mUseManifoldReduction(boolean mUseManifoldReduction) {
         internal_native_set_mUseManifoldReduction((long) getNativeData().getCPointer(), mUseManifoldReduction);
@@ -508,7 +508,7 @@ return nativeObject->mUseManifoldReduction;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mUseManifoldReduction = mUseManifoldReduction;
 */
-    private static native void internal_native_set_mUseManifoldReduction(long this_addr, boolean mUseManifoldReduction);
+    public static native void internal_native_set_mUseManifoldReduction(long this_addr, boolean mUseManifoldReduction);
 
     public boolean get_mUseLargeIslandSplitter() {
         return internal_native_get_mUseLargeIslandSplitter((long) getNativeData().getCPointer());
@@ -518,7 +518,7 @@ nativeObject->mUseManifoldReduction = mUseManifoldReduction;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mUseLargeIslandSplitter;
 */
-    private static native boolean internal_native_get_mUseLargeIslandSplitter(long this_addr);
+    public static native boolean internal_native_get_mUseLargeIslandSplitter(long this_addr);
 
     public void set_mUseLargeIslandSplitter(boolean mUseLargeIslandSplitter) {
         internal_native_set_mUseLargeIslandSplitter((long) getNativeData().getCPointer(), mUseLargeIslandSplitter);
@@ -528,7 +528,7 @@ return nativeObject->mUseLargeIslandSplitter;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mUseLargeIslandSplitter = mUseLargeIslandSplitter;
 */
-    private static native void internal_native_set_mUseLargeIslandSplitter(long this_addr, boolean mUseLargeIslandSplitter);
+    public static native void internal_native_set_mUseLargeIslandSplitter(long this_addr, boolean mUseLargeIslandSplitter);
 
     public boolean get_mAllowSleeping() {
         return internal_native_get_mAllowSleeping((long) getNativeData().getCPointer());
@@ -538,7 +538,7 @@ nativeObject->mUseLargeIslandSplitter = mUseLargeIslandSplitter;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mAllowSleeping;
 */
-    private static native boolean internal_native_get_mAllowSleeping(long this_addr);
+    public static native boolean internal_native_get_mAllowSleeping(long this_addr);
 
     public void set_mAllowSleeping(boolean mAllowSleeping) {
         internal_native_set_mAllowSleeping((long) getNativeData().getCPointer(), mAllowSleeping);
@@ -548,7 +548,7 @@ return nativeObject->mAllowSleeping;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mAllowSleeping = mAllowSleeping;
 */
-    private static native void internal_native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping);
+    public static native void internal_native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping);
 
     public boolean get_mCheckActiveEdges() {
         return internal_native_get_mCheckActiveEdges((long) getNativeData().getCPointer());
@@ -558,7 +558,7 @@ nativeObject->mAllowSleeping = mAllowSleeping;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 return nativeObject->mCheckActiveEdges;
 */
-    private static native boolean internal_native_get_mCheckActiveEdges(long this_addr);
+    public static native boolean internal_native_get_mCheckActiveEdges(long this_addr);
 
     public void set_mCheckActiveEdges(boolean mCheckActiveEdges) {
         internal_native_set_mCheckActiveEdges((long) getNativeData().getCPointer(), mCheckActiveEdges);
@@ -568,221 +568,5 @@ return nativeObject->mCheckActiveEdges;
 PhysicsSettings* nativeObject = (PhysicsSettings*)this_addr;
 nativeObject->mCheckActiveEdges = mCheckActiveEdges;
 */
-    private static native void internal_native_set_mCheckActiveEdges(long this_addr, boolean mCheckActiveEdges);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_get_mMaxInFlightBodyPairs(long this_addr) {
-        return internal_native_get_mMaxInFlightBodyPairs(this_addr);
-    }
-
-    public static void native_set_mMaxInFlightBodyPairs(long this_addr, int mMaxInFlightBodyPairs) {
-        internal_native_set_mMaxInFlightBodyPairs(this_addr, mMaxInFlightBodyPairs);
-    }
-
-    public static int native_get_mStepListenersBatchSize(long this_addr) {
-        return internal_native_get_mStepListenersBatchSize(this_addr);
-    }
-
-    public static void native_set_mStepListenersBatchSize(long this_addr, int mStepListenersBatchSize) {
-        internal_native_set_mStepListenersBatchSize(this_addr, mStepListenersBatchSize);
-    }
-
-    public static int native_get_mStepListenerBatchesPerJob(long this_addr) {
-        return internal_native_get_mStepListenerBatchesPerJob(this_addr);
-    }
-
-    public static void native_set_mStepListenerBatchesPerJob(long this_addr, int mStepListenerBatchesPerJob) {
-        internal_native_set_mStepListenerBatchesPerJob(this_addr, mStepListenerBatchesPerJob);
-    }
-
-    public static float native_get_mBaumgarte(long this_addr) {
-        return internal_native_get_mBaumgarte(this_addr);
-    }
-
-    public static void native_set_mBaumgarte(long this_addr, float mBaumgarte) {
-        internal_native_set_mBaumgarte(this_addr, mBaumgarte);
-    }
-
-    public static float native_get_mSpeculativeContactDistance(long this_addr) {
-        return internal_native_get_mSpeculativeContactDistance(this_addr);
-    }
-
-    public static void native_set_mSpeculativeContactDistance(long this_addr, float mSpeculativeContactDistance) {
-        internal_native_set_mSpeculativeContactDistance(this_addr, mSpeculativeContactDistance);
-    }
-
-    public static float native_get_mPenetrationSlop(long this_addr) {
-        return internal_native_get_mPenetrationSlop(this_addr);
-    }
-
-    public static void native_set_mPenetrationSlop(long this_addr, float mPenetrationSlop) {
-        internal_native_set_mPenetrationSlop(this_addr, mPenetrationSlop);
-    }
-
-    public static float native_get_mLinearCastThreshold(long this_addr) {
-        return internal_native_get_mLinearCastThreshold(this_addr);
-    }
-
-    public static void native_set_mLinearCastThreshold(long this_addr, float mLinearCastThreshold) {
-        internal_native_set_mLinearCastThreshold(this_addr, mLinearCastThreshold);
-    }
-
-    public static float native_get_mLinearCastMaxPenetration(long this_addr) {
-        return internal_native_get_mLinearCastMaxPenetration(this_addr);
-    }
-
-    public static void native_set_mLinearCastMaxPenetration(long this_addr, float mLinearCastMaxPenetration) {
-        internal_native_set_mLinearCastMaxPenetration(this_addr, mLinearCastMaxPenetration);
-    }
-
-    public static float native_get_mManifoldTolerance(long this_addr) {
-        return internal_native_get_mManifoldTolerance(this_addr);
-    }
-
-    public static void native_set_mManifoldTolerance(long this_addr, float mManifoldTolerance) {
-        internal_native_set_mManifoldTolerance(this_addr, mManifoldTolerance);
-    }
-
-    public static float native_get_mMaxPenetrationDistance(long this_addr) {
-        return internal_native_get_mMaxPenetrationDistance(this_addr);
-    }
-
-    public static void native_set_mMaxPenetrationDistance(long this_addr, float mMaxPenetrationDistance) {
-        internal_native_set_mMaxPenetrationDistance(this_addr, mMaxPenetrationDistance);
-    }
-
-    public static float native_get_mBodyPairCacheMaxDeltaPositionSq(long this_addr) {
-        return internal_native_get_mBodyPairCacheMaxDeltaPositionSq(this_addr);
-    }
-
-    public static void native_set_mBodyPairCacheMaxDeltaPositionSq(long this_addr, float mBodyPairCacheMaxDeltaPositionSq) {
-        internal_native_set_mBodyPairCacheMaxDeltaPositionSq(this_addr, mBodyPairCacheMaxDeltaPositionSq);
-    }
-
-    public static float native_get_mBodyPairCacheCosMaxDeltaRotationDiv2(long this_addr) {
-        return internal_native_get_mBodyPairCacheCosMaxDeltaRotationDiv2(this_addr);
-    }
-
-    public static void native_set_mBodyPairCacheCosMaxDeltaRotationDiv2(long this_addr, float mBodyPairCacheCosMaxDeltaRotationDiv2) {
-        internal_native_set_mBodyPairCacheCosMaxDeltaRotationDiv2(this_addr, mBodyPairCacheCosMaxDeltaRotationDiv2);
-    }
-
-    public static float native_get_mContactNormalCosMaxDeltaRotation(long this_addr) {
-        return internal_native_get_mContactNormalCosMaxDeltaRotation(this_addr);
-    }
-
-    public static void native_set_mContactNormalCosMaxDeltaRotation(long this_addr, float mContactNormalCosMaxDeltaRotation) {
-        internal_native_set_mContactNormalCosMaxDeltaRotation(this_addr, mContactNormalCosMaxDeltaRotation);
-    }
-
-    public static float native_get_mContactPointPreserveLambdaMaxDistSq(long this_addr) {
-        return internal_native_get_mContactPointPreserveLambdaMaxDistSq(this_addr);
-    }
-
-    public static void native_set_mContactPointPreserveLambdaMaxDistSq(long this_addr, float mContactPointPreserveLambdaMaxDistSq) {
-        internal_native_set_mContactPointPreserveLambdaMaxDistSq(this_addr, mContactPointPreserveLambdaMaxDistSq);
-    }
-
-    public static int native_get_mNumVelocitySteps(long this_addr) {
-        return internal_native_get_mNumVelocitySteps(this_addr);
-    }
-
-    public static void native_set_mNumVelocitySteps(long this_addr, int mNumVelocitySteps) {
-        internal_native_set_mNumVelocitySteps(this_addr, mNumVelocitySteps);
-    }
-
-    public static int native_get_mNumPositionSteps(long this_addr) {
-        return internal_native_get_mNumPositionSteps(this_addr);
-    }
-
-    public static void native_set_mNumPositionSteps(long this_addr, int mNumPositionSteps) {
-        internal_native_set_mNumPositionSteps(this_addr, mNumPositionSteps);
-    }
-
-    public static float native_get_mMinVelocityForRestitution(long this_addr) {
-        return internal_native_get_mMinVelocityForRestitution(this_addr);
-    }
-
-    public static void native_set_mMinVelocityForRestitution(long this_addr, float mMinVelocityForRestitution) {
-        internal_native_set_mMinVelocityForRestitution(this_addr, mMinVelocityForRestitution);
-    }
-
-    public static float native_get_mTimeBeforeSleep(long this_addr) {
-        return internal_native_get_mTimeBeforeSleep(this_addr);
-    }
-
-    public static void native_set_mTimeBeforeSleep(long this_addr, float mTimeBeforeSleep) {
-        internal_native_set_mTimeBeforeSleep(this_addr, mTimeBeforeSleep);
-    }
-
-    public static float native_get_mPointVelocitySleepThreshold(long this_addr) {
-        return internal_native_get_mPointVelocitySleepThreshold(this_addr);
-    }
-
-    public static void native_set_mPointVelocitySleepThreshold(long this_addr, float mPointVelocitySleepThreshold) {
-        internal_native_set_mPointVelocitySleepThreshold(this_addr, mPointVelocitySleepThreshold);
-    }
-
-    public static boolean native_get_mDeterministicSimulation(long this_addr) {
-        return internal_native_get_mDeterministicSimulation(this_addr);
-    }
-
-    public static void native_set_mDeterministicSimulation(long this_addr, boolean mDeterministicSimulation) {
-        internal_native_set_mDeterministicSimulation(this_addr, mDeterministicSimulation);
-    }
-
-    public static boolean native_get_mConstraintWarmStart(long this_addr) {
-        return internal_native_get_mConstraintWarmStart(this_addr);
-    }
-
-    public static void native_set_mConstraintWarmStart(long this_addr, boolean mConstraintWarmStart) {
-        internal_native_set_mConstraintWarmStart(this_addr, mConstraintWarmStart);
-    }
-
-    public static boolean native_get_mUseBodyPairContactCache(long this_addr) {
-        return internal_native_get_mUseBodyPairContactCache(this_addr);
-    }
-
-    public static void native_set_mUseBodyPairContactCache(long this_addr, boolean mUseBodyPairContactCache) {
-        internal_native_set_mUseBodyPairContactCache(this_addr, mUseBodyPairContactCache);
-    }
-
-    public static boolean native_get_mUseManifoldReduction(long this_addr) {
-        return internal_native_get_mUseManifoldReduction(this_addr);
-    }
-
-    public static void native_set_mUseManifoldReduction(long this_addr, boolean mUseManifoldReduction) {
-        internal_native_set_mUseManifoldReduction(this_addr, mUseManifoldReduction);
-    }
-
-    public static boolean native_get_mUseLargeIslandSplitter(long this_addr) {
-        return internal_native_get_mUseLargeIslandSplitter(this_addr);
-    }
-
-    public static void native_set_mUseLargeIslandSplitter(long this_addr, boolean mUseLargeIslandSplitter) {
-        internal_native_set_mUseLargeIslandSplitter(this_addr, mUseLargeIslandSplitter);
-    }
-
-    public static boolean native_get_mAllowSleeping(long this_addr) {
-        return internal_native_get_mAllowSleeping(this_addr);
-    }
-
-    public static void native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping) {
-        internal_native_set_mAllowSleeping(this_addr, mAllowSleeping);
-    }
-
-    public static boolean native_get_mCheckActiveEdges(long this_addr) {
-        return internal_native_get_mCheckActiveEdges(this_addr);
-    }
-
-    public static void native_set_mCheckActiveEdges(long this_addr, boolean mCheckActiveEdges) {
-        internal_native_set_mCheckActiveEdges(this_addr, mCheckActiveEdges);
-    }
+    public static native void internal_native_set_mCheckActiveEdges(long this_addr, boolean mCheckActiveEdges);
 }

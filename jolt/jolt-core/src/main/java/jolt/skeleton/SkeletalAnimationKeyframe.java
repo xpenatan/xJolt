@@ -22,7 +22,7 @@ public class SkeletalAnimationKeyframe extends SkeletalAnimationJointState {
     /*[-JNI;-NATIVE]
 return (jlong)new SkeletalAnimationKeyframe();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new SkeletalAnimationKeyframe();
 SkeletalAnimationKeyframe* nativeObject = (SkeletalAnimationKeyframe*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mTime() {
         return internal_native_get_mTime((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 SkeletalAnimationKeyframe* nativeObject = (SkeletalAnimationKeyframe*)this_addr;
 return nativeObject->mTime;
 */
-    private static native float internal_native_get_mTime(long this_addr);
+    public static native float internal_native_get_mTime(long this_addr);
 
     public void set_mTime(float mTime) {
         internal_native_set_mTime((long) getNativeData().getCPointer(), mTime);
@@ -68,21 +68,5 @@ return nativeObject->mTime;
 SkeletalAnimationKeyframe* nativeObject = (SkeletalAnimationKeyframe*)this_addr;
 nativeObject->mTime = mTime;
 */
-    private static native void internal_native_set_mTime(long this_addr, float mTime);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_get_mTime(long this_addr) {
-        return internal_native_get_mTime(this_addr);
-    }
-
-    public static void native_set_mTime(long this_addr, float mTime) {
-        internal_native_set_mTime(this_addr, mTime);
-    }
+    public static native void internal_native_set_mTime(long this_addr, float mTime);
 }

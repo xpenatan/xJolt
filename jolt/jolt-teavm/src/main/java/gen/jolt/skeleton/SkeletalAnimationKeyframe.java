@@ -24,7 +24,7 @@ var jsObj = new jolt.SkeletalAnimationKeyframe();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SkeletalAnimationKeyframe();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationKeyframe);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationKeyframe);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mTime() {
         return internal_native_get_mTime((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationKeyframe);
 return jsObj.get_mTime();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationKeyframe);return jsObj.get_mTime();")
-    private static native float internal_native_get_mTime(int this_addr);
+    public static native float internal_native_get_mTime(int this_addr);
 
     public void set_mTime(float mTime) {
         internal_native_set_mTime((int) (long) getNativeData().getCPointer(), mTime);
@@ -73,21 +73,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationKeyframe);
 jsObj.set_mTime(mTime);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mTime"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationKeyframe);jsObj.set_mTime(mTime);")
-    private static native void internal_native_set_mTime(int this_addr, float mTime);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_mTime(long this_addr) {
-        return internal_native_get_mTime((int) this_addr);
-    }
-
-    public static void native_set_mTime(long this_addr, float mTime) {
-        internal_native_set_mTime((int) this_addr, mTime);
-    }
+    public static native void internal_native_set_mTime(int this_addr, float mTime);
 }

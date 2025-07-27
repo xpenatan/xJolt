@@ -24,7 +24,7 @@ public class CollideShapeSettings extends CollideSettingsBase {
     /*[-JNI;-NATIVE]
 return (jlong)new CollideShapeSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -42,7 +42,7 @@ return (jlong)new CollideShapeSettings();
 CollideShapeSettings* nativeObject = (CollideShapeSettings*)this_addr;
 return nativeObject->mMaxSeparationDistance;
 */
-    private static native float internal_native_get_mMaxSeparationDistance(long this_addr);
+    public static native float internal_native_get_mMaxSeparationDistance(long this_addr);
 
     public void set_mMaxSeparationDistance(float mMaxSeparationDistance) {
         internal_native_set_mMaxSeparationDistance((long) getNativeData().getCPointer(), mMaxSeparationDistance);
@@ -52,7 +52,7 @@ return nativeObject->mMaxSeparationDistance;
 CollideShapeSettings* nativeObject = (CollideShapeSettings*)this_addr;
 nativeObject->mMaxSeparationDistance = mMaxSeparationDistance;
 */
-    private static native void internal_native_set_mMaxSeparationDistance(long this_addr, float mMaxSeparationDistance);
+    public static native void internal_native_set_mMaxSeparationDistance(long this_addr, float mMaxSeparationDistance);
 
     public EBackFaceMode get_mBackFaceMode() {
         int value = internal_native_get_mBackFaceMode((long) getNativeData().getCPointer());
@@ -63,7 +63,7 @@ nativeObject->mMaxSeparationDistance = mMaxSeparationDistance;
 CollideShapeSettings* nativeObject = (CollideShapeSettings*)this_addr;
 return (jint)nativeObject->mBackFaceMode;
 */
-    private static native int internal_native_get_mBackFaceMode(long this_addr);
+    public static native int internal_native_get_mBackFaceMode(long this_addr);
 
     public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
         internal_native_set_mBackFaceMode((long) getNativeData().getCPointer(), (long) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
@@ -73,25 +73,5 @@ return (jint)nativeObject->mBackFaceMode;
 CollideShapeSettings* nativeObject = (CollideShapeSettings*)this_addr;
 nativeObject->mBackFaceMode = (::EBackFaceMode)mBackFaceMode;
 */
-    private static native void internal_native_set_mBackFaceMode(long this_addr, long mBackFaceMode);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static float native_get_mMaxSeparationDistance(long this_addr) {
-        return internal_native_get_mMaxSeparationDistance(this_addr);
-    }
-
-    public static void native_set_mMaxSeparationDistance(long this_addr, float mMaxSeparationDistance) {
-        internal_native_set_mMaxSeparationDistance(this_addr, mMaxSeparationDistance);
-    }
-
-    public static long native_get_mBackFaceMode(long this_addr) {
-        return internal_native_get_mBackFaceMode(this_addr);
-    }
-
-    public static void native_set_mBackFaceMode(long this_addr, long mBackFaceMode) {
-        internal_native_set_mBackFaceMode(this_addr, mBackFaceMode);
-    }
+    public static native void internal_native_set_mBackFaceMode(long this_addr, long mBackFaceMode);
 }

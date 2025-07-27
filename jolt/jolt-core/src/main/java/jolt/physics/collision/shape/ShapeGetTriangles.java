@@ -29,7 +29,7 @@ public class ShapeGetTriangles extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new ShapeGetTriangles((Shape* )inShape_addr, *((AABox* )inBox_addr), *((Vec3* )inPositionCOM_addr), *((Quat* )inRotation_addr), *((Vec3* )inScale_addr));
 */
-    private static native long internal_native_create_Shape_AABox_Vec3_Quat_Vec3(long inShape_addr, long inBox_addr, long inPositionCOM_addr, long inRotation_addr, long inScale_addr);
+    public static native long internal_native_create_Shape_AABox_Vec3_Quat_Vec3(long inShape_addr, long inBox_addr, long inPositionCOM_addr, long inRotation_addr, long inScale_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -54,7 +54,7 @@ return (jlong)new ShapeGetTriangles((Shape* )inShape_addr, *((AABox* )inBox_addr
 ShapeGetTriangles* nativeObject = (ShapeGetTriangles*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetNumTriangles() {
         return internal_native_GetNumTriangles((long) getNativeData().getCPointer());
@@ -64,7 +64,7 @@ delete nativeObject;
 ShapeGetTriangles* nativeObject = (ShapeGetTriangles*)this_addr;
 return nativeObject->GetNumTriangles();
 */
-    private static native int internal_native_GetNumTriangles(long this_addr);
+    public static native int internal_native_GetNumTriangles(long this_addr);
 
     public int GetVerticesSize() {
         return internal_native_GetVerticesSize((long) getNativeData().getCPointer());
@@ -74,7 +74,7 @@ return nativeObject->GetNumTriangles();
 ShapeGetTriangles* nativeObject = (ShapeGetTriangles*)this_addr;
 return nativeObject->GetVerticesSize();
 */
-    private static native int internal_native_GetVerticesSize(long this_addr);
+    public static native int internal_native_GetVerticesSize(long this_addr);
 
     public long GetVerticesData() {
         return internal_native_GetVerticesData((long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ return nativeObject->GetVerticesSize();
 ShapeGetTriangles* nativeObject = (ShapeGetTriangles*)this_addr;
 return (jlong)nativeObject->GetVerticesData();
 */
-    private static native long internal_native_GetVerticesData(long this_addr);
+    public static native long internal_native_GetVerticesData(long this_addr);
 
     public PhysicsMaterial GetMaterial(int inTriangle) {
         long pointer = internal_native_GetMaterial((long) getNativeData().getCPointer(), inTriangle);
@@ -101,29 +101,5 @@ ShapeGetTriangles* nativeObject = (ShapeGetTriangles*)this_addr;
 const PhysicsMaterial* obj = nativeObject->GetMaterial((int)inTriangle);
 return (jlong)obj;
 */
-    private static native long internal_native_GetMaterial(long this_addr, int inTriangle);
-
-    public static long native_create_Shape_AABox_Vec3_Quat_Vec3(long inShape_addr, long inBox_addr, long inPositionCOM_addr, long inRotation_addr, long inScale_addr) {
-        return internal_native_create_Shape_AABox_Vec3_Quat_Vec3(inShape_addr, inBox_addr, inPositionCOM_addr, inRotation_addr, inScale_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_GetNumTriangles(long this_addr) {
-        return internal_native_GetNumTriangles(this_addr);
-    }
-
-    public static int native_GetVerticesSize(long this_addr) {
-        return internal_native_GetVerticesSize(this_addr);
-    }
-
-    public static long native_GetVerticesData(long this_addr) {
-        return internal_native_GetVerticesData(this_addr);
-    }
-
-    public static long native_GetMaterial(long this_addr, int inTriangle) {
-        return internal_native_GetMaterial(this_addr, inTriangle);
-    }
+    public static native long internal_native_GetMaterial(long this_addr, int inTriangle);
 }

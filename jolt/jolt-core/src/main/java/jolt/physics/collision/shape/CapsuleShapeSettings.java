@@ -24,7 +24,7 @@ public class CapsuleShapeSettings extends ConvexShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new CapsuleShapeSettings((float)inHalfHeight, (float)inRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    private static native long internal_native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, long inMaterial_addr);
+    public static native long internal_native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, long inMaterial_addr);
 
     public CapsuleShapeSettings(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
@@ -35,7 +35,7 @@ return (jlong)new CapsuleShapeSettings((float)inHalfHeight, (float)inRadius, (Ph
     /*[-JNI;-NATIVE]
 return (jlong)new CapsuleShapeSettings((float)inHalfHeight, (float)inRadius);
 */
-    private static native long internal_native_create_float_float(float inHalfHeight, float inRadius);
+    public static native long internal_native_create_float_float(float inHalfHeight, float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ return (jlong)new CapsuleShapeSettings((float)inHalfHeight, (float)inRadius);
 CapsuleShapeSettings* nativeObject = (CapsuleShapeSettings*)this_addr;
 return nativeObject->mRadius;
 */
-    private static native float internal_native_get_mRadius(long this_addr);
+    public static native float internal_native_get_mRadius(long this_addr);
 
     public void set_mRadius(float mRadius) {
         internal_native_set_mRadius((long) getNativeData().getCPointer(), mRadius);
@@ -63,7 +63,7 @@ return nativeObject->mRadius;
 CapsuleShapeSettings* nativeObject = (CapsuleShapeSettings*)this_addr;
 nativeObject->mRadius = mRadius;
 */
-    private static native void internal_native_set_mRadius(long this_addr, float mRadius);
+    public static native void internal_native_set_mRadius(long this_addr, float mRadius);
 
     public float get_mHalfHeightOfCylinder() {
         return internal_native_get_mHalfHeightOfCylinder((long) getNativeData().getCPointer());
@@ -73,7 +73,7 @@ nativeObject->mRadius = mRadius;
 CapsuleShapeSettings* nativeObject = (CapsuleShapeSettings*)this_addr;
 return nativeObject->mHalfHeightOfCylinder;
 */
-    private static native float internal_native_get_mHalfHeightOfCylinder(long this_addr);
+    public static native float internal_native_get_mHalfHeightOfCylinder(long this_addr);
 
     public void set_mHalfHeightOfCylinder(float mHalfHeightOfCylinder) {
         internal_native_set_mHalfHeightOfCylinder((long) getNativeData().getCPointer(), mHalfHeightOfCylinder);
@@ -83,29 +83,5 @@ return nativeObject->mHalfHeightOfCylinder;
 CapsuleShapeSettings* nativeObject = (CapsuleShapeSettings*)this_addr;
 nativeObject->mHalfHeightOfCylinder = mHalfHeightOfCylinder;
 */
-    private static native void internal_native_set_mHalfHeightOfCylinder(long this_addr, float mHalfHeightOfCylinder);
-
-    public static long native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, long inMaterial_addr) {
-        return internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, inMaterial_addr);
-    }
-
-    public static long native_create_float_float(float inHalfHeight, float inRadius) {
-        return internal_native_create_float_float(inHalfHeight, inRadius);
-    }
-
-    public static float native_get_mRadius(long this_addr) {
-        return internal_native_get_mRadius(this_addr);
-    }
-
-    public static void native_set_mRadius(long this_addr, float mRadius) {
-        internal_native_set_mRadius(this_addr, mRadius);
-    }
-
-    public static float native_get_mHalfHeightOfCylinder(long this_addr) {
-        return internal_native_get_mHalfHeightOfCylinder(this_addr);
-    }
-
-    public static void native_set_mHalfHeightOfCylinder(long this_addr, float mHalfHeightOfCylinder) {
-        internal_native_set_mHalfHeightOfCylinder(this_addr, mHalfHeightOfCylinder);
-    }
+    public static native void internal_native_set_mHalfHeightOfCylinder(long this_addr, float mHalfHeightOfCylinder);
 }

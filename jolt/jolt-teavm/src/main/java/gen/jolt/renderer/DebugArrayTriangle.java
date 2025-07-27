@@ -41,7 +41,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugArrayTriangle);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugArrayTriangle);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int size() {
         return internal_native_size((int) (long) getNativeData().getCPointer());
@@ -53,7 +53,7 @@ var returnedJSObj = jsObj.size();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugArrayTriangle);var returnedJSObj = jsObj.size();return returnedJSObj;")
-    private static native int internal_native_size(int this_addr);
+    public static native int internal_native_size(int this_addr);
 
     public DebugRendererTriangle at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
@@ -72,17 +72,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugArrayTriangle);var returnedJSObj = jsObj.at(inIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_at(int this_addr, int inIndex);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_size(long this_addr) {
-        return internal_native_size((int) this_addr);
-    }
-
-    public static long native_at(long this_addr, int inIndex) {
-        return internal_native_at((int) this_addr, inIndex);
-    }
+    public static native int internal_native_at(int this_addr, int inIndex);
 }

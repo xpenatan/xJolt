@@ -37,7 +37,7 @@ var jsObj = new jolt.RagdollSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.RagdollSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -56,7 +56,7 @@ var returnedJSObj = jsObj.Stabilize();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);var returnedJSObj = jsObj.Stabilize();return returnedJSObj;")
-    private static native boolean internal_native_Stabilize(int this_addr);
+    public static native boolean internal_native_Stabilize(int this_addr);
 
     public Ragdoll CreateRagdoll(int inCollisionGroup, int inUserData, PhysicsSystem inSystem) {
         int pointer = internal_native_CreateRagdoll((int) (long) getNativeData().getCPointer(), inCollisionGroup, inUserData, (int) (long) (inSystem != null ? inSystem.getNativeData().getCPointer() : 0));
@@ -75,7 +75,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inCollisionGroup", "inUserData", "inSystem_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);var returnedJSObj = jsObj.CreateRagdoll(inCollisionGroup, inUserData, inSystem_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_CreateRagdoll(int this_addr, int inCollisionGroup, int inUserData, int inSystem_addr);
+    public static native int internal_native_CreateRagdoll(int this_addr, int inCollisionGroup, int inUserData, int inSystem_addr);
 
     public Skeleton GetSkeleton() {
         int pointer = internal_native_GetSkeleton((int) (long) getNativeData().getCPointer());
@@ -94,7 +94,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);var returnedJSObj = jsObj.GetSkeleton();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetSkeleton(int this_addr);
+    public static native int internal_native_GetSkeleton(int this_addr);
 
     public void DisableParentChildCollisions(Mat44MemRef inJointMatrices, float inMinSeparationDistance) {
         internal_native_DisableParentChildCollisions((int) (long) getNativeData().getCPointer(), (int) (long) (inJointMatrices != null ? inJointMatrices.getNativeData().getCPointer() : 0), inMinSeparationDistance);
@@ -105,7 +105,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);
 jsObj.DisableParentChildCollisions(inJointMatrices_addr, inMinSeparationDistance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inJointMatrices_addr", "inMinSeparationDistance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);jsObj.DisableParentChildCollisions(inJointMatrices_addr, inMinSeparationDistance);")
-    private static native void internal_native_DisableParentChildCollisions(int this_addr, int inJointMatrices_addr, float inMinSeparationDistance);
+    public static native void internal_native_DisableParentChildCollisions(int this_addr, int inJointMatrices_addr, float inMinSeparationDistance);
 
     public void DisableParentChildCollisions(Mat44MemRef inJointMatrices) {
         internal_native_DisableParentChildCollisions((int) (long) getNativeData().getCPointer(), (int) (long) (inJointMatrices != null ? inJointMatrices.getNativeData().getCPointer() : 0));
@@ -116,7 +116,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);
 jsObj.DisableParentChildCollisions(inJointMatrices_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inJointMatrices_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);jsObj.DisableParentChildCollisions(inJointMatrices_addr);")
-    private static native void internal_native_DisableParentChildCollisions(int this_addr, int inJointMatrices_addr);
+    public static native void internal_native_DisableParentChildCollisions(int this_addr, int inJointMatrices_addr);
 
     public void DisableParentChildCollisions() {
         internal_native_DisableParentChildCollisions((int) (long) getNativeData().getCPointer());
@@ -127,7 +127,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);
 jsObj.DisableParentChildCollisions();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);jsObj.DisableParentChildCollisions();")
-    private static native void internal_native_DisableParentChildCollisions(int this_addr);
+    public static native void internal_native_DisableParentChildCollisions(int this_addr);
 
     public void CalculateBodyIndexToConstraintIndex() {
         internal_native_CalculateBodyIndexToConstraintIndex((int) (long) getNativeData().getCPointer());
@@ -138,7 +138,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);
 jsObj.CalculateBodyIndexToConstraintIndex();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);jsObj.CalculateBodyIndexToConstraintIndex();")
-    private static native void internal_native_CalculateBodyIndexToConstraintIndex(int this_addr);
+    public static native void internal_native_CalculateBodyIndexToConstraintIndex(int this_addr);
 
     public void CalculateConstraintIndexToBodyIdxPair() {
         internal_native_CalculateConstraintIndexToBodyIdxPair((int) (long) getNativeData().getCPointer());
@@ -149,7 +149,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);
 jsObj.CalculateConstraintIndexToBodyIdxPair();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);jsObj.CalculateConstraintIndexToBodyIdxPair();")
-    private static native void internal_native_CalculateConstraintIndexToBodyIdxPair(int this_addr);
+    public static native void internal_native_CalculateConstraintIndexToBodyIdxPair(int this_addr);
 
     public ArrayRagdollPart get_mParts() {
         int pointer = internal_native_get_mParts((int) (long) getNativeData().getCPointer());
@@ -168,7 +168,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);var returnedJSObj = jsObj.get_mParts();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mParts(int this_addr);
+    public static native int internal_native_get_mParts(int this_addr);
 
     public void set_mParts(ArrayRagdollPart mParts) {
         internal_native_set_mParts((int) (long) getNativeData().getCPointer(), (int) (long) (mParts != null ? mParts.getNativeData().getCPointer() : 0));
@@ -179,7 +179,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);
 jsObj.set_mParts(mParts_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mParts_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);jsObj.set_mParts(mParts_addr);")
-    private static native void internal_native_set_mParts(int this_addr, int mParts_addr);
+    public static native void internal_native_set_mParts(int this_addr, int mParts_addr);
 
     public ArrayRagdollAdditionalConstraint get_mAdditionalConstraints() {
         int pointer = internal_native_get_mAdditionalConstraints((int) (long) getNativeData().getCPointer());
@@ -198,7 +198,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);var returnedJSObj = jsObj.get_mAdditionalConstraints();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mAdditionalConstraints(int this_addr);
+    public static native int internal_native_get_mAdditionalConstraints(int this_addr);
 
     public void set_mAdditionalConstraints(ArrayRagdollAdditionalConstraint mAdditionalConstraints) {
         internal_native_set_mAdditionalConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (mAdditionalConstraints != null ? mAdditionalConstraints.getNativeData().getCPointer() : 0));
@@ -209,57 +209,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);
 jsObj.set_mAdditionalConstraints(mAdditionalConstraints_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mAdditionalConstraints_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollSettings);jsObj.set_mAdditionalConstraints(mAdditionalConstraints_addr);")
-    private static native void internal_native_set_mAdditionalConstraints(int this_addr, int mAdditionalConstraints_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static boolean native_Stabilize(long this_addr) {
-        return internal_native_Stabilize((int) this_addr);
-    }
-
-    public static long native_CreateRagdoll(long this_addr, int inCollisionGroup, int inUserData, long inSystem_addr) {
-        return internal_native_CreateRagdoll((int) this_addr, inCollisionGroup, inUserData, (int) inSystem_addr);
-    }
-
-    public static long native_GetSkeleton(long this_addr) {
-        return internal_native_GetSkeleton((int) this_addr);
-    }
-
-    public static void native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr, float inMinSeparationDistance) {
-        internal_native_DisableParentChildCollisions((int) this_addr, (int) inJointMatrices_addr, inMinSeparationDistance);
-    }
-
-    public static void native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr) {
-        internal_native_DisableParentChildCollisions((int) this_addr, (int) inJointMatrices_addr);
-    }
-
-    public static void native_DisableParentChildCollisions(long this_addr) {
-        internal_native_DisableParentChildCollisions((int) this_addr);
-    }
-
-    public static void native_CalculateBodyIndexToConstraintIndex(long this_addr) {
-        internal_native_CalculateBodyIndexToConstraintIndex((int) this_addr);
-    }
-
-    public static void native_CalculateConstraintIndexToBodyIdxPair(long this_addr) {
-        internal_native_CalculateConstraintIndexToBodyIdxPair((int) this_addr);
-    }
-
-    public static long native_get_mParts(long this_addr) {
-        return internal_native_get_mParts((int) this_addr);
-    }
-
-    public static void native_set_mParts(long this_addr, long mParts_addr) {
-        internal_native_set_mParts((int) this_addr, (int) mParts_addr);
-    }
-
-    public static long native_get_mAdditionalConstraints(long this_addr) {
-        return internal_native_get_mAdditionalConstraints((int) this_addr);
-    }
-
-    public static void native_set_mAdditionalConstraints(long this_addr, long mAdditionalConstraints_addr) {
-        internal_native_set_mAdditionalConstraints((int) this_addr, (int) mAdditionalConstraints_addr);
-    }
+    public static native void internal_native_set_mAdditionalConstraints(int this_addr, int mAdditionalConstraints_addr);
 }

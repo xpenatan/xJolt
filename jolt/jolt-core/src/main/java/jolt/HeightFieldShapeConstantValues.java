@@ -38,7 +38,7 @@ public class HeightFieldShapeConstantValues extends IDLBase {
 HeightFieldShapeConstantValues* nativeObject = (HeightFieldShapeConstantValues*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public static float get_cNoCollisionValue() {
         return internal_native_get_cNoCollisionValue();
@@ -47,13 +47,5 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return HeightFieldShapeConstantValues::cNoCollisionValue;
 */
-    private static native float internal_native_get_cNoCollisionValue();
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_get_cNoCollisionValue() {
-        return internal_native_get_cNoCollisionValue();
-    }
+    public static native float internal_native_get_cNoCollisionValue();
 }

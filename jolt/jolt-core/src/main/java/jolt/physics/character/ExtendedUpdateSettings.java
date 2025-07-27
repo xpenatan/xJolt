@@ -30,7 +30,7 @@ public class ExtendedUpdateSettings extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new CharacterVirtual::ExtendedUpdateSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,7 +55,7 @@ return (jlong)new CharacterVirtual::ExtendedUpdateSettings();
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mStickToFloorStepDown() {
         long pointer = internal_native_get_mStickToFloorStepDown((long) getNativeData().getCPointer());
@@ -71,7 +71,7 @@ delete nativeObject;
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 return (jlong)&nativeObject->mStickToFloorStepDown;
 */
-    private static native long internal_native_get_mStickToFloorStepDown(long this_addr);
+    public static native long internal_native_get_mStickToFloorStepDown(long this_addr);
 
     public void set_mStickToFloorStepDown(Vec3 mStickToFloorStepDown) {
         internal_native_set_mStickToFloorStepDown((long) getNativeData().getCPointer(), (long) (mStickToFloorStepDown != null ? mStickToFloorStepDown.getNativeData().getCPointer() : 0));
@@ -81,7 +81,7 @@ return (jlong)&nativeObject->mStickToFloorStepDown;
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 nativeObject->mStickToFloorStepDown = *((Vec3*)mStickToFloorStepDown_addr);
 */
-    private static native void internal_native_set_mStickToFloorStepDown(long this_addr, long mStickToFloorStepDown_addr);
+    public static native void internal_native_set_mStickToFloorStepDown(long this_addr, long mStickToFloorStepDown_addr);
 
     public Vec3 get_mWalkStairsStepUp() {
         long pointer = internal_native_get_mWalkStairsStepUp((long) getNativeData().getCPointer());
@@ -97,7 +97,7 @@ nativeObject->mStickToFloorStepDown = *((Vec3*)mStickToFloorStepDown_addr);
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 return (jlong)&nativeObject->mWalkStairsStepUp;
 */
-    private static native long internal_native_get_mWalkStairsStepUp(long this_addr);
+    public static native long internal_native_get_mWalkStairsStepUp(long this_addr);
 
     public void set_mWalkStairsStepUp(Vec3 mWalkStairsStepUp) {
         internal_native_set_mWalkStairsStepUp((long) getNativeData().getCPointer(), (long) (mWalkStairsStepUp != null ? mWalkStairsStepUp.getNativeData().getCPointer() : 0));
@@ -107,7 +107,7 @@ return (jlong)&nativeObject->mWalkStairsStepUp;
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 nativeObject->mWalkStairsStepUp = *((Vec3*)mWalkStairsStepUp_addr);
 */
-    private static native void internal_native_set_mWalkStairsStepUp(long this_addr, long mWalkStairsStepUp_addr);
+    public static native void internal_native_set_mWalkStairsStepUp(long this_addr, long mWalkStairsStepUp_addr);
 
     public float get_mWalkStairsMinStepForward() {
         return internal_native_get_mWalkStairsMinStepForward((long) getNativeData().getCPointer());
@@ -117,7 +117,7 @@ nativeObject->mWalkStairsStepUp = *((Vec3*)mWalkStairsStepUp_addr);
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 return nativeObject->mWalkStairsMinStepForward;
 */
-    private static native float internal_native_get_mWalkStairsMinStepForward(long this_addr);
+    public static native float internal_native_get_mWalkStairsMinStepForward(long this_addr);
 
     public void set_mWalkStairsMinStepForward(float mWalkStairsMinStepForward) {
         internal_native_set_mWalkStairsMinStepForward((long) getNativeData().getCPointer(), mWalkStairsMinStepForward);
@@ -127,7 +127,7 @@ return nativeObject->mWalkStairsMinStepForward;
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 nativeObject->mWalkStairsMinStepForward = mWalkStairsMinStepForward;
 */
-    private static native void internal_native_set_mWalkStairsMinStepForward(long this_addr, float mWalkStairsMinStepForward);
+    public static native void internal_native_set_mWalkStairsMinStepForward(long this_addr, float mWalkStairsMinStepForward);
 
     public float get_mWalkStairsStepForwardTest() {
         return internal_native_get_mWalkStairsStepForwardTest((long) getNativeData().getCPointer());
@@ -137,7 +137,7 @@ nativeObject->mWalkStairsMinStepForward = mWalkStairsMinStepForward;
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 return nativeObject->mWalkStairsStepForwardTest;
 */
-    private static native float internal_native_get_mWalkStairsStepForwardTest(long this_addr);
+    public static native float internal_native_get_mWalkStairsStepForwardTest(long this_addr);
 
     public void set_mWalkStairsStepForwardTest(float mWalkStairsStepForwardTest) {
         internal_native_set_mWalkStairsStepForwardTest((long) getNativeData().getCPointer(), mWalkStairsStepForwardTest);
@@ -147,7 +147,7 @@ return nativeObject->mWalkStairsStepForwardTest;
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 nativeObject->mWalkStairsStepForwardTest = mWalkStairsStepForwardTest;
 */
-    private static native void internal_native_set_mWalkStairsStepForwardTest(long this_addr, float mWalkStairsStepForwardTest);
+    public static native void internal_native_set_mWalkStairsStepForwardTest(long this_addr, float mWalkStairsStepForwardTest);
 
     public float get_mWalkStairsCosAngleForwardContact() {
         return internal_native_get_mWalkStairsCosAngleForwardContact((long) getNativeData().getCPointer());
@@ -157,7 +157,7 @@ nativeObject->mWalkStairsStepForwardTest = mWalkStairsStepForwardTest;
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 return nativeObject->mWalkStairsCosAngleForwardContact;
 */
-    private static native float internal_native_get_mWalkStairsCosAngleForwardContact(long this_addr);
+    public static native float internal_native_get_mWalkStairsCosAngleForwardContact(long this_addr);
 
     public void set_mWalkStairsCosAngleForwardContact(float mWalkStairsCosAngleForwardContact) {
         internal_native_set_mWalkStairsCosAngleForwardContact((long) getNativeData().getCPointer(), mWalkStairsCosAngleForwardContact);
@@ -167,7 +167,7 @@ return nativeObject->mWalkStairsCosAngleForwardContact;
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 nativeObject->mWalkStairsCosAngleForwardContact = mWalkStairsCosAngleForwardContact;
 */
-    private static native void internal_native_set_mWalkStairsCosAngleForwardContact(long this_addr, float mWalkStairsCosAngleForwardContact);
+    public static native void internal_native_set_mWalkStairsCosAngleForwardContact(long this_addr, float mWalkStairsCosAngleForwardContact);
 
     public Vec3 get_mWalkStairsStepDownExtra() {
         long pointer = internal_native_get_mWalkStairsStepDownExtra((long) getNativeData().getCPointer());
@@ -183,7 +183,7 @@ nativeObject->mWalkStairsCosAngleForwardContact = mWalkStairsCosAngleForwardCont
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 return (jlong)&nativeObject->mWalkStairsStepDownExtra;
 */
-    private static native long internal_native_get_mWalkStairsStepDownExtra(long this_addr);
+    public static native long internal_native_get_mWalkStairsStepDownExtra(long this_addr);
 
     public void set_mWalkStairsStepDownExtra(Vec3 mWalkStairsStepDownExtra) {
         internal_native_set_mWalkStairsStepDownExtra((long) getNativeData().getCPointer(), (long) (mWalkStairsStepDownExtra != null ? mWalkStairsStepDownExtra.getNativeData().getCPointer() : 0));
@@ -193,61 +193,5 @@ return (jlong)&nativeObject->mWalkStairsStepDownExtra;
 CharacterVirtual::ExtendedUpdateSettings* nativeObject = (CharacterVirtual::ExtendedUpdateSettings*)this_addr;
 nativeObject->mWalkStairsStepDownExtra = *((Vec3*)mWalkStairsStepDownExtra_addr);
 */
-    private static native void internal_native_set_mWalkStairsStepDownExtra(long this_addr, long mWalkStairsStepDownExtra_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mStickToFloorStepDown(long this_addr) {
-        return internal_native_get_mStickToFloorStepDown(this_addr);
-    }
-
-    public static void native_set_mStickToFloorStepDown(long this_addr, long mStickToFloorStepDown_addr) {
-        internal_native_set_mStickToFloorStepDown(this_addr, mStickToFloorStepDown_addr);
-    }
-
-    public static long native_get_mWalkStairsStepUp(long this_addr) {
-        return internal_native_get_mWalkStairsStepUp(this_addr);
-    }
-
-    public static void native_set_mWalkStairsStepUp(long this_addr, long mWalkStairsStepUp_addr) {
-        internal_native_set_mWalkStairsStepUp(this_addr, mWalkStairsStepUp_addr);
-    }
-
-    public static float native_get_mWalkStairsMinStepForward(long this_addr) {
-        return internal_native_get_mWalkStairsMinStepForward(this_addr);
-    }
-
-    public static void native_set_mWalkStairsMinStepForward(long this_addr, float mWalkStairsMinStepForward) {
-        internal_native_set_mWalkStairsMinStepForward(this_addr, mWalkStairsMinStepForward);
-    }
-
-    public static float native_get_mWalkStairsStepForwardTest(long this_addr) {
-        return internal_native_get_mWalkStairsStepForwardTest(this_addr);
-    }
-
-    public static void native_set_mWalkStairsStepForwardTest(long this_addr, float mWalkStairsStepForwardTest) {
-        internal_native_set_mWalkStairsStepForwardTest(this_addr, mWalkStairsStepForwardTest);
-    }
-
-    public static float native_get_mWalkStairsCosAngleForwardContact(long this_addr) {
-        return internal_native_get_mWalkStairsCosAngleForwardContact(this_addr);
-    }
-
-    public static void native_set_mWalkStairsCosAngleForwardContact(long this_addr, float mWalkStairsCosAngleForwardContact) {
-        internal_native_set_mWalkStairsCosAngleForwardContact(this_addr, mWalkStairsCosAngleForwardContact);
-    }
-
-    public static long native_get_mWalkStairsStepDownExtra(long this_addr) {
-        return internal_native_get_mWalkStairsStepDownExtra(this_addr);
-    }
-
-    public static void native_set_mWalkStairsStepDownExtra(long this_addr, long mWalkStairsStepDownExtra_addr) {
-        internal_native_set_mWalkStairsStepDownExtra(this_addr, mWalkStairsStepDownExtra_addr);
-    }
+    public static native void internal_native_set_mWalkStairsStepDownExtra(long this_addr, long mWalkStairsStepDownExtra_addr);
 }

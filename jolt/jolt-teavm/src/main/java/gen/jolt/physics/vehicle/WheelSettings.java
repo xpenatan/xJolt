@@ -41,7 +41,7 @@ var jsObj = new jolt.WheelSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.WheelSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -60,7 +60,7 @@ var returnedJSObj = jsObj.GetRefCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.GetRefCount();return returnedJSObj;")
-    private static native int internal_native_GetRefCount(int this_addr);
+    public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
         internal_native_AddRef((int) (long) getNativeData().getCPointer());
@@ -71,7 +71,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.AddRef();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.AddRef();")
-    private static native void internal_native_AddRef(int this_addr);
+    public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
         internal_native_Release((int) (long) getNativeData().getCPointer());
@@ -82,7 +82,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.Release();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.Release();")
-    private static native void internal_native_Release(int this_addr);
+    public static native void internal_native_Release(int this_addr);
 
     public Vec3 get_mPosition() {
         int pointer = internal_native_get_mPosition((int) (long) getNativeData().getCPointer());
@@ -101,7 +101,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPosition(int this_addr);
+    public static native int internal_native_get_mPosition(int this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition((int) (long) getNativeData().getCPointer(), (int) (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -112,7 +112,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mPosition(mPosition_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPosition_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mPosition(mPosition_addr);")
-    private static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
+    public static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
 
     public Vec3 get_mSuspensionForcePoint() {
         int pointer = internal_native_get_mSuspensionForcePoint((int) (long) getNativeData().getCPointer());
@@ -131,7 +131,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mSuspensionForcePoint();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSuspensionForcePoint(int this_addr);
+    public static native int internal_native_get_mSuspensionForcePoint(int this_addr);
 
     public void set_mSuspensionForcePoint(Vec3 mSuspensionForcePoint) {
         internal_native_set_mSuspensionForcePoint((int) (long) getNativeData().getCPointer(), (int) (long) (mSuspensionForcePoint != null ? mSuspensionForcePoint.getNativeData().getCPointer() : 0));
@@ -142,7 +142,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mSuspensionForcePoint(mSuspensionForcePoint_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSuspensionForcePoint_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mSuspensionForcePoint(mSuspensionForcePoint_addr);")
-    private static native void internal_native_set_mSuspensionForcePoint(int this_addr, int mSuspensionForcePoint_addr);
+    public static native void internal_native_set_mSuspensionForcePoint(int this_addr, int mSuspensionForcePoint_addr);
 
     public Vec3 get_mSuspensionDirection() {
         int pointer = internal_native_get_mSuspensionDirection((int) (long) getNativeData().getCPointer());
@@ -161,7 +161,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mSuspensionDirection();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSuspensionDirection(int this_addr);
+    public static native int internal_native_get_mSuspensionDirection(int this_addr);
 
     public void set_mSuspensionDirection(Vec3 mSuspensionDirection) {
         internal_native_set_mSuspensionDirection((int) (long) getNativeData().getCPointer(), (int) (long) (mSuspensionDirection != null ? mSuspensionDirection.getNativeData().getCPointer() : 0));
@@ -172,7 +172,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mSuspensionDirection(mSuspensionDirection_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSuspensionDirection_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mSuspensionDirection(mSuspensionDirection_addr);")
-    private static native void internal_native_set_mSuspensionDirection(int this_addr, int mSuspensionDirection_addr);
+    public static native void internal_native_set_mSuspensionDirection(int this_addr, int mSuspensionDirection_addr);
 
     public Vec3 get_mSteeringAxis() {
         int pointer = internal_native_get_mSteeringAxis((int) (long) getNativeData().getCPointer());
@@ -191,7 +191,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mSteeringAxis();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSteeringAxis(int this_addr);
+    public static native int internal_native_get_mSteeringAxis(int this_addr);
 
     public void set_mSteeringAxis(Vec3 mSteeringAxis) {
         internal_native_set_mSteeringAxis((int) (long) getNativeData().getCPointer(), (int) (long) (mSteeringAxis != null ? mSteeringAxis.getNativeData().getCPointer() : 0));
@@ -202,7 +202,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mSteeringAxis(mSteeringAxis_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSteeringAxis_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mSteeringAxis(mSteeringAxis_addr);")
-    private static native void internal_native_set_mSteeringAxis(int this_addr, int mSteeringAxis_addr);
+    public static native void internal_native_set_mSteeringAxis(int this_addr, int mSteeringAxis_addr);
 
     public Vec3 get_mWheelUp() {
         int pointer = internal_native_get_mWheelUp((int) (long) getNativeData().getCPointer());
@@ -221,7 +221,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mWheelUp();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mWheelUp(int this_addr);
+    public static native int internal_native_get_mWheelUp(int this_addr);
 
     public void set_mWheelUp(Vec3 mWheelUp) {
         internal_native_set_mWheelUp((int) (long) getNativeData().getCPointer(), (int) (long) (mWheelUp != null ? mWheelUp.getNativeData().getCPointer() : 0));
@@ -232,7 +232,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mWheelUp(mWheelUp_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mWheelUp_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mWheelUp(mWheelUp_addr);")
-    private static native void internal_native_set_mWheelUp(int this_addr, int mWheelUp_addr);
+    public static native void internal_native_set_mWheelUp(int this_addr, int mWheelUp_addr);
 
     public Vec3 get_mWheelForward() {
         int pointer = internal_native_get_mWheelForward((int) (long) getNativeData().getCPointer());
@@ -251,7 +251,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mWheelForward();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mWheelForward(int this_addr);
+    public static native int internal_native_get_mWheelForward(int this_addr);
 
     public void set_mWheelForward(Vec3 mWheelForward) {
         internal_native_set_mWheelForward((int) (long) getNativeData().getCPointer(), (int) (long) (mWheelForward != null ? mWheelForward.getNativeData().getCPointer() : 0));
@@ -262,7 +262,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mWheelForward(mWheelForward_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mWheelForward_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mWheelForward(mWheelForward_addr);")
-    private static native void internal_native_set_mWheelForward(int this_addr, int mWheelForward_addr);
+    public static native void internal_native_set_mWheelForward(int this_addr, int mWheelForward_addr);
 
     public SpringSettings get_mSuspensionSpring() {
         int pointer = internal_native_get_mSuspensionSpring((int) (long) getNativeData().getCPointer());
@@ -281,7 +281,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mSuspensionSpring();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSuspensionSpring(int this_addr);
+    public static native int internal_native_get_mSuspensionSpring(int this_addr);
 
     public void set_mSuspensionSpring(SpringSettings mSuspensionSpring) {
         internal_native_set_mSuspensionSpring((int) (long) getNativeData().getCPointer(), (int) (long) (mSuspensionSpring != null ? mSuspensionSpring.getNativeData().getCPointer() : 0));
@@ -292,7 +292,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mSuspensionSpring(mSuspensionSpring_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSuspensionSpring_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mSuspensionSpring(mSuspensionSpring_addr);")
-    private static native void internal_native_set_mSuspensionSpring(int this_addr, int mSuspensionSpring_addr);
+    public static native void internal_native_set_mSuspensionSpring(int this_addr, int mSuspensionSpring_addr);
 
     public float get_mSuspensionMinLength() {
         return internal_native_get_mSuspensionMinLength((int) (long) getNativeData().getCPointer());
@@ -303,7 +303,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 return jsObj.get_mSuspensionMinLength();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);return jsObj.get_mSuspensionMinLength();")
-    private static native float internal_native_get_mSuspensionMinLength(int this_addr);
+    public static native float internal_native_get_mSuspensionMinLength(int this_addr);
 
     public void set_mSuspensionMinLength(float mSuspensionMinLength) {
         internal_native_set_mSuspensionMinLength((int) (long) getNativeData().getCPointer(), mSuspensionMinLength);
@@ -314,7 +314,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mSuspensionMinLength(mSuspensionMinLength);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSuspensionMinLength"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mSuspensionMinLength(mSuspensionMinLength);")
-    private static native void internal_native_set_mSuspensionMinLength(int this_addr, float mSuspensionMinLength);
+    public static native void internal_native_set_mSuspensionMinLength(int this_addr, float mSuspensionMinLength);
 
     public float get_mSuspensionMaxLength() {
         return internal_native_get_mSuspensionMaxLength((int) (long) getNativeData().getCPointer());
@@ -325,7 +325,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 return jsObj.get_mSuspensionMaxLength();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);return jsObj.get_mSuspensionMaxLength();")
-    private static native float internal_native_get_mSuspensionMaxLength(int this_addr);
+    public static native float internal_native_get_mSuspensionMaxLength(int this_addr);
 
     public void set_mSuspensionMaxLength(float mSuspensionMaxLength) {
         internal_native_set_mSuspensionMaxLength((int) (long) getNativeData().getCPointer(), mSuspensionMaxLength);
@@ -336,7 +336,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mSuspensionMaxLength(mSuspensionMaxLength);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSuspensionMaxLength"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mSuspensionMaxLength(mSuspensionMaxLength);")
-    private static native void internal_native_set_mSuspensionMaxLength(int this_addr, float mSuspensionMaxLength);
+    public static native void internal_native_set_mSuspensionMaxLength(int this_addr, float mSuspensionMaxLength);
 
     public float get_mSuspensionPreloadLength() {
         return internal_native_get_mSuspensionPreloadLength((int) (long) getNativeData().getCPointer());
@@ -347,7 +347,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 return jsObj.get_mSuspensionPreloadLength();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);return jsObj.get_mSuspensionPreloadLength();")
-    private static native float internal_native_get_mSuspensionPreloadLength(int this_addr);
+    public static native float internal_native_get_mSuspensionPreloadLength(int this_addr);
 
     public void set_mSuspensionPreloadLength(float mSuspensionPreloadLength) {
         internal_native_set_mSuspensionPreloadLength((int) (long) getNativeData().getCPointer(), mSuspensionPreloadLength);
@@ -358,7 +358,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mSuspensionPreloadLength(mSuspensionPreloadLength);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSuspensionPreloadLength"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mSuspensionPreloadLength(mSuspensionPreloadLength);")
-    private static native void internal_native_set_mSuspensionPreloadLength(int this_addr, float mSuspensionPreloadLength);
+    public static native void internal_native_set_mSuspensionPreloadLength(int this_addr, float mSuspensionPreloadLength);
 
     public float get_mRadius() {
         return internal_native_get_mRadius((int) (long) getNativeData().getCPointer());
@@ -369,7 +369,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 return jsObj.get_mRadius();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);return jsObj.get_mRadius();")
-    private static native float internal_native_get_mRadius(int this_addr);
+    public static native float internal_native_get_mRadius(int this_addr);
 
     public void set_mRadius(float mRadius) {
         internal_native_set_mRadius((int) (long) getNativeData().getCPointer(), mRadius);
@@ -380,7 +380,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mRadius(mRadius);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRadius"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mRadius(mRadius);")
-    private static native void internal_native_set_mRadius(int this_addr, float mRadius);
+    public static native void internal_native_set_mRadius(int this_addr, float mRadius);
 
     public float get_mWidth() {
         return internal_native_get_mWidth((int) (long) getNativeData().getCPointer());
@@ -391,7 +391,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 return jsObj.get_mWidth();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);return jsObj.get_mWidth();")
-    private static native float internal_native_get_mWidth(int this_addr);
+    public static native float internal_native_get_mWidth(int this_addr);
 
     public void set_mWidth(float mWidth) {
         internal_native_set_mWidth((int) (long) getNativeData().getCPointer(), mWidth);
@@ -402,7 +402,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mWidth(mWidth);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mWidth"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mWidth(mWidth);")
-    private static native void internal_native_set_mWidth(int this_addr, float mWidth);
+    public static native void internal_native_set_mWidth(int this_addr, float mWidth);
 
     public boolean get_mEnableSuspensionForcePoint() {
         return internal_native_get_mEnableSuspensionForcePoint((int) (long) getNativeData().getCPointer());
@@ -413,7 +413,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 return jsObj.get_mEnableSuspensionForcePoint();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);return jsObj.get_mEnableSuspensionForcePoint();")
-    private static native boolean internal_native_get_mEnableSuspensionForcePoint(int this_addr);
+    public static native boolean internal_native_get_mEnableSuspensionForcePoint(int this_addr);
 
     public void set_mEnableSuspensionForcePoint(boolean mEnableSuspensionForcePoint) {
         internal_native_set_mEnableSuspensionForcePoint((int) (long) getNativeData().getCPointer(), mEnableSuspensionForcePoint);
@@ -424,125 +424,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
 jsObj.set_mEnableSuspensionForcePoint(mEnableSuspensionForcePoint);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mEnableSuspensionForcePoint"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jsObj.set_mEnableSuspensionForcePoint(mEnableSuspensionForcePoint);")
-    private static native void internal_native_set_mEnableSuspensionForcePoint(int this_addr, boolean mEnableSuspensionForcePoint);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount((int) this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef((int) this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release((int) this_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition((int) this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition((int) this_addr, (int) mPosition_addr);
-    }
-
-    public static long native_get_mSuspensionForcePoint(long this_addr) {
-        return internal_native_get_mSuspensionForcePoint((int) this_addr);
-    }
-
-    public static void native_set_mSuspensionForcePoint(long this_addr, long mSuspensionForcePoint_addr) {
-        internal_native_set_mSuspensionForcePoint((int) this_addr, (int) mSuspensionForcePoint_addr);
-    }
-
-    public static long native_get_mSuspensionDirection(long this_addr) {
-        return internal_native_get_mSuspensionDirection((int) this_addr);
-    }
-
-    public static void native_set_mSuspensionDirection(long this_addr, long mSuspensionDirection_addr) {
-        internal_native_set_mSuspensionDirection((int) this_addr, (int) mSuspensionDirection_addr);
-    }
-
-    public static long native_get_mSteeringAxis(long this_addr) {
-        return internal_native_get_mSteeringAxis((int) this_addr);
-    }
-
-    public static void native_set_mSteeringAxis(long this_addr, long mSteeringAxis_addr) {
-        internal_native_set_mSteeringAxis((int) this_addr, (int) mSteeringAxis_addr);
-    }
-
-    public static long native_get_mWheelUp(long this_addr) {
-        return internal_native_get_mWheelUp((int) this_addr);
-    }
-
-    public static void native_set_mWheelUp(long this_addr, long mWheelUp_addr) {
-        internal_native_set_mWheelUp((int) this_addr, (int) mWheelUp_addr);
-    }
-
-    public static long native_get_mWheelForward(long this_addr) {
-        return internal_native_get_mWheelForward((int) this_addr);
-    }
-
-    public static void native_set_mWheelForward(long this_addr, long mWheelForward_addr) {
-        internal_native_set_mWheelForward((int) this_addr, (int) mWheelForward_addr);
-    }
-
-    public static long native_get_mSuspensionSpring(long this_addr) {
-        return internal_native_get_mSuspensionSpring((int) this_addr);
-    }
-
-    public static void native_set_mSuspensionSpring(long this_addr, long mSuspensionSpring_addr) {
-        internal_native_set_mSuspensionSpring((int) this_addr, (int) mSuspensionSpring_addr);
-    }
-
-    public static float native_get_mSuspensionMinLength(long this_addr) {
-        return internal_native_get_mSuspensionMinLength((int) this_addr);
-    }
-
-    public static void native_set_mSuspensionMinLength(long this_addr, float mSuspensionMinLength) {
-        internal_native_set_mSuspensionMinLength((int) this_addr, mSuspensionMinLength);
-    }
-
-    public static float native_get_mSuspensionMaxLength(long this_addr) {
-        return internal_native_get_mSuspensionMaxLength((int) this_addr);
-    }
-
-    public static void native_set_mSuspensionMaxLength(long this_addr, float mSuspensionMaxLength) {
-        internal_native_set_mSuspensionMaxLength((int) this_addr, mSuspensionMaxLength);
-    }
-
-    public static float native_get_mSuspensionPreloadLength(long this_addr) {
-        return internal_native_get_mSuspensionPreloadLength((int) this_addr);
-    }
-
-    public static void native_set_mSuspensionPreloadLength(long this_addr, float mSuspensionPreloadLength) {
-        internal_native_set_mSuspensionPreloadLength((int) this_addr, mSuspensionPreloadLength);
-    }
-
-    public static float native_get_mRadius(long this_addr) {
-        return internal_native_get_mRadius((int) this_addr);
-    }
-
-    public static void native_set_mRadius(long this_addr, float mRadius) {
-        internal_native_set_mRadius((int) this_addr, mRadius);
-    }
-
-    public static float native_get_mWidth(long this_addr) {
-        return internal_native_get_mWidth((int) this_addr);
-    }
-
-    public static void native_set_mWidth(long this_addr, float mWidth) {
-        internal_native_set_mWidth((int) this_addr, mWidth);
-    }
-
-    public static boolean native_get_mEnableSuspensionForcePoint(long this_addr) {
-        return internal_native_get_mEnableSuspensionForcePoint((int) this_addr);
-    }
-
-    public static void native_set_mEnableSuspensionForcePoint(long this_addr, boolean mEnableSuspensionForcePoint) {
-        internal_native_set_mEnableSuspensionForcePoint((int) this_addr, mEnableSuspensionForcePoint);
-    }
+    public static native void internal_native_set_mEnableSuspensionForcePoint(int this_addr, boolean mEnableSuspensionForcePoint);
 }

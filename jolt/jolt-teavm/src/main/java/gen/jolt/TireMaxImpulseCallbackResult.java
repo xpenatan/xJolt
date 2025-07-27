@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mLongitudinalImpulse() {
         return internal_native_get_mLongitudinalImpulse((int) (long) getNativeData().getCPointer());
@@ -50,7 +50,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);
 return jsObj.get_mLongitudinalImpulse();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);return jsObj.get_mLongitudinalImpulse();")
-    private static native float internal_native_get_mLongitudinalImpulse(int this_addr);
+    public static native float internal_native_get_mLongitudinalImpulse(int this_addr);
 
     public void set_mLongitudinalImpulse(float mLongitudinalImpulse) {
         internal_native_set_mLongitudinalImpulse((int) (long) getNativeData().getCPointer(), mLongitudinalImpulse);
@@ -61,7 +61,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);
 jsObj.set_mLongitudinalImpulse(mLongitudinalImpulse);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLongitudinalImpulse"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);jsObj.set_mLongitudinalImpulse(mLongitudinalImpulse);")
-    private static native void internal_native_set_mLongitudinalImpulse(int this_addr, float mLongitudinalImpulse);
+    public static native void internal_native_set_mLongitudinalImpulse(int this_addr, float mLongitudinalImpulse);
 
     public float get_mLateralImpulse() {
         return internal_native_get_mLateralImpulse((int) (long) getNativeData().getCPointer());
@@ -72,7 +72,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);
 return jsObj.get_mLateralImpulse();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);return jsObj.get_mLateralImpulse();")
-    private static native float internal_native_get_mLateralImpulse(int this_addr);
+    public static native float internal_native_get_mLateralImpulse(int this_addr);
 
     public void set_mLateralImpulse(float mLateralImpulse) {
         internal_native_set_mLateralImpulse((int) (long) getNativeData().getCPointer(), mLateralImpulse);
@@ -83,25 +83,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);
 jsObj.set_mLateralImpulse(mLateralImpulse);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLateralImpulse"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TireMaxImpulseCallbackResult);jsObj.set_mLateralImpulse(mLateralImpulse);")
-    private static native void internal_native_set_mLateralImpulse(int this_addr, float mLateralImpulse);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_mLongitudinalImpulse(long this_addr) {
-        return internal_native_get_mLongitudinalImpulse((int) this_addr);
-    }
-
-    public static void native_set_mLongitudinalImpulse(long this_addr, float mLongitudinalImpulse) {
-        internal_native_set_mLongitudinalImpulse((int) this_addr, mLongitudinalImpulse);
-    }
-
-    public static float native_get_mLateralImpulse(long this_addr) {
-        return internal_native_get_mLateralImpulse((int) this_addr);
-    }
-
-    public static void native_set_mLateralImpulse(long this_addr, float mLateralImpulse) {
-        internal_native_set_mLateralImpulse((int) this_addr, mLateralImpulse);
-    }
+    public static native void internal_native_set_mLateralImpulse(int this_addr, float mLateralImpulse);
 }

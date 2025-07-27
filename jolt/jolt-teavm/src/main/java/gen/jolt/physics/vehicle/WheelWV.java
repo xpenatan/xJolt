@@ -26,7 +26,7 @@ var jsObj = new jolt.WheelWV(inWheel_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inWheel_addr"}, script = "var jsObj = new jolt.WheelWV(inWheel_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_WheelSettingsWV(int inWheel_addr);
+    public static native int internal_native_create_WheelSettingsWV(int inWheel_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public WheelSettingsWV GetSettings() {
         int pointer = internal_native_GetSettings((int) (long) getNativeData().getCPointer());
@@ -72,7 +72,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);var returnedJSObj = jsObj.GetSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetSettings(int this_addr);
+    public static native int internal_native_GetSettings(int this_addr);
 
     public float get_mLongitudinalSlip() {
         return internal_native_get_mLongitudinalSlip((int) (long) getNativeData().getCPointer());
@@ -83,7 +83,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 return jsObj.get_mLongitudinalSlip();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);return jsObj.get_mLongitudinalSlip();")
-    private static native float internal_native_get_mLongitudinalSlip(int this_addr);
+    public static native float internal_native_get_mLongitudinalSlip(int this_addr);
 
     public void set_mLongitudinalSlip(float mLongitudinalSlip) {
         internal_native_set_mLongitudinalSlip((int) (long) getNativeData().getCPointer(), mLongitudinalSlip);
@@ -94,7 +94,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 jsObj.set_mLongitudinalSlip(mLongitudinalSlip);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLongitudinalSlip"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);jsObj.set_mLongitudinalSlip(mLongitudinalSlip);")
-    private static native void internal_native_set_mLongitudinalSlip(int this_addr, float mLongitudinalSlip);
+    public static native void internal_native_set_mLongitudinalSlip(int this_addr, float mLongitudinalSlip);
 
     public float get_mLateralSlip() {
         return internal_native_get_mLateralSlip((int) (long) getNativeData().getCPointer());
@@ -105,7 +105,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 return jsObj.get_mLateralSlip();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);return jsObj.get_mLateralSlip();")
-    private static native float internal_native_get_mLateralSlip(int this_addr);
+    public static native float internal_native_get_mLateralSlip(int this_addr);
 
     public void set_mLateralSlip(float mLateralSlip) {
         internal_native_set_mLateralSlip((int) (long) getNativeData().getCPointer(), mLateralSlip);
@@ -116,7 +116,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 jsObj.set_mLateralSlip(mLateralSlip);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLateralSlip"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);jsObj.set_mLateralSlip(mLateralSlip);")
-    private static native void internal_native_set_mLateralSlip(int this_addr, float mLateralSlip);
+    public static native void internal_native_set_mLateralSlip(int this_addr, float mLateralSlip);
 
     public float get_mCombinedLongitudinalFriction() {
         return internal_native_get_mCombinedLongitudinalFriction((int) (long) getNativeData().getCPointer());
@@ -127,7 +127,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 return jsObj.get_mCombinedLongitudinalFriction();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);return jsObj.get_mCombinedLongitudinalFriction();")
-    private static native float internal_native_get_mCombinedLongitudinalFriction(int this_addr);
+    public static native float internal_native_get_mCombinedLongitudinalFriction(int this_addr);
 
     public void set_mCombinedLongitudinalFriction(float mCombinedLongitudinalFriction) {
         internal_native_set_mCombinedLongitudinalFriction((int) (long) getNativeData().getCPointer(), mCombinedLongitudinalFriction);
@@ -138,7 +138,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 jsObj.set_mCombinedLongitudinalFriction(mCombinedLongitudinalFriction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCombinedLongitudinalFriction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);jsObj.set_mCombinedLongitudinalFriction(mCombinedLongitudinalFriction);")
-    private static native void internal_native_set_mCombinedLongitudinalFriction(int this_addr, float mCombinedLongitudinalFriction);
+    public static native void internal_native_set_mCombinedLongitudinalFriction(int this_addr, float mCombinedLongitudinalFriction);
 
     public float get_mCombinedLateralFriction() {
         return internal_native_get_mCombinedLateralFriction((int) (long) getNativeData().getCPointer());
@@ -149,7 +149,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 return jsObj.get_mCombinedLateralFriction();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);return jsObj.get_mCombinedLateralFriction();")
-    private static native float internal_native_get_mCombinedLateralFriction(int this_addr);
+    public static native float internal_native_get_mCombinedLateralFriction(int this_addr);
 
     public void set_mCombinedLateralFriction(float mCombinedLateralFriction) {
         internal_native_set_mCombinedLateralFriction((int) (long) getNativeData().getCPointer(), mCombinedLateralFriction);
@@ -160,7 +160,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 jsObj.set_mCombinedLateralFriction(mCombinedLateralFriction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCombinedLateralFriction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);jsObj.set_mCombinedLateralFriction(mCombinedLateralFriction);")
-    private static native void internal_native_set_mCombinedLateralFriction(int this_addr, float mCombinedLateralFriction);
+    public static native void internal_native_set_mCombinedLateralFriction(int this_addr, float mCombinedLateralFriction);
 
     public float get_mBrakeImpulse() {
         return internal_native_get_mBrakeImpulse((int) (long) getNativeData().getCPointer());
@@ -171,7 +171,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 return jsObj.get_mBrakeImpulse();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);return jsObj.get_mBrakeImpulse();")
-    private static native float internal_native_get_mBrakeImpulse(int this_addr);
+    public static native float internal_native_get_mBrakeImpulse(int this_addr);
 
     public void set_mBrakeImpulse(float mBrakeImpulse) {
         internal_native_set_mBrakeImpulse((int) (long) getNativeData().getCPointer(), mBrakeImpulse);
@@ -182,57 +182,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);
 jsObj.set_mBrakeImpulse(mBrakeImpulse);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBrakeImpulse"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelWV);jsObj.set_mBrakeImpulse(mBrakeImpulse);")
-    private static native void internal_native_set_mBrakeImpulse(int this_addr, float mBrakeImpulse);
-
-    public static long native_create_WheelSettingsWV(long inWheel_addr) {
-        return internal_native_create_WheelSettingsWV((int) inWheel_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_GetSettings(long this_addr) {
-        return internal_native_GetSettings((int) this_addr);
-    }
-
-    public static float native_get_mLongitudinalSlip(long this_addr) {
-        return internal_native_get_mLongitudinalSlip((int) this_addr);
-    }
-
-    public static void native_set_mLongitudinalSlip(long this_addr, float mLongitudinalSlip) {
-        internal_native_set_mLongitudinalSlip((int) this_addr, mLongitudinalSlip);
-    }
-
-    public static float native_get_mLateralSlip(long this_addr) {
-        return internal_native_get_mLateralSlip((int) this_addr);
-    }
-
-    public static void native_set_mLateralSlip(long this_addr, float mLateralSlip) {
-        internal_native_set_mLateralSlip((int) this_addr, mLateralSlip);
-    }
-
-    public static float native_get_mCombinedLongitudinalFriction(long this_addr) {
-        return internal_native_get_mCombinedLongitudinalFriction((int) this_addr);
-    }
-
-    public static void native_set_mCombinedLongitudinalFriction(long this_addr, float mCombinedLongitudinalFriction) {
-        internal_native_set_mCombinedLongitudinalFriction((int) this_addr, mCombinedLongitudinalFriction);
-    }
-
-    public static float native_get_mCombinedLateralFriction(long this_addr) {
-        return internal_native_get_mCombinedLateralFriction((int) this_addr);
-    }
-
-    public static void native_set_mCombinedLateralFriction(long this_addr, float mCombinedLateralFriction) {
-        internal_native_set_mCombinedLateralFriction((int) this_addr, mCombinedLateralFriction);
-    }
-
-    public static float native_get_mBrakeImpulse(long this_addr) {
-        return internal_native_get_mBrakeImpulse((int) this_addr);
-    }
-
-    public static void native_set_mBrakeImpulse(long this_addr, float mBrakeImpulse) {
-        internal_native_set_mBrakeImpulse((int) this_addr, mBrakeImpulse);
-    }
+    public static native void internal_native_set_mBrakeImpulse(int this_addr, float mBrakeImpulse);
 }

@@ -40,9 +40,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DecoratedShape);var returnedJSObj = jsObj.GetInnerShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetInnerShape(int this_addr);
-
-    public static long native_GetInnerShape(long this_addr) {
-        return internal_native_GetInnerShape((int) this_addr);
-    }
+    public static native int internal_native_GetInnerShape(int this_addr);
 }

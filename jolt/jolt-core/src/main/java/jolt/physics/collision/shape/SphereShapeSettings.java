@@ -24,7 +24,7 @@ public class SphereShapeSettings extends ConvexShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new SphereShapeSettings((float)inRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    private static native long internal_native_create_float_PhysicsMaterial(float inRadius, long inMaterial_addr);
+    public static native long internal_native_create_float_PhysicsMaterial(float inRadius, long inMaterial_addr);
 
     public SphereShapeSettings(float inRadius) {
         super((byte) 1, (char) 1);
@@ -35,7 +35,7 @@ return (jlong)new SphereShapeSettings((float)inRadius, (PhysicsMaterial* )inMate
     /*[-JNI;-NATIVE]
 return (jlong)new SphereShapeSettings((float)inRadius);
 */
-    private static native long internal_native_create_float(float inRadius);
+    public static native long internal_native_create_float(float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ return (jlong)new SphereShapeSettings((float)inRadius);
 SphereShapeSettings* nativeObject = (SphereShapeSettings*)this_addr;
 return nativeObject->mRadius;
 */
-    private static native float internal_native_get_mRadius(long this_addr);
+    public static native float internal_native_get_mRadius(long this_addr);
 
     public void set_mRadius(float mRadius) {
         internal_native_set_mRadius((long) getNativeData().getCPointer(), mRadius);
@@ -63,21 +63,5 @@ return nativeObject->mRadius;
 SphereShapeSettings* nativeObject = (SphereShapeSettings*)this_addr;
 nativeObject->mRadius = mRadius;
 */
-    private static native void internal_native_set_mRadius(long this_addr, float mRadius);
-
-    public static long native_create_float_PhysicsMaterial(float inRadius, long inMaterial_addr) {
-        return internal_native_create_float_PhysicsMaterial(inRadius, inMaterial_addr);
-    }
-
-    public static long native_create_float(float inRadius) {
-        return internal_native_create_float(inRadius);
-    }
-
-    public static float native_get_mRadius(long this_addr) {
-        return internal_native_get_mRadius(this_addr);
-    }
-
-    public static void native_set_mRadius(long this_addr, float mRadius) {
-        internal_native_set_mRadius(this_addr, mRadius);
-    }
+    public static native void internal_native_set_mRadius(long this_addr, float mRadius);
 }

@@ -23,7 +23,7 @@ public class BodyID extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new BodyID();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     public BodyID(int inIndexAndSequenceNumber) {
         long addr = internal_native_create_int(inIndexAndSequenceNumber);
@@ -33,7 +33,7 @@ return (jlong)new BodyID();
     /*[-JNI;-NATIVE]
 return (jlong)new BodyID(inIndexAndSequenceNumber);
 */
-    private static native long internal_native_create_int(int inIndexAndSequenceNumber);
+    public static native long internal_native_create_int(int inIndexAndSequenceNumber);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -58,7 +58,7 @@ return (jlong)new BodyID(inIndexAndSequenceNumber);
 BodyID* nativeObject = (BodyID*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetIndex() {
         return internal_native_GetIndex((long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ delete nativeObject;
 BodyID* nativeObject = (BodyID*)this_addr;
 return nativeObject->GetIndex();
 */
-    private static native int internal_native_GetIndex(long this_addr);
+    public static native int internal_native_GetIndex(long this_addr);
 
     public int GetIndexAndSequenceNumber() {
         return internal_native_GetIndexAndSequenceNumber((long) getNativeData().getCPointer());
@@ -78,25 +78,5 @@ return nativeObject->GetIndex();
 BodyID* nativeObject = (BodyID*)this_addr;
 return nativeObject->GetIndexAndSequenceNumber();
 */
-    private static native int internal_native_GetIndexAndSequenceNumber(long this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_int(int inIndexAndSequenceNumber) {
-        return internal_native_create_int(inIndexAndSequenceNumber);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_GetIndex(long this_addr) {
-        return internal_native_GetIndex(this_addr);
-    }
-
-    public static int native_GetIndexAndSequenceNumber(long this_addr) {
-        return internal_native_GetIndexAndSequenceNumber(this_addr);
-    }
+    public static native int internal_native_GetIndexAndSequenceNumber(long this_addr);
 }

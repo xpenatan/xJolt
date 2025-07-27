@@ -26,7 +26,7 @@ var jsObj = new jolt.DefaultBroadPhaseLayerFilter(inFilter_addr, inObjectLayer);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inFilter_addr", "inObjectLayer"}, script = "var jsObj = new jolt.DefaultBroadPhaseLayerFilter(inFilter_addr, inObjectLayer);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_ObjectVsBroadPhaseLayerFilter_int(int inFilter_addr, int inObjectLayer);
+    public static native int internal_native_create_ObjectVsBroadPhaseLayerFilter_int(int inFilter_addr, int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,13 +53,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DefaultBroadPhaseLayerFilter);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DefaultBroadPhaseLayerFilter);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
-
-    public static long native_create_ObjectVsBroadPhaseLayerFilter_int(long inFilter_addr, int inObjectLayer) {
-        return internal_native_create_ObjectVsBroadPhaseLayerFilter_int((int) inFilter_addr, inObjectLayer);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
+    public static native void internal_native_deleteNative(int this_addr);
 }

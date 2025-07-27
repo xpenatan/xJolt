@@ -35,7 +35,7 @@ public class CharacterVirtualSettings extends CharacterBaseSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new CharacterVirtualSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -59,7 +59,7 @@ return (jlong)new CharacterVirtualSettings();
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return (jlong)&nativeObject->mID;
 */
-    private static native long internal_native_get_mID(long this_addr);
+    public static native long internal_native_get_mID(long this_addr);
 
     public void set_mID(CharacterID mID) {
         internal_native_set_mID((long) getNativeData().getCPointer(), (long) (mID != null ? mID.getNativeData().getCPointer() : 0));
@@ -69,7 +69,7 @@ return (jlong)&nativeObject->mID;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mID = *((CharacterID*)mID_addr);
 */
-    private static native void internal_native_set_mID(long this_addr, long mID_addr);
+    public static native void internal_native_set_mID(long this_addr, long mID_addr);
 
     public float get_mMass() {
         return internal_native_get_mMass((long) getNativeData().getCPointer());
@@ -79,7 +79,7 @@ nativeObject->mID = *((CharacterID*)mID_addr);
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mMass;
 */
-    private static native float internal_native_get_mMass(long this_addr);
+    public static native float internal_native_get_mMass(long this_addr);
 
     public void set_mMass(float mMass) {
         internal_native_set_mMass((long) getNativeData().getCPointer(), mMass);
@@ -89,7 +89,7 @@ return nativeObject->mMass;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mMass = mMass;
 */
-    private static native void internal_native_set_mMass(long this_addr, float mMass);
+    public static native void internal_native_set_mMass(long this_addr, float mMass);
 
     public float get_mMaxStrength() {
         return internal_native_get_mMaxStrength((long) getNativeData().getCPointer());
@@ -99,7 +99,7 @@ nativeObject->mMass = mMass;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mMaxStrength;
 */
-    private static native float internal_native_get_mMaxStrength(long this_addr);
+    public static native float internal_native_get_mMaxStrength(long this_addr);
 
     public void set_mMaxStrength(float mMaxStrength) {
         internal_native_set_mMaxStrength((long) getNativeData().getCPointer(), mMaxStrength);
@@ -109,7 +109,7 @@ return nativeObject->mMaxStrength;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mMaxStrength = mMaxStrength;
 */
-    private static native void internal_native_set_mMaxStrength(long this_addr, float mMaxStrength);
+    public static native void internal_native_set_mMaxStrength(long this_addr, float mMaxStrength);
 
     public Vec3 get_mShapeOffset() {
         long pointer = internal_native_get_mShapeOffset((long) getNativeData().getCPointer());
@@ -125,7 +125,7 @@ nativeObject->mMaxStrength = mMaxStrength;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return (jlong)&nativeObject->mShapeOffset;
 */
-    private static native long internal_native_get_mShapeOffset(long this_addr);
+    public static native long internal_native_get_mShapeOffset(long this_addr);
 
     public void set_mShapeOffset(Vec3 mShapeOffset) {
         internal_native_set_mShapeOffset((long) getNativeData().getCPointer(), (long) (mShapeOffset != null ? mShapeOffset.getNativeData().getCPointer() : 0));
@@ -135,7 +135,7 @@ return (jlong)&nativeObject->mShapeOffset;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mShapeOffset = *((Vec3*)mShapeOffset_addr);
 */
-    private static native void internal_native_set_mShapeOffset(long this_addr, long mShapeOffset_addr);
+    public static native void internal_native_set_mShapeOffset(long this_addr, long mShapeOffset_addr);
 
     public EBackFaceMode get_mBackFaceMode() {
         int value = internal_native_get_mBackFaceMode((long) getNativeData().getCPointer());
@@ -146,7 +146,7 @@ nativeObject->mShapeOffset = *((Vec3*)mShapeOffset_addr);
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return (jint)nativeObject->mBackFaceMode;
 */
-    private static native int internal_native_get_mBackFaceMode(long this_addr);
+    public static native int internal_native_get_mBackFaceMode(long this_addr);
 
     public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
         internal_native_set_mBackFaceMode((long) getNativeData().getCPointer(), (long) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
@@ -156,7 +156,7 @@ return (jint)nativeObject->mBackFaceMode;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mBackFaceMode = (::EBackFaceMode)mBackFaceMode;
 */
-    private static native void internal_native_set_mBackFaceMode(long this_addr, long mBackFaceMode);
+    public static native void internal_native_set_mBackFaceMode(long this_addr, long mBackFaceMode);
 
     public float get_mPredictiveContactDistance() {
         return internal_native_get_mPredictiveContactDistance((long) getNativeData().getCPointer());
@@ -166,7 +166,7 @@ nativeObject->mBackFaceMode = (::EBackFaceMode)mBackFaceMode;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mPredictiveContactDistance;
 */
-    private static native float internal_native_get_mPredictiveContactDistance(long this_addr);
+    public static native float internal_native_get_mPredictiveContactDistance(long this_addr);
 
     public void set_mPredictiveContactDistance(float mPredictiveContactDistance) {
         internal_native_set_mPredictiveContactDistance((long) getNativeData().getCPointer(), mPredictiveContactDistance);
@@ -176,7 +176,7 @@ return nativeObject->mPredictiveContactDistance;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mPredictiveContactDistance = mPredictiveContactDistance;
 */
-    private static native void internal_native_set_mPredictiveContactDistance(long this_addr, float mPredictiveContactDistance);
+    public static native void internal_native_set_mPredictiveContactDistance(long this_addr, float mPredictiveContactDistance);
 
     public int get_mMaxCollisionIterations() {
         return internal_native_get_mMaxCollisionIterations((long) getNativeData().getCPointer());
@@ -186,7 +186,7 @@ nativeObject->mPredictiveContactDistance = mPredictiveContactDistance;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mMaxCollisionIterations;
 */
-    private static native int internal_native_get_mMaxCollisionIterations(long this_addr);
+    public static native int internal_native_get_mMaxCollisionIterations(long this_addr);
 
     public void set_mMaxCollisionIterations(int mMaxCollisionIterations) {
         internal_native_set_mMaxCollisionIterations((long) getNativeData().getCPointer(), mMaxCollisionIterations);
@@ -196,7 +196,7 @@ return nativeObject->mMaxCollisionIterations;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mMaxCollisionIterations = mMaxCollisionIterations;
 */
-    private static native void internal_native_set_mMaxCollisionIterations(long this_addr, int mMaxCollisionIterations);
+    public static native void internal_native_set_mMaxCollisionIterations(long this_addr, int mMaxCollisionIterations);
 
     public int get_mMaxConstraintIterations() {
         return internal_native_get_mMaxConstraintIterations((long) getNativeData().getCPointer());
@@ -206,7 +206,7 @@ nativeObject->mMaxCollisionIterations = mMaxCollisionIterations;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mMaxConstraintIterations;
 */
-    private static native int internal_native_get_mMaxConstraintIterations(long this_addr);
+    public static native int internal_native_get_mMaxConstraintIterations(long this_addr);
 
     public void set_mMaxConstraintIterations(int mMaxConstraintIterations) {
         internal_native_set_mMaxConstraintIterations((long) getNativeData().getCPointer(), mMaxConstraintIterations);
@@ -216,7 +216,7 @@ return nativeObject->mMaxConstraintIterations;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mMaxConstraintIterations = mMaxConstraintIterations;
 */
-    private static native void internal_native_set_mMaxConstraintIterations(long this_addr, int mMaxConstraintIterations);
+    public static native void internal_native_set_mMaxConstraintIterations(long this_addr, int mMaxConstraintIterations);
 
     public float get_mMinTimeRemaining() {
         return internal_native_get_mMinTimeRemaining((long) getNativeData().getCPointer());
@@ -226,7 +226,7 @@ nativeObject->mMaxConstraintIterations = mMaxConstraintIterations;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mMinTimeRemaining;
 */
-    private static native float internal_native_get_mMinTimeRemaining(long this_addr);
+    public static native float internal_native_get_mMinTimeRemaining(long this_addr);
 
     public void set_mMinTimeRemaining(float mMinTimeRemaining) {
         internal_native_set_mMinTimeRemaining((long) getNativeData().getCPointer(), mMinTimeRemaining);
@@ -236,7 +236,7 @@ return nativeObject->mMinTimeRemaining;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mMinTimeRemaining = mMinTimeRemaining;
 */
-    private static native void internal_native_set_mMinTimeRemaining(long this_addr, float mMinTimeRemaining);
+    public static native void internal_native_set_mMinTimeRemaining(long this_addr, float mMinTimeRemaining);
 
     public float get_mCollisionTolerance() {
         return internal_native_get_mCollisionTolerance((long) getNativeData().getCPointer());
@@ -246,7 +246,7 @@ nativeObject->mMinTimeRemaining = mMinTimeRemaining;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mCollisionTolerance;
 */
-    private static native float internal_native_get_mCollisionTolerance(long this_addr);
+    public static native float internal_native_get_mCollisionTolerance(long this_addr);
 
     public void set_mCollisionTolerance(float mCollisionTolerance) {
         internal_native_set_mCollisionTolerance((long) getNativeData().getCPointer(), mCollisionTolerance);
@@ -256,7 +256,7 @@ return nativeObject->mCollisionTolerance;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mCollisionTolerance = mCollisionTolerance;
 */
-    private static native void internal_native_set_mCollisionTolerance(long this_addr, float mCollisionTolerance);
+    public static native void internal_native_set_mCollisionTolerance(long this_addr, float mCollisionTolerance);
 
     public float get_mCharacterPadding() {
         return internal_native_get_mCharacterPadding((long) getNativeData().getCPointer());
@@ -266,7 +266,7 @@ nativeObject->mCollisionTolerance = mCollisionTolerance;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mCharacterPadding;
 */
-    private static native float internal_native_get_mCharacterPadding(long this_addr);
+    public static native float internal_native_get_mCharacterPadding(long this_addr);
 
     public void set_mCharacterPadding(float mCharacterPadding) {
         internal_native_set_mCharacterPadding((long) getNativeData().getCPointer(), mCharacterPadding);
@@ -276,7 +276,7 @@ return nativeObject->mCharacterPadding;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mCharacterPadding = mCharacterPadding;
 */
-    private static native void internal_native_set_mCharacterPadding(long this_addr, float mCharacterPadding);
+    public static native void internal_native_set_mCharacterPadding(long this_addr, float mCharacterPadding);
 
     public int get_mMaxNumHits() {
         return internal_native_get_mMaxNumHits((long) getNativeData().getCPointer());
@@ -286,7 +286,7 @@ nativeObject->mCharacterPadding = mCharacterPadding;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mMaxNumHits;
 */
-    private static native int internal_native_get_mMaxNumHits(long this_addr);
+    public static native int internal_native_get_mMaxNumHits(long this_addr);
 
     public void set_mMaxNumHits(int mMaxNumHits) {
         internal_native_set_mMaxNumHits((long) getNativeData().getCPointer(), mMaxNumHits);
@@ -296,7 +296,7 @@ return nativeObject->mMaxNumHits;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mMaxNumHits = mMaxNumHits;
 */
-    private static native void internal_native_set_mMaxNumHits(long this_addr, int mMaxNumHits);
+    public static native void internal_native_set_mMaxNumHits(long this_addr, int mMaxNumHits);
 
     public float get_mHitReductionCosMaxAngle() {
         return internal_native_get_mHitReductionCosMaxAngle((long) getNativeData().getCPointer());
@@ -306,7 +306,7 @@ nativeObject->mMaxNumHits = mMaxNumHits;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mHitReductionCosMaxAngle;
 */
-    private static native float internal_native_get_mHitReductionCosMaxAngle(long this_addr);
+    public static native float internal_native_get_mHitReductionCosMaxAngle(long this_addr);
 
     public void set_mHitReductionCosMaxAngle(float mHitReductionCosMaxAngle) {
         internal_native_set_mHitReductionCosMaxAngle((long) getNativeData().getCPointer(), mHitReductionCosMaxAngle);
@@ -316,7 +316,7 @@ return nativeObject->mHitReductionCosMaxAngle;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mHitReductionCosMaxAngle = mHitReductionCosMaxAngle;
 */
-    private static native void internal_native_set_mHitReductionCosMaxAngle(long this_addr, float mHitReductionCosMaxAngle);
+    public static native void internal_native_set_mHitReductionCosMaxAngle(long this_addr, float mHitReductionCosMaxAngle);
 
     public float get_mPenetrationRecoverySpeed() {
         return internal_native_get_mPenetrationRecoverySpeed((long) getNativeData().getCPointer());
@@ -326,7 +326,7 @@ nativeObject->mHitReductionCosMaxAngle = mHitReductionCosMaxAngle;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mPenetrationRecoverySpeed;
 */
-    private static native float internal_native_get_mPenetrationRecoverySpeed(long this_addr);
+    public static native float internal_native_get_mPenetrationRecoverySpeed(long this_addr);
 
     public void set_mPenetrationRecoverySpeed(float mPenetrationRecoverySpeed) {
         internal_native_set_mPenetrationRecoverySpeed((long) getNativeData().getCPointer(), mPenetrationRecoverySpeed);
@@ -336,7 +336,7 @@ return nativeObject->mPenetrationRecoverySpeed;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mPenetrationRecoverySpeed = mPenetrationRecoverySpeed;
 */
-    private static native void internal_native_set_mPenetrationRecoverySpeed(long this_addr, float mPenetrationRecoverySpeed);
+    public static native void internal_native_set_mPenetrationRecoverySpeed(long this_addr, float mPenetrationRecoverySpeed);
 
     public Shape get_mInnerBodyShape() {
         long pointer = internal_native_get_mInnerBodyShape((long) getNativeData().getCPointer());
@@ -353,7 +353,7 @@ CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 const Shape* attr = nativeObject->mInnerBodyShape;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mInnerBodyShape(long this_addr);
+    public static native long internal_native_get_mInnerBodyShape(long this_addr);
 
     public void set_mInnerBodyShape(Shape mInnerBodyShape) {
         internal_native_set_mInnerBodyShape((long) getNativeData().getCPointer(), (long) (mInnerBodyShape != null ? mInnerBodyShape.getNativeData().getCPointer() : 0));
@@ -363,7 +363,7 @@ return (jlong)attr;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mInnerBodyShape = (Shape*)mInnerBodyShape_addr;
 */
-    private static native void internal_native_set_mInnerBodyShape(long this_addr, long mInnerBodyShape_addr);
+    public static native void internal_native_set_mInnerBodyShape(long this_addr, long mInnerBodyShape_addr);
 
     public BodyID get_mInnerBodyIDOverride() {
         long pointer = internal_native_get_mInnerBodyIDOverride((long) getNativeData().getCPointer());
@@ -379,7 +379,7 @@ nativeObject->mInnerBodyShape = (Shape*)mInnerBodyShape_addr;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return (jlong)&nativeObject->mInnerBodyIDOverride;
 */
-    private static native long internal_native_get_mInnerBodyIDOverride(long this_addr);
+    public static native long internal_native_get_mInnerBodyIDOverride(long this_addr);
 
     public void set_mInnerBodyIDOverride(BodyID mInnerBodyIDOverride) {
         internal_native_set_mInnerBodyIDOverride((long) getNativeData().getCPointer(), (long) (mInnerBodyIDOverride != null ? mInnerBodyIDOverride.getNativeData().getCPointer() : 0));
@@ -389,7 +389,7 @@ return (jlong)&nativeObject->mInnerBodyIDOverride;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mInnerBodyIDOverride = *((BodyID*)mInnerBodyIDOverride_addr);
 */
-    private static native void internal_native_set_mInnerBodyIDOverride(long this_addr, long mInnerBodyIDOverride_addr);
+    public static native void internal_native_set_mInnerBodyIDOverride(long this_addr, long mInnerBodyIDOverride_addr);
 
     public int get_mInnerBodyLayer() {
         return internal_native_get_mInnerBodyLayer((long) getNativeData().getCPointer());
@@ -399,7 +399,7 @@ nativeObject->mInnerBodyIDOverride = *((BodyID*)mInnerBodyIDOverride_addr);
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return nativeObject->mInnerBodyLayer;
 */
-    private static native int internal_native_get_mInnerBodyLayer(long this_addr);
+    public static native int internal_native_get_mInnerBodyLayer(long this_addr);
 
     public void set_mInnerBodyLayer(int mInnerBodyLayer) {
         internal_native_set_mInnerBodyLayer((long) getNativeData().getCPointer(), mInnerBodyLayer);
@@ -409,145 +409,5 @@ return nativeObject->mInnerBodyLayer;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mInnerBodyLayer = mInnerBodyLayer;
 */
-    private static native void internal_native_set_mInnerBodyLayer(long this_addr, int mInnerBodyLayer);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_get_mID(long this_addr) {
-        return internal_native_get_mID(this_addr);
-    }
-
-    public static void native_set_mID(long this_addr, long mID_addr) {
-        internal_native_set_mID(this_addr, mID_addr);
-    }
-
-    public static float native_get_mMass(long this_addr) {
-        return internal_native_get_mMass(this_addr);
-    }
-
-    public static void native_set_mMass(long this_addr, float mMass) {
-        internal_native_set_mMass(this_addr, mMass);
-    }
-
-    public static float native_get_mMaxStrength(long this_addr) {
-        return internal_native_get_mMaxStrength(this_addr);
-    }
-
-    public static void native_set_mMaxStrength(long this_addr, float mMaxStrength) {
-        internal_native_set_mMaxStrength(this_addr, mMaxStrength);
-    }
-
-    public static long native_get_mShapeOffset(long this_addr) {
-        return internal_native_get_mShapeOffset(this_addr);
-    }
-
-    public static void native_set_mShapeOffset(long this_addr, long mShapeOffset_addr) {
-        internal_native_set_mShapeOffset(this_addr, mShapeOffset_addr);
-    }
-
-    public static long native_get_mBackFaceMode(long this_addr) {
-        return internal_native_get_mBackFaceMode(this_addr);
-    }
-
-    public static void native_set_mBackFaceMode(long this_addr, long mBackFaceMode) {
-        internal_native_set_mBackFaceMode(this_addr, mBackFaceMode);
-    }
-
-    public static float native_get_mPredictiveContactDistance(long this_addr) {
-        return internal_native_get_mPredictiveContactDistance(this_addr);
-    }
-
-    public static void native_set_mPredictiveContactDistance(long this_addr, float mPredictiveContactDistance) {
-        internal_native_set_mPredictiveContactDistance(this_addr, mPredictiveContactDistance);
-    }
-
-    public static int native_get_mMaxCollisionIterations(long this_addr) {
-        return internal_native_get_mMaxCollisionIterations(this_addr);
-    }
-
-    public static void native_set_mMaxCollisionIterations(long this_addr, int mMaxCollisionIterations) {
-        internal_native_set_mMaxCollisionIterations(this_addr, mMaxCollisionIterations);
-    }
-
-    public static int native_get_mMaxConstraintIterations(long this_addr) {
-        return internal_native_get_mMaxConstraintIterations(this_addr);
-    }
-
-    public static void native_set_mMaxConstraintIterations(long this_addr, int mMaxConstraintIterations) {
-        internal_native_set_mMaxConstraintIterations(this_addr, mMaxConstraintIterations);
-    }
-
-    public static float native_get_mMinTimeRemaining(long this_addr) {
-        return internal_native_get_mMinTimeRemaining(this_addr);
-    }
-
-    public static void native_set_mMinTimeRemaining(long this_addr, float mMinTimeRemaining) {
-        internal_native_set_mMinTimeRemaining(this_addr, mMinTimeRemaining);
-    }
-
-    public static float native_get_mCollisionTolerance(long this_addr) {
-        return internal_native_get_mCollisionTolerance(this_addr);
-    }
-
-    public static void native_set_mCollisionTolerance(long this_addr, float mCollisionTolerance) {
-        internal_native_set_mCollisionTolerance(this_addr, mCollisionTolerance);
-    }
-
-    public static float native_get_mCharacterPadding(long this_addr) {
-        return internal_native_get_mCharacterPadding(this_addr);
-    }
-
-    public static void native_set_mCharacterPadding(long this_addr, float mCharacterPadding) {
-        internal_native_set_mCharacterPadding(this_addr, mCharacterPadding);
-    }
-
-    public static int native_get_mMaxNumHits(long this_addr) {
-        return internal_native_get_mMaxNumHits(this_addr);
-    }
-
-    public static void native_set_mMaxNumHits(long this_addr, int mMaxNumHits) {
-        internal_native_set_mMaxNumHits(this_addr, mMaxNumHits);
-    }
-
-    public static float native_get_mHitReductionCosMaxAngle(long this_addr) {
-        return internal_native_get_mHitReductionCosMaxAngle(this_addr);
-    }
-
-    public static void native_set_mHitReductionCosMaxAngle(long this_addr, float mHitReductionCosMaxAngle) {
-        internal_native_set_mHitReductionCosMaxAngle(this_addr, mHitReductionCosMaxAngle);
-    }
-
-    public static float native_get_mPenetrationRecoverySpeed(long this_addr) {
-        return internal_native_get_mPenetrationRecoverySpeed(this_addr);
-    }
-
-    public static void native_set_mPenetrationRecoverySpeed(long this_addr, float mPenetrationRecoverySpeed) {
-        internal_native_set_mPenetrationRecoverySpeed(this_addr, mPenetrationRecoverySpeed);
-    }
-
-    public static long native_get_mInnerBodyShape(long this_addr) {
-        return internal_native_get_mInnerBodyShape(this_addr);
-    }
-
-    public static void native_set_mInnerBodyShape(long this_addr, long mInnerBodyShape_addr) {
-        internal_native_set_mInnerBodyShape(this_addr, mInnerBodyShape_addr);
-    }
-
-    public static long native_get_mInnerBodyIDOverride(long this_addr) {
-        return internal_native_get_mInnerBodyIDOverride(this_addr);
-    }
-
-    public static void native_set_mInnerBodyIDOverride(long this_addr, long mInnerBodyIDOverride_addr) {
-        internal_native_set_mInnerBodyIDOverride(this_addr, mInnerBodyIDOverride_addr);
-    }
-
-    public static int native_get_mInnerBodyLayer(long this_addr) {
-        return internal_native_get_mInnerBodyLayer(this_addr);
-    }
-
-    public static void native_set_mInnerBodyLayer(long this_addr, int mInnerBodyLayer) {
-        internal_native_set_mInnerBodyLayer(this_addr, mInnerBodyLayer);
-    }
+    public static native void internal_native_set_mInnerBodyLayer(long this_addr, int mInnerBodyLayer);
 }

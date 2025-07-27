@@ -27,7 +27,7 @@ public class CastShapeClosestHitCollisionCollector extends CastShapeCollector {
     /*[-JNI;-NATIVE]
 return (jlong)new CastShapeClosestHitCollisionCollector();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ return (jlong)new CastShapeClosestHitCollisionCollector();
 CastShapeClosestHitCollisionCollector* nativeObject = (CastShapeClosestHitCollisionCollector*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean HadHit() {
         return internal_native_HadHit((long) getNativeData().getCPointer());
@@ -63,7 +63,7 @@ delete nativeObject;
 CastShapeClosestHitCollisionCollector* nativeObject = (CastShapeClosestHitCollisionCollector*)this_addr;
 return nativeObject->HadHit();
 */
-    private static native boolean internal_native_HadHit(long this_addr);
+    public static native boolean internal_native_HadHit(long this_addr);
 
     public ShapeCastResult get_mHit() {
         long pointer = internal_native_get_mHit((long) getNativeData().getCPointer());
@@ -79,7 +79,7 @@ return nativeObject->HadHit();
 CastShapeClosestHitCollisionCollector* nativeObject = (CastShapeClosestHitCollisionCollector*)this_addr;
 return (jlong)&nativeObject->mHit;
 */
-    private static native long internal_native_get_mHit(long this_addr);
+    public static native long internal_native_get_mHit(long this_addr);
 
     public void set_mHit(ShapeCastResult mHit) {
         internal_native_set_mHit((long) getNativeData().getCPointer(), (long) (mHit != null ? mHit.getNativeData().getCPointer() : 0));
@@ -89,25 +89,5 @@ return (jlong)&nativeObject->mHit;
 CastShapeClosestHitCollisionCollector* nativeObject = (CastShapeClosestHitCollisionCollector*)this_addr;
 nativeObject->mHit = *((ShapeCastResult*)mHit_addr);
 */
-    private static native void internal_native_set_mHit(long this_addr, long mHit_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static boolean native_HadHit(long this_addr) {
-        return internal_native_HadHit(this_addr);
-    }
-
-    public static long native_get_mHit(long this_addr) {
-        return internal_native_get_mHit(this_addr);
-    }
-
-    public static void native_set_mHit(long this_addr, long mHit_addr) {
-        internal_native_set_mHit(this_addr, mHit_addr);
-    }
+    public static native void internal_native_set_mHit(long this_addr, long mHit_addr);
 }

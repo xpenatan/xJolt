@@ -27,7 +27,7 @@ var jsObj = new jolt.SkeletalAnimation();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SkeletalAnimation();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -46,7 +46,7 @@ var returnedJSObj = jsObj.GetDuration();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimation);var returnedJSObj = jsObj.GetDuration();return returnedJSObj;")
-    private static native float internal_native_GetDuration(int this_addr);
+    public static native float internal_native_GetDuration(int this_addr);
 
     public void ScaleJoints(float inScale) {
         internal_native_ScaleJoints((int) (long) getNativeData().getCPointer(), inScale);
@@ -57,7 +57,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimation);
 jsObj.ScaleJoints(inScale);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inScale"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimation);jsObj.ScaleJoints(inScale);")
-    private static native void internal_native_ScaleJoints(int this_addr, float inScale);
+    public static native void internal_native_ScaleJoints(int this_addr, float inScale);
 
     public void Sample(float inTime, SkeletonPose ioPose) {
         internal_native_Sample((int) (long) getNativeData().getCPointer(), inTime, (int) (long) (ioPose != null ? ioPose.getNativeData().getCPointer() : 0));
@@ -68,7 +68,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimation);
 jsObj.Sample(inTime, ioPose_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inTime", "ioPose_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimation);jsObj.Sample(inTime, ioPose_addr);")
-    private static native void internal_native_Sample(int this_addr, float inTime, int ioPose_addr);
+    public static native void internal_native_Sample(int this_addr, float inTime, int ioPose_addr);
 
     public ArraySkeletonAnimatedJoint GetAnimatedJoints() {
         int pointer = internal_native_GetAnimatedJoints((int) (long) getNativeData().getCPointer());
@@ -87,25 +87,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimation);var returnedJSObj = jsObj.GetAnimatedJoints();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetAnimatedJoints(int this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static float native_GetDuration(long this_addr) {
-        return internal_native_GetDuration((int) this_addr);
-    }
-
-    public static void native_ScaleJoints(long this_addr, float inScale) {
-        internal_native_ScaleJoints((int) this_addr, inScale);
-    }
-
-    public static void native_Sample(long this_addr, float inTime, long ioPose_addr) {
-        internal_native_Sample((int) this_addr, inTime, (int) ioPose_addr);
-    }
-
-    public static long native_GetAnimatedJoints(long this_addr) {
-        return internal_native_GetAnimatedJoints((int) this_addr);
-    }
+    public static native int internal_native_GetAnimatedJoints(int this_addr);
 }

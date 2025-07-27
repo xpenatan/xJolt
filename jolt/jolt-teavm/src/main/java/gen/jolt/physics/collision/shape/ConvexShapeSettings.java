@@ -42,7 +42,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShapeSettings);var returnedJSObj = jsObj.get_mMaterial();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mMaterial(int this_addr);
+    public static native int internal_native_get_mMaterial(int this_addr);
 
     public void set_mMaterial(PhysicsMaterial mMaterial) {
         internal_native_set_mMaterial((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterial != null ? mMaterial.getNativeData().getCPointer() : 0));
@@ -53,7 +53,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShapeSettings);
 jsObj.set_mMaterial(mMaterial_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaterial_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShapeSettings);jsObj.set_mMaterial(mMaterial_addr);")
-    private static native void internal_native_set_mMaterial(int this_addr, int mMaterial_addr);
+    public static native void internal_native_set_mMaterial(int this_addr, int mMaterial_addr);
 
     public float get_mDensity() {
         return internal_native_get_mDensity((int) (long) getNativeData().getCPointer());
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShapeSettings);
 return jsObj.get_mDensity();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShapeSettings);return jsObj.get_mDensity();")
-    private static native float internal_native_get_mDensity(int this_addr);
+    public static native float internal_native_get_mDensity(int this_addr);
 
     public void set_mDensity(float mDensity) {
         internal_native_set_mDensity((int) (long) getNativeData().getCPointer(), mDensity);
@@ -75,21 +75,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShapeSettings);
 jsObj.set_mDensity(mDensity);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDensity"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShapeSettings);jsObj.set_mDensity(mDensity);")
-    private static native void internal_native_set_mDensity(int this_addr, float mDensity);
-
-    public static long native_get_mMaterial(long this_addr) {
-        return internal_native_get_mMaterial((int) this_addr);
-    }
-
-    public static void native_set_mMaterial(long this_addr, long mMaterial_addr) {
-        internal_native_set_mMaterial((int) this_addr, (int) mMaterial_addr);
-    }
-
-    public static float native_get_mDensity(long this_addr) {
-        return internal_native_get_mDensity((int) this_addr);
-    }
-
-    public static void native_set_mDensity(long this_addr, float mDensity) {
-        internal_native_set_mDensity((int) this_addr, mDensity);
-    }
+    public static native void internal_native_set_mDensity(int this_addr, float mDensity);
 }

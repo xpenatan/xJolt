@@ -30,7 +30,7 @@ var jsObj = new jolt.TrackedVehicleControllerSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.TrackedVehicleControllerSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -57,7 +57,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleControllerSettings);var returnedJSObj = jsObj.get_mEngine();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mEngine(int this_addr);
+    public static native int internal_native_get_mEngine(int this_addr);
 
     public void set_mEngine(VehicleEngineSettings mEngine) {
         internal_native_set_mEngine((int) (long) getNativeData().getCPointer(), (int) (long) (mEngine != null ? mEngine.getNativeData().getCPointer() : 0));
@@ -68,7 +68,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleControllerSettings);
 jsObj.set_mEngine(mEngine_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mEngine_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleControllerSettings);jsObj.set_mEngine(mEngine_addr);")
-    private static native void internal_native_set_mEngine(int this_addr, int mEngine_addr);
+    public static native void internal_native_set_mEngine(int this_addr, int mEngine_addr);
 
     public VehicleTransmissionSettings get_mTransmission() {
         int pointer = internal_native_get_mTransmission((int) (long) getNativeData().getCPointer());
@@ -87,7 +87,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleControllerSettings);var returnedJSObj = jsObj.get_mTransmission();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mTransmission(int this_addr);
+    public static native int internal_native_get_mTransmission(int this_addr);
 
     public void set_mTransmission(VehicleTransmissionSettings mTransmission) {
         internal_native_set_mTransmission((int) (long) getNativeData().getCPointer(), (int) (long) (mTransmission != null ? mTransmission.getNativeData().getCPointer() : 0));
@@ -98,7 +98,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleControllerSettings);
 jsObj.set_mTransmission(mTransmission_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mTransmission_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleControllerSettings);jsObj.set_mTransmission(mTransmission_addr);")
-    private static native void internal_native_set_mTransmission(int this_addr, int mTransmission_addr);
+    public static native void internal_native_set_mTransmission(int this_addr, int mTransmission_addr);
 
     public VehicleTrackSettings get_mTracks(int index) {
         int pointer = internal_native_get_mTracks((int) (long) getNativeData().getCPointer(), index);
@@ -117,7 +117,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleControllerSettings);var returnedJSObj = jsObj.get_mTracks(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mTracks(int this_addr, int index);
+    public static native int internal_native_get_mTracks(int this_addr, int index);
 
     public void set_mTracks(int index, VehicleTrackSettings mTracks) {
         internal_native_set_mTracks((int) (long) getNativeData().getCPointer(), index, (int) (long) (mTracks != null ? mTracks.getNativeData().getCPointer() : 0));
@@ -128,33 +128,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleControllerSettings);
 jsObj.set_mTracks(index, mTracks_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mTracks_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleControllerSettings);jsObj.set_mTracks(index, mTracks_addr);")
-    private static native void internal_native_set_mTracks(int this_addr, int index, int mTracks_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_get_mEngine(long this_addr) {
-        return internal_native_get_mEngine((int) this_addr);
-    }
-
-    public static void native_set_mEngine(long this_addr, long mEngine_addr) {
-        internal_native_set_mEngine((int) this_addr, (int) mEngine_addr);
-    }
-
-    public static long native_get_mTransmission(long this_addr) {
-        return internal_native_get_mTransmission((int) this_addr);
-    }
-
-    public static void native_set_mTransmission(long this_addr, long mTransmission_addr) {
-        internal_native_set_mTransmission((int) this_addr, (int) mTransmission_addr);
-    }
-
-    public static long native_get_mTracks(long this_addr, int index) {
-        return internal_native_get_mTracks((int) this_addr, index);
-    }
-
-    public static void native_set_mTracks(long this_addr, int index, long mTracks_addr) {
-        internal_native_set_mTracks((int) this_addr, index, (int) mTracks_addr);
-    }
+    public static native void internal_native_set_mTracks(int this_addr, int index, int mTracks_addr);
 }

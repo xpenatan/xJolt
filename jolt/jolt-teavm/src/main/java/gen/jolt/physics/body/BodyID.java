@@ -25,7 +25,7 @@ var jsObj = new jolt.BodyID();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.BodyID();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     public BodyID(int inIndexAndSequenceNumber) {
         int addr = internal_native_create_int(inIndexAndSequenceNumber);
@@ -37,7 +37,7 @@ var jsObj = new jolt.BodyID(inIndexAndSequenceNumber);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inIndexAndSequenceNumber"}, script = "var jsObj = new jolt.BodyID(inIndexAndSequenceNumber);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int(int inIndexAndSequenceNumber);
+    public static native int internal_native_create_int(int inIndexAndSequenceNumber);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -63,7 +63,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyID);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyID);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int GetIndex() {
         return internal_native_GetIndex((int) (long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ var returnedJSObj = jsObj.GetIndex();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyID);var returnedJSObj = jsObj.GetIndex();return returnedJSObj;")
-    private static native int internal_native_GetIndex(int this_addr);
+    public static native int internal_native_GetIndex(int this_addr);
 
     public int GetIndexAndSequenceNumber() {
         return internal_native_GetIndexAndSequenceNumber((int) (long) getNativeData().getCPointer());
@@ -87,25 +87,5 @@ var returnedJSObj = jsObj.GetIndexAndSequenceNumber();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyID);var returnedJSObj = jsObj.GetIndexAndSequenceNumber();return returnedJSObj;")
-    private static native int internal_native_GetIndexAndSequenceNumber(int this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_int(int inIndexAndSequenceNumber) {
-        return internal_native_create_int(inIndexAndSequenceNumber);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_GetIndex(long this_addr) {
-        return internal_native_GetIndex((int) this_addr);
-    }
-
-    public static int native_GetIndexAndSequenceNumber(long this_addr) {
-        return internal_native_GetIndexAndSequenceNumber((int) this_addr);
-    }
+    public static native int internal_native_GetIndexAndSequenceNumber(int this_addr);
 }

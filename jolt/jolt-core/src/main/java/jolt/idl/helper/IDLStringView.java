@@ -51,7 +51,7 @@ public class IDLStringView extends IDLBase {
       [-JNI;-NATIVE]
       return (jlong)new IDLStringView(text);
     */
-    private static native long internal_native_create_String(String text);
+    public static native long internal_native_create_String(String text);
 
     public IDLStringView(String text, int size) {
         long addr = internal_native_create_String_int(text, size);
@@ -62,7 +62,7 @@ public class IDLStringView extends IDLBase {
       [-JNI;-NATIVE]
       return (jlong)new IDLStringView(text, (int)size);
     */
-    private static native long internal_native_create_String_int(String text, int size);
+    public static native long internal_native_create_String_int(String text, int size);
 
     public void dispose() {
         super.dispose();
@@ -81,7 +81,7 @@ public class IDLStringView extends IDLBase {
       IDLStringView* nativeObject = (IDLStringView*)this_addr;
       delete nativeObject;
     */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int size() {
         return internal_native_size((long) getNativeData().getCPointer());
@@ -92,7 +92,7 @@ public class IDLStringView extends IDLBase {
       IDLStringView* nativeObject = (IDLStringView*)this_addr;
       return nativeObject->size();
     */
-    private static native int internal_native_size(long this_addr);
+    public static native int internal_native_size(long this_addr);
 
     public byte at(int index) {
         return internal_native_at((long) getNativeData().getCPointer(), index);
@@ -103,25 +103,5 @@ public class IDLStringView extends IDLBase {
       IDLStringView* nativeObject = (IDLStringView*)this_addr;
       return nativeObject->at((int)index);
     */
-    private static native byte internal_native_at(long this_addr, int index);
-
-    public static long native_create_String(String text) {
-        return internal_native_create_String(text);
-    }
-
-    public static long native_create_String_int(String text, int size) {
-        return internal_native_create_String_int(text, size);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_size(long this_addr) {
-        return internal_native_size(this_addr);
-    }
-
-    public static byte native_at(long this_addr, int index) {
-        return internal_native_at(this_addr, index);
-    }
+    public static native byte internal_native_at(long this_addr, int index);
 }

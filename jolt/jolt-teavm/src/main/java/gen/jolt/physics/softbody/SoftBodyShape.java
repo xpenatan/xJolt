@@ -34,7 +34,7 @@ var returnedJSObj = jsObj.GetSubShapeIDBits();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyShape);var returnedJSObj = jsObj.GetSubShapeIDBits();return returnedJSObj;")
-    private static native int internal_native_GetSubShapeIDBits(int this_addr);
+    public static native int internal_native_GetSubShapeIDBits(int this_addr);
 
     public int GetFaceIndex(SubShapeID inSubShapeID) {
         return internal_native_GetFaceIndex((int) (long) getNativeData().getCPointer(), (int) (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0));
@@ -46,13 +46,5 @@ var returnedJSObj = jsObj.GetFaceIndex(inSubShapeID_addr);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSubShapeID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyShape);var returnedJSObj = jsObj.GetFaceIndex(inSubShapeID_addr);return returnedJSObj;")
-    private static native int internal_native_GetFaceIndex(int this_addr, int inSubShapeID_addr);
-
-    public static int native_GetSubShapeIDBits(long this_addr) {
-        return internal_native_GetSubShapeIDBits((int) this_addr);
-    }
-
-    public static int native_GetFaceIndex(long this_addr, long inSubShapeID_addr) {
-        return internal_native_GetFaceIndex((int) this_addr, (int) inSubShapeID_addr);
-    }
+    public static native int internal_native_GetFaceIndex(int this_addr, int inSubShapeID_addr);
 }

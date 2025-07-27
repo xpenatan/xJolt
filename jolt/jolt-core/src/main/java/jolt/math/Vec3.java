@@ -106,7 +106,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       delete nativeObject;
     */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public static Vec3 sZero() {
         long pointer = internal_native_sZero();
@@ -124,7 +124,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sZero();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sZero();
+    public static native long internal_native_sZero();
 
     public static Vec3 sOne() {
         long pointer = internal_native_sOne();
@@ -142,7 +142,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sOne();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sOne();
+    public static native long internal_native_sOne();
 
     public static Vec3 sAxisX() {
         long pointer = internal_native_sAxisX();
@@ -160,7 +160,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sAxisX();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sAxisX();
+    public static native long internal_native_sAxisX();
 
     public static Vec3 sAxisY() {
         long pointer = internal_native_sAxisY();
@@ -178,7 +178,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sAxisY();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sAxisY();
+    public static native long internal_native_sAxisY();
 
     public static Vec3 sAxisZ() {
         long pointer = internal_native_sAxisZ();
@@ -196,7 +196,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sAxisZ();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sAxisZ();
+    public static native long internal_native_sAxisZ();
 
     public static Vec3 sReplicate(float inValue) {
         long pointer = internal_native_sReplicate(inValue);
@@ -214,7 +214,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sReplicate((float)inValue);
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sReplicate(float inValue);
+    public static native long internal_native_sReplicate(float inValue);
 
     public static Vec3 sMin(Vec3 inLHS, Vec3 inRHS) {
         long pointer = internal_native_sMin((long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
@@ -232,7 +232,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sMin(*((Vec3* )inLHS_addr), *((Vec3* )inRHS_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sMin(long inLHS_addr, long inRHS_addr);
+    public static native long internal_native_sMin(long inLHS_addr, long inRHS_addr);
 
     public static Vec3 sMax(Vec3 inLHS, Vec3 inRHS) {
         long pointer = internal_native_sMax((long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
@@ -250,7 +250,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sMax(*((Vec3* )inLHS_addr), *((Vec3* )inRHS_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sMax(long inLHS_addr, long inRHS_addr);
+    public static native long internal_native_sMax(long inLHS_addr, long inRHS_addr);
 
     public static Vec3 sClamp(Vec3 inValue, Vec3 inMin, Vec3 inMax) {
         long pointer = internal_native_sClamp((long) (inValue != null ? inValue.getNativeData().getCPointer() : 0), (long) (inMin != null ? inMin.getNativeData().getCPointer() : 0), (long) (inMax != null ? inMax.getNativeData().getCPointer() : 0));
@@ -268,7 +268,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sClamp(*((Vec3* )inValue_addr), *((Vec3* )inMin_addr), *((Vec3* )inMax_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sClamp(long inValue_addr, long inMin_addr, long inMax_addr);
+    public static native long internal_native_sClamp(long inValue_addr, long inMin_addr, long inMax_addr);
 
     public static Vec3 sFusedMultiplyAdd(Vec3 inMul1, Vec3 inMul2, Vec3 inAdd) {
         long pointer = internal_native_sFusedMultiplyAdd((long) (inMul1 != null ? inMul1.getNativeData().getCPointer() : 0), (long) (inMul2 != null ? inMul2.getNativeData().getCPointer() : 0), (long) (inAdd != null ? inAdd.getNativeData().getCPointer() : 0));
@@ -286,7 +286,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sFusedMultiplyAdd(*((Vec3* )inMul1_addr), *((Vec3* )inMul2_addr), *((Vec3* )inAdd_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sFusedMultiplyAdd(long inMul1_addr, long inMul2_addr, long inAdd_addr);
+    public static native long internal_native_sFusedMultiplyAdd(long inMul1_addr, long inMul2_addr, long inAdd_addr);
 
     public static Vec3 sOr(Vec3 inV1, Vec3 inV2) {
         long pointer = internal_native_sOr((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
@@ -304,7 +304,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sOr(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sOr(long inV1_addr, long inV2_addr);
+    public static native long internal_native_sOr(long inV1_addr, long inV2_addr);
 
     public static Vec3 sXor(Vec3 inV1, Vec3 inV2) {
         long pointer = internal_native_sXor((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
@@ -322,7 +322,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sXor(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sXor(long inV1_addr, long inV2_addr);
+    public static native long internal_native_sXor(long inV1_addr, long inV2_addr);
 
     public static Vec3 sAnd(Vec3 inV1, Vec3 inV2) {
         long pointer = internal_native_sAnd((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
@@ -340,7 +340,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sAnd(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sAnd(long inV1_addr, long inV2_addr);
+    public static native long internal_native_sAnd(long inV1_addr, long inV2_addr);
 
     public static Vec3 sUnitSpherical(float inTheta, float inPhi) {
         long pointer = internal_native_sUnitSpherical(inTheta, inPhi);
@@ -358,7 +358,7 @@ public class Vec3 extends IDLBase {
       copy_addr = Vec3::sUnitSpherical((float)inTheta, (float)inPhi);
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_sUnitSpherical(float inTheta, float inPhi);
+    public static native long internal_native_sUnitSpherical(float inTheta, float inPhi);
 
     public float GetComponent(int inCoordinate) {
         return internal_native_GetComponent((long) getNativeData().getCPointer(), inCoordinate);
@@ -369,7 +369,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return ((*nativeObject)[inCoordinate]);
     */
-    private static native float internal_native_GetComponent(long this_addr, int inCoordinate);
+    public static native float internal_native_GetComponent(long this_addr, int inCoordinate);
 
     public boolean Equals(Vec3 inV) {
         return internal_native_Equals((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -380,7 +380,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return ((*nativeObject == *((Vec3* )inV_addr)));
     */
-    private static native boolean internal_native_Equals(long this_addr, long inV_addr);
+    public static native boolean internal_native_Equals(long this_addr, long inV_addr);
 
     public boolean NotEquals(Vec3 inV) {
         return internal_native_NotEquals((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -391,7 +391,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return ((*nativeObject != *((Vec3* )inV_addr)));
     */
-    private static native boolean internal_native_NotEquals(long this_addr, long inV_addr);
+    public static native boolean internal_native_NotEquals(long this_addr, long inV_addr);
 
     public float LengthSq() {
         return internal_native_LengthSq((long) getNativeData().getCPointer());
@@ -402,7 +402,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->LengthSq();
     */
-    private static native float internal_native_LengthSq(long this_addr);
+    public static native float internal_native_LengthSq(long this_addr);
 
     public float Length() {
         return internal_native_Length((long) getNativeData().getCPointer());
@@ -413,7 +413,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->Length();
     */
-    private static native float internal_native_Length(long this_addr);
+    public static native float internal_native_Length(long this_addr);
 
     public Vec3 Normalized() {
         long pointer = internal_native_Normalized((long) getNativeData().getCPointer());
@@ -432,7 +432,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->Normalized();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_Normalized(long this_addr);
+    public static native long internal_native_Normalized(long this_addr);
 
     public Vec3 NormalizedOr(Vec3 inZeroValue) {
         long pointer = internal_native_NormalizedOr((long) getNativeData().getCPointer(), (long) (inZeroValue != null ? inZeroValue.getNativeData().getCPointer() : 0));
@@ -451,7 +451,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->NormalizedOr(*((Vec3* )inZeroValue_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_NormalizedOr(long this_addr, long inZeroValue_addr);
+    public static native long internal_native_NormalizedOr(long this_addr, long inZeroValue_addr);
 
     public Vec3 GetNormalizedPerpendicular() {
         long pointer = internal_native_GetNormalizedPerpendicular((long) getNativeData().getCPointer());
@@ -470,7 +470,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->GetNormalizedPerpendicular();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_GetNormalizedPerpendicular(long this_addr);
+    public static native long internal_native_GetNormalizedPerpendicular(long this_addr);
 
     public float GetX() {
         return internal_native_GetX((long) getNativeData().getCPointer());
@@ -481,7 +481,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->GetX();
     */
-    private static native float internal_native_GetX(long this_addr);
+    public static native float internal_native_GetX(long this_addr);
 
     public float GetY() {
         return internal_native_GetY((long) getNativeData().getCPointer());
@@ -492,7 +492,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->GetY();
     */
-    private static native float internal_native_GetY(long this_addr);
+    public static native float internal_native_GetY(long this_addr);
 
     public float GetZ() {
         return internal_native_GetZ((long) getNativeData().getCPointer());
@@ -503,7 +503,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->GetZ();
     */
-    private static native float internal_native_GetZ(long this_addr);
+    public static native float internal_native_GetZ(long this_addr);
 
     public void SetX(float inX) {
         internal_native_SetX((long) getNativeData().getCPointer(), inX);
@@ -514,7 +514,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       nativeObject->SetX((float)inX);
     */
-    private static native void internal_native_SetX(long this_addr, float inX);
+    public static native void internal_native_SetX(long this_addr, float inX);
 
     public void SetY(float inY) {
         internal_native_SetY((long) getNativeData().getCPointer(), inY);
@@ -525,7 +525,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       nativeObject->SetY((float)inY);
     */
-    private static native void internal_native_SetY(long this_addr, float inY);
+    public static native void internal_native_SetY(long this_addr, float inY);
 
     public void SetZ(float inZ) {
         internal_native_SetZ((long) getNativeData().getCPointer(), inZ);
@@ -536,7 +536,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       nativeObject->SetZ((float)inZ);
     */
-    private static native void internal_native_SetZ(long this_addr, float inZ);
+    public static native void internal_native_SetZ(long this_addr, float inZ);
 
     public void Set(float inX, float inY, float inZ) {
         internal_native_Set((long) getNativeData().getCPointer(), inX, inY, inZ);
@@ -547,7 +547,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       nativeObject->Set((float)inX, (float)inY, (float)inZ);
     */
-    private static native void internal_native_Set(long this_addr, float inX, float inY, float inZ);
+    public static native void internal_native_Set(long this_addr, float inX, float inY, float inZ);
 
     public void SetComponent(int inCoordinate, float inValue) {
         internal_native_SetComponent((long) getNativeData().getCPointer(), inCoordinate, inValue);
@@ -558,7 +558,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       nativeObject->SetComponent(inCoordinate, (float)inValue);
     */
-    private static native void internal_native_SetComponent(long this_addr, int inCoordinate, float inValue);
+    public static native void internal_native_SetComponent(long this_addr, int inCoordinate, float inValue);
 
     public boolean IsNearZero(float inMaxDistSq) {
         return internal_native_IsNearZero((long) getNativeData().getCPointer(), inMaxDistSq);
@@ -569,7 +569,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->IsNearZero((float)inMaxDistSq);
     */
-    private static native boolean internal_native_IsNearZero(long this_addr, float inMaxDistSq);
+    public static native boolean internal_native_IsNearZero(long this_addr, float inMaxDistSq);
 
     public boolean IsNearZero() {
         return internal_native_IsNearZero((long) getNativeData().getCPointer());
@@ -580,7 +580,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->IsNearZero();
     */
-    private static native boolean internal_native_IsNearZero(long this_addr);
+    public static native boolean internal_native_IsNearZero(long this_addr);
 
     public boolean IsClose(Vec3 inV, float inMaxDistSq) {
         return internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0), inMaxDistSq);
@@ -591,7 +591,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->IsClose(*((Vec3* )inV_addr), (float)inMaxDistSq);
     */
-    private static native boolean internal_native_IsClose(long this_addr, long inV_addr, float inMaxDistSq);
+    public static native boolean internal_native_IsClose(long this_addr, long inV_addr, float inMaxDistSq);
 
     public boolean IsClose(Vec3 inV) {
         return internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -602,7 +602,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->IsClose(*((Vec3* )inV_addr));
     */
-    private static native boolean internal_native_IsClose(long this_addr, long inV_addr);
+    public static native boolean internal_native_IsClose(long this_addr, long inV_addr);
 
     public boolean IsNormalized(float inTolerance) {
         return internal_native_IsNormalized((long) getNativeData().getCPointer(), inTolerance);
@@ -613,7 +613,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->IsNormalized((float)inTolerance);
     */
-    private static native boolean internal_native_IsNormalized(long this_addr, float inTolerance);
+    public static native boolean internal_native_IsNormalized(long this_addr, float inTolerance);
 
     public boolean IsNormalized() {
         return internal_native_IsNormalized((long) getNativeData().getCPointer());
@@ -624,7 +624,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->IsNormalized();
     */
-    private static native boolean internal_native_IsNormalized(long this_addr);
+    public static native boolean internal_native_IsNormalized(long this_addr);
 
     public int GetLowestComponentIndex() {
         return internal_native_GetLowestComponentIndex((long) getNativeData().getCPointer());
@@ -635,7 +635,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->GetLowestComponentIndex();
     */
-    private static native int internal_native_GetLowestComponentIndex(long this_addr);
+    public static native int internal_native_GetLowestComponentIndex(long this_addr);
 
     public int GetHighestComponentIndex() {
         return internal_native_GetHighestComponentIndex((long) getNativeData().getCPointer());
@@ -646,7 +646,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->GetHighestComponentIndex();
     */
-    private static native int internal_native_GetHighestComponentIndex(long this_addr);
+    public static native int internal_native_GetHighestComponentIndex(long this_addr);
 
     public Vec3 Abs() {
         long pointer = internal_native_Abs((long) getNativeData().getCPointer());
@@ -665,7 +665,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->Abs();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_Abs(long this_addr);
+    public static native long internal_native_Abs(long this_addr);
 
     public Vec3 Reciprocal() {
         long pointer = internal_native_Reciprocal((long) getNativeData().getCPointer());
@@ -684,7 +684,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->Reciprocal();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_Reciprocal(long this_addr);
+    public static native long internal_native_Reciprocal(long this_addr);
 
     public Vec3 Cross(Vec3 inRHS) {
         long pointer = internal_native_Cross((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
@@ -703,7 +703,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->Cross(*((Vec3* )inRHS_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_Cross(long this_addr, long inRHS_addr);
+    public static native long internal_native_Cross(long this_addr, long inRHS_addr);
 
     public float Dot(Vec3 inRHS) {
         return internal_native_Dot((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
@@ -714,7 +714,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->Dot(*((Vec3* )inRHS_addr));
     */
-    private static native float internal_native_Dot(long this_addr, long inRHS_addr);
+    public static native float internal_native_Dot(long this_addr, long inRHS_addr);
 
     public Vec3 DotV(Vec3 inRHS) {
         long pointer = internal_native_DotV((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
@@ -733,7 +733,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->DotV(*((Vec3* )inRHS_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_DotV(long this_addr, long inRHS_addr);
+    public static native long internal_native_DotV(long this_addr, long inRHS_addr);
 
     public Vec4 DotV4(Vec3 inRHS) {
         long pointer = internal_native_DotV4((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
@@ -752,7 +752,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->DotV4(*((Vec3* )inRHS_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_DotV4(long this_addr, long inRHS_addr);
+    public static native long internal_native_DotV4(long this_addr, long inRHS_addr);
 
     public Vec3 Add(Vec3 inV) {
         internal_native_Add((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -764,7 +764,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return (jlong)&(*nativeObject += *((Vec3* )inV_addr));
     */
-    private static native long internal_native_Add(long this_addr, long inV_addr);
+    public static native long internal_native_Add(long this_addr, long inV_addr);
 
     public Vec3 Sub(Vec3 inV) {
         internal_native_Sub((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -776,7 +776,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return (jlong)&(*nativeObject -= *((Vec3* )inV_addr));
     */
-    private static native long internal_native_Sub(long this_addr, long inV_addr);
+    public static native long internal_native_Sub(long this_addr, long inV_addr);
 
     public Vec3 Mul(float inV) {
         internal_native_Mul((long) getNativeData().getCPointer(), inV);
@@ -788,7 +788,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return (jlong)&(*nativeObject *= (float)inV);
     */
-    private static native long internal_native_Mul(long this_addr, float inV);
+    public static native long internal_native_Mul(long this_addr, float inV);
 
     public Vec3 Div(float inV) {
         internal_native_Div((long) getNativeData().getCPointer(), inV);
@@ -800,7 +800,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return (jlong)&(*nativeObject /= (float)inV);
     */
-    private static native long internal_native_Div(long this_addr, float inV);
+    public static native long internal_native_Div(long this_addr, float inV);
 
     public Vec3 MulVec3(Vec3 inV) {
         long pointer = internal_native_MulVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -819,7 +819,7 @@ public class Vec3 extends IDLBase {
       copy_addr = (*nativeObject * *((Vec3* )inV_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_MulVec3(long this_addr, long inV_addr);
+    public static native long internal_native_MulVec3(long this_addr, long inV_addr);
 
     public Vec3 MulFloat(float inV) {
         long pointer = internal_native_MulFloat((long) getNativeData().getCPointer(), inV);
@@ -838,7 +838,7 @@ public class Vec3 extends IDLBase {
       copy_addr = (*nativeObject * (float)inV);
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_MulFloat(long this_addr, float inV);
+    public static native long internal_native_MulFloat(long this_addr, float inV);
 
     public Vec3 DivVec3(Vec3 inV) {
         long pointer = internal_native_DivVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -857,7 +857,7 @@ public class Vec3 extends IDLBase {
       copy_addr = (*nativeObject / *((Vec3* )inV_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_DivVec3(long this_addr, long inV_addr);
+    public static native long internal_native_DivVec3(long this_addr, long inV_addr);
 
     public Vec3 DivFloat(float inV) {
         long pointer = internal_native_DivFloat((long) getNativeData().getCPointer(), inV);
@@ -876,7 +876,7 @@ public class Vec3 extends IDLBase {
       copy_addr = (*nativeObject / (float)inV);
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_DivFloat(long this_addr, float inV);
+    public static native long internal_native_DivFloat(long this_addr, float inV);
 
     public Vec3 AddVec3(Vec3 inV) {
         long pointer = internal_native_AddVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -895,7 +895,7 @@ public class Vec3 extends IDLBase {
       copy_addr = (*nativeObject + *((Vec3* )inV_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_AddVec3(long this_addr, long inV_addr);
+    public static native long internal_native_AddVec3(long this_addr, long inV_addr);
 
     public Vec3 SubVec3(Vec3 inV) {
         long pointer = internal_native_SubVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -914,7 +914,7 @@ public class Vec3 extends IDLBase {
       copy_addr = (*nativeObject - *((Vec3* )inV_addr));
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_SubVec3(long this_addr, long inV_addr);
+    public static native long internal_native_SubVec3(long this_addr, long inV_addr);
 
     public Vec4 SplatX() {
         long pointer = internal_native_SplatX((long) getNativeData().getCPointer());
@@ -933,7 +933,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->SplatX();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_SplatX(long this_addr);
+    public static native long internal_native_SplatX(long this_addr);
 
     public Vec4 SplatY() {
         long pointer = internal_native_SplatY((long) getNativeData().getCPointer());
@@ -952,7 +952,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->SplatY();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_SplatY(long this_addr);
+    public static native long internal_native_SplatY(long this_addr);
 
     public Vec4 SplatZ() {
         long pointer = internal_native_SplatZ((long) getNativeData().getCPointer());
@@ -971,7 +971,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->SplatZ();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_SplatZ(long this_addr);
+    public static native long internal_native_SplatZ(long this_addr);
 
     public float ReduceMin() {
         return internal_native_ReduceMin((long) getNativeData().getCPointer());
@@ -982,7 +982,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->ReduceMin();
     */
-    private static native float internal_native_ReduceMin(long this_addr);
+    public static native float internal_native_ReduceMin(long this_addr);
 
     public float ReduceMax() {
         return internal_native_ReduceMax((long) getNativeData().getCPointer());
@@ -993,7 +993,7 @@ public class Vec3 extends IDLBase {
       Vec3* nativeObject = (Vec3*)this_addr;
       return nativeObject->ReduceMax();
     */
-    private static native float internal_native_ReduceMax(long this_addr);
+    public static native float internal_native_ReduceMax(long this_addr);
 
     public Vec3 Sqrt() {
         long pointer = internal_native_Sqrt((long) getNativeData().getCPointer());
@@ -1012,7 +1012,7 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->Sqrt();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_Sqrt(long this_addr);
+    public static native long internal_native_Sqrt(long this_addr);
 
     public Vec3 GetSign() {
         long pointer = internal_native_GetSign((long) getNativeData().getCPointer());
@@ -1031,253 +1031,5 @@ public class Vec3 extends IDLBase {
       copy_addr = nativeObject->GetSign();
       return (jlong)&copy_addr;
     */
-    private static native long internal_native_GetSign(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_sZero() {
-        return internal_native_sZero();
-    }
-
-    public static long native_sOne() {
-        return internal_native_sOne();
-    }
-
-    public static long native_sAxisX() {
-        return internal_native_sAxisX();
-    }
-
-    public static long native_sAxisY() {
-        return internal_native_sAxisY();
-    }
-
-    public static long native_sAxisZ() {
-        return internal_native_sAxisZ();
-    }
-
-    public static long native_sReplicate(float inValue) {
-        return internal_native_sReplicate(inValue);
-    }
-
-    public static long native_sMin(long inLHS_addr, long inRHS_addr) {
-        return internal_native_sMin(inLHS_addr, inRHS_addr);
-    }
-
-    public static long native_sMax(long inLHS_addr, long inRHS_addr) {
-        return internal_native_sMax(inLHS_addr, inRHS_addr);
-    }
-
-    public static long native_sClamp(long inValue_addr, long inMin_addr, long inMax_addr) {
-        return internal_native_sClamp(inValue_addr, inMin_addr, inMax_addr);
-    }
-
-    public static long native_sFusedMultiplyAdd(long inMul1_addr, long inMul2_addr, long inAdd_addr) {
-        return internal_native_sFusedMultiplyAdd(inMul1_addr, inMul2_addr, inAdd_addr);
-    }
-
-    public static long native_sOr(long inV1_addr, long inV2_addr) {
-        return internal_native_sOr(inV1_addr, inV2_addr);
-    }
-
-    public static long native_sXor(long inV1_addr, long inV2_addr) {
-        return internal_native_sXor(inV1_addr, inV2_addr);
-    }
-
-    public static long native_sAnd(long inV1_addr, long inV2_addr) {
-        return internal_native_sAnd(inV1_addr, inV2_addr);
-    }
-
-    public static long native_sUnitSpherical(float inTheta, float inPhi) {
-        return internal_native_sUnitSpherical(inTheta, inPhi);
-    }
-
-    public static float native_GetComponent(long this_addr, int inCoordinate) {
-        return internal_native_GetComponent(this_addr, inCoordinate);
-    }
-
-    public static boolean native_Equals(long this_addr, long inV_addr) {
-        return internal_native_Equals(this_addr, inV_addr);
-    }
-
-    public static boolean native_NotEquals(long this_addr, long inV_addr) {
-        return internal_native_NotEquals(this_addr, inV_addr);
-    }
-
-    public static float native_LengthSq(long this_addr) {
-        return internal_native_LengthSq(this_addr);
-    }
-
-    public static float native_Length(long this_addr) {
-        return internal_native_Length(this_addr);
-    }
-
-    public static long native_Normalized(long this_addr) {
-        return internal_native_Normalized(this_addr);
-    }
-
-    public static long native_NormalizedOr(long this_addr, long inZeroValue_addr) {
-        return internal_native_NormalizedOr(this_addr, inZeroValue_addr);
-    }
-
-    public static long native_GetNormalizedPerpendicular(long this_addr) {
-        return internal_native_GetNormalizedPerpendicular(this_addr);
-    }
-
-    public static float native_GetX(long this_addr) {
-        return internal_native_GetX(this_addr);
-    }
-
-    public static float native_GetY(long this_addr) {
-        return internal_native_GetY(this_addr);
-    }
-
-    public static float native_GetZ(long this_addr) {
-        return internal_native_GetZ(this_addr);
-    }
-
-    public static void native_SetX(long this_addr, float inX) {
-        internal_native_SetX(this_addr, inX);
-    }
-
-    public static void native_SetY(long this_addr, float inY) {
-        internal_native_SetY(this_addr, inY);
-    }
-
-    public static void native_SetZ(long this_addr, float inZ) {
-        internal_native_SetZ(this_addr, inZ);
-    }
-
-    public static void native_Set(long this_addr, float inX, float inY, float inZ) {
-        internal_native_Set(this_addr, inX, inY, inZ);
-    }
-
-    public static void native_SetComponent(long this_addr, int inCoordinate, float inValue) {
-        internal_native_SetComponent(this_addr, inCoordinate, inValue);
-    }
-
-    public static boolean native_IsNearZero(long this_addr, float inMaxDistSq) {
-        return internal_native_IsNearZero(this_addr, inMaxDistSq);
-    }
-
-    public static boolean native_IsNearZero(long this_addr) {
-        return internal_native_IsNearZero(this_addr);
-    }
-
-    public static boolean native_IsClose(long this_addr, long inV_addr, float inMaxDistSq) {
-        return internal_native_IsClose(this_addr, inV_addr, inMaxDistSq);
-    }
-
-    public static boolean native_IsClose(long this_addr, long inV_addr) {
-        return internal_native_IsClose(this_addr, inV_addr);
-    }
-
-    public static boolean native_IsNormalized(long this_addr, float inTolerance) {
-        return internal_native_IsNormalized(this_addr, inTolerance);
-    }
-
-    public static boolean native_IsNormalized(long this_addr) {
-        return internal_native_IsNormalized(this_addr);
-    }
-
-    public static int native_GetLowestComponentIndex(long this_addr) {
-        return internal_native_GetLowestComponentIndex(this_addr);
-    }
-
-    public static int native_GetHighestComponentIndex(long this_addr) {
-        return internal_native_GetHighestComponentIndex(this_addr);
-    }
-
-    public static long native_Abs(long this_addr) {
-        return internal_native_Abs(this_addr);
-    }
-
-    public static long native_Reciprocal(long this_addr) {
-        return internal_native_Reciprocal(this_addr);
-    }
-
-    public static long native_Cross(long this_addr, long inRHS_addr) {
-        return internal_native_Cross(this_addr, inRHS_addr);
-    }
-
-    public static float native_Dot(long this_addr, long inRHS_addr) {
-        return internal_native_Dot(this_addr, inRHS_addr);
-    }
-
-    public static long native_DotV(long this_addr, long inRHS_addr) {
-        return internal_native_DotV(this_addr, inRHS_addr);
-    }
-
-    public static long native_DotV4(long this_addr, long inRHS_addr) {
-        return internal_native_DotV4(this_addr, inRHS_addr);
-    }
-
-    public static long native_Add(long this_addr, long inV_addr) {
-        return internal_native_Add(this_addr, inV_addr);
-    }
-
-    public static long native_Sub(long this_addr, long inV_addr) {
-        return internal_native_Sub(this_addr, inV_addr);
-    }
-
-    public static long native_Mul(long this_addr, float inV) {
-        return internal_native_Mul(this_addr, inV);
-    }
-
-    public static long native_Div(long this_addr, float inV) {
-        return internal_native_Div(this_addr, inV);
-    }
-
-    public static long native_MulVec3(long this_addr, long inV_addr) {
-        return internal_native_MulVec3(this_addr, inV_addr);
-    }
-
-    public static long native_MulFloat(long this_addr, float inV) {
-        return internal_native_MulFloat(this_addr, inV);
-    }
-
-    public static long native_DivVec3(long this_addr, long inV_addr) {
-        return internal_native_DivVec3(this_addr, inV_addr);
-    }
-
-    public static long native_DivFloat(long this_addr, float inV) {
-        return internal_native_DivFloat(this_addr, inV);
-    }
-
-    public static long native_AddVec3(long this_addr, long inV_addr) {
-        return internal_native_AddVec3(this_addr, inV_addr);
-    }
-
-    public static long native_SubVec3(long this_addr, long inV_addr) {
-        return internal_native_SubVec3(this_addr, inV_addr);
-    }
-
-    public static long native_SplatX(long this_addr) {
-        return internal_native_SplatX(this_addr);
-    }
-
-    public static long native_SplatY(long this_addr) {
-        return internal_native_SplatY(this_addr);
-    }
-
-    public static long native_SplatZ(long this_addr) {
-        return internal_native_SplatZ(this_addr);
-    }
-
-    public static float native_ReduceMin(long this_addr) {
-        return internal_native_ReduceMin(this_addr);
-    }
-
-    public static float native_ReduceMax(long this_addr) {
-        return internal_native_ReduceMax(this_addr);
-    }
-
-    public static long native_Sqrt(long this_addr) {
-        return internal_native_Sqrt(this_addr);
-    }
-
-    public static long native_GetSign(long this_addr) {
-        return internal_native_GetSign(this_addr);
-    }
+    public static native long internal_native_GetSign(long this_addr);
 }

@@ -39,7 +39,7 @@ public class WheelSettings extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new WheelSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -56,7 +56,7 @@ return (jlong)new WheelSettings();
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return nativeObject->GetRefCount();
 */
-    private static native int internal_native_GetRefCount(long this_addr);
+    public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
         internal_native_AddRef((long) getNativeData().getCPointer());
@@ -66,7 +66,7 @@ return nativeObject->GetRefCount();
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->AddRef();
 */
-    private static native void internal_native_AddRef(long this_addr);
+    public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
         internal_native_Release((long) getNativeData().getCPointer());
@@ -76,7 +76,7 @@ nativeObject->AddRef();
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->Release();
 */
-    private static native void internal_native_Release(long this_addr);
+    public static native void internal_native_Release(long this_addr);
 
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
@@ -92,7 +92,7 @@ nativeObject->Release();
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    private static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition((long) getNativeData().getCPointer(), (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -102,7 +102,7 @@ return (jlong)&nativeObject->mPosition;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mPosition = *((Vec3*)mPosition_addr);
 */
-    private static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
+    public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Vec3 get_mSuspensionForcePoint() {
         long pointer = internal_native_get_mSuspensionForcePoint((long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mSuspensionForcePoint;
 */
-    private static native long internal_native_get_mSuspensionForcePoint(long this_addr);
+    public static native long internal_native_get_mSuspensionForcePoint(long this_addr);
 
     public void set_mSuspensionForcePoint(Vec3 mSuspensionForcePoint) {
         internal_native_set_mSuspensionForcePoint((long) getNativeData().getCPointer(), (long) (mSuspensionForcePoint != null ? mSuspensionForcePoint.getNativeData().getCPointer() : 0));
@@ -128,7 +128,7 @@ return (jlong)&nativeObject->mSuspensionForcePoint;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mSuspensionForcePoint = *((Vec3*)mSuspensionForcePoint_addr);
 */
-    private static native void internal_native_set_mSuspensionForcePoint(long this_addr, long mSuspensionForcePoint_addr);
+    public static native void internal_native_set_mSuspensionForcePoint(long this_addr, long mSuspensionForcePoint_addr);
 
     public Vec3 get_mSuspensionDirection() {
         long pointer = internal_native_get_mSuspensionDirection((long) getNativeData().getCPointer());
@@ -144,7 +144,7 @@ nativeObject->mSuspensionForcePoint = *((Vec3*)mSuspensionForcePoint_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mSuspensionDirection;
 */
-    private static native long internal_native_get_mSuspensionDirection(long this_addr);
+    public static native long internal_native_get_mSuspensionDirection(long this_addr);
 
     public void set_mSuspensionDirection(Vec3 mSuspensionDirection) {
         internal_native_set_mSuspensionDirection((long) getNativeData().getCPointer(), (long) (mSuspensionDirection != null ? mSuspensionDirection.getNativeData().getCPointer() : 0));
@@ -154,7 +154,7 @@ return (jlong)&nativeObject->mSuspensionDirection;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mSuspensionDirection = *((Vec3*)mSuspensionDirection_addr);
 */
-    private static native void internal_native_set_mSuspensionDirection(long this_addr, long mSuspensionDirection_addr);
+    public static native void internal_native_set_mSuspensionDirection(long this_addr, long mSuspensionDirection_addr);
 
     public Vec3 get_mSteeringAxis() {
         long pointer = internal_native_get_mSteeringAxis((long) getNativeData().getCPointer());
@@ -170,7 +170,7 @@ nativeObject->mSuspensionDirection = *((Vec3*)mSuspensionDirection_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mSteeringAxis;
 */
-    private static native long internal_native_get_mSteeringAxis(long this_addr);
+    public static native long internal_native_get_mSteeringAxis(long this_addr);
 
     public void set_mSteeringAxis(Vec3 mSteeringAxis) {
         internal_native_set_mSteeringAxis((long) getNativeData().getCPointer(), (long) (mSteeringAxis != null ? mSteeringAxis.getNativeData().getCPointer() : 0));
@@ -180,7 +180,7 @@ return (jlong)&nativeObject->mSteeringAxis;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mSteeringAxis = *((Vec3*)mSteeringAxis_addr);
 */
-    private static native void internal_native_set_mSteeringAxis(long this_addr, long mSteeringAxis_addr);
+    public static native void internal_native_set_mSteeringAxis(long this_addr, long mSteeringAxis_addr);
 
     public Vec3 get_mWheelUp() {
         long pointer = internal_native_get_mWheelUp((long) getNativeData().getCPointer());
@@ -196,7 +196,7 @@ nativeObject->mSteeringAxis = *((Vec3*)mSteeringAxis_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mWheelUp;
 */
-    private static native long internal_native_get_mWheelUp(long this_addr);
+    public static native long internal_native_get_mWheelUp(long this_addr);
 
     public void set_mWheelUp(Vec3 mWheelUp) {
         internal_native_set_mWheelUp((long) getNativeData().getCPointer(), (long) (mWheelUp != null ? mWheelUp.getNativeData().getCPointer() : 0));
@@ -206,7 +206,7 @@ return (jlong)&nativeObject->mWheelUp;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mWheelUp = *((Vec3*)mWheelUp_addr);
 */
-    private static native void internal_native_set_mWheelUp(long this_addr, long mWheelUp_addr);
+    public static native void internal_native_set_mWheelUp(long this_addr, long mWheelUp_addr);
 
     public Vec3 get_mWheelForward() {
         long pointer = internal_native_get_mWheelForward((long) getNativeData().getCPointer());
@@ -222,7 +222,7 @@ nativeObject->mWheelUp = *((Vec3*)mWheelUp_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mWheelForward;
 */
-    private static native long internal_native_get_mWheelForward(long this_addr);
+    public static native long internal_native_get_mWheelForward(long this_addr);
 
     public void set_mWheelForward(Vec3 mWheelForward) {
         internal_native_set_mWheelForward((long) getNativeData().getCPointer(), (long) (mWheelForward != null ? mWheelForward.getNativeData().getCPointer() : 0));
@@ -232,7 +232,7 @@ return (jlong)&nativeObject->mWheelForward;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mWheelForward = *((Vec3*)mWheelForward_addr);
 */
-    private static native void internal_native_set_mWheelForward(long this_addr, long mWheelForward_addr);
+    public static native void internal_native_set_mWheelForward(long this_addr, long mWheelForward_addr);
 
     public SpringSettings get_mSuspensionSpring() {
         long pointer = internal_native_get_mSuspensionSpring((long) getNativeData().getCPointer());
@@ -248,7 +248,7 @@ nativeObject->mWheelForward = *((Vec3*)mWheelForward_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mSuspensionSpring;
 */
-    private static native long internal_native_get_mSuspensionSpring(long this_addr);
+    public static native long internal_native_get_mSuspensionSpring(long this_addr);
 
     public void set_mSuspensionSpring(SpringSettings mSuspensionSpring) {
         internal_native_set_mSuspensionSpring((long) getNativeData().getCPointer(), (long) (mSuspensionSpring != null ? mSuspensionSpring.getNativeData().getCPointer() : 0));
@@ -258,7 +258,7 @@ return (jlong)&nativeObject->mSuspensionSpring;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mSuspensionSpring = *((SpringSettings*)mSuspensionSpring_addr);
 */
-    private static native void internal_native_set_mSuspensionSpring(long this_addr, long mSuspensionSpring_addr);
+    public static native void internal_native_set_mSuspensionSpring(long this_addr, long mSuspensionSpring_addr);
 
     public float get_mSuspensionMinLength() {
         return internal_native_get_mSuspensionMinLength((long) getNativeData().getCPointer());
@@ -268,7 +268,7 @@ nativeObject->mSuspensionSpring = *((SpringSettings*)mSuspensionSpring_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return nativeObject->mSuspensionMinLength;
 */
-    private static native float internal_native_get_mSuspensionMinLength(long this_addr);
+    public static native float internal_native_get_mSuspensionMinLength(long this_addr);
 
     public void set_mSuspensionMinLength(float mSuspensionMinLength) {
         internal_native_set_mSuspensionMinLength((long) getNativeData().getCPointer(), mSuspensionMinLength);
@@ -278,7 +278,7 @@ return nativeObject->mSuspensionMinLength;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mSuspensionMinLength = mSuspensionMinLength;
 */
-    private static native void internal_native_set_mSuspensionMinLength(long this_addr, float mSuspensionMinLength);
+    public static native void internal_native_set_mSuspensionMinLength(long this_addr, float mSuspensionMinLength);
 
     public float get_mSuspensionMaxLength() {
         return internal_native_get_mSuspensionMaxLength((long) getNativeData().getCPointer());
@@ -288,7 +288,7 @@ nativeObject->mSuspensionMinLength = mSuspensionMinLength;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return nativeObject->mSuspensionMaxLength;
 */
-    private static native float internal_native_get_mSuspensionMaxLength(long this_addr);
+    public static native float internal_native_get_mSuspensionMaxLength(long this_addr);
 
     public void set_mSuspensionMaxLength(float mSuspensionMaxLength) {
         internal_native_set_mSuspensionMaxLength((long) getNativeData().getCPointer(), mSuspensionMaxLength);
@@ -298,7 +298,7 @@ return nativeObject->mSuspensionMaxLength;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mSuspensionMaxLength = mSuspensionMaxLength;
 */
-    private static native void internal_native_set_mSuspensionMaxLength(long this_addr, float mSuspensionMaxLength);
+    public static native void internal_native_set_mSuspensionMaxLength(long this_addr, float mSuspensionMaxLength);
 
     public float get_mSuspensionPreloadLength() {
         return internal_native_get_mSuspensionPreloadLength((long) getNativeData().getCPointer());
@@ -308,7 +308,7 @@ nativeObject->mSuspensionMaxLength = mSuspensionMaxLength;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return nativeObject->mSuspensionPreloadLength;
 */
-    private static native float internal_native_get_mSuspensionPreloadLength(long this_addr);
+    public static native float internal_native_get_mSuspensionPreloadLength(long this_addr);
 
     public void set_mSuspensionPreloadLength(float mSuspensionPreloadLength) {
         internal_native_set_mSuspensionPreloadLength((long) getNativeData().getCPointer(), mSuspensionPreloadLength);
@@ -318,7 +318,7 @@ return nativeObject->mSuspensionPreloadLength;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mSuspensionPreloadLength = mSuspensionPreloadLength;
 */
-    private static native void internal_native_set_mSuspensionPreloadLength(long this_addr, float mSuspensionPreloadLength);
+    public static native void internal_native_set_mSuspensionPreloadLength(long this_addr, float mSuspensionPreloadLength);
 
     public float get_mRadius() {
         return internal_native_get_mRadius((long) getNativeData().getCPointer());
@@ -328,7 +328,7 @@ nativeObject->mSuspensionPreloadLength = mSuspensionPreloadLength;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return nativeObject->mRadius;
 */
-    private static native float internal_native_get_mRadius(long this_addr);
+    public static native float internal_native_get_mRadius(long this_addr);
 
     public void set_mRadius(float mRadius) {
         internal_native_set_mRadius((long) getNativeData().getCPointer(), mRadius);
@@ -338,7 +338,7 @@ return nativeObject->mRadius;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mRadius = mRadius;
 */
-    private static native void internal_native_set_mRadius(long this_addr, float mRadius);
+    public static native void internal_native_set_mRadius(long this_addr, float mRadius);
 
     public float get_mWidth() {
         return internal_native_get_mWidth((long) getNativeData().getCPointer());
@@ -348,7 +348,7 @@ nativeObject->mRadius = mRadius;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return nativeObject->mWidth;
 */
-    private static native float internal_native_get_mWidth(long this_addr);
+    public static native float internal_native_get_mWidth(long this_addr);
 
     public void set_mWidth(float mWidth) {
         internal_native_set_mWidth((long) getNativeData().getCPointer(), mWidth);
@@ -358,7 +358,7 @@ return nativeObject->mWidth;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mWidth = mWidth;
 */
-    private static native void internal_native_set_mWidth(long this_addr, float mWidth);
+    public static native void internal_native_set_mWidth(long this_addr, float mWidth);
 
     public boolean get_mEnableSuspensionForcePoint() {
         return internal_native_get_mEnableSuspensionForcePoint((long) getNativeData().getCPointer());
@@ -368,7 +368,7 @@ nativeObject->mWidth = mWidth;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return nativeObject->mEnableSuspensionForcePoint;
 */
-    private static native boolean internal_native_get_mEnableSuspensionForcePoint(long this_addr);
+    public static native boolean internal_native_get_mEnableSuspensionForcePoint(long this_addr);
 
     public void set_mEnableSuspensionForcePoint(boolean mEnableSuspensionForcePoint) {
         internal_native_set_mEnableSuspensionForcePoint((long) getNativeData().getCPointer(), mEnableSuspensionForcePoint);
@@ -378,125 +378,5 @@ return nativeObject->mEnableSuspensionForcePoint;
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 nativeObject->mEnableSuspensionForcePoint = mEnableSuspensionForcePoint;
 */
-    private static native void internal_native_set_mEnableSuspensionForcePoint(long this_addr, boolean mEnableSuspensionForcePoint);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount(this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef(this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release(this_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition(this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition(this_addr, mPosition_addr);
-    }
-
-    public static long native_get_mSuspensionForcePoint(long this_addr) {
-        return internal_native_get_mSuspensionForcePoint(this_addr);
-    }
-
-    public static void native_set_mSuspensionForcePoint(long this_addr, long mSuspensionForcePoint_addr) {
-        internal_native_set_mSuspensionForcePoint(this_addr, mSuspensionForcePoint_addr);
-    }
-
-    public static long native_get_mSuspensionDirection(long this_addr) {
-        return internal_native_get_mSuspensionDirection(this_addr);
-    }
-
-    public static void native_set_mSuspensionDirection(long this_addr, long mSuspensionDirection_addr) {
-        internal_native_set_mSuspensionDirection(this_addr, mSuspensionDirection_addr);
-    }
-
-    public static long native_get_mSteeringAxis(long this_addr) {
-        return internal_native_get_mSteeringAxis(this_addr);
-    }
-
-    public static void native_set_mSteeringAxis(long this_addr, long mSteeringAxis_addr) {
-        internal_native_set_mSteeringAxis(this_addr, mSteeringAxis_addr);
-    }
-
-    public static long native_get_mWheelUp(long this_addr) {
-        return internal_native_get_mWheelUp(this_addr);
-    }
-
-    public static void native_set_mWheelUp(long this_addr, long mWheelUp_addr) {
-        internal_native_set_mWheelUp(this_addr, mWheelUp_addr);
-    }
-
-    public static long native_get_mWheelForward(long this_addr) {
-        return internal_native_get_mWheelForward(this_addr);
-    }
-
-    public static void native_set_mWheelForward(long this_addr, long mWheelForward_addr) {
-        internal_native_set_mWheelForward(this_addr, mWheelForward_addr);
-    }
-
-    public static long native_get_mSuspensionSpring(long this_addr) {
-        return internal_native_get_mSuspensionSpring(this_addr);
-    }
-
-    public static void native_set_mSuspensionSpring(long this_addr, long mSuspensionSpring_addr) {
-        internal_native_set_mSuspensionSpring(this_addr, mSuspensionSpring_addr);
-    }
-
-    public static float native_get_mSuspensionMinLength(long this_addr) {
-        return internal_native_get_mSuspensionMinLength(this_addr);
-    }
-
-    public static void native_set_mSuspensionMinLength(long this_addr, float mSuspensionMinLength) {
-        internal_native_set_mSuspensionMinLength(this_addr, mSuspensionMinLength);
-    }
-
-    public static float native_get_mSuspensionMaxLength(long this_addr) {
-        return internal_native_get_mSuspensionMaxLength(this_addr);
-    }
-
-    public static void native_set_mSuspensionMaxLength(long this_addr, float mSuspensionMaxLength) {
-        internal_native_set_mSuspensionMaxLength(this_addr, mSuspensionMaxLength);
-    }
-
-    public static float native_get_mSuspensionPreloadLength(long this_addr) {
-        return internal_native_get_mSuspensionPreloadLength(this_addr);
-    }
-
-    public static void native_set_mSuspensionPreloadLength(long this_addr, float mSuspensionPreloadLength) {
-        internal_native_set_mSuspensionPreloadLength(this_addr, mSuspensionPreloadLength);
-    }
-
-    public static float native_get_mRadius(long this_addr) {
-        return internal_native_get_mRadius(this_addr);
-    }
-
-    public static void native_set_mRadius(long this_addr, float mRadius) {
-        internal_native_set_mRadius(this_addr, mRadius);
-    }
-
-    public static float native_get_mWidth(long this_addr) {
-        return internal_native_get_mWidth(this_addr);
-    }
-
-    public static void native_set_mWidth(long this_addr, float mWidth) {
-        internal_native_set_mWidth(this_addr, mWidth);
-    }
-
-    public static boolean native_get_mEnableSuspensionForcePoint(long this_addr) {
-        return internal_native_get_mEnableSuspensionForcePoint(this_addr);
-    }
-
-    public static void native_set_mEnableSuspensionForcePoint(long this_addr, boolean mEnableSuspensionForcePoint) {
-        internal_native_set_mEnableSuspensionForcePoint(this_addr, mEnableSuspensionForcePoint);
-    }
+    public static native void internal_native_set_mEnableSuspensionForcePoint(long this_addr, boolean mEnableSuspensionForcePoint);
 }

@@ -38,7 +38,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngine);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngine);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void ClampRPM() {
         internal_native_ClampRPM((int) (long) getNativeData().getCPointer());
@@ -49,7 +49,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngine);
 jsObj.ClampRPM();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngine);jsObj.ClampRPM();")
-    private static native void internal_native_ClampRPM(int this_addr);
+    public static native void internal_native_ClampRPM(int this_addr);
 
     public float GetCurrentRPM() {
         return internal_native_GetCurrentRPM((int) (long) getNativeData().getCPointer());
@@ -61,7 +61,7 @@ var returnedJSObj = jsObj.GetCurrentRPM();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngine);var returnedJSObj = jsObj.GetCurrentRPM();return returnedJSObj;")
-    private static native float internal_native_GetCurrentRPM(int this_addr);
+    public static native float internal_native_GetCurrentRPM(int this_addr);
 
     public void SetCurrentRPM(float inRPM) {
         internal_native_SetCurrentRPM((int) (long) getNativeData().getCPointer(), inRPM);
@@ -72,7 +72,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngine);
 jsObj.SetCurrentRPM(inRPM);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inRPM"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngine);jsObj.SetCurrentRPM(inRPM);")
-    private static native void internal_native_SetCurrentRPM(int this_addr, float inRPM);
+    public static native void internal_native_SetCurrentRPM(int this_addr, float inRPM);
 
     public float GetAngularVelocity() {
         return internal_native_GetAngularVelocity((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ var returnedJSObj = jsObj.GetAngularVelocity();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngine);var returnedJSObj = jsObj.GetAngularVelocity();return returnedJSObj;")
-    private static native float internal_native_GetAngularVelocity(int this_addr);
+    public static native float internal_native_GetAngularVelocity(int this_addr);
 
     public float GetTorque(float inAcceleration) {
         return internal_native_GetTorque((int) (long) getNativeData().getCPointer(), inAcceleration);
@@ -96,29 +96,5 @@ var returnedJSObj = jsObj.GetTorque(inAcceleration);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inAcceleration"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngine);var returnedJSObj = jsObj.GetTorque(inAcceleration);return returnedJSObj;")
-    private static native float internal_native_GetTorque(int this_addr, float inAcceleration);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_ClampRPM(long this_addr) {
-        internal_native_ClampRPM((int) this_addr);
-    }
-
-    public static float native_GetCurrentRPM(long this_addr) {
-        return internal_native_GetCurrentRPM((int) this_addr);
-    }
-
-    public static void native_SetCurrentRPM(long this_addr, float inRPM) {
-        internal_native_SetCurrentRPM((int) this_addr, inRPM);
-    }
-
-    public static float native_GetAngularVelocity(long this_addr) {
-        return internal_native_GetAngularVelocity((int) this_addr);
-    }
-
-    public static float native_GetTorque(long this_addr, float inAcceleration) {
-        return internal_native_GetTorque((int) this_addr, inAcceleration);
-    }
+    public static native float internal_native_GetTorque(int this_addr, float inAcceleration);
 }

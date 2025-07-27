@@ -29,7 +29,7 @@ public class ConvexShape extends Shape {
 ConvexShape* nativeObject = (ConvexShape*)this_addr;
 return nativeObject->GetDensity();
 */
-    private static native float internal_native_GetDensity(long this_addr);
+    public static native float internal_native_GetDensity(long this_addr);
 
     public void SetDensity(float inDensity) {
         internal_native_SetDensity((long) getNativeData().getCPointer(), inDensity);
@@ -39,13 +39,5 @@ return nativeObject->GetDensity();
 ConvexShape* nativeObject = (ConvexShape*)this_addr;
 nativeObject->SetDensity((float)inDensity);
 */
-    private static native void internal_native_SetDensity(long this_addr, float inDensity);
-
-    public static float native_GetDensity(long this_addr) {
-        return internal_native_GetDensity(this_addr);
-    }
-
-    public static void native_SetDensity(long this_addr, float inDensity) {
-        internal_native_SetDensity(this_addr, inDensity);
-    }
+    public static native void internal_native_SetDensity(long this_addr, float inDensity);
 }

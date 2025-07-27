@@ -26,7 +26,7 @@ var jsObj = new jolt.OffsetCenterOfMassShape(inShape_addr, inOffset_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inOffset_addr"}, script = "var jsObj = new jolt.OffsetCenterOfMassShape(inShape_addr, inOffset_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Shape_Vec3(int inShape_addr, int inOffset_addr);
+    public static native int internal_native_create_Shape_Vec3(int inShape_addr, int inOffset_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -34,9 +34,5 @@ return jolt.getPointer(jsObj);
     @Deprecated()
     public OffsetCenterOfMassShape(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create_Shape_Vec3(long inShape_addr, long inOffset_addr) {
-        return internal_native_create_Shape_Vec3((int) inShape_addr, (int) inOffset_addr);
     }
 }

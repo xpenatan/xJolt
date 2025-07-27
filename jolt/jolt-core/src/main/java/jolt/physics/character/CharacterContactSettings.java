@@ -23,7 +23,7 @@ public class CharacterContactSettings extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new CharacterContactSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new CharacterContactSettings();
 CharacterContactSettings* nativeObject = (CharacterContactSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean get_mCanPushCharacter() {
         return internal_native_get_mCanPushCharacter((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 CharacterContactSettings* nativeObject = (CharacterContactSettings*)this_addr;
 return nativeObject->mCanPushCharacter;
 */
-    private static native boolean internal_native_get_mCanPushCharacter(long this_addr);
+    public static native boolean internal_native_get_mCanPushCharacter(long this_addr);
 
     public void set_mCanPushCharacter(boolean mCanPushCharacter) {
         internal_native_set_mCanPushCharacter((long) getNativeData().getCPointer(), mCanPushCharacter);
@@ -68,7 +68,7 @@ return nativeObject->mCanPushCharacter;
 CharacterContactSettings* nativeObject = (CharacterContactSettings*)this_addr;
 nativeObject->mCanPushCharacter = mCanPushCharacter;
 */
-    private static native void internal_native_set_mCanPushCharacter(long this_addr, boolean mCanPushCharacter);
+    public static native void internal_native_set_mCanPushCharacter(long this_addr, boolean mCanPushCharacter);
 
     public boolean get_mCanReceiveImpulses() {
         return internal_native_get_mCanReceiveImpulses((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ nativeObject->mCanPushCharacter = mCanPushCharacter;
 CharacterContactSettings* nativeObject = (CharacterContactSettings*)this_addr;
 return nativeObject->mCanReceiveImpulses;
 */
-    private static native boolean internal_native_get_mCanReceiveImpulses(long this_addr);
+    public static native boolean internal_native_get_mCanReceiveImpulses(long this_addr);
 
     public void set_mCanReceiveImpulses(boolean mCanReceiveImpulses) {
         internal_native_set_mCanReceiveImpulses((long) getNativeData().getCPointer(), mCanReceiveImpulses);
@@ -88,29 +88,5 @@ return nativeObject->mCanReceiveImpulses;
 CharacterContactSettings* nativeObject = (CharacterContactSettings*)this_addr;
 nativeObject->mCanReceiveImpulses = mCanReceiveImpulses;
 */
-    private static native void internal_native_set_mCanReceiveImpulses(long this_addr, boolean mCanReceiveImpulses);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static boolean native_get_mCanPushCharacter(long this_addr) {
-        return internal_native_get_mCanPushCharacter(this_addr);
-    }
-
-    public static void native_set_mCanPushCharacter(long this_addr, boolean mCanPushCharacter) {
-        internal_native_set_mCanPushCharacter(this_addr, mCanPushCharacter);
-    }
-
-    public static boolean native_get_mCanReceiveImpulses(long this_addr) {
-        return internal_native_get_mCanReceiveImpulses(this_addr);
-    }
-
-    public static void native_set_mCanReceiveImpulses(long this_addr, boolean mCanReceiveImpulses) {
-        internal_native_set_mCanReceiveImpulses(this_addr, mCanReceiveImpulses);
-    }
+    public static native void internal_native_set_mCanReceiveImpulses(long this_addr, boolean mCanReceiveImpulses);
 }

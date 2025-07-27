@@ -47,7 +47,7 @@ public class SkeletalAnimationJointState extends IDLBase {
 SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void FromMatrix(Mat44 inMatrix) {
         internal_native_FromMatrix((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0));
@@ -57,7 +57,7 @@ delete nativeObject;
 SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_addr;
 nativeObject->FromMatrix(*((Mat44* )inMatrix_addr));
 */
-    private static native void internal_native_FromMatrix(long this_addr, long inMatrix_addr);
+    public static native void internal_native_FromMatrix(long this_addr, long inMatrix_addr);
 
     public Mat44 ToMatrix() {
         long pointer = internal_native_ToMatrix((long) getNativeData().getCPointer());
@@ -74,7 +74,7 @@ SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_a
 static Mat44 copy_addr;
 copy_addr = nativeObject->ToMatrix();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_ToMatrix(long this_addr);
+    public static native long internal_native_ToMatrix(long this_addr);
 
     public Vec3 get_mTranslation() {
         long pointer = internal_native_get_mTranslation((long) getNativeData().getCPointer());
@@ -90,7 +90,7 @@ return (jlong)&copy_addr;*/
 SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_addr;
 return (jlong)&nativeObject->mTranslation;
 */
-    private static native long internal_native_get_mTranslation(long this_addr);
+    public static native long internal_native_get_mTranslation(long this_addr);
 
     public void set_mTranslation(Vec3 mTranslation) {
         internal_native_set_mTranslation((long) getNativeData().getCPointer(), (long) (mTranslation != null ? mTranslation.getNativeData().getCPointer() : 0));
@@ -100,7 +100,7 @@ return (jlong)&nativeObject->mTranslation;
 SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_addr;
 nativeObject->mTranslation = *((Vec3*)mTranslation_addr);
 */
-    private static native void internal_native_set_mTranslation(long this_addr, long mTranslation_addr);
+    public static native void internal_native_set_mTranslation(long this_addr, long mTranslation_addr);
 
     public Quat get_mRotation() {
         long pointer = internal_native_get_mRotation((long) getNativeData().getCPointer());
@@ -116,7 +116,7 @@ nativeObject->mTranslation = *((Vec3*)mTranslation_addr);
 SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_addr;
 return (jlong)&nativeObject->mRotation;
 */
-    private static native long internal_native_get_mRotation(long this_addr);
+    public static native long internal_native_get_mRotation(long this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation((long) getNativeData().getCPointer(), (long) (mRotation != null ? mRotation.getNativeData().getCPointer() : 0));
@@ -126,33 +126,5 @@ return (jlong)&nativeObject->mRotation;
 SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_addr;
 nativeObject->mRotation = *((Quat*)mRotation_addr);
 */
-    private static native void internal_native_set_mRotation(long this_addr, long mRotation_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_FromMatrix(long this_addr, long inMatrix_addr) {
-        internal_native_FromMatrix(this_addr, inMatrix_addr);
-    }
-
-    public static long native_ToMatrix(long this_addr) {
-        return internal_native_ToMatrix(this_addr);
-    }
-
-    public static long native_get_mTranslation(long this_addr) {
-        return internal_native_get_mTranslation(this_addr);
-    }
-
-    public static void native_set_mTranslation(long this_addr, long mTranslation_addr) {
-        internal_native_set_mTranslation(this_addr, mTranslation_addr);
-    }
-
-    public static long native_get_mRotation(long this_addr) {
-        return internal_native_get_mRotation(this_addr);
-    }
-
-    public static void native_set_mRotation(long this_addr, long mRotation_addr) {
-        internal_native_set_mRotation(this_addr, mRotation_addr);
-    }
+    public static native void internal_native_set_mRotation(long this_addr, long mRotation_addr);
 }

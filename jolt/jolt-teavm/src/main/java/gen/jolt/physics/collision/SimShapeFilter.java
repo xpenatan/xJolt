@@ -25,7 +25,7 @@ var jsObj = new jolt.SimShapeFilter();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SimShapeFilter();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,13 +51,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SimShapeFilter);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SimShapeFilter);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
+    public static native void internal_native_deleteNative(int this_addr);
 }

@@ -26,7 +26,7 @@ public class OffsetCenterOfMassShapeSettings extends DecoratedShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new OffsetCenterOfMassShapeSettings(*((Vec3* )inOffset_addr), (Shape* )inShape_addr);
 */
-    private static native long internal_native_create_Vec3_Shape(long inOffset_addr, long inShape_addr);
+    public static native long internal_native_create_Vec3_Shape(long inOffset_addr, long inShape_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,7 +50,7 @@ return (jlong)new OffsetCenterOfMassShapeSettings(*((Vec3* )inOffset_addr), (Sha
 OffsetCenterOfMassShapeSettings* nativeObject = (OffsetCenterOfMassShapeSettings*)this_addr;
 return (jlong)&nativeObject->mOffset;
 */
-    private static native long internal_native_get_mOffset(long this_addr);
+    public static native long internal_native_get_mOffset(long this_addr);
 
     public void set_mOffset(Vec3 mOffset) {
         internal_native_set_mOffset((long) getNativeData().getCPointer(), (long) (mOffset != null ? mOffset.getNativeData().getCPointer() : 0));
@@ -60,17 +60,5 @@ return (jlong)&nativeObject->mOffset;
 OffsetCenterOfMassShapeSettings* nativeObject = (OffsetCenterOfMassShapeSettings*)this_addr;
 nativeObject->mOffset = *((Vec3*)mOffset_addr);
 */
-    private static native void internal_native_set_mOffset(long this_addr, long mOffset_addr);
-
-    public static long native_create_Vec3_Shape(long inOffset_addr, long inShape_addr) {
-        return internal_native_create_Vec3_Shape(inOffset_addr, inShape_addr);
-    }
-
-    public static long native_get_mOffset(long this_addr) {
-        return internal_native_get_mOffset(this_addr);
-    }
-
-    public static void native_set_mOffset(long this_addr, long mOffset_addr) {
-        internal_native_set_mOffset(this_addr, mOffset_addr);
-    }
+    public static native void internal_native_set_mOffset(long this_addr, long mOffset_addr);
 }

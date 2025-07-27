@@ -38,11 +38,9 @@ public interface IDLEnum<T extends IDLEnum<T>> {
             throw new IllegalArgumentException("Flags cannot be null");
         }
         T custom = flag1.getCustom();
-        synchronized (custom) {
-            int result = flag1.getValue() | flag2.getValue();
-            custom.setValue(result);
-            return custom;
-        }
+        int result = flag1.getValue() | flag2.getValue();
+        custom.setValue(result);
+        return custom;
     }
 
     static <T extends IDLEnum<T>> T and(IDLEnum<T> flag1, T flag2) {
@@ -50,10 +48,8 @@ public interface IDLEnum<T extends IDLEnum<T>> {
             throw new IllegalArgumentException("Flags cannot be null");
         }
         T custom = flag1.getCustom();
-        synchronized (custom) {
-            int result = flag1.getValue() & flag2.getValue();
-            custom.setValue(result);
-            return custom;
-        }
+        int result = flag1.getValue() & flag2.getValue();
+        custom.setValue(result);
+        return custom;
     }
 }

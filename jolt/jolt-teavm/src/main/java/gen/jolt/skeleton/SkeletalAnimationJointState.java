@@ -48,7 +48,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void FromMatrix(Mat44 inMatrix) {
         internal_native_FromMatrix((int) (long) getNativeData().getCPointer(), (int) (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0));
@@ -59,7 +59,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);
 jsObj.FromMatrix(inMatrix_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inMatrix_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);jsObj.FromMatrix(inMatrix_addr);")
-    private static native void internal_native_FromMatrix(int this_addr, int inMatrix_addr);
+    public static native void internal_native_FromMatrix(int this_addr, int inMatrix_addr);
 
     public Mat44 ToMatrix() {
         int pointer = internal_native_ToMatrix((int) (long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);var returnedJSObj = jsObj.ToMatrix();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_ToMatrix(int this_addr);
+    public static native int internal_native_ToMatrix(int this_addr);
 
     public Vec3 get_mTranslation() {
         int pointer = internal_native_get_mTranslation((int) (long) getNativeData().getCPointer());
@@ -97,7 +97,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);var returnedJSObj = jsObj.get_mTranslation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mTranslation(int this_addr);
+    public static native int internal_native_get_mTranslation(int this_addr);
 
     public void set_mTranslation(Vec3 mTranslation) {
         internal_native_set_mTranslation((int) (long) getNativeData().getCPointer(), (int) (long) (mTranslation != null ? mTranslation.getNativeData().getCPointer() : 0));
@@ -108,7 +108,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);
 jsObj.set_mTranslation(mTranslation_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mTranslation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);jsObj.set_mTranslation(mTranslation_addr);")
-    private static native void internal_native_set_mTranslation(int this_addr, int mTranslation_addr);
+    public static native void internal_native_set_mTranslation(int this_addr, int mTranslation_addr);
 
     public Quat get_mRotation() {
         int pointer = internal_native_get_mRotation((int) (long) getNativeData().getCPointer());
@@ -127,7 +127,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);var returnedJSObj = jsObj.get_mRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mRotation(int this_addr);
+    public static native int internal_native_get_mRotation(int this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation((int) (long) getNativeData().getCPointer(), (int) (long) (mRotation != null ? mRotation.getNativeData().getCPointer() : 0));
@@ -138,33 +138,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);
 jsObj.set_mRotation(mRotation_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRotation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);jsObj.set_mRotation(mRotation_addr);")
-    private static native void internal_native_set_mRotation(int this_addr, int mRotation_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_FromMatrix(long this_addr, long inMatrix_addr) {
-        internal_native_FromMatrix((int) this_addr, (int) inMatrix_addr);
-    }
-
-    public static long native_ToMatrix(long this_addr) {
-        return internal_native_ToMatrix((int) this_addr);
-    }
-
-    public static long native_get_mTranslation(long this_addr) {
-        return internal_native_get_mTranslation((int) this_addr);
-    }
-
-    public static void native_set_mTranslation(long this_addr, long mTranslation_addr) {
-        internal_native_set_mTranslation((int) this_addr, (int) mTranslation_addr);
-    }
-
-    public static long native_get_mRotation(long this_addr) {
-        return internal_native_get_mRotation((int) this_addr);
-    }
-
-    public static void native_set_mRotation(long this_addr, long mRotation_addr) {
-        internal_native_set_mRotation((int) this_addr, (int) mRotation_addr);
-    }
+    public static native void internal_native_set_mRotation(int this_addr, int mRotation_addr);
 }

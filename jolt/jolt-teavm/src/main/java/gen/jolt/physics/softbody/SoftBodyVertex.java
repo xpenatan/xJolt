@@ -46,7 +46,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mPreviousPosition() {
         int pointer = internal_native_get_mPreviousPosition((int) (long) getNativeData().getCPointer());
@@ -65,7 +65,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);var returnedJSObj = jsObj.get_mPreviousPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPreviousPosition(int this_addr);
+    public static native int internal_native_get_mPreviousPosition(int this_addr);
 
     public void set_mPreviousPosition(Vec3 mPreviousPosition) {
         internal_native_set_mPreviousPosition((int) (long) getNativeData().getCPointer(), (int) (long) (mPreviousPosition != null ? mPreviousPosition.getNativeData().getCPointer() : 0));
@@ -76,7 +76,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);
 jsObj.set_mPreviousPosition(mPreviousPosition_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPreviousPosition_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);jsObj.set_mPreviousPosition(mPreviousPosition_addr);")
-    private static native void internal_native_set_mPreviousPosition(int this_addr, int mPreviousPosition_addr);
+    public static native void internal_native_set_mPreviousPosition(int this_addr, int mPreviousPosition_addr);
 
     public Vec3 get_mPosition() {
         int pointer = internal_native_get_mPosition((int) (long) getNativeData().getCPointer());
@@ -95,7 +95,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);var returnedJSObj = jsObj.get_mPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPosition(int this_addr);
+    public static native int internal_native_get_mPosition(int this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition((int) (long) getNativeData().getCPointer(), (int) (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);
 jsObj.set_mPosition(mPosition_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPosition_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);jsObj.set_mPosition(mPosition_addr);")
-    private static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
+    public static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
 
     public Vec3 get_mVelocity() {
         int pointer = internal_native_get_mVelocity((int) (long) getNativeData().getCPointer());
@@ -125,7 +125,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);var returnedJSObj = jsObj.get_mVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mVelocity(int this_addr);
+    public static native int internal_native_get_mVelocity(int this_addr);
 
     public void set_mVelocity(Vec3 mVelocity) {
         internal_native_set_mVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (mVelocity != null ? mVelocity.getNativeData().getCPointer() : 0));
@@ -136,7 +136,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);
 jsObj.set_mVelocity(mVelocity_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mVelocity_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);jsObj.set_mVelocity(mVelocity_addr);")
-    private static native void internal_native_set_mVelocity(int this_addr, int mVelocity_addr);
+    public static native void internal_native_set_mVelocity(int this_addr, int mVelocity_addr);
 
     public float get_mInvMass() {
         return internal_native_get_mInvMass((int) (long) getNativeData().getCPointer());
@@ -147,7 +147,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);
 return jsObj.get_mInvMass();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);return jsObj.get_mInvMass();")
-    private static native float internal_native_get_mInvMass(int this_addr);
+    public static native float internal_native_get_mInvMass(int this_addr);
 
     public void set_mInvMass(float mInvMass) {
         internal_native_set_mInvMass((int) (long) getNativeData().getCPointer(), mInvMass);
@@ -158,41 +158,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);
 jsObj.set_mInvMass(mInvMass);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvMass"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertex);jsObj.set_mInvMass(mInvMass);")
-    private static native void internal_native_set_mInvMass(int this_addr, float mInvMass);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mPreviousPosition(long this_addr) {
-        return internal_native_get_mPreviousPosition((int) this_addr);
-    }
-
-    public static void native_set_mPreviousPosition(long this_addr, long mPreviousPosition_addr) {
-        internal_native_set_mPreviousPosition((int) this_addr, (int) mPreviousPosition_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition((int) this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition((int) this_addr, (int) mPosition_addr);
-    }
-
-    public static long native_get_mVelocity(long this_addr) {
-        return internal_native_get_mVelocity((int) this_addr);
-    }
-
-    public static void native_set_mVelocity(long this_addr, long mVelocity_addr) {
-        internal_native_set_mVelocity((int) this_addr, (int) mVelocity_addr);
-    }
-
-    public static float native_get_mInvMass(long this_addr) {
-        return internal_native_get_mInvMass((int) this_addr);
-    }
-
-    public static void native_set_mInvMass(long this_addr, float mInvMass) {
-        internal_native_set_mInvMass((int) this_addr, mInvMass);
-    }
+    public static native void internal_native_set_mInvMass(int this_addr, float mInvMass);
 }

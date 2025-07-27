@@ -88,7 +88,7 @@ public class PhysicsSystem extends IDLBase {
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void Init(int inMaxBodies, int inNumBodyMutexes, int inMaxBodyPairs, int inMaxContactConstraints, BroadPhaseLayerInterface inBroadPhaseLayerInterface, ObjectVsBroadPhaseLayerFilter inObjectVsBroadPhaseLayerFilter, ObjectLayerPairFilter inObjectLayerPairFilter) {
         internal_native_Init((long) getNativeData().getCPointer(), inMaxBodies, inNumBodyMutexes, inMaxBodyPairs, inMaxContactConstraints, (long) (inBroadPhaseLayerInterface != null ? inBroadPhaseLayerInterface.getNativeData().getCPointer() : 0), (long) (inObjectVsBroadPhaseLayerFilter != null ? inObjectVsBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerPairFilter != null ? inObjectLayerPairFilter.getNativeData().getCPointer() : 0));
@@ -98,7 +98,7 @@ delete nativeObject;
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->Init((int)inMaxBodies, (int)inNumBodyMutexes, (int)inMaxBodyPairs, (int)inMaxContactConstraints, *((BroadPhaseLayerInterface* )inBroadPhaseLayerInterface_addr), *((ObjectVsBroadPhaseLayerFilter* )inObjectVsBroadPhaseLayerFilter_addr), *((ObjectLayerPairFilter* )inObjectLayerPairFilter_addr));
 */
-    private static native void internal_native_Init(long this_addr, int inMaxBodies, int inNumBodyMutexes, int inMaxBodyPairs, int inMaxContactConstraints, long inBroadPhaseLayerInterface_addr, long inObjectVsBroadPhaseLayerFilter_addr, long inObjectLayerPairFilter_addr);
+    public static native void internal_native_Init(long this_addr, int inMaxBodies, int inNumBodyMutexes, int inMaxBodyPairs, int inMaxContactConstraints, long inBroadPhaseLayerInterface_addr, long inObjectVsBroadPhaseLayerFilter_addr, long inObjectLayerPairFilter_addr);
 
     public void Update(float inDeltaTime, int inCollisionSteps, TempAllocator inTempAllocator, JobSystem inJobSystem) {
         internal_native_Update((long) getNativeData().getCPointer(), inDeltaTime, inCollisionSteps, (long) (inTempAllocator != null ? inTempAllocator.getNativeData().getCPointer() : 0), (long) (inJobSystem != null ? inJobSystem.getNativeData().getCPointer() : 0));
@@ -108,7 +108,7 @@ nativeObject->Init((int)inMaxBodies, (int)inNumBodyMutexes, (int)inMaxBodyPairs,
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->Update((float)inDeltaTime, (int)inCollisionSteps, (TempAllocator* )inTempAllocator_addr, (JobSystem* )inJobSystem_addr);
 */
-    private static native void internal_native_Update(long this_addr, float inDeltaTime, int inCollisionSteps, long inTempAllocator_addr, long inJobSystem_addr);
+    public static native void internal_native_Update(long this_addr, float inDeltaTime, int inCollisionSteps, long inTempAllocator_addr, long inJobSystem_addr);
 
     public void SetGravity(Vec3 inGravity) {
         internal_native_SetGravity((long) getNativeData().getCPointer(), (long) (inGravity != null ? inGravity.getNativeData().getCPointer() : 0));
@@ -118,7 +118,7 @@ nativeObject->Update((float)inDeltaTime, (int)inCollisionSteps, (TempAllocator* 
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SetGravity(*((Vec3* )inGravity_addr));
 */
-    private static native void internal_native_SetGravity(long this_addr, long inGravity_addr);
+    public static native void internal_native_SetGravity(long this_addr, long inGravity_addr);
 
     public Vec3 GetGravity() {
         long pointer = internal_native_GetGravity((long) getNativeData().getCPointer());
@@ -135,7 +135,7 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetGravity();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetGravity(long this_addr);
+    public static native long internal_native_GetGravity(long this_addr);
 
     public PhysicsSettings GetPhysicsSettings() {
         long pointer = internal_native_GetPhysicsSettings((long) getNativeData().getCPointer());
@@ -151,7 +151,7 @@ return (jlong)&copy_addr;*/
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetPhysicsSettings();
 */
-    private static native long internal_native_GetPhysicsSettings(long this_addr);
+    public static native long internal_native_GetPhysicsSettings(long this_addr);
 
     public void SetPhysicsSettings(PhysicsSettings inPhysicsSettings) {
         internal_native_SetPhysicsSettings((long) getNativeData().getCPointer(), (long) (inPhysicsSettings != null ? inPhysicsSettings.getNativeData().getCPointer() : 0));
@@ -161,7 +161,7 @@ return (jlong)&nativeObject->GetPhysicsSettings();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SetPhysicsSettings(*((PhysicsSettings* )inPhysicsSettings_addr));
 */
-    private static native void internal_native_SetPhysicsSettings(long this_addr, long inPhysicsSettings_addr);
+    public static native void internal_native_SetPhysicsSettings(long this_addr, long inPhysicsSettings_addr);
 
     public int GetNumBodies() {
         return internal_native_GetNumBodies((long) getNativeData().getCPointer());
@@ -171,7 +171,7 @@ nativeObject->SetPhysicsSettings(*((PhysicsSettings* )inPhysicsSettings_addr));
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return nativeObject->GetNumBodies();
 */
-    private static native int internal_native_GetNumBodies(long this_addr);
+    public static native int internal_native_GetNumBodies(long this_addr);
 
     public int GetNumActiveBodies(EBodyType inBodyType) {
         return internal_native_GetNumActiveBodies((long) getNativeData().getCPointer(), (long) (inBodyType != null ? inBodyType.getValue() : 0));
@@ -181,7 +181,7 @@ return nativeObject->GetNumBodies();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return nativeObject->GetNumActiveBodies((::EBodyType)inBodyType);
 */
-    private static native int internal_native_GetNumActiveBodies(long this_addr, long inBodyType);
+    public static native int internal_native_GetNumActiveBodies(long this_addr, long inBodyType);
 
     public int GetMaxBodies() {
         return internal_native_GetMaxBodies((long) getNativeData().getCPointer());
@@ -191,7 +191,7 @@ return nativeObject->GetNumActiveBodies((::EBodyType)inBodyType);
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return nativeObject->GetMaxBodies();
 */
-    private static native int internal_native_GetMaxBodies(long this_addr);
+    public static native int internal_native_GetMaxBodies(long this_addr);
 
     public void GetBodies(BodyIDVector outBodies) {
         internal_native_GetBodies((long) getNativeData().getCPointer(), (long) (outBodies != null ? outBodies.getNativeData().getCPointer() : 0));
@@ -201,7 +201,7 @@ return nativeObject->GetMaxBodies();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->GetBodies(*((BodyIDVector* )outBodies_addr));
 */
-    private static native void internal_native_GetBodies(long this_addr, long outBodies_addr);
+    public static native void internal_native_GetBodies(long this_addr, long outBodies_addr);
 
     public void GetActiveBodies(EBodyType inBodyType, BodyIDVector outBodies) {
         internal_native_GetActiveBodies((long) getNativeData().getCPointer(), (long) (inBodyType != null ? inBodyType.getValue() : 0), (long) (outBodies != null ? outBodies.getNativeData().getCPointer() : 0));
@@ -211,7 +211,7 @@ nativeObject->GetBodies(*((BodyIDVector* )outBodies_addr));
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->GetActiveBodies((::EBodyType)inBodyType, *((BodyIDVector* )outBodies_addr));
 */
-    private static native void internal_native_GetActiveBodies(long this_addr, long inBodyType, long outBodies_addr);
+    public static native void internal_native_GetActiveBodies(long this_addr, long inBodyType, long outBodies_addr);
 
     public AABox GetBounds() {
         long pointer = internal_native_GetBounds((long) getNativeData().getCPointer());
@@ -228,7 +228,7 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 static AABox copy_addr;
 copy_addr = nativeObject->GetBounds();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetBounds(long this_addr);
+    public static native long internal_native_GetBounds(long this_addr);
 
     public void AddConstraint(Constraint inConstraint) {
         internal_native_AddConstraint((long) getNativeData().getCPointer(), (long) (inConstraint != null ? inConstraint.getNativeData().getCPointer() : 0));
@@ -238,7 +238,7 @@ return (jlong)&copy_addr;*/
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->AddConstraint((Constraint* )inConstraint_addr);
 */
-    private static native void internal_native_AddConstraint(long this_addr, long inConstraint_addr);
+    public static native void internal_native_AddConstraint(long this_addr, long inConstraint_addr);
 
     public void RemoveConstraint(Constraint inConstraint) {
         internal_native_RemoveConstraint((long) getNativeData().getCPointer(), (long) (inConstraint != null ? inConstraint.getNativeData().getCPointer() : 0));
@@ -248,7 +248,7 @@ nativeObject->AddConstraint((Constraint* )inConstraint_addr);
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->RemoveConstraint((Constraint* )inConstraint_addr);
 */
-    private static native void internal_native_RemoveConstraint(long this_addr, long inConstraint_addr);
+    public static native void internal_native_RemoveConstraint(long this_addr, long inConstraint_addr);
 
     public void SetContactListener(ContactListener inListener) {
         internal_native_SetContactListener((long) getNativeData().getCPointer(), (long) (inListener != null ? inListener.getNativeData().getCPointer() : 0));
@@ -258,7 +258,7 @@ nativeObject->RemoveConstraint((Constraint* )inConstraint_addr);
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SetContactListener((ContactListener* )inListener_addr);
 */
-    private static native void internal_native_SetContactListener(long this_addr, long inListener_addr);
+    public static native void internal_native_SetContactListener(long this_addr, long inListener_addr);
 
     public ContactListener GetContactListener() {
         long pointer = internal_native_GetContactListener((long) getNativeData().getCPointer());
@@ -275,7 +275,7 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 ContactListener* obj = nativeObject->GetContactListener();
 return (jlong)obj;
 */
-    private static native long internal_native_GetContactListener(long this_addr);
+    public static native long internal_native_GetContactListener(long this_addr);
 
     public void SetSoftBodyContactListener(SoftBodyContactListener inListener) {
         internal_native_SetSoftBodyContactListener((long) getNativeData().getCPointer(), (long) (inListener != null ? inListener.getNativeData().getCPointer() : 0));
@@ -285,7 +285,7 @@ return (jlong)obj;
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SetSoftBodyContactListener((SoftBodyContactListener* )inListener_addr);
 */
-    private static native void internal_native_SetSoftBodyContactListener(long this_addr, long inListener_addr);
+    public static native void internal_native_SetSoftBodyContactListener(long this_addr, long inListener_addr);
 
     public SoftBodyContactListener GetSoftBodyContactListener() {
         long pointer = internal_native_GetSoftBodyContactListener((long) getNativeData().getCPointer());
@@ -302,7 +302,7 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 SoftBodyContactListener* obj = nativeObject->GetSoftBodyContactListener();
 return (jlong)obj;
 */
-    private static native long internal_native_GetSoftBodyContactListener(long this_addr);
+    public static native long internal_native_GetSoftBodyContactListener(long this_addr);
 
     public void OptimizeBroadPhase() {
         internal_native_OptimizeBroadPhase((long) getNativeData().getCPointer());
@@ -312,7 +312,7 @@ return (jlong)obj;
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->OptimizeBroadPhase();
 */
-    private static native void internal_native_OptimizeBroadPhase(long this_addr);
+    public static native void internal_native_OptimizeBroadPhase(long this_addr);
 
     public BodyInterface GetBodyInterface() {
         long pointer = internal_native_GetBodyInterface((long) getNativeData().getCPointer());
@@ -328,7 +328,7 @@ nativeObject->OptimizeBroadPhase();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBodyInterface();
 */
-    private static native long internal_native_GetBodyInterface(long this_addr);
+    public static native long internal_native_GetBodyInterface(long this_addr);
 
     public BodyInterface GetBodyInterfaceNoLock() {
         long pointer = internal_native_GetBodyInterfaceNoLock((long) getNativeData().getCPointer());
@@ -344,7 +344,7 @@ return (jlong)&nativeObject->GetBodyInterface();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBodyInterfaceNoLock();
 */
-    private static native long internal_native_GetBodyInterfaceNoLock(long this_addr);
+    public static native long internal_native_GetBodyInterfaceNoLock(long this_addr);
 
     public BodyLockInterfaceNoLock GetBodyLockInterfaceNoLock() {
         long pointer = internal_native_GetBodyLockInterfaceNoLock((long) getNativeData().getCPointer());
@@ -360,7 +360,7 @@ return (jlong)&nativeObject->GetBodyInterfaceNoLock();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBodyLockInterfaceNoLock();
 */
-    private static native long internal_native_GetBodyLockInterfaceNoLock(long this_addr);
+    public static native long internal_native_GetBodyLockInterfaceNoLock(long this_addr);
 
     public BodyLockInterfaceLocking GetBodyLockInterface() {
         long pointer = internal_native_GetBodyLockInterface((long) getNativeData().getCPointer());
@@ -376,7 +376,7 @@ return (jlong)&nativeObject->GetBodyLockInterfaceNoLock();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBodyLockInterface();
 */
-    private static native long internal_native_GetBodyLockInterface(long this_addr);
+    public static native long internal_native_GetBodyLockInterface(long this_addr);
 
     public BroadPhaseQuery GetBroadPhaseQuery() {
         long pointer = internal_native_GetBroadPhaseQuery((long) getNativeData().getCPointer());
@@ -392,7 +392,7 @@ return (jlong)&nativeObject->GetBodyLockInterface();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBroadPhaseQuery();
 */
-    private static native long internal_native_GetBroadPhaseQuery(long this_addr);
+    public static native long internal_native_GetBroadPhaseQuery(long this_addr);
 
     public NarrowPhaseQuery GetNarrowPhaseQuery() {
         long pointer = internal_native_GetNarrowPhaseQuery((long) getNativeData().getCPointer());
@@ -408,7 +408,7 @@ return (jlong)&nativeObject->GetBroadPhaseQuery();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetNarrowPhaseQuery();
 */
-    private static native long internal_native_GetNarrowPhaseQuery(long this_addr);
+    public static native long internal_native_GetNarrowPhaseQuery(long this_addr);
 
     public NarrowPhaseQuery GetNarrowPhaseQueryNoLock() {
         long pointer = internal_native_GetNarrowPhaseQueryNoLock((long) getNativeData().getCPointer());
@@ -424,7 +424,7 @@ return (jlong)&nativeObject->GetNarrowPhaseQuery();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetNarrowPhaseQueryNoLock();
 */
-    private static native long internal_native_GetNarrowPhaseQueryNoLock(long this_addr);
+    public static native long internal_native_GetNarrowPhaseQueryNoLock(long this_addr);
 
     public void SaveState(StateRecorder inStream, EStateRecorderState inState, StateRecorderFilter inFilter) {
         internal_native_SaveState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), (long) (inState != null ? inState.getValue() : 0), (long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0));
@@ -434,7 +434,7 @@ return (jlong)&nativeObject->GetNarrowPhaseQueryNoLock();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SaveState(*((StateRecorder* )inStream_addr), (::EStateRecorderState)inState, (StateRecorderFilter* )inFilter_addr);
 */
-    private static native void internal_native_SaveState(long this_addr, long inStream_addr, long inState, long inFilter_addr);
+    public static native void internal_native_SaveState(long this_addr, long inStream_addr, long inState, long inFilter_addr);
 
     public void SaveState(StateRecorder inStream, EStateRecorderState inState) {
         internal_native_SaveState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), (long) (inState != null ? inState.getValue() : 0));
@@ -444,7 +444,7 @@ nativeObject->SaveState(*((StateRecorder* )inStream_addr), (::EStateRecorderStat
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SaveState(*((StateRecorder* )inStream_addr), (::EStateRecorderState)inState);
 */
-    private static native void internal_native_SaveState(long this_addr, long inStream_addr, long inState);
+    public static native void internal_native_SaveState(long this_addr, long inStream_addr, long inState);
 
     public void SaveState(StateRecorder inStream) {
         internal_native_SaveState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0));
@@ -454,7 +454,7 @@ nativeObject->SaveState(*((StateRecorder* )inStream_addr), (::EStateRecorderStat
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SaveState(*((StateRecorder* )inStream_addr));
 */
-    private static native void internal_native_SaveState(long this_addr, long inStream_addr);
+    public static native void internal_native_SaveState(long this_addr, long inStream_addr);
 
     public boolean RestoreState(StateRecorder inStream, StateRecorderFilter inFilter) {
         return internal_native_RestoreState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0), (long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0));
@@ -464,7 +464,7 @@ nativeObject->SaveState(*((StateRecorder* )inStream_addr));
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return nativeObject->RestoreState(*((StateRecorder* )inStream_addr), (StateRecorderFilter* )inFilter_addr);
 */
-    private static native boolean internal_native_RestoreState(long this_addr, long inStream_addr, long inFilter_addr);
+    public static native boolean internal_native_RestoreState(long this_addr, long inStream_addr, long inFilter_addr);
 
     public boolean RestoreState(StateRecorder inStream) {
         return internal_native_RestoreState((long) getNativeData().getCPointer(), (long) (inStream != null ? inStream.getNativeData().getCPointer() : 0));
@@ -474,7 +474,7 @@ return nativeObject->RestoreState(*((StateRecorder* )inStream_addr), (StateRecor
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return nativeObject->RestoreState(*((StateRecorder* )inStream_addr));
 */
-    private static native boolean internal_native_RestoreState(long this_addr, long inStream_addr);
+    public static native boolean internal_native_RestoreState(long this_addr, long inStream_addr);
 
     public void AddStepListener(PhysicsStepListener inListener) {
         internal_native_AddStepListener_0((long) getNativeData().getCPointer(), (long) (inListener != null ? inListener.getNativeData().getCPointer() : 0));
@@ -484,7 +484,7 @@ return nativeObject->RestoreState(*((StateRecorder* )inStream_addr));
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->AddStepListener((PhysicsStepListener* )inListener_addr);
 */
-    private static native void internal_native_AddStepListener_0(long this_addr, long inListener_addr);
+    public static native void internal_native_AddStepListener_0(long this_addr, long inListener_addr);
 
     public void AddStepListener(VehicleConstraint inListener) {
         internal_native_AddStepListener_1((long) getNativeData().getCPointer(), (long) (inListener != null ? inListener.getNativeData().getCPointer() : 0));
@@ -494,7 +494,7 @@ nativeObject->AddStepListener((PhysicsStepListener* )inListener_addr);
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->AddStepListener((VehicleConstraint* )inListener_addr);
 */
-    private static native void internal_native_AddStepListener_1(long this_addr, long inListener_addr);
+    public static native void internal_native_AddStepListener_1(long this_addr, long inListener_addr);
 
     public void RemoveStepListener(PhysicsStepListener inListener) {
         internal_native_RemoveStepListener_0((long) getNativeData().getCPointer(), (long) (inListener != null ? inListener.getNativeData().getCPointer() : 0));
@@ -504,7 +504,7 @@ nativeObject->AddStepListener((VehicleConstraint* )inListener_addr);
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->RemoveStepListener((PhysicsStepListener* )inListener_addr);
 */
-    private static native void internal_native_RemoveStepListener_0(long this_addr, long inListener_addr);
+    public static native void internal_native_RemoveStepListener_0(long this_addr, long inListener_addr);
 
     public void RemoveStepListener(VehicleConstraint inListener) {
         internal_native_RemoveStepListener_1((long) getNativeData().getCPointer(), (long) (inListener != null ? inListener.getNativeData().getCPointer() : 0));
@@ -514,7 +514,7 @@ nativeObject->RemoveStepListener((PhysicsStepListener* )inListener_addr);
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->RemoveStepListener((VehicleConstraint* )inListener_addr);
 */
-    private static native void internal_native_RemoveStepListener_1(long this_addr, long inListener_addr);
+    public static native void internal_native_RemoveStepListener_1(long this_addr, long inListener_addr);
 
     public void SetBodyActivationListener(BodyActivationListener inListener) {
         internal_native_SetBodyActivationListener((long) getNativeData().getCPointer(), (long) (inListener != null ? inListener.getNativeData().getCPointer() : 0));
@@ -524,7 +524,7 @@ nativeObject->RemoveStepListener((VehicleConstraint* )inListener_addr);
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SetBodyActivationListener((BodyActivationListener* )inListener_addr);
 */
-    private static native void internal_native_SetBodyActivationListener(long this_addr, long inListener_addr);
+    public static native void internal_native_SetBodyActivationListener(long this_addr, long inListener_addr);
 
     public BodyActivationListener GetBodyActivationListener() {
         long pointer = internal_native_GetBodyActivationListener((long) getNativeData().getCPointer());
@@ -541,7 +541,7 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 const BodyActivationListener* obj = nativeObject->GetBodyActivationListener();
 return (jlong)obj;
 */
-    private static native long internal_native_GetBodyActivationListener(long this_addr);
+    public static native long internal_native_GetBodyActivationListener(long this_addr);
 
     public boolean WereBodiesInContact(BodyID inBodyID1, BodyID inBodyID2) {
         return internal_native_WereBodiesInContact((long) getNativeData().getCPointer(), (long) (inBodyID1 != null ? inBodyID1.getNativeData().getCPointer() : 0), (long) (inBodyID2 != null ? inBodyID2.getNativeData().getCPointer() : 0));
@@ -551,7 +551,7 @@ return (jlong)obj;
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return nativeObject->WereBodiesInContact(*((BodyID* )inBodyID1_addr), *((BodyID* )inBodyID2_addr));
 */
-    private static native boolean internal_native_WereBodiesInContact(long this_addr, long inBodyID1_addr, long inBodyID2_addr);
+    public static native boolean internal_native_WereBodiesInContact(long this_addr, long inBodyID1_addr, long inBodyID2_addr);
 
     public void SetSimShapeFilter(SimShapeFilter inShapeFilter) {
         internal_native_SetSimShapeFilter((long) getNativeData().getCPointer(), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0));
@@ -561,7 +561,7 @@ return nativeObject->WereBodiesInContact(*((BodyID* )inBodyID1_addr), *((BodyID*
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SetSimShapeFilter((SimShapeFilter* )inShapeFilter_addr);
 */
-    private static native void internal_native_SetSimShapeFilter(long this_addr, long inShapeFilter_addr);
+    public static native void internal_native_SetSimShapeFilter(long this_addr, long inShapeFilter_addr);
 
     public SimShapeFilter GetSimShapeFilter() {
         long pointer = internal_native_GetSimShapeFilter((long) getNativeData().getCPointer());
@@ -578,169 +578,5 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 const SimShapeFilter* obj = nativeObject->GetSimShapeFilter();
 return (jlong)obj;
 */
-    private static native long internal_native_GetSimShapeFilter(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_Init(long this_addr, int inMaxBodies, int inNumBodyMutexes, int inMaxBodyPairs, int inMaxContactConstraints, long inBroadPhaseLayerInterface_addr, long inObjectVsBroadPhaseLayerFilter_addr, long inObjectLayerPairFilter_addr) {
-        internal_native_Init(this_addr, inMaxBodies, inNumBodyMutexes, inMaxBodyPairs, inMaxContactConstraints, inBroadPhaseLayerInterface_addr, inObjectVsBroadPhaseLayerFilter_addr, inObjectLayerPairFilter_addr);
-    }
-
-    public static void native_Update(long this_addr, float inDeltaTime, int inCollisionSteps, long inTempAllocator_addr, long inJobSystem_addr) {
-        internal_native_Update(this_addr, inDeltaTime, inCollisionSteps, inTempAllocator_addr, inJobSystem_addr);
-    }
-
-    public static void native_SetGravity(long this_addr, long inGravity_addr) {
-        internal_native_SetGravity(this_addr, inGravity_addr);
-    }
-
-    public static long native_GetGravity(long this_addr) {
-        return internal_native_GetGravity(this_addr);
-    }
-
-    public static long native_GetPhysicsSettings(long this_addr) {
-        return internal_native_GetPhysicsSettings(this_addr);
-    }
-
-    public static void native_SetPhysicsSettings(long this_addr, long inPhysicsSettings_addr) {
-        internal_native_SetPhysicsSettings(this_addr, inPhysicsSettings_addr);
-    }
-
-    public static int native_GetNumBodies(long this_addr) {
-        return internal_native_GetNumBodies(this_addr);
-    }
-
-    public static int native_GetNumActiveBodies(long this_addr, long inBodyType) {
-        return internal_native_GetNumActiveBodies(this_addr, inBodyType);
-    }
-
-    public static int native_GetMaxBodies(long this_addr) {
-        return internal_native_GetMaxBodies(this_addr);
-    }
-
-    public static void native_GetBodies(long this_addr, long outBodies_addr) {
-        internal_native_GetBodies(this_addr, outBodies_addr);
-    }
-
-    public static void native_GetActiveBodies(long this_addr, long inBodyType, long outBodies_addr) {
-        internal_native_GetActiveBodies(this_addr, inBodyType, outBodies_addr);
-    }
-
-    public static long native_GetBounds(long this_addr) {
-        return internal_native_GetBounds(this_addr);
-    }
-
-    public static void native_AddConstraint(long this_addr, long inConstraint_addr) {
-        internal_native_AddConstraint(this_addr, inConstraint_addr);
-    }
-
-    public static void native_RemoveConstraint(long this_addr, long inConstraint_addr) {
-        internal_native_RemoveConstraint(this_addr, inConstraint_addr);
-    }
-
-    public static void native_SetContactListener(long this_addr, long inListener_addr) {
-        internal_native_SetContactListener(this_addr, inListener_addr);
-    }
-
-    public static long native_GetContactListener(long this_addr) {
-        return internal_native_GetContactListener(this_addr);
-    }
-
-    public static void native_SetSoftBodyContactListener(long this_addr, long inListener_addr) {
-        internal_native_SetSoftBodyContactListener(this_addr, inListener_addr);
-    }
-
-    public static long native_GetSoftBodyContactListener(long this_addr) {
-        return internal_native_GetSoftBodyContactListener(this_addr);
-    }
-
-    public static void native_OptimizeBroadPhase(long this_addr) {
-        internal_native_OptimizeBroadPhase(this_addr);
-    }
-
-    public static long native_GetBodyInterface(long this_addr) {
-        return internal_native_GetBodyInterface(this_addr);
-    }
-
-    public static long native_GetBodyInterfaceNoLock(long this_addr) {
-        return internal_native_GetBodyInterfaceNoLock(this_addr);
-    }
-
-    public static long native_GetBodyLockInterfaceNoLock(long this_addr) {
-        return internal_native_GetBodyLockInterfaceNoLock(this_addr);
-    }
-
-    public static long native_GetBodyLockInterface(long this_addr) {
-        return internal_native_GetBodyLockInterface(this_addr);
-    }
-
-    public static long native_GetBroadPhaseQuery(long this_addr) {
-        return internal_native_GetBroadPhaseQuery(this_addr);
-    }
-
-    public static long native_GetNarrowPhaseQuery(long this_addr) {
-        return internal_native_GetNarrowPhaseQuery(this_addr);
-    }
-
-    public static long native_GetNarrowPhaseQueryNoLock(long this_addr) {
-        return internal_native_GetNarrowPhaseQueryNoLock(this_addr);
-    }
-
-    public static void native_SaveState(long this_addr, long inStream_addr, long inState, long inFilter_addr) {
-        internal_native_SaveState(this_addr, inStream_addr, inState, inFilter_addr);
-    }
-
-    public static void native_SaveState(long this_addr, long inStream_addr, long inState) {
-        internal_native_SaveState(this_addr, inStream_addr, inState);
-    }
-
-    public static void native_SaveState(long this_addr, long inStream_addr) {
-        internal_native_SaveState(this_addr, inStream_addr);
-    }
-
-    public static boolean native_RestoreState(long this_addr, long inStream_addr, long inFilter_addr) {
-        return internal_native_RestoreState(this_addr, inStream_addr, inFilter_addr);
-    }
-
-    public static boolean native_RestoreState(long this_addr, long inStream_addr) {
-        return internal_native_RestoreState(this_addr, inStream_addr);
-    }
-
-    public static void native_AddStepListener_0(long this_addr, long inListener_addr) {
-        internal_native_AddStepListener_0(this_addr, inListener_addr);
-    }
-
-    public static void native_AddStepListener_1(long this_addr, long inListener_addr) {
-        internal_native_AddStepListener_1(this_addr, inListener_addr);
-    }
-
-    public static void native_RemoveStepListener_0(long this_addr, long inListener_addr) {
-        internal_native_RemoveStepListener_0(this_addr, inListener_addr);
-    }
-
-    public static void native_RemoveStepListener_1(long this_addr, long inListener_addr) {
-        internal_native_RemoveStepListener_1(this_addr, inListener_addr);
-    }
-
-    public static void native_SetBodyActivationListener(long this_addr, long inListener_addr) {
-        internal_native_SetBodyActivationListener(this_addr, inListener_addr);
-    }
-
-    public static long native_GetBodyActivationListener(long this_addr) {
-        return internal_native_GetBodyActivationListener(this_addr);
-    }
-
-    public static boolean native_WereBodiesInContact(long this_addr, long inBodyID1_addr, long inBodyID2_addr) {
-        return internal_native_WereBodiesInContact(this_addr, inBodyID1_addr, inBodyID2_addr);
-    }
-
-    public static void native_SetSimShapeFilter(long this_addr, long inShapeFilter_addr) {
-        internal_native_SetSimShapeFilter(this_addr, inShapeFilter_addr);
-    }
-
-    public static long native_GetSimShapeFilter(long this_addr) {
-        return internal_native_GetSimShapeFilter(this_addr);
-    }
+    public static native long internal_native_GetSimShapeFilter(long this_addr);
 }

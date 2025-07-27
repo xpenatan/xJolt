@@ -46,7 +46,7 @@ public class CompoundShapeSubShape extends IDLBase {
 CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 GetPositionCOM() {
         long pointer = internal_native_GetPositionCOM((long) getNativeData().getCPointer());
@@ -63,7 +63,7 @@ CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPositionCOM();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetPositionCOM(long this_addr);
+    public static native long internal_native_GetPositionCOM(long this_addr);
 
     public Quat GetRotation() {
         long pointer = internal_native_GetRotation((long) getNativeData().getCPointer());
@@ -80,7 +80,7 @@ CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetRotation();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetRotation(long this_addr);
+    public static native long internal_native_GetRotation(long this_addr);
 
     public Shape get_mShape() {
         long pointer = internal_native_get_mShape((long) getNativeData().getCPointer());
@@ -97,7 +97,7 @@ CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 const Shape* attr = nativeObject->mShape;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mShape(long this_addr);
+    public static native long internal_native_get_mShape(long this_addr);
 
     public void set_mShape(Shape mShape) {
         internal_native_set_mShape((long) getNativeData().getCPointer(), (long) (mShape != null ? mShape.getNativeData().getCPointer() : 0));
@@ -107,7 +107,7 @@ return (jlong)attr;
 CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 nativeObject->mShape = (Shape*)mShape_addr;
 */
-    private static native void internal_native_set_mShape(long this_addr, long mShape_addr);
+    public static native void internal_native_set_mShape(long this_addr, long mShape_addr);
 
     public int get_mUserData() {
         return internal_native_get_mUserData((long) getNativeData().getCPointer());
@@ -117,7 +117,7 @@ nativeObject->mShape = (Shape*)mShape_addr;
 CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 return nativeObject->mUserData;
 */
-    private static native int internal_native_get_mUserData(long this_addr);
+    public static native int internal_native_get_mUserData(long this_addr);
 
     public void set_mUserData(int mUserData) {
         internal_native_set_mUserData((long) getNativeData().getCPointer(), mUserData);
@@ -127,33 +127,5 @@ return nativeObject->mUserData;
 CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 nativeObject->mUserData = mUserData;
 */
-    private static native void internal_native_set_mUserData(long this_addr, int mUserData);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_GetPositionCOM(long this_addr) {
-        return internal_native_GetPositionCOM(this_addr);
-    }
-
-    public static long native_GetRotation(long this_addr) {
-        return internal_native_GetRotation(this_addr);
-    }
-
-    public static long native_get_mShape(long this_addr) {
-        return internal_native_get_mShape(this_addr);
-    }
-
-    public static void native_set_mShape(long this_addr, long mShape_addr) {
-        internal_native_set_mShape(this_addr, mShape_addr);
-    }
-
-    public static int native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData(this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, int mUserData) {
-        internal_native_set_mUserData(this_addr, mUserData);
-    }
+    public static native void internal_native_set_mUserData(long this_addr, int mUserData);
 }

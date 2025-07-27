@@ -40,7 +40,7 @@ ConvexShapeSettings* nativeObject = (ConvexShapeSettings*)this_addr;
 const PhysicsMaterial* attr = nativeObject->mMaterial;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mMaterial(long this_addr);
+    public static native long internal_native_get_mMaterial(long this_addr);
 
     public void set_mMaterial(PhysicsMaterial mMaterial) {
         internal_native_set_mMaterial((long) getNativeData().getCPointer(), (long) (mMaterial != null ? mMaterial.getNativeData().getCPointer() : 0));
@@ -50,7 +50,7 @@ return (jlong)attr;
 ConvexShapeSettings* nativeObject = (ConvexShapeSettings*)this_addr;
 nativeObject->mMaterial = (PhysicsMaterial*)mMaterial_addr;
 */
-    private static native void internal_native_set_mMaterial(long this_addr, long mMaterial_addr);
+    public static native void internal_native_set_mMaterial(long this_addr, long mMaterial_addr);
 
     public float get_mDensity() {
         return internal_native_get_mDensity((long) getNativeData().getCPointer());
@@ -60,7 +60,7 @@ nativeObject->mMaterial = (PhysicsMaterial*)mMaterial_addr;
 ConvexShapeSettings* nativeObject = (ConvexShapeSettings*)this_addr;
 return nativeObject->mDensity;
 */
-    private static native float internal_native_get_mDensity(long this_addr);
+    public static native float internal_native_get_mDensity(long this_addr);
 
     public void set_mDensity(float mDensity) {
         internal_native_set_mDensity((long) getNativeData().getCPointer(), mDensity);
@@ -70,21 +70,5 @@ return nativeObject->mDensity;
 ConvexShapeSettings* nativeObject = (ConvexShapeSettings*)this_addr;
 nativeObject->mDensity = mDensity;
 */
-    private static native void internal_native_set_mDensity(long this_addr, float mDensity);
-
-    public static long native_get_mMaterial(long this_addr) {
-        return internal_native_get_mMaterial(this_addr);
-    }
-
-    public static void native_set_mMaterial(long this_addr, long mMaterial_addr) {
-        internal_native_set_mMaterial(this_addr, mMaterial_addr);
-    }
-
-    public static float native_get_mDensity(long this_addr) {
-        return internal_native_get_mDensity(this_addr);
-    }
-
-    public static void native_set_mDensity(long this_addr, float mDensity) {
-        internal_native_set_mDensity(this_addr, mDensity);
-    }
+    public static native void internal_native_set_mDensity(long this_addr, float mDensity);
 }

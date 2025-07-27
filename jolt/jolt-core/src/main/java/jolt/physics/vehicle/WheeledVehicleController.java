@@ -28,7 +28,7 @@ public class WheeledVehicleController extends VehicleController {
     /*[-JNI;-NATIVE]
 return (jlong)new WheeledVehicleController(*((WheeledVehicleControllerSettings* )inSettings_addr), *((VehicleConstraint* )inConstraint_addr));
 */
-    private static native long internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr);
+    public static native long internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -46,7 +46,7 @@ return (jlong)new WheeledVehicleController(*((WheeledVehicleControllerSettings* 
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 nativeObject->SetDriverInput((float)inForward, (float)inRight, (float)inBrake, (float)inHandBrake);
 */
-    private static native void internal_native_SetDriverInput(long this_addr, float inForward, float inRight, float inBrake, float inHandBrake);
+    public static native void internal_native_SetDriverInput(long this_addr, float inForward, float inRight, float inBrake, float inHandBrake);
 
     public void SetForwardInput(float inForward) {
         internal_native_SetForwardInput((long) getNativeData().getCPointer(), inForward);
@@ -56,7 +56,7 @@ nativeObject->SetDriverInput((float)inForward, (float)inRight, (float)inBrake, (
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 nativeObject->SetForwardInput((float)inForward);
 */
-    private static native void internal_native_SetForwardInput(long this_addr, float inForward);
+    public static native void internal_native_SetForwardInput(long this_addr, float inForward);
 
     public float GetForwardInput() {
         return internal_native_GetForwardInput((long) getNativeData().getCPointer());
@@ -66,7 +66,7 @@ nativeObject->SetForwardInput((float)inForward);
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 return nativeObject->GetForwardInput();
 */
-    private static native float internal_native_GetForwardInput(long this_addr);
+    public static native float internal_native_GetForwardInput(long this_addr);
 
     public void SetRightInput(float inRight) {
         internal_native_SetRightInput((long) getNativeData().getCPointer(), inRight);
@@ -76,7 +76,7 @@ return nativeObject->GetForwardInput();
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 nativeObject->SetRightInput((float)inRight);
 */
-    private static native void internal_native_SetRightInput(long this_addr, float inRight);
+    public static native void internal_native_SetRightInput(long this_addr, float inRight);
 
     public float GetRightInput() {
         return internal_native_GetRightInput((long) getNativeData().getCPointer());
@@ -86,7 +86,7 @@ nativeObject->SetRightInput((float)inRight);
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 return nativeObject->GetRightInput();
 */
-    private static native float internal_native_GetRightInput(long this_addr);
+    public static native float internal_native_GetRightInput(long this_addr);
 
     public void SetBrakeInput(float inBrake) {
         internal_native_SetBrakeInput((long) getNativeData().getCPointer(), inBrake);
@@ -96,7 +96,7 @@ return nativeObject->GetRightInput();
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 nativeObject->SetBrakeInput((float)inBrake);
 */
-    private static native void internal_native_SetBrakeInput(long this_addr, float inBrake);
+    public static native void internal_native_SetBrakeInput(long this_addr, float inBrake);
 
     public float GetBrakeInput() {
         return internal_native_GetBrakeInput((long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ nativeObject->SetBrakeInput((float)inBrake);
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 return nativeObject->GetBrakeInput();
 */
-    private static native float internal_native_GetBrakeInput(long this_addr);
+    public static native float internal_native_GetBrakeInput(long this_addr);
 
     public void SetHandBrakeInput(float inHandBrake) {
         internal_native_SetHandBrakeInput((long) getNativeData().getCPointer(), inHandBrake);
@@ -116,7 +116,7 @@ return nativeObject->GetBrakeInput();
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 nativeObject->SetHandBrakeInput((float)inHandBrake);
 */
-    private static native void internal_native_SetHandBrakeInput(long this_addr, float inHandBrake);
+    public static native void internal_native_SetHandBrakeInput(long this_addr, float inHandBrake);
 
     public float GetHandBrakeInput() {
         return internal_native_GetHandBrakeInput((long) getNativeData().getCPointer());
@@ -126,7 +126,7 @@ nativeObject->SetHandBrakeInput((float)inHandBrake);
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 return nativeObject->GetHandBrakeInput();
 */
-    private static native float internal_native_GetHandBrakeInput(long this_addr);
+    public static native float internal_native_GetHandBrakeInput(long this_addr);
 
     public VehicleEngine GetEngine() {
         long pointer = internal_native_GetEngine((long) getNativeData().getCPointer());
@@ -142,7 +142,7 @@ return nativeObject->GetHandBrakeInput();
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 return (jlong)&nativeObject->GetEngine();
 */
-    private static native long internal_native_GetEngine(long this_addr);
+    public static native long internal_native_GetEngine(long this_addr);
 
     public VehicleTransmission GetTransmission() {
         long pointer = internal_native_GetTransmission((long) getNativeData().getCPointer());
@@ -158,7 +158,7 @@ return (jlong)&nativeObject->GetEngine();
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 return (jlong)&nativeObject->GetTransmission();
 */
-    private static native long internal_native_GetTransmission(long this_addr);
+    public static native long internal_native_GetTransmission(long this_addr);
 
     public ArrayVehicleDifferentialSettings GetDifferentials() {
         long pointer = internal_native_GetDifferentials((long) getNativeData().getCPointer());
@@ -174,7 +174,7 @@ return (jlong)&nativeObject->GetTransmission();
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 return (jlong)&nativeObject->GetDifferentials();
 */
-    private static native long internal_native_GetDifferentials(long this_addr);
+    public static native long internal_native_GetDifferentials(long this_addr);
 
     public float GetDifferentialLimitedSlipRatio() {
         return internal_native_GetDifferentialLimitedSlipRatio((long) getNativeData().getCPointer());
@@ -184,7 +184,7 @@ return (jlong)&nativeObject->GetDifferentials();
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 return nativeObject->GetDifferentialLimitedSlipRatio();
 */
-    private static native float internal_native_GetDifferentialLimitedSlipRatio(long this_addr);
+    public static native float internal_native_GetDifferentialLimitedSlipRatio(long this_addr);
 
     public void SetDifferentialLimitedSlipRatio(float inV) {
         internal_native_SetDifferentialLimitedSlipRatio((long) getNativeData().getCPointer(), inV);
@@ -194,7 +194,7 @@ return nativeObject->GetDifferentialLimitedSlipRatio();
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 nativeObject->SetDifferentialLimitedSlipRatio((float)inV);
 */
-    private static native void internal_native_SetDifferentialLimitedSlipRatio(long this_addr, float inV);
+    public static native void internal_native_SetDifferentialLimitedSlipRatio(long this_addr, float inV);
 
     public float GetWheelSpeedAtClutch() {
         return internal_native_GetWheelSpeedAtClutch((long) getNativeData().getCPointer());
@@ -204,69 +204,5 @@ nativeObject->SetDifferentialLimitedSlipRatio((float)inV);
 WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
 return nativeObject->GetWheelSpeedAtClutch();
 */
-    private static native float internal_native_GetWheelSpeedAtClutch(long this_addr);
-
-    public static long native_create_WheeledVehicleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr) {
-        return internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint(inSettings_addr, inConstraint_addr);
-    }
-
-    public static void native_SetDriverInput(long this_addr, float inForward, float inRight, float inBrake, float inHandBrake) {
-        internal_native_SetDriverInput(this_addr, inForward, inRight, inBrake, inHandBrake);
-    }
-
-    public static void native_SetForwardInput(long this_addr, float inForward) {
-        internal_native_SetForwardInput(this_addr, inForward);
-    }
-
-    public static float native_GetForwardInput(long this_addr) {
-        return internal_native_GetForwardInput(this_addr);
-    }
-
-    public static void native_SetRightInput(long this_addr, float inRight) {
-        internal_native_SetRightInput(this_addr, inRight);
-    }
-
-    public static float native_GetRightInput(long this_addr) {
-        return internal_native_GetRightInput(this_addr);
-    }
-
-    public static void native_SetBrakeInput(long this_addr, float inBrake) {
-        internal_native_SetBrakeInput(this_addr, inBrake);
-    }
-
-    public static float native_GetBrakeInput(long this_addr) {
-        return internal_native_GetBrakeInput(this_addr);
-    }
-
-    public static void native_SetHandBrakeInput(long this_addr, float inHandBrake) {
-        internal_native_SetHandBrakeInput(this_addr, inHandBrake);
-    }
-
-    public static float native_GetHandBrakeInput(long this_addr) {
-        return internal_native_GetHandBrakeInput(this_addr);
-    }
-
-    public static long native_GetEngine(long this_addr) {
-        return internal_native_GetEngine(this_addr);
-    }
-
-    public static long native_GetTransmission(long this_addr) {
-        return internal_native_GetTransmission(this_addr);
-    }
-
-    public static long native_GetDifferentials(long this_addr) {
-        return internal_native_GetDifferentials(this_addr);
-    }
-
-    public static float native_GetDifferentialLimitedSlipRatio(long this_addr) {
-        return internal_native_GetDifferentialLimitedSlipRatio(this_addr);
-    }
-
-    public static void native_SetDifferentialLimitedSlipRatio(long this_addr, float inV) {
-        internal_native_SetDifferentialLimitedSlipRatio(this_addr, inV);
-    }
-
-    public static float native_GetWheelSpeedAtClutch(long this_addr) {
-        return internal_native_GetWheelSpeedAtClutch(this_addr);
-    }
+    public static native float internal_native_GetWheelSpeedAtClutch(long this_addr);
 }

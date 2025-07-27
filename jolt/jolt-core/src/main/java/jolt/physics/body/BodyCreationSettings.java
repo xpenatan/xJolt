@@ -68,7 +68,7 @@ public class BodyCreationSettings extends IDLBase {
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public ShapeSettings GetShapeSettings() {
         long pointer = internal_native_GetShapeSettings((long) getNativeData().getCPointer());
@@ -85,7 +85,7 @@ BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 const ShapeSettings* obj = nativeObject->GetShapeSettings();
 return (jlong)obj;
 */
-    private static native long internal_native_GetShapeSettings(long this_addr);
+    public static native long internal_native_GetShapeSettings(long this_addr);
 
     public void SetShapeSettings(ShapeSettings inShape) {
         internal_native_SetShapeSettings((long) getNativeData().getCPointer(), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0));
@@ -95,7 +95,7 @@ return (jlong)obj;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->SetShapeSettings((ShapeSettings* )inShape_addr);
 */
-    private static native void internal_native_SetShapeSettings(long this_addr, long inShape_addr);
+    public static native void internal_native_SetShapeSettings(long this_addr, long inShape_addr);
 
     public ShapeResult ConvertShapeSettings() {
         long pointer = internal_native_ConvertShapeSettings((long) getNativeData().getCPointer());
@@ -112,7 +112,7 @@ BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 static Shape::ShapeResult copy_addr;
 copy_addr = nativeObject->ConvertShapeSettings();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_ConvertShapeSettings(long this_addr);
+    public static native long internal_native_ConvertShapeSettings(long this_addr);
 
     public Shape GetShape() {
         long pointer = internal_native_GetShape((long) getNativeData().getCPointer());
@@ -129,7 +129,7 @@ BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 const Shape* obj = nativeObject->GetShape();
 return (jlong)obj;
 */
-    private static native long internal_native_GetShape(long this_addr);
+    public static native long internal_native_GetShape(long this_addr);
 
     public void SetShape(Shape inShape) {
         internal_native_SetShape((long) getNativeData().getCPointer(), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0));
@@ -139,7 +139,7 @@ return (jlong)obj;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->SetShape((Shape* )inShape_addr);
 */
-    private static native void internal_native_SetShape(long this_addr, long inShape_addr);
+    public static native void internal_native_SetShape(long this_addr, long inShape_addr);
 
     public boolean HasMassProperties() {
         return internal_native_HasMassProperties((long) getNativeData().getCPointer());
@@ -149,7 +149,7 @@ nativeObject->SetShape((Shape* )inShape_addr);
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->HasMassProperties();
 */
-    private static native boolean internal_native_HasMassProperties(long this_addr);
+    public static native boolean internal_native_HasMassProperties(long this_addr);
 
     public MassProperties GetMassProperties() {
         long pointer = internal_native_GetMassProperties((long) getNativeData().getCPointer());
@@ -166,7 +166,7 @@ BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 static MassProperties copy_addr;
 copy_addr = nativeObject->GetMassProperties();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetMassProperties(long this_addr);
+    public static native long internal_native_GetMassProperties(long this_addr);
 
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
@@ -182,7 +182,7 @@ return (jlong)&copy_addr;*/
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    private static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition((long) getNativeData().getCPointer(), (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -192,7 +192,7 @@ return (jlong)&nativeObject->mPosition;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mPosition = *((Vec3*)mPosition_addr);
 */
-    private static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
+    public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Quat get_mRotation() {
         long pointer = internal_native_get_mRotation((long) getNativeData().getCPointer());
@@ -208,7 +208,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mRotation;
 */
-    private static native long internal_native_get_mRotation(long this_addr);
+    public static native long internal_native_get_mRotation(long this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation((long) getNativeData().getCPointer(), (long) (mRotation != null ? mRotation.getNativeData().getCPointer() : 0));
@@ -218,7 +218,7 @@ return (jlong)&nativeObject->mRotation;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mRotation = *((Quat*)mRotation_addr);
 */
-    private static native void internal_native_set_mRotation(long this_addr, long mRotation_addr);
+    public static native void internal_native_set_mRotation(long this_addr, long mRotation_addr);
 
     public Vec3 get_mLinearVelocity() {
         long pointer = internal_native_get_mLinearVelocity((long) getNativeData().getCPointer());
@@ -234,7 +234,7 @@ nativeObject->mRotation = *((Quat*)mRotation_addr);
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mLinearVelocity;
 */
-    private static native long internal_native_get_mLinearVelocity(long this_addr);
+    public static native long internal_native_get_mLinearVelocity(long this_addr);
 
     public void set_mLinearVelocity(Vec3 mLinearVelocity) {
         internal_native_set_mLinearVelocity((long) getNativeData().getCPointer(), (long) (mLinearVelocity != null ? mLinearVelocity.getNativeData().getCPointer() : 0));
@@ -244,7 +244,7 @@ return (jlong)&nativeObject->mLinearVelocity;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
 */
-    private static native void internal_native_set_mLinearVelocity(long this_addr, long mLinearVelocity_addr);
+    public static native void internal_native_set_mLinearVelocity(long this_addr, long mLinearVelocity_addr);
 
     public Vec3 get_mAngularVelocity() {
         long pointer = internal_native_get_mAngularVelocity((long) getNativeData().getCPointer());
@@ -260,7 +260,7 @@ nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mAngularVelocity;
 */
-    private static native long internal_native_get_mAngularVelocity(long this_addr);
+    public static native long internal_native_get_mAngularVelocity(long this_addr);
 
     public void set_mAngularVelocity(Vec3 mAngularVelocity) {
         internal_native_set_mAngularVelocity((long) getNativeData().getCPointer(), (long) (mAngularVelocity != null ? mAngularVelocity.getNativeData().getCPointer() : 0));
@@ -270,7 +270,7 @@ return (jlong)&nativeObject->mAngularVelocity;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mAngularVelocity = *((Vec3*)mAngularVelocity_addr);
 */
-    private static native void internal_native_set_mAngularVelocity(long this_addr, long mAngularVelocity_addr);
+    public static native void internal_native_set_mAngularVelocity(long this_addr, long mAngularVelocity_addr);
 
     public long get_mUserData() {
         return internal_native_get_mUserData((long) getNativeData().getCPointer());
@@ -280,7 +280,7 @@ nativeObject->mAngularVelocity = *((Vec3*)mAngularVelocity_addr);
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mUserData;
 */
-    private static native long internal_native_get_mUserData(long this_addr);
+    public static native long internal_native_get_mUserData(long this_addr);
 
     public void set_mUserData(long mUserData) {
         internal_native_set_mUserData((long) getNativeData().getCPointer(), mUserData);
@@ -290,7 +290,7 @@ return nativeObject->mUserData;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mUserData = mUserData;
 */
-    private static native void internal_native_set_mUserData(long this_addr, long mUserData);
+    public static native void internal_native_set_mUserData(long this_addr, long mUserData);
 
     public int get_mObjectLayer() {
         return internal_native_get_mObjectLayer((long) getNativeData().getCPointer());
@@ -300,7 +300,7 @@ nativeObject->mUserData = mUserData;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mObjectLayer;
 */
-    private static native int internal_native_get_mObjectLayer(long this_addr);
+    public static native int internal_native_get_mObjectLayer(long this_addr);
 
     public void set_mObjectLayer(int mObjectLayer) {
         internal_native_set_mObjectLayer((long) getNativeData().getCPointer(), mObjectLayer);
@@ -310,7 +310,7 @@ return nativeObject->mObjectLayer;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mObjectLayer = mObjectLayer;
 */
-    private static native void internal_native_set_mObjectLayer(long this_addr, int mObjectLayer);
+    public static native void internal_native_set_mObjectLayer(long this_addr, int mObjectLayer);
 
     public CollisionGroup get_mCollisionGroup() {
         long pointer = internal_native_get_mCollisionGroup((long) getNativeData().getCPointer());
@@ -326,7 +326,7 @@ nativeObject->mObjectLayer = mObjectLayer;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mCollisionGroup;
 */
-    private static native long internal_native_get_mCollisionGroup(long this_addr);
+    public static native long internal_native_get_mCollisionGroup(long this_addr);
 
     public void set_mCollisionGroup(CollisionGroup mCollisionGroup) {
         internal_native_set_mCollisionGroup((long) getNativeData().getCPointer(), (long) (mCollisionGroup != null ? mCollisionGroup.getNativeData().getCPointer() : 0));
@@ -336,7 +336,7 @@ return (jlong)&nativeObject->mCollisionGroup;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mCollisionGroup = *((CollisionGroup*)mCollisionGroup_addr);
 */
-    private static native void internal_native_set_mCollisionGroup(long this_addr, long mCollisionGroup_addr);
+    public static native void internal_native_set_mCollisionGroup(long this_addr, long mCollisionGroup_addr);
 
     public EMotionType get_mMotionType() {
         int value = internal_native_get_mMotionType((long) getNativeData().getCPointer());
@@ -347,7 +347,7 @@ nativeObject->mCollisionGroup = *((CollisionGroup*)mCollisionGroup_addr);
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jint)nativeObject->mMotionType;
 */
-    private static native int internal_native_get_mMotionType(long this_addr);
+    public static native int internal_native_get_mMotionType(long this_addr);
 
     public void set_mMotionType(EMotionType mMotionType) {
         internal_native_set_mMotionType((long) getNativeData().getCPointer(), (long) (mMotionType != null ? mMotionType.getValue() : 0));
@@ -357,7 +357,7 @@ return (jint)nativeObject->mMotionType;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mMotionType = (::EMotionType)mMotionType;
 */
-    private static native void internal_native_set_mMotionType(long this_addr, long mMotionType);
+    public static native void internal_native_set_mMotionType(long this_addr, long mMotionType);
 
     public EAllowedDOFs get_mAllowedDOFs() {
         int value = internal_native_get_mAllowedDOFs((long) getNativeData().getCPointer());
@@ -368,7 +368,7 @@ nativeObject->mMotionType = (::EMotionType)mMotionType;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jint)nativeObject->mAllowedDOFs;
 */
-    private static native int internal_native_get_mAllowedDOFs(long this_addr);
+    public static native int internal_native_get_mAllowedDOFs(long this_addr);
 
     public void set_mAllowedDOFs(EAllowedDOFs mAllowedDOFs) {
         internal_native_set_mAllowedDOFs((long) getNativeData().getCPointer(), (long) (mAllowedDOFs != null ? mAllowedDOFs.getValue() : 0));
@@ -378,7 +378,7 @@ return (jint)nativeObject->mAllowedDOFs;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mAllowedDOFs = (::EAllowedDOFs)mAllowedDOFs;
 */
-    private static native void internal_native_set_mAllowedDOFs(long this_addr, long mAllowedDOFs);
+    public static native void internal_native_set_mAllowedDOFs(long this_addr, long mAllowedDOFs);
 
     public boolean get_mAllowDynamicOrKinematic() {
         return internal_native_get_mAllowDynamicOrKinematic((long) getNativeData().getCPointer());
@@ -388,7 +388,7 @@ nativeObject->mAllowedDOFs = (::EAllowedDOFs)mAllowedDOFs;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mAllowDynamicOrKinematic;
 */
-    private static native boolean internal_native_get_mAllowDynamicOrKinematic(long this_addr);
+    public static native boolean internal_native_get_mAllowDynamicOrKinematic(long this_addr);
 
     public void set_mAllowDynamicOrKinematic(boolean mAllowDynamicOrKinematic) {
         internal_native_set_mAllowDynamicOrKinematic((long) getNativeData().getCPointer(), mAllowDynamicOrKinematic);
@@ -398,7 +398,7 @@ return nativeObject->mAllowDynamicOrKinematic;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mAllowDynamicOrKinematic = mAllowDynamicOrKinematic;
 */
-    private static native void internal_native_set_mAllowDynamicOrKinematic(long this_addr, boolean mAllowDynamicOrKinematic);
+    public static native void internal_native_set_mAllowDynamicOrKinematic(long this_addr, boolean mAllowDynamicOrKinematic);
 
     public boolean get_mIsSensor() {
         return internal_native_get_mIsSensor((long) getNativeData().getCPointer());
@@ -408,7 +408,7 @@ nativeObject->mAllowDynamicOrKinematic = mAllowDynamicOrKinematic;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mIsSensor;
 */
-    private static native boolean internal_native_get_mIsSensor(long this_addr);
+    public static native boolean internal_native_get_mIsSensor(long this_addr);
 
     public void set_mIsSensor(boolean mIsSensor) {
         internal_native_set_mIsSensor((long) getNativeData().getCPointer(), mIsSensor);
@@ -418,7 +418,7 @@ return nativeObject->mIsSensor;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mIsSensor = mIsSensor;
 */
-    private static native void internal_native_set_mIsSensor(long this_addr, boolean mIsSensor);
+    public static native void internal_native_set_mIsSensor(long this_addr, boolean mIsSensor);
 
     public boolean get_mUseManifoldReduction() {
         return internal_native_get_mUseManifoldReduction((long) getNativeData().getCPointer());
@@ -428,7 +428,7 @@ nativeObject->mIsSensor = mIsSensor;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mUseManifoldReduction;
 */
-    private static native boolean internal_native_get_mUseManifoldReduction(long this_addr);
+    public static native boolean internal_native_get_mUseManifoldReduction(long this_addr);
 
     public void set_mUseManifoldReduction(boolean mUseManifoldReduction) {
         internal_native_set_mUseManifoldReduction((long) getNativeData().getCPointer(), mUseManifoldReduction);
@@ -438,7 +438,7 @@ return nativeObject->mUseManifoldReduction;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mUseManifoldReduction = mUseManifoldReduction;
 */
-    private static native void internal_native_set_mUseManifoldReduction(long this_addr, boolean mUseManifoldReduction);
+    public static native void internal_native_set_mUseManifoldReduction(long this_addr, boolean mUseManifoldReduction);
 
     public boolean get_mCollideKinematicVsNonDynamic() {
         return internal_native_get_mCollideKinematicVsNonDynamic((long) getNativeData().getCPointer());
@@ -448,7 +448,7 @@ nativeObject->mUseManifoldReduction = mUseManifoldReduction;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mCollideKinematicVsNonDynamic;
 */
-    private static native boolean internal_native_get_mCollideKinematicVsNonDynamic(long this_addr);
+    public static native boolean internal_native_get_mCollideKinematicVsNonDynamic(long this_addr);
 
     public void set_mCollideKinematicVsNonDynamic(boolean mCollideKinematicVsNonDynamic) {
         internal_native_set_mCollideKinematicVsNonDynamic((long) getNativeData().getCPointer(), mCollideKinematicVsNonDynamic);
@@ -458,7 +458,7 @@ return nativeObject->mCollideKinematicVsNonDynamic;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mCollideKinematicVsNonDynamic = mCollideKinematicVsNonDynamic;
 */
-    private static native void internal_native_set_mCollideKinematicVsNonDynamic(long this_addr, boolean mCollideKinematicVsNonDynamic);
+    public static native void internal_native_set_mCollideKinematicVsNonDynamic(long this_addr, boolean mCollideKinematicVsNonDynamic);
 
     public boolean get_mApplyGyroscopicForce() {
         return internal_native_get_mApplyGyroscopicForce((long) getNativeData().getCPointer());
@@ -468,7 +468,7 @@ nativeObject->mCollideKinematicVsNonDynamic = mCollideKinematicVsNonDynamic;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mApplyGyroscopicForce;
 */
-    private static native boolean internal_native_get_mApplyGyroscopicForce(long this_addr);
+    public static native boolean internal_native_get_mApplyGyroscopicForce(long this_addr);
 
     public void set_mApplyGyroscopicForce(boolean mApplyGyroscopicForce) {
         internal_native_set_mApplyGyroscopicForce((long) getNativeData().getCPointer(), mApplyGyroscopicForce);
@@ -478,7 +478,7 @@ return nativeObject->mApplyGyroscopicForce;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mApplyGyroscopicForce = mApplyGyroscopicForce;
 */
-    private static native void internal_native_set_mApplyGyroscopicForce(long this_addr, boolean mApplyGyroscopicForce);
+    public static native void internal_native_set_mApplyGyroscopicForce(long this_addr, boolean mApplyGyroscopicForce);
 
     public EMotionQuality get_mMotionQuality() {
         int value = internal_native_get_mMotionQuality((long) getNativeData().getCPointer());
@@ -489,7 +489,7 @@ nativeObject->mApplyGyroscopicForce = mApplyGyroscopicForce;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jint)nativeObject->mMotionQuality;
 */
-    private static native int internal_native_get_mMotionQuality(long this_addr);
+    public static native int internal_native_get_mMotionQuality(long this_addr);
 
     public void set_mMotionQuality(EMotionQuality mMotionQuality) {
         internal_native_set_mMotionQuality((long) getNativeData().getCPointer(), (long) (mMotionQuality != null ? mMotionQuality.getValue() : 0));
@@ -499,7 +499,7 @@ return (jint)nativeObject->mMotionQuality;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mMotionQuality = (::EMotionQuality)mMotionQuality;
 */
-    private static native void internal_native_set_mMotionQuality(long this_addr, long mMotionQuality);
+    public static native void internal_native_set_mMotionQuality(long this_addr, long mMotionQuality);
 
     public boolean get_mEnhancedInternalEdgeRemoval() {
         return internal_native_get_mEnhancedInternalEdgeRemoval((long) getNativeData().getCPointer());
@@ -509,7 +509,7 @@ nativeObject->mMotionQuality = (::EMotionQuality)mMotionQuality;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mEnhancedInternalEdgeRemoval;
 */
-    private static native boolean internal_native_get_mEnhancedInternalEdgeRemoval(long this_addr);
+    public static native boolean internal_native_get_mEnhancedInternalEdgeRemoval(long this_addr);
 
     public void set_mEnhancedInternalEdgeRemoval(boolean mEnhancedInternalEdgeRemoval) {
         internal_native_set_mEnhancedInternalEdgeRemoval((long) getNativeData().getCPointer(), mEnhancedInternalEdgeRemoval);
@@ -519,7 +519,7 @@ return nativeObject->mEnhancedInternalEdgeRemoval;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mEnhancedInternalEdgeRemoval = mEnhancedInternalEdgeRemoval;
 */
-    private static native void internal_native_set_mEnhancedInternalEdgeRemoval(long this_addr, boolean mEnhancedInternalEdgeRemoval);
+    public static native void internal_native_set_mEnhancedInternalEdgeRemoval(long this_addr, boolean mEnhancedInternalEdgeRemoval);
 
     public boolean get_mAllowSleeping() {
         return internal_native_get_mAllowSleeping((long) getNativeData().getCPointer());
@@ -529,7 +529,7 @@ nativeObject->mEnhancedInternalEdgeRemoval = mEnhancedInternalEdgeRemoval;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mAllowSleeping;
 */
-    private static native boolean internal_native_get_mAllowSleeping(long this_addr);
+    public static native boolean internal_native_get_mAllowSleeping(long this_addr);
 
     public void set_mAllowSleeping(boolean mAllowSleeping) {
         internal_native_set_mAllowSleeping((long) getNativeData().getCPointer(), mAllowSleeping);
@@ -539,7 +539,7 @@ return nativeObject->mAllowSleeping;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mAllowSleeping = mAllowSleeping;
 */
-    private static native void internal_native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping);
+    public static native void internal_native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping);
 
     public float get_mFriction() {
         return internal_native_get_mFriction((long) getNativeData().getCPointer());
@@ -549,7 +549,7 @@ nativeObject->mAllowSleeping = mAllowSleeping;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mFriction;
 */
-    private static native float internal_native_get_mFriction(long this_addr);
+    public static native float internal_native_get_mFriction(long this_addr);
 
     public void set_mFriction(float mFriction) {
         internal_native_set_mFriction((long) getNativeData().getCPointer(), mFriction);
@@ -559,7 +559,7 @@ return nativeObject->mFriction;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mFriction = mFriction;
 */
-    private static native void internal_native_set_mFriction(long this_addr, float mFriction);
+    public static native void internal_native_set_mFriction(long this_addr, float mFriction);
 
     public float get_mRestitution() {
         return internal_native_get_mRestitution((long) getNativeData().getCPointer());
@@ -569,7 +569,7 @@ nativeObject->mFriction = mFriction;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mRestitution;
 */
-    private static native float internal_native_get_mRestitution(long this_addr);
+    public static native float internal_native_get_mRestitution(long this_addr);
 
     public void set_mRestitution(float mRestitution) {
         internal_native_set_mRestitution((long) getNativeData().getCPointer(), mRestitution);
@@ -579,7 +579,7 @@ return nativeObject->mRestitution;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mRestitution = mRestitution;
 */
-    private static native void internal_native_set_mRestitution(long this_addr, float mRestitution);
+    public static native void internal_native_set_mRestitution(long this_addr, float mRestitution);
 
     public float get_mLinearDamping() {
         return internal_native_get_mLinearDamping((long) getNativeData().getCPointer());
@@ -589,7 +589,7 @@ nativeObject->mRestitution = mRestitution;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mLinearDamping;
 */
-    private static native float internal_native_get_mLinearDamping(long this_addr);
+    public static native float internal_native_get_mLinearDamping(long this_addr);
 
     public void set_mLinearDamping(float mLinearDamping) {
         internal_native_set_mLinearDamping((long) getNativeData().getCPointer(), mLinearDamping);
@@ -599,7 +599,7 @@ return nativeObject->mLinearDamping;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mLinearDamping = mLinearDamping;
 */
-    private static native void internal_native_set_mLinearDamping(long this_addr, float mLinearDamping);
+    public static native void internal_native_set_mLinearDamping(long this_addr, float mLinearDamping);
 
     public float get_mAngularDamping() {
         return internal_native_get_mAngularDamping((long) getNativeData().getCPointer());
@@ -609,7 +609,7 @@ nativeObject->mLinearDamping = mLinearDamping;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mAngularDamping;
 */
-    private static native float internal_native_get_mAngularDamping(long this_addr);
+    public static native float internal_native_get_mAngularDamping(long this_addr);
 
     public void set_mAngularDamping(float mAngularDamping) {
         internal_native_set_mAngularDamping((long) getNativeData().getCPointer(), mAngularDamping);
@@ -619,7 +619,7 @@ return nativeObject->mAngularDamping;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mAngularDamping = mAngularDamping;
 */
-    private static native void internal_native_set_mAngularDamping(long this_addr, float mAngularDamping);
+    public static native void internal_native_set_mAngularDamping(long this_addr, float mAngularDamping);
 
     public float get_mMaxLinearVelocity() {
         return internal_native_get_mMaxLinearVelocity((long) getNativeData().getCPointer());
@@ -629,7 +629,7 @@ nativeObject->mAngularDamping = mAngularDamping;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mMaxLinearVelocity;
 */
-    private static native float internal_native_get_mMaxLinearVelocity(long this_addr);
+    public static native float internal_native_get_mMaxLinearVelocity(long this_addr);
 
     public void set_mMaxLinearVelocity(float mMaxLinearVelocity) {
         internal_native_set_mMaxLinearVelocity((long) getNativeData().getCPointer(), mMaxLinearVelocity);
@@ -639,7 +639,7 @@ return nativeObject->mMaxLinearVelocity;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mMaxLinearVelocity = mMaxLinearVelocity;
 */
-    private static native void internal_native_set_mMaxLinearVelocity(long this_addr, float mMaxLinearVelocity);
+    public static native void internal_native_set_mMaxLinearVelocity(long this_addr, float mMaxLinearVelocity);
 
     public float get_mMaxAngularVelocity() {
         return internal_native_get_mMaxAngularVelocity((long) getNativeData().getCPointer());
@@ -649,7 +649,7 @@ nativeObject->mMaxLinearVelocity = mMaxLinearVelocity;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mMaxAngularVelocity;
 */
-    private static native float internal_native_get_mMaxAngularVelocity(long this_addr);
+    public static native float internal_native_get_mMaxAngularVelocity(long this_addr);
 
     public void set_mMaxAngularVelocity(float mMaxAngularVelocity) {
         internal_native_set_mMaxAngularVelocity((long) getNativeData().getCPointer(), mMaxAngularVelocity);
@@ -659,7 +659,7 @@ return nativeObject->mMaxAngularVelocity;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mMaxAngularVelocity = mMaxAngularVelocity;
 */
-    private static native void internal_native_set_mMaxAngularVelocity(long this_addr, float mMaxAngularVelocity);
+    public static native void internal_native_set_mMaxAngularVelocity(long this_addr, float mMaxAngularVelocity);
 
     public float get_mGravityFactor() {
         return internal_native_get_mGravityFactor((long) getNativeData().getCPointer());
@@ -669,7 +669,7 @@ nativeObject->mMaxAngularVelocity = mMaxAngularVelocity;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mGravityFactor;
 */
-    private static native float internal_native_get_mGravityFactor(long this_addr);
+    public static native float internal_native_get_mGravityFactor(long this_addr);
 
     public void set_mGravityFactor(float mGravityFactor) {
         internal_native_set_mGravityFactor((long) getNativeData().getCPointer(), mGravityFactor);
@@ -679,7 +679,7 @@ return nativeObject->mGravityFactor;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mGravityFactor = mGravityFactor;
 */
-    private static native void internal_native_set_mGravityFactor(long this_addr, float mGravityFactor);
+    public static native void internal_native_set_mGravityFactor(long this_addr, float mGravityFactor);
 
     public int get_mNumVelocityStepsOverride() {
         return internal_native_get_mNumVelocityStepsOverride((long) getNativeData().getCPointer());
@@ -689,7 +689,7 @@ nativeObject->mGravityFactor = mGravityFactor;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mNumVelocityStepsOverride;
 */
-    private static native int internal_native_get_mNumVelocityStepsOverride(long this_addr);
+    public static native int internal_native_get_mNumVelocityStepsOverride(long this_addr);
 
     public void set_mNumVelocityStepsOverride(int mNumVelocityStepsOverride) {
         internal_native_set_mNumVelocityStepsOverride((long) getNativeData().getCPointer(), mNumVelocityStepsOverride);
@@ -699,7 +699,7 @@ return nativeObject->mNumVelocityStepsOverride;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
 */
-    private static native void internal_native_set_mNumVelocityStepsOverride(long this_addr, int mNumVelocityStepsOverride);
+    public static native void internal_native_set_mNumVelocityStepsOverride(long this_addr, int mNumVelocityStepsOverride);
 
     public int get_mNumPositionStepsOverride() {
         return internal_native_get_mNumPositionStepsOverride((long) getNativeData().getCPointer());
@@ -709,7 +709,7 @@ nativeObject->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mNumPositionStepsOverride;
 */
-    private static native int internal_native_get_mNumPositionStepsOverride(long this_addr);
+    public static native int internal_native_get_mNumPositionStepsOverride(long this_addr);
 
     public void set_mNumPositionStepsOverride(int mNumPositionStepsOverride) {
         internal_native_set_mNumPositionStepsOverride((long) getNativeData().getCPointer(), mNumPositionStepsOverride);
@@ -719,7 +719,7 @@ return nativeObject->mNumPositionStepsOverride;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mNumPositionStepsOverride = mNumPositionStepsOverride;
 */
-    private static native void internal_native_set_mNumPositionStepsOverride(long this_addr, int mNumPositionStepsOverride);
+    public static native void internal_native_set_mNumPositionStepsOverride(long this_addr, int mNumPositionStepsOverride);
 
     public EOverrideMassProperties get_mOverrideMassProperties() {
         int value = internal_native_get_mOverrideMassProperties((long) getNativeData().getCPointer());
@@ -730,7 +730,7 @@ nativeObject->mNumPositionStepsOverride = mNumPositionStepsOverride;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jint)nativeObject->mOverrideMassProperties;
 */
-    private static native int internal_native_get_mOverrideMassProperties(long this_addr);
+    public static native int internal_native_get_mOverrideMassProperties(long this_addr);
 
     public void set_mOverrideMassProperties(EOverrideMassProperties mOverrideMassProperties) {
         internal_native_set_mOverrideMassProperties((long) getNativeData().getCPointer(), (long) (mOverrideMassProperties != null ? mOverrideMassProperties.getValue() : 0));
@@ -740,7 +740,7 @@ return (jint)nativeObject->mOverrideMassProperties;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mOverrideMassProperties = (::EOverrideMassProperties)mOverrideMassProperties;
 */
-    private static native void internal_native_set_mOverrideMassProperties(long this_addr, long mOverrideMassProperties);
+    public static native void internal_native_set_mOverrideMassProperties(long this_addr, long mOverrideMassProperties);
 
     public float get_mInertiaMultiplier() {
         return internal_native_get_mInertiaMultiplier((long) getNativeData().getCPointer());
@@ -750,7 +750,7 @@ nativeObject->mOverrideMassProperties = (::EOverrideMassProperties)mOverrideMass
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return nativeObject->mInertiaMultiplier;
 */
-    private static native float internal_native_get_mInertiaMultiplier(long this_addr);
+    public static native float internal_native_get_mInertiaMultiplier(long this_addr);
 
     public void set_mInertiaMultiplier(float mInertiaMultiplier) {
         internal_native_set_mInertiaMultiplier((long) getNativeData().getCPointer(), mInertiaMultiplier);
@@ -760,7 +760,7 @@ return nativeObject->mInertiaMultiplier;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mInertiaMultiplier = mInertiaMultiplier;
 */
-    private static native void internal_native_set_mInertiaMultiplier(long this_addr, float mInertiaMultiplier);
+    public static native void internal_native_set_mInertiaMultiplier(long this_addr, float mInertiaMultiplier);
 
     public MassProperties get_mMassPropertiesOverride() {
         long pointer = internal_native_get_mMassPropertiesOverride((long) getNativeData().getCPointer());
@@ -776,7 +776,7 @@ nativeObject->mInertiaMultiplier = mInertiaMultiplier;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mMassPropertiesOverride;
 */
-    private static native long internal_native_get_mMassPropertiesOverride(long this_addr);
+    public static native long internal_native_get_mMassPropertiesOverride(long this_addr);
 
     public void set_mMassPropertiesOverride(MassProperties mMassPropertiesOverride) {
         internal_native_set_mMassPropertiesOverride((long) getNativeData().getCPointer(), (long) (mMassPropertiesOverride != null ? mMassPropertiesOverride.getNativeData().getCPointer() : 0));
@@ -786,269 +786,5 @@ return (jlong)&nativeObject->mMassPropertiesOverride;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mMassPropertiesOverride = *((MassProperties*)mMassPropertiesOverride_addr);
 */
-    private static native void internal_native_set_mMassPropertiesOverride(long this_addr, long mMassPropertiesOverride_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_GetShapeSettings(long this_addr) {
-        return internal_native_GetShapeSettings(this_addr);
-    }
-
-    public static void native_SetShapeSettings(long this_addr, long inShape_addr) {
-        internal_native_SetShapeSettings(this_addr, inShape_addr);
-    }
-
-    public static long native_ConvertShapeSettings(long this_addr) {
-        return internal_native_ConvertShapeSettings(this_addr);
-    }
-
-    public static long native_GetShape(long this_addr) {
-        return internal_native_GetShape(this_addr);
-    }
-
-    public static void native_SetShape(long this_addr, long inShape_addr) {
-        internal_native_SetShape(this_addr, inShape_addr);
-    }
-
-    public static boolean native_HasMassProperties(long this_addr) {
-        return internal_native_HasMassProperties(this_addr);
-    }
-
-    public static long native_GetMassProperties(long this_addr) {
-        return internal_native_GetMassProperties(this_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition(this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition(this_addr, mPosition_addr);
-    }
-
-    public static long native_get_mRotation(long this_addr) {
-        return internal_native_get_mRotation(this_addr);
-    }
-
-    public static void native_set_mRotation(long this_addr, long mRotation_addr) {
-        internal_native_set_mRotation(this_addr, mRotation_addr);
-    }
-
-    public static long native_get_mLinearVelocity(long this_addr) {
-        return internal_native_get_mLinearVelocity(this_addr);
-    }
-
-    public static void native_set_mLinearVelocity(long this_addr, long mLinearVelocity_addr) {
-        internal_native_set_mLinearVelocity(this_addr, mLinearVelocity_addr);
-    }
-
-    public static long native_get_mAngularVelocity(long this_addr) {
-        return internal_native_get_mAngularVelocity(this_addr);
-    }
-
-    public static void native_set_mAngularVelocity(long this_addr, long mAngularVelocity_addr) {
-        internal_native_set_mAngularVelocity(this_addr, mAngularVelocity_addr);
-    }
-
-    public static long native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData(this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, long mUserData) {
-        internal_native_set_mUserData(this_addr, mUserData);
-    }
-
-    public static int native_get_mObjectLayer(long this_addr) {
-        return internal_native_get_mObjectLayer(this_addr);
-    }
-
-    public static void native_set_mObjectLayer(long this_addr, int mObjectLayer) {
-        internal_native_set_mObjectLayer(this_addr, mObjectLayer);
-    }
-
-    public static long native_get_mCollisionGroup(long this_addr) {
-        return internal_native_get_mCollisionGroup(this_addr);
-    }
-
-    public static void native_set_mCollisionGroup(long this_addr, long mCollisionGroup_addr) {
-        internal_native_set_mCollisionGroup(this_addr, mCollisionGroup_addr);
-    }
-
-    public static long native_get_mMotionType(long this_addr) {
-        return internal_native_get_mMotionType(this_addr);
-    }
-
-    public static void native_set_mMotionType(long this_addr, long mMotionType) {
-        internal_native_set_mMotionType(this_addr, mMotionType);
-    }
-
-    public static long native_get_mAllowedDOFs(long this_addr) {
-        return internal_native_get_mAllowedDOFs(this_addr);
-    }
-
-    public static void native_set_mAllowedDOFs(long this_addr, long mAllowedDOFs) {
-        internal_native_set_mAllowedDOFs(this_addr, mAllowedDOFs);
-    }
-
-    public static boolean native_get_mAllowDynamicOrKinematic(long this_addr) {
-        return internal_native_get_mAllowDynamicOrKinematic(this_addr);
-    }
-
-    public static void native_set_mAllowDynamicOrKinematic(long this_addr, boolean mAllowDynamicOrKinematic) {
-        internal_native_set_mAllowDynamicOrKinematic(this_addr, mAllowDynamicOrKinematic);
-    }
-
-    public static boolean native_get_mIsSensor(long this_addr) {
-        return internal_native_get_mIsSensor(this_addr);
-    }
-
-    public static void native_set_mIsSensor(long this_addr, boolean mIsSensor) {
-        internal_native_set_mIsSensor(this_addr, mIsSensor);
-    }
-
-    public static boolean native_get_mUseManifoldReduction(long this_addr) {
-        return internal_native_get_mUseManifoldReduction(this_addr);
-    }
-
-    public static void native_set_mUseManifoldReduction(long this_addr, boolean mUseManifoldReduction) {
-        internal_native_set_mUseManifoldReduction(this_addr, mUseManifoldReduction);
-    }
-
-    public static boolean native_get_mCollideKinematicVsNonDynamic(long this_addr) {
-        return internal_native_get_mCollideKinematicVsNonDynamic(this_addr);
-    }
-
-    public static void native_set_mCollideKinematicVsNonDynamic(long this_addr, boolean mCollideKinematicVsNonDynamic) {
-        internal_native_set_mCollideKinematicVsNonDynamic(this_addr, mCollideKinematicVsNonDynamic);
-    }
-
-    public static boolean native_get_mApplyGyroscopicForce(long this_addr) {
-        return internal_native_get_mApplyGyroscopicForce(this_addr);
-    }
-
-    public static void native_set_mApplyGyroscopicForce(long this_addr, boolean mApplyGyroscopicForce) {
-        internal_native_set_mApplyGyroscopicForce(this_addr, mApplyGyroscopicForce);
-    }
-
-    public static long native_get_mMotionQuality(long this_addr) {
-        return internal_native_get_mMotionQuality(this_addr);
-    }
-
-    public static void native_set_mMotionQuality(long this_addr, long mMotionQuality) {
-        internal_native_set_mMotionQuality(this_addr, mMotionQuality);
-    }
-
-    public static boolean native_get_mEnhancedInternalEdgeRemoval(long this_addr) {
-        return internal_native_get_mEnhancedInternalEdgeRemoval(this_addr);
-    }
-
-    public static void native_set_mEnhancedInternalEdgeRemoval(long this_addr, boolean mEnhancedInternalEdgeRemoval) {
-        internal_native_set_mEnhancedInternalEdgeRemoval(this_addr, mEnhancedInternalEdgeRemoval);
-    }
-
-    public static boolean native_get_mAllowSleeping(long this_addr) {
-        return internal_native_get_mAllowSleeping(this_addr);
-    }
-
-    public static void native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping) {
-        internal_native_set_mAllowSleeping(this_addr, mAllowSleeping);
-    }
-
-    public static float native_get_mFriction(long this_addr) {
-        return internal_native_get_mFriction(this_addr);
-    }
-
-    public static void native_set_mFriction(long this_addr, float mFriction) {
-        internal_native_set_mFriction(this_addr, mFriction);
-    }
-
-    public static float native_get_mRestitution(long this_addr) {
-        return internal_native_get_mRestitution(this_addr);
-    }
-
-    public static void native_set_mRestitution(long this_addr, float mRestitution) {
-        internal_native_set_mRestitution(this_addr, mRestitution);
-    }
-
-    public static float native_get_mLinearDamping(long this_addr) {
-        return internal_native_get_mLinearDamping(this_addr);
-    }
-
-    public static void native_set_mLinearDamping(long this_addr, float mLinearDamping) {
-        internal_native_set_mLinearDamping(this_addr, mLinearDamping);
-    }
-
-    public static float native_get_mAngularDamping(long this_addr) {
-        return internal_native_get_mAngularDamping(this_addr);
-    }
-
-    public static void native_set_mAngularDamping(long this_addr, float mAngularDamping) {
-        internal_native_set_mAngularDamping(this_addr, mAngularDamping);
-    }
-
-    public static float native_get_mMaxLinearVelocity(long this_addr) {
-        return internal_native_get_mMaxLinearVelocity(this_addr);
-    }
-
-    public static void native_set_mMaxLinearVelocity(long this_addr, float mMaxLinearVelocity) {
-        internal_native_set_mMaxLinearVelocity(this_addr, mMaxLinearVelocity);
-    }
-
-    public static float native_get_mMaxAngularVelocity(long this_addr) {
-        return internal_native_get_mMaxAngularVelocity(this_addr);
-    }
-
-    public static void native_set_mMaxAngularVelocity(long this_addr, float mMaxAngularVelocity) {
-        internal_native_set_mMaxAngularVelocity(this_addr, mMaxAngularVelocity);
-    }
-
-    public static float native_get_mGravityFactor(long this_addr) {
-        return internal_native_get_mGravityFactor(this_addr);
-    }
-
-    public static void native_set_mGravityFactor(long this_addr, float mGravityFactor) {
-        internal_native_set_mGravityFactor(this_addr, mGravityFactor);
-    }
-
-    public static int native_get_mNumVelocityStepsOverride(long this_addr) {
-        return internal_native_get_mNumVelocityStepsOverride(this_addr);
-    }
-
-    public static void native_set_mNumVelocityStepsOverride(long this_addr, int mNumVelocityStepsOverride) {
-        internal_native_set_mNumVelocityStepsOverride(this_addr, mNumVelocityStepsOverride);
-    }
-
-    public static int native_get_mNumPositionStepsOverride(long this_addr) {
-        return internal_native_get_mNumPositionStepsOverride(this_addr);
-    }
-
-    public static void native_set_mNumPositionStepsOverride(long this_addr, int mNumPositionStepsOverride) {
-        internal_native_set_mNumPositionStepsOverride(this_addr, mNumPositionStepsOverride);
-    }
-
-    public static long native_get_mOverrideMassProperties(long this_addr) {
-        return internal_native_get_mOverrideMassProperties(this_addr);
-    }
-
-    public static void native_set_mOverrideMassProperties(long this_addr, long mOverrideMassProperties) {
-        internal_native_set_mOverrideMassProperties(this_addr, mOverrideMassProperties);
-    }
-
-    public static float native_get_mInertiaMultiplier(long this_addr) {
-        return internal_native_get_mInertiaMultiplier(this_addr);
-    }
-
-    public static void native_set_mInertiaMultiplier(long this_addr, float mInertiaMultiplier) {
-        internal_native_set_mInertiaMultiplier(this_addr, mInertiaMultiplier);
-    }
-
-    public static long native_get_mMassPropertiesOverride(long this_addr) {
-        return internal_native_get_mMassPropertiesOverride(this_addr);
-    }
-
-    public static void native_set_mMassPropertiesOverride(long this_addr, long mMassPropertiesOverride_addr) {
-        internal_native_set_mMassPropertiesOverride(this_addr, mMassPropertiesOverride_addr);
-    }
+    public static native void internal_native_set_mMassPropertiesOverride(long this_addr, long mMassPropertiesOverride_addr);
 }

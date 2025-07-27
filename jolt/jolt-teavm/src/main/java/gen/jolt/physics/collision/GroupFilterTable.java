@@ -24,7 +24,7 @@ var jsObj = new jolt.GroupFilterTable(inNumGroups);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inNumGroups"}, script = "var jsObj = new jolt.GroupFilterTable(inNumGroups);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int(int inNumGroups);
+    public static native int internal_native_create_int(int inNumGroups);
 
     public GroupFilterTable() {
         super((byte) 1, (char) 1);
@@ -37,7 +37,7 @@ var jsObj = new jolt.GroupFilterTable();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.GroupFilterTable();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -56,7 +56,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilterTable);
 jsObj.DisableCollision(inSubGroup1, inSubGroup2);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSubGroup1", "inSubGroup2"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilterTable);jsObj.DisableCollision(inSubGroup1, inSubGroup2);")
-    private static native void internal_native_DisableCollision(int this_addr, int inSubGroup1, int inSubGroup2);
+    public static native void internal_native_DisableCollision(int this_addr, int inSubGroup1, int inSubGroup2);
 
     public void EnableCollision(int inSubGroup1, int inSubGroup2) {
         internal_native_EnableCollision((int) (long) getNativeData().getCPointer(), inSubGroup1, inSubGroup2);
@@ -67,7 +67,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilterTable);
 jsObj.EnableCollision(inSubGroup1, inSubGroup2);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSubGroup1", "inSubGroup2"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilterTable);jsObj.EnableCollision(inSubGroup1, inSubGroup2);")
-    private static native void internal_native_EnableCollision(int this_addr, int inSubGroup1, int inSubGroup2);
+    public static native void internal_native_EnableCollision(int this_addr, int inSubGroup1, int inSubGroup2);
 
     public boolean IsCollisionEnabled(int inSubGroup1, int inSubGroup2) {
         return internal_native_IsCollisionEnabled((int) (long) getNativeData().getCPointer(), inSubGroup1, inSubGroup2);
@@ -79,25 +79,5 @@ var returnedJSObj = jsObj.IsCollisionEnabled(inSubGroup1, inSubGroup2);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSubGroup1", "inSubGroup2"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilterTable);var returnedJSObj = jsObj.IsCollisionEnabled(inSubGroup1, inSubGroup2);return returnedJSObj;")
-    private static native boolean internal_native_IsCollisionEnabled(int this_addr, int inSubGroup1, int inSubGroup2);
-
-    public static long native_create_int(int inNumGroups) {
-        return internal_native_create_int(inNumGroups);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_DisableCollision(long this_addr, int inSubGroup1, int inSubGroup2) {
-        internal_native_DisableCollision((int) this_addr, inSubGroup1, inSubGroup2);
-    }
-
-    public static void native_EnableCollision(long this_addr, int inSubGroup1, int inSubGroup2) {
-        internal_native_EnableCollision((int) this_addr, inSubGroup1, inSubGroup2);
-    }
-
-    public static boolean native_IsCollisionEnabled(long this_addr, int inSubGroup1, int inSubGroup2) {
-        return internal_native_IsCollisionEnabled((int) this_addr, inSubGroup1, inSubGroup2);
-    }
+    public static native boolean internal_native_IsCollisionEnabled(int this_addr, int inSubGroup1, int inSubGroup2);
 }

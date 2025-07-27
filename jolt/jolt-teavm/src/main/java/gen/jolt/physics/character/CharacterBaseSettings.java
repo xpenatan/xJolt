@@ -41,7 +41,7 @@ var returnedJSObj = jsObj.GetRefCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);var returnedJSObj = jsObj.GetRefCount();return returnedJSObj;")
-    private static native int internal_native_GetRefCount(int this_addr);
+    public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
         internal_native_AddRef((int) (long) getNativeData().getCPointer());
@@ -52,7 +52,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);
 jsObj.AddRef();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);jsObj.AddRef();")
-    private static native void internal_native_AddRef(int this_addr);
+    public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
         internal_native_Release((int) (long) getNativeData().getCPointer());
@@ -63,7 +63,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);
 jsObj.Release();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);jsObj.Release();")
-    private static native void internal_native_Release(int this_addr);
+    public static native void internal_native_Release(int this_addr);
 
     public Vec3 get_mUp() {
         int pointer = internal_native_get_mUp((int) (long) getNativeData().getCPointer());
@@ -82,7 +82,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);var returnedJSObj = jsObj.get_mUp();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mUp(int this_addr);
+    public static native int internal_native_get_mUp(int this_addr);
 
     public void set_mUp(Vec3 mUp) {
         internal_native_set_mUp((int) (long) getNativeData().getCPointer(), (int) (long) (mUp != null ? mUp.getNativeData().getCPointer() : 0));
@@ -93,7 +93,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);
 jsObj.set_mUp(mUp_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mUp_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);jsObj.set_mUp(mUp_addr);")
-    private static native void internal_native_set_mUp(int this_addr, int mUp_addr);
+    public static native void internal_native_set_mUp(int this_addr, int mUp_addr);
 
     public Plane get_mSupportingVolume() {
         int pointer = internal_native_get_mSupportingVolume((int) (long) getNativeData().getCPointer());
@@ -112,7 +112,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);var returnedJSObj = jsObj.get_mSupportingVolume();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSupportingVolume(int this_addr);
+    public static native int internal_native_get_mSupportingVolume(int this_addr);
 
     public void set_mSupportingVolume(Plane mSupportingVolume) {
         internal_native_set_mSupportingVolume((int) (long) getNativeData().getCPointer(), (int) (long) (mSupportingVolume != null ? mSupportingVolume.getNativeData().getCPointer() : 0));
@@ -123,7 +123,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);
 jsObj.set_mSupportingVolume(mSupportingVolume_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSupportingVolume_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);jsObj.set_mSupportingVolume(mSupportingVolume_addr);")
-    private static native void internal_native_set_mSupportingVolume(int this_addr, int mSupportingVolume_addr);
+    public static native void internal_native_set_mSupportingVolume(int this_addr, int mSupportingVolume_addr);
 
     public float get_mMaxSlopeAngle() {
         return internal_native_get_mMaxSlopeAngle((int) (long) getNativeData().getCPointer());
@@ -134,7 +134,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);
 return jsObj.get_mMaxSlopeAngle();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);return jsObj.get_mMaxSlopeAngle();")
-    private static native float internal_native_get_mMaxSlopeAngle(int this_addr);
+    public static native float internal_native_get_mMaxSlopeAngle(int this_addr);
 
     public void set_mMaxSlopeAngle(float mMaxSlopeAngle) {
         internal_native_set_mMaxSlopeAngle((int) (long) getNativeData().getCPointer(), mMaxSlopeAngle);
@@ -145,7 +145,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);
 jsObj.set_mMaxSlopeAngle(mMaxSlopeAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxSlopeAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);jsObj.set_mMaxSlopeAngle(mMaxSlopeAngle);")
-    private static native void internal_native_set_mMaxSlopeAngle(int this_addr, float mMaxSlopeAngle);
+    public static native void internal_native_set_mMaxSlopeAngle(int this_addr, float mMaxSlopeAngle);
 
     public boolean get_mEnhancedInternalEdgeRemoval() {
         return internal_native_get_mEnhancedInternalEdgeRemoval((int) (long) getNativeData().getCPointer());
@@ -156,7 +156,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);
 return jsObj.get_mEnhancedInternalEdgeRemoval();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);return jsObj.get_mEnhancedInternalEdgeRemoval();")
-    private static native boolean internal_native_get_mEnhancedInternalEdgeRemoval(int this_addr);
+    public static native boolean internal_native_get_mEnhancedInternalEdgeRemoval(int this_addr);
 
     public void set_mEnhancedInternalEdgeRemoval(boolean mEnhancedInternalEdgeRemoval) {
         internal_native_set_mEnhancedInternalEdgeRemoval((int) (long) getNativeData().getCPointer(), mEnhancedInternalEdgeRemoval);
@@ -167,7 +167,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);
 jsObj.set_mEnhancedInternalEdgeRemoval(mEnhancedInternalEdgeRemoval);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mEnhancedInternalEdgeRemoval"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);jsObj.set_mEnhancedInternalEdgeRemoval(mEnhancedInternalEdgeRemoval);")
-    private static native void internal_native_set_mEnhancedInternalEdgeRemoval(int this_addr, boolean mEnhancedInternalEdgeRemoval);
+    public static native void internal_native_set_mEnhancedInternalEdgeRemoval(int this_addr, boolean mEnhancedInternalEdgeRemoval);
 
     public Shape get_mShape() {
         int pointer = internal_native_get_mShape((int) (long) getNativeData().getCPointer());
@@ -186,7 +186,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);var returnedJSObj = jsObj.get_mShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mShape(int this_addr);
+    public static native int internal_native_get_mShape(int this_addr);
 
     public void set_mShape(Shape mShape) {
         internal_native_set_mShape((int) (long) getNativeData().getCPointer(), (int) (long) (mShape != null ? mShape.getNativeData().getCPointer() : 0));
@@ -197,57 +197,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);
 jsObj.set_mShape(mShape_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mShape_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);jsObj.set_mShape(mShape_addr);")
-    private static native void internal_native_set_mShape(int this_addr, int mShape_addr);
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount((int) this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef((int) this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release((int) this_addr);
-    }
-
-    public static long native_get_mUp(long this_addr) {
-        return internal_native_get_mUp((int) this_addr);
-    }
-
-    public static void native_set_mUp(long this_addr, long mUp_addr) {
-        internal_native_set_mUp((int) this_addr, (int) mUp_addr);
-    }
-
-    public static long native_get_mSupportingVolume(long this_addr) {
-        return internal_native_get_mSupportingVolume((int) this_addr);
-    }
-
-    public static void native_set_mSupportingVolume(long this_addr, long mSupportingVolume_addr) {
-        internal_native_set_mSupportingVolume((int) this_addr, (int) mSupportingVolume_addr);
-    }
-
-    public static float native_get_mMaxSlopeAngle(long this_addr) {
-        return internal_native_get_mMaxSlopeAngle((int) this_addr);
-    }
-
-    public static void native_set_mMaxSlopeAngle(long this_addr, float mMaxSlopeAngle) {
-        internal_native_set_mMaxSlopeAngle((int) this_addr, mMaxSlopeAngle);
-    }
-
-    public static boolean native_get_mEnhancedInternalEdgeRemoval(long this_addr) {
-        return internal_native_get_mEnhancedInternalEdgeRemoval((int) this_addr);
-    }
-
-    public static void native_set_mEnhancedInternalEdgeRemoval(long this_addr, boolean mEnhancedInternalEdgeRemoval) {
-        internal_native_set_mEnhancedInternalEdgeRemoval((int) this_addr, mEnhancedInternalEdgeRemoval);
-    }
-
-    public static long native_get_mShape(long this_addr) {
-        return internal_native_get_mShape((int) this_addr);
-    }
-
-    public static void native_set_mShape(long this_addr, long mShape_addr) {
-        internal_native_set_mShape((int) this_addr, (int) mShape_addr);
-    }
+    public static native void internal_native_set_mShape(int this_addr, int mShape_addr);
 }

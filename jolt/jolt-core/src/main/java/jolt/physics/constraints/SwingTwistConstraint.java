@@ -62,7 +62,7 @@ SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLocalSpacePosition1();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetLocalSpacePosition1(long this_addr);
+    public static native long internal_native_GetLocalSpacePosition1(long this_addr);
 
     public Vec3 GetLocalSpacePosition2() {
         long pointer = internal_native_GetLocalSpacePosition2((long) getNativeData().getCPointer());
@@ -79,7 +79,7 @@ SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLocalSpacePosition2();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetLocalSpacePosition2(long this_addr);
+    public static native long internal_native_GetLocalSpacePosition2(long this_addr);
 
     public Quat GetConstraintToBody1() {
         long pointer = internal_native_GetConstraintToBody1((long) getNativeData().getCPointer());
@@ -96,7 +96,7 @@ SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetConstraintToBody1();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetConstraintToBody1(long this_addr);
+    public static native long internal_native_GetConstraintToBody1(long this_addr);
 
     public Quat GetConstraintToBody2() {
         long pointer = internal_native_GetConstraintToBody2((long) getNativeData().getCPointer());
@@ -113,7 +113,7 @@ SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetConstraintToBody2();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetConstraintToBody2(long this_addr);
+    public static native long internal_native_GetConstraintToBody2(long this_addr);
 
     public float GetNormalHalfConeAngle() {
         return internal_native_GetNormalHalfConeAngle((long) getNativeData().getCPointer());
@@ -123,7 +123,7 @@ return (jlong)&copy_addr;*/
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return nativeObject->GetNormalHalfConeAngle();
 */
-    private static native float internal_native_GetNormalHalfConeAngle(long this_addr);
+    public static native float internal_native_GetNormalHalfConeAngle(long this_addr);
 
     public void SetNormalHalfConeAngle(float inAngle) {
         internal_native_SetNormalHalfConeAngle((long) getNativeData().getCPointer(), inAngle);
@@ -133,7 +133,7 @@ return nativeObject->GetNormalHalfConeAngle();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetNormalHalfConeAngle((float)inAngle);
 */
-    private static native void internal_native_SetNormalHalfConeAngle(long this_addr, float inAngle);
+    public static native void internal_native_SetNormalHalfConeAngle(long this_addr, float inAngle);
 
     public float GetPlaneHalfConeAngle() {
         return internal_native_GetPlaneHalfConeAngle((long) getNativeData().getCPointer());
@@ -143,7 +143,7 @@ nativeObject->SetNormalHalfConeAngle((float)inAngle);
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return nativeObject->GetPlaneHalfConeAngle();
 */
-    private static native float internal_native_GetPlaneHalfConeAngle(long this_addr);
+    public static native float internal_native_GetPlaneHalfConeAngle(long this_addr);
 
     public void SetPlaneHalfConeAngle(float inAngle) {
         internal_native_SetPlaneHalfConeAngle((long) getNativeData().getCPointer(), inAngle);
@@ -153,7 +153,7 @@ return nativeObject->GetPlaneHalfConeAngle();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetPlaneHalfConeAngle((float)inAngle);
 */
-    private static native void internal_native_SetPlaneHalfConeAngle(long this_addr, float inAngle);
+    public static native void internal_native_SetPlaneHalfConeAngle(long this_addr, float inAngle);
 
     public float GetTwistMinAngle() {
         return internal_native_GetTwistMinAngle((long) getNativeData().getCPointer());
@@ -163,7 +163,7 @@ nativeObject->SetPlaneHalfConeAngle((float)inAngle);
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return nativeObject->GetTwistMinAngle();
 */
-    private static native float internal_native_GetTwistMinAngle(long this_addr);
+    public static native float internal_native_GetTwistMinAngle(long this_addr);
 
     public void SetTwistMinAngle(float inAngle) {
         internal_native_SetTwistMinAngle((long) getNativeData().getCPointer(), inAngle);
@@ -173,7 +173,7 @@ return nativeObject->GetTwistMinAngle();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetTwistMinAngle((float)inAngle);
 */
-    private static native void internal_native_SetTwistMinAngle(long this_addr, float inAngle);
+    public static native void internal_native_SetTwistMinAngle(long this_addr, float inAngle);
 
     public float GetTwistMaxAngle() {
         return internal_native_GetTwistMaxAngle((long) getNativeData().getCPointer());
@@ -183,7 +183,7 @@ nativeObject->SetTwistMinAngle((float)inAngle);
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return nativeObject->GetTwistMaxAngle();
 */
-    private static native float internal_native_GetTwistMaxAngle(long this_addr);
+    public static native float internal_native_GetTwistMaxAngle(long this_addr);
 
     public void SetTwistMaxAngle(float inAngle) {
         internal_native_SetTwistMaxAngle((long) getNativeData().getCPointer(), inAngle);
@@ -193,7 +193,7 @@ return nativeObject->GetTwistMaxAngle();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetTwistMaxAngle((float)inAngle);
 */
-    private static native void internal_native_SetTwistMaxAngle(long this_addr, float inAngle);
+    public static native void internal_native_SetTwistMaxAngle(long this_addr, float inAngle);
 
     public MotorSettings GetSwingMotorSettings() {
         long pointer = internal_native_GetSwingMotorSettings((long) getNativeData().getCPointer());
@@ -209,7 +209,7 @@ nativeObject->SetTwistMaxAngle((float)inAngle);
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return (jlong)&nativeObject->GetSwingMotorSettings();
 */
-    private static native long internal_native_GetSwingMotorSettings(long this_addr);
+    public static native long internal_native_GetSwingMotorSettings(long this_addr);
 
     public MotorSettings GetTwistMotorSettings() {
         long pointer = internal_native_GetTwistMotorSettings((long) getNativeData().getCPointer());
@@ -225,7 +225,7 @@ return (jlong)&nativeObject->GetSwingMotorSettings();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return (jlong)&nativeObject->GetTwistMotorSettings();
 */
-    private static native long internal_native_GetTwistMotorSettings(long this_addr);
+    public static native long internal_native_GetTwistMotorSettings(long this_addr);
 
     public void SetMaxFrictionTorque(float inFrictionTorque) {
         internal_native_SetMaxFrictionTorque((long) getNativeData().getCPointer(), inFrictionTorque);
@@ -235,7 +235,7 @@ return (jlong)&nativeObject->GetTwistMotorSettings();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetMaxFrictionTorque((float)inFrictionTorque);
 */
-    private static native void internal_native_SetMaxFrictionTorque(long this_addr, float inFrictionTorque);
+    public static native void internal_native_SetMaxFrictionTorque(long this_addr, float inFrictionTorque);
 
     public float GetMaxFrictionTorque() {
         return internal_native_GetMaxFrictionTorque((long) getNativeData().getCPointer());
@@ -245,7 +245,7 @@ nativeObject->SetMaxFrictionTorque((float)inFrictionTorque);
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return nativeObject->GetMaxFrictionTorque();
 */
-    private static native float internal_native_GetMaxFrictionTorque(long this_addr);
+    public static native float internal_native_GetMaxFrictionTorque(long this_addr);
 
     public void SetSwingMotorState(EMotorState inState) {
         internal_native_SetSwingMotorState((long) getNativeData().getCPointer(), (long) (inState != null ? inState.getValue() : 0));
@@ -255,7 +255,7 @@ return nativeObject->GetMaxFrictionTorque();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetSwingMotorState((::EMotorState)inState);
 */
-    private static native void internal_native_SetSwingMotorState(long this_addr, long inState);
+    public static native void internal_native_SetSwingMotorState(long this_addr, long inState);
 
     public EMotorState GetSwingMotorState() {
         int value = internal_native_GetSwingMotorState((long) getNativeData().getCPointer());
@@ -266,7 +266,7 @@ nativeObject->SetSwingMotorState((::EMotorState)inState);
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return (int)nativeObject->GetSwingMotorState();
 */
-    private static native int internal_native_GetSwingMotorState(long this_addr);
+    public static native int internal_native_GetSwingMotorState(long this_addr);
 
     public void SetTwistMotorState(EMotorState inState) {
         internal_native_SetTwistMotorState((long) getNativeData().getCPointer(), (long) (inState != null ? inState.getValue() : 0));
@@ -276,7 +276,7 @@ return (int)nativeObject->GetSwingMotorState();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetTwistMotorState((::EMotorState)inState);
 */
-    private static native void internal_native_SetTwistMotorState(long this_addr, long inState);
+    public static native void internal_native_SetTwistMotorState(long this_addr, long inState);
 
     public EMotorState GetTwistMotorState() {
         int value = internal_native_GetTwistMotorState((long) getNativeData().getCPointer());
@@ -287,7 +287,7 @@ nativeObject->SetTwistMotorState((::EMotorState)inState);
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return (int)nativeObject->GetTwistMotorState();
 */
-    private static native int internal_native_GetTwistMotorState(long this_addr);
+    public static native int internal_native_GetTwistMotorState(long this_addr);
 
     public void SetTargetAngularVelocityCS(Vec3 inAngularVelocity) {
         internal_native_SetTargetAngularVelocityCS((long) getNativeData().getCPointer(), (long) (inAngularVelocity != null ? inAngularVelocity.getNativeData().getCPointer() : 0));
@@ -297,7 +297,7 @@ return (int)nativeObject->GetTwistMotorState();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetTargetAngularVelocityCS(*((Vec3* )inAngularVelocity_addr));
 */
-    private static native void internal_native_SetTargetAngularVelocityCS(long this_addr, long inAngularVelocity_addr);
+    public static native void internal_native_SetTargetAngularVelocityCS(long this_addr, long inAngularVelocity_addr);
 
     public Vec3 GetTargetAngularVelocityCS() {
         long pointer = internal_native_GetTargetAngularVelocityCS((long) getNativeData().getCPointer());
@@ -314,7 +314,7 @@ SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetTargetAngularVelocityCS();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetTargetAngularVelocityCS(long this_addr);
+    public static native long internal_native_GetTargetAngularVelocityCS(long this_addr);
 
     public void SetTargetOrientationCS(Quat inOrientation) {
         internal_native_SetTargetOrientationCS((long) getNativeData().getCPointer(), (long) (inOrientation != null ? inOrientation.getNativeData().getCPointer() : 0));
@@ -324,7 +324,7 @@ return (jlong)&copy_addr;*/
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetTargetOrientationCS(*((Quat* )inOrientation_addr));
 */
-    private static native void internal_native_SetTargetOrientationCS(long this_addr, long inOrientation_addr);
+    public static native void internal_native_SetTargetOrientationCS(long this_addr, long inOrientation_addr);
 
     public Quat GetTargetOrientationCS() {
         long pointer = internal_native_GetTargetOrientationCS((long) getNativeData().getCPointer());
@@ -341,7 +341,7 @@ SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetTargetOrientationCS();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetTargetOrientationCS(long this_addr);
+    public static native long internal_native_GetTargetOrientationCS(long this_addr);
 
     public void SetTargetOrientationBS(Quat inOrientation) {
         internal_native_SetTargetOrientationBS((long) getNativeData().getCPointer(), (long) (inOrientation != null ? inOrientation.getNativeData().getCPointer() : 0));
@@ -351,7 +351,7 @@ return (jlong)&copy_addr;*/
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetTargetOrientationBS(*((Quat* )inOrientation_addr));
 */
-    private static native void internal_native_SetTargetOrientationBS(long this_addr, long inOrientation_addr);
+    public static native void internal_native_SetTargetOrientationBS(long this_addr, long inOrientation_addr);
 
     public Quat GetRotationInConstraintSpace() {
         long pointer = internal_native_GetRotationInConstraintSpace((long) getNativeData().getCPointer());
@@ -368,7 +368,7 @@ SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetRotationInConstraintSpace();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetRotationInConstraintSpace(long this_addr);
+    public static native long internal_native_GetRotationInConstraintSpace(long this_addr);
 
     public Vec3 GetTotalLambdaPosition() {
         long pointer = internal_native_GetTotalLambdaPosition((long) getNativeData().getCPointer());
@@ -385,7 +385,7 @@ SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetTotalLambdaPosition();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetTotalLambdaPosition(long this_addr);
+    public static native long internal_native_GetTotalLambdaPosition(long this_addr);
 
     public float GetTotalLambdaTwist() {
         return internal_native_GetTotalLambdaTwist((long) getNativeData().getCPointer());
@@ -395,7 +395,7 @@ return (jlong)&copy_addr;*/
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return nativeObject->GetTotalLambdaTwist();
 */
-    private static native float internal_native_GetTotalLambdaTwist(long this_addr);
+    public static native float internal_native_GetTotalLambdaTwist(long this_addr);
 
     public float GetTotalLambdaSwingY() {
         return internal_native_GetTotalLambdaSwingY((long) getNativeData().getCPointer());
@@ -405,7 +405,7 @@ return nativeObject->GetTotalLambdaTwist();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return nativeObject->GetTotalLambdaSwingY();
 */
-    private static native float internal_native_GetTotalLambdaSwingY(long this_addr);
+    public static native float internal_native_GetTotalLambdaSwingY(long this_addr);
 
     public float GetTotalLambdaSwingZ() {
         return internal_native_GetTotalLambdaSwingZ((long) getNativeData().getCPointer());
@@ -415,7 +415,7 @@ return nativeObject->GetTotalLambdaSwingY();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 return nativeObject->GetTotalLambdaSwingZ();
 */
-    private static native float internal_native_GetTotalLambdaSwingZ(long this_addr);
+    public static native float internal_native_GetTotalLambdaSwingZ(long this_addr);
 
     public Vec3 GetTotalLambdaMotor() {
         long pointer = internal_native_GetTotalLambdaMotor((long) getNativeData().getCPointer());
@@ -432,129 +432,5 @@ SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetTotalLambdaMotor();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetTotalLambdaMotor(long this_addr);
-
-    public static long native_GetLocalSpacePosition1(long this_addr) {
-        return internal_native_GetLocalSpacePosition1(this_addr);
-    }
-
-    public static long native_GetLocalSpacePosition2(long this_addr) {
-        return internal_native_GetLocalSpacePosition2(this_addr);
-    }
-
-    public static long native_GetConstraintToBody1(long this_addr) {
-        return internal_native_GetConstraintToBody1(this_addr);
-    }
-
-    public static long native_GetConstraintToBody2(long this_addr) {
-        return internal_native_GetConstraintToBody2(this_addr);
-    }
-
-    public static float native_GetNormalHalfConeAngle(long this_addr) {
-        return internal_native_GetNormalHalfConeAngle(this_addr);
-    }
-
-    public static void native_SetNormalHalfConeAngle(long this_addr, float inAngle) {
-        internal_native_SetNormalHalfConeAngle(this_addr, inAngle);
-    }
-
-    public static float native_GetPlaneHalfConeAngle(long this_addr) {
-        return internal_native_GetPlaneHalfConeAngle(this_addr);
-    }
-
-    public static void native_SetPlaneHalfConeAngle(long this_addr, float inAngle) {
-        internal_native_SetPlaneHalfConeAngle(this_addr, inAngle);
-    }
-
-    public static float native_GetTwistMinAngle(long this_addr) {
-        return internal_native_GetTwistMinAngle(this_addr);
-    }
-
-    public static void native_SetTwistMinAngle(long this_addr, float inAngle) {
-        internal_native_SetTwistMinAngle(this_addr, inAngle);
-    }
-
-    public static float native_GetTwistMaxAngle(long this_addr) {
-        return internal_native_GetTwistMaxAngle(this_addr);
-    }
-
-    public static void native_SetTwistMaxAngle(long this_addr, float inAngle) {
-        internal_native_SetTwistMaxAngle(this_addr, inAngle);
-    }
-
-    public static long native_GetSwingMotorSettings(long this_addr) {
-        return internal_native_GetSwingMotorSettings(this_addr);
-    }
-
-    public static long native_GetTwistMotorSettings(long this_addr) {
-        return internal_native_GetTwistMotorSettings(this_addr);
-    }
-
-    public static void native_SetMaxFrictionTorque(long this_addr, float inFrictionTorque) {
-        internal_native_SetMaxFrictionTorque(this_addr, inFrictionTorque);
-    }
-
-    public static float native_GetMaxFrictionTorque(long this_addr) {
-        return internal_native_GetMaxFrictionTorque(this_addr);
-    }
-
-    public static void native_SetSwingMotorState(long this_addr, long inState) {
-        internal_native_SetSwingMotorState(this_addr, inState);
-    }
-
-    public static long native_GetSwingMotorState(long this_addr) {
-        return internal_native_GetSwingMotorState(this_addr);
-    }
-
-    public static void native_SetTwistMotorState(long this_addr, long inState) {
-        internal_native_SetTwistMotorState(this_addr, inState);
-    }
-
-    public static long native_GetTwistMotorState(long this_addr) {
-        return internal_native_GetTwistMotorState(this_addr);
-    }
-
-    public static void native_SetTargetAngularVelocityCS(long this_addr, long inAngularVelocity_addr) {
-        internal_native_SetTargetAngularVelocityCS(this_addr, inAngularVelocity_addr);
-    }
-
-    public static long native_GetTargetAngularVelocityCS(long this_addr) {
-        return internal_native_GetTargetAngularVelocityCS(this_addr);
-    }
-
-    public static void native_SetTargetOrientationCS(long this_addr, long inOrientation_addr) {
-        internal_native_SetTargetOrientationCS(this_addr, inOrientation_addr);
-    }
-
-    public static long native_GetTargetOrientationCS(long this_addr) {
-        return internal_native_GetTargetOrientationCS(this_addr);
-    }
-
-    public static void native_SetTargetOrientationBS(long this_addr, long inOrientation_addr) {
-        internal_native_SetTargetOrientationBS(this_addr, inOrientation_addr);
-    }
-
-    public static long native_GetRotationInConstraintSpace(long this_addr) {
-        return internal_native_GetRotationInConstraintSpace(this_addr);
-    }
-
-    public static long native_GetTotalLambdaPosition(long this_addr) {
-        return internal_native_GetTotalLambdaPosition(this_addr);
-    }
-
-    public static float native_GetTotalLambdaTwist(long this_addr) {
-        return internal_native_GetTotalLambdaTwist(this_addr);
-    }
-
-    public static float native_GetTotalLambdaSwingY(long this_addr) {
-        return internal_native_GetTotalLambdaSwingY(this_addr);
-    }
-
-    public static float native_GetTotalLambdaSwingZ(long this_addr) {
-        return internal_native_GetTotalLambdaSwingZ(this_addr);
-    }
-
-    public static long native_GetTotalLambdaMotor(long this_addr) {
-        return internal_native_GetTotalLambdaMotor(this_addr);
-    }
+    public static native long internal_native_GetTotalLambdaMotor(long this_addr);
 }

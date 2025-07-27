@@ -29,7 +29,7 @@ public class CollidePointResult extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new CollidePointResult();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -54,7 +54,7 @@ return (jlong)new CollidePointResult();
 CollidePointResult* nativeObject = (CollidePointResult*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public BodyID get_mBodyID() {
         long pointer = internal_native_get_mBodyID((long) getNativeData().getCPointer());
@@ -70,7 +70,7 @@ delete nativeObject;
 CollidePointResult* nativeObject = (CollidePointResult*)this_addr;
 return (jlong)&nativeObject->mBodyID;
 */
-    private static native long internal_native_get_mBodyID(long this_addr);
+    public static native long internal_native_get_mBodyID(long this_addr);
 
     public void set_mBodyID(BodyID mBodyID) {
         internal_native_set_mBodyID((long) getNativeData().getCPointer(), (long) (mBodyID != null ? mBodyID.getNativeData().getCPointer() : 0));
@@ -80,7 +80,7 @@ return (jlong)&nativeObject->mBodyID;
 CollidePointResult* nativeObject = (CollidePointResult*)this_addr;
 nativeObject->mBodyID = *((BodyID*)mBodyID_addr);
 */
-    private static native void internal_native_set_mBodyID(long this_addr, long mBodyID_addr);
+    public static native void internal_native_set_mBodyID(long this_addr, long mBodyID_addr);
 
     public SubShapeID get_mSubShapeID2() {
         long pointer = internal_native_get_mSubShapeID2((long) getNativeData().getCPointer());
@@ -96,7 +96,7 @@ nativeObject->mBodyID = *((BodyID*)mBodyID_addr);
 CollidePointResult* nativeObject = (CollidePointResult*)this_addr;
 return (jlong)&nativeObject->mSubShapeID2;
 */
-    private static native long internal_native_get_mSubShapeID2(long this_addr);
+    public static native long internal_native_get_mSubShapeID2(long this_addr);
 
     public void set_mSubShapeID2(SubShapeID mSubShapeID2) {
         internal_native_set_mSubShapeID2((long) getNativeData().getCPointer(), (long) (mSubShapeID2 != null ? mSubShapeID2.getNativeData().getCPointer() : 0));
@@ -106,29 +106,5 @@ return (jlong)&nativeObject->mSubShapeID2;
 CollidePointResult* nativeObject = (CollidePointResult*)this_addr;
 nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
 */
-    private static native void internal_native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mBodyID(long this_addr) {
-        return internal_native_get_mBodyID(this_addr);
-    }
-
-    public static void native_set_mBodyID(long this_addr, long mBodyID_addr) {
-        internal_native_set_mBodyID(this_addr, mBodyID_addr);
-    }
-
-    public static long native_get_mSubShapeID2(long this_addr) {
-        return internal_native_get_mSubShapeID2(this_addr);
-    }
-
-    public static void native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr) {
-        internal_native_set_mSubShapeID2(this_addr, mSubShapeID2_addr);
-    }
+    public static native void internal_native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr);
 }

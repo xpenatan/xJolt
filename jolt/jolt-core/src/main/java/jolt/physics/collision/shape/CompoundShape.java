@@ -31,7 +31,7 @@ public class CompoundShape extends Shape {
 CompoundShape* nativeObject = (CompoundShape*)this_addr;
 return nativeObject->GetNumSubShapes();
 */
-    private static native int internal_native_GetNumSubShapes(long this_addr);
+    public static native int internal_native_GetNumSubShapes(long this_addr);
 
     public CompoundShapeSubShape GetSubShape(int inIdx) {
         long pointer = internal_native_GetSubShape((long) getNativeData().getCPointer(), inIdx);
@@ -47,13 +47,5 @@ return nativeObject->GetNumSubShapes();
 CompoundShape* nativeObject = (CompoundShape*)this_addr;
 return (jlong)&nativeObject->GetSubShape((int)inIdx);
 */
-    private static native long internal_native_GetSubShape(long this_addr, int inIdx);
-
-    public static int native_GetNumSubShapes(long this_addr) {
-        return internal_native_GetNumSubShapes(this_addr);
-    }
-
-    public static long native_GetSubShape(long this_addr, int inIdx) {
-        return internal_native_GetSubShape(this_addr, inIdx);
-    }
+    public static native long internal_native_GetSubShape(long this_addr, int inIdx);
 }

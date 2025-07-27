@@ -24,7 +24,7 @@ public class TaperedCapsuleShapeSettings extends ConvexShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylinder, (float)inTopRadius, (float)inBottomRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    private static native long internal_native_create_float_float_float_PhysicsMaterial(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, long inMaterial_addr);
+    public static native long internal_native_create_float_float_float_PhysicsMaterial(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, long inMaterial_addr);
 
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius) {
         super((byte) 1, (char) 1);
@@ -35,7 +35,7 @@ return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylind
     /*[-JNI;-NATIVE]
 return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylinder, (float)inTopRadius, (float)inBottomRadius);
 */
-    private static native long internal_native_create_float_float_float(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius);
+    public static native long internal_native_create_float_float_float(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylind
 TaperedCapsuleShapeSettings* nativeObject = (TaperedCapsuleShapeSettings*)this_addr;
 return nativeObject->mHalfHeightOfTaperedCylinder;
 */
-    private static native float internal_native_get_mHalfHeightOfTaperedCylinder(long this_addr);
+    public static native float internal_native_get_mHalfHeightOfTaperedCylinder(long this_addr);
 
     public void set_mHalfHeightOfTaperedCylinder(float mHalfHeightOfTaperedCylinder) {
         internal_native_set_mHalfHeightOfTaperedCylinder((long) getNativeData().getCPointer(), mHalfHeightOfTaperedCylinder);
@@ -63,7 +63,7 @@ return nativeObject->mHalfHeightOfTaperedCylinder;
 TaperedCapsuleShapeSettings* nativeObject = (TaperedCapsuleShapeSettings*)this_addr;
 nativeObject->mHalfHeightOfTaperedCylinder = mHalfHeightOfTaperedCylinder;
 */
-    private static native void internal_native_set_mHalfHeightOfTaperedCylinder(long this_addr, float mHalfHeightOfTaperedCylinder);
+    public static native void internal_native_set_mHalfHeightOfTaperedCylinder(long this_addr, float mHalfHeightOfTaperedCylinder);
 
     public float get_mTopRadius() {
         return internal_native_get_mTopRadius((long) getNativeData().getCPointer());
@@ -73,7 +73,7 @@ nativeObject->mHalfHeightOfTaperedCylinder = mHalfHeightOfTaperedCylinder;
 TaperedCapsuleShapeSettings* nativeObject = (TaperedCapsuleShapeSettings*)this_addr;
 return nativeObject->mTopRadius;
 */
-    private static native float internal_native_get_mTopRadius(long this_addr);
+    public static native float internal_native_get_mTopRadius(long this_addr);
 
     public void set_mTopRadius(float mTopRadius) {
         internal_native_set_mTopRadius((long) getNativeData().getCPointer(), mTopRadius);
@@ -83,7 +83,7 @@ return nativeObject->mTopRadius;
 TaperedCapsuleShapeSettings* nativeObject = (TaperedCapsuleShapeSettings*)this_addr;
 nativeObject->mTopRadius = mTopRadius;
 */
-    private static native void internal_native_set_mTopRadius(long this_addr, float mTopRadius);
+    public static native void internal_native_set_mTopRadius(long this_addr, float mTopRadius);
 
     public float get_mBottomRadius() {
         return internal_native_get_mBottomRadius((long) getNativeData().getCPointer());
@@ -93,7 +93,7 @@ nativeObject->mTopRadius = mTopRadius;
 TaperedCapsuleShapeSettings* nativeObject = (TaperedCapsuleShapeSettings*)this_addr;
 return nativeObject->mBottomRadius;
 */
-    private static native float internal_native_get_mBottomRadius(long this_addr);
+    public static native float internal_native_get_mBottomRadius(long this_addr);
 
     public void set_mBottomRadius(float mBottomRadius) {
         internal_native_set_mBottomRadius((long) getNativeData().getCPointer(), mBottomRadius);
@@ -103,37 +103,5 @@ return nativeObject->mBottomRadius;
 TaperedCapsuleShapeSettings* nativeObject = (TaperedCapsuleShapeSettings*)this_addr;
 nativeObject->mBottomRadius = mBottomRadius;
 */
-    private static native void internal_native_set_mBottomRadius(long this_addr, float mBottomRadius);
-
-    public static long native_create_float_float_float_PhysicsMaterial(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, long inMaterial_addr) {
-        return internal_native_create_float_float_float_PhysicsMaterial(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, inMaterial_addr);
-    }
-
-    public static long native_create_float_float_float(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius) {
-        return internal_native_create_float_float_float(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);
-    }
-
-    public static float native_get_mHalfHeightOfTaperedCylinder(long this_addr) {
-        return internal_native_get_mHalfHeightOfTaperedCylinder(this_addr);
-    }
-
-    public static void native_set_mHalfHeightOfTaperedCylinder(long this_addr, float mHalfHeightOfTaperedCylinder) {
-        internal_native_set_mHalfHeightOfTaperedCylinder(this_addr, mHalfHeightOfTaperedCylinder);
-    }
-
-    public static float native_get_mTopRadius(long this_addr) {
-        return internal_native_get_mTopRadius(this_addr);
-    }
-
-    public static void native_set_mTopRadius(long this_addr, float mTopRadius) {
-        internal_native_set_mTopRadius(this_addr, mTopRadius);
-    }
-
-    public static float native_get_mBottomRadius(long this_addr) {
-        return internal_native_get_mBottomRadius(this_addr);
-    }
-
-    public static void native_set_mBottomRadius(long this_addr, float mBottomRadius) {
-        internal_native_set_mBottomRadius(this_addr, mBottomRadius);
-    }
+    public static native void internal_native_set_mBottomRadius(long this_addr, float mBottomRadius);
 }

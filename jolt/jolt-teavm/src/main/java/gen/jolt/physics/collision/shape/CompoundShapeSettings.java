@@ -33,9 +33,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);
 jsObj.AddShape(inPosition_addr, inRotation_addr, inShape_addr, inUserData);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPosition_addr", "inRotation_addr", "inShape_addr", "inUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);jsObj.AddShape(inPosition_addr, inRotation_addr, inShape_addr, inUserData);")
-    private static native void internal_native_AddShape(int this_addr, int inPosition_addr, int inRotation_addr, int inShape_addr, int inUserData);
-
-    public static void native_AddShape(long this_addr, long inPosition_addr, long inRotation_addr, long inShape_addr, int inUserData) {
-        internal_native_AddShape((int) this_addr, (int) inPosition_addr, (int) inRotation_addr, (int) inShape_addr, inUserData);
-    }
+    public static native void internal_native_AddShape(int this_addr, int inPosition_addr, int inRotation_addr, int inShape_addr, int inUserData);
 }

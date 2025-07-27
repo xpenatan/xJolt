@@ -25,7 +25,7 @@ var jsObj = new jolt.CharacterContactSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CharacterContactSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public boolean get_mCanPushCharacter() {
         return internal_native_get_mCanPushCharacter((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);
 return jsObj.get_mCanPushCharacter();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);return jsObj.get_mCanPushCharacter();")
-    private static native boolean internal_native_get_mCanPushCharacter(int this_addr);
+    public static native boolean internal_native_get_mCanPushCharacter(int this_addr);
 
     public void set_mCanPushCharacter(boolean mCanPushCharacter) {
         internal_native_set_mCanPushCharacter((int) (long) getNativeData().getCPointer(), mCanPushCharacter);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);
 jsObj.set_mCanPushCharacter(mCanPushCharacter);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCanPushCharacter"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);jsObj.set_mCanPushCharacter(mCanPushCharacter);")
-    private static native void internal_native_set_mCanPushCharacter(int this_addr, boolean mCanPushCharacter);
+    public static native void internal_native_set_mCanPushCharacter(int this_addr, boolean mCanPushCharacter);
 
     public boolean get_mCanReceiveImpulses() {
         return internal_native_get_mCanReceiveImpulses((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);
 return jsObj.get_mCanReceiveImpulses();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);return jsObj.get_mCanReceiveImpulses();")
-    private static native boolean internal_native_get_mCanReceiveImpulses(int this_addr);
+    public static native boolean internal_native_get_mCanReceiveImpulses(int this_addr);
 
     public void set_mCanReceiveImpulses(boolean mCanReceiveImpulses) {
         internal_native_set_mCanReceiveImpulses((int) (long) getNativeData().getCPointer(), mCanReceiveImpulses);
@@ -95,29 +95,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);
 jsObj.set_mCanReceiveImpulses(mCanReceiveImpulses);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCanReceiveImpulses"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactSettings);jsObj.set_mCanReceiveImpulses(mCanReceiveImpulses);")
-    private static native void internal_native_set_mCanReceiveImpulses(int this_addr, boolean mCanReceiveImpulses);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static boolean native_get_mCanPushCharacter(long this_addr) {
-        return internal_native_get_mCanPushCharacter((int) this_addr);
-    }
-
-    public static void native_set_mCanPushCharacter(long this_addr, boolean mCanPushCharacter) {
-        internal_native_set_mCanPushCharacter((int) this_addr, mCanPushCharacter);
-    }
-
-    public static boolean native_get_mCanReceiveImpulses(long this_addr) {
-        return internal_native_get_mCanReceiveImpulses((int) this_addr);
-    }
-
-    public static void native_set_mCanReceiveImpulses(long this_addr, boolean mCanReceiveImpulses) {
-        internal_native_set_mCanReceiveImpulses((int) this_addr, mCanReceiveImpulses);
-    }
+    public static native void internal_native_set_mCanReceiveImpulses(int this_addr, boolean mCanReceiveImpulses);
 }

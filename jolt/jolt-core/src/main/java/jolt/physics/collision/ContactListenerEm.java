@@ -95,7 +95,7 @@ virtual void OnContactRemoved(const SubShapeIDPair& inSubShapePair) {
 ContactListenerJS* nativeObject = (ContactListenerJS*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public ContactListenerEm() {
         super((byte) 1, (char) 1);
@@ -179,19 +179,11 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)new ContactListenerJS();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /*[-JNI;-NATIVE]
 ContactListenerJS* nativeObject = (ContactListenerJS*)this_addr;
 nativeObject->setupCallback(env, object);
 */
-    private native void internal_native_setupCallback(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
-    }
+    public native void internal_native_setupCallback(long this_addr);
 }

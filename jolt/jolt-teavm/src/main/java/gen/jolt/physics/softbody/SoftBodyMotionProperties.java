@@ -61,7 +61,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public SoftBodySharedSettings GetSettings() {
         int pointer = internal_native_GetSettings((int) (long) getNativeData().getCPointer());
@@ -80,7 +80,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetSettings(int this_addr);
+    public static native int internal_native_GetSettings(int this_addr);
 
     public ArraySoftBodyVertex GetVertices() {
         int pointer = internal_native_GetVertices((int) (long) getNativeData().getCPointer());
@@ -99,7 +99,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetVertices();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetVertices(int this_addr);
+    public static native int internal_native_GetVertices(int this_addr);
 
     public SoftBodyVertex GetVertex(int inIndex) {
         int pointer = internal_native_GetVertex((int) (long) getNativeData().getCPointer(), inIndex);
@@ -118,7 +118,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetVertex(inIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetVertex(int this_addr, int inIndex);
+    public static native int internal_native_GetVertex(int this_addr, int inIndex);
 
     public PhysicsMaterialList GetMaterials() {
         int pointer = internal_native_GetMaterials((int) (long) getNativeData().getCPointer());
@@ -137,7 +137,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetMaterials();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetMaterials(int this_addr);
+    public static native int internal_native_GetMaterials(int this_addr);
 
     public ArraySoftBodySharedSettingsFace GetFaces() {
         int pointer = internal_native_GetFaces((int) (long) getNativeData().getCPointer());
@@ -156,7 +156,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetFaces();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetFaces(int this_addr);
+    public static native int internal_native_GetFaces(int this_addr);
 
     public SoftBodySharedSettingsFace GetFace(int inIndex) {
         int pointer = internal_native_GetFace((int) (long) getNativeData().getCPointer(), inIndex);
@@ -175,7 +175,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetFace(inIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetFace(int this_addr, int inIndex);
+    public static native int internal_native_GetFace(int this_addr, int inIndex);
 
     public int GetNumIterations() {
         return internal_native_GetNumIterations((int) (long) getNativeData().getCPointer());
@@ -187,7 +187,7 @@ var returnedJSObj = jsObj.GetNumIterations();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetNumIterations();return returnedJSObj;")
-    private static native int internal_native_GetNumIterations(int this_addr);
+    public static native int internal_native_GetNumIterations(int this_addr);
 
     public void SetNumIterations(int inNumIterations) {
         internal_native_SetNumIterations((int) (long) getNativeData().getCPointer(), inNumIterations);
@@ -198,7 +198,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);
 jsObj.SetNumIterations(inNumIterations);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inNumIterations"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);jsObj.SetNumIterations(inNumIterations);")
-    private static native void internal_native_SetNumIterations(int this_addr, int inNumIterations);
+    public static native void internal_native_SetNumIterations(int this_addr, int inNumIterations);
 
     public float GetPressure() {
         return internal_native_GetPressure((int) (long) getNativeData().getCPointer());
@@ -210,7 +210,7 @@ var returnedJSObj = jsObj.GetPressure();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetPressure();return returnedJSObj;")
-    private static native float internal_native_GetPressure(int this_addr);
+    public static native float internal_native_GetPressure(int this_addr);
 
     public void SetPressure(float inPressure) {
         internal_native_SetPressure((int) (long) getNativeData().getCPointer(), inPressure);
@@ -221,7 +221,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);
 jsObj.SetPressure(inPressure);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPressure"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);jsObj.SetPressure(inPressure);")
-    private static native void internal_native_SetPressure(int this_addr, float inPressure);
+    public static native void internal_native_SetPressure(int this_addr, float inPressure);
 
     public boolean GetUpdatePosition() {
         return internal_native_GetUpdatePosition((int) (long) getNativeData().getCPointer());
@@ -233,7 +233,7 @@ var returnedJSObj = jsObj.GetUpdatePosition();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetUpdatePosition();return returnedJSObj;")
-    private static native boolean internal_native_GetUpdatePosition(int this_addr);
+    public static native boolean internal_native_GetUpdatePosition(int this_addr);
 
     public void SetUpdatePosition(boolean inUpdatePosition) {
         internal_native_SetUpdatePosition((int) (long) getNativeData().getCPointer(), inUpdatePosition);
@@ -244,7 +244,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);
 jsObj.SetUpdatePosition(inUpdatePosition);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inUpdatePosition"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);jsObj.SetUpdatePosition(inUpdatePosition);")
-    private static native void internal_native_SetUpdatePosition(int this_addr, boolean inUpdatePosition);
+    public static native void internal_native_SetUpdatePosition(int this_addr, boolean inUpdatePosition);
 
     public boolean GetEnableSkinConstraints() {
         return internal_native_GetEnableSkinConstraints((int) (long) getNativeData().getCPointer());
@@ -256,7 +256,7 @@ var returnedJSObj = jsObj.GetEnableSkinConstraints();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetEnableSkinConstraints();return returnedJSObj;")
-    private static native boolean internal_native_GetEnableSkinConstraints(int this_addr);
+    public static native boolean internal_native_GetEnableSkinConstraints(int this_addr);
 
     public void SetEnableSkinConstraints(boolean inEnableSkinConstraints) {
         internal_native_SetEnableSkinConstraints((int) (long) getNativeData().getCPointer(), inEnableSkinConstraints);
@@ -267,7 +267,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);
 jsObj.SetEnableSkinConstraints(inEnableSkinConstraints);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inEnableSkinConstraints"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);jsObj.SetEnableSkinConstraints(inEnableSkinConstraints);")
-    private static native void internal_native_SetEnableSkinConstraints(int this_addr, boolean inEnableSkinConstraints);
+    public static native void internal_native_SetEnableSkinConstraints(int this_addr, boolean inEnableSkinConstraints);
 
     public float GetSkinnedMaxDistanceMultiplier() {
         return internal_native_GetSkinnedMaxDistanceMultiplier((int) (long) getNativeData().getCPointer());
@@ -279,7 +279,7 @@ var returnedJSObj = jsObj.GetSkinnedMaxDistanceMultiplier();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetSkinnedMaxDistanceMultiplier();return returnedJSObj;")
-    private static native float internal_native_GetSkinnedMaxDistanceMultiplier(int this_addr);
+    public static native float internal_native_GetSkinnedMaxDistanceMultiplier(int this_addr);
 
     public void SetSkinnedMaxDistanceMultiplier(float inSkinnedMaxDistanceMultiplier) {
         internal_native_SetSkinnedMaxDistanceMultiplier((int) (long) getNativeData().getCPointer(), inSkinnedMaxDistanceMultiplier);
@@ -290,7 +290,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);
 jsObj.SetSkinnedMaxDistanceMultiplier(inSkinnedMaxDistanceMultiplier);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSkinnedMaxDistanceMultiplier"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);jsObj.SetSkinnedMaxDistanceMultiplier(inSkinnedMaxDistanceMultiplier);")
-    private static native void internal_native_SetSkinnedMaxDistanceMultiplier(int this_addr, float inSkinnedMaxDistanceMultiplier);
+    public static native void internal_native_SetSkinnedMaxDistanceMultiplier(int this_addr, float inSkinnedMaxDistanceMultiplier);
 
     public AABox GetLocalBounds() {
         int pointer = internal_native_GetLocalBounds((int) (long) getNativeData().getCPointer());
@@ -309,7 +309,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);var returnedJSObj = jsObj.GetLocalBounds();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetLocalBounds(int this_addr);
+    public static native int internal_native_GetLocalBounds(int this_addr);
 
     public void CustomUpdate(float inDeltaTime, Body ioSoftBody, PhysicsSystem inSystem) {
         internal_native_CustomUpdate((int) (long) getNativeData().getCPointer(), inDeltaTime, (int) (long) (ioSoftBody != null ? ioSoftBody.getNativeData().getCPointer() : 0), (int) (long) (inSystem != null ? inSystem.getNativeData().getCPointer() : 0));
@@ -320,7 +320,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);
 jsObj.CustomUpdate(inDeltaTime, ioSoftBody_addr, inSystem_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inDeltaTime", "ioSoftBody_addr", "inSystem_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);jsObj.CustomUpdate(inDeltaTime, ioSoftBody_addr, inSystem_addr);")
-    private static native void internal_native_CustomUpdate(int this_addr, float inDeltaTime, int ioSoftBody_addr, int inSystem_addr);
+    public static native void internal_native_CustomUpdate(int this_addr, float inDeltaTime, int ioSoftBody_addr, int inSystem_addr);
 
     public void SkinVertices(Mat44 inRootTransform, Mat44MemRef inJointMatrices, int inNumJoints, boolean inHardSkinAll, TempAllocator ioTempAllocator) {
         internal_native_SkinVertices((int) (long) getNativeData().getCPointer(), (int) (long) (inRootTransform != null ? inRootTransform.getNativeData().getCPointer() : 0), (int) (long) (inJointMatrices != null ? inJointMatrices.getNativeData().getCPointer() : 0), inNumJoints, inHardSkinAll, (int) (long) (ioTempAllocator != null ? ioTempAllocator.getNativeData().getCPointer() : 0));
@@ -331,85 +331,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);
 jsObj.SkinVertices(inRootTransform_addr, inJointMatrices_addr, inNumJoints, inHardSkinAll, ioTempAllocator_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inRootTransform_addr", "inJointMatrices_addr", "inNumJoints", "inHardSkinAll", "ioTempAllocator_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyMotionProperties);jsObj.SkinVertices(inRootTransform_addr, inJointMatrices_addr, inNumJoints, inHardSkinAll, ioTempAllocator_addr);")
-    private static native void internal_native_SkinVertices(int this_addr, int inRootTransform_addr, int inJointMatrices_addr, int inNumJoints, boolean inHardSkinAll, int ioTempAllocator_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_GetSettings(long this_addr) {
-        return internal_native_GetSettings((int) this_addr);
-    }
-
-    public static long native_GetVertices(long this_addr) {
-        return internal_native_GetVertices((int) this_addr);
-    }
-
-    public static long native_GetVertex(long this_addr, int inIndex) {
-        return internal_native_GetVertex((int) this_addr, inIndex);
-    }
-
-    public static long native_GetMaterials(long this_addr) {
-        return internal_native_GetMaterials((int) this_addr);
-    }
-
-    public static long native_GetFaces(long this_addr) {
-        return internal_native_GetFaces((int) this_addr);
-    }
-
-    public static long native_GetFace(long this_addr, int inIndex) {
-        return internal_native_GetFace((int) this_addr, inIndex);
-    }
-
-    public static int native_GetNumIterations(long this_addr) {
-        return internal_native_GetNumIterations((int) this_addr);
-    }
-
-    public static void native_SetNumIterations(long this_addr, int inNumIterations) {
-        internal_native_SetNumIterations((int) this_addr, inNumIterations);
-    }
-
-    public static float native_GetPressure(long this_addr) {
-        return internal_native_GetPressure((int) this_addr);
-    }
-
-    public static void native_SetPressure(long this_addr, float inPressure) {
-        internal_native_SetPressure((int) this_addr, inPressure);
-    }
-
-    public static boolean native_GetUpdatePosition(long this_addr) {
-        return internal_native_GetUpdatePosition((int) this_addr);
-    }
-
-    public static void native_SetUpdatePosition(long this_addr, boolean inUpdatePosition) {
-        internal_native_SetUpdatePosition((int) this_addr, inUpdatePosition);
-    }
-
-    public static boolean native_GetEnableSkinConstraints(long this_addr) {
-        return internal_native_GetEnableSkinConstraints((int) this_addr);
-    }
-
-    public static void native_SetEnableSkinConstraints(long this_addr, boolean inEnableSkinConstraints) {
-        internal_native_SetEnableSkinConstraints((int) this_addr, inEnableSkinConstraints);
-    }
-
-    public static float native_GetSkinnedMaxDistanceMultiplier(long this_addr) {
-        return internal_native_GetSkinnedMaxDistanceMultiplier((int) this_addr);
-    }
-
-    public static void native_SetSkinnedMaxDistanceMultiplier(long this_addr, float inSkinnedMaxDistanceMultiplier) {
-        internal_native_SetSkinnedMaxDistanceMultiplier((int) this_addr, inSkinnedMaxDistanceMultiplier);
-    }
-
-    public static long native_GetLocalBounds(long this_addr) {
-        return internal_native_GetLocalBounds((int) this_addr);
-    }
-
-    public static void native_CustomUpdate(long this_addr, float inDeltaTime, long ioSoftBody_addr, long inSystem_addr) {
-        internal_native_CustomUpdate((int) this_addr, inDeltaTime, (int) ioSoftBody_addr, (int) inSystem_addr);
-    }
-
-    public static void native_SkinVertices(long this_addr, long inRootTransform_addr, long inJointMatrices_addr, int inNumJoints, boolean inHardSkinAll, long ioTempAllocator_addr) {
-        internal_native_SkinVertices((int) this_addr, (int) inRootTransform_addr, (int) inJointMatrices_addr, inNumJoints, inHardSkinAll, (int) ioTempAllocator_addr);
-    }
+    public static native void internal_native_SkinVertices(int this_addr, int inRootTransform_addr, int inJointMatrices_addr, int inNumJoints, boolean inHardSkinAll, int ioTempAllocator_addr);
 }

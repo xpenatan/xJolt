@@ -42,7 +42,7 @@ public class RagdollPart extends BodyCreationSettings {
 RagdollPart* nativeObject = (RagdollPart*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public TwoBodyConstraintSettings get_mToParent() {
         long pointer = internal_native_get_mToParent((long) getNativeData().getCPointer());
@@ -59,7 +59,7 @@ RagdollPart* nativeObject = (RagdollPart*)this_addr;
 TwoBodyConstraintSettings* attr = nativeObject->mToParent;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mToParent(long this_addr);
+    public static native long internal_native_get_mToParent(long this_addr);
 
     public void set_mToParent(TwoBodyConstraintSettings mToParent) {
         internal_native_set_mToParent((long) getNativeData().getCPointer(), (long) (mToParent != null ? mToParent.getNativeData().getCPointer() : 0));
@@ -69,17 +69,5 @@ return (jlong)attr;
 RagdollPart* nativeObject = (RagdollPart*)this_addr;
 nativeObject->mToParent = (TwoBodyConstraintSettings*)mToParent_addr;
 */
-    private static native void internal_native_set_mToParent(long this_addr, long mToParent_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mToParent(long this_addr) {
-        return internal_native_get_mToParent(this_addr);
-    }
-
-    public static void native_set_mToParent(long this_addr, long mToParent_addr) {
-        internal_native_set_mToParent(this_addr, mToParent_addr);
-    }
+    public static native void internal_native_set_mToParent(long this_addr, long mToParent_addr);
 }

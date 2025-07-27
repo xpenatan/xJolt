@@ -31,7 +31,7 @@ var returnedJSObj = jsObj.GetDensity();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShape);var returnedJSObj = jsObj.GetDensity();return returnedJSObj;")
-    private static native float internal_native_GetDensity(int this_addr);
+    public static native float internal_native_GetDensity(int this_addr);
 
     public void SetDensity(float inDensity) {
         internal_native_SetDensity((int) (long) getNativeData().getCPointer(), inDensity);
@@ -42,13 +42,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShape);
 jsObj.SetDensity(inDensity);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inDensity"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexShape);jsObj.SetDensity(inDensity);")
-    private static native void internal_native_SetDensity(int this_addr, float inDensity);
-
-    public static float native_GetDensity(long this_addr) {
-        return internal_native_GetDensity((int) this_addr);
-    }
-
-    public static void native_SetDensity(long this_addr, float inDensity) {
-        internal_native_SetDensity((int) this_addr, inDensity);
-    }
+    public static native void internal_native_SetDensity(int this_addr, float inDensity);
 }

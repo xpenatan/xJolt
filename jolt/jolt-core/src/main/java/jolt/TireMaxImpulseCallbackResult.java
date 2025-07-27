@@ -38,7 +38,7 @@ public class TireMaxImpulseCallbackResult extends IDLBase {
 TireMaxImpulseCallbackResult* nativeObject = (TireMaxImpulseCallbackResult*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mLongitudinalImpulse() {
         return internal_native_get_mLongitudinalImpulse((long) getNativeData().getCPointer());
@@ -48,7 +48,7 @@ delete nativeObject;
 TireMaxImpulseCallbackResult* nativeObject = (TireMaxImpulseCallbackResult*)this_addr;
 return nativeObject->mLongitudinalImpulse;
 */
-    private static native float internal_native_get_mLongitudinalImpulse(long this_addr);
+    public static native float internal_native_get_mLongitudinalImpulse(long this_addr);
 
     public void set_mLongitudinalImpulse(float mLongitudinalImpulse) {
         internal_native_set_mLongitudinalImpulse((long) getNativeData().getCPointer(), mLongitudinalImpulse);
@@ -58,7 +58,7 @@ return nativeObject->mLongitudinalImpulse;
 TireMaxImpulseCallbackResult* nativeObject = (TireMaxImpulseCallbackResult*)this_addr;
 nativeObject->mLongitudinalImpulse = mLongitudinalImpulse;
 */
-    private static native void internal_native_set_mLongitudinalImpulse(long this_addr, float mLongitudinalImpulse);
+    public static native void internal_native_set_mLongitudinalImpulse(long this_addr, float mLongitudinalImpulse);
 
     public float get_mLateralImpulse() {
         return internal_native_get_mLateralImpulse((long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ nativeObject->mLongitudinalImpulse = mLongitudinalImpulse;
 TireMaxImpulseCallbackResult* nativeObject = (TireMaxImpulseCallbackResult*)this_addr;
 return nativeObject->mLateralImpulse;
 */
-    private static native float internal_native_get_mLateralImpulse(long this_addr);
+    public static native float internal_native_get_mLateralImpulse(long this_addr);
 
     public void set_mLateralImpulse(float mLateralImpulse) {
         internal_native_set_mLateralImpulse((long) getNativeData().getCPointer(), mLateralImpulse);
@@ -78,25 +78,5 @@ return nativeObject->mLateralImpulse;
 TireMaxImpulseCallbackResult* nativeObject = (TireMaxImpulseCallbackResult*)this_addr;
 nativeObject->mLateralImpulse = mLateralImpulse;
 */
-    private static native void internal_native_set_mLateralImpulse(long this_addr, float mLateralImpulse);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_get_mLongitudinalImpulse(long this_addr) {
-        return internal_native_get_mLongitudinalImpulse(this_addr);
-    }
-
-    public static void native_set_mLongitudinalImpulse(long this_addr, float mLongitudinalImpulse) {
-        internal_native_set_mLongitudinalImpulse(this_addr, mLongitudinalImpulse);
-    }
-
-    public static float native_get_mLateralImpulse(long this_addr) {
-        return internal_native_get_mLateralImpulse(this_addr);
-    }
-
-    public static void native_set_mLateralImpulse(long this_addr, float mLateralImpulse) {
-        internal_native_set_mLateralImpulse(this_addr, mLateralImpulse);
-    }
+    public static native void internal_native_set_mLateralImpulse(long this_addr, float mLateralImpulse);
 }

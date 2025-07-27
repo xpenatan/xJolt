@@ -154,7 +154,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListenerJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListenerJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public CharacterContactListenerEm() {
         super((byte) 1, (char) 1);
@@ -491,10 +491,10 @@ var jsObj = new jolt.CharacterContactListenerJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CharacterContactListenerJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "OnAdjustBodyVelocity", "OnContactValidate", "OnCharacterContactValidate", "OnContactAdded", "OnContactPersisted", "OnContactRemoved", "OnCharacterContactAdded", "OnCharacterContactPersisted", "OnCharacterContactRemoved", "OnContactSolve", "OnCharacterContactSolve" }, script = "var CharacterContactListenerJS = jolt.wrapPointer(this_addr, jolt.CharacterContactListenerJS); CharacterContactListenerJS.OnAdjustBodyVelocity = OnAdjustBodyVelocity; CharacterContactListenerJS.OnContactValidate = OnContactValidate; CharacterContactListenerJS.OnCharacterContactValidate = OnCharacterContactValidate; CharacterContactListenerJS.OnContactAdded = OnContactAdded; CharacterContactListenerJS.OnContactPersisted = OnContactPersisted; CharacterContactListenerJS.OnContactRemoved = OnContactRemoved; CharacterContactListenerJS.OnCharacterContactAdded = OnCharacterContactAdded; CharacterContactListenerJS.OnCharacterContactPersisted = OnCharacterContactPersisted; CharacterContactListenerJS.OnCharacterContactRemoved = OnCharacterContactRemoved; CharacterContactListenerJS.OnContactSolve = OnContactSolve; CharacterContactListenerJS.OnCharacterContactSolve = OnCharacterContactSolve;")
-    private static native void internal_native_setupCallback(int this_addr, OnAdjustBodyVelocity OnAdjustBodyVelocity, OnContactValidate OnContactValidate, OnCharacterContactValidate OnCharacterContactValidate, OnContactAdded OnContactAdded, OnContactPersisted OnContactPersisted, OnContactRemoved OnContactRemoved, OnCharacterContactAdded OnCharacterContactAdded, OnCharacterContactPersisted OnCharacterContactPersisted, OnCharacterContactRemoved OnCharacterContactRemoved, OnContactSolve OnContactSolve, OnCharacterContactSolve OnCharacterContactSolve);
+    public static native void internal_native_setupCallback(int this_addr, OnAdjustBodyVelocity OnAdjustBodyVelocity, OnContactValidate OnContactValidate, OnCharacterContactValidate OnCharacterContactValidate, OnContactAdded OnContactAdded, OnContactPersisted OnContactPersisted, OnContactRemoved OnContactRemoved, OnCharacterContactAdded OnCharacterContactAdded, OnCharacterContactPersisted OnCharacterContactPersisted, OnCharacterContactRemoved OnCharacterContactRemoved, OnContactSolve OnContactSolve, OnCharacterContactSolve OnCharacterContactSolve);
 
     @org.teavm.jso.JSFunctor()
     public interface OnAdjustBodyVelocity extends org.teavm.jso.JSObject {
@@ -560,13 +560,5 @@ return jolt.getPointer(jsObj);
     public interface OnCharacterContactSolve extends org.teavm.jso.JSObject {
 
         void OnCharacterContactSolve(int inCharacter, int inOtherCharacter, int inSubShapeID2, int inContactPosition, int inContactNormal, int inContactVelocity, int inContactMaterial, int inCharacterVelocity, int ioNewCharacterVelocity);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

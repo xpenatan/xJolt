@@ -38,9 +38,5 @@ public class VehicleController extends IDLBase {
 VehicleController* nativeObject = (VehicleController*)this_addr;
 return (jlong)&nativeObject->GetConstraint();
 */
-    private static native long internal_native_GetConstraint(long this_addr);
-
-    public static long native_GetConstraint(long this_addr) {
-        return internal_native_GetConstraint(this_addr);
-    }
+    public static native long internal_native_GetConstraint(long this_addr);
 }

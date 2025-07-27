@@ -35,7 +35,7 @@ public class RagdollSettings extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new RagdollSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -52,7 +52,7 @@ return (jlong)new RagdollSettings();
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 return nativeObject->Stabilize();
 */
-    private static native boolean internal_native_Stabilize(long this_addr);
+    public static native boolean internal_native_Stabilize(long this_addr);
 
     public Ragdoll CreateRagdoll(int inCollisionGroup, int inUserData, PhysicsSystem inSystem) {
         long pointer = internal_native_CreateRagdoll((long) getNativeData().getCPointer(), inCollisionGroup, inUserData, (long) (inSystem != null ? inSystem.getNativeData().getCPointer() : 0));
@@ -69,7 +69,7 @@ RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 Ragdoll* obj = nativeObject->CreateRagdoll((int)inCollisionGroup, (int)inUserData, (PhysicsSystem* )inSystem_addr);
 return (jlong)obj;
 */
-    private static native long internal_native_CreateRagdoll(long this_addr, int inCollisionGroup, int inUserData, long inSystem_addr);
+    public static native long internal_native_CreateRagdoll(long this_addr, int inCollisionGroup, int inUserData, long inSystem_addr);
 
     public Skeleton GetSkeleton() {
         long pointer = internal_native_GetSkeleton((long) getNativeData().getCPointer());
@@ -86,7 +86,7 @@ RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 Skeleton* obj = nativeObject->GetSkeleton();
 return (jlong)obj;
 */
-    private static native long internal_native_GetSkeleton(long this_addr);
+    public static native long internal_native_GetSkeleton(long this_addr);
 
     public void DisableParentChildCollisions(Mat44MemRef inJointMatrices, float inMinSeparationDistance) {
         internal_native_DisableParentChildCollisions((long) getNativeData().getCPointer(), (long) (inJointMatrices != null ? inJointMatrices.getNativeData().getCPointer() : 0), inMinSeparationDistance);
@@ -96,7 +96,7 @@ return (jlong)obj;
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 nativeObject->DisableParentChildCollisions((Mat44MemRef* )inJointMatrices_addr, (float)inMinSeparationDistance);
 */
-    private static native void internal_native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr, float inMinSeparationDistance);
+    public static native void internal_native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr, float inMinSeparationDistance);
 
     public void DisableParentChildCollisions(Mat44MemRef inJointMatrices) {
         internal_native_DisableParentChildCollisions((long) getNativeData().getCPointer(), (long) (inJointMatrices != null ? inJointMatrices.getNativeData().getCPointer() : 0));
@@ -106,7 +106,7 @@ nativeObject->DisableParentChildCollisions((Mat44MemRef* )inJointMatrices_addr, 
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 nativeObject->DisableParentChildCollisions((Mat44MemRef* )inJointMatrices_addr);
 */
-    private static native void internal_native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr);
+    public static native void internal_native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr);
 
     public void DisableParentChildCollisions() {
         internal_native_DisableParentChildCollisions((long) getNativeData().getCPointer());
@@ -116,7 +116,7 @@ nativeObject->DisableParentChildCollisions((Mat44MemRef* )inJointMatrices_addr);
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 nativeObject->DisableParentChildCollisions();
 */
-    private static native void internal_native_DisableParentChildCollisions(long this_addr);
+    public static native void internal_native_DisableParentChildCollisions(long this_addr);
 
     public void CalculateBodyIndexToConstraintIndex() {
         internal_native_CalculateBodyIndexToConstraintIndex((long) getNativeData().getCPointer());
@@ -126,7 +126,7 @@ nativeObject->DisableParentChildCollisions();
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 nativeObject->CalculateBodyIndexToConstraintIndex();
 */
-    private static native void internal_native_CalculateBodyIndexToConstraintIndex(long this_addr);
+    public static native void internal_native_CalculateBodyIndexToConstraintIndex(long this_addr);
 
     public void CalculateConstraintIndexToBodyIdxPair() {
         internal_native_CalculateConstraintIndexToBodyIdxPair((long) getNativeData().getCPointer());
@@ -136,7 +136,7 @@ nativeObject->CalculateBodyIndexToConstraintIndex();
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 nativeObject->CalculateConstraintIndexToBodyIdxPair();
 */
-    private static native void internal_native_CalculateConstraintIndexToBodyIdxPair(long this_addr);
+    public static native void internal_native_CalculateConstraintIndexToBodyIdxPair(long this_addr);
 
     public ArrayRagdollPart get_mParts() {
         long pointer = internal_native_get_mParts((long) getNativeData().getCPointer());
@@ -152,7 +152,7 @@ nativeObject->CalculateConstraintIndexToBodyIdxPair();
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 return (jlong)&nativeObject->mParts;
 */
-    private static native long internal_native_get_mParts(long this_addr);
+    public static native long internal_native_get_mParts(long this_addr);
 
     public void set_mParts(ArrayRagdollPart mParts) {
         internal_native_set_mParts((long) getNativeData().getCPointer(), (long) (mParts != null ? mParts.getNativeData().getCPointer() : 0));
@@ -162,7 +162,7 @@ return (jlong)&nativeObject->mParts;
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 nativeObject->mParts = *((ArrayRagdollPart*)mParts_addr);
 */
-    private static native void internal_native_set_mParts(long this_addr, long mParts_addr);
+    public static native void internal_native_set_mParts(long this_addr, long mParts_addr);
 
     public ArrayRagdollAdditionalConstraint get_mAdditionalConstraints() {
         long pointer = internal_native_get_mAdditionalConstraints((long) getNativeData().getCPointer());
@@ -178,7 +178,7 @@ nativeObject->mParts = *((ArrayRagdollPart*)mParts_addr);
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 return (jlong)&nativeObject->mAdditionalConstraints;
 */
-    private static native long internal_native_get_mAdditionalConstraints(long this_addr);
+    public static native long internal_native_get_mAdditionalConstraints(long this_addr);
 
     public void set_mAdditionalConstraints(ArrayRagdollAdditionalConstraint mAdditionalConstraints) {
         internal_native_set_mAdditionalConstraints((long) getNativeData().getCPointer(), (long) (mAdditionalConstraints != null ? mAdditionalConstraints.getNativeData().getCPointer() : 0));
@@ -188,57 +188,5 @@ return (jlong)&nativeObject->mAdditionalConstraints;
 RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
 nativeObject->mAdditionalConstraints = *((ArrayRagdollAdditionalConstraint*)mAdditionalConstraints_addr);
 */
-    private static native void internal_native_set_mAdditionalConstraints(long this_addr, long mAdditionalConstraints_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static boolean native_Stabilize(long this_addr) {
-        return internal_native_Stabilize(this_addr);
-    }
-
-    public static long native_CreateRagdoll(long this_addr, int inCollisionGroup, int inUserData, long inSystem_addr) {
-        return internal_native_CreateRagdoll(this_addr, inCollisionGroup, inUserData, inSystem_addr);
-    }
-
-    public static long native_GetSkeleton(long this_addr) {
-        return internal_native_GetSkeleton(this_addr);
-    }
-
-    public static void native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr, float inMinSeparationDistance) {
-        internal_native_DisableParentChildCollisions(this_addr, inJointMatrices_addr, inMinSeparationDistance);
-    }
-
-    public static void native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr) {
-        internal_native_DisableParentChildCollisions(this_addr, inJointMatrices_addr);
-    }
-
-    public static void native_DisableParentChildCollisions(long this_addr) {
-        internal_native_DisableParentChildCollisions(this_addr);
-    }
-
-    public static void native_CalculateBodyIndexToConstraintIndex(long this_addr) {
-        internal_native_CalculateBodyIndexToConstraintIndex(this_addr);
-    }
-
-    public static void native_CalculateConstraintIndexToBodyIdxPair(long this_addr) {
-        internal_native_CalculateConstraintIndexToBodyIdxPair(this_addr);
-    }
-
-    public static long native_get_mParts(long this_addr) {
-        return internal_native_get_mParts(this_addr);
-    }
-
-    public static void native_set_mParts(long this_addr, long mParts_addr) {
-        internal_native_set_mParts(this_addr, mParts_addr);
-    }
-
-    public static long native_get_mAdditionalConstraints(long this_addr) {
-        return internal_native_get_mAdditionalConstraints(this_addr);
-    }
-
-    public static void native_set_mAdditionalConstraints(long this_addr, long mAdditionalConstraints_addr) {
-        internal_native_set_mAdditionalConstraints(this_addr, mAdditionalConstraints_addr);
-    }
+    public static native void internal_native_set_mAdditionalConstraints(long this_addr, long mAdditionalConstraints_addr);
 }

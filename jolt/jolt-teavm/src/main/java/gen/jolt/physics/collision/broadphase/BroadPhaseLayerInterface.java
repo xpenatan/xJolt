@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterface);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterface);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int GetNumBroadPhaseLayers() {
         return internal_native_GetNumBroadPhaseLayers((int) (long) getNativeData().getCPointer());
@@ -51,13 +51,5 @@ var returnedJSObj = jsObj.GetNumBroadPhaseLayers();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterface);var returnedJSObj = jsObj.GetNumBroadPhaseLayers();return returnedJSObj;")
-    private static native int internal_native_GetNumBroadPhaseLayers(int this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_GetNumBroadPhaseLayers(long this_addr) {
-        return internal_native_GetNumBroadPhaseLayers((int) this_addr);
-    }
+    public static native int internal_native_GetNumBroadPhaseLayers(int this_addr);
 }

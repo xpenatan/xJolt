@@ -27,7 +27,7 @@ public class Triangle extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new Triangle();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, int inMaterialIndex, int inUserData) {
         long addr = internal_native_create_Vec3_Vec3_Vec3_int_int((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0), (long) (inV3 != null ? inV3.getNativeData().getCPointer() : 0), inMaterialIndex, inUserData);
@@ -37,7 +37,7 @@ return (jlong)new Triangle();
     /*[-JNI;-NATIVE]
 return (jlong)new Triangle(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr), *((Vec3* )inV3_addr), inMaterialIndex, inUserData);
 */
-    private static native long internal_native_create_Vec3_Vec3_Vec3_int_int(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex, int inUserData);
+    public static native long internal_native_create_Vec3_Vec3_Vec3_int_int(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex, int inUserData);
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, int inMaterialIndex) {
         long addr = internal_native_create_Vec3_Vec3_Vec3_int((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0), (long) (inV3 != null ? inV3.getNativeData().getCPointer() : 0), inMaterialIndex);
@@ -47,7 +47,7 @@ return (jlong)new Triangle(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr), *((Vec3* 
     /*[-JNI;-NATIVE]
 return (jlong)new Triangle(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr), *((Vec3* )inV3_addr), inMaterialIndex);
 */
-    private static native long internal_native_create_Vec3_Vec3_Vec3_int(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex);
+    public static native long internal_native_create_Vec3_Vec3_Vec3_int(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex);
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3) {
         long addr = internal_native_create_Vec3_Vec3_Vec3((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0), (long) (inV3 != null ? inV3.getNativeData().getCPointer() : 0));
@@ -57,7 +57,7 @@ return (jlong)new Triangle(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr), *((Vec3* 
     /*[-JNI;-NATIVE]
 return (jlong)new Triangle(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr), *((Vec3* )inV3_addr));
 */
-    private static native long internal_native_create_Vec3_Vec3_Vec3(long inV1_addr, long inV2_addr, long inV3_addr);
+    public static native long internal_native_create_Vec3_Vec3_Vec3(long inV1_addr, long inV2_addr, long inV3_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -82,7 +82,7 @@ return (jlong)new Triangle(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr), *((Vec3* 
 Triangle* nativeObject = (Triangle*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Float3 get_mV(int index) {
         long pointer = internal_native_get_mV((long) getNativeData().getCPointer(), index);
@@ -98,7 +98,7 @@ delete nativeObject;
 Triangle* nativeObject = (Triangle*)this_addr;
 return (jlong)&nativeObject->mV[index];
 */
-    private static native long internal_native_get_mV(long this_addr, int index);
+    public static native long internal_native_get_mV(long this_addr, int index);
 
     public void set_mV(int index, Float3 mV) {
         internal_native_set_mV((long) getNativeData().getCPointer(), index, (long) (mV != null ? mV.getNativeData().getCPointer() : 0));
@@ -108,7 +108,7 @@ return (jlong)&nativeObject->mV[index];
 Triangle* nativeObject = (Triangle*)this_addr;
 nativeObject->mV[index] = *((Float3*)mV_addr);
 */
-    private static native void internal_native_set_mV(long this_addr, int index, long mV_addr);
+    public static native void internal_native_set_mV(long this_addr, int index, long mV_addr);
 
     public int get_mMaterialIndex() {
         return internal_native_get_mMaterialIndex((long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ nativeObject->mV[index] = *((Float3*)mV_addr);
 Triangle* nativeObject = (Triangle*)this_addr;
 return nativeObject->mMaterialIndex;
 */
-    private static native int internal_native_get_mMaterialIndex(long this_addr);
+    public static native int internal_native_get_mMaterialIndex(long this_addr);
 
     public void set_mMaterialIndex(int mMaterialIndex) {
         internal_native_set_mMaterialIndex((long) getNativeData().getCPointer(), mMaterialIndex);
@@ -128,7 +128,7 @@ return nativeObject->mMaterialIndex;
 Triangle* nativeObject = (Triangle*)this_addr;
 nativeObject->mMaterialIndex = mMaterialIndex;
 */
-    private static native void internal_native_set_mMaterialIndex(long this_addr, int mMaterialIndex);
+    public static native void internal_native_set_mMaterialIndex(long this_addr, int mMaterialIndex);
 
     public int get_mUserData() {
         return internal_native_get_mUserData((long) getNativeData().getCPointer());
@@ -138,7 +138,7 @@ nativeObject->mMaterialIndex = mMaterialIndex;
 Triangle* nativeObject = (Triangle*)this_addr;
 return nativeObject->mUserData;
 */
-    private static native int internal_native_get_mUserData(long this_addr);
+    public static native int internal_native_get_mUserData(long this_addr);
 
     public void set_mUserData(int mUserData) {
         internal_native_set_mUserData((long) getNativeData().getCPointer(), mUserData);
@@ -148,49 +148,5 @@ return nativeObject->mUserData;
 Triangle* nativeObject = (Triangle*)this_addr;
 nativeObject->mUserData = mUserData;
 */
-    private static native void internal_native_set_mUserData(long this_addr, int mUserData);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_Vec3_Vec3_Vec3_int_int(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex, int inUserData) {
-        return internal_native_create_Vec3_Vec3_Vec3_int_int(inV1_addr, inV2_addr, inV3_addr, inMaterialIndex, inUserData);
-    }
-
-    public static long native_create_Vec3_Vec3_Vec3_int(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex) {
-        return internal_native_create_Vec3_Vec3_Vec3_int(inV1_addr, inV2_addr, inV3_addr, inMaterialIndex);
-    }
-
-    public static long native_create_Vec3_Vec3_Vec3(long inV1_addr, long inV2_addr, long inV3_addr) {
-        return internal_native_create_Vec3_Vec3_Vec3(inV1_addr, inV2_addr, inV3_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mV(long this_addr, int index) {
-        return internal_native_get_mV(this_addr, index);
-    }
-
-    public static void native_set_mV(long this_addr, int index, long mV_addr) {
-        internal_native_set_mV(this_addr, index, mV_addr);
-    }
-
-    public static int native_get_mMaterialIndex(long this_addr) {
-        return internal_native_get_mMaterialIndex(this_addr);
-    }
-
-    public static void native_set_mMaterialIndex(long this_addr, int mMaterialIndex) {
-        internal_native_set_mMaterialIndex(this_addr, mMaterialIndex);
-    }
-
-    public static int native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData(this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, int mUserData) {
-        internal_native_set_mUserData(this_addr, mUserData);
-    }
+    public static native void internal_native_set_mUserData(long this_addr, int mUserData);
 }

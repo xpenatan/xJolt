@@ -28,7 +28,7 @@ var jsObj = new jolt.OffsetCenterOfMassShapeSettings(inOffset_addr, inShape_addr
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inOffset_addr", "inShape_addr"}, script = "var jsObj = new jolt.OffsetCenterOfMassShapeSettings(inOffset_addr, inShape_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Vec3_Shape(int inOffset_addr, int inShape_addr);
+    public static native int internal_native_create_Vec3_Shape(int inOffset_addr, int inShape_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,7 +55,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.OffsetCenterOfMassShapeSettings);var returnedJSObj = jsObj.get_mOffset();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mOffset(int this_addr);
+    public static native int internal_native_get_mOffset(int this_addr);
 
     public void set_mOffset(Vec3 mOffset) {
         internal_native_set_mOffset((int) (long) getNativeData().getCPointer(), (int) (long) (mOffset != null ? mOffset.getNativeData().getCPointer() : 0));
@@ -66,17 +66,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.OffsetCenterOfMassShapeSettings);
 jsObj.set_mOffset(mOffset_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mOffset_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.OffsetCenterOfMassShapeSettings);jsObj.set_mOffset(mOffset_addr);")
-    private static native void internal_native_set_mOffset(int this_addr, int mOffset_addr);
-
-    public static long native_create_Vec3_Shape(long inOffset_addr, long inShape_addr) {
-        return internal_native_create_Vec3_Shape((int) inOffset_addr, (int) inShape_addr);
-    }
-
-    public static long native_get_mOffset(long this_addr) {
-        return internal_native_get_mOffset((int) this_addr);
-    }
-
-    public static void native_set_mOffset(long this_addr, long mOffset_addr) {
-        internal_native_set_mOffset((int) this_addr, (int) mOffset_addr);
-    }
+    public static native void internal_native_set_mOffset(int this_addr, int mOffset_addr);
 }

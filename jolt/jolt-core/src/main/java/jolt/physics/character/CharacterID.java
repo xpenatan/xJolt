@@ -25,7 +25,7 @@ public class CharacterID extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new CharacterID();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,7 +50,7 @@ return (jlong)new CharacterID();
 CharacterID* nativeObject = (CharacterID*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetValue() {
         return internal_native_GetValue((long) getNativeData().getCPointer());
@@ -60,7 +60,7 @@ delete nativeObject;
 CharacterID* nativeObject = (CharacterID*)this_addr;
 return nativeObject->GetValue();
 */
-    private static native int internal_native_GetValue(long this_addr);
+    public static native int internal_native_GetValue(long this_addr);
 
     public boolean IsInvalid() {
         return internal_native_IsInvalid((long) getNativeData().getCPointer());
@@ -70,7 +70,7 @@ return nativeObject->GetValue();
 CharacterID* nativeObject = (CharacterID*)this_addr;
 return nativeObject->IsInvalid();
 */
-    private static native boolean internal_native_IsInvalid(long this_addr);
+    public static native boolean internal_native_IsInvalid(long this_addr);
 
     public static CharacterID sNextCharacterID() {
         long pointer = internal_native_sNextCharacterID();
@@ -86,7 +86,7 @@ return nativeObject->IsInvalid();
 static CharacterID copy_addr;
 copy_addr = CharacterID::sNextCharacterID();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sNextCharacterID();
+    public static native long internal_native_sNextCharacterID();
 
     public static void sSetNextCharacterID(int inNextValue) {
         internal_native_sSetNextCharacterID(inNextValue);
@@ -95,29 +95,5 @@ return (jlong)&copy_addr;*/
     /*[-JNI;-NATIVE]
 CharacterID::sSetNextCharacterID(inNextValue);
 */
-    private static native void internal_native_sSetNextCharacterID(int inNextValue);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_GetValue(long this_addr) {
-        return internal_native_GetValue(this_addr);
-    }
-
-    public static boolean native_IsInvalid(long this_addr) {
-        return internal_native_IsInvalid(this_addr);
-    }
-
-    public static long native_sNextCharacterID() {
-        return internal_native_sNextCharacterID();
-    }
-
-    public static void native_sSetNextCharacterID(int inNextValue) {
-        internal_native_sSetNextCharacterID(inNextValue);
-    }
+    public static native void internal_native_sSetNextCharacterID(int inNextValue);
 }

@@ -55,7 +55,7 @@ virtual bool CanCollide(const CollisionGroup& inGroup1, const CollisionGroup& in
 GroupFilterJS* nativeObject = (GroupFilterJS*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetRefCount() {
         return internal_native_GetRefCount((long) getNativeData().getCPointer());
@@ -65,7 +65,7 @@ delete nativeObject;
 GroupFilter* nativeObject = (GroupFilter*)this_addr;
 return nativeObject->GetRefCount();
 */
-    private static native int internal_native_GetRefCount(long this_addr);
+    public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
         internal_native_AddRef((long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ return nativeObject->GetRefCount();
 GroupFilter* nativeObject = (GroupFilter*)this_addr;
 nativeObject->AddRef();
 */
-    private static native void internal_native_AddRef(long this_addr);
+    public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
         internal_native_Release((long) getNativeData().getCPointer());
@@ -85,7 +85,7 @@ nativeObject->AddRef();
 GroupFilter* nativeObject = (GroupFilter*)this_addr;
 nativeObject->Release();
 */
-    private static native void internal_native_Release(long this_addr);
+    public static native void internal_native_Release(long this_addr);
 
     public GroupFilter() {
         long addr = internal_native_create();
@@ -114,31 +114,11 @@ nativeObject->Release();
     /*[-JNI;-NATIVE]
 return (jlong)new GroupFilterJS();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /*[-JNI;-NATIVE]
 GroupFilterJS* nativeObject = (GroupFilterJS*)this_addr;
 nativeObject->setupCallback(env, object);
 */
-    private native void internal_native_setupCallback(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount(this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef(this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release(this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
-    }
+    public native void internal_native_setupCallback(long this_addr);
 }

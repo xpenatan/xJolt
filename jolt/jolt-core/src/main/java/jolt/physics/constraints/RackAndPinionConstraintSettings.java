@@ -30,7 +30,7 @@ public class RackAndPinionConstraintSettings extends TwoBodyConstraintSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new RackAndPinionConstraintSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -56,7 +56,7 @@ return (jlong)new RackAndPinionConstraintSettings();
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void SetRatio(int inNumTeethRack, float inRackLength, int inNumTeethPinion) {
         internal_native_SetRatio((long) getNativeData().getCPointer(), inNumTeethRack, inRackLength, inNumTeethPinion);
@@ -66,7 +66,7 @@ delete nativeObject;
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 nativeObject->SetRatio((int)inNumTeethRack, (float)inRackLength, (int)inNumTeethPinion);
 */
-    private static native void internal_native_SetRatio(long this_addr, int inNumTeethRack, float inRackLength, int inNumTeethPinion);
+    public static native void internal_native_SetRatio(long this_addr, int inNumTeethRack, float inRackLength, int inNumTeethPinion);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((long) getNativeData().getCPointer());
@@ -77,7 +77,7 @@ nativeObject->SetRatio((int)inNumTeethRack, (float)inRackLength, (int)inNumTeeth
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 return (jint)nativeObject->mSpace;
 */
-    private static native int internal_native_get_mSpace(long this_addr);
+    public static native int internal_native_get_mSpace(long this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((long) getNativeData().getCPointer(), (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -87,7 +87,7 @@ return (jint)nativeObject->mSpace;
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    private static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
 
     public Vec3 get_mHingeAxis() {
         long pointer = internal_native_get_mHingeAxis((long) getNativeData().getCPointer());
@@ -103,7 +103,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mHingeAxis;
 */
-    private static native long internal_native_get_mHingeAxis(long this_addr);
+    public static native long internal_native_get_mHingeAxis(long this_addr);
 
     public void set_mHingeAxis(Vec3 mHingeAxis) {
         internal_native_set_mHingeAxis((long) getNativeData().getCPointer(), (long) (mHingeAxis != null ? mHingeAxis.getNativeData().getCPointer() : 0));
@@ -113,7 +113,7 @@ return (jlong)&nativeObject->mHingeAxis;
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 nativeObject->mHingeAxis = *((Vec3*)mHingeAxis_addr);
 */
-    private static native void internal_native_set_mHingeAxis(long this_addr, long mHingeAxis_addr);
+    public static native void internal_native_set_mHingeAxis(long this_addr, long mHingeAxis_addr);
 
     public Vec3 get_mSliderAxis() {
         long pointer = internal_native_get_mSliderAxis((long) getNativeData().getCPointer());
@@ -129,7 +129,7 @@ nativeObject->mHingeAxis = *((Vec3*)mHingeAxis_addr);
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mSliderAxis;
 */
-    private static native long internal_native_get_mSliderAxis(long this_addr);
+    public static native long internal_native_get_mSliderAxis(long this_addr);
 
     public void set_mSliderAxis(Vec3 mSliderAxis) {
         internal_native_set_mSliderAxis((long) getNativeData().getCPointer(), (long) (mSliderAxis != null ? mSliderAxis.getNativeData().getCPointer() : 0));
@@ -139,7 +139,7 @@ return (jlong)&nativeObject->mSliderAxis;
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 nativeObject->mSliderAxis = *((Vec3*)mSliderAxis_addr);
 */
-    private static native void internal_native_set_mSliderAxis(long this_addr, long mSliderAxis_addr);
+    public static native void internal_native_set_mSliderAxis(long this_addr, long mSliderAxis_addr);
 
     public float get_mRatio() {
         return internal_native_get_mRatio((long) getNativeData().getCPointer());
@@ -149,7 +149,7 @@ nativeObject->mSliderAxis = *((Vec3*)mSliderAxis_addr);
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 return nativeObject->mRatio;
 */
-    private static native float internal_native_get_mRatio(long this_addr);
+    public static native float internal_native_get_mRatio(long this_addr);
 
     public void set_mRatio(float mRatio) {
         internal_native_set_mRatio((long) getNativeData().getCPointer(), mRatio);
@@ -159,49 +159,5 @@ return nativeObject->mRatio;
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 nativeObject->mRatio = mRatio;
 */
-    private static native void internal_native_set_mRatio(long this_addr, float mRatio);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_SetRatio(long this_addr, int inNumTeethRack, float inRackLength, int inNumTeethPinion) {
-        internal_native_SetRatio(this_addr, inNumTeethRack, inRackLength, inNumTeethPinion);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace(this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace(this_addr, mSpace);
-    }
-
-    public static long native_get_mHingeAxis(long this_addr) {
-        return internal_native_get_mHingeAxis(this_addr);
-    }
-
-    public static void native_set_mHingeAxis(long this_addr, long mHingeAxis_addr) {
-        internal_native_set_mHingeAxis(this_addr, mHingeAxis_addr);
-    }
-
-    public static long native_get_mSliderAxis(long this_addr) {
-        return internal_native_get_mSliderAxis(this_addr);
-    }
-
-    public static void native_set_mSliderAxis(long this_addr, long mSliderAxis_addr) {
-        internal_native_set_mSliderAxis(this_addr, mSliderAxis_addr);
-    }
-
-    public static float native_get_mRatio(long this_addr) {
-        return internal_native_get_mRatio(this_addr);
-    }
-
-    public static void native_set_mRatio(long this_addr, float mRatio) {
-        internal_native_set_mRatio(this_addr, mRatio);
-    }
+    public static native void internal_native_set_mRatio(long this_addr, float mRatio);
 }

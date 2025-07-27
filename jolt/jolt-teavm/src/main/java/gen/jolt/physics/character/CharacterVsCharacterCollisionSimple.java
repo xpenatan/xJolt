@@ -38,7 +38,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVsCharacterCollisionSimple
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVsCharacterCollisionSimple);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void Add(CharacterVirtual inCharacter) {
         internal_native_Add((int) (long) getNativeData().getCPointer(), (int) (long) (inCharacter != null ? inCharacter.getNativeData().getCPointer() : 0));
@@ -49,7 +49,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVsCharacterCollisionSimple
 jsObj.Add(inCharacter_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inCharacter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVsCharacterCollisionSimple);jsObj.Add(inCharacter_addr);")
-    private static native void internal_native_Add(int this_addr, int inCharacter_addr);
+    public static native void internal_native_Add(int this_addr, int inCharacter_addr);
 
     public void Remove(CharacterVirtual inCharacter) {
         internal_native_Remove((int) (long) getNativeData().getCPointer(), (int) (long) (inCharacter != null ? inCharacter.getNativeData().getCPointer() : 0));
@@ -60,17 +60,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVsCharacterCollisionSimple
 jsObj.Remove(inCharacter_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inCharacter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVsCharacterCollisionSimple);jsObj.Remove(inCharacter_addr);")
-    private static native void internal_native_Remove(int this_addr, int inCharacter_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_Add(long this_addr, long inCharacter_addr) {
-        internal_native_Add((int) this_addr, (int) inCharacter_addr);
-    }
-
-    public static void native_Remove(long this_addr, long inCharacter_addr) {
-        internal_native_Remove((int) this_addr, (int) inCharacter_addr);
-    }
+    public static native void internal_native_Remove(int this_addr, int inCharacter_addr);
 }

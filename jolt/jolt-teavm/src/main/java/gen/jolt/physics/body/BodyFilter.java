@@ -37,7 +37,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyFilterJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyFilterJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public BodyFilter() {
         int addr = internal_native_create();
@@ -88,10 +88,10 @@ var jsObj = new jolt.BodyFilterJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.BodyFilterJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "ShouldCollide", "ShouldCollideLocked" }, script = "var BodyFilterJS = jolt.wrapPointer(this_addr, jolt.BodyFilterJS); BodyFilterJS.ShouldCollide = ShouldCollide; BodyFilterJS.ShouldCollideLocked = ShouldCollideLocked;")
-    private static native void internal_native_setupCallback(int this_addr, ShouldCollide ShouldCollide, ShouldCollideLocked ShouldCollideLocked);
+    public static native void internal_native_setupCallback(int this_addr, ShouldCollide ShouldCollide, ShouldCollideLocked ShouldCollideLocked);
 
     @org.teavm.jso.JSFunctor()
     public interface ShouldCollide extends org.teavm.jso.JSObject {
@@ -103,13 +103,5 @@ return jolt.getPointer(jsObj);
     public interface ShouldCollideLocked extends org.teavm.jso.JSObject {
 
         boolean ShouldCollideLocked(int inBody);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

@@ -42,7 +42,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public boolean empty() {
         return internal_native_empty((int) (long) getNativeData().getCPointer());
@@ -54,7 +54,7 @@ var returnedJSObj = jsObj.empty();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);var returnedJSObj = jsObj.empty();return returnedJSObj;")
-    private static native boolean internal_native_empty(int this_addr);
+    public static native boolean internal_native_empty(int this_addr);
 
     public int size() {
         return internal_native_size((int) (long) getNativeData().getCPointer());
@@ -66,7 +66,7 @@ var returnedJSObj = jsObj.size();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);var returnedJSObj = jsObj.size();return returnedJSObj;")
-    private static native int internal_native_size(int this_addr);
+    public static native int internal_native_size(int this_addr);
 
     public Vec3 at(int inIndex) {
         int pointer = internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
@@ -85,7 +85,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);var returnedJSObj = jsObj.at(inIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_at(int this_addr, int inIndex);
+    public static native int internal_native_at(int this_addr, int inIndex);
 
     public void push_back(Vec3 inValue) {
         internal_native_push_back((int) (long) getNativeData().getCPointer(), (int) (long) (inValue != null ? inValue.getNativeData().getCPointer() : 0));
@@ -96,7 +96,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);
 jsObj.push_back(inValue_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inValue_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);jsObj.push_back(inValue_addr);")
-    private static native void internal_native_push_back(int this_addr, int inValue_addr);
+    public static native void internal_native_push_back(int this_addr, int inValue_addr);
 
     public void resize(int inSize) {
         internal_native_resize((int) (long) getNativeData().getCPointer(), inSize);
@@ -107,7 +107,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);
 jsObj.resize(inSize);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSize"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);jsObj.resize(inSize);")
-    private static native void internal_native_resize(int this_addr, int inSize);
+    public static native void internal_native_resize(int this_addr, int inSize);
 
     public void clear() {
         internal_native_clear((int) (long) getNativeData().getCPointer());
@@ -118,33 +118,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);
 jsObj.clear();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactPoints);jsObj.clear();")
-    private static native void internal_native_clear(int this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static boolean native_empty(long this_addr) {
-        return internal_native_empty((int) this_addr);
-    }
-
-    public static int native_size(long this_addr) {
-        return internal_native_size((int) this_addr);
-    }
-
-    public static long native_at(long this_addr, int inIndex) {
-        return internal_native_at((int) this_addr, inIndex);
-    }
-
-    public static void native_push_back(long this_addr, long inValue_addr) {
-        internal_native_push_back((int) this_addr, (int) inValue_addr);
-    }
-
-    public static void native_resize(long this_addr, int inSize) {
-        internal_native_resize((int) this_addr, inSize);
-    }
-
-    public static void native_clear(long this_addr) {
-        internal_native_clear((int) this_addr);
-    }
+    public static native void internal_native_clear(int this_addr);
 }

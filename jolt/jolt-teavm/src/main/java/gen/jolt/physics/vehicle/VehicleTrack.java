@@ -38,7 +38,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTrack);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTrack);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mAngularVelocity() {
         return internal_native_get_mAngularVelocity((int) (long) getNativeData().getCPointer());
@@ -49,7 +49,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTrack);
 return jsObj.get_mAngularVelocity();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTrack);return jsObj.get_mAngularVelocity();")
-    private static native float internal_native_get_mAngularVelocity(int this_addr);
+    public static native float internal_native_get_mAngularVelocity(int this_addr);
 
     public void set_mAngularVelocity(float mAngularVelocity) {
         internal_native_set_mAngularVelocity((int) (long) getNativeData().getCPointer(), mAngularVelocity);
@@ -60,17 +60,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTrack);
 jsObj.set_mAngularVelocity(mAngularVelocity);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mAngularVelocity"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTrack);jsObj.set_mAngularVelocity(mAngularVelocity);")
-    private static native void internal_native_set_mAngularVelocity(int this_addr, float mAngularVelocity);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_mAngularVelocity(long this_addr) {
-        return internal_native_get_mAngularVelocity((int) this_addr);
-    }
-
-    public static void native_set_mAngularVelocity(long this_addr, float mAngularVelocity) {
-        internal_native_set_mAngularVelocity((int) this_addr, mAngularVelocity);
-    }
+    public static native void internal_native_set_mAngularVelocity(int this_addr, float mAngularVelocity);
 }

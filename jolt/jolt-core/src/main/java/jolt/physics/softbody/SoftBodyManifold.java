@@ -48,7 +48,7 @@ public class SoftBodyManifold extends IDLBase {
 SoftBodyManifold* nativeObject = (SoftBodyManifold*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public ArraySoftBodyVertex GetVertices() {
         long pointer = internal_native_GetVertices((long) getNativeData().getCPointer());
@@ -64,7 +64,7 @@ delete nativeObject;
 SoftBodyManifold* nativeObject = (SoftBodyManifold*)this_addr;
 return (jlong)&nativeObject->GetVertices();
 */
-    private static native long internal_native_GetVertices(long this_addr);
+    public static native long internal_native_GetVertices(long this_addr);
 
     public boolean HasContact(SoftBodyVertex inVertex) {
         return internal_native_HasContact((long) getNativeData().getCPointer(), (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
@@ -74,7 +74,7 @@ return (jlong)&nativeObject->GetVertices();
 SoftBodyManifold* nativeObject = (SoftBodyManifold*)this_addr;
 return nativeObject->HasContact(*((SoftBodyVertex* )inVertex_addr));
 */
-    private static native boolean internal_native_HasContact(long this_addr, long inVertex_addr);
+    public static native boolean internal_native_HasContact(long this_addr, long inVertex_addr);
 
     public Vec3 GetLocalContactPoint(SoftBodyVertex inVertex) {
         long pointer = internal_native_GetLocalContactPoint((long) getNativeData().getCPointer(), (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
@@ -91,7 +91,7 @@ SoftBodyManifold* nativeObject = (SoftBodyManifold*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLocalContactPoint(*((SoftBodyVertex* )inVertex_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetLocalContactPoint(long this_addr, long inVertex_addr);
+    public static native long internal_native_GetLocalContactPoint(long this_addr, long inVertex_addr);
 
     public Vec3 GetContactNormal(SoftBodyVertex inVertex) {
         long pointer = internal_native_GetContactNormal((long) getNativeData().getCPointer(), (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
@@ -108,7 +108,7 @@ SoftBodyManifold* nativeObject = (SoftBodyManifold*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactNormal(*((SoftBodyVertex* )inVertex_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetContactNormal(long this_addr, long inVertex_addr);
+    public static native long internal_native_GetContactNormal(long this_addr, long inVertex_addr);
 
     public BodyID GetContactBodyID(SoftBodyVertex inVertex) {
         long pointer = internal_native_GetContactBodyID((long) getNativeData().getCPointer(), (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
@@ -125,29 +125,5 @@ SoftBodyManifold* nativeObject = (SoftBodyManifold*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->GetContactBodyID(*((SoftBodyVertex* )inVertex_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetContactBodyID(long this_addr, long inVertex_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_GetVertices(long this_addr) {
-        return internal_native_GetVertices(this_addr);
-    }
-
-    public static boolean native_HasContact(long this_addr, long inVertex_addr) {
-        return internal_native_HasContact(this_addr, inVertex_addr);
-    }
-
-    public static long native_GetLocalContactPoint(long this_addr, long inVertex_addr) {
-        return internal_native_GetLocalContactPoint(this_addr, inVertex_addr);
-    }
-
-    public static long native_GetContactNormal(long this_addr, long inVertex_addr) {
-        return internal_native_GetContactNormal(this_addr, inVertex_addr);
-    }
-
-    public static long native_GetContactBodyID(long this_addr, long inVertex_addr) {
-        return internal_native_GetContactBodyID(this_addr, inVertex_addr);
-    }
+    public static native long internal_native_GetContactBodyID(long this_addr, long inVertex_addr);
 }

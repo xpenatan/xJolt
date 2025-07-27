@@ -24,7 +24,7 @@ var jsObj = new jolt.IgnoreMultipleBodiesFilter();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.IgnoreMultipleBodiesFilter();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.IgnoreMultipleBodiesFilter);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IgnoreMultipleBodiesFilter);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void Clear() {
         internal_native_Clear((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.IgnoreMultipleBodiesFilter);
 jsObj.Clear();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IgnoreMultipleBodiesFilter);jsObj.Clear();")
-    private static native void internal_native_Clear(int this_addr);
+    public static native void internal_native_Clear(int this_addr);
 
     public void Reserve(int inSize) {
         internal_native_Reserve((int) (long) getNativeData().getCPointer(), inSize);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.IgnoreMultipleBodiesFilter);
 jsObj.Reserve(inSize);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSize"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IgnoreMultipleBodiesFilter);jsObj.Reserve(inSize);")
-    private static native void internal_native_Reserve(int this_addr, int inSize);
+    public static native void internal_native_Reserve(int this_addr, int inSize);
 
     public void IgnoreBody(BodyID inBodyID) {
         internal_native_IgnoreBody((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
@@ -84,25 +84,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.IgnoreMultipleBodiesFilter);
 jsObj.IgnoreBody(inBodyID_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IgnoreMultipleBodiesFilter);jsObj.IgnoreBody(inBodyID_addr);")
-    private static native void internal_native_IgnoreBody(int this_addr, int inBodyID_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_Clear(long this_addr) {
-        internal_native_Clear((int) this_addr);
-    }
-
-    public static void native_Reserve(long this_addr, int inSize) {
-        internal_native_Reserve((int) this_addr, inSize);
-    }
-
-    public static void native_IgnoreBody(long this_addr, long inBodyID_addr) {
-        internal_native_IgnoreBody((int) this_addr, (int) inBodyID_addr);
-    }
+    public static native void internal_native_IgnoreBody(int this_addr, int inBodyID_addr);
 }

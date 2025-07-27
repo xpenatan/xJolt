@@ -37,7 +37,7 @@ public class CharacterVsCharacterCollisionSimple extends CharacterVsCharacterCol
 CharacterVsCharacterCollisionSimple* nativeObject = (CharacterVsCharacterCollisionSimple*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void Add(CharacterVirtual inCharacter) {
         internal_native_Add((long) getNativeData().getCPointer(), (long) (inCharacter != null ? inCharacter.getNativeData().getCPointer() : 0));
@@ -47,7 +47,7 @@ delete nativeObject;
 CharacterVsCharacterCollisionSimple* nativeObject = (CharacterVsCharacterCollisionSimple*)this_addr;
 nativeObject->Add((CharacterVirtual* )inCharacter_addr);
 */
-    private static native void internal_native_Add(long this_addr, long inCharacter_addr);
+    public static native void internal_native_Add(long this_addr, long inCharacter_addr);
 
     public void Remove(CharacterVirtual inCharacter) {
         internal_native_Remove((long) getNativeData().getCPointer(), (long) (inCharacter != null ? inCharacter.getNativeData().getCPointer() : 0));
@@ -57,17 +57,5 @@ nativeObject->Add((CharacterVirtual* )inCharacter_addr);
 CharacterVsCharacterCollisionSimple* nativeObject = (CharacterVsCharacterCollisionSimple*)this_addr;
 nativeObject->Remove((CharacterVirtual* )inCharacter_addr);
 */
-    private static native void internal_native_Remove(long this_addr, long inCharacter_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_Add(long this_addr, long inCharacter_addr) {
-        internal_native_Add(this_addr, inCharacter_addr);
-    }
-
-    public static void native_Remove(long this_addr, long inCharacter_addr) {
-        internal_native_Remove(this_addr, inCharacter_addr);
-    }
+    public static native void internal_native_Remove(long this_addr, long inCharacter_addr);
 }

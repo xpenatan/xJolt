@@ -44,7 +44,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public EActiveEdgeMode get_mActiveEdgeMode() {
         int value = internal_native_get_mActiveEdgeMode((int) (long) getNativeData().getCPointer());
@@ -56,7 +56,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 return jsObj.get_mActiveEdgeMode();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);return jsObj.get_mActiveEdgeMode();")
-    private static native int internal_native_get_mActiveEdgeMode(int this_addr);
+    public static native int internal_native_get_mActiveEdgeMode(int this_addr);
 
     public void set_mActiveEdgeMode(EActiveEdgeMode mActiveEdgeMode) {
         internal_native_set_mActiveEdgeMode((int) (long) getNativeData().getCPointer(), (int) (long) (mActiveEdgeMode != null ? mActiveEdgeMode.getValue() : 0));
@@ -67,7 +67,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 jsObj.set_mActiveEdgeMode(mActiveEdgeMode);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mActiveEdgeMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);jsObj.set_mActiveEdgeMode(mActiveEdgeMode);")
-    private static native void internal_native_set_mActiveEdgeMode(int this_addr, int mActiveEdgeMode);
+    public static native void internal_native_set_mActiveEdgeMode(int this_addr, int mActiveEdgeMode);
 
     public ECollectFacesMode get_mCollectFacesMode() {
         int value = internal_native_get_mCollectFacesMode((int) (long) getNativeData().getCPointer());
@@ -79,7 +79,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 return jsObj.get_mCollectFacesMode();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);return jsObj.get_mCollectFacesMode();")
-    private static native int internal_native_get_mCollectFacesMode(int this_addr);
+    public static native int internal_native_get_mCollectFacesMode(int this_addr);
 
     public void set_mCollectFacesMode(ECollectFacesMode mCollectFacesMode) {
         internal_native_set_mCollectFacesMode((int) (long) getNativeData().getCPointer(), (int) (long) (mCollectFacesMode != null ? mCollectFacesMode.getValue() : 0));
@@ -90,7 +90,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 jsObj.set_mCollectFacesMode(mCollectFacesMode);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCollectFacesMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);jsObj.set_mCollectFacesMode(mCollectFacesMode);")
-    private static native void internal_native_set_mCollectFacesMode(int this_addr, int mCollectFacesMode);
+    public static native void internal_native_set_mCollectFacesMode(int this_addr, int mCollectFacesMode);
 
     public float get_mCollisionTolerance() {
         return internal_native_get_mCollisionTolerance((int) (long) getNativeData().getCPointer());
@@ -101,7 +101,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 return jsObj.get_mCollisionTolerance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);return jsObj.get_mCollisionTolerance();")
-    private static native float internal_native_get_mCollisionTolerance(int this_addr);
+    public static native float internal_native_get_mCollisionTolerance(int this_addr);
 
     public void set_mCollisionTolerance(float mCollisionTolerance) {
         internal_native_set_mCollisionTolerance((int) (long) getNativeData().getCPointer(), mCollisionTolerance);
@@ -112,7 +112,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 jsObj.set_mCollisionTolerance(mCollisionTolerance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCollisionTolerance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);jsObj.set_mCollisionTolerance(mCollisionTolerance);")
-    private static native void internal_native_set_mCollisionTolerance(int this_addr, float mCollisionTolerance);
+    public static native void internal_native_set_mCollisionTolerance(int this_addr, float mCollisionTolerance);
 
     public float get_mPenetrationTolerance() {
         return internal_native_get_mPenetrationTolerance((int) (long) getNativeData().getCPointer());
@@ -123,7 +123,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 return jsObj.get_mPenetrationTolerance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);return jsObj.get_mPenetrationTolerance();")
-    private static native float internal_native_get_mPenetrationTolerance(int this_addr);
+    public static native float internal_native_get_mPenetrationTolerance(int this_addr);
 
     public void set_mPenetrationTolerance(float mPenetrationTolerance) {
         internal_native_set_mPenetrationTolerance((int) (long) getNativeData().getCPointer(), mPenetrationTolerance);
@@ -134,7 +134,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 jsObj.set_mPenetrationTolerance(mPenetrationTolerance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPenetrationTolerance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);jsObj.set_mPenetrationTolerance(mPenetrationTolerance);")
-    private static native void internal_native_set_mPenetrationTolerance(int this_addr, float mPenetrationTolerance);
+    public static native void internal_native_set_mPenetrationTolerance(int this_addr, float mPenetrationTolerance);
 
     public Vec3 get_mActiveEdgeMovementDirection() {
         int pointer = internal_native_get_mActiveEdgeMovementDirection((int) (long) getNativeData().getCPointer());
@@ -153,7 +153,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);var returnedJSObj = jsObj.get_mActiveEdgeMovementDirection();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mActiveEdgeMovementDirection(int this_addr);
+    public static native int internal_native_get_mActiveEdgeMovementDirection(int this_addr);
 
     public void set_mActiveEdgeMovementDirection(Vec3 mActiveEdgeMovementDirection) {
         internal_native_set_mActiveEdgeMovementDirection((int) (long) getNativeData().getCPointer(), (int) (long) (mActiveEdgeMovementDirection != null ? mActiveEdgeMovementDirection.getNativeData().getCPointer() : 0));
@@ -164,49 +164,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);
 jsObj.set_mActiveEdgeMovementDirection(mActiveEdgeMovementDirection_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mActiveEdgeMovementDirection_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideSettingsBase);jsObj.set_mActiveEdgeMovementDirection(mActiveEdgeMovementDirection_addr);")
-    private static native void internal_native_set_mActiveEdgeMovementDirection(int this_addr, int mActiveEdgeMovementDirection_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mActiveEdgeMode(long this_addr) {
-        return internal_native_get_mActiveEdgeMode((int) this_addr);
-    }
-
-    public static void native_set_mActiveEdgeMode(long this_addr, long mActiveEdgeMode) {
-        internal_native_set_mActiveEdgeMode((int) this_addr, (int) mActiveEdgeMode);
-    }
-
-    public static long native_get_mCollectFacesMode(long this_addr) {
-        return internal_native_get_mCollectFacesMode((int) this_addr);
-    }
-
-    public static void native_set_mCollectFacesMode(long this_addr, long mCollectFacesMode) {
-        internal_native_set_mCollectFacesMode((int) this_addr, (int) mCollectFacesMode);
-    }
-
-    public static float native_get_mCollisionTolerance(long this_addr) {
-        return internal_native_get_mCollisionTolerance((int) this_addr);
-    }
-
-    public static void native_set_mCollisionTolerance(long this_addr, float mCollisionTolerance) {
-        internal_native_set_mCollisionTolerance((int) this_addr, mCollisionTolerance);
-    }
-
-    public static float native_get_mPenetrationTolerance(long this_addr) {
-        return internal_native_get_mPenetrationTolerance((int) this_addr);
-    }
-
-    public static void native_set_mPenetrationTolerance(long this_addr, float mPenetrationTolerance) {
-        internal_native_set_mPenetrationTolerance((int) this_addr, mPenetrationTolerance);
-    }
-
-    public static long native_get_mActiveEdgeMovementDirection(long this_addr) {
-        return internal_native_get_mActiveEdgeMovementDirection((int) this_addr);
-    }
-
-    public static void native_set_mActiveEdgeMovementDirection(long this_addr, long mActiveEdgeMovementDirection_addr) {
-        internal_native_set_mActiveEdgeMovementDirection((int) this_addr, (int) mActiveEdgeMovementDirection_addr);
-    }
+    public static native void internal_native_set_mActiveEdgeMovementDirection(int this_addr, int mActiveEdgeMovementDirection_addr);
 }

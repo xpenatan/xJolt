@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mDeltaTime() {
         return internal_native_get_mDeltaTime((int) (long) getNativeData().getCPointer());
@@ -50,7 +50,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);
 return jsObj.get_mDeltaTime();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);return jsObj.get_mDeltaTime();")
-    private static native float internal_native_get_mDeltaTime(int this_addr);
+    public static native float internal_native_get_mDeltaTime(int this_addr);
 
     public void set_mDeltaTime(float mDeltaTime) {
         internal_native_set_mDeltaTime((int) (long) getNativeData().getCPointer(), mDeltaTime);
@@ -61,7 +61,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);
 jsObj.set_mDeltaTime(mDeltaTime);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDeltaTime"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);jsObj.set_mDeltaTime(mDeltaTime);")
-    private static native void internal_native_set_mDeltaTime(int this_addr, float mDeltaTime);
+    public static native void internal_native_set_mDeltaTime(int this_addr, float mDeltaTime);
 
     public boolean get_mIsFirstStep() {
         return internal_native_get_mIsFirstStep((int) (long) getNativeData().getCPointer());
@@ -72,7 +72,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);
 return jsObj.get_mIsFirstStep();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);return jsObj.get_mIsFirstStep();")
-    private static native boolean internal_native_get_mIsFirstStep(int this_addr);
+    public static native boolean internal_native_get_mIsFirstStep(int this_addr);
 
     public void set_mIsFirstStep(boolean mIsFirstStep) {
         internal_native_set_mIsFirstStep((int) (long) getNativeData().getCPointer(), mIsFirstStep);
@@ -83,7 +83,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);
 jsObj.set_mIsFirstStep(mIsFirstStep);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mIsFirstStep"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);jsObj.set_mIsFirstStep(mIsFirstStep);")
-    private static native void internal_native_set_mIsFirstStep(int this_addr, boolean mIsFirstStep);
+    public static native void internal_native_set_mIsFirstStep(int this_addr, boolean mIsFirstStep);
 
     public boolean get_mIsLastStep() {
         return internal_native_get_mIsLastStep((int) (long) getNativeData().getCPointer());
@@ -94,7 +94,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);
 return jsObj.get_mIsLastStep();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);return jsObj.get_mIsLastStep();")
-    private static native boolean internal_native_get_mIsLastStep(int this_addr);
+    public static native boolean internal_native_get_mIsLastStep(int this_addr);
 
     public void set_mIsLastStep(boolean mIsLastStep) {
         internal_native_set_mIsLastStep((int) (long) getNativeData().getCPointer(), mIsLastStep);
@@ -105,33 +105,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);
 jsObj.set_mIsLastStep(mIsLastStep);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mIsLastStep"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerContext);jsObj.set_mIsLastStep(mIsLastStep);")
-    private static native void internal_native_set_mIsLastStep(int this_addr, boolean mIsLastStep);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_mDeltaTime(long this_addr) {
-        return internal_native_get_mDeltaTime((int) this_addr);
-    }
-
-    public static void native_set_mDeltaTime(long this_addr, float mDeltaTime) {
-        internal_native_set_mDeltaTime((int) this_addr, mDeltaTime);
-    }
-
-    public static boolean native_get_mIsFirstStep(long this_addr) {
-        return internal_native_get_mIsFirstStep((int) this_addr);
-    }
-
-    public static void native_set_mIsFirstStep(long this_addr, boolean mIsFirstStep) {
-        internal_native_set_mIsFirstStep((int) this_addr, mIsFirstStep);
-    }
-
-    public static boolean native_get_mIsLastStep(long this_addr) {
-        return internal_native_get_mIsLastStep((int) this_addr);
-    }
-
-    public static void native_set_mIsLastStep(long this_addr, boolean mIsLastStep) {
-        internal_native_set_mIsLastStep((int) this_addr, mIsLastStep);
-    }
+    public static native void internal_native_set_mIsLastStep(int this_addr, boolean mIsLastStep);
 }

@@ -37,7 +37,7 @@ var jsObj = new jolt.PathConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.PathConstraintSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public PathConstraintPath get_mPath() {
         int pointer = internal_native_get_mPath((int) (long) getNativeData().getCPointer());
@@ -83,7 +83,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);var returnedJSObj = jsObj.get_mPath();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPath(int this_addr);
+    public static native int internal_native_get_mPath(int this_addr);
 
     public void set_mPath(PathConstraintPath mPath) {
         internal_native_set_mPath((int) (long) getNativeData().getCPointer(), (int) (long) (mPath != null ? mPath.getNativeData().getCPointer() : 0));
@@ -94,7 +94,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 jsObj.set_mPath(mPath_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPath_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);jsObj.set_mPath(mPath_addr);")
-    private static native void internal_native_set_mPath(int this_addr, int mPath_addr);
+    public static native void internal_native_set_mPath(int this_addr, int mPath_addr);
 
     public Vec3 get_mPathPosition() {
         int pointer = internal_native_get_mPathPosition((int) (long) getNativeData().getCPointer());
@@ -113,7 +113,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);var returnedJSObj = jsObj.get_mPathPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPathPosition(int this_addr);
+    public static native int internal_native_get_mPathPosition(int this_addr);
 
     public void set_mPathPosition(Vec3 mPathPosition) {
         internal_native_set_mPathPosition((int) (long) getNativeData().getCPointer(), (int) (long) (mPathPosition != null ? mPathPosition.getNativeData().getCPointer() : 0));
@@ -124,7 +124,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 jsObj.set_mPathPosition(mPathPosition_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPathPosition_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);jsObj.set_mPathPosition(mPathPosition_addr);")
-    private static native void internal_native_set_mPathPosition(int this_addr, int mPathPosition_addr);
+    public static native void internal_native_set_mPathPosition(int this_addr, int mPathPosition_addr);
 
     public Quat get_mPathRotation() {
         int pointer = internal_native_get_mPathRotation((int) (long) getNativeData().getCPointer());
@@ -143,7 +143,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);var returnedJSObj = jsObj.get_mPathRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPathRotation(int this_addr);
+    public static native int internal_native_get_mPathRotation(int this_addr);
 
     public void set_mPathRotation(Quat mPathRotation) {
         internal_native_set_mPathRotation((int) (long) getNativeData().getCPointer(), (int) (long) (mPathRotation != null ? mPathRotation.getNativeData().getCPointer() : 0));
@@ -154,7 +154,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 jsObj.set_mPathRotation(mPathRotation_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPathRotation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);jsObj.set_mPathRotation(mPathRotation_addr);")
-    private static native void internal_native_set_mPathRotation(int this_addr, int mPathRotation_addr);
+    public static native void internal_native_set_mPathRotation(int this_addr, int mPathRotation_addr);
 
     public float get_mPathFraction() {
         return internal_native_get_mPathFraction((int) (long) getNativeData().getCPointer());
@@ -165,7 +165,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 return jsObj.get_mPathFraction();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);return jsObj.get_mPathFraction();")
-    private static native float internal_native_get_mPathFraction(int this_addr);
+    public static native float internal_native_get_mPathFraction(int this_addr);
 
     public void set_mPathFraction(float mPathFraction) {
         internal_native_set_mPathFraction((int) (long) getNativeData().getCPointer(), mPathFraction);
@@ -176,7 +176,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 jsObj.set_mPathFraction(mPathFraction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPathFraction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);jsObj.set_mPathFraction(mPathFraction);")
-    private static native void internal_native_set_mPathFraction(int this_addr, float mPathFraction);
+    public static native void internal_native_set_mPathFraction(int this_addr, float mPathFraction);
 
     public float get_mMaxFrictionForce() {
         return internal_native_get_mMaxFrictionForce((int) (long) getNativeData().getCPointer());
@@ -187,7 +187,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 return jsObj.get_mMaxFrictionForce();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);return jsObj.get_mMaxFrictionForce();")
-    private static native float internal_native_get_mMaxFrictionForce(int this_addr);
+    public static native float internal_native_get_mMaxFrictionForce(int this_addr);
 
     public void set_mMaxFrictionForce(float mMaxFrictionForce) {
         internal_native_set_mMaxFrictionForce((int) (long) getNativeData().getCPointer(), mMaxFrictionForce);
@@ -198,7 +198,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 jsObj.set_mMaxFrictionForce(mMaxFrictionForce);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxFrictionForce"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);jsObj.set_mMaxFrictionForce(mMaxFrictionForce);")
-    private static native void internal_native_set_mMaxFrictionForce(int this_addr, float mMaxFrictionForce);
+    public static native void internal_native_set_mMaxFrictionForce(int this_addr, float mMaxFrictionForce);
 
     public EPathRotationConstraintType get_mRotationConstraintType() {
         int value = internal_native_get_mRotationConstraintType((int) (long) getNativeData().getCPointer());
@@ -210,7 +210,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 return jsObj.get_mRotationConstraintType();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);return jsObj.get_mRotationConstraintType();")
-    private static native int internal_native_get_mRotationConstraintType(int this_addr);
+    public static native int internal_native_get_mRotationConstraintType(int this_addr);
 
     public void set_mRotationConstraintType(EPathRotationConstraintType mRotationConstraintType) {
         internal_native_set_mRotationConstraintType((int) (long) getNativeData().getCPointer(), (int) (long) (mRotationConstraintType != null ? mRotationConstraintType.getValue() : 0));
@@ -221,7 +221,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 jsObj.set_mRotationConstraintType(mRotationConstraintType);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRotationConstraintType"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);jsObj.set_mRotationConstraintType(mRotationConstraintType);")
-    private static native void internal_native_set_mRotationConstraintType(int this_addr, int mRotationConstraintType);
+    public static native void internal_native_set_mRotationConstraintType(int this_addr, int mRotationConstraintType);
 
     public MotorSettings get_mPositionMotorSettings() {
         int pointer = internal_native_get_mPositionMotorSettings((int) (long) getNativeData().getCPointer());
@@ -240,7 +240,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);var returnedJSObj = jsObj.get_mPositionMotorSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPositionMotorSettings(int this_addr);
+    public static native int internal_native_get_mPositionMotorSettings(int this_addr);
 
     public void set_mPositionMotorSettings(MotorSettings mPositionMotorSettings) {
         internal_native_set_mPositionMotorSettings((int) (long) getNativeData().getCPointer(), (int) (long) (mPositionMotorSettings != null ? mPositionMotorSettings.getNativeData().getCPointer() : 0));
@@ -251,69 +251,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);
 jsObj.set_mPositionMotorSettings(mPositionMotorSettings_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPositionMotorSettings_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);jsObj.set_mPositionMotorSettings(mPositionMotorSettings_addr);")
-    private static native void internal_native_set_mPositionMotorSettings(int this_addr, int mPositionMotorSettings_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mPath(long this_addr) {
-        return internal_native_get_mPath((int) this_addr);
-    }
-
-    public static void native_set_mPath(long this_addr, long mPath_addr) {
-        internal_native_set_mPath((int) this_addr, (int) mPath_addr);
-    }
-
-    public static long native_get_mPathPosition(long this_addr) {
-        return internal_native_get_mPathPosition((int) this_addr);
-    }
-
-    public static void native_set_mPathPosition(long this_addr, long mPathPosition_addr) {
-        internal_native_set_mPathPosition((int) this_addr, (int) mPathPosition_addr);
-    }
-
-    public static long native_get_mPathRotation(long this_addr) {
-        return internal_native_get_mPathRotation((int) this_addr);
-    }
-
-    public static void native_set_mPathRotation(long this_addr, long mPathRotation_addr) {
-        internal_native_set_mPathRotation((int) this_addr, (int) mPathRotation_addr);
-    }
-
-    public static float native_get_mPathFraction(long this_addr) {
-        return internal_native_get_mPathFraction((int) this_addr);
-    }
-
-    public static void native_set_mPathFraction(long this_addr, float mPathFraction) {
-        internal_native_set_mPathFraction((int) this_addr, mPathFraction);
-    }
-
-    public static float native_get_mMaxFrictionForce(long this_addr) {
-        return internal_native_get_mMaxFrictionForce((int) this_addr);
-    }
-
-    public static void native_set_mMaxFrictionForce(long this_addr, float mMaxFrictionForce) {
-        internal_native_set_mMaxFrictionForce((int) this_addr, mMaxFrictionForce);
-    }
-
-    public static long native_get_mRotationConstraintType(long this_addr) {
-        return internal_native_get_mRotationConstraintType((int) this_addr);
-    }
-
-    public static void native_set_mRotationConstraintType(long this_addr, long mRotationConstraintType) {
-        internal_native_set_mRotationConstraintType((int) this_addr, (int) mRotationConstraintType);
-    }
-
-    public static long native_get_mPositionMotorSettings(long this_addr) {
-        return internal_native_get_mPositionMotorSettings((int) this_addr);
-    }
-
-    public static void native_set_mPositionMotorSettings(long this_addr, long mPositionMotorSettings_addr) {
-        internal_native_set_mPositionMotorSettings((int) this_addr, (int) mPositionMotorSettings_addr);
-    }
+    public static native void internal_native_set_mPositionMotorSettings(int this_addr, int mPositionMotorSettings_addr);
 }

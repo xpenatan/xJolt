@@ -36,7 +36,7 @@ public class RShapeCast extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new RShapeCast((Shape* )inShape_addr, *((Vec3* )inScale_addr), *((Mat44* )inCenterOfMassStart_addr), *((Vec3* )inDirection_addr));
 */
-    private static native long internal_native_create_Shape_Vec3_Mat44_Vec3(long inShape_addr, long inScale_addr, long inCenterOfMassStart_addr, long inDirection_addr);
+    public static native long internal_native_create_Shape_Vec3_Mat44_Vec3(long inShape_addr, long inScale_addr, long inCenterOfMassStart_addr, long inDirection_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -61,7 +61,7 @@ return (jlong)new RShapeCast((Shape* )inShape_addr, *((Vec3* )inScale_addr), *((
 RShapeCast* nativeObject = (RShapeCast*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 GetPointOnRay(float inFraction) {
         long pointer = internal_native_GetPointOnRay((long) getNativeData().getCPointer(), inFraction);
@@ -78,7 +78,7 @@ RShapeCast* nativeObject = (RShapeCast*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPointOnRay((float)inFraction);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetPointOnRay(long this_addr, float inFraction);
+    public static native long internal_native_GetPointOnRay(long this_addr, float inFraction);
 
     public Shape get_mShape() {
         long pointer = internal_native_get_mShape((long) getNativeData().getCPointer());
@@ -95,7 +95,7 @@ RShapeCast* nativeObject = (RShapeCast*)this_addr;
 const Shape* attr = nativeObject->mShape;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mShape(long this_addr);
+    public static native long internal_native_get_mShape(long this_addr);
 
     public Vec3 get_mScale() {
         long pointer = internal_native_get_mScale((long) getNativeData().getCPointer());
@@ -111,7 +111,7 @@ return (jlong)attr;
 RShapeCast* nativeObject = (RShapeCast*)this_addr;
 return (jlong)&nativeObject->mScale;
 */
-    private static native long internal_native_get_mScale(long this_addr);
+    public static native long internal_native_get_mScale(long this_addr);
 
     public Mat44 get_mCenterOfMassStart() {
         long pointer = internal_native_get_mCenterOfMassStart((long) getNativeData().getCPointer());
@@ -127,7 +127,7 @@ return (jlong)&nativeObject->mScale;
 RShapeCast* nativeObject = (RShapeCast*)this_addr;
 return (jlong)&nativeObject->mCenterOfMassStart;
 */
-    private static native long internal_native_get_mCenterOfMassStart(long this_addr);
+    public static native long internal_native_get_mCenterOfMassStart(long this_addr);
 
     public Vec3 get_mDirection() {
         long pointer = internal_native_get_mDirection((long) getNativeData().getCPointer());
@@ -143,33 +143,5 @@ return (jlong)&nativeObject->mCenterOfMassStart;
 RShapeCast* nativeObject = (RShapeCast*)this_addr;
 return (jlong)&nativeObject->mDirection;
 */
-    private static native long internal_native_get_mDirection(long this_addr);
-
-    public static long native_create_Shape_Vec3_Mat44_Vec3(long inShape_addr, long inScale_addr, long inCenterOfMassStart_addr, long inDirection_addr) {
-        return internal_native_create_Shape_Vec3_Mat44_Vec3(inShape_addr, inScale_addr, inCenterOfMassStart_addr, inDirection_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_GetPointOnRay(long this_addr, float inFraction) {
-        return internal_native_GetPointOnRay(this_addr, inFraction);
-    }
-
-    public static long native_get_mShape(long this_addr) {
-        return internal_native_get_mShape(this_addr);
-    }
-
-    public static long native_get_mScale(long this_addr) {
-        return internal_native_get_mScale(this_addr);
-    }
-
-    public static long native_get_mCenterOfMassStart(long this_addr) {
-        return internal_native_get_mCenterOfMassStart(this_addr);
-    }
-
-    public static long native_get_mDirection(long this_addr) {
-        return internal_native_get_mDirection(this_addr);
-    }
+    public static native long internal_native_get_mDirection(long this_addr);
 }

@@ -65,7 +65,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererImplCustom);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererImplCustom);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void DrawBodies(PhysicsSystem system, BodyManagerDrawSettings inDrawSettings) {
         internal_native_DrawBodies((int) (long) getNativeData().getCPointer(), (int) (long) (system != null ? system.getNativeData().getCPointer() : 0), (int) (long) (inDrawSettings != null ? inDrawSettings.getNativeData().getCPointer() : 0));
@@ -76,7 +76,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);
 jsObj.DrawBodies(system_addr, inDrawSettings_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "system_addr", "inDrawSettings_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);jsObj.DrawBodies(system_addr, inDrawSettings_addr);")
-    private static native void internal_native_DrawBodies(int this_addr, int system_addr, int inDrawSettings_addr);
+    public static native void internal_native_DrawBodies(int this_addr, int system_addr, int inDrawSettings_addr);
 
     public void DrawBodies(PhysicsSystem system) {
         internal_native_DrawBodies((int) (long) getNativeData().getCPointer(), (int) (long) (system != null ? system.getNativeData().getCPointer() : 0));
@@ -87,7 +87,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);
 jsObj.DrawBodies(system_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "system_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);jsObj.DrawBodies(system_addr);")
-    private static native void internal_native_DrawBodies(int this_addr, int system_addr);
+    public static native void internal_native_DrawBodies(int this_addr, int system_addr);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow, EDrawMode inDrawMode) {
         internal_native_DrawCylinder((int) (long) getNativeData().getCPointer(), (int) (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (int) (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (int) (long) (inCastShadow != null ? inCastShadow.getValue() : 0), (int) (long) (inDrawMode != null ? inDrawMode.getValue() : 0));
@@ -98,7 +98,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);
 jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastShadow, inDrawMode);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inMatrix_addr", "inHalfHeight", "inRadius", "inColor_addr", "inCastShadow", "inDrawMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastShadow, inDrawMode);")
-    private static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr, int inCastShadow, int inDrawMode);
+    public static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr, int inCastShadow, int inDrawMode);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow) {
         internal_native_DrawCylinder((int) (long) getNativeData().getCPointer(), (int) (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (int) (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (int) (long) (inCastShadow != null ? inCastShadow.getValue() : 0));
@@ -109,7 +109,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);
 jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastShadow);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inMatrix_addr", "inHalfHeight", "inRadius", "inColor_addr", "inCastShadow"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastShadow);")
-    private static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr, int inCastShadow);
+    public static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr, int inCastShadow);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor) {
         internal_native_DrawCylinder((int) (long) getNativeData().getCPointer(), (int) (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (int) (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0));
@@ -120,7 +120,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);
 jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inMatrix_addr", "inHalfHeight", "inRadius", "inColor_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererEm);jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr);")
-    private static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr);
+    public static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr);
 
     public DebugRendererEm() {
         int addr = internal_native_create();
@@ -225,10 +225,10 @@ var jsObj = new jolt.DebugRendererImplCustom();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.DebugRendererImplCustom();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "DrawMesh", "DrawLine", "DrawTriangle", "DrawText3D" }, script = "var DebugRendererImplCustom = jolt.wrapPointer(this_addr, jolt.DebugRendererImplCustom); DebugRendererImplCustom.DrawMesh = DrawMesh; DebugRendererImplCustom.DrawLine = DrawLine; DebugRendererImplCustom.DrawTriangle = DrawTriangle; DebugRendererImplCustom.DrawText3D = DrawText3D;")
-    private static native void internal_native_setupCallback(int this_addr, DrawMesh DrawMesh, DrawLine DrawLine, DrawTriangle DrawTriangle, DrawText3D DrawText3D);
+    public static native void internal_native_setupCallback(int this_addr, DrawMesh DrawMesh, DrawLine DrawLine, DrawTriangle DrawTriangle, DrawText3D DrawText3D);
 
     @org.teavm.jso.JSFunctor()
     public interface DrawMesh extends org.teavm.jso.JSObject {
@@ -252,33 +252,5 @@ return jolt.getPointer(jsObj);
     public interface DrawText3D extends org.teavm.jso.JSObject {
 
         void DrawText3D(int inPosition, int inString, int inStringLen, int inColor, float inHeight);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_DrawBodies(long this_addr, long system_addr, long inDrawSettings_addr) {
-        internal_native_DrawBodies((int) this_addr, (int) system_addr, (int) inDrawSettings_addr);
-    }
-
-    public static void native_DrawBodies(long this_addr, long system_addr) {
-        internal_native_DrawBodies((int) this_addr, (int) system_addr);
-    }
-
-    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow, long inDrawMode) {
-        internal_native_DrawCylinder((int) this_addr, (int) inMatrix_addr, inHalfHeight, inRadius, (int) inColor_addr, (int) inCastShadow, (int) inDrawMode);
-    }
-
-    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow) {
-        internal_native_DrawCylinder((int) this_addr, (int) inMatrix_addr, inHalfHeight, inRadius, (int) inColor_addr, (int) inCastShadow);
-    }
-
-    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr) {
-        internal_native_DrawCylinder((int) this_addr, (int) inMatrix_addr, inHalfHeight, inRadius, (int) inColor_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

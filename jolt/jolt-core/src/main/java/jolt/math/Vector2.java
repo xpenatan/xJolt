@@ -25,7 +25,7 @@ public class Vector2 extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new Vector2();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,7 +50,7 @@ return (jlong)new Vector2();
 Vector2* nativeObject = (Vector2*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void SetZero() {
         internal_native_SetZero((long) getNativeData().getCPointer());
@@ -60,7 +60,7 @@ delete nativeObject;
 Vector2* nativeObject = (Vector2*)this_addr;
 nativeObject->SetZero();
 */
-    private static native void internal_native_SetZero(long this_addr);
+    public static native void internal_native_SetZero(long this_addr);
 
     public void IsZero() {
         internal_native_IsZero((long) getNativeData().getCPointer());
@@ -70,7 +70,7 @@ nativeObject->SetZero();
 Vector2* nativeObject = (Vector2*)this_addr;
 nativeObject->IsZero();
 */
-    private static native void internal_native_IsZero(long this_addr);
+    public static native void internal_native_IsZero(long this_addr);
 
     public void IsClose(Vector2 inV, float inMaxDistSq) {
         internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0), inMaxDistSq);
@@ -80,7 +80,7 @@ nativeObject->IsZero();
 Vector2* nativeObject = (Vector2*)this_addr;
 nativeObject->IsClose(*((Vector2* )inV_addr), (float)inMaxDistSq);
 */
-    private static native void internal_native_IsClose(long this_addr, long inV_addr, float inMaxDistSq);
+    public static native void internal_native_IsClose(long this_addr, long inV_addr, float inMaxDistSq);
 
     public void IsClose(Vector2 inV) {
         internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -90,7 +90,7 @@ nativeObject->IsClose(*((Vector2* )inV_addr), (float)inMaxDistSq);
 Vector2* nativeObject = (Vector2*)this_addr;
 nativeObject->IsClose(*((Vector2* )inV_addr));
 */
-    private static native void internal_native_IsClose(long this_addr, long inV_addr);
+    public static native void internal_native_IsClose(long this_addr, long inV_addr);
 
     public void IsNormalized(float inTolerance) {
         internal_native_IsNormalized((long) getNativeData().getCPointer(), inTolerance);
@@ -100,7 +100,7 @@ nativeObject->IsClose(*((Vector2* )inV_addr));
 Vector2* nativeObject = (Vector2*)this_addr;
 nativeObject->IsNormalized((float)inTolerance);
 */
-    private static native void internal_native_IsNormalized(long this_addr, float inTolerance);
+    public static native void internal_native_IsNormalized(long this_addr, float inTolerance);
 
     public void IsNormalized() {
         internal_native_IsNormalized((long) getNativeData().getCPointer());
@@ -110,7 +110,7 @@ nativeObject->IsNormalized((float)inTolerance);
 Vector2* nativeObject = (Vector2*)this_addr;
 nativeObject->IsNormalized();
 */
-    private static native void internal_native_IsNormalized(long this_addr);
+    public static native void internal_native_IsNormalized(long this_addr);
 
     public Vector2 Normalized() {
         long pointer = internal_native_Normalized((long) getNativeData().getCPointer());
@@ -127,7 +127,7 @@ Vector2* nativeObject = (Vector2*)this_addr;
 static Vector2 copy_addr;
 copy_addr = nativeObject->Normalized();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Normalized(long this_addr);
+    public static native long internal_native_Normalized(long this_addr);
 
     public float Dot(Vector2 inRHS) {
         return internal_native_Dot((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
@@ -137,45 +137,5 @@ return (jlong)&copy_addr;*/
 Vector2* nativeObject = (Vector2*)this_addr;
 return nativeObject->Dot(*((Vector2* )inRHS_addr));
 */
-    private static native float internal_native_Dot(long this_addr, long inRHS_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_SetZero(long this_addr) {
-        internal_native_SetZero(this_addr);
-    }
-
-    public static void native_IsZero(long this_addr) {
-        internal_native_IsZero(this_addr);
-    }
-
-    public static void native_IsClose(long this_addr, long inV_addr, float inMaxDistSq) {
-        internal_native_IsClose(this_addr, inV_addr, inMaxDistSq);
-    }
-
-    public static void native_IsClose(long this_addr, long inV_addr) {
-        internal_native_IsClose(this_addr, inV_addr);
-    }
-
-    public static void native_IsNormalized(long this_addr, float inTolerance) {
-        internal_native_IsNormalized(this_addr, inTolerance);
-    }
-
-    public static void native_IsNormalized(long this_addr) {
-        internal_native_IsNormalized(this_addr);
-    }
-
-    public static long native_Normalized(long this_addr) {
-        return internal_native_Normalized(this_addr);
-    }
-
-    public static float native_Dot(long this_addr, long inRHS_addr) {
-        return internal_native_Dot(this_addr, inRHS_addr);
-    }
+    public static native float internal_native_Dot(long this_addr, long inRHS_addr);
 }

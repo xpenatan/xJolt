@@ -24,7 +24,7 @@ var jsObj = new jolt.BroadPhaseLayerInterfaceMask(inNumBroadPhaseLayers);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inNumBroadPhaseLayers"}, script = "var jsObj = new jolt.BroadPhaseLayerInterfaceMask(inNumBroadPhaseLayers);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int(int inNumBroadPhaseLayers);
+    public static native int internal_native_create_int(int inNumBroadPhaseLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterfaceMask);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterfaceMask);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void ConfigureLayer(BroadPhaseLayer inBroadPhaseLayer, int inGroupsToInclude, int inGroupsToExclude) {
         internal_native_ConfigureLayer((int) (long) getNativeData().getCPointer(), (int) (long) (inBroadPhaseLayer != null ? inBroadPhaseLayer.getNativeData().getCPointer() : 0), inGroupsToInclude, inGroupsToExclude);
@@ -62,17 +62,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterfaceMask);
 jsObj.ConfigureLayer(inBroadPhaseLayer_addr, inGroupsToInclude, inGroupsToExclude);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inBroadPhaseLayer_addr", "inGroupsToInclude", "inGroupsToExclude"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterfaceMask);jsObj.ConfigureLayer(inBroadPhaseLayer_addr, inGroupsToInclude, inGroupsToExclude);")
-    private static native void internal_native_ConfigureLayer(int this_addr, int inBroadPhaseLayer_addr, int inGroupsToInclude, int inGroupsToExclude);
-
-    public static long native_create_int(int inNumBroadPhaseLayers) {
-        return internal_native_create_int(inNumBroadPhaseLayers);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_ConfigureLayer(long this_addr, long inBroadPhaseLayer_addr, int inGroupsToInclude, int inGroupsToExclude) {
-        internal_native_ConfigureLayer((int) this_addr, (int) inBroadPhaseLayer_addr, inGroupsToInclude, inGroupsToExclude);
-    }
+    public static native void internal_native_ConfigureLayer(int this_addr, int inBroadPhaseLayer_addr, int inGroupsToInclude, int inGroupsToExclude);
 }

@@ -35,7 +35,7 @@ public class RRayCast extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new RRayCast();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     public RRayCast(Vec3 inOrigin, Vec3 inDirection) {
         long addr = internal_native_create_Vec3_Vec3((long) (inOrigin != null ? inOrigin.getNativeData().getCPointer() : 0), (long) (inDirection != null ? inDirection.getNativeData().getCPointer() : 0));
@@ -45,7 +45,7 @@ return (jlong)new RRayCast();
     /*[-JNI;-NATIVE]
 return (jlong)new RRayCast(*((Vec3* )inOrigin_addr), *((Vec3* )inDirection_addr));
 */
-    private static native long internal_native_create_Vec3_Vec3(long inOrigin_addr, long inDirection_addr);
+    public static native long internal_native_create_Vec3_Vec3(long inOrigin_addr, long inDirection_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -70,7 +70,7 @@ return (jlong)new RRayCast(*((Vec3* )inOrigin_addr), *((Vec3* )inDirection_addr)
 RRayCast* nativeObject = (RRayCast*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public RRayCast Transformed(Mat44 inTransform) {
         long pointer = internal_native_Transformed((long) getNativeData().getCPointer(), (long) (inTransform != null ? inTransform.getNativeData().getCPointer() : 0));
@@ -87,7 +87,7 @@ RRayCast* nativeObject = (RRayCast*)this_addr;
 static RRayCast copy_addr;
 copy_addr = nativeObject->Transformed(*((Mat44* )inTransform_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Transformed(long this_addr, long inTransform_addr);
+    public static native long internal_native_Transformed(long this_addr, long inTransform_addr);
 
     public RRayCast Translated(Vec3 inTranslation) {
         long pointer = internal_native_Translated((long) getNativeData().getCPointer(), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
@@ -104,7 +104,7 @@ RRayCast* nativeObject = (RRayCast*)this_addr;
 static RRayCast copy_addr;
 copy_addr = nativeObject->Translated(*((Vec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Translated(long this_addr, long inTranslation_addr);
+    public static native long internal_native_Translated(long this_addr, long inTranslation_addr);
 
     public Vec3 GetPointOnRay(float inFraction) {
         long pointer = internal_native_GetPointOnRay((long) getNativeData().getCPointer(), inFraction);
@@ -121,7 +121,7 @@ RRayCast* nativeObject = (RRayCast*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPointOnRay((float)inFraction);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetPointOnRay(long this_addr, float inFraction);
+    public static native long internal_native_GetPointOnRay(long this_addr, float inFraction);
 
     public Vec3 get_mOrigin() {
         long pointer = internal_native_get_mOrigin((long) getNativeData().getCPointer());
@@ -137,7 +137,7 @@ return (jlong)&copy_addr;*/
 RRayCast* nativeObject = (RRayCast*)this_addr;
 return (jlong)&nativeObject->mOrigin;
 */
-    private static native long internal_native_get_mOrigin(long this_addr);
+    public static native long internal_native_get_mOrigin(long this_addr);
 
     public void set_mOrigin(Vec3 mOrigin) {
         internal_native_set_mOrigin((long) getNativeData().getCPointer(), (long) (mOrigin != null ? mOrigin.getNativeData().getCPointer() : 0));
@@ -147,7 +147,7 @@ return (jlong)&nativeObject->mOrigin;
 RRayCast* nativeObject = (RRayCast*)this_addr;
 nativeObject->mOrigin = *((Vec3*)mOrigin_addr);
 */
-    private static native void internal_native_set_mOrigin(long this_addr, long mOrigin_addr);
+    public static native void internal_native_set_mOrigin(long this_addr, long mOrigin_addr);
 
     public Vec3 get_mDirection() {
         long pointer = internal_native_get_mDirection((long) getNativeData().getCPointer());
@@ -163,7 +163,7 @@ nativeObject->mOrigin = *((Vec3*)mOrigin_addr);
 RRayCast* nativeObject = (RRayCast*)this_addr;
 return (jlong)&nativeObject->mDirection;
 */
-    private static native long internal_native_get_mDirection(long this_addr);
+    public static native long internal_native_get_mDirection(long this_addr);
 
     public void set_mDirection(Vec3 mDirection) {
         internal_native_set_mDirection((long) getNativeData().getCPointer(), (long) (mDirection != null ? mDirection.getNativeData().getCPointer() : 0));
@@ -173,45 +173,5 @@ return (jlong)&nativeObject->mDirection;
 RRayCast* nativeObject = (RRayCast*)this_addr;
 nativeObject->mDirection = *((Vec3*)mDirection_addr);
 */
-    private static native void internal_native_set_mDirection(long this_addr, long mDirection_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_Vec3_Vec3(long inOrigin_addr, long inDirection_addr) {
-        return internal_native_create_Vec3_Vec3(inOrigin_addr, inDirection_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_Transformed(long this_addr, long inTransform_addr) {
-        return internal_native_Transformed(this_addr, inTransform_addr);
-    }
-
-    public static long native_Translated(long this_addr, long inTranslation_addr) {
-        return internal_native_Translated(this_addr, inTranslation_addr);
-    }
-
-    public static long native_GetPointOnRay(long this_addr, float inFraction) {
-        return internal_native_GetPointOnRay(this_addr, inFraction);
-    }
-
-    public static long native_get_mOrigin(long this_addr) {
-        return internal_native_get_mOrigin(this_addr);
-    }
-
-    public static void native_set_mOrigin(long this_addr, long mOrigin_addr) {
-        internal_native_set_mOrigin(this_addr, mOrigin_addr);
-    }
-
-    public static long native_get_mDirection(long this_addr) {
-        return internal_native_get_mDirection(this_addr);
-    }
-
-    public static void native_set_mDirection(long this_addr, long mDirection_addr) {
-        internal_native_set_mDirection(this_addr, mDirection_addr);
-    }
+    public static native void internal_native_set_mDirection(long this_addr, long mDirection_addr);
 }

@@ -38,7 +38,7 @@ public class FixedConstraintSettings extends TwoBodyConstraintSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new FixedConstraintSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -64,7 +64,7 @@ return (jlong)new FixedConstraintSettings();
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ delete nativeObject;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 return (jint)nativeObject->mSpace;
 */
-    private static native int internal_native_get_mSpace(long this_addr);
+    public static native int internal_native_get_mSpace(long this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((long) getNativeData().getCPointer(), (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -85,7 +85,7 @@ return (jint)nativeObject->mSpace;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    private static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
 
     public boolean get_mAutoDetectPoint() {
         return internal_native_get_mAutoDetectPoint((long) getNativeData().getCPointer());
@@ -95,7 +95,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 return nativeObject->mAutoDetectPoint;
 */
-    private static native boolean internal_native_get_mAutoDetectPoint(long this_addr);
+    public static native boolean internal_native_get_mAutoDetectPoint(long this_addr);
 
     public void set_mAutoDetectPoint(boolean mAutoDetectPoint) {
         internal_native_set_mAutoDetectPoint((long) getNativeData().getCPointer(), mAutoDetectPoint);
@@ -105,7 +105,7 @@ return nativeObject->mAutoDetectPoint;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mAutoDetectPoint = mAutoDetectPoint;
 */
-    private static native void internal_native_set_mAutoDetectPoint(long this_addr, boolean mAutoDetectPoint);
+    public static native void internal_native_set_mAutoDetectPoint(long this_addr, boolean mAutoDetectPoint);
 
     public Vec3 get_mPoint1() {
         long pointer = internal_native_get_mPoint1((long) getNativeData().getCPointer());
@@ -121,7 +121,7 @@ nativeObject->mAutoDetectPoint = mAutoDetectPoint;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPoint1;
 */
-    private static native long internal_native_get_mPoint1(long this_addr);
+    public static native long internal_native_get_mPoint1(long this_addr);
 
     public void set_mPoint1(Vec3 mPoint1) {
         internal_native_set_mPoint1((long) getNativeData().getCPointer(), (long) (mPoint1 != null ? mPoint1.getNativeData().getCPointer() : 0));
@@ -131,7 +131,7 @@ return (jlong)&nativeObject->mPoint1;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
 */
-    private static native void internal_native_set_mPoint1(long this_addr, long mPoint1_addr);
+    public static native void internal_native_set_mPoint1(long this_addr, long mPoint1_addr);
 
     public Vec3 get_mAxisX1() {
         long pointer = internal_native_get_mAxisX1((long) getNativeData().getCPointer());
@@ -147,7 +147,7 @@ nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisX1;
 */
-    private static native long internal_native_get_mAxisX1(long this_addr);
+    public static native long internal_native_get_mAxisX1(long this_addr);
 
     public void set_mAxisX1(Vec3 mAxisX1) {
         internal_native_set_mAxisX1((long) getNativeData().getCPointer(), (long) (mAxisX1 != null ? mAxisX1.getNativeData().getCPointer() : 0));
@@ -157,7 +157,7 @@ return (jlong)&nativeObject->mAxisX1;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
 */
-    private static native void internal_native_set_mAxisX1(long this_addr, long mAxisX1_addr);
+    public static native void internal_native_set_mAxisX1(long this_addr, long mAxisX1_addr);
 
     public Vec3 get_mAxisY1() {
         long pointer = internal_native_get_mAxisY1((long) getNativeData().getCPointer());
@@ -173,7 +173,7 @@ nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisY1;
 */
-    private static native long internal_native_get_mAxisY1(long this_addr);
+    public static native long internal_native_get_mAxisY1(long this_addr);
 
     public void set_mAxisY1(Vec3 mAxisY1) {
         internal_native_set_mAxisY1((long) getNativeData().getCPointer(), (long) (mAxisY1 != null ? mAxisY1.getNativeData().getCPointer() : 0));
@@ -183,7 +183,7 @@ return (jlong)&nativeObject->mAxisY1;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
 */
-    private static native void internal_native_set_mAxisY1(long this_addr, long mAxisY1_addr);
+    public static native void internal_native_set_mAxisY1(long this_addr, long mAxisY1_addr);
 
     public Vec3 get_mPoint2() {
         long pointer = internal_native_get_mPoint2((long) getNativeData().getCPointer());
@@ -199,7 +199,7 @@ nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPoint2;
 */
-    private static native long internal_native_get_mPoint2(long this_addr);
+    public static native long internal_native_get_mPoint2(long this_addr);
 
     public void set_mPoint2(Vec3 mPoint2) {
         internal_native_set_mPoint2((long) getNativeData().getCPointer(), (long) (mPoint2 != null ? mPoint2.getNativeData().getCPointer() : 0));
@@ -209,7 +209,7 @@ return (jlong)&nativeObject->mPoint2;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mPoint2 = *((Vec3*)mPoint2_addr);
 */
-    private static native void internal_native_set_mPoint2(long this_addr, long mPoint2_addr);
+    public static native void internal_native_set_mPoint2(long this_addr, long mPoint2_addr);
 
     public Vec3 get_mAxisX2() {
         long pointer = internal_native_get_mAxisX2((long) getNativeData().getCPointer());
@@ -225,7 +225,7 @@ nativeObject->mPoint2 = *((Vec3*)mPoint2_addr);
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisX2;
 */
-    private static native long internal_native_get_mAxisX2(long this_addr);
+    public static native long internal_native_get_mAxisX2(long this_addr);
 
     public void set_mAxisX2(Vec3 mAxisX2) {
         internal_native_set_mAxisX2((long) getNativeData().getCPointer(), (long) (mAxisX2 != null ? mAxisX2.getNativeData().getCPointer() : 0));
@@ -235,7 +235,7 @@ return (jlong)&nativeObject->mAxisX2;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
 */
-    private static native void internal_native_set_mAxisX2(long this_addr, long mAxisX2_addr);
+    public static native void internal_native_set_mAxisX2(long this_addr, long mAxisX2_addr);
 
     public Vec3 get_mAxisY2() {
         long pointer = internal_native_get_mAxisY2((long) getNativeData().getCPointer());
@@ -251,7 +251,7 @@ nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisY2;
 */
-    private static native long internal_native_get_mAxisY2(long this_addr);
+    public static native long internal_native_get_mAxisY2(long this_addr);
 
     public void set_mAxisY2(Vec3 mAxisY2) {
         internal_native_set_mAxisY2((long) getNativeData().getCPointer(), (long) (mAxisY2 != null ? mAxisY2.getNativeData().getCPointer() : 0));
@@ -261,77 +261,5 @@ return (jlong)&nativeObject->mAxisY2;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mAxisY2 = *((Vec3*)mAxisY2_addr);
 */
-    private static native void internal_native_set_mAxisY2(long this_addr, long mAxisY2_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace(this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace(this_addr, mSpace);
-    }
-
-    public static boolean native_get_mAutoDetectPoint(long this_addr) {
-        return internal_native_get_mAutoDetectPoint(this_addr);
-    }
-
-    public static void native_set_mAutoDetectPoint(long this_addr, boolean mAutoDetectPoint) {
-        internal_native_set_mAutoDetectPoint(this_addr, mAutoDetectPoint);
-    }
-
-    public static long native_get_mPoint1(long this_addr) {
-        return internal_native_get_mPoint1(this_addr);
-    }
-
-    public static void native_set_mPoint1(long this_addr, long mPoint1_addr) {
-        internal_native_set_mPoint1(this_addr, mPoint1_addr);
-    }
-
-    public static long native_get_mAxisX1(long this_addr) {
-        return internal_native_get_mAxisX1(this_addr);
-    }
-
-    public static void native_set_mAxisX1(long this_addr, long mAxisX1_addr) {
-        internal_native_set_mAxisX1(this_addr, mAxisX1_addr);
-    }
-
-    public static long native_get_mAxisY1(long this_addr) {
-        return internal_native_get_mAxisY1(this_addr);
-    }
-
-    public static void native_set_mAxisY1(long this_addr, long mAxisY1_addr) {
-        internal_native_set_mAxisY1(this_addr, mAxisY1_addr);
-    }
-
-    public static long native_get_mPoint2(long this_addr) {
-        return internal_native_get_mPoint2(this_addr);
-    }
-
-    public static void native_set_mPoint2(long this_addr, long mPoint2_addr) {
-        internal_native_set_mPoint2(this_addr, mPoint2_addr);
-    }
-
-    public static long native_get_mAxisX2(long this_addr) {
-        return internal_native_get_mAxisX2(this_addr);
-    }
-
-    public static void native_set_mAxisX2(long this_addr, long mAxisX2_addr) {
-        internal_native_set_mAxisX2(this_addr, mAxisX2_addr);
-    }
-
-    public static long native_get_mAxisY2(long this_addr) {
-        return internal_native_get_mAxisY2(this_addr);
-    }
-
-    public static void native_set_mAxisY2(long this_addr, long mAxisY2_addr) {
-        internal_native_set_mAxisY2(this_addr, mAxisY2_addr);
-    }
+    public static native void internal_native_set_mAxisY2(long this_addr, long mAxisY2_addr);
 }

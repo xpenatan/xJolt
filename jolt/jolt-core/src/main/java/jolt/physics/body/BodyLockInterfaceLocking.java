@@ -37,9 +37,5 @@ public class BodyLockInterfaceLocking extends BodyLockInterface {
 BodyLockInterfaceLocking* nativeObject = (BodyLockInterfaceLocking*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
+    public static native void internal_native_deleteNative(long this_addr);
 }

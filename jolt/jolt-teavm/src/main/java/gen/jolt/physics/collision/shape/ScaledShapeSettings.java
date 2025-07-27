@@ -28,7 +28,7 @@ var jsObj = new jolt.ScaledShapeSettings(inShape_addr, inScale_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inScale_addr"}, script = "var jsObj = new jolt.ScaledShapeSettings(inShape_addr, inScale_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_ShapeSettings_Vec3(int inShape_addr, int inScale_addr);
+    public static native int internal_native_create_ShapeSettings_Vec3(int inShape_addr, int inScale_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,7 +55,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ScaledShapeSettings);var returnedJSObj = jsObj.get_mScale();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mScale(int this_addr);
+    public static native int internal_native_get_mScale(int this_addr);
 
     public void set_mScale(Vec3 mScale) {
         internal_native_set_mScale((int) (long) getNativeData().getCPointer(), (int) (long) (mScale != null ? mScale.getNativeData().getCPointer() : 0));
@@ -66,17 +66,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ScaledShapeSettings);
 jsObj.set_mScale(mScale_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mScale_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ScaledShapeSettings);jsObj.set_mScale(mScale_addr);")
-    private static native void internal_native_set_mScale(int this_addr, int mScale_addr);
-
-    public static long native_create_ShapeSettings_Vec3(long inShape_addr, long inScale_addr) {
-        return internal_native_create_ShapeSettings_Vec3((int) inShape_addr, (int) inScale_addr);
-    }
-
-    public static long native_get_mScale(long this_addr) {
-        return internal_native_get_mScale((int) this_addr);
-    }
-
-    public static void native_set_mScale(long this_addr, long mScale_addr) {
-        internal_native_set_mScale((int) this_addr, (int) mScale_addr);
-    }
+    public static native void internal_native_set_mScale(int this_addr, int mScale_addr);
 }

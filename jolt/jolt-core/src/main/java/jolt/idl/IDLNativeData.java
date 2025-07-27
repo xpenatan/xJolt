@@ -17,6 +17,8 @@ public class IDLNativeData {
 
     private boolean disposed;
 
+    public Object nativeObject;
+
     public IDLNativeData(IDLBase idlBase) {
         this.idlBase = idlBase;
     }
@@ -26,6 +28,10 @@ public class IDLNativeData {
         cMemOwn = cMemoryOwn;
         cPointer = cPtr;
         disposed = false;
+        nativeObject = null;
+        if (cPointer != 0) {
+            idlBase.onNativeAddressChanged();
+        }
     }
 
     public void reset(IDLBase idlBase, boolean cMemoryOwn) {
@@ -77,6 +83,9 @@ public class IDLNativeData {
                     disposed = true;
                     idlBase.deleteNative();
                     cPointer = 0;
+                    nativeObject = null;
+                    idlBase.onNativeDispose();
+                    idlBase = null;
                 } else {
                     if (IDLBase.ENABLE_LOGGING) {
                         error("IDL", "Disposing error - " + toString() + " cPointer is 0");

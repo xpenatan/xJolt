@@ -34,7 +34,7 @@ var jsObj = new jolt.DistanceConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.DistanceConstraintSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -61,7 +61,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 return jsObj.get_mSpace();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);return jsObj.get_mSpace();")
-    private static native int internal_native_get_mSpace(int this_addr);
+    public static native int internal_native_get_mSpace(int this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), (int) (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 jsObj.set_mSpace(mSpace);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSpace"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);jsObj.set_mSpace(mSpace);")
-    private static native void internal_native_set_mSpace(int this_addr, int mSpace);
+    public static native void internal_native_set_mSpace(int this_addr, int mSpace);
 
     public Vec3 get_mPoint1() {
         int pointer = internal_native_get_mPoint1((int) (long) getNativeData().getCPointer());
@@ -103,7 +103,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);var returnedJSObj = jsObj.get_mPoint1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPoint1(int this_addr);
+    public static native int internal_native_get_mPoint1(int this_addr);
 
     public void set_mPoint1(Vec3 mPoint1) {
         internal_native_set_mPoint1((int) (long) getNativeData().getCPointer(), (int) (long) (mPoint1 != null ? mPoint1.getNativeData().getCPointer() : 0));
@@ -114,7 +114,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 jsObj.set_mPoint1(mPoint1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPoint1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);jsObj.set_mPoint1(mPoint1_addr);")
-    private static native void internal_native_set_mPoint1(int this_addr, int mPoint1_addr);
+    public static native void internal_native_set_mPoint1(int this_addr, int mPoint1_addr);
 
     public Vec3 get_mPoint2() {
         int pointer = internal_native_get_mPoint2((int) (long) getNativeData().getCPointer());
@@ -133,7 +133,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);var returnedJSObj = jsObj.get_mPoint2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPoint2(int this_addr);
+    public static native int internal_native_get_mPoint2(int this_addr);
 
     public void set_mPoint2(Vec3 mPoint2) {
         internal_native_set_mPoint2((int) (long) getNativeData().getCPointer(), (int) (long) (mPoint2 != null ? mPoint2.getNativeData().getCPointer() : 0));
@@ -144,7 +144,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 jsObj.set_mPoint2(mPoint2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPoint2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);jsObj.set_mPoint2(mPoint2_addr);")
-    private static native void internal_native_set_mPoint2(int this_addr, int mPoint2_addr);
+    public static native void internal_native_set_mPoint2(int this_addr, int mPoint2_addr);
 
     public float get_mMinDistance() {
         return internal_native_get_mMinDistance((int) (long) getNativeData().getCPointer());
@@ -155,7 +155,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 return jsObj.get_mMinDistance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);return jsObj.get_mMinDistance();")
-    private static native float internal_native_get_mMinDistance(int this_addr);
+    public static native float internal_native_get_mMinDistance(int this_addr);
 
     public void set_mMinDistance(float mMinDistance) {
         internal_native_set_mMinDistance((int) (long) getNativeData().getCPointer(), mMinDistance);
@@ -166,7 +166,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 jsObj.set_mMinDistance(mMinDistance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMinDistance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);jsObj.set_mMinDistance(mMinDistance);")
-    private static native void internal_native_set_mMinDistance(int this_addr, float mMinDistance);
+    public static native void internal_native_set_mMinDistance(int this_addr, float mMinDistance);
 
     public float get_mMaxDistance() {
         return internal_native_get_mMaxDistance((int) (long) getNativeData().getCPointer());
@@ -177,7 +177,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 return jsObj.get_mMaxDistance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);return jsObj.get_mMaxDistance();")
-    private static native float internal_native_get_mMaxDistance(int this_addr);
+    public static native float internal_native_get_mMaxDistance(int this_addr);
 
     public void set_mMaxDistance(float mMaxDistance) {
         internal_native_set_mMaxDistance((int) (long) getNativeData().getCPointer(), mMaxDistance);
@@ -188,7 +188,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 jsObj.set_mMaxDistance(mMaxDistance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxDistance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);jsObj.set_mMaxDistance(mMaxDistance);")
-    private static native void internal_native_set_mMaxDistance(int this_addr, float mMaxDistance);
+    public static native void internal_native_set_mMaxDistance(int this_addr, float mMaxDistance);
 
     public SpringSettings get_mLimitsSpringSettings() {
         int pointer = internal_native_get_mLimitsSpringSettings((int) (long) getNativeData().getCPointer());
@@ -207,7 +207,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);var returnedJSObj = jsObj.get_mLimitsSpringSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mLimitsSpringSettings(int this_addr);
+    public static native int internal_native_get_mLimitsSpringSettings(int this_addr);
 
     public void set_mLimitsSpringSettings(SpringSettings mLimitsSpringSettings) {
         internal_native_set_mLimitsSpringSettings((int) (long) getNativeData().getCPointer(), (int) (long) (mLimitsSpringSettings != null ? mLimitsSpringSettings.getNativeData().getCPointer() : 0));
@@ -218,61 +218,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);
 jsObj.set_mLimitsSpringSettings(mLimitsSpringSettings_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLimitsSpringSettings_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraintSettings);jsObj.set_mLimitsSpringSettings(mLimitsSpringSettings_addr);")
-    private static native void internal_native_set_mLimitsSpringSettings(int this_addr, int mLimitsSpringSettings_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace((int) this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace((int) this_addr, (int) mSpace);
-    }
-
-    public static long native_get_mPoint1(long this_addr) {
-        return internal_native_get_mPoint1((int) this_addr);
-    }
-
-    public static void native_set_mPoint1(long this_addr, long mPoint1_addr) {
-        internal_native_set_mPoint1((int) this_addr, (int) mPoint1_addr);
-    }
-
-    public static long native_get_mPoint2(long this_addr) {
-        return internal_native_get_mPoint2((int) this_addr);
-    }
-
-    public static void native_set_mPoint2(long this_addr, long mPoint2_addr) {
-        internal_native_set_mPoint2((int) this_addr, (int) mPoint2_addr);
-    }
-
-    public static float native_get_mMinDistance(long this_addr) {
-        return internal_native_get_mMinDistance((int) this_addr);
-    }
-
-    public static void native_set_mMinDistance(long this_addr, float mMinDistance) {
-        internal_native_set_mMinDistance((int) this_addr, mMinDistance);
-    }
-
-    public static float native_get_mMaxDistance(long this_addr) {
-        return internal_native_get_mMaxDistance((int) this_addr);
-    }
-
-    public static void native_set_mMaxDistance(long this_addr, float mMaxDistance) {
-        internal_native_set_mMaxDistance((int) this_addr, mMaxDistance);
-    }
-
-    public static long native_get_mLimitsSpringSettings(long this_addr) {
-        return internal_native_get_mLimitsSpringSettings((int) this_addr);
-    }
-
-    public static void native_set_mLimitsSpringSettings(long this_addr, long mLimitsSpringSettings_addr) {
-        internal_native_set_mLimitsSpringSettings((int) this_addr, (int) mLimitsSpringSettings_addr);
-    }
+    public static native void internal_native_set_mLimitsSpringSettings(int this_addr, int mLimitsSpringSettings_addr);
 }

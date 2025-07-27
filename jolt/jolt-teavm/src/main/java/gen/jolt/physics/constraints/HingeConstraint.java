@@ -43,7 +43,7 @@ var returnedJSObj = jsObj.GetCurrentAngle();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetCurrentAngle();return returnedJSObj;")
-    private static native float internal_native_GetCurrentAngle(int this_addr);
+    public static native float internal_native_GetCurrentAngle(int this_addr);
 
     public void SetMaxFrictionTorque(float inFrictionTorque) {
         internal_native_SetMaxFrictionTorque((int) (long) getNativeData().getCPointer(), inFrictionTorque);
@@ -54,7 +54,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);
 jsObj.SetMaxFrictionTorque(inFrictionTorque);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inFrictionTorque"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);jsObj.SetMaxFrictionTorque(inFrictionTorque);")
-    private static native void internal_native_SetMaxFrictionTorque(int this_addr, float inFrictionTorque);
+    public static native void internal_native_SetMaxFrictionTorque(int this_addr, float inFrictionTorque);
 
     public float GetMaxFrictionTorque() {
         return internal_native_GetMaxFrictionTorque((int) (long) getNativeData().getCPointer());
@@ -66,7 +66,7 @@ var returnedJSObj = jsObj.GetMaxFrictionTorque();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetMaxFrictionTorque();return returnedJSObj;")
-    private static native float internal_native_GetMaxFrictionTorque(int this_addr);
+    public static native float internal_native_GetMaxFrictionTorque(int this_addr);
 
     public MotorSettings GetMotorSettings() {
         int pointer = internal_native_GetMotorSettings((int) (long) getNativeData().getCPointer());
@@ -85,7 +85,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetMotorSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetMotorSettings(int this_addr);
+    public static native int internal_native_GetMotorSettings(int this_addr);
 
     public void SetMotorState(EMotorState inState) {
         internal_native_SetMotorState((int) (long) getNativeData().getCPointer(), (int) (long) (inState != null ? inState.getValue() : 0));
@@ -96,7 +96,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);
 jsObj.SetMotorState(inState);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inState"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);jsObj.SetMotorState(inState);")
-    private static native void internal_native_SetMotorState(int this_addr, int inState);
+    public static native void internal_native_SetMotorState(int this_addr, int inState);
 
     public EMotorState GetMotorState() {
         int value = internal_native_GetMotorState((int) (long) getNativeData().getCPointer());
@@ -109,7 +109,7 @@ var returnedJSObj = jsObj.GetMotorState();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetMotorState();return returnedJSObj;")
-    private static native int internal_native_GetMotorState(int this_addr);
+    public static native int internal_native_GetMotorState(int this_addr);
 
     public void SetTargetAngularVelocity(float inAngularVelocity) {
         internal_native_SetTargetAngularVelocity((int) (long) getNativeData().getCPointer(), inAngularVelocity);
@@ -120,7 +120,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);
 jsObj.SetTargetAngularVelocity(inAngularVelocity);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inAngularVelocity"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);jsObj.SetTargetAngularVelocity(inAngularVelocity);")
-    private static native void internal_native_SetTargetAngularVelocity(int this_addr, float inAngularVelocity);
+    public static native void internal_native_SetTargetAngularVelocity(int this_addr, float inAngularVelocity);
 
     public float GetTargetAngularVelocity() {
         return internal_native_GetTargetAngularVelocity((int) (long) getNativeData().getCPointer());
@@ -132,7 +132,7 @@ var returnedJSObj = jsObj.GetTargetAngularVelocity();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetTargetAngularVelocity();return returnedJSObj;")
-    private static native float internal_native_GetTargetAngularVelocity(int this_addr);
+    public static native float internal_native_GetTargetAngularVelocity(int this_addr);
 
     public void SetTargetAngle(float inAngle) {
         internal_native_SetTargetAngle((int) (long) getNativeData().getCPointer(), inAngle);
@@ -143,7 +143,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);
 jsObj.SetTargetAngle(inAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);jsObj.SetTargetAngle(inAngle);")
-    private static native void internal_native_SetTargetAngle(int this_addr, float inAngle);
+    public static native void internal_native_SetTargetAngle(int this_addr, float inAngle);
 
     public float GetTargetAngle() {
         return internal_native_GetTargetAngle((int) (long) getNativeData().getCPointer());
@@ -155,7 +155,7 @@ var returnedJSObj = jsObj.GetTargetAngle();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetTargetAngle();return returnedJSObj;")
-    private static native float internal_native_GetTargetAngle(int this_addr);
+    public static native float internal_native_GetTargetAngle(int this_addr);
 
     public void SetLimits(float inLimitsMin, float inLimitsMax) {
         internal_native_SetLimits((int) (long) getNativeData().getCPointer(), inLimitsMin, inLimitsMax);
@@ -166,7 +166,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);
 jsObj.SetLimits(inLimitsMin, inLimitsMax);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLimitsMin", "inLimitsMax"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);jsObj.SetLimits(inLimitsMin, inLimitsMax);")
-    private static native void internal_native_SetLimits(int this_addr, float inLimitsMin, float inLimitsMax);
+    public static native void internal_native_SetLimits(int this_addr, float inLimitsMin, float inLimitsMax);
 
     public float GetLimitsMin() {
         return internal_native_GetLimitsMin((int) (long) getNativeData().getCPointer());
@@ -178,7 +178,7 @@ var returnedJSObj = jsObj.GetLimitsMin();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetLimitsMin();return returnedJSObj;")
-    private static native float internal_native_GetLimitsMin(int this_addr);
+    public static native float internal_native_GetLimitsMin(int this_addr);
 
     public float GetLimitsMax() {
         return internal_native_GetLimitsMax((int) (long) getNativeData().getCPointer());
@@ -190,7 +190,7 @@ var returnedJSObj = jsObj.GetLimitsMax();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetLimitsMax();return returnedJSObj;")
-    private static native float internal_native_GetLimitsMax(int this_addr);
+    public static native float internal_native_GetLimitsMax(int this_addr);
 
     public boolean HasLimits() {
         return internal_native_HasLimits((int) (long) getNativeData().getCPointer());
@@ -202,7 +202,7 @@ var returnedJSObj = jsObj.HasLimits();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.HasLimits();return returnedJSObj;")
-    private static native boolean internal_native_HasLimits(int this_addr);
+    public static native boolean internal_native_HasLimits(int this_addr);
 
     public SpringSettings GetLimitsSpringSettings() {
         int pointer = internal_native_GetLimitsSpringSettings((int) (long) getNativeData().getCPointer());
@@ -221,7 +221,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetLimitsSpringSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetLimitsSpringSettings(int this_addr);
+    public static native int internal_native_GetLimitsSpringSettings(int this_addr);
 
     public void SetLimitsSpringSettings(SpringSettings inLimitsSpringSettings) {
         internal_native_SetLimitsSpringSettings((int) (long) getNativeData().getCPointer(), (int) (long) (inLimitsSpringSettings != null ? inLimitsSpringSettings.getNativeData().getCPointer() : 0));
@@ -232,7 +232,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);
 jsObj.SetLimitsSpringSettings(inLimitsSpringSettings_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLimitsSpringSettings_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);jsObj.SetLimitsSpringSettings(inLimitsSpringSettings_addr);")
-    private static native void internal_native_SetLimitsSpringSettings(int this_addr, int inLimitsSpringSettings_addr);
+    public static native void internal_native_SetLimitsSpringSettings(int this_addr, int inLimitsSpringSettings_addr);
 
     public Vec3 GetTotalLambdaPosition() {
         int pointer = internal_native_GetTotalLambdaPosition((int) (long) getNativeData().getCPointer());
@@ -251,7 +251,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetTotalLambdaPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetTotalLambdaPosition(int this_addr);
+    public static native int internal_native_GetTotalLambdaPosition(int this_addr);
 
     public Vector2 GetTotalLambdaRotation() {
         int pointer = internal_native_GetTotalLambdaRotation((int) (long) getNativeData().getCPointer());
@@ -270,7 +270,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetTotalLambdaRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetTotalLambdaRotation(int this_addr);
+    public static native int internal_native_GetTotalLambdaRotation(int this_addr);
 
     public float GetTotalLambdaRotationLimits() {
         return internal_native_GetTotalLambdaRotationLimits((int) (long) getNativeData().getCPointer());
@@ -282,7 +282,7 @@ var returnedJSObj = jsObj.GetTotalLambdaRotationLimits();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetTotalLambdaRotationLimits();return returnedJSObj;")
-    private static native float internal_native_GetTotalLambdaRotationLimits(int this_addr);
+    public static native float internal_native_GetTotalLambdaRotationLimits(int this_addr);
 
     public float GetTotalLambdaMotor() {
         return internal_native_GetTotalLambdaMotor((int) (long) getNativeData().getCPointer());
@@ -294,85 +294,5 @@ var returnedJSObj = jsObj.GetTotalLambdaMotor();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetTotalLambdaMotor();return returnedJSObj;")
-    private static native float internal_native_GetTotalLambdaMotor(int this_addr);
-
-    public static float native_GetCurrentAngle(long this_addr) {
-        return internal_native_GetCurrentAngle((int) this_addr);
-    }
-
-    public static void native_SetMaxFrictionTorque(long this_addr, float inFrictionTorque) {
-        internal_native_SetMaxFrictionTorque((int) this_addr, inFrictionTorque);
-    }
-
-    public static float native_GetMaxFrictionTorque(long this_addr) {
-        return internal_native_GetMaxFrictionTorque((int) this_addr);
-    }
-
-    public static long native_GetMotorSettings(long this_addr) {
-        return internal_native_GetMotorSettings((int) this_addr);
-    }
-
-    public static void native_SetMotorState(long this_addr, long inState) {
-        internal_native_SetMotorState((int) this_addr, (int) inState);
-    }
-
-    public static long native_GetMotorState(long this_addr) {
-        return internal_native_GetMotorState((int) this_addr);
-    }
-
-    public static void native_SetTargetAngularVelocity(long this_addr, float inAngularVelocity) {
-        internal_native_SetTargetAngularVelocity((int) this_addr, inAngularVelocity);
-    }
-
-    public static float native_GetTargetAngularVelocity(long this_addr) {
-        return internal_native_GetTargetAngularVelocity((int) this_addr);
-    }
-
-    public static void native_SetTargetAngle(long this_addr, float inAngle) {
-        internal_native_SetTargetAngle((int) this_addr, inAngle);
-    }
-
-    public static float native_GetTargetAngle(long this_addr) {
-        return internal_native_GetTargetAngle((int) this_addr);
-    }
-
-    public static void native_SetLimits(long this_addr, float inLimitsMin, float inLimitsMax) {
-        internal_native_SetLimits((int) this_addr, inLimitsMin, inLimitsMax);
-    }
-
-    public static float native_GetLimitsMin(long this_addr) {
-        return internal_native_GetLimitsMin((int) this_addr);
-    }
-
-    public static float native_GetLimitsMax(long this_addr) {
-        return internal_native_GetLimitsMax((int) this_addr);
-    }
-
-    public static boolean native_HasLimits(long this_addr) {
-        return internal_native_HasLimits((int) this_addr);
-    }
-
-    public static long native_GetLimitsSpringSettings(long this_addr) {
-        return internal_native_GetLimitsSpringSettings((int) this_addr);
-    }
-
-    public static void native_SetLimitsSpringSettings(long this_addr, long inLimitsSpringSettings_addr) {
-        internal_native_SetLimitsSpringSettings((int) this_addr, (int) inLimitsSpringSettings_addr);
-    }
-
-    public static long native_GetTotalLambdaPosition(long this_addr) {
-        return internal_native_GetTotalLambdaPosition((int) this_addr);
-    }
-
-    public static long native_GetTotalLambdaRotation(long this_addr) {
-        return internal_native_GetTotalLambdaRotation((int) this_addr);
-    }
-
-    public static float native_GetTotalLambdaRotationLimits(long this_addr) {
-        return internal_native_GetTotalLambdaRotationLimits((int) this_addr);
-    }
-
-    public static float native_GetTotalLambdaMotor(long this_addr) {
-        return internal_native_GetTotalLambdaMotor((int) this_addr);
-    }
+    public static native float internal_native_GetTotalLambdaMotor(int this_addr);
 }

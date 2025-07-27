@@ -34,7 +34,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraint);
 jsObj.SetHalfConeAngle(inHalfConeAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inHalfConeAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraint);jsObj.SetHalfConeAngle(inHalfConeAngle);")
-    private static native void internal_native_SetHalfConeAngle(int this_addr, float inHalfConeAngle);
+    public static native void internal_native_SetHalfConeAngle(int this_addr, float inHalfConeAngle);
 
     public float GetCosHalfConeAngle() {
         return internal_native_GetCosHalfConeAngle((int) (long) getNativeData().getCPointer());
@@ -46,7 +46,7 @@ var returnedJSObj = jsObj.GetCosHalfConeAngle();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraint);var returnedJSObj = jsObj.GetCosHalfConeAngle();return returnedJSObj;")
-    private static native float internal_native_GetCosHalfConeAngle(int this_addr);
+    public static native float internal_native_GetCosHalfConeAngle(int this_addr);
 
     public Vec3 GetTotalLambdaPosition() {
         int pointer = internal_native_GetTotalLambdaPosition((int) (long) getNativeData().getCPointer());
@@ -65,7 +65,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraint);var returnedJSObj = jsObj.GetTotalLambdaPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetTotalLambdaPosition(int this_addr);
+    public static native int internal_native_GetTotalLambdaPosition(int this_addr);
 
     public float GetTotalLambdaRotation() {
         return internal_native_GetTotalLambdaRotation((int) (long) getNativeData().getCPointer());
@@ -77,21 +77,5 @@ var returnedJSObj = jsObj.GetTotalLambdaRotation();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraint);var returnedJSObj = jsObj.GetTotalLambdaRotation();return returnedJSObj;")
-    private static native float internal_native_GetTotalLambdaRotation(int this_addr);
-
-    public static void native_SetHalfConeAngle(long this_addr, float inHalfConeAngle) {
-        internal_native_SetHalfConeAngle((int) this_addr, inHalfConeAngle);
-    }
-
-    public static float native_GetCosHalfConeAngle(long this_addr) {
-        return internal_native_GetCosHalfConeAngle((int) this_addr);
-    }
-
-    public static long native_GetTotalLambdaPosition(long this_addr) {
-        return internal_native_GetTotalLambdaPosition((int) this_addr);
-    }
-
-    public static float native_GetTotalLambdaRotation(long this_addr) {
-        return internal_native_GetTotalLambdaRotation((int) this_addr);
-    }
+    public static native float internal_native_GetTotalLambdaRotation(int this_addr);
 }

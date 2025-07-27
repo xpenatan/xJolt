@@ -46,7 +46,7 @@ var jsObj = new jolt.SixDOFConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SixDOFConstraintSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void MakeFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
         internal_native_MakeFreeAxis((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.MakeFreeAxis(inAxis);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inAxis"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.MakeFreeAxis(inAxis);")
-    private static native void internal_native_MakeFreeAxis(int this_addr, int inAxis);
+    public static native void internal_native_MakeFreeAxis(int this_addr, int inAxis);
 
     public boolean IsFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
         return internal_native_IsFreeAxis((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
@@ -96,7 +96,7 @@ var returnedJSObj = jsObj.IsFreeAxis(inAxis);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inAxis"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.IsFreeAxis(inAxis);return returnedJSObj;")
-    private static native boolean internal_native_IsFreeAxis(int this_addr, int inAxis);
+    public static native boolean internal_native_IsFreeAxis(int this_addr, int inAxis);
 
     public void MakeFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
         internal_native_MakeFixedAxis((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
@@ -107,7 +107,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.MakeFixedAxis(inAxis);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inAxis"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.MakeFixedAxis(inAxis);")
-    private static native void internal_native_MakeFixedAxis(int this_addr, int inAxis);
+    public static native void internal_native_MakeFixedAxis(int this_addr, int inAxis);
 
     public boolean IsFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
         return internal_native_IsFixedAxis((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
@@ -119,7 +119,7 @@ var returnedJSObj = jsObj.IsFixedAxis(inAxis);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inAxis"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.IsFixedAxis(inAxis);return returnedJSObj;")
-    private static native boolean internal_native_IsFixedAxis(int this_addr, int inAxis);
+    public static native boolean internal_native_IsFixedAxis(int this_addr, int inAxis);
 
     public void SetLimitedAxis(SixDOFConstraintSettings_EAxis inAxis, float inMin, float inMax) {
         internal_native_SetLimitedAxis((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0), inMin, inMax);
@@ -130,7 +130,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.SetLimitedAxis(inAxis, inMin, inMax);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inAxis", "inMin", "inMax"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.SetLimitedAxis(inAxis, inMin, inMax);")
-    private static native void internal_native_SetLimitedAxis(int this_addr, int inAxis, float inMin, float inMax);
+    public static native void internal_native_SetLimitedAxis(int this_addr, int inAxis, float inMin, float inMax);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
@@ -142,7 +142,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 return jsObj.get_mSpace();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);return jsObj.get_mSpace();")
-    private static native int internal_native_get_mSpace(int this_addr);
+    public static native int internal_native_get_mSpace(int this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), (int) (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -153,7 +153,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mSpace(mSpace);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSpace"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mSpace(mSpace);")
-    private static native void internal_native_set_mSpace(int this_addr, int mSpace);
+    public static native void internal_native_set_mSpace(int this_addr, int mSpace);
 
     public Vec3 get_mPosition1() {
         int pointer = internal_native_get_mPosition1((int) (long) getNativeData().getCPointer());
@@ -172,7 +172,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.get_mPosition1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPosition1(int this_addr);
+    public static native int internal_native_get_mPosition1(int this_addr);
 
     public void set_mPosition1(Vec3 mPosition1) {
         internal_native_set_mPosition1((int) (long) getNativeData().getCPointer(), (int) (long) (mPosition1 != null ? mPosition1.getNativeData().getCPointer() : 0));
@@ -183,7 +183,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mPosition1(mPosition1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPosition1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mPosition1(mPosition1_addr);")
-    private static native void internal_native_set_mPosition1(int this_addr, int mPosition1_addr);
+    public static native void internal_native_set_mPosition1(int this_addr, int mPosition1_addr);
 
     public Vec3 get_mAxisX1() {
         int pointer = internal_native_get_mAxisX1((int) (long) getNativeData().getCPointer());
@@ -202,7 +202,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.get_mAxisX1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mAxisX1(int this_addr);
+    public static native int internal_native_get_mAxisX1(int this_addr);
 
     public void set_mAxisX1(Vec3 mAxisX1) {
         internal_native_set_mAxisX1((int) (long) getNativeData().getCPointer(), (int) (long) (mAxisX1 != null ? mAxisX1.getNativeData().getCPointer() : 0));
@@ -213,7 +213,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mAxisX1(mAxisX1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mAxisX1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mAxisX1(mAxisX1_addr);")
-    private static native void internal_native_set_mAxisX1(int this_addr, int mAxisX1_addr);
+    public static native void internal_native_set_mAxisX1(int this_addr, int mAxisX1_addr);
 
     public Vec3 get_mAxisY1() {
         int pointer = internal_native_get_mAxisY1((int) (long) getNativeData().getCPointer());
@@ -232,7 +232,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.get_mAxisY1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mAxisY1(int this_addr);
+    public static native int internal_native_get_mAxisY1(int this_addr);
 
     public void set_mAxisY1(Vec3 mAxisY1) {
         internal_native_set_mAxisY1((int) (long) getNativeData().getCPointer(), (int) (long) (mAxisY1 != null ? mAxisY1.getNativeData().getCPointer() : 0));
@@ -243,7 +243,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mAxisY1(mAxisY1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mAxisY1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mAxisY1(mAxisY1_addr);")
-    private static native void internal_native_set_mAxisY1(int this_addr, int mAxisY1_addr);
+    public static native void internal_native_set_mAxisY1(int this_addr, int mAxisY1_addr);
 
     public Vec3 get_mPosition2() {
         int pointer = internal_native_get_mPosition2((int) (long) getNativeData().getCPointer());
@@ -262,7 +262,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.get_mPosition2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPosition2(int this_addr);
+    public static native int internal_native_get_mPosition2(int this_addr);
 
     public void set_mPosition2(Vec3 mPosition2) {
         internal_native_set_mPosition2((int) (long) getNativeData().getCPointer(), (int) (long) (mPosition2 != null ? mPosition2.getNativeData().getCPointer() : 0));
@@ -273,7 +273,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mPosition2(mPosition2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPosition2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mPosition2(mPosition2_addr);")
-    private static native void internal_native_set_mPosition2(int this_addr, int mPosition2_addr);
+    public static native void internal_native_set_mPosition2(int this_addr, int mPosition2_addr);
 
     public Vec3 get_mAxisX2() {
         int pointer = internal_native_get_mAxisX2((int) (long) getNativeData().getCPointer());
@@ -292,7 +292,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.get_mAxisX2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mAxisX2(int this_addr);
+    public static native int internal_native_get_mAxisX2(int this_addr);
 
     public void set_mAxisX2(Vec3 mAxisX2) {
         internal_native_set_mAxisX2((int) (long) getNativeData().getCPointer(), (int) (long) (mAxisX2 != null ? mAxisX2.getNativeData().getCPointer() : 0));
@@ -303,7 +303,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mAxisX2(mAxisX2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mAxisX2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mAxisX2(mAxisX2_addr);")
-    private static native void internal_native_set_mAxisX2(int this_addr, int mAxisX2_addr);
+    public static native void internal_native_set_mAxisX2(int this_addr, int mAxisX2_addr);
 
     public Vec3 get_mAxisY2() {
         int pointer = internal_native_get_mAxisY2((int) (long) getNativeData().getCPointer());
@@ -322,7 +322,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.get_mAxisY2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mAxisY2(int this_addr);
+    public static native int internal_native_get_mAxisY2(int this_addr);
 
     public void set_mAxisY2(Vec3 mAxisY2) {
         internal_native_set_mAxisY2((int) (long) getNativeData().getCPointer(), (int) (long) (mAxisY2 != null ? mAxisY2.getNativeData().getCPointer() : 0));
@@ -333,7 +333,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mAxisY2(mAxisY2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mAxisY2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mAxisY2(mAxisY2_addr);")
-    private static native void internal_native_set_mAxisY2(int this_addr, int mAxisY2_addr);
+    public static native void internal_native_set_mAxisY2(int this_addr, int mAxisY2_addr);
 
     public float get_mMaxFriction(int index) {
         return internal_native_get_mMaxFriction((int) (long) getNativeData().getCPointer(), index);
@@ -344,7 +344,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 return jsObj.get_mMaxFriction(index);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);return jsObj.get_mMaxFriction(index);")
-    private static native float internal_native_get_mMaxFriction(int this_addr, int index);
+    public static native float internal_native_get_mMaxFriction(int this_addr, int index);
 
     public void set_mMaxFriction(int index, float mMaxFriction) {
         internal_native_set_mMaxFriction((int) (long) getNativeData().getCPointer(), index, mMaxFriction);
@@ -355,7 +355,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mMaxFriction(index, mMaxFriction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mMaxFriction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mMaxFriction(index, mMaxFriction);")
-    private static native void internal_native_set_mMaxFriction(int this_addr, int index, float mMaxFriction);
+    public static native void internal_native_set_mMaxFriction(int this_addr, int index, float mMaxFriction);
 
     public ESwingType get_mSwingType() {
         int value = internal_native_get_mSwingType((int) (long) getNativeData().getCPointer());
@@ -367,7 +367,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 return jsObj.get_mSwingType();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);return jsObj.get_mSwingType();")
-    private static native int internal_native_get_mSwingType(int this_addr);
+    public static native int internal_native_get_mSwingType(int this_addr);
 
     public void set_mSwingType(ESwingType mSwingType) {
         internal_native_set_mSwingType((int) (long) getNativeData().getCPointer(), (int) (long) (mSwingType != null ? mSwingType.getValue() : 0));
@@ -378,7 +378,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mSwingType(mSwingType);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSwingType"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mSwingType(mSwingType);")
-    private static native void internal_native_set_mSwingType(int this_addr, int mSwingType);
+    public static native void internal_native_set_mSwingType(int this_addr, int mSwingType);
 
     public float get_mLimitMin(int index) {
         return internal_native_get_mLimitMin((int) (long) getNativeData().getCPointer(), index);
@@ -389,7 +389,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 return jsObj.get_mLimitMin(index);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);return jsObj.get_mLimitMin(index);")
-    private static native float internal_native_get_mLimitMin(int this_addr, int index);
+    public static native float internal_native_get_mLimitMin(int this_addr, int index);
 
     public void set_mLimitMin(int index, float mLimitMin) {
         internal_native_set_mLimitMin((int) (long) getNativeData().getCPointer(), index, mLimitMin);
@@ -400,7 +400,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mLimitMin(index, mLimitMin);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mLimitMin"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mLimitMin(index, mLimitMin);")
-    private static native void internal_native_set_mLimitMin(int this_addr, int index, float mLimitMin);
+    public static native void internal_native_set_mLimitMin(int this_addr, int index, float mLimitMin);
 
     public float get_mLimitMax(int index) {
         return internal_native_get_mLimitMax((int) (long) getNativeData().getCPointer(), index);
@@ -411,7 +411,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 return jsObj.get_mLimitMax(index);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);return jsObj.get_mLimitMax(index);")
-    private static native float internal_native_get_mLimitMax(int this_addr, int index);
+    public static native float internal_native_get_mLimitMax(int this_addr, int index);
 
     public void set_mLimitMax(int index, float mLimitMax) {
         internal_native_set_mLimitMax((int) (long) getNativeData().getCPointer(), index, mLimitMax);
@@ -422,7 +422,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mLimitMax(index, mLimitMax);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mLimitMax"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mLimitMax(index, mLimitMax);")
-    private static native void internal_native_set_mLimitMax(int this_addr, int index, float mLimitMax);
+    public static native void internal_native_set_mLimitMax(int this_addr, int index, float mLimitMax);
 
     public SpringSettings get_mLimitsSpringSettings(int index) {
         int pointer = internal_native_get_mLimitsSpringSettings((int) (long) getNativeData().getCPointer(), index);
@@ -441,7 +441,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.get_mLimitsSpringSettings(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mLimitsSpringSettings(int this_addr, int index);
+    public static native int internal_native_get_mLimitsSpringSettings(int this_addr, int index);
 
     public void set_mLimitsSpringSettings(int index, SpringSettings mLimitsSpringSettings) {
         internal_native_set_mLimitsSpringSettings((int) (long) getNativeData().getCPointer(), index, (int) (long) (mLimitsSpringSettings != null ? mLimitsSpringSettings.getNativeData().getCPointer() : 0));
@@ -452,7 +452,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mLimitsSpringSettings(index, mLimitsSpringSettings_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mLimitsSpringSettings_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mLimitsSpringSettings(index, mLimitsSpringSettings_addr);")
-    private static native void internal_native_set_mLimitsSpringSettings(int this_addr, int index, int mLimitsSpringSettings_addr);
+    public static native void internal_native_set_mLimitsSpringSettings(int this_addr, int index, int mLimitsSpringSettings_addr);
 
     public MotorSettings get_mMotorSettings(int index) {
         int pointer = internal_native_get_mMotorSettings((int) (long) getNativeData().getCPointer(), index);
@@ -471,7 +471,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);var returnedJSObj = jsObj.get_mMotorSettings(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mMotorSettings(int this_addr, int index);
+    public static native int internal_native_get_mMotorSettings(int this_addr, int index);
 
     public void set_mMotorSettings(int index, MotorSettings mMotorSettings) {
         internal_native_set_mMotorSettings((int) (long) getNativeData().getCPointer(), index, (int) (long) (mMotorSettings != null ? mMotorSettings.getNativeData().getCPointer() : 0));
@@ -482,137 +482,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);
 jsObj.set_mMotorSettings(index, mMotorSettings_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mMotorSettings_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SixDOFConstraintSettings);jsObj.set_mMotorSettings(index, mMotorSettings_addr);")
-    private static native void internal_native_set_mMotorSettings(int this_addr, int index, int mMotorSettings_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_MakeFreeAxis(long this_addr, long inAxis) {
-        internal_native_MakeFreeAxis((int) this_addr, (int) inAxis);
-    }
-
-    public static boolean native_IsFreeAxis(long this_addr, long inAxis) {
-        return internal_native_IsFreeAxis((int) this_addr, (int) inAxis);
-    }
-
-    public static void native_MakeFixedAxis(long this_addr, long inAxis) {
-        internal_native_MakeFixedAxis((int) this_addr, (int) inAxis);
-    }
-
-    public static boolean native_IsFixedAxis(long this_addr, long inAxis) {
-        return internal_native_IsFixedAxis((int) this_addr, (int) inAxis);
-    }
-
-    public static void native_SetLimitedAxis(long this_addr, long inAxis, float inMin, float inMax) {
-        internal_native_SetLimitedAxis((int) this_addr, (int) inAxis, inMin, inMax);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace((int) this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace((int) this_addr, (int) mSpace);
-    }
-
-    public static long native_get_mPosition1(long this_addr) {
-        return internal_native_get_mPosition1((int) this_addr);
-    }
-
-    public static void native_set_mPosition1(long this_addr, long mPosition1_addr) {
-        internal_native_set_mPosition1((int) this_addr, (int) mPosition1_addr);
-    }
-
-    public static long native_get_mAxisX1(long this_addr) {
-        return internal_native_get_mAxisX1((int) this_addr);
-    }
-
-    public static void native_set_mAxisX1(long this_addr, long mAxisX1_addr) {
-        internal_native_set_mAxisX1((int) this_addr, (int) mAxisX1_addr);
-    }
-
-    public static long native_get_mAxisY1(long this_addr) {
-        return internal_native_get_mAxisY1((int) this_addr);
-    }
-
-    public static void native_set_mAxisY1(long this_addr, long mAxisY1_addr) {
-        internal_native_set_mAxisY1((int) this_addr, (int) mAxisY1_addr);
-    }
-
-    public static long native_get_mPosition2(long this_addr) {
-        return internal_native_get_mPosition2((int) this_addr);
-    }
-
-    public static void native_set_mPosition2(long this_addr, long mPosition2_addr) {
-        internal_native_set_mPosition2((int) this_addr, (int) mPosition2_addr);
-    }
-
-    public static long native_get_mAxisX2(long this_addr) {
-        return internal_native_get_mAxisX2((int) this_addr);
-    }
-
-    public static void native_set_mAxisX2(long this_addr, long mAxisX2_addr) {
-        internal_native_set_mAxisX2((int) this_addr, (int) mAxisX2_addr);
-    }
-
-    public static long native_get_mAxisY2(long this_addr) {
-        return internal_native_get_mAxisY2((int) this_addr);
-    }
-
-    public static void native_set_mAxisY2(long this_addr, long mAxisY2_addr) {
-        internal_native_set_mAxisY2((int) this_addr, (int) mAxisY2_addr);
-    }
-
-    public static float native_get_mMaxFriction(long this_addr, int index) {
-        return internal_native_get_mMaxFriction((int) this_addr, index);
-    }
-
-    public static void native_set_mMaxFriction(long this_addr, int index, float mMaxFriction) {
-        internal_native_set_mMaxFriction((int) this_addr, index, mMaxFriction);
-    }
-
-    public static long native_get_mSwingType(long this_addr) {
-        return internal_native_get_mSwingType((int) this_addr);
-    }
-
-    public static void native_set_mSwingType(long this_addr, long mSwingType) {
-        internal_native_set_mSwingType((int) this_addr, (int) mSwingType);
-    }
-
-    public static float native_get_mLimitMin(long this_addr, int index) {
-        return internal_native_get_mLimitMin((int) this_addr, index);
-    }
-
-    public static void native_set_mLimitMin(long this_addr, int index, float mLimitMin) {
-        internal_native_set_mLimitMin((int) this_addr, index, mLimitMin);
-    }
-
-    public static float native_get_mLimitMax(long this_addr, int index) {
-        return internal_native_get_mLimitMax((int) this_addr, index);
-    }
-
-    public static void native_set_mLimitMax(long this_addr, int index, float mLimitMax) {
-        internal_native_set_mLimitMax((int) this_addr, index, mLimitMax);
-    }
-
-    public static long native_get_mLimitsSpringSettings(long this_addr, int index) {
-        return internal_native_get_mLimitsSpringSettings((int) this_addr, index);
-    }
-
-    public static void native_set_mLimitsSpringSettings(long this_addr, int index, long mLimitsSpringSettings_addr) {
-        internal_native_set_mLimitsSpringSettings((int) this_addr, index, (int) mLimitsSpringSettings_addr);
-    }
-
-    public static long native_get_mMotorSettings(long this_addr, int index) {
-        return internal_native_get_mMotorSettings((int) this_addr, index);
-    }
-
-    public static void native_set_mMotorSettings(long this_addr, int index, long mMotorSettings_addr) {
-        internal_native_set_mMotorSettings((int) this_addr, index, (int) mMotorSettings_addr);
-    }
+    public static native void internal_native_set_mMotorSettings(int this_addr, int index, int mMotorSettings_addr);
 }

@@ -24,7 +24,7 @@ public class SpringSettings extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SpringSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -49,7 +49,7 @@ return (jlong)new SpringSettings();
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean HasStiffness() {
         return internal_native_HasStiffness((long) getNativeData().getCPointer());
@@ -59,7 +59,7 @@ delete nativeObject;
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 return nativeObject->HasStiffness();
 */
-    private static native boolean internal_native_HasStiffness(long this_addr);
+    public static native boolean internal_native_HasStiffness(long this_addr);
 
     public ESpringMode get_mMode() {
         int value = internal_native_get_mMode((long) getNativeData().getCPointer());
@@ -70,7 +70,7 @@ return nativeObject->HasStiffness();
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 return (jint)nativeObject->mMode;
 */
-    private static native int internal_native_get_mMode(long this_addr);
+    public static native int internal_native_get_mMode(long this_addr);
 
     public void set_mMode(ESpringMode mMode) {
         internal_native_set_mMode((long) getNativeData().getCPointer(), (long) (mMode != null ? mMode.getValue() : 0));
@@ -80,7 +80,7 @@ return (jint)nativeObject->mMode;
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 nativeObject->mMode = (::ESpringMode)mMode;
 */
-    private static native void internal_native_set_mMode(long this_addr, long mMode);
+    public static native void internal_native_set_mMode(long this_addr, long mMode);
 
     public float get_mFrequency() {
         return internal_native_get_mFrequency((long) getNativeData().getCPointer());
@@ -90,7 +90,7 @@ nativeObject->mMode = (::ESpringMode)mMode;
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 return nativeObject->mFrequency;
 */
-    private static native float internal_native_get_mFrequency(long this_addr);
+    public static native float internal_native_get_mFrequency(long this_addr);
 
     public void set_mFrequency(float mFrequency) {
         internal_native_set_mFrequency((long) getNativeData().getCPointer(), mFrequency);
@@ -100,7 +100,7 @@ return nativeObject->mFrequency;
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 nativeObject->mFrequency = mFrequency;
 */
-    private static native void internal_native_set_mFrequency(long this_addr, float mFrequency);
+    public static native void internal_native_set_mFrequency(long this_addr, float mFrequency);
 
     public float get_mStiffness() {
         return internal_native_get_mStiffness((long) getNativeData().getCPointer());
@@ -110,7 +110,7 @@ nativeObject->mFrequency = mFrequency;
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 return nativeObject->mStiffness;
 */
-    private static native float internal_native_get_mStiffness(long this_addr);
+    public static native float internal_native_get_mStiffness(long this_addr);
 
     public void set_mStiffness(float mStiffness) {
         internal_native_set_mStiffness((long) getNativeData().getCPointer(), mStiffness);
@@ -120,7 +120,7 @@ return nativeObject->mStiffness;
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 nativeObject->mStiffness = mStiffness;
 */
-    private static native void internal_native_set_mStiffness(long this_addr, float mStiffness);
+    public static native void internal_native_set_mStiffness(long this_addr, float mStiffness);
 
     public float get_mDamping() {
         return internal_native_get_mDamping((long) getNativeData().getCPointer());
@@ -130,7 +130,7 @@ nativeObject->mStiffness = mStiffness;
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 return nativeObject->mDamping;
 */
-    private static native float internal_native_get_mDamping(long this_addr);
+    public static native float internal_native_get_mDamping(long this_addr);
 
     public void set_mDamping(float mDamping) {
         internal_native_set_mDamping((long) getNativeData().getCPointer(), mDamping);
@@ -140,49 +140,5 @@ return nativeObject->mDamping;
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 nativeObject->mDamping = mDamping;
 */
-    private static native void internal_native_set_mDamping(long this_addr, float mDamping);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static boolean native_HasStiffness(long this_addr) {
-        return internal_native_HasStiffness(this_addr);
-    }
-
-    public static long native_get_mMode(long this_addr) {
-        return internal_native_get_mMode(this_addr);
-    }
-
-    public static void native_set_mMode(long this_addr, long mMode) {
-        internal_native_set_mMode(this_addr, mMode);
-    }
-
-    public static float native_get_mFrequency(long this_addr) {
-        return internal_native_get_mFrequency(this_addr);
-    }
-
-    public static void native_set_mFrequency(long this_addr, float mFrequency) {
-        internal_native_set_mFrequency(this_addr, mFrequency);
-    }
-
-    public static float native_get_mStiffness(long this_addr) {
-        return internal_native_get_mStiffness(this_addr);
-    }
-
-    public static void native_set_mStiffness(long this_addr, float mStiffness) {
-        internal_native_set_mStiffness(this_addr, mStiffness);
-    }
-
-    public static float native_get_mDamping(long this_addr) {
-        return internal_native_get_mDamping(this_addr);
-    }
-
-    public static void native_set_mDamping(long this_addr, float mDamping) {
-        internal_native_set_mDamping(this_addr, mDamping);
-    }
+    public static native void internal_native_set_mDamping(long this_addr, float mDamping);
 }

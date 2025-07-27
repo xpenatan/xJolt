@@ -41,9 +41,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleController);var returnedJSObj = jsObj.GetConstraint();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetConstraint(int this_addr);
-
-    public static long native_GetConstraint(long this_addr) {
-        return internal_native_GetConstraint((int) this_addr);
-    }
+    public static native int internal_native_GetConstraint(int this_addr);
 }

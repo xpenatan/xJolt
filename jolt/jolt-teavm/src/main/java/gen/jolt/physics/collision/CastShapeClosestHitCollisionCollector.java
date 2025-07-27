@@ -29,7 +29,7 @@ var jsObj = new jolt.CastShapeClosestHitCollisionCollector();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CastShapeClosestHitCollisionCollector();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -56,7 +56,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeClosestHitCollisionCollect
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeClosestHitCollisionCollector);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public boolean HadHit() {
         return internal_native_HadHit((int) (long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ var returnedJSObj = jsObj.HadHit();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeClosestHitCollisionCollector);var returnedJSObj = jsObj.HadHit();return returnedJSObj;")
-    private static native boolean internal_native_HadHit(int this_addr);
+    public static native boolean internal_native_HadHit(int this_addr);
 
     public ShapeCastResult get_mHit() {
         int pointer = internal_native_get_mHit((int) (long) getNativeData().getCPointer());
@@ -87,7 +87,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeClosestHitCollisionCollector);var returnedJSObj = jsObj.get_mHit();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mHit(int this_addr);
+    public static native int internal_native_get_mHit(int this_addr);
 
     public void set_mHit(ShapeCastResult mHit) {
         internal_native_set_mHit((int) (long) getNativeData().getCPointer(), (int) (long) (mHit != null ? mHit.getNativeData().getCPointer() : 0));
@@ -98,25 +98,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeClosestHitCollisionCollect
 jsObj.set_mHit(mHit_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mHit_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeClosestHitCollisionCollector);jsObj.set_mHit(mHit_addr);")
-    private static native void internal_native_set_mHit(int this_addr, int mHit_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static boolean native_HadHit(long this_addr) {
-        return internal_native_HadHit((int) this_addr);
-    }
-
-    public static long native_get_mHit(long this_addr) {
-        return internal_native_get_mHit((int) this_addr);
-    }
-
-    public static void native_set_mHit(long this_addr, long mHit_addr) {
-        internal_native_set_mHit((int) this_addr, (int) mHit_addr);
-    }
+    public static native void internal_native_set_mHit(int this_addr, int mHit_addr);
 }

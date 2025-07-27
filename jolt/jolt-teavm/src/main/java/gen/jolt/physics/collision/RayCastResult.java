@@ -28,7 +28,7 @@ var jsObj = new jolt.RayCastResult();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.RayCastResult();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,7 +55,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastResult);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastResult);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public SubShapeID get_mSubShapeID2() {
         int pointer = internal_native_get_mSubShapeID2((int) (long) getNativeData().getCPointer());
@@ -74,7 +74,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastResult);var returnedJSObj = jsObj.get_mSubShapeID2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSubShapeID2(int this_addr);
+    public static native int internal_native_get_mSubShapeID2(int this_addr);
 
     public void set_mSubShapeID2(SubShapeID mSubShapeID2) {
         internal_native_set_mSubShapeID2((int) (long) getNativeData().getCPointer(), (int) (long) (mSubShapeID2 != null ? mSubShapeID2.getNativeData().getCPointer() : 0));
@@ -85,21 +85,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastResult);
 jsObj.set_mSubShapeID2(mSubShapeID2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSubShapeID2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastResult);jsObj.set_mSubShapeID2(mSubShapeID2_addr);")
-    private static native void internal_native_set_mSubShapeID2(int this_addr, int mSubShapeID2_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mSubShapeID2(long this_addr) {
-        return internal_native_get_mSubShapeID2((int) this_addr);
-    }
-
-    public static void native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr) {
-        internal_native_set_mSubShapeID2((int) this_addr, (int) mSubShapeID2_addr);
-    }
+    public static native void internal_native_set_mSubShapeID2(int this_addr, int mSubShapeID2_addr);
 }

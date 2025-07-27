@@ -25,7 +25,7 @@ var jsObj = new jolt.VehicleDifferentialSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.VehicleDifferentialSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mLeftWheel() {
         return internal_native_get_mLeftWheel((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 return jsObj.get_mLeftWheel();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);return jsObj.get_mLeftWheel();")
-    private static native int internal_native_get_mLeftWheel(int this_addr);
+    public static native int internal_native_get_mLeftWheel(int this_addr);
 
     public void set_mLeftWheel(int mLeftWheel) {
         internal_native_set_mLeftWheel((int) (long) getNativeData().getCPointer(), mLeftWheel);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 jsObj.set_mLeftWheel(mLeftWheel);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLeftWheel"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);jsObj.set_mLeftWheel(mLeftWheel);")
-    private static native void internal_native_set_mLeftWheel(int this_addr, int mLeftWheel);
+    public static native void internal_native_set_mLeftWheel(int this_addr, int mLeftWheel);
 
     public int get_mRightWheel() {
         return internal_native_get_mRightWheel((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 return jsObj.get_mRightWheel();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);return jsObj.get_mRightWheel();")
-    private static native int internal_native_get_mRightWheel(int this_addr);
+    public static native int internal_native_get_mRightWheel(int this_addr);
 
     public void set_mRightWheel(int mRightWheel) {
         internal_native_set_mRightWheel((int) (long) getNativeData().getCPointer(), mRightWheel);
@@ -95,7 +95,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 jsObj.set_mRightWheel(mRightWheel);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRightWheel"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);jsObj.set_mRightWheel(mRightWheel);")
-    private static native void internal_native_set_mRightWheel(int this_addr, int mRightWheel);
+    public static native void internal_native_set_mRightWheel(int this_addr, int mRightWheel);
 
     public float get_mDifferentialRatio() {
         return internal_native_get_mDifferentialRatio((int) (long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 return jsObj.get_mDifferentialRatio();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);return jsObj.get_mDifferentialRatio();")
-    private static native float internal_native_get_mDifferentialRatio(int this_addr);
+    public static native float internal_native_get_mDifferentialRatio(int this_addr);
 
     public void set_mDifferentialRatio(float mDifferentialRatio) {
         internal_native_set_mDifferentialRatio((int) (long) getNativeData().getCPointer(), mDifferentialRatio);
@@ -117,7 +117,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 jsObj.set_mDifferentialRatio(mDifferentialRatio);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDifferentialRatio"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);jsObj.set_mDifferentialRatio(mDifferentialRatio);")
-    private static native void internal_native_set_mDifferentialRatio(int this_addr, float mDifferentialRatio);
+    public static native void internal_native_set_mDifferentialRatio(int this_addr, float mDifferentialRatio);
 
     public float get_mLeftRightSplit() {
         return internal_native_get_mLeftRightSplit((int) (long) getNativeData().getCPointer());
@@ -128,7 +128,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 return jsObj.get_mLeftRightSplit();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);return jsObj.get_mLeftRightSplit();")
-    private static native float internal_native_get_mLeftRightSplit(int this_addr);
+    public static native float internal_native_get_mLeftRightSplit(int this_addr);
 
     public void set_mLeftRightSplit(float mLeftRightSplit) {
         internal_native_set_mLeftRightSplit((int) (long) getNativeData().getCPointer(), mLeftRightSplit);
@@ -139,7 +139,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 jsObj.set_mLeftRightSplit(mLeftRightSplit);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLeftRightSplit"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);jsObj.set_mLeftRightSplit(mLeftRightSplit);")
-    private static native void internal_native_set_mLeftRightSplit(int this_addr, float mLeftRightSplit);
+    public static native void internal_native_set_mLeftRightSplit(int this_addr, float mLeftRightSplit);
 
     public float get_mLimitedSlipRatio() {
         return internal_native_get_mLimitedSlipRatio((int) (long) getNativeData().getCPointer());
@@ -150,7 +150,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 return jsObj.get_mLimitedSlipRatio();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);return jsObj.get_mLimitedSlipRatio();")
-    private static native float internal_native_get_mLimitedSlipRatio(int this_addr);
+    public static native float internal_native_get_mLimitedSlipRatio(int this_addr);
 
     public void set_mLimitedSlipRatio(float mLimitedSlipRatio) {
         internal_native_set_mLimitedSlipRatio((int) (long) getNativeData().getCPointer(), mLimitedSlipRatio);
@@ -161,7 +161,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 jsObj.set_mLimitedSlipRatio(mLimitedSlipRatio);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLimitedSlipRatio"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);jsObj.set_mLimitedSlipRatio(mLimitedSlipRatio);")
-    private static native void internal_native_set_mLimitedSlipRatio(int this_addr, float mLimitedSlipRatio);
+    public static native void internal_native_set_mLimitedSlipRatio(int this_addr, float mLimitedSlipRatio);
 
     public float get_mEngineTorqueRatio() {
         return internal_native_get_mEngineTorqueRatio((int) (long) getNativeData().getCPointer());
@@ -172,7 +172,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 return jsObj.get_mEngineTorqueRatio();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);return jsObj.get_mEngineTorqueRatio();")
-    private static native float internal_native_get_mEngineTorqueRatio(int this_addr);
+    public static native float internal_native_get_mEngineTorqueRatio(int this_addr);
 
     public void set_mEngineTorqueRatio(float mEngineTorqueRatio) {
         internal_native_set_mEngineTorqueRatio((int) (long) getNativeData().getCPointer(), mEngineTorqueRatio);
@@ -183,61 +183,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);
 jsObj.set_mEngineTorqueRatio(mEngineTorqueRatio);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mEngineTorqueRatio"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleDifferentialSettings);jsObj.set_mEngineTorqueRatio(mEngineTorqueRatio);")
-    private static native void internal_native_set_mEngineTorqueRatio(int this_addr, float mEngineTorqueRatio);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_get_mLeftWheel(long this_addr) {
-        return internal_native_get_mLeftWheel((int) this_addr);
-    }
-
-    public static void native_set_mLeftWheel(long this_addr, int mLeftWheel) {
-        internal_native_set_mLeftWheel((int) this_addr, mLeftWheel);
-    }
-
-    public static int native_get_mRightWheel(long this_addr) {
-        return internal_native_get_mRightWheel((int) this_addr);
-    }
-
-    public static void native_set_mRightWheel(long this_addr, int mRightWheel) {
-        internal_native_set_mRightWheel((int) this_addr, mRightWheel);
-    }
-
-    public static float native_get_mDifferentialRatio(long this_addr) {
-        return internal_native_get_mDifferentialRatio((int) this_addr);
-    }
-
-    public static void native_set_mDifferentialRatio(long this_addr, float mDifferentialRatio) {
-        internal_native_set_mDifferentialRatio((int) this_addr, mDifferentialRatio);
-    }
-
-    public static float native_get_mLeftRightSplit(long this_addr) {
-        return internal_native_get_mLeftRightSplit((int) this_addr);
-    }
-
-    public static void native_set_mLeftRightSplit(long this_addr, float mLeftRightSplit) {
-        internal_native_set_mLeftRightSplit((int) this_addr, mLeftRightSplit);
-    }
-
-    public static float native_get_mLimitedSlipRatio(long this_addr) {
-        return internal_native_get_mLimitedSlipRatio((int) this_addr);
-    }
-
-    public static void native_set_mLimitedSlipRatio(long this_addr, float mLimitedSlipRatio) {
-        internal_native_set_mLimitedSlipRatio((int) this_addr, mLimitedSlipRatio);
-    }
-
-    public static float native_get_mEngineTorqueRatio(long this_addr) {
-        return internal_native_get_mEngineTorqueRatio((int) this_addr);
-    }
-
-    public static void native_set_mEngineTorqueRatio(long this_addr, float mEngineTorqueRatio) {
-        internal_native_set_mEngineTorqueRatio((int) this_addr, mEngineTorqueRatio);
-    }
+    public static native void internal_native_set_mEngineTorqueRatio(int this_addr, float mEngineTorqueRatio);
 }

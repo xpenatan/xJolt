@@ -25,7 +25,7 @@ var jsObj = new jolt.SoftBodySharedSettingsVolume(inVertex1, inVertex2, inVertex
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inVertex1", "inVertex2", "inVertex3", "inVertex4", "inCompliance"}, script = "var jsObj = new jolt.SoftBodySharedSettingsVolume(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_int_int_int_float(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance);
+    public static native int internal_native_create_int_int_int_int_float(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mVertex(int index) {
         return internal_native_get_mVertex((int) (long) getNativeData().getCPointer(), index);
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);
 return jsObj.get_mVertex(index);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);return jsObj.get_mVertex(index);")
-    private static native int internal_native_get_mVertex(int this_addr, int index);
+    public static native int internal_native_get_mVertex(int this_addr, int index);
 
     public void set_mVertex(int index, int mVertex) {
         internal_native_set_mVertex((int) (long) getNativeData().getCPointer(), index, mVertex);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);
 jsObj.set_mVertex(index, mVertex);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mVertex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);jsObj.set_mVertex(index, mVertex);")
-    private static native void internal_native_set_mVertex(int this_addr, int index, int mVertex);
+    public static native void internal_native_set_mVertex(int this_addr, int index, int mVertex);
 
     public float get_mSixRestVolume() {
         return internal_native_get_mSixRestVolume((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);
 return jsObj.get_mSixRestVolume();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);return jsObj.get_mSixRestVolume();")
-    private static native float internal_native_get_mSixRestVolume(int this_addr);
+    public static native float internal_native_get_mSixRestVolume(int this_addr);
 
     public void set_mSixRestVolume(float mSixRestVolume) {
         internal_native_set_mSixRestVolume((int) (long) getNativeData().getCPointer(), mSixRestVolume);
@@ -95,7 +95,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);
 jsObj.set_mSixRestVolume(mSixRestVolume);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSixRestVolume"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);jsObj.set_mSixRestVolume(mSixRestVolume);")
-    private static native void internal_native_set_mSixRestVolume(int this_addr, float mSixRestVolume);
+    public static native void internal_native_set_mSixRestVolume(int this_addr, float mSixRestVolume);
 
     public float get_mCompliance() {
         return internal_native_get_mCompliance((int) (long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);
 return jsObj.get_mCompliance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);return jsObj.get_mCompliance();")
-    private static native float internal_native_get_mCompliance(int this_addr);
+    public static native float internal_native_get_mCompliance(int this_addr);
 
     public void set_mCompliance(float mCompliance) {
         internal_native_set_mCompliance((int) (long) getNativeData().getCPointer(), mCompliance);
@@ -117,37 +117,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);
 jsObj.set_mCompliance(mCompliance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCompliance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVolume);jsObj.set_mCompliance(mCompliance);")
-    private static native void internal_native_set_mCompliance(int this_addr, float mCompliance);
-
-    public static long native_create_int_int_int_int_float(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance) {
-        return internal_native_create_int_int_int_int_float(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_get_mVertex(long this_addr, int index) {
-        return internal_native_get_mVertex((int) this_addr, index);
-    }
-
-    public static void native_set_mVertex(long this_addr, int index, int mVertex) {
-        internal_native_set_mVertex((int) this_addr, index, mVertex);
-    }
-
-    public static float native_get_mSixRestVolume(long this_addr) {
-        return internal_native_get_mSixRestVolume((int) this_addr);
-    }
-
-    public static void native_set_mSixRestVolume(long this_addr, float mSixRestVolume) {
-        internal_native_set_mSixRestVolume((int) this_addr, mSixRestVolume);
-    }
-
-    public static float native_get_mCompliance(long this_addr) {
-        return internal_native_get_mCompliance((int) this_addr);
-    }
-
-    public static void native_set_mCompliance(long this_addr, float mCompliance) {
-        internal_native_set_mCompliance((int) this_addr, mCompliance);
-    }
+    public static native void internal_native_set_mCompliance(int this_addr, float mCompliance);
 }

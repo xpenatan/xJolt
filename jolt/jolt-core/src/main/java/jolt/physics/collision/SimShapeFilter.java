@@ -23,7 +23,7 @@ public class SimShapeFilter extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SimShapeFilter();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,13 +48,5 @@ return (jlong)new SimShapeFilter();
 SimShapeFilter* nativeObject = (SimShapeFilter*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
+    public static native void internal_native_deleteNative(long this_addr);
 }

@@ -30,7 +30,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraint);
 jsObj.SetConstraints(inPinion_addr, inRack_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPinion_addr", "inRack_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraint);jsObj.SetConstraints(inPinion_addr, inRack_addr);")
-    private static native void internal_native_SetConstraints(int this_addr, int inPinion_addr, int inRack_addr);
+    public static native void internal_native_SetConstraints(int this_addr, int inPinion_addr, int inRack_addr);
 
     public float GetTotalLambda() {
         return internal_native_GetTotalLambda((int) (long) getNativeData().getCPointer());
@@ -42,13 +42,5 @@ var returnedJSObj = jsObj.GetTotalLambda();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraint);var returnedJSObj = jsObj.GetTotalLambda();return returnedJSObj;")
-    private static native float internal_native_GetTotalLambda(int this_addr);
-
-    public static void native_SetConstraints(long this_addr, long inPinion_addr, long inRack_addr) {
-        internal_native_SetConstraints((int) this_addr, (int) inPinion_addr, (int) inRack_addr);
-    }
-
-    public static float native_GetTotalLambda(long this_addr) {
-        return internal_native_GetTotalLambda((int) this_addr);
-    }
+    public static native float internal_native_GetTotalLambda(int this_addr);
 }

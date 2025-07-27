@@ -27,7 +27,7 @@ var jsObj = new jolt.ShapeCastSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ShapeCastSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -54,7 +54,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public EBackFaceMode get_mBackFaceModeTriangles() {
         int value = internal_native_get_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer());
@@ -66,7 +66,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);
 return jsObj.get_mBackFaceModeTriangles();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);return jsObj.get_mBackFaceModeTriangles();")
-    private static native int internal_native_get_mBackFaceModeTriangles(int this_addr);
+    public static native int internal_native_get_mBackFaceModeTriangles(int this_addr);
 
     public void set_mBackFaceModeTriangles(EBackFaceMode mBackFaceModeTriangles) {
         internal_native_set_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceModeTriangles != null ? mBackFaceModeTriangles.getValue() : 0));
@@ -77,7 +77,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);
 jsObj.set_mBackFaceModeTriangles(mBackFaceModeTriangles);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBackFaceModeTriangles"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);jsObj.set_mBackFaceModeTriangles(mBackFaceModeTriangles);")
-    private static native void internal_native_set_mBackFaceModeTriangles(int this_addr, int mBackFaceModeTriangles);
+    public static native void internal_native_set_mBackFaceModeTriangles(int this_addr, int mBackFaceModeTriangles);
 
     public EBackFaceMode get_mBackFaceModeConvex() {
         int value = internal_native_get_mBackFaceModeConvex((int) (long) getNativeData().getCPointer());
@@ -89,7 +89,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);
 return jsObj.get_mBackFaceModeConvex();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);return jsObj.get_mBackFaceModeConvex();")
-    private static native int internal_native_get_mBackFaceModeConvex(int this_addr);
+    public static native int internal_native_get_mBackFaceModeConvex(int this_addr);
 
     public void set_mBackFaceModeConvex(EBackFaceMode mBackFaceModeConvex) {
         internal_native_set_mBackFaceModeConvex((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceModeConvex != null ? mBackFaceModeConvex.getValue() : 0));
@@ -100,7 +100,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);
 jsObj.set_mBackFaceModeConvex(mBackFaceModeConvex);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBackFaceModeConvex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);jsObj.set_mBackFaceModeConvex(mBackFaceModeConvex);")
-    private static native void internal_native_set_mBackFaceModeConvex(int this_addr, int mBackFaceModeConvex);
+    public static native void internal_native_set_mBackFaceModeConvex(int this_addr, int mBackFaceModeConvex);
 
     public boolean get_mUseShrunkenShapeAndConvexRadius() {
         return internal_native_get_mUseShrunkenShapeAndConvexRadius((int) (long) getNativeData().getCPointer());
@@ -111,7 +111,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);
 return jsObj.get_mUseShrunkenShapeAndConvexRadius();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);return jsObj.get_mUseShrunkenShapeAndConvexRadius();")
-    private static native boolean internal_native_get_mUseShrunkenShapeAndConvexRadius(int this_addr);
+    public static native boolean internal_native_get_mUseShrunkenShapeAndConvexRadius(int this_addr);
 
     public void set_mUseShrunkenShapeAndConvexRadius(boolean mUseShrunkenShapeAndConvexRadius) {
         internal_native_set_mUseShrunkenShapeAndConvexRadius((int) (long) getNativeData().getCPointer(), mUseShrunkenShapeAndConvexRadius);
@@ -122,7 +122,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);
 jsObj.set_mUseShrunkenShapeAndConvexRadius(mUseShrunkenShapeAndConvexRadius);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mUseShrunkenShapeAndConvexRadius"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);jsObj.set_mUseShrunkenShapeAndConvexRadius(mUseShrunkenShapeAndConvexRadius);")
-    private static native void internal_native_set_mUseShrunkenShapeAndConvexRadius(int this_addr, boolean mUseShrunkenShapeAndConvexRadius);
+    public static native void internal_native_set_mUseShrunkenShapeAndConvexRadius(int this_addr, boolean mUseShrunkenShapeAndConvexRadius);
 
     public boolean get_mReturnDeepestPoint() {
         return internal_native_get_mReturnDeepestPoint((int) (long) getNativeData().getCPointer());
@@ -133,7 +133,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);
 return jsObj.get_mReturnDeepestPoint();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);return jsObj.get_mReturnDeepestPoint();")
-    private static native boolean internal_native_get_mReturnDeepestPoint(int this_addr);
+    public static native boolean internal_native_get_mReturnDeepestPoint(int this_addr);
 
     public void set_mReturnDeepestPoint(boolean mReturnDeepestPoint) {
         internal_native_set_mReturnDeepestPoint((int) (long) getNativeData().getCPointer(), mReturnDeepestPoint);
@@ -144,45 +144,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);
 jsObj.set_mReturnDeepestPoint(mReturnDeepestPoint);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mReturnDeepestPoint"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastSettings);jsObj.set_mReturnDeepestPoint(mReturnDeepestPoint);")
-    private static native void internal_native_set_mReturnDeepestPoint(int this_addr, boolean mReturnDeepestPoint);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mBackFaceModeTriangles(long this_addr) {
-        return internal_native_get_mBackFaceModeTriangles((int) this_addr);
-    }
-
-    public static void native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles) {
-        internal_native_set_mBackFaceModeTriangles((int) this_addr, (int) mBackFaceModeTriangles);
-    }
-
-    public static long native_get_mBackFaceModeConvex(long this_addr) {
-        return internal_native_get_mBackFaceModeConvex((int) this_addr);
-    }
-
-    public static void native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex) {
-        internal_native_set_mBackFaceModeConvex((int) this_addr, (int) mBackFaceModeConvex);
-    }
-
-    public static boolean native_get_mUseShrunkenShapeAndConvexRadius(long this_addr) {
-        return internal_native_get_mUseShrunkenShapeAndConvexRadius((int) this_addr);
-    }
-
-    public static void native_set_mUseShrunkenShapeAndConvexRadius(long this_addr, boolean mUseShrunkenShapeAndConvexRadius) {
-        internal_native_set_mUseShrunkenShapeAndConvexRadius((int) this_addr, mUseShrunkenShapeAndConvexRadius);
-    }
-
-    public static boolean native_get_mReturnDeepestPoint(long this_addr) {
-        return internal_native_get_mReturnDeepestPoint((int) this_addr);
-    }
-
-    public static void native_set_mReturnDeepestPoint(long this_addr, boolean mReturnDeepestPoint) {
-        internal_native_set_mReturnDeepestPoint((int) this_addr, mReturnDeepestPoint);
-    }
+    public static native void internal_native_set_mReturnDeepestPoint(int this_addr, boolean mReturnDeepestPoint);
 }

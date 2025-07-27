@@ -41,7 +41,7 @@ public class RagdollAdditionalConstraint extends IDLBase {
 RagdollAdditionalConstraint* nativeObject = (RagdollAdditionalConstraint*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mBodyIdx(int index) {
         return internal_native_get_mBodyIdx((long) getNativeData().getCPointer(), index);
@@ -51,7 +51,7 @@ delete nativeObject;
 RagdollAdditionalConstraint* nativeObject = (RagdollAdditionalConstraint*)this_addr;
 return nativeObject->mBodyIdx[index];
 */
-    private static native int internal_native_get_mBodyIdx(long this_addr, int index);
+    public static native int internal_native_get_mBodyIdx(long this_addr, int index);
 
     public void set_mBodyIdx(int index, int mBodyIdx) {
         internal_native_set_mBodyIdx((long) getNativeData().getCPointer(), index, mBodyIdx);
@@ -61,7 +61,7 @@ return nativeObject->mBodyIdx[index];
 RagdollAdditionalConstraint* nativeObject = (RagdollAdditionalConstraint*)this_addr;
 nativeObject->mBodyIdx[index] = mBodyIdx;
 */
-    private static native void internal_native_set_mBodyIdx(long this_addr, int index, int mBodyIdx);
+    public static native void internal_native_set_mBodyIdx(long this_addr, int index, int mBodyIdx);
 
     public TwoBodyConstraintSettings get_mConstraint() {
         long pointer = internal_native_get_mConstraint((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ RagdollAdditionalConstraint* nativeObject = (RagdollAdditionalConstraint*)this_a
 TwoBodyConstraintSettings* attr = nativeObject->mConstraint;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mConstraint(long this_addr);
+    public static native long internal_native_get_mConstraint(long this_addr);
 
     public void set_mConstraint(TwoBodyConstraintSettings mConstraint) {
         internal_native_set_mConstraint((long) getNativeData().getCPointer(), (long) (mConstraint != null ? mConstraint.getNativeData().getCPointer() : 0));
@@ -88,25 +88,5 @@ return (jlong)attr;
 RagdollAdditionalConstraint* nativeObject = (RagdollAdditionalConstraint*)this_addr;
 nativeObject->mConstraint = (TwoBodyConstraintSettings*)mConstraint_addr;
 */
-    private static native void internal_native_set_mConstraint(long this_addr, long mConstraint_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_get_mBodyIdx(long this_addr, int index) {
-        return internal_native_get_mBodyIdx(this_addr, index);
-    }
-
-    public static void native_set_mBodyIdx(long this_addr, int index, int mBodyIdx) {
-        internal_native_set_mBodyIdx(this_addr, index, mBodyIdx);
-    }
-
-    public static long native_get_mConstraint(long this_addr) {
-        return internal_native_get_mConstraint(this_addr);
-    }
-
-    public static void native_set_mConstraint(long this_addr, long mConstraint_addr) {
-        internal_native_set_mConstraint(this_addr, mConstraint_addr);
-    }
+    public static native void internal_native_set_mConstraint(long this_addr, long mConstraint_addr);
 }

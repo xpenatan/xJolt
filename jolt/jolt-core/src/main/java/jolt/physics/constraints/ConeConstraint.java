@@ -33,7 +33,7 @@ public class ConeConstraint extends TwoBodyConstraint {
 ConeConstraint* nativeObject = (ConeConstraint*)this_addr;
 nativeObject->SetHalfConeAngle((float)inHalfConeAngle);
 */
-    private static native void internal_native_SetHalfConeAngle(long this_addr, float inHalfConeAngle);
+    public static native void internal_native_SetHalfConeAngle(long this_addr, float inHalfConeAngle);
 
     public float GetCosHalfConeAngle() {
         return internal_native_GetCosHalfConeAngle((long) getNativeData().getCPointer());
@@ -43,7 +43,7 @@ nativeObject->SetHalfConeAngle((float)inHalfConeAngle);
 ConeConstraint* nativeObject = (ConeConstraint*)this_addr;
 return nativeObject->GetCosHalfConeAngle();
 */
-    private static native float internal_native_GetCosHalfConeAngle(long this_addr);
+    public static native float internal_native_GetCosHalfConeAngle(long this_addr);
 
     public Vec3 GetTotalLambdaPosition() {
         long pointer = internal_native_GetTotalLambdaPosition((long) getNativeData().getCPointer());
@@ -60,7 +60,7 @@ ConeConstraint* nativeObject = (ConeConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetTotalLambdaPosition();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetTotalLambdaPosition(long this_addr);
+    public static native long internal_native_GetTotalLambdaPosition(long this_addr);
 
     public float GetTotalLambdaRotation() {
         return internal_native_GetTotalLambdaRotation((long) getNativeData().getCPointer());
@@ -70,21 +70,5 @@ return (jlong)&copy_addr;*/
 ConeConstraint* nativeObject = (ConeConstraint*)this_addr;
 return nativeObject->GetTotalLambdaRotation();
 */
-    private static native float internal_native_GetTotalLambdaRotation(long this_addr);
-
-    public static void native_SetHalfConeAngle(long this_addr, float inHalfConeAngle) {
-        internal_native_SetHalfConeAngle(this_addr, inHalfConeAngle);
-    }
-
-    public static float native_GetCosHalfConeAngle(long this_addr) {
-        return internal_native_GetCosHalfConeAngle(this_addr);
-    }
-
-    public static long native_GetTotalLambdaPosition(long this_addr) {
-        return internal_native_GetTotalLambdaPosition(this_addr);
-    }
-
-    public static float native_GetTotalLambdaRotation(long this_addr) {
-        return internal_native_GetTotalLambdaRotation(this_addr);
-    }
+    public static native float internal_native_GetTotalLambdaRotation(long this_addr);
 }

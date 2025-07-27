@@ -38,9 +38,5 @@ DecoratedShape* nativeObject = (DecoratedShape*)this_addr;
 const Shape* obj = nativeObject->GetInnerShape();
 return (jlong)obj;
 */
-    private static native long internal_native_GetInnerShape(long this_addr);
-
-    public static long native_GetInnerShape(long this_addr) {
-        return internal_native_GetInnerShape(this_addr);
-    }
+    public static native long internal_native_GetInnerShape(long this_addr);
 }

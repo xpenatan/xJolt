@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mInvBindIndex() {
         return internal_native_get_mInvBindIndex((int) (long) getNativeData().getCPointer());
@@ -50,7 +50,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);
 return jsObj.get_mInvBindIndex();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);return jsObj.get_mInvBindIndex();")
-    private static native int internal_native_get_mInvBindIndex(int this_addr);
+    public static native int internal_native_get_mInvBindIndex(int this_addr);
 
     public void set_mInvBindIndex(int mInvBindIndex) {
         internal_native_set_mInvBindIndex((int) (long) getNativeData().getCPointer(), mInvBindIndex);
@@ -61,7 +61,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);
 jsObj.set_mInvBindIndex(mInvBindIndex);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvBindIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);jsObj.set_mInvBindIndex(mInvBindIndex);")
-    private static native void internal_native_set_mInvBindIndex(int this_addr, int mInvBindIndex);
+    public static native void internal_native_set_mInvBindIndex(int this_addr, int mInvBindIndex);
 
     public float get_mWeight() {
         return internal_native_get_mWeight((int) (long) getNativeData().getCPointer());
@@ -72,7 +72,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);
 return jsObj.get_mWeight();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);return jsObj.get_mWeight();")
-    private static native float internal_native_get_mWeight(int this_addr);
+    public static native float internal_native_get_mWeight(int this_addr);
 
     public void set_mWeight(float mWeight) {
         internal_native_set_mWeight((int) (long) getNativeData().getCPointer(), mWeight);
@@ -83,25 +83,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);
 jsObj.set_mWeight(mWeight);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mWeight"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinWeight);jsObj.set_mWeight(mWeight);")
-    private static native void internal_native_set_mWeight(int this_addr, float mWeight);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_get_mInvBindIndex(long this_addr) {
-        return internal_native_get_mInvBindIndex((int) this_addr);
-    }
-
-    public static void native_set_mInvBindIndex(long this_addr, int mInvBindIndex) {
-        internal_native_set_mInvBindIndex((int) this_addr, mInvBindIndex);
-    }
-
-    public static float native_get_mWeight(long this_addr) {
-        return internal_native_get_mWeight((int) this_addr);
-    }
-
-    public static void native_set_mWeight(long this_addr, float mWeight) {
-        internal_native_set_mWeight((int) this_addr, mWeight);
-    }
+    public static native void internal_native_set_mWeight(int this_addr, float mWeight);
 }

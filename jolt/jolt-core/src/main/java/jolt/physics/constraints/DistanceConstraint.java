@@ -31,7 +31,7 @@ public class DistanceConstraint extends TwoBodyConstraint {
 DistanceConstraint* nativeObject = (DistanceConstraint*)this_addr;
 nativeObject->SetDistance((float)inMinDistance, (float)inMaxDistance);
 */
-    private static native void internal_native_SetDistance(long this_addr, float inMinDistance, float inMaxDistance);
+    public static native void internal_native_SetDistance(long this_addr, float inMinDistance, float inMaxDistance);
 
     public float GetMinDistance() {
         return internal_native_GetMinDistance((long) getNativeData().getCPointer());
@@ -41,7 +41,7 @@ nativeObject->SetDistance((float)inMinDistance, (float)inMaxDistance);
 DistanceConstraint* nativeObject = (DistanceConstraint*)this_addr;
 return nativeObject->GetMinDistance();
 */
-    private static native float internal_native_GetMinDistance(long this_addr);
+    public static native float internal_native_GetMinDistance(long this_addr);
 
     public float GetMaxDistance() {
         return internal_native_GetMaxDistance((long) getNativeData().getCPointer());
@@ -51,7 +51,7 @@ return nativeObject->GetMinDistance();
 DistanceConstraint* nativeObject = (DistanceConstraint*)this_addr;
 return nativeObject->GetMaxDistance();
 */
-    private static native float internal_native_GetMaxDistance(long this_addr);
+    public static native float internal_native_GetMaxDistance(long this_addr);
 
     public SpringSettings GetLimitsSpringSettings() {
         long pointer = internal_native_GetLimitsSpringSettings((long) getNativeData().getCPointer());
@@ -67,7 +67,7 @@ return nativeObject->GetMaxDistance();
 DistanceConstraint* nativeObject = (DistanceConstraint*)this_addr;
 return (jlong)&nativeObject->GetLimitsSpringSettings();
 */
-    private static native long internal_native_GetLimitsSpringSettings(long this_addr);
+    public static native long internal_native_GetLimitsSpringSettings(long this_addr);
 
     public void SetLimitsSpringSettings(SpringSettings inSettings) {
         internal_native_SetLimitsSpringSettings((long) getNativeData().getCPointer(), (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
@@ -77,7 +77,7 @@ return (jlong)&nativeObject->GetLimitsSpringSettings();
 DistanceConstraint* nativeObject = (DistanceConstraint*)this_addr;
 nativeObject->SetLimitsSpringSettings(*((SpringSettings* )inSettings_addr));
 */
-    private static native void internal_native_SetLimitsSpringSettings(long this_addr, long inSettings_addr);
+    public static native void internal_native_SetLimitsSpringSettings(long this_addr, long inSettings_addr);
 
     public float GetTotalLambdaPosition() {
         return internal_native_GetTotalLambdaPosition((long) getNativeData().getCPointer());
@@ -87,29 +87,5 @@ nativeObject->SetLimitsSpringSettings(*((SpringSettings* )inSettings_addr));
 DistanceConstraint* nativeObject = (DistanceConstraint*)this_addr;
 return nativeObject->GetTotalLambdaPosition();
 */
-    private static native float internal_native_GetTotalLambdaPosition(long this_addr);
-
-    public static void native_SetDistance(long this_addr, float inMinDistance, float inMaxDistance) {
-        internal_native_SetDistance(this_addr, inMinDistance, inMaxDistance);
-    }
-
-    public static float native_GetMinDistance(long this_addr) {
-        return internal_native_GetMinDistance(this_addr);
-    }
-
-    public static float native_GetMaxDistance(long this_addr) {
-        return internal_native_GetMaxDistance(this_addr);
-    }
-
-    public static long native_GetLimitsSpringSettings(long this_addr) {
-        return internal_native_GetLimitsSpringSettings(this_addr);
-    }
-
-    public static void native_SetLimitsSpringSettings(long this_addr, long inSettings_addr) {
-        internal_native_SetLimitsSpringSettings(this_addr, inSettings_addr);
-    }
-
-    public static float native_GetTotalLambdaPosition(long this_addr) {
-        return internal_native_GetTotalLambdaPosition(this_addr);
-    }
+    public static native float internal_native_GetTotalLambdaPosition(long this_addr);
 }

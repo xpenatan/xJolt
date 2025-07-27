@@ -34,7 +34,7 @@ var returnedJSObj = jsObj.GetRefCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);var returnedJSObj = jsObj.GetRefCount();return returnedJSObj;")
-    private static native int internal_native_GetRefCount(int this_addr);
+    public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
         internal_native_AddRef((int) (long) getNativeData().getCPointer());
@@ -45,7 +45,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);
 jsObj.AddRef();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);jsObj.AddRef();")
-    private static native void internal_native_AddRef(int this_addr);
+    public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
         internal_native_Release((int) (long) getNativeData().getCPointer());
@@ -56,7 +56,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);
 jsObj.Release();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);jsObj.Release();")
-    private static native void internal_native_Release(int this_addr);
+    public static native void internal_native_Release(int this_addr);
 
     public ShapeResult Create() {
         int pointer = internal_native_Create((int) (long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);var returnedJSObj = jsObj.Create();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_Create(int this_addr);
+    public static native int internal_native_Create(int this_addr);
 
     public void ClearCachedResult() {
         internal_native_ClearCachedResult((int) (long) getNativeData().getCPointer());
@@ -86,7 +86,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);
 jsObj.ClearCachedResult();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);jsObj.ClearCachedResult();")
-    private static native void internal_native_ClearCachedResult(int this_addr);
+    public static native void internal_native_ClearCachedResult(int this_addr);
 
     public long get_mUserData() {
         return internal_native_get_mUserData((int) (long) getNativeData().getCPointer());
@@ -97,7 +97,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);
 return jsObj.get_mUserData();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);return jsObj.get_mUserData();")
-    private static native int internal_native_get_mUserData(int this_addr);
+    public static native int internal_native_get_mUserData(int this_addr);
 
     public void set_mUserData(long mUserData) {
         internal_native_set_mUserData((int) (long) getNativeData().getCPointer(), (int) mUserData);
@@ -108,33 +108,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);
 jsObj.set_mUserData(mUserData);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);jsObj.set_mUserData(mUserData);")
-    private static native void internal_native_set_mUserData(int this_addr, int mUserData);
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount((int) this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef((int) this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release((int) this_addr);
-    }
-
-    public static long native_Create(long this_addr) {
-        return internal_native_Create((int) this_addr);
-    }
-
-    public static void native_ClearCachedResult(long this_addr) {
-        internal_native_ClearCachedResult((int) this_addr);
-    }
-
-    public static long native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData((int) this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, long mUserData) {
-        internal_native_set_mUserData((int) this_addr, (int) mUserData);
-    }
+    public static native void internal_native_set_mUserData(int this_addr, int mUserData);
 }

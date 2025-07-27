@@ -29,7 +29,7 @@ var jsObj = new jolt.PlaneShape(inPlane_addr, inMaterial_addr, inHalfExtent);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPlane_addr", "inMaterial_addr", "inHalfExtent"}, script = "var jsObj = new jolt.PlaneShape(inPlane_addr, inMaterial_addr, inHalfExtent);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Plane_PhysicsMaterial_float(int inPlane_addr, int inMaterial_addr, float inHalfExtent);
+    public static native int internal_native_create_Plane_PhysicsMaterial_float(int inPlane_addr, int inMaterial_addr, float inHalfExtent);
 
     public PlaneShape(Plane inPlane, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -42,7 +42,7 @@ var jsObj = new jolt.PlaneShape(inPlane_addr, inMaterial_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPlane_addr", "inMaterial_addr"}, script = "var jsObj = new jolt.PlaneShape(inPlane_addr, inMaterial_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Plane_PhysicsMaterial(int inPlane_addr, int inMaterial_addr);
+    public static native int internal_native_create_Plane_PhysicsMaterial(int inPlane_addr, int inMaterial_addr);
 
     public PlaneShape(Plane inPlane) {
         super((byte) 1, (char) 1);
@@ -55,7 +55,7 @@ var jsObj = new jolt.PlaneShape(inPlane_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPlane_addr"}, script = "var jsObj = new jolt.PlaneShape(inPlane_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Plane(int inPlane_addr);
+    public static native int internal_native_create_Plane(int inPlane_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -82,7 +82,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PlaneShape);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PlaneShape);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void SetMaterial(PhysicsMaterial inMaterial) {
         internal_native_SetMaterial((int) (long) getNativeData().getCPointer(), (int) (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
@@ -93,7 +93,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PlaneShape);
 jsObj.SetMaterial(inMaterial_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inMaterial_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PlaneShape);jsObj.SetMaterial(inMaterial_addr);")
-    private static native void internal_native_SetMaterial(int this_addr, int inMaterial_addr);
+    public static native void internal_native_SetMaterial(int this_addr, int inMaterial_addr);
 
     public Plane GetPlane() {
         int pointer = internal_native_GetPlane((int) (long) getNativeData().getCPointer());
@@ -112,7 +112,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PlaneShape);var returnedJSObj = jsObj.GetPlane();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetPlane(int this_addr);
+    public static native int internal_native_GetPlane(int this_addr);
 
     public float GetHalfExtent() {
         return internal_native_GetHalfExtent((int) (long) getNativeData().getCPointer());
@@ -124,33 +124,5 @@ var returnedJSObj = jsObj.GetHalfExtent();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PlaneShape);var returnedJSObj = jsObj.GetHalfExtent();return returnedJSObj;")
-    private static native float internal_native_GetHalfExtent(int this_addr);
-
-    public static long native_create_Plane_PhysicsMaterial_float(long inPlane_addr, long inMaterial_addr, float inHalfExtent) {
-        return internal_native_create_Plane_PhysicsMaterial_float((int) inPlane_addr, (int) inMaterial_addr, inHalfExtent);
-    }
-
-    public static long native_create_Plane_PhysicsMaterial(long inPlane_addr, long inMaterial_addr) {
-        return internal_native_create_Plane_PhysicsMaterial((int) inPlane_addr, (int) inMaterial_addr);
-    }
-
-    public static long native_create_Plane(long inPlane_addr) {
-        return internal_native_create_Plane((int) inPlane_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_SetMaterial(long this_addr, long inMaterial_addr) {
-        internal_native_SetMaterial((int) this_addr, (int) inMaterial_addr);
-    }
-
-    public static long native_GetPlane(long this_addr) {
-        return internal_native_GetPlane((int) this_addr);
-    }
-
-    public static float native_GetHalfExtent(long this_addr) {
-        return internal_native_GetHalfExtent((int) this_addr);
-    }
+    public static native float internal_native_GetHalfExtent(int this_addr);
 }

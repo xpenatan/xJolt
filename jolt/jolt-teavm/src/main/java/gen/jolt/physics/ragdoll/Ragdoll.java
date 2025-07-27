@@ -47,7 +47,7 @@ var jsObj = new jolt.Ragdoll(inSystem_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inSystem_addr"}, script = "var jsObj = new jolt.Ragdoll(inSystem_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_PhysicsSystem(int inSystem_addr);
+    public static native int internal_native_create_PhysicsSystem(int inSystem_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -65,7 +65,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.AddToPhysicsSystem(inActivationMode, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inActivationMode", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.AddToPhysicsSystem(inActivationMode, inLockBodies);")
-    private static native void internal_native_AddToPhysicsSystem(int this_addr, int inActivationMode, boolean inLockBodies);
+    public static native void internal_native_AddToPhysicsSystem(int this_addr, int inActivationMode, boolean inLockBodies);
 
     public void AddToPhysicsSystem(EActivation inActivationMode) {
         internal_native_AddToPhysicsSystem((int) (long) getNativeData().getCPointer(), (int) (long) (inActivationMode != null ? inActivationMode.getValue() : 0));
@@ -76,7 +76,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.AddToPhysicsSystem(inActivationMode);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inActivationMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.AddToPhysicsSystem(inActivationMode);")
-    private static native void internal_native_AddToPhysicsSystem(int this_addr, int inActivationMode);
+    public static native void internal_native_AddToPhysicsSystem(int this_addr, int inActivationMode);
 
     public void RemoveFromPhysicsSystem(boolean inLockBodies) {
         internal_native_RemoveFromPhysicsSystem((int) (long) getNativeData().getCPointer(), inLockBodies);
@@ -87,7 +87,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.RemoveFromPhysicsSystem(inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.RemoveFromPhysicsSystem(inLockBodies);")
-    private static native void internal_native_RemoveFromPhysicsSystem(int this_addr, boolean inLockBodies);
+    public static native void internal_native_RemoveFromPhysicsSystem(int this_addr, boolean inLockBodies);
 
     public void RemoveFromPhysicsSystem() {
         internal_native_RemoveFromPhysicsSystem((int) (long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.RemoveFromPhysicsSystem();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.RemoveFromPhysicsSystem();")
-    private static native void internal_native_RemoveFromPhysicsSystem(int this_addr);
+    public static native void internal_native_RemoveFromPhysicsSystem(int this_addr);
 
     public void Activate(boolean inLockBodies) {
         internal_native_Activate((int) (long) getNativeData().getCPointer(), inLockBodies);
@@ -109,7 +109,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.Activate(inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.Activate(inLockBodies);")
-    private static native void internal_native_Activate(int this_addr, boolean inLockBodies);
+    public static native void internal_native_Activate(int this_addr, boolean inLockBodies);
 
     public void Activate() {
         internal_native_Activate((int) (long) getNativeData().getCPointer());
@@ -120,7 +120,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.Activate();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.Activate();")
-    private static native void internal_native_Activate(int this_addr);
+    public static native void internal_native_Activate(int this_addr);
 
     public boolean IsActive(boolean inLockBodies) {
         return internal_native_IsActive((int) (long) getNativeData().getCPointer(), inLockBodies);
@@ -132,7 +132,7 @@ var returnedJSObj = jsObj.IsActive(inLockBodies);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.IsActive(inLockBodies);return returnedJSObj;")
-    private static native boolean internal_native_IsActive(int this_addr, boolean inLockBodies);
+    public static native boolean internal_native_IsActive(int this_addr, boolean inLockBodies);
 
     public boolean IsActive() {
         return internal_native_IsActive((int) (long) getNativeData().getCPointer());
@@ -144,7 +144,7 @@ var returnedJSObj = jsObj.IsActive();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.IsActive();return returnedJSObj;")
-    private static native boolean internal_native_IsActive(int this_addr);
+    public static native boolean internal_native_IsActive(int this_addr);
 
     public void SetGroupID(int inGroupID, boolean inLockBodies) {
         internal_native_SetGroupID((int) (long) getNativeData().getCPointer(), inGroupID, inLockBodies);
@@ -155,7 +155,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.SetGroupID(inGroupID, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inGroupID", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.SetGroupID(inGroupID, inLockBodies);")
-    private static native void internal_native_SetGroupID(int this_addr, int inGroupID, boolean inLockBodies);
+    public static native void internal_native_SetGroupID(int this_addr, int inGroupID, boolean inLockBodies);
 
     public void SetGroupID(int inGroupID) {
         internal_native_SetGroupID((int) (long) getNativeData().getCPointer(), inGroupID);
@@ -166,7 +166,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.SetGroupID(inGroupID);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inGroupID"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.SetGroupID(inGroupID);")
-    private static native void internal_native_SetGroupID(int this_addr, int inGroupID);
+    public static native void internal_native_SetGroupID(int this_addr, int inGroupID);
 
     public void SetPose(SkeletonPose inPose, boolean inLockBodies) {
         internal_native_SetPose((int) (long) getNativeData().getCPointer(), (int) (long) (inPose != null ? inPose.getNativeData().getCPointer() : 0), inLockBodies);
@@ -177,7 +177,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.SetPose(inPose_addr, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPose_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.SetPose(inPose_addr, inLockBodies);")
-    private static native void internal_native_SetPose(int this_addr, int inPose_addr, boolean inLockBodies);
+    public static native void internal_native_SetPose(int this_addr, int inPose_addr, boolean inLockBodies);
 
     public void SetPose(SkeletonPose inPose) {
         internal_native_SetPose((int) (long) getNativeData().getCPointer(), (int) (long) (inPose != null ? inPose.getNativeData().getCPointer() : 0));
@@ -188,7 +188,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.SetPose(inPose_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPose_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.SetPose(inPose_addr);")
-    private static native void internal_native_SetPose(int this_addr, int inPose_addr);
+    public static native void internal_native_SetPose(int this_addr, int inPose_addr);
 
     public void GetPose(SkeletonPose outPose, boolean inLockBodies) {
         internal_native_GetPose((int) (long) getNativeData().getCPointer(), (int) (long) (outPose != null ? outPose.getNativeData().getCPointer() : 0), inLockBodies);
@@ -199,7 +199,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.GetPose(outPose_addr, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "outPose_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.GetPose(outPose_addr, inLockBodies);")
-    private static native void internal_native_GetPose(int this_addr, int outPose_addr, boolean inLockBodies);
+    public static native void internal_native_GetPose(int this_addr, int outPose_addr, boolean inLockBodies);
 
     public void GetPose(SkeletonPose outPose) {
         internal_native_GetPose((int) (long) getNativeData().getCPointer(), (int) (long) (outPose != null ? outPose.getNativeData().getCPointer() : 0));
@@ -210,7 +210,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.GetPose(outPose_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "outPose_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.GetPose(outPose_addr);")
-    private static native void internal_native_GetPose(int this_addr, int outPose_addr);
+    public static native void internal_native_GetPose(int this_addr, int outPose_addr);
 
     public void ResetWarmStart() {
         internal_native_ResetWarmStart((int) (long) getNativeData().getCPointer());
@@ -221,7 +221,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.ResetWarmStart();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.ResetWarmStart();")
-    private static native void internal_native_ResetWarmStart(int this_addr);
+    public static native void internal_native_ResetWarmStart(int this_addr);
 
     public void DriveToPoseUsingKinematics(SkeletonPose inPose, float inDeltaTime, boolean inLockBodies) {
         internal_native_DriveToPoseUsingKinematics((int) (long) getNativeData().getCPointer(), (int) (long) (inPose != null ? inPose.getNativeData().getCPointer() : 0), inDeltaTime, inLockBodies);
@@ -232,7 +232,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.DriveToPoseUsingKinematics(inPose_addr, inDeltaTime, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPose_addr", "inDeltaTime", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.DriveToPoseUsingKinematics(inPose_addr, inDeltaTime, inLockBodies);")
-    private static native void internal_native_DriveToPoseUsingKinematics(int this_addr, int inPose_addr, float inDeltaTime, boolean inLockBodies);
+    public static native void internal_native_DriveToPoseUsingKinematics(int this_addr, int inPose_addr, float inDeltaTime, boolean inLockBodies);
 
     public void DriveToPoseUsingKinematics(SkeletonPose inPose, float inDeltaTime) {
         internal_native_DriveToPoseUsingKinematics((int) (long) getNativeData().getCPointer(), (int) (long) (inPose != null ? inPose.getNativeData().getCPointer() : 0), inDeltaTime);
@@ -243,7 +243,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.DriveToPoseUsingKinematics(inPose_addr, inDeltaTime);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPose_addr", "inDeltaTime"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.DriveToPoseUsingKinematics(inPose_addr, inDeltaTime);")
-    private static native void internal_native_DriveToPoseUsingKinematics(int this_addr, int inPose_addr, float inDeltaTime);
+    public static native void internal_native_DriveToPoseUsingKinematics(int this_addr, int inPose_addr, float inDeltaTime);
 
     public void DriveToPoseUsingMotors(SkeletonPose inPose) {
         internal_native_DriveToPoseUsingMotors((int) (long) getNativeData().getCPointer(), (int) (long) (inPose != null ? inPose.getNativeData().getCPointer() : 0));
@@ -254,7 +254,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.DriveToPoseUsingMotors(inPose_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPose_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.DriveToPoseUsingMotors(inPose_addr);")
-    private static native void internal_native_DriveToPoseUsingMotors(int this_addr, int inPose_addr);
+    public static native void internal_native_DriveToPoseUsingMotors(int this_addr, int inPose_addr);
 
     public void SetLinearAndAngularVelocity(Vec3 inLinearVelocity, Vec3 inAngularVelocity, boolean inLockBodies) {
         internal_native_SetLinearAndAngularVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0), (int) (long) (inAngularVelocity != null ? inAngularVelocity.getNativeData().getCPointer() : 0), inLockBodies);
@@ -265,7 +265,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.SetLinearAndAngularVelocity(inLinearVelocity_addr, inAngularVelocity_addr, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLinearVelocity_addr", "inAngularVelocity_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.SetLinearAndAngularVelocity(inLinearVelocity_addr, inAngularVelocity_addr, inLockBodies);")
-    private static native void internal_native_SetLinearAndAngularVelocity(int this_addr, int inLinearVelocity_addr, int inAngularVelocity_addr, boolean inLockBodies);
+    public static native void internal_native_SetLinearAndAngularVelocity(int this_addr, int inLinearVelocity_addr, int inAngularVelocity_addr, boolean inLockBodies);
 
     public void SetLinearAndAngularVelocity(Vec3 inLinearVelocity, Vec3 inAngularVelocity) {
         internal_native_SetLinearAndAngularVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0), (int) (long) (inAngularVelocity != null ? inAngularVelocity.getNativeData().getCPointer() : 0));
@@ -276,7 +276,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.SetLinearAndAngularVelocity(inLinearVelocity_addr, inAngularVelocity_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLinearVelocity_addr", "inAngularVelocity_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.SetLinearAndAngularVelocity(inLinearVelocity_addr, inAngularVelocity_addr);")
-    private static native void internal_native_SetLinearAndAngularVelocity(int this_addr, int inLinearVelocity_addr, int inAngularVelocity_addr);
+    public static native void internal_native_SetLinearAndAngularVelocity(int this_addr, int inLinearVelocity_addr, int inAngularVelocity_addr);
 
     public void SetLinearVelocity(Vec3 inLinearVelocity, boolean inLockBodies) {
         internal_native_SetLinearVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0), inLockBodies);
@@ -287,7 +287,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.SetLinearVelocity(inLinearVelocity_addr, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLinearVelocity_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.SetLinearVelocity(inLinearVelocity_addr, inLockBodies);")
-    private static native void internal_native_SetLinearVelocity(int this_addr, int inLinearVelocity_addr, boolean inLockBodies);
+    public static native void internal_native_SetLinearVelocity(int this_addr, int inLinearVelocity_addr, boolean inLockBodies);
 
     public void SetLinearVelocity(Vec3 inLinearVelocity) {
         internal_native_SetLinearVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0));
@@ -298,7 +298,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.SetLinearVelocity(inLinearVelocity_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLinearVelocity_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.SetLinearVelocity(inLinearVelocity_addr);")
-    private static native void internal_native_SetLinearVelocity(int this_addr, int inLinearVelocity_addr);
+    public static native void internal_native_SetLinearVelocity(int this_addr, int inLinearVelocity_addr);
 
     public void AddLinearVelocity(Vec3 inLinearVelocity, boolean inLockBodies) {
         internal_native_AddLinearVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0), inLockBodies);
@@ -309,7 +309,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.AddLinearVelocity(inLinearVelocity_addr, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLinearVelocity_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.AddLinearVelocity(inLinearVelocity_addr, inLockBodies);")
-    private static native void internal_native_AddLinearVelocity(int this_addr, int inLinearVelocity_addr, boolean inLockBodies);
+    public static native void internal_native_AddLinearVelocity(int this_addr, int inLinearVelocity_addr, boolean inLockBodies);
 
     public void AddLinearVelocity(Vec3 inLinearVelocity) {
         internal_native_AddLinearVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0));
@@ -320,7 +320,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.AddLinearVelocity(inLinearVelocity_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLinearVelocity_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.AddLinearVelocity(inLinearVelocity_addr);")
-    private static native void internal_native_AddLinearVelocity(int this_addr, int inLinearVelocity_addr);
+    public static native void internal_native_AddLinearVelocity(int this_addr, int inLinearVelocity_addr);
 
     public void AddImpulse(Vec3 inImpulse, boolean inLockBodies) {
         internal_native_AddImpulse((int) (long) getNativeData().getCPointer(), (int) (long) (inImpulse != null ? inImpulse.getNativeData().getCPointer() : 0), inLockBodies);
@@ -331,7 +331,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.AddImpulse(inImpulse_addr, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inImpulse_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.AddImpulse(inImpulse_addr, inLockBodies);")
-    private static native void internal_native_AddImpulse(int this_addr, int inImpulse_addr, boolean inLockBodies);
+    public static native void internal_native_AddImpulse(int this_addr, int inImpulse_addr, boolean inLockBodies);
 
     public void AddImpulse(Vec3 inImpulse) {
         internal_native_AddImpulse((int) (long) getNativeData().getCPointer(), (int) (long) (inImpulse != null ? inImpulse.getNativeData().getCPointer() : 0));
@@ -342,7 +342,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.AddImpulse(inImpulse_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inImpulse_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.AddImpulse(inImpulse_addr);")
-    private static native void internal_native_AddImpulse(int this_addr, int inImpulse_addr);
+    public static native void internal_native_AddImpulse(int this_addr, int inImpulse_addr);
 
     public void GetRootTransform(Vec3 outPosition, Quat outRotation, boolean inLockBodies) {
         internal_native_GetRootTransform((int) (long) getNativeData().getCPointer(), (int) (long) (outPosition != null ? outPosition.getNativeData().getCPointer() : 0), (int) (long) (outRotation != null ? outRotation.getNativeData().getCPointer() : 0), inLockBodies);
@@ -353,7 +353,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.GetRootTransform(outPosition_addr, outRotation_addr, inLockBodies);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "outPosition_addr", "outRotation_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.GetRootTransform(outPosition_addr, outRotation_addr, inLockBodies);")
-    private static native void internal_native_GetRootTransform(int this_addr, int outPosition_addr, int outRotation_addr, boolean inLockBodies);
+    public static native void internal_native_GetRootTransform(int this_addr, int outPosition_addr, int outRotation_addr, boolean inLockBodies);
 
     public void GetRootTransform(Vec3 outPosition, Quat outRotation) {
         internal_native_GetRootTransform((int) (long) getNativeData().getCPointer(), (int) (long) (outPosition != null ? outPosition.getNativeData().getCPointer() : 0), (int) (long) (outRotation != null ? outRotation.getNativeData().getCPointer() : 0));
@@ -364,7 +364,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);
 jsObj.GetRootTransform(outPosition_addr, outRotation_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "outPosition_addr", "outRotation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);jsObj.GetRootTransform(outPosition_addr, outRotation_addr);")
-    private static native void internal_native_GetRootTransform(int this_addr, int outPosition_addr, int outRotation_addr);
+    public static native void internal_native_GetRootTransform(int this_addr, int outPosition_addr, int outRotation_addr);
 
     public int GetBodyCount() {
         return internal_native_GetBodyCount((int) (long) getNativeData().getCPointer());
@@ -376,7 +376,7 @@ var returnedJSObj = jsObj.GetBodyCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetBodyCount();return returnedJSObj;")
-    private static native int internal_native_GetBodyCount(int this_addr);
+    public static native int internal_native_GetBodyCount(int this_addr);
 
     public BodyID GetBodyID(int inBodyIndex) {
         int pointer = internal_native_GetBodyID((int) (long) getNativeData().getCPointer(), inBodyIndex);
@@ -395,7 +395,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetBodyID(inBodyIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetBodyID(int this_addr, int inBodyIndex);
+    public static native int internal_native_GetBodyID(int this_addr, int inBodyIndex);
 
     public BodyIDVector GetBodyIDs() {
         int pointer = internal_native_GetBodyIDs((int) (long) getNativeData().getCPointer());
@@ -414,7 +414,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetBodyIDs();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetBodyIDs(int this_addr);
+    public static native int internal_native_GetBodyIDs(int this_addr);
 
     public int GetConstraintCount() {
         return internal_native_GetConstraintCount((int) (long) getNativeData().getCPointer());
@@ -426,7 +426,7 @@ var returnedJSObj = jsObj.GetConstraintCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetConstraintCount();return returnedJSObj;")
-    private static native int internal_native_GetConstraintCount(int this_addr);
+    public static native int internal_native_GetConstraintCount(int this_addr);
 
     public AABox GetWorldSpaceBounds(boolean inLockBodies) {
         int pointer = internal_native_GetWorldSpaceBounds((int) (long) getNativeData().getCPointer(), inLockBodies);
@@ -445,7 +445,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetWorldSpaceBounds(inLockBodies);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetWorldSpaceBounds(int this_addr, boolean inLockBodies);
+    public static native int internal_native_GetWorldSpaceBounds(int this_addr, boolean inLockBodies);
 
     public AABox GetWorldSpaceBounds() {
         int pointer = internal_native_GetWorldSpaceBounds((int) (long) getNativeData().getCPointer());
@@ -464,7 +464,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetWorldSpaceBounds();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetWorldSpaceBounds(int this_addr);
+    public static native int internal_native_GetWorldSpaceBounds(int this_addr);
 
     public TwoBodyConstraint GetConstraint(int inConstraintIndex) {
         int pointer = internal_native_GetConstraint((int) (long) getNativeData().getCPointer(), inConstraintIndex);
@@ -483,7 +483,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inConstraintIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetConstraint(inConstraintIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetConstraint(int this_addr, int inConstraintIndex);
+    public static native int internal_native_GetConstraint(int this_addr, int inConstraintIndex);
 
     public RagdollSettings GetRagdollSettings() {
         int pointer = internal_native_GetRagdollSettings((int) (long) getNativeData().getCPointer());
@@ -502,153 +502,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetRagdollSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetRagdollSettings(int this_addr);
-
-    public static long native_create_PhysicsSystem(long inSystem_addr) {
-        return internal_native_create_PhysicsSystem((int) inSystem_addr);
-    }
-
-    public static void native_AddToPhysicsSystem(long this_addr, long inActivationMode, boolean inLockBodies) {
-        internal_native_AddToPhysicsSystem((int) this_addr, (int) inActivationMode, inLockBodies);
-    }
-
-    public static void native_AddToPhysicsSystem(long this_addr, long inActivationMode) {
-        internal_native_AddToPhysicsSystem((int) this_addr, (int) inActivationMode);
-    }
-
-    public static void native_RemoveFromPhysicsSystem(long this_addr, boolean inLockBodies) {
-        internal_native_RemoveFromPhysicsSystem((int) this_addr, inLockBodies);
-    }
-
-    public static void native_RemoveFromPhysicsSystem(long this_addr) {
-        internal_native_RemoveFromPhysicsSystem((int) this_addr);
-    }
-
-    public static void native_Activate(long this_addr, boolean inLockBodies) {
-        internal_native_Activate((int) this_addr, inLockBodies);
-    }
-
-    public static void native_Activate(long this_addr) {
-        internal_native_Activate((int) this_addr);
-    }
-
-    public static boolean native_IsActive(long this_addr, boolean inLockBodies) {
-        return internal_native_IsActive((int) this_addr, inLockBodies);
-    }
-
-    public static boolean native_IsActive(long this_addr) {
-        return internal_native_IsActive((int) this_addr);
-    }
-
-    public static void native_SetGroupID(long this_addr, int inGroupID, boolean inLockBodies) {
-        internal_native_SetGroupID((int) this_addr, inGroupID, inLockBodies);
-    }
-
-    public static void native_SetGroupID(long this_addr, int inGroupID) {
-        internal_native_SetGroupID((int) this_addr, inGroupID);
-    }
-
-    public static void native_SetPose(long this_addr, long inPose_addr, boolean inLockBodies) {
-        internal_native_SetPose((int) this_addr, (int) inPose_addr, inLockBodies);
-    }
-
-    public static void native_SetPose(long this_addr, long inPose_addr) {
-        internal_native_SetPose((int) this_addr, (int) inPose_addr);
-    }
-
-    public static void native_GetPose(long this_addr, long outPose_addr, boolean inLockBodies) {
-        internal_native_GetPose((int) this_addr, (int) outPose_addr, inLockBodies);
-    }
-
-    public static void native_GetPose(long this_addr, long outPose_addr) {
-        internal_native_GetPose((int) this_addr, (int) outPose_addr);
-    }
-
-    public static void native_ResetWarmStart(long this_addr) {
-        internal_native_ResetWarmStart((int) this_addr);
-    }
-
-    public static void native_DriveToPoseUsingKinematics(long this_addr, long inPose_addr, float inDeltaTime, boolean inLockBodies) {
-        internal_native_DriveToPoseUsingKinematics((int) this_addr, (int) inPose_addr, inDeltaTime, inLockBodies);
-    }
-
-    public static void native_DriveToPoseUsingKinematics(long this_addr, long inPose_addr, float inDeltaTime) {
-        internal_native_DriveToPoseUsingKinematics((int) this_addr, (int) inPose_addr, inDeltaTime);
-    }
-
-    public static void native_DriveToPoseUsingMotors(long this_addr, long inPose_addr) {
-        internal_native_DriveToPoseUsingMotors((int) this_addr, (int) inPose_addr);
-    }
-
-    public static void native_SetLinearAndAngularVelocity(long this_addr, long inLinearVelocity_addr, long inAngularVelocity_addr, boolean inLockBodies) {
-        internal_native_SetLinearAndAngularVelocity((int) this_addr, (int) inLinearVelocity_addr, (int) inAngularVelocity_addr, inLockBodies);
-    }
-
-    public static void native_SetLinearAndAngularVelocity(long this_addr, long inLinearVelocity_addr, long inAngularVelocity_addr) {
-        internal_native_SetLinearAndAngularVelocity((int) this_addr, (int) inLinearVelocity_addr, (int) inAngularVelocity_addr);
-    }
-
-    public static void native_SetLinearVelocity(long this_addr, long inLinearVelocity_addr, boolean inLockBodies) {
-        internal_native_SetLinearVelocity((int) this_addr, (int) inLinearVelocity_addr, inLockBodies);
-    }
-
-    public static void native_SetLinearVelocity(long this_addr, long inLinearVelocity_addr) {
-        internal_native_SetLinearVelocity((int) this_addr, (int) inLinearVelocity_addr);
-    }
-
-    public static void native_AddLinearVelocity(long this_addr, long inLinearVelocity_addr, boolean inLockBodies) {
-        internal_native_AddLinearVelocity((int) this_addr, (int) inLinearVelocity_addr, inLockBodies);
-    }
-
-    public static void native_AddLinearVelocity(long this_addr, long inLinearVelocity_addr) {
-        internal_native_AddLinearVelocity((int) this_addr, (int) inLinearVelocity_addr);
-    }
-
-    public static void native_AddImpulse(long this_addr, long inImpulse_addr, boolean inLockBodies) {
-        internal_native_AddImpulse((int) this_addr, (int) inImpulse_addr, inLockBodies);
-    }
-
-    public static void native_AddImpulse(long this_addr, long inImpulse_addr) {
-        internal_native_AddImpulse((int) this_addr, (int) inImpulse_addr);
-    }
-
-    public static void native_GetRootTransform(long this_addr, long outPosition_addr, long outRotation_addr, boolean inLockBodies) {
-        internal_native_GetRootTransform((int) this_addr, (int) outPosition_addr, (int) outRotation_addr, inLockBodies);
-    }
-
-    public static void native_GetRootTransform(long this_addr, long outPosition_addr, long outRotation_addr) {
-        internal_native_GetRootTransform((int) this_addr, (int) outPosition_addr, (int) outRotation_addr);
-    }
-
-    public static int native_GetBodyCount(long this_addr) {
-        return internal_native_GetBodyCount((int) this_addr);
-    }
-
-    public static long native_GetBodyID(long this_addr, int inBodyIndex) {
-        return internal_native_GetBodyID((int) this_addr, inBodyIndex);
-    }
-
-    public static long native_GetBodyIDs(long this_addr) {
-        return internal_native_GetBodyIDs((int) this_addr);
-    }
-
-    public static int native_GetConstraintCount(long this_addr) {
-        return internal_native_GetConstraintCount((int) this_addr);
-    }
-
-    public static long native_GetWorldSpaceBounds(long this_addr, boolean inLockBodies) {
-        return internal_native_GetWorldSpaceBounds((int) this_addr, inLockBodies);
-    }
-
-    public static long native_GetWorldSpaceBounds(long this_addr) {
-        return internal_native_GetWorldSpaceBounds((int) this_addr);
-    }
-
-    public static long native_GetConstraint(long this_addr, int inConstraintIndex) {
-        return internal_native_GetConstraint((int) this_addr, inConstraintIndex);
-    }
-
-    public static long native_GetRagdollSettings(long this_addr) {
-        return internal_native_GetRagdollSettings((int) this_addr);
-    }
+    public static native int internal_native_GetRagdollSettings(int this_addr);
 }

@@ -30,7 +30,7 @@ var jsObj = new jolt.WheeledVehicleController(inSettings_addr, inConstraint_addr
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inSettings_addr", "inConstraint_addr"}, script = "var jsObj = new jolt.WheeledVehicleController(inSettings_addr, inConstraint_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint(int inSettings_addr, int inConstraint_addr);
+    public static native int internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint(int inSettings_addr, int inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -49,7 +49,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);
 jsObj.SetDriverInput(inForward, inRight, inBrake, inHandBrake);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inForward", "inRight", "inBrake", "inHandBrake"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);jsObj.SetDriverInput(inForward, inRight, inBrake, inHandBrake);")
-    private static native void internal_native_SetDriverInput(int this_addr, float inForward, float inRight, float inBrake, float inHandBrake);
+    public static native void internal_native_SetDriverInput(int this_addr, float inForward, float inRight, float inBrake, float inHandBrake);
 
     public void SetForwardInput(float inForward) {
         internal_native_SetForwardInput((int) (long) getNativeData().getCPointer(), inForward);
@@ -60,7 +60,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);
 jsObj.SetForwardInput(inForward);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inForward"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);jsObj.SetForwardInput(inForward);")
-    private static native void internal_native_SetForwardInput(int this_addr, float inForward);
+    public static native void internal_native_SetForwardInput(int this_addr, float inForward);
 
     public float GetForwardInput() {
         return internal_native_GetForwardInput((int) (long) getNativeData().getCPointer());
@@ -72,7 +72,7 @@ var returnedJSObj = jsObj.GetForwardInput();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);var returnedJSObj = jsObj.GetForwardInput();return returnedJSObj;")
-    private static native float internal_native_GetForwardInput(int this_addr);
+    public static native float internal_native_GetForwardInput(int this_addr);
 
     public void SetRightInput(float inRight) {
         internal_native_SetRightInput((int) (long) getNativeData().getCPointer(), inRight);
@@ -83,7 +83,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);
 jsObj.SetRightInput(inRight);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inRight"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);jsObj.SetRightInput(inRight);")
-    private static native void internal_native_SetRightInput(int this_addr, float inRight);
+    public static native void internal_native_SetRightInput(int this_addr, float inRight);
 
     public float GetRightInput() {
         return internal_native_GetRightInput((int) (long) getNativeData().getCPointer());
@@ -95,7 +95,7 @@ var returnedJSObj = jsObj.GetRightInput();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);var returnedJSObj = jsObj.GetRightInput();return returnedJSObj;")
-    private static native float internal_native_GetRightInput(int this_addr);
+    public static native float internal_native_GetRightInput(int this_addr);
 
     public void SetBrakeInput(float inBrake) {
         internal_native_SetBrakeInput((int) (long) getNativeData().getCPointer(), inBrake);
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);
 jsObj.SetBrakeInput(inBrake);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inBrake"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);jsObj.SetBrakeInput(inBrake);")
-    private static native void internal_native_SetBrakeInput(int this_addr, float inBrake);
+    public static native void internal_native_SetBrakeInput(int this_addr, float inBrake);
 
     public float GetBrakeInput() {
         return internal_native_GetBrakeInput((int) (long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ var returnedJSObj = jsObj.GetBrakeInput();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);var returnedJSObj = jsObj.GetBrakeInput();return returnedJSObj;")
-    private static native float internal_native_GetBrakeInput(int this_addr);
+    public static native float internal_native_GetBrakeInput(int this_addr);
 
     public void SetHandBrakeInput(float inHandBrake) {
         internal_native_SetHandBrakeInput((int) (long) getNativeData().getCPointer(), inHandBrake);
@@ -129,7 +129,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);
 jsObj.SetHandBrakeInput(inHandBrake);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inHandBrake"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);jsObj.SetHandBrakeInput(inHandBrake);")
-    private static native void internal_native_SetHandBrakeInput(int this_addr, float inHandBrake);
+    public static native void internal_native_SetHandBrakeInput(int this_addr, float inHandBrake);
 
     public float GetHandBrakeInput() {
         return internal_native_GetHandBrakeInput((int) (long) getNativeData().getCPointer());
@@ -141,7 +141,7 @@ var returnedJSObj = jsObj.GetHandBrakeInput();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);var returnedJSObj = jsObj.GetHandBrakeInput();return returnedJSObj;")
-    private static native float internal_native_GetHandBrakeInput(int this_addr);
+    public static native float internal_native_GetHandBrakeInput(int this_addr);
 
     public VehicleEngine GetEngine() {
         int pointer = internal_native_GetEngine((int) (long) getNativeData().getCPointer());
@@ -160,7 +160,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);var returnedJSObj = jsObj.GetEngine();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetEngine(int this_addr);
+    public static native int internal_native_GetEngine(int this_addr);
 
     public VehicleTransmission GetTransmission() {
         int pointer = internal_native_GetTransmission((int) (long) getNativeData().getCPointer());
@@ -179,7 +179,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);var returnedJSObj = jsObj.GetTransmission();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetTransmission(int this_addr);
+    public static native int internal_native_GetTransmission(int this_addr);
 
     public ArrayVehicleDifferentialSettings GetDifferentials() {
         int pointer = internal_native_GetDifferentials((int) (long) getNativeData().getCPointer());
@@ -198,7 +198,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);var returnedJSObj = jsObj.GetDifferentials();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetDifferentials(int this_addr);
+    public static native int internal_native_GetDifferentials(int this_addr);
 
     public float GetDifferentialLimitedSlipRatio() {
         return internal_native_GetDifferentialLimitedSlipRatio((int) (long) getNativeData().getCPointer());
@@ -210,7 +210,7 @@ var returnedJSObj = jsObj.GetDifferentialLimitedSlipRatio();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);var returnedJSObj = jsObj.GetDifferentialLimitedSlipRatio();return returnedJSObj;")
-    private static native float internal_native_GetDifferentialLimitedSlipRatio(int this_addr);
+    public static native float internal_native_GetDifferentialLimitedSlipRatio(int this_addr);
 
     public void SetDifferentialLimitedSlipRatio(float inV) {
         internal_native_SetDifferentialLimitedSlipRatio((int) (long) getNativeData().getCPointer(), inV);
@@ -221,7 +221,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);
 jsObj.SetDifferentialLimitedSlipRatio(inV);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inV"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);jsObj.SetDifferentialLimitedSlipRatio(inV);")
-    private static native void internal_native_SetDifferentialLimitedSlipRatio(int this_addr, float inV);
+    public static native void internal_native_SetDifferentialLimitedSlipRatio(int this_addr, float inV);
 
     public float GetWheelSpeedAtClutch() {
         return internal_native_GetWheelSpeedAtClutch((int) (long) getNativeData().getCPointer());
@@ -233,69 +233,5 @@ var returnedJSObj = jsObj.GetWheelSpeedAtClutch();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);var returnedJSObj = jsObj.GetWheelSpeedAtClutch();return returnedJSObj;")
-    private static native float internal_native_GetWheelSpeedAtClutch(int this_addr);
-
-    public static long native_create_WheeledVehicleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr) {
-        return internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint((int) inSettings_addr, (int) inConstraint_addr);
-    }
-
-    public static void native_SetDriverInput(long this_addr, float inForward, float inRight, float inBrake, float inHandBrake) {
-        internal_native_SetDriverInput((int) this_addr, inForward, inRight, inBrake, inHandBrake);
-    }
-
-    public static void native_SetForwardInput(long this_addr, float inForward) {
-        internal_native_SetForwardInput((int) this_addr, inForward);
-    }
-
-    public static float native_GetForwardInput(long this_addr) {
-        return internal_native_GetForwardInput((int) this_addr);
-    }
-
-    public static void native_SetRightInput(long this_addr, float inRight) {
-        internal_native_SetRightInput((int) this_addr, inRight);
-    }
-
-    public static float native_GetRightInput(long this_addr) {
-        return internal_native_GetRightInput((int) this_addr);
-    }
-
-    public static void native_SetBrakeInput(long this_addr, float inBrake) {
-        internal_native_SetBrakeInput((int) this_addr, inBrake);
-    }
-
-    public static float native_GetBrakeInput(long this_addr) {
-        return internal_native_GetBrakeInput((int) this_addr);
-    }
-
-    public static void native_SetHandBrakeInput(long this_addr, float inHandBrake) {
-        internal_native_SetHandBrakeInput((int) this_addr, inHandBrake);
-    }
-
-    public static float native_GetHandBrakeInput(long this_addr) {
-        return internal_native_GetHandBrakeInput((int) this_addr);
-    }
-
-    public static long native_GetEngine(long this_addr) {
-        return internal_native_GetEngine((int) this_addr);
-    }
-
-    public static long native_GetTransmission(long this_addr) {
-        return internal_native_GetTransmission((int) this_addr);
-    }
-
-    public static long native_GetDifferentials(long this_addr) {
-        return internal_native_GetDifferentials((int) this_addr);
-    }
-
-    public static float native_GetDifferentialLimitedSlipRatio(long this_addr) {
-        return internal_native_GetDifferentialLimitedSlipRatio((int) this_addr);
-    }
-
-    public static void native_SetDifferentialLimitedSlipRatio(long this_addr, float inV) {
-        internal_native_SetDifferentialLimitedSlipRatio((int) this_addr, inV);
-    }
-
-    public static float native_GetWheelSpeedAtClutch(long this_addr) {
-        return internal_native_GetWheelSpeedAtClutch((int) this_addr);
-    }
+    public static native float internal_native_GetWheelSpeedAtClutch(int this_addr);
 }

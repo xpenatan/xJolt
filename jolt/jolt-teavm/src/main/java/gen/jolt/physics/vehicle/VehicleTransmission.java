@@ -38,7 +38,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmission);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmission);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void Set(int inCurrentGear, float inClutchFriction) {
         internal_native_Set((int) (long) getNativeData().getCPointer(), inCurrentGear, inClutchFriction);
@@ -49,7 +49,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmission);
 jsObj.Set(inCurrentGear, inClutchFriction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inCurrentGear", "inClutchFriction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmission);jsObj.Set(inCurrentGear, inClutchFriction);")
-    private static native void internal_native_Set(int this_addr, int inCurrentGear, float inClutchFriction);
+    public static native void internal_native_Set(int this_addr, int inCurrentGear, float inClutchFriction);
 
     public int GetCurrentGear() {
         return internal_native_GetCurrentGear((int) (long) getNativeData().getCPointer());
@@ -61,7 +61,7 @@ var returnedJSObj = jsObj.GetCurrentGear();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmission);var returnedJSObj = jsObj.GetCurrentGear();return returnedJSObj;")
-    private static native int internal_native_GetCurrentGear(int this_addr);
+    public static native int internal_native_GetCurrentGear(int this_addr);
 
     public float GetClutchFriction() {
         return internal_native_GetClutchFriction((int) (long) getNativeData().getCPointer());
@@ -73,7 +73,7 @@ var returnedJSObj = jsObj.GetClutchFriction();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmission);var returnedJSObj = jsObj.GetClutchFriction();return returnedJSObj;")
-    private static native float internal_native_GetClutchFriction(int this_addr);
+    public static native float internal_native_GetClutchFriction(int this_addr);
 
     public boolean IsSwitchingGear() {
         return internal_native_IsSwitchingGear((int) (long) getNativeData().getCPointer());
@@ -85,7 +85,7 @@ var returnedJSObj = jsObj.IsSwitchingGear();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmission);var returnedJSObj = jsObj.IsSwitchingGear();return returnedJSObj;")
-    private static native boolean internal_native_IsSwitchingGear(int this_addr);
+    public static native boolean internal_native_IsSwitchingGear(int this_addr);
 
     public float GetCurrentRatio() {
         return internal_native_GetCurrentRatio((int) (long) getNativeData().getCPointer());
@@ -97,29 +97,5 @@ var returnedJSObj = jsObj.GetCurrentRatio();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmission);var returnedJSObj = jsObj.GetCurrentRatio();return returnedJSObj;")
-    private static native float internal_native_GetCurrentRatio(int this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_Set(long this_addr, int inCurrentGear, float inClutchFriction) {
-        internal_native_Set((int) this_addr, inCurrentGear, inClutchFriction);
-    }
-
-    public static int native_GetCurrentGear(long this_addr) {
-        return internal_native_GetCurrentGear((int) this_addr);
-    }
-
-    public static float native_GetClutchFriction(long this_addr) {
-        return internal_native_GetClutchFriction((int) this_addr);
-    }
-
-    public static boolean native_IsSwitchingGear(long this_addr) {
-        return internal_native_IsSwitchingGear((int) this_addr);
-    }
-
-    public static float native_GetCurrentRatio(long this_addr) {
-        return internal_native_GetCurrentRatio((int) this_addr);
-    }
+    public static native float internal_native_GetCurrentRatio(int this_addr);
 }

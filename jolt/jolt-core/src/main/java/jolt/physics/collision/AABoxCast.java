@@ -29,7 +29,7 @@ public class AABoxCast extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new AABoxCast();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -54,7 +54,7 @@ return (jlong)new AABoxCast();
 AABoxCast* nativeObject = (AABoxCast*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public AABox get_mBox() {
         long pointer = internal_native_get_mBox((long) getNativeData().getCPointer());
@@ -70,7 +70,7 @@ delete nativeObject;
 AABoxCast* nativeObject = (AABoxCast*)this_addr;
 return (jlong)&nativeObject->mBox;
 */
-    private static native long internal_native_get_mBox(long this_addr);
+    public static native long internal_native_get_mBox(long this_addr);
 
     public void set_mBox(AABox mBox) {
         internal_native_set_mBox((long) getNativeData().getCPointer(), (long) (mBox != null ? mBox.getNativeData().getCPointer() : 0));
@@ -80,7 +80,7 @@ return (jlong)&nativeObject->mBox;
 AABoxCast* nativeObject = (AABoxCast*)this_addr;
 nativeObject->mBox = *((AABox*)mBox_addr);
 */
-    private static native void internal_native_set_mBox(long this_addr, long mBox_addr);
+    public static native void internal_native_set_mBox(long this_addr, long mBox_addr);
 
     public Vec3 get_mDirection() {
         long pointer = internal_native_get_mDirection((long) getNativeData().getCPointer());
@@ -96,7 +96,7 @@ nativeObject->mBox = *((AABox*)mBox_addr);
 AABoxCast* nativeObject = (AABoxCast*)this_addr;
 return (jlong)&nativeObject->mDirection;
 */
-    private static native long internal_native_get_mDirection(long this_addr);
+    public static native long internal_native_get_mDirection(long this_addr);
 
     public void set_mDirection(Vec3 mDirection) {
         internal_native_set_mDirection((long) getNativeData().getCPointer(), (long) (mDirection != null ? mDirection.getNativeData().getCPointer() : 0));
@@ -106,29 +106,5 @@ return (jlong)&nativeObject->mDirection;
 AABoxCast* nativeObject = (AABoxCast*)this_addr;
 nativeObject->mDirection = *((Vec3*)mDirection_addr);
 */
-    private static native void internal_native_set_mDirection(long this_addr, long mDirection_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mBox(long this_addr) {
-        return internal_native_get_mBox(this_addr);
-    }
-
-    public static void native_set_mBox(long this_addr, long mBox_addr) {
-        internal_native_set_mBox(this_addr, mBox_addr);
-    }
-
-    public static long native_get_mDirection(long this_addr) {
-        return internal_native_get_mDirection(this_addr);
-    }
-
-    public static void native_set_mDirection(long this_addr, long mDirection_addr) {
-        internal_native_set_mDirection(this_addr, mDirection_addr);
-    }
+    public static native void internal_native_set_mDirection(long this_addr, long mDirection_addr);
 }

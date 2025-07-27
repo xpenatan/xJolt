@@ -29,7 +29,7 @@ public class OrientedBox extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new OrientedBox();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     public OrientedBox(Mat44 inOrientation, Vec3 inHalfExtents) {
         long addr = internal_native_create_Mat44_Vec3((long) (inOrientation != null ? inOrientation.getNativeData().getCPointer() : 0), (long) (inHalfExtents != null ? inHalfExtents.getNativeData().getCPointer() : 0));
@@ -39,7 +39,7 @@ return (jlong)new OrientedBox();
     /*[-JNI;-NATIVE]
 return (jlong)new OrientedBox(*((Mat44* )inOrientation_addr), *((Vec3* )inHalfExtents_addr));
 */
-    private static native long internal_native_create_Mat44_Vec3(long inOrientation_addr, long inHalfExtents_addr);
+    public static native long internal_native_create_Mat44_Vec3(long inOrientation_addr, long inHalfExtents_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -64,7 +64,7 @@ return (jlong)new OrientedBox(*((Mat44* )inOrientation_addr), *((Vec3* )inHalfEx
 OrientedBox* nativeObject = (OrientedBox*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Mat44 get_mOrientation() {
         long pointer = internal_native_get_mOrientation((long) getNativeData().getCPointer());
@@ -80,7 +80,7 @@ delete nativeObject;
 OrientedBox* nativeObject = (OrientedBox*)this_addr;
 return (jlong)&nativeObject->mOrientation;
 */
-    private static native long internal_native_get_mOrientation(long this_addr);
+    public static native long internal_native_get_mOrientation(long this_addr);
 
     public void set_mOrientation(Mat44 mOrientation) {
         internal_native_set_mOrientation((long) getNativeData().getCPointer(), (long) (mOrientation != null ? mOrientation.getNativeData().getCPointer() : 0));
@@ -90,7 +90,7 @@ return (jlong)&nativeObject->mOrientation;
 OrientedBox* nativeObject = (OrientedBox*)this_addr;
 nativeObject->mOrientation = *((Mat44*)mOrientation_addr);
 */
-    private static native void internal_native_set_mOrientation(long this_addr, long mOrientation_addr);
+    public static native void internal_native_set_mOrientation(long this_addr, long mOrientation_addr);
 
     public Vec3 get_mHalfExtents() {
         long pointer = internal_native_get_mHalfExtents((long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ nativeObject->mOrientation = *((Mat44*)mOrientation_addr);
 OrientedBox* nativeObject = (OrientedBox*)this_addr;
 return (jlong)&nativeObject->mHalfExtents;
 */
-    private static native long internal_native_get_mHalfExtents(long this_addr);
+    public static native long internal_native_get_mHalfExtents(long this_addr);
 
     public void set_mHalfExtents(Vec3 mHalfExtents) {
         internal_native_set_mHalfExtents((long) getNativeData().getCPointer(), (long) (mHalfExtents != null ? mHalfExtents.getNativeData().getCPointer() : 0));
@@ -116,33 +116,5 @@ return (jlong)&nativeObject->mHalfExtents;
 OrientedBox* nativeObject = (OrientedBox*)this_addr;
 nativeObject->mHalfExtents = *((Vec3*)mHalfExtents_addr);
 */
-    private static native void internal_native_set_mHalfExtents(long this_addr, long mHalfExtents_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_Mat44_Vec3(long inOrientation_addr, long inHalfExtents_addr) {
-        return internal_native_create_Mat44_Vec3(inOrientation_addr, inHalfExtents_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mOrientation(long this_addr) {
-        return internal_native_get_mOrientation(this_addr);
-    }
-
-    public static void native_set_mOrientation(long this_addr, long mOrientation_addr) {
-        internal_native_set_mOrientation(this_addr, mOrientation_addr);
-    }
-
-    public static long native_get_mHalfExtents(long this_addr) {
-        return internal_native_get_mHalfExtents(this_addr);
-    }
-
-    public static void native_set_mHalfExtents(long this_addr, long mHalfExtents_addr) {
-        internal_native_set_mHalfExtents(this_addr, mHalfExtents_addr);
-    }
+    public static native void internal_native_set_mHalfExtents(long this_addr, long mHalfExtents_addr);
 }

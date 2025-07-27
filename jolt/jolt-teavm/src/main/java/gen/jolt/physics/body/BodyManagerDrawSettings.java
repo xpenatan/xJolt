@@ -27,7 +27,7 @@ var jsObj = new jolt.BodyManagerDrawSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.BodyManagerDrawSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public boolean get_mDrawGetSupportFunction() {
         return internal_native_get_mDrawGetSupportFunction((int) (long) getNativeData().getCPointer());
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawGetSupportFunction();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawGetSupportFunction();")
-    private static native boolean internal_native_get_mDrawGetSupportFunction(int this_addr);
+    public static native boolean internal_native_get_mDrawGetSupportFunction(int this_addr);
 
     public void set_mDrawGetSupportFunction(boolean mDrawGetSupportFunction) {
         internal_native_set_mDrawGetSupportFunction((int) (long) getNativeData().getCPointer(), mDrawGetSupportFunction);
@@ -75,7 +75,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawGetSupportFunction(mDrawGetSupportFunction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawGetSupportFunction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawGetSupportFunction(mDrawGetSupportFunction);")
-    private static native void internal_native_set_mDrawGetSupportFunction(int this_addr, boolean mDrawGetSupportFunction);
+    public static native void internal_native_set_mDrawGetSupportFunction(int this_addr, boolean mDrawGetSupportFunction);
 
     public boolean get_mDrawSupportDirection() {
         return internal_native_get_mDrawSupportDirection((int) (long) getNativeData().getCPointer());
@@ -86,7 +86,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSupportDirection();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSupportDirection();")
-    private static native boolean internal_native_get_mDrawSupportDirection(int this_addr);
+    public static native boolean internal_native_get_mDrawSupportDirection(int this_addr);
 
     public void set_mDrawSupportDirection(boolean mDrawSupportDirection) {
         internal_native_set_mDrawSupportDirection((int) (long) getNativeData().getCPointer(), mDrawSupportDirection);
@@ -97,7 +97,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSupportDirection(mDrawSupportDirection);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSupportDirection"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSupportDirection(mDrawSupportDirection);")
-    private static native void internal_native_set_mDrawSupportDirection(int this_addr, boolean mDrawSupportDirection);
+    public static native void internal_native_set_mDrawSupportDirection(int this_addr, boolean mDrawSupportDirection);
 
     public boolean get_mDrawGetSupportingFace() {
         return internal_native_get_mDrawGetSupportingFace((int) (long) getNativeData().getCPointer());
@@ -108,7 +108,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawGetSupportingFace();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawGetSupportingFace();")
-    private static native boolean internal_native_get_mDrawGetSupportingFace(int this_addr);
+    public static native boolean internal_native_get_mDrawGetSupportingFace(int this_addr);
 
     public void set_mDrawGetSupportingFace(boolean mDrawGetSupportingFace) {
         internal_native_set_mDrawGetSupportingFace((int) (long) getNativeData().getCPointer(), mDrawGetSupportingFace);
@@ -119,7 +119,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawGetSupportingFace(mDrawGetSupportingFace);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawGetSupportingFace"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawGetSupportingFace(mDrawGetSupportingFace);")
-    private static native void internal_native_set_mDrawGetSupportingFace(int this_addr, boolean mDrawGetSupportingFace);
+    public static native void internal_native_set_mDrawGetSupportingFace(int this_addr, boolean mDrawGetSupportingFace);
 
     public boolean get_mDrawShape() {
         return internal_native_get_mDrawShape((int) (long) getNativeData().getCPointer());
@@ -130,7 +130,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawShape();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawShape();")
-    private static native boolean internal_native_get_mDrawShape(int this_addr);
+    public static native boolean internal_native_get_mDrawShape(int this_addr);
 
     public void set_mDrawShape(boolean mDrawShape) {
         internal_native_set_mDrawShape((int) (long) getNativeData().getCPointer(), mDrawShape);
@@ -141,7 +141,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawShape(mDrawShape);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawShape"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawShape(mDrawShape);")
-    private static native void internal_native_set_mDrawShape(int this_addr, boolean mDrawShape);
+    public static native void internal_native_set_mDrawShape(int this_addr, boolean mDrawShape);
 
     public boolean get_mDrawShapeWireframe() {
         return internal_native_get_mDrawShapeWireframe((int) (long) getNativeData().getCPointer());
@@ -152,7 +152,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawShapeWireframe();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawShapeWireframe();")
-    private static native boolean internal_native_get_mDrawShapeWireframe(int this_addr);
+    public static native boolean internal_native_get_mDrawShapeWireframe(int this_addr);
 
     public void set_mDrawShapeWireframe(boolean mDrawShapeWireframe) {
         internal_native_set_mDrawShapeWireframe((int) (long) getNativeData().getCPointer(), mDrawShapeWireframe);
@@ -163,7 +163,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawShapeWireframe(mDrawShapeWireframe);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawShapeWireframe"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawShapeWireframe(mDrawShapeWireframe);")
-    private static native void internal_native_set_mDrawShapeWireframe(int this_addr, boolean mDrawShapeWireframe);
+    public static native void internal_native_set_mDrawShapeWireframe(int this_addr, boolean mDrawShapeWireframe);
 
     public EShapeColor get_mDrawShapeColor() {
         int value = internal_native_get_mDrawShapeColor((int) (long) getNativeData().getCPointer());
@@ -175,7 +175,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawShapeColor();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawShapeColor();")
-    private static native int internal_native_get_mDrawShapeColor(int this_addr);
+    public static native int internal_native_get_mDrawShapeColor(int this_addr);
 
     public void set_mDrawShapeColor(EShapeColor mDrawShapeColor) {
         internal_native_set_mDrawShapeColor((int) (long) getNativeData().getCPointer(), (int) (long) (mDrawShapeColor != null ? mDrawShapeColor.getValue() : 0));
@@ -186,7 +186,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawShapeColor(mDrawShapeColor);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawShapeColor"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawShapeColor(mDrawShapeColor);")
-    private static native void internal_native_set_mDrawShapeColor(int this_addr, int mDrawShapeColor);
+    public static native void internal_native_set_mDrawShapeColor(int this_addr, int mDrawShapeColor);
 
     public boolean get_mDrawBoundingBox() {
         return internal_native_get_mDrawBoundingBox((int) (long) getNativeData().getCPointer());
@@ -197,7 +197,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawBoundingBox();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawBoundingBox();")
-    private static native boolean internal_native_get_mDrawBoundingBox(int this_addr);
+    public static native boolean internal_native_get_mDrawBoundingBox(int this_addr);
 
     public void set_mDrawBoundingBox(boolean mDrawBoundingBox) {
         internal_native_set_mDrawBoundingBox((int) (long) getNativeData().getCPointer(), mDrawBoundingBox);
@@ -208,7 +208,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawBoundingBox(mDrawBoundingBox);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawBoundingBox"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawBoundingBox(mDrawBoundingBox);")
-    private static native void internal_native_set_mDrawBoundingBox(int this_addr, boolean mDrawBoundingBox);
+    public static native void internal_native_set_mDrawBoundingBox(int this_addr, boolean mDrawBoundingBox);
 
     public boolean get_mDrawCenterOfMassTransform() {
         return internal_native_get_mDrawCenterOfMassTransform((int) (long) getNativeData().getCPointer());
@@ -219,7 +219,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawCenterOfMassTransform();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawCenterOfMassTransform();")
-    private static native boolean internal_native_get_mDrawCenterOfMassTransform(int this_addr);
+    public static native boolean internal_native_get_mDrawCenterOfMassTransform(int this_addr);
 
     public void set_mDrawCenterOfMassTransform(boolean mDrawCenterOfMassTransform) {
         internal_native_set_mDrawCenterOfMassTransform((int) (long) getNativeData().getCPointer(), mDrawCenterOfMassTransform);
@@ -230,7 +230,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawCenterOfMassTransform(mDrawCenterOfMassTransform);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawCenterOfMassTransform"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawCenterOfMassTransform(mDrawCenterOfMassTransform);")
-    private static native void internal_native_set_mDrawCenterOfMassTransform(int this_addr, boolean mDrawCenterOfMassTransform);
+    public static native void internal_native_set_mDrawCenterOfMassTransform(int this_addr, boolean mDrawCenterOfMassTransform);
 
     public boolean get_mDrawWorldTransform() {
         return internal_native_get_mDrawWorldTransform((int) (long) getNativeData().getCPointer());
@@ -241,7 +241,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawWorldTransform();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawWorldTransform();")
-    private static native boolean internal_native_get_mDrawWorldTransform(int this_addr);
+    public static native boolean internal_native_get_mDrawWorldTransform(int this_addr);
 
     public void set_mDrawWorldTransform(boolean mDrawWorldTransform) {
         internal_native_set_mDrawWorldTransform((int) (long) getNativeData().getCPointer(), mDrawWorldTransform);
@@ -252,7 +252,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawWorldTransform(mDrawWorldTransform);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawWorldTransform"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawWorldTransform(mDrawWorldTransform);")
-    private static native void internal_native_set_mDrawWorldTransform(int this_addr, boolean mDrawWorldTransform);
+    public static native void internal_native_set_mDrawWorldTransform(int this_addr, boolean mDrawWorldTransform);
 
     public boolean get_mDrawVelocity() {
         return internal_native_get_mDrawVelocity((int) (long) getNativeData().getCPointer());
@@ -263,7 +263,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawVelocity();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawVelocity();")
-    private static native boolean internal_native_get_mDrawVelocity(int this_addr);
+    public static native boolean internal_native_get_mDrawVelocity(int this_addr);
 
     public void set_mDrawVelocity(boolean mDrawVelocity) {
         internal_native_set_mDrawVelocity((int) (long) getNativeData().getCPointer(), mDrawVelocity);
@@ -274,7 +274,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawVelocity(mDrawVelocity);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawVelocity"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawVelocity(mDrawVelocity);")
-    private static native void internal_native_set_mDrawVelocity(int this_addr, boolean mDrawVelocity);
+    public static native void internal_native_set_mDrawVelocity(int this_addr, boolean mDrawVelocity);
 
     public boolean get_mDrawMassAndInertia() {
         return internal_native_get_mDrawMassAndInertia((int) (long) getNativeData().getCPointer());
@@ -285,7 +285,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawMassAndInertia();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawMassAndInertia();")
-    private static native boolean internal_native_get_mDrawMassAndInertia(int this_addr);
+    public static native boolean internal_native_get_mDrawMassAndInertia(int this_addr);
 
     public void set_mDrawMassAndInertia(boolean mDrawMassAndInertia) {
         internal_native_set_mDrawMassAndInertia((int) (long) getNativeData().getCPointer(), mDrawMassAndInertia);
@@ -296,7 +296,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawMassAndInertia(mDrawMassAndInertia);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawMassAndInertia"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawMassAndInertia(mDrawMassAndInertia);")
-    private static native void internal_native_set_mDrawMassAndInertia(int this_addr, boolean mDrawMassAndInertia);
+    public static native void internal_native_set_mDrawMassAndInertia(int this_addr, boolean mDrawMassAndInertia);
 
     public boolean get_mDrawSleepStats() {
         return internal_native_get_mDrawSleepStats((int) (long) getNativeData().getCPointer());
@@ -307,7 +307,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSleepStats();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSleepStats();")
-    private static native boolean internal_native_get_mDrawSleepStats(int this_addr);
+    public static native boolean internal_native_get_mDrawSleepStats(int this_addr);
 
     public void set_mDrawSleepStats(boolean mDrawSleepStats) {
         internal_native_set_mDrawSleepStats((int) (long) getNativeData().getCPointer(), mDrawSleepStats);
@@ -318,7 +318,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSleepStats(mDrawSleepStats);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSleepStats"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSleepStats(mDrawSleepStats);")
-    private static native void internal_native_set_mDrawSleepStats(int this_addr, boolean mDrawSleepStats);
+    public static native void internal_native_set_mDrawSleepStats(int this_addr, boolean mDrawSleepStats);
 
     public boolean get_mDrawSoftBodyVertices() {
         return internal_native_get_mDrawSoftBodyVertices((int) (long) getNativeData().getCPointer());
@@ -329,7 +329,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSoftBodyVertices();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodyVertices();")
-    private static native boolean internal_native_get_mDrawSoftBodyVertices(int this_addr);
+    public static native boolean internal_native_get_mDrawSoftBodyVertices(int this_addr);
 
     public void set_mDrawSoftBodyVertices(boolean mDrawSoftBodyVertices) {
         internal_native_set_mDrawSoftBodyVertices((int) (long) getNativeData().getCPointer(), mDrawSoftBodyVertices);
@@ -340,7 +340,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSoftBodyVertices(mDrawSoftBodyVertices);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodyVertices"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodyVertices(mDrawSoftBodyVertices);")
-    private static native void internal_native_set_mDrawSoftBodyVertices(int this_addr, boolean mDrawSoftBodyVertices);
+    public static native void internal_native_set_mDrawSoftBodyVertices(int this_addr, boolean mDrawSoftBodyVertices);
 
     public boolean get_mDrawSoftBodyVertexVelocities() {
         return internal_native_get_mDrawSoftBodyVertexVelocities((int) (long) getNativeData().getCPointer());
@@ -351,7 +351,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSoftBodyVertexVelocities();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodyVertexVelocities();")
-    private static native boolean internal_native_get_mDrawSoftBodyVertexVelocities(int this_addr);
+    public static native boolean internal_native_get_mDrawSoftBodyVertexVelocities(int this_addr);
 
     public void set_mDrawSoftBodyVertexVelocities(boolean mDrawSoftBodyVertexVelocities) {
         internal_native_set_mDrawSoftBodyVertexVelocities((int) (long) getNativeData().getCPointer(), mDrawSoftBodyVertexVelocities);
@@ -362,7 +362,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSoftBodyVertexVelocities(mDrawSoftBodyVertexVelocities);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodyVertexVelocities"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodyVertexVelocities(mDrawSoftBodyVertexVelocities);")
-    private static native void internal_native_set_mDrawSoftBodyVertexVelocities(int this_addr, boolean mDrawSoftBodyVertexVelocities);
+    public static native void internal_native_set_mDrawSoftBodyVertexVelocities(int this_addr, boolean mDrawSoftBodyVertexVelocities);
 
     public boolean get_mDrawSoftBodyEdgeConstraints() {
         return internal_native_get_mDrawSoftBodyEdgeConstraints((int) (long) getNativeData().getCPointer());
@@ -373,7 +373,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSoftBodyEdgeConstraints();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodyEdgeConstraints();")
-    private static native boolean internal_native_get_mDrawSoftBodyEdgeConstraints(int this_addr);
+    public static native boolean internal_native_get_mDrawSoftBodyEdgeConstraints(int this_addr);
 
     public void set_mDrawSoftBodyEdgeConstraints(boolean mDrawSoftBodyEdgeConstraints) {
         internal_native_set_mDrawSoftBodyEdgeConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodyEdgeConstraints);
@@ -384,7 +384,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSoftBodyEdgeConstraints(mDrawSoftBodyEdgeConstraints);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodyEdgeConstraints"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodyEdgeConstraints(mDrawSoftBodyEdgeConstraints);")
-    private static native void internal_native_set_mDrawSoftBodyEdgeConstraints(int this_addr, boolean mDrawSoftBodyEdgeConstraints);
+    public static native void internal_native_set_mDrawSoftBodyEdgeConstraints(int this_addr, boolean mDrawSoftBodyEdgeConstraints);
 
     public boolean get_mDrawSoftBodyBendConstraints() {
         return internal_native_get_mDrawSoftBodyBendConstraints((int) (long) getNativeData().getCPointer());
@@ -395,7 +395,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSoftBodyBendConstraints();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodyBendConstraints();")
-    private static native boolean internal_native_get_mDrawSoftBodyBendConstraints(int this_addr);
+    public static native boolean internal_native_get_mDrawSoftBodyBendConstraints(int this_addr);
 
     public void set_mDrawSoftBodyBendConstraints(boolean mDrawSoftBodyBendConstraints) {
         internal_native_set_mDrawSoftBodyBendConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodyBendConstraints);
@@ -406,7 +406,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSoftBodyBendConstraints(mDrawSoftBodyBendConstraints);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodyBendConstraints"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodyBendConstraints(mDrawSoftBodyBendConstraints);")
-    private static native void internal_native_set_mDrawSoftBodyBendConstraints(int this_addr, boolean mDrawSoftBodyBendConstraints);
+    public static native void internal_native_set_mDrawSoftBodyBendConstraints(int this_addr, boolean mDrawSoftBodyBendConstraints);
 
     public boolean get_mDrawSoftBodyVolumeConstraints() {
         return internal_native_get_mDrawSoftBodyVolumeConstraints((int) (long) getNativeData().getCPointer());
@@ -417,7 +417,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSoftBodyVolumeConstraints();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodyVolumeConstraints();")
-    private static native boolean internal_native_get_mDrawSoftBodyVolumeConstraints(int this_addr);
+    public static native boolean internal_native_get_mDrawSoftBodyVolumeConstraints(int this_addr);
 
     public void set_mDrawSoftBodyVolumeConstraints(boolean mDrawSoftBodyVolumeConstraints) {
         internal_native_set_mDrawSoftBodyVolumeConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodyVolumeConstraints);
@@ -428,7 +428,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSoftBodyVolumeConstraints(mDrawSoftBodyVolumeConstraints);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodyVolumeConstraints"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodyVolumeConstraints(mDrawSoftBodyVolumeConstraints);")
-    private static native void internal_native_set_mDrawSoftBodyVolumeConstraints(int this_addr, boolean mDrawSoftBodyVolumeConstraints);
+    public static native void internal_native_set_mDrawSoftBodyVolumeConstraints(int this_addr, boolean mDrawSoftBodyVolumeConstraints);
 
     public boolean get_mDrawSoftBodySkinConstraints() {
         return internal_native_get_mDrawSoftBodySkinConstraints((int) (long) getNativeData().getCPointer());
@@ -439,7 +439,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSoftBodySkinConstraints();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodySkinConstraints();")
-    private static native boolean internal_native_get_mDrawSoftBodySkinConstraints(int this_addr);
+    public static native boolean internal_native_get_mDrawSoftBodySkinConstraints(int this_addr);
 
     public void set_mDrawSoftBodySkinConstraints(boolean mDrawSoftBodySkinConstraints) {
         internal_native_set_mDrawSoftBodySkinConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodySkinConstraints);
@@ -450,7 +450,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSoftBodySkinConstraints(mDrawSoftBodySkinConstraints);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodySkinConstraints"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodySkinConstraints(mDrawSoftBodySkinConstraints);")
-    private static native void internal_native_set_mDrawSoftBodySkinConstraints(int this_addr, boolean mDrawSoftBodySkinConstraints);
+    public static native void internal_native_set_mDrawSoftBodySkinConstraints(int this_addr, boolean mDrawSoftBodySkinConstraints);
 
     public boolean get_mDrawSoftBodyLRAConstraints() {
         return internal_native_get_mDrawSoftBodyLRAConstraints((int) (long) getNativeData().getCPointer());
@@ -461,7 +461,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSoftBodyLRAConstraints();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodyLRAConstraints();")
-    private static native boolean internal_native_get_mDrawSoftBodyLRAConstraints(int this_addr);
+    public static native boolean internal_native_get_mDrawSoftBodyLRAConstraints(int this_addr);
 
     public void set_mDrawSoftBodyLRAConstraints(boolean mDrawSoftBodyLRAConstraints) {
         internal_native_set_mDrawSoftBodyLRAConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodyLRAConstraints);
@@ -472,7 +472,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSoftBodyLRAConstraints(mDrawSoftBodyLRAConstraints);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodyLRAConstraints"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodyLRAConstraints(mDrawSoftBodyLRAConstraints);")
-    private static native void internal_native_set_mDrawSoftBodyLRAConstraints(int this_addr, boolean mDrawSoftBodyLRAConstraints);
+    public static native void internal_native_set_mDrawSoftBodyLRAConstraints(int this_addr, boolean mDrawSoftBodyLRAConstraints);
 
     public boolean get_mDrawSoftBodyPredictedBounds() {
         return internal_native_get_mDrawSoftBodyPredictedBounds((int) (long) getNativeData().getCPointer());
@@ -483,7 +483,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSoftBodyPredictedBounds();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodyPredictedBounds();")
-    private static native boolean internal_native_get_mDrawSoftBodyPredictedBounds(int this_addr);
+    public static native boolean internal_native_get_mDrawSoftBodyPredictedBounds(int this_addr);
 
     public void set_mDrawSoftBodyPredictedBounds(boolean mDrawSoftBodyPredictedBounds) {
         internal_native_set_mDrawSoftBodyPredictedBounds((int) (long) getNativeData().getCPointer(), mDrawSoftBodyPredictedBounds);
@@ -494,7 +494,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSoftBodyPredictedBounds(mDrawSoftBodyPredictedBounds);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodyPredictedBounds"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodyPredictedBounds(mDrawSoftBodyPredictedBounds);")
-    private static native void internal_native_set_mDrawSoftBodyPredictedBounds(int this_addr, boolean mDrawSoftBodyPredictedBounds);
+    public static native void internal_native_set_mDrawSoftBodyPredictedBounds(int this_addr, boolean mDrawSoftBodyPredictedBounds);
 
     public ESoftBodyConstraintColor get_mDrawSoftBodyConstraintColor() {
         int value = internal_native_get_mDrawSoftBodyConstraintColor((int) (long) getNativeData().getCPointer());
@@ -506,7 +506,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 return jsObj.get_mDrawSoftBodyConstraintColor();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);return jsObj.get_mDrawSoftBodyConstraintColor();")
-    private static native int internal_native_get_mDrawSoftBodyConstraintColor(int this_addr);
+    public static native int internal_native_get_mDrawSoftBodyConstraintColor(int this_addr);
 
     public void set_mDrawSoftBodyConstraintColor(ESoftBodyConstraintColor mDrawSoftBodyConstraintColor) {
         internal_native_set_mDrawSoftBodyConstraintColor((int) (long) getNativeData().getCPointer(), (int) (long) (mDrawSoftBodyConstraintColor != null ? mDrawSoftBodyConstraintColor.getValue() : 0));
@@ -517,181 +517,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);
 jsObj.set_mDrawSoftBodyConstraintColor(mDrawSoftBodyConstraintColor);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDrawSoftBodyConstraintColor"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyManagerDrawSettings);jsObj.set_mDrawSoftBodyConstraintColor(mDrawSoftBodyConstraintColor);")
-    private static native void internal_native_set_mDrawSoftBodyConstraintColor(int this_addr, int mDrawSoftBodyConstraintColor);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static boolean native_get_mDrawGetSupportFunction(long this_addr) {
-        return internal_native_get_mDrawGetSupportFunction((int) this_addr);
-    }
-
-    public static void native_set_mDrawGetSupportFunction(long this_addr, boolean mDrawGetSupportFunction) {
-        internal_native_set_mDrawGetSupportFunction((int) this_addr, mDrawGetSupportFunction);
-    }
-
-    public static boolean native_get_mDrawSupportDirection(long this_addr) {
-        return internal_native_get_mDrawSupportDirection((int) this_addr);
-    }
-
-    public static void native_set_mDrawSupportDirection(long this_addr, boolean mDrawSupportDirection) {
-        internal_native_set_mDrawSupportDirection((int) this_addr, mDrawSupportDirection);
-    }
-
-    public static boolean native_get_mDrawGetSupportingFace(long this_addr) {
-        return internal_native_get_mDrawGetSupportingFace((int) this_addr);
-    }
-
-    public static void native_set_mDrawGetSupportingFace(long this_addr, boolean mDrawGetSupportingFace) {
-        internal_native_set_mDrawGetSupportingFace((int) this_addr, mDrawGetSupportingFace);
-    }
-
-    public static boolean native_get_mDrawShape(long this_addr) {
-        return internal_native_get_mDrawShape((int) this_addr);
-    }
-
-    public static void native_set_mDrawShape(long this_addr, boolean mDrawShape) {
-        internal_native_set_mDrawShape((int) this_addr, mDrawShape);
-    }
-
-    public static boolean native_get_mDrawShapeWireframe(long this_addr) {
-        return internal_native_get_mDrawShapeWireframe((int) this_addr);
-    }
-
-    public static void native_set_mDrawShapeWireframe(long this_addr, boolean mDrawShapeWireframe) {
-        internal_native_set_mDrawShapeWireframe((int) this_addr, mDrawShapeWireframe);
-    }
-
-    public static long native_get_mDrawShapeColor(long this_addr) {
-        return internal_native_get_mDrawShapeColor((int) this_addr);
-    }
-
-    public static void native_set_mDrawShapeColor(long this_addr, long mDrawShapeColor) {
-        internal_native_set_mDrawShapeColor((int) this_addr, (int) mDrawShapeColor);
-    }
-
-    public static boolean native_get_mDrawBoundingBox(long this_addr) {
-        return internal_native_get_mDrawBoundingBox((int) this_addr);
-    }
-
-    public static void native_set_mDrawBoundingBox(long this_addr, boolean mDrawBoundingBox) {
-        internal_native_set_mDrawBoundingBox((int) this_addr, mDrawBoundingBox);
-    }
-
-    public static boolean native_get_mDrawCenterOfMassTransform(long this_addr) {
-        return internal_native_get_mDrawCenterOfMassTransform((int) this_addr);
-    }
-
-    public static void native_set_mDrawCenterOfMassTransform(long this_addr, boolean mDrawCenterOfMassTransform) {
-        internal_native_set_mDrawCenterOfMassTransform((int) this_addr, mDrawCenterOfMassTransform);
-    }
-
-    public static boolean native_get_mDrawWorldTransform(long this_addr) {
-        return internal_native_get_mDrawWorldTransform((int) this_addr);
-    }
-
-    public static void native_set_mDrawWorldTransform(long this_addr, boolean mDrawWorldTransform) {
-        internal_native_set_mDrawWorldTransform((int) this_addr, mDrawWorldTransform);
-    }
-
-    public static boolean native_get_mDrawVelocity(long this_addr) {
-        return internal_native_get_mDrawVelocity((int) this_addr);
-    }
-
-    public static void native_set_mDrawVelocity(long this_addr, boolean mDrawVelocity) {
-        internal_native_set_mDrawVelocity((int) this_addr, mDrawVelocity);
-    }
-
-    public static boolean native_get_mDrawMassAndInertia(long this_addr) {
-        return internal_native_get_mDrawMassAndInertia((int) this_addr);
-    }
-
-    public static void native_set_mDrawMassAndInertia(long this_addr, boolean mDrawMassAndInertia) {
-        internal_native_set_mDrawMassAndInertia((int) this_addr, mDrawMassAndInertia);
-    }
-
-    public static boolean native_get_mDrawSleepStats(long this_addr) {
-        return internal_native_get_mDrawSleepStats((int) this_addr);
-    }
-
-    public static void native_set_mDrawSleepStats(long this_addr, boolean mDrawSleepStats) {
-        internal_native_set_mDrawSleepStats((int) this_addr, mDrawSleepStats);
-    }
-
-    public static boolean native_get_mDrawSoftBodyVertices(long this_addr) {
-        return internal_native_get_mDrawSoftBodyVertices((int) this_addr);
-    }
-
-    public static void native_set_mDrawSoftBodyVertices(long this_addr, boolean mDrawSoftBodyVertices) {
-        internal_native_set_mDrawSoftBodyVertices((int) this_addr, mDrawSoftBodyVertices);
-    }
-
-    public static boolean native_get_mDrawSoftBodyVertexVelocities(long this_addr) {
-        return internal_native_get_mDrawSoftBodyVertexVelocities((int) this_addr);
-    }
-
-    public static void native_set_mDrawSoftBodyVertexVelocities(long this_addr, boolean mDrawSoftBodyVertexVelocities) {
-        internal_native_set_mDrawSoftBodyVertexVelocities((int) this_addr, mDrawSoftBodyVertexVelocities);
-    }
-
-    public static boolean native_get_mDrawSoftBodyEdgeConstraints(long this_addr) {
-        return internal_native_get_mDrawSoftBodyEdgeConstraints((int) this_addr);
-    }
-
-    public static void native_set_mDrawSoftBodyEdgeConstraints(long this_addr, boolean mDrawSoftBodyEdgeConstraints) {
-        internal_native_set_mDrawSoftBodyEdgeConstraints((int) this_addr, mDrawSoftBodyEdgeConstraints);
-    }
-
-    public static boolean native_get_mDrawSoftBodyBendConstraints(long this_addr) {
-        return internal_native_get_mDrawSoftBodyBendConstraints((int) this_addr);
-    }
-
-    public static void native_set_mDrawSoftBodyBendConstraints(long this_addr, boolean mDrawSoftBodyBendConstraints) {
-        internal_native_set_mDrawSoftBodyBendConstraints((int) this_addr, mDrawSoftBodyBendConstraints);
-    }
-
-    public static boolean native_get_mDrawSoftBodyVolumeConstraints(long this_addr) {
-        return internal_native_get_mDrawSoftBodyVolumeConstraints((int) this_addr);
-    }
-
-    public static void native_set_mDrawSoftBodyVolumeConstraints(long this_addr, boolean mDrawSoftBodyVolumeConstraints) {
-        internal_native_set_mDrawSoftBodyVolumeConstraints((int) this_addr, mDrawSoftBodyVolumeConstraints);
-    }
-
-    public static boolean native_get_mDrawSoftBodySkinConstraints(long this_addr) {
-        return internal_native_get_mDrawSoftBodySkinConstraints((int) this_addr);
-    }
-
-    public static void native_set_mDrawSoftBodySkinConstraints(long this_addr, boolean mDrawSoftBodySkinConstraints) {
-        internal_native_set_mDrawSoftBodySkinConstraints((int) this_addr, mDrawSoftBodySkinConstraints);
-    }
-
-    public static boolean native_get_mDrawSoftBodyLRAConstraints(long this_addr) {
-        return internal_native_get_mDrawSoftBodyLRAConstraints((int) this_addr);
-    }
-
-    public static void native_set_mDrawSoftBodyLRAConstraints(long this_addr, boolean mDrawSoftBodyLRAConstraints) {
-        internal_native_set_mDrawSoftBodyLRAConstraints((int) this_addr, mDrawSoftBodyLRAConstraints);
-    }
-
-    public static boolean native_get_mDrawSoftBodyPredictedBounds(long this_addr) {
-        return internal_native_get_mDrawSoftBodyPredictedBounds((int) this_addr);
-    }
-
-    public static void native_set_mDrawSoftBodyPredictedBounds(long this_addr, boolean mDrawSoftBodyPredictedBounds) {
-        internal_native_set_mDrawSoftBodyPredictedBounds((int) this_addr, mDrawSoftBodyPredictedBounds);
-    }
-
-    public static long native_get_mDrawSoftBodyConstraintColor(long this_addr) {
-        return internal_native_get_mDrawSoftBodyConstraintColor((int) this_addr);
-    }
-
-    public static void native_set_mDrawSoftBodyConstraintColor(long this_addr, long mDrawSoftBodyConstraintColor) {
-        internal_native_set_mDrawSoftBodyConstraintColor((int) this_addr, (int) mDrawSoftBodyConstraintColor);
-    }
+    public static native void internal_native_set_mDrawSoftBodyConstraintColor(int this_addr, int mDrawSoftBodyConstraintColor);
 }

@@ -49,7 +49,7 @@ public class CharacterBase extends IDLBase {
 CharacterBase* nativeObject = (CharacterBase*)this_addr;
 return nativeObject->GetRefCount();
 */
-    private static native int internal_native_GetRefCount(long this_addr);
+    public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
         internal_native_AddRef((long) getNativeData().getCPointer());
@@ -59,7 +59,7 @@ return nativeObject->GetRefCount();
 CharacterBase* nativeObject = (CharacterBase*)this_addr;
 nativeObject->AddRef();
 */
-    private static native void internal_native_AddRef(long this_addr);
+    public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
         internal_native_Release((long) getNativeData().getCPointer());
@@ -69,7 +69,7 @@ nativeObject->AddRef();
 CharacterBase* nativeObject = (CharacterBase*)this_addr;
 nativeObject->Release();
 */
-    private static native void internal_native_Release(long this_addr);
+    public static native void internal_native_Release(long this_addr);
 
     public void SetMaxSlopeAngle(float inMaxSlopeAngle) {
         internal_native_SetMaxSlopeAngle((long) getNativeData().getCPointer(), inMaxSlopeAngle);
@@ -79,7 +79,7 @@ nativeObject->Release();
 CharacterBase* nativeObject = (CharacterBase*)this_addr;
 nativeObject->SetMaxSlopeAngle((float)inMaxSlopeAngle);
 */
-    private static native void internal_native_SetMaxSlopeAngle(long this_addr, float inMaxSlopeAngle);
+    public static native void internal_native_SetMaxSlopeAngle(long this_addr, float inMaxSlopeAngle);
 
     public float GetCosMaxSlopeAngle() {
         return internal_native_GetCosMaxSlopeAngle((long) getNativeData().getCPointer());
@@ -89,7 +89,7 @@ nativeObject->SetMaxSlopeAngle((float)inMaxSlopeAngle);
 CharacterBase* nativeObject = (CharacterBase*)this_addr;
 return nativeObject->GetCosMaxSlopeAngle();
 */
-    private static native float internal_native_GetCosMaxSlopeAngle(long this_addr);
+    public static native float internal_native_GetCosMaxSlopeAngle(long this_addr);
 
     public void SetUp(Vec3 inUp) {
         internal_native_SetUp((long) getNativeData().getCPointer(), (long) (inUp != null ? inUp.getNativeData().getCPointer() : 0));
@@ -99,7 +99,7 @@ return nativeObject->GetCosMaxSlopeAngle();
 CharacterBase* nativeObject = (CharacterBase*)this_addr;
 nativeObject->SetUp(*((Vec3* )inUp_addr));
 */
-    private static native void internal_native_SetUp(long this_addr, long inUp_addr);
+    public static native void internal_native_SetUp(long this_addr, long inUp_addr);
 
     public Vec3 GetUp() {
         long pointer = internal_native_GetUp((long) getNativeData().getCPointer());
@@ -116,7 +116,7 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetUp();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetUp(long this_addr);
+    public static native long internal_native_GetUp(long this_addr);
 
     public Shape GetShape() {
         long pointer = internal_native_GetShape((long) getNativeData().getCPointer());
@@ -133,7 +133,7 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 const Shape* obj = nativeObject->GetShape();
 return (jlong)obj;
 */
-    private static native long internal_native_GetShape(long this_addr);
+    public static native long internal_native_GetShape(long this_addr);
 
     public EGroundState GetGroundState() {
         int value = internal_native_GetGroundState((long) getNativeData().getCPointer());
@@ -144,7 +144,7 @@ return (jlong)obj;
 CharacterBase* nativeObject = (CharacterBase*)this_addr;
 return (int)nativeObject->GetGroundState();
 */
-    private static native int internal_native_GetGroundState(long this_addr);
+    public static native int internal_native_GetGroundState(long this_addr);
 
     public boolean IsSlopeTooSteep(Vec3 inNormal) {
         return internal_native_IsSlopeTooSteep((long) getNativeData().getCPointer(), (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
@@ -154,7 +154,7 @@ return (int)nativeObject->GetGroundState();
 CharacterBase* nativeObject = (CharacterBase*)this_addr;
 return nativeObject->IsSlopeTooSteep(*((Vec3* )inNormal_addr));
 */
-    private static native boolean internal_native_IsSlopeTooSteep(long this_addr, long inNormal_addr);
+    public static native boolean internal_native_IsSlopeTooSteep(long this_addr, long inNormal_addr);
 
     public boolean IsSupported() {
         return internal_native_IsSupported((long) getNativeData().getCPointer());
@@ -164,7 +164,7 @@ return nativeObject->IsSlopeTooSteep(*((Vec3* )inNormal_addr));
 CharacterBase* nativeObject = (CharacterBase*)this_addr;
 return nativeObject->IsSupported();
 */
-    private static native boolean internal_native_IsSupported(long this_addr);
+    public static native boolean internal_native_IsSupported(long this_addr);
 
     public Vec3 GetGroundPosition() {
         long pointer = internal_native_GetGroundPosition((long) getNativeData().getCPointer());
@@ -181,7 +181,7 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetGroundPosition();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetGroundPosition(long this_addr);
+    public static native long internal_native_GetGroundPosition(long this_addr);
 
     public Vec3 GetGroundNormal() {
         long pointer = internal_native_GetGroundNormal((long) getNativeData().getCPointer());
@@ -198,7 +198,7 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetGroundNormal();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetGroundNormal(long this_addr);
+    public static native long internal_native_GetGroundNormal(long this_addr);
 
     public Vec3 GetGroundVelocity() {
         long pointer = internal_native_GetGroundVelocity((long) getNativeData().getCPointer());
@@ -215,7 +215,7 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetGroundVelocity();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetGroundVelocity(long this_addr);
+    public static native long internal_native_GetGroundVelocity(long this_addr);
 
     public PhysicsMaterial GetGroundMaterial() {
         long pointer = internal_native_GetGroundMaterial((long) getNativeData().getCPointer());
@@ -232,7 +232,7 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 const PhysicsMaterial* obj = nativeObject->GetGroundMaterial();
 return (jlong)obj;
 */
-    private static native long internal_native_GetGroundMaterial(long this_addr);
+    public static native long internal_native_GetGroundMaterial(long this_addr);
 
     public BodyID GetGroundBodyID() {
         long pointer = internal_native_GetGroundBodyID((long) getNativeData().getCPointer());
@@ -249,69 +249,5 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->GetGroundBodyID();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetGroundBodyID(long this_addr);
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount(this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef(this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release(this_addr);
-    }
-
-    public static void native_SetMaxSlopeAngle(long this_addr, float inMaxSlopeAngle) {
-        internal_native_SetMaxSlopeAngle(this_addr, inMaxSlopeAngle);
-    }
-
-    public static float native_GetCosMaxSlopeAngle(long this_addr) {
-        return internal_native_GetCosMaxSlopeAngle(this_addr);
-    }
-
-    public static void native_SetUp(long this_addr, long inUp_addr) {
-        internal_native_SetUp(this_addr, inUp_addr);
-    }
-
-    public static long native_GetUp(long this_addr) {
-        return internal_native_GetUp(this_addr);
-    }
-
-    public static long native_GetShape(long this_addr) {
-        return internal_native_GetShape(this_addr);
-    }
-
-    public static long native_GetGroundState(long this_addr) {
-        return internal_native_GetGroundState(this_addr);
-    }
-
-    public static boolean native_IsSlopeTooSteep(long this_addr, long inNormal_addr) {
-        return internal_native_IsSlopeTooSteep(this_addr, inNormal_addr);
-    }
-
-    public static boolean native_IsSupported(long this_addr) {
-        return internal_native_IsSupported(this_addr);
-    }
-
-    public static long native_GetGroundPosition(long this_addr) {
-        return internal_native_GetGroundPosition(this_addr);
-    }
-
-    public static long native_GetGroundNormal(long this_addr) {
-        return internal_native_GetGroundNormal(this_addr);
-    }
-
-    public static long native_GetGroundVelocity(long this_addr) {
-        return internal_native_GetGroundVelocity(this_addr);
-    }
-
-    public static long native_GetGroundMaterial(long this_addr) {
-        return internal_native_GetGroundMaterial(this_addr);
-    }
-
-    public static long native_GetGroundBodyID(long this_addr) {
-        return internal_native_GetGroundBodyID(this_addr);
-    }
+    public static native long internal_native_GetGroundBodyID(long this_addr);
 }

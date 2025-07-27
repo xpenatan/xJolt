@@ -35,7 +35,7 @@ public class PathConstraintSettings extends TwoBodyConstraintSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new PathConstraintSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -61,7 +61,7 @@ return (jlong)new PathConstraintSettings();
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public PathConstraintPath get_mPath() {
         long pointer = internal_native_get_mPath((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 const PathConstraintPath* attr = nativeObject->mPath;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mPath(long this_addr);
+    public static native long internal_native_get_mPath(long this_addr);
 
     public void set_mPath(PathConstraintPath mPath) {
         internal_native_set_mPath((long) getNativeData().getCPointer(), (long) (mPath != null ? mPath.getNativeData().getCPointer() : 0));
@@ -88,7 +88,7 @@ return (jlong)attr;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 nativeObject->mPath = (PathConstraintPath*)mPath_addr;
 */
-    private static native void internal_native_set_mPath(long this_addr, long mPath_addr);
+    public static native void internal_native_set_mPath(long this_addr, long mPath_addr);
 
     public Vec3 get_mPathPosition() {
         long pointer = internal_native_get_mPathPosition((long) getNativeData().getCPointer());
@@ -104,7 +104,7 @@ nativeObject->mPath = (PathConstraintPath*)mPath_addr;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPathPosition;
 */
-    private static native long internal_native_get_mPathPosition(long this_addr);
+    public static native long internal_native_get_mPathPosition(long this_addr);
 
     public void set_mPathPosition(Vec3 mPathPosition) {
         internal_native_set_mPathPosition((long) getNativeData().getCPointer(), (long) (mPathPosition != null ? mPathPosition.getNativeData().getCPointer() : 0));
@@ -114,7 +114,7 @@ return (jlong)&nativeObject->mPathPosition;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 nativeObject->mPathPosition = *((Vec3*)mPathPosition_addr);
 */
-    private static native void internal_native_set_mPathPosition(long this_addr, long mPathPosition_addr);
+    public static native void internal_native_set_mPathPosition(long this_addr, long mPathPosition_addr);
 
     public Quat get_mPathRotation() {
         long pointer = internal_native_get_mPathRotation((long) getNativeData().getCPointer());
@@ -130,7 +130,7 @@ nativeObject->mPathPosition = *((Vec3*)mPathPosition_addr);
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPathRotation;
 */
-    private static native long internal_native_get_mPathRotation(long this_addr);
+    public static native long internal_native_get_mPathRotation(long this_addr);
 
     public void set_mPathRotation(Quat mPathRotation) {
         internal_native_set_mPathRotation((long) getNativeData().getCPointer(), (long) (mPathRotation != null ? mPathRotation.getNativeData().getCPointer() : 0));
@@ -140,7 +140,7 @@ return (jlong)&nativeObject->mPathRotation;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 nativeObject->mPathRotation = *((Quat*)mPathRotation_addr);
 */
-    private static native void internal_native_set_mPathRotation(long this_addr, long mPathRotation_addr);
+    public static native void internal_native_set_mPathRotation(long this_addr, long mPathRotation_addr);
 
     public float get_mPathFraction() {
         return internal_native_get_mPathFraction((long) getNativeData().getCPointer());
@@ -150,7 +150,7 @@ nativeObject->mPathRotation = *((Quat*)mPathRotation_addr);
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 return nativeObject->mPathFraction;
 */
-    private static native float internal_native_get_mPathFraction(long this_addr);
+    public static native float internal_native_get_mPathFraction(long this_addr);
 
     public void set_mPathFraction(float mPathFraction) {
         internal_native_set_mPathFraction((long) getNativeData().getCPointer(), mPathFraction);
@@ -160,7 +160,7 @@ return nativeObject->mPathFraction;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 nativeObject->mPathFraction = mPathFraction;
 */
-    private static native void internal_native_set_mPathFraction(long this_addr, float mPathFraction);
+    public static native void internal_native_set_mPathFraction(long this_addr, float mPathFraction);
 
     public float get_mMaxFrictionForce() {
         return internal_native_get_mMaxFrictionForce((long) getNativeData().getCPointer());
@@ -170,7 +170,7 @@ nativeObject->mPathFraction = mPathFraction;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 return nativeObject->mMaxFrictionForce;
 */
-    private static native float internal_native_get_mMaxFrictionForce(long this_addr);
+    public static native float internal_native_get_mMaxFrictionForce(long this_addr);
 
     public void set_mMaxFrictionForce(float mMaxFrictionForce) {
         internal_native_set_mMaxFrictionForce((long) getNativeData().getCPointer(), mMaxFrictionForce);
@@ -180,7 +180,7 @@ return nativeObject->mMaxFrictionForce;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 nativeObject->mMaxFrictionForce = mMaxFrictionForce;
 */
-    private static native void internal_native_set_mMaxFrictionForce(long this_addr, float mMaxFrictionForce);
+    public static native void internal_native_set_mMaxFrictionForce(long this_addr, float mMaxFrictionForce);
 
     public EPathRotationConstraintType get_mRotationConstraintType() {
         int value = internal_native_get_mRotationConstraintType((long) getNativeData().getCPointer());
@@ -191,7 +191,7 @@ nativeObject->mMaxFrictionForce = mMaxFrictionForce;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 return (jint)nativeObject->mRotationConstraintType;
 */
-    private static native int internal_native_get_mRotationConstraintType(long this_addr);
+    public static native int internal_native_get_mRotationConstraintType(long this_addr);
 
     public void set_mRotationConstraintType(EPathRotationConstraintType mRotationConstraintType) {
         internal_native_set_mRotationConstraintType((long) getNativeData().getCPointer(), (long) (mRotationConstraintType != null ? mRotationConstraintType.getValue() : 0));
@@ -201,7 +201,7 @@ return (jint)nativeObject->mRotationConstraintType;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 nativeObject->mRotationConstraintType = (::EPathRotationConstraintType)mRotationConstraintType;
 */
-    private static native void internal_native_set_mRotationConstraintType(long this_addr, long mRotationConstraintType);
+    public static native void internal_native_set_mRotationConstraintType(long this_addr, long mRotationConstraintType);
 
     public MotorSettings get_mPositionMotorSettings() {
         long pointer = internal_native_get_mPositionMotorSettings((long) getNativeData().getCPointer());
@@ -217,7 +217,7 @@ nativeObject->mRotationConstraintType = (::EPathRotationConstraintType)mRotation
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPositionMotorSettings;
 */
-    private static native long internal_native_get_mPositionMotorSettings(long this_addr);
+    public static native long internal_native_get_mPositionMotorSettings(long this_addr);
 
     public void set_mPositionMotorSettings(MotorSettings mPositionMotorSettings) {
         internal_native_set_mPositionMotorSettings((long) getNativeData().getCPointer(), (long) (mPositionMotorSettings != null ? mPositionMotorSettings.getNativeData().getCPointer() : 0));
@@ -227,69 +227,5 @@ return (jlong)&nativeObject->mPositionMotorSettings;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 nativeObject->mPositionMotorSettings = *((MotorSettings*)mPositionMotorSettings_addr);
 */
-    private static native void internal_native_set_mPositionMotorSettings(long this_addr, long mPositionMotorSettings_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mPath(long this_addr) {
-        return internal_native_get_mPath(this_addr);
-    }
-
-    public static void native_set_mPath(long this_addr, long mPath_addr) {
-        internal_native_set_mPath(this_addr, mPath_addr);
-    }
-
-    public static long native_get_mPathPosition(long this_addr) {
-        return internal_native_get_mPathPosition(this_addr);
-    }
-
-    public static void native_set_mPathPosition(long this_addr, long mPathPosition_addr) {
-        internal_native_set_mPathPosition(this_addr, mPathPosition_addr);
-    }
-
-    public static long native_get_mPathRotation(long this_addr) {
-        return internal_native_get_mPathRotation(this_addr);
-    }
-
-    public static void native_set_mPathRotation(long this_addr, long mPathRotation_addr) {
-        internal_native_set_mPathRotation(this_addr, mPathRotation_addr);
-    }
-
-    public static float native_get_mPathFraction(long this_addr) {
-        return internal_native_get_mPathFraction(this_addr);
-    }
-
-    public static void native_set_mPathFraction(long this_addr, float mPathFraction) {
-        internal_native_set_mPathFraction(this_addr, mPathFraction);
-    }
-
-    public static float native_get_mMaxFrictionForce(long this_addr) {
-        return internal_native_get_mMaxFrictionForce(this_addr);
-    }
-
-    public static void native_set_mMaxFrictionForce(long this_addr, float mMaxFrictionForce) {
-        internal_native_set_mMaxFrictionForce(this_addr, mMaxFrictionForce);
-    }
-
-    public static long native_get_mRotationConstraintType(long this_addr) {
-        return internal_native_get_mRotationConstraintType(this_addr);
-    }
-
-    public static void native_set_mRotationConstraintType(long this_addr, long mRotationConstraintType) {
-        internal_native_set_mRotationConstraintType(this_addr, mRotationConstraintType);
-    }
-
-    public static long native_get_mPositionMotorSettings(long this_addr) {
-        return internal_native_get_mPositionMotorSettings(this_addr);
-    }
-
-    public static void native_set_mPositionMotorSettings(long this_addr, long mPositionMotorSettings_addr) {
-        internal_native_set_mPositionMotorSettings(this_addr, mPositionMotorSettings_addr);
-    }
+    public static native void internal_native_set_mPositionMotorSettings(long this_addr, long mPositionMotorSettings_addr);
 }

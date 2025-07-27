@@ -23,7 +23,7 @@ public class BroadPhaseLayer extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new BroadPhaseLayer(inLayer);
 */
-    private static native long internal_native_create_short(short inLayer);
+    public static native long internal_native_create_short(short inLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new BroadPhaseLayer(inLayer);
 BroadPhaseLayer* nativeObject = (BroadPhaseLayer*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public short GetValue() {
         return internal_native_GetValue((long) getNativeData().getCPointer());
@@ -58,17 +58,5 @@ delete nativeObject;
 BroadPhaseLayer* nativeObject = (BroadPhaseLayer*)this_addr;
 return nativeObject->GetValue();
 */
-    private static native short internal_native_GetValue(long this_addr);
-
-    public static long native_create_short(short inLayer) {
-        return internal_native_create_short(inLayer);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static short native_GetValue(long this_addr) {
-        return internal_native_GetValue(this_addr);
-    }
+    public static native short internal_native_GetValue(long this_addr);
 }

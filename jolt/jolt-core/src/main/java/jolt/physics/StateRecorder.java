@@ -38,7 +38,7 @@ public class StateRecorder extends IDLBase {
 StateRecorder* nativeObject = (StateRecorder*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void SetValidating(boolean inValidating) {
         internal_native_SetValidating((long) getNativeData().getCPointer(), inValidating);
@@ -48,7 +48,7 @@ delete nativeObject;
 StateRecorder* nativeObject = (StateRecorder*)this_addr;
 nativeObject->SetValidating(inValidating);
 */
-    private static native void internal_native_SetValidating(long this_addr, boolean inValidating);
+    public static native void internal_native_SetValidating(long this_addr, boolean inValidating);
 
     public boolean IsValidating() {
         return internal_native_IsValidating((long) getNativeData().getCPointer());
@@ -58,17 +58,5 @@ nativeObject->SetValidating(inValidating);
 StateRecorder* nativeObject = (StateRecorder*)this_addr;
 return nativeObject->IsValidating();
 */
-    private static native boolean internal_native_IsValidating(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_SetValidating(long this_addr, boolean inValidating) {
-        internal_native_SetValidating(this_addr, inValidating);
-    }
-
-    public static boolean native_IsValidating(long this_addr) {
-        return internal_native_IsValidating(this_addr);
-    }
+    public static native boolean internal_native_IsValidating(long this_addr);
 }

@@ -24,7 +24,7 @@ public class ShapeCastResult extends CollideShapeResult {
     /*[-JNI;-NATIVE]
 return (jlong)new ShapeCastResult();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,7 +50,7 @@ return (jlong)new ShapeCastResult();
 ShapeCastResult* nativeObject = (ShapeCastResult*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mFraction() {
         return internal_native_get_mFraction((long) getNativeData().getCPointer());
@@ -60,7 +60,7 @@ delete nativeObject;
 ShapeCastResult* nativeObject = (ShapeCastResult*)this_addr;
 return nativeObject->mFraction;
 */
-    private static native float internal_native_get_mFraction(long this_addr);
+    public static native float internal_native_get_mFraction(long this_addr);
 
     public void set_mFraction(float mFraction) {
         internal_native_set_mFraction((long) getNativeData().getCPointer(), mFraction);
@@ -70,7 +70,7 @@ return nativeObject->mFraction;
 ShapeCastResult* nativeObject = (ShapeCastResult*)this_addr;
 nativeObject->mFraction = mFraction;
 */
-    private static native void internal_native_set_mFraction(long this_addr, float mFraction);
+    public static native void internal_native_set_mFraction(long this_addr, float mFraction);
 
     public boolean get_mIsBackFaceHit() {
         return internal_native_get_mIsBackFaceHit((long) getNativeData().getCPointer());
@@ -80,7 +80,7 @@ nativeObject->mFraction = mFraction;
 ShapeCastResult* nativeObject = (ShapeCastResult*)this_addr;
 return nativeObject->mIsBackFaceHit;
 */
-    private static native boolean internal_native_get_mIsBackFaceHit(long this_addr);
+    public static native boolean internal_native_get_mIsBackFaceHit(long this_addr);
 
     public void set_mIsBackFaceHit(boolean mIsBackFaceHit) {
         internal_native_set_mIsBackFaceHit((long) getNativeData().getCPointer(), mIsBackFaceHit);
@@ -90,29 +90,5 @@ return nativeObject->mIsBackFaceHit;
 ShapeCastResult* nativeObject = (ShapeCastResult*)this_addr;
 nativeObject->mIsBackFaceHit = mIsBackFaceHit;
 */
-    private static native void internal_native_set_mIsBackFaceHit(long this_addr, boolean mIsBackFaceHit);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_get_mFraction(long this_addr) {
-        return internal_native_get_mFraction(this_addr);
-    }
-
-    public static void native_set_mFraction(long this_addr, float mFraction) {
-        internal_native_set_mFraction(this_addr, mFraction);
-    }
-
-    public static boolean native_get_mIsBackFaceHit(long this_addr) {
-        return internal_native_get_mIsBackFaceHit(this_addr);
-    }
-
-    public static void native_set_mIsBackFaceHit(long this_addr, boolean mIsBackFaceHit) {
-        internal_native_set_mIsBackFaceHit(this_addr, mIsBackFaceHit);
-    }
+    public static native void internal_native_set_mIsBackFaceHit(long this_addr, boolean mIsBackFaceHit);
 }

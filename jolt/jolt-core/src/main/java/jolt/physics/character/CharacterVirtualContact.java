@@ -61,7 +61,7 @@ public class CharacterVirtualContact extends IDLBase {
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean IsSameBody(CharacterVirtualContact inOther) {
         return internal_native_IsSameBody((long) getNativeData().getCPointer(), (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
@@ -71,7 +71,7 @@ delete nativeObject;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return nativeObject->IsSameBody(*((CharacterVirtualContact* )inOther_addr));
 */
-    private static native boolean internal_native_IsSameBody(long this_addr, long inOther_addr);
+    public static native boolean internal_native_IsSameBody(long this_addr, long inOther_addr);
 
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
@@ -87,7 +87,7 @@ return nativeObject->IsSameBody(*((CharacterVirtualContact* )inOther_addr));
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    private static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition((long) getNativeData().getCPointer(), (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -97,7 +97,7 @@ return (jlong)&nativeObject->mPosition;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mPosition = *((Vec3*)mPosition_addr);
 */
-    private static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
+    public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Vec3 get_mLinearVelocity() {
         long pointer = internal_native_get_mLinearVelocity((long) getNativeData().getCPointer());
@@ -113,7 +113,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return (jlong)&nativeObject->mLinearVelocity;
 */
-    private static native long internal_native_get_mLinearVelocity(long this_addr);
+    public static native long internal_native_get_mLinearVelocity(long this_addr);
 
     public void set_mLinearVelocity(Vec3 mLinearVelocity) {
         internal_native_set_mLinearVelocity((long) getNativeData().getCPointer(), (long) (mLinearVelocity != null ? mLinearVelocity.getNativeData().getCPointer() : 0));
@@ -123,7 +123,7 @@ return (jlong)&nativeObject->mLinearVelocity;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
 */
-    private static native void internal_native_set_mLinearVelocity(long this_addr, long mLinearVelocity_addr);
+    public static native void internal_native_set_mLinearVelocity(long this_addr, long mLinearVelocity_addr);
 
     public Vec3 get_mContactNormal() {
         long pointer = internal_native_get_mContactNormal((long) getNativeData().getCPointer());
@@ -139,7 +139,7 @@ nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return (jlong)&nativeObject->mContactNormal;
 */
-    private static native long internal_native_get_mContactNormal(long this_addr);
+    public static native long internal_native_get_mContactNormal(long this_addr);
 
     public void set_mContactNormal(Vec3 mContactNormal) {
         internal_native_set_mContactNormal((long) getNativeData().getCPointer(), (long) (mContactNormal != null ? mContactNormal.getNativeData().getCPointer() : 0));
@@ -149,7 +149,7 @@ return (jlong)&nativeObject->mContactNormal;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mContactNormal = *((Vec3*)mContactNormal_addr);
 */
-    private static native void internal_native_set_mContactNormal(long this_addr, long mContactNormal_addr);
+    public static native void internal_native_set_mContactNormal(long this_addr, long mContactNormal_addr);
 
     public Vec3 get_mSurfaceNormal() {
         long pointer = internal_native_get_mSurfaceNormal((long) getNativeData().getCPointer());
@@ -165,7 +165,7 @@ nativeObject->mContactNormal = *((Vec3*)mContactNormal_addr);
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return (jlong)&nativeObject->mSurfaceNormal;
 */
-    private static native long internal_native_get_mSurfaceNormal(long this_addr);
+    public static native long internal_native_get_mSurfaceNormal(long this_addr);
 
     public void set_mSurfaceNormal(Vec3 mSurfaceNormal) {
         internal_native_set_mSurfaceNormal((long) getNativeData().getCPointer(), (long) (mSurfaceNormal != null ? mSurfaceNormal.getNativeData().getCPointer() : 0));
@@ -175,7 +175,7 @@ return (jlong)&nativeObject->mSurfaceNormal;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mSurfaceNormal = *((Vec3*)mSurfaceNormal_addr);
 */
-    private static native void internal_native_set_mSurfaceNormal(long this_addr, long mSurfaceNormal_addr);
+    public static native void internal_native_set_mSurfaceNormal(long this_addr, long mSurfaceNormal_addr);
 
     public float get_mDistance() {
         return internal_native_get_mDistance((long) getNativeData().getCPointer());
@@ -185,7 +185,7 @@ nativeObject->mSurfaceNormal = *((Vec3*)mSurfaceNormal_addr);
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return nativeObject->mDistance;
 */
-    private static native float internal_native_get_mDistance(long this_addr);
+    public static native float internal_native_get_mDistance(long this_addr);
 
     public void set_mDistance(float mDistance) {
         internal_native_set_mDistance((long) getNativeData().getCPointer(), mDistance);
@@ -195,7 +195,7 @@ return nativeObject->mDistance;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mDistance = mDistance;
 */
-    private static native void internal_native_set_mDistance(long this_addr, float mDistance);
+    public static native void internal_native_set_mDistance(long this_addr, float mDistance);
 
     public float get_mFraction() {
         return internal_native_get_mFraction((long) getNativeData().getCPointer());
@@ -205,7 +205,7 @@ nativeObject->mDistance = mDistance;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return nativeObject->mFraction;
 */
-    private static native float internal_native_get_mFraction(long this_addr);
+    public static native float internal_native_get_mFraction(long this_addr);
 
     public void set_mFraction(float mFraction) {
         internal_native_set_mFraction((long) getNativeData().getCPointer(), mFraction);
@@ -215,7 +215,7 @@ return nativeObject->mFraction;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mFraction = mFraction;
 */
-    private static native void internal_native_set_mFraction(long this_addr, float mFraction);
+    public static native void internal_native_set_mFraction(long this_addr, float mFraction);
 
     public BodyID get_mBodyB() {
         long pointer = internal_native_get_mBodyB((long) getNativeData().getCPointer());
@@ -231,7 +231,7 @@ nativeObject->mFraction = mFraction;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return (jlong)&nativeObject->mBodyB;
 */
-    private static native long internal_native_get_mBodyB(long this_addr);
+    public static native long internal_native_get_mBodyB(long this_addr);
 
     public void set_mBodyB(BodyID mBodyB) {
         internal_native_set_mBodyB((long) getNativeData().getCPointer(), (long) (mBodyB != null ? mBodyB.getNativeData().getCPointer() : 0));
@@ -241,7 +241,7 @@ return (jlong)&nativeObject->mBodyB;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mBodyB = *((BodyID*)mBodyB_addr);
 */
-    private static native void internal_native_set_mBodyB(long this_addr, long mBodyB_addr);
+    public static native void internal_native_set_mBodyB(long this_addr, long mBodyB_addr);
 
     public CharacterID get_mCharacterIDB() {
         long pointer = internal_native_get_mCharacterIDB((long) getNativeData().getCPointer());
@@ -257,7 +257,7 @@ nativeObject->mBodyB = *((BodyID*)mBodyB_addr);
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return (jlong)&nativeObject->mCharacterIDB;
 */
-    private static native long internal_native_get_mCharacterIDB(long this_addr);
+    public static native long internal_native_get_mCharacterIDB(long this_addr);
 
     public void set_mCharacterIDB(CharacterID mCharacterIDB) {
         internal_native_set_mCharacterIDB((long) getNativeData().getCPointer(), (long) (mCharacterIDB != null ? mCharacterIDB.getNativeData().getCPointer() : 0));
@@ -267,7 +267,7 @@ return (jlong)&nativeObject->mCharacterIDB;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mCharacterIDB = *((CharacterID*)mCharacterIDB_addr);
 */
-    private static native void internal_native_set_mCharacterIDB(long this_addr, long mCharacterIDB_addr);
+    public static native void internal_native_set_mCharacterIDB(long this_addr, long mCharacterIDB_addr);
 
     public SubShapeID get_mSubShapeIDB() {
         long pointer = internal_native_get_mSubShapeIDB((long) getNativeData().getCPointer());
@@ -283,7 +283,7 @@ nativeObject->mCharacterIDB = *((CharacterID*)mCharacterIDB_addr);
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return (jlong)&nativeObject->mSubShapeIDB;
 */
-    private static native long internal_native_get_mSubShapeIDB(long this_addr);
+    public static native long internal_native_get_mSubShapeIDB(long this_addr);
 
     public void set_mSubShapeIDB(SubShapeID mSubShapeIDB) {
         internal_native_set_mSubShapeIDB((long) getNativeData().getCPointer(), (long) (mSubShapeIDB != null ? mSubShapeIDB.getNativeData().getCPointer() : 0));
@@ -293,7 +293,7 @@ return (jlong)&nativeObject->mSubShapeIDB;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mSubShapeIDB = *((SubShapeID*)mSubShapeIDB_addr);
 */
-    private static native void internal_native_set_mSubShapeIDB(long this_addr, long mSubShapeIDB_addr);
+    public static native void internal_native_set_mSubShapeIDB(long this_addr, long mSubShapeIDB_addr);
 
     public EMotionType get_mMotionTypeB() {
         int value = internal_native_get_mMotionTypeB((long) getNativeData().getCPointer());
@@ -304,7 +304,7 @@ nativeObject->mSubShapeIDB = *((SubShapeID*)mSubShapeIDB_addr);
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return (jint)nativeObject->mMotionTypeB;
 */
-    private static native int internal_native_get_mMotionTypeB(long this_addr);
+    public static native int internal_native_get_mMotionTypeB(long this_addr);
 
     public void set_mMotionTypeB(EMotionType mMotionTypeB) {
         internal_native_set_mMotionTypeB((long) getNativeData().getCPointer(), (long) (mMotionTypeB != null ? mMotionTypeB.getValue() : 0));
@@ -314,7 +314,7 @@ return (jint)nativeObject->mMotionTypeB;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mMotionTypeB = (::EMotionType)mMotionTypeB;
 */
-    private static native void internal_native_set_mMotionTypeB(long this_addr, long mMotionTypeB);
+    public static native void internal_native_set_mMotionTypeB(long this_addr, long mMotionTypeB);
 
     public boolean get_mIsSensorB() {
         return internal_native_get_mIsSensorB((long) getNativeData().getCPointer());
@@ -324,7 +324,7 @@ nativeObject->mMotionTypeB = (::EMotionType)mMotionTypeB;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return nativeObject->mIsSensorB;
 */
-    private static native boolean internal_native_get_mIsSensorB(long this_addr);
+    public static native boolean internal_native_get_mIsSensorB(long this_addr);
 
     public void set_mIsSensorB(boolean mIsSensorB) {
         internal_native_set_mIsSensorB((long) getNativeData().getCPointer(), mIsSensorB);
@@ -334,7 +334,7 @@ return nativeObject->mIsSensorB;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mIsSensorB = mIsSensorB;
 */
-    private static native void internal_native_set_mIsSensorB(long this_addr, boolean mIsSensorB);
+    public static native void internal_native_set_mIsSensorB(long this_addr, boolean mIsSensorB);
 
     public CharacterVirtual get_mCharacterB() {
         long pointer = internal_native_get_mCharacterB((long) getNativeData().getCPointer());
@@ -351,7 +351,7 @@ CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 const CharacterVirtual* attr = nativeObject->mCharacterB;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mCharacterB(long this_addr);
+    public static native long internal_native_get_mCharacterB(long this_addr);
 
     public void set_mCharacterB(CharacterVirtual mCharacterB) {
         internal_native_set_mCharacterB((long) getNativeData().getCPointer(), (long) (mCharacterB != null ? mCharacterB.getNativeData().getCPointer() : 0));
@@ -361,7 +361,7 @@ return (jlong)attr;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mCharacterB = (CharacterVirtual*)mCharacterB_addr;
 */
-    private static native void internal_native_set_mCharacterB(long this_addr, long mCharacterB_addr);
+    public static native void internal_native_set_mCharacterB(long this_addr, long mCharacterB_addr);
 
     public long get_mUserData() {
         return internal_native_get_mUserData((long) getNativeData().getCPointer());
@@ -371,7 +371,7 @@ nativeObject->mCharacterB = (CharacterVirtual*)mCharacterB_addr;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return nativeObject->mUserData;
 */
-    private static native long internal_native_get_mUserData(long this_addr);
+    public static native long internal_native_get_mUserData(long this_addr);
 
     public void set_mUserData(long mUserData) {
         internal_native_set_mUserData((long) getNativeData().getCPointer(), mUserData);
@@ -381,7 +381,7 @@ return nativeObject->mUserData;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mUserData = mUserData;
 */
-    private static native void internal_native_set_mUserData(long this_addr, long mUserData);
+    public static native void internal_native_set_mUserData(long this_addr, long mUserData);
 
     public PhysicsMaterial get_mMaterial() {
         long pointer = internal_native_get_mMaterial((long) getNativeData().getCPointer());
@@ -398,7 +398,7 @@ CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 const PhysicsMaterial* attr = nativeObject->mMaterial;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mMaterial(long this_addr);
+    public static native long internal_native_get_mMaterial(long this_addr);
 
     public void set_mMaterial(PhysicsMaterial mMaterial) {
         internal_native_set_mMaterial((long) getNativeData().getCPointer(), (long) (mMaterial != null ? mMaterial.getNativeData().getCPointer() : 0));
@@ -408,7 +408,7 @@ return (jlong)attr;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mMaterial = (PhysicsMaterial*)mMaterial_addr;
 */
-    private static native void internal_native_set_mMaterial(long this_addr, long mMaterial_addr);
+    public static native void internal_native_set_mMaterial(long this_addr, long mMaterial_addr);
 
     public boolean get_mHadCollision() {
         return internal_native_get_mHadCollision((long) getNativeData().getCPointer());
@@ -418,7 +418,7 @@ nativeObject->mMaterial = (PhysicsMaterial*)mMaterial_addr;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return nativeObject->mHadCollision;
 */
-    private static native boolean internal_native_get_mHadCollision(long this_addr);
+    public static native boolean internal_native_get_mHadCollision(long this_addr);
 
     public void set_mHadCollision(boolean mHadCollision) {
         internal_native_set_mHadCollision((long) getNativeData().getCPointer(), mHadCollision);
@@ -428,7 +428,7 @@ return nativeObject->mHadCollision;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mHadCollision = mHadCollision;
 */
-    private static native void internal_native_set_mHadCollision(long this_addr, boolean mHadCollision);
+    public static native void internal_native_set_mHadCollision(long this_addr, boolean mHadCollision);
 
     public boolean get_mWasDiscarded() {
         return internal_native_get_mWasDiscarded((long) getNativeData().getCPointer());
@@ -438,7 +438,7 @@ nativeObject->mHadCollision = mHadCollision;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return nativeObject->mWasDiscarded;
 */
-    private static native boolean internal_native_get_mWasDiscarded(long this_addr);
+    public static native boolean internal_native_get_mWasDiscarded(long this_addr);
 
     public void set_mWasDiscarded(boolean mWasDiscarded) {
         internal_native_set_mWasDiscarded((long) getNativeData().getCPointer(), mWasDiscarded);
@@ -448,7 +448,7 @@ return nativeObject->mWasDiscarded;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mWasDiscarded = mWasDiscarded;
 */
-    private static native void internal_native_set_mWasDiscarded(long this_addr, boolean mWasDiscarded);
+    public static native void internal_native_set_mWasDiscarded(long this_addr, boolean mWasDiscarded);
 
     public boolean get_mCanPushCharacter() {
         return internal_native_get_mCanPushCharacter((long) getNativeData().getCPointer());
@@ -458,7 +458,7 @@ nativeObject->mWasDiscarded = mWasDiscarded;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 return nativeObject->mCanPushCharacter;
 */
-    private static native boolean internal_native_get_mCanPushCharacter(long this_addr);
+    public static native boolean internal_native_get_mCanPushCharacter(long this_addr);
 
     public void set_mCanPushCharacter(boolean mCanPushCharacter) {
         internal_native_set_mCanPushCharacter((long) getNativeData().getCPointer(), mCanPushCharacter);
@@ -468,149 +468,5 @@ return nativeObject->mCanPushCharacter;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mCanPushCharacter = mCanPushCharacter;
 */
-    private static native void internal_native_set_mCanPushCharacter(long this_addr, boolean mCanPushCharacter);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static boolean native_IsSameBody(long this_addr, long inOther_addr) {
-        return internal_native_IsSameBody(this_addr, inOther_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition(this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition(this_addr, mPosition_addr);
-    }
-
-    public static long native_get_mLinearVelocity(long this_addr) {
-        return internal_native_get_mLinearVelocity(this_addr);
-    }
-
-    public static void native_set_mLinearVelocity(long this_addr, long mLinearVelocity_addr) {
-        internal_native_set_mLinearVelocity(this_addr, mLinearVelocity_addr);
-    }
-
-    public static long native_get_mContactNormal(long this_addr) {
-        return internal_native_get_mContactNormal(this_addr);
-    }
-
-    public static void native_set_mContactNormal(long this_addr, long mContactNormal_addr) {
-        internal_native_set_mContactNormal(this_addr, mContactNormal_addr);
-    }
-
-    public static long native_get_mSurfaceNormal(long this_addr) {
-        return internal_native_get_mSurfaceNormal(this_addr);
-    }
-
-    public static void native_set_mSurfaceNormal(long this_addr, long mSurfaceNormal_addr) {
-        internal_native_set_mSurfaceNormal(this_addr, mSurfaceNormal_addr);
-    }
-
-    public static float native_get_mDistance(long this_addr) {
-        return internal_native_get_mDistance(this_addr);
-    }
-
-    public static void native_set_mDistance(long this_addr, float mDistance) {
-        internal_native_set_mDistance(this_addr, mDistance);
-    }
-
-    public static float native_get_mFraction(long this_addr) {
-        return internal_native_get_mFraction(this_addr);
-    }
-
-    public static void native_set_mFraction(long this_addr, float mFraction) {
-        internal_native_set_mFraction(this_addr, mFraction);
-    }
-
-    public static long native_get_mBodyB(long this_addr) {
-        return internal_native_get_mBodyB(this_addr);
-    }
-
-    public static void native_set_mBodyB(long this_addr, long mBodyB_addr) {
-        internal_native_set_mBodyB(this_addr, mBodyB_addr);
-    }
-
-    public static long native_get_mCharacterIDB(long this_addr) {
-        return internal_native_get_mCharacterIDB(this_addr);
-    }
-
-    public static void native_set_mCharacterIDB(long this_addr, long mCharacterIDB_addr) {
-        internal_native_set_mCharacterIDB(this_addr, mCharacterIDB_addr);
-    }
-
-    public static long native_get_mSubShapeIDB(long this_addr) {
-        return internal_native_get_mSubShapeIDB(this_addr);
-    }
-
-    public static void native_set_mSubShapeIDB(long this_addr, long mSubShapeIDB_addr) {
-        internal_native_set_mSubShapeIDB(this_addr, mSubShapeIDB_addr);
-    }
-
-    public static long native_get_mMotionTypeB(long this_addr) {
-        return internal_native_get_mMotionTypeB(this_addr);
-    }
-
-    public static void native_set_mMotionTypeB(long this_addr, long mMotionTypeB) {
-        internal_native_set_mMotionTypeB(this_addr, mMotionTypeB);
-    }
-
-    public static boolean native_get_mIsSensorB(long this_addr) {
-        return internal_native_get_mIsSensorB(this_addr);
-    }
-
-    public static void native_set_mIsSensorB(long this_addr, boolean mIsSensorB) {
-        internal_native_set_mIsSensorB(this_addr, mIsSensorB);
-    }
-
-    public static long native_get_mCharacterB(long this_addr) {
-        return internal_native_get_mCharacterB(this_addr);
-    }
-
-    public static void native_set_mCharacterB(long this_addr, long mCharacterB_addr) {
-        internal_native_set_mCharacterB(this_addr, mCharacterB_addr);
-    }
-
-    public static long native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData(this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, long mUserData) {
-        internal_native_set_mUserData(this_addr, mUserData);
-    }
-
-    public static long native_get_mMaterial(long this_addr) {
-        return internal_native_get_mMaterial(this_addr);
-    }
-
-    public static void native_set_mMaterial(long this_addr, long mMaterial_addr) {
-        internal_native_set_mMaterial(this_addr, mMaterial_addr);
-    }
-
-    public static boolean native_get_mHadCollision(long this_addr) {
-        return internal_native_get_mHadCollision(this_addr);
-    }
-
-    public static void native_set_mHadCollision(long this_addr, boolean mHadCollision) {
-        internal_native_set_mHadCollision(this_addr, mHadCollision);
-    }
-
-    public static boolean native_get_mWasDiscarded(long this_addr) {
-        return internal_native_get_mWasDiscarded(this_addr);
-    }
-
-    public static void native_set_mWasDiscarded(long this_addr, boolean mWasDiscarded) {
-        internal_native_set_mWasDiscarded(this_addr, mWasDiscarded);
-    }
-
-    public static boolean native_get_mCanPushCharacter(long this_addr) {
-        return internal_native_get_mCanPushCharacter(this_addr);
-    }
-
-    public static void native_set_mCanPushCharacter(long this_addr, boolean mCanPushCharacter) {
-        internal_native_set_mCanPushCharacter(this_addr, mCanPushCharacter);
-    }
+    public static native void internal_native_set_mCanPushCharacter(long this_addr, boolean mCanPushCharacter);
 }

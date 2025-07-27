@@ -27,7 +27,7 @@ public class BoxShape extends ConvexShape {
     /*[-JNI;-NATIVE]
 return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    private static native long internal_native_create_Vec3_float_PhysicsMaterial(long inHalfExtent_addr, float inConvexRadius, long inMaterial_addr);
+    public static native long internal_native_create_Vec3_float_PhysicsMaterial(long inHalfExtent_addr, float inConvexRadius, long inMaterial_addr);
 
     public BoxShape(Vec3 inHalfExtent, float inConvexRadius) {
         super((byte) 1, (char) 1);
@@ -38,7 +38,7 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius, 
     /*[-JNI;-NATIVE]
 return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius);
 */
-    private static native long internal_native_create_Vec3_float(long inHalfExtent_addr, float inConvexRadius);
+    public static native long internal_native_create_Vec3_float(long inHalfExtent_addr, float inConvexRadius);
 
     public BoxShape(Vec3 inHalfExtent) {
         super((byte) 1, (char) 1);
@@ -49,7 +49,7 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius);
     /*[-JNI;-NATIVE]
 return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr));
 */
-    private static native long internal_native_create_Vec3(long inHalfExtent_addr);
+    public static native long internal_native_create_Vec3(long inHalfExtent_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -74,21 +74,5 @@ BoxShape* nativeObject = (BoxShape*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetHalfExtent();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetHalfExtent(long this_addr);
-
-    public static long native_create_Vec3_float_PhysicsMaterial(long inHalfExtent_addr, float inConvexRadius, long inMaterial_addr) {
-        return internal_native_create_Vec3_float_PhysicsMaterial(inHalfExtent_addr, inConvexRadius, inMaterial_addr);
-    }
-
-    public static long native_create_Vec3_float(long inHalfExtent_addr, float inConvexRadius) {
-        return internal_native_create_Vec3_float(inHalfExtent_addr, inConvexRadius);
-    }
-
-    public static long native_create_Vec3(long inHalfExtent_addr) {
-        return internal_native_create_Vec3(inHalfExtent_addr);
-    }
-
-    public static long native_GetHalfExtent(long this_addr) {
-        return internal_native_GetHalfExtent(this_addr);
-    }
+    public static native long internal_native_GetHalfExtent(long this_addr);
 }

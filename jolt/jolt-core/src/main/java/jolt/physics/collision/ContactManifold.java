@@ -43,7 +43,7 @@ public class ContactManifold extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new ContactManifold();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -68,7 +68,7 @@ return (jlong)new ContactManifold();
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public ContactManifold SwapShapes() {
         long pointer = internal_native_SwapShapes((long) getNativeData().getCPointer());
@@ -85,7 +85,7 @@ ContactManifold* nativeObject = (ContactManifold*)this_addr;
 static ContactManifold copy_addr;
 copy_addr = nativeObject->SwapShapes();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_SwapShapes(long this_addr);
+    public static native long internal_native_SwapShapes(long this_addr);
 
     public Vec3 GetWorldSpaceContactPointOn1(int inIndex) {
         long pointer = internal_native_GetWorldSpaceContactPointOn1((long) getNativeData().getCPointer(), inIndex);
@@ -102,7 +102,7 @@ ContactManifold* nativeObject = (ContactManifold*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetWorldSpaceContactPointOn1(inIndex);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetWorldSpaceContactPointOn1(long this_addr, int inIndex);
+    public static native long internal_native_GetWorldSpaceContactPointOn1(long this_addr, int inIndex);
 
     public Vec3 GetWorldSpaceContactPointOn2(int inIndex) {
         long pointer = internal_native_GetWorldSpaceContactPointOn2((long) getNativeData().getCPointer(), inIndex);
@@ -119,7 +119,7 @@ ContactManifold* nativeObject = (ContactManifold*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetWorldSpaceContactPointOn2(inIndex);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetWorldSpaceContactPointOn2(long this_addr, int inIndex);
+    public static native long internal_native_GetWorldSpaceContactPointOn2(long this_addr, int inIndex);
 
     public Vec3 get_mBaseOffset() {
         long pointer = internal_native_get_mBaseOffset((long) getNativeData().getCPointer());
@@ -135,7 +135,7 @@ return (jlong)&copy_addr;*/
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 return (jlong)&nativeObject->mBaseOffset;
 */
-    private static native long internal_native_get_mBaseOffset(long this_addr);
+    public static native long internal_native_get_mBaseOffset(long this_addr);
 
     public void set_mBaseOffset(Vec3 mBaseOffset) {
         internal_native_set_mBaseOffset((long) getNativeData().getCPointer(), (long) (mBaseOffset != null ? mBaseOffset.getNativeData().getCPointer() : 0));
@@ -145,7 +145,7 @@ return (jlong)&nativeObject->mBaseOffset;
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 nativeObject->mBaseOffset = *((Vec3*)mBaseOffset_addr);
 */
-    private static native void internal_native_set_mBaseOffset(long this_addr, long mBaseOffset_addr);
+    public static native void internal_native_set_mBaseOffset(long this_addr, long mBaseOffset_addr);
 
     public Vec3 get_mWorldSpaceNormal() {
         long pointer = internal_native_get_mWorldSpaceNormal((long) getNativeData().getCPointer());
@@ -161,7 +161,7 @@ nativeObject->mBaseOffset = *((Vec3*)mBaseOffset_addr);
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 return (jlong)&nativeObject->mWorldSpaceNormal;
 */
-    private static native long internal_native_get_mWorldSpaceNormal(long this_addr);
+    public static native long internal_native_get_mWorldSpaceNormal(long this_addr);
 
     public void set_mWorldSpaceNormal(Vec3 mWorldSpaceNormal) {
         internal_native_set_mWorldSpaceNormal((long) getNativeData().getCPointer(), (long) (mWorldSpaceNormal != null ? mWorldSpaceNormal.getNativeData().getCPointer() : 0));
@@ -171,7 +171,7 @@ return (jlong)&nativeObject->mWorldSpaceNormal;
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 nativeObject->mWorldSpaceNormal = *((Vec3*)mWorldSpaceNormal_addr);
 */
-    private static native void internal_native_set_mWorldSpaceNormal(long this_addr, long mWorldSpaceNormal_addr);
+    public static native void internal_native_set_mWorldSpaceNormal(long this_addr, long mWorldSpaceNormal_addr);
 
     public float get_mPenetrationDepth() {
         return internal_native_get_mPenetrationDepth((long) getNativeData().getCPointer());
@@ -181,7 +181,7 @@ nativeObject->mWorldSpaceNormal = *((Vec3*)mWorldSpaceNormal_addr);
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 return nativeObject->mPenetrationDepth;
 */
-    private static native float internal_native_get_mPenetrationDepth(long this_addr);
+    public static native float internal_native_get_mPenetrationDepth(long this_addr);
 
     public void set_mPenetrationDepth(float mPenetrationDepth) {
         internal_native_set_mPenetrationDepth((long) getNativeData().getCPointer(), mPenetrationDepth);
@@ -191,7 +191,7 @@ return nativeObject->mPenetrationDepth;
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 nativeObject->mPenetrationDepth = mPenetrationDepth;
 */
-    private static native void internal_native_set_mPenetrationDepth(long this_addr, float mPenetrationDepth);
+    public static native void internal_native_set_mPenetrationDepth(long this_addr, float mPenetrationDepth);
 
     public SubShapeID get_mSubShapeID1() {
         long pointer = internal_native_get_mSubShapeID1((long) getNativeData().getCPointer());
@@ -207,7 +207,7 @@ nativeObject->mPenetrationDepth = mPenetrationDepth;
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 return (jlong)&nativeObject->mSubShapeID1;
 */
-    private static native long internal_native_get_mSubShapeID1(long this_addr);
+    public static native long internal_native_get_mSubShapeID1(long this_addr);
 
     public void set_mSubShapeID1(SubShapeID mSubShapeID1) {
         internal_native_set_mSubShapeID1((long) getNativeData().getCPointer(), (long) (mSubShapeID1 != null ? mSubShapeID1.getNativeData().getCPointer() : 0));
@@ -217,7 +217,7 @@ return (jlong)&nativeObject->mSubShapeID1;
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 nativeObject->mSubShapeID1 = *((SubShapeID*)mSubShapeID1_addr);
 */
-    private static native void internal_native_set_mSubShapeID1(long this_addr, long mSubShapeID1_addr);
+    public static native void internal_native_set_mSubShapeID1(long this_addr, long mSubShapeID1_addr);
 
     public SubShapeID get_mSubShapeID2() {
         long pointer = internal_native_get_mSubShapeID2((long) getNativeData().getCPointer());
@@ -233,7 +233,7 @@ nativeObject->mSubShapeID1 = *((SubShapeID*)mSubShapeID1_addr);
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 return (jlong)&nativeObject->mSubShapeID2;
 */
-    private static native long internal_native_get_mSubShapeID2(long this_addr);
+    public static native long internal_native_get_mSubShapeID2(long this_addr);
 
     public void set_mSubShapeID2(SubShapeID mSubShapeID2) {
         internal_native_set_mSubShapeID2((long) getNativeData().getCPointer(), (long) (mSubShapeID2 != null ? mSubShapeID2.getNativeData().getCPointer() : 0));
@@ -243,7 +243,7 @@ return (jlong)&nativeObject->mSubShapeID2;
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
 */
-    private static native void internal_native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr);
+    public static native void internal_native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr);
 
     public ContactPoints get_mRelativeContactPointsOn1() {
         long pointer = internal_native_get_mRelativeContactPointsOn1((long) getNativeData().getCPointer());
@@ -259,7 +259,7 @@ nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 return (jlong)&nativeObject->mRelativeContactPointsOn1;
 */
-    private static native long internal_native_get_mRelativeContactPointsOn1(long this_addr);
+    public static native long internal_native_get_mRelativeContactPointsOn1(long this_addr);
 
     public void set_mRelativeContactPointsOn1(ContactPoints mRelativeContactPointsOn1) {
         internal_native_set_mRelativeContactPointsOn1((long) getNativeData().getCPointer(), (long) (mRelativeContactPointsOn1 != null ? mRelativeContactPointsOn1.getNativeData().getCPointer() : 0));
@@ -269,7 +269,7 @@ return (jlong)&nativeObject->mRelativeContactPointsOn1;
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 nativeObject->mRelativeContactPointsOn1 = *((ContactPoints*)mRelativeContactPointsOn1_addr);
 */
-    private static native void internal_native_set_mRelativeContactPointsOn1(long this_addr, long mRelativeContactPointsOn1_addr);
+    public static native void internal_native_set_mRelativeContactPointsOn1(long this_addr, long mRelativeContactPointsOn1_addr);
 
     public ContactPoints get_mRelativeContactPointsOn2() {
         long pointer = internal_native_get_mRelativeContactPointsOn2((long) getNativeData().getCPointer());
@@ -285,7 +285,7 @@ nativeObject->mRelativeContactPointsOn1 = *((ContactPoints*)mRelativeContactPoin
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 return (jlong)&nativeObject->mRelativeContactPointsOn2;
 */
-    private static native long internal_native_get_mRelativeContactPointsOn2(long this_addr);
+    public static native long internal_native_get_mRelativeContactPointsOn2(long this_addr);
 
     public void set_mRelativeContactPointsOn2(ContactPoints mRelativeContactPointsOn2) {
         internal_native_set_mRelativeContactPointsOn2((long) getNativeData().getCPointer(), (long) (mRelativeContactPointsOn2 != null ? mRelativeContactPointsOn2.getNativeData().getCPointer() : 0));
@@ -295,81 +295,5 @@ return (jlong)&nativeObject->mRelativeContactPointsOn2;
 ContactManifold* nativeObject = (ContactManifold*)this_addr;
 nativeObject->mRelativeContactPointsOn2 = *((ContactPoints*)mRelativeContactPointsOn2_addr);
 */
-    private static native void internal_native_set_mRelativeContactPointsOn2(long this_addr, long mRelativeContactPointsOn2_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_SwapShapes(long this_addr) {
-        return internal_native_SwapShapes(this_addr);
-    }
-
-    public static long native_GetWorldSpaceContactPointOn1(long this_addr, int inIndex) {
-        return internal_native_GetWorldSpaceContactPointOn1(this_addr, inIndex);
-    }
-
-    public static long native_GetWorldSpaceContactPointOn2(long this_addr, int inIndex) {
-        return internal_native_GetWorldSpaceContactPointOn2(this_addr, inIndex);
-    }
-
-    public static long native_get_mBaseOffset(long this_addr) {
-        return internal_native_get_mBaseOffset(this_addr);
-    }
-
-    public static void native_set_mBaseOffset(long this_addr, long mBaseOffset_addr) {
-        internal_native_set_mBaseOffset(this_addr, mBaseOffset_addr);
-    }
-
-    public static long native_get_mWorldSpaceNormal(long this_addr) {
-        return internal_native_get_mWorldSpaceNormal(this_addr);
-    }
-
-    public static void native_set_mWorldSpaceNormal(long this_addr, long mWorldSpaceNormal_addr) {
-        internal_native_set_mWorldSpaceNormal(this_addr, mWorldSpaceNormal_addr);
-    }
-
-    public static float native_get_mPenetrationDepth(long this_addr) {
-        return internal_native_get_mPenetrationDepth(this_addr);
-    }
-
-    public static void native_set_mPenetrationDepth(long this_addr, float mPenetrationDepth) {
-        internal_native_set_mPenetrationDepth(this_addr, mPenetrationDepth);
-    }
-
-    public static long native_get_mSubShapeID1(long this_addr) {
-        return internal_native_get_mSubShapeID1(this_addr);
-    }
-
-    public static void native_set_mSubShapeID1(long this_addr, long mSubShapeID1_addr) {
-        internal_native_set_mSubShapeID1(this_addr, mSubShapeID1_addr);
-    }
-
-    public static long native_get_mSubShapeID2(long this_addr) {
-        return internal_native_get_mSubShapeID2(this_addr);
-    }
-
-    public static void native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr) {
-        internal_native_set_mSubShapeID2(this_addr, mSubShapeID2_addr);
-    }
-
-    public static long native_get_mRelativeContactPointsOn1(long this_addr) {
-        return internal_native_get_mRelativeContactPointsOn1(this_addr);
-    }
-
-    public static void native_set_mRelativeContactPointsOn1(long this_addr, long mRelativeContactPointsOn1_addr) {
-        internal_native_set_mRelativeContactPointsOn1(this_addr, mRelativeContactPointsOn1_addr);
-    }
-
-    public static long native_get_mRelativeContactPointsOn2(long this_addr) {
-        return internal_native_get_mRelativeContactPointsOn2(this_addr);
-    }
-
-    public static void native_set_mRelativeContactPointsOn2(long this_addr, long mRelativeContactPointsOn2_addr) {
-        internal_native_set_mRelativeContactPointsOn2(this_addr, mRelativeContactPointsOn2_addr);
-    }
+    public static native void internal_native_set_mRelativeContactPointsOn2(long this_addr, long mRelativeContactPointsOn2_addr);
 }

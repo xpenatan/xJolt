@@ -45,7 +45,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPathJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPathJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public PathConstraintPathEm() {
         super((byte) 1, (char) 1);
@@ -119,10 +119,10 @@ var jsObj = new jolt.PathConstraintPathJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.PathConstraintPathJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "GetPathMaxFraction", "GetClosestPoint", "GetPointOnPath" }, script = "var PathConstraintPathJS = jolt.wrapPointer(this_addr, jolt.PathConstraintPathJS); PathConstraintPathJS.GetPathMaxFraction = GetPathMaxFraction; PathConstraintPathJS.GetClosestPoint = GetClosestPoint; PathConstraintPathJS.GetPointOnPath = GetPointOnPath;")
-    private static native void internal_native_setupCallback(int this_addr, GetPathMaxFraction GetPathMaxFraction, GetClosestPoint GetClosestPoint, GetPointOnPath GetPointOnPath);
+    public static native void internal_native_setupCallback(int this_addr, GetPathMaxFraction GetPathMaxFraction, GetClosestPoint GetClosestPoint, GetPointOnPath GetPointOnPath);
 
     @org.teavm.jso.JSFunctor()
     public interface GetPathMaxFraction extends org.teavm.jso.JSObject {
@@ -140,13 +140,5 @@ return jolt.getPointer(jsObj);
     public interface GetPointOnPath extends org.teavm.jso.JSObject {
 
         void GetPointOnPath(float inFraction, int outPathPosition, int outPathTangent, int outPathNormal, int outPathBinormal);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

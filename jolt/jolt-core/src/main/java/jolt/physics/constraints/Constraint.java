@@ -32,7 +32,7 @@ public class Constraint extends IDLBase {
 Constraint* nativeObject = (Constraint*)this_addr;
 return nativeObject->GetRefCount();
 */
-    private static native int internal_native_GetRefCount(long this_addr);
+    public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
         internal_native_AddRef((long) getNativeData().getCPointer());
@@ -42,7 +42,7 @@ return nativeObject->GetRefCount();
 Constraint* nativeObject = (Constraint*)this_addr;
 nativeObject->AddRef();
 */
-    private static native void internal_native_AddRef(long this_addr);
+    public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
         internal_native_Release((long) getNativeData().getCPointer());
@@ -52,7 +52,7 @@ nativeObject->AddRef();
 Constraint* nativeObject = (Constraint*)this_addr;
 nativeObject->Release();
 */
-    private static native void internal_native_Release(long this_addr);
+    public static native void internal_native_Release(long this_addr);
 
     public EConstraintType GetType() {
         int value = internal_native_GetType((long) getNativeData().getCPointer());
@@ -63,7 +63,7 @@ nativeObject->Release();
 Constraint* nativeObject = (Constraint*)this_addr;
 return (int)nativeObject->GetType();
 */
-    private static native int internal_native_GetType(long this_addr);
+    public static native int internal_native_GetType(long this_addr);
 
     public EConstraintSubType GetSubType() {
         int value = internal_native_GetSubType((long) getNativeData().getCPointer());
@@ -74,7 +74,7 @@ return (int)nativeObject->GetType();
 Constraint* nativeObject = (Constraint*)this_addr;
 return (int)nativeObject->GetSubType();
 */
-    private static native int internal_native_GetSubType(long this_addr);
+    public static native int internal_native_GetSubType(long this_addr);
 
     public int GetConstraintPriority() {
         return internal_native_GetConstraintPriority((long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ return (int)nativeObject->GetSubType();
 Constraint* nativeObject = (Constraint*)this_addr;
 return nativeObject->GetConstraintPriority();
 */
-    private static native int internal_native_GetConstraintPriority(long this_addr);
+    public static native int internal_native_GetConstraintPriority(long this_addr);
 
     public void SetConstraintPriority(int inPriority) {
         internal_native_SetConstraintPriority((long) getNativeData().getCPointer(), inPriority);
@@ -94,7 +94,7 @@ return nativeObject->GetConstraintPriority();
 Constraint* nativeObject = (Constraint*)this_addr;
 nativeObject->SetConstraintPriority(inPriority);
 */
-    private static native void internal_native_SetConstraintPriority(long this_addr, int inPriority);
+    public static native void internal_native_SetConstraintPriority(long this_addr, int inPriority);
 
     public void SetNumVelocityStepsOverride(int inN) {
         internal_native_SetNumVelocityStepsOverride((long) getNativeData().getCPointer(), inN);
@@ -104,7 +104,7 @@ nativeObject->SetConstraintPriority(inPriority);
 Constraint* nativeObject = (Constraint*)this_addr;
 nativeObject->SetNumVelocityStepsOverride((int)inN);
 */
-    private static native void internal_native_SetNumVelocityStepsOverride(long this_addr, int inN);
+    public static native void internal_native_SetNumVelocityStepsOverride(long this_addr, int inN);
 
     public int GetNumVelocityStepsOverride() {
         return internal_native_GetNumVelocityStepsOverride((long) getNativeData().getCPointer());
@@ -114,7 +114,7 @@ nativeObject->SetNumVelocityStepsOverride((int)inN);
 Constraint* nativeObject = (Constraint*)this_addr;
 return nativeObject->GetNumVelocityStepsOverride();
 */
-    private static native int internal_native_GetNumVelocityStepsOverride(long this_addr);
+    public static native int internal_native_GetNumVelocityStepsOverride(long this_addr);
 
     public void SetNumPositionStepsOverride(int inN) {
         internal_native_SetNumPositionStepsOverride((long) getNativeData().getCPointer(), inN);
@@ -124,7 +124,7 @@ return nativeObject->GetNumVelocityStepsOverride();
 Constraint* nativeObject = (Constraint*)this_addr;
 nativeObject->SetNumPositionStepsOverride((int)inN);
 */
-    private static native void internal_native_SetNumPositionStepsOverride(long this_addr, int inN);
+    public static native void internal_native_SetNumPositionStepsOverride(long this_addr, int inN);
 
     public int GetNumPositionStepsOverride() {
         return internal_native_GetNumPositionStepsOverride((long) getNativeData().getCPointer());
@@ -134,7 +134,7 @@ nativeObject->SetNumPositionStepsOverride((int)inN);
 Constraint* nativeObject = (Constraint*)this_addr;
 return nativeObject->GetNumPositionStepsOverride();
 */
-    private static native int internal_native_GetNumPositionStepsOverride(long this_addr);
+    public static native int internal_native_GetNumPositionStepsOverride(long this_addr);
 
     public void SetEnabled(boolean inEnabled) {
         internal_native_SetEnabled((long) getNativeData().getCPointer(), inEnabled);
@@ -144,7 +144,7 @@ return nativeObject->GetNumPositionStepsOverride();
 Constraint* nativeObject = (Constraint*)this_addr;
 nativeObject->SetEnabled(inEnabled);
 */
-    private static native void internal_native_SetEnabled(long this_addr, boolean inEnabled);
+    public static native void internal_native_SetEnabled(long this_addr, boolean inEnabled);
 
     public boolean GetEnabled() {
         return internal_native_GetEnabled((long) getNativeData().getCPointer());
@@ -154,7 +154,7 @@ nativeObject->SetEnabled(inEnabled);
 Constraint* nativeObject = (Constraint*)this_addr;
 return nativeObject->GetEnabled();
 */
-    private static native boolean internal_native_GetEnabled(long this_addr);
+    public static native boolean internal_native_GetEnabled(long this_addr);
 
     public boolean IsActive() {
         return internal_native_IsActive((long) getNativeData().getCPointer());
@@ -164,7 +164,7 @@ return nativeObject->GetEnabled();
 Constraint* nativeObject = (Constraint*)this_addr;
 return nativeObject->IsActive();
 */
-    private static native boolean internal_native_IsActive(long this_addr);
+    public static native boolean internal_native_IsActive(long this_addr);
 
     public long GetUserData() {
         return internal_native_GetUserData((long) getNativeData().getCPointer());
@@ -174,7 +174,7 @@ return nativeObject->IsActive();
 Constraint* nativeObject = (Constraint*)this_addr;
 return nativeObject->GetUserData();
 */
-    private static native long internal_native_GetUserData(long this_addr);
+    public static native long internal_native_GetUserData(long this_addr);
 
     public void SetUserData(long inUserData) {
         internal_native_SetUserData((long) getNativeData().getCPointer(), inUserData);
@@ -184,7 +184,7 @@ return nativeObject->GetUserData();
 Constraint* nativeObject = (Constraint*)this_addr;
 nativeObject->SetUserData(inUserData);
 */
-    private static native void internal_native_SetUserData(long this_addr, long inUserData);
+    public static native void internal_native_SetUserData(long this_addr, long inUserData);
 
     public void ResetWarmStart() {
         internal_native_ResetWarmStart((long) getNativeData().getCPointer());
@@ -194,73 +194,5 @@ nativeObject->SetUserData(inUserData);
 Constraint* nativeObject = (Constraint*)this_addr;
 nativeObject->ResetWarmStart();
 */
-    private static native void internal_native_ResetWarmStart(long this_addr);
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount(this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef(this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release(this_addr);
-    }
-
-    public static long native_GetType(long this_addr) {
-        return internal_native_GetType(this_addr);
-    }
-
-    public static long native_GetSubType(long this_addr) {
-        return internal_native_GetSubType(this_addr);
-    }
-
-    public static int native_GetConstraintPriority(long this_addr) {
-        return internal_native_GetConstraintPriority(this_addr);
-    }
-
-    public static void native_SetConstraintPriority(long this_addr, int inPriority) {
-        internal_native_SetConstraintPriority(this_addr, inPriority);
-    }
-
-    public static void native_SetNumVelocityStepsOverride(long this_addr, int inN) {
-        internal_native_SetNumVelocityStepsOverride(this_addr, inN);
-    }
-
-    public static int native_GetNumVelocityStepsOverride(long this_addr) {
-        return internal_native_GetNumVelocityStepsOverride(this_addr);
-    }
-
-    public static void native_SetNumPositionStepsOverride(long this_addr, int inN) {
-        internal_native_SetNumPositionStepsOverride(this_addr, inN);
-    }
-
-    public static int native_GetNumPositionStepsOverride(long this_addr) {
-        return internal_native_GetNumPositionStepsOverride(this_addr);
-    }
-
-    public static void native_SetEnabled(long this_addr, boolean inEnabled) {
-        internal_native_SetEnabled(this_addr, inEnabled);
-    }
-
-    public static boolean native_GetEnabled(long this_addr) {
-        return internal_native_GetEnabled(this_addr);
-    }
-
-    public static boolean native_IsActive(long this_addr) {
-        return internal_native_IsActive(this_addr);
-    }
-
-    public static long native_GetUserData(long this_addr) {
-        return internal_native_GetUserData(this_addr);
-    }
-
-    public static void native_SetUserData(long this_addr, long inUserData) {
-        internal_native_SetUserData(this_addr, inUserData);
-    }
-
-    public static void native_ResetWarmStart(long this_addr) {
-        internal_native_ResetWarmStart(this_addr);
-    }
+    public static native void internal_native_ResetWarmStart(long this_addr);
 }

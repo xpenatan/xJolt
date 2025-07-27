@@ -25,7 +25,7 @@ var jsObj = new jolt.SoftBodySharedSettingsFace(inVertex1, inVertex2, inVertex3,
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inVertex1", "inVertex2", "inVertex3", "inMaterialIndex"}, script = "var jsObj = new jolt.SoftBodySharedSettingsFace(inVertex1, inVertex2, inVertex3, inMaterialIndex);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_int_int_int(int inVertex1, int inVertex2, int inVertex3, int inMaterialIndex);
+    public static native int internal_native_create_int_int_int_int(int inVertex1, int inVertex2, int inVertex3, int inMaterialIndex);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mVertex(int index) {
         return internal_native_get_mVertex((int) (long) getNativeData().getCPointer(), index);
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);
 return jsObj.get_mVertex(index);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);return jsObj.get_mVertex(index);")
-    private static native int internal_native_get_mVertex(int this_addr, int index);
+    public static native int internal_native_get_mVertex(int this_addr, int index);
 
     public void set_mVertex(int index, int mVertex) {
         internal_native_set_mVertex((int) (long) getNativeData().getCPointer(), index, mVertex);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);
 jsObj.set_mVertex(index, mVertex);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mVertex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);jsObj.set_mVertex(index, mVertex);")
-    private static native void internal_native_set_mVertex(int this_addr, int index, int mVertex);
+    public static native void internal_native_set_mVertex(int this_addr, int index, int mVertex);
 
     public int get_mMaterialIndex() {
         return internal_native_get_mMaterialIndex((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);
 return jsObj.get_mMaterialIndex();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);return jsObj.get_mMaterialIndex();")
-    private static native int internal_native_get_mMaterialIndex(int this_addr);
+    public static native int internal_native_get_mMaterialIndex(int this_addr);
 
     public void set_mMaterialIndex(int mMaterialIndex) {
         internal_native_set_mMaterialIndex((int) (long) getNativeData().getCPointer(), mMaterialIndex);
@@ -95,29 +95,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);
 jsObj.set_mMaterialIndex(mMaterialIndex);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaterialIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsFace);jsObj.set_mMaterialIndex(mMaterialIndex);")
-    private static native void internal_native_set_mMaterialIndex(int this_addr, int mMaterialIndex);
-
-    public static long native_create_int_int_int_int(int inVertex1, int inVertex2, int inVertex3, int inMaterialIndex) {
-        return internal_native_create_int_int_int_int(inVertex1, inVertex2, inVertex3, inMaterialIndex);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_get_mVertex(long this_addr, int index) {
-        return internal_native_get_mVertex((int) this_addr, index);
-    }
-
-    public static void native_set_mVertex(long this_addr, int index, int mVertex) {
-        internal_native_set_mVertex((int) this_addr, index, mVertex);
-    }
-
-    public static int native_get_mMaterialIndex(long this_addr) {
-        return internal_native_get_mMaterialIndex((int) this_addr);
-    }
-
-    public static void native_set_mMaterialIndex(long this_addr, int mMaterialIndex) {
-        internal_native_set_mMaterialIndex((int) this_addr, mMaterialIndex);
-    }
+    public static native void internal_native_set_mMaterialIndex(int this_addr, int mMaterialIndex);
 }

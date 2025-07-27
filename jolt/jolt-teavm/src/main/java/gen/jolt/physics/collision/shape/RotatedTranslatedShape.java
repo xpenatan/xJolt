@@ -45,7 +45,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShape);var returnedJSObj = jsObj.GetRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetRotation(int this_addr);
+    public static native int internal_native_GetRotation(int this_addr);
 
     public Vec3 GetPosition() {
         int pointer = internal_native_GetPosition((int) (long) getNativeData().getCPointer());
@@ -64,13 +64,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShape);var returnedJSObj = jsObj.GetPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetPosition(int this_addr);
-
-    public static long native_GetRotation(long this_addr) {
-        return internal_native_GetRotation((int) this_addr);
-    }
-
-    public static long native_GetPosition(long this_addr) {
-        return internal_native_GetPosition((int) this_addr);
-    }
+    public static native int internal_native_GetPosition(int this_addr);
 }

@@ -37,7 +37,7 @@ public class VehicleTransmission extends VehicleTransmissionSettings {
 VehicleTransmission* nativeObject = (VehicleTransmission*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void Set(int inCurrentGear, float inClutchFriction) {
         internal_native_Set((long) getNativeData().getCPointer(), inCurrentGear, inClutchFriction);
@@ -47,7 +47,7 @@ delete nativeObject;
 VehicleTransmission* nativeObject = (VehicleTransmission*)this_addr;
 nativeObject->Set((int)inCurrentGear, (float)inClutchFriction);
 */
-    private static native void internal_native_Set(long this_addr, int inCurrentGear, float inClutchFriction);
+    public static native void internal_native_Set(long this_addr, int inCurrentGear, float inClutchFriction);
 
     public int GetCurrentGear() {
         return internal_native_GetCurrentGear((long) getNativeData().getCPointer());
@@ -57,7 +57,7 @@ nativeObject->Set((int)inCurrentGear, (float)inClutchFriction);
 VehicleTransmission* nativeObject = (VehicleTransmission*)this_addr;
 return nativeObject->GetCurrentGear();
 */
-    private static native int internal_native_GetCurrentGear(long this_addr);
+    public static native int internal_native_GetCurrentGear(long this_addr);
 
     public float GetClutchFriction() {
         return internal_native_GetClutchFriction((long) getNativeData().getCPointer());
@@ -67,7 +67,7 @@ return nativeObject->GetCurrentGear();
 VehicleTransmission* nativeObject = (VehicleTransmission*)this_addr;
 return nativeObject->GetClutchFriction();
 */
-    private static native float internal_native_GetClutchFriction(long this_addr);
+    public static native float internal_native_GetClutchFriction(long this_addr);
 
     public boolean IsSwitchingGear() {
         return internal_native_IsSwitchingGear((long) getNativeData().getCPointer());
@@ -77,7 +77,7 @@ return nativeObject->GetClutchFriction();
 VehicleTransmission* nativeObject = (VehicleTransmission*)this_addr;
 return nativeObject->IsSwitchingGear();
 */
-    private static native boolean internal_native_IsSwitchingGear(long this_addr);
+    public static native boolean internal_native_IsSwitchingGear(long this_addr);
 
     public float GetCurrentRatio() {
         return internal_native_GetCurrentRatio((long) getNativeData().getCPointer());
@@ -87,29 +87,5 @@ return nativeObject->IsSwitchingGear();
 VehicleTransmission* nativeObject = (VehicleTransmission*)this_addr;
 return nativeObject->GetCurrentRatio();
 */
-    private static native float internal_native_GetCurrentRatio(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_Set(long this_addr, int inCurrentGear, float inClutchFriction) {
-        internal_native_Set(this_addr, inCurrentGear, inClutchFriction);
-    }
-
-    public static int native_GetCurrentGear(long this_addr) {
-        return internal_native_GetCurrentGear(this_addr);
-    }
-
-    public static float native_GetClutchFriction(long this_addr) {
-        return internal_native_GetClutchFriction(this_addr);
-    }
-
-    public static boolean native_IsSwitchingGear(long this_addr) {
-        return internal_native_IsSwitchingGear(this_addr);
-    }
-
-    public static float native_GetCurrentRatio(long this_addr) {
-        return internal_native_GetCurrentRatio(this_addr);
-    }
+    public static native float internal_native_GetCurrentRatio(long this_addr);
 }

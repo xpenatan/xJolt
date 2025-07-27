@@ -25,7 +25,7 @@ var jsObj = new jolt.LinearCurve();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.LinearCurve();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void Clear() {
         internal_native_Clear((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);
 jsObj.Clear();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);jsObj.Clear();")
-    private static native void internal_native_Clear(int this_addr);
+    public static native void internal_native_Clear(int this_addr);
 
     public void Reserve(int inSize) {
         internal_native_Reserve((int) (long) getNativeData().getCPointer(), inSize);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);
 jsObj.Reserve(inSize);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSize"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);jsObj.Reserve(inSize);")
-    private static native void internal_native_Reserve(int this_addr, int inSize);
+    public static native void internal_native_Reserve(int this_addr, int inSize);
 
     public void AddPoint(float inX, float inY) {
         internal_native_AddPoint((int) (long) getNativeData().getCPointer(), inX, inY);
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);
 jsObj.AddPoint(inX, inY);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX", "inY"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);jsObj.AddPoint(inX, inY);")
-    private static native void internal_native_AddPoint(int this_addr, float inX, float inY);
+    public static native void internal_native_AddPoint(int this_addr, float inX, float inY);
 
     public void Sort() {
         internal_native_Sort((int) (long) getNativeData().getCPointer());
@@ -95,7 +95,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);
 jsObj.Sort();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);jsObj.Sort();")
-    private static native void internal_native_Sort(int this_addr);
+    public static native void internal_native_Sort(int this_addr);
 
     public float GetMinX() {
         return internal_native_GetMinX((int) (long) getNativeData().getCPointer());
@@ -107,7 +107,7 @@ var returnedJSObj = jsObj.GetMinX();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);var returnedJSObj = jsObj.GetMinX();return returnedJSObj;")
-    private static native float internal_native_GetMinX(int this_addr);
+    public static native float internal_native_GetMinX(int this_addr);
 
     public float GetMaxX() {
         return internal_native_GetMaxX((int) (long) getNativeData().getCPointer());
@@ -119,7 +119,7 @@ var returnedJSObj = jsObj.GetMaxX();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);var returnedJSObj = jsObj.GetMaxX();return returnedJSObj;")
-    private static native float internal_native_GetMaxX(int this_addr);
+    public static native float internal_native_GetMaxX(int this_addr);
 
     public float GetValue(float inX) {
         return internal_native_GetValue((int) (long) getNativeData().getCPointer(), inX);
@@ -131,41 +131,5 @@ var returnedJSObj = jsObj.GetValue(inX);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.LinearCurve);var returnedJSObj = jsObj.GetValue(inX);return returnedJSObj;")
-    private static native float internal_native_GetValue(int this_addr, float inX);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_Clear(long this_addr) {
-        internal_native_Clear((int) this_addr);
-    }
-
-    public static void native_Reserve(long this_addr, int inSize) {
-        internal_native_Reserve((int) this_addr, inSize);
-    }
-
-    public static void native_AddPoint(long this_addr, float inX, float inY) {
-        internal_native_AddPoint((int) this_addr, inX, inY);
-    }
-
-    public static void native_Sort(long this_addr) {
-        internal_native_Sort((int) this_addr);
-    }
-
-    public static float native_GetMinX(long this_addr) {
-        return internal_native_GetMinX((int) this_addr);
-    }
-
-    public static float native_GetMaxX(long this_addr) {
-        return internal_native_GetMaxX((int) this_addr);
-    }
-
-    public static float native_GetValue(long this_addr, float inX) {
-        return internal_native_GetValue((int) this_addr, inX);
-    }
+    public static native float internal_native_GetValue(int this_addr, float inX);
 }

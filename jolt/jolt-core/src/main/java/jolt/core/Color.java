@@ -58,7 +58,7 @@ public class Color extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new Color();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -83,7 +83,7 @@ return (jlong)new Color();
 Color* nativeObject = (Color*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Color MulColor(Color other) {
         long pointer = internal_native_MulColor((long) getNativeData().getCPointer(), (long) (other != null ? other.getNativeData().getCPointer() : 0));
@@ -100,7 +100,7 @@ Color* nativeObject = (Color*)this_addr;
 static Color copy_addr;
 copy_addr = (*nativeObject * *((Color* )other_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_MulColor(long this_addr, long other_addr);
+    public static native long internal_native_MulColor(long this_addr, long other_addr);
 
     public Vec4 ToVec4() {
         long pointer = internal_native_ToVec4((long) getNativeData().getCPointer());
@@ -117,7 +117,7 @@ Color* nativeObject = (Color*)this_addr;
 static Vec4 copy_addr;
 copy_addr = nativeObject->ToVec4();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_ToVec4(long this_addr);
+    public static native long internal_native_ToVec4(long this_addr);
 
     public int get_mU32() {
         return internal_native_get_mU32((long) getNativeData().getCPointer());
@@ -127,7 +127,7 @@ return (jlong)&copy_addr;*/
 Color* nativeObject = (Color*)this_addr;
 return nativeObject->mU32;
 */
-    private static native int internal_native_get_mU32(long this_addr);
+    public static native int internal_native_get_mU32(long this_addr);
 
     public void set_mU32(int mU32) {
         internal_native_set_mU32((long) getNativeData().getCPointer(), mU32);
@@ -137,7 +137,7 @@ return nativeObject->mU32;
 Color* nativeObject = (Color*)this_addr;
 nativeObject->mU32 = mU32;
 */
-    private static native void internal_native_set_mU32(long this_addr, int mU32);
+    public static native void internal_native_set_mU32(long this_addr, int mU32);
 
     public static Color get_sBlack() {
         long pointer = internal_native_get_sBlack();
@@ -152,7 +152,7 @@ nativeObject->mU32 = mU32;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sBlack;
 */
-    private static native long internal_native_get_sBlack();
+    public static native long internal_native_get_sBlack();
 
     public static Color get_sDarkRed() {
         long pointer = internal_native_get_sDarkRed();
@@ -167,7 +167,7 @@ return (jlong)&Color::sBlack;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sDarkRed;
 */
-    private static native long internal_native_get_sDarkRed();
+    public static native long internal_native_get_sDarkRed();
 
     public static Color get_sRed() {
         long pointer = internal_native_get_sRed();
@@ -182,7 +182,7 @@ return (jlong)&Color::sDarkRed;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sRed;
 */
-    private static native long internal_native_get_sRed();
+    public static native long internal_native_get_sRed();
 
     public static Color get_sDarkGreen() {
         long pointer = internal_native_get_sDarkGreen();
@@ -197,7 +197,7 @@ return (jlong)&Color::sRed;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sDarkGreen;
 */
-    private static native long internal_native_get_sDarkGreen();
+    public static native long internal_native_get_sDarkGreen();
 
     public static Color get_sGreen() {
         long pointer = internal_native_get_sGreen();
@@ -212,7 +212,7 @@ return (jlong)&Color::sDarkGreen;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sGreen;
 */
-    private static native long internal_native_get_sGreen();
+    public static native long internal_native_get_sGreen();
 
     public static Color get_sDarkBlue() {
         long pointer = internal_native_get_sDarkBlue();
@@ -227,7 +227,7 @@ return (jlong)&Color::sGreen;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sDarkBlue;
 */
-    private static native long internal_native_get_sDarkBlue();
+    public static native long internal_native_get_sDarkBlue();
 
     public static Color get_sBlue() {
         long pointer = internal_native_get_sBlue();
@@ -242,7 +242,7 @@ return (jlong)&Color::sDarkBlue;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sBlue;
 */
-    private static native long internal_native_get_sBlue();
+    public static native long internal_native_get_sBlue();
 
     public static Color get_sYellow() {
         long pointer = internal_native_get_sYellow();
@@ -257,7 +257,7 @@ return (jlong)&Color::sBlue;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sYellow;
 */
-    private static native long internal_native_get_sYellow();
+    public static native long internal_native_get_sYellow();
 
     public static Color get_sPurple() {
         long pointer = internal_native_get_sPurple();
@@ -272,7 +272,7 @@ return (jlong)&Color::sYellow;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sPurple;
 */
-    private static native long internal_native_get_sPurple();
+    public static native long internal_native_get_sPurple();
 
     public static Color get_sCyan() {
         long pointer = internal_native_get_sCyan();
@@ -287,7 +287,7 @@ return (jlong)&Color::sPurple;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sCyan;
 */
-    private static native long internal_native_get_sCyan();
+    public static native long internal_native_get_sCyan();
 
     public static Color get_sOrange() {
         long pointer = internal_native_get_sOrange();
@@ -302,7 +302,7 @@ return (jlong)&Color::sCyan;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sOrange;
 */
-    private static native long internal_native_get_sOrange();
+    public static native long internal_native_get_sOrange();
 
     public static Color get_sDarkOrange() {
         long pointer = internal_native_get_sDarkOrange();
@@ -317,7 +317,7 @@ return (jlong)&Color::sOrange;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sDarkOrange;
 */
-    private static native long internal_native_get_sDarkOrange();
+    public static native long internal_native_get_sDarkOrange();
 
     public static Color get_sGrey() {
         long pointer = internal_native_get_sGrey();
@@ -332,7 +332,7 @@ return (jlong)&Color::sDarkOrange;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sGrey;
 */
-    private static native long internal_native_get_sGrey();
+    public static native long internal_native_get_sGrey();
 
     public static Color get_sLightGrey() {
         long pointer = internal_native_get_sLightGrey();
@@ -347,7 +347,7 @@ return (jlong)&Color::sGrey;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sLightGrey;
 */
-    private static native long internal_native_get_sLightGrey();
+    public static native long internal_native_get_sLightGrey();
 
     public static Color get_sWhite() {
         long pointer = internal_native_get_sWhite();
@@ -362,89 +362,5 @@ return (jlong)&Color::sLightGrey;
     /*[-JNI;-NATIVE]
 return (jlong)&Color::sWhite;
 */
-    private static native long internal_native_get_sWhite();
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_MulColor(long this_addr, long other_addr) {
-        return internal_native_MulColor(this_addr, other_addr);
-    }
-
-    public static long native_ToVec4(long this_addr) {
-        return internal_native_ToVec4(this_addr);
-    }
-
-    public static int native_get_mU32(long this_addr) {
-        return internal_native_get_mU32(this_addr);
-    }
-
-    public static void native_set_mU32(long this_addr, int mU32) {
-        internal_native_set_mU32(this_addr, mU32);
-    }
-
-    public static long native_get_sBlack() {
-        return internal_native_get_sBlack();
-    }
-
-    public static long native_get_sDarkRed() {
-        return internal_native_get_sDarkRed();
-    }
-
-    public static long native_get_sRed() {
-        return internal_native_get_sRed();
-    }
-
-    public static long native_get_sDarkGreen() {
-        return internal_native_get_sDarkGreen();
-    }
-
-    public static long native_get_sGreen() {
-        return internal_native_get_sGreen();
-    }
-
-    public static long native_get_sDarkBlue() {
-        return internal_native_get_sDarkBlue();
-    }
-
-    public static long native_get_sBlue() {
-        return internal_native_get_sBlue();
-    }
-
-    public static long native_get_sYellow() {
-        return internal_native_get_sYellow();
-    }
-
-    public static long native_get_sPurple() {
-        return internal_native_get_sPurple();
-    }
-
-    public static long native_get_sCyan() {
-        return internal_native_get_sCyan();
-    }
-
-    public static long native_get_sOrange() {
-        return internal_native_get_sOrange();
-    }
-
-    public static long native_get_sDarkOrange() {
-        return internal_native_get_sDarkOrange();
-    }
-
-    public static long native_get_sGrey() {
-        return internal_native_get_sGrey();
-    }
-
-    public static long native_get_sLightGrey() {
-        return internal_native_get_sLightGrey();
-    }
-
-    public static long native_get_sWhite() {
-        return internal_native_get_sWhite();
-    }
+    public static native long internal_native_get_sWhite();
 }

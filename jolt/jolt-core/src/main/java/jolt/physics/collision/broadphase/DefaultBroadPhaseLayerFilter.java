@@ -24,7 +24,7 @@ public class DefaultBroadPhaseLayerFilter extends ObjectLayerFilter {
     /*[-JNI;-NATIVE]
 return (jlong)new DefaultBroadPhaseLayerFilter(*((ObjectVsBroadPhaseLayerFilter* )inFilter_addr), inObjectLayer);
 */
-    private static native long internal_native_create_ObjectVsBroadPhaseLayerFilter_int(long inFilter_addr, int inObjectLayer);
+    public static native long internal_native_create_ObjectVsBroadPhaseLayerFilter_int(long inFilter_addr, int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,13 +50,5 @@ return (jlong)new DefaultBroadPhaseLayerFilter(*((ObjectVsBroadPhaseLayerFilter*
 DefaultBroadPhaseLayerFilter* nativeObject = (DefaultBroadPhaseLayerFilter*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
-
-    public static long native_create_ObjectVsBroadPhaseLayerFilter_int(long inFilter_addr, int inObjectLayer) {
-        return internal_native_create_ObjectVsBroadPhaseLayerFilter_int(inFilter_addr, inObjectLayer);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
+    public static native void internal_native_deleteNative(long this_addr);
 }

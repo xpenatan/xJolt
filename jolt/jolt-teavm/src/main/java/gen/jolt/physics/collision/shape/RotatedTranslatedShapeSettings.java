@@ -31,7 +31,7 @@ var jsObj = new jolt.RotatedTranslatedShapeSettings(inPosition_addr, inRotation_
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPosition_addr", "inRotation_addr", "inShape_addr"}, script = "var jsObj = new jolt.RotatedTranslatedShapeSettings(inPosition_addr, inRotation_addr, inShape_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Vec3_Quat_ShapeSettings(int inPosition_addr, int inRotation_addr, int inShape_addr);
+    public static native int internal_native_create_Vec3_Quat_ShapeSettings(int inPosition_addr, int inRotation_addr, int inShape_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -58,7 +58,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);var returnedJSObj = jsObj.get_mPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPosition(int this_addr);
+    public static native int internal_native_get_mPosition(int this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition((int) (long) getNativeData().getCPointer(), (int) (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -69,7 +69,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);
 jsObj.set_mPosition(mPosition_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPosition_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);jsObj.set_mPosition(mPosition_addr);")
-    private static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
+    public static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
 
     public Quat get_mRotation() {
         int pointer = internal_native_get_mRotation((int) (long) getNativeData().getCPointer());
@@ -88,7 +88,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);var returnedJSObj = jsObj.get_mRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mRotation(int this_addr);
+    public static native int internal_native_get_mRotation(int this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation((int) (long) getNativeData().getCPointer(), (int) (long) (mRotation != null ? mRotation.getNativeData().getCPointer() : 0));
@@ -99,25 +99,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);
 jsObj.set_mRotation(mRotation_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRotation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);jsObj.set_mRotation(mRotation_addr);")
-    private static native void internal_native_set_mRotation(int this_addr, int mRotation_addr);
-
-    public static long native_create_Vec3_Quat_ShapeSettings(long inPosition_addr, long inRotation_addr, long inShape_addr) {
-        return internal_native_create_Vec3_Quat_ShapeSettings((int) inPosition_addr, (int) inRotation_addr, (int) inShape_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition((int) this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition((int) this_addr, (int) mPosition_addr);
-    }
-
-    public static long native_get_mRotation(long this_addr) {
-        return internal_native_get_mRotation((int) this_addr);
-    }
-
-    public static void native_set_mRotation(long this_addr, long mRotation_addr) {
-        internal_native_set_mRotation((int) this_addr, (int) mRotation_addr);
-    }
+    public static native void internal_native_set_mRotation(int this_addr, int mRotation_addr);
 }

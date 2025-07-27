@@ -29,7 +29,7 @@ var jsObj = new jolt.ConvexHullShapeSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ConvexHullShapeSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -42,7 +42,7 @@ var jsObj = new jolt.ConvexHullShapeSettings(inPoints_addr, inConvexRadius, inMa
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPoints_addr", "inConvexRadius", "inMaterial_addr"}, script = "var jsObj = new jolt.ConvexHullShapeSettings(inPoints_addr, inConvexRadius, inMaterial_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_ArrayVec3_float_PhysicsMaterial(int inPoints_addr, float inConvexRadius, int inMaterial_addr);
+    public static native int internal_native_create_ArrayVec3_float_PhysicsMaterial(int inPoints_addr, float inConvexRadius, int inMaterial_addr);
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius) {
         super((byte) 1, (char) 1);
@@ -55,7 +55,7 @@ var jsObj = new jolt.ConvexHullShapeSettings(inPoints_addr, inConvexRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPoints_addr", "inConvexRadius"}, script = "var jsObj = new jolt.ConvexHullShapeSettings(inPoints_addr, inConvexRadius);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_ArrayVec3_float(int inPoints_addr, float inConvexRadius);
+    public static native int internal_native_create_ArrayVec3_float(int inPoints_addr, float inConvexRadius);
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints) {
         super((byte) 1, (char) 1);
@@ -68,7 +68,7 @@ var jsObj = new jolt.ConvexHullShapeSettings(inPoints_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPoints_addr"}, script = "var jsObj = new jolt.ConvexHullShapeSettings(inPoints_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_ArrayVec3(int inPoints_addr);
+    public static native int internal_native_create_ArrayVec3(int inPoints_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -95,7 +95,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);var returnedJSObj = jsObj.get_mPoints();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPoints(int this_addr);
+    public static native int internal_native_get_mPoints(int this_addr);
 
     public void set_mPoints(ArrayVec3 mPoints) {
         internal_native_set_mPoints((int) (long) getNativeData().getCPointer(), (int) (long) (mPoints != null ? mPoints.getNativeData().getCPointer() : 0));
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);
 jsObj.set_mPoints(mPoints_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPoints_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);jsObj.set_mPoints(mPoints_addr);")
-    private static native void internal_native_set_mPoints(int this_addr, int mPoints_addr);
+    public static native void internal_native_set_mPoints(int this_addr, int mPoints_addr);
 
     public float get_mMaxConvexRadius() {
         return internal_native_get_mMaxConvexRadius((int) (long) getNativeData().getCPointer());
@@ -117,7 +117,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);
 return jsObj.get_mMaxConvexRadius();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);return jsObj.get_mMaxConvexRadius();")
-    private static native float internal_native_get_mMaxConvexRadius(int this_addr);
+    public static native float internal_native_get_mMaxConvexRadius(int this_addr);
 
     public void set_mMaxConvexRadius(float mMaxConvexRadius) {
         internal_native_set_mMaxConvexRadius((int) (long) getNativeData().getCPointer(), mMaxConvexRadius);
@@ -128,7 +128,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);
 jsObj.set_mMaxConvexRadius(mMaxConvexRadius);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxConvexRadius"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);jsObj.set_mMaxConvexRadius(mMaxConvexRadius);")
-    private static native void internal_native_set_mMaxConvexRadius(int this_addr, float mMaxConvexRadius);
+    public static native void internal_native_set_mMaxConvexRadius(int this_addr, float mMaxConvexRadius);
 
     public float get_mMaxErrorConvexRadius() {
         return internal_native_get_mMaxErrorConvexRadius((int) (long) getNativeData().getCPointer());
@@ -139,7 +139,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);
 return jsObj.get_mMaxErrorConvexRadius();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);return jsObj.get_mMaxErrorConvexRadius();")
-    private static native float internal_native_get_mMaxErrorConvexRadius(int this_addr);
+    public static native float internal_native_get_mMaxErrorConvexRadius(int this_addr);
 
     public void set_mMaxErrorConvexRadius(float mMaxErrorConvexRadius) {
         internal_native_set_mMaxErrorConvexRadius((int) (long) getNativeData().getCPointer(), mMaxErrorConvexRadius);
@@ -150,7 +150,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);
 jsObj.set_mMaxErrorConvexRadius(mMaxErrorConvexRadius);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxErrorConvexRadius"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);jsObj.set_mMaxErrorConvexRadius(mMaxErrorConvexRadius);")
-    private static native void internal_native_set_mMaxErrorConvexRadius(int this_addr, float mMaxErrorConvexRadius);
+    public static native void internal_native_set_mMaxErrorConvexRadius(int this_addr, float mMaxErrorConvexRadius);
 
     public float get_mHullTolerance() {
         return internal_native_get_mHullTolerance((int) (long) getNativeData().getCPointer());
@@ -161,7 +161,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);
 return jsObj.get_mHullTolerance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);return jsObj.get_mHullTolerance();")
-    private static native float internal_native_get_mHullTolerance(int this_addr);
+    public static native float internal_native_get_mHullTolerance(int this_addr);
 
     public void set_mHullTolerance(float mHullTolerance) {
         internal_native_set_mHullTolerance((int) (long) getNativeData().getCPointer(), mHullTolerance);
@@ -172,53 +172,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);
 jsObj.set_mHullTolerance(mHullTolerance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mHullTolerance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConvexHullShapeSettings);jsObj.set_mHullTolerance(mHullTolerance);")
-    private static native void internal_native_set_mHullTolerance(int this_addr, float mHullTolerance);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_ArrayVec3_float_PhysicsMaterial(long inPoints_addr, float inConvexRadius, long inMaterial_addr) {
-        return internal_native_create_ArrayVec3_float_PhysicsMaterial((int) inPoints_addr, inConvexRadius, (int) inMaterial_addr);
-    }
-
-    public static long native_create_ArrayVec3_float(long inPoints_addr, float inConvexRadius) {
-        return internal_native_create_ArrayVec3_float((int) inPoints_addr, inConvexRadius);
-    }
-
-    public static long native_create_ArrayVec3(long inPoints_addr) {
-        return internal_native_create_ArrayVec3((int) inPoints_addr);
-    }
-
-    public static long native_get_mPoints(long this_addr) {
-        return internal_native_get_mPoints((int) this_addr);
-    }
-
-    public static void native_set_mPoints(long this_addr, long mPoints_addr) {
-        internal_native_set_mPoints((int) this_addr, (int) mPoints_addr);
-    }
-
-    public static float native_get_mMaxConvexRadius(long this_addr) {
-        return internal_native_get_mMaxConvexRadius((int) this_addr);
-    }
-
-    public static void native_set_mMaxConvexRadius(long this_addr, float mMaxConvexRadius) {
-        internal_native_set_mMaxConvexRadius((int) this_addr, mMaxConvexRadius);
-    }
-
-    public static float native_get_mMaxErrorConvexRadius(long this_addr) {
-        return internal_native_get_mMaxErrorConvexRadius((int) this_addr);
-    }
-
-    public static void native_set_mMaxErrorConvexRadius(long this_addr, float mMaxErrorConvexRadius) {
-        internal_native_set_mMaxErrorConvexRadius((int) this_addr, mMaxErrorConvexRadius);
-    }
-
-    public static float native_get_mHullTolerance(long this_addr) {
-        return internal_native_get_mHullTolerance((int) this_addr);
-    }
-
-    public static void native_set_mHullTolerance(long this_addr, float mHullTolerance) {
-        internal_native_set_mHullTolerance((int) this_addr, mHullTolerance);
-    }
+    public static native void internal_native_set_mHullTolerance(int this_addr, float mHullTolerance);
 }

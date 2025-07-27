@@ -22,7 +22,7 @@ public class ObjectLayerPairFilterMask extends ObjectLayerPairFilter {
     /*[-JNI;-NATIVE]
 return (jlong)new ObjectLayerPairFilterMask();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new ObjectLayerPairFilterMask();
 ObjectLayerPairFilterMask* nativeObject = (ObjectLayerPairFilterMask*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public static int sGetObjectLayer(int inGroup, int inMask) {
         return internal_native_sGetObjectLayer(inGroup, inMask);
@@ -57,7 +57,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return ObjectLayerPairFilterMask::sGetObjectLayer(inGroup, inMask);
 */
-    private static native int internal_native_sGetObjectLayer(int inGroup, int inMask);
+    public static native int internal_native_sGetObjectLayer(int inGroup, int inMask);
 
     public static int sGetGroup(int inObjectLayer) {
         return internal_native_sGetGroup(inObjectLayer);
@@ -66,7 +66,7 @@ return ObjectLayerPairFilterMask::sGetObjectLayer(inGroup, inMask);
     /*[-JNI;-NATIVE]
 return ObjectLayerPairFilterMask::sGetGroup(inObjectLayer);
 */
-    private static native int internal_native_sGetGroup(int inObjectLayer);
+    public static native int internal_native_sGetGroup(int inObjectLayer);
 
     public static int sGetMask(int inObjectLayer) {
         return internal_native_sGetMask(inObjectLayer);
@@ -75,25 +75,5 @@ return ObjectLayerPairFilterMask::sGetGroup(inObjectLayer);
     /*[-JNI;-NATIVE]
 return ObjectLayerPairFilterMask::sGetMask(inObjectLayer);
 */
-    private static native int internal_native_sGetMask(int inObjectLayer);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_sGetObjectLayer(int inGroup, int inMask) {
-        return internal_native_sGetObjectLayer(inGroup, inMask);
-    }
-
-    public static int native_sGetGroup(int inObjectLayer) {
-        return internal_native_sGetGroup(inObjectLayer);
-    }
-
-    public static int native_sGetMask(int inObjectLayer) {
-        return internal_native_sGetMask(inObjectLayer);
-    }
+    public static native int internal_native_sGetMask(int inObjectLayer);
 }

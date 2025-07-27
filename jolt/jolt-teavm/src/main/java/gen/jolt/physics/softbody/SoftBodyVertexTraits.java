@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertexTraits);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyVertexTraits);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public static int get_mPreviousPositionOffset() {
         return internal_native_get_mPreviousPositionOffset();
@@ -49,7 +49,7 @@ jolt.destroy(jsObj);
 return jolt.SoftBodyVertexTraits.prototype.get_mPreviousPositionOffset()
 */
     @org.teavm.jso.JSBody(script = "return jolt.SoftBodyVertexTraits.prototype.get_mPreviousPositionOffset()")
-    private static native int internal_native_get_mPreviousPositionOffset();
+    public static native int internal_native_get_mPreviousPositionOffset();
 
     public static int get_mPositionOffset() {
         return internal_native_get_mPositionOffset();
@@ -59,7 +59,7 @@ return jolt.SoftBodyVertexTraits.prototype.get_mPreviousPositionOffset()
 return jolt.SoftBodyVertexTraits.prototype.get_mPositionOffset()
 */
     @org.teavm.jso.JSBody(script = "return jolt.SoftBodyVertexTraits.prototype.get_mPositionOffset()")
-    private static native int internal_native_get_mPositionOffset();
+    public static native int internal_native_get_mPositionOffset();
 
     public static int get_mVelocityOffset() {
         return internal_native_get_mVelocityOffset();
@@ -69,21 +69,5 @@ return jolt.SoftBodyVertexTraits.prototype.get_mPositionOffset()
 return jolt.SoftBodyVertexTraits.prototype.get_mVelocityOffset()
 */
     @org.teavm.jso.JSBody(script = "return jolt.SoftBodyVertexTraits.prototype.get_mVelocityOffset()")
-    private static native int internal_native_get_mVelocityOffset();
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_get_mPreviousPositionOffset() {
-        return internal_native_get_mPreviousPositionOffset();
-    }
-
-    public static int native_get_mPositionOffset() {
-        return internal_native_get_mPositionOffset();
-    }
-
-    public static int native_get_mVelocityOffset() {
-        return internal_native_get_mVelocityOffset();
-    }
+    public static native int internal_native_get_mVelocityOffset();
 }

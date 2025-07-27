@@ -24,7 +24,7 @@ var jsObj = new jolt.StateRecorderImpl();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.StateRecorderImpl();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorderImpl);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorderImpl);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void Clear() {
         internal_native_Clear((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorderImpl);
 jsObj.Clear();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorderImpl);jsObj.Clear();")
-    private static native void internal_native_Clear(int this_addr);
+    public static native void internal_native_Clear(int this_addr);
 
     public void Rewind() {
         internal_native_Rewind((int) (long) getNativeData().getCPointer());
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorderImpl);
 jsObj.Rewind();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorderImpl);jsObj.Rewind();")
-    private static native void internal_native_Rewind(int this_addr);
+    public static native void internal_native_Rewind(int this_addr);
 
     public boolean IsEqual(StateRecorderImpl inReference) {
         return internal_native_IsEqual((int) (long) getNativeData().getCPointer(), (int) (long) (inReference != null ? inReference.getNativeData().getCPointer() : 0));
@@ -85,25 +85,5 @@ var returnedJSObj = jsObj.IsEqual(inReference_addr);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inReference_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorderImpl);var returnedJSObj = jsObj.IsEqual(inReference_addr);return returnedJSObj;")
-    private static native boolean internal_native_IsEqual(int this_addr, int inReference_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_Clear(long this_addr) {
-        internal_native_Clear((int) this_addr);
-    }
-
-    public static void native_Rewind(long this_addr) {
-        internal_native_Rewind((int) this_addr);
-    }
-
-    public static boolean native_IsEqual(long this_addr, long inReference_addr) {
-        return internal_native_IsEqual((int) this_addr, (int) inReference_addr);
-    }
+    public static native boolean internal_native_IsEqual(int this_addr, int inReference_addr);
 }

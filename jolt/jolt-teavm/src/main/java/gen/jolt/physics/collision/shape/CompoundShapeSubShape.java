@@ -47,7 +47,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 GetPositionCOM() {
         int pointer = internal_native_GetPositionCOM((int) (long) getNativeData().getCPointer());
@@ -66,7 +66,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);var returnedJSObj = jsObj.GetPositionCOM();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetPositionCOM(int this_addr);
+    public static native int internal_native_GetPositionCOM(int this_addr);
 
     public Quat GetRotation() {
         int pointer = internal_native_GetRotation((int) (long) getNativeData().getCPointer());
@@ -85,7 +85,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);var returnedJSObj = jsObj.GetRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetRotation(int this_addr);
+    public static native int internal_native_GetRotation(int this_addr);
 
     public Shape get_mShape() {
         int pointer = internal_native_get_mShape((int) (long) getNativeData().getCPointer());
@@ -104,7 +104,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);var returnedJSObj = jsObj.get_mShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mShape(int this_addr);
+    public static native int internal_native_get_mShape(int this_addr);
 
     public void set_mShape(Shape mShape) {
         internal_native_set_mShape((int) (long) getNativeData().getCPointer(), (int) (long) (mShape != null ? mShape.getNativeData().getCPointer() : 0));
@@ -115,7 +115,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);
 jsObj.set_mShape(mShape_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mShape_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);jsObj.set_mShape(mShape_addr);")
-    private static native void internal_native_set_mShape(int this_addr, int mShape_addr);
+    public static native void internal_native_set_mShape(int this_addr, int mShape_addr);
 
     public int get_mUserData() {
         return internal_native_get_mUserData((int) (long) getNativeData().getCPointer());
@@ -126,7 +126,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);
 return jsObj.get_mUserData();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);return jsObj.get_mUserData();")
-    private static native int internal_native_get_mUserData(int this_addr);
+    public static native int internal_native_get_mUserData(int this_addr);
 
     public void set_mUserData(int mUserData) {
         internal_native_set_mUserData((int) (long) getNativeData().getCPointer(), mUserData);
@@ -137,33 +137,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);
 jsObj.set_mUserData(mUserData);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSubShape);jsObj.set_mUserData(mUserData);")
-    private static native void internal_native_set_mUserData(int this_addr, int mUserData);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_GetPositionCOM(long this_addr) {
-        return internal_native_GetPositionCOM((int) this_addr);
-    }
-
-    public static long native_GetRotation(long this_addr) {
-        return internal_native_GetRotation((int) this_addr);
-    }
-
-    public static long native_get_mShape(long this_addr) {
-        return internal_native_get_mShape((int) this_addr);
-    }
-
-    public static void native_set_mShape(long this_addr, long mShape_addr) {
-        internal_native_set_mShape((int) this_addr, (int) mShape_addr);
-    }
-
-    public static int native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData((int) this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, int mUserData) {
-        internal_native_set_mUserData((int) this_addr, mUserData);
-    }
+    public static native void internal_native_set_mUserData(int this_addr, int mUserData);
 }

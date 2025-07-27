@@ -32,7 +32,7 @@ var jsObj = new jolt.RackAndPinionConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.RackAndPinionConstraintSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -59,7 +59,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void SetRatio(int inNumTeethRack, float inRackLength, int inNumTeethPinion) {
         internal_native_SetRatio((int) (long) getNativeData().getCPointer(), inNumTeethRack, inRackLength, inNumTeethPinion);
@@ -70,7 +70,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);
 jsObj.SetRatio(inNumTeethRack, inRackLength, inNumTeethPinion);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inNumTeethRack", "inRackLength", "inNumTeethPinion"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);jsObj.SetRatio(inNumTeethRack, inRackLength, inNumTeethPinion);")
-    private static native void internal_native_SetRatio(int this_addr, int inNumTeethRack, float inRackLength, int inNumTeethPinion);
+    public static native void internal_native_SetRatio(int this_addr, int inNumTeethRack, float inRackLength, int inNumTeethPinion);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
@@ -82,7 +82,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);
 return jsObj.get_mSpace();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);return jsObj.get_mSpace();")
-    private static native int internal_native_get_mSpace(int this_addr);
+    public static native int internal_native_get_mSpace(int this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), (int) (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -93,7 +93,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);
 jsObj.set_mSpace(mSpace);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSpace"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);jsObj.set_mSpace(mSpace);")
-    private static native void internal_native_set_mSpace(int this_addr, int mSpace);
+    public static native void internal_native_set_mSpace(int this_addr, int mSpace);
 
     public Vec3 get_mHingeAxis() {
         int pointer = internal_native_get_mHingeAxis((int) (long) getNativeData().getCPointer());
@@ -112,7 +112,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);var returnedJSObj = jsObj.get_mHingeAxis();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mHingeAxis(int this_addr);
+    public static native int internal_native_get_mHingeAxis(int this_addr);
 
     public void set_mHingeAxis(Vec3 mHingeAxis) {
         internal_native_set_mHingeAxis((int) (long) getNativeData().getCPointer(), (int) (long) (mHingeAxis != null ? mHingeAxis.getNativeData().getCPointer() : 0));
@@ -123,7 +123,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);
 jsObj.set_mHingeAxis(mHingeAxis_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mHingeAxis_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);jsObj.set_mHingeAxis(mHingeAxis_addr);")
-    private static native void internal_native_set_mHingeAxis(int this_addr, int mHingeAxis_addr);
+    public static native void internal_native_set_mHingeAxis(int this_addr, int mHingeAxis_addr);
 
     public Vec3 get_mSliderAxis() {
         int pointer = internal_native_get_mSliderAxis((int) (long) getNativeData().getCPointer());
@@ -142,7 +142,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);var returnedJSObj = jsObj.get_mSliderAxis();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSliderAxis(int this_addr);
+    public static native int internal_native_get_mSliderAxis(int this_addr);
 
     public void set_mSliderAxis(Vec3 mSliderAxis) {
         internal_native_set_mSliderAxis((int) (long) getNativeData().getCPointer(), (int) (long) (mSliderAxis != null ? mSliderAxis.getNativeData().getCPointer() : 0));
@@ -153,7 +153,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);
 jsObj.set_mSliderAxis(mSliderAxis_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSliderAxis_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);jsObj.set_mSliderAxis(mSliderAxis_addr);")
-    private static native void internal_native_set_mSliderAxis(int this_addr, int mSliderAxis_addr);
+    public static native void internal_native_set_mSliderAxis(int this_addr, int mSliderAxis_addr);
 
     public float get_mRatio() {
         return internal_native_get_mRatio((int) (long) getNativeData().getCPointer());
@@ -164,7 +164,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);
 return jsObj.get_mRatio();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);return jsObj.get_mRatio();")
-    private static native float internal_native_get_mRatio(int this_addr);
+    public static native float internal_native_get_mRatio(int this_addr);
 
     public void set_mRatio(float mRatio) {
         internal_native_set_mRatio((int) (long) getNativeData().getCPointer(), mRatio);
@@ -175,49 +175,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);
 jsObj.set_mRatio(mRatio);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRatio"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);jsObj.set_mRatio(mRatio);")
-    private static native void internal_native_set_mRatio(int this_addr, float mRatio);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_SetRatio(long this_addr, int inNumTeethRack, float inRackLength, int inNumTeethPinion) {
-        internal_native_SetRatio((int) this_addr, inNumTeethRack, inRackLength, inNumTeethPinion);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace((int) this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace((int) this_addr, (int) mSpace);
-    }
-
-    public static long native_get_mHingeAxis(long this_addr) {
-        return internal_native_get_mHingeAxis((int) this_addr);
-    }
-
-    public static void native_set_mHingeAxis(long this_addr, long mHingeAxis_addr) {
-        internal_native_set_mHingeAxis((int) this_addr, (int) mHingeAxis_addr);
-    }
-
-    public static long native_get_mSliderAxis(long this_addr) {
-        return internal_native_get_mSliderAxis((int) this_addr);
-    }
-
-    public static void native_set_mSliderAxis(long this_addr, long mSliderAxis_addr) {
-        internal_native_set_mSliderAxis((int) this_addr, (int) mSliderAxis_addr);
-    }
-
-    public static float native_get_mRatio(long this_addr) {
-        return internal_native_get_mRatio((int) this_addr);
-    }
-
-    public static void native_set_mRatio(long this_addr, float mRatio) {
-        internal_native_set_mRatio((int) this_addr, mRatio);
-    }
+    public static native void internal_native_set_mRatio(int this_addr, float mRatio);
 }

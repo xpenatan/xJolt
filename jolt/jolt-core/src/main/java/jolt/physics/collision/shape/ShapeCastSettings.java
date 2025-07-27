@@ -25,7 +25,7 @@ public class ShapeCastSettings extends CollideSettingsBase {
     /*[-JNI;-NATIVE]
 return (jlong)new ShapeCastSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ return (jlong)new ShapeCastSettings();
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public EBackFaceMode get_mBackFaceModeTriangles() {
         int value = internal_native_get_mBackFaceModeTriangles((long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ delete nativeObject;
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 return (jint)nativeObject->mBackFaceModeTriangles;
 */
-    private static native int internal_native_get_mBackFaceModeTriangles(long this_addr);
+    public static native int internal_native_get_mBackFaceModeTriangles(long this_addr);
 
     public void set_mBackFaceModeTriangles(EBackFaceMode mBackFaceModeTriangles) {
         internal_native_set_mBackFaceModeTriangles((long) getNativeData().getCPointer(), (long) (mBackFaceModeTriangles != null ? mBackFaceModeTriangles.getValue() : 0));
@@ -72,7 +72,7 @@ return (jint)nativeObject->mBackFaceModeTriangles;
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 nativeObject->mBackFaceModeTriangles = (::EBackFaceMode)mBackFaceModeTriangles;
 */
-    private static native void internal_native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles);
+    public static native void internal_native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles);
 
     public EBackFaceMode get_mBackFaceModeConvex() {
         int value = internal_native_get_mBackFaceModeConvex((long) getNativeData().getCPointer());
@@ -83,7 +83,7 @@ nativeObject->mBackFaceModeTriangles = (::EBackFaceMode)mBackFaceModeTriangles;
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 return (jint)nativeObject->mBackFaceModeConvex;
 */
-    private static native int internal_native_get_mBackFaceModeConvex(long this_addr);
+    public static native int internal_native_get_mBackFaceModeConvex(long this_addr);
 
     public void set_mBackFaceModeConvex(EBackFaceMode mBackFaceModeConvex) {
         internal_native_set_mBackFaceModeConvex((long) getNativeData().getCPointer(), (long) (mBackFaceModeConvex != null ? mBackFaceModeConvex.getValue() : 0));
@@ -93,7 +93,7 @@ return (jint)nativeObject->mBackFaceModeConvex;
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 nativeObject->mBackFaceModeConvex = (::EBackFaceMode)mBackFaceModeConvex;
 */
-    private static native void internal_native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex);
+    public static native void internal_native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex);
 
     public boolean get_mUseShrunkenShapeAndConvexRadius() {
         return internal_native_get_mUseShrunkenShapeAndConvexRadius((long) getNativeData().getCPointer());
@@ -103,7 +103,7 @@ nativeObject->mBackFaceModeConvex = (::EBackFaceMode)mBackFaceModeConvex;
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 return nativeObject->mUseShrunkenShapeAndConvexRadius;
 */
-    private static native boolean internal_native_get_mUseShrunkenShapeAndConvexRadius(long this_addr);
+    public static native boolean internal_native_get_mUseShrunkenShapeAndConvexRadius(long this_addr);
 
     public void set_mUseShrunkenShapeAndConvexRadius(boolean mUseShrunkenShapeAndConvexRadius) {
         internal_native_set_mUseShrunkenShapeAndConvexRadius((long) getNativeData().getCPointer(), mUseShrunkenShapeAndConvexRadius);
@@ -113,7 +113,7 @@ return nativeObject->mUseShrunkenShapeAndConvexRadius;
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 nativeObject->mUseShrunkenShapeAndConvexRadius = mUseShrunkenShapeAndConvexRadius;
 */
-    private static native void internal_native_set_mUseShrunkenShapeAndConvexRadius(long this_addr, boolean mUseShrunkenShapeAndConvexRadius);
+    public static native void internal_native_set_mUseShrunkenShapeAndConvexRadius(long this_addr, boolean mUseShrunkenShapeAndConvexRadius);
 
     public boolean get_mReturnDeepestPoint() {
         return internal_native_get_mReturnDeepestPoint((long) getNativeData().getCPointer());
@@ -123,7 +123,7 @@ nativeObject->mUseShrunkenShapeAndConvexRadius = mUseShrunkenShapeAndConvexRadiu
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 return nativeObject->mReturnDeepestPoint;
 */
-    private static native boolean internal_native_get_mReturnDeepestPoint(long this_addr);
+    public static native boolean internal_native_get_mReturnDeepestPoint(long this_addr);
 
     public void set_mReturnDeepestPoint(boolean mReturnDeepestPoint) {
         internal_native_set_mReturnDeepestPoint((long) getNativeData().getCPointer(), mReturnDeepestPoint);
@@ -133,45 +133,5 @@ return nativeObject->mReturnDeepestPoint;
 ShapeCastSettings* nativeObject = (ShapeCastSettings*)this_addr;
 nativeObject->mReturnDeepestPoint = mReturnDeepestPoint;
 */
-    private static native void internal_native_set_mReturnDeepestPoint(long this_addr, boolean mReturnDeepestPoint);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mBackFaceModeTriangles(long this_addr) {
-        return internal_native_get_mBackFaceModeTriangles(this_addr);
-    }
-
-    public static void native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles) {
-        internal_native_set_mBackFaceModeTriangles(this_addr, mBackFaceModeTriangles);
-    }
-
-    public static long native_get_mBackFaceModeConvex(long this_addr) {
-        return internal_native_get_mBackFaceModeConvex(this_addr);
-    }
-
-    public static void native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex) {
-        internal_native_set_mBackFaceModeConvex(this_addr, mBackFaceModeConvex);
-    }
-
-    public static boolean native_get_mUseShrunkenShapeAndConvexRadius(long this_addr) {
-        return internal_native_get_mUseShrunkenShapeAndConvexRadius(this_addr);
-    }
-
-    public static void native_set_mUseShrunkenShapeAndConvexRadius(long this_addr, boolean mUseShrunkenShapeAndConvexRadius) {
-        internal_native_set_mUseShrunkenShapeAndConvexRadius(this_addr, mUseShrunkenShapeAndConvexRadius);
-    }
-
-    public static boolean native_get_mReturnDeepestPoint(long this_addr) {
-        return internal_native_get_mReturnDeepestPoint(this_addr);
-    }
-
-    public static void native_set_mReturnDeepestPoint(long this_addr, boolean mReturnDeepestPoint) {
-        internal_native_set_mReturnDeepestPoint(this_addr, mReturnDeepestPoint);
-    }
+    public static native void internal_native_set_mReturnDeepestPoint(long this_addr, boolean mReturnDeepestPoint);
 }

@@ -49,7 +49,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TwoBodyConstraint);var returnedJSObj = jsObj.GetBody1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetBody1(int this_addr);
+    public static native int internal_native_GetBody1(int this_addr);
 
     public Body GetBody2() {
         int pointer = internal_native_GetBody2((int) (long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TwoBodyConstraint);var returnedJSObj = jsObj.GetBody2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetBody2(int this_addr);
+    public static native int internal_native_GetBody2(int this_addr);
 
     public Mat44 GetConstraintToBody1Matrix() {
         int pointer = internal_native_GetConstraintToBody1Matrix((int) (long) getNativeData().getCPointer());
@@ -87,7 +87,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TwoBodyConstraint);var returnedJSObj = jsObj.GetConstraintToBody1Matrix();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetConstraintToBody1Matrix(int this_addr);
+    public static native int internal_native_GetConstraintToBody1Matrix(int this_addr);
 
     public Mat44 GetConstraintToBody2Matrix() {
         int pointer = internal_native_GetConstraintToBody2Matrix((int) (long) getNativeData().getCPointer());
@@ -106,21 +106,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TwoBodyConstraint);var returnedJSObj = jsObj.GetConstraintToBody2Matrix();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetConstraintToBody2Matrix(int this_addr);
-
-    public static long native_GetBody1(long this_addr) {
-        return internal_native_GetBody1((int) this_addr);
-    }
-
-    public static long native_GetBody2(long this_addr) {
-        return internal_native_GetBody2((int) this_addr);
-    }
-
-    public static long native_GetConstraintToBody1Matrix(long this_addr) {
-        return internal_native_GetConstraintToBody1Matrix((int) this_addr);
-    }
-
-    public static long native_GetConstraintToBody2Matrix(long this_addr) {
-        return internal_native_GetConstraintToBody2Matrix((int) this_addr);
-    }
+    public static native int internal_native_GetConstraintToBody2Matrix(int this_addr);
 }

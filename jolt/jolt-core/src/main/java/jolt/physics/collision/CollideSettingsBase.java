@@ -43,7 +43,7 @@ public class CollideSettingsBase extends IDLBase {
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public EActiveEdgeMode get_mActiveEdgeMode() {
         int value = internal_native_get_mActiveEdgeMode((long) getNativeData().getCPointer());
@@ -54,7 +54,7 @@ delete nativeObject;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 return (jint)nativeObject->mActiveEdgeMode;
 */
-    private static native int internal_native_get_mActiveEdgeMode(long this_addr);
+    public static native int internal_native_get_mActiveEdgeMode(long this_addr);
 
     public void set_mActiveEdgeMode(EActiveEdgeMode mActiveEdgeMode) {
         internal_native_set_mActiveEdgeMode((long) getNativeData().getCPointer(), (long) (mActiveEdgeMode != null ? mActiveEdgeMode.getValue() : 0));
@@ -64,7 +64,7 @@ return (jint)nativeObject->mActiveEdgeMode;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 nativeObject->mActiveEdgeMode = (::EActiveEdgeMode)mActiveEdgeMode;
 */
-    private static native void internal_native_set_mActiveEdgeMode(long this_addr, long mActiveEdgeMode);
+    public static native void internal_native_set_mActiveEdgeMode(long this_addr, long mActiveEdgeMode);
 
     public ECollectFacesMode get_mCollectFacesMode() {
         int value = internal_native_get_mCollectFacesMode((long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ nativeObject->mActiveEdgeMode = (::EActiveEdgeMode)mActiveEdgeMode;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 return (jint)nativeObject->mCollectFacesMode;
 */
-    private static native int internal_native_get_mCollectFacesMode(long this_addr);
+    public static native int internal_native_get_mCollectFacesMode(long this_addr);
 
     public void set_mCollectFacesMode(ECollectFacesMode mCollectFacesMode) {
         internal_native_set_mCollectFacesMode((long) getNativeData().getCPointer(), (long) (mCollectFacesMode != null ? mCollectFacesMode.getValue() : 0));
@@ -85,7 +85,7 @@ return (jint)nativeObject->mCollectFacesMode;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 nativeObject->mCollectFacesMode = (::ECollectFacesMode)mCollectFacesMode;
 */
-    private static native void internal_native_set_mCollectFacesMode(long this_addr, long mCollectFacesMode);
+    public static native void internal_native_set_mCollectFacesMode(long this_addr, long mCollectFacesMode);
 
     public float get_mCollisionTolerance() {
         return internal_native_get_mCollisionTolerance((long) getNativeData().getCPointer());
@@ -95,7 +95,7 @@ nativeObject->mCollectFacesMode = (::ECollectFacesMode)mCollectFacesMode;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 return nativeObject->mCollisionTolerance;
 */
-    private static native float internal_native_get_mCollisionTolerance(long this_addr);
+    public static native float internal_native_get_mCollisionTolerance(long this_addr);
 
     public void set_mCollisionTolerance(float mCollisionTolerance) {
         internal_native_set_mCollisionTolerance((long) getNativeData().getCPointer(), mCollisionTolerance);
@@ -105,7 +105,7 @@ return nativeObject->mCollisionTolerance;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 nativeObject->mCollisionTolerance = mCollisionTolerance;
 */
-    private static native void internal_native_set_mCollisionTolerance(long this_addr, float mCollisionTolerance);
+    public static native void internal_native_set_mCollisionTolerance(long this_addr, float mCollisionTolerance);
 
     public float get_mPenetrationTolerance() {
         return internal_native_get_mPenetrationTolerance((long) getNativeData().getCPointer());
@@ -115,7 +115,7 @@ nativeObject->mCollisionTolerance = mCollisionTolerance;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 return nativeObject->mPenetrationTolerance;
 */
-    private static native float internal_native_get_mPenetrationTolerance(long this_addr);
+    public static native float internal_native_get_mPenetrationTolerance(long this_addr);
 
     public void set_mPenetrationTolerance(float mPenetrationTolerance) {
         internal_native_set_mPenetrationTolerance((long) getNativeData().getCPointer(), mPenetrationTolerance);
@@ -125,7 +125,7 @@ return nativeObject->mPenetrationTolerance;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 nativeObject->mPenetrationTolerance = mPenetrationTolerance;
 */
-    private static native void internal_native_set_mPenetrationTolerance(long this_addr, float mPenetrationTolerance);
+    public static native void internal_native_set_mPenetrationTolerance(long this_addr, float mPenetrationTolerance);
 
     public Vec3 get_mActiveEdgeMovementDirection() {
         long pointer = internal_native_get_mActiveEdgeMovementDirection((long) getNativeData().getCPointer());
@@ -141,7 +141,7 @@ nativeObject->mPenetrationTolerance = mPenetrationTolerance;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 return (jlong)&nativeObject->mActiveEdgeMovementDirection;
 */
-    private static native long internal_native_get_mActiveEdgeMovementDirection(long this_addr);
+    public static native long internal_native_get_mActiveEdgeMovementDirection(long this_addr);
 
     public void set_mActiveEdgeMovementDirection(Vec3 mActiveEdgeMovementDirection) {
         internal_native_set_mActiveEdgeMovementDirection((long) getNativeData().getCPointer(), (long) (mActiveEdgeMovementDirection != null ? mActiveEdgeMovementDirection.getNativeData().getCPointer() : 0));
@@ -151,49 +151,5 @@ return (jlong)&nativeObject->mActiveEdgeMovementDirection;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 nativeObject->mActiveEdgeMovementDirection = *((Vec3*)mActiveEdgeMovementDirection_addr);
 */
-    private static native void internal_native_set_mActiveEdgeMovementDirection(long this_addr, long mActiveEdgeMovementDirection_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mActiveEdgeMode(long this_addr) {
-        return internal_native_get_mActiveEdgeMode(this_addr);
-    }
-
-    public static void native_set_mActiveEdgeMode(long this_addr, long mActiveEdgeMode) {
-        internal_native_set_mActiveEdgeMode(this_addr, mActiveEdgeMode);
-    }
-
-    public static long native_get_mCollectFacesMode(long this_addr) {
-        return internal_native_get_mCollectFacesMode(this_addr);
-    }
-
-    public static void native_set_mCollectFacesMode(long this_addr, long mCollectFacesMode) {
-        internal_native_set_mCollectFacesMode(this_addr, mCollectFacesMode);
-    }
-
-    public static float native_get_mCollisionTolerance(long this_addr) {
-        return internal_native_get_mCollisionTolerance(this_addr);
-    }
-
-    public static void native_set_mCollisionTolerance(long this_addr, float mCollisionTolerance) {
-        internal_native_set_mCollisionTolerance(this_addr, mCollisionTolerance);
-    }
-
-    public static float native_get_mPenetrationTolerance(long this_addr) {
-        return internal_native_get_mPenetrationTolerance(this_addr);
-    }
-
-    public static void native_set_mPenetrationTolerance(long this_addr, float mPenetrationTolerance) {
-        internal_native_set_mPenetrationTolerance(this_addr, mPenetrationTolerance);
-    }
-
-    public static long native_get_mActiveEdgeMovementDirection(long this_addr) {
-        return internal_native_get_mActiveEdgeMovementDirection(this_addr);
-    }
-
-    public static void native_set_mActiveEdgeMovementDirection(long this_addr, long mActiveEdgeMovementDirection_addr) {
-        internal_native_set_mActiveEdgeMovementDirection(this_addr, mActiveEdgeMovementDirection_addr);
-    }
+    public static native void internal_native_set_mActiveEdgeMovementDirection(long this_addr, long mActiveEdgeMovementDirection_addr);
 }

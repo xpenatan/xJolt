@@ -42,7 +42,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mJointIndex() {
         return internal_native_get_mJointIndex((int) (long) getNativeData().getCPointer());
@@ -53,7 +53,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);
 return jsObj.get_mJointIndex();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);return jsObj.get_mJointIndex();")
-    private static native int internal_native_get_mJointIndex(int this_addr);
+    public static native int internal_native_get_mJointIndex(int this_addr);
 
     public void set_mJointIndex(int mJointIndex) {
         internal_native_set_mJointIndex((int) (long) getNativeData().getCPointer(), mJointIndex);
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);
 jsObj.set_mJointIndex(mJointIndex);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mJointIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);jsObj.set_mJointIndex(mJointIndex);")
-    private static native void internal_native_set_mJointIndex(int this_addr, int mJointIndex);
+    public static native void internal_native_set_mJointIndex(int this_addr, int mJointIndex);
 
     public Mat44 get_mInvBind() {
         int pointer = internal_native_get_mInvBind((int) (long) getNativeData().getCPointer());
@@ -83,7 +83,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);var returnedJSObj = jsObj.get_mInvBind();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mInvBind(int this_addr);
+    public static native int internal_native_get_mInvBind(int this_addr);
 
     public void set_mInvBind(Mat44 mInvBind) {
         internal_native_set_mInvBind((int) (long) getNativeData().getCPointer(), (int) (long) (mInvBind != null ? mInvBind.getNativeData().getCPointer() : 0));
@@ -94,25 +94,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);
 jsObj.set_mInvBind(mInvBind_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvBind_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);jsObj.set_mInvBind(mInvBind_addr);")
-    private static native void internal_native_set_mInvBind(int this_addr, int mInvBind_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_get_mJointIndex(long this_addr) {
-        return internal_native_get_mJointIndex((int) this_addr);
-    }
-
-    public static void native_set_mJointIndex(long this_addr, int mJointIndex) {
-        internal_native_set_mJointIndex((int) this_addr, mJointIndex);
-    }
-
-    public static long native_get_mInvBind(long this_addr) {
-        return internal_native_get_mInvBind((int) this_addr);
-    }
-
-    public static void native_set_mInvBind(long this_addr, long mInvBind_addr) {
-        internal_native_set_mInvBind((int) this_addr, (int) mInvBind_addr);
-    }
+    public static native void internal_native_set_mInvBind(int this_addr, int mInvBind_addr);
 }

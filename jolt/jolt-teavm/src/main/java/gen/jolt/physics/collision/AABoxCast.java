@@ -31,7 +31,7 @@ var jsObj = new jolt.AABoxCast();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.AABoxCast();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -57,7 +57,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public AABox get_mBox() {
         int pointer = internal_native_get_mBox((int) (long) getNativeData().getCPointer());
@@ -76,7 +76,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);var returnedJSObj = jsObj.get_mBox();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mBox(int this_addr);
+    public static native int internal_native_get_mBox(int this_addr);
 
     public void set_mBox(AABox mBox) {
         internal_native_set_mBox((int) (long) getNativeData().getCPointer(), (int) (long) (mBox != null ? mBox.getNativeData().getCPointer() : 0));
@@ -87,7 +87,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);
 jsObj.set_mBox(mBox_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBox_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);jsObj.set_mBox(mBox_addr);")
-    private static native void internal_native_set_mBox(int this_addr, int mBox_addr);
+    public static native void internal_native_set_mBox(int this_addr, int mBox_addr);
 
     public Vec3 get_mDirection() {
         int pointer = internal_native_get_mDirection((int) (long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);var returnedJSObj = jsObj.get_mDirection();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mDirection(int this_addr);
+    public static native int internal_native_get_mDirection(int this_addr);
 
     public void set_mDirection(Vec3 mDirection) {
         internal_native_set_mDirection((int) (long) getNativeData().getCPointer(), (int) (long) (mDirection != null ? mDirection.getNativeData().getCPointer() : 0));
@@ -117,29 +117,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);
 jsObj.set_mDirection(mDirection_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDirection_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);jsObj.set_mDirection(mDirection_addr);")
-    private static native void internal_native_set_mDirection(int this_addr, int mDirection_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mBox(long this_addr) {
-        return internal_native_get_mBox((int) this_addr);
-    }
-
-    public static void native_set_mBox(long this_addr, long mBox_addr) {
-        internal_native_set_mBox((int) this_addr, (int) mBox_addr);
-    }
-
-    public static long native_get_mDirection(long this_addr) {
-        return internal_native_get_mDirection((int) this_addr);
-    }
-
-    public static void native_set_mDirection(long this_addr, long mDirection_addr) {
-        internal_native_set_mDirection((int) this_addr, (int) mDirection_addr);
-    }
+    public static native void internal_native_set_mDirection(int this_addr, int mDirection_addr);
 }

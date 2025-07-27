@@ -50,7 +50,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Float3 get_mPosition() {
         int pointer = internal_native_get_mPosition((int) (long) getNativeData().getCPointer());
@@ -69,7 +69,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);var returnedJSObj = jsObj.get_mPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPosition(int this_addr);
+    public static native int internal_native_get_mPosition(int this_addr);
 
     public Float3 get_mNormal() {
         int pointer = internal_native_get_mNormal((int) (long) getNativeData().getCPointer());
@@ -88,7 +88,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);var returnedJSObj = jsObj.get_mNormal();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mNormal(int this_addr);
+    public static native int internal_native_get_mNormal(int this_addr);
 
     public Float2 get_mUV() {
         int pointer = internal_native_get_mUV((int) (long) getNativeData().getCPointer());
@@ -107,7 +107,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);var returnedJSObj = jsObj.get_mUV();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mUV(int this_addr);
+    public static native int internal_native_get_mUV(int this_addr);
 
     public Color get_mColor() {
         int pointer = internal_native_get_mColor((int) (long) getNativeData().getCPointer());
@@ -126,25 +126,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);var returnedJSObj = jsObj.get_mColor();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mColor(int this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition((int) this_addr);
-    }
-
-    public static long native_get_mNormal(long this_addr) {
-        return internal_native_get_mNormal((int) this_addr);
-    }
-
-    public static long native_get_mUV(long this_addr) {
-        return internal_native_get_mUV((int) this_addr);
-    }
-
-    public static long native_get_mColor(long this_addr) {
-        return internal_native_get_mColor((int) this_addr);
-    }
+    public static native int internal_native_get_mColor(int this_addr);
 }

@@ -23,7 +23,7 @@ public class VehicleDifferentialSettings extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleDifferentialSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new VehicleDifferentialSettings();
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mLeftWheel() {
         return internal_native_get_mLeftWheel((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 return nativeObject->mLeftWheel;
 */
-    private static native int internal_native_get_mLeftWheel(long this_addr);
+    public static native int internal_native_get_mLeftWheel(long this_addr);
 
     public void set_mLeftWheel(int mLeftWheel) {
         internal_native_set_mLeftWheel((long) getNativeData().getCPointer(), mLeftWheel);
@@ -68,7 +68,7 @@ return nativeObject->mLeftWheel;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 nativeObject->mLeftWheel = mLeftWheel;
 */
-    private static native void internal_native_set_mLeftWheel(long this_addr, int mLeftWheel);
+    public static native void internal_native_set_mLeftWheel(long this_addr, int mLeftWheel);
 
     public int get_mRightWheel() {
         return internal_native_get_mRightWheel((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ nativeObject->mLeftWheel = mLeftWheel;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 return nativeObject->mRightWheel;
 */
-    private static native int internal_native_get_mRightWheel(long this_addr);
+    public static native int internal_native_get_mRightWheel(long this_addr);
 
     public void set_mRightWheel(int mRightWheel) {
         internal_native_set_mRightWheel((long) getNativeData().getCPointer(), mRightWheel);
@@ -88,7 +88,7 @@ return nativeObject->mRightWheel;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 nativeObject->mRightWheel = mRightWheel;
 */
-    private static native void internal_native_set_mRightWheel(long this_addr, int mRightWheel);
+    public static native void internal_native_set_mRightWheel(long this_addr, int mRightWheel);
 
     public float get_mDifferentialRatio() {
         return internal_native_get_mDifferentialRatio((long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ nativeObject->mRightWheel = mRightWheel;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 return nativeObject->mDifferentialRatio;
 */
-    private static native float internal_native_get_mDifferentialRatio(long this_addr);
+    public static native float internal_native_get_mDifferentialRatio(long this_addr);
 
     public void set_mDifferentialRatio(float mDifferentialRatio) {
         internal_native_set_mDifferentialRatio((long) getNativeData().getCPointer(), mDifferentialRatio);
@@ -108,7 +108,7 @@ return nativeObject->mDifferentialRatio;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 nativeObject->mDifferentialRatio = mDifferentialRatio;
 */
-    private static native void internal_native_set_mDifferentialRatio(long this_addr, float mDifferentialRatio);
+    public static native void internal_native_set_mDifferentialRatio(long this_addr, float mDifferentialRatio);
 
     public float get_mLeftRightSplit() {
         return internal_native_get_mLeftRightSplit((long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ nativeObject->mDifferentialRatio = mDifferentialRatio;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 return nativeObject->mLeftRightSplit;
 */
-    private static native float internal_native_get_mLeftRightSplit(long this_addr);
+    public static native float internal_native_get_mLeftRightSplit(long this_addr);
 
     public void set_mLeftRightSplit(float mLeftRightSplit) {
         internal_native_set_mLeftRightSplit((long) getNativeData().getCPointer(), mLeftRightSplit);
@@ -128,7 +128,7 @@ return nativeObject->mLeftRightSplit;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 nativeObject->mLeftRightSplit = mLeftRightSplit;
 */
-    private static native void internal_native_set_mLeftRightSplit(long this_addr, float mLeftRightSplit);
+    public static native void internal_native_set_mLeftRightSplit(long this_addr, float mLeftRightSplit);
 
     public float get_mLimitedSlipRatio() {
         return internal_native_get_mLimitedSlipRatio((long) getNativeData().getCPointer());
@@ -138,7 +138,7 @@ nativeObject->mLeftRightSplit = mLeftRightSplit;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 return nativeObject->mLimitedSlipRatio;
 */
-    private static native float internal_native_get_mLimitedSlipRatio(long this_addr);
+    public static native float internal_native_get_mLimitedSlipRatio(long this_addr);
 
     public void set_mLimitedSlipRatio(float mLimitedSlipRatio) {
         internal_native_set_mLimitedSlipRatio((long) getNativeData().getCPointer(), mLimitedSlipRatio);
@@ -148,7 +148,7 @@ return nativeObject->mLimitedSlipRatio;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 nativeObject->mLimitedSlipRatio = mLimitedSlipRatio;
 */
-    private static native void internal_native_set_mLimitedSlipRatio(long this_addr, float mLimitedSlipRatio);
+    public static native void internal_native_set_mLimitedSlipRatio(long this_addr, float mLimitedSlipRatio);
 
     public float get_mEngineTorqueRatio() {
         return internal_native_get_mEngineTorqueRatio((long) getNativeData().getCPointer());
@@ -158,7 +158,7 @@ nativeObject->mLimitedSlipRatio = mLimitedSlipRatio;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 return nativeObject->mEngineTorqueRatio;
 */
-    private static native float internal_native_get_mEngineTorqueRatio(long this_addr);
+    public static native float internal_native_get_mEngineTorqueRatio(long this_addr);
 
     public void set_mEngineTorqueRatio(float mEngineTorqueRatio) {
         internal_native_set_mEngineTorqueRatio((long) getNativeData().getCPointer(), mEngineTorqueRatio);
@@ -168,61 +168,5 @@ return nativeObject->mEngineTorqueRatio;
 VehicleDifferentialSettings* nativeObject = (VehicleDifferentialSettings*)this_addr;
 nativeObject->mEngineTorqueRatio = mEngineTorqueRatio;
 */
-    private static native void internal_native_set_mEngineTorqueRatio(long this_addr, float mEngineTorqueRatio);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_get_mLeftWheel(long this_addr) {
-        return internal_native_get_mLeftWheel(this_addr);
-    }
-
-    public static void native_set_mLeftWheel(long this_addr, int mLeftWheel) {
-        internal_native_set_mLeftWheel(this_addr, mLeftWheel);
-    }
-
-    public static int native_get_mRightWheel(long this_addr) {
-        return internal_native_get_mRightWheel(this_addr);
-    }
-
-    public static void native_set_mRightWheel(long this_addr, int mRightWheel) {
-        internal_native_set_mRightWheel(this_addr, mRightWheel);
-    }
-
-    public static float native_get_mDifferentialRatio(long this_addr) {
-        return internal_native_get_mDifferentialRatio(this_addr);
-    }
-
-    public static void native_set_mDifferentialRatio(long this_addr, float mDifferentialRatio) {
-        internal_native_set_mDifferentialRatio(this_addr, mDifferentialRatio);
-    }
-
-    public static float native_get_mLeftRightSplit(long this_addr) {
-        return internal_native_get_mLeftRightSplit(this_addr);
-    }
-
-    public static void native_set_mLeftRightSplit(long this_addr, float mLeftRightSplit) {
-        internal_native_set_mLeftRightSplit(this_addr, mLeftRightSplit);
-    }
-
-    public static float native_get_mLimitedSlipRatio(long this_addr) {
-        return internal_native_get_mLimitedSlipRatio(this_addr);
-    }
-
-    public static void native_set_mLimitedSlipRatio(long this_addr, float mLimitedSlipRatio) {
-        internal_native_set_mLimitedSlipRatio(this_addr, mLimitedSlipRatio);
-    }
-
-    public static float native_get_mEngineTorqueRatio(long this_addr) {
-        return internal_native_get_mEngineTorqueRatio(this_addr);
-    }
-
-    public static void native_set_mEngineTorqueRatio(long this_addr, float mEngineTorqueRatio) {
-        internal_native_set_mEngineTorqueRatio(this_addr, mEngineTorqueRatio);
-    }
+    public static native void internal_native_set_mEngineTorqueRatio(long this_addr, float mEngineTorqueRatio);
 }

@@ -44,7 +44,7 @@ PointConstraint* nativeObject = (PointConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLocalSpacePoint1();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetLocalSpacePoint1(long this_addr);
+    public static native long internal_native_GetLocalSpacePoint1(long this_addr);
 
     public Vec3 GetLocalSpacePoint2() {
         long pointer = internal_native_GetLocalSpacePoint2((long) getNativeData().getCPointer());
@@ -61,7 +61,7 @@ PointConstraint* nativeObject = (PointConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLocalSpacePoint2();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetLocalSpacePoint2(long this_addr);
+    public static native long internal_native_GetLocalSpacePoint2(long this_addr);
 
     public Vec3 GetTotalLambdaPosition() {
         long pointer = internal_native_GetTotalLambdaPosition((long) getNativeData().getCPointer());
@@ -78,17 +78,5 @@ PointConstraint* nativeObject = (PointConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetTotalLambdaPosition();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetTotalLambdaPosition(long this_addr);
-
-    public static long native_GetLocalSpacePoint1(long this_addr) {
-        return internal_native_GetLocalSpacePoint1(this_addr);
-    }
-
-    public static long native_GetLocalSpacePoint2(long this_addr) {
-        return internal_native_GetLocalSpacePoint2(this_addr);
-    }
-
-    public static long native_GetTotalLambdaPosition(long this_addr) {
-        return internal_native_GetTotalLambdaPosition(this_addr);
-    }
+    public static native long internal_native_GetTotalLambdaPosition(long this_addr);
 }

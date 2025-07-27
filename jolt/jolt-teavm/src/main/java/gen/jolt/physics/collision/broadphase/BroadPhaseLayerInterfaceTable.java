@@ -24,7 +24,7 @@ var jsObj = new jolt.BroadPhaseLayerInterfaceTable(inNumObjectLayers, inNumBroad
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inNumObjectLayers", "inNumBroadPhaseLayers"}, script = "var jsObj = new jolt.BroadPhaseLayerInterfaceTable(inNumObjectLayers, inNumBroadPhaseLayers);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_int(int inNumObjectLayers, int inNumBroadPhaseLayers);
+    public static native int internal_native_create_int_int(int inNumObjectLayers, int inNumBroadPhaseLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -43,13 +43,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterfaceTable);
 jsObj.MapObjectToBroadPhaseLayer(inObjectLayer, inBroadPhaseLayer_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inObjectLayer", "inBroadPhaseLayer_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterfaceTable);jsObj.MapObjectToBroadPhaseLayer(inObjectLayer, inBroadPhaseLayer_addr);")
-    private static native void internal_native_MapObjectToBroadPhaseLayer(int this_addr, int inObjectLayer, int inBroadPhaseLayer_addr);
-
-    public static long native_create_int_int(int inNumObjectLayers, int inNumBroadPhaseLayers) {
-        return internal_native_create_int_int(inNumObjectLayers, inNumBroadPhaseLayers);
-    }
-
-    public static void native_MapObjectToBroadPhaseLayer(long this_addr, int inObjectLayer, long inBroadPhaseLayer_addr) {
-        internal_native_MapObjectToBroadPhaseLayer((int) this_addr, inObjectLayer, (int) inBroadPhaseLayer_addr);
-    }
+    public static native void internal_native_MapObjectToBroadPhaseLayer(int this_addr, int inObjectLayer, int inBroadPhaseLayer_addr);
 }

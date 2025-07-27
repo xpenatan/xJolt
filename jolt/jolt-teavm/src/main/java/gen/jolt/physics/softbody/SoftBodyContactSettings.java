@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mInvMassScale1() {
         return internal_native_get_mInvMassScale1((int) (long) getNativeData().getCPointer());
@@ -50,7 +50,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);
 return jsObj.get_mInvMassScale1();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);return jsObj.get_mInvMassScale1();")
-    private static native float internal_native_get_mInvMassScale1(int this_addr);
+    public static native float internal_native_get_mInvMassScale1(int this_addr);
 
     public void set_mInvMassScale1(float mInvMassScale1) {
         internal_native_set_mInvMassScale1((int) (long) getNativeData().getCPointer(), mInvMassScale1);
@@ -61,7 +61,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);
 jsObj.set_mInvMassScale1(mInvMassScale1);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvMassScale1"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);jsObj.set_mInvMassScale1(mInvMassScale1);")
-    private static native void internal_native_set_mInvMassScale1(int this_addr, float mInvMassScale1);
+    public static native void internal_native_set_mInvMassScale1(int this_addr, float mInvMassScale1);
 
     public float get_mInvMassScale2() {
         return internal_native_get_mInvMassScale2((int) (long) getNativeData().getCPointer());
@@ -72,7 +72,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);
 return jsObj.get_mInvMassScale2();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);return jsObj.get_mInvMassScale2();")
-    private static native float internal_native_get_mInvMassScale2(int this_addr);
+    public static native float internal_native_get_mInvMassScale2(int this_addr);
 
     public void set_mInvMassScale2(float mInvMassScale2) {
         internal_native_set_mInvMassScale2((int) (long) getNativeData().getCPointer(), mInvMassScale2);
@@ -83,7 +83,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);
 jsObj.set_mInvMassScale2(mInvMassScale2);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvMassScale2"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);jsObj.set_mInvMassScale2(mInvMassScale2);")
-    private static native void internal_native_set_mInvMassScale2(int this_addr, float mInvMassScale2);
+    public static native void internal_native_set_mInvMassScale2(int this_addr, float mInvMassScale2);
 
     public float get_mInvInertiaScale2() {
         return internal_native_get_mInvInertiaScale2((int) (long) getNativeData().getCPointer());
@@ -94,7 +94,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);
 return jsObj.get_mInvInertiaScale2();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);return jsObj.get_mInvInertiaScale2();")
-    private static native float internal_native_get_mInvInertiaScale2(int this_addr);
+    public static native float internal_native_get_mInvInertiaScale2(int this_addr);
 
     public void set_mInvInertiaScale2(float mInvInertiaScale2) {
         internal_native_set_mInvInertiaScale2((int) (long) getNativeData().getCPointer(), mInvInertiaScale2);
@@ -105,7 +105,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);
 jsObj.set_mInvInertiaScale2(mInvInertiaScale2);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInvInertiaScale2"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);jsObj.set_mInvInertiaScale2(mInvInertiaScale2);")
-    private static native void internal_native_set_mInvInertiaScale2(int this_addr, float mInvInertiaScale2);
+    public static native void internal_native_set_mInvInertiaScale2(int this_addr, float mInvInertiaScale2);
 
     public boolean get_mIsSensor() {
         return internal_native_get_mIsSensor((int) (long) getNativeData().getCPointer());
@@ -116,7 +116,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);
 return jsObj.get_mIsSensor();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);return jsObj.get_mIsSensor();")
-    private static native boolean internal_native_get_mIsSensor(int this_addr);
+    public static native boolean internal_native_get_mIsSensor(int this_addr);
 
     public void set_mIsSensor(boolean mIsSensor) {
         internal_native_set_mIsSensor((int) (long) getNativeData().getCPointer(), mIsSensor);
@@ -127,41 +127,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);
 jsObj.set_mIsSensor(mIsSensor);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mIsSensor"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyContactSettings);jsObj.set_mIsSensor(mIsSensor);")
-    private static native void internal_native_set_mIsSensor(int this_addr, boolean mIsSensor);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_mInvMassScale1(long this_addr) {
-        return internal_native_get_mInvMassScale1((int) this_addr);
-    }
-
-    public static void native_set_mInvMassScale1(long this_addr, float mInvMassScale1) {
-        internal_native_set_mInvMassScale1((int) this_addr, mInvMassScale1);
-    }
-
-    public static float native_get_mInvMassScale2(long this_addr) {
-        return internal_native_get_mInvMassScale2((int) this_addr);
-    }
-
-    public static void native_set_mInvMassScale2(long this_addr, float mInvMassScale2) {
-        internal_native_set_mInvMassScale2((int) this_addr, mInvMassScale2);
-    }
-
-    public static float native_get_mInvInertiaScale2(long this_addr) {
-        return internal_native_get_mInvInertiaScale2((int) this_addr);
-    }
-
-    public static void native_set_mInvInertiaScale2(long this_addr, float mInvInertiaScale2) {
-        internal_native_set_mInvInertiaScale2((int) this_addr, mInvInertiaScale2);
-    }
-
-    public static boolean native_get_mIsSensor(long this_addr) {
-        return internal_native_get_mIsSensor((int) this_addr);
-    }
-
-    public static void native_set_mIsSensor(long this_addr, boolean mIsSensor) {
-        internal_native_set_mIsSensor((int) this_addr, mIsSensor);
-    }
+    public static native void internal_native_set_mIsSensor(int this_addr, boolean mIsSensor);
 }

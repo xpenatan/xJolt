@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeConstantValues);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeConstantValues);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public static float get_cNoCollisionValue() {
         return internal_native_get_cNoCollisionValue();
@@ -49,13 +49,5 @@ jolt.destroy(jsObj);
 return jolt.HeightFieldShapeConstantValues.prototype.get_cNoCollisionValue()
 */
     @org.teavm.jso.JSBody(script = "return jolt.HeightFieldShapeConstantValues.prototype.get_cNoCollisionValue()")
-    private static native float internal_native_get_cNoCollisionValue();
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_cNoCollisionValue() {
-        return internal_native_get_cNoCollisionValue();
-    }
+    public static native float internal_native_get_cNoCollisionValue();
 }

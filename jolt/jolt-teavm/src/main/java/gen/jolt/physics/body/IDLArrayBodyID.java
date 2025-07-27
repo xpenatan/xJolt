@@ -27,7 +27,7 @@ var jsObj = new jolt.IDLArrayBodyID(size);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"size"}, script = "var jsObj = new jolt.IDLArrayBodyID(size);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int(int size);
+    public static native int internal_native_create_int(int size);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void resize(int size) {
         internal_native_resize((int) (long) getNativeData().getCPointer(), size);
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);
 jsObj.resize(size);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "size"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);jsObj.resize(size);")
-    private static native void internal_native_resize(int this_addr, int size);
+    public static native void internal_native_resize(int this_addr, int size);
 
     public void clear() {
         internal_native_clear((int) (long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);
 jsObj.clear();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);jsObj.clear();")
-    private static native void internal_native_clear(int this_addr);
+    public static native void internal_native_clear(int this_addr);
 
     public BodyID getValue(int index) {
         int pointer = internal_native_getValue((int) (long) getNativeData().getCPointer(), index);
@@ -94,7 +94,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);var returnedJSObj = jsObj.getValue(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_getValue(int this_addr, int index);
+    public static native int internal_native_getValue(int this_addr, int index);
 
     public void setValue(int index, BodyID value) {
         internal_native_setValue((int) (long) getNativeData().getCPointer(), index, (int) (long) (value != null ? value.getNativeData().getCPointer() : 0));
@@ -105,7 +105,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);
 jsObj.setValue(index, value_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "value_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);jsObj.setValue(index, value_addr);")
-    private static native void internal_native_setValue(int this_addr, int index, int value_addr);
+    public static native void internal_native_setValue(int this_addr, int index, int value_addr);
 
     public int getSize() {
         return internal_native_getSize((int) (long) getNativeData().getCPointer());
@@ -117,7 +117,7 @@ var returnedJSObj = jsObj.getSize();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);var returnedJSObj = jsObj.getSize();return returnedJSObj;")
-    private static native int internal_native_getSize(int this_addr);
+    public static native int internal_native_getSize(int this_addr);
 
     public long getPointer() {
         return internal_native_getPointer((int) (long) getNativeData().getCPointer());
@@ -129,37 +129,5 @@ var returnedJSObj = jsObj.getPointer();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);var returnedJSObj = jsObj.getPointer();return returnedJSObj;")
-    private static native int internal_native_getPointer(int this_addr);
-
-    public static long native_create_int(int size) {
-        return internal_native_create_int(size);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_resize(long this_addr, int size) {
-        internal_native_resize((int) this_addr, size);
-    }
-
-    public static void native_clear(long this_addr) {
-        internal_native_clear((int) this_addr);
-    }
-
-    public static long native_getValue(long this_addr, int index) {
-        return internal_native_getValue((int) this_addr, index);
-    }
-
-    public static void native_setValue(long this_addr, int index, long value_addr) {
-        internal_native_setValue((int) this_addr, index, (int) value_addr);
-    }
-
-    public static int native_getSize(long this_addr) {
-        return internal_native_getSize((int) this_addr);
-    }
-
-    public static long native_getPointer(long this_addr) {
-        return internal_native_getPointer((int) this_addr);
-    }
+    public static native int internal_native_getPointer(int this_addr);
 }

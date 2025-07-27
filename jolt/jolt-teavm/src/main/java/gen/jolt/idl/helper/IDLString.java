@@ -64,7 +64,7 @@ public class IDLString extends IDLBase {
       return jolt.getPointer(jsObj);
     */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.IDLString();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     public void dispose() {
         super.dispose();
@@ -84,7 +84,7 @@ public class IDLString extends IDLBase {
       jolt.destroy(jsObj);
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLString);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void clear() {
         internal_native_clear((int) (long) getNativeData().getCPointer());
@@ -96,7 +96,7 @@ public class IDLString extends IDLBase {
       jsObj.clear();
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLString);jsObj.clear();")
-    private static native void internal_native_clear(int this_addr);
+    public static native void internal_native_clear(int this_addr);
 
     public void append(String text) {
         internal_native_append((int) (long) getNativeData().getCPointer(), text);
@@ -108,7 +108,7 @@ public class IDLString extends IDLBase {
       jsObj.append(text);
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "text"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLString);jsObj.append(text);")
-    private static native void internal_native_append(int this_addr, String text);
+    public static native void internal_native_append(int this_addr, String text);
 
     public void append(String text, int size) {
         internal_native_append((int) (long) getNativeData().getCPointer(), text, size);
@@ -120,7 +120,7 @@ public class IDLString extends IDLBase {
       jsObj.append(text, size);
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "text", "size"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLString);jsObj.append(text, size);")
-    private static native void internal_native_append(int this_addr, String text, int size);
+    public static native void internal_native_append(int this_addr, String text, int size);
 
     public int size() {
         return internal_native_size((int) (long) getNativeData().getCPointer());
@@ -133,7 +133,7 @@ public class IDLString extends IDLBase {
       return returnedJSObj;
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLString);var returnedJSObj = jsObj.size();return returnedJSObj;")
-    private static native int internal_native_size(int this_addr);
+    public static native int internal_native_size(int this_addr);
 
     public byte at(int index) {
         return internal_native_at((int) (long) getNativeData().getCPointer(), index);
@@ -146,33 +146,5 @@ public class IDLString extends IDLBase {
       return returnedJSObj;
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLString);var returnedJSObj = jsObj.at(index);return returnedJSObj;")
-    private static native byte internal_native_at(int this_addr, int index);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_clear(long this_addr) {
-        internal_native_clear((int) this_addr);
-    }
-
-    public static void native_append(long this_addr, String text) {
-        internal_native_append((int) this_addr, text);
-    }
-
-    public static void native_append(long this_addr, String text, int size) {
-        internal_native_append((int) this_addr, text, size);
-    }
-
-    public static int native_size(long this_addr) {
-        return internal_native_size((int) this_addr);
-    }
-
-    public static byte native_at(long this_addr, int index) {
-        return internal_native_at((int) this_addr, index);
-    }
+    public static native byte internal_native_at(int this_addr, int index);
 }

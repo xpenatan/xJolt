@@ -35,7 +35,7 @@ public class Plane extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new Plane(*((Vec3* )inNormal_addr), (float)inConstant);
 */
-    private static native long internal_native_create_Vec3_float(long inNormal_addr, float inConstant);
+    public static native long internal_native_create_Vec3_float(long inNormal_addr, float inConstant);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -60,7 +60,7 @@ return (jlong)new Plane(*((Vec3* )inNormal_addr), (float)inConstant);
 Plane* nativeObject = (Plane*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 GetNormal() {
         long pointer = internal_native_GetNormal((long) getNativeData().getCPointer());
@@ -77,7 +77,7 @@ Plane* nativeObject = (Plane*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetNormal();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetNormal(long this_addr);
+    public static native long internal_native_GetNormal(long this_addr);
 
     public void SetNormal(Vec3 inNormal) {
         internal_native_SetNormal((long) getNativeData().getCPointer(), (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
@@ -87,7 +87,7 @@ return (jlong)&copy_addr;*/
 Plane* nativeObject = (Plane*)this_addr;
 nativeObject->SetNormal(*((Vec3* )inNormal_addr));
 */
-    private static native void internal_native_SetNormal(long this_addr, long inNormal_addr);
+    public static native void internal_native_SetNormal(long this_addr, long inNormal_addr);
 
     public float GetConstant() {
         return internal_native_GetConstant((long) getNativeData().getCPointer());
@@ -97,7 +97,7 @@ nativeObject->SetNormal(*((Vec3* )inNormal_addr));
 Plane* nativeObject = (Plane*)this_addr;
 return nativeObject->GetConstant();
 */
-    private static native float internal_native_GetConstant(long this_addr);
+    public static native float internal_native_GetConstant(long this_addr);
 
     public void SetConstant(float inConstant) {
         internal_native_SetConstant((long) getNativeData().getCPointer(), inConstant);
@@ -107,7 +107,7 @@ return nativeObject->GetConstant();
 Plane* nativeObject = (Plane*)this_addr;
 nativeObject->SetConstant((float)inConstant);
 */
-    private static native void internal_native_SetConstant(long this_addr, float inConstant);
+    public static native void internal_native_SetConstant(long this_addr, float inConstant);
 
     public Plane sFromPointAndNormal(Vec3 inPoint, Vec3 inNormal) {
         long pointer = internal_native_sFromPointAndNormal((long) getNativeData().getCPointer(), (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
@@ -124,7 +124,7 @@ Plane* nativeObject = (Plane*)this_addr;
 static Plane copy_addr;
 copy_addr = nativeObject->sFromPointAndNormal(*((Vec3* )inPoint_addr), *((Vec3* )inNormal_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sFromPointAndNormal(long this_addr, long inPoint_addr, long inNormal_addr);
+    public static native long internal_native_sFromPointAndNormal(long this_addr, long inPoint_addr, long inNormal_addr);
 
     public Plane sFromPointsCCW(Vec3 inPoint1, Vec3 inPoint2, Vec3 inPoint3) {
         long pointer = internal_native_sFromPointsCCW((long) getNativeData().getCPointer(), (long) (inPoint1 != null ? inPoint1.getNativeData().getCPointer() : 0), (long) (inPoint2 != null ? inPoint2.getNativeData().getCPointer() : 0), (long) (inPoint3 != null ? inPoint3.getNativeData().getCPointer() : 0));
@@ -141,7 +141,7 @@ Plane* nativeObject = (Plane*)this_addr;
 static Plane copy_addr;
 copy_addr = nativeObject->sFromPointsCCW(*((Vec3* )inPoint1_addr), *((Vec3* )inPoint2_addr), *((Vec3* )inPoint3_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sFromPointsCCW(long this_addr, long inPoint1_addr, long inPoint2_addr, long inPoint3_addr);
+    public static native long internal_native_sFromPointsCCW(long this_addr, long inPoint1_addr, long inPoint2_addr, long inPoint3_addr);
 
     public Plane Offset(float inDistance) {
         long pointer = internal_native_Offset((long) getNativeData().getCPointer(), inDistance);
@@ -158,7 +158,7 @@ Plane* nativeObject = (Plane*)this_addr;
 static Plane copy_addr;
 copy_addr = nativeObject->Offset((float)inDistance);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Offset(long this_addr, float inDistance);
+    public static native long internal_native_Offset(long this_addr, float inDistance);
 
     public Plane GetTransformed(Mat44 inTransform) {
         long pointer = internal_native_GetTransformed((long) getNativeData().getCPointer(), (long) (inTransform != null ? inTransform.getNativeData().getCPointer() : 0));
@@ -175,7 +175,7 @@ Plane* nativeObject = (Plane*)this_addr;
 static Plane copy_addr;
 copy_addr = nativeObject->GetTransformed(*((Mat44* )inTransform_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetTransformed(long this_addr, long inTransform_addr);
+    public static native long internal_native_GetTransformed(long this_addr, long inTransform_addr);
 
     public float SignedDistance(Vec3 inPoint) {
         return internal_native_SignedDistance((long) getNativeData().getCPointer(), (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0));
@@ -185,49 +185,5 @@ return (jlong)&copy_addr;*/
 Plane* nativeObject = (Plane*)this_addr;
 return nativeObject->SignedDistance(*((Vec3* )inPoint_addr));
 */
-    private static native float internal_native_SignedDistance(long this_addr, long inPoint_addr);
-
-    public static long native_create_Vec3_float(long inNormal_addr, float inConstant) {
-        return internal_native_create_Vec3_float(inNormal_addr, inConstant);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_GetNormal(long this_addr) {
-        return internal_native_GetNormal(this_addr);
-    }
-
-    public static void native_SetNormal(long this_addr, long inNormal_addr) {
-        internal_native_SetNormal(this_addr, inNormal_addr);
-    }
-
-    public static float native_GetConstant(long this_addr) {
-        return internal_native_GetConstant(this_addr);
-    }
-
-    public static void native_SetConstant(long this_addr, float inConstant) {
-        internal_native_SetConstant(this_addr, inConstant);
-    }
-
-    public static long native_sFromPointAndNormal(long this_addr, long inPoint_addr, long inNormal_addr) {
-        return internal_native_sFromPointAndNormal(this_addr, inPoint_addr, inNormal_addr);
-    }
-
-    public static long native_sFromPointsCCW(long this_addr, long inPoint1_addr, long inPoint2_addr, long inPoint3_addr) {
-        return internal_native_sFromPointsCCW(this_addr, inPoint1_addr, inPoint2_addr, inPoint3_addr);
-    }
-
-    public static long native_Offset(long this_addr, float inDistance) {
-        return internal_native_Offset(this_addr, inDistance);
-    }
-
-    public static long native_GetTransformed(long this_addr, long inTransform_addr) {
-        return internal_native_GetTransformed(this_addr, inTransform_addr);
-    }
-
-    public static float native_SignedDistance(long this_addr, long inPoint_addr) {
-        return internal_native_SignedDistance(this_addr, inPoint_addr);
-    }
+    public static native float internal_native_SignedDistance(long this_addr, long inPoint_addr);
 }

@@ -34,7 +34,7 @@ var jsObj = new jolt.SoftBodyCreationSettings(inSettings_addr, inPosition_addr, 
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inSettings_addr", "inPosition_addr", "inRotation_addr", "inObjectLayer"}, script = "var jsObj = new jolt.SoftBodyCreationSettings(inSettings_addr, inPosition_addr, inRotation_addr, inObjectLayer);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_SoftBodySharedSettings_Vec3_Quat_int(int inSettings_addr, int inPosition_addr, int inRotation_addr, int inObjectLayer);
+    public static native int internal_native_create_SoftBodySharedSettings_Vec3_Quat_int(int inSettings_addr, int inPosition_addr, int inRotation_addr, int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -60,7 +60,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mPosition() {
         int pointer = internal_native_get_mPosition((int) (long) getNativeData().getCPointer());
@@ -79,7 +79,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);var returnedJSObj = jsObj.get_mPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPosition(int this_addr);
+    public static native int internal_native_get_mPosition(int this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition((int) (long) getNativeData().getCPointer(), (int) (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -90,7 +90,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mPosition(mPosition_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPosition_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mPosition(mPosition_addr);")
-    private static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
+    public static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
 
     public Quat get_mRotation() {
         int pointer = internal_native_get_mRotation((int) (long) getNativeData().getCPointer());
@@ -109,7 +109,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);var returnedJSObj = jsObj.get_mRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mRotation(int this_addr);
+    public static native int internal_native_get_mRotation(int this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation((int) (long) getNativeData().getCPointer(), (int) (long) (mRotation != null ? mRotation.getNativeData().getCPointer() : 0));
@@ -120,7 +120,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mRotation(mRotation_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRotation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mRotation(mRotation_addr);")
-    private static native void internal_native_set_mRotation(int this_addr, int mRotation_addr);
+    public static native void internal_native_set_mRotation(int this_addr, int mRotation_addr);
 
     public long get_mUserData() {
         return internal_native_get_mUserData((int) (long) getNativeData().getCPointer());
@@ -131,7 +131,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mUserData();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mUserData();")
-    private static native int internal_native_get_mUserData(int this_addr);
+    public static native int internal_native_get_mUserData(int this_addr);
 
     public void set_mUserData(long mUserData) {
         internal_native_set_mUserData((int) (long) getNativeData().getCPointer(), (int) mUserData);
@@ -142,7 +142,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mUserData(mUserData);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mUserData(mUserData);")
-    private static native void internal_native_set_mUserData(int this_addr, int mUserData);
+    public static native void internal_native_set_mUserData(int this_addr, int mUserData);
 
     public int get_mObjectLayer() {
         return internal_native_get_mObjectLayer((int) (long) getNativeData().getCPointer());
@@ -153,7 +153,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mObjectLayer();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mObjectLayer();")
-    private static native int internal_native_get_mObjectLayer(int this_addr);
+    public static native int internal_native_get_mObjectLayer(int this_addr);
 
     public void set_mObjectLayer(int mObjectLayer) {
         internal_native_set_mObjectLayer((int) (long) getNativeData().getCPointer(), mObjectLayer);
@@ -164,7 +164,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mObjectLayer(mObjectLayer);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mObjectLayer"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mObjectLayer(mObjectLayer);")
-    private static native void internal_native_set_mObjectLayer(int this_addr, int mObjectLayer);
+    public static native void internal_native_set_mObjectLayer(int this_addr, int mObjectLayer);
 
     public CollisionGroup get_mCollisionGroup() {
         int pointer = internal_native_get_mCollisionGroup((int) (long) getNativeData().getCPointer());
@@ -183,7 +183,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);var returnedJSObj = jsObj.get_mCollisionGroup();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mCollisionGroup(int this_addr);
+    public static native int internal_native_get_mCollisionGroup(int this_addr);
 
     public void set_mCollisionGroup(CollisionGroup mCollisionGroup) {
         internal_native_set_mCollisionGroup((int) (long) getNativeData().getCPointer(), (int) (long) (mCollisionGroup != null ? mCollisionGroup.getNativeData().getCPointer() : 0));
@@ -194,7 +194,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mCollisionGroup(mCollisionGroup_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mCollisionGroup_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mCollisionGroup(mCollisionGroup_addr);")
-    private static native void internal_native_set_mCollisionGroup(int this_addr, int mCollisionGroup_addr);
+    public static native void internal_native_set_mCollisionGroup(int this_addr, int mCollisionGroup_addr);
 
     public int get_mNumIterations() {
         return internal_native_get_mNumIterations((int) (long) getNativeData().getCPointer());
@@ -205,7 +205,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mNumIterations();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mNumIterations();")
-    private static native int internal_native_get_mNumIterations(int this_addr);
+    public static native int internal_native_get_mNumIterations(int this_addr);
 
     public void set_mNumIterations(int mNumIterations) {
         internal_native_set_mNumIterations((int) (long) getNativeData().getCPointer(), mNumIterations);
@@ -216,7 +216,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mNumIterations(mNumIterations);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mNumIterations"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mNumIterations(mNumIterations);")
-    private static native void internal_native_set_mNumIterations(int this_addr, int mNumIterations);
+    public static native void internal_native_set_mNumIterations(int this_addr, int mNumIterations);
 
     public float get_mLinearDamping() {
         return internal_native_get_mLinearDamping((int) (long) getNativeData().getCPointer());
@@ -227,7 +227,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mLinearDamping();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mLinearDamping();")
-    private static native float internal_native_get_mLinearDamping(int this_addr);
+    public static native float internal_native_get_mLinearDamping(int this_addr);
 
     public void set_mLinearDamping(float mLinearDamping) {
         internal_native_set_mLinearDamping((int) (long) getNativeData().getCPointer(), mLinearDamping);
@@ -238,7 +238,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mLinearDamping(mLinearDamping);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLinearDamping"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mLinearDamping(mLinearDamping);")
-    private static native void internal_native_set_mLinearDamping(int this_addr, float mLinearDamping);
+    public static native void internal_native_set_mLinearDamping(int this_addr, float mLinearDamping);
 
     public float get_mMaxLinearVelocity() {
         return internal_native_get_mMaxLinearVelocity((int) (long) getNativeData().getCPointer());
@@ -249,7 +249,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mMaxLinearVelocity();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mMaxLinearVelocity();")
-    private static native float internal_native_get_mMaxLinearVelocity(int this_addr);
+    public static native float internal_native_get_mMaxLinearVelocity(int this_addr);
 
     public void set_mMaxLinearVelocity(float mMaxLinearVelocity) {
         internal_native_set_mMaxLinearVelocity((int) (long) getNativeData().getCPointer(), mMaxLinearVelocity);
@@ -260,7 +260,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mMaxLinearVelocity(mMaxLinearVelocity);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxLinearVelocity"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mMaxLinearVelocity(mMaxLinearVelocity);")
-    private static native void internal_native_set_mMaxLinearVelocity(int this_addr, float mMaxLinearVelocity);
+    public static native void internal_native_set_mMaxLinearVelocity(int this_addr, float mMaxLinearVelocity);
 
     public float get_mRestitution() {
         return internal_native_get_mRestitution((int) (long) getNativeData().getCPointer());
@@ -271,7 +271,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mRestitution();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mRestitution();")
-    private static native float internal_native_get_mRestitution(int this_addr);
+    public static native float internal_native_get_mRestitution(int this_addr);
 
     public void set_mRestitution(float mRestitution) {
         internal_native_set_mRestitution((int) (long) getNativeData().getCPointer(), mRestitution);
@@ -282,7 +282,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mRestitution(mRestitution);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRestitution"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mRestitution(mRestitution);")
-    private static native void internal_native_set_mRestitution(int this_addr, float mRestitution);
+    public static native void internal_native_set_mRestitution(int this_addr, float mRestitution);
 
     public float get_mFriction() {
         return internal_native_get_mFriction((int) (long) getNativeData().getCPointer());
@@ -293,7 +293,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mFriction();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mFriction();")
-    private static native float internal_native_get_mFriction(int this_addr);
+    public static native float internal_native_get_mFriction(int this_addr);
 
     public void set_mFriction(float mFriction) {
         internal_native_set_mFriction((int) (long) getNativeData().getCPointer(), mFriction);
@@ -304,7 +304,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mFriction(mFriction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mFriction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mFriction(mFriction);")
-    private static native void internal_native_set_mFriction(int this_addr, float mFriction);
+    public static native void internal_native_set_mFriction(int this_addr, float mFriction);
 
     public float get_mPressure() {
         return internal_native_get_mPressure((int) (long) getNativeData().getCPointer());
@@ -315,7 +315,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mPressure();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mPressure();")
-    private static native float internal_native_get_mPressure(int this_addr);
+    public static native float internal_native_get_mPressure(int this_addr);
 
     public void set_mPressure(float mPressure) {
         internal_native_set_mPressure((int) (long) getNativeData().getCPointer(), mPressure);
@@ -326,7 +326,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mPressure(mPressure);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPressure"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mPressure(mPressure);")
-    private static native void internal_native_set_mPressure(int this_addr, float mPressure);
+    public static native void internal_native_set_mPressure(int this_addr, float mPressure);
 
     public float get_mGravityFactor() {
         return internal_native_get_mGravityFactor((int) (long) getNativeData().getCPointer());
@@ -337,7 +337,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mGravityFactor();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mGravityFactor();")
-    private static native float internal_native_get_mGravityFactor(int this_addr);
+    public static native float internal_native_get_mGravityFactor(int this_addr);
 
     public void set_mGravityFactor(float mGravityFactor) {
         internal_native_set_mGravityFactor((int) (long) getNativeData().getCPointer(), mGravityFactor);
@@ -348,7 +348,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mGravityFactor(mGravityFactor);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mGravityFactor"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mGravityFactor(mGravityFactor);")
-    private static native void internal_native_set_mGravityFactor(int this_addr, float mGravityFactor);
+    public static native void internal_native_set_mGravityFactor(int this_addr, float mGravityFactor);
 
     public boolean get_mUpdatePosition() {
         return internal_native_get_mUpdatePosition((int) (long) getNativeData().getCPointer());
@@ -359,7 +359,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mUpdatePosition();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mUpdatePosition();")
-    private static native boolean internal_native_get_mUpdatePosition(int this_addr);
+    public static native boolean internal_native_get_mUpdatePosition(int this_addr);
 
     public void set_mUpdatePosition(boolean mUpdatePosition) {
         internal_native_set_mUpdatePosition((int) (long) getNativeData().getCPointer(), mUpdatePosition);
@@ -370,7 +370,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mUpdatePosition(mUpdatePosition);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mUpdatePosition"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mUpdatePosition(mUpdatePosition);")
-    private static native void internal_native_set_mUpdatePosition(int this_addr, boolean mUpdatePosition);
+    public static native void internal_native_set_mUpdatePosition(int this_addr, boolean mUpdatePosition);
 
     public boolean get_mMakeRotationIdentity() {
         return internal_native_get_mMakeRotationIdentity((int) (long) getNativeData().getCPointer());
@@ -381,7 +381,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mMakeRotationIdentity();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mMakeRotationIdentity();")
-    private static native boolean internal_native_get_mMakeRotationIdentity(int this_addr);
+    public static native boolean internal_native_get_mMakeRotationIdentity(int this_addr);
 
     public void set_mMakeRotationIdentity(boolean mMakeRotationIdentity) {
         internal_native_set_mMakeRotationIdentity((int) (long) getNativeData().getCPointer(), mMakeRotationIdentity);
@@ -392,7 +392,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mMakeRotationIdentity(mMakeRotationIdentity);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMakeRotationIdentity"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mMakeRotationIdentity(mMakeRotationIdentity);")
-    private static native void internal_native_set_mMakeRotationIdentity(int this_addr, boolean mMakeRotationIdentity);
+    public static native void internal_native_set_mMakeRotationIdentity(int this_addr, boolean mMakeRotationIdentity);
 
     public boolean get_mAllowSleeping() {
         return internal_native_get_mAllowSleeping((int) (long) getNativeData().getCPointer());
@@ -403,7 +403,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 return jsObj.get_mAllowSleeping();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);return jsObj.get_mAllowSleeping();")
-    private static native boolean internal_native_get_mAllowSleeping(int this_addr);
+    public static native boolean internal_native_get_mAllowSleeping(int this_addr);
 
     public void set_mAllowSleeping(boolean mAllowSleeping) {
         internal_native_set_mAllowSleeping((int) (long) getNativeData().getCPointer(), mAllowSleeping);
@@ -414,133 +414,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);
 jsObj.set_mAllowSleeping(mAllowSleeping);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mAllowSleeping"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyCreationSettings);jsObj.set_mAllowSleeping(mAllowSleeping);")
-    private static native void internal_native_set_mAllowSleeping(int this_addr, boolean mAllowSleeping);
-
-    public static long native_create_SoftBodySharedSettings_Vec3_Quat_int(long inSettings_addr, long inPosition_addr, long inRotation_addr, int inObjectLayer) {
-        return internal_native_create_SoftBodySharedSettings_Vec3_Quat_int((int) inSettings_addr, (int) inPosition_addr, (int) inRotation_addr, inObjectLayer);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition((int) this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition((int) this_addr, (int) mPosition_addr);
-    }
-
-    public static long native_get_mRotation(long this_addr) {
-        return internal_native_get_mRotation((int) this_addr);
-    }
-
-    public static void native_set_mRotation(long this_addr, long mRotation_addr) {
-        internal_native_set_mRotation((int) this_addr, (int) mRotation_addr);
-    }
-
-    public static long native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData((int) this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, long mUserData) {
-        internal_native_set_mUserData((int) this_addr, (int) mUserData);
-    }
-
-    public static int native_get_mObjectLayer(long this_addr) {
-        return internal_native_get_mObjectLayer((int) this_addr);
-    }
-
-    public static void native_set_mObjectLayer(long this_addr, int mObjectLayer) {
-        internal_native_set_mObjectLayer((int) this_addr, mObjectLayer);
-    }
-
-    public static long native_get_mCollisionGroup(long this_addr) {
-        return internal_native_get_mCollisionGroup((int) this_addr);
-    }
-
-    public static void native_set_mCollisionGroup(long this_addr, long mCollisionGroup_addr) {
-        internal_native_set_mCollisionGroup((int) this_addr, (int) mCollisionGroup_addr);
-    }
-
-    public static int native_get_mNumIterations(long this_addr) {
-        return internal_native_get_mNumIterations((int) this_addr);
-    }
-
-    public static void native_set_mNumIterations(long this_addr, int mNumIterations) {
-        internal_native_set_mNumIterations((int) this_addr, mNumIterations);
-    }
-
-    public static float native_get_mLinearDamping(long this_addr) {
-        return internal_native_get_mLinearDamping((int) this_addr);
-    }
-
-    public static void native_set_mLinearDamping(long this_addr, float mLinearDamping) {
-        internal_native_set_mLinearDamping((int) this_addr, mLinearDamping);
-    }
-
-    public static float native_get_mMaxLinearVelocity(long this_addr) {
-        return internal_native_get_mMaxLinearVelocity((int) this_addr);
-    }
-
-    public static void native_set_mMaxLinearVelocity(long this_addr, float mMaxLinearVelocity) {
-        internal_native_set_mMaxLinearVelocity((int) this_addr, mMaxLinearVelocity);
-    }
-
-    public static float native_get_mRestitution(long this_addr) {
-        return internal_native_get_mRestitution((int) this_addr);
-    }
-
-    public static void native_set_mRestitution(long this_addr, float mRestitution) {
-        internal_native_set_mRestitution((int) this_addr, mRestitution);
-    }
-
-    public static float native_get_mFriction(long this_addr) {
-        return internal_native_get_mFriction((int) this_addr);
-    }
-
-    public static void native_set_mFriction(long this_addr, float mFriction) {
-        internal_native_set_mFriction((int) this_addr, mFriction);
-    }
-
-    public static float native_get_mPressure(long this_addr) {
-        return internal_native_get_mPressure((int) this_addr);
-    }
-
-    public static void native_set_mPressure(long this_addr, float mPressure) {
-        internal_native_set_mPressure((int) this_addr, mPressure);
-    }
-
-    public static float native_get_mGravityFactor(long this_addr) {
-        return internal_native_get_mGravityFactor((int) this_addr);
-    }
-
-    public static void native_set_mGravityFactor(long this_addr, float mGravityFactor) {
-        internal_native_set_mGravityFactor((int) this_addr, mGravityFactor);
-    }
-
-    public static boolean native_get_mUpdatePosition(long this_addr) {
-        return internal_native_get_mUpdatePosition((int) this_addr);
-    }
-
-    public static void native_set_mUpdatePosition(long this_addr, boolean mUpdatePosition) {
-        internal_native_set_mUpdatePosition((int) this_addr, mUpdatePosition);
-    }
-
-    public static boolean native_get_mMakeRotationIdentity(long this_addr) {
-        return internal_native_get_mMakeRotationIdentity((int) this_addr);
-    }
-
-    public static void native_set_mMakeRotationIdentity(long this_addr, boolean mMakeRotationIdentity) {
-        internal_native_set_mMakeRotationIdentity((int) this_addr, mMakeRotationIdentity);
-    }
-
-    public static boolean native_get_mAllowSleeping(long this_addr) {
-        return internal_native_get_mAllowSleeping((int) this_addr);
-    }
-
-    public static void native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping) {
-        internal_native_set_mAllowSleeping((int) this_addr, mAllowSleeping);
-    }
+    public static native void internal_native_set_mAllowSleeping(int this_addr, boolean mAllowSleeping);
 }

@@ -26,7 +26,7 @@ var jsObj = new jolt.CylinderShape(inHalfHeight, inRadius, inConvexRadius, inMat
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfHeight", "inRadius", "inConvexRadius", "inMaterial_addr"}, script = "var jsObj = new jolt.CylinderShape(inHalfHeight, inRadius, inConvexRadius, inMaterial_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, float inConvexRadius, int inMaterial_addr);
+    public static native int internal_native_create_float_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, float inConvexRadius, int inMaterial_addr);
 
     public CylinderShape(float inHalfHeight, float inRadius, float inConvexRadius) {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ var jsObj = new jolt.CylinderShape(inHalfHeight, inRadius, inConvexRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfHeight", "inRadius", "inConvexRadius"}, script = "var jsObj = new jolt.CylinderShape(inHalfHeight, inRadius, inConvexRadius);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float_float_float(float inHalfHeight, float inRadius, float inConvexRadius);
+    public static native int internal_native_create_float_float_float(float inHalfHeight, float inRadius, float inConvexRadius);
 
     public CylinderShape(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
@@ -52,7 +52,7 @@ var jsObj = new jolt.CylinderShape(inHalfHeight, inRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfHeight", "inRadius"}, script = "var jsObj = new jolt.CylinderShape(inHalfHeight, inRadius);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float_float(float inHalfHeight, float inRadius);
+    public static native int internal_native_create_float_float(float inHalfHeight, float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -72,7 +72,7 @@ var returnedJSObj = jsObj.GetRadius();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CylinderShape);var returnedJSObj = jsObj.GetRadius();return returnedJSObj;")
-    private static native float internal_native_GetRadius(int this_addr);
+    public static native float internal_native_GetRadius(int this_addr);
 
     public float GetHalfHeight() {
         return internal_native_GetHalfHeight((int) (long) getNativeData().getCPointer());
@@ -84,25 +84,5 @@ var returnedJSObj = jsObj.GetHalfHeight();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CylinderShape);var returnedJSObj = jsObj.GetHalfHeight();return returnedJSObj;")
-    private static native float internal_native_GetHalfHeight(int this_addr);
-
-    public static long native_create_float_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, float inConvexRadius, long inMaterial_addr) {
-        return internal_native_create_float_float_float_PhysicsMaterial(inHalfHeight, inRadius, inConvexRadius, (int) inMaterial_addr);
-    }
-
-    public static long native_create_float_float_float(float inHalfHeight, float inRadius, float inConvexRadius) {
-        return internal_native_create_float_float_float(inHalfHeight, inRadius, inConvexRadius);
-    }
-
-    public static long native_create_float_float(float inHalfHeight, float inRadius) {
-        return internal_native_create_float_float(inHalfHeight, inRadius);
-    }
-
-    public static float native_GetRadius(long this_addr) {
-        return internal_native_GetRadius((int) this_addr);
-    }
-
-    public static float native_GetHalfHeight(long this_addr) {
-        return internal_native_GetHalfHeight((int) this_addr);
-    }
+    public static native float internal_native_GetHalfHeight(int this_addr);
 }

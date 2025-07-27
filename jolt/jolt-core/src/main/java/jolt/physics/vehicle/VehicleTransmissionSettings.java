@@ -44,7 +44,7 @@ public class VehicleTransmissionSettings extends IDLBase {
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public ETransmissionMode get_mMode() {
         int value = internal_native_get_mMode((long) getNativeData().getCPointer());
@@ -55,7 +55,7 @@ delete nativeObject;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return (jint)nativeObject->mMode;
 */
-    private static native int internal_native_get_mMode(long this_addr);
+    public static native int internal_native_get_mMode(long this_addr);
 
     public void set_mMode(ETransmissionMode mMode) {
         internal_native_set_mMode((long) getNativeData().getCPointer(), (long) (mMode != null ? mMode.getValue() : 0));
@@ -65,7 +65,7 @@ return (jint)nativeObject->mMode;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mMode = (::ETransmissionMode)mMode;
 */
-    private static native void internal_native_set_mMode(long this_addr, long mMode);
+    public static native void internal_native_set_mMode(long this_addr, long mMode);
 
     public ArrayFloat get_mGearRatios() {
         long pointer = internal_native_get_mGearRatios((long) getNativeData().getCPointer());
@@ -81,7 +81,7 @@ nativeObject->mMode = (::ETransmissionMode)mMode;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return (jlong)&nativeObject->mGearRatios;
 */
-    private static native long internal_native_get_mGearRatios(long this_addr);
+    public static native long internal_native_get_mGearRatios(long this_addr);
 
     public void set_mGearRatios(ArrayFloat mGearRatios) {
         internal_native_set_mGearRatios((long) getNativeData().getCPointer(), (long) (mGearRatios != null ? mGearRatios.getNativeData().getCPointer() : 0));
@@ -91,7 +91,7 @@ return (jlong)&nativeObject->mGearRatios;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mGearRatios = *((ArrayFloat*)mGearRatios_addr);
 */
-    private static native void internal_native_set_mGearRatios(long this_addr, long mGearRatios_addr);
+    public static native void internal_native_set_mGearRatios(long this_addr, long mGearRatios_addr);
 
     public ArrayFloat get_mReverseGearRatios() {
         long pointer = internal_native_get_mReverseGearRatios((long) getNativeData().getCPointer());
@@ -107,7 +107,7 @@ nativeObject->mGearRatios = *((ArrayFloat*)mGearRatios_addr);
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return (jlong)&nativeObject->mReverseGearRatios;
 */
-    private static native long internal_native_get_mReverseGearRatios(long this_addr);
+    public static native long internal_native_get_mReverseGearRatios(long this_addr);
 
     public void set_mReverseGearRatios(ArrayFloat mReverseGearRatios) {
         internal_native_set_mReverseGearRatios((long) getNativeData().getCPointer(), (long) (mReverseGearRatios != null ? mReverseGearRatios.getNativeData().getCPointer() : 0));
@@ -117,7 +117,7 @@ return (jlong)&nativeObject->mReverseGearRatios;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mReverseGearRatios = *((ArrayFloat*)mReverseGearRatios_addr);
 */
-    private static native void internal_native_set_mReverseGearRatios(long this_addr, long mReverseGearRatios_addr);
+    public static native void internal_native_set_mReverseGearRatios(long this_addr, long mReverseGearRatios_addr);
 
     public float get_mSwitchTime() {
         return internal_native_get_mSwitchTime((long) getNativeData().getCPointer());
@@ -127,7 +127,7 @@ nativeObject->mReverseGearRatios = *((ArrayFloat*)mReverseGearRatios_addr);
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return nativeObject->mSwitchTime;
 */
-    private static native float internal_native_get_mSwitchTime(long this_addr);
+    public static native float internal_native_get_mSwitchTime(long this_addr);
 
     public void set_mSwitchTime(float mSwitchTime) {
         internal_native_set_mSwitchTime((long) getNativeData().getCPointer(), mSwitchTime);
@@ -137,7 +137,7 @@ return nativeObject->mSwitchTime;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mSwitchTime = mSwitchTime;
 */
-    private static native void internal_native_set_mSwitchTime(long this_addr, float mSwitchTime);
+    public static native void internal_native_set_mSwitchTime(long this_addr, float mSwitchTime);
 
     public float get_mClutchReleaseTime() {
         return internal_native_get_mClutchReleaseTime((long) getNativeData().getCPointer());
@@ -147,7 +147,7 @@ nativeObject->mSwitchTime = mSwitchTime;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return nativeObject->mClutchReleaseTime;
 */
-    private static native float internal_native_get_mClutchReleaseTime(long this_addr);
+    public static native float internal_native_get_mClutchReleaseTime(long this_addr);
 
     public void set_mClutchReleaseTime(float mClutchReleaseTime) {
         internal_native_set_mClutchReleaseTime((long) getNativeData().getCPointer(), mClutchReleaseTime);
@@ -157,7 +157,7 @@ return nativeObject->mClutchReleaseTime;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mClutchReleaseTime = mClutchReleaseTime;
 */
-    private static native void internal_native_set_mClutchReleaseTime(long this_addr, float mClutchReleaseTime);
+    public static native void internal_native_set_mClutchReleaseTime(long this_addr, float mClutchReleaseTime);
 
     public float get_mSwitchLatency() {
         return internal_native_get_mSwitchLatency((long) getNativeData().getCPointer());
@@ -167,7 +167,7 @@ nativeObject->mClutchReleaseTime = mClutchReleaseTime;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return nativeObject->mSwitchLatency;
 */
-    private static native float internal_native_get_mSwitchLatency(long this_addr);
+    public static native float internal_native_get_mSwitchLatency(long this_addr);
 
     public void set_mSwitchLatency(float mSwitchLatency) {
         internal_native_set_mSwitchLatency((long) getNativeData().getCPointer(), mSwitchLatency);
@@ -177,7 +177,7 @@ return nativeObject->mSwitchLatency;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mSwitchLatency = mSwitchLatency;
 */
-    private static native void internal_native_set_mSwitchLatency(long this_addr, float mSwitchLatency);
+    public static native void internal_native_set_mSwitchLatency(long this_addr, float mSwitchLatency);
 
     public float get_mShiftUpRPM() {
         return internal_native_get_mShiftUpRPM((long) getNativeData().getCPointer());
@@ -187,7 +187,7 @@ nativeObject->mSwitchLatency = mSwitchLatency;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return nativeObject->mShiftUpRPM;
 */
-    private static native float internal_native_get_mShiftUpRPM(long this_addr);
+    public static native float internal_native_get_mShiftUpRPM(long this_addr);
 
     public void set_mShiftUpRPM(float mShiftUpRPM) {
         internal_native_set_mShiftUpRPM((long) getNativeData().getCPointer(), mShiftUpRPM);
@@ -197,7 +197,7 @@ return nativeObject->mShiftUpRPM;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mShiftUpRPM = mShiftUpRPM;
 */
-    private static native void internal_native_set_mShiftUpRPM(long this_addr, float mShiftUpRPM);
+    public static native void internal_native_set_mShiftUpRPM(long this_addr, float mShiftUpRPM);
 
     public float get_mShiftDownRPM() {
         return internal_native_get_mShiftDownRPM((long) getNativeData().getCPointer());
@@ -207,7 +207,7 @@ nativeObject->mShiftUpRPM = mShiftUpRPM;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return nativeObject->mShiftDownRPM;
 */
-    private static native float internal_native_get_mShiftDownRPM(long this_addr);
+    public static native float internal_native_get_mShiftDownRPM(long this_addr);
 
     public void set_mShiftDownRPM(float mShiftDownRPM) {
         internal_native_set_mShiftDownRPM((long) getNativeData().getCPointer(), mShiftDownRPM);
@@ -217,7 +217,7 @@ return nativeObject->mShiftDownRPM;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mShiftDownRPM = mShiftDownRPM;
 */
-    private static native void internal_native_set_mShiftDownRPM(long this_addr, float mShiftDownRPM);
+    public static native void internal_native_set_mShiftDownRPM(long this_addr, float mShiftDownRPM);
 
     public float get_mClutchStrength() {
         return internal_native_get_mClutchStrength((long) getNativeData().getCPointer());
@@ -227,7 +227,7 @@ nativeObject->mShiftDownRPM = mShiftDownRPM;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return nativeObject->mClutchStrength;
 */
-    private static native float internal_native_get_mClutchStrength(long this_addr);
+    public static native float internal_native_get_mClutchStrength(long this_addr);
 
     public void set_mClutchStrength(float mClutchStrength) {
         internal_native_set_mClutchStrength((long) getNativeData().getCPointer(), mClutchStrength);
@@ -237,81 +237,5 @@ return nativeObject->mClutchStrength;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mClutchStrength = mClutchStrength;
 */
-    private static native void internal_native_set_mClutchStrength(long this_addr, float mClutchStrength);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mMode(long this_addr) {
-        return internal_native_get_mMode(this_addr);
-    }
-
-    public static void native_set_mMode(long this_addr, long mMode) {
-        internal_native_set_mMode(this_addr, mMode);
-    }
-
-    public static long native_get_mGearRatios(long this_addr) {
-        return internal_native_get_mGearRatios(this_addr);
-    }
-
-    public static void native_set_mGearRatios(long this_addr, long mGearRatios_addr) {
-        internal_native_set_mGearRatios(this_addr, mGearRatios_addr);
-    }
-
-    public static long native_get_mReverseGearRatios(long this_addr) {
-        return internal_native_get_mReverseGearRatios(this_addr);
-    }
-
-    public static void native_set_mReverseGearRatios(long this_addr, long mReverseGearRatios_addr) {
-        internal_native_set_mReverseGearRatios(this_addr, mReverseGearRatios_addr);
-    }
-
-    public static float native_get_mSwitchTime(long this_addr) {
-        return internal_native_get_mSwitchTime(this_addr);
-    }
-
-    public static void native_set_mSwitchTime(long this_addr, float mSwitchTime) {
-        internal_native_set_mSwitchTime(this_addr, mSwitchTime);
-    }
-
-    public static float native_get_mClutchReleaseTime(long this_addr) {
-        return internal_native_get_mClutchReleaseTime(this_addr);
-    }
-
-    public static void native_set_mClutchReleaseTime(long this_addr, float mClutchReleaseTime) {
-        internal_native_set_mClutchReleaseTime(this_addr, mClutchReleaseTime);
-    }
-
-    public static float native_get_mSwitchLatency(long this_addr) {
-        return internal_native_get_mSwitchLatency(this_addr);
-    }
-
-    public static void native_set_mSwitchLatency(long this_addr, float mSwitchLatency) {
-        internal_native_set_mSwitchLatency(this_addr, mSwitchLatency);
-    }
-
-    public static float native_get_mShiftUpRPM(long this_addr) {
-        return internal_native_get_mShiftUpRPM(this_addr);
-    }
-
-    public static void native_set_mShiftUpRPM(long this_addr, float mShiftUpRPM) {
-        internal_native_set_mShiftUpRPM(this_addr, mShiftUpRPM);
-    }
-
-    public static float native_get_mShiftDownRPM(long this_addr) {
-        return internal_native_get_mShiftDownRPM(this_addr);
-    }
-
-    public static void native_set_mShiftDownRPM(long this_addr, float mShiftDownRPM) {
-        internal_native_set_mShiftDownRPM(this_addr, mShiftDownRPM);
-    }
-
-    public static float native_get_mClutchStrength(long this_addr) {
-        return internal_native_get_mClutchStrength(this_addr);
-    }
-
-    public static void native_set_mClutchStrength(long this_addr, float mClutchStrength) {
-        internal_native_set_mClutchStrength(this_addr, mClutchStrength);
-    }
+    public static native void internal_native_set_mClutchStrength(long this_addr, float mClutchStrength);
 }

@@ -22,7 +22,7 @@ public class BroadPhaseLayerInterfaceMask extends BroadPhaseLayerInterface {
     /*[-JNI;-NATIVE]
 return (jlong)new BroadPhaseLayerInterfaceMask(inNumBroadPhaseLayers);
 */
-    private static native long internal_native_create_int(int inNumBroadPhaseLayers);
+    public static native long internal_native_create_int(int inNumBroadPhaseLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new BroadPhaseLayerInterfaceMask(inNumBroadPhaseLayers);
 BroadPhaseLayerInterfaceMask* nativeObject = (BroadPhaseLayerInterfaceMask*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void ConfigureLayer(BroadPhaseLayer inBroadPhaseLayer, int inGroupsToInclude, int inGroupsToExclude) {
         internal_native_ConfigureLayer((long) getNativeData().getCPointer(), (long) (inBroadPhaseLayer != null ? inBroadPhaseLayer.getNativeData().getCPointer() : 0), inGroupsToInclude, inGroupsToExclude);
@@ -58,17 +58,5 @@ delete nativeObject;
 BroadPhaseLayerInterfaceMask* nativeObject = (BroadPhaseLayerInterfaceMask*)this_addr;
 nativeObject->ConfigureLayer(*((BroadPhaseLayer* )inBroadPhaseLayer_addr), inGroupsToInclude, inGroupsToExclude);
 */
-    private static native void internal_native_ConfigureLayer(long this_addr, long inBroadPhaseLayer_addr, int inGroupsToInclude, int inGroupsToExclude);
-
-    public static long native_create_int(int inNumBroadPhaseLayers) {
-        return internal_native_create_int(inNumBroadPhaseLayers);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_ConfigureLayer(long this_addr, long inBroadPhaseLayer_addr, int inGroupsToInclude, int inGroupsToExclude) {
-        internal_native_ConfigureLayer(this_addr, inBroadPhaseLayer_addr, inGroupsToInclude, inGroupsToExclude);
-    }
+    public static native void internal_native_ConfigureLayer(long this_addr, long inBroadPhaseLayer_addr, int inGroupsToInclude, int inGroupsToExclude);
 }

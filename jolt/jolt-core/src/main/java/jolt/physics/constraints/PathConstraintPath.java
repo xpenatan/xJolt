@@ -38,7 +38,7 @@ public class PathConstraintPath extends IDLBase {
 PathConstraintPath* nativeObject = (PathConstraintPath*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean IsLooping() {
         return internal_native_IsLooping((long) getNativeData().getCPointer());
@@ -48,7 +48,7 @@ delete nativeObject;
 PathConstraintPath* nativeObject = (PathConstraintPath*)this_addr;
 return nativeObject->IsLooping();
 */
-    private static native boolean internal_native_IsLooping(long this_addr);
+    public static native boolean internal_native_IsLooping(long this_addr);
 
     public void SetIsLooping(boolean inIsLooping) {
         internal_native_SetIsLooping((long) getNativeData().getCPointer(), inIsLooping);
@@ -58,7 +58,7 @@ return nativeObject->IsLooping();
 PathConstraintPath* nativeObject = (PathConstraintPath*)this_addr;
 nativeObject->SetIsLooping(inIsLooping);
 */
-    private static native void internal_native_SetIsLooping(long this_addr, boolean inIsLooping);
+    public static native void internal_native_SetIsLooping(long this_addr, boolean inIsLooping);
 
     public int GetRefCount() {
         return internal_native_GetRefCount((long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ nativeObject->SetIsLooping(inIsLooping);
 PathConstraintPath* nativeObject = (PathConstraintPath*)this_addr;
 return nativeObject->GetRefCount();
 */
-    private static native int internal_native_GetRefCount(long this_addr);
+    public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
         internal_native_AddRef((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ return nativeObject->GetRefCount();
 PathConstraintPath* nativeObject = (PathConstraintPath*)this_addr;
 nativeObject->AddRef();
 */
-    private static native void internal_native_AddRef(long this_addr);
+    public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
         internal_native_Release((long) getNativeData().getCPointer());
@@ -88,29 +88,5 @@ nativeObject->AddRef();
 PathConstraintPath* nativeObject = (PathConstraintPath*)this_addr;
 nativeObject->Release();
 */
-    private static native void internal_native_Release(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static boolean native_IsLooping(long this_addr) {
-        return internal_native_IsLooping(this_addr);
-    }
-
-    public static void native_SetIsLooping(long this_addr, boolean inIsLooping) {
-        internal_native_SetIsLooping(this_addr, inIsLooping);
-    }
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount(this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef(this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release(this_addr);
-    }
+    public static native void internal_native_Release(long this_addr);
 }

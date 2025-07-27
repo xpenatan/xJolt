@@ -31,7 +31,7 @@ var jsObj = new jolt.OrientedBox();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.OrientedBox();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     public OrientedBox(Mat44 inOrientation, Vec3 inHalfExtents) {
         int addr = internal_native_create_Mat44_Vec3((int) (long) (inOrientation != null ? inOrientation.getNativeData().getCPointer() : 0), (int) (long) (inHalfExtents != null ? inHalfExtents.getNativeData().getCPointer() : 0));
@@ -43,7 +43,7 @@ var jsObj = new jolt.OrientedBox(inOrientation_addr, inHalfExtents_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inOrientation_addr", "inHalfExtents_addr"}, script = "var jsObj = new jolt.OrientedBox(inOrientation_addr, inHalfExtents_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Mat44_Vec3(int inOrientation_addr, int inHalfExtents_addr);
+    public static native int internal_native_create_Mat44_Vec3(int inOrientation_addr, int inHalfExtents_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -69,7 +69,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.OrientedBox);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.OrientedBox);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Mat44 get_mOrientation() {
         int pointer = internal_native_get_mOrientation((int) (long) getNativeData().getCPointer());
@@ -88,7 +88,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.OrientedBox);var returnedJSObj = jsObj.get_mOrientation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mOrientation(int this_addr);
+    public static native int internal_native_get_mOrientation(int this_addr);
 
     public void set_mOrientation(Mat44 mOrientation) {
         internal_native_set_mOrientation((int) (long) getNativeData().getCPointer(), (int) (long) (mOrientation != null ? mOrientation.getNativeData().getCPointer() : 0));
@@ -99,7 +99,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.OrientedBox);
 jsObj.set_mOrientation(mOrientation_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mOrientation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.OrientedBox);jsObj.set_mOrientation(mOrientation_addr);")
-    private static native void internal_native_set_mOrientation(int this_addr, int mOrientation_addr);
+    public static native void internal_native_set_mOrientation(int this_addr, int mOrientation_addr);
 
     public Vec3 get_mHalfExtents() {
         int pointer = internal_native_get_mHalfExtents((int) (long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.OrientedBox);var returnedJSObj = jsObj.get_mHalfExtents();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mHalfExtents(int this_addr);
+    public static native int internal_native_get_mHalfExtents(int this_addr);
 
     public void set_mHalfExtents(Vec3 mHalfExtents) {
         internal_native_set_mHalfExtents((int) (long) getNativeData().getCPointer(), (int) (long) (mHalfExtents != null ? mHalfExtents.getNativeData().getCPointer() : 0));
@@ -129,33 +129,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.OrientedBox);
 jsObj.set_mHalfExtents(mHalfExtents_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mHalfExtents_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.OrientedBox);jsObj.set_mHalfExtents(mHalfExtents_addr);")
-    private static native void internal_native_set_mHalfExtents(int this_addr, int mHalfExtents_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_Mat44_Vec3(long inOrientation_addr, long inHalfExtents_addr) {
-        return internal_native_create_Mat44_Vec3((int) inOrientation_addr, (int) inHalfExtents_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mOrientation(long this_addr) {
-        return internal_native_get_mOrientation((int) this_addr);
-    }
-
-    public static void native_set_mOrientation(long this_addr, long mOrientation_addr) {
-        internal_native_set_mOrientation((int) this_addr, (int) mOrientation_addr);
-    }
-
-    public static long native_get_mHalfExtents(long this_addr) {
-        return internal_native_get_mHalfExtents((int) this_addr);
-    }
-
-    public static void native_set_mHalfExtents(long this_addr, long mHalfExtents_addr) {
-        internal_native_set_mHalfExtents((int) this_addr, (int) mHalfExtents_addr);
-    }
+    public static native void internal_native_set_mHalfExtents(int this_addr, int mHalfExtents_addr);
 }

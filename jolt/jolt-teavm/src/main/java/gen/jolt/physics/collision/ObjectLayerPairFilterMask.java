@@ -24,7 +24,7 @@ var jsObj = new jolt.ObjectLayerPairFilterMask();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ObjectLayerPairFilterMask();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ObjectLayerPairFilterMask);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ObjectLayerPairFilterMask);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public static int sGetObjectLayer(int inGroup, int inMask) {
         return internal_native_sGetObjectLayer(inGroup, inMask);
@@ -62,7 +62,7 @@ var returnedJSObj = jolt.ObjectLayerPairFilterMask.prototype.sGetObjectLayer(inG
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"inGroup", "inMask"}, script = "var returnedJSObj = jolt.ObjectLayerPairFilterMask.prototype.sGetObjectLayer(inGroup, inMask);return returnedJSObj;")
-    private static native int internal_native_sGetObjectLayer(int inGroup, int inMask);
+    public static native int internal_native_sGetObjectLayer(int inGroup, int inMask);
 
     public static int sGetGroup(int inObjectLayer) {
         return internal_native_sGetGroup(inObjectLayer);
@@ -73,7 +73,7 @@ var returnedJSObj = jolt.ObjectLayerPairFilterMask.prototype.sGetGroup(inObjectL
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer"}, script = "var returnedJSObj = jolt.ObjectLayerPairFilterMask.prototype.sGetGroup(inObjectLayer);return returnedJSObj;")
-    private static native int internal_native_sGetGroup(int inObjectLayer);
+    public static native int internal_native_sGetGroup(int inObjectLayer);
 
     public static int sGetMask(int inObjectLayer) {
         return internal_native_sGetMask(inObjectLayer);
@@ -84,25 +84,5 @@ var returnedJSObj = jolt.ObjectLayerPairFilterMask.prototype.sGetMask(inObjectLa
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer"}, script = "var returnedJSObj = jolt.ObjectLayerPairFilterMask.prototype.sGetMask(inObjectLayer);return returnedJSObj;")
-    private static native int internal_native_sGetMask(int inObjectLayer);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_sGetObjectLayer(int inGroup, int inMask) {
-        return internal_native_sGetObjectLayer(inGroup, inMask);
-    }
-
-    public static int native_sGetGroup(int inObjectLayer) {
-        return internal_native_sGetGroup(inObjectLayer);
-    }
-
-    public static int native_sGetMask(int inObjectLayer) {
-        return internal_native_sGetMask(inObjectLayer);
-    }
+    public static native int internal_native_sGetMask(int inObjectLayer);
 }

@@ -57,7 +57,7 @@ public class Jolt extends IDLBase {
 Jolt* nativeObject = (Jolt*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public static PhysicsSystem New_PhysicsSystem() {
         long pointer = internal_native_New_PhysicsSystem();
@@ -71,7 +71,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_PhysicsSystem();
 */
-    private static native long internal_native_New_PhysicsSystem();
+    public static native long internal_native_New_PhysicsSystem();
 
     public static Factory New_Factory() {
         long pointer = internal_native_New_Factory();
@@ -85,7 +85,7 @@ return (jlong)Jolt::New_PhysicsSystem();
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Factory();
 */
-    private static native long internal_native_New_Factory();
+    public static native long internal_native_New_Factory();
 
     public static TempAllocatorImpl New_TempAllocatorImpl(int inSize) {
         long pointer = internal_native_New_TempAllocatorImpl(inSize);
@@ -99,7 +99,7 @@ return (jlong)Jolt::New_Factory();
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_TempAllocatorImpl(inSize);
 */
-    private static native long internal_native_New_TempAllocatorImpl(int inSize);
+    public static native long internal_native_New_TempAllocatorImpl(int inSize);
 
     public static JobSystemThreadPool New_JobSystemThreadPool(int inNumThreads, int inMaxJobs, int inMaxBarriers) {
         long pointer = internal_native_New_JobSystemThreadPool(inNumThreads, inMaxJobs, inMaxBarriers);
@@ -113,7 +113,7 @@ return (jlong)Jolt::New_TempAllocatorImpl(inSize);
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads, inMaxJobs, inMaxBarriers);
 */
-    private static native long internal_native_New_JobSystemThreadPool(int inNumThreads, int inMaxJobs, int inMaxBarriers);
+    public static native long internal_native_New_JobSystemThreadPool(int inNumThreads, int inMaxJobs, int inMaxBarriers);
 
     public static JobSystemThreadPool New_JobSystemThreadPool(int inNumThreads, int inMaxJobs) {
         long pointer = internal_native_New_JobSystemThreadPool(inNumThreads, inMaxJobs);
@@ -128,7 +128,7 @@ return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads, inMaxJobs, inMaxB
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads, inMaxJobs);
 */
-    private static native long internal_native_New_JobSystemThreadPool(int inNumThreads, int inMaxJobs);
+    public static native long internal_native_New_JobSystemThreadPool(int inNumThreads, int inMaxJobs);
 
     public static JobSystemThreadPool New_JobSystemThreadPool(int inNumThreads) {
         long pointer = internal_native_New_JobSystemThreadPool(inNumThreads);
@@ -143,7 +143,7 @@ return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads, inMaxJobs);
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads);
 */
-    private static native long internal_native_New_JobSystemThreadPool(int inNumThreads);
+    public static native long internal_native_New_JobSystemThreadPool(int inNumThreads);
 
     public static JobSystemThreadPool New_JobSystemThreadPool() {
         long pointer = internal_native_New_JobSystemThreadPool();
@@ -158,7 +158,7 @@ return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads);
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_JobSystemThreadPool();
 */
-    private static native long internal_native_New_JobSystemThreadPool();
+    public static native long internal_native_New_JobSystemThreadPool();
 
     public static BodyCreationSettings New_BodyCreationSettings() {
         long pointer = internal_native_New_BodyCreationSettings_0();
@@ -172,7 +172,7 @@ return (jlong)Jolt::New_JobSystemThreadPool();
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_BodyCreationSettings();
 */
-    private static native long internal_native_New_BodyCreationSettings_0();
+    public static native long internal_native_New_BodyCreationSettings_0();
 
     public static BodyCreationSettings New_BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
         long pointer = internal_native_New_BodyCreationSettings_1((long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
@@ -186,7 +186,7 @@ return (jlong)Jolt::New_BodyCreationSettings();
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_BodyCreationSettings((ShapeSettings* )inShape_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EMotionType)inMotionType, inObjectLayer);
 */
-    private static native long internal_native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer);
+    public static native long internal_native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer);
 
     public static BodyCreationSettings New_BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
         long pointer = internal_native_New_BodyCreationSettings_2((long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
@@ -200,7 +200,7 @@ return (jlong)Jolt::New_BodyCreationSettings((ShapeSettings* )inShape_addr, *((V
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_BodyCreationSettings((Shape* )inShape_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EMotionType)inMotionType, inObjectLayer);
 */
-    private static native long internal_native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer);
+    public static native long internal_native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer);
 
     public static Mat44 New_Mat44() {
         long pointer = internal_native_New_Mat44_0();
@@ -214,7 +214,7 @@ return (jlong)Jolt::New_BodyCreationSettings((Shape* )inShape_addr, *((Vec3* )in
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Mat44();
 */
-    private static native long internal_native_New_Mat44_0();
+    public static native long internal_native_New_Mat44_0();
 
     public static Mat44 New_Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec4 inC4) {
         long pointer = internal_native_New_Mat44_1((long) (inC1 != null ? inC1.getNativeData().getCPointer() : 0), (long) (inC2 != null ? inC2.getNativeData().getCPointer() : 0), (long) (inC3 != null ? inC3.getNativeData().getCPointer() : 0), (long) (inC4 != null ? inC4.getNativeData().getCPointer() : 0));
@@ -228,7 +228,7 @@ return (jlong)Jolt::New_Mat44();
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Mat44(*((Vec4* )inC1_addr), *((Vec4* )inC2_addr), *((Vec4* )inC3_addr), *((Vec4* )inC4_addr));
 */
-    private static native long internal_native_New_Mat44_1(long inC1_addr, long inC2_addr, long inC3_addr, long inC4_addr);
+    public static native long internal_native_New_Mat44_1(long inC1_addr, long inC2_addr, long inC3_addr, long inC4_addr);
 
     public static Mat44 New_Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec3 inC4) {
         long pointer = internal_native_New_Mat44_2((long) (inC1 != null ? inC1.getNativeData().getCPointer() : 0), (long) (inC2 != null ? inC2.getNativeData().getCPointer() : 0), (long) (inC3 != null ? inC3.getNativeData().getCPointer() : 0), (long) (inC4 != null ? inC4.getNativeData().getCPointer() : 0));
@@ -242,7 +242,7 @@ return (jlong)Jolt::New_Mat44(*((Vec4* )inC1_addr), *((Vec4* )inC2_addr), *((Vec
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Mat44(*((Vec4* )inC1_addr), *((Vec4* )inC2_addr), *((Vec4* )inC3_addr), *((Vec3* )inC4_addr));
 */
-    private static native long internal_native_New_Mat44_2(long inC1_addr, long inC2_addr, long inC3_addr, long inC4_addr);
+    public static native long internal_native_New_Mat44_2(long inC1_addr, long inC2_addr, long inC3_addr, long inC4_addr);
 
     public static Vec3 New_Vec3() {
         long pointer = internal_native_New_Vec3_0();
@@ -256,7 +256,7 @@ return (jlong)Jolt::New_Mat44(*((Vec4* )inC1_addr), *((Vec4* )inC2_addr), *((Vec
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Vec3();
 */
-    private static native long internal_native_New_Vec3_0();
+    public static native long internal_native_New_Vec3_0();
 
     public static Vec3 New_Vec3(float inX, float inY, float inZ) {
         long pointer = internal_native_New_Vec3_1(inX, inY, inZ);
@@ -270,7 +270,7 @@ return (jlong)Jolt::New_Vec3();
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Vec3((float)inX, (float)inY, (float)inZ);
 */
-    private static native long internal_native_New_Vec3_1(float inX, float inY, float inZ);
+    public static native long internal_native_New_Vec3_1(float inX, float inY, float inZ);
 
     public static Vec3 New_Vec3(Vec3 inRHS) {
         long pointer = internal_native_New_Vec3_2((long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
@@ -284,7 +284,7 @@ return (jlong)Jolt::New_Vec3((float)inX, (float)inY, (float)inZ);
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Vec3(*((Vec3* )inRHS_addr));
 */
-    private static native long internal_native_New_Vec3_2(long inRHS_addr);
+    public static native long internal_native_New_Vec3_2(long inRHS_addr);
 
     public static Vec3 New_Vec3(Float3 inV) {
         long pointer = internal_native_New_Vec3_3((long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -298,7 +298,7 @@ return (jlong)Jolt::New_Vec3(*((Vec3* )inRHS_addr));
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Vec3(*((Float3* )inV_addr));
 */
-    private static native long internal_native_New_Vec3_3(long inV_addr);
+    public static native long internal_native_New_Vec3_3(long inV_addr);
 
     public static Vec4 New_Vec4() {
         long pointer = internal_native_New_Vec4_0();
@@ -312,7 +312,7 @@ return (jlong)Jolt::New_Vec3(*((Float3* )inV_addr));
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Vec4();
 */
-    private static native long internal_native_New_Vec4_0();
+    public static native long internal_native_New_Vec4_0();
 
     public static Vec4 New_Vec4(float inX, float inY, float inZ, float inW) {
         long pointer = internal_native_New_Vec4_1(inX, inY, inZ, inW);
@@ -326,7 +326,7 @@ return (jlong)Jolt::New_Vec4();
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Vec4((float)inX, (float)inY, (float)inZ, (float)inW);
 */
-    private static native long internal_native_New_Vec4_1(float inX, float inY, float inZ, float inW);
+    public static native long internal_native_New_Vec4_1(float inX, float inY, float inZ, float inW);
 
     public static Vec4 New_Vec4(Vec4 inV) {
         long pointer = internal_native_New_Vec4_2((long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -340,7 +340,7 @@ return (jlong)Jolt::New_Vec4((float)inX, (float)inY, (float)inZ, (float)inW);
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Vec4(*((Vec4* )inV_addr));
 */
-    private static native long internal_native_New_Vec4_2(long inV_addr);
+    public static native long internal_native_New_Vec4_2(long inV_addr);
 
     public static Vec4 New_Vec4(Vec3 inV, float inW) {
         long pointer = internal_native_New_Vec4_3((long) (inV != null ? inV.getNativeData().getCPointer() : 0), inW);
@@ -354,7 +354,7 @@ return (jlong)Jolt::New_Vec4(*((Vec4* )inV_addr));
     /*[-JNI;-NATIVE]
 return (jlong)Jolt::New_Vec4(*((Vec3* )inV_addr), (float)inW);
 */
-    private static native long internal_native_New_Vec4_3(long inV_addr, float inW);
+    public static native long internal_native_New_Vec4_3(long inV_addr, float inW);
 
     public static void Init() {
         internal_native_Init();
@@ -363,7 +363,7 @@ return (jlong)Jolt::New_Vec4(*((Vec3* )inV_addr), (float)inW);
     /*[-JNI;-NATIVE]
 Jolt::Init();
 */
-    private static native void internal_native_Init();
+    public static native void internal_native_Init();
 
     public static void RegisterTypes() {
         internal_native_RegisterTypes();
@@ -372,7 +372,7 @@ Jolt::Init();
     /*[-JNI;-NATIVE]
 Jolt::RegisterTypes();
 */
-    private static native void internal_native_RegisterTypes();
+    public static native void internal_native_RegisterTypes();
 
     public static void UnregisterTypes() {
         internal_native_UnregisterTypes();
@@ -381,7 +381,7 @@ Jolt::RegisterTypes();
     /*[-JNI;-NATIVE]
 Jolt::UnregisterTypes();
 */
-    private static native void internal_native_UnregisterTypes();
+    public static native void internal_native_UnregisterTypes();
 
     public static void ClearWorld(PhysicsSystem physicsSystem) {
         internal_native_ClearWorld((long) (physicsSystem != null ? physicsSystem.getNativeData().getCPointer() : 0));
@@ -390,109 +390,5 @@ Jolt::UnregisterTypes();
     /*[-JNI;-NATIVE]
 Jolt::ClearWorld(*((PhysicsSystem* )physicsSystem_addr));
 */
-    private static native void internal_native_ClearWorld(long physicsSystem_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_New_PhysicsSystem() {
-        return internal_native_New_PhysicsSystem();
-    }
-
-    public static long native_New_Factory() {
-        return internal_native_New_Factory();
-    }
-
-    public static long native_New_TempAllocatorImpl(int inSize) {
-        return internal_native_New_TempAllocatorImpl(inSize);
-    }
-
-    public static long native_New_JobSystemThreadPool(int inNumThreads, int inMaxJobs, int inMaxBarriers) {
-        return internal_native_New_JobSystemThreadPool(inNumThreads, inMaxJobs, inMaxBarriers);
-    }
-
-    public static long native_New_JobSystemThreadPool(int inNumThreads, int inMaxJobs) {
-        return internal_native_New_JobSystemThreadPool(inNumThreads, inMaxJobs);
-    }
-
-    public static long native_New_JobSystemThreadPool(int inNumThreads) {
-        return internal_native_New_JobSystemThreadPool(inNumThreads);
-    }
-
-    public static long native_New_JobSystemThreadPool() {
-        return internal_native_New_JobSystemThreadPool();
-    }
-
-    public static long native_New_BodyCreationSettings_0() {
-        return internal_native_New_BodyCreationSettings_0();
-    }
-
-    public static long native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer) {
-        return internal_native_New_BodyCreationSettings_1(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
-    }
-
-    public static long native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer) {
-        return internal_native_New_BodyCreationSettings_2(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
-    }
-
-    public static long native_New_Mat44_0() {
-        return internal_native_New_Mat44_0();
-    }
-
-    public static long native_New_Mat44_1(long inC1_addr, long inC2_addr, long inC3_addr, long inC4_addr) {
-        return internal_native_New_Mat44_1(inC1_addr, inC2_addr, inC3_addr, inC4_addr);
-    }
-
-    public static long native_New_Mat44_2(long inC1_addr, long inC2_addr, long inC3_addr, long inC4_addr) {
-        return internal_native_New_Mat44_2(inC1_addr, inC2_addr, inC3_addr, inC4_addr);
-    }
-
-    public static long native_New_Vec3_0() {
-        return internal_native_New_Vec3_0();
-    }
-
-    public static long native_New_Vec3_1(float inX, float inY, float inZ) {
-        return internal_native_New_Vec3_1(inX, inY, inZ);
-    }
-
-    public static long native_New_Vec3_2(long inRHS_addr) {
-        return internal_native_New_Vec3_2(inRHS_addr);
-    }
-
-    public static long native_New_Vec3_3(long inV_addr) {
-        return internal_native_New_Vec3_3(inV_addr);
-    }
-
-    public static long native_New_Vec4_0() {
-        return internal_native_New_Vec4_0();
-    }
-
-    public static long native_New_Vec4_1(float inX, float inY, float inZ, float inW) {
-        return internal_native_New_Vec4_1(inX, inY, inZ, inW);
-    }
-
-    public static long native_New_Vec4_2(long inV_addr) {
-        return internal_native_New_Vec4_2(inV_addr);
-    }
-
-    public static long native_New_Vec4_3(long inV_addr, float inW) {
-        return internal_native_New_Vec4_3(inV_addr, inW);
-    }
-
-    public static void native_Init() {
-        internal_native_Init();
-    }
-
-    public static void native_RegisterTypes() {
-        internal_native_RegisterTypes();
-    }
-
-    public static void native_UnregisterTypes() {
-        internal_native_UnregisterTypes();
-    }
-
-    public static void native_ClearWorld(long physicsSystem_addr) {
-        internal_native_ClearWorld(physicsSystem_addr);
-    }
+    public static native void internal_native_ClearWorld(long physicsSystem_addr);
 }

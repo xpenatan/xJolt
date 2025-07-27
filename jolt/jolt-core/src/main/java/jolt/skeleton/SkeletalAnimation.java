@@ -25,7 +25,7 @@ public class SkeletalAnimation extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SkeletalAnimation();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -42,7 +42,7 @@ return (jlong)new SkeletalAnimation();
 SkeletalAnimation* nativeObject = (SkeletalAnimation*)this_addr;
 return nativeObject->GetDuration();
 */
-    private static native float internal_native_GetDuration(long this_addr);
+    public static native float internal_native_GetDuration(long this_addr);
 
     public void ScaleJoints(float inScale) {
         internal_native_ScaleJoints((long) getNativeData().getCPointer(), inScale);
@@ -52,7 +52,7 @@ return nativeObject->GetDuration();
 SkeletalAnimation* nativeObject = (SkeletalAnimation*)this_addr;
 nativeObject->ScaleJoints((float)inScale);
 */
-    private static native void internal_native_ScaleJoints(long this_addr, float inScale);
+    public static native void internal_native_ScaleJoints(long this_addr, float inScale);
 
     public void Sample(float inTime, SkeletonPose ioPose) {
         internal_native_Sample((long) getNativeData().getCPointer(), inTime, (long) (ioPose != null ? ioPose.getNativeData().getCPointer() : 0));
@@ -62,7 +62,7 @@ nativeObject->ScaleJoints((float)inScale);
 SkeletalAnimation* nativeObject = (SkeletalAnimation*)this_addr;
 nativeObject->Sample((float)inTime, *((SkeletonPose* )ioPose_addr));
 */
-    private static native void internal_native_Sample(long this_addr, float inTime, long ioPose_addr);
+    public static native void internal_native_Sample(long this_addr, float inTime, long ioPose_addr);
 
     public ArraySkeletonAnimatedJoint GetAnimatedJoints() {
         long pointer = internal_native_GetAnimatedJoints((long) getNativeData().getCPointer());
@@ -78,25 +78,5 @@ nativeObject->Sample((float)inTime, *((SkeletonPose* )ioPose_addr));
 SkeletalAnimation* nativeObject = (SkeletalAnimation*)this_addr;
 return (jlong)&nativeObject->GetAnimatedJoints();
 */
-    private static native long internal_native_GetAnimatedJoints(long this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static float native_GetDuration(long this_addr) {
-        return internal_native_GetDuration(this_addr);
-    }
-
-    public static void native_ScaleJoints(long this_addr, float inScale) {
-        internal_native_ScaleJoints(this_addr, inScale);
-    }
-
-    public static void native_Sample(long this_addr, float inTime, long ioPose_addr) {
-        internal_native_Sample(this_addr, inTime, ioPose_addr);
-    }
-
-    public static long native_GetAnimatedJoints(long this_addr) {
-        return internal_native_GetAnimatedJoints(this_addr);
-    }
+    public static native long internal_native_GetAnimatedJoints(long this_addr);
 }

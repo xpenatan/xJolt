@@ -31,7 +31,7 @@ var jsObj = new jolt.ShapeGetTriangles(inShape_addr, inBox_addr, inPositionCOM_a
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inBox_addr", "inPositionCOM_addr", "inRotation_addr", "inScale_addr"}, script = "var jsObj = new jolt.ShapeGetTriangles(inShape_addr, inBox_addr, inPositionCOM_addr, inRotation_addr, inScale_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Shape_AABox_Vec3_Quat_Vec3(int inShape_addr, int inBox_addr, int inPositionCOM_addr, int inRotation_addr, int inScale_addr);
+    public static native int internal_native_create_Shape_AABox_Vec3_Quat_Vec3(int inShape_addr, int inBox_addr, int inPositionCOM_addr, int inRotation_addr, int inScale_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -57,7 +57,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeGetTriangles);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeGetTriangles);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int GetNumTriangles() {
         return internal_native_GetNumTriangles((int) (long) getNativeData().getCPointer());
@@ -69,7 +69,7 @@ var returnedJSObj = jsObj.GetNumTriangles();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeGetTriangles);var returnedJSObj = jsObj.GetNumTriangles();return returnedJSObj;")
-    private static native int internal_native_GetNumTriangles(int this_addr);
+    public static native int internal_native_GetNumTriangles(int this_addr);
 
     public int GetVerticesSize() {
         return internal_native_GetVerticesSize((int) (long) getNativeData().getCPointer());
@@ -81,7 +81,7 @@ var returnedJSObj = jsObj.GetVerticesSize();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeGetTriangles);var returnedJSObj = jsObj.GetVerticesSize();return returnedJSObj;")
-    private static native int internal_native_GetVerticesSize(int this_addr);
+    public static native int internal_native_GetVerticesSize(int this_addr);
 
     public long GetVerticesData() {
         return internal_native_GetVerticesData((int) (long) getNativeData().getCPointer());
@@ -93,7 +93,7 @@ var returnedJSObj = jsObj.GetVerticesData();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeGetTriangles);var returnedJSObj = jsObj.GetVerticesData();return returnedJSObj;")
-    private static native int internal_native_GetVerticesData(int this_addr);
+    public static native int internal_native_GetVerticesData(int this_addr);
 
     public PhysicsMaterial GetMaterial(int inTriangle) {
         int pointer = internal_native_GetMaterial((int) (long) getNativeData().getCPointer(), inTriangle);
@@ -112,29 +112,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inTriangle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeGetTriangles);var returnedJSObj = jsObj.GetMaterial(inTriangle);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetMaterial(int this_addr, int inTriangle);
-
-    public static long native_create_Shape_AABox_Vec3_Quat_Vec3(long inShape_addr, long inBox_addr, long inPositionCOM_addr, long inRotation_addr, long inScale_addr) {
-        return internal_native_create_Shape_AABox_Vec3_Quat_Vec3((int) inShape_addr, (int) inBox_addr, (int) inPositionCOM_addr, (int) inRotation_addr, (int) inScale_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_GetNumTriangles(long this_addr) {
-        return internal_native_GetNumTriangles((int) this_addr);
-    }
-
-    public static int native_GetVerticesSize(long this_addr) {
-        return internal_native_GetVerticesSize((int) this_addr);
-    }
-
-    public static long native_GetVerticesData(long this_addr) {
-        return internal_native_GetVerticesData((int) this_addr);
-    }
-
-    public static long native_GetMaterial(long this_addr, int inTriangle) {
-        return internal_native_GetMaterial((int) this_addr, inTriangle);
-    }
+    public static native int internal_native_GetMaterial(int this_addr, int inTriangle);
 }

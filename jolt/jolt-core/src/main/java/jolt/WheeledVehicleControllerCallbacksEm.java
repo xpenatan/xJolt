@@ -54,7 +54,7 @@ virtual void OnTireMaxImpulseCallback(unsigned int inWheelIndex, TireMaxImpulseC
 WheeledVehicleControllerCallbacksJS* nativeObject = (WheeledVehicleControllerCallbacksJS*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void SetWheeledVehicleController(WheeledVehicleController inController) {
         internal_native_SetWheeledVehicleController((long) getNativeData().getCPointer(), (long) (inController != null ? inController.getNativeData().getCPointer() : 0));
@@ -64,7 +64,7 @@ delete nativeObject;
 WheeledVehicleControllerCallbacksEm* nativeObject = (WheeledVehicleControllerCallbacksEm*)this_addr;
 nativeObject->SetWheeledVehicleController(*((WheeledVehicleController* )inController_addr));
 */
-    private static native void internal_native_SetWheeledVehicleController(long this_addr, long inController_addr);
+    public static native void internal_native_SetWheeledVehicleController(long this_addr, long inController_addr);
 
     public WheeledVehicleControllerCallbacksEm() {
         long addr = internal_native_create();
@@ -89,23 +89,11 @@ nativeObject->SetWheeledVehicleController(*((WheeledVehicleController* )inContro
     /*[-JNI;-NATIVE]
 return (jlong)new WheeledVehicleControllerCallbacksJS();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /*[-JNI;-NATIVE]
 WheeledVehicleControllerCallbacksJS* nativeObject = (WheeledVehicleControllerCallbacksJS*)this_addr;
 nativeObject->setupCallback(env, object);
 */
-    private native void internal_native_setupCallback(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_SetWheeledVehicleController(long this_addr, long inController_addr) {
-        internal_native_SetWheeledVehicleController(this_addr, inController_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
-    }
+    public native void internal_native_setupCallback(long this_addr);
 }

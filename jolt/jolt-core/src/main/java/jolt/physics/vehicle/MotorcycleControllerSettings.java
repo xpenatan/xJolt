@@ -22,7 +22,7 @@ public class MotorcycleControllerSettings extends WheeledVehicleControllerSettin
     /*[-JNI;-NATIVE]
 return (jlong)new MotorcycleControllerSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new MotorcycleControllerSettings();
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mMaxLeanAngle() {
         return internal_native_get_mMaxLeanAngle((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 return nativeObject->mMaxLeanAngle;
 */
-    private static native float internal_native_get_mMaxLeanAngle(long this_addr);
+    public static native float internal_native_get_mMaxLeanAngle(long this_addr);
 
     public void set_mMaxLeanAngle(float mMaxLeanAngle) {
         internal_native_set_mMaxLeanAngle((long) getNativeData().getCPointer(), mMaxLeanAngle);
@@ -68,7 +68,7 @@ return nativeObject->mMaxLeanAngle;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 nativeObject->mMaxLeanAngle = mMaxLeanAngle;
 */
-    private static native void internal_native_set_mMaxLeanAngle(long this_addr, float mMaxLeanAngle);
+    public static native void internal_native_set_mMaxLeanAngle(long this_addr, float mMaxLeanAngle);
 
     public float get_mLeanSpringConstant() {
         return internal_native_get_mLeanSpringConstant((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ nativeObject->mMaxLeanAngle = mMaxLeanAngle;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 return nativeObject->mLeanSpringConstant;
 */
-    private static native float internal_native_get_mLeanSpringConstant(long this_addr);
+    public static native float internal_native_get_mLeanSpringConstant(long this_addr);
 
     public void set_mLeanSpringConstant(float mLeanSpringConstant) {
         internal_native_set_mLeanSpringConstant((long) getNativeData().getCPointer(), mLeanSpringConstant);
@@ -88,7 +88,7 @@ return nativeObject->mLeanSpringConstant;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 nativeObject->mLeanSpringConstant = mLeanSpringConstant;
 */
-    private static native void internal_native_set_mLeanSpringConstant(long this_addr, float mLeanSpringConstant);
+    public static native void internal_native_set_mLeanSpringConstant(long this_addr, float mLeanSpringConstant);
 
     public float get_mLeanSpringDamping() {
         return internal_native_get_mLeanSpringDamping((long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ nativeObject->mLeanSpringConstant = mLeanSpringConstant;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 return nativeObject->mLeanSpringDamping;
 */
-    private static native float internal_native_get_mLeanSpringDamping(long this_addr);
+    public static native float internal_native_get_mLeanSpringDamping(long this_addr);
 
     public void set_mLeanSpringDamping(float mLeanSpringDamping) {
         internal_native_set_mLeanSpringDamping((long) getNativeData().getCPointer(), mLeanSpringDamping);
@@ -108,7 +108,7 @@ return nativeObject->mLeanSpringDamping;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 nativeObject->mLeanSpringDamping = mLeanSpringDamping;
 */
-    private static native void internal_native_set_mLeanSpringDamping(long this_addr, float mLeanSpringDamping);
+    public static native void internal_native_set_mLeanSpringDamping(long this_addr, float mLeanSpringDamping);
 
     public float get_mLeanSpringIntegrationCoefficient() {
         return internal_native_get_mLeanSpringIntegrationCoefficient((long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ nativeObject->mLeanSpringDamping = mLeanSpringDamping;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 return nativeObject->mLeanSpringIntegrationCoefficient;
 */
-    private static native float internal_native_get_mLeanSpringIntegrationCoefficient(long this_addr);
+    public static native float internal_native_get_mLeanSpringIntegrationCoefficient(long this_addr);
 
     public void set_mLeanSpringIntegrationCoefficient(float mLeanSpringIntegrationCoefficient) {
         internal_native_set_mLeanSpringIntegrationCoefficient((long) getNativeData().getCPointer(), mLeanSpringIntegrationCoefficient);
@@ -128,7 +128,7 @@ return nativeObject->mLeanSpringIntegrationCoefficient;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 nativeObject->mLeanSpringIntegrationCoefficient = mLeanSpringIntegrationCoefficient;
 */
-    private static native void internal_native_set_mLeanSpringIntegrationCoefficient(long this_addr, float mLeanSpringIntegrationCoefficient);
+    public static native void internal_native_set_mLeanSpringIntegrationCoefficient(long this_addr, float mLeanSpringIntegrationCoefficient);
 
     public float get_mLeanSpringIntegrationCoefficientDecay() {
         return internal_native_get_mLeanSpringIntegrationCoefficientDecay((long) getNativeData().getCPointer());
@@ -138,7 +138,7 @@ nativeObject->mLeanSpringIntegrationCoefficient = mLeanSpringIntegrationCoeffici
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 return nativeObject->mLeanSpringIntegrationCoefficientDecay;
 */
-    private static native float internal_native_get_mLeanSpringIntegrationCoefficientDecay(long this_addr);
+    public static native float internal_native_get_mLeanSpringIntegrationCoefficientDecay(long this_addr);
 
     public void set_mLeanSpringIntegrationCoefficientDecay(float mLeanSpringIntegrationCoefficientDecay) {
         internal_native_set_mLeanSpringIntegrationCoefficientDecay((long) getNativeData().getCPointer(), mLeanSpringIntegrationCoefficientDecay);
@@ -148,7 +148,7 @@ return nativeObject->mLeanSpringIntegrationCoefficientDecay;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 nativeObject->mLeanSpringIntegrationCoefficientDecay = mLeanSpringIntegrationCoefficientDecay;
 */
-    private static native void internal_native_set_mLeanSpringIntegrationCoefficientDecay(long this_addr, float mLeanSpringIntegrationCoefficientDecay);
+    public static native void internal_native_set_mLeanSpringIntegrationCoefficientDecay(long this_addr, float mLeanSpringIntegrationCoefficientDecay);
 
     public float get_mLeanSmoothingFactor() {
         return internal_native_get_mLeanSmoothingFactor((long) getNativeData().getCPointer());
@@ -158,7 +158,7 @@ nativeObject->mLeanSpringIntegrationCoefficientDecay = mLeanSpringIntegrationCoe
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 return nativeObject->mLeanSmoothingFactor;
 */
-    private static native float internal_native_get_mLeanSmoothingFactor(long this_addr);
+    public static native float internal_native_get_mLeanSmoothingFactor(long this_addr);
 
     public void set_mLeanSmoothingFactor(float mLeanSmoothingFactor) {
         internal_native_set_mLeanSmoothingFactor((long) getNativeData().getCPointer(), mLeanSmoothingFactor);
@@ -168,61 +168,5 @@ return nativeObject->mLeanSmoothingFactor;
 MotorcycleControllerSettings* nativeObject = (MotorcycleControllerSettings*)this_addr;
 nativeObject->mLeanSmoothingFactor = mLeanSmoothingFactor;
 */
-    private static native void internal_native_set_mLeanSmoothingFactor(long this_addr, float mLeanSmoothingFactor);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_get_mMaxLeanAngle(long this_addr) {
-        return internal_native_get_mMaxLeanAngle(this_addr);
-    }
-
-    public static void native_set_mMaxLeanAngle(long this_addr, float mMaxLeanAngle) {
-        internal_native_set_mMaxLeanAngle(this_addr, mMaxLeanAngle);
-    }
-
-    public static float native_get_mLeanSpringConstant(long this_addr) {
-        return internal_native_get_mLeanSpringConstant(this_addr);
-    }
-
-    public static void native_set_mLeanSpringConstant(long this_addr, float mLeanSpringConstant) {
-        internal_native_set_mLeanSpringConstant(this_addr, mLeanSpringConstant);
-    }
-
-    public static float native_get_mLeanSpringDamping(long this_addr) {
-        return internal_native_get_mLeanSpringDamping(this_addr);
-    }
-
-    public static void native_set_mLeanSpringDamping(long this_addr, float mLeanSpringDamping) {
-        internal_native_set_mLeanSpringDamping(this_addr, mLeanSpringDamping);
-    }
-
-    public static float native_get_mLeanSpringIntegrationCoefficient(long this_addr) {
-        return internal_native_get_mLeanSpringIntegrationCoefficient(this_addr);
-    }
-
-    public static void native_set_mLeanSpringIntegrationCoefficient(long this_addr, float mLeanSpringIntegrationCoefficient) {
-        internal_native_set_mLeanSpringIntegrationCoefficient(this_addr, mLeanSpringIntegrationCoefficient);
-    }
-
-    public static float native_get_mLeanSpringIntegrationCoefficientDecay(long this_addr) {
-        return internal_native_get_mLeanSpringIntegrationCoefficientDecay(this_addr);
-    }
-
-    public static void native_set_mLeanSpringIntegrationCoefficientDecay(long this_addr, float mLeanSpringIntegrationCoefficientDecay) {
-        internal_native_set_mLeanSpringIntegrationCoefficientDecay(this_addr, mLeanSpringIntegrationCoefficientDecay);
-    }
-
-    public static float native_get_mLeanSmoothingFactor(long this_addr) {
-        return internal_native_get_mLeanSmoothingFactor(this_addr);
-    }
-
-    public static void native_set_mLeanSmoothingFactor(long this_addr, float mLeanSmoothingFactor) {
-        internal_native_set_mLeanSmoothingFactor(this_addr, mLeanSmoothingFactor);
-    }
+    public static native void internal_native_set_mLeanSmoothingFactor(long this_addr, float mLeanSmoothingFactor);
 }

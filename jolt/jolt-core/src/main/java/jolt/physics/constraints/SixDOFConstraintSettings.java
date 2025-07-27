@@ -44,7 +44,7 @@ public class SixDOFConstraintSettings extends TwoBodyConstraintSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new SixDOFConstraintSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -70,7 +70,7 @@ return (jlong)new SixDOFConstraintSettings();
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void MakeFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
         internal_native_MakeFreeAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0));
@@ -80,7 +80,7 @@ delete nativeObject;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->MakeFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    private static native void internal_native_MakeFreeAxis(long this_addr, long inAxis);
+    public static native void internal_native_MakeFreeAxis(long this_addr, long inAxis);
 
     public boolean IsFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
         return internal_native_IsFreeAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0));
@@ -90,7 +90,7 @@ nativeObject->MakeFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return nativeObject->IsFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    private static native boolean internal_native_IsFreeAxis(long this_addr, long inAxis);
+    public static native boolean internal_native_IsFreeAxis(long this_addr, long inAxis);
 
     public void MakeFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
         internal_native_MakeFixedAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0));
@@ -100,7 +100,7 @@ return nativeObject->IsFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->MakeFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    private static native void internal_native_MakeFixedAxis(long this_addr, long inAxis);
+    public static native void internal_native_MakeFixedAxis(long this_addr, long inAxis);
 
     public boolean IsFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
         return internal_native_IsFixedAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0));
@@ -110,7 +110,7 @@ nativeObject->MakeFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return nativeObject->IsFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    private static native boolean internal_native_IsFixedAxis(long this_addr, long inAxis);
+    public static native boolean internal_native_IsFixedAxis(long this_addr, long inAxis);
 
     public void SetLimitedAxis(SixDOFConstraintSettings_EAxis inAxis, float inMin, float inMax) {
         internal_native_SetLimitedAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0), inMin, inMax);
@@ -120,7 +120,7 @@ return nativeObject->IsFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->SetLimitedAxis((::SixDOFConstraintSettings_EAxis)inAxis, (float)inMin, (float)inMax);
 */
-    private static native void internal_native_SetLimitedAxis(long this_addr, long inAxis, float inMin, float inMax);
+    public static native void internal_native_SetLimitedAxis(long this_addr, long inAxis, float inMin, float inMax);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((long) getNativeData().getCPointer());
@@ -131,7 +131,7 @@ nativeObject->SetLimitedAxis((::SixDOFConstraintSettings_EAxis)inAxis, (float)in
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jint)nativeObject->mSpace;
 */
-    private static native int internal_native_get_mSpace(long this_addr);
+    public static native int internal_native_get_mSpace(long this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((long) getNativeData().getCPointer(), (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -141,7 +141,7 @@ return (jint)nativeObject->mSpace;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    private static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
 
     public Vec3 get_mPosition1() {
         long pointer = internal_native_get_mPosition1((long) getNativeData().getCPointer());
@@ -157,7 +157,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPosition1;
 */
-    private static native long internal_native_get_mPosition1(long this_addr);
+    public static native long internal_native_get_mPosition1(long this_addr);
 
     public void set_mPosition1(Vec3 mPosition1) {
         internal_native_set_mPosition1((long) getNativeData().getCPointer(), (long) (mPosition1 != null ? mPosition1.getNativeData().getCPointer() : 0));
@@ -167,7 +167,7 @@ return (jlong)&nativeObject->mPosition1;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
 */
-    private static native void internal_native_set_mPosition1(long this_addr, long mPosition1_addr);
+    public static native void internal_native_set_mPosition1(long this_addr, long mPosition1_addr);
 
     public Vec3 get_mAxisX1() {
         long pointer = internal_native_get_mAxisX1((long) getNativeData().getCPointer());
@@ -183,7 +183,7 @@ nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisX1;
 */
-    private static native long internal_native_get_mAxisX1(long this_addr);
+    public static native long internal_native_get_mAxisX1(long this_addr);
 
     public void set_mAxisX1(Vec3 mAxisX1) {
         internal_native_set_mAxisX1((long) getNativeData().getCPointer(), (long) (mAxisX1 != null ? mAxisX1.getNativeData().getCPointer() : 0));
@@ -193,7 +193,7 @@ return (jlong)&nativeObject->mAxisX1;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
 */
-    private static native void internal_native_set_mAxisX1(long this_addr, long mAxisX1_addr);
+    public static native void internal_native_set_mAxisX1(long this_addr, long mAxisX1_addr);
 
     public Vec3 get_mAxisY1() {
         long pointer = internal_native_get_mAxisY1((long) getNativeData().getCPointer());
@@ -209,7 +209,7 @@ nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisY1;
 */
-    private static native long internal_native_get_mAxisY1(long this_addr);
+    public static native long internal_native_get_mAxisY1(long this_addr);
 
     public void set_mAxisY1(Vec3 mAxisY1) {
         internal_native_set_mAxisY1((long) getNativeData().getCPointer(), (long) (mAxisY1 != null ? mAxisY1.getNativeData().getCPointer() : 0));
@@ -219,7 +219,7 @@ return (jlong)&nativeObject->mAxisY1;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
 */
-    private static native void internal_native_set_mAxisY1(long this_addr, long mAxisY1_addr);
+    public static native void internal_native_set_mAxisY1(long this_addr, long mAxisY1_addr);
 
     public Vec3 get_mPosition2() {
         long pointer = internal_native_get_mPosition2((long) getNativeData().getCPointer());
@@ -235,7 +235,7 @@ nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPosition2;
 */
-    private static native long internal_native_get_mPosition2(long this_addr);
+    public static native long internal_native_get_mPosition2(long this_addr);
 
     public void set_mPosition2(Vec3 mPosition2) {
         internal_native_set_mPosition2((long) getNativeData().getCPointer(), (long) (mPosition2 != null ? mPosition2.getNativeData().getCPointer() : 0));
@@ -245,7 +245,7 @@ return (jlong)&nativeObject->mPosition2;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
 */
-    private static native void internal_native_set_mPosition2(long this_addr, long mPosition2_addr);
+    public static native void internal_native_set_mPosition2(long this_addr, long mPosition2_addr);
 
     public Vec3 get_mAxisX2() {
         long pointer = internal_native_get_mAxisX2((long) getNativeData().getCPointer());
@@ -261,7 +261,7 @@ nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisX2;
 */
-    private static native long internal_native_get_mAxisX2(long this_addr);
+    public static native long internal_native_get_mAxisX2(long this_addr);
 
     public void set_mAxisX2(Vec3 mAxisX2) {
         internal_native_set_mAxisX2((long) getNativeData().getCPointer(), (long) (mAxisX2 != null ? mAxisX2.getNativeData().getCPointer() : 0));
@@ -271,7 +271,7 @@ return (jlong)&nativeObject->mAxisX2;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
 */
-    private static native void internal_native_set_mAxisX2(long this_addr, long mAxisX2_addr);
+    public static native void internal_native_set_mAxisX2(long this_addr, long mAxisX2_addr);
 
     public Vec3 get_mAxisY2() {
         long pointer = internal_native_get_mAxisY2((long) getNativeData().getCPointer());
@@ -287,7 +287,7 @@ nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisY2;
 */
-    private static native long internal_native_get_mAxisY2(long this_addr);
+    public static native long internal_native_get_mAxisY2(long this_addr);
 
     public void set_mAxisY2(Vec3 mAxisY2) {
         internal_native_set_mAxisY2((long) getNativeData().getCPointer(), (long) (mAxisY2 != null ? mAxisY2.getNativeData().getCPointer() : 0));
@@ -297,7 +297,7 @@ return (jlong)&nativeObject->mAxisY2;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mAxisY2 = *((Vec3*)mAxisY2_addr);
 */
-    private static native void internal_native_set_mAxisY2(long this_addr, long mAxisY2_addr);
+    public static native void internal_native_set_mAxisY2(long this_addr, long mAxisY2_addr);
 
     public float get_mMaxFriction(int index) {
         return internal_native_get_mMaxFriction((long) getNativeData().getCPointer(), index);
@@ -307,7 +307,7 @@ nativeObject->mAxisY2 = *((Vec3*)mAxisY2_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return nativeObject->mMaxFriction[index];
 */
-    private static native float internal_native_get_mMaxFriction(long this_addr, int index);
+    public static native float internal_native_get_mMaxFriction(long this_addr, int index);
 
     public void set_mMaxFriction(int index, float mMaxFriction) {
         internal_native_set_mMaxFriction((long) getNativeData().getCPointer(), index, mMaxFriction);
@@ -317,7 +317,7 @@ return nativeObject->mMaxFriction[index];
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mMaxFriction[index] = mMaxFriction;
 */
-    private static native void internal_native_set_mMaxFriction(long this_addr, int index, float mMaxFriction);
+    public static native void internal_native_set_mMaxFriction(long this_addr, int index, float mMaxFriction);
 
     public ESwingType get_mSwingType() {
         int value = internal_native_get_mSwingType((long) getNativeData().getCPointer());
@@ -328,7 +328,7 @@ nativeObject->mMaxFriction[index] = mMaxFriction;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jint)nativeObject->mSwingType;
 */
-    private static native int internal_native_get_mSwingType(long this_addr);
+    public static native int internal_native_get_mSwingType(long this_addr);
 
     public void set_mSwingType(ESwingType mSwingType) {
         internal_native_set_mSwingType((long) getNativeData().getCPointer(), (long) (mSwingType != null ? mSwingType.getValue() : 0));
@@ -338,7 +338,7 @@ return (jint)nativeObject->mSwingType;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mSwingType = (::ESwingType)mSwingType;
 */
-    private static native void internal_native_set_mSwingType(long this_addr, long mSwingType);
+    public static native void internal_native_set_mSwingType(long this_addr, long mSwingType);
 
     public float get_mLimitMin(int index) {
         return internal_native_get_mLimitMin((long) getNativeData().getCPointer(), index);
@@ -348,7 +348,7 @@ nativeObject->mSwingType = (::ESwingType)mSwingType;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return nativeObject->mLimitMin[index];
 */
-    private static native float internal_native_get_mLimitMin(long this_addr, int index);
+    public static native float internal_native_get_mLimitMin(long this_addr, int index);
 
     public void set_mLimitMin(int index, float mLimitMin) {
         internal_native_set_mLimitMin((long) getNativeData().getCPointer(), index, mLimitMin);
@@ -358,7 +358,7 @@ return nativeObject->mLimitMin[index];
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mLimitMin[index] = mLimitMin;
 */
-    private static native void internal_native_set_mLimitMin(long this_addr, int index, float mLimitMin);
+    public static native void internal_native_set_mLimitMin(long this_addr, int index, float mLimitMin);
 
     public float get_mLimitMax(int index) {
         return internal_native_get_mLimitMax((long) getNativeData().getCPointer(), index);
@@ -368,7 +368,7 @@ nativeObject->mLimitMin[index] = mLimitMin;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return nativeObject->mLimitMax[index];
 */
-    private static native float internal_native_get_mLimitMax(long this_addr, int index);
+    public static native float internal_native_get_mLimitMax(long this_addr, int index);
 
     public void set_mLimitMax(int index, float mLimitMax) {
         internal_native_set_mLimitMax((long) getNativeData().getCPointer(), index, mLimitMax);
@@ -378,7 +378,7 @@ return nativeObject->mLimitMax[index];
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mLimitMax[index] = mLimitMax;
 */
-    private static native void internal_native_set_mLimitMax(long this_addr, int index, float mLimitMax);
+    public static native void internal_native_set_mLimitMax(long this_addr, int index, float mLimitMax);
 
     public SpringSettings get_mLimitsSpringSettings(int index) {
         long pointer = internal_native_get_mLimitsSpringSettings((long) getNativeData().getCPointer(), index);
@@ -394,7 +394,7 @@ nativeObject->mLimitMax[index] = mLimitMax;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mLimitsSpringSettings[index];
 */
-    private static native long internal_native_get_mLimitsSpringSettings(long this_addr, int index);
+    public static native long internal_native_get_mLimitsSpringSettings(long this_addr, int index);
 
     public void set_mLimitsSpringSettings(int index, SpringSettings mLimitsSpringSettings) {
         internal_native_set_mLimitsSpringSettings((long) getNativeData().getCPointer(), index, (long) (mLimitsSpringSettings != null ? mLimitsSpringSettings.getNativeData().getCPointer() : 0));
@@ -404,7 +404,7 @@ return (jlong)&nativeObject->mLimitsSpringSettings[index];
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mLimitsSpringSettings[index] = *((SpringSettings*)mLimitsSpringSettings_addr);
 */
-    private static native void internal_native_set_mLimitsSpringSettings(long this_addr, int index, long mLimitsSpringSettings_addr);
+    public static native void internal_native_set_mLimitsSpringSettings(long this_addr, int index, long mLimitsSpringSettings_addr);
 
     public MotorSettings get_mMotorSettings(int index) {
         long pointer = internal_native_get_mMotorSettings((long) getNativeData().getCPointer(), index);
@@ -420,7 +420,7 @@ nativeObject->mLimitsSpringSettings[index] = *((SpringSettings*)mLimitsSpringSet
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mMotorSettings[index];
 */
-    private static native long internal_native_get_mMotorSettings(long this_addr, int index);
+    public static native long internal_native_get_mMotorSettings(long this_addr, int index);
 
     public void set_mMotorSettings(int index, MotorSettings mMotorSettings) {
         internal_native_set_mMotorSettings((long) getNativeData().getCPointer(), index, (long) (mMotorSettings != null ? mMotorSettings.getNativeData().getCPointer() : 0));
@@ -430,137 +430,5 @@ return (jlong)&nativeObject->mMotorSettings[index];
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mMotorSettings[index] = *((MotorSettings*)mMotorSettings_addr);
 */
-    private static native void internal_native_set_mMotorSettings(long this_addr, int index, long mMotorSettings_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_MakeFreeAxis(long this_addr, long inAxis) {
-        internal_native_MakeFreeAxis(this_addr, inAxis);
-    }
-
-    public static boolean native_IsFreeAxis(long this_addr, long inAxis) {
-        return internal_native_IsFreeAxis(this_addr, inAxis);
-    }
-
-    public static void native_MakeFixedAxis(long this_addr, long inAxis) {
-        internal_native_MakeFixedAxis(this_addr, inAxis);
-    }
-
-    public static boolean native_IsFixedAxis(long this_addr, long inAxis) {
-        return internal_native_IsFixedAxis(this_addr, inAxis);
-    }
-
-    public static void native_SetLimitedAxis(long this_addr, long inAxis, float inMin, float inMax) {
-        internal_native_SetLimitedAxis(this_addr, inAxis, inMin, inMax);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace(this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace(this_addr, mSpace);
-    }
-
-    public static long native_get_mPosition1(long this_addr) {
-        return internal_native_get_mPosition1(this_addr);
-    }
-
-    public static void native_set_mPosition1(long this_addr, long mPosition1_addr) {
-        internal_native_set_mPosition1(this_addr, mPosition1_addr);
-    }
-
-    public static long native_get_mAxisX1(long this_addr) {
-        return internal_native_get_mAxisX1(this_addr);
-    }
-
-    public static void native_set_mAxisX1(long this_addr, long mAxisX1_addr) {
-        internal_native_set_mAxisX1(this_addr, mAxisX1_addr);
-    }
-
-    public static long native_get_mAxisY1(long this_addr) {
-        return internal_native_get_mAxisY1(this_addr);
-    }
-
-    public static void native_set_mAxisY1(long this_addr, long mAxisY1_addr) {
-        internal_native_set_mAxisY1(this_addr, mAxisY1_addr);
-    }
-
-    public static long native_get_mPosition2(long this_addr) {
-        return internal_native_get_mPosition2(this_addr);
-    }
-
-    public static void native_set_mPosition2(long this_addr, long mPosition2_addr) {
-        internal_native_set_mPosition2(this_addr, mPosition2_addr);
-    }
-
-    public static long native_get_mAxisX2(long this_addr) {
-        return internal_native_get_mAxisX2(this_addr);
-    }
-
-    public static void native_set_mAxisX2(long this_addr, long mAxisX2_addr) {
-        internal_native_set_mAxisX2(this_addr, mAxisX2_addr);
-    }
-
-    public static long native_get_mAxisY2(long this_addr) {
-        return internal_native_get_mAxisY2(this_addr);
-    }
-
-    public static void native_set_mAxisY2(long this_addr, long mAxisY2_addr) {
-        internal_native_set_mAxisY2(this_addr, mAxisY2_addr);
-    }
-
-    public static float native_get_mMaxFriction(long this_addr, int index) {
-        return internal_native_get_mMaxFriction(this_addr, index);
-    }
-
-    public static void native_set_mMaxFriction(long this_addr, int index, float mMaxFriction) {
-        internal_native_set_mMaxFriction(this_addr, index, mMaxFriction);
-    }
-
-    public static long native_get_mSwingType(long this_addr) {
-        return internal_native_get_mSwingType(this_addr);
-    }
-
-    public static void native_set_mSwingType(long this_addr, long mSwingType) {
-        internal_native_set_mSwingType(this_addr, mSwingType);
-    }
-
-    public static float native_get_mLimitMin(long this_addr, int index) {
-        return internal_native_get_mLimitMin(this_addr, index);
-    }
-
-    public static void native_set_mLimitMin(long this_addr, int index, float mLimitMin) {
-        internal_native_set_mLimitMin(this_addr, index, mLimitMin);
-    }
-
-    public static float native_get_mLimitMax(long this_addr, int index) {
-        return internal_native_get_mLimitMax(this_addr, index);
-    }
-
-    public static void native_set_mLimitMax(long this_addr, int index, float mLimitMax) {
-        internal_native_set_mLimitMax(this_addr, index, mLimitMax);
-    }
-
-    public static long native_get_mLimitsSpringSettings(long this_addr, int index) {
-        return internal_native_get_mLimitsSpringSettings(this_addr, index);
-    }
-
-    public static void native_set_mLimitsSpringSettings(long this_addr, int index, long mLimitsSpringSettings_addr) {
-        internal_native_set_mLimitsSpringSettings(this_addr, index, mLimitsSpringSettings_addr);
-    }
-
-    public static long native_get_mMotorSettings(long this_addr, int index) {
-        return internal_native_get_mMotorSettings(this_addr, index);
-    }
-
-    public static void native_set_mMotorSettings(long this_addr, int index, long mMotorSettings_addr) {
-        internal_native_set_mMotorSettings(this_addr, index, mMotorSettings_addr);
-    }
+    public static native void internal_native_set_mMotorSettings(long this_addr, int index, long mMotorSettings_addr);
 }

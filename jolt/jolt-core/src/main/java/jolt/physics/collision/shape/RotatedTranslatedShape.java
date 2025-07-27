@@ -43,7 +43,7 @@ RotatedTranslatedShape* nativeObject = (RotatedTranslatedShape*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetRotation();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetRotation(long this_addr);
+    public static native long internal_native_GetRotation(long this_addr);
 
     public Vec3 GetPosition() {
         long pointer = internal_native_GetPosition((long) getNativeData().getCPointer());
@@ -60,13 +60,5 @@ RotatedTranslatedShape* nativeObject = (RotatedTranslatedShape*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPosition();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetPosition(long this_addr);
-
-    public static long native_GetRotation(long this_addr) {
-        return internal_native_GetRotation(this_addr);
-    }
-
-    public static long native_GetPosition(long this_addr) {
-        return internal_native_GetPosition(this_addr);
-    }
+    public static native long internal_native_GetPosition(long this_addr);
 }

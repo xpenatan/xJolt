@@ -28,7 +28,7 @@ public class SoftBodySharedSettingsVertex extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SoftBodySharedSettingsVertex();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ return (jlong)new SoftBodySharedSettingsVertex();
 SoftBodySharedSettingsVertex* nativeObject = (SoftBodySharedSettingsVertex*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Float3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
@@ -69,7 +69,7 @@ delete nativeObject;
 SoftBodySharedSettingsVertex* nativeObject = (SoftBodySharedSettingsVertex*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    private static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition(long this_addr);
 
     public void set_mPosition(Float3 mPosition) {
         internal_native_set_mPosition((long) getNativeData().getCPointer(), (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -79,7 +79,7 @@ return (jlong)&nativeObject->mPosition;
 SoftBodySharedSettingsVertex* nativeObject = (SoftBodySharedSettingsVertex*)this_addr;
 nativeObject->mPosition = *((Float3*)mPosition_addr);
 */
-    private static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
+    public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Float3 get_mVelocity() {
         long pointer = internal_native_get_mVelocity((long) getNativeData().getCPointer());
@@ -95,7 +95,7 @@ nativeObject->mPosition = *((Float3*)mPosition_addr);
 SoftBodySharedSettingsVertex* nativeObject = (SoftBodySharedSettingsVertex*)this_addr;
 return (jlong)&nativeObject->mVelocity;
 */
-    private static native long internal_native_get_mVelocity(long this_addr);
+    public static native long internal_native_get_mVelocity(long this_addr);
 
     public void set_mVelocity(Float3 mVelocity) {
         internal_native_set_mVelocity((long) getNativeData().getCPointer(), (long) (mVelocity != null ? mVelocity.getNativeData().getCPointer() : 0));
@@ -105,7 +105,7 @@ return (jlong)&nativeObject->mVelocity;
 SoftBodySharedSettingsVertex* nativeObject = (SoftBodySharedSettingsVertex*)this_addr;
 nativeObject->mVelocity = *((Float3*)mVelocity_addr);
 */
-    private static native void internal_native_set_mVelocity(long this_addr, long mVelocity_addr);
+    public static native void internal_native_set_mVelocity(long this_addr, long mVelocity_addr);
 
     public float get_mInvMass() {
         return internal_native_get_mInvMass((long) getNativeData().getCPointer());
@@ -115,7 +115,7 @@ nativeObject->mVelocity = *((Float3*)mVelocity_addr);
 SoftBodySharedSettingsVertex* nativeObject = (SoftBodySharedSettingsVertex*)this_addr;
 return nativeObject->mInvMass;
 */
-    private static native float internal_native_get_mInvMass(long this_addr);
+    public static native float internal_native_get_mInvMass(long this_addr);
 
     public void set_mInvMass(float mInvMass) {
         internal_native_set_mInvMass((long) getNativeData().getCPointer(), mInvMass);
@@ -125,37 +125,5 @@ return nativeObject->mInvMass;
 SoftBodySharedSettingsVertex* nativeObject = (SoftBodySharedSettingsVertex*)this_addr;
 nativeObject->mInvMass = mInvMass;
 */
-    private static native void internal_native_set_mInvMass(long this_addr, float mInvMass);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition(this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition(this_addr, mPosition_addr);
-    }
-
-    public static long native_get_mVelocity(long this_addr) {
-        return internal_native_get_mVelocity(this_addr);
-    }
-
-    public static void native_set_mVelocity(long this_addr, long mVelocity_addr) {
-        internal_native_set_mVelocity(this_addr, mVelocity_addr);
-    }
-
-    public static float native_get_mInvMass(long this_addr) {
-        return internal_native_get_mInvMass(this_addr);
-    }
-
-    public static void native_set_mInvMass(long this_addr, float mInvMass) {
-        internal_native_set_mInvMass(this_addr, mInvMass);
-    }
+    public static native void internal_native_set_mInvMass(long this_addr, float mInvMass);
 }

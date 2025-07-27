@@ -25,7 +25,7 @@ var jsObj = new jolt.VehicleAntiRollBar();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.VehicleAntiRollBar();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mLeftWheel() {
         return internal_native_get_mLeftWheel((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);
 return jsObj.get_mLeftWheel();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);return jsObj.get_mLeftWheel();")
-    private static native int internal_native_get_mLeftWheel(int this_addr);
+    public static native int internal_native_get_mLeftWheel(int this_addr);
 
     public void set_mLeftWheel(int mLeftWheel) {
         internal_native_set_mLeftWheel((int) (long) getNativeData().getCPointer(), mLeftWheel);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);
 jsObj.set_mLeftWheel(mLeftWheel);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLeftWheel"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);jsObj.set_mLeftWheel(mLeftWheel);")
-    private static native void internal_native_set_mLeftWheel(int this_addr, int mLeftWheel);
+    public static native void internal_native_set_mLeftWheel(int this_addr, int mLeftWheel);
 
     public int get_mRightWheel() {
         return internal_native_get_mRightWheel((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);
 return jsObj.get_mRightWheel();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);return jsObj.get_mRightWheel();")
-    private static native int internal_native_get_mRightWheel(int this_addr);
+    public static native int internal_native_get_mRightWheel(int this_addr);
 
     public void set_mRightWheel(int mRightWheel) {
         internal_native_set_mRightWheel((int) (long) getNativeData().getCPointer(), mRightWheel);
@@ -95,7 +95,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);
 jsObj.set_mRightWheel(mRightWheel);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRightWheel"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);jsObj.set_mRightWheel(mRightWheel);")
-    private static native void internal_native_set_mRightWheel(int this_addr, int mRightWheel);
+    public static native void internal_native_set_mRightWheel(int this_addr, int mRightWheel);
 
     public float get_mStiffness() {
         return internal_native_get_mStiffness((int) (long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);
 return jsObj.get_mStiffness();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);return jsObj.get_mStiffness();")
-    private static native float internal_native_get_mStiffness(int this_addr);
+    public static native float internal_native_get_mStiffness(int this_addr);
 
     public void set_mStiffness(float mStiffness) {
         internal_native_set_mStiffness((int) (long) getNativeData().getCPointer(), mStiffness);
@@ -117,37 +117,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);
 jsObj.set_mStiffness(mStiffness);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mStiffness"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleAntiRollBar);jsObj.set_mStiffness(mStiffness);")
-    private static native void internal_native_set_mStiffness(int this_addr, float mStiffness);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_get_mLeftWheel(long this_addr) {
-        return internal_native_get_mLeftWheel((int) this_addr);
-    }
-
-    public static void native_set_mLeftWheel(long this_addr, int mLeftWheel) {
-        internal_native_set_mLeftWheel((int) this_addr, mLeftWheel);
-    }
-
-    public static int native_get_mRightWheel(long this_addr) {
-        return internal_native_get_mRightWheel((int) this_addr);
-    }
-
-    public static void native_set_mRightWheel(long this_addr, int mRightWheel) {
-        internal_native_set_mRightWheel((int) this_addr, mRightWheel);
-    }
-
-    public static float native_get_mStiffness(long this_addr) {
-        return internal_native_get_mStiffness((int) this_addr);
-    }
-
-    public static void native_set_mStiffness(long this_addr, float mStiffness) {
-        internal_native_set_mStiffness((int) this_addr, mStiffness);
-    }
+    public static native void internal_native_set_mStiffness(int this_addr, float mStiffness);
 }

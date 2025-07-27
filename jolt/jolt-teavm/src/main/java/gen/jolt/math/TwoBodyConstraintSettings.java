@@ -44,9 +44,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inBody1_addr", "inBody2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TwoBodyConstraintSettings);var returnedJSObj = jsObj.Create(inBody1_addr, inBody2_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_Create(int this_addr, int inBody1_addr, int inBody2_addr);
-
-    public static long native_Create(long this_addr, long inBody1_addr, long inBody2_addr) {
-        return internal_native_Create((int) this_addr, (int) inBody1_addr, (int) inBody2_addr);
-    }
+    public static native int internal_native_Create(int this_addr, int inBody1_addr, int inBody2_addr);
 }

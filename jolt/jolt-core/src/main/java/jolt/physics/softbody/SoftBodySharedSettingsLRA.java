@@ -23,7 +23,7 @@ public class SoftBodySharedSettingsLRA extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SoftBodySharedSettingsLRA(inVertex1, inVertex2, (float)inMaxDistance);
 */
-    private static native long internal_native_create_int_int_float(int inVertex1, int inVertex2, float inMaxDistance);
+    public static native long internal_native_create_int_int_float(int inVertex1, int inVertex2, float inMaxDistance);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new SoftBodySharedSettingsLRA(inVertex1, inVertex2, (float)inMaxDi
 SoftBodySharedSettingsLRA* nativeObject = (SoftBodySharedSettingsLRA*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mVertex(int index) {
         return internal_native_get_mVertex((long) getNativeData().getCPointer(), index);
@@ -58,7 +58,7 @@ delete nativeObject;
 SoftBodySharedSettingsLRA* nativeObject = (SoftBodySharedSettingsLRA*)this_addr;
 return nativeObject->mVertex[index];
 */
-    private static native int internal_native_get_mVertex(long this_addr, int index);
+    public static native int internal_native_get_mVertex(long this_addr, int index);
 
     public void set_mVertex(int index, int mVertex) {
         internal_native_set_mVertex((long) getNativeData().getCPointer(), index, mVertex);
@@ -68,7 +68,7 @@ return nativeObject->mVertex[index];
 SoftBodySharedSettingsLRA* nativeObject = (SoftBodySharedSettingsLRA*)this_addr;
 nativeObject->mVertex[index] = mVertex;
 */
-    private static native void internal_native_set_mVertex(long this_addr, int index, int mVertex);
+    public static native void internal_native_set_mVertex(long this_addr, int index, int mVertex);
 
     public float get_mMaxDistance() {
         return internal_native_get_mMaxDistance((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ nativeObject->mVertex[index] = mVertex;
 SoftBodySharedSettingsLRA* nativeObject = (SoftBodySharedSettingsLRA*)this_addr;
 return nativeObject->mMaxDistance;
 */
-    private static native float internal_native_get_mMaxDistance(long this_addr);
+    public static native float internal_native_get_mMaxDistance(long this_addr);
 
     public void set_mMaxDistance(float mMaxDistance) {
         internal_native_set_mMaxDistance((long) getNativeData().getCPointer(), mMaxDistance);
@@ -88,29 +88,5 @@ return nativeObject->mMaxDistance;
 SoftBodySharedSettingsLRA* nativeObject = (SoftBodySharedSettingsLRA*)this_addr;
 nativeObject->mMaxDistance = mMaxDistance;
 */
-    private static native void internal_native_set_mMaxDistance(long this_addr, float mMaxDistance);
-
-    public static long native_create_int_int_float(int inVertex1, int inVertex2, float inMaxDistance) {
-        return internal_native_create_int_int_float(inVertex1, inVertex2, inMaxDistance);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_get_mVertex(long this_addr, int index) {
-        return internal_native_get_mVertex(this_addr, index);
-    }
-
-    public static void native_set_mVertex(long this_addr, int index, int mVertex) {
-        internal_native_set_mVertex(this_addr, index, mVertex);
-    }
-
-    public static float native_get_mMaxDistance(long this_addr) {
-        return internal_native_get_mMaxDistance(this_addr);
-    }
-
-    public static void native_set_mMaxDistance(long this_addr, float mMaxDistance) {
-        internal_native_set_mMaxDistance(this_addr, mMaxDistance);
-    }
+    public static native void internal_native_set_mMaxDistance(long this_addr, float mMaxDistance);
 }

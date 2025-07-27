@@ -25,7 +25,7 @@ var jsObj = new jolt.BroadPhaseLayer(inLayer);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inLayer"}, script = "var jsObj = new jolt.BroadPhaseLayer(inLayer);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_short(short inLayer);
+    public static native int internal_native_create_short(short inLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayer);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayer);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public short GetValue() {
         return internal_native_GetValue((int) (long) getNativeData().getCPointer());
@@ -63,17 +63,5 @@ var returnedJSObj = jsObj.GetValue();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayer);var returnedJSObj = jsObj.GetValue();return returnedJSObj;")
-    private static native short internal_native_GetValue(int this_addr);
-
-    public static long native_create_short(short inLayer) {
-        return internal_native_create_short(inLayer);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static short native_GetValue(long this_addr) {
-        return internal_native_GetValue((int) this_addr);
-    }
+    public static native short internal_native_GetValue(int this_addr);
 }

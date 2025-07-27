@@ -26,7 +26,7 @@ var jsObj = new jolt.SpringSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SpringSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -52,7 +52,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public boolean HasStiffness() {
         return internal_native_HasStiffness((int) (long) getNativeData().getCPointer());
@@ -64,7 +64,7 @@ var returnedJSObj = jsObj.HasStiffness();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);var returnedJSObj = jsObj.HasStiffness();return returnedJSObj;")
-    private static native boolean internal_native_HasStiffness(int this_addr);
+    public static native boolean internal_native_HasStiffness(int this_addr);
 
     public ESpringMode get_mMode() {
         int value = internal_native_get_mMode((int) (long) getNativeData().getCPointer());
@@ -76,7 +76,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);
 return jsObj.get_mMode();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);return jsObj.get_mMode();")
-    private static native int internal_native_get_mMode(int this_addr);
+    public static native int internal_native_get_mMode(int this_addr);
 
     public void set_mMode(ESpringMode mMode) {
         internal_native_set_mMode((int) (long) getNativeData().getCPointer(), (int) (long) (mMode != null ? mMode.getValue() : 0));
@@ -87,7 +87,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);
 jsObj.set_mMode(mMode);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);jsObj.set_mMode(mMode);")
-    private static native void internal_native_set_mMode(int this_addr, int mMode);
+    public static native void internal_native_set_mMode(int this_addr, int mMode);
 
     public float get_mFrequency() {
         return internal_native_get_mFrequency((int) (long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);
 return jsObj.get_mFrequency();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);return jsObj.get_mFrequency();")
-    private static native float internal_native_get_mFrequency(int this_addr);
+    public static native float internal_native_get_mFrequency(int this_addr);
 
     public void set_mFrequency(float mFrequency) {
         internal_native_set_mFrequency((int) (long) getNativeData().getCPointer(), mFrequency);
@@ -109,7 +109,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);
 jsObj.set_mFrequency(mFrequency);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mFrequency"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);jsObj.set_mFrequency(mFrequency);")
-    private static native void internal_native_set_mFrequency(int this_addr, float mFrequency);
+    public static native void internal_native_set_mFrequency(int this_addr, float mFrequency);
 
     public float get_mStiffness() {
         return internal_native_get_mStiffness((int) (long) getNativeData().getCPointer());
@@ -120,7 +120,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);
 return jsObj.get_mStiffness();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);return jsObj.get_mStiffness();")
-    private static native float internal_native_get_mStiffness(int this_addr);
+    public static native float internal_native_get_mStiffness(int this_addr);
 
     public void set_mStiffness(float mStiffness) {
         internal_native_set_mStiffness((int) (long) getNativeData().getCPointer(), mStiffness);
@@ -131,7 +131,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);
 jsObj.set_mStiffness(mStiffness);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mStiffness"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);jsObj.set_mStiffness(mStiffness);")
-    private static native void internal_native_set_mStiffness(int this_addr, float mStiffness);
+    public static native void internal_native_set_mStiffness(int this_addr, float mStiffness);
 
     public float get_mDamping() {
         return internal_native_get_mDamping((int) (long) getNativeData().getCPointer());
@@ -142,7 +142,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);
 return jsObj.get_mDamping();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);return jsObj.get_mDamping();")
-    private static native float internal_native_get_mDamping(int this_addr);
+    public static native float internal_native_get_mDamping(int this_addr);
 
     public void set_mDamping(float mDamping) {
         internal_native_set_mDamping((int) (long) getNativeData().getCPointer(), mDamping);
@@ -153,49 +153,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);
 jsObj.set_mDamping(mDamping);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDamping"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SpringSettings);jsObj.set_mDamping(mDamping);")
-    private static native void internal_native_set_mDamping(int this_addr, float mDamping);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static boolean native_HasStiffness(long this_addr) {
-        return internal_native_HasStiffness((int) this_addr);
-    }
-
-    public static long native_get_mMode(long this_addr) {
-        return internal_native_get_mMode((int) this_addr);
-    }
-
-    public static void native_set_mMode(long this_addr, long mMode) {
-        internal_native_set_mMode((int) this_addr, (int) mMode);
-    }
-
-    public static float native_get_mFrequency(long this_addr) {
-        return internal_native_get_mFrequency((int) this_addr);
-    }
-
-    public static void native_set_mFrequency(long this_addr, float mFrequency) {
-        internal_native_set_mFrequency((int) this_addr, mFrequency);
-    }
-
-    public static float native_get_mStiffness(long this_addr) {
-        return internal_native_get_mStiffness((int) this_addr);
-    }
-
-    public static void native_set_mStiffness(long this_addr, float mStiffness) {
-        internal_native_set_mStiffness((int) this_addr, mStiffness);
-    }
-
-    public static float native_get_mDamping(long this_addr) {
-        return internal_native_get_mDamping((int) this_addr);
-    }
-
-    public static void native_set_mDamping(long this_addr, float mDamping) {
-        internal_native_set_mDamping((int) this_addr, mDamping);
-    }
+    public static native void internal_native_set_mDamping(int this_addr, float mDamping);
 }

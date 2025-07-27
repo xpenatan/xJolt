@@ -34,7 +34,7 @@ var returnedJSObj = jsObj.GetRefCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetRefCount();return returnedJSObj;")
-    private static native int internal_native_GetRefCount(int this_addr);
+    public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
         internal_native_AddRef((int) (long) getNativeData().getCPointer());
@@ -45,7 +45,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);
 jsObj.AddRef();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.AddRef();")
-    private static native void internal_native_AddRef(int this_addr);
+    public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
         internal_native_Release((int) (long) getNativeData().getCPointer());
@@ -56,7 +56,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);
 jsObj.Release();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.Release();")
-    private static native void internal_native_Release(int this_addr);
+    public static native void internal_native_Release(int this_addr);
 
     public EConstraintType GetType() {
         int value = internal_native_GetType((int) (long) getNativeData().getCPointer());
@@ -69,7 +69,7 @@ var returnedJSObj = jsObj.GetType();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetType();return returnedJSObj;")
-    private static native int internal_native_GetType(int this_addr);
+    public static native int internal_native_GetType(int this_addr);
 
     public EConstraintSubType GetSubType() {
         int value = internal_native_GetSubType((int) (long) getNativeData().getCPointer());
@@ -82,7 +82,7 @@ var returnedJSObj = jsObj.GetSubType();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetSubType();return returnedJSObj;")
-    private static native int internal_native_GetSubType(int this_addr);
+    public static native int internal_native_GetSubType(int this_addr);
 
     public int GetConstraintPriority() {
         return internal_native_GetConstraintPriority((int) (long) getNativeData().getCPointer());
@@ -94,7 +94,7 @@ var returnedJSObj = jsObj.GetConstraintPriority();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetConstraintPriority();return returnedJSObj;")
-    private static native int internal_native_GetConstraintPriority(int this_addr);
+    public static native int internal_native_GetConstraintPriority(int this_addr);
 
     public void SetConstraintPriority(int inPriority) {
         internal_native_SetConstraintPriority((int) (long) getNativeData().getCPointer(), inPriority);
@@ -105,7 +105,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);
 jsObj.SetConstraintPriority(inPriority);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPriority"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.SetConstraintPriority(inPriority);")
-    private static native void internal_native_SetConstraintPriority(int this_addr, int inPriority);
+    public static native void internal_native_SetConstraintPriority(int this_addr, int inPriority);
 
     public void SetNumVelocityStepsOverride(int inN) {
         internal_native_SetNumVelocityStepsOverride((int) (long) getNativeData().getCPointer(), inN);
@@ -116,7 +116,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);
 jsObj.SetNumVelocityStepsOverride(inN);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inN"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.SetNumVelocityStepsOverride(inN);")
-    private static native void internal_native_SetNumVelocityStepsOverride(int this_addr, int inN);
+    public static native void internal_native_SetNumVelocityStepsOverride(int this_addr, int inN);
 
     public int GetNumVelocityStepsOverride() {
         return internal_native_GetNumVelocityStepsOverride((int) (long) getNativeData().getCPointer());
@@ -128,7 +128,7 @@ var returnedJSObj = jsObj.GetNumVelocityStepsOverride();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetNumVelocityStepsOverride();return returnedJSObj;")
-    private static native int internal_native_GetNumVelocityStepsOverride(int this_addr);
+    public static native int internal_native_GetNumVelocityStepsOverride(int this_addr);
 
     public void SetNumPositionStepsOverride(int inN) {
         internal_native_SetNumPositionStepsOverride((int) (long) getNativeData().getCPointer(), inN);
@@ -139,7 +139,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);
 jsObj.SetNumPositionStepsOverride(inN);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inN"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.SetNumPositionStepsOverride(inN);")
-    private static native void internal_native_SetNumPositionStepsOverride(int this_addr, int inN);
+    public static native void internal_native_SetNumPositionStepsOverride(int this_addr, int inN);
 
     public int GetNumPositionStepsOverride() {
         return internal_native_GetNumPositionStepsOverride((int) (long) getNativeData().getCPointer());
@@ -151,7 +151,7 @@ var returnedJSObj = jsObj.GetNumPositionStepsOverride();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetNumPositionStepsOverride();return returnedJSObj;")
-    private static native int internal_native_GetNumPositionStepsOverride(int this_addr);
+    public static native int internal_native_GetNumPositionStepsOverride(int this_addr);
 
     public void SetEnabled(boolean inEnabled) {
         internal_native_SetEnabled((int) (long) getNativeData().getCPointer(), inEnabled);
@@ -162,7 +162,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);
 jsObj.SetEnabled(inEnabled);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inEnabled"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.SetEnabled(inEnabled);")
-    private static native void internal_native_SetEnabled(int this_addr, boolean inEnabled);
+    public static native void internal_native_SetEnabled(int this_addr, boolean inEnabled);
 
     public boolean GetEnabled() {
         return internal_native_GetEnabled((int) (long) getNativeData().getCPointer());
@@ -174,7 +174,7 @@ var returnedJSObj = jsObj.GetEnabled();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetEnabled();return returnedJSObj;")
-    private static native boolean internal_native_GetEnabled(int this_addr);
+    public static native boolean internal_native_GetEnabled(int this_addr);
 
     public boolean IsActive() {
         return internal_native_IsActive((int) (long) getNativeData().getCPointer());
@@ -186,7 +186,7 @@ var returnedJSObj = jsObj.IsActive();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.IsActive();return returnedJSObj;")
-    private static native boolean internal_native_IsActive(int this_addr);
+    public static native boolean internal_native_IsActive(int this_addr);
 
     public long GetUserData() {
         return internal_native_GetUserData((int) (long) getNativeData().getCPointer());
@@ -198,7 +198,7 @@ var returnedJSObj = jsObj.GetUserData();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetUserData();return returnedJSObj;")
-    private static native int internal_native_GetUserData(int this_addr);
+    public static native int internal_native_GetUserData(int this_addr);
 
     public void SetUserData(long inUserData) {
         internal_native_SetUserData((int) (long) getNativeData().getCPointer(), (int) inUserData);
@@ -209,7 +209,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);
 jsObj.SetUserData(inUserData);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.SetUserData(inUserData);")
-    private static native void internal_native_SetUserData(int this_addr, int inUserData);
+    public static native void internal_native_SetUserData(int this_addr, int inUserData);
 
     public void ResetWarmStart() {
         internal_native_ResetWarmStart((int) (long) getNativeData().getCPointer());
@@ -220,73 +220,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);
 jsObj.ResetWarmStart();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.ResetWarmStart();")
-    private static native void internal_native_ResetWarmStart(int this_addr);
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount((int) this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef((int) this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release((int) this_addr);
-    }
-
-    public static long native_GetType(long this_addr) {
-        return internal_native_GetType((int) this_addr);
-    }
-
-    public static long native_GetSubType(long this_addr) {
-        return internal_native_GetSubType((int) this_addr);
-    }
-
-    public static int native_GetConstraintPriority(long this_addr) {
-        return internal_native_GetConstraintPriority((int) this_addr);
-    }
-
-    public static void native_SetConstraintPriority(long this_addr, int inPriority) {
-        internal_native_SetConstraintPriority((int) this_addr, inPriority);
-    }
-
-    public static void native_SetNumVelocityStepsOverride(long this_addr, int inN) {
-        internal_native_SetNumVelocityStepsOverride((int) this_addr, inN);
-    }
-
-    public static int native_GetNumVelocityStepsOverride(long this_addr) {
-        return internal_native_GetNumVelocityStepsOverride((int) this_addr);
-    }
-
-    public static void native_SetNumPositionStepsOverride(long this_addr, int inN) {
-        internal_native_SetNumPositionStepsOverride((int) this_addr, inN);
-    }
-
-    public static int native_GetNumPositionStepsOverride(long this_addr) {
-        return internal_native_GetNumPositionStepsOverride((int) this_addr);
-    }
-
-    public static void native_SetEnabled(long this_addr, boolean inEnabled) {
-        internal_native_SetEnabled((int) this_addr, inEnabled);
-    }
-
-    public static boolean native_GetEnabled(long this_addr) {
-        return internal_native_GetEnabled((int) this_addr);
-    }
-
-    public static boolean native_IsActive(long this_addr) {
-        return internal_native_IsActive((int) this_addr);
-    }
-
-    public static long native_GetUserData(long this_addr) {
-        return internal_native_GetUserData((int) this_addr);
-    }
-
-    public static void native_SetUserData(long this_addr, long inUserData) {
-        internal_native_SetUserData((int) this_addr, (int) inUserData);
-    }
-
-    public static void native_ResetWarmStart(long this_addr) {
-        internal_native_ResetWarmStart((int) this_addr);
-    }
+    public static native void internal_native_ResetWarmStart(int this_addr);
 }

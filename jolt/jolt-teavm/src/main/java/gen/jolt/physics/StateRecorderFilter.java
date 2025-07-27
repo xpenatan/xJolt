@@ -48,7 +48,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorderFilterJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.StateRecorderFilterJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public StateRecorderFilter() {
         int addr = internal_native_create();
@@ -139,10 +139,10 @@ var jsObj = new jolt.StateRecorderFilterJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.StateRecorderFilterJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "ShouldSaveBody", "ShouldSaveConstraint", "ShouldSaveContact", "ShouldRestoreContact" }, script = "var StateRecorderFilterJS = jolt.wrapPointer(this_addr, jolt.StateRecorderFilterJS); StateRecorderFilterJS.ShouldSaveBody = ShouldSaveBody; StateRecorderFilterJS.ShouldSaveConstraint = ShouldSaveConstraint; StateRecorderFilterJS.ShouldSaveContact = ShouldSaveContact; StateRecorderFilterJS.ShouldRestoreContact = ShouldRestoreContact;")
-    private static native void internal_native_setupCallback(int this_addr, ShouldSaveBody ShouldSaveBody, ShouldSaveConstraint ShouldSaveConstraint, ShouldSaveContact ShouldSaveContact, ShouldRestoreContact ShouldRestoreContact);
+    public static native void internal_native_setupCallback(int this_addr, ShouldSaveBody ShouldSaveBody, ShouldSaveConstraint ShouldSaveConstraint, ShouldSaveContact ShouldSaveContact, ShouldRestoreContact ShouldRestoreContact);
 
     @org.teavm.jso.JSFunctor()
     public interface ShouldSaveBody extends org.teavm.jso.JSObject {
@@ -166,13 +166,5 @@ return jolt.getPointer(jsObj);
     public interface ShouldRestoreContact extends org.teavm.jso.JSObject {
 
         boolean ShouldRestoreContact(int inBody1, int inBody2);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

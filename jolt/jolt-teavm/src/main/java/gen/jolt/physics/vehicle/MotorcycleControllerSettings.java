@@ -24,7 +24,7 @@ var jsObj = new jolt.MotorcycleControllerSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.MotorcycleControllerSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mMaxLeanAngle() {
         return internal_native_get_mMaxLeanAngle((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 return jsObj.get_mMaxLeanAngle();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);return jsObj.get_mMaxLeanAngle();")
-    private static native float internal_native_get_mMaxLeanAngle(int this_addr);
+    public static native float internal_native_get_mMaxLeanAngle(int this_addr);
 
     public void set_mMaxLeanAngle(float mMaxLeanAngle) {
         internal_native_set_mMaxLeanAngle((int) (long) getNativeData().getCPointer(), mMaxLeanAngle);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 jsObj.set_mMaxLeanAngle(mMaxLeanAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxLeanAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);jsObj.set_mMaxLeanAngle(mMaxLeanAngle);")
-    private static native void internal_native_set_mMaxLeanAngle(int this_addr, float mMaxLeanAngle);
+    public static native void internal_native_set_mMaxLeanAngle(int this_addr, float mMaxLeanAngle);
 
     public float get_mLeanSpringConstant() {
         return internal_native_get_mLeanSpringConstant((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 return jsObj.get_mLeanSpringConstant();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);return jsObj.get_mLeanSpringConstant();")
-    private static native float internal_native_get_mLeanSpringConstant(int this_addr);
+    public static native float internal_native_get_mLeanSpringConstant(int this_addr);
 
     public void set_mLeanSpringConstant(float mLeanSpringConstant) {
         internal_native_set_mLeanSpringConstant((int) (long) getNativeData().getCPointer(), mLeanSpringConstant);
@@ -95,7 +95,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 jsObj.set_mLeanSpringConstant(mLeanSpringConstant);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLeanSpringConstant"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);jsObj.set_mLeanSpringConstant(mLeanSpringConstant);")
-    private static native void internal_native_set_mLeanSpringConstant(int this_addr, float mLeanSpringConstant);
+    public static native void internal_native_set_mLeanSpringConstant(int this_addr, float mLeanSpringConstant);
 
     public float get_mLeanSpringDamping() {
         return internal_native_get_mLeanSpringDamping((int) (long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 return jsObj.get_mLeanSpringDamping();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);return jsObj.get_mLeanSpringDamping();")
-    private static native float internal_native_get_mLeanSpringDamping(int this_addr);
+    public static native float internal_native_get_mLeanSpringDamping(int this_addr);
 
     public void set_mLeanSpringDamping(float mLeanSpringDamping) {
         internal_native_set_mLeanSpringDamping((int) (long) getNativeData().getCPointer(), mLeanSpringDamping);
@@ -117,7 +117,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 jsObj.set_mLeanSpringDamping(mLeanSpringDamping);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLeanSpringDamping"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);jsObj.set_mLeanSpringDamping(mLeanSpringDamping);")
-    private static native void internal_native_set_mLeanSpringDamping(int this_addr, float mLeanSpringDamping);
+    public static native void internal_native_set_mLeanSpringDamping(int this_addr, float mLeanSpringDamping);
 
     public float get_mLeanSpringIntegrationCoefficient() {
         return internal_native_get_mLeanSpringIntegrationCoefficient((int) (long) getNativeData().getCPointer());
@@ -128,7 +128,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 return jsObj.get_mLeanSpringIntegrationCoefficient();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);return jsObj.get_mLeanSpringIntegrationCoefficient();")
-    private static native float internal_native_get_mLeanSpringIntegrationCoefficient(int this_addr);
+    public static native float internal_native_get_mLeanSpringIntegrationCoefficient(int this_addr);
 
     public void set_mLeanSpringIntegrationCoefficient(float mLeanSpringIntegrationCoefficient) {
         internal_native_set_mLeanSpringIntegrationCoefficient((int) (long) getNativeData().getCPointer(), mLeanSpringIntegrationCoefficient);
@@ -139,7 +139,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 jsObj.set_mLeanSpringIntegrationCoefficient(mLeanSpringIntegrationCoefficient);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLeanSpringIntegrationCoefficient"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);jsObj.set_mLeanSpringIntegrationCoefficient(mLeanSpringIntegrationCoefficient);")
-    private static native void internal_native_set_mLeanSpringIntegrationCoefficient(int this_addr, float mLeanSpringIntegrationCoefficient);
+    public static native void internal_native_set_mLeanSpringIntegrationCoefficient(int this_addr, float mLeanSpringIntegrationCoefficient);
 
     public float get_mLeanSpringIntegrationCoefficientDecay() {
         return internal_native_get_mLeanSpringIntegrationCoefficientDecay((int) (long) getNativeData().getCPointer());
@@ -150,7 +150,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 return jsObj.get_mLeanSpringIntegrationCoefficientDecay();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);return jsObj.get_mLeanSpringIntegrationCoefficientDecay();")
-    private static native float internal_native_get_mLeanSpringIntegrationCoefficientDecay(int this_addr);
+    public static native float internal_native_get_mLeanSpringIntegrationCoefficientDecay(int this_addr);
 
     public void set_mLeanSpringIntegrationCoefficientDecay(float mLeanSpringIntegrationCoefficientDecay) {
         internal_native_set_mLeanSpringIntegrationCoefficientDecay((int) (long) getNativeData().getCPointer(), mLeanSpringIntegrationCoefficientDecay);
@@ -161,7 +161,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 jsObj.set_mLeanSpringIntegrationCoefficientDecay(mLeanSpringIntegrationCoefficientDecay);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLeanSpringIntegrationCoefficientDecay"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);jsObj.set_mLeanSpringIntegrationCoefficientDecay(mLeanSpringIntegrationCoefficientDecay);")
-    private static native void internal_native_set_mLeanSpringIntegrationCoefficientDecay(int this_addr, float mLeanSpringIntegrationCoefficientDecay);
+    public static native void internal_native_set_mLeanSpringIntegrationCoefficientDecay(int this_addr, float mLeanSpringIntegrationCoefficientDecay);
 
     public float get_mLeanSmoothingFactor() {
         return internal_native_get_mLeanSmoothingFactor((int) (long) getNativeData().getCPointer());
@@ -172,7 +172,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 return jsObj.get_mLeanSmoothingFactor();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);return jsObj.get_mLeanSmoothingFactor();")
-    private static native float internal_native_get_mLeanSmoothingFactor(int this_addr);
+    public static native float internal_native_get_mLeanSmoothingFactor(int this_addr);
 
     public void set_mLeanSmoothingFactor(float mLeanSmoothingFactor) {
         internal_native_set_mLeanSmoothingFactor((int) (long) getNativeData().getCPointer(), mLeanSmoothingFactor);
@@ -183,61 +183,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);
 jsObj.set_mLeanSmoothingFactor(mLeanSmoothingFactor);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mLeanSmoothingFactor"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleControllerSettings);jsObj.set_mLeanSmoothingFactor(mLeanSmoothingFactor);")
-    private static native void internal_native_set_mLeanSmoothingFactor(int this_addr, float mLeanSmoothingFactor);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_mMaxLeanAngle(long this_addr) {
-        return internal_native_get_mMaxLeanAngle((int) this_addr);
-    }
-
-    public static void native_set_mMaxLeanAngle(long this_addr, float mMaxLeanAngle) {
-        internal_native_set_mMaxLeanAngle((int) this_addr, mMaxLeanAngle);
-    }
-
-    public static float native_get_mLeanSpringConstant(long this_addr) {
-        return internal_native_get_mLeanSpringConstant((int) this_addr);
-    }
-
-    public static void native_set_mLeanSpringConstant(long this_addr, float mLeanSpringConstant) {
-        internal_native_set_mLeanSpringConstant((int) this_addr, mLeanSpringConstant);
-    }
-
-    public static float native_get_mLeanSpringDamping(long this_addr) {
-        return internal_native_get_mLeanSpringDamping((int) this_addr);
-    }
-
-    public static void native_set_mLeanSpringDamping(long this_addr, float mLeanSpringDamping) {
-        internal_native_set_mLeanSpringDamping((int) this_addr, mLeanSpringDamping);
-    }
-
-    public static float native_get_mLeanSpringIntegrationCoefficient(long this_addr) {
-        return internal_native_get_mLeanSpringIntegrationCoefficient((int) this_addr);
-    }
-
-    public static void native_set_mLeanSpringIntegrationCoefficient(long this_addr, float mLeanSpringIntegrationCoefficient) {
-        internal_native_set_mLeanSpringIntegrationCoefficient((int) this_addr, mLeanSpringIntegrationCoefficient);
-    }
-
-    public static float native_get_mLeanSpringIntegrationCoefficientDecay(long this_addr) {
-        return internal_native_get_mLeanSpringIntegrationCoefficientDecay((int) this_addr);
-    }
-
-    public static void native_set_mLeanSpringIntegrationCoefficientDecay(long this_addr, float mLeanSpringIntegrationCoefficientDecay) {
-        internal_native_set_mLeanSpringIntegrationCoefficientDecay((int) this_addr, mLeanSpringIntegrationCoefficientDecay);
-    }
-
-    public static float native_get_mLeanSmoothingFactor(long this_addr) {
-        return internal_native_get_mLeanSmoothingFactor((int) this_addr);
-    }
-
-    public static void native_set_mLeanSmoothingFactor(long this_addr, float mLeanSmoothingFactor) {
-        internal_native_set_mLeanSmoothingFactor((int) this_addr, mLeanSmoothingFactor);
-    }
+    public static native void internal_native_set_mLeanSmoothingFactor(int this_addr, float mLeanSmoothingFactor);
 }

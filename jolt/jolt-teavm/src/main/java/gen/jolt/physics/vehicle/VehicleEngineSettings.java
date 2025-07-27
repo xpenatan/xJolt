@@ -42,7 +42,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mMaxTorque() {
         return internal_native_get_mMaxTorque((int) (long) getNativeData().getCPointer());
@@ -53,7 +53,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 return jsObj.get_mMaxTorque();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);return jsObj.get_mMaxTorque();")
-    private static native float internal_native_get_mMaxTorque(int this_addr);
+    public static native float internal_native_get_mMaxTorque(int this_addr);
 
     public void set_mMaxTorque(float mMaxTorque) {
         internal_native_set_mMaxTorque((int) (long) getNativeData().getCPointer(), mMaxTorque);
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 jsObj.set_mMaxTorque(mMaxTorque);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxTorque"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);jsObj.set_mMaxTorque(mMaxTorque);")
-    private static native void internal_native_set_mMaxTorque(int this_addr, float mMaxTorque);
+    public static native void internal_native_set_mMaxTorque(int this_addr, float mMaxTorque);
 
     public float get_mMinRPM() {
         return internal_native_get_mMinRPM((int) (long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 return jsObj.get_mMinRPM();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);return jsObj.get_mMinRPM();")
-    private static native float internal_native_get_mMinRPM(int this_addr);
+    public static native float internal_native_get_mMinRPM(int this_addr);
 
     public void set_mMinRPM(float mMinRPM) {
         internal_native_set_mMinRPM((int) (long) getNativeData().getCPointer(), mMinRPM);
@@ -86,7 +86,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 jsObj.set_mMinRPM(mMinRPM);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMinRPM"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);jsObj.set_mMinRPM(mMinRPM);")
-    private static native void internal_native_set_mMinRPM(int this_addr, float mMinRPM);
+    public static native void internal_native_set_mMinRPM(int this_addr, float mMinRPM);
 
     public float get_mMaxRPM() {
         return internal_native_get_mMaxRPM((int) (long) getNativeData().getCPointer());
@@ -97,7 +97,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 return jsObj.get_mMaxRPM();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);return jsObj.get_mMaxRPM();")
-    private static native float internal_native_get_mMaxRPM(int this_addr);
+    public static native float internal_native_get_mMaxRPM(int this_addr);
 
     public void set_mMaxRPM(float mMaxRPM) {
         internal_native_set_mMaxRPM((int) (long) getNativeData().getCPointer(), mMaxRPM);
@@ -108,7 +108,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 jsObj.set_mMaxRPM(mMaxRPM);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxRPM"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);jsObj.set_mMaxRPM(mMaxRPM);")
-    private static native void internal_native_set_mMaxRPM(int this_addr, float mMaxRPM);
+    public static native void internal_native_set_mMaxRPM(int this_addr, float mMaxRPM);
 
     public LinearCurve get_mNormalizedTorque() {
         int pointer = internal_native_get_mNormalizedTorque((int) (long) getNativeData().getCPointer());
@@ -127,7 +127,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);var returnedJSObj = jsObj.get_mNormalizedTorque();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mNormalizedTorque(int this_addr);
+    public static native int internal_native_get_mNormalizedTorque(int this_addr);
 
     public void set_mNormalizedTorque(LinearCurve mNormalizedTorque) {
         internal_native_set_mNormalizedTorque((int) (long) getNativeData().getCPointer(), (int) (long) (mNormalizedTorque != null ? mNormalizedTorque.getNativeData().getCPointer() : 0));
@@ -138,7 +138,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 jsObj.set_mNormalizedTorque(mNormalizedTorque_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mNormalizedTorque_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);jsObj.set_mNormalizedTorque(mNormalizedTorque_addr);")
-    private static native void internal_native_set_mNormalizedTorque(int this_addr, int mNormalizedTorque_addr);
+    public static native void internal_native_set_mNormalizedTorque(int this_addr, int mNormalizedTorque_addr);
 
     public float get_mInertia() {
         return internal_native_get_mInertia((int) (long) getNativeData().getCPointer());
@@ -149,7 +149,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 return jsObj.get_mInertia();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);return jsObj.get_mInertia();")
-    private static native float internal_native_get_mInertia(int this_addr);
+    public static native float internal_native_get_mInertia(int this_addr);
 
     public void set_mInertia(float mInertia) {
         internal_native_set_mInertia((int) (long) getNativeData().getCPointer(), mInertia);
@@ -160,7 +160,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 jsObj.set_mInertia(mInertia);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mInertia"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);jsObj.set_mInertia(mInertia);")
-    private static native void internal_native_set_mInertia(int this_addr, float mInertia);
+    public static native void internal_native_set_mInertia(int this_addr, float mInertia);
 
     public float get_mAngularDamping() {
         return internal_native_get_mAngularDamping((int) (long) getNativeData().getCPointer());
@@ -171,7 +171,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 return jsObj.get_mAngularDamping();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);return jsObj.get_mAngularDamping();")
-    private static native float internal_native_get_mAngularDamping(int this_addr);
+    public static native float internal_native_get_mAngularDamping(int this_addr);
 
     public void set_mAngularDamping(float mAngularDamping) {
         internal_native_set_mAngularDamping((int) (long) getNativeData().getCPointer(), mAngularDamping);
@@ -182,57 +182,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);
 jsObj.set_mAngularDamping(mAngularDamping);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mAngularDamping"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);jsObj.set_mAngularDamping(mAngularDamping);")
-    private static native void internal_native_set_mAngularDamping(int this_addr, float mAngularDamping);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_mMaxTorque(long this_addr) {
-        return internal_native_get_mMaxTorque((int) this_addr);
-    }
-
-    public static void native_set_mMaxTorque(long this_addr, float mMaxTorque) {
-        internal_native_set_mMaxTorque((int) this_addr, mMaxTorque);
-    }
-
-    public static float native_get_mMinRPM(long this_addr) {
-        return internal_native_get_mMinRPM((int) this_addr);
-    }
-
-    public static void native_set_mMinRPM(long this_addr, float mMinRPM) {
-        internal_native_set_mMinRPM((int) this_addr, mMinRPM);
-    }
-
-    public static float native_get_mMaxRPM(long this_addr) {
-        return internal_native_get_mMaxRPM((int) this_addr);
-    }
-
-    public static void native_set_mMaxRPM(long this_addr, float mMaxRPM) {
-        internal_native_set_mMaxRPM((int) this_addr, mMaxRPM);
-    }
-
-    public static long native_get_mNormalizedTorque(long this_addr) {
-        return internal_native_get_mNormalizedTorque((int) this_addr);
-    }
-
-    public static void native_set_mNormalizedTorque(long this_addr, long mNormalizedTorque_addr) {
-        internal_native_set_mNormalizedTorque((int) this_addr, (int) mNormalizedTorque_addr);
-    }
-
-    public static float native_get_mInertia(long this_addr) {
-        return internal_native_get_mInertia((int) this_addr);
-    }
-
-    public static void native_set_mInertia(long this_addr, float mInertia) {
-        internal_native_set_mInertia((int) this_addr, mInertia);
-    }
-
-    public static float native_get_mAngularDamping(long this_addr) {
-        return internal_native_get_mAngularDamping((int) this_addr);
-    }
-
-    public static void native_set_mAngularDamping(long this_addr, float mAngularDamping) {
-        internal_native_set_mAngularDamping((int) this_addr, mAngularDamping);
-    }
+    public static native void internal_native_set_mAngularDamping(int this_addr, float mAngularDamping);
 }

@@ -22,7 +22,7 @@ public class StaticCompoundShapeSettings extends CompoundShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new StaticCompoundShapeSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,9 +30,5 @@ return (jlong)new StaticCompoundShapeSettings();
     @Deprecated()
     public StaticCompoundShapeSettings(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

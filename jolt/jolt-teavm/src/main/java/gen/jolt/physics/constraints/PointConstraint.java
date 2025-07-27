@@ -46,7 +46,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PointConstraint);var returnedJSObj = jsObj.GetLocalSpacePoint1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetLocalSpacePoint1(int this_addr);
+    public static native int internal_native_GetLocalSpacePoint1(int this_addr);
 
     public Vec3 GetLocalSpacePoint2() {
         int pointer = internal_native_GetLocalSpacePoint2((int) (long) getNativeData().getCPointer());
@@ -65,7 +65,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PointConstraint);var returnedJSObj = jsObj.GetLocalSpacePoint2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetLocalSpacePoint2(int this_addr);
+    public static native int internal_native_GetLocalSpacePoint2(int this_addr);
 
     public Vec3 GetTotalLambdaPosition() {
         int pointer = internal_native_GetTotalLambdaPosition((int) (long) getNativeData().getCPointer());
@@ -84,17 +84,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PointConstraint);var returnedJSObj = jsObj.GetTotalLambdaPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetTotalLambdaPosition(int this_addr);
-
-    public static long native_GetLocalSpacePoint1(long this_addr) {
-        return internal_native_GetLocalSpacePoint1((int) this_addr);
-    }
-
-    public static long native_GetLocalSpacePoint2(long this_addr) {
-        return internal_native_GetLocalSpacePoint2((int) this_addr);
-    }
-
-    public static long native_GetTotalLambdaPosition(long this_addr) {
-        return internal_native_GetTotalLambdaPosition((int) this_addr);
-    }
+    public static native int internal_native_GetTotalLambdaPosition(int this_addr);
 }

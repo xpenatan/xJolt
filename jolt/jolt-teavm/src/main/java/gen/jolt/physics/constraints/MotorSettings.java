@@ -27,7 +27,7 @@ var jsObj = new jolt.MotorSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.MotorSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     public MotorSettings(float inFrequency, float inDamping) {
         int addr = internal_native_create_float_float(inFrequency, inDamping);
@@ -39,7 +39,7 @@ var jsObj = new jolt.MotorSettings(inFrequency, inDamping);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inFrequency", "inDamping"}, script = "var jsObj = new jolt.MotorSettings(inFrequency, inDamping);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float_float(float inFrequency, float inDamping);
+    public static native int internal_native_create_float_float(float inFrequency, float inDamping);
 
     public MotorSettings(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit) {
         int addr = internal_native_create_float_float_float_float(inFrequency, inDamping, inForceLimit, inTorqueLimit);
@@ -51,7 +51,7 @@ var jsObj = new jolt.MotorSettings(inFrequency, inDamping, inForceLimit, inTorqu
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inFrequency", "inDamping", "inForceLimit", "inTorqueLimit"}, script = "var jsObj = new jolt.MotorSettings(inFrequency, inDamping, inForceLimit, inTorqueLimit);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float_float_float_float(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
+    public static native int internal_native_create_float_float_float_float(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -77,7 +77,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public SpringSettings get_mSpringSettings() {
         int pointer = internal_native_get_mSpringSettings((int) (long) getNativeData().getCPointer());
@@ -96,7 +96,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);var returnedJSObj = jsObj.get_mSpringSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSpringSettings(int this_addr);
+    public static native int internal_native_get_mSpringSettings(int this_addr);
 
     public void set_mSpringSettings(SpringSettings mSpringSettings) {
         internal_native_set_mSpringSettings((int) (long) getNativeData().getCPointer(), (int) (long) (mSpringSettings != null ? mSpringSettings.getNativeData().getCPointer() : 0));
@@ -107,7 +107,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 jsObj.set_mSpringSettings(mSpringSettings_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSpringSettings_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);jsObj.set_mSpringSettings(mSpringSettings_addr);")
-    private static native void internal_native_set_mSpringSettings(int this_addr, int mSpringSettings_addr);
+    public static native void internal_native_set_mSpringSettings(int this_addr, int mSpringSettings_addr);
 
     public float get_mMinForceLimit() {
         return internal_native_get_mMinForceLimit((int) (long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 return jsObj.get_mMinForceLimit();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);return jsObj.get_mMinForceLimit();")
-    private static native float internal_native_get_mMinForceLimit(int this_addr);
+    public static native float internal_native_get_mMinForceLimit(int this_addr);
 
     public void set_mMinForceLimit(float mMinForceLimit) {
         internal_native_set_mMinForceLimit((int) (long) getNativeData().getCPointer(), mMinForceLimit);
@@ -129,7 +129,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 jsObj.set_mMinForceLimit(mMinForceLimit);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMinForceLimit"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);jsObj.set_mMinForceLimit(mMinForceLimit);")
-    private static native void internal_native_set_mMinForceLimit(int this_addr, float mMinForceLimit);
+    public static native void internal_native_set_mMinForceLimit(int this_addr, float mMinForceLimit);
 
     public float get_mMaxForceLimit() {
         return internal_native_get_mMaxForceLimit((int) (long) getNativeData().getCPointer());
@@ -140,7 +140,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 return jsObj.get_mMaxForceLimit();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);return jsObj.get_mMaxForceLimit();")
-    private static native float internal_native_get_mMaxForceLimit(int this_addr);
+    public static native float internal_native_get_mMaxForceLimit(int this_addr);
 
     public void set_mMaxForceLimit(float mMaxForceLimit) {
         internal_native_set_mMaxForceLimit((int) (long) getNativeData().getCPointer(), mMaxForceLimit);
@@ -151,7 +151,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 jsObj.set_mMaxForceLimit(mMaxForceLimit);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxForceLimit"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);jsObj.set_mMaxForceLimit(mMaxForceLimit);")
-    private static native void internal_native_set_mMaxForceLimit(int this_addr, float mMaxForceLimit);
+    public static native void internal_native_set_mMaxForceLimit(int this_addr, float mMaxForceLimit);
 
     public float get_mMinTorqueLimit() {
         return internal_native_get_mMinTorqueLimit((int) (long) getNativeData().getCPointer());
@@ -162,7 +162,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 return jsObj.get_mMinTorqueLimit();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);return jsObj.get_mMinTorqueLimit();")
-    private static native float internal_native_get_mMinTorqueLimit(int this_addr);
+    public static native float internal_native_get_mMinTorqueLimit(int this_addr);
 
     public void set_mMinTorqueLimit(float mMinTorqueLimit) {
         internal_native_set_mMinTorqueLimit((int) (long) getNativeData().getCPointer(), mMinTorqueLimit);
@@ -173,7 +173,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 jsObj.set_mMinTorqueLimit(mMinTorqueLimit);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMinTorqueLimit"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);jsObj.set_mMinTorqueLimit(mMinTorqueLimit);")
-    private static native void internal_native_set_mMinTorqueLimit(int this_addr, float mMinTorqueLimit);
+    public static native void internal_native_set_mMinTorqueLimit(int this_addr, float mMinTorqueLimit);
 
     public float get_mMaxTorqueLimit() {
         return internal_native_get_mMaxTorqueLimit((int) (long) getNativeData().getCPointer());
@@ -184,7 +184,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 return jsObj.get_mMaxTorqueLimit();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);return jsObj.get_mMaxTorqueLimit();")
-    private static native float internal_native_get_mMaxTorqueLimit(int this_addr);
+    public static native float internal_native_get_mMaxTorqueLimit(int this_addr);
 
     public void set_mMaxTorqueLimit(float mMaxTorqueLimit) {
         internal_native_set_mMaxTorqueLimit((int) (long) getNativeData().getCPointer(), mMaxTorqueLimit);
@@ -195,61 +195,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);
 jsObj.set_mMaxTorqueLimit(mMaxTorqueLimit);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxTorqueLimit"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);jsObj.set_mMaxTorqueLimit(mMaxTorqueLimit);")
-    private static native void internal_native_set_mMaxTorqueLimit(int this_addr, float mMaxTorqueLimit);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_float_float(float inFrequency, float inDamping) {
-        return internal_native_create_float_float(inFrequency, inDamping);
-    }
-
-    public static long native_create_float_float_float_float(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit) {
-        return internal_native_create_float_float_float_float(inFrequency, inDamping, inForceLimit, inTorqueLimit);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mSpringSettings(long this_addr) {
-        return internal_native_get_mSpringSettings((int) this_addr);
-    }
-
-    public static void native_set_mSpringSettings(long this_addr, long mSpringSettings_addr) {
-        internal_native_set_mSpringSettings((int) this_addr, (int) mSpringSettings_addr);
-    }
-
-    public static float native_get_mMinForceLimit(long this_addr) {
-        return internal_native_get_mMinForceLimit((int) this_addr);
-    }
-
-    public static void native_set_mMinForceLimit(long this_addr, float mMinForceLimit) {
-        internal_native_set_mMinForceLimit((int) this_addr, mMinForceLimit);
-    }
-
-    public static float native_get_mMaxForceLimit(long this_addr) {
-        return internal_native_get_mMaxForceLimit((int) this_addr);
-    }
-
-    public static void native_set_mMaxForceLimit(long this_addr, float mMaxForceLimit) {
-        internal_native_set_mMaxForceLimit((int) this_addr, mMaxForceLimit);
-    }
-
-    public static float native_get_mMinTorqueLimit(long this_addr) {
-        return internal_native_get_mMinTorqueLimit((int) this_addr);
-    }
-
-    public static void native_set_mMinTorqueLimit(long this_addr, float mMinTorqueLimit) {
-        internal_native_set_mMinTorqueLimit((int) this_addr, mMinTorqueLimit);
-    }
-
-    public static float native_get_mMaxTorqueLimit(long this_addr) {
-        return internal_native_get_mMaxTorqueLimit((int) this_addr);
-    }
-
-    public static void native_set_mMaxTorqueLimit(long this_addr, float mMaxTorqueLimit) {
-        internal_native_set_mMaxTorqueLimit((int) this_addr, mMaxTorqueLimit);
-    }
+    public static native void internal_native_set_mMaxTorqueLimit(int this_addr, float mMaxTorqueLimit);
 }

@@ -26,7 +26,7 @@ var jsObj = new jolt.CollideShapeSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CollideShapeSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -45,7 +45,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);
 return jsObj.get_mMaxSeparationDistance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);return jsObj.get_mMaxSeparationDistance();")
-    private static native float internal_native_get_mMaxSeparationDistance(int this_addr);
+    public static native float internal_native_get_mMaxSeparationDistance(int this_addr);
 
     public void set_mMaxSeparationDistance(float mMaxSeparationDistance) {
         internal_native_set_mMaxSeparationDistance((int) (long) getNativeData().getCPointer(), mMaxSeparationDistance);
@@ -56,7 +56,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);
 jsObj.set_mMaxSeparationDistance(mMaxSeparationDistance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxSeparationDistance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);jsObj.set_mMaxSeparationDistance(mMaxSeparationDistance);")
-    private static native void internal_native_set_mMaxSeparationDistance(int this_addr, float mMaxSeparationDistance);
+    public static native void internal_native_set_mMaxSeparationDistance(int this_addr, float mMaxSeparationDistance);
 
     public EBackFaceMode get_mBackFaceMode() {
         int value = internal_native_get_mBackFaceMode((int) (long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);
 return jsObj.get_mBackFaceMode();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);return jsObj.get_mBackFaceMode();")
-    private static native int internal_native_get_mBackFaceMode(int this_addr);
+    public static native int internal_native_get_mBackFaceMode(int this_addr);
 
     public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
         internal_native_set_mBackFaceMode((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
@@ -79,25 +79,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);
 jsObj.set_mBackFaceMode(mBackFaceMode);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBackFaceMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeSettings);jsObj.set_mBackFaceMode(mBackFaceMode);")
-    private static native void internal_native_set_mBackFaceMode(int this_addr, int mBackFaceMode);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static float native_get_mMaxSeparationDistance(long this_addr) {
-        return internal_native_get_mMaxSeparationDistance((int) this_addr);
-    }
-
-    public static void native_set_mMaxSeparationDistance(long this_addr, float mMaxSeparationDistance) {
-        internal_native_set_mMaxSeparationDistance((int) this_addr, mMaxSeparationDistance);
-    }
-
-    public static long native_get_mBackFaceMode(long this_addr) {
-        return internal_native_get_mBackFaceMode((int) this_addr);
-    }
-
-    public static void native_set_mBackFaceMode(long this_addr, long mBackFaceMode) {
-        internal_native_set_mBackFaceMode((int) this_addr, (int) mBackFaceMode);
-    }
+    public static native void internal_native_set_mBackFaceMode(int this_addr, int mBackFaceMode);
 }

@@ -43,7 +43,7 @@ public class ShapeResult extends IDLBase {
 Shape::ShapeResult* nativeObject = (Shape::ShapeResult*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean IsValid() {
         return internal_native_IsValid((long) getNativeData().getCPointer());
@@ -53,7 +53,7 @@ delete nativeObject;
 Shape::ShapeResult* nativeObject = (Shape::ShapeResult*)this_addr;
 return nativeObject->IsValid();
 */
-    private static native boolean internal_native_IsValid(long this_addr);
+    public static native boolean internal_native_IsValid(long this_addr);
 
     public boolean HasError() {
         return internal_native_HasError((long) getNativeData().getCPointer());
@@ -63,7 +63,7 @@ return nativeObject->IsValid();
 Shape::ShapeResult* nativeObject = (Shape::ShapeResult*)this_addr;
 return nativeObject->HasError();
 */
-    private static native boolean internal_native_HasError(long this_addr);
+    public static native boolean internal_native_HasError(long this_addr);
 
     public IDLString GetError() {
         long pointer = internal_native_GetError((long) getNativeData().getCPointer());
@@ -79,7 +79,7 @@ return nativeObject->HasError();
 Shape::ShapeResult* nativeObject = (Shape::ShapeResult*)this_addr;
 return (jlong)&nativeObject->GetError();
 */
-    private static native long internal_native_GetError(long this_addr);
+    public static native long internal_native_GetError(long this_addr);
 
     public Shape Get() {
         long pointer = internal_native_Get((long) getNativeData().getCPointer());
@@ -96,7 +96,7 @@ Shape::ShapeResult* nativeObject = (Shape::ShapeResult*)this_addr;
 Shape* obj = nativeObject->Get();
 return (jlong)obj;
 */
-    private static native long internal_native_Get(long this_addr);
+    public static native long internal_native_Get(long this_addr);
 
     public void Clear() {
         internal_native_Clear((long) getNativeData().getCPointer());
@@ -106,29 +106,5 @@ return (jlong)obj;
 Shape::ShapeResult* nativeObject = (Shape::ShapeResult*)this_addr;
 nativeObject->Clear();
 */
-    private static native void internal_native_Clear(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static boolean native_IsValid(long this_addr) {
-        return internal_native_IsValid(this_addr);
-    }
-
-    public static boolean native_HasError(long this_addr) {
-        return internal_native_HasError(this_addr);
-    }
-
-    public static long native_GetError(long this_addr) {
-        return internal_native_GetError(this_addr);
-    }
-
-    public static long native_Get(long this_addr) {
-        return internal_native_Get(this_addr);
-    }
-
-    public static void native_Clear(long this_addr) {
-        internal_native_Clear(this_addr);
-    }
+    public static native void internal_native_Clear(long this_addr);
 }

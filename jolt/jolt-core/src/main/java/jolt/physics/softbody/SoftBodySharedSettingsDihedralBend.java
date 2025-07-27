@@ -23,7 +23,7 @@ public class SoftBodySharedSettingsDihedralBend extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SoftBodySharedSettingsDihedralBend(inVertex1, inVertex2, inVertex3, inVertex4, (float)inCompliance);
 */
-    private static native long internal_native_create_int_int_int_int_float(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance);
+    public static native long internal_native_create_int_int_int_int_float(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new SoftBodySharedSettingsDihedralBend(inVertex1, inVertex2, inVer
 SoftBodySharedSettingsDihedralBend* nativeObject = (SoftBodySharedSettingsDihedralBend*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mVertex(int index) {
         return internal_native_get_mVertex((long) getNativeData().getCPointer(), index);
@@ -58,7 +58,7 @@ delete nativeObject;
 SoftBodySharedSettingsDihedralBend* nativeObject = (SoftBodySharedSettingsDihedralBend*)this_addr;
 return nativeObject->mVertex[index];
 */
-    private static native int internal_native_get_mVertex(long this_addr, int index);
+    public static native int internal_native_get_mVertex(long this_addr, int index);
 
     public void set_mVertex(int index, int mVertex) {
         internal_native_set_mVertex((long) getNativeData().getCPointer(), index, mVertex);
@@ -68,7 +68,7 @@ return nativeObject->mVertex[index];
 SoftBodySharedSettingsDihedralBend* nativeObject = (SoftBodySharedSettingsDihedralBend*)this_addr;
 nativeObject->mVertex[index] = mVertex;
 */
-    private static native void internal_native_set_mVertex(long this_addr, int index, int mVertex);
+    public static native void internal_native_set_mVertex(long this_addr, int index, int mVertex);
 
     public float get_mCompliance() {
         return internal_native_get_mCompliance((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ nativeObject->mVertex[index] = mVertex;
 SoftBodySharedSettingsDihedralBend* nativeObject = (SoftBodySharedSettingsDihedralBend*)this_addr;
 return nativeObject->mCompliance;
 */
-    private static native float internal_native_get_mCompliance(long this_addr);
+    public static native float internal_native_get_mCompliance(long this_addr);
 
     public void set_mCompliance(float mCompliance) {
         internal_native_set_mCompliance((long) getNativeData().getCPointer(), mCompliance);
@@ -88,7 +88,7 @@ return nativeObject->mCompliance;
 SoftBodySharedSettingsDihedralBend* nativeObject = (SoftBodySharedSettingsDihedralBend*)this_addr;
 nativeObject->mCompliance = mCompliance;
 */
-    private static native void internal_native_set_mCompliance(long this_addr, float mCompliance);
+    public static native void internal_native_set_mCompliance(long this_addr, float mCompliance);
 
     public float get_mInitialAngle() {
         return internal_native_get_mInitialAngle((long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ nativeObject->mCompliance = mCompliance;
 SoftBodySharedSettingsDihedralBend* nativeObject = (SoftBodySharedSettingsDihedralBend*)this_addr;
 return nativeObject->mInitialAngle;
 */
-    private static native float internal_native_get_mInitialAngle(long this_addr);
+    public static native float internal_native_get_mInitialAngle(long this_addr);
 
     public void set_mInitialAngle(float mInitialAngle) {
         internal_native_set_mInitialAngle((long) getNativeData().getCPointer(), mInitialAngle);
@@ -108,37 +108,5 @@ return nativeObject->mInitialAngle;
 SoftBodySharedSettingsDihedralBend* nativeObject = (SoftBodySharedSettingsDihedralBend*)this_addr;
 nativeObject->mInitialAngle = mInitialAngle;
 */
-    private static native void internal_native_set_mInitialAngle(long this_addr, float mInitialAngle);
-
-    public static long native_create_int_int_int_int_float(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance) {
-        return internal_native_create_int_int_int_int_float(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_get_mVertex(long this_addr, int index) {
-        return internal_native_get_mVertex(this_addr, index);
-    }
-
-    public static void native_set_mVertex(long this_addr, int index, int mVertex) {
-        internal_native_set_mVertex(this_addr, index, mVertex);
-    }
-
-    public static float native_get_mCompliance(long this_addr) {
-        return internal_native_get_mCompliance(this_addr);
-    }
-
-    public static void native_set_mCompliance(long this_addr, float mCompliance) {
-        internal_native_set_mCompliance(this_addr, mCompliance);
-    }
-
-    public static float native_get_mInitialAngle(long this_addr) {
-        return internal_native_get_mInitialAngle(this_addr);
-    }
-
-    public static void native_set_mInitialAngle(long this_addr, float mInitialAngle) {
-        internal_native_set_mInitialAngle(this_addr, mInitialAngle);
-    }
+    public static native void internal_native_set_mInitialAngle(long this_addr, float mInitialAngle);
 }

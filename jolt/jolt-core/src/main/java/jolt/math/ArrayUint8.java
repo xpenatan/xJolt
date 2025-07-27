@@ -40,7 +40,7 @@ public class ArrayUint8 extends IDLBase {
 ArrayUint8* nativeObject = (ArrayUint8*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean empty() {
         return internal_native_empty((long) getNativeData().getCPointer());
@@ -50,7 +50,7 @@ delete nativeObject;
 ArrayUint8* nativeObject = (ArrayUint8*)this_addr;
 return nativeObject->empty();
 */
-    private static native boolean internal_native_empty(long this_addr);
+    public static native boolean internal_native_empty(long this_addr);
 
     public int size() {
         return internal_native_size((long) getNativeData().getCPointer());
@@ -60,7 +60,7 @@ return nativeObject->empty();
 ArrayUint8* nativeObject = (ArrayUint8*)this_addr;
 return nativeObject->size();
 */
-    private static native int internal_native_size(long this_addr);
+    public static native int internal_native_size(long this_addr);
 
     public void reserve(int inSize) {
         internal_native_reserve((long) getNativeData().getCPointer(), inSize);
@@ -70,7 +70,7 @@ return nativeObject->size();
 ArrayUint8* nativeObject = (ArrayUint8*)this_addr;
 nativeObject->reserve(inSize);
 */
-    private static native void internal_native_reserve(long this_addr, int inSize);
+    public static native void internal_native_reserve(long this_addr, int inSize);
 
     public void resize(int inSize) {
         internal_native_resize((long) getNativeData().getCPointer(), inSize);
@@ -80,7 +80,7 @@ nativeObject->reserve(inSize);
 ArrayUint8* nativeObject = (ArrayUint8*)this_addr;
 nativeObject->resize(inSize);
 */
-    private static native void internal_native_resize(long this_addr, int inSize);
+    public static native void internal_native_resize(long this_addr, int inSize);
 
     public void clear() {
         internal_native_clear((long) getNativeData().getCPointer());
@@ -90,7 +90,7 @@ nativeObject->resize(inSize);
 ArrayUint8* nativeObject = (ArrayUint8*)this_addr;
 nativeObject->clear();
 */
-    private static native void internal_native_clear(long this_addr);
+    public static native void internal_native_clear(long this_addr);
 
     public Uint8MemRef data() {
         long pointer = internal_native_data((long) getNativeData().getCPointer());
@@ -107,33 +107,5 @@ ArrayUint8* nativeObject = (ArrayUint8*)this_addr;
 Uint8MemRef* obj = nativeObject->data();
 return (jlong)obj;
 */
-    private static native long internal_native_data(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static boolean native_empty(long this_addr) {
-        return internal_native_empty(this_addr);
-    }
-
-    public static int native_size(long this_addr) {
-        return internal_native_size(this_addr);
-    }
-
-    public static void native_reserve(long this_addr, int inSize) {
-        internal_native_reserve(this_addr, inSize);
-    }
-
-    public static void native_resize(long this_addr, int inSize) {
-        internal_native_resize(this_addr, inSize);
-    }
-
-    public static void native_clear(long this_addr) {
-        internal_native_clear(this_addr);
-    }
-
-    public static long native_data(long this_addr) {
-        return internal_native_data(this_addr);
-    }
+    public static native long internal_native_data(long this_addr);
 }

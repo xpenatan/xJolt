@@ -24,7 +24,7 @@ public class Skeleton extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new Skeleton();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -41,7 +41,7 @@ return (jlong)new Skeleton();
 Skeleton* nativeObject = (Skeleton*)this_addr;
 return nativeObject->AddJoint(*((IDLString* )inName_addr), (int)inParentIndex);
 */
-    private static native int internal_native_AddJoint(long this_addr, long inName_addr, int inParentIndex);
+    public static native int internal_native_AddJoint(long this_addr, long inName_addr, int inParentIndex);
 
     public int GetJointCount() {
         return internal_native_GetJointCount((long) getNativeData().getCPointer());
@@ -51,7 +51,7 @@ return nativeObject->AddJoint(*((IDLString* )inName_addr), (int)inParentIndex);
 Skeleton* nativeObject = (Skeleton*)this_addr;
 return nativeObject->GetJointCount();
 */
-    private static native int internal_native_GetJointCount(long this_addr);
+    public static native int internal_native_GetJointCount(long this_addr);
 
     public boolean AreJointsCorrectlyOrdered() {
         return internal_native_AreJointsCorrectlyOrdered((long) getNativeData().getCPointer());
@@ -61,7 +61,7 @@ return nativeObject->GetJointCount();
 Skeleton* nativeObject = (Skeleton*)this_addr;
 return nativeObject->AreJointsCorrectlyOrdered();
 */
-    private static native boolean internal_native_AreJointsCorrectlyOrdered(long this_addr);
+    public static native boolean internal_native_AreJointsCorrectlyOrdered(long this_addr);
 
     public void CalculateParentJointIndices() {
         internal_native_CalculateParentJointIndices((long) getNativeData().getCPointer());
@@ -71,25 +71,5 @@ return nativeObject->AreJointsCorrectlyOrdered();
 Skeleton* nativeObject = (Skeleton*)this_addr;
 nativeObject->CalculateParentJointIndices();
 */
-    private static native void internal_native_CalculateParentJointIndices(long this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static int native_AddJoint(long this_addr, long inName_addr, int inParentIndex) {
-        return internal_native_AddJoint(this_addr, inName_addr, inParentIndex);
-    }
-
-    public static int native_GetJointCount(long this_addr) {
-        return internal_native_GetJointCount(this_addr);
-    }
-
-    public static boolean native_AreJointsCorrectlyOrdered(long this_addr) {
-        return internal_native_AreJointsCorrectlyOrdered(this_addr);
-    }
-
-    public static void native_CalculateParentJointIndices(long this_addr) {
-        internal_native_CalculateParentJointIndices(this_addr);
-    }
+    public static native void internal_native_CalculateParentJointIndices(long this_addr);
 }

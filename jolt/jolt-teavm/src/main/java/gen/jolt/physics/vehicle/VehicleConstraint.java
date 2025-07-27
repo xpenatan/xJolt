@@ -51,7 +51,7 @@ var jsObj = new jolt.VehicleConstraint(inVehicleBody_addr, inSettings_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inVehicleBody_addr", "inSettings_addr"}, script = "var jsObj = new jolt.VehicleConstraint(inVehicleBody_addr, inSettings_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Body_VehicleConstraintSettings(int inVehicleBody_addr, int inSettings_addr);
+    public static native int internal_native_create_Body_VehicleConstraintSettings(int inVehicleBody_addr, int inSettings_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -70,7 +70,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);
 jsObj.SetMaxPitchRollAngle(inMaxPitchRollAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inMaxPitchRollAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);jsObj.SetMaxPitchRollAngle(inMaxPitchRollAngle);")
-    private static native void internal_native_SetMaxPitchRollAngle(int this_addr, float inMaxPitchRollAngle);
+    public static native void internal_native_SetMaxPitchRollAngle(int this_addr, float inMaxPitchRollAngle);
 
     public void SetVehicleCollisionTester(VehicleCollisionTester inTester) {
         internal_native_SetVehicleCollisionTester((int) (long) getNativeData().getCPointer(), (int) (long) (inTester != null ? inTester.getNativeData().getCPointer() : 0));
@@ -81,7 +81,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);
 jsObj.SetVehicleCollisionTester(inTester_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inTester_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);jsObj.SetVehicleCollisionTester(inTester_addr);")
-    private static native void internal_native_SetVehicleCollisionTester(int this_addr, int inTester_addr);
+    public static native void internal_native_SetVehicleCollisionTester(int this_addr, int inTester_addr);
 
     public void OverrideGravity(Vec3 inGravity) {
         internal_native_OverrideGravity((int) (long) getNativeData().getCPointer(), (int) (long) (inGravity != null ? inGravity.getNativeData().getCPointer() : 0));
@@ -92,7 +92,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);
 jsObj.OverrideGravity(inGravity_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inGravity_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);jsObj.OverrideGravity(inGravity_addr);")
-    private static native void internal_native_OverrideGravity(int this_addr, int inGravity_addr);
+    public static native void internal_native_OverrideGravity(int this_addr, int inGravity_addr);
 
     public boolean IsGravityOverridden() {
         return internal_native_IsGravityOverridden((int) (long) getNativeData().getCPointer());
@@ -104,7 +104,7 @@ var returnedJSObj = jsObj.IsGravityOverridden();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.IsGravityOverridden();return returnedJSObj;")
-    private static native boolean internal_native_IsGravityOverridden(int this_addr);
+    public static native boolean internal_native_IsGravityOverridden(int this_addr);
 
     public Vec3 GetGravityOverride() {
         int pointer = internal_native_GetGravityOverride((int) (long) getNativeData().getCPointer());
@@ -123,7 +123,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetGravityOverride();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetGravityOverride(int this_addr);
+    public static native int internal_native_GetGravityOverride(int this_addr);
 
     public void ResetGravityOverride() {
         internal_native_ResetGravityOverride((int) (long) getNativeData().getCPointer());
@@ -134,7 +134,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);
 jsObj.ResetGravityOverride();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);jsObj.ResetGravityOverride();")
-    private static native void internal_native_ResetGravityOverride(int this_addr);
+    public static native void internal_native_ResetGravityOverride(int this_addr);
 
     public Vec3 GetLocalUp() {
         int pointer = internal_native_GetLocalUp((int) (long) getNativeData().getCPointer());
@@ -153,7 +153,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetLocalUp();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetLocalUp(int this_addr);
+    public static native int internal_native_GetLocalUp(int this_addr);
 
     public Vec3 GetLocalForward() {
         int pointer = internal_native_GetLocalForward((int) (long) getNativeData().getCPointer());
@@ -172,7 +172,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetLocalForward();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetLocalForward(int this_addr);
+    public static native int internal_native_GetLocalForward(int this_addr);
 
     public Vec3 GetWorldUp() {
         int pointer = internal_native_GetWorldUp((int) (long) getNativeData().getCPointer());
@@ -191,7 +191,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetWorldUp();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetWorldUp(int this_addr);
+    public static native int internal_native_GetWorldUp(int this_addr);
 
     public Body GetVehicleBody() {
         int pointer = internal_native_GetVehicleBody((int) (long) getNativeData().getCPointer());
@@ -210,7 +210,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetVehicleBody();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetVehicleBody(int this_addr);
+    public static native int internal_native_GetVehicleBody(int this_addr);
 
     public VehicleController GetController() {
         int pointer = internal_native_GetController((int) (long) getNativeData().getCPointer());
@@ -229,7 +229,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetController();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetController(int this_addr);
+    public static native int internal_native_GetController(int this_addr);
 
     public Wheels GetWheels() {
         int pointer = internal_native_GetWheels((int) (long) getNativeData().getCPointer());
@@ -248,7 +248,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetWheels();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetWheels(int this_addr);
+    public static native int internal_native_GetWheels(int this_addr);
 
     public Wheel GetWheel(int inIdx) {
         int pointer = internal_native_GetWheel((int) (long) getNativeData().getCPointer(), inIdx);
@@ -267,7 +267,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIdx"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetWheel(inIdx);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetWheel(int this_addr, int inIdx);
+    public static native int internal_native_GetWheel(int this_addr, int inIdx);
 
     public Mat44 GetWheelLocalTransform(int inWheelIndex, Vec3 inWheelRight, Vec3 inWheelUp) {
         int pointer = internal_native_GetWheelLocalTransform((int) (long) getNativeData().getCPointer(), inWheelIndex, (int) (long) (inWheelRight != null ? inWheelRight.getNativeData().getCPointer() : 0), (int) (long) (inWheelUp != null ? inWheelUp.getNativeData().getCPointer() : 0));
@@ -286,7 +286,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inWheelIndex", "inWheelRight_addr", "inWheelUp_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetWheelLocalTransform(inWheelIndex, inWheelRight_addr, inWheelUp_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetWheelLocalTransform(int this_addr, int inWheelIndex, int inWheelRight_addr, int inWheelUp_addr);
+    public static native int internal_native_GetWheelLocalTransform(int this_addr, int inWheelIndex, int inWheelRight_addr, int inWheelUp_addr);
 
     public Mat44 GetWheelWorldTransform(int inWheelIndex, Vec3 inWheelRight, Vec3 inWheelUp) {
         int pointer = internal_native_GetWheelWorldTransform((int) (long) getNativeData().getCPointer(), inWheelIndex, (int) (long) (inWheelRight != null ? inWheelRight.getNativeData().getCPointer() : 0), (int) (long) (inWheelUp != null ? inWheelUp.getNativeData().getCPointer() : 0));
@@ -305,7 +305,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inWheelIndex", "inWheelRight_addr", "inWheelUp_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetWheelWorldTransform(inWheelIndex, inWheelRight_addr, inWheelUp_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetWheelWorldTransform(int this_addr, int inWheelIndex, int inWheelRight_addr, int inWheelUp_addr);
+    public static native int internal_native_GetWheelWorldTransform(int this_addr, int inWheelIndex, int inWheelRight_addr, int inWheelUp_addr);
 
     public ArrayVehicleAntiRollBar GetAntiRollBars() {
         int pointer = internal_native_GetAntiRollBars((int) (long) getNativeData().getCPointer());
@@ -324,7 +324,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetAntiRollBars();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetAntiRollBars(int this_addr);
+    public static native int internal_native_GetAntiRollBars(int this_addr);
 
     public void SetNumStepsBetweenCollisionTestActive(int inSteps) {
         internal_native_SetNumStepsBetweenCollisionTestActive((int) (long) getNativeData().getCPointer(), inSteps);
@@ -335,7 +335,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);
 jsObj.SetNumStepsBetweenCollisionTestActive(inSteps);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSteps"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);jsObj.SetNumStepsBetweenCollisionTestActive(inSteps);")
-    private static native void internal_native_SetNumStepsBetweenCollisionTestActive(int this_addr, int inSteps);
+    public static native void internal_native_SetNumStepsBetweenCollisionTestActive(int this_addr, int inSteps);
 
     public int GetNumStepsBetweenCollisionTestActive() {
         return internal_native_GetNumStepsBetweenCollisionTestActive((int) (long) getNativeData().getCPointer());
@@ -347,7 +347,7 @@ var returnedJSObj = jsObj.GetNumStepsBetweenCollisionTestActive();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetNumStepsBetweenCollisionTestActive();return returnedJSObj;")
-    private static native int internal_native_GetNumStepsBetweenCollisionTestActive(int this_addr);
+    public static native int internal_native_GetNumStepsBetweenCollisionTestActive(int this_addr);
 
     public void SetNumStepsBetweenCollisionTestInactive(int inSteps) {
         internal_native_SetNumStepsBetweenCollisionTestInactive((int) (long) getNativeData().getCPointer(), inSteps);
@@ -358,7 +358,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);
 jsObj.SetNumStepsBetweenCollisionTestInactive(inSteps);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSteps"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);jsObj.SetNumStepsBetweenCollisionTestInactive(inSteps);")
-    private static native void internal_native_SetNumStepsBetweenCollisionTestInactive(int this_addr, int inSteps);
+    public static native void internal_native_SetNumStepsBetweenCollisionTestInactive(int this_addr, int inSteps);
 
     public int GetNumStepsBetweenCollisionTestInactive() {
         return internal_native_GetNumStepsBetweenCollisionTestInactive((int) (long) getNativeData().getCPointer());
@@ -370,89 +370,5 @@ var returnedJSObj = jsObj.GetNumStepsBetweenCollisionTestInactive();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraint);var returnedJSObj = jsObj.GetNumStepsBetweenCollisionTestInactive();return returnedJSObj;")
-    private static native int internal_native_GetNumStepsBetweenCollisionTestInactive(int this_addr);
-
-    public static long native_create_Body_VehicleConstraintSettings(long inVehicleBody_addr, long inSettings_addr) {
-        return internal_native_create_Body_VehicleConstraintSettings((int) inVehicleBody_addr, (int) inSettings_addr);
-    }
-
-    public static void native_SetMaxPitchRollAngle(long this_addr, float inMaxPitchRollAngle) {
-        internal_native_SetMaxPitchRollAngle((int) this_addr, inMaxPitchRollAngle);
-    }
-
-    public static void native_SetVehicleCollisionTester(long this_addr, long inTester_addr) {
-        internal_native_SetVehicleCollisionTester((int) this_addr, (int) inTester_addr);
-    }
-
-    public static void native_OverrideGravity(long this_addr, long inGravity_addr) {
-        internal_native_OverrideGravity((int) this_addr, (int) inGravity_addr);
-    }
-
-    public static boolean native_IsGravityOverridden(long this_addr) {
-        return internal_native_IsGravityOverridden((int) this_addr);
-    }
-
-    public static long native_GetGravityOverride(long this_addr) {
-        return internal_native_GetGravityOverride((int) this_addr);
-    }
-
-    public static void native_ResetGravityOverride(long this_addr) {
-        internal_native_ResetGravityOverride((int) this_addr);
-    }
-
-    public static long native_GetLocalUp(long this_addr) {
-        return internal_native_GetLocalUp((int) this_addr);
-    }
-
-    public static long native_GetLocalForward(long this_addr) {
-        return internal_native_GetLocalForward((int) this_addr);
-    }
-
-    public static long native_GetWorldUp(long this_addr) {
-        return internal_native_GetWorldUp((int) this_addr);
-    }
-
-    public static long native_GetVehicleBody(long this_addr) {
-        return internal_native_GetVehicleBody((int) this_addr);
-    }
-
-    public static long native_GetController(long this_addr) {
-        return internal_native_GetController((int) this_addr);
-    }
-
-    public static long native_GetWheels(long this_addr) {
-        return internal_native_GetWheels((int) this_addr);
-    }
-
-    public static long native_GetWheel(long this_addr, int inIdx) {
-        return internal_native_GetWheel((int) this_addr, inIdx);
-    }
-
-    public static long native_GetWheelLocalTransform(long this_addr, int inWheelIndex, long inWheelRight_addr, long inWheelUp_addr) {
-        return internal_native_GetWheelLocalTransform((int) this_addr, inWheelIndex, (int) inWheelRight_addr, (int) inWheelUp_addr);
-    }
-
-    public static long native_GetWheelWorldTransform(long this_addr, int inWheelIndex, long inWheelRight_addr, long inWheelUp_addr) {
-        return internal_native_GetWheelWorldTransform((int) this_addr, inWheelIndex, (int) inWheelRight_addr, (int) inWheelUp_addr);
-    }
-
-    public static long native_GetAntiRollBars(long this_addr) {
-        return internal_native_GetAntiRollBars((int) this_addr);
-    }
-
-    public static void native_SetNumStepsBetweenCollisionTestActive(long this_addr, int inSteps) {
-        internal_native_SetNumStepsBetweenCollisionTestActive((int) this_addr, inSteps);
-    }
-
-    public static int native_GetNumStepsBetweenCollisionTestActive(long this_addr) {
-        return internal_native_GetNumStepsBetweenCollisionTestActive((int) this_addr);
-    }
-
-    public static void native_SetNumStepsBetweenCollisionTestInactive(long this_addr, int inSteps) {
-        internal_native_SetNumStepsBetweenCollisionTestInactive((int) this_addr, inSteps);
-    }
-
-    public static int native_GetNumStepsBetweenCollisionTestInactive(long this_addr) {
-        return internal_native_GetNumStepsBetweenCollisionTestInactive((int) this_addr);
-    }
+    public static native int internal_native_GetNumStepsBetweenCollisionTestInactive(int this_addr);
 }

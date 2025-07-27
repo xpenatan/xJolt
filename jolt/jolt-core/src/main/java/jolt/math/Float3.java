@@ -23,7 +23,7 @@ public class Float3 extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new Float3((float)inX, (float)inY, (float)inZ);
 */
-    private static native long internal_native_create_float_float_float(float inX, float inY, float inZ);
+    public static native long internal_native_create_float_float_float(float inX, float inY, float inZ);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new Float3((float)inX, (float)inY, (float)inZ);
 Float3* nativeObject = (Float3*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_x() {
         return internal_native_get_x((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 Float3* nativeObject = (Float3*)this_addr;
 return nativeObject->x;
 */
-    private static native float internal_native_get_x(long this_addr);
+    public static native float internal_native_get_x(long this_addr);
 
     public void set_x(float x) {
         internal_native_set_x((long) getNativeData().getCPointer(), x);
@@ -68,7 +68,7 @@ return nativeObject->x;
 Float3* nativeObject = (Float3*)this_addr;
 nativeObject->x = x;
 */
-    private static native void internal_native_set_x(long this_addr, float x);
+    public static native void internal_native_set_x(long this_addr, float x);
 
     public float get_y() {
         return internal_native_get_y((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ nativeObject->x = x;
 Float3* nativeObject = (Float3*)this_addr;
 return nativeObject->y;
 */
-    private static native float internal_native_get_y(long this_addr);
+    public static native float internal_native_get_y(long this_addr);
 
     public void set_y(float y) {
         internal_native_set_y((long) getNativeData().getCPointer(), y);
@@ -88,7 +88,7 @@ return nativeObject->y;
 Float3* nativeObject = (Float3*)this_addr;
 nativeObject->y = y;
 */
-    private static native void internal_native_set_y(long this_addr, float y);
+    public static native void internal_native_set_y(long this_addr, float y);
 
     public float get_z() {
         return internal_native_get_z((long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ nativeObject->y = y;
 Float3* nativeObject = (Float3*)this_addr;
 return nativeObject->z;
 */
-    private static native float internal_native_get_z(long this_addr);
+    public static native float internal_native_get_z(long this_addr);
 
     public void set_z(float z) {
         internal_native_set_z((long) getNativeData().getCPointer(), z);
@@ -108,37 +108,5 @@ return nativeObject->z;
 Float3* nativeObject = (Float3*)this_addr;
 nativeObject->z = z;
 */
-    private static native void internal_native_set_z(long this_addr, float z);
-
-    public static long native_create_float_float_float(float inX, float inY, float inZ) {
-        return internal_native_create_float_float_float(inX, inY, inZ);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_get_x(long this_addr) {
-        return internal_native_get_x(this_addr);
-    }
-
-    public static void native_set_x(long this_addr, float x) {
-        internal_native_set_x(this_addr, x);
-    }
-
-    public static float native_get_y(long this_addr) {
-        return internal_native_get_y(this_addr);
-    }
-
-    public static void native_set_y(long this_addr, float y) {
-        internal_native_set_y(this_addr, y);
-    }
-
-    public static float native_get_z(long this_addr) {
-        return internal_native_get_z(this_addr);
-    }
-
-    public static void native_set_z(long this_addr, float z) {
-        internal_native_set_z(this_addr, z);
-    }
+    public static native void internal_native_set_z(long this_addr, float z);
 }

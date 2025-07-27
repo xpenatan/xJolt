@@ -38,7 +38,7 @@ public class SoftBodyVertexTraits extends IDLBase {
 SoftBodyVertexTraits* nativeObject = (SoftBodyVertexTraits*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public static int get_mPreviousPositionOffset() {
         return internal_native_get_mPreviousPositionOffset();
@@ -47,7 +47,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return SoftBodyVertexTraits::mPreviousPositionOffset;
 */
-    private static native int internal_native_get_mPreviousPositionOffset();
+    public static native int internal_native_get_mPreviousPositionOffset();
 
     public static int get_mPositionOffset() {
         return internal_native_get_mPositionOffset();
@@ -56,7 +56,7 @@ return SoftBodyVertexTraits::mPreviousPositionOffset;
     /*[-JNI;-NATIVE]
 return SoftBodyVertexTraits::mPositionOffset;
 */
-    private static native int internal_native_get_mPositionOffset();
+    public static native int internal_native_get_mPositionOffset();
 
     public static int get_mVelocityOffset() {
         return internal_native_get_mVelocityOffset();
@@ -65,21 +65,5 @@ return SoftBodyVertexTraits::mPositionOffset;
     /*[-JNI;-NATIVE]
 return SoftBodyVertexTraits::mVelocityOffset;
 */
-    private static native int internal_native_get_mVelocityOffset();
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_get_mPreviousPositionOffset() {
-        return internal_native_get_mPreviousPositionOffset();
-    }
-
-    public static int native_get_mPositionOffset() {
-        return internal_native_get_mPositionOffset();
-    }
-
-    public static int native_get_mVelocityOffset() {
-        return internal_native_get_mVelocityOffset();
-    }
+    public static native int internal_native_get_mVelocityOffset();
 }

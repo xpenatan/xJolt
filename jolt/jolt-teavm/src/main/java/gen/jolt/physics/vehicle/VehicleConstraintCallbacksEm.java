@@ -53,7 +53,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraintCallbacksJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraintCallbacksJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void SetVehicleConstraint(VehicleConstraint inConstraint) {
         internal_native_SetVehicleConstraint((int) (long) getNativeData().getCPointer(), (int) (long) (inConstraint != null ? inConstraint.getNativeData().getCPointer() : 0));
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraintCallbacksEm);
 jsObj.SetVehicleConstraint(inConstraint_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inConstraint_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraintCallbacksEm);jsObj.SetVehicleConstraint(inConstraint_addr);")
-    private static native void internal_native_SetVehicleConstraint(int this_addr, int inConstraint_addr);
+    public static native void internal_native_SetVehicleConstraint(int this_addr, int inConstraint_addr);
 
     public VehicleConstraintCallbacksEm() {
         int addr = internal_native_create();
@@ -158,10 +158,10 @@ var jsObj = new jolt.VehicleConstraintCallbacksJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.VehicleConstraintCallbacksJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "GetCombinedFriction", "OnPreStepCallback", "OnPostCollideCallback", "OnPostStepCallback" }, script = "var VehicleConstraintCallbacksJS = jolt.wrapPointer(this_addr, jolt.VehicleConstraintCallbacksJS); VehicleConstraintCallbacksJS.GetCombinedFriction = GetCombinedFriction; VehicleConstraintCallbacksJS.OnPreStepCallback = OnPreStepCallback; VehicleConstraintCallbacksJS.OnPostCollideCallback = OnPostCollideCallback; VehicleConstraintCallbacksJS.OnPostStepCallback = OnPostStepCallback;")
-    private static native void internal_native_setupCallback(int this_addr, GetCombinedFriction GetCombinedFriction, OnPreStepCallback OnPreStepCallback, OnPostCollideCallback OnPostCollideCallback, OnPostStepCallback OnPostStepCallback);
+    public static native void internal_native_setupCallback(int this_addr, GetCombinedFriction GetCombinedFriction, OnPreStepCallback OnPreStepCallback, OnPostCollideCallback OnPostCollideCallback, OnPostStepCallback OnPostStepCallback);
 
     @org.teavm.jso.JSFunctor()
     public interface GetCombinedFriction extends org.teavm.jso.JSObject {
@@ -185,17 +185,5 @@ return jolt.getPointer(jsObj);
     public interface OnPostStepCallback extends org.teavm.jso.JSObject {
 
         void OnPostStepCallback(int inVehicle, int inContext);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_SetVehicleConstraint(long this_addr, long inConstraint_addr) {
-        internal_native_SetVehicleConstraint((int) this_addr, (int) inConstraint_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

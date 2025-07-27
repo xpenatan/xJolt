@@ -26,7 +26,7 @@ var jsObj = new jolt.ShapeCastResult();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ShapeCastResult();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mFraction() {
         return internal_native_get_mFraction((int) (long) getNativeData().getCPointer());
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);
 return jsObj.get_mFraction();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);return jsObj.get_mFraction();")
-    private static native float internal_native_get_mFraction(int this_addr);
+    public static native float internal_native_get_mFraction(int this_addr);
 
     public void set_mFraction(float mFraction) {
         internal_native_set_mFraction((int) (long) getNativeData().getCPointer(), mFraction);
@@ -75,7 +75,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);
 jsObj.set_mFraction(mFraction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mFraction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);jsObj.set_mFraction(mFraction);")
-    private static native void internal_native_set_mFraction(int this_addr, float mFraction);
+    public static native void internal_native_set_mFraction(int this_addr, float mFraction);
 
     public boolean get_mIsBackFaceHit() {
         return internal_native_get_mIsBackFaceHit((int) (long) getNativeData().getCPointer());
@@ -86,7 +86,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);
 return jsObj.get_mIsBackFaceHit();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);return jsObj.get_mIsBackFaceHit();")
-    private static native boolean internal_native_get_mIsBackFaceHit(int this_addr);
+    public static native boolean internal_native_get_mIsBackFaceHit(int this_addr);
 
     public void set_mIsBackFaceHit(boolean mIsBackFaceHit) {
         internal_native_set_mIsBackFaceHit((int) (long) getNativeData().getCPointer(), mIsBackFaceHit);
@@ -97,29 +97,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);
 jsObj.set_mIsBackFaceHit(mIsBackFaceHit);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mIsBackFaceHit"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeCastResult);jsObj.set_mIsBackFaceHit(mIsBackFaceHit);")
-    private static native void internal_native_set_mIsBackFaceHit(int this_addr, boolean mIsBackFaceHit);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_mFraction(long this_addr) {
-        return internal_native_get_mFraction((int) this_addr);
-    }
-
-    public static void native_set_mFraction(long this_addr, float mFraction) {
-        internal_native_set_mFraction((int) this_addr, mFraction);
-    }
-
-    public static boolean native_get_mIsBackFaceHit(long this_addr) {
-        return internal_native_get_mIsBackFaceHit((int) this_addr);
-    }
-
-    public static void native_set_mIsBackFaceHit(long this_addr, boolean mIsBackFaceHit) {
-        internal_native_set_mIsBackFaceHit((int) this_addr, mIsBackFaceHit);
-    }
+    public static native void internal_native_set_mIsBackFaceHit(int this_addr, boolean mIsBackFaceHit);
 }

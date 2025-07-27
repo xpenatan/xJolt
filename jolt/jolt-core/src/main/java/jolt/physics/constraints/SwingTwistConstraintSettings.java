@@ -43,7 +43,7 @@ public class SwingTwistConstraintSettings extends TwoBodyConstraintSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new SwingTwistConstraintSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -69,7 +69,7 @@ return (jlong)new SwingTwistConstraintSettings();
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((long) getNativeData().getCPointer());
@@ -80,7 +80,7 @@ delete nativeObject;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jint)nativeObject->mSpace;
 */
-    private static native int internal_native_get_mSpace(long this_addr);
+    public static native int internal_native_get_mSpace(long this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((long) getNativeData().getCPointer(), (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -90,7 +90,7 @@ return (jint)nativeObject->mSpace;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    private static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
 
     public Vec3 get_mPosition1() {
         long pointer = internal_native_get_mPosition1((long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPosition1;
 */
-    private static native long internal_native_get_mPosition1(long this_addr);
+    public static native long internal_native_get_mPosition1(long this_addr);
 
     public void set_mPosition1(Vec3 mPosition1) {
         internal_native_set_mPosition1((long) getNativeData().getCPointer(), (long) (mPosition1 != null ? mPosition1.getNativeData().getCPointer() : 0));
@@ -116,7 +116,7 @@ return (jlong)&nativeObject->mPosition1;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
 */
-    private static native void internal_native_set_mPosition1(long this_addr, long mPosition1_addr);
+    public static native void internal_native_set_mPosition1(long this_addr, long mPosition1_addr);
 
     public Vec3 get_mTwistAxis1() {
         long pointer = internal_native_get_mTwistAxis1((long) getNativeData().getCPointer());
@@ -132,7 +132,7 @@ nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mTwistAxis1;
 */
-    private static native long internal_native_get_mTwistAxis1(long this_addr);
+    public static native long internal_native_get_mTwistAxis1(long this_addr);
 
     public void set_mTwistAxis1(Vec3 mTwistAxis1) {
         internal_native_set_mTwistAxis1((long) getNativeData().getCPointer(), (long) (mTwistAxis1 != null ? mTwistAxis1.getNativeData().getCPointer() : 0));
@@ -142,7 +142,7 @@ return (jlong)&nativeObject->mTwistAxis1;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mTwistAxis1 = *((Vec3*)mTwistAxis1_addr);
 */
-    private static native void internal_native_set_mTwistAxis1(long this_addr, long mTwistAxis1_addr);
+    public static native void internal_native_set_mTwistAxis1(long this_addr, long mTwistAxis1_addr);
 
     public Vec3 get_mPlaneAxis1() {
         long pointer = internal_native_get_mPlaneAxis1((long) getNativeData().getCPointer());
@@ -158,7 +158,7 @@ nativeObject->mTwistAxis1 = *((Vec3*)mTwistAxis1_addr);
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPlaneAxis1;
 */
-    private static native long internal_native_get_mPlaneAxis1(long this_addr);
+    public static native long internal_native_get_mPlaneAxis1(long this_addr);
 
     public void set_mPlaneAxis1(Vec3 mPlaneAxis1) {
         internal_native_set_mPlaneAxis1((long) getNativeData().getCPointer(), (long) (mPlaneAxis1 != null ? mPlaneAxis1.getNativeData().getCPointer() : 0));
@@ -168,7 +168,7 @@ return (jlong)&nativeObject->mPlaneAxis1;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mPlaneAxis1 = *((Vec3*)mPlaneAxis1_addr);
 */
-    private static native void internal_native_set_mPlaneAxis1(long this_addr, long mPlaneAxis1_addr);
+    public static native void internal_native_set_mPlaneAxis1(long this_addr, long mPlaneAxis1_addr);
 
     public Vec3 get_mPosition2() {
         long pointer = internal_native_get_mPosition2((long) getNativeData().getCPointer());
@@ -184,7 +184,7 @@ nativeObject->mPlaneAxis1 = *((Vec3*)mPlaneAxis1_addr);
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPosition2;
 */
-    private static native long internal_native_get_mPosition2(long this_addr);
+    public static native long internal_native_get_mPosition2(long this_addr);
 
     public void set_mPosition2(Vec3 mPosition2) {
         internal_native_set_mPosition2((long) getNativeData().getCPointer(), (long) (mPosition2 != null ? mPosition2.getNativeData().getCPointer() : 0));
@@ -194,7 +194,7 @@ return (jlong)&nativeObject->mPosition2;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
 */
-    private static native void internal_native_set_mPosition2(long this_addr, long mPosition2_addr);
+    public static native void internal_native_set_mPosition2(long this_addr, long mPosition2_addr);
 
     public Vec3 get_mTwistAxis2() {
         long pointer = internal_native_get_mTwistAxis2((long) getNativeData().getCPointer());
@@ -210,7 +210,7 @@ nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mTwistAxis2;
 */
-    private static native long internal_native_get_mTwistAxis2(long this_addr);
+    public static native long internal_native_get_mTwistAxis2(long this_addr);
 
     public void set_mTwistAxis2(Vec3 mTwistAxis2) {
         internal_native_set_mTwistAxis2((long) getNativeData().getCPointer(), (long) (mTwistAxis2 != null ? mTwistAxis2.getNativeData().getCPointer() : 0));
@@ -220,7 +220,7 @@ return (jlong)&nativeObject->mTwistAxis2;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mTwistAxis2 = *((Vec3*)mTwistAxis2_addr);
 */
-    private static native void internal_native_set_mTwistAxis2(long this_addr, long mTwistAxis2_addr);
+    public static native void internal_native_set_mTwistAxis2(long this_addr, long mTwistAxis2_addr);
 
     public Vec3 get_mPlaneAxis2() {
         long pointer = internal_native_get_mPlaneAxis2((long) getNativeData().getCPointer());
@@ -236,7 +236,7 @@ nativeObject->mTwistAxis2 = *((Vec3*)mTwistAxis2_addr);
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPlaneAxis2;
 */
-    private static native long internal_native_get_mPlaneAxis2(long this_addr);
+    public static native long internal_native_get_mPlaneAxis2(long this_addr);
 
     public void set_mPlaneAxis2(Vec3 mPlaneAxis2) {
         internal_native_set_mPlaneAxis2((long) getNativeData().getCPointer(), (long) (mPlaneAxis2 != null ? mPlaneAxis2.getNativeData().getCPointer() : 0));
@@ -246,7 +246,7 @@ return (jlong)&nativeObject->mPlaneAxis2;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mPlaneAxis2 = *((Vec3*)mPlaneAxis2_addr);
 */
-    private static native void internal_native_set_mPlaneAxis2(long this_addr, long mPlaneAxis2_addr);
+    public static native void internal_native_set_mPlaneAxis2(long this_addr, long mPlaneAxis2_addr);
 
     public ESwingType get_mSwingType() {
         int value = internal_native_get_mSwingType((long) getNativeData().getCPointer());
@@ -257,7 +257,7 @@ nativeObject->mPlaneAxis2 = *((Vec3*)mPlaneAxis2_addr);
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jint)nativeObject->mSwingType;
 */
-    private static native int internal_native_get_mSwingType(long this_addr);
+    public static native int internal_native_get_mSwingType(long this_addr);
 
     public void set_mSwingType(ESwingType mSwingType) {
         internal_native_set_mSwingType((long) getNativeData().getCPointer(), (long) (mSwingType != null ? mSwingType.getValue() : 0));
@@ -267,7 +267,7 @@ return (jint)nativeObject->mSwingType;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mSwingType = (::ESwingType)mSwingType;
 */
-    private static native void internal_native_set_mSwingType(long this_addr, long mSwingType);
+    public static native void internal_native_set_mSwingType(long this_addr, long mSwingType);
 
     public float get_mNormalHalfConeAngle() {
         return internal_native_get_mNormalHalfConeAngle((long) getNativeData().getCPointer());
@@ -277,7 +277,7 @@ nativeObject->mSwingType = (::ESwingType)mSwingType;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return nativeObject->mNormalHalfConeAngle;
 */
-    private static native float internal_native_get_mNormalHalfConeAngle(long this_addr);
+    public static native float internal_native_get_mNormalHalfConeAngle(long this_addr);
 
     public void set_mNormalHalfConeAngle(float mNormalHalfConeAngle) {
         internal_native_set_mNormalHalfConeAngle((long) getNativeData().getCPointer(), mNormalHalfConeAngle);
@@ -287,7 +287,7 @@ return nativeObject->mNormalHalfConeAngle;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mNormalHalfConeAngle = mNormalHalfConeAngle;
 */
-    private static native void internal_native_set_mNormalHalfConeAngle(long this_addr, float mNormalHalfConeAngle);
+    public static native void internal_native_set_mNormalHalfConeAngle(long this_addr, float mNormalHalfConeAngle);
 
     public float get_mPlaneHalfConeAngle() {
         return internal_native_get_mPlaneHalfConeAngle((long) getNativeData().getCPointer());
@@ -297,7 +297,7 @@ nativeObject->mNormalHalfConeAngle = mNormalHalfConeAngle;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return nativeObject->mPlaneHalfConeAngle;
 */
-    private static native float internal_native_get_mPlaneHalfConeAngle(long this_addr);
+    public static native float internal_native_get_mPlaneHalfConeAngle(long this_addr);
 
     public void set_mPlaneHalfConeAngle(float mPlaneHalfConeAngle) {
         internal_native_set_mPlaneHalfConeAngle((long) getNativeData().getCPointer(), mPlaneHalfConeAngle);
@@ -307,7 +307,7 @@ return nativeObject->mPlaneHalfConeAngle;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mPlaneHalfConeAngle = mPlaneHalfConeAngle;
 */
-    private static native void internal_native_set_mPlaneHalfConeAngle(long this_addr, float mPlaneHalfConeAngle);
+    public static native void internal_native_set_mPlaneHalfConeAngle(long this_addr, float mPlaneHalfConeAngle);
 
     public float get_mTwistMinAngle() {
         return internal_native_get_mTwistMinAngle((long) getNativeData().getCPointer());
@@ -317,7 +317,7 @@ nativeObject->mPlaneHalfConeAngle = mPlaneHalfConeAngle;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return nativeObject->mTwistMinAngle;
 */
-    private static native float internal_native_get_mTwistMinAngle(long this_addr);
+    public static native float internal_native_get_mTwistMinAngle(long this_addr);
 
     public void set_mTwistMinAngle(float mTwistMinAngle) {
         internal_native_set_mTwistMinAngle((long) getNativeData().getCPointer(), mTwistMinAngle);
@@ -327,7 +327,7 @@ return nativeObject->mTwistMinAngle;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mTwistMinAngle = mTwistMinAngle;
 */
-    private static native void internal_native_set_mTwistMinAngle(long this_addr, float mTwistMinAngle);
+    public static native void internal_native_set_mTwistMinAngle(long this_addr, float mTwistMinAngle);
 
     public float get_mTwistMaxAngle() {
         return internal_native_get_mTwistMaxAngle((long) getNativeData().getCPointer());
@@ -337,7 +337,7 @@ nativeObject->mTwistMinAngle = mTwistMinAngle;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return nativeObject->mTwistMaxAngle;
 */
-    private static native float internal_native_get_mTwistMaxAngle(long this_addr);
+    public static native float internal_native_get_mTwistMaxAngle(long this_addr);
 
     public void set_mTwistMaxAngle(float mTwistMaxAngle) {
         internal_native_set_mTwistMaxAngle((long) getNativeData().getCPointer(), mTwistMaxAngle);
@@ -347,7 +347,7 @@ return nativeObject->mTwistMaxAngle;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mTwistMaxAngle = mTwistMaxAngle;
 */
-    private static native void internal_native_set_mTwistMaxAngle(long this_addr, float mTwistMaxAngle);
+    public static native void internal_native_set_mTwistMaxAngle(long this_addr, float mTwistMaxAngle);
 
     public float get_mMaxFrictionTorque() {
         return internal_native_get_mMaxFrictionTorque((long) getNativeData().getCPointer());
@@ -357,7 +357,7 @@ nativeObject->mTwistMaxAngle = mTwistMaxAngle;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return nativeObject->mMaxFrictionTorque;
 */
-    private static native float internal_native_get_mMaxFrictionTorque(long this_addr);
+    public static native float internal_native_get_mMaxFrictionTorque(long this_addr);
 
     public void set_mMaxFrictionTorque(float mMaxFrictionTorque) {
         internal_native_set_mMaxFrictionTorque((long) getNativeData().getCPointer(), mMaxFrictionTorque);
@@ -367,7 +367,7 @@ return nativeObject->mMaxFrictionTorque;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mMaxFrictionTorque = mMaxFrictionTorque;
 */
-    private static native void internal_native_set_mMaxFrictionTorque(long this_addr, float mMaxFrictionTorque);
+    public static native void internal_native_set_mMaxFrictionTorque(long this_addr, float mMaxFrictionTorque);
 
     public MotorSettings get_mSwingMotorSettings() {
         long pointer = internal_native_get_mSwingMotorSettings((long) getNativeData().getCPointer());
@@ -383,7 +383,7 @@ nativeObject->mMaxFrictionTorque = mMaxFrictionTorque;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mSwingMotorSettings;
 */
-    private static native long internal_native_get_mSwingMotorSettings(long this_addr);
+    public static native long internal_native_get_mSwingMotorSettings(long this_addr);
 
     public void set_mSwingMotorSettings(MotorSettings mSwingMotorSettings) {
         internal_native_set_mSwingMotorSettings((long) getNativeData().getCPointer(), (long) (mSwingMotorSettings != null ? mSwingMotorSettings.getNativeData().getCPointer() : 0));
@@ -393,7 +393,7 @@ return (jlong)&nativeObject->mSwingMotorSettings;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mSwingMotorSettings = *((MotorSettings*)mSwingMotorSettings_addr);
 */
-    private static native void internal_native_set_mSwingMotorSettings(long this_addr, long mSwingMotorSettings_addr);
+    public static native void internal_native_set_mSwingMotorSettings(long this_addr, long mSwingMotorSettings_addr);
 
     public MotorSettings get_mTwistMotorSettings() {
         long pointer = internal_native_get_mTwistMotorSettings((long) getNativeData().getCPointer());
@@ -409,7 +409,7 @@ nativeObject->mSwingMotorSettings = *((MotorSettings*)mSwingMotorSettings_addr);
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mTwistMotorSettings;
 */
-    private static native long internal_native_get_mTwistMotorSettings(long this_addr);
+    public static native long internal_native_get_mTwistMotorSettings(long this_addr);
 
     public void set_mTwistMotorSettings(MotorSettings mTwistMotorSettings) {
         internal_native_set_mTwistMotorSettings((long) getNativeData().getCPointer(), (long) (mTwistMotorSettings != null ? mTwistMotorSettings.getNativeData().getCPointer() : 0));
@@ -419,133 +419,5 @@ return (jlong)&nativeObject->mTwistMotorSettings;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mTwistMotorSettings = *((MotorSettings*)mTwistMotorSettings_addr);
 */
-    private static native void internal_native_set_mTwistMotorSettings(long this_addr, long mTwistMotorSettings_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace(this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace(this_addr, mSpace);
-    }
-
-    public static long native_get_mPosition1(long this_addr) {
-        return internal_native_get_mPosition1(this_addr);
-    }
-
-    public static void native_set_mPosition1(long this_addr, long mPosition1_addr) {
-        internal_native_set_mPosition1(this_addr, mPosition1_addr);
-    }
-
-    public static long native_get_mTwistAxis1(long this_addr) {
-        return internal_native_get_mTwistAxis1(this_addr);
-    }
-
-    public static void native_set_mTwistAxis1(long this_addr, long mTwistAxis1_addr) {
-        internal_native_set_mTwistAxis1(this_addr, mTwistAxis1_addr);
-    }
-
-    public static long native_get_mPlaneAxis1(long this_addr) {
-        return internal_native_get_mPlaneAxis1(this_addr);
-    }
-
-    public static void native_set_mPlaneAxis1(long this_addr, long mPlaneAxis1_addr) {
-        internal_native_set_mPlaneAxis1(this_addr, mPlaneAxis1_addr);
-    }
-
-    public static long native_get_mPosition2(long this_addr) {
-        return internal_native_get_mPosition2(this_addr);
-    }
-
-    public static void native_set_mPosition2(long this_addr, long mPosition2_addr) {
-        internal_native_set_mPosition2(this_addr, mPosition2_addr);
-    }
-
-    public static long native_get_mTwistAxis2(long this_addr) {
-        return internal_native_get_mTwistAxis2(this_addr);
-    }
-
-    public static void native_set_mTwistAxis2(long this_addr, long mTwistAxis2_addr) {
-        internal_native_set_mTwistAxis2(this_addr, mTwistAxis2_addr);
-    }
-
-    public static long native_get_mPlaneAxis2(long this_addr) {
-        return internal_native_get_mPlaneAxis2(this_addr);
-    }
-
-    public static void native_set_mPlaneAxis2(long this_addr, long mPlaneAxis2_addr) {
-        internal_native_set_mPlaneAxis2(this_addr, mPlaneAxis2_addr);
-    }
-
-    public static long native_get_mSwingType(long this_addr) {
-        return internal_native_get_mSwingType(this_addr);
-    }
-
-    public static void native_set_mSwingType(long this_addr, long mSwingType) {
-        internal_native_set_mSwingType(this_addr, mSwingType);
-    }
-
-    public static float native_get_mNormalHalfConeAngle(long this_addr) {
-        return internal_native_get_mNormalHalfConeAngle(this_addr);
-    }
-
-    public static void native_set_mNormalHalfConeAngle(long this_addr, float mNormalHalfConeAngle) {
-        internal_native_set_mNormalHalfConeAngle(this_addr, mNormalHalfConeAngle);
-    }
-
-    public static float native_get_mPlaneHalfConeAngle(long this_addr) {
-        return internal_native_get_mPlaneHalfConeAngle(this_addr);
-    }
-
-    public static void native_set_mPlaneHalfConeAngle(long this_addr, float mPlaneHalfConeAngle) {
-        internal_native_set_mPlaneHalfConeAngle(this_addr, mPlaneHalfConeAngle);
-    }
-
-    public static float native_get_mTwistMinAngle(long this_addr) {
-        return internal_native_get_mTwistMinAngle(this_addr);
-    }
-
-    public static void native_set_mTwistMinAngle(long this_addr, float mTwistMinAngle) {
-        internal_native_set_mTwistMinAngle(this_addr, mTwistMinAngle);
-    }
-
-    public static float native_get_mTwistMaxAngle(long this_addr) {
-        return internal_native_get_mTwistMaxAngle(this_addr);
-    }
-
-    public static void native_set_mTwistMaxAngle(long this_addr, float mTwistMaxAngle) {
-        internal_native_set_mTwistMaxAngle(this_addr, mTwistMaxAngle);
-    }
-
-    public static float native_get_mMaxFrictionTorque(long this_addr) {
-        return internal_native_get_mMaxFrictionTorque(this_addr);
-    }
-
-    public static void native_set_mMaxFrictionTorque(long this_addr, float mMaxFrictionTorque) {
-        internal_native_set_mMaxFrictionTorque(this_addr, mMaxFrictionTorque);
-    }
-
-    public static long native_get_mSwingMotorSettings(long this_addr) {
-        return internal_native_get_mSwingMotorSettings(this_addr);
-    }
-
-    public static void native_set_mSwingMotorSettings(long this_addr, long mSwingMotorSettings_addr) {
-        internal_native_set_mSwingMotorSettings(this_addr, mSwingMotorSettings_addr);
-    }
-
-    public static long native_get_mTwistMotorSettings(long this_addr) {
-        return internal_native_get_mTwistMotorSettings(this_addr);
-    }
-
-    public static void native_set_mTwistMotorSettings(long this_addr, long mTwistMotorSettings_addr) {
-        internal_native_set_mTwistMotorSettings(this_addr, mTwistMotorSettings_addr);
-    }
+    public static native void internal_native_set_mTwistMotorSettings(long this_addr, long mTwistMotorSettings_addr);
 }

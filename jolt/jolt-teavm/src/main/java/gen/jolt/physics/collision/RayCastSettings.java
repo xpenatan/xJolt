@@ -26,7 +26,7 @@ var jsObj = new jolt.RayCastSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.RayCastSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -52,7 +52,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public EBackFaceMode get_mBackFaceModeTriangles() {
         int value = internal_native_get_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer());
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);
 return jsObj.get_mBackFaceModeTriangles();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);return jsObj.get_mBackFaceModeTriangles();")
-    private static native int internal_native_get_mBackFaceModeTriangles(int this_addr);
+    public static native int internal_native_get_mBackFaceModeTriangles(int this_addr);
 
     public void set_mBackFaceModeTriangles(EBackFaceMode mBackFaceModeTriangles) {
         internal_native_set_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceModeTriangles != null ? mBackFaceModeTriangles.getValue() : 0));
@@ -75,7 +75,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);
 jsObj.set_mBackFaceModeTriangles(mBackFaceModeTriangles);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBackFaceModeTriangles"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);jsObj.set_mBackFaceModeTriangles(mBackFaceModeTriangles);")
-    private static native void internal_native_set_mBackFaceModeTriangles(int this_addr, int mBackFaceModeTriangles);
+    public static native void internal_native_set_mBackFaceModeTriangles(int this_addr, int mBackFaceModeTriangles);
 
     public EBackFaceMode get_mBackFaceModeConvex() {
         int value = internal_native_get_mBackFaceModeConvex((int) (long) getNativeData().getCPointer());
@@ -87,7 +87,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);
 return jsObj.get_mBackFaceModeConvex();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);return jsObj.get_mBackFaceModeConvex();")
-    private static native int internal_native_get_mBackFaceModeConvex(int this_addr);
+    public static native int internal_native_get_mBackFaceModeConvex(int this_addr);
 
     public void set_mBackFaceModeConvex(EBackFaceMode mBackFaceModeConvex) {
         internal_native_set_mBackFaceModeConvex((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceModeConvex != null ? mBackFaceModeConvex.getValue() : 0));
@@ -98,7 +98,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);
 jsObj.set_mBackFaceModeConvex(mBackFaceModeConvex);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBackFaceModeConvex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);jsObj.set_mBackFaceModeConvex(mBackFaceModeConvex);")
-    private static native void internal_native_set_mBackFaceModeConvex(int this_addr, int mBackFaceModeConvex);
+    public static native void internal_native_set_mBackFaceModeConvex(int this_addr, int mBackFaceModeConvex);
 
     public boolean get_mTreatConvexAsSolid() {
         return internal_native_get_mTreatConvexAsSolid((int) (long) getNativeData().getCPointer());
@@ -109,7 +109,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);
 return jsObj.get_mTreatConvexAsSolid();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);return jsObj.get_mTreatConvexAsSolid();")
-    private static native boolean internal_native_get_mTreatConvexAsSolid(int this_addr);
+    public static native boolean internal_native_get_mTreatConvexAsSolid(int this_addr);
 
     public void set_mTreatConvexAsSolid(boolean mTreatConvexAsSolid) {
         internal_native_set_mTreatConvexAsSolid((int) (long) getNativeData().getCPointer(), mTreatConvexAsSolid);
@@ -120,37 +120,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);
 jsObj.set_mTreatConvexAsSolid(mTreatConvexAsSolid);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mTreatConvexAsSolid"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RayCastSettings);jsObj.set_mTreatConvexAsSolid(mTreatConvexAsSolid);")
-    private static native void internal_native_set_mTreatConvexAsSolid(int this_addr, boolean mTreatConvexAsSolid);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mBackFaceModeTriangles(long this_addr) {
-        return internal_native_get_mBackFaceModeTriangles((int) this_addr);
-    }
-
-    public static void native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles) {
-        internal_native_set_mBackFaceModeTriangles((int) this_addr, (int) mBackFaceModeTriangles);
-    }
-
-    public static long native_get_mBackFaceModeConvex(long this_addr) {
-        return internal_native_get_mBackFaceModeConvex((int) this_addr);
-    }
-
-    public static void native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex) {
-        internal_native_set_mBackFaceModeConvex((int) this_addr, (int) mBackFaceModeConvex);
-    }
-
-    public static boolean native_get_mTreatConvexAsSolid(long this_addr) {
-        return internal_native_get_mTreatConvexAsSolid((int) this_addr);
-    }
-
-    public static void native_set_mTreatConvexAsSolid(long this_addr, boolean mTreatConvexAsSolid) {
-        internal_native_set_mTreatConvexAsSolid((int) this_addr, mTreatConvexAsSolid);
-    }
+    public static native void internal_native_set_mTreatConvexAsSolid(int this_addr, boolean mTreatConvexAsSolid);
 }

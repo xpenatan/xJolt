@@ -24,7 +24,7 @@ var jsObj = new jolt.ObjectLayerPairFilterTable(inNumObjectLayers);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inNumObjectLayers"}, script = "var jsObj = new jolt.ObjectLayerPairFilterTable(inNumObjectLayers);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int(int inNumObjectLayers);
+    public static native int internal_native_create_int(int inNumObjectLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -44,7 +44,7 @@ var returnedJSObj = jsObj.GetNumObjectLayers();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ObjectLayerPairFilterTable);var returnedJSObj = jsObj.GetNumObjectLayers();return returnedJSObj;")
-    private static native int internal_native_GetNumObjectLayers(int this_addr);
+    public static native int internal_native_GetNumObjectLayers(int this_addr);
 
     public void DisableCollision(int inLayer1, int inLayer2) {
         internal_native_DisableCollision((int) (long) getNativeData().getCPointer(), inLayer1, inLayer2);
@@ -55,7 +55,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ObjectLayerPairFilterTable);
 jsObj.DisableCollision(inLayer1, inLayer2);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLayer1", "inLayer2"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ObjectLayerPairFilterTable);jsObj.DisableCollision(inLayer1, inLayer2);")
-    private static native void internal_native_DisableCollision(int this_addr, int inLayer1, int inLayer2);
+    public static native void internal_native_DisableCollision(int this_addr, int inLayer1, int inLayer2);
 
     public void EnableCollision(int inLayer1, int inLayer2) {
         internal_native_EnableCollision((int) (long) getNativeData().getCPointer(), inLayer1, inLayer2);
@@ -66,21 +66,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ObjectLayerPairFilterTable);
 jsObj.EnableCollision(inLayer1, inLayer2);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLayer1", "inLayer2"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ObjectLayerPairFilterTable);jsObj.EnableCollision(inLayer1, inLayer2);")
-    private static native void internal_native_EnableCollision(int this_addr, int inLayer1, int inLayer2);
-
-    public static long native_create_int(int inNumObjectLayers) {
-        return internal_native_create_int(inNumObjectLayers);
-    }
-
-    public static int native_GetNumObjectLayers(long this_addr) {
-        return internal_native_GetNumObjectLayers((int) this_addr);
-    }
-
-    public static void native_DisableCollision(long this_addr, int inLayer1, int inLayer2) {
-        internal_native_DisableCollision((int) this_addr, inLayer1, inLayer2);
-    }
-
-    public static void native_EnableCollision(long this_addr, int inLayer1, int inLayer2) {
-        internal_native_EnableCollision((int) this_addr, inLayer1, inLayer2);
-    }
+    public static native void internal_native_EnableCollision(int this_addr, int inLayer1, int inLayer2);
 }

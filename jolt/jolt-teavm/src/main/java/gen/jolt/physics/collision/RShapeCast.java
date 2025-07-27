@@ -38,7 +38,7 @@ var jsObj = new jolt.RShapeCast(inShape_addr, inScale_addr, inCenterOfMassStart_
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inScale_addr", "inCenterOfMassStart_addr", "inDirection_addr"}, script = "var jsObj = new jolt.RShapeCast(inShape_addr, inScale_addr, inCenterOfMassStart_addr, inDirection_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Shape_Vec3_Mat44_Vec3(int inShape_addr, int inScale_addr, int inCenterOfMassStart_addr, int inDirection_addr);
+    public static native int internal_native_create_Shape_Vec3_Mat44_Vec3(int inShape_addr, int inScale_addr, int inCenterOfMassStart_addr, int inDirection_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -64,7 +64,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 GetPointOnRay(float inFraction) {
         int pointer = internal_native_GetPointOnRay((int) (long) getNativeData().getCPointer(), inFraction);
@@ -83,7 +83,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inFraction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.GetPointOnRay(inFraction);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetPointOnRay(int this_addr, float inFraction);
+    public static native int internal_native_GetPointOnRay(int this_addr, float inFraction);
 
     public Shape get_mShape() {
         int pointer = internal_native_get_mShape((int) (long) getNativeData().getCPointer());
@@ -102,7 +102,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.get_mShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mShape(int this_addr);
+    public static native int internal_native_get_mShape(int this_addr);
 
     public Vec3 get_mScale() {
         int pointer = internal_native_get_mScale((int) (long) getNativeData().getCPointer());
@@ -121,7 +121,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.get_mScale();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mScale(int this_addr);
+    public static native int internal_native_get_mScale(int this_addr);
 
     public Mat44 get_mCenterOfMassStart() {
         int pointer = internal_native_get_mCenterOfMassStart((int) (long) getNativeData().getCPointer());
@@ -140,7 +140,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.get_mCenterOfMassStart();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mCenterOfMassStart(int this_addr);
+    public static native int internal_native_get_mCenterOfMassStart(int this_addr);
 
     public Vec3 get_mDirection() {
         int pointer = internal_native_get_mDirection((int) (long) getNativeData().getCPointer());
@@ -159,33 +159,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.get_mDirection();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mDirection(int this_addr);
-
-    public static long native_create_Shape_Vec3_Mat44_Vec3(long inShape_addr, long inScale_addr, long inCenterOfMassStart_addr, long inDirection_addr) {
-        return internal_native_create_Shape_Vec3_Mat44_Vec3((int) inShape_addr, (int) inScale_addr, (int) inCenterOfMassStart_addr, (int) inDirection_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_GetPointOnRay(long this_addr, float inFraction) {
-        return internal_native_GetPointOnRay((int) this_addr, inFraction);
-    }
-
-    public static long native_get_mShape(long this_addr) {
-        return internal_native_get_mShape((int) this_addr);
-    }
-
-    public static long native_get_mScale(long this_addr) {
-        return internal_native_get_mScale((int) this_addr);
-    }
-
-    public static long native_get_mCenterOfMassStart(long this_addr) {
-        return internal_native_get_mCenterOfMassStart((int) this_addr);
-    }
-
-    public static long native_get_mDirection(long this_addr) {
-        return internal_native_get_mDirection((int) this_addr);
-    }
+    public static native int internal_native_get_mDirection(int this_addr);
 }

@@ -22,7 +22,7 @@ public class IgnoreSingleBodyFilter extends BodyFilter {
     /*[-JNI;-NATIVE]
 return (jlong)new IgnoreSingleBodyFilter(*((BodyID* )inBodyID_addr));
 */
-    private static native long internal_native_create_BodyID(long inBodyID_addr);
+    public static native long internal_native_create_BodyID(long inBodyID_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,13 +48,5 @@ return (jlong)new IgnoreSingleBodyFilter(*((BodyID* )inBodyID_addr));
 IgnoreSingleBodyFilter* nativeObject = (IgnoreSingleBodyFilter*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
-
-    public static long native_create_BodyID(long inBodyID_addr) {
-        return internal_native_create_BodyID(inBodyID_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
+    public static native void internal_native_deleteNative(long this_addr);
 }

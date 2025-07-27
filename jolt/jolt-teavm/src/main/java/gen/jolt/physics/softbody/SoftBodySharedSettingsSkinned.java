@@ -41,7 +41,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mVertex() {
         return internal_native_get_mVertex((int) (long) getNativeData().getCPointer());
@@ -52,7 +52,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 return jsObj.get_mVertex();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);return jsObj.get_mVertex();")
-    private static native int internal_native_get_mVertex(int this_addr);
+    public static native int internal_native_get_mVertex(int this_addr);
 
     public void set_mVertex(int mVertex) {
         internal_native_set_mVertex((int) (long) getNativeData().getCPointer(), mVertex);
@@ -63,7 +63,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 jsObj.set_mVertex(mVertex);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mVertex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);jsObj.set_mVertex(mVertex);")
-    private static native void internal_native_set_mVertex(int this_addr, int mVertex);
+    public static native void internal_native_set_mVertex(int this_addr, int mVertex);
 
     public SoftBodySharedSettingsSkinWeight get_mWeights(int index) {
         int pointer = internal_native_get_mWeights((int) (long) getNativeData().getCPointer(), index);
@@ -82,7 +82,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);var returnedJSObj = jsObj.get_mWeights(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mWeights(int this_addr, int index);
+    public static native int internal_native_get_mWeights(int this_addr, int index);
 
     public void set_mWeights(int index, SoftBodySharedSettingsSkinWeight mWeights) {
         internal_native_set_mWeights((int) (long) getNativeData().getCPointer(), index, (int) (long) (mWeights != null ? mWeights.getNativeData().getCPointer() : 0));
@@ -93,7 +93,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 jsObj.set_mWeights(index, mWeights_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mWeights_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);jsObj.set_mWeights(index, mWeights_addr);")
-    private static native void internal_native_set_mWeights(int this_addr, int index, int mWeights_addr);
+    public static native void internal_native_set_mWeights(int this_addr, int index, int mWeights_addr);
 
     public float get_mMaxDistance() {
         return internal_native_get_mMaxDistance((int) (long) getNativeData().getCPointer());
@@ -104,7 +104,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 return jsObj.get_mMaxDistance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);return jsObj.get_mMaxDistance();")
-    private static native float internal_native_get_mMaxDistance(int this_addr);
+    public static native float internal_native_get_mMaxDistance(int this_addr);
 
     public void set_mMaxDistance(float mMaxDistance) {
         internal_native_set_mMaxDistance((int) (long) getNativeData().getCPointer(), mMaxDistance);
@@ -115,7 +115,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 jsObj.set_mMaxDistance(mMaxDistance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxDistance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);jsObj.set_mMaxDistance(mMaxDistance);")
-    private static native void internal_native_set_mMaxDistance(int this_addr, float mMaxDistance);
+    public static native void internal_native_set_mMaxDistance(int this_addr, float mMaxDistance);
 
     public float get_mBackStopDistance() {
         return internal_native_get_mBackStopDistance((int) (long) getNativeData().getCPointer());
@@ -126,7 +126,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 return jsObj.get_mBackStopDistance();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);return jsObj.get_mBackStopDistance();")
-    private static native float internal_native_get_mBackStopDistance(int this_addr);
+    public static native float internal_native_get_mBackStopDistance(int this_addr);
 
     public void set_mBackStopDistance(float mBackStopDistance) {
         internal_native_set_mBackStopDistance((int) (long) getNativeData().getCPointer(), mBackStopDistance);
@@ -137,7 +137,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 jsObj.set_mBackStopDistance(mBackStopDistance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBackStopDistance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);jsObj.set_mBackStopDistance(mBackStopDistance);")
-    private static native void internal_native_set_mBackStopDistance(int this_addr, float mBackStopDistance);
+    public static native void internal_native_set_mBackStopDistance(int this_addr, float mBackStopDistance);
 
     public float get_mBackStopRadius() {
         return internal_native_get_mBackStopRadius((int) (long) getNativeData().getCPointer());
@@ -148,7 +148,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 return jsObj.get_mBackStopRadius();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);return jsObj.get_mBackStopRadius();")
-    private static native float internal_native_get_mBackStopRadius(int this_addr);
+    public static native float internal_native_get_mBackStopRadius(int this_addr);
 
     public void set_mBackStopRadius(float mBackStopRadius) {
         internal_native_set_mBackStopRadius((int) (long) getNativeData().getCPointer(), mBackStopRadius);
@@ -159,49 +159,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);
 jsObj.set_mBackStopRadius(mBackStopRadius);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBackStopRadius"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);jsObj.set_mBackStopRadius(mBackStopRadius);")
-    private static native void internal_native_set_mBackStopRadius(int this_addr, float mBackStopRadius);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_get_mVertex(long this_addr) {
-        return internal_native_get_mVertex((int) this_addr);
-    }
-
-    public static void native_set_mVertex(long this_addr, int mVertex) {
-        internal_native_set_mVertex((int) this_addr, mVertex);
-    }
-
-    public static long native_get_mWeights(long this_addr, int index) {
-        return internal_native_get_mWeights((int) this_addr, index);
-    }
-
-    public static void native_set_mWeights(long this_addr, int index, long mWeights_addr) {
-        internal_native_set_mWeights((int) this_addr, index, (int) mWeights_addr);
-    }
-
-    public static float native_get_mMaxDistance(long this_addr) {
-        return internal_native_get_mMaxDistance((int) this_addr);
-    }
-
-    public static void native_set_mMaxDistance(long this_addr, float mMaxDistance) {
-        internal_native_set_mMaxDistance((int) this_addr, mMaxDistance);
-    }
-
-    public static float native_get_mBackStopDistance(long this_addr) {
-        return internal_native_get_mBackStopDistance((int) this_addr);
-    }
-
-    public static void native_set_mBackStopDistance(long this_addr, float mBackStopDistance) {
-        internal_native_set_mBackStopDistance((int) this_addr, mBackStopDistance);
-    }
-
-    public static float native_get_mBackStopRadius(long this_addr) {
-        return internal_native_get_mBackStopRadius((int) this_addr);
-    }
-
-    public static void native_set_mBackStopRadius(long this_addr, float mBackStopRadius) {
-        internal_native_set_mBackStopRadius((int) this_addr, mBackStopRadius);
-    }
+    public static native void internal_native_set_mBackStopRadius(int this_addr, float mBackStopRadius);
 }

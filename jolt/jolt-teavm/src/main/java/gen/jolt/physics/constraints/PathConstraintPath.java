@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public boolean IsLooping() {
         return internal_native_IsLooping((int) (long) getNativeData().getCPointer());
@@ -51,7 +51,7 @@ var returnedJSObj = jsObj.IsLooping();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);var returnedJSObj = jsObj.IsLooping();return returnedJSObj;")
-    private static native boolean internal_native_IsLooping(int this_addr);
+    public static native boolean internal_native_IsLooping(int this_addr);
 
     public void SetIsLooping(boolean inIsLooping) {
         internal_native_SetIsLooping((int) (long) getNativeData().getCPointer(), inIsLooping);
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);
 jsObj.SetIsLooping(inIsLooping);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIsLooping"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);jsObj.SetIsLooping(inIsLooping);")
-    private static native void internal_native_SetIsLooping(int this_addr, boolean inIsLooping);
+    public static native void internal_native_SetIsLooping(int this_addr, boolean inIsLooping);
 
     public int GetRefCount() {
         return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
@@ -74,7 +74,7 @@ var returnedJSObj = jsObj.GetRefCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);var returnedJSObj = jsObj.GetRefCount();return returnedJSObj;")
-    private static native int internal_native_GetRefCount(int this_addr);
+    public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
         internal_native_AddRef((int) (long) getNativeData().getCPointer());
@@ -85,7 +85,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);
 jsObj.AddRef();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);jsObj.AddRef();")
-    private static native void internal_native_AddRef(int this_addr);
+    public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
         internal_native_Release((int) (long) getNativeData().getCPointer());
@@ -96,29 +96,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);
 jsObj.Release();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintPath);jsObj.Release();")
-    private static native void internal_native_Release(int this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static boolean native_IsLooping(long this_addr) {
-        return internal_native_IsLooping((int) this_addr);
-    }
-
-    public static void native_SetIsLooping(long this_addr, boolean inIsLooping) {
-        internal_native_SetIsLooping((int) this_addr, inIsLooping);
-    }
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount((int) this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef((int) this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release((int) this_addr);
-    }
+    public static native void internal_native_Release(int this_addr);
 }

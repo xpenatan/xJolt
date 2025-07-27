@@ -98,7 +98,7 @@ virtual void DrawText3D(const Vec3* inPosition, const void* inString, unsigned i
 DebugRendererImplCustom* nativeObject = (DebugRendererImplCustom*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void DrawBodies(PhysicsSystem system, BodyManagerDrawSettings inDrawSettings) {
         internal_native_DrawBodies((long) getNativeData().getCPointer(), (long) (system != null ? system.getNativeData().getCPointer() : 0), (long) (inDrawSettings != null ? inDrawSettings.getNativeData().getCPointer() : 0));
@@ -108,7 +108,7 @@ delete nativeObject;
 DebugRendererEm* nativeObject = (DebugRendererEm*)this_addr;
 nativeObject->DrawBodies((PhysicsSystem* )system_addr, (BodyManagerDrawSettings* )inDrawSettings_addr);
 */
-    private static native void internal_native_DrawBodies(long this_addr, long system_addr, long inDrawSettings_addr);
+    public static native void internal_native_DrawBodies(long this_addr, long system_addr, long inDrawSettings_addr);
 
     public void DrawBodies(PhysicsSystem system) {
         internal_native_DrawBodies((long) getNativeData().getCPointer(), (long) (system != null ? system.getNativeData().getCPointer() : 0));
@@ -118,7 +118,7 @@ nativeObject->DrawBodies((PhysicsSystem* )system_addr, (BodyManagerDrawSettings*
 DebugRendererEm* nativeObject = (DebugRendererEm*)this_addr;
 nativeObject->DrawBodies((PhysicsSystem* )system_addr);
 */
-    private static native void internal_native_DrawBodies(long this_addr, long system_addr);
+    public static native void internal_native_DrawBodies(long this_addr, long system_addr);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow, EDrawMode inDrawMode) {
         internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (long) (inCastShadow != null ? inCastShadow.getValue() : 0), (long) (inDrawMode != null ? inDrawMode.getValue() : 0));
@@ -128,7 +128,7 @@ nativeObject->DrawBodies((PhysicsSystem* )system_addr);
 DebugRendererEm* nativeObject = (DebugRendererEm*)this_addr;
 nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (float)inRadius, *((Color* )inColor_addr), (::ECastShadow)inCastShadow, (::EDrawMode)inDrawMode);
 */
-    private static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow, long inDrawMode);
+    public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow, long inDrawMode);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow) {
         internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (long) (inCastShadow != null ? inCastShadow.getValue() : 0));
@@ -138,7 +138,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
 DebugRendererEm* nativeObject = (DebugRendererEm*)this_addr;
 nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (float)inRadius, *((Color* )inColor_addr), (::ECastShadow)inCastShadow);
 */
-    private static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow);
+    public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor) {
         internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0));
@@ -148,7 +148,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
 DebugRendererEm* nativeObject = (DebugRendererEm*)this_addr;
 nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (float)inRadius, *((Color* )inColor_addr));
 */
-    private static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr);
+    public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr);
 
     public DebugRendererEm() {
         long addr = internal_native_create();
@@ -227,39 +227,11 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
     /*[-JNI;-NATIVE]
 return (jlong)new DebugRendererImplCustom();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /*[-JNI;-NATIVE]
 DebugRendererImplCustom* nativeObject = (DebugRendererImplCustom*)this_addr;
 nativeObject->setupCallback(env, object);
 */
-    private native void internal_native_setupCallback(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_DrawBodies(long this_addr, long system_addr, long inDrawSettings_addr) {
-        internal_native_DrawBodies(this_addr, system_addr, inDrawSettings_addr);
-    }
-
-    public static void native_DrawBodies(long this_addr, long system_addr) {
-        internal_native_DrawBodies(this_addr, system_addr);
-    }
-
-    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow, long inDrawMode) {
-        internal_native_DrawCylinder(this_addr, inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastShadow, inDrawMode);
-    }
-
-    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow) {
-        internal_native_DrawCylinder(this_addr, inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastShadow);
-    }
-
-    public static void native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr) {
-        internal_native_DrawCylinder(this_addr, inMatrix_addr, inHalfHeight, inRadius, inColor_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
-    }
+    public native void internal_native_setupCallback(long this_addr);
 }

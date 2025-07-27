@@ -24,7 +24,7 @@ public class SphereShape extends ConvexShape {
     /*[-JNI;-NATIVE]
 return (jlong)new SphereShape((float)inRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    private static native long internal_native_create_float_PhysicsMaterial(float inRadius, long inMaterial_addr);
+    public static native long internal_native_create_float_PhysicsMaterial(float inRadius, long inMaterial_addr);
 
     public SphereShape(float inRadius) {
         super((byte) 1, (char) 1);
@@ -35,7 +35,7 @@ return (jlong)new SphereShape((float)inRadius, (PhysicsMaterial* )inMaterial_add
     /*[-JNI;-NATIVE]
 return (jlong)new SphereShape((float)inRadius);
 */
-    private static native long internal_native_create_float(float inRadius);
+    public static native long internal_native_create_float(float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,17 +53,5 @@ return (jlong)new SphereShape((float)inRadius);
 SphereShape* nativeObject = (SphereShape*)this_addr;
 return nativeObject->GetRadius();
 */
-    private static native float internal_native_GetRadius(long this_addr);
-
-    public static long native_create_float_PhysicsMaterial(float inRadius, long inMaterial_addr) {
-        return internal_native_create_float_PhysicsMaterial(inRadius, inMaterial_addr);
-    }
-
-    public static long native_create_float(float inRadius) {
-        return internal_native_create_float(inRadius);
-    }
-
-    public static float native_GetRadius(long this_addr) {
-        return internal_native_GetRadius(this_addr);
-    }
+    public static native float internal_native_GetRadius(long this_addr);
 }

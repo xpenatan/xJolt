@@ -29,7 +29,7 @@ public class PulleyConstraint extends TwoBodyConstraint {
 PulleyConstraint* nativeObject = (PulleyConstraint*)this_addr;
 nativeObject->SetLength((float)inMinLength, (float)inMaxLength);
 */
-    private static native void internal_native_SetLength(long this_addr, float inMinLength, float inMaxLength);
+    public static native void internal_native_SetLength(long this_addr, float inMinLength, float inMaxLength);
 
     public float GetMinLength() {
         return internal_native_GetMinLength((long) getNativeData().getCPointer());
@@ -39,7 +39,7 @@ nativeObject->SetLength((float)inMinLength, (float)inMaxLength);
 PulleyConstraint* nativeObject = (PulleyConstraint*)this_addr;
 return nativeObject->GetMinLength();
 */
-    private static native float internal_native_GetMinLength(long this_addr);
+    public static native float internal_native_GetMinLength(long this_addr);
 
     public float GetMaxLength() {
         return internal_native_GetMaxLength((long) getNativeData().getCPointer());
@@ -49,7 +49,7 @@ return nativeObject->GetMinLength();
 PulleyConstraint* nativeObject = (PulleyConstraint*)this_addr;
 return nativeObject->GetMaxLength();
 */
-    private static native float internal_native_GetMaxLength(long this_addr);
+    public static native float internal_native_GetMaxLength(long this_addr);
 
     public float GetCurrentLength() {
         return internal_native_GetCurrentLength((long) getNativeData().getCPointer());
@@ -59,21 +59,5 @@ return nativeObject->GetMaxLength();
 PulleyConstraint* nativeObject = (PulleyConstraint*)this_addr;
 return nativeObject->GetCurrentLength();
 */
-    private static native float internal_native_GetCurrentLength(long this_addr);
-
-    public static void native_SetLength(long this_addr, float inMinLength, float inMaxLength) {
-        internal_native_SetLength(this_addr, inMinLength, inMaxLength);
-    }
-
-    public static float native_GetMinLength(long this_addr) {
-        return internal_native_GetMinLength(this_addr);
-    }
-
-    public static float native_GetMaxLength(long this_addr) {
-        return internal_native_GetMaxLength(this_addr);
-    }
-
-    public static float native_GetCurrentLength(long this_addr) {
-        return internal_native_GetCurrentLength(this_addr);
-    }
+    public static native float internal_native_GetCurrentLength(long this_addr);
 }

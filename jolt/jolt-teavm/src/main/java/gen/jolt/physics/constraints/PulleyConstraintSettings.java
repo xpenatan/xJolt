@@ -36,7 +36,7 @@ var jsObj = new jolt.PulleyConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.PulleyConstraintSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -63,7 +63,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 return jsObj.get_mSpace();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);return jsObj.get_mSpace();")
-    private static native int internal_native_get_mSpace(int this_addr);
+    public static native int internal_native_get_mSpace(int this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), (int) (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -86,7 +86,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 jsObj.set_mSpace(mSpace);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSpace"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jsObj.set_mSpace(mSpace);")
-    private static native void internal_native_set_mSpace(int this_addr, int mSpace);
+    public static native void internal_native_set_mSpace(int this_addr, int mSpace);
 
     public Vec3 get_mBodyPoint1() {
         int pointer = internal_native_get_mBodyPoint1((int) (long) getNativeData().getCPointer());
@@ -105,7 +105,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);var returnedJSObj = jsObj.get_mBodyPoint1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mBodyPoint1(int this_addr);
+    public static native int internal_native_get_mBodyPoint1(int this_addr);
 
     public void set_mBodyPoint1(Vec3 mBodyPoint1) {
         internal_native_set_mBodyPoint1((int) (long) getNativeData().getCPointer(), (int) (long) (mBodyPoint1 != null ? mBodyPoint1.getNativeData().getCPointer() : 0));
@@ -116,7 +116,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 jsObj.set_mBodyPoint1(mBodyPoint1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBodyPoint1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jsObj.set_mBodyPoint1(mBodyPoint1_addr);")
-    private static native void internal_native_set_mBodyPoint1(int this_addr, int mBodyPoint1_addr);
+    public static native void internal_native_set_mBodyPoint1(int this_addr, int mBodyPoint1_addr);
 
     public Vec3 get_mFixedPoint1() {
         int pointer = internal_native_get_mFixedPoint1((int) (long) getNativeData().getCPointer());
@@ -135,7 +135,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);var returnedJSObj = jsObj.get_mFixedPoint1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mFixedPoint1(int this_addr);
+    public static native int internal_native_get_mFixedPoint1(int this_addr);
 
     public void set_mFixedPoint1(Vec3 mFixedPoint1) {
         internal_native_set_mFixedPoint1((int) (long) getNativeData().getCPointer(), (int) (long) (mFixedPoint1 != null ? mFixedPoint1.getNativeData().getCPointer() : 0));
@@ -146,7 +146,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 jsObj.set_mFixedPoint1(mFixedPoint1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mFixedPoint1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jsObj.set_mFixedPoint1(mFixedPoint1_addr);")
-    private static native void internal_native_set_mFixedPoint1(int this_addr, int mFixedPoint1_addr);
+    public static native void internal_native_set_mFixedPoint1(int this_addr, int mFixedPoint1_addr);
 
     public Vec3 get_mBodyPoint2() {
         int pointer = internal_native_get_mBodyPoint2((int) (long) getNativeData().getCPointer());
@@ -165,7 +165,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);var returnedJSObj = jsObj.get_mBodyPoint2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mBodyPoint2(int this_addr);
+    public static native int internal_native_get_mBodyPoint2(int this_addr);
 
     public void set_mBodyPoint2(Vec3 mBodyPoint2) {
         internal_native_set_mBodyPoint2((int) (long) getNativeData().getCPointer(), (int) (long) (mBodyPoint2 != null ? mBodyPoint2.getNativeData().getCPointer() : 0));
@@ -176,7 +176,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 jsObj.set_mBodyPoint2(mBodyPoint2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBodyPoint2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jsObj.set_mBodyPoint2(mBodyPoint2_addr);")
-    private static native void internal_native_set_mBodyPoint2(int this_addr, int mBodyPoint2_addr);
+    public static native void internal_native_set_mBodyPoint2(int this_addr, int mBodyPoint2_addr);
 
     public Vec3 get_mFixedPoint2() {
         int pointer = internal_native_get_mFixedPoint2((int) (long) getNativeData().getCPointer());
@@ -195,7 +195,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);var returnedJSObj = jsObj.get_mFixedPoint2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mFixedPoint2(int this_addr);
+    public static native int internal_native_get_mFixedPoint2(int this_addr);
 
     public void set_mFixedPoint2(Vec3 mFixedPoint2) {
         internal_native_set_mFixedPoint2((int) (long) getNativeData().getCPointer(), (int) (long) (mFixedPoint2 != null ? mFixedPoint2.getNativeData().getCPointer() : 0));
@@ -206,7 +206,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 jsObj.set_mFixedPoint2(mFixedPoint2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mFixedPoint2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jsObj.set_mFixedPoint2(mFixedPoint2_addr);")
-    private static native void internal_native_set_mFixedPoint2(int this_addr, int mFixedPoint2_addr);
+    public static native void internal_native_set_mFixedPoint2(int this_addr, int mFixedPoint2_addr);
 
     public float get_mRatio() {
         return internal_native_get_mRatio((int) (long) getNativeData().getCPointer());
@@ -217,7 +217,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 return jsObj.get_mRatio();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);return jsObj.get_mRatio();")
-    private static native float internal_native_get_mRatio(int this_addr);
+    public static native float internal_native_get_mRatio(int this_addr);
 
     public void set_mRatio(float mRatio) {
         internal_native_set_mRatio((int) (long) getNativeData().getCPointer(), mRatio);
@@ -228,7 +228,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 jsObj.set_mRatio(mRatio);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRatio"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jsObj.set_mRatio(mRatio);")
-    private static native void internal_native_set_mRatio(int this_addr, float mRatio);
+    public static native void internal_native_set_mRatio(int this_addr, float mRatio);
 
     public float get_mMinLength() {
         return internal_native_get_mMinLength((int) (long) getNativeData().getCPointer());
@@ -239,7 +239,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 return jsObj.get_mMinLength();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);return jsObj.get_mMinLength();")
-    private static native float internal_native_get_mMinLength(int this_addr);
+    public static native float internal_native_get_mMinLength(int this_addr);
 
     public void set_mMinLength(float mMinLength) {
         internal_native_set_mMinLength((int) (long) getNativeData().getCPointer(), mMinLength);
@@ -250,7 +250,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 jsObj.set_mMinLength(mMinLength);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMinLength"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jsObj.set_mMinLength(mMinLength);")
-    private static native void internal_native_set_mMinLength(int this_addr, float mMinLength);
+    public static native void internal_native_set_mMinLength(int this_addr, float mMinLength);
 
     public float get_mMaxLength() {
         return internal_native_get_mMaxLength((int) (long) getNativeData().getCPointer());
@@ -261,7 +261,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 return jsObj.get_mMaxLength();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);return jsObj.get_mMaxLength();")
-    private static native float internal_native_get_mMaxLength(int this_addr);
+    public static native float internal_native_get_mMaxLength(int this_addr);
 
     public void set_mMaxLength(float mMaxLength) {
         internal_native_set_mMaxLength((int) (long) getNativeData().getCPointer(), mMaxLength);
@@ -272,77 +272,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);
 jsObj.set_mMaxLength(mMaxLength);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxLength"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraintSettings);jsObj.set_mMaxLength(mMaxLength);")
-    private static native void internal_native_set_mMaxLength(int this_addr, float mMaxLength);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace((int) this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace((int) this_addr, (int) mSpace);
-    }
-
-    public static long native_get_mBodyPoint1(long this_addr) {
-        return internal_native_get_mBodyPoint1((int) this_addr);
-    }
-
-    public static void native_set_mBodyPoint1(long this_addr, long mBodyPoint1_addr) {
-        internal_native_set_mBodyPoint1((int) this_addr, (int) mBodyPoint1_addr);
-    }
-
-    public static long native_get_mFixedPoint1(long this_addr) {
-        return internal_native_get_mFixedPoint1((int) this_addr);
-    }
-
-    public static void native_set_mFixedPoint1(long this_addr, long mFixedPoint1_addr) {
-        internal_native_set_mFixedPoint1((int) this_addr, (int) mFixedPoint1_addr);
-    }
-
-    public static long native_get_mBodyPoint2(long this_addr) {
-        return internal_native_get_mBodyPoint2((int) this_addr);
-    }
-
-    public static void native_set_mBodyPoint2(long this_addr, long mBodyPoint2_addr) {
-        internal_native_set_mBodyPoint2((int) this_addr, (int) mBodyPoint2_addr);
-    }
-
-    public static long native_get_mFixedPoint2(long this_addr) {
-        return internal_native_get_mFixedPoint2((int) this_addr);
-    }
-
-    public static void native_set_mFixedPoint2(long this_addr, long mFixedPoint2_addr) {
-        internal_native_set_mFixedPoint2((int) this_addr, (int) mFixedPoint2_addr);
-    }
-
-    public static float native_get_mRatio(long this_addr) {
-        return internal_native_get_mRatio((int) this_addr);
-    }
-
-    public static void native_set_mRatio(long this_addr, float mRatio) {
-        internal_native_set_mRatio((int) this_addr, mRatio);
-    }
-
-    public static float native_get_mMinLength(long this_addr) {
-        return internal_native_get_mMinLength((int) this_addr);
-    }
-
-    public static void native_set_mMinLength(long this_addr, float mMinLength) {
-        internal_native_set_mMinLength((int) this_addr, mMinLength);
-    }
-
-    public static float native_get_mMaxLength(long this_addr) {
-        return internal_native_get_mMaxLength((int) this_addr);
-    }
-
-    public static void native_set_mMaxLength(long this_addr, float mMaxLength) {
-        internal_native_set_mMaxLength((int) this_addr, mMaxLength);
-    }
+    public static native void internal_native_set_mMaxLength(int this_addr, float mMaxLength);
 }

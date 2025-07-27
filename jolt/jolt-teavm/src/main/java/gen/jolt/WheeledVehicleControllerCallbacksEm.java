@@ -36,7 +36,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleControllerCallbacksJS
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleControllerCallbacksJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void SetWheeledVehicleController(WheeledVehicleController inController) {
         internal_native_SetWheeledVehicleController((int) (long) getNativeData().getCPointer(), (int) (long) (inController != null ? inController.getNativeData().getCPointer() : 0));
@@ -47,7 +47,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleControllerCallbacksEm
 jsObj.SetWheeledVehicleController(inController_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inController_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleControllerCallbacksEm);jsObj.SetWheeledVehicleController(inController_addr);")
-    private static native void internal_native_SetWheeledVehicleController(int this_addr, int inController_addr);
+    public static native void internal_native_SetWheeledVehicleController(int this_addr, int inController_addr);
 
     public WheeledVehicleControllerCallbacksEm() {
         int addr = internal_native_create();
@@ -80,26 +80,14 @@ var jsObj = new jolt.WheeledVehicleControllerCallbacksJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.WheeledVehicleControllerCallbacksJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "OnTireMaxImpulseCallback" }, script = "var WheeledVehicleControllerCallbacksJS = jolt.wrapPointer(this_addr, jolt.WheeledVehicleControllerCallbacksJS); WheeledVehicleControllerCallbacksJS.OnTireMaxImpulseCallback = OnTireMaxImpulseCallback;")
-    private static native void internal_native_setupCallback(int this_addr, OnTireMaxImpulseCallback OnTireMaxImpulseCallback);
+    public static native void internal_native_setupCallback(int this_addr, OnTireMaxImpulseCallback OnTireMaxImpulseCallback);
 
     @org.teavm.jso.JSFunctor()
     public interface OnTireMaxImpulseCallback extends org.teavm.jso.JSObject {
 
         void OnTireMaxImpulseCallback(int inWheelIndex, int outResult, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_SetWheeledVehicleController(long this_addr, long inController_addr) {
-        internal_native_SetWheeledVehicleController((int) this_addr, (int) inController_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

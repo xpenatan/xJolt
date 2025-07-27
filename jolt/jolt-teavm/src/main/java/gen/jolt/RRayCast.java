@@ -37,7 +37,7 @@ var jsObj = new jolt.RRayCast();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.RRayCast();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     public RRayCast(Vec3 inOrigin, Vec3 inDirection) {
         int addr = internal_native_create_Vec3_Vec3((int) (long) (inOrigin != null ? inOrigin.getNativeData().getCPointer() : 0), (int) (long) (inDirection != null ? inDirection.getNativeData().getCPointer() : 0));
@@ -49,7 +49,7 @@ var jsObj = new jolt.RRayCast(inOrigin_addr, inDirection_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inOrigin_addr", "inDirection_addr"}, script = "var jsObj = new jolt.RRayCast(inOrigin_addr, inDirection_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Vec3_Vec3(int inOrigin_addr, int inDirection_addr);
+    public static native int internal_native_create_Vec3_Vec3(int inOrigin_addr, int inDirection_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -75,7 +75,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public RRayCast Transformed(Mat44 inTransform) {
         int pointer = internal_native_Transformed((int) (long) getNativeData().getCPointer(), (int) (long) (inTransform != null ? inTransform.getNativeData().getCPointer() : 0));
@@ -94,7 +94,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inTransform_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);var returnedJSObj = jsObj.Transformed(inTransform_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_Transformed(int this_addr, int inTransform_addr);
+    public static native int internal_native_Transformed(int this_addr, int inTransform_addr);
 
     public RRayCast Translated(Vec3 inTranslation) {
         int pointer = internal_native_Translated((int) (long) getNativeData().getCPointer(), (int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
@@ -113,7 +113,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inTranslation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);var returnedJSObj = jsObj.Translated(inTranslation_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_Translated(int this_addr, int inTranslation_addr);
+    public static native int internal_native_Translated(int this_addr, int inTranslation_addr);
 
     public Vec3 GetPointOnRay(float inFraction) {
         int pointer = internal_native_GetPointOnRay((int) (long) getNativeData().getCPointer(), inFraction);
@@ -132,7 +132,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inFraction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);var returnedJSObj = jsObj.GetPointOnRay(inFraction);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetPointOnRay(int this_addr, float inFraction);
+    public static native int internal_native_GetPointOnRay(int this_addr, float inFraction);
 
     public Vec3 get_mOrigin() {
         int pointer = internal_native_get_mOrigin((int) (long) getNativeData().getCPointer());
@@ -151,7 +151,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);var returnedJSObj = jsObj.get_mOrigin();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mOrigin(int this_addr);
+    public static native int internal_native_get_mOrigin(int this_addr);
 
     public void set_mOrigin(Vec3 mOrigin) {
         internal_native_set_mOrigin((int) (long) getNativeData().getCPointer(), (int) (long) (mOrigin != null ? mOrigin.getNativeData().getCPointer() : 0));
@@ -162,7 +162,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);
 jsObj.set_mOrigin(mOrigin_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mOrigin_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);jsObj.set_mOrigin(mOrigin_addr);")
-    private static native void internal_native_set_mOrigin(int this_addr, int mOrigin_addr);
+    public static native void internal_native_set_mOrigin(int this_addr, int mOrigin_addr);
 
     public Vec3 get_mDirection() {
         int pointer = internal_native_get_mDirection((int) (long) getNativeData().getCPointer());
@@ -181,7 +181,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);var returnedJSObj = jsObj.get_mDirection();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mDirection(int this_addr);
+    public static native int internal_native_get_mDirection(int this_addr);
 
     public void set_mDirection(Vec3 mDirection) {
         internal_native_set_mDirection((int) (long) getNativeData().getCPointer(), (int) (long) (mDirection != null ? mDirection.getNativeData().getCPointer() : 0));
@@ -192,45 +192,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);
 jsObj.set_mDirection(mDirection_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mDirection_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RRayCast);jsObj.set_mDirection(mDirection_addr);")
-    private static native void internal_native_set_mDirection(int this_addr, int mDirection_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_Vec3_Vec3(long inOrigin_addr, long inDirection_addr) {
-        return internal_native_create_Vec3_Vec3((int) inOrigin_addr, (int) inDirection_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_Transformed(long this_addr, long inTransform_addr) {
-        return internal_native_Transformed((int) this_addr, (int) inTransform_addr);
-    }
-
-    public static long native_Translated(long this_addr, long inTranslation_addr) {
-        return internal_native_Translated((int) this_addr, (int) inTranslation_addr);
-    }
-
-    public static long native_GetPointOnRay(long this_addr, float inFraction) {
-        return internal_native_GetPointOnRay((int) this_addr, inFraction);
-    }
-
-    public static long native_get_mOrigin(long this_addr) {
-        return internal_native_get_mOrigin((int) this_addr);
-    }
-
-    public static void native_set_mOrigin(long this_addr, long mOrigin_addr) {
-        internal_native_set_mOrigin((int) this_addr, (int) mOrigin_addr);
-    }
-
-    public static long native_get_mDirection(long this_addr) {
-        return internal_native_get_mDirection((int) this_addr);
-    }
-
-    public static void native_set_mDirection(long this_addr, long mDirection_addr) {
-        internal_native_set_mDirection((int) this_addr, (int) mDirection_addr);
-    }
+    public static native void internal_native_set_mDirection(int this_addr, int mDirection_addr);
 }

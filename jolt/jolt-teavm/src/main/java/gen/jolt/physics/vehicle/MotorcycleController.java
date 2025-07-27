@@ -24,7 +24,7 @@ var jsObj = new jolt.MotorcycleController(inSettings_addr, inConstraint_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inSettings_addr", "inConstraint_addr"}, script = "var jsObj = new jolt.MotorcycleController(inSettings_addr, inConstraint_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_MotorcycleControllerSettings_VehicleConstraint(int inSettings_addr, int inConstraint_addr);
+    public static native int internal_native_create_MotorcycleControllerSettings_VehicleConstraint(int inSettings_addr, int inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleController);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleController);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float GetWheelBase() {
         return internal_native_GetWheelBase((int) (long) getNativeData().getCPointer());
@@ -63,7 +63,7 @@ var returnedJSObj = jsObj.GetWheelBase();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleController);var returnedJSObj = jsObj.GetWheelBase();return returnedJSObj;")
-    private static native float internal_native_GetWheelBase(int this_addr);
+    public static native float internal_native_GetWheelBase(int this_addr);
 
     public void EnableLeanController(boolean inEnable) {
         internal_native_EnableLeanController((int) (long) getNativeData().getCPointer(), inEnable);
@@ -74,7 +74,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleController);
 jsObj.EnableLeanController(inEnable);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inEnable"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleController);jsObj.EnableLeanController(inEnable);")
-    private static native void internal_native_EnableLeanController(int this_addr, boolean inEnable);
+    public static native void internal_native_EnableLeanController(int this_addr, boolean inEnable);
 
     public boolean IsLeanControllerEnabled() {
         return internal_native_IsLeanControllerEnabled((int) (long) getNativeData().getCPointer());
@@ -86,25 +86,5 @@ var returnedJSObj = jsObj.IsLeanControllerEnabled();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorcycleController);var returnedJSObj = jsObj.IsLeanControllerEnabled();return returnedJSObj;")
-    private static native boolean internal_native_IsLeanControllerEnabled(int this_addr);
-
-    public static long native_create_MotorcycleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr) {
-        return internal_native_create_MotorcycleControllerSettings_VehicleConstraint((int) inSettings_addr, (int) inConstraint_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_GetWheelBase(long this_addr) {
-        return internal_native_GetWheelBase((int) this_addr);
-    }
-
-    public static void native_EnableLeanController(long this_addr, boolean inEnable) {
-        internal_native_EnableLeanController((int) this_addr, inEnable);
-    }
-
-    public static boolean native_IsLeanControllerEnabled(long this_addr) {
-        return internal_native_IsLeanControllerEnabled((int) this_addr);
-    }
+    public static native boolean internal_native_IsLeanControllerEnabled(int this_addr);
 }

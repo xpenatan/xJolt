@@ -30,7 +30,7 @@ public class GearConstraintSettings extends TwoBodyConstraintSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new GearConstraintSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -56,7 +56,7 @@ return (jlong)new GearConstraintSettings();
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void SetRatio(int inNumTeethGear1, int inNumTeethGear2) {
         internal_native_SetRatio((long) getNativeData().getCPointer(), inNumTeethGear1, inNumTeethGear2);
@@ -66,7 +66,7 @@ delete nativeObject;
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 nativeObject->SetRatio((int)inNumTeethGear1, (int)inNumTeethGear2);
 */
-    private static native void internal_native_SetRatio(long this_addr, int inNumTeethGear1, int inNumTeethGear2);
+    public static native void internal_native_SetRatio(long this_addr, int inNumTeethGear1, int inNumTeethGear2);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((long) getNativeData().getCPointer());
@@ -77,7 +77,7 @@ nativeObject->SetRatio((int)inNumTeethGear1, (int)inNumTeethGear2);
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 return (jint)nativeObject->mSpace;
 */
-    private static native int internal_native_get_mSpace(long this_addr);
+    public static native int internal_native_get_mSpace(long this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((long) getNativeData().getCPointer(), (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -87,7 +87,7 @@ return (jint)nativeObject->mSpace;
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    private static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
 
     public Vec3 get_mHingeAxis1() {
         long pointer = internal_native_get_mHingeAxis1((long) getNativeData().getCPointer());
@@ -103,7 +103,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mHingeAxis1;
 */
-    private static native long internal_native_get_mHingeAxis1(long this_addr);
+    public static native long internal_native_get_mHingeAxis1(long this_addr);
 
     public void set_mHingeAxis1(Vec3 mHingeAxis1) {
         internal_native_set_mHingeAxis1((long) getNativeData().getCPointer(), (long) (mHingeAxis1 != null ? mHingeAxis1.getNativeData().getCPointer() : 0));
@@ -113,7 +113,7 @@ return (jlong)&nativeObject->mHingeAxis1;
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 nativeObject->mHingeAxis1 = *((Vec3*)mHingeAxis1_addr);
 */
-    private static native void internal_native_set_mHingeAxis1(long this_addr, long mHingeAxis1_addr);
+    public static native void internal_native_set_mHingeAxis1(long this_addr, long mHingeAxis1_addr);
 
     public Vec3 get_mHingeAxis2() {
         long pointer = internal_native_get_mHingeAxis2((long) getNativeData().getCPointer());
@@ -129,7 +129,7 @@ nativeObject->mHingeAxis1 = *((Vec3*)mHingeAxis1_addr);
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mHingeAxis2;
 */
-    private static native long internal_native_get_mHingeAxis2(long this_addr);
+    public static native long internal_native_get_mHingeAxis2(long this_addr);
 
     public void set_mHingeAxis2(Vec3 mHingeAxis2) {
         internal_native_set_mHingeAxis2((long) getNativeData().getCPointer(), (long) (mHingeAxis2 != null ? mHingeAxis2.getNativeData().getCPointer() : 0));
@@ -139,7 +139,7 @@ return (jlong)&nativeObject->mHingeAxis2;
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 nativeObject->mHingeAxis2 = *((Vec3*)mHingeAxis2_addr);
 */
-    private static native void internal_native_set_mHingeAxis2(long this_addr, long mHingeAxis2_addr);
+    public static native void internal_native_set_mHingeAxis2(long this_addr, long mHingeAxis2_addr);
 
     public float get_mRatio() {
         return internal_native_get_mRatio((long) getNativeData().getCPointer());
@@ -149,7 +149,7 @@ nativeObject->mHingeAxis2 = *((Vec3*)mHingeAxis2_addr);
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 return nativeObject->mRatio;
 */
-    private static native float internal_native_get_mRatio(long this_addr);
+    public static native float internal_native_get_mRatio(long this_addr);
 
     public void set_mRatio(float mRatio) {
         internal_native_set_mRatio((long) getNativeData().getCPointer(), mRatio);
@@ -159,49 +159,5 @@ return nativeObject->mRatio;
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 nativeObject->mRatio = mRatio;
 */
-    private static native void internal_native_set_mRatio(long this_addr, float mRatio);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_SetRatio(long this_addr, int inNumTeethGear1, int inNumTeethGear2) {
-        internal_native_SetRatio(this_addr, inNumTeethGear1, inNumTeethGear2);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace(this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace(this_addr, mSpace);
-    }
-
-    public static long native_get_mHingeAxis1(long this_addr) {
-        return internal_native_get_mHingeAxis1(this_addr);
-    }
-
-    public static void native_set_mHingeAxis1(long this_addr, long mHingeAxis1_addr) {
-        internal_native_set_mHingeAxis1(this_addr, mHingeAxis1_addr);
-    }
-
-    public static long native_get_mHingeAxis2(long this_addr) {
-        return internal_native_get_mHingeAxis2(this_addr);
-    }
-
-    public static void native_set_mHingeAxis2(long this_addr, long mHingeAxis2_addr) {
-        internal_native_set_mHingeAxis2(this_addr, mHingeAxis2_addr);
-    }
-
-    public static float native_get_mRatio(long this_addr) {
-        return internal_native_get_mRatio(this_addr);
-    }
-
-    public static void native_set_mRatio(long this_addr, float mRatio) {
-        internal_native_set_mRatio(this_addr, mRatio);
-    }
+    public static native void internal_native_set_mRatio(long this_addr, float mRatio);
 }

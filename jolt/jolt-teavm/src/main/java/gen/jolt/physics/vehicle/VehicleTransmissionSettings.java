@@ -45,7 +45,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public ETransmissionMode get_mMode() {
         int value = internal_native_get_mMode((int) (long) getNativeData().getCPointer());
@@ -57,7 +57,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 return jsObj.get_mMode();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);return jsObj.get_mMode();")
-    private static native int internal_native_get_mMode(int this_addr);
+    public static native int internal_native_get_mMode(int this_addr);
 
     public void set_mMode(ETransmissionMode mMode) {
         internal_native_set_mMode((int) (long) getNativeData().getCPointer(), (int) (long) (mMode != null ? mMode.getValue() : 0));
@@ -68,7 +68,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jsObj.set_mMode(mMode);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMode"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jsObj.set_mMode(mMode);")
-    private static native void internal_native_set_mMode(int this_addr, int mMode);
+    public static native void internal_native_set_mMode(int this_addr, int mMode);
 
     public ArrayFloat get_mGearRatios() {
         int pointer = internal_native_get_mGearRatios((int) (long) getNativeData().getCPointer());
@@ -87,7 +87,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);var returnedJSObj = jsObj.get_mGearRatios();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mGearRatios(int this_addr);
+    public static native int internal_native_get_mGearRatios(int this_addr);
 
     public void set_mGearRatios(ArrayFloat mGearRatios) {
         internal_native_set_mGearRatios((int) (long) getNativeData().getCPointer(), (int) (long) (mGearRatios != null ? mGearRatios.getNativeData().getCPointer() : 0));
@@ -98,7 +98,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jsObj.set_mGearRatios(mGearRatios_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mGearRatios_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jsObj.set_mGearRatios(mGearRatios_addr);")
-    private static native void internal_native_set_mGearRatios(int this_addr, int mGearRatios_addr);
+    public static native void internal_native_set_mGearRatios(int this_addr, int mGearRatios_addr);
 
     public ArrayFloat get_mReverseGearRatios() {
         int pointer = internal_native_get_mReverseGearRatios((int) (long) getNativeData().getCPointer());
@@ -117,7 +117,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);var returnedJSObj = jsObj.get_mReverseGearRatios();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mReverseGearRatios(int this_addr);
+    public static native int internal_native_get_mReverseGearRatios(int this_addr);
 
     public void set_mReverseGearRatios(ArrayFloat mReverseGearRatios) {
         internal_native_set_mReverseGearRatios((int) (long) getNativeData().getCPointer(), (int) (long) (mReverseGearRatios != null ? mReverseGearRatios.getNativeData().getCPointer() : 0));
@@ -128,7 +128,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jsObj.set_mReverseGearRatios(mReverseGearRatios_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mReverseGearRatios_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jsObj.set_mReverseGearRatios(mReverseGearRatios_addr);")
-    private static native void internal_native_set_mReverseGearRatios(int this_addr, int mReverseGearRatios_addr);
+    public static native void internal_native_set_mReverseGearRatios(int this_addr, int mReverseGearRatios_addr);
 
     public float get_mSwitchTime() {
         return internal_native_get_mSwitchTime((int) (long) getNativeData().getCPointer());
@@ -139,7 +139,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 return jsObj.get_mSwitchTime();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);return jsObj.get_mSwitchTime();")
-    private static native float internal_native_get_mSwitchTime(int this_addr);
+    public static native float internal_native_get_mSwitchTime(int this_addr);
 
     public void set_mSwitchTime(float mSwitchTime) {
         internal_native_set_mSwitchTime((int) (long) getNativeData().getCPointer(), mSwitchTime);
@@ -150,7 +150,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jsObj.set_mSwitchTime(mSwitchTime);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSwitchTime"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jsObj.set_mSwitchTime(mSwitchTime);")
-    private static native void internal_native_set_mSwitchTime(int this_addr, float mSwitchTime);
+    public static native void internal_native_set_mSwitchTime(int this_addr, float mSwitchTime);
 
     public float get_mClutchReleaseTime() {
         return internal_native_get_mClutchReleaseTime((int) (long) getNativeData().getCPointer());
@@ -161,7 +161,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 return jsObj.get_mClutchReleaseTime();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);return jsObj.get_mClutchReleaseTime();")
-    private static native float internal_native_get_mClutchReleaseTime(int this_addr);
+    public static native float internal_native_get_mClutchReleaseTime(int this_addr);
 
     public void set_mClutchReleaseTime(float mClutchReleaseTime) {
         internal_native_set_mClutchReleaseTime((int) (long) getNativeData().getCPointer(), mClutchReleaseTime);
@@ -172,7 +172,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jsObj.set_mClutchReleaseTime(mClutchReleaseTime);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mClutchReleaseTime"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jsObj.set_mClutchReleaseTime(mClutchReleaseTime);")
-    private static native void internal_native_set_mClutchReleaseTime(int this_addr, float mClutchReleaseTime);
+    public static native void internal_native_set_mClutchReleaseTime(int this_addr, float mClutchReleaseTime);
 
     public float get_mSwitchLatency() {
         return internal_native_get_mSwitchLatency((int) (long) getNativeData().getCPointer());
@@ -183,7 +183,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 return jsObj.get_mSwitchLatency();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);return jsObj.get_mSwitchLatency();")
-    private static native float internal_native_get_mSwitchLatency(int this_addr);
+    public static native float internal_native_get_mSwitchLatency(int this_addr);
 
     public void set_mSwitchLatency(float mSwitchLatency) {
         internal_native_set_mSwitchLatency((int) (long) getNativeData().getCPointer(), mSwitchLatency);
@@ -194,7 +194,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jsObj.set_mSwitchLatency(mSwitchLatency);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSwitchLatency"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jsObj.set_mSwitchLatency(mSwitchLatency);")
-    private static native void internal_native_set_mSwitchLatency(int this_addr, float mSwitchLatency);
+    public static native void internal_native_set_mSwitchLatency(int this_addr, float mSwitchLatency);
 
     public float get_mShiftUpRPM() {
         return internal_native_get_mShiftUpRPM((int) (long) getNativeData().getCPointer());
@@ -205,7 +205,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 return jsObj.get_mShiftUpRPM();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);return jsObj.get_mShiftUpRPM();")
-    private static native float internal_native_get_mShiftUpRPM(int this_addr);
+    public static native float internal_native_get_mShiftUpRPM(int this_addr);
 
     public void set_mShiftUpRPM(float mShiftUpRPM) {
         internal_native_set_mShiftUpRPM((int) (long) getNativeData().getCPointer(), mShiftUpRPM);
@@ -216,7 +216,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jsObj.set_mShiftUpRPM(mShiftUpRPM);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mShiftUpRPM"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jsObj.set_mShiftUpRPM(mShiftUpRPM);")
-    private static native void internal_native_set_mShiftUpRPM(int this_addr, float mShiftUpRPM);
+    public static native void internal_native_set_mShiftUpRPM(int this_addr, float mShiftUpRPM);
 
     public float get_mShiftDownRPM() {
         return internal_native_get_mShiftDownRPM((int) (long) getNativeData().getCPointer());
@@ -227,7 +227,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 return jsObj.get_mShiftDownRPM();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);return jsObj.get_mShiftDownRPM();")
-    private static native float internal_native_get_mShiftDownRPM(int this_addr);
+    public static native float internal_native_get_mShiftDownRPM(int this_addr);
 
     public void set_mShiftDownRPM(float mShiftDownRPM) {
         internal_native_set_mShiftDownRPM((int) (long) getNativeData().getCPointer(), mShiftDownRPM);
@@ -238,7 +238,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jsObj.set_mShiftDownRPM(mShiftDownRPM);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mShiftDownRPM"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jsObj.set_mShiftDownRPM(mShiftDownRPM);")
-    private static native void internal_native_set_mShiftDownRPM(int this_addr, float mShiftDownRPM);
+    public static native void internal_native_set_mShiftDownRPM(int this_addr, float mShiftDownRPM);
 
     public float get_mClutchStrength() {
         return internal_native_get_mClutchStrength((int) (long) getNativeData().getCPointer());
@@ -249,7 +249,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 return jsObj.get_mClutchStrength();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);return jsObj.get_mClutchStrength();")
-    private static native float internal_native_get_mClutchStrength(int this_addr);
+    public static native float internal_native_get_mClutchStrength(int this_addr);
 
     public void set_mClutchStrength(float mClutchStrength) {
         internal_native_set_mClutchStrength((int) (long) getNativeData().getCPointer(), mClutchStrength);
@@ -260,81 +260,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);
 jsObj.set_mClutchStrength(mClutchStrength);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mClutchStrength"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);jsObj.set_mClutchStrength(mClutchStrength);")
-    private static native void internal_native_set_mClutchStrength(int this_addr, float mClutchStrength);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mMode(long this_addr) {
-        return internal_native_get_mMode((int) this_addr);
-    }
-
-    public static void native_set_mMode(long this_addr, long mMode) {
-        internal_native_set_mMode((int) this_addr, (int) mMode);
-    }
-
-    public static long native_get_mGearRatios(long this_addr) {
-        return internal_native_get_mGearRatios((int) this_addr);
-    }
-
-    public static void native_set_mGearRatios(long this_addr, long mGearRatios_addr) {
-        internal_native_set_mGearRatios((int) this_addr, (int) mGearRatios_addr);
-    }
-
-    public static long native_get_mReverseGearRatios(long this_addr) {
-        return internal_native_get_mReverseGearRatios((int) this_addr);
-    }
-
-    public static void native_set_mReverseGearRatios(long this_addr, long mReverseGearRatios_addr) {
-        internal_native_set_mReverseGearRatios((int) this_addr, (int) mReverseGearRatios_addr);
-    }
-
-    public static float native_get_mSwitchTime(long this_addr) {
-        return internal_native_get_mSwitchTime((int) this_addr);
-    }
-
-    public static void native_set_mSwitchTime(long this_addr, float mSwitchTime) {
-        internal_native_set_mSwitchTime((int) this_addr, mSwitchTime);
-    }
-
-    public static float native_get_mClutchReleaseTime(long this_addr) {
-        return internal_native_get_mClutchReleaseTime((int) this_addr);
-    }
-
-    public static void native_set_mClutchReleaseTime(long this_addr, float mClutchReleaseTime) {
-        internal_native_set_mClutchReleaseTime((int) this_addr, mClutchReleaseTime);
-    }
-
-    public static float native_get_mSwitchLatency(long this_addr) {
-        return internal_native_get_mSwitchLatency((int) this_addr);
-    }
-
-    public static void native_set_mSwitchLatency(long this_addr, float mSwitchLatency) {
-        internal_native_set_mSwitchLatency((int) this_addr, mSwitchLatency);
-    }
-
-    public static float native_get_mShiftUpRPM(long this_addr) {
-        return internal_native_get_mShiftUpRPM((int) this_addr);
-    }
-
-    public static void native_set_mShiftUpRPM(long this_addr, float mShiftUpRPM) {
-        internal_native_set_mShiftUpRPM((int) this_addr, mShiftUpRPM);
-    }
-
-    public static float native_get_mShiftDownRPM(long this_addr) {
-        return internal_native_get_mShiftDownRPM((int) this_addr);
-    }
-
-    public static void native_set_mShiftDownRPM(long this_addr, float mShiftDownRPM) {
-        internal_native_set_mShiftDownRPM((int) this_addr, mShiftDownRPM);
-    }
-
-    public static float native_get_mClutchStrength(long this_addr) {
-        return internal_native_get_mClutchStrength((int) this_addr);
-    }
-
-    public static void native_set_mClutchStrength(long this_addr, float mClutchStrength) {
-        internal_native_set_mClutchStrength((int) this_addr, mClutchStrength);
-    }
+    public static native void internal_native_set_mClutchStrength(int this_addr, float mClutchStrength);
 }

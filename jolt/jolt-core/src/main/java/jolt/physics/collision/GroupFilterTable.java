@@ -22,7 +22,7 @@ public class GroupFilterTable extends GroupFilter {
     /*[-JNI;-NATIVE]
 return (jlong)new GroupFilterTable(inNumGroups);
 */
-    private static native long internal_native_create_int(int inNumGroups);
+    public static native long internal_native_create_int(int inNumGroups);
 
     public GroupFilterTable() {
         super((byte) 1, (char) 1);
@@ -33,7 +33,7 @@ return (jlong)new GroupFilterTable(inNumGroups);
     /*[-JNI;-NATIVE]
 return (jlong)new GroupFilterTable();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ return (jlong)new GroupFilterTable();
 GroupFilterTable* nativeObject = (GroupFilterTable*)this_addr;
 nativeObject->DisableCollision(inSubGroup1, inSubGroup2);
 */
-    private static native void internal_native_DisableCollision(long this_addr, int inSubGroup1, int inSubGroup2);
+    public static native void internal_native_DisableCollision(long this_addr, int inSubGroup1, int inSubGroup2);
 
     public void EnableCollision(int inSubGroup1, int inSubGroup2) {
         internal_native_EnableCollision((long) getNativeData().getCPointer(), inSubGroup1, inSubGroup2);
@@ -61,7 +61,7 @@ nativeObject->DisableCollision(inSubGroup1, inSubGroup2);
 GroupFilterTable* nativeObject = (GroupFilterTable*)this_addr;
 nativeObject->EnableCollision(inSubGroup1, inSubGroup2);
 */
-    private static native void internal_native_EnableCollision(long this_addr, int inSubGroup1, int inSubGroup2);
+    public static native void internal_native_EnableCollision(long this_addr, int inSubGroup1, int inSubGroup2);
 
     public boolean IsCollisionEnabled(int inSubGroup1, int inSubGroup2) {
         return internal_native_IsCollisionEnabled((long) getNativeData().getCPointer(), inSubGroup1, inSubGroup2);
@@ -71,25 +71,5 @@ nativeObject->EnableCollision(inSubGroup1, inSubGroup2);
 GroupFilterTable* nativeObject = (GroupFilterTable*)this_addr;
 return nativeObject->IsCollisionEnabled(inSubGroup1, inSubGroup2);
 */
-    private static native boolean internal_native_IsCollisionEnabled(long this_addr, int inSubGroup1, int inSubGroup2);
-
-    public static long native_create_int(int inNumGroups) {
-        return internal_native_create_int(inNumGroups);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_DisableCollision(long this_addr, int inSubGroup1, int inSubGroup2) {
-        internal_native_DisableCollision(this_addr, inSubGroup1, inSubGroup2);
-    }
-
-    public static void native_EnableCollision(long this_addr, int inSubGroup1, int inSubGroup2) {
-        internal_native_EnableCollision(this_addr, inSubGroup1, inSubGroup2);
-    }
-
-    public static boolean native_IsCollisionEnabled(long this_addr, int inSubGroup1, int inSubGroup2) {
-        return internal_native_IsCollisionEnabled(this_addr, inSubGroup1, inSubGroup2);
-    }
+    public static native boolean internal_native_IsCollisionEnabled(long this_addr, int inSubGroup1, int inSubGroup2);
 }

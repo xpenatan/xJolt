@@ -39,7 +39,7 @@ public class Wheel extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new Wheel(*((WheelSettings* )inSettings_addr));
 */
-    private static native long internal_native_create_WheelSettings(long inSettings_addr);
+    public static native long internal_native_create_WheelSettings(long inSettings_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -64,7 +64,7 @@ return (jlong)new Wheel(*((WheelSettings* )inSettings_addr));
 Wheel* nativeObject = (Wheel*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public WheelSettings GetSettings() {
         long pointer = internal_native_GetSettings((long) getNativeData().getCPointer());
@@ -81,7 +81,7 @@ Wheel* nativeObject = (Wheel*)this_addr;
 const WheelSettings* obj = nativeObject->GetSettings();
 return (jlong)obj;
 */
-    private static native long internal_native_GetSettings(long this_addr);
+    public static native long internal_native_GetSettings(long this_addr);
 
     public float GetAngularVelocity() {
         return internal_native_GetAngularVelocity((long) getNativeData().getCPointer());
@@ -91,7 +91,7 @@ return (jlong)obj;
 Wheel* nativeObject = (Wheel*)this_addr;
 return nativeObject->GetAngularVelocity();
 */
-    private static native float internal_native_GetAngularVelocity(long this_addr);
+    public static native float internal_native_GetAngularVelocity(long this_addr);
 
     public void SetAngularVelocity(float inVel) {
         internal_native_SetAngularVelocity((long) getNativeData().getCPointer(), inVel);
@@ -101,7 +101,7 @@ return nativeObject->GetAngularVelocity();
 Wheel* nativeObject = (Wheel*)this_addr;
 nativeObject->SetAngularVelocity((float)inVel);
 */
-    private static native void internal_native_SetAngularVelocity(long this_addr, float inVel);
+    public static native void internal_native_SetAngularVelocity(long this_addr, float inVel);
 
     public float GetRotationAngle() {
         return internal_native_GetRotationAngle((long) getNativeData().getCPointer());
@@ -111,7 +111,7 @@ nativeObject->SetAngularVelocity((float)inVel);
 Wheel* nativeObject = (Wheel*)this_addr;
 return nativeObject->GetRotationAngle();
 */
-    private static native float internal_native_GetRotationAngle(long this_addr);
+    public static native float internal_native_GetRotationAngle(long this_addr);
 
     public void SetRotationAngle(float inAngle) {
         internal_native_SetRotationAngle((long) getNativeData().getCPointer(), inAngle);
@@ -121,7 +121,7 @@ return nativeObject->GetRotationAngle();
 Wheel* nativeObject = (Wheel*)this_addr;
 nativeObject->SetRotationAngle((float)inAngle);
 */
-    private static native void internal_native_SetRotationAngle(long this_addr, float inAngle);
+    public static native void internal_native_SetRotationAngle(long this_addr, float inAngle);
 
     public float GetSteerAngle() {
         return internal_native_GetSteerAngle((long) getNativeData().getCPointer());
@@ -131,7 +131,7 @@ nativeObject->SetRotationAngle((float)inAngle);
 Wheel* nativeObject = (Wheel*)this_addr;
 return nativeObject->GetSteerAngle();
 */
-    private static native float internal_native_GetSteerAngle(long this_addr);
+    public static native float internal_native_GetSteerAngle(long this_addr);
 
     public void SetSteerAngle(float inAngle) {
         internal_native_SetSteerAngle((long) getNativeData().getCPointer(), inAngle);
@@ -141,7 +141,7 @@ return nativeObject->GetSteerAngle();
 Wheel* nativeObject = (Wheel*)this_addr;
 nativeObject->SetSteerAngle((float)inAngle);
 */
-    private static native void internal_native_SetSteerAngle(long this_addr, float inAngle);
+    public static native void internal_native_SetSteerAngle(long this_addr, float inAngle);
 
     public boolean HasContact() {
         return internal_native_HasContact((long) getNativeData().getCPointer());
@@ -151,7 +151,7 @@ nativeObject->SetSteerAngle((float)inAngle);
 Wheel* nativeObject = (Wheel*)this_addr;
 return nativeObject->HasContact();
 */
-    private static native boolean internal_native_HasContact(long this_addr);
+    public static native boolean internal_native_HasContact(long this_addr);
 
     public BodyID GetContactBodyID() {
         long pointer = internal_native_GetContactBodyID((long) getNativeData().getCPointer());
@@ -168,7 +168,7 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->GetContactBodyID();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetContactBodyID(long this_addr);
+    public static native long internal_native_GetContactBodyID(long this_addr);
 
     public Vec3 GetContactPosition() {
         long pointer = internal_native_GetContactPosition((long) getNativeData().getCPointer());
@@ -185,7 +185,7 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactPosition();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetContactPosition(long this_addr);
+    public static native long internal_native_GetContactPosition(long this_addr);
 
     public Vec3 GetContactPointVelocity() {
         long pointer = internal_native_GetContactPointVelocity((long) getNativeData().getCPointer());
@@ -202,7 +202,7 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactPointVelocity();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetContactPointVelocity(long this_addr);
+    public static native long internal_native_GetContactPointVelocity(long this_addr);
 
     public Vec3 GetContactNormal() {
         long pointer = internal_native_GetContactNormal((long) getNativeData().getCPointer());
@@ -219,7 +219,7 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactNormal();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetContactNormal(long this_addr);
+    public static native long internal_native_GetContactNormal(long this_addr);
 
     public Vec3 GetContactLongitudinal() {
         long pointer = internal_native_GetContactLongitudinal((long) getNativeData().getCPointer());
@@ -236,7 +236,7 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactLongitudinal();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetContactLongitudinal(long this_addr);
+    public static native long internal_native_GetContactLongitudinal(long this_addr);
 
     public Vec3 GetContactLateral() {
         long pointer = internal_native_GetContactLateral((long) getNativeData().getCPointer());
@@ -253,7 +253,7 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactLateral();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetContactLateral(long this_addr);
+    public static native long internal_native_GetContactLateral(long this_addr);
 
     public float GetSuspensionLength() {
         return internal_native_GetSuspensionLength((long) getNativeData().getCPointer());
@@ -263,7 +263,7 @@ return (jlong)&copy_addr;*/
 Wheel* nativeObject = (Wheel*)this_addr;
 return nativeObject->GetSuspensionLength();
 */
-    private static native float internal_native_GetSuspensionLength(long this_addr);
+    public static native float internal_native_GetSuspensionLength(long this_addr);
 
     public boolean HasHitHardPoint() {
         return internal_native_HasHitHardPoint((long) getNativeData().getCPointer());
@@ -273,7 +273,7 @@ return nativeObject->GetSuspensionLength();
 Wheel* nativeObject = (Wheel*)this_addr;
 return nativeObject->HasHitHardPoint();
 */
-    private static native boolean internal_native_HasHitHardPoint(long this_addr);
+    public static native boolean internal_native_HasHitHardPoint(long this_addr);
 
     public float GetSuspensionLambda() {
         return internal_native_GetSuspensionLambda((long) getNativeData().getCPointer());
@@ -283,7 +283,7 @@ return nativeObject->HasHitHardPoint();
 Wheel* nativeObject = (Wheel*)this_addr;
 return nativeObject->GetSuspensionLambda();
 */
-    private static native float internal_native_GetSuspensionLambda(long this_addr);
+    public static native float internal_native_GetSuspensionLambda(long this_addr);
 
     public float GetLongitudinalLambda() {
         return internal_native_GetLongitudinalLambda((long) getNativeData().getCPointer());
@@ -293,7 +293,7 @@ return nativeObject->GetSuspensionLambda();
 Wheel* nativeObject = (Wheel*)this_addr;
 return nativeObject->GetLongitudinalLambda();
 */
-    private static native float internal_native_GetLongitudinalLambda(long this_addr);
+    public static native float internal_native_GetLongitudinalLambda(long this_addr);
 
     public float GetLateralLambda() {
         return internal_native_GetLateralLambda((long) getNativeData().getCPointer());
@@ -303,89 +303,5 @@ return nativeObject->GetLongitudinalLambda();
 Wheel* nativeObject = (Wheel*)this_addr;
 return nativeObject->GetLateralLambda();
 */
-    private static native float internal_native_GetLateralLambda(long this_addr);
-
-    public static long native_create_WheelSettings(long inSettings_addr) {
-        return internal_native_create_WheelSettings(inSettings_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_GetSettings(long this_addr) {
-        return internal_native_GetSettings(this_addr);
-    }
-
-    public static float native_GetAngularVelocity(long this_addr) {
-        return internal_native_GetAngularVelocity(this_addr);
-    }
-
-    public static void native_SetAngularVelocity(long this_addr, float inVel) {
-        internal_native_SetAngularVelocity(this_addr, inVel);
-    }
-
-    public static float native_GetRotationAngle(long this_addr) {
-        return internal_native_GetRotationAngle(this_addr);
-    }
-
-    public static void native_SetRotationAngle(long this_addr, float inAngle) {
-        internal_native_SetRotationAngle(this_addr, inAngle);
-    }
-
-    public static float native_GetSteerAngle(long this_addr) {
-        return internal_native_GetSteerAngle(this_addr);
-    }
-
-    public static void native_SetSteerAngle(long this_addr, float inAngle) {
-        internal_native_SetSteerAngle(this_addr, inAngle);
-    }
-
-    public static boolean native_HasContact(long this_addr) {
-        return internal_native_HasContact(this_addr);
-    }
-
-    public static long native_GetContactBodyID(long this_addr) {
-        return internal_native_GetContactBodyID(this_addr);
-    }
-
-    public static long native_GetContactPosition(long this_addr) {
-        return internal_native_GetContactPosition(this_addr);
-    }
-
-    public static long native_GetContactPointVelocity(long this_addr) {
-        return internal_native_GetContactPointVelocity(this_addr);
-    }
-
-    public static long native_GetContactNormal(long this_addr) {
-        return internal_native_GetContactNormal(this_addr);
-    }
-
-    public static long native_GetContactLongitudinal(long this_addr) {
-        return internal_native_GetContactLongitudinal(this_addr);
-    }
-
-    public static long native_GetContactLateral(long this_addr) {
-        return internal_native_GetContactLateral(this_addr);
-    }
-
-    public static float native_GetSuspensionLength(long this_addr) {
-        return internal_native_GetSuspensionLength(this_addr);
-    }
-
-    public static boolean native_HasHitHardPoint(long this_addr) {
-        return internal_native_HasHitHardPoint(this_addr);
-    }
-
-    public static float native_GetSuspensionLambda(long this_addr) {
-        return internal_native_GetSuspensionLambda(this_addr);
-    }
-
-    public static float native_GetLongitudinalLambda(long this_addr) {
-        return internal_native_GetLongitudinalLambda(this_addr);
-    }
-
-    public static float native_GetLateralLambda(long this_addr) {
-        return internal_native_GetLateralLambda(this_addr);
-    }
+    public static native float internal_native_GetLateralLambda(long this_addr);
 }

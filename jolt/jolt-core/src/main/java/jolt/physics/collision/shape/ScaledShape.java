@@ -26,7 +26,7 @@ public class ScaledShape extends DecoratedShape {
     /*[-JNI;-NATIVE]
 return (jlong)new ScaledShape((Shape* )inShape_addr, *((Vec3* )inScale_addr));
 */
-    private static native long internal_native_create_Shape_Vec3(long inShape_addr, long inScale_addr);
+    public static native long internal_native_create_Shape_Vec3(long inShape_addr, long inScale_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,13 +51,5 @@ ScaledShape* nativeObject = (ScaledShape*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetScale();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetScale(long this_addr);
-
-    public static long native_create_Shape_Vec3(long inShape_addr, long inScale_addr) {
-        return internal_native_create_Shape_Vec3(inShape_addr, inScale_addr);
-    }
-
-    public static long native_GetScale(long this_addr) {
-        return internal_native_GetScale(this_addr);
-    }
+    public static native long internal_native_GetScale(long this_addr);
 }

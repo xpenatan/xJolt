@@ -42,7 +42,7 @@ public class HingeConstraintSettings extends TwoBodyConstraintSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new HingeConstraintSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -68,7 +68,7 @@ return (jlong)new HingeConstraintSettings();
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((long) getNativeData().getCPointer());
@@ -79,7 +79,7 @@ delete nativeObject;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return (jint)nativeObject->mSpace;
 */
-    private static native int internal_native_get_mSpace(long this_addr);
+    public static native int internal_native_get_mSpace(long this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((long) getNativeData().getCPointer(), (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -89,7 +89,7 @@ return (jint)nativeObject->mSpace;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    private static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
 
     public Vec3 get_mPoint1() {
         long pointer = internal_native_get_mPoint1((long) getNativeData().getCPointer());
@@ -105,7 +105,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPoint1;
 */
-    private static native long internal_native_get_mPoint1(long this_addr);
+    public static native long internal_native_get_mPoint1(long this_addr);
 
     public void set_mPoint1(Vec3 mPoint1) {
         internal_native_set_mPoint1((long) getNativeData().getCPointer(), (long) (mPoint1 != null ? mPoint1.getNativeData().getCPointer() : 0));
@@ -115,7 +115,7 @@ return (jlong)&nativeObject->mPoint1;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
 */
-    private static native void internal_native_set_mPoint1(long this_addr, long mPoint1_addr);
+    public static native void internal_native_set_mPoint1(long this_addr, long mPoint1_addr);
 
     public Vec3 get_mHingeAxis1() {
         long pointer = internal_native_get_mHingeAxis1((long) getNativeData().getCPointer());
@@ -131,7 +131,7 @@ nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mHingeAxis1;
 */
-    private static native long internal_native_get_mHingeAxis1(long this_addr);
+    public static native long internal_native_get_mHingeAxis1(long this_addr);
 
     public void set_mHingeAxis1(Vec3 mHingeAxis1) {
         internal_native_set_mHingeAxis1((long) getNativeData().getCPointer(), (long) (mHingeAxis1 != null ? mHingeAxis1.getNativeData().getCPointer() : 0));
@@ -141,7 +141,7 @@ return (jlong)&nativeObject->mHingeAxis1;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mHingeAxis1 = *((Vec3*)mHingeAxis1_addr);
 */
-    private static native void internal_native_set_mHingeAxis1(long this_addr, long mHingeAxis1_addr);
+    public static native void internal_native_set_mHingeAxis1(long this_addr, long mHingeAxis1_addr);
 
     public Vec3 get_mNormalAxis1() {
         long pointer = internal_native_get_mNormalAxis1((long) getNativeData().getCPointer());
@@ -157,7 +157,7 @@ nativeObject->mHingeAxis1 = *((Vec3*)mHingeAxis1_addr);
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mNormalAxis1;
 */
-    private static native long internal_native_get_mNormalAxis1(long this_addr);
+    public static native long internal_native_get_mNormalAxis1(long this_addr);
 
     public void set_mNormalAxis1(Vec3 mNormalAxis1) {
         internal_native_set_mNormalAxis1((long) getNativeData().getCPointer(), (long) (mNormalAxis1 != null ? mNormalAxis1.getNativeData().getCPointer() : 0));
@@ -167,7 +167,7 @@ return (jlong)&nativeObject->mNormalAxis1;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mNormalAxis1 = *((Vec3*)mNormalAxis1_addr);
 */
-    private static native void internal_native_set_mNormalAxis1(long this_addr, long mNormalAxis1_addr);
+    public static native void internal_native_set_mNormalAxis1(long this_addr, long mNormalAxis1_addr);
 
     public Vec3 get_mPoint2() {
         long pointer = internal_native_get_mPoint2((long) getNativeData().getCPointer());
@@ -183,7 +183,7 @@ nativeObject->mNormalAxis1 = *((Vec3*)mNormalAxis1_addr);
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPoint2;
 */
-    private static native long internal_native_get_mPoint2(long this_addr);
+    public static native long internal_native_get_mPoint2(long this_addr);
 
     public void set_mPoint2(Vec3 mPoint2) {
         internal_native_set_mPoint2((long) getNativeData().getCPointer(), (long) (mPoint2 != null ? mPoint2.getNativeData().getCPointer() : 0));
@@ -193,7 +193,7 @@ return (jlong)&nativeObject->mPoint2;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mPoint2 = *((Vec3*)mPoint2_addr);
 */
-    private static native void internal_native_set_mPoint2(long this_addr, long mPoint2_addr);
+    public static native void internal_native_set_mPoint2(long this_addr, long mPoint2_addr);
 
     public Vec3 get_mHingeAxis2() {
         long pointer = internal_native_get_mHingeAxis2((long) getNativeData().getCPointer());
@@ -209,7 +209,7 @@ nativeObject->mPoint2 = *((Vec3*)mPoint2_addr);
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mHingeAxis2;
 */
-    private static native long internal_native_get_mHingeAxis2(long this_addr);
+    public static native long internal_native_get_mHingeAxis2(long this_addr);
 
     public void set_mHingeAxis2(Vec3 mHingeAxis2) {
         internal_native_set_mHingeAxis2((long) getNativeData().getCPointer(), (long) (mHingeAxis2 != null ? mHingeAxis2.getNativeData().getCPointer() : 0));
@@ -219,7 +219,7 @@ return (jlong)&nativeObject->mHingeAxis2;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mHingeAxis2 = *((Vec3*)mHingeAxis2_addr);
 */
-    private static native void internal_native_set_mHingeAxis2(long this_addr, long mHingeAxis2_addr);
+    public static native void internal_native_set_mHingeAxis2(long this_addr, long mHingeAxis2_addr);
 
     public Vec3 get_mNormalAxis2() {
         long pointer = internal_native_get_mNormalAxis2((long) getNativeData().getCPointer());
@@ -235,7 +235,7 @@ nativeObject->mHingeAxis2 = *((Vec3*)mHingeAxis2_addr);
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mNormalAxis2;
 */
-    private static native long internal_native_get_mNormalAxis2(long this_addr);
+    public static native long internal_native_get_mNormalAxis2(long this_addr);
 
     public void set_mNormalAxis2(Vec3 mNormalAxis2) {
         internal_native_set_mNormalAxis2((long) getNativeData().getCPointer(), (long) (mNormalAxis2 != null ? mNormalAxis2.getNativeData().getCPointer() : 0));
@@ -245,7 +245,7 @@ return (jlong)&nativeObject->mNormalAxis2;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mNormalAxis2 = *((Vec3*)mNormalAxis2_addr);
 */
-    private static native void internal_native_set_mNormalAxis2(long this_addr, long mNormalAxis2_addr);
+    public static native void internal_native_set_mNormalAxis2(long this_addr, long mNormalAxis2_addr);
 
     public float get_mLimitsMin() {
         return internal_native_get_mLimitsMin((long) getNativeData().getCPointer());
@@ -255,7 +255,7 @@ nativeObject->mNormalAxis2 = *((Vec3*)mNormalAxis2_addr);
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return nativeObject->mLimitsMin;
 */
-    private static native float internal_native_get_mLimitsMin(long this_addr);
+    public static native float internal_native_get_mLimitsMin(long this_addr);
 
     public void set_mLimitsMin(float mLimitsMin) {
         internal_native_set_mLimitsMin((long) getNativeData().getCPointer(), mLimitsMin);
@@ -265,7 +265,7 @@ return nativeObject->mLimitsMin;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mLimitsMin = mLimitsMin;
 */
-    private static native void internal_native_set_mLimitsMin(long this_addr, float mLimitsMin);
+    public static native void internal_native_set_mLimitsMin(long this_addr, float mLimitsMin);
 
     public float get_mLimitsMax() {
         return internal_native_get_mLimitsMax((long) getNativeData().getCPointer());
@@ -275,7 +275,7 @@ nativeObject->mLimitsMin = mLimitsMin;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return nativeObject->mLimitsMax;
 */
-    private static native float internal_native_get_mLimitsMax(long this_addr);
+    public static native float internal_native_get_mLimitsMax(long this_addr);
 
     public void set_mLimitsMax(float mLimitsMax) {
         internal_native_set_mLimitsMax((long) getNativeData().getCPointer(), mLimitsMax);
@@ -285,7 +285,7 @@ return nativeObject->mLimitsMax;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mLimitsMax = mLimitsMax;
 */
-    private static native void internal_native_set_mLimitsMax(long this_addr, float mLimitsMax);
+    public static native void internal_native_set_mLimitsMax(long this_addr, float mLimitsMax);
 
     public SpringSettings get_mLimitsSpringSettings() {
         long pointer = internal_native_get_mLimitsSpringSettings((long) getNativeData().getCPointer());
@@ -301,7 +301,7 @@ nativeObject->mLimitsMax = mLimitsMax;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mLimitsSpringSettings;
 */
-    private static native long internal_native_get_mLimitsSpringSettings(long this_addr);
+    public static native long internal_native_get_mLimitsSpringSettings(long this_addr);
 
     public void set_mLimitsSpringSettings(SpringSettings mLimitsSpringSettings) {
         internal_native_set_mLimitsSpringSettings((long) getNativeData().getCPointer(), (long) (mLimitsSpringSettings != null ? mLimitsSpringSettings.getNativeData().getCPointer() : 0));
@@ -311,7 +311,7 @@ return (jlong)&nativeObject->mLimitsSpringSettings;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mLimitsSpringSettings = *((SpringSettings*)mLimitsSpringSettings_addr);
 */
-    private static native void internal_native_set_mLimitsSpringSettings(long this_addr, long mLimitsSpringSettings_addr);
+    public static native void internal_native_set_mLimitsSpringSettings(long this_addr, long mLimitsSpringSettings_addr);
 
     public float get_mMaxFrictionTorque() {
         return internal_native_get_mMaxFrictionTorque((long) getNativeData().getCPointer());
@@ -321,7 +321,7 @@ nativeObject->mLimitsSpringSettings = *((SpringSettings*)mLimitsSpringSettings_a
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return nativeObject->mMaxFrictionTorque;
 */
-    private static native float internal_native_get_mMaxFrictionTorque(long this_addr);
+    public static native float internal_native_get_mMaxFrictionTorque(long this_addr);
 
     public void set_mMaxFrictionTorque(float mMaxFrictionTorque) {
         internal_native_set_mMaxFrictionTorque((long) getNativeData().getCPointer(), mMaxFrictionTorque);
@@ -331,7 +331,7 @@ return nativeObject->mMaxFrictionTorque;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mMaxFrictionTorque = mMaxFrictionTorque;
 */
-    private static native void internal_native_set_mMaxFrictionTorque(long this_addr, float mMaxFrictionTorque);
+    public static native void internal_native_set_mMaxFrictionTorque(long this_addr, float mMaxFrictionTorque);
 
     public MotorSettings get_mMotorSettings() {
         long pointer = internal_native_get_mMotorSettings((long) getNativeData().getCPointer());
@@ -347,7 +347,7 @@ nativeObject->mMaxFrictionTorque = mMaxFrictionTorque;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mMotorSettings;
 */
-    private static native long internal_native_get_mMotorSettings(long this_addr);
+    public static native long internal_native_get_mMotorSettings(long this_addr);
 
     public void set_mMotorSettings(MotorSettings mMotorSettings) {
         internal_native_set_mMotorSettings((long) getNativeData().getCPointer(), (long) (mMotorSettings != null ? mMotorSettings.getNativeData().getCPointer() : 0));
@@ -357,109 +357,5 @@ return (jlong)&nativeObject->mMotorSettings;
 HingeConstraintSettings* nativeObject = (HingeConstraintSettings*)this_addr;
 nativeObject->mMotorSettings = *((MotorSettings*)mMotorSettings_addr);
 */
-    private static native void internal_native_set_mMotorSettings(long this_addr, long mMotorSettings_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace(this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace(this_addr, mSpace);
-    }
-
-    public static long native_get_mPoint1(long this_addr) {
-        return internal_native_get_mPoint1(this_addr);
-    }
-
-    public static void native_set_mPoint1(long this_addr, long mPoint1_addr) {
-        internal_native_set_mPoint1(this_addr, mPoint1_addr);
-    }
-
-    public static long native_get_mHingeAxis1(long this_addr) {
-        return internal_native_get_mHingeAxis1(this_addr);
-    }
-
-    public static void native_set_mHingeAxis1(long this_addr, long mHingeAxis1_addr) {
-        internal_native_set_mHingeAxis1(this_addr, mHingeAxis1_addr);
-    }
-
-    public static long native_get_mNormalAxis1(long this_addr) {
-        return internal_native_get_mNormalAxis1(this_addr);
-    }
-
-    public static void native_set_mNormalAxis1(long this_addr, long mNormalAxis1_addr) {
-        internal_native_set_mNormalAxis1(this_addr, mNormalAxis1_addr);
-    }
-
-    public static long native_get_mPoint2(long this_addr) {
-        return internal_native_get_mPoint2(this_addr);
-    }
-
-    public static void native_set_mPoint2(long this_addr, long mPoint2_addr) {
-        internal_native_set_mPoint2(this_addr, mPoint2_addr);
-    }
-
-    public static long native_get_mHingeAxis2(long this_addr) {
-        return internal_native_get_mHingeAxis2(this_addr);
-    }
-
-    public static void native_set_mHingeAxis2(long this_addr, long mHingeAxis2_addr) {
-        internal_native_set_mHingeAxis2(this_addr, mHingeAxis2_addr);
-    }
-
-    public static long native_get_mNormalAxis2(long this_addr) {
-        return internal_native_get_mNormalAxis2(this_addr);
-    }
-
-    public static void native_set_mNormalAxis2(long this_addr, long mNormalAxis2_addr) {
-        internal_native_set_mNormalAxis2(this_addr, mNormalAxis2_addr);
-    }
-
-    public static float native_get_mLimitsMin(long this_addr) {
-        return internal_native_get_mLimitsMin(this_addr);
-    }
-
-    public static void native_set_mLimitsMin(long this_addr, float mLimitsMin) {
-        internal_native_set_mLimitsMin(this_addr, mLimitsMin);
-    }
-
-    public static float native_get_mLimitsMax(long this_addr) {
-        return internal_native_get_mLimitsMax(this_addr);
-    }
-
-    public static void native_set_mLimitsMax(long this_addr, float mLimitsMax) {
-        internal_native_set_mLimitsMax(this_addr, mLimitsMax);
-    }
-
-    public static long native_get_mLimitsSpringSettings(long this_addr) {
-        return internal_native_get_mLimitsSpringSettings(this_addr);
-    }
-
-    public static void native_set_mLimitsSpringSettings(long this_addr, long mLimitsSpringSettings_addr) {
-        internal_native_set_mLimitsSpringSettings(this_addr, mLimitsSpringSettings_addr);
-    }
-
-    public static float native_get_mMaxFrictionTorque(long this_addr) {
-        return internal_native_get_mMaxFrictionTorque(this_addr);
-    }
-
-    public static void native_set_mMaxFrictionTorque(long this_addr, float mMaxFrictionTorque) {
-        internal_native_set_mMaxFrictionTorque(this_addr, mMaxFrictionTorque);
-    }
-
-    public static long native_get_mMotorSettings(long this_addr) {
-        return internal_native_get_mMotorSettings(this_addr);
-    }
-
-    public static void native_set_mMotorSettings(long this_addr, long mMotorSettings_addr) {
-        internal_native_set_mMotorSettings(this_addr, mMotorSettings_addr);
-    }
+    public static native void internal_native_set_mMotorSettings(long this_addr, long mMotorSettings_addr);
 }

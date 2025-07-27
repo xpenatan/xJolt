@@ -26,7 +26,7 @@ var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer, inUp_addr, inMaxSl
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer", "inUp_addr", "inMaxSlopeAngle"}, script = "var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer, inUp_addr, inMaxSlopeAngle);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_Vec3_float(int inObjectLayer, int inUp_addr, float inMaxSlopeAngle);
+    public static native int internal_native_create_int_Vec3_float(int inObjectLayer, int inUp_addr, float inMaxSlopeAngle);
 
     public VehicleCollisionTesterRay(int inObjectLayer, Vec3 inUp) {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer, inUp_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer", "inUp_addr"}, script = "var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer, inUp_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_Vec3(int inObjectLayer, int inUp_addr);
+    public static native int internal_native_create_int_Vec3(int inObjectLayer, int inUp_addr);
 
     public VehicleCollisionTesterRay(int inObjectLayer) {
         super((byte) 1, (char) 1);
@@ -52,7 +52,7 @@ var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer"}, script = "var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int(int inObjectLayer);
+    public static native int internal_native_create_int(int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -60,17 +60,5 @@ return jolt.getPointer(jsObj);
     @Deprecated()
     public VehicleCollisionTesterRay(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create_int_Vec3_float(int inObjectLayer, long inUp_addr, float inMaxSlopeAngle) {
-        return internal_native_create_int_Vec3_float(inObjectLayer, (int) inUp_addr, inMaxSlopeAngle);
-    }
-
-    public static long native_create_int_Vec3(int inObjectLayer, long inUp_addr) {
-        return internal_native_create_int_Vec3(inObjectLayer, (int) inUp_addr);
-    }
-
-    public static long native_create_int(int inObjectLayer) {
-        return internal_native_create_int(inObjectLayer);
     }
 }

@@ -37,7 +37,7 @@ public class HeightFieldShapeSettings extends ShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new HeightFieldShapeSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -61,7 +61,7 @@ return (jlong)new HeightFieldShapeSettings();
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mOffset;
 */
-    private static native long internal_native_get_mOffset(long this_addr);
+    public static native long internal_native_get_mOffset(long this_addr);
 
     public void set_mOffset(Vec3 mOffset) {
         internal_native_set_mOffset((long) getNativeData().getCPointer(), (long) (mOffset != null ? mOffset.getNativeData().getCPointer() : 0));
@@ -71,7 +71,7 @@ return (jlong)&nativeObject->mOffset;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mOffset = *((Vec3*)mOffset_addr);
 */
-    private static native void internal_native_set_mOffset(long this_addr, long mOffset_addr);
+    public static native void internal_native_set_mOffset(long this_addr, long mOffset_addr);
 
     public Vec3 get_mScale() {
         long pointer = internal_native_get_mScale((long) getNativeData().getCPointer());
@@ -87,7 +87,7 @@ nativeObject->mOffset = *((Vec3*)mOffset_addr);
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mScale;
 */
-    private static native long internal_native_get_mScale(long this_addr);
+    public static native long internal_native_get_mScale(long this_addr);
 
     public void set_mScale(Vec3 mScale) {
         internal_native_set_mScale((long) getNativeData().getCPointer(), (long) (mScale != null ? mScale.getNativeData().getCPointer() : 0));
@@ -97,7 +97,7 @@ return (jlong)&nativeObject->mScale;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mScale = *((Vec3*)mScale_addr);
 */
-    private static native void internal_native_set_mScale(long this_addr, long mScale_addr);
+    public static native void internal_native_set_mScale(long this_addr, long mScale_addr);
 
     public int get_mSampleCount() {
         return internal_native_get_mSampleCount((long) getNativeData().getCPointer());
@@ -107,7 +107,7 @@ nativeObject->mScale = *((Vec3*)mScale_addr);
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return nativeObject->mSampleCount;
 */
-    private static native int internal_native_get_mSampleCount(long this_addr);
+    public static native int internal_native_get_mSampleCount(long this_addr);
 
     public void set_mSampleCount(int mSampleCount) {
         internal_native_set_mSampleCount((long) getNativeData().getCPointer(), mSampleCount);
@@ -117,7 +117,7 @@ return nativeObject->mSampleCount;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mSampleCount = mSampleCount;
 */
-    private static native void internal_native_set_mSampleCount(long this_addr, int mSampleCount);
+    public static native void internal_native_set_mSampleCount(long this_addr, int mSampleCount);
 
     public float get_mMinHeightValue() {
         return internal_native_get_mMinHeightValue((long) getNativeData().getCPointer());
@@ -127,7 +127,7 @@ nativeObject->mSampleCount = mSampleCount;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return nativeObject->mMinHeightValue;
 */
-    private static native float internal_native_get_mMinHeightValue(long this_addr);
+    public static native float internal_native_get_mMinHeightValue(long this_addr);
 
     public void set_mMinHeightValue(float mMinHeightValue) {
         internal_native_set_mMinHeightValue((long) getNativeData().getCPointer(), mMinHeightValue);
@@ -137,7 +137,7 @@ return nativeObject->mMinHeightValue;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mMinHeightValue = mMinHeightValue;
 */
-    private static native void internal_native_set_mMinHeightValue(long this_addr, float mMinHeightValue);
+    public static native void internal_native_set_mMinHeightValue(long this_addr, float mMinHeightValue);
 
     public float get_mMaxHeightValue() {
         return internal_native_get_mMaxHeightValue((long) getNativeData().getCPointer());
@@ -147,7 +147,7 @@ nativeObject->mMinHeightValue = mMinHeightValue;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return nativeObject->mMaxHeightValue;
 */
-    private static native float internal_native_get_mMaxHeightValue(long this_addr);
+    public static native float internal_native_get_mMaxHeightValue(long this_addr);
 
     public void set_mMaxHeightValue(float mMaxHeightValue) {
         internal_native_set_mMaxHeightValue((long) getNativeData().getCPointer(), mMaxHeightValue);
@@ -157,7 +157,7 @@ return nativeObject->mMaxHeightValue;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mMaxHeightValue = mMaxHeightValue;
 */
-    private static native void internal_native_set_mMaxHeightValue(long this_addr, float mMaxHeightValue);
+    public static native void internal_native_set_mMaxHeightValue(long this_addr, float mMaxHeightValue);
 
     public int get_mMaterialsCapacity() {
         return internal_native_get_mMaterialsCapacity((long) getNativeData().getCPointer());
@@ -167,7 +167,7 @@ nativeObject->mMaxHeightValue = mMaxHeightValue;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return nativeObject->mMaterialsCapacity;
 */
-    private static native int internal_native_get_mMaterialsCapacity(long this_addr);
+    public static native int internal_native_get_mMaterialsCapacity(long this_addr);
 
     public void set_mMaterialsCapacity(int mMaterialsCapacity) {
         internal_native_set_mMaterialsCapacity((long) getNativeData().getCPointer(), mMaterialsCapacity);
@@ -177,7 +177,7 @@ return nativeObject->mMaterialsCapacity;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mMaterialsCapacity = mMaterialsCapacity;
 */
-    private static native void internal_native_set_mMaterialsCapacity(long this_addr, int mMaterialsCapacity);
+    public static native void internal_native_set_mMaterialsCapacity(long this_addr, int mMaterialsCapacity);
 
     public int get_mBlockSize() {
         return internal_native_get_mBlockSize((long) getNativeData().getCPointer());
@@ -187,7 +187,7 @@ nativeObject->mMaterialsCapacity = mMaterialsCapacity;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return nativeObject->mBlockSize;
 */
-    private static native int internal_native_get_mBlockSize(long this_addr);
+    public static native int internal_native_get_mBlockSize(long this_addr);
 
     public void set_mBlockSize(int mBlockSize) {
         internal_native_set_mBlockSize((long) getNativeData().getCPointer(), mBlockSize);
@@ -197,7 +197,7 @@ return nativeObject->mBlockSize;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mBlockSize = mBlockSize;
 */
-    private static native void internal_native_set_mBlockSize(long this_addr, int mBlockSize);
+    public static native void internal_native_set_mBlockSize(long this_addr, int mBlockSize);
 
     public int get_mBitsPerSample() {
         return internal_native_get_mBitsPerSample((long) getNativeData().getCPointer());
@@ -207,7 +207,7 @@ nativeObject->mBlockSize = mBlockSize;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return nativeObject->mBitsPerSample;
 */
-    private static native int internal_native_get_mBitsPerSample(long this_addr);
+    public static native int internal_native_get_mBitsPerSample(long this_addr);
 
     public void set_mBitsPerSample(int mBitsPerSample) {
         internal_native_set_mBitsPerSample((long) getNativeData().getCPointer(), mBitsPerSample);
@@ -217,7 +217,7 @@ return nativeObject->mBitsPerSample;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mBitsPerSample = mBitsPerSample;
 */
-    private static native void internal_native_set_mBitsPerSample(long this_addr, int mBitsPerSample);
+    public static native void internal_native_set_mBitsPerSample(long this_addr, int mBitsPerSample);
 
     public ArrayFloat get_mHeightSamples() {
         long pointer = internal_native_get_mHeightSamples((long) getNativeData().getCPointer());
@@ -233,7 +233,7 @@ nativeObject->mBitsPerSample = mBitsPerSample;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mHeightSamples;
 */
-    private static native long internal_native_get_mHeightSamples(long this_addr);
+    public static native long internal_native_get_mHeightSamples(long this_addr);
 
     public void set_mHeightSamples(ArrayFloat mHeightSamples) {
         internal_native_set_mHeightSamples((long) getNativeData().getCPointer(), (long) (mHeightSamples != null ? mHeightSamples.getNativeData().getCPointer() : 0));
@@ -243,7 +243,7 @@ return (jlong)&nativeObject->mHeightSamples;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mHeightSamples = *((ArrayFloat*)mHeightSamples_addr);
 */
-    private static native void internal_native_set_mHeightSamples(long this_addr, long mHeightSamples_addr);
+    public static native void internal_native_set_mHeightSamples(long this_addr, long mHeightSamples_addr);
 
     public ArrayUint8 get_mMaterialIndices() {
         long pointer = internal_native_get_mMaterialIndices((long) getNativeData().getCPointer());
@@ -259,7 +259,7 @@ nativeObject->mHeightSamples = *((ArrayFloat*)mHeightSamples_addr);
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mMaterialIndices;
 */
-    private static native long internal_native_get_mMaterialIndices(long this_addr);
+    public static native long internal_native_get_mMaterialIndices(long this_addr);
 
     public void set_mMaterialIndices(ArrayUint8 mMaterialIndices) {
         internal_native_set_mMaterialIndices((long) getNativeData().getCPointer(), (long) (mMaterialIndices != null ? mMaterialIndices.getNativeData().getCPointer() : 0));
@@ -269,7 +269,7 @@ return (jlong)&nativeObject->mMaterialIndices;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mMaterialIndices = *((ArrayUint8*)mMaterialIndices_addr);
 */
-    private static native void internal_native_set_mMaterialIndices(long this_addr, long mMaterialIndices_addr);
+    public static native void internal_native_set_mMaterialIndices(long this_addr, long mMaterialIndices_addr);
 
     public PhysicsMaterialList get_mMaterials() {
         long pointer = internal_native_get_mMaterials((long) getNativeData().getCPointer());
@@ -285,7 +285,7 @@ nativeObject->mMaterialIndices = *((ArrayUint8*)mMaterialIndices_addr);
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mMaterials;
 */
-    private static native long internal_native_get_mMaterials(long this_addr);
+    public static native long internal_native_get_mMaterials(long this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
         internal_native_set_mMaterials((long) getNativeData().getCPointer(), (long) (mMaterials != null ? mMaterials.getNativeData().getCPointer() : 0));
@@ -295,7 +295,7 @@ return (jlong)&nativeObject->mMaterials;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mMaterials = *((PhysicsMaterialList*)mMaterials_addr);
 */
-    private static native void internal_native_set_mMaterials(long this_addr, long mMaterials_addr);
+    public static native void internal_native_set_mMaterials(long this_addr, long mMaterials_addr);
 
     public float get_mActiveEdgeCosThresholdAngle() {
         return internal_native_get_mActiveEdgeCosThresholdAngle((long) getNativeData().getCPointer());
@@ -305,7 +305,7 @@ nativeObject->mMaterials = *((PhysicsMaterialList*)mMaterials_addr);
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return nativeObject->mActiveEdgeCosThresholdAngle;
 */
-    private static native float internal_native_get_mActiveEdgeCosThresholdAngle(long this_addr);
+    public static native float internal_native_get_mActiveEdgeCosThresholdAngle(long this_addr);
 
     public void set_mActiveEdgeCosThresholdAngle(float mActiveEdgeCosThresholdAngle) {
         internal_native_set_mActiveEdgeCosThresholdAngle((long) getNativeData().getCPointer(), mActiveEdgeCosThresholdAngle);
@@ -315,105 +315,5 @@ return nativeObject->mActiveEdgeCosThresholdAngle;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 nativeObject->mActiveEdgeCosThresholdAngle = mActiveEdgeCosThresholdAngle;
 */
-    private static native void internal_native_set_mActiveEdgeCosThresholdAngle(long this_addr, float mActiveEdgeCosThresholdAngle);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_get_mOffset(long this_addr) {
-        return internal_native_get_mOffset(this_addr);
-    }
-
-    public static void native_set_mOffset(long this_addr, long mOffset_addr) {
-        internal_native_set_mOffset(this_addr, mOffset_addr);
-    }
-
-    public static long native_get_mScale(long this_addr) {
-        return internal_native_get_mScale(this_addr);
-    }
-
-    public static void native_set_mScale(long this_addr, long mScale_addr) {
-        internal_native_set_mScale(this_addr, mScale_addr);
-    }
-
-    public static int native_get_mSampleCount(long this_addr) {
-        return internal_native_get_mSampleCount(this_addr);
-    }
-
-    public static void native_set_mSampleCount(long this_addr, int mSampleCount) {
-        internal_native_set_mSampleCount(this_addr, mSampleCount);
-    }
-
-    public static float native_get_mMinHeightValue(long this_addr) {
-        return internal_native_get_mMinHeightValue(this_addr);
-    }
-
-    public static void native_set_mMinHeightValue(long this_addr, float mMinHeightValue) {
-        internal_native_set_mMinHeightValue(this_addr, mMinHeightValue);
-    }
-
-    public static float native_get_mMaxHeightValue(long this_addr) {
-        return internal_native_get_mMaxHeightValue(this_addr);
-    }
-
-    public static void native_set_mMaxHeightValue(long this_addr, float mMaxHeightValue) {
-        internal_native_set_mMaxHeightValue(this_addr, mMaxHeightValue);
-    }
-
-    public static int native_get_mMaterialsCapacity(long this_addr) {
-        return internal_native_get_mMaterialsCapacity(this_addr);
-    }
-
-    public static void native_set_mMaterialsCapacity(long this_addr, int mMaterialsCapacity) {
-        internal_native_set_mMaterialsCapacity(this_addr, mMaterialsCapacity);
-    }
-
-    public static int native_get_mBlockSize(long this_addr) {
-        return internal_native_get_mBlockSize(this_addr);
-    }
-
-    public static void native_set_mBlockSize(long this_addr, int mBlockSize) {
-        internal_native_set_mBlockSize(this_addr, mBlockSize);
-    }
-
-    public static int native_get_mBitsPerSample(long this_addr) {
-        return internal_native_get_mBitsPerSample(this_addr);
-    }
-
-    public static void native_set_mBitsPerSample(long this_addr, int mBitsPerSample) {
-        internal_native_set_mBitsPerSample(this_addr, mBitsPerSample);
-    }
-
-    public static long native_get_mHeightSamples(long this_addr) {
-        return internal_native_get_mHeightSamples(this_addr);
-    }
-
-    public static void native_set_mHeightSamples(long this_addr, long mHeightSamples_addr) {
-        internal_native_set_mHeightSamples(this_addr, mHeightSamples_addr);
-    }
-
-    public static long native_get_mMaterialIndices(long this_addr) {
-        return internal_native_get_mMaterialIndices(this_addr);
-    }
-
-    public static void native_set_mMaterialIndices(long this_addr, long mMaterialIndices_addr) {
-        internal_native_set_mMaterialIndices(this_addr, mMaterialIndices_addr);
-    }
-
-    public static long native_get_mMaterials(long this_addr) {
-        return internal_native_get_mMaterials(this_addr);
-    }
-
-    public static void native_set_mMaterials(long this_addr, long mMaterials_addr) {
-        internal_native_set_mMaterials(this_addr, mMaterials_addr);
-    }
-
-    public static float native_get_mActiveEdgeCosThresholdAngle(long this_addr) {
-        return internal_native_get_mActiveEdgeCosThresholdAngle(this_addr);
-    }
-
-    public static void native_set_mActiveEdgeCosThresholdAngle(long this_addr, float mActiveEdgeCosThresholdAngle) {
-        internal_native_set_mActiveEdgeCosThresholdAngle(this_addr, mActiveEdgeCosThresholdAngle);
-    }
+    public static native void internal_native_set_mActiveEdgeCosThresholdAngle(long this_addr, float mActiveEdgeCosThresholdAngle);
 }

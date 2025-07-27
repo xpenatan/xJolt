@@ -39,7 +39,7 @@ public class CharacterBaseSettings extends IDLBase {
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 return nativeObject->GetRefCount();
 */
-    private static native int internal_native_GetRefCount(long this_addr);
+    public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
         internal_native_AddRef((long) getNativeData().getCPointer());
@@ -49,7 +49,7 @@ return nativeObject->GetRefCount();
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 nativeObject->AddRef();
 */
-    private static native void internal_native_AddRef(long this_addr);
+    public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
         internal_native_Release((long) getNativeData().getCPointer());
@@ -59,7 +59,7 @@ nativeObject->AddRef();
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 nativeObject->Release();
 */
-    private static native void internal_native_Release(long this_addr);
+    public static native void internal_native_Release(long this_addr);
 
     public Vec3 get_mUp() {
         long pointer = internal_native_get_mUp((long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ nativeObject->Release();
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 return (jlong)&nativeObject->mUp;
 */
-    private static native long internal_native_get_mUp(long this_addr);
+    public static native long internal_native_get_mUp(long this_addr);
 
     public void set_mUp(Vec3 mUp) {
         internal_native_set_mUp((long) getNativeData().getCPointer(), (long) (mUp != null ? mUp.getNativeData().getCPointer() : 0));
@@ -85,7 +85,7 @@ return (jlong)&nativeObject->mUp;
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 nativeObject->mUp = *((Vec3*)mUp_addr);
 */
-    private static native void internal_native_set_mUp(long this_addr, long mUp_addr);
+    public static native void internal_native_set_mUp(long this_addr, long mUp_addr);
 
     public Plane get_mSupportingVolume() {
         long pointer = internal_native_get_mSupportingVolume((long) getNativeData().getCPointer());
@@ -101,7 +101,7 @@ nativeObject->mUp = *((Vec3*)mUp_addr);
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 return (jlong)&nativeObject->mSupportingVolume;
 */
-    private static native long internal_native_get_mSupportingVolume(long this_addr);
+    public static native long internal_native_get_mSupportingVolume(long this_addr);
 
     public void set_mSupportingVolume(Plane mSupportingVolume) {
         internal_native_set_mSupportingVolume((long) getNativeData().getCPointer(), (long) (mSupportingVolume != null ? mSupportingVolume.getNativeData().getCPointer() : 0));
@@ -111,7 +111,7 @@ return (jlong)&nativeObject->mSupportingVolume;
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 nativeObject->mSupportingVolume = *((Plane*)mSupportingVolume_addr);
 */
-    private static native void internal_native_set_mSupportingVolume(long this_addr, long mSupportingVolume_addr);
+    public static native void internal_native_set_mSupportingVolume(long this_addr, long mSupportingVolume_addr);
 
     public float get_mMaxSlopeAngle() {
         return internal_native_get_mMaxSlopeAngle((long) getNativeData().getCPointer());
@@ -121,7 +121,7 @@ nativeObject->mSupportingVolume = *((Plane*)mSupportingVolume_addr);
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 return nativeObject->mMaxSlopeAngle;
 */
-    private static native float internal_native_get_mMaxSlopeAngle(long this_addr);
+    public static native float internal_native_get_mMaxSlopeAngle(long this_addr);
 
     public void set_mMaxSlopeAngle(float mMaxSlopeAngle) {
         internal_native_set_mMaxSlopeAngle((long) getNativeData().getCPointer(), mMaxSlopeAngle);
@@ -131,7 +131,7 @@ return nativeObject->mMaxSlopeAngle;
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 nativeObject->mMaxSlopeAngle = mMaxSlopeAngle;
 */
-    private static native void internal_native_set_mMaxSlopeAngle(long this_addr, float mMaxSlopeAngle);
+    public static native void internal_native_set_mMaxSlopeAngle(long this_addr, float mMaxSlopeAngle);
 
     public boolean get_mEnhancedInternalEdgeRemoval() {
         return internal_native_get_mEnhancedInternalEdgeRemoval((long) getNativeData().getCPointer());
@@ -141,7 +141,7 @@ nativeObject->mMaxSlopeAngle = mMaxSlopeAngle;
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 return nativeObject->mEnhancedInternalEdgeRemoval;
 */
-    private static native boolean internal_native_get_mEnhancedInternalEdgeRemoval(long this_addr);
+    public static native boolean internal_native_get_mEnhancedInternalEdgeRemoval(long this_addr);
 
     public void set_mEnhancedInternalEdgeRemoval(boolean mEnhancedInternalEdgeRemoval) {
         internal_native_set_mEnhancedInternalEdgeRemoval((long) getNativeData().getCPointer(), mEnhancedInternalEdgeRemoval);
@@ -151,7 +151,7 @@ return nativeObject->mEnhancedInternalEdgeRemoval;
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 nativeObject->mEnhancedInternalEdgeRemoval = mEnhancedInternalEdgeRemoval;
 */
-    private static native void internal_native_set_mEnhancedInternalEdgeRemoval(long this_addr, boolean mEnhancedInternalEdgeRemoval);
+    public static native void internal_native_set_mEnhancedInternalEdgeRemoval(long this_addr, boolean mEnhancedInternalEdgeRemoval);
 
     public Shape get_mShape() {
         long pointer = internal_native_get_mShape((long) getNativeData().getCPointer());
@@ -168,7 +168,7 @@ CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 const Shape* attr = nativeObject->mShape;
 return (jlong)attr;
 */
-    private static native long internal_native_get_mShape(long this_addr);
+    public static native long internal_native_get_mShape(long this_addr);
 
     public void set_mShape(Shape mShape) {
         internal_native_set_mShape((long) getNativeData().getCPointer(), (long) (mShape != null ? mShape.getNativeData().getCPointer() : 0));
@@ -178,57 +178,5 @@ return (jlong)attr;
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 nativeObject->mShape = (Shape*)mShape_addr;
 */
-    private static native void internal_native_set_mShape(long this_addr, long mShape_addr);
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount(this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef(this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release(this_addr);
-    }
-
-    public static long native_get_mUp(long this_addr) {
-        return internal_native_get_mUp(this_addr);
-    }
-
-    public static void native_set_mUp(long this_addr, long mUp_addr) {
-        internal_native_set_mUp(this_addr, mUp_addr);
-    }
-
-    public static long native_get_mSupportingVolume(long this_addr) {
-        return internal_native_get_mSupportingVolume(this_addr);
-    }
-
-    public static void native_set_mSupportingVolume(long this_addr, long mSupportingVolume_addr) {
-        internal_native_set_mSupportingVolume(this_addr, mSupportingVolume_addr);
-    }
-
-    public static float native_get_mMaxSlopeAngle(long this_addr) {
-        return internal_native_get_mMaxSlopeAngle(this_addr);
-    }
-
-    public static void native_set_mMaxSlopeAngle(long this_addr, float mMaxSlopeAngle) {
-        internal_native_set_mMaxSlopeAngle(this_addr, mMaxSlopeAngle);
-    }
-
-    public static boolean native_get_mEnhancedInternalEdgeRemoval(long this_addr) {
-        return internal_native_get_mEnhancedInternalEdgeRemoval(this_addr);
-    }
-
-    public static void native_set_mEnhancedInternalEdgeRemoval(long this_addr, boolean mEnhancedInternalEdgeRemoval) {
-        internal_native_set_mEnhancedInternalEdgeRemoval(this_addr, mEnhancedInternalEdgeRemoval);
-    }
-
-    public static long native_get_mShape(long this_addr) {
-        return internal_native_get_mShape(this_addr);
-    }
-
-    public static void native_set_mShape(long this_addr, long mShape_addr) {
-        internal_native_set_mShape(this_addr, mShape_addr);
-    }
+    public static native void internal_native_set_mShape(long this_addr, long mShape_addr);
 }

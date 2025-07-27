@@ -23,7 +23,7 @@ public class IndexedTriangle extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new IndexedTriangle();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     public IndexedTriangle(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData) {
         long addr = internal_native_create_int_int_int_int_int(inI1, inI2, inI3, inMaterialIndex, inUserData);
@@ -33,7 +33,7 @@ return (jlong)new IndexedTriangle();
     /*[-JNI;-NATIVE]
 return (jlong)new IndexedTriangle(inI1, inI2, inI3, inMaterialIndex, inUserData);
 */
-    private static native long internal_native_create_int_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData);
+    public static native long internal_native_create_int_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData);
 
     public IndexedTriangle(int inI1, int inI2, int inI3, int inMaterialIndex) {
         long addr = internal_native_create_int_int_int_int(inI1, inI2, inI3, inMaterialIndex);
@@ -43,7 +43,7 @@ return (jlong)new IndexedTriangle(inI1, inI2, inI3, inMaterialIndex, inUserData)
     /*[-JNI;-NATIVE]
 return (jlong)new IndexedTriangle(inI1, inI2, inI3, inMaterialIndex);
 */
-    private static native long internal_native_create_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex);
+    public static native long internal_native_create_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -68,7 +68,7 @@ return (jlong)new IndexedTriangle(inI1, inI2, inI3, inMaterialIndex);
 IndexedTriangle* nativeObject = (IndexedTriangle*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mIdx(int index) {
         return internal_native_get_mIdx((long) getNativeData().getCPointer(), index);
@@ -78,7 +78,7 @@ delete nativeObject;
 IndexedTriangle* nativeObject = (IndexedTriangle*)this_addr;
 return nativeObject->mIdx[index];
 */
-    private static native int internal_native_get_mIdx(long this_addr, int index);
+    public static native int internal_native_get_mIdx(long this_addr, int index);
 
     public void set_mIdx(int index, int mIdx) {
         internal_native_set_mIdx((long) getNativeData().getCPointer(), index, mIdx);
@@ -88,7 +88,7 @@ return nativeObject->mIdx[index];
 IndexedTriangle* nativeObject = (IndexedTriangle*)this_addr;
 nativeObject->mIdx[index] = mIdx;
 */
-    private static native void internal_native_set_mIdx(long this_addr, int index, int mIdx);
+    public static native void internal_native_set_mIdx(long this_addr, int index, int mIdx);
 
     public int get_mMaterialIndex() {
         return internal_native_get_mMaterialIndex((long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ nativeObject->mIdx[index] = mIdx;
 IndexedTriangle* nativeObject = (IndexedTriangle*)this_addr;
 return nativeObject->mMaterialIndex;
 */
-    private static native int internal_native_get_mMaterialIndex(long this_addr);
+    public static native int internal_native_get_mMaterialIndex(long this_addr);
 
     public void set_mMaterialIndex(int mMaterialIndex) {
         internal_native_set_mMaterialIndex((long) getNativeData().getCPointer(), mMaterialIndex);
@@ -108,7 +108,7 @@ return nativeObject->mMaterialIndex;
 IndexedTriangle* nativeObject = (IndexedTriangle*)this_addr;
 nativeObject->mMaterialIndex = mMaterialIndex;
 */
-    private static native void internal_native_set_mMaterialIndex(long this_addr, int mMaterialIndex);
+    public static native void internal_native_set_mMaterialIndex(long this_addr, int mMaterialIndex);
 
     public int get_mUserData() {
         return internal_native_get_mUserData((long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ nativeObject->mMaterialIndex = mMaterialIndex;
 IndexedTriangle* nativeObject = (IndexedTriangle*)this_addr;
 return nativeObject->mUserData;
 */
-    private static native int internal_native_get_mUserData(long this_addr);
+    public static native int internal_native_get_mUserData(long this_addr);
 
     public void set_mUserData(int mUserData) {
         internal_native_set_mUserData((long) getNativeData().getCPointer(), mUserData);
@@ -128,45 +128,5 @@ return nativeObject->mUserData;
 IndexedTriangle* nativeObject = (IndexedTriangle*)this_addr;
 nativeObject->mUserData = mUserData;
 */
-    private static native void internal_native_set_mUserData(long this_addr, int mUserData);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_int_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData) {
-        return internal_native_create_int_int_int_int_int(inI1, inI2, inI3, inMaterialIndex, inUserData);
-    }
-
-    public static long native_create_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex) {
-        return internal_native_create_int_int_int_int(inI1, inI2, inI3, inMaterialIndex);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_get_mIdx(long this_addr, int index) {
-        return internal_native_get_mIdx(this_addr, index);
-    }
-
-    public static void native_set_mIdx(long this_addr, int index, int mIdx) {
-        internal_native_set_mIdx(this_addr, index, mIdx);
-    }
-
-    public static int native_get_mMaterialIndex(long this_addr) {
-        return internal_native_get_mMaterialIndex(this_addr);
-    }
-
-    public static void native_set_mMaterialIndex(long this_addr, int mMaterialIndex) {
-        internal_native_set_mMaterialIndex(this_addr, mMaterialIndex);
-    }
-
-    public static int native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData(this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, int mUserData) {
-        internal_native_set_mUserData(this_addr, mUserData);
-    }
+    public static native void internal_native_set_mUserData(long this_addr, int mUserData);
 }

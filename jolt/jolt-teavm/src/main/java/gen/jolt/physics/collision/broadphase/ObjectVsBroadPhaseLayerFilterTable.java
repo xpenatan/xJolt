@@ -26,7 +26,7 @@ var jsObj = new jolt.ObjectVsBroadPhaseLayerFilterTable(inBroadPhaseLayerInterfa
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inBroadPhaseLayerInterface_addr", "inNumBroadPhaseLayers", "inObjectLayerPairFilter_addr", "inNumObjectLayers"}, script = "var jsObj = new jolt.ObjectVsBroadPhaseLayerFilterTable(inBroadPhaseLayerInterface_addr, inNumBroadPhaseLayers, inObjectLayerPairFilter_addr, inNumObjectLayers);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int(int inBroadPhaseLayerInterface_addr, int inNumBroadPhaseLayers, int inObjectLayerPairFilter_addr, int inNumObjectLayers);
+    public static native int internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int(int inBroadPhaseLayerInterface_addr, int inNumBroadPhaseLayers, int inObjectLayerPairFilter_addr, int inNumObjectLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -34,9 +34,5 @@ return jolt.getPointer(jsObj);
     @Deprecated()
     public ObjectVsBroadPhaseLayerFilterTable(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int(long inBroadPhaseLayerInterface_addr, int inNumBroadPhaseLayers, long inObjectLayerPairFilter_addr, int inNumObjectLayers) {
-        return internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int((int) inBroadPhaseLayerInterface_addr, inNumBroadPhaseLayers, (int) inObjectLayerPairFilter_addr, inNumObjectLayers);
     }
 }

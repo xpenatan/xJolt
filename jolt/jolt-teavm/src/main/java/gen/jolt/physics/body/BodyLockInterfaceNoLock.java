@@ -38,9 +38,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BodyLockInterfaceNoLock);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BodyLockInterfaceNoLock);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
+    public static native void internal_native_deleteNative(int this_addr);
 }

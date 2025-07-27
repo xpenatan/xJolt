@@ -26,7 +26,7 @@ var jsObj = new jolt.VehicleCollisionTesterCastSphere(inObjectLayer, inRadius, i
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer", "inRadius", "inUp_addr", "inMaxSlopeAngle"}, script = "var jsObj = new jolt.VehicleCollisionTesterCastSphere(inObjectLayer, inRadius, inUp_addr, inMaxSlopeAngle);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_float_Vec3_float(int inObjectLayer, float inRadius, int inUp_addr, float inMaxSlopeAngle);
+    public static native int internal_native_create_int_float_Vec3_float(int inObjectLayer, float inRadius, int inUp_addr, float inMaxSlopeAngle);
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp) {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ var jsObj = new jolt.VehicleCollisionTesterCastSphere(inObjectLayer, inRadius, i
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer", "inRadius", "inUp_addr"}, script = "var jsObj = new jolt.VehicleCollisionTesterCastSphere(inObjectLayer, inRadius, inUp_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_float_Vec3(int inObjectLayer, float inRadius, int inUp_addr);
+    public static native int internal_native_create_int_float_Vec3(int inObjectLayer, float inRadius, int inUp_addr);
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius) {
         super((byte) 1, (char) 1);
@@ -52,7 +52,7 @@ var jsObj = new jolt.VehicleCollisionTesterCastSphere(inObjectLayer, inRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer", "inRadius"}, script = "var jsObj = new jolt.VehicleCollisionTesterCastSphere(inObjectLayer, inRadius);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_float(int inObjectLayer, float inRadius);
+    public static native int internal_native_create_int_float(int inObjectLayer, float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -60,17 +60,5 @@ return jolt.getPointer(jsObj);
     @Deprecated()
     public VehicleCollisionTesterCastSphere(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create_int_float_Vec3_float(int inObjectLayer, float inRadius, long inUp_addr, float inMaxSlopeAngle) {
-        return internal_native_create_int_float_Vec3_float(inObjectLayer, inRadius, (int) inUp_addr, inMaxSlopeAngle);
-    }
-
-    public static long native_create_int_float_Vec3(int inObjectLayer, float inRadius, long inUp_addr) {
-        return internal_native_create_int_float_Vec3(inObjectLayer, inRadius, (int) inUp_addr);
-    }
-
-    public static long native_create_int_float(int inObjectLayer, float inRadius) {
-        return internal_native_create_int_float(inObjectLayer, inRadius);
     }
 }

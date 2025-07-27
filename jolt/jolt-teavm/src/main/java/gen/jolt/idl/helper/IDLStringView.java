@@ -53,7 +53,7 @@ public class IDLStringView extends IDLBase {
       return jolt.getPointer(jsObj);
     */
     @org.teavm.jso.JSBody(params = {"text"}, script = "var jsObj = new jolt.IDLStringView(text);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_String(String text);
+    public static native int internal_native_create_String(String text);
 
     public IDLStringView(String text, int size) {
         int addr = internal_native_create_String_int(text, size);
@@ -66,7 +66,7 @@ public class IDLStringView extends IDLBase {
       return jolt.getPointer(jsObj);
     */
     @org.teavm.jso.JSBody(params = {"text", "size"}, script = "var jsObj = new jolt.IDLStringView(text, size);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_String_int(String text, int size);
+    public static native int internal_native_create_String_int(String text, int size);
 
     public void dispose() {
         super.dispose();
@@ -86,7 +86,7 @@ public class IDLStringView extends IDLBase {
       jolt.destroy(jsObj);
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLStringView);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int size() {
         return internal_native_size((int) (long) getNativeData().getCPointer());
@@ -99,7 +99,7 @@ public class IDLStringView extends IDLBase {
       return returnedJSObj;
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLStringView);var returnedJSObj = jsObj.size();return returnedJSObj;")
-    private static native int internal_native_size(int this_addr);
+    public static native int internal_native_size(int this_addr);
 
     public byte at(int index) {
         return internal_native_at((int) (long) getNativeData().getCPointer(), index);
@@ -112,25 +112,5 @@ public class IDLStringView extends IDLBase {
       return returnedJSObj;
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLStringView);var returnedJSObj = jsObj.at(index);return returnedJSObj;")
-    private static native byte internal_native_at(int this_addr, int index);
-
-    public static long native_create_String(String text) {
-        return internal_native_create_String(text);
-    }
-
-    public static long native_create_String_int(String text, int size) {
-        return internal_native_create_String_int(text, size);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_size(long this_addr) {
-        return internal_native_size((int) this_addr);
-    }
-
-    public static byte native_at(long this_addr, int index) {
-        return internal_native_at((int) this_addr, index);
-    }
+    public static native byte internal_native_at(int this_addr, int index);
 }

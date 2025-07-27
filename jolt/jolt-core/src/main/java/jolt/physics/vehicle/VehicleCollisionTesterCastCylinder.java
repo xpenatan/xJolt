@@ -22,7 +22,7 @@ public class VehicleCollisionTesterCastCylinder extends VehicleCollisionTester {
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastCylinder(inObjectLayer, (float)inConvexRadiusFraction);
 */
-    private static native long internal_native_create_int_float(int inObjectLayer, float inConvexRadiusFraction);
+    public static native long internal_native_create_int_float(int inObjectLayer, float inConvexRadiusFraction);
 
     public VehicleCollisionTesterCastCylinder(int inObjectLayer) {
         super((byte) 1, (char) 1);
@@ -33,7 +33,7 @@ return (jlong)new VehicleCollisionTesterCastCylinder(inObjectLayer, (float)inCon
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastCylinder(inObjectLayer);
 */
-    private static native long internal_native_create_int(int inObjectLayer);
+    public static native long internal_native_create_int(int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -41,13 +41,5 @@ return (jlong)new VehicleCollisionTesterCastCylinder(inObjectLayer);
     @Deprecated()
     public VehicleCollisionTesterCastCylinder(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create_int_float(int inObjectLayer, float inConvexRadiusFraction) {
-        return internal_native_create_int_float(inObjectLayer, inConvexRadiusFraction);
-    }
-
-    public static long native_create_int(int inObjectLayer) {
-        return internal_native_create_int(inObjectLayer);
     }
 }

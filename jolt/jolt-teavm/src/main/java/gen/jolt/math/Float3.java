@@ -25,7 +25,7 @@ var jsObj = new jolt.Float3(inX, inY, inZ);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inX", "inY", "inZ"}, script = "var jsObj = new jolt.Float3(inX, inY, inZ);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float_float_float(float inX, float inY, float inZ);
+    public static native int internal_native_create_float_float_float(float inX, float inY, float inZ);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_x() {
         return internal_native_get_x((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);
 return jsObj.get_x();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);return jsObj.get_x();")
-    private static native float internal_native_get_x(int this_addr);
+    public static native float internal_native_get_x(int this_addr);
 
     public void set_x(float x) {
         internal_native_set_x((int) (long) getNativeData().getCPointer(), x);
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);
 jsObj.set_x(x);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "x"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);jsObj.set_x(x);")
-    private static native void internal_native_set_x(int this_addr, float x);
+    public static native void internal_native_set_x(int this_addr, float x);
 
     public float get_y() {
         return internal_native_get_y((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);
 return jsObj.get_y();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);return jsObj.get_y();")
-    private static native float internal_native_get_y(int this_addr);
+    public static native float internal_native_get_y(int this_addr);
 
     public void set_y(float y) {
         internal_native_set_y((int) (long) getNativeData().getCPointer(), y);
@@ -95,7 +95,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);
 jsObj.set_y(y);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "y"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);jsObj.set_y(y);")
-    private static native void internal_native_set_y(int this_addr, float y);
+    public static native void internal_native_set_y(int this_addr, float y);
 
     public float get_z() {
         return internal_native_get_z((int) (long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);
 return jsObj.get_z();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);return jsObj.get_z();")
-    private static native float internal_native_get_z(int this_addr);
+    public static native float internal_native_get_z(int this_addr);
 
     public void set_z(float z) {
         internal_native_set_z((int) (long) getNativeData().getCPointer(), z);
@@ -117,37 +117,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);
 jsObj.set_z(z);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "z"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Float3);jsObj.set_z(z);")
-    private static native void internal_native_set_z(int this_addr, float z);
-
-    public static long native_create_float_float_float(float inX, float inY, float inZ) {
-        return internal_native_create_float_float_float(inX, inY, inZ);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static float native_get_x(long this_addr) {
-        return internal_native_get_x((int) this_addr);
-    }
-
-    public static void native_set_x(long this_addr, float x) {
-        internal_native_set_x((int) this_addr, x);
-    }
-
-    public static float native_get_y(long this_addr) {
-        return internal_native_get_y((int) this_addr);
-    }
-
-    public static void native_set_y(long this_addr, float y) {
-        internal_native_set_y((int) this_addr, y);
-    }
-
-    public static float native_get_z(long this_addr) {
-        return internal_native_get_z((int) this_addr);
-    }
-
-    public static void native_set_z(long this_addr, float z) {
-        internal_native_set_z((int) this_addr, z);
-    }
+    public static native void internal_native_set_z(int this_addr, float z);
 }

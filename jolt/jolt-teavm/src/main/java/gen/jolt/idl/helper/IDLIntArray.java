@@ -31,7 +31,7 @@ public class IDLIntArray extends IDLBase {
       return jolt.getPointer(jsObj);
     */
     @org.teavm.jso.JSBody(params = {"size"}, script = "var jsObj = new jolt.IDLIntArray(size);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int(int size);
+    public static native int internal_native_create_int(int size);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -58,7 +58,7 @@ public class IDLIntArray extends IDLBase {
       jolt.destroy(jsObj);
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLIntArray);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void resize(int size) {
         internal_native_resize((int) (long) getNativeData().getCPointer(), size);
@@ -70,7 +70,7 @@ public class IDLIntArray extends IDLBase {
       jsObj.resize(size);
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "size"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLIntArray);jsObj.resize(size);")
-    private static native void internal_native_resize(int this_addr, int size);
+    public static native void internal_native_resize(int this_addr, int size);
 
     public void clear() {
         internal_native_clear((int) (long) getNativeData().getCPointer());
@@ -82,7 +82,7 @@ public class IDLIntArray extends IDLBase {
       jsObj.clear();
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLIntArray);jsObj.clear();")
-    private static native void internal_native_clear(int this_addr);
+    public static native void internal_native_clear(int this_addr);
 
     public int getValue(int index) {
         return internal_native_getValue((int) (long) getNativeData().getCPointer(), index);
@@ -95,7 +95,7 @@ public class IDLIntArray extends IDLBase {
       return returnedJSObj;
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLIntArray);var returnedJSObj = jsObj.getValue(index);return returnedJSObj;")
-    private static native int internal_native_getValue(int this_addr, int index);
+    public static native int internal_native_getValue(int this_addr, int index);
 
     public void setValue(int index, int value) {
         internal_native_setValue((int) (long) getNativeData().getCPointer(), index, value);
@@ -107,7 +107,7 @@ public class IDLIntArray extends IDLBase {
       jsObj.setValue(index, value);
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "value"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLIntArray);jsObj.setValue(index, value);")
-    private static native void internal_native_setValue(int this_addr, int index, int value);
+    public static native void internal_native_setValue(int this_addr, int index, int value);
 
     public int getSize() {
         return internal_native_getSize((int) (long) getNativeData().getCPointer());
@@ -120,7 +120,7 @@ public class IDLIntArray extends IDLBase {
       return returnedJSObj;
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLIntArray);var returnedJSObj = jsObj.getSize();return returnedJSObj;")
-    private static native int internal_native_getSize(int this_addr);
+    public static native int internal_native_getSize(int this_addr);
 
     public long getPointer() {
         return internal_native_getPointer((int) (long) getNativeData().getCPointer());
@@ -133,7 +133,7 @@ public class IDLIntArray extends IDLBase {
       return returnedJSObj;
     */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLIntArray);var returnedJSObj = jsObj.getPointer();return returnedJSObj;")
-    private static native int internal_native_getPointer(int this_addr);
+    public static native int internal_native_getPointer(int this_addr);
 
     public void copy(IDLIntArray src, int srcOffset, int destOffset, int length) {
         internal_native_copy((int) (long) getNativeData().getCPointer(), (int) (long) (src != null ? src.getNativeData().getCPointer() : 0), srcOffset, destOffset, length);
@@ -145,41 +145,5 @@ public class IDLIntArray extends IDLBase {
       jsObj.copy(src_addr, srcOffset, destOffset, length);
     */
     @org.teavm.jso.JSBody(params = {"this_addr", "src_addr", "srcOffset", "destOffset", "length"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLIntArray);jsObj.copy(src_addr, srcOffset, destOffset, length);")
-    private static native void internal_native_copy(int this_addr, int src_addr, int srcOffset, int destOffset, int length);
-
-    public static long native_create_int(int size) {
-        return internal_native_create_int(size);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_resize(long this_addr, int size) {
-        internal_native_resize((int) this_addr, size);
-    }
-
-    public static void native_clear(long this_addr) {
-        internal_native_clear((int) this_addr);
-    }
-
-    public static int native_getValue(long this_addr, int index) {
-        return internal_native_getValue((int) this_addr, index);
-    }
-
-    public static void native_setValue(long this_addr, int index, int value) {
-        internal_native_setValue((int) this_addr, index, value);
-    }
-
-    public static int native_getSize(long this_addr) {
-        return internal_native_getSize((int) this_addr);
-    }
-
-    public static long native_getPointer(long this_addr) {
-        return internal_native_getPointer((int) this_addr);
-    }
-
-    public static void native_copy(long this_addr, long src_addr, int srcOffset, int destOffset, int length) {
-        internal_native_copy((int) this_addr, (int) src_addr, srcOffset, destOffset, length);
-    }
+    public static native void internal_native_copy(int this_addr, int src_addr, int srcOffset, int destOffset, int length);
 }

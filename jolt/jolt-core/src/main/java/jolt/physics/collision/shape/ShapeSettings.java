@@ -32,7 +32,7 @@ public class ShapeSettings extends IDLBase {
 ShapeSettings* nativeObject = (ShapeSettings*)this_addr;
 return nativeObject->GetRefCount();
 */
-    private static native int internal_native_GetRefCount(long this_addr);
+    public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
         internal_native_AddRef((long) getNativeData().getCPointer());
@@ -42,7 +42,7 @@ return nativeObject->GetRefCount();
 ShapeSettings* nativeObject = (ShapeSettings*)this_addr;
 nativeObject->AddRef();
 */
-    private static native void internal_native_AddRef(long this_addr);
+    public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
         internal_native_Release((long) getNativeData().getCPointer());
@@ -52,7 +52,7 @@ nativeObject->AddRef();
 ShapeSettings* nativeObject = (ShapeSettings*)this_addr;
 nativeObject->Release();
 */
-    private static native void internal_native_Release(long this_addr);
+    public static native void internal_native_Release(long this_addr);
 
     public ShapeResult Create() {
         long pointer = internal_native_Create((long) getNativeData().getCPointer());
@@ -69,7 +69,7 @@ ShapeSettings* nativeObject = (ShapeSettings*)this_addr;
 static Shape::ShapeResult copy_addr;
 copy_addr = nativeObject->Create();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Create(long this_addr);
+    public static native long internal_native_Create(long this_addr);
 
     public void ClearCachedResult() {
         internal_native_ClearCachedResult((long) getNativeData().getCPointer());
@@ -79,7 +79,7 @@ return (jlong)&copy_addr;*/
 ShapeSettings* nativeObject = (ShapeSettings*)this_addr;
 nativeObject->ClearCachedResult();
 */
-    private static native void internal_native_ClearCachedResult(long this_addr);
+    public static native void internal_native_ClearCachedResult(long this_addr);
 
     public long get_mUserData() {
         return internal_native_get_mUserData((long) getNativeData().getCPointer());
@@ -89,7 +89,7 @@ nativeObject->ClearCachedResult();
 ShapeSettings* nativeObject = (ShapeSettings*)this_addr;
 return nativeObject->mUserData;
 */
-    private static native long internal_native_get_mUserData(long this_addr);
+    public static native long internal_native_get_mUserData(long this_addr);
 
     public void set_mUserData(long mUserData) {
         internal_native_set_mUserData((long) getNativeData().getCPointer(), mUserData);
@@ -99,33 +99,5 @@ return nativeObject->mUserData;
 ShapeSettings* nativeObject = (ShapeSettings*)this_addr;
 nativeObject->mUserData = mUserData;
 */
-    private static native void internal_native_set_mUserData(long this_addr, long mUserData);
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount(this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef(this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release(this_addr);
-    }
-
-    public static long native_Create(long this_addr) {
-        return internal_native_Create(this_addr);
-    }
-
-    public static void native_ClearCachedResult(long this_addr) {
-        internal_native_ClearCachedResult(this_addr);
-    }
-
-    public static long native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData(this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, long mUserData) {
-        internal_native_set_mUserData(this_addr, mUserData);
-    }
+    public static native void internal_native_set_mUserData(long this_addr, long mUserData);
 }

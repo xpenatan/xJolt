@@ -39,7 +39,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollectorJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollectorJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void SetContext(TransformedShape inContext) {
         internal_native_SetContext((int) (long) getNativeData().getCPointer(), (int) (long) (inContext != null ? inContext.getNativeData().getCPointer() : 0));
@@ -50,7 +50,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);
 jsObj.SetContext(inContext_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inContext_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);jsObj.SetContext(inContext_addr);")
-    private static native void internal_native_SetContext(int this_addr, int inContext_addr);
+    public static native void internal_native_SetContext(int this_addr, int inContext_addr);
 
     public TransformedShape GetContext() {
         int pointer = internal_native_GetContext((int) (long) getNativeData().getCPointer());
@@ -69,7 +69,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);var returnedJSObj = jsObj.GetContext();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetContext(int this_addr);
+    public static native int internal_native_GetContext(int this_addr);
 
     public void UpdateEarlyOutFraction(float inFraction) {
         internal_native_UpdateEarlyOutFraction((int) (long) getNativeData().getCPointer(), inFraction);
@@ -80,7 +80,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);
 jsObj.UpdateEarlyOutFraction(inFraction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inFraction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);jsObj.UpdateEarlyOutFraction(inFraction);")
-    private static native void internal_native_UpdateEarlyOutFraction(int this_addr, float inFraction);
+    public static native void internal_native_UpdateEarlyOutFraction(int this_addr, float inFraction);
 
     public void ResetEarlyOutFraction(float inFraction) {
         internal_native_ResetEarlyOutFraction((int) (long) getNativeData().getCPointer(), inFraction);
@@ -91,7 +91,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);
 jsObj.ResetEarlyOutFraction(inFraction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inFraction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);jsObj.ResetEarlyOutFraction(inFraction);")
-    private static native void internal_native_ResetEarlyOutFraction(int this_addr, float inFraction);
+    public static native void internal_native_ResetEarlyOutFraction(int this_addr, float inFraction);
 
     public void ResetEarlyOutFraction() {
         internal_native_ResetEarlyOutFraction((int) (long) getNativeData().getCPointer());
@@ -102,7 +102,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);
 jsObj.ResetEarlyOutFraction();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);jsObj.ResetEarlyOutFraction();")
-    private static native void internal_native_ResetEarlyOutFraction(int this_addr);
+    public static native void internal_native_ResetEarlyOutFraction(int this_addr);
 
     public void ForceEarlyOut() {
         internal_native_ForceEarlyOut((int) (long) getNativeData().getCPointer());
@@ -113,7 +113,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);
 jsObj.ForceEarlyOut();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);jsObj.ForceEarlyOut();")
-    private static native void internal_native_ForceEarlyOut(int this_addr);
+    public static native void internal_native_ForceEarlyOut(int this_addr);
 
     public boolean ShouldEarlyOut() {
         return internal_native_ShouldEarlyOut((int) (long) getNativeData().getCPointer());
@@ -125,7 +125,7 @@ var returnedJSObj = jsObj.ShouldEarlyOut();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);var returnedJSObj = jsObj.ShouldEarlyOut();return returnedJSObj;")
-    private static native boolean internal_native_ShouldEarlyOut(int this_addr);
+    public static native boolean internal_native_ShouldEarlyOut(int this_addr);
 
     public float GetEarlyOutFraction() {
         return internal_native_GetEarlyOutFraction((int) (long) getNativeData().getCPointer());
@@ -137,7 +137,7 @@ var returnedJSObj = jsObj.GetEarlyOutFraction();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);var returnedJSObj = jsObj.GetEarlyOutFraction();return returnedJSObj;")
-    private static native float internal_native_GetEarlyOutFraction(int this_addr);
+    public static native float internal_native_GetEarlyOutFraction(int this_addr);
 
     public float GetPositiveEarlyOutFraction() {
         return internal_native_GetPositiveEarlyOutFraction((int) (long) getNativeData().getCPointer());
@@ -149,7 +149,7 @@ var returnedJSObj = jsObj.GetPositiveEarlyOutFraction();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollector);var returnedJSObj = jsObj.GetPositiveEarlyOutFraction();return returnedJSObj;")
-    private static native float internal_native_GetPositiveEarlyOutFraction(int this_addr);
+    public static native float internal_native_GetPositiveEarlyOutFraction(int this_addr);
 
     public CastShapeBodyCollector() {
         int addr = internal_native_create();
@@ -195,10 +195,10 @@ var jsObj = new jolt.CastShapeBodyCollectorJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CastShapeBodyCollectorJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "Reset", "AddHit" }, script = "var CastShapeBodyCollectorJS = jolt.wrapPointer(this_addr, jolt.CastShapeBodyCollectorJS); CastShapeBodyCollectorJS.Reset = Reset; CastShapeBodyCollectorJS.AddHit = AddHit;")
-    private static native void internal_native_setupCallback(int this_addr, Reset Reset, AddHit AddHit);
+    public static native void internal_native_setupCallback(int this_addr, Reset Reset, AddHit AddHit);
 
     @org.teavm.jso.JSFunctor()
     public interface Reset extends org.teavm.jso.JSObject {
@@ -210,49 +210,5 @@ return jolt.getPointer(jsObj);
     public interface AddHit extends org.teavm.jso.JSObject {
 
         void AddHit(int inResult);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_SetContext(long this_addr, long inContext_addr) {
-        internal_native_SetContext((int) this_addr, (int) inContext_addr);
-    }
-
-    public static long native_GetContext(long this_addr) {
-        return internal_native_GetContext((int) this_addr);
-    }
-
-    public static void native_UpdateEarlyOutFraction(long this_addr, float inFraction) {
-        internal_native_UpdateEarlyOutFraction((int) this_addr, inFraction);
-    }
-
-    public static void native_ResetEarlyOutFraction(long this_addr, float inFraction) {
-        internal_native_ResetEarlyOutFraction((int) this_addr, inFraction);
-    }
-
-    public static void native_ResetEarlyOutFraction(long this_addr) {
-        internal_native_ResetEarlyOutFraction((int) this_addr);
-    }
-
-    public static void native_ForceEarlyOut(long this_addr) {
-        internal_native_ForceEarlyOut((int) this_addr);
-    }
-
-    public static boolean native_ShouldEarlyOut(long this_addr) {
-        return internal_native_ShouldEarlyOut((int) this_addr);
-    }
-
-    public static float native_GetEarlyOutFraction(long this_addr) {
-        return internal_native_GetEarlyOutFraction((int) this_addr);
-    }
-
-    public static float native_GetPositiveEarlyOutFraction(long this_addr) {
-        return internal_native_GetPositiveEarlyOutFraction((int) this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

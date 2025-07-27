@@ -40,7 +40,7 @@ public class Factory extends IDLBase {
 Factory* nativeObject = (Factory*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public static Factory get_sInstance() {
         long pointer = internal_native_get_sInstance();
@@ -55,7 +55,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)Factory::sInstance;
 */
-    private static native long internal_native_get_sInstance();
+    public static native long internal_native_get_sInstance();
 
     public static void set_sInstance(Factory sInstance) {
         internal_native_set_sInstance((long) (sInstance != null ? sInstance.getNativeData().getCPointer() : 0));
@@ -64,17 +64,5 @@ return (jlong)Factory::sInstance;
     /*[-JNI;-NATIVE]
 Factory::sInstance = (Factory*)sInstance_addr;
 */
-    private static native void internal_native_set_sInstance(long sInstance_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_sInstance() {
-        return internal_native_get_sInstance();
-    }
-
-    public static void native_set_sInstance(long sInstance_addr) {
-        internal_native_set_sInstance(sInstance_addr);
-    }
+    public static native void internal_native_set_sInstance(long sInstance_addr);
 }

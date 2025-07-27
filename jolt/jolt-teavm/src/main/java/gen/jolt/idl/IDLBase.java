@@ -17,7 +17,7 @@ public abstract class IDLBase {
 
     public static boolean ENABLE_LOGGING = true;
 
-    protected final IDLNativeData nativeData = new IDLNativeData(this);
+    protected IDLNativeData nativeData = new IDLNativeData(this);
 
     public IDLBase() {
     }
@@ -43,6 +43,13 @@ public abstract class IDLBase {
      * Deletes the IDL object this class encapsulates. Do not call directly, instead use the {@link #dispose()} method.
      */
     protected void deleteNative() {
+    }
+
+    protected void onNativeAddressChanged() {
+    }
+
+    protected void onNativeDispose() {
+        nativeData = null;
     }
 
     @Override

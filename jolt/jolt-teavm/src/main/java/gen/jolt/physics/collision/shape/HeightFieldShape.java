@@ -39,7 +39,7 @@ var returnedJSObj = jsObj.GetSampleCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);var returnedJSObj = jsObj.GetSampleCount();return returnedJSObj;")
-    private static native int internal_native_GetSampleCount(int this_addr);
+    public static native int internal_native_GetSampleCount(int this_addr);
 
     public int GetBlockSize() {
         return internal_native_GetBlockSize((int) (long) getNativeData().getCPointer());
@@ -51,7 +51,7 @@ var returnedJSObj = jsObj.GetBlockSize();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);var returnedJSObj = jsObj.GetBlockSize();return returnedJSObj;")
-    private static native int internal_native_GetBlockSize(int this_addr);
+    public static native int internal_native_GetBlockSize(int this_addr);
 
     public Vec3 GetPosition(int inX, int inY) {
         int pointer = internal_native_GetPosition((int) (long) getNativeData().getCPointer(), inX, inY);
@@ -70,7 +70,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX", "inY"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);var returnedJSObj = jsObj.GetPosition(inX, inY);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetPosition(int this_addr, int inX, int inY);
+    public static native int internal_native_GetPosition(int this_addr, int inX, int inY);
 
     public boolean IsNoCollision(int inX, int inY) {
         return internal_native_IsNoCollision((int) (long) getNativeData().getCPointer(), inX, inY);
@@ -82,7 +82,7 @@ var returnedJSObj = jsObj.IsNoCollision(inX, inY);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX", "inY"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);var returnedJSObj = jsObj.IsNoCollision(inX, inY);return returnedJSObj;")
-    private static native boolean internal_native_IsNoCollision(int this_addr, int inX, int inY);
+    public static native boolean internal_native_IsNoCollision(int this_addr, int inX, int inY);
 
     public float GetMinHeightValue() {
         return internal_native_GetMinHeightValue((int) (long) getNativeData().getCPointer());
@@ -94,7 +94,7 @@ var returnedJSObj = jsObj.GetMinHeightValue();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);var returnedJSObj = jsObj.GetMinHeightValue();return returnedJSObj;")
-    private static native float internal_native_GetMinHeightValue(int this_addr);
+    public static native float internal_native_GetMinHeightValue(int this_addr);
 
     public float GetMaxHeightValue() {
         return internal_native_GetMaxHeightValue((int) (long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ var returnedJSObj = jsObj.GetMaxHeightValue();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);var returnedJSObj = jsObj.GetMaxHeightValue();return returnedJSObj;")
-    private static native float internal_native_GetMaxHeightValue(int this_addr);
+    public static native float internal_native_GetMaxHeightValue(int this_addr);
 
     public void GetHeights(int inX, int inY, int inSizeX, int inSizeY, FloatMemRef outHeights, int inHeightsStride) {
         internal_native_GetHeights((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (outHeights != null ? outHeights.getNativeData().getCPointer() : 0), inHeightsStride);
@@ -117,7 +117,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);
 jsObj.GetHeights(inX, inY, inSizeX, inSizeY, outHeights_addr, inHeightsStride);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX", "inY", "inSizeX", "inSizeY", "outHeights_addr", "inHeightsStride"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);jsObj.GetHeights(inX, inY, inSizeX, inSizeY, outHeights_addr, inHeightsStride);")
-    private static native void internal_native_GetHeights(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int outHeights_addr, int inHeightsStride);
+    public static native void internal_native_GetHeights(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int outHeights_addr, int inHeightsStride);
 
     public void SetHeights(int inX, int inY, int inSizeX, int inSizeY, FloatMemRef inHeights, int inHeightsStride, TempAllocator inAllocator, float inActiveEdgeCosThresholdAngle) {
         internal_native_SetHeights((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (inHeights != null ? inHeights.getNativeData().getCPointer() : 0), inHeightsStride, (int) (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0), inActiveEdgeCosThresholdAngle);
@@ -128,7 +128,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);
 jsObj.SetHeights(inX, inY, inSizeX, inSizeY, inHeights_addr, inHeightsStride, inAllocator_addr, inActiveEdgeCosThresholdAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX", "inY", "inSizeX", "inSizeY", "inHeights_addr", "inHeightsStride", "inAllocator_addr", "inActiveEdgeCosThresholdAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);jsObj.SetHeights(inX, inY, inSizeX, inSizeY, inHeights_addr, inHeightsStride, inAllocator_addr, inActiveEdgeCosThresholdAngle);")
-    private static native void internal_native_SetHeights(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int inHeights_addr, int inHeightsStride, int inAllocator_addr, float inActiveEdgeCosThresholdAngle);
+    public static native void internal_native_SetHeights(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int inHeights_addr, int inHeightsStride, int inAllocator_addr, float inActiveEdgeCosThresholdAngle);
 
     public void SetHeights(int inX, int inY, int inSizeX, int inSizeY, FloatMemRef inHeights, int inHeightsStride, TempAllocator inAllocator) {
         internal_native_SetHeights((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (inHeights != null ? inHeights.getNativeData().getCPointer() : 0), inHeightsStride, (int) (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
@@ -139,7 +139,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);
 jsObj.SetHeights(inX, inY, inSizeX, inSizeY, inHeights_addr, inHeightsStride, inAllocator_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX", "inY", "inSizeX", "inSizeY", "inHeights_addr", "inHeightsStride", "inAllocator_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);jsObj.SetHeights(inX, inY, inSizeX, inSizeY, inHeights_addr, inHeightsStride, inAllocator_addr);")
-    private static native void internal_native_SetHeights(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int inHeights_addr, int inHeightsStride, int inAllocator_addr);
+    public static native void internal_native_SetHeights(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int inHeights_addr, int inHeightsStride, int inAllocator_addr);
 
     public void GetMaterials(int inX, int inY, int inSizeX, int inSizeY, Uint8MemRef outMaterials, int inMaterialsStride) {
         internal_native_GetMaterials((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (outMaterials != null ? outMaterials.getNativeData().getCPointer() : 0), inMaterialsStride);
@@ -150,7 +150,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);
 jsObj.GetMaterials(inX, inY, inSizeX, inSizeY, outMaterials_addr, inMaterialsStride);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX", "inY", "inSizeX", "inSizeY", "outMaterials_addr", "inMaterialsStride"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);jsObj.GetMaterials(inX, inY, inSizeX, inSizeY, outMaterials_addr, inMaterialsStride);")
-    private static native void internal_native_GetMaterials(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int outMaterials_addr, int inMaterialsStride);
+    public static native void internal_native_GetMaterials(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int outMaterials_addr, int inMaterialsStride);
 
     public boolean SetMaterials(int inX, int inY, int inSizeX, int inSizeY, Uint8MemRef inMaterials, int inMaterialsStride, PhysicsMaterialList inMaterialList, TempAllocator inAllocator) {
         return internal_native_SetMaterials((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (inMaterials != null ? inMaterials.getNativeData().getCPointer() : 0), inMaterialsStride, (int) (long) (inMaterialList != null ? inMaterialList.getNativeData().getCPointer() : 0), (int) (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
@@ -162,49 +162,5 @@ var returnedJSObj = jsObj.SetMaterials(inX, inY, inSizeX, inSizeY, inMaterials_a
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX", "inY", "inSizeX", "inSizeY", "inMaterials_addr", "inMaterialsStride", "inMaterialList_addr", "inAllocator_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);var returnedJSObj = jsObj.SetMaterials(inX, inY, inSizeX, inSizeY, inMaterials_addr, inMaterialsStride, inMaterialList_addr, inAllocator_addr);return returnedJSObj;")
-    private static native boolean internal_native_SetMaterials(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int inMaterials_addr, int inMaterialsStride, int inMaterialList_addr, int inAllocator_addr);
-
-    public static int native_GetSampleCount(long this_addr) {
-        return internal_native_GetSampleCount((int) this_addr);
-    }
-
-    public static int native_GetBlockSize(long this_addr) {
-        return internal_native_GetBlockSize((int) this_addr);
-    }
-
-    public static long native_GetPosition(long this_addr, int inX, int inY) {
-        return internal_native_GetPosition((int) this_addr, inX, inY);
-    }
-
-    public static boolean native_IsNoCollision(long this_addr, int inX, int inY) {
-        return internal_native_IsNoCollision((int) this_addr, inX, inY);
-    }
-
-    public static float native_GetMinHeightValue(long this_addr) {
-        return internal_native_GetMinHeightValue((int) this_addr);
-    }
-
-    public static float native_GetMaxHeightValue(long this_addr) {
-        return internal_native_GetMaxHeightValue((int) this_addr);
-    }
-
-    public static void native_GetHeights(long this_addr, int inX, int inY, int inSizeX, int inSizeY, long outHeights_addr, int inHeightsStride) {
-        internal_native_GetHeights((int) this_addr, inX, inY, inSizeX, inSizeY, (int) outHeights_addr, inHeightsStride);
-    }
-
-    public static void native_SetHeights(long this_addr, int inX, int inY, int inSizeX, int inSizeY, long inHeights_addr, int inHeightsStride, long inAllocator_addr, float inActiveEdgeCosThresholdAngle) {
-        internal_native_SetHeights((int) this_addr, inX, inY, inSizeX, inSizeY, (int) inHeights_addr, inHeightsStride, (int) inAllocator_addr, inActiveEdgeCosThresholdAngle);
-    }
-
-    public static void native_SetHeights(long this_addr, int inX, int inY, int inSizeX, int inSizeY, long inHeights_addr, int inHeightsStride, long inAllocator_addr) {
-        internal_native_SetHeights((int) this_addr, inX, inY, inSizeX, inSizeY, (int) inHeights_addr, inHeightsStride, (int) inAllocator_addr);
-    }
-
-    public static void native_GetMaterials(long this_addr, int inX, int inY, int inSizeX, int inSizeY, long outMaterials_addr, int inMaterialsStride) {
-        internal_native_GetMaterials((int) this_addr, inX, inY, inSizeX, inSizeY, (int) outMaterials_addr, inMaterialsStride);
-    }
-
-    public static boolean native_SetMaterials(long this_addr, int inX, int inY, int inSizeX, int inSizeY, long inMaterials_addr, int inMaterialsStride, long inMaterialList_addr, long inAllocator_addr) {
-        return internal_native_SetMaterials((int) this_addr, inX, inY, inSizeX, inSizeY, (int) inMaterials_addr, inMaterialsStride, (int) inMaterialList_addr, (int) inAllocator_addr);
-    }
+    public static native boolean internal_native_SetMaterials(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int inMaterials_addr, int inMaterialsStride, int inMaterialList_addr, int inAllocator_addr);
 }

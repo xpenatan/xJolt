@@ -41,7 +41,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Factory);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Factory);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public static Factory get_sInstance() {
         int pointer = internal_native_get_sInstance();
@@ -59,7 +59,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Factory.prototype.get_sInstance();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sInstance();
+    public static native int internal_native_get_sInstance();
 
     public static void set_sInstance(Factory sInstance) {
         internal_native_set_sInstance((int) (long) (sInstance != null ? sInstance.getNativeData().getCPointer() : 0));
@@ -70,17 +70,5 @@ jolt.Factory.prototype.set_sInstance(sInstance_addr);
 
 */
     @org.teavm.jso.JSBody(params = {"sInstance_addr"}, script = "jolt.Factory.prototype.set_sInstance(sInstance_addr);")
-    private static native void internal_native_set_sInstance(int sInstance_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_sInstance() {
-        return internal_native_get_sInstance();
-    }
-
-    public static void native_set_sInstance(long sInstance_addr) {
-        internal_native_set_sInstance((int) sInstance_addr);
-    }
+    public static native void internal_native_set_sInstance(int sInstance_addr);
 }

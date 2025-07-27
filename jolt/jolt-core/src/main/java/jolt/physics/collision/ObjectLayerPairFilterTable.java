@@ -22,7 +22,7 @@ public class ObjectLayerPairFilterTable extends ObjectLayerPairFilter {
     /*[-JNI;-NATIVE]
 return (jlong)new ObjectLayerPairFilterTable(inNumObjectLayers);
 */
-    private static native long internal_native_create_int(int inNumObjectLayers);
+    public static native long internal_native_create_int(int inNumObjectLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -40,7 +40,7 @@ return (jlong)new ObjectLayerPairFilterTable(inNumObjectLayers);
 ObjectLayerPairFilterTable* nativeObject = (ObjectLayerPairFilterTable*)this_addr;
 return nativeObject->GetNumObjectLayers();
 */
-    private static native int internal_native_GetNumObjectLayers(long this_addr);
+    public static native int internal_native_GetNumObjectLayers(long this_addr);
 
     public void DisableCollision(int inLayer1, int inLayer2) {
         internal_native_DisableCollision((long) getNativeData().getCPointer(), inLayer1, inLayer2);
@@ -50,7 +50,7 @@ return nativeObject->GetNumObjectLayers();
 ObjectLayerPairFilterTable* nativeObject = (ObjectLayerPairFilterTable*)this_addr;
 nativeObject->DisableCollision(inLayer1, inLayer2);
 */
-    private static native void internal_native_DisableCollision(long this_addr, int inLayer1, int inLayer2);
+    public static native void internal_native_DisableCollision(long this_addr, int inLayer1, int inLayer2);
 
     public void EnableCollision(int inLayer1, int inLayer2) {
         internal_native_EnableCollision((long) getNativeData().getCPointer(), inLayer1, inLayer2);
@@ -60,21 +60,5 @@ nativeObject->DisableCollision(inLayer1, inLayer2);
 ObjectLayerPairFilterTable* nativeObject = (ObjectLayerPairFilterTable*)this_addr;
 nativeObject->EnableCollision(inLayer1, inLayer2);
 */
-    private static native void internal_native_EnableCollision(long this_addr, int inLayer1, int inLayer2);
-
-    public static long native_create_int(int inNumObjectLayers) {
-        return internal_native_create_int(inNumObjectLayers);
-    }
-
-    public static int native_GetNumObjectLayers(long this_addr) {
-        return internal_native_GetNumObjectLayers(this_addr);
-    }
-
-    public static void native_DisableCollision(long this_addr, int inLayer1, int inLayer2) {
-        internal_native_DisableCollision(this_addr, inLayer1, inLayer2);
-    }
-
-    public static void native_EnableCollision(long this_addr, int inLayer1, int inLayer2) {
-        internal_native_EnableCollision(this_addr, inLayer1, inLayer2);
-    }
+    public static native void internal_native_EnableCollision(long this_addr, int inLayer1, int inLayer2);
 }

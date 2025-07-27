@@ -35,7 +35,7 @@ public class PathConstraint extends TwoBodyConstraint {
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 nativeObject->SetPath((PathConstraintPath* )inPath_addr, (float)inPathFraction);
 */
-    private static native void internal_native_SetPath(long this_addr, long inPath_addr, float inPathFraction);
+    public static native void internal_native_SetPath(long this_addr, long inPath_addr, float inPathFraction);
 
     public PathConstraintPath GetPath() {
         long pointer = internal_native_GetPath((long) getNativeData().getCPointer());
@@ -52,7 +52,7 @@ PathConstraint* nativeObject = (PathConstraint*)this_addr;
 const PathConstraintPath* obj = nativeObject->GetPath();
 return (jlong)obj;
 */
-    private static native long internal_native_GetPath(long this_addr);
+    public static native long internal_native_GetPath(long this_addr);
 
     public float GetPathFraction() {
         return internal_native_GetPathFraction((long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ return (jlong)obj;
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 return nativeObject->GetPathFraction();
 */
-    private static native float internal_native_GetPathFraction(long this_addr);
+    public static native float internal_native_GetPathFraction(long this_addr);
 
     public void SetMaxFrictionForce(float inFrictionForce) {
         internal_native_SetMaxFrictionForce((long) getNativeData().getCPointer(), inFrictionForce);
@@ -72,7 +72,7 @@ return nativeObject->GetPathFraction();
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 nativeObject->SetMaxFrictionForce((float)inFrictionForce);
 */
-    private static native void internal_native_SetMaxFrictionForce(long this_addr, float inFrictionForce);
+    public static native void internal_native_SetMaxFrictionForce(long this_addr, float inFrictionForce);
 
     public float GetMaxFrictionForce() {
         return internal_native_GetMaxFrictionForce((long) getNativeData().getCPointer());
@@ -82,7 +82,7 @@ nativeObject->SetMaxFrictionForce((float)inFrictionForce);
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 return nativeObject->GetMaxFrictionForce();
 */
-    private static native float internal_native_GetMaxFrictionForce(long this_addr);
+    public static native float internal_native_GetMaxFrictionForce(long this_addr);
 
     public MotorSettings GetPositionMotorSettings() {
         long pointer = internal_native_GetPositionMotorSettings((long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ return nativeObject->GetMaxFrictionForce();
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 return (jlong)&nativeObject->GetPositionMotorSettings();
 */
-    private static native long internal_native_GetPositionMotorSettings(long this_addr);
+    public static native long internal_native_GetPositionMotorSettings(long this_addr);
 
     public void SetPositionMotorState(EMotorState inState) {
         internal_native_SetPositionMotorState((long) getNativeData().getCPointer(), (long) (inState != null ? inState.getValue() : 0));
@@ -108,7 +108,7 @@ return (jlong)&nativeObject->GetPositionMotorSettings();
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 nativeObject->SetPositionMotorState((::EMotorState)inState);
 */
-    private static native void internal_native_SetPositionMotorState(long this_addr, long inState);
+    public static native void internal_native_SetPositionMotorState(long this_addr, long inState);
 
     public EMotorState GetPositionMotorState() {
         int value = internal_native_GetPositionMotorState((long) getNativeData().getCPointer());
@@ -119,7 +119,7 @@ nativeObject->SetPositionMotorState((::EMotorState)inState);
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 return (int)nativeObject->GetPositionMotorState();
 */
-    private static native int internal_native_GetPositionMotorState(long this_addr);
+    public static native int internal_native_GetPositionMotorState(long this_addr);
 
     public void SetTargetVelocity(float inVelocity) {
         internal_native_SetTargetVelocity((long) getNativeData().getCPointer(), inVelocity);
@@ -129,7 +129,7 @@ return (int)nativeObject->GetPositionMotorState();
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 nativeObject->SetTargetVelocity((float)inVelocity);
 */
-    private static native void internal_native_SetTargetVelocity(long this_addr, float inVelocity);
+    public static native void internal_native_SetTargetVelocity(long this_addr, float inVelocity);
 
     public float GetTargetVelocity() {
         return internal_native_GetTargetVelocity((long) getNativeData().getCPointer());
@@ -139,7 +139,7 @@ nativeObject->SetTargetVelocity((float)inVelocity);
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 return nativeObject->GetTargetVelocity();
 */
-    private static native float internal_native_GetTargetVelocity(long this_addr);
+    public static native float internal_native_GetTargetVelocity(long this_addr);
 
     public void SetTargetPathFraction(float inFraction) {
         internal_native_SetTargetPathFraction((long) getNativeData().getCPointer(), inFraction);
@@ -149,7 +149,7 @@ return nativeObject->GetTargetVelocity();
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 nativeObject->SetTargetPathFraction((float)inFraction);
 */
-    private static native void internal_native_SetTargetPathFraction(long this_addr, float inFraction);
+    public static native void internal_native_SetTargetPathFraction(long this_addr, float inFraction);
 
     public float GetTargetPathFraction() {
         return internal_native_GetTargetPathFraction((long) getNativeData().getCPointer());
@@ -159,53 +159,5 @@ nativeObject->SetTargetPathFraction((float)inFraction);
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 return nativeObject->GetTargetPathFraction();
 */
-    private static native float internal_native_GetTargetPathFraction(long this_addr);
-
-    public static void native_SetPath(long this_addr, long inPath_addr, float inPathFraction) {
-        internal_native_SetPath(this_addr, inPath_addr, inPathFraction);
-    }
-
-    public static long native_GetPath(long this_addr) {
-        return internal_native_GetPath(this_addr);
-    }
-
-    public static float native_GetPathFraction(long this_addr) {
-        return internal_native_GetPathFraction(this_addr);
-    }
-
-    public static void native_SetMaxFrictionForce(long this_addr, float inFrictionForce) {
-        internal_native_SetMaxFrictionForce(this_addr, inFrictionForce);
-    }
-
-    public static float native_GetMaxFrictionForce(long this_addr) {
-        return internal_native_GetMaxFrictionForce(this_addr);
-    }
-
-    public static long native_GetPositionMotorSettings(long this_addr) {
-        return internal_native_GetPositionMotorSettings(this_addr);
-    }
-
-    public static void native_SetPositionMotorState(long this_addr, long inState) {
-        internal_native_SetPositionMotorState(this_addr, inState);
-    }
-
-    public static long native_GetPositionMotorState(long this_addr) {
-        return internal_native_GetPositionMotorState(this_addr);
-    }
-
-    public static void native_SetTargetVelocity(long this_addr, float inVelocity) {
-        internal_native_SetTargetVelocity(this_addr, inVelocity);
-    }
-
-    public static float native_GetTargetVelocity(long this_addr) {
-        return internal_native_GetTargetVelocity(this_addr);
-    }
-
-    public static void native_SetTargetPathFraction(long this_addr, float inFraction) {
-        internal_native_SetTargetPathFraction(this_addr, inFraction);
-    }
-
-    public static float native_GetTargetPathFraction(long this_addr) {
-        return internal_native_GetTargetPathFraction(this_addr);
-    }
+    public static native float internal_native_GetTargetPathFraction(long this_addr);
 }

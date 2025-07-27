@@ -24,7 +24,7 @@ public class WheelTV extends Wheel {
     /*[-JNI;-NATIVE]
 return (jlong)new WheelTV(*((WheelSettingsTV* )inWheel_addr));
 */
-    private static native long internal_native_create_WheelSettingsTV(long inWheel_addr);
+    public static native long internal_native_create_WheelSettingsTV(long inWheel_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,7 +50,7 @@ return (jlong)new WheelTV(*((WheelSettingsTV* )inWheel_addr));
 WheelTV* nativeObject = (WheelTV*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public WheelSettingsTV GetSettings() {
         long pointer = internal_native_GetSettings((long) getNativeData().getCPointer());
@@ -67,7 +67,7 @@ WheelTV* nativeObject = (WheelTV*)this_addr;
 const WheelSettingsTV* obj = nativeObject->GetSettings();
 return (jlong)obj;
 */
-    private static native long internal_native_GetSettings(long this_addr);
+    public static native long internal_native_GetSettings(long this_addr);
 
     public int get_mTrackIndex() {
         return internal_native_get_mTrackIndex((long) getNativeData().getCPointer());
@@ -77,7 +77,7 @@ return (jlong)obj;
 WheelTV* nativeObject = (WheelTV*)this_addr;
 return nativeObject->mTrackIndex;
 */
-    private static native int internal_native_get_mTrackIndex(long this_addr);
+    public static native int internal_native_get_mTrackIndex(long this_addr);
 
     public void set_mTrackIndex(int mTrackIndex) {
         internal_native_set_mTrackIndex((long) getNativeData().getCPointer(), mTrackIndex);
@@ -87,7 +87,7 @@ return nativeObject->mTrackIndex;
 WheelTV* nativeObject = (WheelTV*)this_addr;
 nativeObject->mTrackIndex = mTrackIndex;
 */
-    private static native void internal_native_set_mTrackIndex(long this_addr, int mTrackIndex);
+    public static native void internal_native_set_mTrackIndex(long this_addr, int mTrackIndex);
 
     public float get_mCombinedLongitudinalFriction() {
         return internal_native_get_mCombinedLongitudinalFriction((long) getNativeData().getCPointer());
@@ -97,7 +97,7 @@ nativeObject->mTrackIndex = mTrackIndex;
 WheelTV* nativeObject = (WheelTV*)this_addr;
 return nativeObject->mCombinedLongitudinalFriction;
 */
-    private static native float internal_native_get_mCombinedLongitudinalFriction(long this_addr);
+    public static native float internal_native_get_mCombinedLongitudinalFriction(long this_addr);
 
     public void set_mCombinedLongitudinalFriction(float mCombinedLongitudinalFriction) {
         internal_native_set_mCombinedLongitudinalFriction((long) getNativeData().getCPointer(), mCombinedLongitudinalFriction);
@@ -107,7 +107,7 @@ return nativeObject->mCombinedLongitudinalFriction;
 WheelTV* nativeObject = (WheelTV*)this_addr;
 nativeObject->mCombinedLongitudinalFriction = mCombinedLongitudinalFriction;
 */
-    private static native void internal_native_set_mCombinedLongitudinalFriction(long this_addr, float mCombinedLongitudinalFriction);
+    public static native void internal_native_set_mCombinedLongitudinalFriction(long this_addr, float mCombinedLongitudinalFriction);
 
     public float get_mCombinedLateralFriction() {
         return internal_native_get_mCombinedLateralFriction((long) getNativeData().getCPointer());
@@ -117,7 +117,7 @@ nativeObject->mCombinedLongitudinalFriction = mCombinedLongitudinalFriction;
 WheelTV* nativeObject = (WheelTV*)this_addr;
 return nativeObject->mCombinedLateralFriction;
 */
-    private static native float internal_native_get_mCombinedLateralFriction(long this_addr);
+    public static native float internal_native_get_mCombinedLateralFriction(long this_addr);
 
     public void set_mCombinedLateralFriction(float mCombinedLateralFriction) {
         internal_native_set_mCombinedLateralFriction((long) getNativeData().getCPointer(), mCombinedLateralFriction);
@@ -127,7 +127,7 @@ return nativeObject->mCombinedLateralFriction;
 WheelTV* nativeObject = (WheelTV*)this_addr;
 nativeObject->mCombinedLateralFriction = mCombinedLateralFriction;
 */
-    private static native void internal_native_set_mCombinedLateralFriction(long this_addr, float mCombinedLateralFriction);
+    public static native void internal_native_set_mCombinedLateralFriction(long this_addr, float mCombinedLateralFriction);
 
     public float get_mBrakeImpulse() {
         return internal_native_get_mBrakeImpulse((long) getNativeData().getCPointer());
@@ -137,7 +137,7 @@ nativeObject->mCombinedLateralFriction = mCombinedLateralFriction;
 WheelTV* nativeObject = (WheelTV*)this_addr;
 return nativeObject->mBrakeImpulse;
 */
-    private static native float internal_native_get_mBrakeImpulse(long this_addr);
+    public static native float internal_native_get_mBrakeImpulse(long this_addr);
 
     public void set_mBrakeImpulse(float mBrakeImpulse) {
         internal_native_set_mBrakeImpulse((long) getNativeData().getCPointer(), mBrakeImpulse);
@@ -147,49 +147,5 @@ return nativeObject->mBrakeImpulse;
 WheelTV* nativeObject = (WheelTV*)this_addr;
 nativeObject->mBrakeImpulse = mBrakeImpulse;
 */
-    private static native void internal_native_set_mBrakeImpulse(long this_addr, float mBrakeImpulse);
-
-    public static long native_create_WheelSettingsTV(long inWheel_addr) {
-        return internal_native_create_WheelSettingsTV(inWheel_addr);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_GetSettings(long this_addr) {
-        return internal_native_GetSettings(this_addr);
-    }
-
-    public static int native_get_mTrackIndex(long this_addr) {
-        return internal_native_get_mTrackIndex(this_addr);
-    }
-
-    public static void native_set_mTrackIndex(long this_addr, int mTrackIndex) {
-        internal_native_set_mTrackIndex(this_addr, mTrackIndex);
-    }
-
-    public static float native_get_mCombinedLongitudinalFriction(long this_addr) {
-        return internal_native_get_mCombinedLongitudinalFriction(this_addr);
-    }
-
-    public static void native_set_mCombinedLongitudinalFriction(long this_addr, float mCombinedLongitudinalFriction) {
-        internal_native_set_mCombinedLongitudinalFriction(this_addr, mCombinedLongitudinalFriction);
-    }
-
-    public static float native_get_mCombinedLateralFriction(long this_addr) {
-        return internal_native_get_mCombinedLateralFriction(this_addr);
-    }
-
-    public static void native_set_mCombinedLateralFriction(long this_addr, float mCombinedLateralFriction) {
-        internal_native_set_mCombinedLateralFriction(this_addr, mCombinedLateralFriction);
-    }
-
-    public static float native_get_mBrakeImpulse(long this_addr) {
-        return internal_native_get_mBrakeImpulse(this_addr);
-    }
-
-    public static void native_set_mBrakeImpulse(long this_addr, float mBrakeImpulse) {
-        internal_native_set_mBrakeImpulse(this_addr, mBrakeImpulse);
-    }
+    public static native void internal_native_set_mBrakeImpulse(long this_addr, float mBrakeImpulse);
 }

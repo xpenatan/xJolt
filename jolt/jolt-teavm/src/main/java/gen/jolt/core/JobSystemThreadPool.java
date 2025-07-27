@@ -38,7 +38,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.JobSystemThreadPool);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.JobSystemThreadPool);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int GetMaxConcurrency() {
         return internal_native_GetMaxConcurrency((int) (long) getNativeData().getCPointer());
@@ -50,7 +50,7 @@ var returnedJSObj = jsObj.GetMaxConcurrency();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.JobSystemThreadPool);var returnedJSObj = jsObj.GetMaxConcurrency();return returnedJSObj;")
-    private static native int internal_native_GetMaxConcurrency(int this_addr);
+    public static native int internal_native_GetMaxConcurrency(int this_addr);
 
     public void SetNumThreads(int inNumThreads) {
         internal_native_SetNumThreads((int) (long) getNativeData().getCPointer(), inNumThreads);
@@ -61,17 +61,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.JobSystemThreadPool);
 jsObj.SetNumThreads(inNumThreads);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inNumThreads"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.JobSystemThreadPool);jsObj.SetNumThreads(inNumThreads);")
-    private static native void internal_native_SetNumThreads(int this_addr, int inNumThreads);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_GetMaxConcurrency(long this_addr) {
-        return internal_native_GetMaxConcurrency((int) this_addr);
-    }
-
-    public static void native_SetNumThreads(long this_addr, int inNumThreads) {
-        internal_native_SetNumThreads((int) this_addr, inNumThreads);
-    }
+    public static native void internal_native_SetNumThreads(int this_addr, int inNumThreads);
 }

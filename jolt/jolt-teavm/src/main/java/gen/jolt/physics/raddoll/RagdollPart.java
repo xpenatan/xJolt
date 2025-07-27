@@ -43,7 +43,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollPart);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollPart);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public TwoBodyConstraintSettings get_mToParent() {
         int pointer = internal_native_get_mToParent((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollPart);var returnedJSObj = jsObj.get_mToParent();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mToParent(int this_addr);
+    public static native int internal_native_get_mToParent(int this_addr);
 
     public void set_mToParent(TwoBodyConstraintSettings mToParent) {
         internal_native_set_mToParent((int) (long) getNativeData().getCPointer(), (int) (long) (mToParent != null ? mToParent.getNativeData().getCPointer() : 0));
@@ -73,17 +73,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollPart);
 jsObj.set_mToParent(mToParent_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mToParent_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollPart);jsObj.set_mToParent(mToParent_addr);")
-    private static native void internal_native_set_mToParent(int this_addr, int mToParent_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mToParent(long this_addr) {
-        return internal_native_get_mToParent((int) this_addr);
-    }
-
-    public static void native_set_mToParent(long this_addr, long mToParent_addr) {
-        internal_native_set_mToParent((int) this_addr, (int) mToParent_addr);
-    }
+    public static native void internal_native_set_mToParent(int this_addr, int mToParent_addr);
 }

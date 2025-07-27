@@ -36,7 +36,7 @@ var jsObj = new jolt.MeshShapeSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.MeshShapeSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     public MeshShapeSettings(TriangleList inTriangleList, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
@@ -49,7 +49,7 @@ var jsObj = new jolt.MeshShapeSettings(inTriangleList_addr, inMaterialList_addr)
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inTriangleList_addr", "inMaterialList_addr"}, script = "var jsObj = new jolt.MeshShapeSettings(inTriangleList_addr, inMaterialList_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_TriangleList_PhysicsMaterialList(int inTriangleList_addr, int inMaterialList_addr);
+    public static native int internal_native_create_TriangleList_PhysicsMaterialList(int inTriangleList_addr, int inMaterialList_addr);
 
     public MeshShapeSettings(TriangleList inTriangleList) {
         super((byte) 1, (char) 1);
@@ -62,7 +62,7 @@ var jsObj = new jolt.MeshShapeSettings(inTriangleList_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inTriangleList_addr"}, script = "var jsObj = new jolt.MeshShapeSettings(inTriangleList_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_TriangleList(int inTriangleList_addr);
+    public static native int internal_native_create_TriangleList(int inTriangleList_addr);
 
     public MeshShapeSettings(VertexList inVertices, IndexedTriangleList inTriangles, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
@@ -75,7 +75,7 @@ var jsObj = new jolt.MeshShapeSettings(inVertices_addr, inTriangles_addr, inMate
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inVertices_addr", "inTriangles_addr", "inMaterialList_addr"}, script = "var jsObj = new jolt.MeshShapeSettings(inVertices_addr, inTriangles_addr, inMaterialList_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList(int inVertices_addr, int inTriangles_addr, int inMaterialList_addr);
+    public static native int internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList(int inVertices_addr, int inTriangles_addr, int inMaterialList_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -94,7 +94,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 jsObj.Sanitize();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jsObj.Sanitize();")
-    private static native void internal_native_Sanitize(int this_addr);
+    public static native void internal_native_Sanitize(int this_addr);
 
     public VertexList get_mTriangleVertices() {
         int pointer = internal_native_get_mTriangleVertices((int) (long) getNativeData().getCPointer());
@@ -113,7 +113,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);var returnedJSObj = jsObj.get_mTriangleVertices();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mTriangleVertices(int this_addr);
+    public static native int internal_native_get_mTriangleVertices(int this_addr);
 
     public void set_mTriangleVertices(VertexList mTriangleVertices) {
         internal_native_set_mTriangleVertices((int) (long) getNativeData().getCPointer(), (int) (long) (mTriangleVertices != null ? mTriangleVertices.getNativeData().getCPointer() : 0));
@@ -124,7 +124,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 jsObj.set_mTriangleVertices(mTriangleVertices_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mTriangleVertices_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jsObj.set_mTriangleVertices(mTriangleVertices_addr);")
-    private static native void internal_native_set_mTriangleVertices(int this_addr, int mTriangleVertices_addr);
+    public static native void internal_native_set_mTriangleVertices(int this_addr, int mTriangleVertices_addr);
 
     public IndexedTriangleList get_mIndexedTriangles() {
         int pointer = internal_native_get_mIndexedTriangles((int) (long) getNativeData().getCPointer());
@@ -143,7 +143,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);var returnedJSObj = jsObj.get_mIndexedTriangles();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mIndexedTriangles(int this_addr);
+    public static native int internal_native_get_mIndexedTriangles(int this_addr);
 
     public void set_mIndexedTriangles(IndexedTriangleList mIndexedTriangles) {
         internal_native_set_mIndexedTriangles((int) (long) getNativeData().getCPointer(), (int) (long) (mIndexedTriangles != null ? mIndexedTriangles.getNativeData().getCPointer() : 0));
@@ -154,7 +154,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 jsObj.set_mIndexedTriangles(mIndexedTriangles_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mIndexedTriangles_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jsObj.set_mIndexedTriangles(mIndexedTriangles_addr);")
-    private static native void internal_native_set_mIndexedTriangles(int this_addr, int mIndexedTriangles_addr);
+    public static native void internal_native_set_mIndexedTriangles(int this_addr, int mIndexedTriangles_addr);
 
     public PhysicsMaterialList get_mMaterials() {
         int pointer = internal_native_get_mMaterials((int) (long) getNativeData().getCPointer());
@@ -173,7 +173,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);var returnedJSObj = jsObj.get_mMaterials();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mMaterials(int this_addr);
+    public static native int internal_native_get_mMaterials(int this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
         internal_native_set_mMaterials((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterials != null ? mMaterials.getNativeData().getCPointer() : 0));
@@ -184,7 +184,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 jsObj.set_mMaterials(mMaterials_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaterials_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jsObj.set_mMaterials(mMaterials_addr);")
-    private static native void internal_native_set_mMaterials(int this_addr, int mMaterials_addr);
+    public static native void internal_native_set_mMaterials(int this_addr, int mMaterials_addr);
 
     public int get_mMaxTrianglesPerLeaf() {
         return internal_native_get_mMaxTrianglesPerLeaf((int) (long) getNativeData().getCPointer());
@@ -195,7 +195,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 return jsObj.get_mMaxTrianglesPerLeaf();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);return jsObj.get_mMaxTrianglesPerLeaf();")
-    private static native int internal_native_get_mMaxTrianglesPerLeaf(int this_addr);
+    public static native int internal_native_get_mMaxTrianglesPerLeaf(int this_addr);
 
     public void set_mMaxTrianglesPerLeaf(int mMaxTrianglesPerLeaf) {
         internal_native_set_mMaxTrianglesPerLeaf((int) (long) getNativeData().getCPointer(), mMaxTrianglesPerLeaf);
@@ -206,7 +206,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 jsObj.set_mMaxTrianglesPerLeaf(mMaxTrianglesPerLeaf);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxTrianglesPerLeaf"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jsObj.set_mMaxTrianglesPerLeaf(mMaxTrianglesPerLeaf);")
-    private static native void internal_native_set_mMaxTrianglesPerLeaf(int this_addr, int mMaxTrianglesPerLeaf);
+    public static native void internal_native_set_mMaxTrianglesPerLeaf(int this_addr, int mMaxTrianglesPerLeaf);
 
     public float get_mActiveEdgeCosThresholdAngle() {
         return internal_native_get_mActiveEdgeCosThresholdAngle((int) (long) getNativeData().getCPointer());
@@ -217,7 +217,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 return jsObj.get_mActiveEdgeCosThresholdAngle();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);return jsObj.get_mActiveEdgeCosThresholdAngle();")
-    private static native float internal_native_get_mActiveEdgeCosThresholdAngle(int this_addr);
+    public static native float internal_native_get_mActiveEdgeCosThresholdAngle(int this_addr);
 
     public void set_mActiveEdgeCosThresholdAngle(float mActiveEdgeCosThresholdAngle) {
         internal_native_set_mActiveEdgeCosThresholdAngle((int) (long) getNativeData().getCPointer(), mActiveEdgeCosThresholdAngle);
@@ -228,7 +228,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 jsObj.set_mActiveEdgeCosThresholdAngle(mActiveEdgeCosThresholdAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mActiveEdgeCosThresholdAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jsObj.set_mActiveEdgeCosThresholdAngle(mActiveEdgeCosThresholdAngle);")
-    private static native void internal_native_set_mActiveEdgeCosThresholdAngle(int this_addr, float mActiveEdgeCosThresholdAngle);
+    public static native void internal_native_set_mActiveEdgeCosThresholdAngle(int this_addr, float mActiveEdgeCosThresholdAngle);
 
     public boolean get_mPerTriangleUserData() {
         return internal_native_get_mPerTriangleUserData((int) (long) getNativeData().getCPointer());
@@ -239,7 +239,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 return jsObj.get_mPerTriangleUserData();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);return jsObj.get_mPerTriangleUserData();")
-    private static native boolean internal_native_get_mPerTriangleUserData(int this_addr);
+    public static native boolean internal_native_get_mPerTriangleUserData(int this_addr);
 
     public void set_mPerTriangleUserData(boolean mPerTriangleUserData) {
         internal_native_set_mPerTriangleUserData((int) (long) getNativeData().getCPointer(), mPerTriangleUserData);
@@ -250,7 +250,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 jsObj.set_mPerTriangleUserData(mPerTriangleUserData);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPerTriangleUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jsObj.set_mPerTriangleUserData(mPerTriangleUserData);")
-    private static native void internal_native_set_mPerTriangleUserData(int this_addr, boolean mPerTriangleUserData);
+    public static native void internal_native_set_mPerTriangleUserData(int this_addr, boolean mPerTriangleUserData);
 
     public MeshShapeSettings_EBuildQuality get_mBuildQuality() {
         int value = internal_native_get_mBuildQuality((int) (long) getNativeData().getCPointer());
@@ -262,7 +262,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 return jsObj.get_mBuildQuality();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);return jsObj.get_mBuildQuality();")
-    private static native int internal_native_get_mBuildQuality(int this_addr);
+    public static native int internal_native_get_mBuildQuality(int this_addr);
 
     public void set_mBuildQuality(MeshShapeSettings_EBuildQuality mBuildQuality) {
         internal_native_set_mBuildQuality((int) (long) getNativeData().getCPointer(), (int) (long) (mBuildQuality != null ? mBuildQuality.getValue() : 0));
@@ -273,81 +273,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
 jsObj.set_mBuildQuality(mBuildQuality);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBuildQuality"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jsObj.set_mBuildQuality(mBuildQuality);")
-    private static native void internal_native_set_mBuildQuality(int this_addr, int mBuildQuality);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_TriangleList_PhysicsMaterialList(long inTriangleList_addr, long inMaterialList_addr) {
-        return internal_native_create_TriangleList_PhysicsMaterialList((int) inTriangleList_addr, (int) inMaterialList_addr);
-    }
-
-    public static long native_create_TriangleList(long inTriangleList_addr) {
-        return internal_native_create_TriangleList((int) inTriangleList_addr);
-    }
-
-    public static long native_create_VertexList_IndexedTriangleList_PhysicsMaterialList(long inVertices_addr, long inTriangles_addr, long inMaterialList_addr) {
-        return internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList((int) inVertices_addr, (int) inTriangles_addr, (int) inMaterialList_addr);
-    }
-
-    public static void native_Sanitize(long this_addr) {
-        internal_native_Sanitize((int) this_addr);
-    }
-
-    public static long native_get_mTriangleVertices(long this_addr) {
-        return internal_native_get_mTriangleVertices((int) this_addr);
-    }
-
-    public static void native_set_mTriangleVertices(long this_addr, long mTriangleVertices_addr) {
-        internal_native_set_mTriangleVertices((int) this_addr, (int) mTriangleVertices_addr);
-    }
-
-    public static long native_get_mIndexedTriangles(long this_addr) {
-        return internal_native_get_mIndexedTriangles((int) this_addr);
-    }
-
-    public static void native_set_mIndexedTriangles(long this_addr, long mIndexedTriangles_addr) {
-        internal_native_set_mIndexedTriangles((int) this_addr, (int) mIndexedTriangles_addr);
-    }
-
-    public static long native_get_mMaterials(long this_addr) {
-        return internal_native_get_mMaterials((int) this_addr);
-    }
-
-    public static void native_set_mMaterials(long this_addr, long mMaterials_addr) {
-        internal_native_set_mMaterials((int) this_addr, (int) mMaterials_addr);
-    }
-
-    public static int native_get_mMaxTrianglesPerLeaf(long this_addr) {
-        return internal_native_get_mMaxTrianglesPerLeaf((int) this_addr);
-    }
-
-    public static void native_set_mMaxTrianglesPerLeaf(long this_addr, int mMaxTrianglesPerLeaf) {
-        internal_native_set_mMaxTrianglesPerLeaf((int) this_addr, mMaxTrianglesPerLeaf);
-    }
-
-    public static float native_get_mActiveEdgeCosThresholdAngle(long this_addr) {
-        return internal_native_get_mActiveEdgeCosThresholdAngle((int) this_addr);
-    }
-
-    public static void native_set_mActiveEdgeCosThresholdAngle(long this_addr, float mActiveEdgeCosThresholdAngle) {
-        internal_native_set_mActiveEdgeCosThresholdAngle((int) this_addr, mActiveEdgeCosThresholdAngle);
-    }
-
-    public static boolean native_get_mPerTriangleUserData(long this_addr) {
-        return internal_native_get_mPerTriangleUserData((int) this_addr);
-    }
-
-    public static void native_set_mPerTriangleUserData(long this_addr, boolean mPerTriangleUserData) {
-        internal_native_set_mPerTriangleUserData((int) this_addr, mPerTriangleUserData);
-    }
-
-    public static long native_get_mBuildQuality(long this_addr) {
-        return internal_native_get_mBuildQuality((int) this_addr);
-    }
-
-    public static void native_set_mBuildQuality(long this_addr, long mBuildQuality) {
-        internal_native_set_mBuildQuality((int) this_addr, (int) mBuildQuality);
-    }
+    public static native void internal_native_set_mBuildQuality(int this_addr, int mBuildQuality);
 }

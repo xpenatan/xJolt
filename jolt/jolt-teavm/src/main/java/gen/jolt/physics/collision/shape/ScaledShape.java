@@ -28,7 +28,7 @@ var jsObj = new jolt.ScaledShape(inShape_addr, inScale_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inScale_addr"}, script = "var jsObj = new jolt.ScaledShape(inShape_addr, inScale_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Shape_Vec3(int inShape_addr, int inScale_addr);
+    public static native int internal_native_create_Shape_Vec3(int inShape_addr, int inScale_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,13 +55,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ScaledShape);var returnedJSObj = jsObj.GetScale();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetScale(int this_addr);
-
-    public static long native_create_Shape_Vec3(long inShape_addr, long inScale_addr) {
-        return internal_native_create_Shape_Vec3((int) inShape_addr, (int) inScale_addr);
-    }
-
-    public static long native_GetScale(long this_addr) {
-        return internal_native_GetScale((int) this_addr);
-    }
+    public static native int internal_native_GetScale(int this_addr);
 }

@@ -32,7 +32,7 @@ public class SoftBodyCreationSettings extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SoftBodyCreationSettings((SoftBodySharedSettings* )inSettings_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), inObjectLayer);
 */
-    private static native long internal_native_create_SoftBodySharedSettings_Vec3_Quat_int(long inSettings_addr, long inPosition_addr, long inRotation_addr, int inObjectLayer);
+    public static native long internal_native_create_SoftBodySharedSettings_Vec3_Quat_int(long inSettings_addr, long inPosition_addr, long inRotation_addr, int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -57,7 +57,7 @@ return (jlong)new SoftBodyCreationSettings((SoftBodySharedSettings* )inSettings_
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
@@ -73,7 +73,7 @@ delete nativeObject;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    private static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition((long) getNativeData().getCPointer(), (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -83,7 +83,7 @@ return (jlong)&nativeObject->mPosition;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mPosition = *((Vec3*)mPosition_addr);
 */
-    private static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
+    public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Quat get_mRotation() {
         long pointer = internal_native_get_mRotation((long) getNativeData().getCPointer());
@@ -99,7 +99,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mRotation;
 */
-    private static native long internal_native_get_mRotation(long this_addr);
+    public static native long internal_native_get_mRotation(long this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation((long) getNativeData().getCPointer(), (long) (mRotation != null ? mRotation.getNativeData().getCPointer() : 0));
@@ -109,7 +109,7 @@ return (jlong)&nativeObject->mRotation;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mRotation = *((Quat*)mRotation_addr);
 */
-    private static native void internal_native_set_mRotation(long this_addr, long mRotation_addr);
+    public static native void internal_native_set_mRotation(long this_addr, long mRotation_addr);
 
     public long get_mUserData() {
         return internal_native_get_mUserData((long) getNativeData().getCPointer());
@@ -119,7 +119,7 @@ nativeObject->mRotation = *((Quat*)mRotation_addr);
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mUserData;
 */
-    private static native long internal_native_get_mUserData(long this_addr);
+    public static native long internal_native_get_mUserData(long this_addr);
 
     public void set_mUserData(long mUserData) {
         internal_native_set_mUserData((long) getNativeData().getCPointer(), mUserData);
@@ -129,7 +129,7 @@ return nativeObject->mUserData;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mUserData = mUserData;
 */
-    private static native void internal_native_set_mUserData(long this_addr, long mUserData);
+    public static native void internal_native_set_mUserData(long this_addr, long mUserData);
 
     public int get_mObjectLayer() {
         return internal_native_get_mObjectLayer((long) getNativeData().getCPointer());
@@ -139,7 +139,7 @@ nativeObject->mUserData = mUserData;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mObjectLayer;
 */
-    private static native int internal_native_get_mObjectLayer(long this_addr);
+    public static native int internal_native_get_mObjectLayer(long this_addr);
 
     public void set_mObjectLayer(int mObjectLayer) {
         internal_native_set_mObjectLayer((long) getNativeData().getCPointer(), mObjectLayer);
@@ -149,7 +149,7 @@ return nativeObject->mObjectLayer;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mObjectLayer = mObjectLayer;
 */
-    private static native void internal_native_set_mObjectLayer(long this_addr, int mObjectLayer);
+    public static native void internal_native_set_mObjectLayer(long this_addr, int mObjectLayer);
 
     public CollisionGroup get_mCollisionGroup() {
         long pointer = internal_native_get_mCollisionGroup((long) getNativeData().getCPointer());
@@ -165,7 +165,7 @@ nativeObject->mObjectLayer = mObjectLayer;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mCollisionGroup;
 */
-    private static native long internal_native_get_mCollisionGroup(long this_addr);
+    public static native long internal_native_get_mCollisionGroup(long this_addr);
 
     public void set_mCollisionGroup(CollisionGroup mCollisionGroup) {
         internal_native_set_mCollisionGroup((long) getNativeData().getCPointer(), (long) (mCollisionGroup != null ? mCollisionGroup.getNativeData().getCPointer() : 0));
@@ -175,7 +175,7 @@ return (jlong)&nativeObject->mCollisionGroup;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mCollisionGroup = *((CollisionGroup*)mCollisionGroup_addr);
 */
-    private static native void internal_native_set_mCollisionGroup(long this_addr, long mCollisionGroup_addr);
+    public static native void internal_native_set_mCollisionGroup(long this_addr, long mCollisionGroup_addr);
 
     public int get_mNumIterations() {
         return internal_native_get_mNumIterations((long) getNativeData().getCPointer());
@@ -185,7 +185,7 @@ nativeObject->mCollisionGroup = *((CollisionGroup*)mCollisionGroup_addr);
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mNumIterations;
 */
-    private static native int internal_native_get_mNumIterations(long this_addr);
+    public static native int internal_native_get_mNumIterations(long this_addr);
 
     public void set_mNumIterations(int mNumIterations) {
         internal_native_set_mNumIterations((long) getNativeData().getCPointer(), mNumIterations);
@@ -195,7 +195,7 @@ return nativeObject->mNumIterations;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mNumIterations = mNumIterations;
 */
-    private static native void internal_native_set_mNumIterations(long this_addr, int mNumIterations);
+    public static native void internal_native_set_mNumIterations(long this_addr, int mNumIterations);
 
     public float get_mLinearDamping() {
         return internal_native_get_mLinearDamping((long) getNativeData().getCPointer());
@@ -205,7 +205,7 @@ nativeObject->mNumIterations = mNumIterations;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mLinearDamping;
 */
-    private static native float internal_native_get_mLinearDamping(long this_addr);
+    public static native float internal_native_get_mLinearDamping(long this_addr);
 
     public void set_mLinearDamping(float mLinearDamping) {
         internal_native_set_mLinearDamping((long) getNativeData().getCPointer(), mLinearDamping);
@@ -215,7 +215,7 @@ return nativeObject->mLinearDamping;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mLinearDamping = mLinearDamping;
 */
-    private static native void internal_native_set_mLinearDamping(long this_addr, float mLinearDamping);
+    public static native void internal_native_set_mLinearDamping(long this_addr, float mLinearDamping);
 
     public float get_mMaxLinearVelocity() {
         return internal_native_get_mMaxLinearVelocity((long) getNativeData().getCPointer());
@@ -225,7 +225,7 @@ nativeObject->mLinearDamping = mLinearDamping;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mMaxLinearVelocity;
 */
-    private static native float internal_native_get_mMaxLinearVelocity(long this_addr);
+    public static native float internal_native_get_mMaxLinearVelocity(long this_addr);
 
     public void set_mMaxLinearVelocity(float mMaxLinearVelocity) {
         internal_native_set_mMaxLinearVelocity((long) getNativeData().getCPointer(), mMaxLinearVelocity);
@@ -235,7 +235,7 @@ return nativeObject->mMaxLinearVelocity;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mMaxLinearVelocity = mMaxLinearVelocity;
 */
-    private static native void internal_native_set_mMaxLinearVelocity(long this_addr, float mMaxLinearVelocity);
+    public static native void internal_native_set_mMaxLinearVelocity(long this_addr, float mMaxLinearVelocity);
 
     public float get_mRestitution() {
         return internal_native_get_mRestitution((long) getNativeData().getCPointer());
@@ -245,7 +245,7 @@ nativeObject->mMaxLinearVelocity = mMaxLinearVelocity;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mRestitution;
 */
-    private static native float internal_native_get_mRestitution(long this_addr);
+    public static native float internal_native_get_mRestitution(long this_addr);
 
     public void set_mRestitution(float mRestitution) {
         internal_native_set_mRestitution((long) getNativeData().getCPointer(), mRestitution);
@@ -255,7 +255,7 @@ return nativeObject->mRestitution;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mRestitution = mRestitution;
 */
-    private static native void internal_native_set_mRestitution(long this_addr, float mRestitution);
+    public static native void internal_native_set_mRestitution(long this_addr, float mRestitution);
 
     public float get_mFriction() {
         return internal_native_get_mFriction((long) getNativeData().getCPointer());
@@ -265,7 +265,7 @@ nativeObject->mRestitution = mRestitution;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mFriction;
 */
-    private static native float internal_native_get_mFriction(long this_addr);
+    public static native float internal_native_get_mFriction(long this_addr);
 
     public void set_mFriction(float mFriction) {
         internal_native_set_mFriction((long) getNativeData().getCPointer(), mFriction);
@@ -275,7 +275,7 @@ return nativeObject->mFriction;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mFriction = mFriction;
 */
-    private static native void internal_native_set_mFriction(long this_addr, float mFriction);
+    public static native void internal_native_set_mFriction(long this_addr, float mFriction);
 
     public float get_mPressure() {
         return internal_native_get_mPressure((long) getNativeData().getCPointer());
@@ -285,7 +285,7 @@ nativeObject->mFriction = mFriction;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mPressure;
 */
-    private static native float internal_native_get_mPressure(long this_addr);
+    public static native float internal_native_get_mPressure(long this_addr);
 
     public void set_mPressure(float mPressure) {
         internal_native_set_mPressure((long) getNativeData().getCPointer(), mPressure);
@@ -295,7 +295,7 @@ return nativeObject->mPressure;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mPressure = mPressure;
 */
-    private static native void internal_native_set_mPressure(long this_addr, float mPressure);
+    public static native void internal_native_set_mPressure(long this_addr, float mPressure);
 
     public float get_mGravityFactor() {
         return internal_native_get_mGravityFactor((long) getNativeData().getCPointer());
@@ -305,7 +305,7 @@ nativeObject->mPressure = mPressure;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mGravityFactor;
 */
-    private static native float internal_native_get_mGravityFactor(long this_addr);
+    public static native float internal_native_get_mGravityFactor(long this_addr);
 
     public void set_mGravityFactor(float mGravityFactor) {
         internal_native_set_mGravityFactor((long) getNativeData().getCPointer(), mGravityFactor);
@@ -315,7 +315,7 @@ return nativeObject->mGravityFactor;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mGravityFactor = mGravityFactor;
 */
-    private static native void internal_native_set_mGravityFactor(long this_addr, float mGravityFactor);
+    public static native void internal_native_set_mGravityFactor(long this_addr, float mGravityFactor);
 
     public boolean get_mUpdatePosition() {
         return internal_native_get_mUpdatePosition((long) getNativeData().getCPointer());
@@ -325,7 +325,7 @@ nativeObject->mGravityFactor = mGravityFactor;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mUpdatePosition;
 */
-    private static native boolean internal_native_get_mUpdatePosition(long this_addr);
+    public static native boolean internal_native_get_mUpdatePosition(long this_addr);
 
     public void set_mUpdatePosition(boolean mUpdatePosition) {
         internal_native_set_mUpdatePosition((long) getNativeData().getCPointer(), mUpdatePosition);
@@ -335,7 +335,7 @@ return nativeObject->mUpdatePosition;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mUpdatePosition = mUpdatePosition;
 */
-    private static native void internal_native_set_mUpdatePosition(long this_addr, boolean mUpdatePosition);
+    public static native void internal_native_set_mUpdatePosition(long this_addr, boolean mUpdatePosition);
 
     public boolean get_mMakeRotationIdentity() {
         return internal_native_get_mMakeRotationIdentity((long) getNativeData().getCPointer());
@@ -345,7 +345,7 @@ nativeObject->mUpdatePosition = mUpdatePosition;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mMakeRotationIdentity;
 */
-    private static native boolean internal_native_get_mMakeRotationIdentity(long this_addr);
+    public static native boolean internal_native_get_mMakeRotationIdentity(long this_addr);
 
     public void set_mMakeRotationIdentity(boolean mMakeRotationIdentity) {
         internal_native_set_mMakeRotationIdentity((long) getNativeData().getCPointer(), mMakeRotationIdentity);
@@ -355,7 +355,7 @@ return nativeObject->mMakeRotationIdentity;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mMakeRotationIdentity = mMakeRotationIdentity;
 */
-    private static native void internal_native_set_mMakeRotationIdentity(long this_addr, boolean mMakeRotationIdentity);
+    public static native void internal_native_set_mMakeRotationIdentity(long this_addr, boolean mMakeRotationIdentity);
 
     public boolean get_mAllowSleeping() {
         return internal_native_get_mAllowSleeping((long) getNativeData().getCPointer());
@@ -365,7 +365,7 @@ nativeObject->mMakeRotationIdentity = mMakeRotationIdentity;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return nativeObject->mAllowSleeping;
 */
-    private static native boolean internal_native_get_mAllowSleeping(long this_addr);
+    public static native boolean internal_native_get_mAllowSleeping(long this_addr);
 
     public void set_mAllowSleeping(boolean mAllowSleeping) {
         internal_native_set_mAllowSleeping((long) getNativeData().getCPointer(), mAllowSleeping);
@@ -375,133 +375,5 @@ return nativeObject->mAllowSleeping;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 nativeObject->mAllowSleeping = mAllowSleeping;
 */
-    private static native void internal_native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping);
-
-    public static long native_create_SoftBodySharedSettings_Vec3_Quat_int(long inSettings_addr, long inPosition_addr, long inRotation_addr, int inObjectLayer) {
-        return internal_native_create_SoftBodySharedSettings_Vec3_Quat_int(inSettings_addr, inPosition_addr, inRotation_addr, inObjectLayer);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition(this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition(this_addr, mPosition_addr);
-    }
-
-    public static long native_get_mRotation(long this_addr) {
-        return internal_native_get_mRotation(this_addr);
-    }
-
-    public static void native_set_mRotation(long this_addr, long mRotation_addr) {
-        internal_native_set_mRotation(this_addr, mRotation_addr);
-    }
-
-    public static long native_get_mUserData(long this_addr) {
-        return internal_native_get_mUserData(this_addr);
-    }
-
-    public static void native_set_mUserData(long this_addr, long mUserData) {
-        internal_native_set_mUserData(this_addr, mUserData);
-    }
-
-    public static int native_get_mObjectLayer(long this_addr) {
-        return internal_native_get_mObjectLayer(this_addr);
-    }
-
-    public static void native_set_mObjectLayer(long this_addr, int mObjectLayer) {
-        internal_native_set_mObjectLayer(this_addr, mObjectLayer);
-    }
-
-    public static long native_get_mCollisionGroup(long this_addr) {
-        return internal_native_get_mCollisionGroup(this_addr);
-    }
-
-    public static void native_set_mCollisionGroup(long this_addr, long mCollisionGroup_addr) {
-        internal_native_set_mCollisionGroup(this_addr, mCollisionGroup_addr);
-    }
-
-    public static int native_get_mNumIterations(long this_addr) {
-        return internal_native_get_mNumIterations(this_addr);
-    }
-
-    public static void native_set_mNumIterations(long this_addr, int mNumIterations) {
-        internal_native_set_mNumIterations(this_addr, mNumIterations);
-    }
-
-    public static float native_get_mLinearDamping(long this_addr) {
-        return internal_native_get_mLinearDamping(this_addr);
-    }
-
-    public static void native_set_mLinearDamping(long this_addr, float mLinearDamping) {
-        internal_native_set_mLinearDamping(this_addr, mLinearDamping);
-    }
-
-    public static float native_get_mMaxLinearVelocity(long this_addr) {
-        return internal_native_get_mMaxLinearVelocity(this_addr);
-    }
-
-    public static void native_set_mMaxLinearVelocity(long this_addr, float mMaxLinearVelocity) {
-        internal_native_set_mMaxLinearVelocity(this_addr, mMaxLinearVelocity);
-    }
-
-    public static float native_get_mRestitution(long this_addr) {
-        return internal_native_get_mRestitution(this_addr);
-    }
-
-    public static void native_set_mRestitution(long this_addr, float mRestitution) {
-        internal_native_set_mRestitution(this_addr, mRestitution);
-    }
-
-    public static float native_get_mFriction(long this_addr) {
-        return internal_native_get_mFriction(this_addr);
-    }
-
-    public static void native_set_mFriction(long this_addr, float mFriction) {
-        internal_native_set_mFriction(this_addr, mFriction);
-    }
-
-    public static float native_get_mPressure(long this_addr) {
-        return internal_native_get_mPressure(this_addr);
-    }
-
-    public static void native_set_mPressure(long this_addr, float mPressure) {
-        internal_native_set_mPressure(this_addr, mPressure);
-    }
-
-    public static float native_get_mGravityFactor(long this_addr) {
-        return internal_native_get_mGravityFactor(this_addr);
-    }
-
-    public static void native_set_mGravityFactor(long this_addr, float mGravityFactor) {
-        internal_native_set_mGravityFactor(this_addr, mGravityFactor);
-    }
-
-    public static boolean native_get_mUpdatePosition(long this_addr) {
-        return internal_native_get_mUpdatePosition(this_addr);
-    }
-
-    public static void native_set_mUpdatePosition(long this_addr, boolean mUpdatePosition) {
-        internal_native_set_mUpdatePosition(this_addr, mUpdatePosition);
-    }
-
-    public static boolean native_get_mMakeRotationIdentity(long this_addr) {
-        return internal_native_get_mMakeRotationIdentity(this_addr);
-    }
-
-    public static void native_set_mMakeRotationIdentity(long this_addr, boolean mMakeRotationIdentity) {
-        internal_native_set_mMakeRotationIdentity(this_addr, mMakeRotationIdentity);
-    }
-
-    public static boolean native_get_mAllowSleeping(long this_addr) {
-        return internal_native_get_mAllowSleeping(this_addr);
-    }
-
-    public static void native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping) {
-        internal_native_set_mAllowSleeping(this_addr, mAllowSleeping);
-    }
+    public static native void internal_native_set_mAllowSleeping(long this_addr, boolean mAllowSleeping);
 }

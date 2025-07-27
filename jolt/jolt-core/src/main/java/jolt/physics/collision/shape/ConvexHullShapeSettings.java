@@ -27,7 +27,7 @@ public class ConvexHullShapeSettings extends ConvexShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new ConvexHullShapeSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -38,7 +38,7 @@ return (jlong)new ConvexHullShapeSettings();
     /*[-JNI;-NATIVE]
 return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr), (float)inConvexRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    private static native long internal_native_create_ArrayVec3_float_PhysicsMaterial(long inPoints_addr, float inConvexRadius, long inMaterial_addr);
+    public static native long internal_native_create_ArrayVec3_float_PhysicsMaterial(long inPoints_addr, float inConvexRadius, long inMaterial_addr);
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius) {
         super((byte) 1, (char) 1);
@@ -49,7 +49,7 @@ return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr), (float)
     /*[-JNI;-NATIVE]
 return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr), (float)inConvexRadius);
 */
-    private static native long internal_native_create_ArrayVec3_float(long inPoints_addr, float inConvexRadius);
+    public static native long internal_native_create_ArrayVec3_float(long inPoints_addr, float inConvexRadius);
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints) {
         super((byte) 1, (char) 1);
@@ -60,7 +60,7 @@ return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr), (float)
     /*[-JNI;-NATIVE]
 return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr));
 */
-    private static native long internal_native_create_ArrayVec3(long inPoints_addr);
+    public static native long internal_native_create_ArrayVec3(long inPoints_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -84,7 +84,7 @@ return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr));
 ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
 return (jlong)&nativeObject->mPoints;
 */
-    private static native long internal_native_get_mPoints(long this_addr);
+    public static native long internal_native_get_mPoints(long this_addr);
 
     public void set_mPoints(ArrayVec3 mPoints) {
         internal_native_set_mPoints((long) getNativeData().getCPointer(), (long) (mPoints != null ? mPoints.getNativeData().getCPointer() : 0));
@@ -94,7 +94,7 @@ return (jlong)&nativeObject->mPoints;
 ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
 nativeObject->mPoints = *((ArrayVec3*)mPoints_addr);
 */
-    private static native void internal_native_set_mPoints(long this_addr, long mPoints_addr);
+    public static native void internal_native_set_mPoints(long this_addr, long mPoints_addr);
 
     public float get_mMaxConvexRadius() {
         return internal_native_get_mMaxConvexRadius((long) getNativeData().getCPointer());
@@ -104,7 +104,7 @@ nativeObject->mPoints = *((ArrayVec3*)mPoints_addr);
 ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
 return nativeObject->mMaxConvexRadius;
 */
-    private static native float internal_native_get_mMaxConvexRadius(long this_addr);
+    public static native float internal_native_get_mMaxConvexRadius(long this_addr);
 
     public void set_mMaxConvexRadius(float mMaxConvexRadius) {
         internal_native_set_mMaxConvexRadius((long) getNativeData().getCPointer(), mMaxConvexRadius);
@@ -114,7 +114,7 @@ return nativeObject->mMaxConvexRadius;
 ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
 nativeObject->mMaxConvexRadius = mMaxConvexRadius;
 */
-    private static native void internal_native_set_mMaxConvexRadius(long this_addr, float mMaxConvexRadius);
+    public static native void internal_native_set_mMaxConvexRadius(long this_addr, float mMaxConvexRadius);
 
     public float get_mMaxErrorConvexRadius() {
         return internal_native_get_mMaxErrorConvexRadius((long) getNativeData().getCPointer());
@@ -124,7 +124,7 @@ nativeObject->mMaxConvexRadius = mMaxConvexRadius;
 ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
 return nativeObject->mMaxErrorConvexRadius;
 */
-    private static native float internal_native_get_mMaxErrorConvexRadius(long this_addr);
+    public static native float internal_native_get_mMaxErrorConvexRadius(long this_addr);
 
     public void set_mMaxErrorConvexRadius(float mMaxErrorConvexRadius) {
         internal_native_set_mMaxErrorConvexRadius((long) getNativeData().getCPointer(), mMaxErrorConvexRadius);
@@ -134,7 +134,7 @@ return nativeObject->mMaxErrorConvexRadius;
 ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
 nativeObject->mMaxErrorConvexRadius = mMaxErrorConvexRadius;
 */
-    private static native void internal_native_set_mMaxErrorConvexRadius(long this_addr, float mMaxErrorConvexRadius);
+    public static native void internal_native_set_mMaxErrorConvexRadius(long this_addr, float mMaxErrorConvexRadius);
 
     public float get_mHullTolerance() {
         return internal_native_get_mHullTolerance((long) getNativeData().getCPointer());
@@ -144,7 +144,7 @@ nativeObject->mMaxErrorConvexRadius = mMaxErrorConvexRadius;
 ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
 return nativeObject->mHullTolerance;
 */
-    private static native float internal_native_get_mHullTolerance(long this_addr);
+    public static native float internal_native_get_mHullTolerance(long this_addr);
 
     public void set_mHullTolerance(float mHullTolerance) {
         internal_native_set_mHullTolerance((long) getNativeData().getCPointer(), mHullTolerance);
@@ -154,53 +154,5 @@ return nativeObject->mHullTolerance;
 ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
 nativeObject->mHullTolerance = mHullTolerance;
 */
-    private static native void internal_native_set_mHullTolerance(long this_addr, float mHullTolerance);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_ArrayVec3_float_PhysicsMaterial(long inPoints_addr, float inConvexRadius, long inMaterial_addr) {
-        return internal_native_create_ArrayVec3_float_PhysicsMaterial(inPoints_addr, inConvexRadius, inMaterial_addr);
-    }
-
-    public static long native_create_ArrayVec3_float(long inPoints_addr, float inConvexRadius) {
-        return internal_native_create_ArrayVec3_float(inPoints_addr, inConvexRadius);
-    }
-
-    public static long native_create_ArrayVec3(long inPoints_addr) {
-        return internal_native_create_ArrayVec3(inPoints_addr);
-    }
-
-    public static long native_get_mPoints(long this_addr) {
-        return internal_native_get_mPoints(this_addr);
-    }
-
-    public static void native_set_mPoints(long this_addr, long mPoints_addr) {
-        internal_native_set_mPoints(this_addr, mPoints_addr);
-    }
-
-    public static float native_get_mMaxConvexRadius(long this_addr) {
-        return internal_native_get_mMaxConvexRadius(this_addr);
-    }
-
-    public static void native_set_mMaxConvexRadius(long this_addr, float mMaxConvexRadius) {
-        internal_native_set_mMaxConvexRadius(this_addr, mMaxConvexRadius);
-    }
-
-    public static float native_get_mMaxErrorConvexRadius(long this_addr) {
-        return internal_native_get_mMaxErrorConvexRadius(this_addr);
-    }
-
-    public static void native_set_mMaxErrorConvexRadius(long this_addr, float mMaxErrorConvexRadius) {
-        internal_native_set_mMaxErrorConvexRadius(this_addr, mMaxErrorConvexRadius);
-    }
-
-    public static float native_get_mHullTolerance(long this_addr) {
-        return internal_native_get_mHullTolerance(this_addr);
-    }
-
-    public static void native_set_mHullTolerance(long this_addr, float mHullTolerance) {
-        internal_native_set_mHullTolerance(this_addr, mHullTolerance);
-    }
+    public static native void internal_native_set_mHullTolerance(long this_addr, float mHullTolerance);
 }

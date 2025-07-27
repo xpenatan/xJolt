@@ -33,7 +33,7 @@ var returnedJSObj = jsObj.GetNumSubShapes();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShape);var returnedJSObj = jsObj.GetNumSubShapes();return returnedJSObj;")
-    private static native int internal_native_GetNumSubShapes(int this_addr);
+    public static native int internal_native_GetNumSubShapes(int this_addr);
 
     public CompoundShapeSubShape GetSubShape(int inIdx) {
         int pointer = internal_native_GetSubShape((int) (long) getNativeData().getCPointer(), inIdx);
@@ -52,13 +52,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIdx"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShape);var returnedJSObj = jsObj.GetSubShape(inIdx);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetSubShape(int this_addr, int inIdx);
-
-    public static int native_GetNumSubShapes(long this_addr) {
-        return internal_native_GetNumSubShapes((int) this_addr);
-    }
-
-    public static long native_GetSubShape(long this_addr, int inIdx) {
-        return internal_native_GetSubShape((int) this_addr, inIdx);
-    }
+    public static native int internal_native_GetSubShape(int this_addr, int inIdx);
 }

@@ -49,7 +49,7 @@ public class DebugRendererVertex extends IDLBase {
 DebugRendererVertex* nativeObject = (DebugRendererVertex*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Float3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
@@ -65,7 +65,7 @@ delete nativeObject;
 DebugRendererVertex* nativeObject = (DebugRendererVertex*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    private static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition(long this_addr);
 
     public Float3 get_mNormal() {
         long pointer = internal_native_get_mNormal((long) getNativeData().getCPointer());
@@ -81,7 +81,7 @@ return (jlong)&nativeObject->mPosition;
 DebugRendererVertex* nativeObject = (DebugRendererVertex*)this_addr;
 return (jlong)&nativeObject->mNormal;
 */
-    private static native long internal_native_get_mNormal(long this_addr);
+    public static native long internal_native_get_mNormal(long this_addr);
 
     public Float2 get_mUV() {
         long pointer = internal_native_get_mUV((long) getNativeData().getCPointer());
@@ -97,7 +97,7 @@ return (jlong)&nativeObject->mNormal;
 DebugRendererVertex* nativeObject = (DebugRendererVertex*)this_addr;
 return (jlong)&nativeObject->mUV;
 */
-    private static native long internal_native_get_mUV(long this_addr);
+    public static native long internal_native_get_mUV(long this_addr);
 
     public Color get_mColor() {
         long pointer = internal_native_get_mColor((long) getNativeData().getCPointer());
@@ -113,25 +113,5 @@ return (jlong)&nativeObject->mUV;
 DebugRendererVertex* nativeObject = (DebugRendererVertex*)this_addr;
 return (jlong)&nativeObject->mColor;
 */
-    private static native long internal_native_get_mColor(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition(this_addr);
-    }
-
-    public static long native_get_mNormal(long this_addr) {
-        return internal_native_get_mNormal(this_addr);
-    }
-
-    public static long native_get_mUV(long this_addr) {
-        return internal_native_get_mUV(this_addr);
-    }
-
-    public static long native_get_mColor(long this_addr) {
-        return internal_native_get_mColor(this_addr);
-    }
+    public static native long internal_native_get_mColor(long this_addr);
 }

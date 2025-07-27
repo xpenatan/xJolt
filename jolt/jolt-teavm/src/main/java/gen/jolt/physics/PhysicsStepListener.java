@@ -35,7 +35,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public PhysicsStepListener() {
         int addr = internal_native_create();
@@ -68,22 +68,14 @@ var jsObj = new jolt.PhysicsStepListenerJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.PhysicsStepListenerJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "OnStep" }, script = "var PhysicsStepListenerJS = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerJS); PhysicsStepListenerJS.OnStep = OnStep;")
-    private static native void internal_native_setupCallback(int this_addr, OnStep OnStep);
+    public static native void internal_native_setupCallback(int this_addr, OnStep OnStep);
 
     @org.teavm.jso.JSFunctor()
     public interface OnStep extends org.teavm.jso.JSObject {
 
         void OnStep(int inContext);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

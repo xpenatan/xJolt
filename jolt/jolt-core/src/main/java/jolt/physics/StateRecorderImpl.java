@@ -22,7 +22,7 @@ public class StateRecorderImpl extends StateRecorder {
     /*[-JNI;-NATIVE]
 return (jlong)new StateRecorderImpl();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new StateRecorderImpl();
 StateRecorderImpl* nativeObject = (StateRecorderImpl*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void Clear() {
         internal_native_Clear((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 StateRecorderImpl* nativeObject = (StateRecorderImpl*)this_addr;
 nativeObject->Clear();
 */
-    private static native void internal_native_Clear(long this_addr);
+    public static native void internal_native_Clear(long this_addr);
 
     public void Rewind() {
         internal_native_Rewind((long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ nativeObject->Clear();
 StateRecorderImpl* nativeObject = (StateRecorderImpl*)this_addr;
 nativeObject->Rewind();
 */
-    private static native void internal_native_Rewind(long this_addr);
+    public static native void internal_native_Rewind(long this_addr);
 
     public boolean IsEqual(StateRecorderImpl inReference) {
         return internal_native_IsEqual((long) getNativeData().getCPointer(), (long) (inReference != null ? inReference.getNativeData().getCPointer() : 0));
@@ -78,25 +78,5 @@ nativeObject->Rewind();
 StateRecorderImpl* nativeObject = (StateRecorderImpl*)this_addr;
 return nativeObject->IsEqual(*((StateRecorderImpl* )inReference_addr));
 */
-    private static native boolean internal_native_IsEqual(long this_addr, long inReference_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_Clear(long this_addr) {
-        internal_native_Clear(this_addr);
-    }
-
-    public static void native_Rewind(long this_addr) {
-        internal_native_Rewind(this_addr);
-    }
-
-    public static boolean native_IsEqual(long this_addr, long inReference_addr) {
-        return internal_native_IsEqual(this_addr, inReference_addr);
-    }
+    public static native boolean internal_native_IsEqual(long this_addr, long inReference_addr);
 }

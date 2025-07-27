@@ -29,7 +29,7 @@ var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr, inConvexRadius, inMater
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfExtent_addr", "inConvexRadius", "inMaterial_addr"}, script = "var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr, inConvexRadius, inMaterial_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Vec3_float_PhysicsMaterial(int inHalfExtent_addr, float inConvexRadius, int inMaterial_addr);
+    public static native int internal_native_create_Vec3_float_PhysicsMaterial(int inHalfExtent_addr, float inConvexRadius, int inMaterial_addr);
 
     public BoxShapeSettings(Vec3 inHalfExtent, float inConvexRadius) {
         super((byte) 1, (char) 1);
@@ -42,7 +42,7 @@ var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr, inConvexRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfExtent_addr", "inConvexRadius"}, script = "var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr, inConvexRadius);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Vec3_float(int inHalfExtent_addr, float inConvexRadius);
+    public static native int internal_native_create_Vec3_float(int inHalfExtent_addr, float inConvexRadius);
 
     public BoxShapeSettings(Vec3 inHalfExtent) {
         super((byte) 1, (char) 1);
@@ -55,7 +55,7 @@ var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfExtent_addr"}, script = "var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_Vec3(int inHalfExtent_addr);
+    public static native int internal_native_create_Vec3(int inHalfExtent_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -82,7 +82,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BoxShapeSettings);var returnedJSObj = jsObj.get_mHalfExtent();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mHalfExtent(int this_addr);
+    public static native int internal_native_get_mHalfExtent(int this_addr);
 
     public void set_mHalfExtent(Vec3 mHalfExtent) {
         internal_native_set_mHalfExtent((int) (long) getNativeData().getCPointer(), (int) (long) (mHalfExtent != null ? mHalfExtent.getNativeData().getCPointer() : 0));
@@ -93,7 +93,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BoxShapeSettings);
 jsObj.set_mHalfExtent(mHalfExtent_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mHalfExtent_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BoxShapeSettings);jsObj.set_mHalfExtent(mHalfExtent_addr);")
-    private static native void internal_native_set_mHalfExtent(int this_addr, int mHalfExtent_addr);
+    public static native void internal_native_set_mHalfExtent(int this_addr, int mHalfExtent_addr);
 
     public float get_mConvexRadius() {
         return internal_native_get_mConvexRadius((int) (long) getNativeData().getCPointer());
@@ -104,7 +104,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BoxShapeSettings);
 return jsObj.get_mConvexRadius();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BoxShapeSettings);return jsObj.get_mConvexRadius();")
-    private static native float internal_native_get_mConvexRadius(int this_addr);
+    public static native float internal_native_get_mConvexRadius(int this_addr);
 
     public void set_mConvexRadius(float mConvexRadius) {
         internal_native_set_mConvexRadius((int) (long) getNativeData().getCPointer(), mConvexRadius);
@@ -115,33 +115,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BoxShapeSettings);
 jsObj.set_mConvexRadius(mConvexRadius);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mConvexRadius"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BoxShapeSettings);jsObj.set_mConvexRadius(mConvexRadius);")
-    private static native void internal_native_set_mConvexRadius(int this_addr, float mConvexRadius);
-
-    public static long native_create_Vec3_float_PhysicsMaterial(long inHalfExtent_addr, float inConvexRadius, long inMaterial_addr) {
-        return internal_native_create_Vec3_float_PhysicsMaterial((int) inHalfExtent_addr, inConvexRadius, (int) inMaterial_addr);
-    }
-
-    public static long native_create_Vec3_float(long inHalfExtent_addr, float inConvexRadius) {
-        return internal_native_create_Vec3_float((int) inHalfExtent_addr, inConvexRadius);
-    }
-
-    public static long native_create_Vec3(long inHalfExtent_addr) {
-        return internal_native_create_Vec3((int) inHalfExtent_addr);
-    }
-
-    public static long native_get_mHalfExtent(long this_addr) {
-        return internal_native_get_mHalfExtent((int) this_addr);
-    }
-
-    public static void native_set_mHalfExtent(long this_addr, long mHalfExtent_addr) {
-        internal_native_set_mHalfExtent((int) this_addr, (int) mHalfExtent_addr);
-    }
-
-    public static float native_get_mConvexRadius(long this_addr) {
-        return internal_native_get_mConvexRadius((int) this_addr);
-    }
-
-    public static void native_set_mConvexRadius(long this_addr, float mConvexRadius) {
-        internal_native_set_mConvexRadius((int) this_addr, mConvexRadius);
-    }
+    public static native void internal_native_set_mConvexRadius(int this_addr, float mConvexRadius);
 }

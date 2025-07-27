@@ -23,7 +23,7 @@ public class PhysicsMaterial extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new PhysicsMaterial();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -40,7 +40,7 @@ return (jlong)new PhysicsMaterial();
 PhysicsMaterial* nativeObject = (PhysicsMaterial*)this_addr;
 return nativeObject->GetRefCount();
 */
-    private static native int internal_native_GetRefCount(long this_addr);
+    public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
         internal_native_AddRef((long) getNativeData().getCPointer());
@@ -50,7 +50,7 @@ return nativeObject->GetRefCount();
 PhysicsMaterial* nativeObject = (PhysicsMaterial*)this_addr;
 nativeObject->AddRef();
 */
-    private static native void internal_native_AddRef(long this_addr);
+    public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
         internal_native_Release((long) getNativeData().getCPointer());
@@ -60,21 +60,5 @@ nativeObject->AddRef();
 PhysicsMaterial* nativeObject = (PhysicsMaterial*)this_addr;
 nativeObject->Release();
 */
-    private static native void internal_native_Release(long this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount(this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef(this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release(this_addr);
-    }
+    public static native void internal_native_Release(long this_addr);
 }

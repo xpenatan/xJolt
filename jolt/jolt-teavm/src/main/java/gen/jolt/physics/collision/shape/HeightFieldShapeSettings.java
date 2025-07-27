@@ -39,7 +39,7 @@ var jsObj = new jolt.HeightFieldShapeSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.HeightFieldShapeSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -66,7 +66,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);var returnedJSObj = jsObj.get_mOffset();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mOffset(int this_addr);
+    public static native int internal_native_get_mOffset(int this_addr);
 
     public void set_mOffset(Vec3 mOffset) {
         internal_native_set_mOffset((int) (long) getNativeData().getCPointer(), (int) (long) (mOffset != null ? mOffset.getNativeData().getCPointer() : 0));
@@ -77,7 +77,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mOffset(mOffset_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mOffset_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mOffset(mOffset_addr);")
-    private static native void internal_native_set_mOffset(int this_addr, int mOffset_addr);
+    public static native void internal_native_set_mOffset(int this_addr, int mOffset_addr);
 
     public Vec3 get_mScale() {
         int pointer = internal_native_get_mScale((int) (long) getNativeData().getCPointer());
@@ -96,7 +96,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);var returnedJSObj = jsObj.get_mScale();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mScale(int this_addr);
+    public static native int internal_native_get_mScale(int this_addr);
 
     public void set_mScale(Vec3 mScale) {
         internal_native_set_mScale((int) (long) getNativeData().getCPointer(), (int) (long) (mScale != null ? mScale.getNativeData().getCPointer() : 0));
@@ -107,7 +107,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mScale(mScale_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mScale_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mScale(mScale_addr);")
-    private static native void internal_native_set_mScale(int this_addr, int mScale_addr);
+    public static native void internal_native_set_mScale(int this_addr, int mScale_addr);
 
     public int get_mSampleCount() {
         return internal_native_get_mSampleCount((int) (long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 return jsObj.get_mSampleCount();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);return jsObj.get_mSampleCount();")
-    private static native int internal_native_get_mSampleCount(int this_addr);
+    public static native int internal_native_get_mSampleCount(int this_addr);
 
     public void set_mSampleCount(int mSampleCount) {
         internal_native_set_mSampleCount((int) (long) getNativeData().getCPointer(), mSampleCount);
@@ -129,7 +129,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mSampleCount(mSampleCount);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSampleCount"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mSampleCount(mSampleCount);")
-    private static native void internal_native_set_mSampleCount(int this_addr, int mSampleCount);
+    public static native void internal_native_set_mSampleCount(int this_addr, int mSampleCount);
 
     public float get_mMinHeightValue() {
         return internal_native_get_mMinHeightValue((int) (long) getNativeData().getCPointer());
@@ -140,7 +140,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 return jsObj.get_mMinHeightValue();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);return jsObj.get_mMinHeightValue();")
-    private static native float internal_native_get_mMinHeightValue(int this_addr);
+    public static native float internal_native_get_mMinHeightValue(int this_addr);
 
     public void set_mMinHeightValue(float mMinHeightValue) {
         internal_native_set_mMinHeightValue((int) (long) getNativeData().getCPointer(), mMinHeightValue);
@@ -151,7 +151,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mMinHeightValue(mMinHeightValue);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMinHeightValue"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mMinHeightValue(mMinHeightValue);")
-    private static native void internal_native_set_mMinHeightValue(int this_addr, float mMinHeightValue);
+    public static native void internal_native_set_mMinHeightValue(int this_addr, float mMinHeightValue);
 
     public float get_mMaxHeightValue() {
         return internal_native_get_mMaxHeightValue((int) (long) getNativeData().getCPointer());
@@ -162,7 +162,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 return jsObj.get_mMaxHeightValue();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);return jsObj.get_mMaxHeightValue();")
-    private static native float internal_native_get_mMaxHeightValue(int this_addr);
+    public static native float internal_native_get_mMaxHeightValue(int this_addr);
 
     public void set_mMaxHeightValue(float mMaxHeightValue) {
         internal_native_set_mMaxHeightValue((int) (long) getNativeData().getCPointer(), mMaxHeightValue);
@@ -173,7 +173,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mMaxHeightValue(mMaxHeightValue);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaxHeightValue"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mMaxHeightValue(mMaxHeightValue);")
-    private static native void internal_native_set_mMaxHeightValue(int this_addr, float mMaxHeightValue);
+    public static native void internal_native_set_mMaxHeightValue(int this_addr, float mMaxHeightValue);
 
     public int get_mMaterialsCapacity() {
         return internal_native_get_mMaterialsCapacity((int) (long) getNativeData().getCPointer());
@@ -184,7 +184,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 return jsObj.get_mMaterialsCapacity();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);return jsObj.get_mMaterialsCapacity();")
-    private static native int internal_native_get_mMaterialsCapacity(int this_addr);
+    public static native int internal_native_get_mMaterialsCapacity(int this_addr);
 
     public void set_mMaterialsCapacity(int mMaterialsCapacity) {
         internal_native_set_mMaterialsCapacity((int) (long) getNativeData().getCPointer(), mMaterialsCapacity);
@@ -195,7 +195,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mMaterialsCapacity(mMaterialsCapacity);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaterialsCapacity"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mMaterialsCapacity(mMaterialsCapacity);")
-    private static native void internal_native_set_mMaterialsCapacity(int this_addr, int mMaterialsCapacity);
+    public static native void internal_native_set_mMaterialsCapacity(int this_addr, int mMaterialsCapacity);
 
     public int get_mBlockSize() {
         return internal_native_get_mBlockSize((int) (long) getNativeData().getCPointer());
@@ -206,7 +206,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 return jsObj.get_mBlockSize();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);return jsObj.get_mBlockSize();")
-    private static native int internal_native_get_mBlockSize(int this_addr);
+    public static native int internal_native_get_mBlockSize(int this_addr);
 
     public void set_mBlockSize(int mBlockSize) {
         internal_native_set_mBlockSize((int) (long) getNativeData().getCPointer(), mBlockSize);
@@ -217,7 +217,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mBlockSize(mBlockSize);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBlockSize"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mBlockSize(mBlockSize);")
-    private static native void internal_native_set_mBlockSize(int this_addr, int mBlockSize);
+    public static native void internal_native_set_mBlockSize(int this_addr, int mBlockSize);
 
     public int get_mBitsPerSample() {
         return internal_native_get_mBitsPerSample((int) (long) getNativeData().getCPointer());
@@ -228,7 +228,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 return jsObj.get_mBitsPerSample();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);return jsObj.get_mBitsPerSample();")
-    private static native int internal_native_get_mBitsPerSample(int this_addr);
+    public static native int internal_native_get_mBitsPerSample(int this_addr);
 
     public void set_mBitsPerSample(int mBitsPerSample) {
         internal_native_set_mBitsPerSample((int) (long) getNativeData().getCPointer(), mBitsPerSample);
@@ -239,7 +239,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mBitsPerSample(mBitsPerSample);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBitsPerSample"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mBitsPerSample(mBitsPerSample);")
-    private static native void internal_native_set_mBitsPerSample(int this_addr, int mBitsPerSample);
+    public static native void internal_native_set_mBitsPerSample(int this_addr, int mBitsPerSample);
 
     public ArrayFloat get_mHeightSamples() {
         int pointer = internal_native_get_mHeightSamples((int) (long) getNativeData().getCPointer());
@@ -258,7 +258,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);var returnedJSObj = jsObj.get_mHeightSamples();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mHeightSamples(int this_addr);
+    public static native int internal_native_get_mHeightSamples(int this_addr);
 
     public void set_mHeightSamples(ArrayFloat mHeightSamples) {
         internal_native_set_mHeightSamples((int) (long) getNativeData().getCPointer(), (int) (long) (mHeightSamples != null ? mHeightSamples.getNativeData().getCPointer() : 0));
@@ -269,7 +269,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mHeightSamples(mHeightSamples_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mHeightSamples_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mHeightSamples(mHeightSamples_addr);")
-    private static native void internal_native_set_mHeightSamples(int this_addr, int mHeightSamples_addr);
+    public static native void internal_native_set_mHeightSamples(int this_addr, int mHeightSamples_addr);
 
     public ArrayUint8 get_mMaterialIndices() {
         int pointer = internal_native_get_mMaterialIndices((int) (long) getNativeData().getCPointer());
@@ -288,7 +288,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);var returnedJSObj = jsObj.get_mMaterialIndices();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mMaterialIndices(int this_addr);
+    public static native int internal_native_get_mMaterialIndices(int this_addr);
 
     public void set_mMaterialIndices(ArrayUint8 mMaterialIndices) {
         internal_native_set_mMaterialIndices((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterialIndices != null ? mMaterialIndices.getNativeData().getCPointer() : 0));
@@ -299,7 +299,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mMaterialIndices(mMaterialIndices_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaterialIndices_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mMaterialIndices(mMaterialIndices_addr);")
-    private static native void internal_native_set_mMaterialIndices(int this_addr, int mMaterialIndices_addr);
+    public static native void internal_native_set_mMaterialIndices(int this_addr, int mMaterialIndices_addr);
 
     public PhysicsMaterialList get_mMaterials() {
         int pointer = internal_native_get_mMaterials((int) (long) getNativeData().getCPointer());
@@ -318,7 +318,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);var returnedJSObj = jsObj.get_mMaterials();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mMaterials(int this_addr);
+    public static native int internal_native_get_mMaterials(int this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
         internal_native_set_mMaterials((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterials != null ? mMaterials.getNativeData().getCPointer() : 0));
@@ -329,7 +329,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mMaterials(mMaterials_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mMaterials_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mMaterials(mMaterials_addr);")
-    private static native void internal_native_set_mMaterials(int this_addr, int mMaterials_addr);
+    public static native void internal_native_set_mMaterials(int this_addr, int mMaterials_addr);
 
     public float get_mActiveEdgeCosThresholdAngle() {
         return internal_native_get_mActiveEdgeCosThresholdAngle((int) (long) getNativeData().getCPointer());
@@ -340,7 +340,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 return jsObj.get_mActiveEdgeCosThresholdAngle();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);return jsObj.get_mActiveEdgeCosThresholdAngle();")
-    private static native float internal_native_get_mActiveEdgeCosThresholdAngle(int this_addr);
+    public static native float internal_native_get_mActiveEdgeCosThresholdAngle(int this_addr);
 
     public void set_mActiveEdgeCosThresholdAngle(float mActiveEdgeCosThresholdAngle) {
         internal_native_set_mActiveEdgeCosThresholdAngle((int) (long) getNativeData().getCPointer(), mActiveEdgeCosThresholdAngle);
@@ -351,105 +351,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);
 jsObj.set_mActiveEdgeCosThresholdAngle(mActiveEdgeCosThresholdAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mActiveEdgeCosThresholdAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShapeSettings);jsObj.set_mActiveEdgeCosThresholdAngle(mActiveEdgeCosThresholdAngle);")
-    private static native void internal_native_set_mActiveEdgeCosThresholdAngle(int this_addr, float mActiveEdgeCosThresholdAngle);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_get_mOffset(long this_addr) {
-        return internal_native_get_mOffset((int) this_addr);
-    }
-
-    public static void native_set_mOffset(long this_addr, long mOffset_addr) {
-        internal_native_set_mOffset((int) this_addr, (int) mOffset_addr);
-    }
-
-    public static long native_get_mScale(long this_addr) {
-        return internal_native_get_mScale((int) this_addr);
-    }
-
-    public static void native_set_mScale(long this_addr, long mScale_addr) {
-        internal_native_set_mScale((int) this_addr, (int) mScale_addr);
-    }
-
-    public static int native_get_mSampleCount(long this_addr) {
-        return internal_native_get_mSampleCount((int) this_addr);
-    }
-
-    public static void native_set_mSampleCount(long this_addr, int mSampleCount) {
-        internal_native_set_mSampleCount((int) this_addr, mSampleCount);
-    }
-
-    public static float native_get_mMinHeightValue(long this_addr) {
-        return internal_native_get_mMinHeightValue((int) this_addr);
-    }
-
-    public static void native_set_mMinHeightValue(long this_addr, float mMinHeightValue) {
-        internal_native_set_mMinHeightValue((int) this_addr, mMinHeightValue);
-    }
-
-    public static float native_get_mMaxHeightValue(long this_addr) {
-        return internal_native_get_mMaxHeightValue((int) this_addr);
-    }
-
-    public static void native_set_mMaxHeightValue(long this_addr, float mMaxHeightValue) {
-        internal_native_set_mMaxHeightValue((int) this_addr, mMaxHeightValue);
-    }
-
-    public static int native_get_mMaterialsCapacity(long this_addr) {
-        return internal_native_get_mMaterialsCapacity((int) this_addr);
-    }
-
-    public static void native_set_mMaterialsCapacity(long this_addr, int mMaterialsCapacity) {
-        internal_native_set_mMaterialsCapacity((int) this_addr, mMaterialsCapacity);
-    }
-
-    public static int native_get_mBlockSize(long this_addr) {
-        return internal_native_get_mBlockSize((int) this_addr);
-    }
-
-    public static void native_set_mBlockSize(long this_addr, int mBlockSize) {
-        internal_native_set_mBlockSize((int) this_addr, mBlockSize);
-    }
-
-    public static int native_get_mBitsPerSample(long this_addr) {
-        return internal_native_get_mBitsPerSample((int) this_addr);
-    }
-
-    public static void native_set_mBitsPerSample(long this_addr, int mBitsPerSample) {
-        internal_native_set_mBitsPerSample((int) this_addr, mBitsPerSample);
-    }
-
-    public static long native_get_mHeightSamples(long this_addr) {
-        return internal_native_get_mHeightSamples((int) this_addr);
-    }
-
-    public static void native_set_mHeightSamples(long this_addr, long mHeightSamples_addr) {
-        internal_native_set_mHeightSamples((int) this_addr, (int) mHeightSamples_addr);
-    }
-
-    public static long native_get_mMaterialIndices(long this_addr) {
-        return internal_native_get_mMaterialIndices((int) this_addr);
-    }
-
-    public static void native_set_mMaterialIndices(long this_addr, long mMaterialIndices_addr) {
-        internal_native_set_mMaterialIndices((int) this_addr, (int) mMaterialIndices_addr);
-    }
-
-    public static long native_get_mMaterials(long this_addr) {
-        return internal_native_get_mMaterials((int) this_addr);
-    }
-
-    public static void native_set_mMaterials(long this_addr, long mMaterials_addr) {
-        internal_native_set_mMaterials((int) this_addr, (int) mMaterials_addr);
-    }
-
-    public static float native_get_mActiveEdgeCosThresholdAngle(long this_addr) {
-        return internal_native_get_mActiveEdgeCosThresholdAngle((int) this_addr);
-    }
-
-    public static void native_set_mActiveEdgeCosThresholdAngle(long this_addr, float mActiveEdgeCosThresholdAngle) {
-        internal_native_set_mActiveEdgeCosThresholdAngle((int) this_addr, mActiveEdgeCosThresholdAngle);
-    }
+    public static native void internal_native_set_mActiveEdgeCosThresholdAngle(int this_addr, float mActiveEdgeCosThresholdAngle);
 }

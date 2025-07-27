@@ -36,7 +36,7 @@ var jsObj = new jolt.ConeConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ConeConstraintSettings();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -63,7 +63,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);
 return jsObj.get_mSpace();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);return jsObj.get_mSpace();")
-    private static native int internal_native_get_mSpace(int this_addr);
+    public static native int internal_native_get_mSpace(int this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
         internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), (int) (long) (mSpace != null ? mSpace.getValue() : 0));
@@ -86,7 +86,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);
 jsObj.set_mSpace(mSpace);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSpace"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);jsObj.set_mSpace(mSpace);")
-    private static native void internal_native_set_mSpace(int this_addr, int mSpace);
+    public static native void internal_native_set_mSpace(int this_addr, int mSpace);
 
     public Vec3 get_mPoint1() {
         int pointer = internal_native_get_mPoint1((int) (long) getNativeData().getCPointer());
@@ -105,7 +105,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);var returnedJSObj = jsObj.get_mPoint1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPoint1(int this_addr);
+    public static native int internal_native_get_mPoint1(int this_addr);
 
     public void set_mPoint1(Vec3 mPoint1) {
         internal_native_set_mPoint1((int) (long) getNativeData().getCPointer(), (int) (long) (mPoint1 != null ? mPoint1.getNativeData().getCPointer() : 0));
@@ -116,7 +116,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);
 jsObj.set_mPoint1(mPoint1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPoint1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);jsObj.set_mPoint1(mPoint1_addr);")
-    private static native void internal_native_set_mPoint1(int this_addr, int mPoint1_addr);
+    public static native void internal_native_set_mPoint1(int this_addr, int mPoint1_addr);
 
     public Vec3 get_mTwistAxis1() {
         int pointer = internal_native_get_mTwistAxis1((int) (long) getNativeData().getCPointer());
@@ -135,7 +135,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);var returnedJSObj = jsObj.get_mTwistAxis1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mTwistAxis1(int this_addr);
+    public static native int internal_native_get_mTwistAxis1(int this_addr);
 
     public void set_mTwistAxis1(Vec3 mTwistAxis1) {
         internal_native_set_mTwistAxis1((int) (long) getNativeData().getCPointer(), (int) (long) (mTwistAxis1 != null ? mTwistAxis1.getNativeData().getCPointer() : 0));
@@ -146,7 +146,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);
 jsObj.set_mTwistAxis1(mTwistAxis1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mTwistAxis1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);jsObj.set_mTwistAxis1(mTwistAxis1_addr);")
-    private static native void internal_native_set_mTwistAxis1(int this_addr, int mTwistAxis1_addr);
+    public static native void internal_native_set_mTwistAxis1(int this_addr, int mTwistAxis1_addr);
 
     public Vec3 get_mPoint2() {
         int pointer = internal_native_get_mPoint2((int) (long) getNativeData().getCPointer());
@@ -165,7 +165,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);var returnedJSObj = jsObj.get_mPoint2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPoint2(int this_addr);
+    public static native int internal_native_get_mPoint2(int this_addr);
 
     public void set_mPoint2(Vec3 mPoint2) {
         internal_native_set_mPoint2((int) (long) getNativeData().getCPointer(), (int) (long) (mPoint2 != null ? mPoint2.getNativeData().getCPointer() : 0));
@@ -176,7 +176,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);
 jsObj.set_mPoint2(mPoint2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPoint2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);jsObj.set_mPoint2(mPoint2_addr);")
-    private static native void internal_native_set_mPoint2(int this_addr, int mPoint2_addr);
+    public static native void internal_native_set_mPoint2(int this_addr, int mPoint2_addr);
 
     public Vec3 get_mTwistAxis2() {
         int pointer = internal_native_get_mTwistAxis2((int) (long) getNativeData().getCPointer());
@@ -195,7 +195,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);var returnedJSObj = jsObj.get_mTwistAxis2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mTwistAxis2(int this_addr);
+    public static native int internal_native_get_mTwistAxis2(int this_addr);
 
     public void set_mTwistAxis2(Vec3 mTwistAxis2) {
         internal_native_set_mTwistAxis2((int) (long) getNativeData().getCPointer(), (int) (long) (mTwistAxis2 != null ? mTwistAxis2.getNativeData().getCPointer() : 0));
@@ -206,7 +206,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);
 jsObj.set_mTwistAxis2(mTwistAxis2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mTwistAxis2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);jsObj.set_mTwistAxis2(mTwistAxis2_addr);")
-    private static native void internal_native_set_mTwistAxis2(int this_addr, int mTwistAxis2_addr);
+    public static native void internal_native_set_mTwistAxis2(int this_addr, int mTwistAxis2_addr);
 
     public float get_mHalfConeAngle() {
         return internal_native_get_mHalfConeAngle((int) (long) getNativeData().getCPointer());
@@ -217,7 +217,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);
 return jsObj.get_mHalfConeAngle();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);return jsObj.get_mHalfConeAngle();")
-    private static native float internal_native_get_mHalfConeAngle(int this_addr);
+    public static native float internal_native_get_mHalfConeAngle(int this_addr);
 
     public void set_mHalfConeAngle(float mHalfConeAngle) {
         internal_native_set_mHalfConeAngle((int) (long) getNativeData().getCPointer(), mHalfConeAngle);
@@ -228,61 +228,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);
 jsObj.set_mHalfConeAngle(mHalfConeAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mHalfConeAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);jsObj.set_mHalfConeAngle(mHalfConeAngle);")
-    private static native void internal_native_set_mHalfConeAngle(int this_addr, float mHalfConeAngle);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mSpace(long this_addr) {
-        return internal_native_get_mSpace((int) this_addr);
-    }
-
-    public static void native_set_mSpace(long this_addr, long mSpace) {
-        internal_native_set_mSpace((int) this_addr, (int) mSpace);
-    }
-
-    public static long native_get_mPoint1(long this_addr) {
-        return internal_native_get_mPoint1((int) this_addr);
-    }
-
-    public static void native_set_mPoint1(long this_addr, long mPoint1_addr) {
-        internal_native_set_mPoint1((int) this_addr, (int) mPoint1_addr);
-    }
-
-    public static long native_get_mTwistAxis1(long this_addr) {
-        return internal_native_get_mTwistAxis1((int) this_addr);
-    }
-
-    public static void native_set_mTwistAxis1(long this_addr, long mTwistAxis1_addr) {
-        internal_native_set_mTwistAxis1((int) this_addr, (int) mTwistAxis1_addr);
-    }
-
-    public static long native_get_mPoint2(long this_addr) {
-        return internal_native_get_mPoint2((int) this_addr);
-    }
-
-    public static void native_set_mPoint2(long this_addr, long mPoint2_addr) {
-        internal_native_set_mPoint2((int) this_addr, (int) mPoint2_addr);
-    }
-
-    public static long native_get_mTwistAxis2(long this_addr) {
-        return internal_native_get_mTwistAxis2((int) this_addr);
-    }
-
-    public static void native_set_mTwistAxis2(long this_addr, long mTwistAxis2_addr) {
-        internal_native_set_mTwistAxis2((int) this_addr, (int) mTwistAxis2_addr);
-    }
-
-    public static float native_get_mHalfConeAngle(long this_addr) {
-        return internal_native_get_mHalfConeAngle((int) this_addr);
-    }
-
-    public static void native_set_mHalfConeAngle(long this_addr, float mHalfConeAngle) {
-        internal_native_set_mHalfConeAngle((int) this_addr, mHalfConeAngle);
-    }
+    public static native void internal_native_set_mHalfConeAngle(int this_addr, float mHalfConeAngle);
 }

@@ -28,7 +28,7 @@ public class SkeletalAnimationAnimatedJoint extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SkeletalAnimationAnimatedJoint();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ return (jlong)new SkeletalAnimationAnimatedJoint();
 SkeletalAnimationAnimatedJoint* nativeObject = (SkeletalAnimationAnimatedJoint*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public IDLString get_mJointName() {
         long pointer = internal_native_get_mJointName((long) getNativeData().getCPointer());
@@ -69,7 +69,7 @@ delete nativeObject;
 SkeletalAnimationAnimatedJoint* nativeObject = (SkeletalAnimationAnimatedJoint*)this_addr;
 return (jlong)&nativeObject->mJointName;
 */
-    private static native long internal_native_get_mJointName(long this_addr);
+    public static native long internal_native_get_mJointName(long this_addr);
 
     public void set_mJointName(IDLString mJointName) {
         internal_native_set_mJointName((long) getNativeData().getCPointer(), (long) (mJointName != null ? mJointName.getNativeData().getCPointer() : 0));
@@ -79,7 +79,7 @@ return (jlong)&nativeObject->mJointName;
 SkeletalAnimationAnimatedJoint* nativeObject = (SkeletalAnimationAnimatedJoint*)this_addr;
 nativeObject->mJointName = *((IDLString*)mJointName_addr);
 */
-    private static native void internal_native_set_mJointName(long this_addr, long mJointName_addr);
+    public static native void internal_native_set_mJointName(long this_addr, long mJointName_addr);
 
     public ArraySkeletonKeyframe get_mKeyframes() {
         long pointer = internal_native_get_mKeyframes((long) getNativeData().getCPointer());
@@ -95,7 +95,7 @@ nativeObject->mJointName = *((IDLString*)mJointName_addr);
 SkeletalAnimationAnimatedJoint* nativeObject = (SkeletalAnimationAnimatedJoint*)this_addr;
 return (jlong)&nativeObject->mKeyframes;
 */
-    private static native long internal_native_get_mKeyframes(long this_addr);
+    public static native long internal_native_get_mKeyframes(long this_addr);
 
     public void set_mKeyframes(ArraySkeletonKeyframe mKeyframes) {
         internal_native_set_mKeyframes((long) getNativeData().getCPointer(), (long) (mKeyframes != null ? mKeyframes.getNativeData().getCPointer() : 0));
@@ -105,29 +105,5 @@ return (jlong)&nativeObject->mKeyframes;
 SkeletalAnimationAnimatedJoint* nativeObject = (SkeletalAnimationAnimatedJoint*)this_addr;
 nativeObject->mKeyframes = *((ArraySkeletonKeyframe*)mKeyframes_addr);
 */
-    private static native void internal_native_set_mKeyframes(long this_addr, long mKeyframes_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mJointName(long this_addr) {
-        return internal_native_get_mJointName(this_addr);
-    }
-
-    public static void native_set_mJointName(long this_addr, long mJointName_addr) {
-        internal_native_set_mJointName(this_addr, mJointName_addr);
-    }
-
-    public static long native_get_mKeyframes(long this_addr) {
-        return internal_native_get_mKeyframes(this_addr);
-    }
-
-    public static void native_set_mKeyframes(long this_addr, long mKeyframes_addr) {
-        internal_native_set_mKeyframes(this_addr, mKeyframes_addr);
-    }
+    public static native void internal_native_set_mKeyframes(long this_addr, long mKeyframes_addr);
 }

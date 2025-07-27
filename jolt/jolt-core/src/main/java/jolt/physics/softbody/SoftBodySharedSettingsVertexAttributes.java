@@ -24,7 +24,7 @@ public class SoftBodySharedSettingsVertexAttributes extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SoftBodySharedSettingsVertexAttributes();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -49,7 +49,7 @@ return (jlong)new SoftBodySharedSettingsVertexAttributes();
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mCompliance() {
         return internal_native_get_mCompliance((long) getNativeData().getCPointer());
@@ -59,7 +59,7 @@ delete nativeObject;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 return nativeObject->mCompliance;
 */
-    private static native float internal_native_get_mCompliance(long this_addr);
+    public static native float internal_native_get_mCompliance(long this_addr);
 
     public void set_mCompliance(float mCompliance) {
         internal_native_set_mCompliance((long) getNativeData().getCPointer(), mCompliance);
@@ -69,7 +69,7 @@ return nativeObject->mCompliance;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 nativeObject->mCompliance = mCompliance;
 */
-    private static native void internal_native_set_mCompliance(long this_addr, float mCompliance);
+    public static native void internal_native_set_mCompliance(long this_addr, float mCompliance);
 
     public float get_mShearCompliance() {
         return internal_native_get_mShearCompliance((long) getNativeData().getCPointer());
@@ -79,7 +79,7 @@ nativeObject->mCompliance = mCompliance;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 return nativeObject->mShearCompliance;
 */
-    private static native float internal_native_get_mShearCompliance(long this_addr);
+    public static native float internal_native_get_mShearCompliance(long this_addr);
 
     public void set_mShearCompliance(float mShearCompliance) {
         internal_native_set_mShearCompliance((long) getNativeData().getCPointer(), mShearCompliance);
@@ -89,7 +89,7 @@ return nativeObject->mShearCompliance;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 nativeObject->mShearCompliance = mShearCompliance;
 */
-    private static native void internal_native_set_mShearCompliance(long this_addr, float mShearCompliance);
+    public static native void internal_native_set_mShearCompliance(long this_addr, float mShearCompliance);
 
     public float get_mBendCompliance() {
         return internal_native_get_mBendCompliance((long) getNativeData().getCPointer());
@@ -99,7 +99,7 @@ nativeObject->mShearCompliance = mShearCompliance;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 return nativeObject->mBendCompliance;
 */
-    private static native float internal_native_get_mBendCompliance(long this_addr);
+    public static native float internal_native_get_mBendCompliance(long this_addr);
 
     public void set_mBendCompliance(float mBendCompliance) {
         internal_native_set_mBendCompliance((long) getNativeData().getCPointer(), mBendCompliance);
@@ -109,7 +109,7 @@ return nativeObject->mBendCompliance;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 nativeObject->mBendCompliance = mBendCompliance;
 */
-    private static native void internal_native_set_mBendCompliance(long this_addr, float mBendCompliance);
+    public static native void internal_native_set_mBendCompliance(long this_addr, float mBendCompliance);
 
     public SoftBodySharedSettings_ELRAType get_mLRAType() {
         int value = internal_native_get_mLRAType((long) getNativeData().getCPointer());
@@ -120,7 +120,7 @@ nativeObject->mBendCompliance = mBendCompliance;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 return (jint)nativeObject->mLRAType;
 */
-    private static native int internal_native_get_mLRAType(long this_addr);
+    public static native int internal_native_get_mLRAType(long this_addr);
 
     public void set_mLRAType(SoftBodySharedSettings_ELRAType mLRAType) {
         internal_native_set_mLRAType((long) getNativeData().getCPointer(), (long) (mLRAType != null ? mLRAType.getValue() : 0));
@@ -130,7 +130,7 @@ return (jint)nativeObject->mLRAType;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 nativeObject->mLRAType = (::SoftBodySharedSettings_ELRAType)mLRAType;
 */
-    private static native void internal_native_set_mLRAType(long this_addr, long mLRAType);
+    public static native void internal_native_set_mLRAType(long this_addr, long mLRAType);
 
     public float get_mLRAMaxDistanceMultiplier() {
         return internal_native_get_mLRAMaxDistanceMultiplier((long) getNativeData().getCPointer());
@@ -140,7 +140,7 @@ nativeObject->mLRAType = (::SoftBodySharedSettings_ELRAType)mLRAType;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 return nativeObject->mLRAMaxDistanceMultiplier;
 */
-    private static native float internal_native_get_mLRAMaxDistanceMultiplier(long this_addr);
+    public static native float internal_native_get_mLRAMaxDistanceMultiplier(long this_addr);
 
     public void set_mLRAMaxDistanceMultiplier(float mLRAMaxDistanceMultiplier) {
         internal_native_set_mLRAMaxDistanceMultiplier((long) getNativeData().getCPointer(), mLRAMaxDistanceMultiplier);
@@ -150,53 +150,5 @@ return nativeObject->mLRAMaxDistanceMultiplier;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 nativeObject->mLRAMaxDistanceMultiplier = mLRAMaxDistanceMultiplier;
 */
-    private static native void internal_native_set_mLRAMaxDistanceMultiplier(long this_addr, float mLRAMaxDistanceMultiplier);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_get_mCompliance(long this_addr) {
-        return internal_native_get_mCompliance(this_addr);
-    }
-
-    public static void native_set_mCompliance(long this_addr, float mCompliance) {
-        internal_native_set_mCompliance(this_addr, mCompliance);
-    }
-
-    public static float native_get_mShearCompliance(long this_addr) {
-        return internal_native_get_mShearCompliance(this_addr);
-    }
-
-    public static void native_set_mShearCompliance(long this_addr, float mShearCompliance) {
-        internal_native_set_mShearCompliance(this_addr, mShearCompliance);
-    }
-
-    public static float native_get_mBendCompliance(long this_addr) {
-        return internal_native_get_mBendCompliance(this_addr);
-    }
-
-    public static void native_set_mBendCompliance(long this_addr, float mBendCompliance) {
-        internal_native_set_mBendCompliance(this_addr, mBendCompliance);
-    }
-
-    public static long native_get_mLRAType(long this_addr) {
-        return internal_native_get_mLRAType(this_addr);
-    }
-
-    public static void native_set_mLRAType(long this_addr, long mLRAType) {
-        internal_native_set_mLRAType(this_addr, mLRAType);
-    }
-
-    public static float native_get_mLRAMaxDistanceMultiplier(long this_addr) {
-        return internal_native_get_mLRAMaxDistanceMultiplier(this_addr);
-    }
-
-    public static void native_set_mLRAMaxDistanceMultiplier(long this_addr, float mLRAMaxDistanceMultiplier) {
-        internal_native_set_mLRAMaxDistanceMultiplier(this_addr, mLRAMaxDistanceMultiplier);
-    }
+    public static native void internal_native_set_mLRAMaxDistanceMultiplier(long this_addr, float mLRAMaxDistanceMultiplier);
 }

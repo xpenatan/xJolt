@@ -42,9 +42,5 @@ TwoBodyConstraintSettings* nativeObject = (TwoBodyConstraintSettings*)this_addr;
 Constraint* obj = nativeObject->Create(*((Body* )inBody1_addr), *((Body* )inBody2_addr));
 return (jlong)obj;
 */
-    private static native long internal_native_Create(long this_addr, long inBody1_addr, long inBody2_addr);
-
-    public static long native_Create(long this_addr, long inBody1_addr, long inBody2_addr) {
-        return internal_native_Create(this_addr, inBody1_addr, inBody2_addr);
-    }
+    public static native long internal_native_Create(long this_addr, long inBody1_addr, long inBody2_addr);
 }

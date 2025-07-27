@@ -45,7 +45,7 @@ public class SoftBodyVertex extends IDLBase {
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mPreviousPosition() {
         long pointer = internal_native_get_mPreviousPosition((long) getNativeData().getCPointer());
@@ -61,7 +61,7 @@ delete nativeObject;
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 return (jlong)&nativeObject->mPreviousPosition;
 */
-    private static native long internal_native_get_mPreviousPosition(long this_addr);
+    public static native long internal_native_get_mPreviousPosition(long this_addr);
 
     public void set_mPreviousPosition(Vec3 mPreviousPosition) {
         internal_native_set_mPreviousPosition((long) getNativeData().getCPointer(), (long) (mPreviousPosition != null ? mPreviousPosition.getNativeData().getCPointer() : 0));
@@ -71,7 +71,7 @@ return (jlong)&nativeObject->mPreviousPosition;
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 nativeObject->mPreviousPosition = *((Vec3*)mPreviousPosition_addr);
 */
-    private static native void internal_native_set_mPreviousPosition(long this_addr, long mPreviousPosition_addr);
+    public static native void internal_native_set_mPreviousPosition(long this_addr, long mPreviousPosition_addr);
 
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
@@ -87,7 +87,7 @@ nativeObject->mPreviousPosition = *((Vec3*)mPreviousPosition_addr);
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    private static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition((long) getNativeData().getCPointer(), (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
@@ -97,7 +97,7 @@ return (jlong)&nativeObject->mPosition;
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 nativeObject->mPosition = *((Vec3*)mPosition_addr);
 */
-    private static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
+    public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Vec3 get_mVelocity() {
         long pointer = internal_native_get_mVelocity((long) getNativeData().getCPointer());
@@ -113,7 +113,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 return (jlong)&nativeObject->mVelocity;
 */
-    private static native long internal_native_get_mVelocity(long this_addr);
+    public static native long internal_native_get_mVelocity(long this_addr);
 
     public void set_mVelocity(Vec3 mVelocity) {
         internal_native_set_mVelocity((long) getNativeData().getCPointer(), (long) (mVelocity != null ? mVelocity.getNativeData().getCPointer() : 0));
@@ -123,7 +123,7 @@ return (jlong)&nativeObject->mVelocity;
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 nativeObject->mVelocity = *((Vec3*)mVelocity_addr);
 */
-    private static native void internal_native_set_mVelocity(long this_addr, long mVelocity_addr);
+    public static native void internal_native_set_mVelocity(long this_addr, long mVelocity_addr);
 
     public float get_mInvMass() {
         return internal_native_get_mInvMass((long) getNativeData().getCPointer());
@@ -133,7 +133,7 @@ nativeObject->mVelocity = *((Vec3*)mVelocity_addr);
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 return nativeObject->mInvMass;
 */
-    private static native float internal_native_get_mInvMass(long this_addr);
+    public static native float internal_native_get_mInvMass(long this_addr);
 
     public void set_mInvMass(float mInvMass) {
         internal_native_set_mInvMass((long) getNativeData().getCPointer(), mInvMass);
@@ -143,41 +143,5 @@ return nativeObject->mInvMass;
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 nativeObject->mInvMass = mInvMass;
 */
-    private static native void internal_native_set_mInvMass(long this_addr, float mInvMass);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mPreviousPosition(long this_addr) {
-        return internal_native_get_mPreviousPosition(this_addr);
-    }
-
-    public static void native_set_mPreviousPosition(long this_addr, long mPreviousPosition_addr) {
-        internal_native_set_mPreviousPosition(this_addr, mPreviousPosition_addr);
-    }
-
-    public static long native_get_mPosition(long this_addr) {
-        return internal_native_get_mPosition(this_addr);
-    }
-
-    public static void native_set_mPosition(long this_addr, long mPosition_addr) {
-        internal_native_set_mPosition(this_addr, mPosition_addr);
-    }
-
-    public static long native_get_mVelocity(long this_addr) {
-        return internal_native_get_mVelocity(this_addr);
-    }
-
-    public static void native_set_mVelocity(long this_addr, long mVelocity_addr) {
-        internal_native_set_mVelocity(this_addr, mVelocity_addr);
-    }
-
-    public static float native_get_mInvMass(long this_addr) {
-        return internal_native_get_mInvMass(this_addr);
-    }
-
-    public static void native_set_mInvMass(long this_addr, float mInvMass) {
-        internal_native_set_mInvMass(this_addr, mInvMass);
-    }
+    public static native void internal_native_set_mInvMass(long this_addr, float mInvMass);
 }

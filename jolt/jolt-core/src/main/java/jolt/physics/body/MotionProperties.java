@@ -67,7 +67,7 @@ public class MotionProperties extends IDLBase {
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public EMotionQuality GetMotionQuality() {
         int value = internal_native_GetMotionQuality((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ delete nativeObject;
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return (int)nativeObject->GetMotionQuality();
 */
-    private static native int internal_native_GetMotionQuality(long this_addr);
+    public static native int internal_native_GetMotionQuality(long this_addr);
 
     public EAllowedDOFs GetAllowedDOFs() {
         int value = internal_native_GetAllowedDOFs((long) getNativeData().getCPointer());
@@ -89,7 +89,7 @@ return (int)nativeObject->GetMotionQuality();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return (int)nativeObject->GetAllowedDOFs();
 */
-    private static native int internal_native_GetAllowedDOFs(long this_addr);
+    public static native int internal_native_GetAllowedDOFs(long this_addr);
 
     public boolean GetAllowSleeping() {
         return internal_native_GetAllowSleeping((long) getNativeData().getCPointer());
@@ -99,7 +99,7 @@ return (int)nativeObject->GetAllowedDOFs();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetAllowSleeping();
 */
-    private static native boolean internal_native_GetAllowSleeping(long this_addr);
+    public static native boolean internal_native_GetAllowSleeping(long this_addr);
 
     public Vec3 GetLinearVelocity() {
         long pointer = internal_native_GetLinearVelocity((long) getNativeData().getCPointer());
@@ -116,7 +116,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLinearVelocity();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetLinearVelocity(long this_addr);
+    public static native long internal_native_GetLinearVelocity(long this_addr);
 
     public void SetLinearVelocity(Vec3 inVelocity) {
         internal_native_SetLinearVelocity((long) getNativeData().getCPointer(), (long) (inVelocity != null ? inVelocity.getNativeData().getCPointer() : 0));
@@ -126,7 +126,7 @@ return (jlong)&copy_addr;*/
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetLinearVelocity(*((Vec3* )inVelocity_addr));
 */
-    private static native void internal_native_SetLinearVelocity(long this_addr, long inVelocity_addr);
+    public static native void internal_native_SetLinearVelocity(long this_addr, long inVelocity_addr);
 
     public void SetLinearVelocityClamped(Vec3 inVelocity) {
         internal_native_SetLinearVelocityClamped((long) getNativeData().getCPointer(), (long) (inVelocity != null ? inVelocity.getNativeData().getCPointer() : 0));
@@ -136,7 +136,7 @@ nativeObject->SetLinearVelocity(*((Vec3* )inVelocity_addr));
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetLinearVelocityClamped(*((Vec3* )inVelocity_addr));
 */
-    private static native void internal_native_SetLinearVelocityClamped(long this_addr, long inVelocity_addr);
+    public static native void internal_native_SetLinearVelocityClamped(long this_addr, long inVelocity_addr);
 
     public Vec3 GetAngularVelocity() {
         long pointer = internal_native_GetAngularVelocity((long) getNativeData().getCPointer());
@@ -153,7 +153,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAngularVelocity();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetAngularVelocity(long this_addr);
+    public static native long internal_native_GetAngularVelocity(long this_addr);
 
     public void SetAngularVelocity(Vec3 inVelocity) {
         internal_native_SetAngularVelocity((long) getNativeData().getCPointer(), (long) (inVelocity != null ? inVelocity.getNativeData().getCPointer() : 0));
@@ -163,7 +163,7 @@ return (jlong)&copy_addr;*/
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetAngularVelocity(*((Vec3* )inVelocity_addr));
 */
-    private static native void internal_native_SetAngularVelocity(long this_addr, long inVelocity_addr);
+    public static native void internal_native_SetAngularVelocity(long this_addr, long inVelocity_addr);
 
     public void SetAngularVelocityClamped(Vec3 inVelocity) {
         internal_native_SetAngularVelocityClamped((long) getNativeData().getCPointer(), (long) (inVelocity != null ? inVelocity.getNativeData().getCPointer() : 0));
@@ -173,7 +173,7 @@ nativeObject->SetAngularVelocity(*((Vec3* )inVelocity_addr));
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetAngularVelocityClamped(*((Vec3* )inVelocity_addr));
 */
-    private static native void internal_native_SetAngularVelocityClamped(long this_addr, long inVelocity_addr);
+    public static native void internal_native_SetAngularVelocityClamped(long this_addr, long inVelocity_addr);
 
     public void MoveKinematic(Vec3 inPosition, Quat inRotation, float inDeltaTime) {
         internal_native_MoveKinematic((long) getNativeData().getCPointer(), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inDeltaTime);
@@ -183,7 +183,7 @@ nativeObject->SetAngularVelocityClamped(*((Vec3* )inVelocity_addr));
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->MoveKinematic(*((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (float)inDeltaTime);
 */
-    private static native void internal_native_MoveKinematic(long this_addr, long inPosition_addr, long inRotation_addr, float inDeltaTime);
+    public static native void internal_native_MoveKinematic(long this_addr, long inPosition_addr, long inRotation_addr, float inDeltaTime);
 
     public float GetMaxLinearVelocity() {
         return internal_native_GetMaxLinearVelocity((long) getNativeData().getCPointer());
@@ -193,7 +193,7 @@ nativeObject->MoveKinematic(*((Vec3* )inPosition_addr), *((Quat* )inRotation_add
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetMaxLinearVelocity();
 */
-    private static native float internal_native_GetMaxLinearVelocity(long this_addr);
+    public static native float internal_native_GetMaxLinearVelocity(long this_addr);
 
     public void SetMaxLinearVelocity(float inVelocity) {
         internal_native_SetMaxLinearVelocity((long) getNativeData().getCPointer(), inVelocity);
@@ -203,7 +203,7 @@ return nativeObject->GetMaxLinearVelocity();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetMaxLinearVelocity((float)inVelocity);
 */
-    private static native void internal_native_SetMaxLinearVelocity(long this_addr, float inVelocity);
+    public static native void internal_native_SetMaxLinearVelocity(long this_addr, float inVelocity);
 
     public float GetMaxAngularVelocity() {
         return internal_native_GetMaxAngularVelocity((long) getNativeData().getCPointer());
@@ -213,7 +213,7 @@ nativeObject->SetMaxLinearVelocity((float)inVelocity);
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetMaxAngularVelocity();
 */
-    private static native float internal_native_GetMaxAngularVelocity(long this_addr);
+    public static native float internal_native_GetMaxAngularVelocity(long this_addr);
 
     public void SetMaxAngularVelocity(float inVelocity) {
         internal_native_SetMaxAngularVelocity((long) getNativeData().getCPointer(), inVelocity);
@@ -223,7 +223,7 @@ return nativeObject->GetMaxAngularVelocity();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetMaxAngularVelocity((float)inVelocity);
 */
-    private static native void internal_native_SetMaxAngularVelocity(long this_addr, float inVelocity);
+    public static native void internal_native_SetMaxAngularVelocity(long this_addr, float inVelocity);
 
     public void ClampLinearVelocity() {
         internal_native_ClampLinearVelocity((long) getNativeData().getCPointer());
@@ -233,7 +233,7 @@ nativeObject->SetMaxAngularVelocity((float)inVelocity);
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->ClampLinearVelocity();
 */
-    private static native void internal_native_ClampLinearVelocity(long this_addr);
+    public static native void internal_native_ClampLinearVelocity(long this_addr);
 
     public void ClampAngularVelocity() {
         internal_native_ClampAngularVelocity((long) getNativeData().getCPointer());
@@ -243,7 +243,7 @@ nativeObject->ClampLinearVelocity();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->ClampAngularVelocity();
 */
-    private static native void internal_native_ClampAngularVelocity(long this_addr);
+    public static native void internal_native_ClampAngularVelocity(long this_addr);
 
     public float GetLinearDamping() {
         return internal_native_GetLinearDamping((long) getNativeData().getCPointer());
@@ -253,7 +253,7 @@ nativeObject->ClampAngularVelocity();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetLinearDamping();
 */
-    private static native float internal_native_GetLinearDamping(long this_addr);
+    public static native float internal_native_GetLinearDamping(long this_addr);
 
     public void SetLinearDamping(float inDamping) {
         internal_native_SetLinearDamping((long) getNativeData().getCPointer(), inDamping);
@@ -263,7 +263,7 @@ return nativeObject->GetLinearDamping();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetLinearDamping((float)inDamping);
 */
-    private static native void internal_native_SetLinearDamping(long this_addr, float inDamping);
+    public static native void internal_native_SetLinearDamping(long this_addr, float inDamping);
 
     public float GetAngularDamping() {
         return internal_native_GetAngularDamping((long) getNativeData().getCPointer());
@@ -273,7 +273,7 @@ nativeObject->SetLinearDamping((float)inDamping);
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetAngularDamping();
 */
-    private static native float internal_native_GetAngularDamping(long this_addr);
+    public static native float internal_native_GetAngularDamping(long this_addr);
 
     public void SetAngularDamping(float inDamping) {
         internal_native_SetAngularDamping((long) getNativeData().getCPointer(), inDamping);
@@ -283,7 +283,7 @@ return nativeObject->GetAngularDamping();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetAngularDamping((float)inDamping);
 */
-    private static native void internal_native_SetAngularDamping(long this_addr, float inDamping);
+    public static native void internal_native_SetAngularDamping(long this_addr, float inDamping);
 
     public float GetGravityFactor() {
         return internal_native_GetGravityFactor((long) getNativeData().getCPointer());
@@ -293,7 +293,7 @@ nativeObject->SetAngularDamping((float)inDamping);
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetGravityFactor();
 */
-    private static native float internal_native_GetGravityFactor(long this_addr);
+    public static native float internal_native_GetGravityFactor(long this_addr);
 
     public void SetGravityFactor(float inFactor) {
         internal_native_SetGravityFactor((long) getNativeData().getCPointer(), inFactor);
@@ -303,7 +303,7 @@ return nativeObject->GetGravityFactor();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetGravityFactor((float)inFactor);
 */
-    private static native void internal_native_SetGravityFactor(long this_addr, float inFactor);
+    public static native void internal_native_SetGravityFactor(long this_addr, float inFactor);
 
     public void SetMassProperties(EAllowedDOFs inAllowedDOFs, MassProperties inMassProperties) {
         internal_native_SetMassProperties((long) getNativeData().getCPointer(), (long) (inAllowedDOFs != null ? inAllowedDOFs.getValue() : 0), (long) (inMassProperties != null ? inMassProperties.getNativeData().getCPointer() : 0));
@@ -313,7 +313,7 @@ nativeObject->SetGravityFactor((float)inFactor);
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetMassProperties((::EAllowedDOFs)inAllowedDOFs, *((MassProperties* )inMassProperties_addr));
 */
-    private static native void internal_native_SetMassProperties(long this_addr, long inAllowedDOFs, long inMassProperties_addr);
+    public static native void internal_native_SetMassProperties(long this_addr, long inAllowedDOFs, long inMassProperties_addr);
 
     public float GetInverseMass() {
         return internal_native_GetInverseMass((long) getNativeData().getCPointer());
@@ -323,7 +323,7 @@ nativeObject->SetMassProperties((::EAllowedDOFs)inAllowedDOFs, *((MassProperties
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetInverseMass();
 */
-    private static native float internal_native_GetInverseMass(long this_addr);
+    public static native float internal_native_GetInverseMass(long this_addr);
 
     public float GetInverseMassUnchecked() {
         return internal_native_GetInverseMassUnchecked((long) getNativeData().getCPointer());
@@ -333,7 +333,7 @@ return nativeObject->GetInverseMass();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetInverseMassUnchecked();
 */
-    private static native float internal_native_GetInverseMassUnchecked(long this_addr);
+    public static native float internal_native_GetInverseMassUnchecked(long this_addr);
 
     public void SetInverseMass(float inInvM) {
         internal_native_SetInverseMass((long) getNativeData().getCPointer(), inInvM);
@@ -343,7 +343,7 @@ return nativeObject->GetInverseMassUnchecked();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetInverseMass((float)inInvM);
 */
-    private static native void internal_native_SetInverseMass(long this_addr, float inInvM);
+    public static native void internal_native_SetInverseMass(long this_addr, float inInvM);
 
     public Vec3 GetInverseInertiaDiagonal() {
         long pointer = internal_native_GetInverseInertiaDiagonal((long) getNativeData().getCPointer());
@@ -360,7 +360,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetInverseInertiaDiagonal();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetInverseInertiaDiagonal(long this_addr);
+    public static native long internal_native_GetInverseInertiaDiagonal(long this_addr);
 
     public Quat GetInertiaRotation() {
         long pointer = internal_native_GetInertiaRotation((long) getNativeData().getCPointer());
@@ -377,7 +377,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetInertiaRotation();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetInertiaRotation(long this_addr);
+    public static native long internal_native_GetInertiaRotation(long this_addr);
 
     public void SetInverseInertia(Vec3 inInvI, Quat inRotation) {
         internal_native_SetInverseInertia((long) getNativeData().getCPointer(), (long) (inInvI != null ? inInvI.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0));
@@ -387,7 +387,7 @@ return (jlong)&copy_addr;*/
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetInverseInertia(*((Vec3* )inInvI_addr), *((Quat* )inRotation_addr));
 */
-    private static native void internal_native_SetInverseInertia(long this_addr, long inInvI_addr, long inRotation_addr);
+    public static native void internal_native_SetInverseInertia(long this_addr, long inInvI_addr, long inRotation_addr);
 
     public Mat44 GetLocalSpaceInverseInertia() {
         long pointer = internal_native_GetLocalSpaceInverseInertia((long) getNativeData().getCPointer());
@@ -404,7 +404,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetLocalSpaceInverseInertia();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetLocalSpaceInverseInertia(long this_addr);
+    public static native long internal_native_GetLocalSpaceInverseInertia(long this_addr);
 
     public Mat44 GetInverseInertiaForRotation(Mat44 inRotation) {
         long pointer = internal_native_GetInverseInertiaForRotation((long) getNativeData().getCPointer(), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0));
@@ -421,7 +421,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetInverseInertiaForRotation(*((Mat44* )inRotation_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetInverseInertiaForRotation(long this_addr, long inRotation_addr);
+    public static native long internal_native_GetInverseInertiaForRotation(long this_addr, long inRotation_addr);
 
     public Vec3 MultiplyWorldSpaceInverseInertiaByVector(Quat inRotation, Vec3 inV) {
         long pointer = internal_native_MultiplyWorldSpaceInverseInertiaByVector((long) getNativeData().getCPointer(), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -438,7 +438,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->MultiplyWorldSpaceInverseInertiaByVector(*((Quat* )inRotation_addr), *((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_MultiplyWorldSpaceInverseInertiaByVector(long this_addr, long inRotation_addr, long inV_addr);
+    public static native long internal_native_MultiplyWorldSpaceInverseInertiaByVector(long this_addr, long inRotation_addr, long inV_addr);
 
     public Vec3 GetPointVelocityCOM(Vec3 inPointRelativeToCOM) {
         long pointer = internal_native_GetPointVelocityCOM((long) getNativeData().getCPointer(), (long) (inPointRelativeToCOM != null ? inPointRelativeToCOM.getNativeData().getCPointer() : 0));
@@ -455,7 +455,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPointVelocityCOM(*((Vec3* )inPointRelativeToCOM_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetPointVelocityCOM(long this_addr, long inPointRelativeToCOM_addr);
+    public static native long internal_native_GetPointVelocityCOM(long this_addr, long inPointRelativeToCOM_addr);
 
     public Vec3 GetAccumulatedForce() {
         long pointer = internal_native_GetAccumulatedForce((long) getNativeData().getCPointer());
@@ -472,7 +472,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAccumulatedForce();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetAccumulatedForce(long this_addr);
+    public static native long internal_native_GetAccumulatedForce(long this_addr);
 
     public Vec3 GetAccumulatedTorque() {
         long pointer = internal_native_GetAccumulatedTorque((long) getNativeData().getCPointer());
@@ -489,7 +489,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAccumulatedTorque();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetAccumulatedTorque(long this_addr);
+    public static native long internal_native_GetAccumulatedTorque(long this_addr);
 
     public void ResetForce() {
         internal_native_ResetForce((long) getNativeData().getCPointer());
@@ -499,7 +499,7 @@ return (jlong)&copy_addr;*/
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->ResetForce();
 */
-    private static native void internal_native_ResetForce(long this_addr);
+    public static native void internal_native_ResetForce(long this_addr);
 
     public void ResetTorque() {
         internal_native_ResetTorque((long) getNativeData().getCPointer());
@@ -509,7 +509,7 @@ nativeObject->ResetForce();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->ResetTorque();
 */
-    private static native void internal_native_ResetTorque(long this_addr);
+    public static native void internal_native_ResetTorque(long this_addr);
 
     public void ResetMotion() {
         internal_native_ResetMotion((long) getNativeData().getCPointer());
@@ -519,7 +519,7 @@ nativeObject->ResetTorque();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->ResetMotion();
 */
-    private static native void internal_native_ResetMotion(long this_addr);
+    public static native void internal_native_ResetMotion(long this_addr);
 
     public Vec3 LockTranslation(Vec3 inV) {
         long pointer = internal_native_LockTranslation((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -536,7 +536,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->LockTranslation(*((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_LockTranslation(long this_addr, long inV_addr);
+    public static native long internal_native_LockTranslation(long this_addr, long inV_addr);
 
     public Vec3 LockAngular(Vec3 inV) {
         long pointer = internal_native_LockAngular((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -553,7 +553,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->LockAngular(*((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_LockAngular(long this_addr, long inV_addr);
+    public static native long internal_native_LockAngular(long this_addr, long inV_addr);
 
     public void SetNumVelocityStepsOverride(int inN) {
         internal_native_SetNumVelocityStepsOverride((long) getNativeData().getCPointer(), inN);
@@ -563,7 +563,7 @@ return (jlong)&copy_addr;*/
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetNumVelocityStepsOverride(inN);
 */
-    private static native void internal_native_SetNumVelocityStepsOverride(long this_addr, int inN);
+    public static native void internal_native_SetNumVelocityStepsOverride(long this_addr, int inN);
 
     public int GetNumVelocityStepsOverride() {
         return internal_native_GetNumVelocityStepsOverride((long) getNativeData().getCPointer());
@@ -573,7 +573,7 @@ nativeObject->SetNumVelocityStepsOverride(inN);
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetNumVelocityStepsOverride();
 */
-    private static native int internal_native_GetNumVelocityStepsOverride(long this_addr);
+    public static native int internal_native_GetNumVelocityStepsOverride(long this_addr);
 
     public void SetNumPositionStepsOverride(int inN) {
         internal_native_SetNumPositionStepsOverride((long) getNativeData().getCPointer(), inN);
@@ -583,7 +583,7 @@ return nativeObject->GetNumVelocityStepsOverride();
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetNumPositionStepsOverride(inN);
 */
-    private static native void internal_native_SetNumPositionStepsOverride(long this_addr, int inN);
+    public static native void internal_native_SetNumPositionStepsOverride(long this_addr, int inN);
 
     public int GetNumPositionStepsOverride() {
         return internal_native_GetNumPositionStepsOverride((long) getNativeData().getCPointer());
@@ -593,185 +593,5 @@ nativeObject->SetNumPositionStepsOverride(inN);
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 return nativeObject->GetNumPositionStepsOverride();
 */
-    private static native int internal_native_GetNumPositionStepsOverride(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_GetMotionQuality(long this_addr) {
-        return internal_native_GetMotionQuality(this_addr);
-    }
-
-    public static long native_GetAllowedDOFs(long this_addr) {
-        return internal_native_GetAllowedDOFs(this_addr);
-    }
-
-    public static boolean native_GetAllowSleeping(long this_addr) {
-        return internal_native_GetAllowSleeping(this_addr);
-    }
-
-    public static long native_GetLinearVelocity(long this_addr) {
-        return internal_native_GetLinearVelocity(this_addr);
-    }
-
-    public static void native_SetLinearVelocity(long this_addr, long inVelocity_addr) {
-        internal_native_SetLinearVelocity(this_addr, inVelocity_addr);
-    }
-
-    public static void native_SetLinearVelocityClamped(long this_addr, long inVelocity_addr) {
-        internal_native_SetLinearVelocityClamped(this_addr, inVelocity_addr);
-    }
-
-    public static long native_GetAngularVelocity(long this_addr) {
-        return internal_native_GetAngularVelocity(this_addr);
-    }
-
-    public static void native_SetAngularVelocity(long this_addr, long inVelocity_addr) {
-        internal_native_SetAngularVelocity(this_addr, inVelocity_addr);
-    }
-
-    public static void native_SetAngularVelocityClamped(long this_addr, long inVelocity_addr) {
-        internal_native_SetAngularVelocityClamped(this_addr, inVelocity_addr);
-    }
-
-    public static void native_MoveKinematic(long this_addr, long inPosition_addr, long inRotation_addr, float inDeltaTime) {
-        internal_native_MoveKinematic(this_addr, inPosition_addr, inRotation_addr, inDeltaTime);
-    }
-
-    public static float native_GetMaxLinearVelocity(long this_addr) {
-        return internal_native_GetMaxLinearVelocity(this_addr);
-    }
-
-    public static void native_SetMaxLinearVelocity(long this_addr, float inVelocity) {
-        internal_native_SetMaxLinearVelocity(this_addr, inVelocity);
-    }
-
-    public static float native_GetMaxAngularVelocity(long this_addr) {
-        return internal_native_GetMaxAngularVelocity(this_addr);
-    }
-
-    public static void native_SetMaxAngularVelocity(long this_addr, float inVelocity) {
-        internal_native_SetMaxAngularVelocity(this_addr, inVelocity);
-    }
-
-    public static void native_ClampLinearVelocity(long this_addr) {
-        internal_native_ClampLinearVelocity(this_addr);
-    }
-
-    public static void native_ClampAngularVelocity(long this_addr) {
-        internal_native_ClampAngularVelocity(this_addr);
-    }
-
-    public static float native_GetLinearDamping(long this_addr) {
-        return internal_native_GetLinearDamping(this_addr);
-    }
-
-    public static void native_SetLinearDamping(long this_addr, float inDamping) {
-        internal_native_SetLinearDamping(this_addr, inDamping);
-    }
-
-    public static float native_GetAngularDamping(long this_addr) {
-        return internal_native_GetAngularDamping(this_addr);
-    }
-
-    public static void native_SetAngularDamping(long this_addr, float inDamping) {
-        internal_native_SetAngularDamping(this_addr, inDamping);
-    }
-
-    public static float native_GetGravityFactor(long this_addr) {
-        return internal_native_GetGravityFactor(this_addr);
-    }
-
-    public static void native_SetGravityFactor(long this_addr, float inFactor) {
-        internal_native_SetGravityFactor(this_addr, inFactor);
-    }
-
-    public static void native_SetMassProperties(long this_addr, long inAllowedDOFs, long inMassProperties_addr) {
-        internal_native_SetMassProperties(this_addr, inAllowedDOFs, inMassProperties_addr);
-    }
-
-    public static float native_GetInverseMass(long this_addr) {
-        return internal_native_GetInverseMass(this_addr);
-    }
-
-    public static float native_GetInverseMassUnchecked(long this_addr) {
-        return internal_native_GetInverseMassUnchecked(this_addr);
-    }
-
-    public static void native_SetInverseMass(long this_addr, float inInvM) {
-        internal_native_SetInverseMass(this_addr, inInvM);
-    }
-
-    public static long native_GetInverseInertiaDiagonal(long this_addr) {
-        return internal_native_GetInverseInertiaDiagonal(this_addr);
-    }
-
-    public static long native_GetInertiaRotation(long this_addr) {
-        return internal_native_GetInertiaRotation(this_addr);
-    }
-
-    public static void native_SetInverseInertia(long this_addr, long inInvI_addr, long inRotation_addr) {
-        internal_native_SetInverseInertia(this_addr, inInvI_addr, inRotation_addr);
-    }
-
-    public static long native_GetLocalSpaceInverseInertia(long this_addr) {
-        return internal_native_GetLocalSpaceInverseInertia(this_addr);
-    }
-
-    public static long native_GetInverseInertiaForRotation(long this_addr, long inRotation_addr) {
-        return internal_native_GetInverseInertiaForRotation(this_addr, inRotation_addr);
-    }
-
-    public static long native_MultiplyWorldSpaceInverseInertiaByVector(long this_addr, long inRotation_addr, long inV_addr) {
-        return internal_native_MultiplyWorldSpaceInverseInertiaByVector(this_addr, inRotation_addr, inV_addr);
-    }
-
-    public static long native_GetPointVelocityCOM(long this_addr, long inPointRelativeToCOM_addr) {
-        return internal_native_GetPointVelocityCOM(this_addr, inPointRelativeToCOM_addr);
-    }
-
-    public static long native_GetAccumulatedForce(long this_addr) {
-        return internal_native_GetAccumulatedForce(this_addr);
-    }
-
-    public static long native_GetAccumulatedTorque(long this_addr) {
-        return internal_native_GetAccumulatedTorque(this_addr);
-    }
-
-    public static void native_ResetForce(long this_addr) {
-        internal_native_ResetForce(this_addr);
-    }
-
-    public static void native_ResetTorque(long this_addr) {
-        internal_native_ResetTorque(this_addr);
-    }
-
-    public static void native_ResetMotion(long this_addr) {
-        internal_native_ResetMotion(this_addr);
-    }
-
-    public static long native_LockTranslation(long this_addr, long inV_addr) {
-        return internal_native_LockTranslation(this_addr, inV_addr);
-    }
-
-    public static long native_LockAngular(long this_addr, long inV_addr) {
-        return internal_native_LockAngular(this_addr, inV_addr);
-    }
-
-    public static void native_SetNumVelocityStepsOverride(long this_addr, int inN) {
-        internal_native_SetNumVelocityStepsOverride(this_addr, inN);
-    }
-
-    public static int native_GetNumVelocityStepsOverride(long this_addr) {
-        return internal_native_GetNumVelocityStepsOverride(this_addr);
-    }
-
-    public static void native_SetNumPositionStepsOverride(long this_addr, int inN) {
-        internal_native_SetNumPositionStepsOverride(this_addr, inN);
-    }
-
-    public static int native_GetNumPositionStepsOverride(long this_addr) {
-        return internal_native_GetNumPositionStepsOverride(this_addr);
-    }
+    public static native int internal_native_GetNumPositionStepsOverride(long this_addr);
 }

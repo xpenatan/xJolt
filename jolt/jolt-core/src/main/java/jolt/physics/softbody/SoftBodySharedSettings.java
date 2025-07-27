@@ -43,7 +43,7 @@ public class SoftBodySharedSettings extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SoftBodySharedSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -60,7 +60,7 @@ return (jlong)new SoftBodySharedSettings();
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return nativeObject->GetRefCount();
 */
-    private static native int internal_native_GetRefCount(long this_addr);
+    public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
         internal_native_AddRef((long) getNativeData().getCPointer());
@@ -70,7 +70,7 @@ return nativeObject->GetRefCount();
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->AddRef();
 */
-    private static native void internal_native_AddRef(long this_addr);
+    public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
         internal_native_Release((long) getNativeData().getCPointer());
@@ -80,7 +80,7 @@ nativeObject->AddRef();
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->Release();
 */
-    private static native void internal_native_Release(long this_addr);
+    public static native void internal_native_Release(long this_addr);
 
     public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType, float inAngleTolerance) {
         internal_native_CreateConstraints((long) getNativeData().getCPointer(), (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, (long) (inBendType != null ? inBendType.getValue() : 0), inAngleTolerance);
@@ -90,7 +90,7 @@ nativeObject->Release();
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CreateConstraints((SoftBodySharedSettingsVertexAttributes* )inVertexAttributes_addr, inVertexAttributesLength, (::SoftBodySharedSettings_EBendType)inBendType, (float)inAngleTolerance);
 */
-    private static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType, float inAngleTolerance);
+    public static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType, float inAngleTolerance);
 
     public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType) {
         internal_native_CreateConstraints((long) getNativeData().getCPointer(), (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, (long) (inBendType != null ? inBendType.getValue() : 0));
@@ -100,7 +100,7 @@ nativeObject->CreateConstraints((SoftBodySharedSettingsVertexAttributes* )inVert
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CreateConstraints((SoftBodySharedSettingsVertexAttributes* )inVertexAttributes_addr, inVertexAttributesLength, (::SoftBodySharedSettings_EBendType)inBendType);
 */
-    private static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType);
+    public static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType);
 
     public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength) {
         internal_native_CreateConstraints((long) getNativeData().getCPointer(), (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength);
@@ -110,7 +110,7 @@ nativeObject->CreateConstraints((SoftBodySharedSettingsVertexAttributes* )inVert
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CreateConstraints((SoftBodySharedSettingsVertexAttributes* )inVertexAttributes_addr, inVertexAttributesLength);
 */
-    private static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength);
+    public static native void internal_native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength);
 
     public void AddFace(SoftBodySharedSettingsFace inFace) {
         internal_native_AddFace((long) getNativeData().getCPointer(), (long) (inFace != null ? inFace.getNativeData().getCPointer() : 0));
@@ -120,7 +120,7 @@ nativeObject->CreateConstraints((SoftBodySharedSettingsVertexAttributes* )inVert
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->AddFace(*((SoftBodySharedSettingsFace* )inFace_addr));
 */
-    private static native void internal_native_AddFace(long this_addr, long inFace_addr);
+    public static native void internal_native_AddFace(long this_addr, long inFace_addr);
 
     public void CalculateEdgeLengths() {
         internal_native_CalculateEdgeLengths((long) getNativeData().getCPointer());
@@ -130,7 +130,7 @@ nativeObject->AddFace(*((SoftBodySharedSettingsFace* )inFace_addr));
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CalculateEdgeLengths();
 */
-    private static native void internal_native_CalculateEdgeLengths(long this_addr);
+    public static native void internal_native_CalculateEdgeLengths(long this_addr);
 
     public void CalculateLRALengths() {
         internal_native_CalculateLRALengths((long) getNativeData().getCPointer());
@@ -140,7 +140,7 @@ nativeObject->CalculateEdgeLengths();
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CalculateLRALengths();
 */
-    private static native void internal_native_CalculateLRALengths(long this_addr);
+    public static native void internal_native_CalculateLRALengths(long this_addr);
 
     public void CalculateBendConstraintConstants() {
         internal_native_CalculateBendConstraintConstants((long) getNativeData().getCPointer());
@@ -150,7 +150,7 @@ nativeObject->CalculateLRALengths();
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CalculateBendConstraintConstants();
 */
-    private static native void internal_native_CalculateBendConstraintConstants(long this_addr);
+    public static native void internal_native_CalculateBendConstraintConstants(long this_addr);
 
     public void CalculateVolumeConstraintVolumes() {
         internal_native_CalculateVolumeConstraintVolumes((long) getNativeData().getCPointer());
@@ -160,7 +160,7 @@ nativeObject->CalculateBendConstraintConstants();
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CalculateVolumeConstraintVolumes();
 */
-    private static native void internal_native_CalculateVolumeConstraintVolumes(long this_addr);
+    public static native void internal_native_CalculateVolumeConstraintVolumes(long this_addr);
 
     public void CalculateSkinnedConstraintNormals() {
         internal_native_CalculateSkinnedConstraintNormals((long) getNativeData().getCPointer());
@@ -170,7 +170,7 @@ nativeObject->CalculateVolumeConstraintVolumes();
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->CalculateSkinnedConstraintNormals();
 */
-    private static native void internal_native_CalculateSkinnedConstraintNormals(long this_addr);
+    public static native void internal_native_CalculateSkinnedConstraintNormals(long this_addr);
 
     public void Optimize() {
         internal_native_Optimize((long) getNativeData().getCPointer());
@@ -180,7 +180,7 @@ nativeObject->CalculateSkinnedConstraintNormals();
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->Optimize();
 */
-    private static native void internal_native_Optimize(long this_addr);
+    public static native void internal_native_Optimize(long this_addr);
 
     public SoftBodySharedSettings Clone() {
         long pointer = internal_native_Clone((long) getNativeData().getCPointer());
@@ -196,7 +196,7 @@ SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 SoftBodySharedSettings* obj = nativeObject->Clone();
 return (jlong)obj;
 */
-    private static native long internal_native_Clone(long this_addr);
+    public static native long internal_native_Clone(long this_addr);
 
     public ArraySoftBodySharedSettingsVertex get_mVertices() {
         long pointer = internal_native_get_mVertices((long) getNativeData().getCPointer());
@@ -212,7 +212,7 @@ return (jlong)obj;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return (jlong)&nativeObject->mVertices;
 */
-    private static native long internal_native_get_mVertices(long this_addr);
+    public static native long internal_native_get_mVertices(long this_addr);
 
     public void set_mVertices(ArraySoftBodySharedSettingsVertex mVertices) {
         internal_native_set_mVertices((long) getNativeData().getCPointer(), (long) (mVertices != null ? mVertices.getNativeData().getCPointer() : 0));
@@ -222,7 +222,7 @@ return (jlong)&nativeObject->mVertices;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mVertices = *((ArraySoftBodySharedSettingsVertex*)mVertices_addr);
 */
-    private static native void internal_native_set_mVertices(long this_addr, long mVertices_addr);
+    public static native void internal_native_set_mVertices(long this_addr, long mVertices_addr);
 
     public ArraySoftBodySharedSettingsFace get_mFaces() {
         long pointer = internal_native_get_mFaces((long) getNativeData().getCPointer());
@@ -238,7 +238,7 @@ nativeObject->mVertices = *((ArraySoftBodySharedSettingsVertex*)mVertices_addr);
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return (jlong)&nativeObject->mFaces;
 */
-    private static native long internal_native_get_mFaces(long this_addr);
+    public static native long internal_native_get_mFaces(long this_addr);
 
     public void set_mFaces(ArraySoftBodySharedSettingsFace mFaces) {
         internal_native_set_mFaces((long) getNativeData().getCPointer(), (long) (mFaces != null ? mFaces.getNativeData().getCPointer() : 0));
@@ -248,7 +248,7 @@ return (jlong)&nativeObject->mFaces;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mFaces = *((ArraySoftBodySharedSettingsFace*)mFaces_addr);
 */
-    private static native void internal_native_set_mFaces(long this_addr, long mFaces_addr);
+    public static native void internal_native_set_mFaces(long this_addr, long mFaces_addr);
 
     public ArraySoftBodySharedSettingsEdge get_mEdgeConstraints() {
         long pointer = internal_native_get_mEdgeConstraints((long) getNativeData().getCPointer());
@@ -264,7 +264,7 @@ nativeObject->mFaces = *((ArraySoftBodySharedSettingsFace*)mFaces_addr);
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return (jlong)&nativeObject->mEdgeConstraints;
 */
-    private static native long internal_native_get_mEdgeConstraints(long this_addr);
+    public static native long internal_native_get_mEdgeConstraints(long this_addr);
 
     public void set_mEdgeConstraints(ArraySoftBodySharedSettingsEdge mEdgeConstraints) {
         internal_native_set_mEdgeConstraints((long) getNativeData().getCPointer(), (long) (mEdgeConstraints != null ? mEdgeConstraints.getNativeData().getCPointer() : 0));
@@ -274,7 +274,7 @@ return (jlong)&nativeObject->mEdgeConstraints;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mEdgeConstraints = *((ArraySoftBodySharedSettingsEdge*)mEdgeConstraints_addr);
 */
-    private static native void internal_native_set_mEdgeConstraints(long this_addr, long mEdgeConstraints_addr);
+    public static native void internal_native_set_mEdgeConstraints(long this_addr, long mEdgeConstraints_addr);
 
     public ArraySoftBodySharedSettingsDihedralBend get_mDihedralBendConstraints() {
         long pointer = internal_native_get_mDihedralBendConstraints((long) getNativeData().getCPointer());
@@ -290,7 +290,7 @@ nativeObject->mEdgeConstraints = *((ArraySoftBodySharedSettingsEdge*)mEdgeConstr
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return (jlong)&nativeObject->mDihedralBendConstraints;
 */
-    private static native long internal_native_get_mDihedralBendConstraints(long this_addr);
+    public static native long internal_native_get_mDihedralBendConstraints(long this_addr);
 
     public void set_mDihedralBendConstraints(ArraySoftBodySharedSettingsDihedralBend mDihedralBendConstraints) {
         internal_native_set_mDihedralBendConstraints((long) getNativeData().getCPointer(), (long) (mDihedralBendConstraints != null ? mDihedralBendConstraints.getNativeData().getCPointer() : 0));
@@ -300,7 +300,7 @@ return (jlong)&nativeObject->mDihedralBendConstraints;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mDihedralBendConstraints = *((ArraySoftBodySharedSettingsDihedralBend*)mDihedralBendConstraints_addr);
 */
-    private static native void internal_native_set_mDihedralBendConstraints(long this_addr, long mDihedralBendConstraints_addr);
+    public static native void internal_native_set_mDihedralBendConstraints(long this_addr, long mDihedralBendConstraints_addr);
 
     public ArraySoftBodySharedSettingsVolume get_mVolumeConstraints() {
         long pointer = internal_native_get_mVolumeConstraints((long) getNativeData().getCPointer());
@@ -316,7 +316,7 @@ nativeObject->mDihedralBendConstraints = *((ArraySoftBodySharedSettingsDihedralB
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return (jlong)&nativeObject->mVolumeConstraints;
 */
-    private static native long internal_native_get_mVolumeConstraints(long this_addr);
+    public static native long internal_native_get_mVolumeConstraints(long this_addr);
 
     public void set_mVolumeConstraints(ArraySoftBodySharedSettingsVolume mVolumeConstraints) {
         internal_native_set_mVolumeConstraints((long) getNativeData().getCPointer(), (long) (mVolumeConstraints != null ? mVolumeConstraints.getNativeData().getCPointer() : 0));
@@ -326,7 +326,7 @@ return (jlong)&nativeObject->mVolumeConstraints;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mVolumeConstraints = *((ArraySoftBodySharedSettingsVolume*)mVolumeConstraints_addr);
 */
-    private static native void internal_native_set_mVolumeConstraints(long this_addr, long mVolumeConstraints_addr);
+    public static native void internal_native_set_mVolumeConstraints(long this_addr, long mVolumeConstraints_addr);
 
     public ArraySoftBodySharedSettingsSkinned get_mSkinnedConstraints() {
         long pointer = internal_native_get_mSkinnedConstraints((long) getNativeData().getCPointer());
@@ -342,7 +342,7 @@ nativeObject->mVolumeConstraints = *((ArraySoftBodySharedSettingsVolume*)mVolume
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return (jlong)&nativeObject->mSkinnedConstraints;
 */
-    private static native long internal_native_get_mSkinnedConstraints(long this_addr);
+    public static native long internal_native_get_mSkinnedConstraints(long this_addr);
 
     public void set_mSkinnedConstraints(ArraySoftBodySharedSettingsSkinned mSkinnedConstraints) {
         internal_native_set_mSkinnedConstraints((long) getNativeData().getCPointer(), (long) (mSkinnedConstraints != null ? mSkinnedConstraints.getNativeData().getCPointer() : 0));
@@ -352,7 +352,7 @@ return (jlong)&nativeObject->mSkinnedConstraints;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mSkinnedConstraints = *((ArraySoftBodySharedSettingsSkinned*)mSkinnedConstraints_addr);
 */
-    private static native void internal_native_set_mSkinnedConstraints(long this_addr, long mSkinnedConstraints_addr);
+    public static native void internal_native_set_mSkinnedConstraints(long this_addr, long mSkinnedConstraints_addr);
 
     public ArraySoftBodySharedSettingsInvBind get_mInvBindMatrices() {
         long pointer = internal_native_get_mInvBindMatrices((long) getNativeData().getCPointer());
@@ -368,7 +368,7 @@ nativeObject->mSkinnedConstraints = *((ArraySoftBodySharedSettingsSkinned*)mSkin
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return (jlong)&nativeObject->mInvBindMatrices;
 */
-    private static native long internal_native_get_mInvBindMatrices(long this_addr);
+    public static native long internal_native_get_mInvBindMatrices(long this_addr);
 
     public void set_mInvBindMatrices(ArraySoftBodySharedSettingsInvBind mInvBindMatrices) {
         internal_native_set_mInvBindMatrices((long) getNativeData().getCPointer(), (long) (mInvBindMatrices != null ? mInvBindMatrices.getNativeData().getCPointer() : 0));
@@ -378,7 +378,7 @@ return (jlong)&nativeObject->mInvBindMatrices;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mInvBindMatrices = *((ArraySoftBodySharedSettingsInvBind*)mInvBindMatrices_addr);
 */
-    private static native void internal_native_set_mInvBindMatrices(long this_addr, long mInvBindMatrices_addr);
+    public static native void internal_native_set_mInvBindMatrices(long this_addr, long mInvBindMatrices_addr);
 
     public ArraySoftBodySharedSettingsLRA get_mLRAConstraints() {
         long pointer = internal_native_get_mLRAConstraints((long) getNativeData().getCPointer());
@@ -394,7 +394,7 @@ nativeObject->mInvBindMatrices = *((ArraySoftBodySharedSettingsInvBind*)mInvBind
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return (jlong)&nativeObject->mLRAConstraints;
 */
-    private static native long internal_native_get_mLRAConstraints(long this_addr);
+    public static native long internal_native_get_mLRAConstraints(long this_addr);
 
     public void set_mLRAConstraints(ArraySoftBodySharedSettingsLRA mLRAConstraints) {
         internal_native_set_mLRAConstraints((long) getNativeData().getCPointer(), (long) (mLRAConstraints != null ? mLRAConstraints.getNativeData().getCPointer() : 0));
@@ -404,7 +404,7 @@ return (jlong)&nativeObject->mLRAConstraints;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mLRAConstraints = *((ArraySoftBodySharedSettingsLRA*)mLRAConstraints_addr);
 */
-    private static native void internal_native_set_mLRAConstraints(long this_addr, long mLRAConstraints_addr);
+    public static native void internal_native_set_mLRAConstraints(long this_addr, long mLRAConstraints_addr);
 
     public PhysicsMaterialList get_mMaterials() {
         long pointer = internal_native_get_mMaterials((long) getNativeData().getCPointer());
@@ -420,7 +420,7 @@ nativeObject->mLRAConstraints = *((ArraySoftBodySharedSettingsLRA*)mLRAConstrain
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return (jlong)&nativeObject->mMaterials;
 */
-    private static native long internal_native_get_mMaterials(long this_addr);
+    public static native long internal_native_get_mMaterials(long this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
         internal_native_set_mMaterials((long) getNativeData().getCPointer(), (long) (mMaterials != null ? mMaterials.getNativeData().getCPointer() : 0));
@@ -430,7 +430,7 @@ return (jlong)&nativeObject->mMaterials;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mMaterials = *((PhysicsMaterialList*)mMaterials_addr);
 */
-    private static native void internal_native_set_mMaterials(long this_addr, long mMaterials_addr);
+    public static native void internal_native_set_mMaterials(long this_addr, long mMaterials_addr);
 
     public float get_mVertexRadius() {
         return internal_native_get_mVertexRadius((long) getNativeData().getCPointer());
@@ -440,7 +440,7 @@ nativeObject->mMaterials = *((PhysicsMaterialList*)mMaterials_addr);
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 return nativeObject->mVertexRadius;
 */
-    private static native float internal_native_get_mVertexRadius(long this_addr);
+    public static native float internal_native_get_mVertexRadius(long this_addr);
 
     public void set_mVertexRadius(float mVertexRadius) {
         internal_native_set_mVertexRadius((long) getNativeData().getCPointer(), mVertexRadius);
@@ -450,145 +450,5 @@ return nativeObject->mVertexRadius;
 SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
 nativeObject->mVertexRadius = mVertexRadius;
 */
-    private static native void internal_native_set_mVertexRadius(long this_addr, float mVertexRadius);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount(this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef(this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release(this_addr);
-    }
-
-    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType, float inAngleTolerance) {
-        internal_native_CreateConstraints(this_addr, inVertexAttributes_addr, inVertexAttributesLength, inBendType, inAngleTolerance);
-    }
-
-    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength, long inBendType) {
-        internal_native_CreateConstraints(this_addr, inVertexAttributes_addr, inVertexAttributesLength, inBendType);
-    }
-
-    public static void native_CreateConstraints(long this_addr, long inVertexAttributes_addr, int inVertexAttributesLength) {
-        internal_native_CreateConstraints(this_addr, inVertexAttributes_addr, inVertexAttributesLength);
-    }
-
-    public static void native_AddFace(long this_addr, long inFace_addr) {
-        internal_native_AddFace(this_addr, inFace_addr);
-    }
-
-    public static void native_CalculateEdgeLengths(long this_addr) {
-        internal_native_CalculateEdgeLengths(this_addr);
-    }
-
-    public static void native_CalculateLRALengths(long this_addr) {
-        internal_native_CalculateLRALengths(this_addr);
-    }
-
-    public static void native_CalculateBendConstraintConstants(long this_addr) {
-        internal_native_CalculateBendConstraintConstants(this_addr);
-    }
-
-    public static void native_CalculateVolumeConstraintVolumes(long this_addr) {
-        internal_native_CalculateVolumeConstraintVolumes(this_addr);
-    }
-
-    public static void native_CalculateSkinnedConstraintNormals(long this_addr) {
-        internal_native_CalculateSkinnedConstraintNormals(this_addr);
-    }
-
-    public static void native_Optimize(long this_addr) {
-        internal_native_Optimize(this_addr);
-    }
-
-    public static long native_Clone(long this_addr) {
-        return internal_native_Clone(this_addr);
-    }
-
-    public static long native_get_mVertices(long this_addr) {
-        return internal_native_get_mVertices(this_addr);
-    }
-
-    public static void native_set_mVertices(long this_addr, long mVertices_addr) {
-        internal_native_set_mVertices(this_addr, mVertices_addr);
-    }
-
-    public static long native_get_mFaces(long this_addr) {
-        return internal_native_get_mFaces(this_addr);
-    }
-
-    public static void native_set_mFaces(long this_addr, long mFaces_addr) {
-        internal_native_set_mFaces(this_addr, mFaces_addr);
-    }
-
-    public static long native_get_mEdgeConstraints(long this_addr) {
-        return internal_native_get_mEdgeConstraints(this_addr);
-    }
-
-    public static void native_set_mEdgeConstraints(long this_addr, long mEdgeConstraints_addr) {
-        internal_native_set_mEdgeConstraints(this_addr, mEdgeConstraints_addr);
-    }
-
-    public static long native_get_mDihedralBendConstraints(long this_addr) {
-        return internal_native_get_mDihedralBendConstraints(this_addr);
-    }
-
-    public static void native_set_mDihedralBendConstraints(long this_addr, long mDihedralBendConstraints_addr) {
-        internal_native_set_mDihedralBendConstraints(this_addr, mDihedralBendConstraints_addr);
-    }
-
-    public static long native_get_mVolumeConstraints(long this_addr) {
-        return internal_native_get_mVolumeConstraints(this_addr);
-    }
-
-    public static void native_set_mVolumeConstraints(long this_addr, long mVolumeConstraints_addr) {
-        internal_native_set_mVolumeConstraints(this_addr, mVolumeConstraints_addr);
-    }
-
-    public static long native_get_mSkinnedConstraints(long this_addr) {
-        return internal_native_get_mSkinnedConstraints(this_addr);
-    }
-
-    public static void native_set_mSkinnedConstraints(long this_addr, long mSkinnedConstraints_addr) {
-        internal_native_set_mSkinnedConstraints(this_addr, mSkinnedConstraints_addr);
-    }
-
-    public static long native_get_mInvBindMatrices(long this_addr) {
-        return internal_native_get_mInvBindMatrices(this_addr);
-    }
-
-    public static void native_set_mInvBindMatrices(long this_addr, long mInvBindMatrices_addr) {
-        internal_native_set_mInvBindMatrices(this_addr, mInvBindMatrices_addr);
-    }
-
-    public static long native_get_mLRAConstraints(long this_addr) {
-        return internal_native_get_mLRAConstraints(this_addr);
-    }
-
-    public static void native_set_mLRAConstraints(long this_addr, long mLRAConstraints_addr) {
-        internal_native_set_mLRAConstraints(this_addr, mLRAConstraints_addr);
-    }
-
-    public static long native_get_mMaterials(long this_addr) {
-        return internal_native_get_mMaterials(this_addr);
-    }
-
-    public static void native_set_mMaterials(long this_addr, long mMaterials_addr) {
-        internal_native_set_mMaterials(this_addr, mMaterials_addr);
-    }
-
-    public static float native_get_mVertexRadius(long this_addr) {
-        return internal_native_get_mVertexRadius(this_addr);
-    }
-
-    public static void native_set_mVertexRadius(long this_addr, float mVertexRadius) {
-        internal_native_set_mVertexRadius(this_addr, mVertexRadius);
-    }
+    public static native void internal_native_set_mVertexRadius(long this_addr, float mVertexRadius);
 }

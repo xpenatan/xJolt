@@ -44,7 +44,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public boolean IsValid() {
         return internal_native_IsValid((int) (long) getNativeData().getCPointer());
@@ -56,7 +56,7 @@ var returnedJSObj = jsObj.IsValid();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);var returnedJSObj = jsObj.IsValid();return returnedJSObj;")
-    private static native boolean internal_native_IsValid(int this_addr);
+    public static native boolean internal_native_IsValid(int this_addr);
 
     public boolean HasError() {
         return internal_native_HasError((int) (long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ var returnedJSObj = jsObj.HasError();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);var returnedJSObj = jsObj.HasError();return returnedJSObj;")
-    private static native boolean internal_native_HasError(int this_addr);
+    public static native boolean internal_native_HasError(int this_addr);
 
     public IDLString GetError() {
         int pointer = internal_native_GetError((int) (long) getNativeData().getCPointer());
@@ -87,7 +87,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);var returnedJSObj = jsObj.GetError();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetError(int this_addr);
+    public static native int internal_native_GetError(int this_addr);
 
     public Shape Get() {
         int pointer = internal_native_Get((int) (long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);var returnedJSObj = jsObj.Get();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_Get(int this_addr);
+    public static native int internal_native_Get(int this_addr);
 
     public void Clear() {
         internal_native_Clear((int) (long) getNativeData().getCPointer());
@@ -117,29 +117,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);
 jsObj.Clear();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);jsObj.Clear();")
-    private static native void internal_native_Clear(int this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static boolean native_IsValid(long this_addr) {
-        return internal_native_IsValid((int) this_addr);
-    }
-
-    public static boolean native_HasError(long this_addr) {
-        return internal_native_HasError((int) this_addr);
-    }
-
-    public static long native_GetError(long this_addr) {
-        return internal_native_GetError((int) this_addr);
-    }
-
-    public static long native_Get(long this_addr) {
-        return internal_native_Get((int) this_addr);
-    }
-
-    public static void native_Clear(long this_addr) {
-        internal_native_Clear((int) this_addr);
-    }
+    public static native void internal_native_Clear(int this_addr);
 }

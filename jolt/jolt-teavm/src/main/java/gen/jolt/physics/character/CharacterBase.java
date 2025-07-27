@@ -51,7 +51,7 @@ var returnedJSObj = jsObj.GetRefCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetRefCount();return returnedJSObj;")
-    private static native int internal_native_GetRefCount(int this_addr);
+    public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
         internal_native_AddRef((int) (long) getNativeData().getCPointer());
@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);
 jsObj.AddRef();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);jsObj.AddRef();")
-    private static native void internal_native_AddRef(int this_addr);
+    public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
         internal_native_Release((int) (long) getNativeData().getCPointer());
@@ -73,7 +73,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);
 jsObj.Release();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);jsObj.Release();")
-    private static native void internal_native_Release(int this_addr);
+    public static native void internal_native_Release(int this_addr);
 
     public void SetMaxSlopeAngle(float inMaxSlopeAngle) {
         internal_native_SetMaxSlopeAngle((int) (long) getNativeData().getCPointer(), inMaxSlopeAngle);
@@ -84,7 +84,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);
 jsObj.SetMaxSlopeAngle(inMaxSlopeAngle);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inMaxSlopeAngle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);jsObj.SetMaxSlopeAngle(inMaxSlopeAngle);")
-    private static native void internal_native_SetMaxSlopeAngle(int this_addr, float inMaxSlopeAngle);
+    public static native void internal_native_SetMaxSlopeAngle(int this_addr, float inMaxSlopeAngle);
 
     public float GetCosMaxSlopeAngle() {
         return internal_native_GetCosMaxSlopeAngle((int) (long) getNativeData().getCPointer());
@@ -96,7 +96,7 @@ var returnedJSObj = jsObj.GetCosMaxSlopeAngle();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetCosMaxSlopeAngle();return returnedJSObj;")
-    private static native float internal_native_GetCosMaxSlopeAngle(int this_addr);
+    public static native float internal_native_GetCosMaxSlopeAngle(int this_addr);
 
     public void SetUp(Vec3 inUp) {
         internal_native_SetUp((int) (long) getNativeData().getCPointer(), (int) (long) (inUp != null ? inUp.getNativeData().getCPointer() : 0));
@@ -107,7 +107,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);
 jsObj.SetUp(inUp_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inUp_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);jsObj.SetUp(inUp_addr);")
-    private static native void internal_native_SetUp(int this_addr, int inUp_addr);
+    public static native void internal_native_SetUp(int this_addr, int inUp_addr);
 
     public Vec3 GetUp() {
         int pointer = internal_native_GetUp((int) (long) getNativeData().getCPointer());
@@ -126,7 +126,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetUp();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetUp(int this_addr);
+    public static native int internal_native_GetUp(int this_addr);
 
     public Shape GetShape() {
         int pointer = internal_native_GetShape((int) (long) getNativeData().getCPointer());
@@ -145,7 +145,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetShape(int this_addr);
+    public static native int internal_native_GetShape(int this_addr);
 
     public EGroundState GetGroundState() {
         int value = internal_native_GetGroundState((int) (long) getNativeData().getCPointer());
@@ -158,7 +158,7 @@ var returnedJSObj = jsObj.GetGroundState();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetGroundState();return returnedJSObj;")
-    private static native int internal_native_GetGroundState(int this_addr);
+    public static native int internal_native_GetGroundState(int this_addr);
 
     public boolean IsSlopeTooSteep(Vec3 inNormal) {
         return internal_native_IsSlopeTooSteep((int) (long) getNativeData().getCPointer(), (int) (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
@@ -170,7 +170,7 @@ var returnedJSObj = jsObj.IsSlopeTooSteep(inNormal_addr);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inNormal_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.IsSlopeTooSteep(inNormal_addr);return returnedJSObj;")
-    private static native boolean internal_native_IsSlopeTooSteep(int this_addr, int inNormal_addr);
+    public static native boolean internal_native_IsSlopeTooSteep(int this_addr, int inNormal_addr);
 
     public boolean IsSupported() {
         return internal_native_IsSupported((int) (long) getNativeData().getCPointer());
@@ -182,7 +182,7 @@ var returnedJSObj = jsObj.IsSupported();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.IsSupported();return returnedJSObj;")
-    private static native boolean internal_native_IsSupported(int this_addr);
+    public static native boolean internal_native_IsSupported(int this_addr);
 
     public Vec3 GetGroundPosition() {
         int pointer = internal_native_GetGroundPosition((int) (long) getNativeData().getCPointer());
@@ -201,7 +201,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetGroundPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetGroundPosition(int this_addr);
+    public static native int internal_native_GetGroundPosition(int this_addr);
 
     public Vec3 GetGroundNormal() {
         int pointer = internal_native_GetGroundNormal((int) (long) getNativeData().getCPointer());
@@ -220,7 +220,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetGroundNormal();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetGroundNormal(int this_addr);
+    public static native int internal_native_GetGroundNormal(int this_addr);
 
     public Vec3 GetGroundVelocity() {
         int pointer = internal_native_GetGroundVelocity((int) (long) getNativeData().getCPointer());
@@ -239,7 +239,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetGroundVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetGroundVelocity(int this_addr);
+    public static native int internal_native_GetGroundVelocity(int this_addr);
 
     public PhysicsMaterial GetGroundMaterial() {
         int pointer = internal_native_GetGroundMaterial((int) (long) getNativeData().getCPointer());
@@ -258,7 +258,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetGroundMaterial();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetGroundMaterial(int this_addr);
+    public static native int internal_native_GetGroundMaterial(int this_addr);
 
     public BodyID GetGroundBodyID() {
         int pointer = internal_native_GetGroundBodyID((int) (long) getNativeData().getCPointer());
@@ -277,69 +277,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBase);var returnedJSObj = jsObj.GetGroundBodyID();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetGroundBodyID(int this_addr);
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount((int) this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef((int) this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release((int) this_addr);
-    }
-
-    public static void native_SetMaxSlopeAngle(long this_addr, float inMaxSlopeAngle) {
-        internal_native_SetMaxSlopeAngle((int) this_addr, inMaxSlopeAngle);
-    }
-
-    public static float native_GetCosMaxSlopeAngle(long this_addr) {
-        return internal_native_GetCosMaxSlopeAngle((int) this_addr);
-    }
-
-    public static void native_SetUp(long this_addr, long inUp_addr) {
-        internal_native_SetUp((int) this_addr, (int) inUp_addr);
-    }
-
-    public static long native_GetUp(long this_addr) {
-        return internal_native_GetUp((int) this_addr);
-    }
-
-    public static long native_GetShape(long this_addr) {
-        return internal_native_GetShape((int) this_addr);
-    }
-
-    public static long native_GetGroundState(long this_addr) {
-        return internal_native_GetGroundState((int) this_addr);
-    }
-
-    public static boolean native_IsSlopeTooSteep(long this_addr, long inNormal_addr) {
-        return internal_native_IsSlopeTooSteep((int) this_addr, (int) inNormal_addr);
-    }
-
-    public static boolean native_IsSupported(long this_addr) {
-        return internal_native_IsSupported((int) this_addr);
-    }
-
-    public static long native_GetGroundPosition(long this_addr) {
-        return internal_native_GetGroundPosition((int) this_addr);
-    }
-
-    public static long native_GetGroundNormal(long this_addr) {
-        return internal_native_GetGroundNormal((int) this_addr);
-    }
-
-    public static long native_GetGroundVelocity(long this_addr) {
-        return internal_native_GetGroundVelocity((int) this_addr);
-    }
-
-    public static long native_GetGroundMaterial(long this_addr) {
-        return internal_native_GetGroundMaterial((int) this_addr);
-    }
-
-    public static long native_GetGroundBodyID(long this_addr) {
-        return internal_native_GetGroundBodyID((int) this_addr);
-    }
+    public static native int internal_native_GetGroundBodyID(int this_addr);
 }

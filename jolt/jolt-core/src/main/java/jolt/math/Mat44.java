@@ -130,7 +130,7 @@ public class Mat44 extends IDLBase {
 Mat44* nativeObject = (Mat44*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public static Mat44 sZero() {
         long pointer = internal_native_sZero();
@@ -146,7 +146,7 @@ delete nativeObject;
 static Mat44 copy_addr;
 copy_addr = Mat44::sZero();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sZero();
+    public static native long internal_native_sZero();
 
     public static Mat44 sIdentity() {
         long pointer = internal_native_sIdentity();
@@ -162,7 +162,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sIdentity();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sIdentity();
+    public static native long internal_native_sIdentity();
 
     public static Mat44 sRotationX(float inX) {
         long pointer = internal_native_sRotationX(inX);
@@ -178,7 +178,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sRotationX((float)inX);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sRotationX(float inX);
+    public static native long internal_native_sRotationX(float inX);
 
     public static Mat44 sRotationY(float inY) {
         long pointer = internal_native_sRotationY(inY);
@@ -194,7 +194,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sRotationY((float)inY);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sRotationY(float inY);
+    public static native long internal_native_sRotationY(float inY);
 
     public static Mat44 sRotationZ(float inZ) {
         long pointer = internal_native_sRotationZ(inZ);
@@ -210,7 +210,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sRotationZ((float)inZ);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sRotationZ(float inZ);
+    public static native long internal_native_sRotationZ(float inZ);
 
     public static Mat44 sRotation(Quat inQ) {
         long pointer = internal_native_sRotation((long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
@@ -226,7 +226,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sRotation(*((Quat* )inQ_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sRotation(long inQ_addr);
+    public static native long internal_native_sRotation(long inQ_addr);
 
     public static Mat44 sRotationAxisAngle(Vec3 inAxis, float inAngle) {
         long pointer = internal_native_sRotationAxisAngle((long) (inAxis != null ? inAxis.getNativeData().getCPointer() : 0), inAngle);
@@ -242,7 +242,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sRotation(*((Vec3* )inAxis_addr), (float)inAngle);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sRotationAxisAngle(long inAxis_addr, float inAngle);
+    public static native long internal_native_sRotationAxisAngle(long inAxis_addr, float inAngle);
 
     public static Mat44 sTranslation(Vec3 inTranslation) {
         long pointer = internal_native_sTranslation((long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
@@ -258,7 +258,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sTranslation(*((Vec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sTranslation(long inTranslation_addr);
+    public static native long internal_native_sTranslation(long inTranslation_addr);
 
     public static Mat44 sRotationTranslation(Quat inRotation, Vec3 inTranslation) {
         long pointer = internal_native_sRotationTranslation((long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
@@ -274,7 +274,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sRotationTranslation(*((Quat* )inRotation_addr), *((Vec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sRotationTranslation(long inRotation_addr, long inTranslation_addr);
+    public static native long internal_native_sRotationTranslation(long inRotation_addr, long inTranslation_addr);
 
     public static Mat44 sInverseRotationTranslation(Quat inRotation, Vec3 inTranslation) {
         long pointer = internal_native_sInverseRotationTranslation((long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
@@ -290,7 +290,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sInverseRotationTranslation(*((Quat* )inRotation_addr), *((Vec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sInverseRotationTranslation(long inRotation_addr, long inTranslation_addr);
+    public static native long internal_native_sInverseRotationTranslation(long inRotation_addr, long inTranslation_addr);
 
     public static Mat44 sScale(float inScale) {
         long pointer = internal_native_sScale(inScale);
@@ -306,7 +306,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sScale((float)inScale);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sScale(float inScale);
+    public static native long internal_native_sScale(float inScale);
 
     public static Mat44 sScaleVec3(Vec3 inScale) {
         long pointer = internal_native_sScaleVec3((long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
@@ -322,7 +322,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sScale(*((Vec3* )inScale_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sScaleVec3(long inScale_addr);
+    public static native long internal_native_sScaleVec3(long inScale_addr);
 
     public static Mat44 sOuterProduct(Vec3 inV1, Vec3 inV2) {
         long pointer = internal_native_sOuterProduct((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
@@ -338,7 +338,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sOuterProduct(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sOuterProduct(long inV1_addr, long inV2_addr);
+    public static native long internal_native_sOuterProduct(long inV1_addr, long inV2_addr);
 
     public static Mat44 sCrossProduct(Vec3 inV) {
         long pointer = internal_native_sCrossProduct((long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -354,7 +354,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sCrossProduct(*((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sCrossProduct(long inV_addr);
+    public static native long internal_native_sCrossProduct(long inV_addr);
 
     public static Mat44 sQuatLeftMultiply(Quat inQ) {
         long pointer = internal_native_sQuatLeftMultiply((long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
@@ -370,7 +370,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sQuatLeftMultiply(*((Quat* )inQ_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sQuatLeftMultiply(long inQ_addr);
+    public static native long internal_native_sQuatLeftMultiply(long inQ_addr);
 
     public static Mat44 sQuatRightMultiply(Quat inQ) {
         long pointer = internal_native_sQuatRightMultiply((long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
@@ -386,7 +386,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sQuatRightMultiply(*((Quat* )inQ_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sQuatRightMultiply(long inQ_addr);
+    public static native long internal_native_sQuatRightMultiply(long inQ_addr);
 
     public static Mat44 sLookAt(Vec3 inPos, Vec3 inTarget, Vec3 inUp) {
         long pointer = internal_native_sLookAt((long) (inPos != null ? inPos.getNativeData().getCPointer() : 0), (long) (inTarget != null ? inTarget.getNativeData().getCPointer() : 0), (long) (inUp != null ? inUp.getNativeData().getCPointer() : 0));
@@ -402,7 +402,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sLookAt(*((Vec3* )inPos_addr), *((Vec3* )inTarget_addr), *((Vec3* )inUp_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sLookAt(long inPos_addr, long inTarget_addr, long inUp_addr);
+    public static native long internal_native_sLookAt(long inPos_addr, long inTarget_addr, long inUp_addr);
 
     public static Mat44 sPerspective(float inFovY, float inAspect, float inNear, float inFar) {
         long pointer = internal_native_sPerspective(inFovY, inAspect, inNear, inFar);
@@ -418,7 +418,7 @@ return (jlong)&copy_addr;*/
 static Mat44 copy_addr;
 copy_addr = Mat44::sPerspective((float)inFovY, (float)inAspect, (float)inNear, (float)inFar);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_sPerspective(float inFovY, float inAspect, float inNear, float inFar);
+    public static native long internal_native_sPerspective(float inFovY, float inAspect, float inNear, float inFar);
 
     public Vec3 GetAxisX() {
         long pointer = internal_native_GetAxisX((long) getNativeData().getCPointer());
@@ -435,7 +435,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAxisX();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetAxisX(long this_addr);
+    public static native long internal_native_GetAxisX(long this_addr);
 
     public Vec3 GetAxisY() {
         long pointer = internal_native_GetAxisY((long) getNativeData().getCPointer());
@@ -452,7 +452,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAxisY();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetAxisY(long this_addr);
+    public static native long internal_native_GetAxisY(long this_addr);
 
     public Vec3 GetAxisZ() {
         long pointer = internal_native_GetAxisZ((long) getNativeData().getCPointer());
@@ -469,7 +469,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAxisZ();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetAxisZ(long this_addr);
+    public static native long internal_native_GetAxisZ(long this_addr);
 
     public Vec3 GetDiagonal3() {
         long pointer = internal_native_GetDiagonal3((long) getNativeData().getCPointer());
@@ -486,7 +486,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetDiagonal3();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetDiagonal3(long this_addr);
+    public static native long internal_native_GetDiagonal3(long this_addr);
 
     public Vec4 GetDiagonal4() {
         long pointer = internal_native_GetDiagonal4((long) getNativeData().getCPointer());
@@ -503,7 +503,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec4 copy_addr;
 copy_addr = nativeObject->GetDiagonal4();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetDiagonal4(long this_addr);
+    public static native long internal_native_GetDiagonal4(long this_addr);
 
     public Mat44 GetRotation() {
         long pointer = internal_native_GetRotation((long) getNativeData().getCPointer());
@@ -520,7 +520,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetRotation();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetRotation(long this_addr);
+    public static native long internal_native_GetRotation(long this_addr);
 
     public Mat44 GetRotationSafe() {
         long pointer = internal_native_GetRotationSafe((long) getNativeData().getCPointer());
@@ -537,7 +537,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetRotationSafe();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetRotationSafe(long this_addr);
+    public static native long internal_native_GetRotationSafe(long this_addr);
 
     public Quat GetQuaternion() {
         long pointer = internal_native_GetQuaternion((long) getNativeData().getCPointer());
@@ -554,7 +554,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetQuaternion();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetQuaternion(long this_addr);
+    public static native long internal_native_GetQuaternion(long this_addr);
 
     public Vec3 GetTranslation() {
         long pointer = internal_native_GetTranslation((long) getNativeData().getCPointer());
@@ -571,7 +571,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetTranslation();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetTranslation(long this_addr);
+    public static native long internal_native_GetTranslation(long this_addr);
 
     public boolean Equals(Mat44 inV) {
         return internal_native_Equals((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -580,7 +580,7 @@ return (jlong)&copy_addr;*/
     /*[-JNI;-NATIVE]
 Mat44* nativeObject = (Mat44*)this_addr;
 return ((*nativeObject == *((Mat44* )inV_addr)));*/
-    private static native boolean internal_native_Equals(long this_addr, long inV_addr);
+    public static native boolean internal_native_Equals(long this_addr, long inV_addr);
 
     public boolean NotEquals(Mat44 inV) {
         return internal_native_NotEquals((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -589,7 +589,7 @@ return ((*nativeObject == *((Mat44* )inV_addr)));*/
     /*[-JNI;-NATIVE]
 Mat44* nativeObject = (Mat44*)this_addr;
 return ((*nativeObject != *((Mat44* )inV_addr)));*/
-    private static native boolean internal_native_NotEquals(long this_addr, long inV_addr);
+    public static native boolean internal_native_NotEquals(long this_addr, long inV_addr);
 
     public boolean IsClose(Mat44 inM, float inMaxDistSq) {
         return internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inM != null ? inM.getNativeData().getCPointer() : 0), inMaxDistSq);
@@ -599,7 +599,7 @@ return ((*nativeObject != *((Mat44* )inV_addr)));*/
 Mat44* nativeObject = (Mat44*)this_addr;
 return nativeObject->IsClose(*((Mat44* )inM_addr), (float)inMaxDistSq);
 */
-    private static native boolean internal_native_IsClose(long this_addr, long inM_addr, float inMaxDistSq);
+    public static native boolean internal_native_IsClose(long this_addr, long inM_addr, float inMaxDistSq);
 
     public boolean IsClose(Mat44 inM) {
         return internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
@@ -609,7 +609,7 @@ return nativeObject->IsClose(*((Mat44* )inM_addr), (float)inMaxDistSq);
 Mat44* nativeObject = (Mat44*)this_addr;
 return nativeObject->IsClose(*((Mat44* )inM_addr));
 */
-    private static native boolean internal_native_IsClose(long this_addr, long inM_addr);
+    public static native boolean internal_native_IsClose(long this_addr, long inM_addr);
 
     public Vec3 MulVec3(Vec3 inV) {
         long pointer = internal_native_MulVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -626,7 +626,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = (*nativeObject * *((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_MulVec3(long this_addr, long inV_addr);
+    public static native long internal_native_MulVec3(long this_addr, long inV_addr);
 
     public Vec3 Multiply3x3(Vec3 inV) {
         long pointer = internal_native_Multiply3x3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -643,7 +643,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->Multiply3x3(*((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Multiply3x3(long this_addr, long inV_addr);
+    public static native long internal_native_Multiply3x3(long this_addr, long inV_addr);
 
     public Vec3 Multiply3x3Transposed(Vec3 inV) {
         long pointer = internal_native_Multiply3x3Transposed((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -660,7 +660,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->Multiply3x3Transposed(*((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Multiply3x3Transposed(long this_addr, long inV_addr);
+    public static native long internal_native_Multiply3x3Transposed(long this_addr, long inV_addr);
 
     public Mat44 Multiply3x3LeftTransposed(Mat44 inM) {
         long pointer = internal_native_Multiply3x3LeftTransposed((long) getNativeData().getCPointer(), (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
@@ -677,7 +677,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->Multiply3x3LeftTransposed(*((Mat44* )inM_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Multiply3x3LeftTransposed(long this_addr, long inM_addr);
+    public static native long internal_native_Multiply3x3LeftTransposed(long this_addr, long inM_addr);
 
     public Mat44 Multiply3x3RightTransposed(Mat44 inM) {
         long pointer = internal_native_Multiply3x3RightTransposed((long) getNativeData().getCPointer(), (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
@@ -694,7 +694,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->Multiply3x3RightTransposed(*((Mat44* )inM_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Multiply3x3RightTransposed(long this_addr, long inM_addr);
+    public static native long internal_native_Multiply3x3RightTransposed(long this_addr, long inM_addr);
 
     public Mat44 Transposed() {
         long pointer = internal_native_Transposed((long) getNativeData().getCPointer());
@@ -711,7 +711,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->Transposed();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Transposed(long this_addr);
+    public static native long internal_native_Transposed(long this_addr);
 
     public Mat44 Transposed3x3() {
         long pointer = internal_native_Transposed3x3((long) getNativeData().getCPointer());
@@ -728,7 +728,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->Transposed3x3();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Transposed3x3(long this_addr);
+    public static native long internal_native_Transposed3x3(long this_addr);
 
     public Mat44 Inversed() {
         long pointer = internal_native_Inversed((long) getNativeData().getCPointer());
@@ -745,7 +745,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->Inversed();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Inversed(long this_addr);
+    public static native long internal_native_Inversed(long this_addr);
 
     public Mat44 InversedRotationTranslation() {
         long pointer = internal_native_InversedRotationTranslation((long) getNativeData().getCPointer());
@@ -762,7 +762,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->InversedRotationTranslation();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_InversedRotationTranslation(long this_addr);
+    public static native long internal_native_InversedRotationTranslation(long this_addr);
 
     public Mat44 Adjointed3x3() {
         long pointer = internal_native_Adjointed3x3((long) getNativeData().getCPointer());
@@ -779,7 +779,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->Adjointed3x3();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Adjointed3x3(long this_addr);
+    public static native long internal_native_Adjointed3x3(long this_addr);
 
     public boolean SetInversed3x3(Mat44 inM) {
         return internal_native_SetInversed3x3((long) getNativeData().getCPointer(), (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
@@ -789,7 +789,7 @@ return (jlong)&copy_addr;*/
 Mat44* nativeObject = (Mat44*)this_addr;
 return nativeObject->SetInversed3x3(*((Mat44* )inM_addr));
 */
-    private static native boolean internal_native_SetInversed3x3(long this_addr, long inM_addr);
+    public static native boolean internal_native_SetInversed3x3(long this_addr, long inM_addr);
 
     public float GetDeterminant3x3() {
         return internal_native_GetDeterminant3x3((long) getNativeData().getCPointer());
@@ -799,7 +799,7 @@ return nativeObject->SetInversed3x3(*((Mat44* )inM_addr));
 Mat44* nativeObject = (Mat44*)this_addr;
 return nativeObject->GetDeterminant3x3();
 */
-    private static native float internal_native_GetDeterminant3x3(long this_addr);
+    public static native float internal_native_GetDeterminant3x3(long this_addr);
 
     public Mat44 Inversed3x3() {
         long pointer = internal_native_Inversed3x3((long) getNativeData().getCPointer());
@@ -816,7 +816,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->Inversed3x3();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Inversed3x3(long this_addr);
+    public static native long internal_native_Inversed3x3(long this_addr);
 
     public Mat44 GetDirectionPreservingMatrix() {
         long pointer = internal_native_GetDirectionPreservingMatrix((long) getNativeData().getCPointer());
@@ -833,7 +833,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetDirectionPreservingMatrix();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetDirectionPreservingMatrix(long this_addr);
+    public static native long internal_native_GetDirectionPreservingMatrix(long this_addr);
 
     public Mat44 PreTranslated(Vec3 inTranslation) {
         long pointer = internal_native_PreTranslated((long) getNativeData().getCPointer(), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
@@ -850,7 +850,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->PreTranslated(*((Vec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_PreTranslated(long this_addr, long inTranslation_addr);
+    public static native long internal_native_PreTranslated(long this_addr, long inTranslation_addr);
 
     public Mat44 PostTranslated(Vec3 inTranslation) {
         long pointer = internal_native_PostTranslated((long) getNativeData().getCPointer(), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
@@ -867,7 +867,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->PostTranslated(*((Vec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_PostTranslated(long this_addr, long inTranslation_addr);
+    public static native long internal_native_PostTranslated(long this_addr, long inTranslation_addr);
 
     public Mat44 PreScaled(Vec3 inScale) {
         long pointer = internal_native_PreScaled((long) getNativeData().getCPointer(), (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
@@ -884,7 +884,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->PreScaled(*((Vec3* )inScale_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_PreScaled(long this_addr, long inScale_addr);
+    public static native long internal_native_PreScaled(long this_addr, long inScale_addr);
 
     public Mat44 PostScaled(Vec3 inScale) {
         long pointer = internal_native_PostScaled((long) getNativeData().getCPointer(), (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
@@ -901,7 +901,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->PostScaled(*((Vec3* )inScale_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_PostScaled(long this_addr, long inScale_addr);
+    public static native long internal_native_PostScaled(long this_addr, long inScale_addr);
 
     public Mat44 Decompose(Vec3 outScale) {
         long pointer = internal_native_Decompose((long) getNativeData().getCPointer(), (long) (outScale != null ? outScale.getNativeData().getCPointer() : 0));
@@ -918,7 +918,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->Decompose(*((Vec3* )outScale_addr));
 return (jlong)&copy_addr;*/
-    private static native long internal_native_Decompose(long this_addr, long outScale_addr);
+    public static native long internal_native_Decompose(long this_addr, long outScale_addr);
 
     public void SetColumn3(int inCol, Vec3 inV) {
         internal_native_SetColumn3((long) getNativeData().getCPointer(), inCol, (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -928,7 +928,7 @@ return (jlong)&copy_addr;*/
 Mat44* nativeObject = (Mat44*)this_addr;
 nativeObject->SetColumn3((int)inCol, *((Vec3* )inV_addr));
 */
-    private static native void internal_native_SetColumn3(long this_addr, int inCol, long inV_addr);
+    public static native void internal_native_SetColumn3(long this_addr, int inCol, long inV_addr);
 
     public void SetColumn4(int inCol, Vec4 inV) {
         internal_native_SetColumn4((long) getNativeData().getCPointer(), inCol, (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -938,7 +938,7 @@ nativeObject->SetColumn3((int)inCol, *((Vec3* )inV_addr));
 Mat44* nativeObject = (Mat44*)this_addr;
 nativeObject->SetColumn4((int)inCol, *((Vec4* )inV_addr));
 */
-    private static native void internal_native_SetColumn4(long this_addr, int inCol, long inV_addr);
+    public static native void internal_native_SetColumn4(long this_addr, int inCol, long inV_addr);
 
     public void SetAxisX(Vec3 inV) {
         internal_native_SetAxisX((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -948,7 +948,7 @@ nativeObject->SetColumn4((int)inCol, *((Vec4* )inV_addr));
 Mat44* nativeObject = (Mat44*)this_addr;
 nativeObject->SetAxisX(*((Vec3* )inV_addr));
 */
-    private static native void internal_native_SetAxisX(long this_addr, long inV_addr);
+    public static native void internal_native_SetAxisX(long this_addr, long inV_addr);
 
     public void SetAxisY(Vec3 inV) {
         internal_native_SetAxisY((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -958,7 +958,7 @@ nativeObject->SetAxisX(*((Vec3* )inV_addr));
 Mat44* nativeObject = (Mat44*)this_addr;
 nativeObject->SetAxisY(*((Vec3* )inV_addr));
 */
-    private static native void internal_native_SetAxisY(long this_addr, long inV_addr);
+    public static native void internal_native_SetAxisY(long this_addr, long inV_addr);
 
     public void SetAxisZ(Vec3 inV) {
         internal_native_SetAxisZ((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -968,7 +968,7 @@ nativeObject->SetAxisY(*((Vec3* )inV_addr));
 Mat44* nativeObject = (Mat44*)this_addr;
 nativeObject->SetAxisZ(*((Vec3* )inV_addr));
 */
-    private static native void internal_native_SetAxisZ(long this_addr, long inV_addr);
+    public static native void internal_native_SetAxisZ(long this_addr, long inV_addr);
 
     public void SetDiagonal3(Vec3 inV) {
         internal_native_SetDiagonal3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -978,7 +978,7 @@ nativeObject->SetAxisZ(*((Vec3* )inV_addr));
 Mat44* nativeObject = (Mat44*)this_addr;
 nativeObject->SetDiagonal3(*((Vec3* )inV_addr));
 */
-    private static native void internal_native_SetDiagonal3(long this_addr, long inV_addr);
+    public static native void internal_native_SetDiagonal3(long this_addr, long inV_addr);
 
     public void SetDiagonal4(Vec4 inV) {
         internal_native_SetDiagonal4((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -988,7 +988,7 @@ nativeObject->SetDiagonal3(*((Vec3* )inV_addr));
 Mat44* nativeObject = (Mat44*)this_addr;
 nativeObject->SetDiagonal4(*((Vec4* )inV_addr));
 */
-    private static native void internal_native_SetDiagonal4(long this_addr, long inV_addr);
+    public static native void internal_native_SetDiagonal4(long this_addr, long inV_addr);
 
     public void SetTranslation(Vec3 inV) {
         internal_native_SetTranslation((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
@@ -998,7 +998,7 @@ nativeObject->SetDiagonal4(*((Vec4* )inV_addr));
 Mat44* nativeObject = (Mat44*)this_addr;
 nativeObject->SetTranslation(*((Vec3* )inV_addr));
 */
-    private static native void internal_native_SetTranslation(long this_addr, long inV_addr);
+    public static native void internal_native_SetTranslation(long this_addr, long inV_addr);
 
     public Vec3 GetColumn3(int inCol) {
         long pointer = internal_native_GetColumn3((long) getNativeData().getCPointer(), inCol);
@@ -1015,7 +1015,7 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetColumn3((int)inCol);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetColumn3(long this_addr, int inCol);
+    public static native long internal_native_GetColumn3(long this_addr, int inCol);
 
     public Vec4 GetColumn4(int inCol) {
         long pointer = internal_native_GetColumn4((long) getNativeData().getCPointer(), inCol);
@@ -1032,249 +1032,5 @@ Mat44* nativeObject = (Mat44*)this_addr;
 static Vec4 copy_addr;
 copy_addr = nativeObject->GetColumn4((int)inCol);
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetColumn4(long this_addr, int inCol);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_sZero() {
-        return internal_native_sZero();
-    }
-
-    public static long native_sIdentity() {
-        return internal_native_sIdentity();
-    }
-
-    public static long native_sRotationX(float inX) {
-        return internal_native_sRotationX(inX);
-    }
-
-    public static long native_sRotationY(float inY) {
-        return internal_native_sRotationY(inY);
-    }
-
-    public static long native_sRotationZ(float inZ) {
-        return internal_native_sRotationZ(inZ);
-    }
-
-    public static long native_sRotation(long inQ_addr) {
-        return internal_native_sRotation(inQ_addr);
-    }
-
-    public static long native_sRotationAxisAngle(long inAxis_addr, float inAngle) {
-        return internal_native_sRotationAxisAngle(inAxis_addr, inAngle);
-    }
-
-    public static long native_sTranslation(long inTranslation_addr) {
-        return internal_native_sTranslation(inTranslation_addr);
-    }
-
-    public static long native_sRotationTranslation(long inRotation_addr, long inTranslation_addr) {
-        return internal_native_sRotationTranslation(inRotation_addr, inTranslation_addr);
-    }
-
-    public static long native_sInverseRotationTranslation(long inRotation_addr, long inTranslation_addr) {
-        return internal_native_sInverseRotationTranslation(inRotation_addr, inTranslation_addr);
-    }
-
-    public static long native_sScale(float inScale) {
-        return internal_native_sScale(inScale);
-    }
-
-    public static long native_sScaleVec3(long inScale_addr) {
-        return internal_native_sScaleVec3(inScale_addr);
-    }
-
-    public static long native_sOuterProduct(long inV1_addr, long inV2_addr) {
-        return internal_native_sOuterProduct(inV1_addr, inV2_addr);
-    }
-
-    public static long native_sCrossProduct(long inV_addr) {
-        return internal_native_sCrossProduct(inV_addr);
-    }
-
-    public static long native_sQuatLeftMultiply(long inQ_addr) {
-        return internal_native_sQuatLeftMultiply(inQ_addr);
-    }
-
-    public static long native_sQuatRightMultiply(long inQ_addr) {
-        return internal_native_sQuatRightMultiply(inQ_addr);
-    }
-
-    public static long native_sLookAt(long inPos_addr, long inTarget_addr, long inUp_addr) {
-        return internal_native_sLookAt(inPos_addr, inTarget_addr, inUp_addr);
-    }
-
-    public static long native_sPerspective(float inFovY, float inAspect, float inNear, float inFar) {
-        return internal_native_sPerspective(inFovY, inAspect, inNear, inFar);
-    }
-
-    public static long native_GetAxisX(long this_addr) {
-        return internal_native_GetAxisX(this_addr);
-    }
-
-    public static long native_GetAxisY(long this_addr) {
-        return internal_native_GetAxisY(this_addr);
-    }
-
-    public static long native_GetAxisZ(long this_addr) {
-        return internal_native_GetAxisZ(this_addr);
-    }
-
-    public static long native_GetDiagonal3(long this_addr) {
-        return internal_native_GetDiagonal3(this_addr);
-    }
-
-    public static long native_GetDiagonal4(long this_addr) {
-        return internal_native_GetDiagonal4(this_addr);
-    }
-
-    public static long native_GetRotation(long this_addr) {
-        return internal_native_GetRotation(this_addr);
-    }
-
-    public static long native_GetRotationSafe(long this_addr) {
-        return internal_native_GetRotationSafe(this_addr);
-    }
-
-    public static long native_GetQuaternion(long this_addr) {
-        return internal_native_GetQuaternion(this_addr);
-    }
-
-    public static long native_GetTranslation(long this_addr) {
-        return internal_native_GetTranslation(this_addr);
-    }
-
-    public static boolean native_Equals(long this_addr, long inV_addr) {
-        return internal_native_Equals(this_addr, inV_addr);
-    }
-
-    public static boolean native_NotEquals(long this_addr, long inV_addr) {
-        return internal_native_NotEquals(this_addr, inV_addr);
-    }
-
-    public static boolean native_IsClose(long this_addr, long inM_addr, float inMaxDistSq) {
-        return internal_native_IsClose(this_addr, inM_addr, inMaxDistSq);
-    }
-
-    public static boolean native_IsClose(long this_addr, long inM_addr) {
-        return internal_native_IsClose(this_addr, inM_addr);
-    }
-
-    public static long native_MulVec3(long this_addr, long inV_addr) {
-        return internal_native_MulVec3(this_addr, inV_addr);
-    }
-
-    public static long native_Multiply3x3(long this_addr, long inV_addr) {
-        return internal_native_Multiply3x3(this_addr, inV_addr);
-    }
-
-    public static long native_Multiply3x3Transposed(long this_addr, long inV_addr) {
-        return internal_native_Multiply3x3Transposed(this_addr, inV_addr);
-    }
-
-    public static long native_Multiply3x3LeftTransposed(long this_addr, long inM_addr) {
-        return internal_native_Multiply3x3LeftTransposed(this_addr, inM_addr);
-    }
-
-    public static long native_Multiply3x3RightTransposed(long this_addr, long inM_addr) {
-        return internal_native_Multiply3x3RightTransposed(this_addr, inM_addr);
-    }
-
-    public static long native_Transposed(long this_addr) {
-        return internal_native_Transposed(this_addr);
-    }
-
-    public static long native_Transposed3x3(long this_addr) {
-        return internal_native_Transposed3x3(this_addr);
-    }
-
-    public static long native_Inversed(long this_addr) {
-        return internal_native_Inversed(this_addr);
-    }
-
-    public static long native_InversedRotationTranslation(long this_addr) {
-        return internal_native_InversedRotationTranslation(this_addr);
-    }
-
-    public static long native_Adjointed3x3(long this_addr) {
-        return internal_native_Adjointed3x3(this_addr);
-    }
-
-    public static boolean native_SetInversed3x3(long this_addr, long inM_addr) {
-        return internal_native_SetInversed3x3(this_addr, inM_addr);
-    }
-
-    public static float native_GetDeterminant3x3(long this_addr) {
-        return internal_native_GetDeterminant3x3(this_addr);
-    }
-
-    public static long native_Inversed3x3(long this_addr) {
-        return internal_native_Inversed3x3(this_addr);
-    }
-
-    public static long native_GetDirectionPreservingMatrix(long this_addr) {
-        return internal_native_GetDirectionPreservingMatrix(this_addr);
-    }
-
-    public static long native_PreTranslated(long this_addr, long inTranslation_addr) {
-        return internal_native_PreTranslated(this_addr, inTranslation_addr);
-    }
-
-    public static long native_PostTranslated(long this_addr, long inTranslation_addr) {
-        return internal_native_PostTranslated(this_addr, inTranslation_addr);
-    }
-
-    public static long native_PreScaled(long this_addr, long inScale_addr) {
-        return internal_native_PreScaled(this_addr, inScale_addr);
-    }
-
-    public static long native_PostScaled(long this_addr, long inScale_addr) {
-        return internal_native_PostScaled(this_addr, inScale_addr);
-    }
-
-    public static long native_Decompose(long this_addr, long outScale_addr) {
-        return internal_native_Decompose(this_addr, outScale_addr);
-    }
-
-    public static void native_SetColumn3(long this_addr, int inCol, long inV_addr) {
-        internal_native_SetColumn3(this_addr, inCol, inV_addr);
-    }
-
-    public static void native_SetColumn4(long this_addr, int inCol, long inV_addr) {
-        internal_native_SetColumn4(this_addr, inCol, inV_addr);
-    }
-
-    public static void native_SetAxisX(long this_addr, long inV_addr) {
-        internal_native_SetAxisX(this_addr, inV_addr);
-    }
-
-    public static void native_SetAxisY(long this_addr, long inV_addr) {
-        internal_native_SetAxisY(this_addr, inV_addr);
-    }
-
-    public static void native_SetAxisZ(long this_addr, long inV_addr) {
-        internal_native_SetAxisZ(this_addr, inV_addr);
-    }
-
-    public static void native_SetDiagonal3(long this_addr, long inV_addr) {
-        internal_native_SetDiagonal3(this_addr, inV_addr);
-    }
-
-    public static void native_SetDiagonal4(long this_addr, long inV_addr) {
-        internal_native_SetDiagonal4(this_addr, inV_addr);
-    }
-
-    public static void native_SetTranslation(long this_addr, long inV_addr) {
-        internal_native_SetTranslation(this_addr, inV_addr);
-    }
-
-    public static long native_GetColumn3(long this_addr, int inCol) {
-        return internal_native_GetColumn3(this_addr, inCol);
-    }
-
-    public static long native_GetColumn4(long this_addr, int inCol) {
-        return internal_native_GetColumn4(this_addr, inCol);
-    }
+    public static native long internal_native_GetColumn4(long this_addr, int inCol);
 }

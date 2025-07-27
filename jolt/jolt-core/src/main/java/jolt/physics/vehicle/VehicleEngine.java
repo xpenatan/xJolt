@@ -37,7 +37,7 @@ public class VehicleEngine extends VehicleEngineSettings {
 VehicleEngine* nativeObject = (VehicleEngine*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void ClampRPM() {
         internal_native_ClampRPM((long) getNativeData().getCPointer());
@@ -47,7 +47,7 @@ delete nativeObject;
 VehicleEngine* nativeObject = (VehicleEngine*)this_addr;
 nativeObject->ClampRPM();
 */
-    private static native void internal_native_ClampRPM(long this_addr);
+    public static native void internal_native_ClampRPM(long this_addr);
 
     public float GetCurrentRPM() {
         return internal_native_GetCurrentRPM((long) getNativeData().getCPointer());
@@ -57,7 +57,7 @@ nativeObject->ClampRPM();
 VehicleEngine* nativeObject = (VehicleEngine*)this_addr;
 return nativeObject->GetCurrentRPM();
 */
-    private static native float internal_native_GetCurrentRPM(long this_addr);
+    public static native float internal_native_GetCurrentRPM(long this_addr);
 
     public void SetCurrentRPM(float inRPM) {
         internal_native_SetCurrentRPM((long) getNativeData().getCPointer(), inRPM);
@@ -67,7 +67,7 @@ return nativeObject->GetCurrentRPM();
 VehicleEngine* nativeObject = (VehicleEngine*)this_addr;
 nativeObject->SetCurrentRPM((float)inRPM);
 */
-    private static native void internal_native_SetCurrentRPM(long this_addr, float inRPM);
+    public static native void internal_native_SetCurrentRPM(long this_addr, float inRPM);
 
     public float GetAngularVelocity() {
         return internal_native_GetAngularVelocity((long) getNativeData().getCPointer());
@@ -77,7 +77,7 @@ nativeObject->SetCurrentRPM((float)inRPM);
 VehicleEngine* nativeObject = (VehicleEngine*)this_addr;
 return nativeObject->GetAngularVelocity();
 */
-    private static native float internal_native_GetAngularVelocity(long this_addr);
+    public static native float internal_native_GetAngularVelocity(long this_addr);
 
     public float GetTorque(float inAcceleration) {
         return internal_native_GetTorque((long) getNativeData().getCPointer(), inAcceleration);
@@ -87,29 +87,5 @@ return nativeObject->GetAngularVelocity();
 VehicleEngine* nativeObject = (VehicleEngine*)this_addr;
 return nativeObject->GetTorque((float)inAcceleration);
 */
-    private static native float internal_native_GetTorque(long this_addr, float inAcceleration);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_ClampRPM(long this_addr) {
-        internal_native_ClampRPM(this_addr);
-    }
-
-    public static float native_GetCurrentRPM(long this_addr) {
-        return internal_native_GetCurrentRPM(this_addr);
-    }
-
-    public static void native_SetCurrentRPM(long this_addr, float inRPM) {
-        internal_native_SetCurrentRPM(this_addr, inRPM);
-    }
-
-    public static float native_GetAngularVelocity(long this_addr) {
-        return internal_native_GetAngularVelocity(this_addr);
-    }
-
-    public static float native_GetTorque(long this_addr, float inAcceleration) {
-        return internal_native_GetTorque(this_addr, inAcceleration);
-    }
+    public static native float internal_native_GetTorque(long this_addr, float inAcceleration);
 }

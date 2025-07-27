@@ -30,7 +30,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraint);
 jsObj.SetLength(inMinLength, inMaxLength);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inMinLength", "inMaxLength"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraint);jsObj.SetLength(inMinLength, inMaxLength);")
-    private static native void internal_native_SetLength(int this_addr, float inMinLength, float inMaxLength);
+    public static native void internal_native_SetLength(int this_addr, float inMinLength, float inMaxLength);
 
     public float GetMinLength() {
         return internal_native_GetMinLength((int) (long) getNativeData().getCPointer());
@@ -42,7 +42,7 @@ var returnedJSObj = jsObj.GetMinLength();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraint);var returnedJSObj = jsObj.GetMinLength();return returnedJSObj;")
-    private static native float internal_native_GetMinLength(int this_addr);
+    public static native float internal_native_GetMinLength(int this_addr);
 
     public float GetMaxLength() {
         return internal_native_GetMaxLength((int) (long) getNativeData().getCPointer());
@@ -54,7 +54,7 @@ var returnedJSObj = jsObj.GetMaxLength();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraint);var returnedJSObj = jsObj.GetMaxLength();return returnedJSObj;")
-    private static native float internal_native_GetMaxLength(int this_addr);
+    public static native float internal_native_GetMaxLength(int this_addr);
 
     public float GetCurrentLength() {
         return internal_native_GetCurrentLength((int) (long) getNativeData().getCPointer());
@@ -66,21 +66,5 @@ var returnedJSObj = jsObj.GetCurrentLength();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PulleyConstraint);var returnedJSObj = jsObj.GetCurrentLength();return returnedJSObj;")
-    private static native float internal_native_GetCurrentLength(int this_addr);
-
-    public static void native_SetLength(long this_addr, float inMinLength, float inMaxLength) {
-        internal_native_SetLength((int) this_addr, inMinLength, inMaxLength);
-    }
-
-    public static float native_GetMinLength(long this_addr) {
-        return internal_native_GetMinLength((int) this_addr);
-    }
-
-    public static float native_GetMaxLength(long this_addr) {
-        return internal_native_GetMaxLength((int) this_addr);
-    }
-
-    public static float native_GetCurrentLength(long this_addr) {
-        return internal_native_GetCurrentLength((int) this_addr);
-    }
+    public static native float internal_native_GetCurrentLength(int this_addr);
 }

@@ -26,7 +26,7 @@ var jsObj = new jolt.CapsuleShapeSettings(inHalfHeight, inRadius, inMaterial_add
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfHeight", "inRadius", "inMaterial_addr"}, script = "var jsObj = new jolt.CapsuleShapeSettings(inHalfHeight, inRadius, inMaterial_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, int inMaterial_addr);
+    public static native int internal_native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, int inMaterial_addr);
 
     public CapsuleShapeSettings(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ var jsObj = new jolt.CapsuleShapeSettings(inHalfHeight, inRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfHeight", "inRadius"}, script = "var jsObj = new jolt.CapsuleShapeSettings(inHalfHeight, inRadius);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float_float(float inHalfHeight, float inRadius);
+    public static native int internal_native_create_float_float(float inHalfHeight, float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -58,7 +58,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CapsuleShapeSettings);
 return jsObj.get_mRadius();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CapsuleShapeSettings);return jsObj.get_mRadius();")
-    private static native float internal_native_get_mRadius(int this_addr);
+    public static native float internal_native_get_mRadius(int this_addr);
 
     public void set_mRadius(float mRadius) {
         internal_native_set_mRadius((int) (long) getNativeData().getCPointer(), mRadius);
@@ -69,7 +69,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CapsuleShapeSettings);
 jsObj.set_mRadius(mRadius);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRadius"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CapsuleShapeSettings);jsObj.set_mRadius(mRadius);")
-    private static native void internal_native_set_mRadius(int this_addr, float mRadius);
+    public static native void internal_native_set_mRadius(int this_addr, float mRadius);
 
     public float get_mHalfHeightOfCylinder() {
         return internal_native_get_mHalfHeightOfCylinder((int) (long) getNativeData().getCPointer());
@@ -80,7 +80,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CapsuleShapeSettings);
 return jsObj.get_mHalfHeightOfCylinder();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CapsuleShapeSettings);return jsObj.get_mHalfHeightOfCylinder();")
-    private static native float internal_native_get_mHalfHeightOfCylinder(int this_addr);
+    public static native float internal_native_get_mHalfHeightOfCylinder(int this_addr);
 
     public void set_mHalfHeightOfCylinder(float mHalfHeightOfCylinder) {
         internal_native_set_mHalfHeightOfCylinder((int) (long) getNativeData().getCPointer(), mHalfHeightOfCylinder);
@@ -91,29 +91,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CapsuleShapeSettings);
 jsObj.set_mHalfHeightOfCylinder(mHalfHeightOfCylinder);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mHalfHeightOfCylinder"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CapsuleShapeSettings);jsObj.set_mHalfHeightOfCylinder(mHalfHeightOfCylinder);")
-    private static native void internal_native_set_mHalfHeightOfCylinder(int this_addr, float mHalfHeightOfCylinder);
-
-    public static long native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, long inMaterial_addr) {
-        return internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, (int) inMaterial_addr);
-    }
-
-    public static long native_create_float_float(float inHalfHeight, float inRadius) {
-        return internal_native_create_float_float(inHalfHeight, inRadius);
-    }
-
-    public static float native_get_mRadius(long this_addr) {
-        return internal_native_get_mRadius((int) this_addr);
-    }
-
-    public static void native_set_mRadius(long this_addr, float mRadius) {
-        internal_native_set_mRadius((int) this_addr, mRadius);
-    }
-
-    public static float native_get_mHalfHeightOfCylinder(long this_addr) {
-        return internal_native_get_mHalfHeightOfCylinder((int) this_addr);
-    }
-
-    public static void native_set_mHalfHeightOfCylinder(long this_addr, float mHalfHeightOfCylinder) {
-        internal_native_set_mHalfHeightOfCylinder((int) this_addr, mHalfHeightOfCylinder);
-    }
+    public static native void internal_native_set_mHalfHeightOfCylinder(int this_addr, float mHalfHeightOfCylinder);
 }

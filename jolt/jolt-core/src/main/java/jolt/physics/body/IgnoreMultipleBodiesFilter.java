@@ -22,7 +22,7 @@ public class IgnoreMultipleBodiesFilter extends BodyFilter {
     /*[-JNI;-NATIVE]
 return (jlong)new IgnoreMultipleBodiesFilter();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new IgnoreMultipleBodiesFilter();
 IgnoreMultipleBodiesFilter* nativeObject = (IgnoreMultipleBodiesFilter*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void Clear() {
         internal_native_Clear((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 IgnoreMultipleBodiesFilter* nativeObject = (IgnoreMultipleBodiesFilter*)this_addr;
 nativeObject->Clear();
 */
-    private static native void internal_native_Clear(long this_addr);
+    public static native void internal_native_Clear(long this_addr);
 
     public void Reserve(int inSize) {
         internal_native_Reserve((long) getNativeData().getCPointer(), inSize);
@@ -68,7 +68,7 @@ nativeObject->Clear();
 IgnoreMultipleBodiesFilter* nativeObject = (IgnoreMultipleBodiesFilter*)this_addr;
 nativeObject->Reserve(inSize);
 */
-    private static native void internal_native_Reserve(long this_addr, int inSize);
+    public static native void internal_native_Reserve(long this_addr, int inSize);
 
     public void IgnoreBody(BodyID inBodyID) {
         internal_native_IgnoreBody((long) getNativeData().getCPointer(), (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
@@ -78,25 +78,5 @@ nativeObject->Reserve(inSize);
 IgnoreMultipleBodiesFilter* nativeObject = (IgnoreMultipleBodiesFilter*)this_addr;
 nativeObject->IgnoreBody(*((BodyID* )inBodyID_addr));
 */
-    private static native void internal_native_IgnoreBody(long this_addr, long inBodyID_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_Clear(long this_addr) {
-        internal_native_Clear(this_addr);
-    }
-
-    public static void native_Reserve(long this_addr, int inSize) {
-        internal_native_Reserve(this_addr, inSize);
-    }
-
-    public static void native_IgnoreBody(long this_addr, long inBodyID_addr) {
-        internal_native_IgnoreBody(this_addr, inBodyID_addr);
-    }
+    public static native void internal_native_IgnoreBody(long this_addr, long inBodyID_addr);
 }

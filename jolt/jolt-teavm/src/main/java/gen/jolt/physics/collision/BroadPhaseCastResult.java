@@ -28,7 +28,7 @@ var jsObj = new jolt.BroadPhaseCastResult();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.BroadPhaseCastResult();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -54,7 +54,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void Reset() {
         internal_native_Reset((int) (long) getNativeData().getCPointer());
@@ -65,7 +65,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);
 jsObj.Reset();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);jsObj.Reset();")
-    private static native void internal_native_Reset(int this_addr);
+    public static native void internal_native_Reset(int this_addr);
 
     public BodyID get_mBodyID() {
         int pointer = internal_native_get_mBodyID((int) (long) getNativeData().getCPointer());
@@ -84,7 +84,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);var returnedJSObj = jsObj.get_mBodyID();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mBodyID(int this_addr);
+    public static native int internal_native_get_mBodyID(int this_addr);
 
     public void set_mBodyID(BodyID mBodyID) {
         internal_native_set_mBodyID((int) (long) getNativeData().getCPointer(), (int) (long) (mBodyID != null ? mBodyID.getNativeData().getCPointer() : 0));
@@ -95,7 +95,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);
 jsObj.set_mBodyID(mBodyID_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBodyID_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);jsObj.set_mBodyID(mBodyID_addr);")
-    private static native void internal_native_set_mBodyID(int this_addr, int mBodyID_addr);
+    public static native void internal_native_set_mBodyID(int this_addr, int mBodyID_addr);
 
     public float get_mFraction() {
         return internal_native_get_mFraction((int) (long) getNativeData().getCPointer());
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);
 return jsObj.get_mFraction();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);return jsObj.get_mFraction();")
-    private static native float internal_native_get_mFraction(int this_addr);
+    public static native float internal_native_get_mFraction(int this_addr);
 
     public void set_mFraction(float mFraction) {
         internal_native_set_mFraction((int) (long) getNativeData().getCPointer(), mFraction);
@@ -117,33 +117,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);
 jsObj.set_mFraction(mFraction);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mFraction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);jsObj.set_mFraction(mFraction);")
-    private static native void internal_native_set_mFraction(int this_addr, float mFraction);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_Reset(long this_addr) {
-        internal_native_Reset((int) this_addr);
-    }
-
-    public static long native_get_mBodyID(long this_addr) {
-        return internal_native_get_mBodyID((int) this_addr);
-    }
-
-    public static void native_set_mBodyID(long this_addr, long mBodyID_addr) {
-        internal_native_set_mBodyID((int) this_addr, (int) mBodyID_addr);
-    }
-
-    public static float native_get_mFraction(long this_addr) {
-        return internal_native_get_mFraction((int) this_addr);
-    }
-
-    public static void native_set_mFraction(long this_addr, float mFraction) {
-        internal_native_set_mFraction((int) this_addr, mFraction);
-    }
+    public static native void internal_native_set_mFraction(int this_addr, float mFraction);
 }

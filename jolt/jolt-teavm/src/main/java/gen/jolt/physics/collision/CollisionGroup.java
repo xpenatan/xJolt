@@ -27,7 +27,7 @@ var jsObj = new jolt.CollisionGroup();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CollisionGroup();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     public CollisionGroup(GroupFilter inFilter, int inGroupID, int inSubGroupID) {
         int addr = internal_native_create_GroupFilter_int_int((int) (long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0), inGroupID, inSubGroupID);
@@ -39,7 +39,7 @@ var jsObj = new jolt.CollisionGroup(inFilter_addr, inGroupID, inSubGroupID);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inFilter_addr", "inGroupID", "inSubGroupID"}, script = "var jsObj = new jolt.CollisionGroup(inFilter_addr, inGroupID, inSubGroupID);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_GroupFilter_int_int(int inFilter_addr, int inGroupID, int inSubGroupID);
+    public static native int internal_native_create_GroupFilter_int_int(int inFilter_addr, int inGroupID, int inSubGroupID);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -65,7 +65,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void SetGroupFilter(GroupFilter inFilter) {
         internal_native_SetGroupFilter((int) (long) getNativeData().getCPointer(), (int) (long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0));
@@ -76,7 +76,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);
 jsObj.SetGroupFilter(inFilter_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);jsObj.SetGroupFilter(inFilter_addr);")
-    private static native void internal_native_SetGroupFilter(int this_addr, int inFilter_addr);
+    public static native void internal_native_SetGroupFilter(int this_addr, int inFilter_addr);
 
     public GroupFilter GetGroupFilter() {
         int pointer = internal_native_GetGroupFilter((int) (long) getNativeData().getCPointer());
@@ -95,7 +95,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);var returnedJSObj = jsObj.GetGroupFilter();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetGroupFilter(int this_addr);
+    public static native int internal_native_GetGroupFilter(int this_addr);
 
     public void SetGroupID(int inGroupID) {
         internal_native_SetGroupID((int) (long) getNativeData().getCPointer(), inGroupID);
@@ -106,7 +106,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);
 jsObj.SetGroupID(inGroupID);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inGroupID"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);jsObj.SetGroupID(inGroupID);")
-    private static native void internal_native_SetGroupID(int this_addr, int inGroupID);
+    public static native void internal_native_SetGroupID(int this_addr, int inGroupID);
 
     public int GetGroupID() {
         return internal_native_GetGroupID((int) (long) getNativeData().getCPointer());
@@ -118,7 +118,7 @@ var returnedJSObj = jsObj.GetGroupID();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);var returnedJSObj = jsObj.GetGroupID();return returnedJSObj;")
-    private static native int internal_native_GetGroupID(int this_addr);
+    public static native int internal_native_GetGroupID(int this_addr);
 
     public void SetSubGroupID(int inSubGroupID) {
         internal_native_SetSubGroupID((int) (long) getNativeData().getCPointer(), inSubGroupID);
@@ -129,7 +129,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);
 jsObj.SetSubGroupID(inSubGroupID);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSubGroupID"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);jsObj.SetSubGroupID(inSubGroupID);")
-    private static native void internal_native_SetSubGroupID(int this_addr, int inSubGroupID);
+    public static native void internal_native_SetSubGroupID(int this_addr, int inSubGroupID);
 
     public int GetSubGroupID() {
         return internal_native_GetSubGroupID((int) (long) getNativeData().getCPointer());
@@ -141,41 +141,5 @@ var returnedJSObj = jsObj.GetSubGroupID();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);var returnedJSObj = jsObj.GetSubGroupID();return returnedJSObj;")
-    private static native int internal_native_GetSubGroupID(int this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_create_GroupFilter_int_int(long inFilter_addr, int inGroupID, int inSubGroupID) {
-        return internal_native_create_GroupFilter_int_int((int) inFilter_addr, inGroupID, inSubGroupID);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static void native_SetGroupFilter(long this_addr, long inFilter_addr) {
-        internal_native_SetGroupFilter((int) this_addr, (int) inFilter_addr);
-    }
-
-    public static long native_GetGroupFilter(long this_addr) {
-        return internal_native_GetGroupFilter((int) this_addr);
-    }
-
-    public static void native_SetGroupID(long this_addr, int inGroupID) {
-        internal_native_SetGroupID((int) this_addr, inGroupID);
-    }
-
-    public static int native_GetGroupID(long this_addr) {
-        return internal_native_GetGroupID((int) this_addr);
-    }
-
-    public static void native_SetSubGroupID(long this_addr, int inSubGroupID) {
-        internal_native_SetSubGroupID((int) this_addr, inSubGroupID);
-    }
-
-    public static int native_GetSubGroupID(long this_addr) {
-        return internal_native_GetSubGroupID((int) this_addr);
-    }
+    public static native int internal_native_GetSubGroupID(int this_addr);
 }

@@ -47,7 +47,7 @@ TwoBodyConstraint* nativeObject = (TwoBodyConstraint*)this_addr;
 Body* obj = nativeObject->GetBody1();
 return (jlong)obj;
 */
-    private static native long internal_native_GetBody1(long this_addr);
+    public static native long internal_native_GetBody1(long this_addr);
 
     public Body GetBody2() {
         long pointer = internal_native_GetBody2((long) getNativeData().getCPointer());
@@ -64,7 +64,7 @@ TwoBodyConstraint* nativeObject = (TwoBodyConstraint*)this_addr;
 Body* obj = nativeObject->GetBody2();
 return (jlong)obj;
 */
-    private static native long internal_native_GetBody2(long this_addr);
+    public static native long internal_native_GetBody2(long this_addr);
 
     public Mat44 GetConstraintToBody1Matrix() {
         long pointer = internal_native_GetConstraintToBody1Matrix((long) getNativeData().getCPointer());
@@ -81,7 +81,7 @@ TwoBodyConstraint* nativeObject = (TwoBodyConstraint*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetConstraintToBody1Matrix();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetConstraintToBody1Matrix(long this_addr);
+    public static native long internal_native_GetConstraintToBody1Matrix(long this_addr);
 
     public Mat44 GetConstraintToBody2Matrix() {
         long pointer = internal_native_GetConstraintToBody2Matrix((long) getNativeData().getCPointer());
@@ -98,21 +98,5 @@ TwoBodyConstraint* nativeObject = (TwoBodyConstraint*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetConstraintToBody2Matrix();
 return (jlong)&copy_addr;*/
-    private static native long internal_native_GetConstraintToBody2Matrix(long this_addr);
-
-    public static long native_GetBody1(long this_addr) {
-        return internal_native_GetBody1(this_addr);
-    }
-
-    public static long native_GetBody2(long this_addr) {
-        return internal_native_GetBody2(this_addr);
-    }
-
-    public static long native_GetConstraintToBody1Matrix(long this_addr) {
-        return internal_native_GetConstraintToBody1Matrix(this_addr);
-    }
-
-    public static long native_GetConstraintToBody2Matrix(long this_addr) {
-        return internal_native_GetConstraintToBody2Matrix(this_addr);
-    }
+    public static native long internal_native_GetConstraintToBody2Matrix(long this_addr);
 }

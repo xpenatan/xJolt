@@ -62,7 +62,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ContactListenerJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactListenerJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public ContactListenerEm() {
         super((byte) 1, (char) 1);
@@ -172,10 +172,10 @@ var jsObj = new jolt.ContactListenerJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ContactListenerJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "OnContactValidate", "OnContactAdded", "OnContactPersisted", "OnContactRemoved" }, script = "var ContactListenerJS = jolt.wrapPointer(this_addr, jolt.ContactListenerJS); ContactListenerJS.OnContactValidate = OnContactValidate; ContactListenerJS.OnContactAdded = OnContactAdded; ContactListenerJS.OnContactPersisted = OnContactPersisted; ContactListenerJS.OnContactRemoved = OnContactRemoved;")
-    private static native void internal_native_setupCallback(int this_addr, OnContactValidate OnContactValidate, OnContactAdded OnContactAdded, OnContactPersisted OnContactPersisted, OnContactRemoved OnContactRemoved);
+    public static native void internal_native_setupCallback(int this_addr, OnContactValidate OnContactValidate, OnContactAdded OnContactAdded, OnContactPersisted OnContactPersisted, OnContactRemoved OnContactRemoved);
 
     @org.teavm.jso.JSFunctor()
     public interface OnContactValidate extends org.teavm.jso.JSObject {
@@ -199,13 +199,5 @@ return jolt.getPointer(jsObj);
     public interface OnContactRemoved extends org.teavm.jso.JSObject {
 
         void OnContactRemoved(int inSubShapePair);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

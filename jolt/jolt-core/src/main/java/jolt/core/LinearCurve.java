@@ -23,7 +23,7 @@ public class LinearCurve extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new LinearCurve();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new LinearCurve();
 LinearCurve* nativeObject = (LinearCurve*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void Clear() {
         internal_native_Clear((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 LinearCurve* nativeObject = (LinearCurve*)this_addr;
 nativeObject->Clear();
 */
-    private static native void internal_native_Clear(long this_addr);
+    public static native void internal_native_Clear(long this_addr);
 
     public void Reserve(int inSize) {
         internal_native_Reserve((long) getNativeData().getCPointer(), inSize);
@@ -68,7 +68,7 @@ nativeObject->Clear();
 LinearCurve* nativeObject = (LinearCurve*)this_addr;
 nativeObject->Reserve(inSize);
 */
-    private static native void internal_native_Reserve(long this_addr, int inSize);
+    public static native void internal_native_Reserve(long this_addr, int inSize);
 
     public void AddPoint(float inX, float inY) {
         internal_native_AddPoint((long) getNativeData().getCPointer(), inX, inY);
@@ -78,7 +78,7 @@ nativeObject->Reserve(inSize);
 LinearCurve* nativeObject = (LinearCurve*)this_addr;
 nativeObject->AddPoint((float)inX, (float)inY);
 */
-    private static native void internal_native_AddPoint(long this_addr, float inX, float inY);
+    public static native void internal_native_AddPoint(long this_addr, float inX, float inY);
 
     public void Sort() {
         internal_native_Sort((long) getNativeData().getCPointer());
@@ -88,7 +88,7 @@ nativeObject->AddPoint((float)inX, (float)inY);
 LinearCurve* nativeObject = (LinearCurve*)this_addr;
 nativeObject->Sort();
 */
-    private static native void internal_native_Sort(long this_addr);
+    public static native void internal_native_Sort(long this_addr);
 
     public float GetMinX() {
         return internal_native_GetMinX((long) getNativeData().getCPointer());
@@ -98,7 +98,7 @@ nativeObject->Sort();
 LinearCurve* nativeObject = (LinearCurve*)this_addr;
 return nativeObject->GetMinX();
 */
-    private static native float internal_native_GetMinX(long this_addr);
+    public static native float internal_native_GetMinX(long this_addr);
 
     public float GetMaxX() {
         return internal_native_GetMaxX((long) getNativeData().getCPointer());
@@ -108,7 +108,7 @@ return nativeObject->GetMinX();
 LinearCurve* nativeObject = (LinearCurve*)this_addr;
 return nativeObject->GetMaxX();
 */
-    private static native float internal_native_GetMaxX(long this_addr);
+    public static native float internal_native_GetMaxX(long this_addr);
 
     public float GetValue(float inX) {
         return internal_native_GetValue((long) getNativeData().getCPointer(), inX);
@@ -118,41 +118,5 @@ return nativeObject->GetMaxX();
 LinearCurve* nativeObject = (LinearCurve*)this_addr;
 return nativeObject->GetValue((float)inX);
 */
-    private static native float internal_native_GetValue(long this_addr, float inX);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_Clear(long this_addr) {
-        internal_native_Clear(this_addr);
-    }
-
-    public static void native_Reserve(long this_addr, int inSize) {
-        internal_native_Reserve(this_addr, inSize);
-    }
-
-    public static void native_AddPoint(long this_addr, float inX, float inY) {
-        internal_native_AddPoint(this_addr, inX, inY);
-    }
-
-    public static void native_Sort(long this_addr) {
-        internal_native_Sort(this_addr);
-    }
-
-    public static float native_GetMinX(long this_addr) {
-        return internal_native_GetMinX(this_addr);
-    }
-
-    public static float native_GetMaxX(long this_addr) {
-        return internal_native_GetMaxX(this_addr);
-    }
-
-    public static float native_GetValue(long this_addr, float inX) {
-        return internal_native_GetValue(this_addr, inX);
-    }
+    public static native float internal_native_GetValue(long this_addr, float inX);
 }

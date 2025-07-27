@@ -25,7 +25,7 @@ var jsObj = new jolt.SubShapeID();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SubShapeID();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,7 +51,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SubShapeID);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SubShapeID);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int GetValue() {
         return internal_native_GetValue((int) (long) getNativeData().getCPointer());
@@ -63,7 +63,7 @@ var returnedJSObj = jsObj.GetValue();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SubShapeID);var returnedJSObj = jsObj.GetValue();return returnedJSObj;")
-    private static native int internal_native_GetValue(int this_addr);
+    public static native int internal_native_GetValue(int this_addr);
 
     public void SetValue(int inValue) {
         internal_native_SetValue((int) (long) getNativeData().getCPointer(), inValue);
@@ -74,21 +74,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SubShapeID);
 jsObj.SetValue(inValue);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inValue"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SubShapeID);jsObj.SetValue(inValue);")
-    private static native void internal_native_SetValue(int this_addr, int inValue);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_GetValue(long this_addr) {
-        return internal_native_GetValue((int) this_addr);
-    }
-
-    public static void native_SetValue(long this_addr, int inValue) {
-        internal_native_SetValue((int) this_addr, inValue);
-    }
+    public static native void internal_native_SetValue(int this_addr, int inValue);
 }

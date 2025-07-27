@@ -41,7 +41,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererTriangle);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererTriangle);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public DebugRendererVertex get_mV(int index) {
         int pointer = internal_native_get_mV((int) (long) getNativeData().getCPointer(), index);
@@ -60,7 +60,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererTriangle);var returnedJSObj = jsObj.get_mV(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mV(int this_addr, int index);
+    public static native int internal_native_get_mV(int this_addr, int index);
 
     public void set_mV(int index, DebugRendererVertex mV) {
         internal_native_set_mV((int) (long) getNativeData().getCPointer(), index, (int) (long) (mV != null ? mV.getNativeData().getCPointer() : 0));
@@ -71,17 +71,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererTriangle);
 jsObj.set_mV(index, mV_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index", "mV_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererTriangle);jsObj.set_mV(index, mV_addr);")
-    private static native void internal_native_set_mV(int this_addr, int index, int mV_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mV(long this_addr, int index) {
-        return internal_native_get_mV((int) this_addr, index);
-    }
-
-    public static void native_set_mV(long this_addr, int index, long mV_addr) {
-        internal_native_set_mV((int) this_addr, index, (int) mV_addr);
-    }
+    public static native void internal_native_set_mV(int this_addr, int index, int mV_addr);
 }

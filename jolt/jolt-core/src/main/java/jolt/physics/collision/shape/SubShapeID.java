@@ -23,7 +23,7 @@ public class SubShapeID extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new SubShapeID();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,7 +48,7 @@ return (jlong)new SubShapeID();
 SubShapeID* nativeObject = (SubShapeID*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetValue() {
         return internal_native_GetValue((long) getNativeData().getCPointer());
@@ -58,7 +58,7 @@ delete nativeObject;
 SubShapeID* nativeObject = (SubShapeID*)this_addr;
 return nativeObject->GetValue();
 */
-    private static native int internal_native_GetValue(long this_addr);
+    public static native int internal_native_GetValue(long this_addr);
 
     public void SetValue(int inValue) {
         internal_native_SetValue((long) getNativeData().getCPointer(), inValue);
@@ -68,21 +68,5 @@ return nativeObject->GetValue();
 SubShapeID* nativeObject = (SubShapeID*)this_addr;
 nativeObject->SetValue((int)inValue);
 */
-    private static native void internal_native_SetValue(long this_addr, int inValue);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_GetValue(long this_addr) {
-        return internal_native_GetValue(this_addr);
-    }
-
-    public static void native_SetValue(long this_addr, int inValue) {
-        internal_native_SetValue(this_addr, inValue);
-    }
+    public static native void internal_native_SetValue(long this_addr, int inValue);
 }

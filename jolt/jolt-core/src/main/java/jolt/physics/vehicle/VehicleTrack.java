@@ -37,7 +37,7 @@ public class VehicleTrack extends VehicleTrackSettings {
 VehicleTrack* nativeObject = (VehicleTrack*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mAngularVelocity() {
         return internal_native_get_mAngularVelocity((long) getNativeData().getCPointer());
@@ -47,7 +47,7 @@ delete nativeObject;
 VehicleTrack* nativeObject = (VehicleTrack*)this_addr;
 return nativeObject->mAngularVelocity;
 */
-    private static native float internal_native_get_mAngularVelocity(long this_addr);
+    public static native float internal_native_get_mAngularVelocity(long this_addr);
 
     public void set_mAngularVelocity(float mAngularVelocity) {
         internal_native_set_mAngularVelocity((long) getNativeData().getCPointer(), mAngularVelocity);
@@ -57,17 +57,5 @@ return nativeObject->mAngularVelocity;
 VehicleTrack* nativeObject = (VehicleTrack*)this_addr;
 nativeObject->mAngularVelocity = mAngularVelocity;
 */
-    private static native void internal_native_set_mAngularVelocity(long this_addr, float mAngularVelocity);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static float native_get_mAngularVelocity(long this_addr) {
-        return internal_native_get_mAngularVelocity(this_addr);
-    }
-
-    public static void native_set_mAngularVelocity(long this_addr, float mAngularVelocity) {
-        internal_native_set_mAngularVelocity(this_addr, mAngularVelocity);
-    }
+    public static native void internal_native_set_mAngularVelocity(long this_addr, float mAngularVelocity);
 }

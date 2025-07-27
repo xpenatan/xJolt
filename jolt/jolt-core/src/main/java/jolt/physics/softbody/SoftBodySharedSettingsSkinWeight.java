@@ -38,7 +38,7 @@ public class SoftBodySharedSettingsSkinWeight extends IDLBase {
 SoftBodySharedSettingsSkinWeight* nativeObject = (SoftBodySharedSettingsSkinWeight*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mInvBindIndex() {
         return internal_native_get_mInvBindIndex((long) getNativeData().getCPointer());
@@ -48,7 +48,7 @@ delete nativeObject;
 SoftBodySharedSettingsSkinWeight* nativeObject = (SoftBodySharedSettingsSkinWeight*)this_addr;
 return nativeObject->mInvBindIndex;
 */
-    private static native int internal_native_get_mInvBindIndex(long this_addr);
+    public static native int internal_native_get_mInvBindIndex(long this_addr);
 
     public void set_mInvBindIndex(int mInvBindIndex) {
         internal_native_set_mInvBindIndex((long) getNativeData().getCPointer(), mInvBindIndex);
@@ -58,7 +58,7 @@ return nativeObject->mInvBindIndex;
 SoftBodySharedSettingsSkinWeight* nativeObject = (SoftBodySharedSettingsSkinWeight*)this_addr;
 nativeObject->mInvBindIndex = mInvBindIndex;
 */
-    private static native void internal_native_set_mInvBindIndex(long this_addr, int mInvBindIndex);
+    public static native void internal_native_set_mInvBindIndex(long this_addr, int mInvBindIndex);
 
     public float get_mWeight() {
         return internal_native_get_mWeight((long) getNativeData().getCPointer());
@@ -68,7 +68,7 @@ nativeObject->mInvBindIndex = mInvBindIndex;
 SoftBodySharedSettingsSkinWeight* nativeObject = (SoftBodySharedSettingsSkinWeight*)this_addr;
 return nativeObject->mWeight;
 */
-    private static native float internal_native_get_mWeight(long this_addr);
+    public static native float internal_native_get_mWeight(long this_addr);
 
     public void set_mWeight(float mWeight) {
         internal_native_set_mWeight((long) getNativeData().getCPointer(), mWeight);
@@ -78,25 +78,5 @@ return nativeObject->mWeight;
 SoftBodySharedSettingsSkinWeight* nativeObject = (SoftBodySharedSettingsSkinWeight*)this_addr;
 nativeObject->mWeight = mWeight;
 */
-    private static native void internal_native_set_mWeight(long this_addr, float mWeight);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_get_mInvBindIndex(long this_addr) {
-        return internal_native_get_mInvBindIndex(this_addr);
-    }
-
-    public static void native_set_mInvBindIndex(long this_addr, int mInvBindIndex) {
-        internal_native_set_mInvBindIndex(this_addr, mInvBindIndex);
-    }
-
-    public static float native_get_mWeight(long this_addr) {
-        return internal_native_get_mWeight(this_addr);
-    }
-
-    public static void native_set_mWeight(long this_addr, float mWeight) {
-        internal_native_set_mWeight(this_addr, mWeight);
-    }
+    public static native void internal_native_set_mWeight(long this_addr, float mWeight);
 }

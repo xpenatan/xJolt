@@ -26,7 +26,7 @@ var jsObj = new jolt.SphereShapeSettings(inRadius, inMaterial_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inRadius", "inMaterial_addr"}, script = "var jsObj = new jolt.SphereShapeSettings(inRadius, inMaterial_addr);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float_PhysicsMaterial(float inRadius, int inMaterial_addr);
+    public static native int internal_native_create_float_PhysicsMaterial(float inRadius, int inMaterial_addr);
 
     public SphereShapeSettings(float inRadius) {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ var jsObj = new jolt.SphereShapeSettings(inRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inRadius"}, script = "var jsObj = new jolt.SphereShapeSettings(inRadius);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_float(float inRadius);
+    public static native int internal_native_create_float(float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -58,7 +58,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SphereShapeSettings);
 return jsObj.get_mRadius();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SphereShapeSettings);return jsObj.get_mRadius();")
-    private static native float internal_native_get_mRadius(int this_addr);
+    public static native float internal_native_get_mRadius(int this_addr);
 
     public void set_mRadius(float mRadius) {
         internal_native_set_mRadius((int) (long) getNativeData().getCPointer(), mRadius);
@@ -69,21 +69,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.SphereShapeSettings);
 jsObj.set_mRadius(mRadius);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mRadius"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SphereShapeSettings);jsObj.set_mRadius(mRadius);")
-    private static native void internal_native_set_mRadius(int this_addr, float mRadius);
-
-    public static long native_create_float_PhysicsMaterial(float inRadius, long inMaterial_addr) {
-        return internal_native_create_float_PhysicsMaterial(inRadius, (int) inMaterial_addr);
-    }
-
-    public static long native_create_float(float inRadius) {
-        return internal_native_create_float(inRadius);
-    }
-
-    public static float native_get_mRadius(long this_addr) {
-        return internal_native_get_mRadius((int) this_addr);
-    }
-
-    public static void native_set_mRadius(long this_addr, float mRadius) {
-        internal_native_set_mRadius((int) this_addr, mRadius);
-    }
+    public static native void internal_native_set_mRadius(int this_addr, float mRadius);
 }

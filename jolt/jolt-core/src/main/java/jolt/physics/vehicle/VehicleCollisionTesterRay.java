@@ -24,7 +24,7 @@ public class VehicleCollisionTesterRay extends VehicleCollisionTester {
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterRay(inObjectLayer, *((Vec3* )inUp_addr), (float)inMaxSlopeAngle);
 */
-    private static native long internal_native_create_int_Vec3_float(int inObjectLayer, long inUp_addr, float inMaxSlopeAngle);
+    public static native long internal_native_create_int_Vec3_float(int inObjectLayer, long inUp_addr, float inMaxSlopeAngle);
 
     public VehicleCollisionTesterRay(int inObjectLayer, Vec3 inUp) {
         super((byte) 1, (char) 1);
@@ -35,7 +35,7 @@ return (jlong)new VehicleCollisionTesterRay(inObjectLayer, *((Vec3* )inUp_addr),
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterRay(inObjectLayer, *((Vec3* )inUp_addr));
 */
-    private static native long internal_native_create_int_Vec3(int inObjectLayer, long inUp_addr);
+    public static native long internal_native_create_int_Vec3(int inObjectLayer, long inUp_addr);
 
     public VehicleCollisionTesterRay(int inObjectLayer) {
         super((byte) 1, (char) 1);
@@ -46,7 +46,7 @@ return (jlong)new VehicleCollisionTesterRay(inObjectLayer, *((Vec3* )inUp_addr))
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterRay(inObjectLayer);
 */
-    private static native long internal_native_create_int(int inObjectLayer);
+    public static native long internal_native_create_int(int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -54,17 +54,5 @@ return (jlong)new VehicleCollisionTesterRay(inObjectLayer);
     @Deprecated()
     public VehicleCollisionTesterRay(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create_int_Vec3_float(int inObjectLayer, long inUp_addr, float inMaxSlopeAngle) {
-        return internal_native_create_int_Vec3_float(inObjectLayer, inUp_addr, inMaxSlopeAngle);
-    }
-
-    public static long native_create_int_Vec3(int inObjectLayer, long inUp_addr) {
-        return internal_native_create_int_Vec3(inObjectLayer, inUp_addr);
-    }
-
-    public static long native_create_int(int inObjectLayer) {
-        return internal_native_create_int(inObjectLayer);
     }
 }

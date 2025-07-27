@@ -40,7 +40,7 @@ public class ArrayCharacterVirtualContact extends IDLBase {
 ArrayCharacterVirtualContact* nativeObject = (ArrayCharacterVirtualContact*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean empty() {
         return internal_native_empty((long) getNativeData().getCPointer());
@@ -50,7 +50,7 @@ delete nativeObject;
 ArrayCharacterVirtualContact* nativeObject = (ArrayCharacterVirtualContact*)this_addr;
 return nativeObject->empty();
 */
-    private static native boolean internal_native_empty(long this_addr);
+    public static native boolean internal_native_empty(long this_addr);
 
     public int size() {
         return internal_native_size((long) getNativeData().getCPointer());
@@ -60,7 +60,7 @@ return nativeObject->empty();
 ArrayCharacterVirtualContact* nativeObject = (ArrayCharacterVirtualContact*)this_addr;
 return nativeObject->size();
 */
-    private static native int internal_native_size(long this_addr);
+    public static native int internal_native_size(long this_addr);
 
     public CharacterVirtualContact at(int inIndex) {
         long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
@@ -76,21 +76,5 @@ return nativeObject->size();
 ArrayCharacterVirtualContact* nativeObject = (ArrayCharacterVirtualContact*)this_addr;
 return (jlong)&nativeObject->at((int)inIndex);
 */
-    private static native long internal_native_at(long this_addr, int inIndex);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static boolean native_empty(long this_addr) {
-        return internal_native_empty(this_addr);
-    }
-
-    public static int native_size(long this_addr) {
-        return internal_native_size(this_addr);
-    }
-
-    public static long native_at(long this_addr, int inIndex) {
-        return internal_native_at(this_addr, inIndex);
-    }
+    public static native long internal_native_at(long this_addr, int inIndex);
 }

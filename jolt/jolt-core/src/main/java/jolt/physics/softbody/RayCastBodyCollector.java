@@ -62,7 +62,7 @@ virtual void AddHit(const BroadPhaseCastResult& inResult) {
 RayCastBodyCollectorJS* nativeObject = (RayCastBodyCollectorJS*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void SetContext(TransformedShape inContext) {
         internal_native_SetContext((long) getNativeData().getCPointer(), (long) (inContext != null ? inContext.getNativeData().getCPointer() : 0));
@@ -72,7 +72,7 @@ delete nativeObject;
 RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 nativeObject->SetContext((TransformedShape* )inContext_addr);
 */
-    private static native void internal_native_SetContext(long this_addr, long inContext_addr);
+    public static native void internal_native_SetContext(long this_addr, long inContext_addr);
 
     public TransformedShape GetContext() {
         long pointer = internal_native_GetContext((long) getNativeData().getCPointer());
@@ -89,7 +89,7 @@ RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 const TransformedShape* obj = nativeObject->GetContext();
 return (jlong)obj;
 */
-    private static native long internal_native_GetContext(long this_addr);
+    public static native long internal_native_GetContext(long this_addr);
 
     public void UpdateEarlyOutFraction(float inFraction) {
         internal_native_UpdateEarlyOutFraction((long) getNativeData().getCPointer(), inFraction);
@@ -99,7 +99,7 @@ return (jlong)obj;
 RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 nativeObject->UpdateEarlyOutFraction((float)inFraction);
 */
-    private static native void internal_native_UpdateEarlyOutFraction(long this_addr, float inFraction);
+    public static native void internal_native_UpdateEarlyOutFraction(long this_addr, float inFraction);
 
     public void ResetEarlyOutFraction(float inFraction) {
         internal_native_ResetEarlyOutFraction((long) getNativeData().getCPointer(), inFraction);
@@ -109,7 +109,7 @@ nativeObject->UpdateEarlyOutFraction((float)inFraction);
 RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 nativeObject->ResetEarlyOutFraction((float)inFraction);
 */
-    private static native void internal_native_ResetEarlyOutFraction(long this_addr, float inFraction);
+    public static native void internal_native_ResetEarlyOutFraction(long this_addr, float inFraction);
 
     public void ResetEarlyOutFraction() {
         internal_native_ResetEarlyOutFraction((long) getNativeData().getCPointer());
@@ -119,7 +119,7 @@ nativeObject->ResetEarlyOutFraction((float)inFraction);
 RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 nativeObject->ResetEarlyOutFraction();
 */
-    private static native void internal_native_ResetEarlyOutFraction(long this_addr);
+    public static native void internal_native_ResetEarlyOutFraction(long this_addr);
 
     public void ForceEarlyOut() {
         internal_native_ForceEarlyOut((long) getNativeData().getCPointer());
@@ -129,7 +129,7 @@ nativeObject->ResetEarlyOutFraction();
 RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 nativeObject->ForceEarlyOut();
 */
-    private static native void internal_native_ForceEarlyOut(long this_addr);
+    public static native void internal_native_ForceEarlyOut(long this_addr);
 
     public boolean ShouldEarlyOut() {
         return internal_native_ShouldEarlyOut((long) getNativeData().getCPointer());
@@ -139,7 +139,7 @@ nativeObject->ForceEarlyOut();
 RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 return nativeObject->ShouldEarlyOut();
 */
-    private static native boolean internal_native_ShouldEarlyOut(long this_addr);
+    public static native boolean internal_native_ShouldEarlyOut(long this_addr);
 
     public float GetEarlyOutFraction() {
         return internal_native_GetEarlyOutFraction((long) getNativeData().getCPointer());
@@ -149,7 +149,7 @@ return nativeObject->ShouldEarlyOut();
 RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 return nativeObject->GetEarlyOutFraction();
 */
-    private static native float internal_native_GetEarlyOutFraction(long this_addr);
+    public static native float internal_native_GetEarlyOutFraction(long this_addr);
 
     public float GetPositiveEarlyOutFraction() {
         return internal_native_GetPositiveEarlyOutFraction((long) getNativeData().getCPointer());
@@ -159,7 +159,7 @@ return nativeObject->GetEarlyOutFraction();
 RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 return nativeObject->GetPositiveEarlyOutFraction();
 */
-    private static native float internal_native_GetPositiveEarlyOutFraction(long this_addr);
+    public static native float internal_native_GetPositiveEarlyOutFraction(long this_addr);
 
     public RayCastBodyCollector() {
         long addr = internal_native_create();
@@ -191,55 +191,11 @@ return nativeObject->GetPositiveEarlyOutFraction();
     /*[-JNI;-NATIVE]
 return (jlong)new RayCastBodyCollectorJS();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /*[-JNI;-NATIVE]
 RayCastBodyCollectorJS* nativeObject = (RayCastBodyCollectorJS*)this_addr;
 nativeObject->setupCallback(env, object);
 */
-    private native void internal_native_setupCallback(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_SetContext(long this_addr, long inContext_addr) {
-        internal_native_SetContext(this_addr, inContext_addr);
-    }
-
-    public static long native_GetContext(long this_addr) {
-        return internal_native_GetContext(this_addr);
-    }
-
-    public static void native_UpdateEarlyOutFraction(long this_addr, float inFraction) {
-        internal_native_UpdateEarlyOutFraction(this_addr, inFraction);
-    }
-
-    public static void native_ResetEarlyOutFraction(long this_addr, float inFraction) {
-        internal_native_ResetEarlyOutFraction(this_addr, inFraction);
-    }
-
-    public static void native_ResetEarlyOutFraction(long this_addr) {
-        internal_native_ResetEarlyOutFraction(this_addr);
-    }
-
-    public static void native_ForceEarlyOut(long this_addr) {
-        internal_native_ForceEarlyOut(this_addr);
-    }
-
-    public static boolean native_ShouldEarlyOut(long this_addr) {
-        return internal_native_ShouldEarlyOut(this_addr);
-    }
-
-    public static float native_GetEarlyOutFraction(long this_addr) {
-        return internal_native_GetEarlyOutFraction(this_addr);
-    }
-
-    public static float native_GetPositiveEarlyOutFraction(long this_addr) {
-        return internal_native_GetPositiveEarlyOutFraction(this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
-    }
+    public native void internal_native_setupCallback(long this_addr);
 }

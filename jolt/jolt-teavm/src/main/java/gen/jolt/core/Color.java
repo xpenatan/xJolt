@@ -60,7 +60,7 @@ var jsObj = new jolt.Color();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.Color();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -86,7 +86,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Color);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Color);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Color MulColor(Color other) {
         int pointer = internal_native_MulColor((int) (long) getNativeData().getCPointer(), (int) (long) (other != null ? other.getNativeData().getCPointer() : 0));
@@ -105,7 +105,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "other_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Color);var returnedJSObj = jsObj.MulColor(other_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_MulColor(int this_addr, int other_addr);
+    public static native int internal_native_MulColor(int this_addr, int other_addr);
 
     public Vec4 ToVec4() {
         int pointer = internal_native_ToVec4((int) (long) getNativeData().getCPointer());
@@ -124,7 +124,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Color);var returnedJSObj = jsObj.ToVec4();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_ToVec4(int this_addr);
+    public static native int internal_native_ToVec4(int this_addr);
 
     public int get_mU32() {
         return internal_native_get_mU32((int) (long) getNativeData().getCPointer());
@@ -135,7 +135,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Color);
 return jsObj.get_mU32();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Color);return jsObj.get_mU32();")
-    private static native int internal_native_get_mU32(int this_addr);
+    public static native int internal_native_get_mU32(int this_addr);
 
     public void set_mU32(int mU32) {
         internal_native_set_mU32((int) (long) getNativeData().getCPointer(), mU32);
@@ -146,7 +146,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Color);
 jsObj.set_mU32(mU32);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mU32"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Color);jsObj.set_mU32(mU32);")
-    private static native void internal_native_set_mU32(int this_addr, int mU32);
+    public static native void internal_native_set_mU32(int this_addr, int mU32);
 
     public static Color get_sBlack() {
         int pointer = internal_native_get_sBlack();
@@ -164,7 +164,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sBlack();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sBlack();
+    public static native int internal_native_get_sBlack();
 
     public static Color get_sDarkRed() {
         int pointer = internal_native_get_sDarkRed();
@@ -182,7 +182,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sDarkRed();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sDarkRed();
+    public static native int internal_native_get_sDarkRed();
 
     public static Color get_sRed() {
         int pointer = internal_native_get_sRed();
@@ -200,7 +200,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sRed();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sRed();
+    public static native int internal_native_get_sRed();
 
     public static Color get_sDarkGreen() {
         int pointer = internal_native_get_sDarkGreen();
@@ -218,7 +218,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sDarkGreen();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sDarkGreen();
+    public static native int internal_native_get_sDarkGreen();
 
     public static Color get_sGreen() {
         int pointer = internal_native_get_sGreen();
@@ -236,7 +236,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sGreen();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sGreen();
+    public static native int internal_native_get_sGreen();
 
     public static Color get_sDarkBlue() {
         int pointer = internal_native_get_sDarkBlue();
@@ -254,7 +254,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sDarkBlue();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sDarkBlue();
+    public static native int internal_native_get_sDarkBlue();
 
     public static Color get_sBlue() {
         int pointer = internal_native_get_sBlue();
@@ -272,7 +272,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sBlue();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sBlue();
+    public static native int internal_native_get_sBlue();
 
     public static Color get_sYellow() {
         int pointer = internal_native_get_sYellow();
@@ -290,7 +290,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sYellow();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sYellow();
+    public static native int internal_native_get_sYellow();
 
     public static Color get_sPurple() {
         int pointer = internal_native_get_sPurple();
@@ -308,7 +308,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sPurple();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sPurple();
+    public static native int internal_native_get_sPurple();
 
     public static Color get_sCyan() {
         int pointer = internal_native_get_sCyan();
@@ -326,7 +326,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sCyan();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sCyan();
+    public static native int internal_native_get_sCyan();
 
     public static Color get_sOrange() {
         int pointer = internal_native_get_sOrange();
@@ -344,7 +344,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sOrange();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sOrange();
+    public static native int internal_native_get_sOrange();
 
     public static Color get_sDarkOrange() {
         int pointer = internal_native_get_sDarkOrange();
@@ -362,7 +362,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sDarkOrange();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sDarkOrange();
+    public static native int internal_native_get_sDarkOrange();
 
     public static Color get_sGrey() {
         int pointer = internal_native_get_sGrey();
@@ -380,7 +380,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sGrey();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sGrey();
+    public static native int internal_native_get_sGrey();
 
     public static Color get_sLightGrey() {
         int pointer = internal_native_get_sLightGrey();
@@ -398,7 +398,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sLightGrey();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sLightGrey();
+    public static native int internal_native_get_sLightGrey();
 
     public static Color get_sWhite() {
         int pointer = internal_native_get_sWhite();
@@ -416,89 +416,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Color.prototype.get_sWhite();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_sWhite();
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_MulColor(long this_addr, long other_addr) {
-        return internal_native_MulColor((int) this_addr, (int) other_addr);
-    }
-
-    public static long native_ToVec4(long this_addr) {
-        return internal_native_ToVec4((int) this_addr);
-    }
-
-    public static int native_get_mU32(long this_addr) {
-        return internal_native_get_mU32((int) this_addr);
-    }
-
-    public static void native_set_mU32(long this_addr, int mU32) {
-        internal_native_set_mU32((int) this_addr, mU32);
-    }
-
-    public static long native_get_sBlack() {
-        return internal_native_get_sBlack();
-    }
-
-    public static long native_get_sDarkRed() {
-        return internal_native_get_sDarkRed();
-    }
-
-    public static long native_get_sRed() {
-        return internal_native_get_sRed();
-    }
-
-    public static long native_get_sDarkGreen() {
-        return internal_native_get_sDarkGreen();
-    }
-
-    public static long native_get_sGreen() {
-        return internal_native_get_sGreen();
-    }
-
-    public static long native_get_sDarkBlue() {
-        return internal_native_get_sDarkBlue();
-    }
-
-    public static long native_get_sBlue() {
-        return internal_native_get_sBlue();
-    }
-
-    public static long native_get_sYellow() {
-        return internal_native_get_sYellow();
-    }
-
-    public static long native_get_sPurple() {
-        return internal_native_get_sPurple();
-    }
-
-    public static long native_get_sCyan() {
-        return internal_native_get_sCyan();
-    }
-
-    public static long native_get_sOrange() {
-        return internal_native_get_sOrange();
-    }
-
-    public static long native_get_sDarkOrange() {
-        return internal_native_get_sDarkOrange();
-    }
-
-    public static long native_get_sGrey() {
-        return internal_native_get_sGrey();
-    }
-
-    public static long native_get_sLightGrey() {
-        return internal_native_get_sLightGrey();
-    }
-
-    public static long native_get_sWhite() {
-        return internal_native_get_sWhite();
-    }
+    public static native int internal_native_get_sWhite();
 }

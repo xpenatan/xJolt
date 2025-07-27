@@ -32,7 +32,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraint);
 jsObj.SetDistance(inMinDistance, inMaxDistance);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inMinDistance", "inMaxDistance"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraint);jsObj.SetDistance(inMinDistance, inMaxDistance);")
-    private static native void internal_native_SetDistance(int this_addr, float inMinDistance, float inMaxDistance);
+    public static native void internal_native_SetDistance(int this_addr, float inMinDistance, float inMaxDistance);
 
     public float GetMinDistance() {
         return internal_native_GetMinDistance((int) (long) getNativeData().getCPointer());
@@ -44,7 +44,7 @@ var returnedJSObj = jsObj.GetMinDistance();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraint);var returnedJSObj = jsObj.GetMinDistance();return returnedJSObj;")
-    private static native float internal_native_GetMinDistance(int this_addr);
+    public static native float internal_native_GetMinDistance(int this_addr);
 
     public float GetMaxDistance() {
         return internal_native_GetMaxDistance((int) (long) getNativeData().getCPointer());
@@ -56,7 +56,7 @@ var returnedJSObj = jsObj.GetMaxDistance();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraint);var returnedJSObj = jsObj.GetMaxDistance();return returnedJSObj;")
-    private static native float internal_native_GetMaxDistance(int this_addr);
+    public static native float internal_native_GetMaxDistance(int this_addr);
 
     public SpringSettings GetLimitsSpringSettings() {
         int pointer = internal_native_GetLimitsSpringSettings((int) (long) getNativeData().getCPointer());
@@ -75,7 +75,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraint);var returnedJSObj = jsObj.GetLimitsSpringSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_GetLimitsSpringSettings(int this_addr);
+    public static native int internal_native_GetLimitsSpringSettings(int this_addr);
 
     public void SetLimitsSpringSettings(SpringSettings inSettings) {
         internal_native_SetLimitsSpringSettings((int) (long) getNativeData().getCPointer(), (int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
@@ -86,7 +86,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraint);
 jsObj.SetLimitsSpringSettings(inSettings_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inSettings_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraint);jsObj.SetLimitsSpringSettings(inSettings_addr);")
-    private static native void internal_native_SetLimitsSpringSettings(int this_addr, int inSettings_addr);
+    public static native void internal_native_SetLimitsSpringSettings(int this_addr, int inSettings_addr);
 
     public float GetTotalLambdaPosition() {
         return internal_native_GetTotalLambdaPosition((int) (long) getNativeData().getCPointer());
@@ -98,29 +98,5 @@ var returnedJSObj = jsObj.GetTotalLambdaPosition();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraint);var returnedJSObj = jsObj.GetTotalLambdaPosition();return returnedJSObj;")
-    private static native float internal_native_GetTotalLambdaPosition(int this_addr);
-
-    public static void native_SetDistance(long this_addr, float inMinDistance, float inMaxDistance) {
-        internal_native_SetDistance((int) this_addr, inMinDistance, inMaxDistance);
-    }
-
-    public static float native_GetMinDistance(long this_addr) {
-        return internal_native_GetMinDistance((int) this_addr);
-    }
-
-    public static float native_GetMaxDistance(long this_addr) {
-        return internal_native_GetMaxDistance((int) this_addr);
-    }
-
-    public static long native_GetLimitsSpringSettings(long this_addr) {
-        return internal_native_GetLimitsSpringSettings((int) this_addr);
-    }
-
-    public static void native_SetLimitsSpringSettings(long this_addr, long inSettings_addr) {
-        internal_native_SetLimitsSpringSettings((int) this_addr, (int) inSettings_addr);
-    }
-
-    public static float native_GetTotalLambdaPosition(long this_addr) {
-        return internal_native_GetTotalLambdaPosition((int) this_addr);
-    }
+    public static native float internal_native_GetTotalLambdaPosition(int this_addr);
 }

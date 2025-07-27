@@ -26,7 +26,7 @@ var jsObj = new jolt.Skeleton();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.Skeleton();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -45,7 +45,7 @@ var returnedJSObj = jsObj.AddJoint(inName_addr, inParentIndex);
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inName_addr", "inParentIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Skeleton);var returnedJSObj = jsObj.AddJoint(inName_addr, inParentIndex);return returnedJSObj;")
-    private static native int internal_native_AddJoint(int this_addr, int inName_addr, int inParentIndex);
+    public static native int internal_native_AddJoint(int this_addr, int inName_addr, int inParentIndex);
 
     public int GetJointCount() {
         return internal_native_GetJointCount((int) (long) getNativeData().getCPointer());
@@ -57,7 +57,7 @@ var returnedJSObj = jsObj.GetJointCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Skeleton);var returnedJSObj = jsObj.GetJointCount();return returnedJSObj;")
-    private static native int internal_native_GetJointCount(int this_addr);
+    public static native int internal_native_GetJointCount(int this_addr);
 
     public boolean AreJointsCorrectlyOrdered() {
         return internal_native_AreJointsCorrectlyOrdered((int) (long) getNativeData().getCPointer());
@@ -69,7 +69,7 @@ var returnedJSObj = jsObj.AreJointsCorrectlyOrdered();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Skeleton);var returnedJSObj = jsObj.AreJointsCorrectlyOrdered();return returnedJSObj;")
-    private static native boolean internal_native_AreJointsCorrectlyOrdered(int this_addr);
+    public static native boolean internal_native_AreJointsCorrectlyOrdered(int this_addr);
 
     public void CalculateParentJointIndices() {
         internal_native_CalculateParentJointIndices((int) (long) getNativeData().getCPointer());
@@ -80,25 +80,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Skeleton);
 jsObj.CalculateParentJointIndices();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Skeleton);jsObj.CalculateParentJointIndices();")
-    private static native void internal_native_CalculateParentJointIndices(int this_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static int native_AddJoint(long this_addr, long inName_addr, int inParentIndex) {
-        return internal_native_AddJoint((int) this_addr, (int) inName_addr, inParentIndex);
-    }
-
-    public static int native_GetJointCount(long this_addr) {
-        return internal_native_GetJointCount((int) this_addr);
-    }
-
-    public static boolean native_AreJointsCorrectlyOrdered(long this_addr) {
-        return internal_native_AreJointsCorrectlyOrdered((int) this_addr);
-    }
-
-    public static void native_CalculateParentJointIndices(long this_addr) {
-        internal_native_CalculateParentJointIndices((int) this_addr);
-    }
+    public static native void internal_native_CalculateParentJointIndices(int this_addr);
 }

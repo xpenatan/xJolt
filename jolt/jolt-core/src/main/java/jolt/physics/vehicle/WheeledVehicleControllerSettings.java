@@ -28,7 +28,7 @@ public class WheeledVehicleControllerSettings extends VehicleControllerSettings 
     /*[-JNI;-NATIVE]
 return (jlong)new WheeledVehicleControllerSettings();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -52,7 +52,7 @@ return (jlong)new WheeledVehicleControllerSettings();
 WheeledVehicleControllerSettings* nativeObject = (WheeledVehicleControllerSettings*)this_addr;
 return (jlong)&nativeObject->mEngine;
 */
-    private static native long internal_native_get_mEngine(long this_addr);
+    public static native long internal_native_get_mEngine(long this_addr);
 
     public void set_mEngine(VehicleEngineSettings mEngine) {
         internal_native_set_mEngine((long) getNativeData().getCPointer(), (long) (mEngine != null ? mEngine.getNativeData().getCPointer() : 0));
@@ -62,7 +62,7 @@ return (jlong)&nativeObject->mEngine;
 WheeledVehicleControllerSettings* nativeObject = (WheeledVehicleControllerSettings*)this_addr;
 nativeObject->mEngine = *((VehicleEngineSettings*)mEngine_addr);
 */
-    private static native void internal_native_set_mEngine(long this_addr, long mEngine_addr);
+    public static native void internal_native_set_mEngine(long this_addr, long mEngine_addr);
 
     public VehicleTransmissionSettings get_mTransmission() {
         long pointer = internal_native_get_mTransmission((long) getNativeData().getCPointer());
@@ -78,7 +78,7 @@ nativeObject->mEngine = *((VehicleEngineSettings*)mEngine_addr);
 WheeledVehicleControllerSettings* nativeObject = (WheeledVehicleControllerSettings*)this_addr;
 return (jlong)&nativeObject->mTransmission;
 */
-    private static native long internal_native_get_mTransmission(long this_addr);
+    public static native long internal_native_get_mTransmission(long this_addr);
 
     public void set_mTransmission(VehicleTransmissionSettings mTransmission) {
         internal_native_set_mTransmission((long) getNativeData().getCPointer(), (long) (mTransmission != null ? mTransmission.getNativeData().getCPointer() : 0));
@@ -88,7 +88,7 @@ return (jlong)&nativeObject->mTransmission;
 WheeledVehicleControllerSettings* nativeObject = (WheeledVehicleControllerSettings*)this_addr;
 nativeObject->mTransmission = *((VehicleTransmissionSettings*)mTransmission_addr);
 */
-    private static native void internal_native_set_mTransmission(long this_addr, long mTransmission_addr);
+    public static native void internal_native_set_mTransmission(long this_addr, long mTransmission_addr);
 
     public ArrayVehicleDifferentialSettings get_mDifferentials() {
         long pointer = internal_native_get_mDifferentials((long) getNativeData().getCPointer());
@@ -104,7 +104,7 @@ nativeObject->mTransmission = *((VehicleTransmissionSettings*)mTransmission_addr
 WheeledVehicleControllerSettings* nativeObject = (WheeledVehicleControllerSettings*)this_addr;
 return (jlong)&nativeObject->mDifferentials;
 */
-    private static native long internal_native_get_mDifferentials(long this_addr);
+    public static native long internal_native_get_mDifferentials(long this_addr);
 
     public void set_mDifferentials(ArrayVehicleDifferentialSettings mDifferentials) {
         internal_native_set_mDifferentials((long) getNativeData().getCPointer(), (long) (mDifferentials != null ? mDifferentials.getNativeData().getCPointer() : 0));
@@ -114,7 +114,7 @@ return (jlong)&nativeObject->mDifferentials;
 WheeledVehicleControllerSettings* nativeObject = (WheeledVehicleControllerSettings*)this_addr;
 nativeObject->mDifferentials = *((ArrayVehicleDifferentialSettings*)mDifferentials_addr);
 */
-    private static native void internal_native_set_mDifferentials(long this_addr, long mDifferentials_addr);
+    public static native void internal_native_set_mDifferentials(long this_addr, long mDifferentials_addr);
 
     public float get_mDifferentialLimitedSlipRatio() {
         return internal_native_get_mDifferentialLimitedSlipRatio((long) getNativeData().getCPointer());
@@ -124,7 +124,7 @@ nativeObject->mDifferentials = *((ArrayVehicleDifferentialSettings*)mDifferentia
 WheeledVehicleControllerSettings* nativeObject = (WheeledVehicleControllerSettings*)this_addr;
 return nativeObject->mDifferentialLimitedSlipRatio;
 */
-    private static native float internal_native_get_mDifferentialLimitedSlipRatio(long this_addr);
+    public static native float internal_native_get_mDifferentialLimitedSlipRatio(long this_addr);
 
     public void set_mDifferentialLimitedSlipRatio(float mDifferentialLimitedSlipRatio) {
         internal_native_set_mDifferentialLimitedSlipRatio((long) getNativeData().getCPointer(), mDifferentialLimitedSlipRatio);
@@ -134,41 +134,5 @@ return nativeObject->mDifferentialLimitedSlipRatio;
 WheeledVehicleControllerSettings* nativeObject = (WheeledVehicleControllerSettings*)this_addr;
 nativeObject->mDifferentialLimitedSlipRatio = mDifferentialLimitedSlipRatio;
 */
-    private static native void internal_native_set_mDifferentialLimitedSlipRatio(long this_addr, float mDifferentialLimitedSlipRatio);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static long native_get_mEngine(long this_addr) {
-        return internal_native_get_mEngine(this_addr);
-    }
-
-    public static void native_set_mEngine(long this_addr, long mEngine_addr) {
-        internal_native_set_mEngine(this_addr, mEngine_addr);
-    }
-
-    public static long native_get_mTransmission(long this_addr) {
-        return internal_native_get_mTransmission(this_addr);
-    }
-
-    public static void native_set_mTransmission(long this_addr, long mTransmission_addr) {
-        internal_native_set_mTransmission(this_addr, mTransmission_addr);
-    }
-
-    public static long native_get_mDifferentials(long this_addr) {
-        return internal_native_get_mDifferentials(this_addr);
-    }
-
-    public static void native_set_mDifferentials(long this_addr, long mDifferentials_addr) {
-        internal_native_set_mDifferentials(this_addr, mDifferentials_addr);
-    }
-
-    public static float native_get_mDifferentialLimitedSlipRatio(long this_addr) {
-        return internal_native_get_mDifferentialLimitedSlipRatio(this_addr);
-    }
-
-    public static void native_set_mDifferentialLimitedSlipRatio(long this_addr, float mDifferentialLimitedSlipRatio) {
-        internal_native_set_mDifferentialLimitedSlipRatio(this_addr, mDifferentialLimitedSlipRatio);
-    }
+    public static native void internal_native_set_mDifferentialLimitedSlipRatio(long this_addr, float mDifferentialLimitedSlipRatio);
 }

@@ -24,7 +24,7 @@ var jsObj = new jolt.VehicleCollisionTesterCastCylinder(inObjectLayer, inConvexR
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer", "inConvexRadiusFraction"}, script = "var jsObj = new jolt.VehicleCollisionTesterCastCylinder(inObjectLayer, inConvexRadiusFraction);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int_float(int inObjectLayer, float inConvexRadiusFraction);
+    public static native int internal_native_create_int_float(int inObjectLayer, float inConvexRadiusFraction);
 
     public VehicleCollisionTesterCastCylinder(int inObjectLayer) {
         super((byte) 1, (char) 1);
@@ -37,7 +37,7 @@ var jsObj = new jolt.VehicleCollisionTesterCastCylinder(inObjectLayer);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer"}, script = "var jsObj = new jolt.VehicleCollisionTesterCastCylinder(inObjectLayer);return jolt.getPointer(jsObj);")
-    private static native int internal_native_create_int(int inObjectLayer);
+    public static native int internal_native_create_int(int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -45,13 +45,5 @@ return jolt.getPointer(jsObj);
     @Deprecated()
     public VehicleCollisionTesterCastCylinder(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create_int_float(int inObjectLayer, float inConvexRadiusFraction) {
-        return internal_native_create_int_float(inObjectLayer, inConvexRadiusFraction);
-    }
-
-    public static long native_create_int(int inObjectLayer) {
-        return internal_native_create_int(inObjectLayer);
     }
 }

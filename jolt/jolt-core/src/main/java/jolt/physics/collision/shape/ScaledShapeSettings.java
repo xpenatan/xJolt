@@ -26,7 +26,7 @@ public class ScaledShapeSettings extends DecoratedShapeSettings {
     /*[-JNI;-NATIVE]
 return (jlong)new ScaledShapeSettings((ShapeSettings* )inShape_addr, *((Vec3* )inScale_addr));
 */
-    private static native long internal_native_create_ShapeSettings_Vec3(long inShape_addr, long inScale_addr);
+    public static native long internal_native_create_ShapeSettings_Vec3(long inShape_addr, long inScale_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,7 +50,7 @@ return (jlong)new ScaledShapeSettings((ShapeSettings* )inShape_addr, *((Vec3* )i
 ScaledShapeSettings* nativeObject = (ScaledShapeSettings*)this_addr;
 return (jlong)&nativeObject->mScale;
 */
-    private static native long internal_native_get_mScale(long this_addr);
+    public static native long internal_native_get_mScale(long this_addr);
 
     public void set_mScale(Vec3 mScale) {
         internal_native_set_mScale((long) getNativeData().getCPointer(), (long) (mScale != null ? mScale.getNativeData().getCPointer() : 0));
@@ -60,17 +60,5 @@ return (jlong)&nativeObject->mScale;
 ScaledShapeSettings* nativeObject = (ScaledShapeSettings*)this_addr;
 nativeObject->mScale = *((Vec3*)mScale_addr);
 */
-    private static native void internal_native_set_mScale(long this_addr, long mScale_addr);
-
-    public static long native_create_ShapeSettings_Vec3(long inShape_addr, long inScale_addr) {
-        return internal_native_create_ShapeSettings_Vec3(inShape_addr, inScale_addr);
-    }
-
-    public static long native_get_mScale(long this_addr) {
-        return internal_native_get_mScale(this_addr);
-    }
-
-    public static void native_set_mScale(long this_addr, long mScale_addr) {
-        internal_native_set_mScale(this_addr, mScale_addr);
-    }
+    public static native void internal_native_set_mScale(long this_addr, long mScale_addr);
 }

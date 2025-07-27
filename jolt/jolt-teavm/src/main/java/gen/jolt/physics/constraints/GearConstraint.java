@@ -30,7 +30,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.GearConstraint);
 jsObj.SetConstraints(inGear1_addr, inGear2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inGear1_addr", "inGear2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.GearConstraint);jsObj.SetConstraints(inGear1_addr, inGear2_addr);")
-    private static native void internal_native_SetConstraints(int this_addr, int inGear1_addr, int inGear2_addr);
+    public static native void internal_native_SetConstraints(int this_addr, int inGear1_addr, int inGear2_addr);
 
     public float GetTotalLambda() {
         return internal_native_GetTotalLambda((int) (long) getNativeData().getCPointer());
@@ -42,13 +42,5 @@ var returnedJSObj = jsObj.GetTotalLambda();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.GearConstraint);var returnedJSObj = jsObj.GetTotalLambda();return returnedJSObj;")
-    private static native float internal_native_GetTotalLambda(int this_addr);
-
-    public static void native_SetConstraints(long this_addr, long inGear1_addr, long inGear2_addr) {
-        internal_native_SetConstraints((int) this_addr, (int) inGear1_addr, (int) inGear2_addr);
-    }
-
-    public static float native_GetTotalLambda(long this_addr) {
-        return internal_native_GetTotalLambda((int) this_addr);
-    }
+    public static native float internal_native_GetTotalLambda(int this_addr);
 }

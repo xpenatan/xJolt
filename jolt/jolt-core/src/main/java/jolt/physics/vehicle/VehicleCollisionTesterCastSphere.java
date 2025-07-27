@@ -24,7 +24,7 @@ public class VehicleCollisionTesterCastSphere extends VehicleCollisionTester {
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadius, *((Vec3* )inUp_addr), (float)inMaxSlopeAngle);
 */
-    private static native long internal_native_create_int_float_Vec3_float(int inObjectLayer, float inRadius, long inUp_addr, float inMaxSlopeAngle);
+    public static native long internal_native_create_int_float_Vec3_float(int inObjectLayer, float inRadius, long inUp_addr, float inMaxSlopeAngle);
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp) {
         super((byte) 1, (char) 1);
@@ -35,7 +35,7 @@ return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadiu
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadius, *((Vec3* )inUp_addr));
 */
-    private static native long internal_native_create_int_float_Vec3(int inObjectLayer, float inRadius, long inUp_addr);
+    public static native long internal_native_create_int_float_Vec3(int inObjectLayer, float inRadius, long inUp_addr);
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius) {
         super((byte) 1, (char) 1);
@@ -46,7 +46,7 @@ return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadiu
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadius);
 */
-    private static native long internal_native_create_int_float(int inObjectLayer, float inRadius);
+    public static native long internal_native_create_int_float(int inObjectLayer, float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -54,17 +54,5 @@ return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadiu
     @Deprecated()
     public VehicleCollisionTesterCastSphere(byte b, char c) {
         super((byte) 1, (char) 1);
-    }
-
-    public static long native_create_int_float_Vec3_float(int inObjectLayer, float inRadius, long inUp_addr, float inMaxSlopeAngle) {
-        return internal_native_create_int_float_Vec3_float(inObjectLayer, inRadius, inUp_addr, inMaxSlopeAngle);
-    }
-
-    public static long native_create_int_float_Vec3(int inObjectLayer, float inRadius, long inUp_addr) {
-        return internal_native_create_int_float_Vec3(inObjectLayer, inRadius, inUp_addr);
-    }
-
-    public static long native_create_int_float(int inObjectLayer, float inRadius) {
-        return internal_native_create_int_float(inObjectLayer, inRadius);
     }
 }

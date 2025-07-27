@@ -37,7 +37,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilterJS);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilterJS);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int GetRefCount() {
         return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
@@ -49,7 +49,7 @@ var returnedJSObj = jsObj.GetRefCount();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilter);var returnedJSObj = jsObj.GetRefCount();return returnedJSObj;")
-    private static native int internal_native_GetRefCount(int this_addr);
+    public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
         internal_native_AddRef((int) (long) getNativeData().getCPointer());
@@ -60,7 +60,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilter);
 jsObj.AddRef();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilter);jsObj.AddRef();")
-    private static native void internal_native_AddRef(int this_addr);
+    public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
         internal_native_Release((int) (long) getNativeData().getCPointer());
@@ -71,7 +71,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilter);
 jsObj.Release();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.GroupFilter);jsObj.Release();")
-    private static native void internal_native_Release(int this_addr);
+    public static native void internal_native_Release(int this_addr);
 
     public GroupFilter() {
         int addr = internal_native_create();
@@ -108,34 +108,14 @@ var jsObj = new jolt.GroupFilterJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.GroupFilterJS();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "CanCollide" }, script = "var GroupFilterJS = jolt.wrapPointer(this_addr, jolt.GroupFilterJS); GroupFilterJS.CanCollide = CanCollide;")
-    private static native void internal_native_setupCallback(int this_addr, CanCollide CanCollide);
+    public static native void internal_native_setupCallback(int this_addr, CanCollide CanCollide);
 
     @org.teavm.jso.JSFunctor()
     public interface CanCollide extends org.teavm.jso.JSObject {
 
         boolean CanCollide(int inGroup1, int inGroup2);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static int native_GetRefCount(long this_addr) {
-        return internal_native_GetRefCount((int) this_addr);
-    }
-
-    public static void native_AddRef(long this_addr) {
-        internal_native_AddRef((int) this_addr);
-    }
-
-    public static void native_Release(long this_addr) {
-        internal_native_Release((int) this_addr);
-    }
-
-    public static long native_create() {
-        return internal_native_create();
     }
 }

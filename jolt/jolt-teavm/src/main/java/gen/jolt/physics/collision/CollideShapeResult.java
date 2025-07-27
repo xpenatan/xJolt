@@ -44,7 +44,7 @@ var jsObj = new jolt.CollideShapeResult();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CollideShapeResult();return jolt.getPointer(jsObj);")
-    private static native int internal_native_create();
+    public static native int internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -70,7 +70,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jolt.destroy(jsObj);")
-    private static native void internal_native_deleteNative(int this_addr);
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mContactPointOn1() {
         int pointer = internal_native_get_mContactPointOn1((int) (long) getNativeData().getCPointer());
@@ -89,7 +89,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);var returnedJSObj = jsObj.get_mContactPointOn1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mContactPointOn1(int this_addr);
+    public static native int internal_native_get_mContactPointOn1(int this_addr);
 
     public void set_mContactPointOn1(Vec3 mContactPointOn1) {
         internal_native_set_mContactPointOn1((int) (long) getNativeData().getCPointer(), (int) (long) (mContactPointOn1 != null ? mContactPointOn1.getNativeData().getCPointer() : 0));
@@ -100,7 +100,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jsObj.set_mContactPointOn1(mContactPointOn1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mContactPointOn1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jsObj.set_mContactPointOn1(mContactPointOn1_addr);")
-    private static native void internal_native_set_mContactPointOn1(int this_addr, int mContactPointOn1_addr);
+    public static native void internal_native_set_mContactPointOn1(int this_addr, int mContactPointOn1_addr);
 
     public Vec3 get_mContactPointOn2() {
         int pointer = internal_native_get_mContactPointOn2((int) (long) getNativeData().getCPointer());
@@ -119,7 +119,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);var returnedJSObj = jsObj.get_mContactPointOn2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mContactPointOn2(int this_addr);
+    public static native int internal_native_get_mContactPointOn2(int this_addr);
 
     public void set_mContactPointOn2(Vec3 mContactPointOn2) {
         internal_native_set_mContactPointOn2((int) (long) getNativeData().getCPointer(), (int) (long) (mContactPointOn2 != null ? mContactPointOn2.getNativeData().getCPointer() : 0));
@@ -130,7 +130,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jsObj.set_mContactPointOn2(mContactPointOn2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mContactPointOn2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jsObj.set_mContactPointOn2(mContactPointOn2_addr);")
-    private static native void internal_native_set_mContactPointOn2(int this_addr, int mContactPointOn2_addr);
+    public static native void internal_native_set_mContactPointOn2(int this_addr, int mContactPointOn2_addr);
 
     public Vec3 get_mPenetrationAxis() {
         int pointer = internal_native_get_mPenetrationAxis((int) (long) getNativeData().getCPointer());
@@ -149,7 +149,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);var returnedJSObj = jsObj.get_mPenetrationAxis();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mPenetrationAxis(int this_addr);
+    public static native int internal_native_get_mPenetrationAxis(int this_addr);
 
     public void set_mPenetrationAxis(Vec3 mPenetrationAxis) {
         internal_native_set_mPenetrationAxis((int) (long) getNativeData().getCPointer(), (int) (long) (mPenetrationAxis != null ? mPenetrationAxis.getNativeData().getCPointer() : 0));
@@ -160,7 +160,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jsObj.set_mPenetrationAxis(mPenetrationAxis_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPenetrationAxis_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jsObj.set_mPenetrationAxis(mPenetrationAxis_addr);")
-    private static native void internal_native_set_mPenetrationAxis(int this_addr, int mPenetrationAxis_addr);
+    public static native void internal_native_set_mPenetrationAxis(int this_addr, int mPenetrationAxis_addr);
 
     public float get_mPenetrationDepth() {
         return internal_native_get_mPenetrationDepth((int) (long) getNativeData().getCPointer());
@@ -171,7 +171,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 return jsObj.get_mPenetrationDepth();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);return jsObj.get_mPenetrationDepth();")
-    private static native float internal_native_get_mPenetrationDepth(int this_addr);
+    public static native float internal_native_get_mPenetrationDepth(int this_addr);
 
     public void set_mPenetrationDepth(float mPenetrationDepth) {
         internal_native_set_mPenetrationDepth((int) (long) getNativeData().getCPointer(), mPenetrationDepth);
@@ -182,7 +182,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jsObj.set_mPenetrationDepth(mPenetrationDepth);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mPenetrationDepth"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jsObj.set_mPenetrationDepth(mPenetrationDepth);")
-    private static native void internal_native_set_mPenetrationDepth(int this_addr, float mPenetrationDepth);
+    public static native void internal_native_set_mPenetrationDepth(int this_addr, float mPenetrationDepth);
 
     public SubShapeID get_mSubShapeID1() {
         int pointer = internal_native_get_mSubShapeID1((int) (long) getNativeData().getCPointer());
@@ -201,7 +201,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);var returnedJSObj = jsObj.get_mSubShapeID1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSubShapeID1(int this_addr);
+    public static native int internal_native_get_mSubShapeID1(int this_addr);
 
     public void set_mSubShapeID1(SubShapeID mSubShapeID1) {
         internal_native_set_mSubShapeID1((int) (long) getNativeData().getCPointer(), (int) (long) (mSubShapeID1 != null ? mSubShapeID1.getNativeData().getCPointer() : 0));
@@ -212,7 +212,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jsObj.set_mSubShapeID1(mSubShapeID1_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSubShapeID1_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jsObj.set_mSubShapeID1(mSubShapeID1_addr);")
-    private static native void internal_native_set_mSubShapeID1(int this_addr, int mSubShapeID1_addr);
+    public static native void internal_native_set_mSubShapeID1(int this_addr, int mSubShapeID1_addr);
 
     public SubShapeID get_mSubShapeID2() {
         int pointer = internal_native_get_mSubShapeID2((int) (long) getNativeData().getCPointer());
@@ -231,7 +231,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);var returnedJSObj = jsObj.get_mSubShapeID2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mSubShapeID2(int this_addr);
+    public static native int internal_native_get_mSubShapeID2(int this_addr);
 
     public void set_mSubShapeID2(SubShapeID mSubShapeID2) {
         internal_native_set_mSubShapeID2((int) (long) getNativeData().getCPointer(), (int) (long) (mSubShapeID2 != null ? mSubShapeID2.getNativeData().getCPointer() : 0));
@@ -242,7 +242,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jsObj.set_mSubShapeID2(mSubShapeID2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mSubShapeID2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jsObj.set_mSubShapeID2(mSubShapeID2_addr);")
-    private static native void internal_native_set_mSubShapeID2(int this_addr, int mSubShapeID2_addr);
+    public static native void internal_native_set_mSubShapeID2(int this_addr, int mSubShapeID2_addr);
 
     public BodyID get_mBodyID2() {
         int pointer = internal_native_get_mBodyID2((int) (long) getNativeData().getCPointer());
@@ -261,7 +261,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);var returnedJSObj = jsObj.get_mBodyID2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mBodyID2(int this_addr);
+    public static native int internal_native_get_mBodyID2(int this_addr);
 
     public void set_mBodyID2(BodyID mBodyID2) {
         internal_native_set_mBodyID2((int) (long) getNativeData().getCPointer(), (int) (long) (mBodyID2 != null ? mBodyID2.getNativeData().getCPointer() : 0));
@@ -272,7 +272,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jsObj.set_mBodyID2(mBodyID2_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mBodyID2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jsObj.set_mBodyID2(mBodyID2_addr);")
-    private static native void internal_native_set_mBodyID2(int this_addr, int mBodyID2_addr);
+    public static native void internal_native_set_mBodyID2(int this_addr, int mBodyID2_addr);
 
     public CollideShapeResultFace get_mShape1Face() {
         int pointer = internal_native_get_mShape1Face((int) (long) getNativeData().getCPointer());
@@ -291,7 +291,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);var returnedJSObj = jsObj.get_mShape1Face();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mShape1Face(int this_addr);
+    public static native int internal_native_get_mShape1Face(int this_addr);
 
     public void set_mShape1Face(CollideShapeResultFace mShape1Face) {
         internal_native_set_mShape1Face((int) (long) getNativeData().getCPointer(), (int) (long) (mShape1Face != null ? mShape1Face.getNativeData().getCPointer() : 0));
@@ -302,7 +302,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jsObj.set_mShape1Face(mShape1Face_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mShape1Face_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jsObj.set_mShape1Face(mShape1Face_addr);")
-    private static native void internal_native_set_mShape1Face(int this_addr, int mShape1Face_addr);
+    public static native void internal_native_set_mShape1Face(int this_addr, int mShape1Face_addr);
 
     public CollideShapeResultFace get_mShape2Face() {
         int pointer = internal_native_get_mShape2Face((int) (long) getNativeData().getCPointer());
@@ -321,7 +321,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);var returnedJSObj = jsObj.get_mShape2Face();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    private static native int internal_native_get_mShape2Face(int this_addr);
+    public static native int internal_native_get_mShape2Face(int this_addr);
 
     public void set_mShape2Face(CollideShapeResultFace mShape2Face) {
         internal_native_set_mShape2Face((int) (long) getNativeData().getCPointer(), (int) (long) (mShape2Face != null ? mShape2Face.getNativeData().getCPointer() : 0));
@@ -332,85 +332,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);
 jsObj.set_mShape2Face(mShape2Face_addr);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mShape2Face_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeResult);jsObj.set_mShape2Face(mShape2Face_addr);")
-    private static native void internal_native_set_mShape2Face(int this_addr, int mShape2Face_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative((int) this_addr);
-    }
-
-    public static long native_get_mContactPointOn1(long this_addr) {
-        return internal_native_get_mContactPointOn1((int) this_addr);
-    }
-
-    public static void native_set_mContactPointOn1(long this_addr, long mContactPointOn1_addr) {
-        internal_native_set_mContactPointOn1((int) this_addr, (int) mContactPointOn1_addr);
-    }
-
-    public static long native_get_mContactPointOn2(long this_addr) {
-        return internal_native_get_mContactPointOn2((int) this_addr);
-    }
-
-    public static void native_set_mContactPointOn2(long this_addr, long mContactPointOn2_addr) {
-        internal_native_set_mContactPointOn2((int) this_addr, (int) mContactPointOn2_addr);
-    }
-
-    public static long native_get_mPenetrationAxis(long this_addr) {
-        return internal_native_get_mPenetrationAxis((int) this_addr);
-    }
-
-    public static void native_set_mPenetrationAxis(long this_addr, long mPenetrationAxis_addr) {
-        internal_native_set_mPenetrationAxis((int) this_addr, (int) mPenetrationAxis_addr);
-    }
-
-    public static float native_get_mPenetrationDepth(long this_addr) {
-        return internal_native_get_mPenetrationDepth((int) this_addr);
-    }
-
-    public static void native_set_mPenetrationDepth(long this_addr, float mPenetrationDepth) {
-        internal_native_set_mPenetrationDepth((int) this_addr, mPenetrationDepth);
-    }
-
-    public static long native_get_mSubShapeID1(long this_addr) {
-        return internal_native_get_mSubShapeID1((int) this_addr);
-    }
-
-    public static void native_set_mSubShapeID1(long this_addr, long mSubShapeID1_addr) {
-        internal_native_set_mSubShapeID1((int) this_addr, (int) mSubShapeID1_addr);
-    }
-
-    public static long native_get_mSubShapeID2(long this_addr) {
-        return internal_native_get_mSubShapeID2((int) this_addr);
-    }
-
-    public static void native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr) {
-        internal_native_set_mSubShapeID2((int) this_addr, (int) mSubShapeID2_addr);
-    }
-
-    public static long native_get_mBodyID2(long this_addr) {
-        return internal_native_get_mBodyID2((int) this_addr);
-    }
-
-    public static void native_set_mBodyID2(long this_addr, long mBodyID2_addr) {
-        internal_native_set_mBodyID2((int) this_addr, (int) mBodyID2_addr);
-    }
-
-    public static long native_get_mShape1Face(long this_addr) {
-        return internal_native_get_mShape1Face((int) this_addr);
-    }
-
-    public static void native_set_mShape1Face(long this_addr, long mShape1Face_addr) {
-        internal_native_set_mShape1Face((int) this_addr, (int) mShape1Face_addr);
-    }
-
-    public static long native_get_mShape2Face(long this_addr) {
-        return internal_native_get_mShape2Face((int) this_addr);
-    }
-
-    public static void native_set_mShape2Face(long this_addr, long mShape2Face_addr) {
-        internal_native_set_mShape2Face((int) this_addr, (int) mShape2Face_addr);
-    }
+    public static native void internal_native_set_mShape2Face(int this_addr, int mShape2Face_addr);
 }

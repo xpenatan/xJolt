@@ -41,7 +41,7 @@ public class SoftBodySharedSettingsInvBind extends IDLBase {
 SoftBodySharedSettingsInvBind* nativeObject = (SoftBodySharedSettingsInvBind*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mJointIndex() {
         return internal_native_get_mJointIndex((long) getNativeData().getCPointer());
@@ -51,7 +51,7 @@ delete nativeObject;
 SoftBodySharedSettingsInvBind* nativeObject = (SoftBodySharedSettingsInvBind*)this_addr;
 return nativeObject->mJointIndex;
 */
-    private static native int internal_native_get_mJointIndex(long this_addr);
+    public static native int internal_native_get_mJointIndex(long this_addr);
 
     public void set_mJointIndex(int mJointIndex) {
         internal_native_set_mJointIndex((long) getNativeData().getCPointer(), mJointIndex);
@@ -61,7 +61,7 @@ return nativeObject->mJointIndex;
 SoftBodySharedSettingsInvBind* nativeObject = (SoftBodySharedSettingsInvBind*)this_addr;
 nativeObject->mJointIndex = mJointIndex;
 */
-    private static native void internal_native_set_mJointIndex(long this_addr, int mJointIndex);
+    public static native void internal_native_set_mJointIndex(long this_addr, int mJointIndex);
 
     public Mat44 get_mInvBind() {
         long pointer = internal_native_get_mInvBind((long) getNativeData().getCPointer());
@@ -77,7 +77,7 @@ nativeObject->mJointIndex = mJointIndex;
 SoftBodySharedSettingsInvBind* nativeObject = (SoftBodySharedSettingsInvBind*)this_addr;
 return (jlong)&nativeObject->mInvBind;
 */
-    private static native long internal_native_get_mInvBind(long this_addr);
+    public static native long internal_native_get_mInvBind(long this_addr);
 
     public void set_mInvBind(Mat44 mInvBind) {
         internal_native_set_mInvBind((long) getNativeData().getCPointer(), (long) (mInvBind != null ? mInvBind.getNativeData().getCPointer() : 0));
@@ -87,25 +87,5 @@ return (jlong)&nativeObject->mInvBind;
 SoftBodySharedSettingsInvBind* nativeObject = (SoftBodySharedSettingsInvBind*)this_addr;
 nativeObject->mInvBind = *((Mat44*)mInvBind_addr);
 */
-    private static native void internal_native_set_mInvBind(long this_addr, long mInvBind_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_get_mJointIndex(long this_addr) {
-        return internal_native_get_mJointIndex(this_addr);
-    }
-
-    public static void native_set_mJointIndex(long this_addr, int mJointIndex) {
-        internal_native_set_mJointIndex(this_addr, mJointIndex);
-    }
-
-    public static long native_get_mInvBind(long this_addr) {
-        return internal_native_get_mInvBind(this_addr);
-    }
-
-    public static void native_set_mInvBind(long this_addr, long mInvBind_addr) {
-        internal_native_set_mInvBind(this_addr, mInvBind_addr);
-    }
+    public static native void internal_native_set_mInvBind(long this_addr, long mInvBind_addr);
 }

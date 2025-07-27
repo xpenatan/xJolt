@@ -37,9 +37,5 @@ public class JobSystemWithBarrier extends JobSystem {
 JobSystemWithBarrier* nativeObject = (JobSystemWithBarrier*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
+    public static native void internal_native_deleteNative(long this_addr);
 }

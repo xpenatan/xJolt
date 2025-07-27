@@ -29,7 +29,7 @@ public class IDLDoubleArray extends IDLBase {
       [-JNI;-NATIVE]
       return (jlong)new IDLDoubleArray((int)size);
     */
-    private static native long internal_native_create_int(int size);
+    public static native long internal_native_create_int(int size);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,7 +55,7 @@ public class IDLDoubleArray extends IDLBase {
       IDLDoubleArray* nativeObject = (IDLDoubleArray*)this_addr;
       delete nativeObject;
     */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void resize(int size) {
         internal_native_resize((long) getNativeData().getCPointer(), size);
@@ -66,7 +66,7 @@ public class IDLDoubleArray extends IDLBase {
       IDLDoubleArray* nativeObject = (IDLDoubleArray*)this_addr;
       nativeObject->resize((int)size);
     */
-    private static native void internal_native_resize(long this_addr, int size);
+    public static native void internal_native_resize(long this_addr, int size);
 
     public void clear() {
         internal_native_clear((long) getNativeData().getCPointer());
@@ -77,7 +77,7 @@ public class IDLDoubleArray extends IDLBase {
       IDLDoubleArray* nativeObject = (IDLDoubleArray*)this_addr;
       nativeObject->clear();
     */
-    private static native void internal_native_clear(long this_addr);
+    public static native void internal_native_clear(long this_addr);
 
     public double getValue(int index) {
         return internal_native_getValue((long) getNativeData().getCPointer(), index);
@@ -88,7 +88,7 @@ public class IDLDoubleArray extends IDLBase {
       IDLDoubleArray* nativeObject = (IDLDoubleArray*)this_addr;
       return nativeObject->getValue((int)index);
     */
-    private static native double internal_native_getValue(long this_addr, int index);
+    public static native double internal_native_getValue(long this_addr, int index);
 
     public void setValue(int index, double value) {
         internal_native_setValue((long) getNativeData().getCPointer(), index, value);
@@ -99,7 +99,7 @@ public class IDLDoubleArray extends IDLBase {
       IDLDoubleArray* nativeObject = (IDLDoubleArray*)this_addr;
       nativeObject->setValue((int)index, (double)value);
     */
-    private static native void internal_native_setValue(long this_addr, int index, double value);
+    public static native void internal_native_setValue(long this_addr, int index, double value);
 
     public int getSize() {
         return internal_native_getSize((long) getNativeData().getCPointer());
@@ -110,7 +110,7 @@ public class IDLDoubleArray extends IDLBase {
       IDLDoubleArray* nativeObject = (IDLDoubleArray*)this_addr;
       return nativeObject->getSize();
     */
-    private static native int internal_native_getSize(long this_addr);
+    public static native int internal_native_getSize(long this_addr);
 
     public long getPointer() {
         return internal_native_getPointer((long) getNativeData().getCPointer());
@@ -121,7 +121,7 @@ public class IDLDoubleArray extends IDLBase {
       IDLDoubleArray* nativeObject = (IDLDoubleArray*)this_addr;
       return (jlong)nativeObject->getPointer();
     */
-    private static native long internal_native_getPointer(long this_addr);
+    public static native long internal_native_getPointer(long this_addr);
 
     public void copy(IDLDoubleArray src, int srcOffset, int destOffset, int length) {
         internal_native_copy((long) getNativeData().getCPointer(), (long) (src != null ? src.getNativeData().getCPointer() : 0), srcOffset, destOffset, length);
@@ -132,41 +132,5 @@ public class IDLDoubleArray extends IDLBase {
       IDLDoubleArray* nativeObject = (IDLDoubleArray*)this_addr;
       nativeObject->copy(*((IDLDoubleArray* )src_addr), (int)srcOffset, (int)destOffset, (int)length);
     */
-    private static native void internal_native_copy(long this_addr, long src_addr, int srcOffset, int destOffset, int length);
-
-    public static long native_create_int(int size) {
-        return internal_native_create_int(size);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static void native_resize(long this_addr, int size) {
-        internal_native_resize(this_addr, size);
-    }
-
-    public static void native_clear(long this_addr) {
-        internal_native_clear(this_addr);
-    }
-
-    public static double native_getValue(long this_addr, int index) {
-        return internal_native_getValue(this_addr, index);
-    }
-
-    public static void native_setValue(long this_addr, int index, double value) {
-        internal_native_setValue(this_addr, index, value);
-    }
-
-    public static int native_getSize(long this_addr) {
-        return internal_native_getSize(this_addr);
-    }
-
-    public static long native_getPointer(long this_addr) {
-        return internal_native_getPointer(this_addr);
-    }
-
-    public static void native_copy(long this_addr, long src_addr, int srcOffset, int destOffset, int length) {
-        internal_native_copy(this_addr, src_addr, srcOffset, destOffset, length);
-    }
+    public static native void internal_native_copy(long this_addr, long src_addr, int srcOffset, int destOffset, int length);
 }

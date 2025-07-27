@@ -37,7 +37,7 @@ public class JobSystemThreadPool extends JobSystemWithBarrier {
 JobSystemThreadPool* nativeObject = (JobSystemThreadPool*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetMaxConcurrency() {
         return internal_native_GetMaxConcurrency((long) getNativeData().getCPointer());
@@ -47,7 +47,7 @@ delete nativeObject;
 JobSystemThreadPool* nativeObject = (JobSystemThreadPool*)this_addr;
 return nativeObject->GetMaxConcurrency();
 */
-    private static native int internal_native_GetMaxConcurrency(long this_addr);
+    public static native int internal_native_GetMaxConcurrency(long this_addr);
 
     public void SetNumThreads(int inNumThreads) {
         internal_native_SetNumThreads((long) getNativeData().getCPointer(), inNumThreads);
@@ -57,17 +57,5 @@ return nativeObject->GetMaxConcurrency();
 JobSystemThreadPool* nativeObject = (JobSystemThreadPool*)this_addr;
 nativeObject->SetNumThreads((int)inNumThreads);
 */
-    private static native void internal_native_SetNumThreads(long this_addr, int inNumThreads);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static int native_GetMaxConcurrency(long this_addr) {
-        return internal_native_GetMaxConcurrency(this_addr);
-    }
-
-    public static void native_SetNumThreads(long this_addr, int inNumThreads) {
-        internal_native_SetNumThreads(this_addr, inNumThreads);
-    }
+    public static native void internal_native_SetNumThreads(long this_addr, int inNumThreads);
 }

@@ -22,7 +22,7 @@ public class DefaultObjectLayerFilter extends ObjectLayerFilter {
     /*[-JNI;-NATIVE]
 return (jlong)new DefaultObjectLayerFilter(*((ObjectLayerPairFilter* )inFilter_addr), inObjectLayer);
 */
-    private static native long internal_native_create_ObjectLayerPairFilter_int(long inFilter_addr, int inObjectLayer);
+    public static native long internal_native_create_ObjectLayerPairFilter_int(long inFilter_addr, int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,13 +48,5 @@ return (jlong)new DefaultObjectLayerFilter(*((ObjectLayerPairFilter* )inFilter_a
 DefaultObjectLayerFilter* nativeObject = (DefaultObjectLayerFilter*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
-
-    public static long native_create_ObjectLayerPairFilter_int(long inFilter_addr, int inObjectLayer) {
-        return internal_native_create_ObjectLayerPairFilter_int(inFilter_addr, inObjectLayer);
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
+    public static native void internal_native_deleteNative(long this_addr);
 }

@@ -60,7 +60,7 @@ public class SoftBodyMotionProperties extends MotionProperties {
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public SoftBodySharedSettings GetSettings() {
         long pointer = internal_native_GetSettings((long) getNativeData().getCPointer());
@@ -77,7 +77,7 @@ SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 const SoftBodySharedSettings* obj = nativeObject->GetSettings();
 return (jlong)obj;
 */
-    private static native long internal_native_GetSettings(long this_addr);
+    public static native long internal_native_GetSettings(long this_addr);
 
     public ArraySoftBodyVertex GetVertices() {
         long pointer = internal_native_GetVertices((long) getNativeData().getCPointer());
@@ -93,7 +93,7 @@ return (jlong)obj;
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetVertices();
 */
-    private static native long internal_native_GetVertices(long this_addr);
+    public static native long internal_native_GetVertices(long this_addr);
 
     public SoftBodyVertex GetVertex(int inIndex) {
         long pointer = internal_native_GetVertex((long) getNativeData().getCPointer(), inIndex);
@@ -109,7 +109,7 @@ return (jlong)&nativeObject->GetVertices();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetVertex(inIndex);
 */
-    private static native long internal_native_GetVertex(long this_addr, int inIndex);
+    public static native long internal_native_GetVertex(long this_addr, int inIndex);
 
     public PhysicsMaterialList GetMaterials() {
         long pointer = internal_native_GetMaterials((long) getNativeData().getCPointer());
@@ -125,7 +125,7 @@ return (jlong)&nativeObject->GetVertex(inIndex);
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetMaterials();
 */
-    private static native long internal_native_GetMaterials(long this_addr);
+    public static native long internal_native_GetMaterials(long this_addr);
 
     public ArraySoftBodySharedSettingsFace GetFaces() {
         long pointer = internal_native_GetFaces((long) getNativeData().getCPointer());
@@ -141,7 +141,7 @@ return (jlong)&nativeObject->GetMaterials();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetFaces();
 */
-    private static native long internal_native_GetFaces(long this_addr);
+    public static native long internal_native_GetFaces(long this_addr);
 
     public SoftBodySharedSettingsFace GetFace(int inIndex) {
         long pointer = internal_native_GetFace((long) getNativeData().getCPointer(), inIndex);
@@ -157,7 +157,7 @@ return (jlong)&nativeObject->GetFaces();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetFace(inIndex);
 */
-    private static native long internal_native_GetFace(long this_addr, int inIndex);
+    public static native long internal_native_GetFace(long this_addr, int inIndex);
 
     public int GetNumIterations() {
         return internal_native_GetNumIterations((long) getNativeData().getCPointer());
@@ -167,7 +167,7 @@ return (jlong)&nativeObject->GetFace(inIndex);
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return nativeObject->GetNumIterations();
 */
-    private static native int internal_native_GetNumIterations(long this_addr);
+    public static native int internal_native_GetNumIterations(long this_addr);
 
     public void SetNumIterations(int inNumIterations) {
         internal_native_SetNumIterations((long) getNativeData().getCPointer(), inNumIterations);
@@ -177,7 +177,7 @@ return nativeObject->GetNumIterations();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 nativeObject->SetNumIterations(inNumIterations);
 */
-    private static native void internal_native_SetNumIterations(long this_addr, int inNumIterations);
+    public static native void internal_native_SetNumIterations(long this_addr, int inNumIterations);
 
     public float GetPressure() {
         return internal_native_GetPressure((long) getNativeData().getCPointer());
@@ -187,7 +187,7 @@ nativeObject->SetNumIterations(inNumIterations);
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return nativeObject->GetPressure();
 */
-    private static native float internal_native_GetPressure(long this_addr);
+    public static native float internal_native_GetPressure(long this_addr);
 
     public void SetPressure(float inPressure) {
         internal_native_SetPressure((long) getNativeData().getCPointer(), inPressure);
@@ -197,7 +197,7 @@ return nativeObject->GetPressure();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 nativeObject->SetPressure((float)inPressure);
 */
-    private static native void internal_native_SetPressure(long this_addr, float inPressure);
+    public static native void internal_native_SetPressure(long this_addr, float inPressure);
 
     public boolean GetUpdatePosition() {
         return internal_native_GetUpdatePosition((long) getNativeData().getCPointer());
@@ -207,7 +207,7 @@ nativeObject->SetPressure((float)inPressure);
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return nativeObject->GetUpdatePosition();
 */
-    private static native boolean internal_native_GetUpdatePosition(long this_addr);
+    public static native boolean internal_native_GetUpdatePosition(long this_addr);
 
     public void SetUpdatePosition(boolean inUpdatePosition) {
         internal_native_SetUpdatePosition((long) getNativeData().getCPointer(), inUpdatePosition);
@@ -217,7 +217,7 @@ return nativeObject->GetUpdatePosition();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 nativeObject->SetUpdatePosition(inUpdatePosition);
 */
-    private static native void internal_native_SetUpdatePosition(long this_addr, boolean inUpdatePosition);
+    public static native void internal_native_SetUpdatePosition(long this_addr, boolean inUpdatePosition);
 
     public boolean GetEnableSkinConstraints() {
         return internal_native_GetEnableSkinConstraints((long) getNativeData().getCPointer());
@@ -227,7 +227,7 @@ nativeObject->SetUpdatePosition(inUpdatePosition);
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return nativeObject->GetEnableSkinConstraints();
 */
-    private static native boolean internal_native_GetEnableSkinConstraints(long this_addr);
+    public static native boolean internal_native_GetEnableSkinConstraints(long this_addr);
 
     public void SetEnableSkinConstraints(boolean inEnableSkinConstraints) {
         internal_native_SetEnableSkinConstraints((long) getNativeData().getCPointer(), inEnableSkinConstraints);
@@ -237,7 +237,7 @@ return nativeObject->GetEnableSkinConstraints();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 nativeObject->SetEnableSkinConstraints(inEnableSkinConstraints);
 */
-    private static native void internal_native_SetEnableSkinConstraints(long this_addr, boolean inEnableSkinConstraints);
+    public static native void internal_native_SetEnableSkinConstraints(long this_addr, boolean inEnableSkinConstraints);
 
     public float GetSkinnedMaxDistanceMultiplier() {
         return internal_native_GetSkinnedMaxDistanceMultiplier((long) getNativeData().getCPointer());
@@ -247,7 +247,7 @@ nativeObject->SetEnableSkinConstraints(inEnableSkinConstraints);
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return nativeObject->GetSkinnedMaxDistanceMultiplier();
 */
-    private static native float internal_native_GetSkinnedMaxDistanceMultiplier(long this_addr);
+    public static native float internal_native_GetSkinnedMaxDistanceMultiplier(long this_addr);
 
     public void SetSkinnedMaxDistanceMultiplier(float inSkinnedMaxDistanceMultiplier) {
         internal_native_SetSkinnedMaxDistanceMultiplier((long) getNativeData().getCPointer(), inSkinnedMaxDistanceMultiplier);
@@ -257,7 +257,7 @@ return nativeObject->GetSkinnedMaxDistanceMultiplier();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 nativeObject->SetSkinnedMaxDistanceMultiplier((float)inSkinnedMaxDistanceMultiplier);
 */
-    private static native void internal_native_SetSkinnedMaxDistanceMultiplier(long this_addr, float inSkinnedMaxDistanceMultiplier);
+    public static native void internal_native_SetSkinnedMaxDistanceMultiplier(long this_addr, float inSkinnedMaxDistanceMultiplier);
 
     public AABox GetLocalBounds() {
         long pointer = internal_native_GetLocalBounds((long) getNativeData().getCPointer());
@@ -273,7 +273,7 @@ nativeObject->SetSkinnedMaxDistanceMultiplier((float)inSkinnedMaxDistanceMultipl
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetLocalBounds();
 */
-    private static native long internal_native_GetLocalBounds(long this_addr);
+    public static native long internal_native_GetLocalBounds(long this_addr);
 
     public void CustomUpdate(float inDeltaTime, Body ioSoftBody, PhysicsSystem inSystem) {
         internal_native_CustomUpdate((long) getNativeData().getCPointer(), inDeltaTime, (long) (ioSoftBody != null ? ioSoftBody.getNativeData().getCPointer() : 0), (long) (inSystem != null ? inSystem.getNativeData().getCPointer() : 0));
@@ -283,7 +283,7 @@ return (jlong)&nativeObject->GetLocalBounds();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 nativeObject->CustomUpdate((float)inDeltaTime, *((Body* )ioSoftBody_addr), *((PhysicsSystem* )inSystem_addr));
 */
-    private static native void internal_native_CustomUpdate(long this_addr, float inDeltaTime, long ioSoftBody_addr, long inSystem_addr);
+    public static native void internal_native_CustomUpdate(long this_addr, float inDeltaTime, long ioSoftBody_addr, long inSystem_addr);
 
     public void SkinVertices(Mat44 inRootTransform, Mat44MemRef inJointMatrices, int inNumJoints, boolean inHardSkinAll, TempAllocator ioTempAllocator) {
         internal_native_SkinVertices((long) getNativeData().getCPointer(), (long) (inRootTransform != null ? inRootTransform.getNativeData().getCPointer() : 0), (long) (inJointMatrices != null ? inJointMatrices.getNativeData().getCPointer() : 0), inNumJoints, inHardSkinAll, (long) (ioTempAllocator != null ? ioTempAllocator.getNativeData().getCPointer() : 0));
@@ -293,85 +293,5 @@ nativeObject->CustomUpdate((float)inDeltaTime, *((Body* )ioSoftBody_addr), *((Ph
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 nativeObject->SkinVertices(*((Mat44* )inRootTransform_addr), (Mat44MemRef* )inJointMatrices_addr, inNumJoints, inHardSkinAll, *((TempAllocator* )ioTempAllocator_addr));
 */
-    private static native void internal_native_SkinVertices(long this_addr, long inRootTransform_addr, long inJointMatrices_addr, int inNumJoints, boolean inHardSkinAll, long ioTempAllocator_addr);
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_GetSettings(long this_addr) {
-        return internal_native_GetSettings(this_addr);
-    }
-
-    public static long native_GetVertices(long this_addr) {
-        return internal_native_GetVertices(this_addr);
-    }
-
-    public static long native_GetVertex(long this_addr, int inIndex) {
-        return internal_native_GetVertex(this_addr, inIndex);
-    }
-
-    public static long native_GetMaterials(long this_addr) {
-        return internal_native_GetMaterials(this_addr);
-    }
-
-    public static long native_GetFaces(long this_addr) {
-        return internal_native_GetFaces(this_addr);
-    }
-
-    public static long native_GetFace(long this_addr, int inIndex) {
-        return internal_native_GetFace(this_addr, inIndex);
-    }
-
-    public static int native_GetNumIterations(long this_addr) {
-        return internal_native_GetNumIterations(this_addr);
-    }
-
-    public static void native_SetNumIterations(long this_addr, int inNumIterations) {
-        internal_native_SetNumIterations(this_addr, inNumIterations);
-    }
-
-    public static float native_GetPressure(long this_addr) {
-        return internal_native_GetPressure(this_addr);
-    }
-
-    public static void native_SetPressure(long this_addr, float inPressure) {
-        internal_native_SetPressure(this_addr, inPressure);
-    }
-
-    public static boolean native_GetUpdatePosition(long this_addr) {
-        return internal_native_GetUpdatePosition(this_addr);
-    }
-
-    public static void native_SetUpdatePosition(long this_addr, boolean inUpdatePosition) {
-        internal_native_SetUpdatePosition(this_addr, inUpdatePosition);
-    }
-
-    public static boolean native_GetEnableSkinConstraints(long this_addr) {
-        return internal_native_GetEnableSkinConstraints(this_addr);
-    }
-
-    public static void native_SetEnableSkinConstraints(long this_addr, boolean inEnableSkinConstraints) {
-        internal_native_SetEnableSkinConstraints(this_addr, inEnableSkinConstraints);
-    }
-
-    public static float native_GetSkinnedMaxDistanceMultiplier(long this_addr) {
-        return internal_native_GetSkinnedMaxDistanceMultiplier(this_addr);
-    }
-
-    public static void native_SetSkinnedMaxDistanceMultiplier(long this_addr, float inSkinnedMaxDistanceMultiplier) {
-        internal_native_SetSkinnedMaxDistanceMultiplier(this_addr, inSkinnedMaxDistanceMultiplier);
-    }
-
-    public static long native_GetLocalBounds(long this_addr) {
-        return internal_native_GetLocalBounds(this_addr);
-    }
-
-    public static void native_CustomUpdate(long this_addr, float inDeltaTime, long ioSoftBody_addr, long inSystem_addr) {
-        internal_native_CustomUpdate(this_addr, inDeltaTime, ioSoftBody_addr, inSystem_addr);
-    }
-
-    public static void native_SkinVertices(long this_addr, long inRootTransform_addr, long inJointMatrices_addr, int inNumJoints, boolean inHardSkinAll, long ioTempAllocator_addr) {
-        internal_native_SkinVertices(this_addr, inRootTransform_addr, inJointMatrices_addr, inNumJoints, inHardSkinAll, ioTempAllocator_addr);
-    }
+    public static native void internal_native_SkinVertices(long this_addr, long inRootTransform_addr, long inJointMatrices_addr, int inNumJoints, boolean inHardSkinAll, long ioTempAllocator_addr);
 }

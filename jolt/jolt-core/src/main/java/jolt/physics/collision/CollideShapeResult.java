@@ -42,7 +42,7 @@ public class CollideShapeResult extends IDLBase {
     /*[-JNI;-NATIVE]
 return (jlong)new CollideShapeResult();
 */
-    private static native long internal_native_create();
+    public static native long internal_native_create();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -67,7 +67,7 @@ return (jlong)new CollideShapeResult();
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 delete nativeObject;
 */
-    private static native void internal_native_deleteNative(long this_addr);
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mContactPointOn1() {
         long pointer = internal_native_get_mContactPointOn1((long) getNativeData().getCPointer());
@@ -83,7 +83,7 @@ delete nativeObject;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 return (jlong)&nativeObject->mContactPointOn1;
 */
-    private static native long internal_native_get_mContactPointOn1(long this_addr);
+    public static native long internal_native_get_mContactPointOn1(long this_addr);
 
     public void set_mContactPointOn1(Vec3 mContactPointOn1) {
         internal_native_set_mContactPointOn1((long) getNativeData().getCPointer(), (long) (mContactPointOn1 != null ? mContactPointOn1.getNativeData().getCPointer() : 0));
@@ -93,7 +93,7 @@ return (jlong)&nativeObject->mContactPointOn1;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 nativeObject->mContactPointOn1 = *((Vec3*)mContactPointOn1_addr);
 */
-    private static native void internal_native_set_mContactPointOn1(long this_addr, long mContactPointOn1_addr);
+    public static native void internal_native_set_mContactPointOn1(long this_addr, long mContactPointOn1_addr);
 
     public Vec3 get_mContactPointOn2() {
         long pointer = internal_native_get_mContactPointOn2((long) getNativeData().getCPointer());
@@ -109,7 +109,7 @@ nativeObject->mContactPointOn1 = *((Vec3*)mContactPointOn1_addr);
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 return (jlong)&nativeObject->mContactPointOn2;
 */
-    private static native long internal_native_get_mContactPointOn2(long this_addr);
+    public static native long internal_native_get_mContactPointOn2(long this_addr);
 
     public void set_mContactPointOn2(Vec3 mContactPointOn2) {
         internal_native_set_mContactPointOn2((long) getNativeData().getCPointer(), (long) (mContactPointOn2 != null ? mContactPointOn2.getNativeData().getCPointer() : 0));
@@ -119,7 +119,7 @@ return (jlong)&nativeObject->mContactPointOn2;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 nativeObject->mContactPointOn2 = *((Vec3*)mContactPointOn2_addr);
 */
-    private static native void internal_native_set_mContactPointOn2(long this_addr, long mContactPointOn2_addr);
+    public static native void internal_native_set_mContactPointOn2(long this_addr, long mContactPointOn2_addr);
 
     public Vec3 get_mPenetrationAxis() {
         long pointer = internal_native_get_mPenetrationAxis((long) getNativeData().getCPointer());
@@ -135,7 +135,7 @@ nativeObject->mContactPointOn2 = *((Vec3*)mContactPointOn2_addr);
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 return (jlong)&nativeObject->mPenetrationAxis;
 */
-    private static native long internal_native_get_mPenetrationAxis(long this_addr);
+    public static native long internal_native_get_mPenetrationAxis(long this_addr);
 
     public void set_mPenetrationAxis(Vec3 mPenetrationAxis) {
         internal_native_set_mPenetrationAxis((long) getNativeData().getCPointer(), (long) (mPenetrationAxis != null ? mPenetrationAxis.getNativeData().getCPointer() : 0));
@@ -145,7 +145,7 @@ return (jlong)&nativeObject->mPenetrationAxis;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 nativeObject->mPenetrationAxis = *((Vec3*)mPenetrationAxis_addr);
 */
-    private static native void internal_native_set_mPenetrationAxis(long this_addr, long mPenetrationAxis_addr);
+    public static native void internal_native_set_mPenetrationAxis(long this_addr, long mPenetrationAxis_addr);
 
     public float get_mPenetrationDepth() {
         return internal_native_get_mPenetrationDepth((long) getNativeData().getCPointer());
@@ -155,7 +155,7 @@ nativeObject->mPenetrationAxis = *((Vec3*)mPenetrationAxis_addr);
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 return nativeObject->mPenetrationDepth;
 */
-    private static native float internal_native_get_mPenetrationDepth(long this_addr);
+    public static native float internal_native_get_mPenetrationDepth(long this_addr);
 
     public void set_mPenetrationDepth(float mPenetrationDepth) {
         internal_native_set_mPenetrationDepth((long) getNativeData().getCPointer(), mPenetrationDepth);
@@ -165,7 +165,7 @@ return nativeObject->mPenetrationDepth;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 nativeObject->mPenetrationDepth = mPenetrationDepth;
 */
-    private static native void internal_native_set_mPenetrationDepth(long this_addr, float mPenetrationDepth);
+    public static native void internal_native_set_mPenetrationDepth(long this_addr, float mPenetrationDepth);
 
     public SubShapeID get_mSubShapeID1() {
         long pointer = internal_native_get_mSubShapeID1((long) getNativeData().getCPointer());
@@ -181,7 +181,7 @@ nativeObject->mPenetrationDepth = mPenetrationDepth;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 return (jlong)&nativeObject->mSubShapeID1;
 */
-    private static native long internal_native_get_mSubShapeID1(long this_addr);
+    public static native long internal_native_get_mSubShapeID1(long this_addr);
 
     public void set_mSubShapeID1(SubShapeID mSubShapeID1) {
         internal_native_set_mSubShapeID1((long) getNativeData().getCPointer(), (long) (mSubShapeID1 != null ? mSubShapeID1.getNativeData().getCPointer() : 0));
@@ -191,7 +191,7 @@ return (jlong)&nativeObject->mSubShapeID1;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 nativeObject->mSubShapeID1 = *((SubShapeID*)mSubShapeID1_addr);
 */
-    private static native void internal_native_set_mSubShapeID1(long this_addr, long mSubShapeID1_addr);
+    public static native void internal_native_set_mSubShapeID1(long this_addr, long mSubShapeID1_addr);
 
     public SubShapeID get_mSubShapeID2() {
         long pointer = internal_native_get_mSubShapeID2((long) getNativeData().getCPointer());
@@ -207,7 +207,7 @@ nativeObject->mSubShapeID1 = *((SubShapeID*)mSubShapeID1_addr);
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 return (jlong)&nativeObject->mSubShapeID2;
 */
-    private static native long internal_native_get_mSubShapeID2(long this_addr);
+    public static native long internal_native_get_mSubShapeID2(long this_addr);
 
     public void set_mSubShapeID2(SubShapeID mSubShapeID2) {
         internal_native_set_mSubShapeID2((long) getNativeData().getCPointer(), (long) (mSubShapeID2 != null ? mSubShapeID2.getNativeData().getCPointer() : 0));
@@ -217,7 +217,7 @@ return (jlong)&nativeObject->mSubShapeID2;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
 */
-    private static native void internal_native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr);
+    public static native void internal_native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr);
 
     public BodyID get_mBodyID2() {
         long pointer = internal_native_get_mBodyID2((long) getNativeData().getCPointer());
@@ -233,7 +233,7 @@ nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 return (jlong)&nativeObject->mBodyID2;
 */
-    private static native long internal_native_get_mBodyID2(long this_addr);
+    public static native long internal_native_get_mBodyID2(long this_addr);
 
     public void set_mBodyID2(BodyID mBodyID2) {
         internal_native_set_mBodyID2((long) getNativeData().getCPointer(), (long) (mBodyID2 != null ? mBodyID2.getNativeData().getCPointer() : 0));
@@ -243,7 +243,7 @@ return (jlong)&nativeObject->mBodyID2;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 nativeObject->mBodyID2 = *((BodyID*)mBodyID2_addr);
 */
-    private static native void internal_native_set_mBodyID2(long this_addr, long mBodyID2_addr);
+    public static native void internal_native_set_mBodyID2(long this_addr, long mBodyID2_addr);
 
     public CollideShapeResultFace get_mShape1Face() {
         long pointer = internal_native_get_mShape1Face((long) getNativeData().getCPointer());
@@ -259,7 +259,7 @@ nativeObject->mBodyID2 = *((BodyID*)mBodyID2_addr);
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 return (jlong)&nativeObject->mShape1Face;
 */
-    private static native long internal_native_get_mShape1Face(long this_addr);
+    public static native long internal_native_get_mShape1Face(long this_addr);
 
     public void set_mShape1Face(CollideShapeResultFace mShape1Face) {
         internal_native_set_mShape1Face((long) getNativeData().getCPointer(), (long) (mShape1Face != null ? mShape1Face.getNativeData().getCPointer() : 0));
@@ -269,7 +269,7 @@ return (jlong)&nativeObject->mShape1Face;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 nativeObject->mShape1Face = *((CollideShapeResultFace*)mShape1Face_addr);
 */
-    private static native void internal_native_set_mShape1Face(long this_addr, long mShape1Face_addr);
+    public static native void internal_native_set_mShape1Face(long this_addr, long mShape1Face_addr);
 
     public CollideShapeResultFace get_mShape2Face() {
         long pointer = internal_native_get_mShape2Face((long) getNativeData().getCPointer());
@@ -285,7 +285,7 @@ nativeObject->mShape1Face = *((CollideShapeResultFace*)mShape1Face_addr);
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 return (jlong)&nativeObject->mShape2Face;
 */
-    private static native long internal_native_get_mShape2Face(long this_addr);
+    public static native long internal_native_get_mShape2Face(long this_addr);
 
     public void set_mShape2Face(CollideShapeResultFace mShape2Face) {
         internal_native_set_mShape2Face((long) getNativeData().getCPointer(), (long) (mShape2Face != null ? mShape2Face.getNativeData().getCPointer() : 0));
@@ -295,85 +295,5 @@ return (jlong)&nativeObject->mShape2Face;
 CollideShapeResult* nativeObject = (CollideShapeResult*)this_addr;
 nativeObject->mShape2Face = *((CollideShapeResultFace*)mShape2Face_addr);
 */
-    private static native void internal_native_set_mShape2Face(long this_addr, long mShape2Face_addr);
-
-    public static long native_create() {
-        return internal_native_create();
-    }
-
-    public static void native_deleteNative(long this_addr) {
-        internal_native_deleteNative(this_addr);
-    }
-
-    public static long native_get_mContactPointOn1(long this_addr) {
-        return internal_native_get_mContactPointOn1(this_addr);
-    }
-
-    public static void native_set_mContactPointOn1(long this_addr, long mContactPointOn1_addr) {
-        internal_native_set_mContactPointOn1(this_addr, mContactPointOn1_addr);
-    }
-
-    public static long native_get_mContactPointOn2(long this_addr) {
-        return internal_native_get_mContactPointOn2(this_addr);
-    }
-
-    public static void native_set_mContactPointOn2(long this_addr, long mContactPointOn2_addr) {
-        internal_native_set_mContactPointOn2(this_addr, mContactPointOn2_addr);
-    }
-
-    public static long native_get_mPenetrationAxis(long this_addr) {
-        return internal_native_get_mPenetrationAxis(this_addr);
-    }
-
-    public static void native_set_mPenetrationAxis(long this_addr, long mPenetrationAxis_addr) {
-        internal_native_set_mPenetrationAxis(this_addr, mPenetrationAxis_addr);
-    }
-
-    public static float native_get_mPenetrationDepth(long this_addr) {
-        return internal_native_get_mPenetrationDepth(this_addr);
-    }
-
-    public static void native_set_mPenetrationDepth(long this_addr, float mPenetrationDepth) {
-        internal_native_set_mPenetrationDepth(this_addr, mPenetrationDepth);
-    }
-
-    public static long native_get_mSubShapeID1(long this_addr) {
-        return internal_native_get_mSubShapeID1(this_addr);
-    }
-
-    public static void native_set_mSubShapeID1(long this_addr, long mSubShapeID1_addr) {
-        internal_native_set_mSubShapeID1(this_addr, mSubShapeID1_addr);
-    }
-
-    public static long native_get_mSubShapeID2(long this_addr) {
-        return internal_native_get_mSubShapeID2(this_addr);
-    }
-
-    public static void native_set_mSubShapeID2(long this_addr, long mSubShapeID2_addr) {
-        internal_native_set_mSubShapeID2(this_addr, mSubShapeID2_addr);
-    }
-
-    public static long native_get_mBodyID2(long this_addr) {
-        return internal_native_get_mBodyID2(this_addr);
-    }
-
-    public static void native_set_mBodyID2(long this_addr, long mBodyID2_addr) {
-        internal_native_set_mBodyID2(this_addr, mBodyID2_addr);
-    }
-
-    public static long native_get_mShape1Face(long this_addr) {
-        return internal_native_get_mShape1Face(this_addr);
-    }
-
-    public static void native_set_mShape1Face(long this_addr, long mShape1Face_addr) {
-        internal_native_set_mShape1Face(this_addr, mShape1Face_addr);
-    }
-
-    public static long native_get_mShape2Face(long this_addr) {
-        return internal_native_get_mShape2Face(this_addr);
-    }
-
-    public static void native_set_mShape2Face(long this_addr, long mShape2Face_addr) {
-        internal_native_set_mShape2Face(this_addr, mShape2Face_addr);
-    }
+    public static native void internal_native_set_mShape2Face(long this_addr, long mShape2Face_addr);
 }

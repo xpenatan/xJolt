@@ -24,7 +24,7 @@ public class CapsuleShape extends ConvexShape {
     /*[-JNI;-NATIVE]
 return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    private static native long internal_native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, long inMaterial_addr);
+    public static native long internal_native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, long inMaterial_addr);
 
     public CapsuleShape(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
@@ -35,7 +35,7 @@ return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius, (PhysicsMat
     /*[-JNI;-NATIVE]
 return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius);
 */
-    private static native long internal_native_create_float_float(float inHalfHeight, float inRadius);
+    public static native long internal_native_create_float_float(float inHalfHeight, float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,7 +53,7 @@ return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius);
 CapsuleShape* nativeObject = (CapsuleShape*)this_addr;
 return nativeObject->GetRadius();
 */
-    private static native float internal_native_GetRadius(long this_addr);
+    public static native float internal_native_GetRadius(long this_addr);
 
     public float GetHalfHeightOfCylinder() {
         return internal_native_GetHalfHeightOfCylinder((long) getNativeData().getCPointer());
@@ -63,21 +63,5 @@ return nativeObject->GetRadius();
 CapsuleShape* nativeObject = (CapsuleShape*)this_addr;
 return nativeObject->GetHalfHeightOfCylinder();
 */
-    private static native float internal_native_GetHalfHeightOfCylinder(long this_addr);
-
-    public static long native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, long inMaterial_addr) {
-        return internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, inMaterial_addr);
-    }
-
-    public static long native_create_float_float(float inHalfHeight, float inRadius) {
-        return internal_native_create_float_float(inHalfHeight, inRadius);
-    }
-
-    public static float native_GetRadius(long this_addr) {
-        return internal_native_GetRadius(this_addr);
-    }
-
-    public static float native_GetHalfHeightOfCylinder(long this_addr) {
-        return internal_native_GetHalfHeightOfCylinder(this_addr);
-    }
+    public static native float internal_native_GetHalfHeightOfCylinder(long this_addr);
 }
