@@ -10,7 +10,7 @@ dependencies {
         implementation(project(":jolt:jolt-desktop"))
     }
 
-    implementation("com.badlogicgames.gdx:gdx-backend-lwjgl3:${LibExt.gdxVersion}")
+    implementation("io.github.monstroussoftware.gdx-webgpu:gdx-desktop-webgpu:-SNAPSHOT")
     implementation("com.badlogicgames.gdx:gdx-platform:${LibExt.gdxVersion}:natives-desktop")
 //    implementation("com.github.xpenatan.gdx-imgui:imgui-ext-desktop:${LibExt.gdxImGuiVersion}")
 }
@@ -18,9 +18,9 @@ dependencies {
 val mainClassName = "jolt.example.samples.app.Main"
 val assetsDir = File("../assets");
 
-tasks.register<JavaExec>("jolt_samples_run_desktop") {
+tasks.register<JavaExec>("jolt_samples_run_desktop_wgpu") {
     group = "jolt_examples_desktop"
-    description = "Run desktop app"
+    description = "Run WebGPU desktop app"
     mainClass.set(mainClassName)
     classpath = sourceSets["main"].runtimeClasspath
     workingDir = assetsDir

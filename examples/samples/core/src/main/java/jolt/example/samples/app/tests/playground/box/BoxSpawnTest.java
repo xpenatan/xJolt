@@ -20,10 +20,10 @@ import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.BufferUtils;
-import imgui.ImGui;
-import imgui.idl.helper.IDLBool;
-import imgui.idl.helper.IDLFloat;
-import imgui.idl.helper.IDLInt;
+//import imgui.ImGui;
+//import imgui.idl.helper.IDLBool;
+//import imgui.idl.helper.IDLFloat;
+//import imgui.idl.helper.IDLInt;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import jolt.Jolt;
@@ -377,31 +377,31 @@ public class BoxSpawnTest extends Test {
 
     @Override
     public void renderUI() {
-        IDLBool.TMP_1.set(hardwareModelInstance);
-        if(ImGui.Checkbox("Hardware Model Instance", IDLBool.TMP_1)) {
-            hardwareModelInstance = IDLBool.TMP_1.getValue();
-        }
-        IDLBool.TMP_1.set(renderModels);
-        if(ImGui.Checkbox("Render Models", IDLBool.TMP_1)) {
-            renderModels = IDLBool.TMP_1.getValue();
-        }
-        IDLBool.TMP_1.set(randomRotation);
-        if(ImGui.Checkbox("Random Rotation", IDLBool.TMP_1)) {
-            randomRotation = IDLBool.TMP_1.getValue();
-        }
-        IDLFloat.TMP_1.set(boxRestitution);
-        if(ImGui.SliderFloat("Box Restitution", IDLFloat.TMP_1, 0.0f, 1.0f, "%.1f")) {
-            boxRestitution = IDLFloat.TMP_1.getValue();
-        }
-        IDLInt.TMP_1.set(resetDelaySeconds);
-        if(ImGui.SliderInt("Delay Seconds", IDLInt.TMP_1, 1, 20)) {
-            resetDelaySeconds = IDLInt.TMP_1.getValue();
-        }
-        IDLInt.TMP_1.set(totalCubes);
-        if(ImGui.SliderInt("Max Cubes", IDLInt.TMP_1, 9, 16000)) {
-            totalCubes = IDLInt.TMP_1.getValue();
-        }
-        ImGui.Text("Cubes: " + cubeCount);
+//        IDLBool.TMP_1.set(hardwareModelInstance);
+//        if(ImGui.Checkbox("Hardware Model Instance", IDLBool.TMP_1)) {
+//            hardwareModelInstance = IDLBool.TMP_1.getValue();
+//        }
+//        IDLBool.TMP_1.set(renderModels);
+//        if(ImGui.Checkbox("Render Models", IDLBool.TMP_1)) {
+//            renderModels = IDLBool.TMP_1.getValue();
+//        }
+//        IDLBool.TMP_1.set(randomRotation);
+//        if(ImGui.Checkbox("Random Rotation", IDLBool.TMP_1)) {
+//            randomRotation = IDLBool.TMP_1.getValue();
+//        }
+//        IDLFloat.TMP_1.set(boxRestitution);
+//        if(ImGui.SliderFloat("Box Restitution", IDLFloat.TMP_1, 0.0f, 1.0f, "%.1f")) {
+//            boxRestitution = IDLFloat.TMP_1.getValue();
+//        }
+//        IDLInt.TMP_1.set(resetDelaySeconds);
+//        if(ImGui.SliderInt("Delay Seconds", IDLInt.TMP_1, 1, 20)) {
+//            resetDelaySeconds = IDLInt.TMP_1.getValue();
+//        }
+//        IDLInt.TMP_1.set(totalCubes);
+//        if(ImGui.SliderInt("Max Cubes", IDLInt.TMP_1, 9, 16000)) {
+//            totalCubes = IDLInt.TMP_1.getValue();
+//        }
+//        ImGui.Text("Cubes: " + cubeCount);
     }
 
     static class CubeData {

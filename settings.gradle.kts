@@ -6,11 +6,13 @@ include(":jolt:jolt-desktop")
 include(":jolt:jolt-teavm")
 include(":jolt:jolt-android")
 include(":jolt-gdx")
+include(":jolt-wgpu")
 
 // Examples
 include(":examples:samples:base")
 include(":examples:samples:core")
 include(":examples:samples:desktop")
+include(":examples:samples:desktop-wgpu")
 include(":examples:samples:teavm")
 include(":examples:samples:android")
 

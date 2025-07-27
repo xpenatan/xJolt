@@ -19,7 +19,7 @@ dependencies {
 
     implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}")
     implementation("com.github.xpenatan.gdx-teavm:backend-teavm:${LibExt.gdxTeaVMVersion}")
-    implementation("com.github.xpenatan.gdx-imgui:imgui-ext-teavm:${LibExt.gdxImGuiVersion}")
+//    implementation("com.github.xpenatan.gdx-imgui:imgui-ext-teavm:${LibExt.gdxImGuiVersion}")
 }
 
 val mainClassName = "jolt.example.samples.app.Build"

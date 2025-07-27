@@ -7,10 +7,10 @@ import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import imgui.ImGui;
-import imgui.ImGuiCond;
-import imgui.ImGuiTabBarFlags;
-import imgui.ImVec2;
+//import imgui.ImGui;
+//import imgui.ImGuiCond;
+//import imgui.ImGuiTabBarFlags;
+//import imgui.ImVec2;
 import jolt.example.samples.app.imgui.FPSRenderer;
 import jolt.example.samples.app.imgui.ImGuiSettingsRenderer;
 import jolt.example.samples.app.jolt.JoltInstance;
@@ -80,44 +80,44 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void renderUI() {
-        Class<Test> newTest = null;
-        ImGui.SetNextWindowSize(ImVec2.TMP_1.set(250, 400), ImGuiCond.FirstUseEver);
-        ImGui.Begin("Settings");
-
-        fpsRenderer.render();
-
-        newTest = settingsRenderer.render(allTests);
-
-        settingsRenderer.idlBool.set(isPaused);
-        if(ImGui.Checkbox("IsPaused", settingsRenderer.idlBool)) {
-            isPaused = settingsRenderer.idlBool.getValue();
-        }
-
-        settingsRenderer.idlBool.set(debugRenderer.isEnable());
-        if(ImGui.Checkbox("DebugRenderer", settingsRenderer.idlBool)) {
-            debugRenderer.setEnable(settingsRenderer.idlBool.getValue());
-        }
-
-        if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.FittingPolicyScroll.or(ImGuiTabBarFlags.Reorderable))) {
-            if(ImGui.BeginTabItem("Physics")) {
-                settingsRenderer.render(joltInstance);
-                ImGui.EndTabItem();
-            }
-            if(ImGui.BeginTabItem("DebugRenderer")) {
-                settingsRenderer.render(debugSettings);
-                ImGui.EndTabItem();
-            }
-            if(ImGui.BeginTabItem("Test")) {
-                test.renderUI();
-                ImGui.EndTabItem();
-            }
-            ImGui.EndTabBar();
-        }
-        ImGui.End();
-
-        if(newTest != null) {
-            startTest(newTest);
-        }
+//        Class<Test> newTest = null;
+//        ImGui.SetNextWindowSize(ImVec2.TMP_1.set(250, 400), ImGuiCond.FirstUseEver);
+//        ImGui.Begin("Settings");
+//
+//        fpsRenderer.render();
+//
+//        newTest = settingsRenderer.render(allTests);
+//
+//        settingsRenderer.idlBool.set(isPaused);
+//        if(ImGui.Checkbox("IsPaused", settingsRenderer.idlBool)) {
+//            isPaused = settingsRenderer.idlBool.getValue();
+//        }
+//
+//        settingsRenderer.idlBool.set(debugRenderer.isEnable());
+//        if(ImGui.Checkbox("DebugRenderer", settingsRenderer.idlBool)) {
+//            debugRenderer.setEnable(settingsRenderer.idlBool.getValue());
+//        }
+//
+//        if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.FittingPolicyScroll.or(ImGuiTabBarFlags.Reorderable))) {
+//            if(ImGui.BeginTabItem("Physics")) {
+//                settingsRenderer.render(joltInstance);
+//                ImGui.EndTabItem();
+//            }
+//            if(ImGui.BeginTabItem("DebugRenderer")) {
+//                settingsRenderer.render(debugSettings);
+//                ImGui.EndTabItem();
+//            }
+//            if(ImGui.BeginTabItem("Test")) {
+//                test.renderUI();
+//                ImGui.EndTabItem();
+//            }
+//            ImGui.EndTabBar();
+//        }
+//        ImGui.End();
+//
+//        if(newTest != null) {
+//            startTest(newTest);
+//        }
     }
 
     public void startTest(Class<? extends Test> testClass) {
