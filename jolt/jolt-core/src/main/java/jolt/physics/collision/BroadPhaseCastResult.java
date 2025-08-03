@@ -20,7 +20,7 @@ public class BroadPhaseCastResult extends IDLBase {
 
     public BroadPhaseCastResult() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -35,16 +35,8 @@ return (jlong)new BroadPhaseCastResult();
     public BroadPhaseCastResult(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,7 +46,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void Reset() {
-        internal_native_Reset((long) getNativeData().getCPointer());
+        internal_native_Reset(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,12 +56,12 @@ nativeObject->Reset();
     public static native void internal_native_Reset(long this_addr);
 
     public BodyID get_mBodyID() {
-        long pointer = internal_native_get_mBodyID((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mBodyID(native_address);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -80,7 +72,7 @@ return (jlong)&nativeObject->mBodyID;
     public static native long internal_native_get_mBodyID(long this_addr);
 
     public void set_mBodyID(BodyID mBodyID) {
-        internal_native_set_mBodyID((long) getNativeData().getCPointer(), (long) (mBodyID != null ? mBodyID.getNativeData().getCPointer() : 0));
+        internal_native_set_mBodyID(native_address, (mBodyID != null ? mBodyID.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -90,7 +82,7 @@ nativeObject->mBodyID = *((BodyID*)mBodyID_addr);
     public static native void internal_native_set_mBodyID(long this_addr, long mBodyID_addr);
 
     public float get_mFraction() {
-        return internal_native_get_mFraction((long) getNativeData().getCPointer());
+        return internal_native_get_mFraction(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -100,7 +92,7 @@ return nativeObject->mFraction;
     public static native float internal_native_get_mFraction(long this_addr);
 
     public void set_mFraction(float mFraction) {
-        internal_native_set_mFraction((long) getNativeData().getCPointer(), mFraction);
+        internal_native_set_mFraction(native_address, mFraction);
     }
 
     /*[-JNI;-NATIVE]

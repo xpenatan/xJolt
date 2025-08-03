@@ -17,8 +17,8 @@ public class ObjectVsBroadPhaseLayerFilterTable extends ObjectVsBroadPhaseLayerF
 
     public ObjectVsBroadPhaseLayerFilterTable(BroadPhaseLayerInterface inBroadPhaseLayerInterface, int inNumBroadPhaseLayers, ObjectLayerPairFilter inObjectLayerPairFilter, int inNumObjectLayers) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int((long) (inBroadPhaseLayerInterface != null ? inBroadPhaseLayerInterface.getNativeData().getCPointer() : 0), inNumBroadPhaseLayers, (long) (inObjectLayerPairFilter != null ? inObjectLayerPairFilter.getNativeData().getCPointer() : 0), inNumObjectLayers);
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int((inBroadPhaseLayerInterface != null ? inBroadPhaseLayerInterface.native_address : 0), inNumBroadPhaseLayers, (inObjectLayerPairFilter != null ? inObjectLayerPairFilter.native_address : 0), inNumObjectLayers);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]

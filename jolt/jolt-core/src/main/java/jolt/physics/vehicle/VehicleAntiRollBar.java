@@ -17,7 +17,7 @@ public class VehicleAntiRollBar extends IDLBase {
 
     public VehicleAntiRollBar() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new VehicleAntiRollBar();
     public VehicleAntiRollBar(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mLeftWheel() {
-        return internal_native_get_mLeftWheel((long) getNativeData().getCPointer());
+        return internal_native_get_mLeftWheel(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ return nativeObject->mLeftWheel;
     public static native int internal_native_get_mLeftWheel(long this_addr);
 
     public void set_mLeftWheel(int mLeftWheel) {
-        internal_native_set_mLeftWheel((long) getNativeData().getCPointer(), mLeftWheel);
+        internal_native_set_mLeftWheel(native_address, mLeftWheel);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ nativeObject->mLeftWheel = mLeftWheel;
     public static native void internal_native_set_mLeftWheel(long this_addr, int mLeftWheel);
 
     public int get_mRightWheel() {
-        return internal_native_get_mRightWheel((long) getNativeData().getCPointer());
+        return internal_native_get_mRightWheel(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -81,7 +73,7 @@ return nativeObject->mRightWheel;
     public static native int internal_native_get_mRightWheel(long this_addr);
 
     public void set_mRightWheel(int mRightWheel) {
-        internal_native_set_mRightWheel((long) getNativeData().getCPointer(), mRightWheel);
+        internal_native_set_mRightWheel(native_address, mRightWheel);
     }
 
     /*[-JNI;-NATIVE]
@@ -91,7 +83,7 @@ nativeObject->mRightWheel = mRightWheel;
     public static native void internal_native_set_mRightWheel(long this_addr, int mRightWheel);
 
     public float get_mStiffness() {
-        return internal_native_get_mStiffness((long) getNativeData().getCPointer());
+        return internal_native_get_mStiffness(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -101,7 +93,7 @@ return nativeObject->mStiffness;
     public static native float internal_native_get_mStiffness(long this_addr);
 
     public void set_mStiffness(float mStiffness) {
-        internal_native_set_mStiffness((long) getNativeData().getCPointer(), mStiffness);
+        internal_native_set_mStiffness(native_address, mStiffness);
     }
 
     /*[-JNI;-NATIVE]

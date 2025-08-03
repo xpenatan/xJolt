@@ -18,7 +18,7 @@ public class Skeleton extends IDLBase {
 
     public Skeleton() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -36,7 +36,7 @@ return jolt.getPointer(jsObj);
     }
 
     public int AddJoint(IDLString inName, int inParentIndex) {
-        return internal_native_AddJoint((int) (long) getNativeData().getCPointer(), (int) (long) (inName != null ? inName.getNativeData().getCPointer() : 0), inParentIndex);
+        return internal_native_AddJoint(native_address, (inName != null ? inName.native_address : 0), inParentIndex);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -48,7 +48,7 @@ return returnedJSObj;
     public static native int internal_native_AddJoint(int this_addr, int inName_addr, int inParentIndex);
 
     public int GetJointCount() {
-        return internal_native_GetJointCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetJointCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -60,7 +60,7 @@ return returnedJSObj;
     public static native int internal_native_GetJointCount(int this_addr);
 
     public boolean AreJointsCorrectlyOrdered() {
-        return internal_native_AreJointsCorrectlyOrdered((int) (long) getNativeData().getCPointer());
+        return internal_native_AreJointsCorrectlyOrdered(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -72,7 +72,7 @@ return returnedJSObj;
     public static native boolean internal_native_AreJointsCorrectlyOrdered(int this_addr);
 
     public void CalculateParentJointIndices() {
-        internal_native_CalculateParentJointIndices((int) (long) getNativeData().getCPointer());
+        internal_native_CalculateParentJointIndices(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -22,7 +22,7 @@ public class SkeletalAnimationAnimatedJoint extends IDLBase {
 
     public SkeletalAnimationAnimatedJoint() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -37,16 +37,8 @@ return (jlong)new SkeletalAnimationAnimatedJoint();
     public SkeletalAnimationAnimatedJoint(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -56,12 +48,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public IDLString get_mJointName() {
-        long pointer = internal_native_get_mJointName((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mJointName(native_address);
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = new IDLString((byte) 1, (char) 1);
-        IDLString_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -72,7 +64,7 @@ return (jlong)&nativeObject->mJointName;
     public static native long internal_native_get_mJointName(long this_addr);
 
     public void set_mJointName(IDLString mJointName) {
-        internal_native_set_mJointName((long) getNativeData().getCPointer(), (long) (mJointName != null ? mJointName.getNativeData().getCPointer() : 0));
+        internal_native_set_mJointName(native_address, (mJointName != null ? mJointName.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -82,12 +74,12 @@ nativeObject->mJointName = *((IDLString*)mJointName_addr);
     public static native void internal_native_set_mJointName(long this_addr, long mJointName_addr);
 
     public ArraySkeletonKeyframe get_mKeyframes() {
-        long pointer = internal_native_get_mKeyframes((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mKeyframes(native_address);
         if (pointer == 0)
             return null;
         if (ArraySkeletonKeyframe_TEMP_GEN_0 == null)
             ArraySkeletonKeyframe_TEMP_GEN_0 = new ArraySkeletonKeyframe((byte) 1, (char) 1);
-        ArraySkeletonKeyframe_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySkeletonKeyframe_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySkeletonKeyframe_TEMP_GEN_0;
     }
 
@@ -98,7 +90,7 @@ return (jlong)&nativeObject->mKeyframes;
     public static native long internal_native_get_mKeyframes(long this_addr);
 
     public void set_mKeyframes(ArraySkeletonKeyframe mKeyframes) {
-        internal_native_set_mKeyframes((long) getNativeData().getCPointer(), (long) (mKeyframes != null ? mKeyframes.getNativeData().getCPointer() : 0));
+        internal_native_set_mKeyframes(native_address, (mKeyframes != null ? mKeyframes.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

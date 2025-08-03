@@ -31,7 +31,7 @@ public class HeightFieldShapeSettings extends ShapeSettings {
     public HeightFieldShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -50,12 +50,12 @@ return jolt.getPointer(jsObj);
     }
 
     public Vec3 get_mOffset() {
-        int pointer = internal_native_get_mOffset((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mOffset(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -69,7 +69,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mOffset(int this_addr);
 
     public void set_mOffset(Vec3 mOffset) {
-        internal_native_set_mOffset((int) (long) getNativeData().getCPointer(), (int) (long) (mOffset != null ? mOffset.getNativeData().getCPointer() : 0));
+        internal_native_set_mOffset(native_address, (mOffset != null ? mOffset.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -80,12 +80,12 @@ jsObj.set_mOffset(mOffset_addr);
     public static native void internal_native_set_mOffset(int this_addr, int mOffset_addr);
 
     public Vec3 get_mScale() {
-        int pointer = internal_native_get_mScale((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mScale(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -99,7 +99,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mScale(int this_addr);
 
     public void set_mScale(Vec3 mScale) {
-        internal_native_set_mScale((int) (long) getNativeData().getCPointer(), (int) (long) (mScale != null ? mScale.getNativeData().getCPointer() : 0));
+        internal_native_set_mScale(native_address, (mScale != null ? mScale.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -110,7 +110,7 @@ jsObj.set_mScale(mScale_addr);
     public static native void internal_native_set_mScale(int this_addr, int mScale_addr);
 
     public int get_mSampleCount() {
-        return internal_native_get_mSampleCount((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mSampleCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -121,7 +121,7 @@ return jsObj.get_mSampleCount();
     public static native int internal_native_get_mSampleCount(int this_addr);
 
     public void set_mSampleCount(int mSampleCount) {
-        internal_native_set_mSampleCount((int) (long) getNativeData().getCPointer(), mSampleCount);
+        internal_native_set_mSampleCount(native_address, mSampleCount);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -132,7 +132,7 @@ jsObj.set_mSampleCount(mSampleCount);
     public static native void internal_native_set_mSampleCount(int this_addr, int mSampleCount);
 
     public float get_mMinHeightValue() {
-        return internal_native_get_mMinHeightValue((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMinHeightValue(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -143,7 +143,7 @@ return jsObj.get_mMinHeightValue();
     public static native float internal_native_get_mMinHeightValue(int this_addr);
 
     public void set_mMinHeightValue(float mMinHeightValue) {
-        internal_native_set_mMinHeightValue((int) (long) getNativeData().getCPointer(), mMinHeightValue);
+        internal_native_set_mMinHeightValue(native_address, mMinHeightValue);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -154,7 +154,7 @@ jsObj.set_mMinHeightValue(mMinHeightValue);
     public static native void internal_native_set_mMinHeightValue(int this_addr, float mMinHeightValue);
 
     public float get_mMaxHeightValue() {
-        return internal_native_get_mMaxHeightValue((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxHeightValue(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -165,7 +165,7 @@ return jsObj.get_mMaxHeightValue();
     public static native float internal_native_get_mMaxHeightValue(int this_addr);
 
     public void set_mMaxHeightValue(float mMaxHeightValue) {
-        internal_native_set_mMaxHeightValue((int) (long) getNativeData().getCPointer(), mMaxHeightValue);
+        internal_native_set_mMaxHeightValue(native_address, mMaxHeightValue);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -176,7 +176,7 @@ jsObj.set_mMaxHeightValue(mMaxHeightValue);
     public static native void internal_native_set_mMaxHeightValue(int this_addr, float mMaxHeightValue);
 
     public int get_mMaterialsCapacity() {
-        return internal_native_get_mMaterialsCapacity((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaterialsCapacity(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -187,7 +187,7 @@ return jsObj.get_mMaterialsCapacity();
     public static native int internal_native_get_mMaterialsCapacity(int this_addr);
 
     public void set_mMaterialsCapacity(int mMaterialsCapacity) {
-        internal_native_set_mMaterialsCapacity((int) (long) getNativeData().getCPointer(), mMaterialsCapacity);
+        internal_native_set_mMaterialsCapacity(native_address, mMaterialsCapacity);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -198,7 +198,7 @@ jsObj.set_mMaterialsCapacity(mMaterialsCapacity);
     public static native void internal_native_set_mMaterialsCapacity(int this_addr, int mMaterialsCapacity);
 
     public int get_mBlockSize() {
-        return internal_native_get_mBlockSize((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mBlockSize(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -209,7 +209,7 @@ return jsObj.get_mBlockSize();
     public static native int internal_native_get_mBlockSize(int this_addr);
 
     public void set_mBlockSize(int mBlockSize) {
-        internal_native_set_mBlockSize((int) (long) getNativeData().getCPointer(), mBlockSize);
+        internal_native_set_mBlockSize(native_address, mBlockSize);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -220,7 +220,7 @@ jsObj.set_mBlockSize(mBlockSize);
     public static native void internal_native_set_mBlockSize(int this_addr, int mBlockSize);
 
     public int get_mBitsPerSample() {
-        return internal_native_get_mBitsPerSample((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mBitsPerSample(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -231,7 +231,7 @@ return jsObj.get_mBitsPerSample();
     public static native int internal_native_get_mBitsPerSample(int this_addr);
 
     public void set_mBitsPerSample(int mBitsPerSample) {
-        internal_native_set_mBitsPerSample((int) (long) getNativeData().getCPointer(), mBitsPerSample);
+        internal_native_set_mBitsPerSample(native_address, mBitsPerSample);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -242,12 +242,12 @@ jsObj.set_mBitsPerSample(mBitsPerSample);
     public static native void internal_native_set_mBitsPerSample(int this_addr, int mBitsPerSample);
 
     public ArrayFloat get_mHeightSamples() {
-        int pointer = internal_native_get_mHeightSamples((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mHeightSamples(native_address);
         if (pointer == 0)
             return null;
         if (ArrayFloat_TEMP_GEN_0 == null)
             ArrayFloat_TEMP_GEN_0 = new ArrayFloat((byte) 1, (char) 1);
-        ArrayFloat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayFloat_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayFloat_TEMP_GEN_0;
     }
 
@@ -261,7 +261,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mHeightSamples(int this_addr);
 
     public void set_mHeightSamples(ArrayFloat mHeightSamples) {
-        internal_native_set_mHeightSamples((int) (long) getNativeData().getCPointer(), (int) (long) (mHeightSamples != null ? mHeightSamples.getNativeData().getCPointer() : 0));
+        internal_native_set_mHeightSamples(native_address, (mHeightSamples != null ? mHeightSamples.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -272,12 +272,12 @@ jsObj.set_mHeightSamples(mHeightSamples_addr);
     public static native void internal_native_set_mHeightSamples(int this_addr, int mHeightSamples_addr);
 
     public ArrayUint8 get_mMaterialIndices() {
-        int pointer = internal_native_get_mMaterialIndices((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mMaterialIndices(native_address);
         if (pointer == 0)
             return null;
         if (ArrayUint8_TEMP_GEN_0 == null)
             ArrayUint8_TEMP_GEN_0 = new ArrayUint8((byte) 1, (char) 1);
-        ArrayUint8_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayUint8_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayUint8_TEMP_GEN_0;
     }
 
@@ -291,7 +291,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mMaterialIndices(int this_addr);
 
     public void set_mMaterialIndices(ArrayUint8 mMaterialIndices) {
-        internal_native_set_mMaterialIndices((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterialIndices != null ? mMaterialIndices.getNativeData().getCPointer() : 0));
+        internal_native_set_mMaterialIndices(native_address, (mMaterialIndices != null ? mMaterialIndices.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -302,12 +302,12 @@ jsObj.set_mMaterialIndices(mMaterialIndices_addr);
     public static native void internal_native_set_mMaterialIndices(int this_addr, int mMaterialIndices_addr);
 
     public PhysicsMaterialList get_mMaterials() {
-        int pointer = internal_native_get_mMaterials((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mMaterials(native_address);
         if (pointer == 0)
             return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
-        PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
 
@@ -321,7 +321,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mMaterials(int this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
-        internal_native_set_mMaterials((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterials != null ? mMaterials.getNativeData().getCPointer() : 0));
+        internal_native_set_mMaterials(native_address, (mMaterials != null ? mMaterials.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -332,7 +332,7 @@ jsObj.set_mMaterials(mMaterials_addr);
     public static native void internal_native_set_mMaterials(int this_addr, int mMaterials_addr);
 
     public float get_mActiveEdgeCosThresholdAngle() {
-        return internal_native_get_mActiveEdgeCosThresholdAngle((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mActiveEdgeCosThresholdAngle(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -343,7 +343,7 @@ return jsObj.get_mActiveEdgeCosThresholdAngle();
     public static native float internal_native_get_mActiveEdgeCosThresholdAngle(int this_addr);
 
     public void set_mActiveEdgeCosThresholdAngle(float mActiveEdgeCosThresholdAngle) {
-        internal_native_set_mActiveEdgeCosThresholdAngle((int) (long) getNativeData().getCPointer(), mActiveEdgeCosThresholdAngle);
+        internal_native_set_mActiveEdgeCosThresholdAngle(native_address, mActiveEdgeCosThresholdAngle);
     }
 
     /*[-TEAVM;-NATIVE]

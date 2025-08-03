@@ -17,7 +17,7 @@ public class PhysicsMaterial extends IDLBase {
 
     public PhysicsMaterial() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -35,7 +35,7 @@ return jolt.getPointer(jsObj);
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -47,7 +47,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -58,7 +58,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

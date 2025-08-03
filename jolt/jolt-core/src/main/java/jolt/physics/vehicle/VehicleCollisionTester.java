@@ -23,7 +23,7 @@ public class VehicleCollisionTester extends IDLBase {
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -33,7 +33,7 @@ return nativeObject->GetRefCount();
     public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -43,7 +43,7 @@ nativeObject->AddRef();
     public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
-        internal_native_Release((long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-JNI;-NATIVE]

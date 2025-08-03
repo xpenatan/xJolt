@@ -65,16 +65,8 @@ virtual bool ShouldRestoreContact(const BodyID& inBody1, const BodyID& inBody2) 
     public StateRecorderFilter(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -85,22 +77,22 @@ delete nativeObject;
 
     public StateRecorderFilter() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected boolean ShouldSaveBody(Body inBody) {
         return false;
     }
 
-    private boolean internal_ShouldSaveBody(long inBody) {
+    private boolean internal_ShouldSaveBody(long inBody_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
             Body_TEMP_STATIC_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_0.getNativeData().reset(inBody, false);
+        Body_TEMP_STATIC_GEN_0.internal_reset(inBody_addr, false);
         return ShouldSaveBody(Body_TEMP_STATIC_GEN_0);
     }
 
@@ -108,10 +100,10 @@ delete nativeObject;
         return false;
     }
 
-    private boolean internal_ShouldSaveConstraint(long inConstraint) {
+    private boolean internal_ShouldSaveConstraint(long inConstraint_addr) {
         if (Constraint_TEMP_STATIC_GEN_0 == null)
             Constraint_TEMP_STATIC_GEN_0 = new Constraint((byte) 1, (char) 1);
-        Constraint_TEMP_STATIC_GEN_0.getNativeData().reset(inConstraint, false);
+        Constraint_TEMP_STATIC_GEN_0.internal_reset(inConstraint_addr, false);
         return ShouldSaveConstraint(Constraint_TEMP_STATIC_GEN_0);
     }
 
@@ -119,13 +111,13 @@ delete nativeObject;
         return false;
     }
 
-    private boolean internal_ShouldSaveContact(long inBody1, long inBody2) {
+    private boolean internal_ShouldSaveContact(long inBody1_addr, long inBody2_addr) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
             BodyID_TEMP_STATIC_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_0.getNativeData().reset(inBody1, false);
+        BodyID_TEMP_STATIC_GEN_0.internal_reset(inBody1_addr, false);
         if (BodyID_TEMP_STATIC_GEN_1 == null)
             BodyID_TEMP_STATIC_GEN_1 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_1.getNativeData().reset(inBody2, false);
+        BodyID_TEMP_STATIC_GEN_1.internal_reset(inBody2_addr, false);
         return ShouldSaveContact(BodyID_TEMP_STATIC_GEN_0, BodyID_TEMP_STATIC_GEN_1);
     }
 
@@ -133,13 +125,13 @@ delete nativeObject;
         return false;
     }
 
-    private boolean internal_ShouldRestoreContact(long inBody1, long inBody2) {
+    private boolean internal_ShouldRestoreContact(long inBody1_addr, long inBody2_addr) {
         if (BodyID_TEMP_STATIC_GEN_2 == null)
             BodyID_TEMP_STATIC_GEN_2 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_2.getNativeData().reset(inBody1, false);
+        BodyID_TEMP_STATIC_GEN_2.internal_reset(inBody1_addr, false);
         if (BodyID_TEMP_STATIC_GEN_3 == null)
             BodyID_TEMP_STATIC_GEN_3 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_3.getNativeData().reset(inBody2, false);
+        BodyID_TEMP_STATIC_GEN_3.internal_reset(inBody2_addr, false);
         return ShouldRestoreContact(BodyID_TEMP_STATIC_GEN_2, BodyID_TEMP_STATIC_GEN_3);
     }
 

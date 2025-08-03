@@ -37,7 +37,7 @@ public class ContactManifold extends IDLBase {
 
     public ContactManifold() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,16 +54,8 @@ return jolt.getPointer(jsObj);
     public ContactManifold(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -74,12 +66,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public ContactManifold SwapShapes() {
-        int pointer = internal_native_SwapShapes((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_SwapShapes(native_address);
         if (pointer == 0)
             return null;
         if (ContactManifold_TEMP_GEN_0 == null)
             ContactManifold_TEMP_GEN_0 = new ContactManifold((byte) 1, (char) 1);
-        ContactManifold_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ContactManifold_TEMP_GEN_0.internal_reset(pointer, false);
         return ContactManifold_TEMP_GEN_0;
     }
 
@@ -93,12 +85,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_SwapShapes(int this_addr);
 
     public Vec3 GetWorldSpaceContactPointOn1(int inIndex) {
-        int pointer = internal_native_GetWorldSpaceContactPointOn1((int) (long) getNativeData().getCPointer(), inIndex);
+        int pointer = internal_native_GetWorldSpaceContactPointOn1(native_address, inIndex);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -112,12 +104,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetWorldSpaceContactPointOn1(int this_addr, int inIndex);
 
     public Vec3 GetWorldSpaceContactPointOn2(int inIndex) {
-        int pointer = internal_native_GetWorldSpaceContactPointOn2((int) (long) getNativeData().getCPointer(), inIndex);
+        int pointer = internal_native_GetWorldSpaceContactPointOn2(native_address, inIndex);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -131,12 +123,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetWorldSpaceContactPointOn2(int this_addr, int inIndex);
 
     public Vec3 get_mBaseOffset() {
-        int pointer = internal_native_get_mBaseOffset((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mBaseOffset(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -150,7 +142,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mBaseOffset(int this_addr);
 
     public void set_mBaseOffset(Vec3 mBaseOffset) {
-        internal_native_set_mBaseOffset((int) (long) getNativeData().getCPointer(), (int) (long) (mBaseOffset != null ? mBaseOffset.getNativeData().getCPointer() : 0));
+        internal_native_set_mBaseOffset(native_address, (mBaseOffset != null ? mBaseOffset.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -161,12 +153,12 @@ jsObj.set_mBaseOffset(mBaseOffset_addr);
     public static native void internal_native_set_mBaseOffset(int this_addr, int mBaseOffset_addr);
 
     public Vec3 get_mWorldSpaceNormal() {
-        int pointer = internal_native_get_mWorldSpaceNormal((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mWorldSpaceNormal(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -180,7 +172,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mWorldSpaceNormal(int this_addr);
 
     public void set_mWorldSpaceNormal(Vec3 mWorldSpaceNormal) {
-        internal_native_set_mWorldSpaceNormal((int) (long) getNativeData().getCPointer(), (int) (long) (mWorldSpaceNormal != null ? mWorldSpaceNormal.getNativeData().getCPointer() : 0));
+        internal_native_set_mWorldSpaceNormal(native_address, (mWorldSpaceNormal != null ? mWorldSpaceNormal.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -191,7 +183,7 @@ jsObj.set_mWorldSpaceNormal(mWorldSpaceNormal_addr);
     public static native void internal_native_set_mWorldSpaceNormal(int this_addr, int mWorldSpaceNormal_addr);
 
     public float get_mPenetrationDepth() {
-        return internal_native_get_mPenetrationDepth((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mPenetrationDepth(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -202,7 +194,7 @@ return jsObj.get_mPenetrationDepth();
     public static native float internal_native_get_mPenetrationDepth(int this_addr);
 
     public void set_mPenetrationDepth(float mPenetrationDepth) {
-        internal_native_set_mPenetrationDepth((int) (long) getNativeData().getCPointer(), mPenetrationDepth);
+        internal_native_set_mPenetrationDepth(native_address, mPenetrationDepth);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -213,12 +205,12 @@ jsObj.set_mPenetrationDepth(mPenetrationDepth);
     public static native void internal_native_set_mPenetrationDepth(int this_addr, float mPenetrationDepth);
 
     public SubShapeID get_mSubShapeID1() {
-        int pointer = internal_native_get_mSubShapeID1((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSubShapeID1(native_address);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = new SubShapeID((byte) 1, (char) 1);
-        SubShapeID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_0;
     }
 
@@ -232,7 +224,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSubShapeID1(int this_addr);
 
     public void set_mSubShapeID1(SubShapeID mSubShapeID1) {
-        internal_native_set_mSubShapeID1((int) (long) getNativeData().getCPointer(), (int) (long) (mSubShapeID1 != null ? mSubShapeID1.getNativeData().getCPointer() : 0));
+        internal_native_set_mSubShapeID1(native_address, (mSubShapeID1 != null ? mSubShapeID1.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -243,12 +235,12 @@ jsObj.set_mSubShapeID1(mSubShapeID1_addr);
     public static native void internal_native_set_mSubShapeID1(int this_addr, int mSubShapeID1_addr);
 
     public SubShapeID get_mSubShapeID2() {
-        int pointer = internal_native_get_mSubShapeID2((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSubShapeID2(native_address);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = new SubShapeID((byte) 1, (char) 1);
-        SubShapeID_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        SubShapeID_TEMP_GEN_1.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_1;
     }
 
@@ -262,7 +254,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSubShapeID2(int this_addr);
 
     public void set_mSubShapeID2(SubShapeID mSubShapeID2) {
-        internal_native_set_mSubShapeID2((int) (long) getNativeData().getCPointer(), (int) (long) (mSubShapeID2 != null ? mSubShapeID2.getNativeData().getCPointer() : 0));
+        internal_native_set_mSubShapeID2(native_address, (mSubShapeID2 != null ? mSubShapeID2.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -273,12 +265,12 @@ jsObj.set_mSubShapeID2(mSubShapeID2_addr);
     public static native void internal_native_set_mSubShapeID2(int this_addr, int mSubShapeID2_addr);
 
     public ContactPoints get_mRelativeContactPointsOn1() {
-        int pointer = internal_native_get_mRelativeContactPointsOn1((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mRelativeContactPointsOn1(native_address);
         if (pointer == 0)
             return null;
         if (ContactPoints_TEMP_GEN_0 == null)
             ContactPoints_TEMP_GEN_0 = new ContactPoints((byte) 1, (char) 1);
-        ContactPoints_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ContactPoints_TEMP_GEN_0.internal_reset(pointer, false);
         return ContactPoints_TEMP_GEN_0;
     }
 
@@ -292,7 +284,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mRelativeContactPointsOn1(int this_addr);
 
     public void set_mRelativeContactPointsOn1(ContactPoints mRelativeContactPointsOn1) {
-        internal_native_set_mRelativeContactPointsOn1((int) (long) getNativeData().getCPointer(), (int) (long) (mRelativeContactPointsOn1 != null ? mRelativeContactPointsOn1.getNativeData().getCPointer() : 0));
+        internal_native_set_mRelativeContactPointsOn1(native_address, (mRelativeContactPointsOn1 != null ? mRelativeContactPointsOn1.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -303,12 +295,12 @@ jsObj.set_mRelativeContactPointsOn1(mRelativeContactPointsOn1_addr);
     public static native void internal_native_set_mRelativeContactPointsOn1(int this_addr, int mRelativeContactPointsOn1_addr);
 
     public ContactPoints get_mRelativeContactPointsOn2() {
-        int pointer = internal_native_get_mRelativeContactPointsOn2((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mRelativeContactPointsOn2(native_address);
         if (pointer == 0)
             return null;
         if (ContactPoints_TEMP_GEN_1 == null)
             ContactPoints_TEMP_GEN_1 = new ContactPoints((byte) 1, (char) 1);
-        ContactPoints_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        ContactPoints_TEMP_GEN_1.internal_reset(pointer, false);
         return ContactPoints_TEMP_GEN_1;
     }
 
@@ -322,7 +314,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mRelativeContactPointsOn2(int this_addr);
 
     public void set_mRelativeContactPointsOn2(ContactPoints mRelativeContactPointsOn2) {
-        internal_native_set_mRelativeContactPointsOn2((int) (long) getNativeData().getCPointer(), (int) (long) (mRelativeContactPointsOn2 != null ? mRelativeContactPointsOn2.getNativeData().getCPointer() : 0));
+        internal_native_set_mRelativeContactPointsOn2(native_address, (mRelativeContactPointsOn2 != null ? mRelativeContactPointsOn2.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

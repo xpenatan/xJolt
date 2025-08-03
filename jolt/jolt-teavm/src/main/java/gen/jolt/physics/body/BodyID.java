@@ -17,7 +17,7 @@ public class BodyID extends IDLBase {
 
     public BodyID() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -29,7 +29,7 @@ return jolt.getPointer(jsObj);
 
     public BodyID(int inIndexAndSequenceNumber) {
         int addr = internal_native_create_int(inIndexAndSequenceNumber);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -46,16 +46,8 @@ return jolt.getPointer(jsObj);
     public BodyID(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,7 +58,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int GetIndex() {
-        return internal_native_GetIndex((int) (long) getNativeData().getCPointer());
+        return internal_native_GetIndex(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -78,7 +70,7 @@ return returnedJSObj;
     public static native int internal_native_GetIndex(int this_addr);
 
     public int GetIndexAndSequenceNumber() {
-        return internal_native_GetIndexAndSequenceNumber((int) (long) getNativeData().getCPointer());
+        return internal_native_GetIndexAndSequenceNumber(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

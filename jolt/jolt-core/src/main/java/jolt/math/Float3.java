@@ -17,7 +17,7 @@ public class Float3 extends IDLBase {
 
     public Float3(float inX, float inY, float inZ) {
         long addr = internal_native_create_float_float_float(inX, inY, inZ);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new Float3((float)inX, (float)inY, (float)inZ);
     public Float3(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public float get_x() {
-        return internal_native_get_x((long) getNativeData().getCPointer());
+        return internal_native_get_x(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ return nativeObject->x;
     public static native float internal_native_get_x(long this_addr);
 
     public void set_x(float x) {
-        internal_native_set_x((long) getNativeData().getCPointer(), x);
+        internal_native_set_x(native_address, x);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ nativeObject->x = x;
     public static native void internal_native_set_x(long this_addr, float x);
 
     public float get_y() {
-        return internal_native_get_y((long) getNativeData().getCPointer());
+        return internal_native_get_y(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -81,7 +73,7 @@ return nativeObject->y;
     public static native float internal_native_get_y(long this_addr);
 
     public void set_y(float y) {
-        internal_native_set_y((long) getNativeData().getCPointer(), y);
+        internal_native_set_y(native_address, y);
     }
 
     /*[-JNI;-NATIVE]
@@ -91,7 +83,7 @@ nativeObject->y = y;
     public static native void internal_native_set_y(long this_addr, float y);
 
     public float get_z() {
-        return internal_native_get_z((long) getNativeData().getCPointer());
+        return internal_native_get_z(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -101,7 +93,7 @@ return nativeObject->z;
     public static native float internal_native_get_z(long this_addr);
 
     public void set_z(float z) {
-        internal_native_set_z((long) getNativeData().getCPointer(), z);
+        internal_native_set_z(native_address, z);
     }
 
     /*[-JNI;-NATIVE]

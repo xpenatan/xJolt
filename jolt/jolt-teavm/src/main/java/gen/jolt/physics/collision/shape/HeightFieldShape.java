@@ -30,7 +30,7 @@ public class HeightFieldShape extends Shape {
     }
 
     public int GetSampleCount() {
-        return internal_native_GetSampleCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetSampleCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -42,7 +42,7 @@ return returnedJSObj;
     public static native int internal_native_GetSampleCount(int this_addr);
 
     public int GetBlockSize() {
-        return internal_native_GetBlockSize((int) (long) getNativeData().getCPointer());
+        return internal_native_GetBlockSize(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,12 +54,12 @@ return returnedJSObj;
     public static native int internal_native_GetBlockSize(int this_addr);
 
     public Vec3 GetPosition(int inX, int inY) {
-        int pointer = internal_native_GetPosition((int) (long) getNativeData().getCPointer(), inX, inY);
+        int pointer = internal_native_GetPosition(native_address, inX, inY);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -73,7 +73,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetPosition(int this_addr, int inX, int inY);
 
     public boolean IsNoCollision(int inX, int inY) {
-        return internal_native_IsNoCollision((int) (long) getNativeData().getCPointer(), inX, inY);
+        return internal_native_IsNoCollision(native_address, inX, inY);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -85,7 +85,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsNoCollision(int this_addr, int inX, int inY);
 
     public float GetMinHeightValue() {
-        return internal_native_GetMinHeightValue((int) (long) getNativeData().getCPointer());
+        return internal_native_GetMinHeightValue(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,7 +97,7 @@ return returnedJSObj;
     public static native float internal_native_GetMinHeightValue(int this_addr);
 
     public float GetMaxHeightValue() {
-        return internal_native_GetMaxHeightValue((int) (long) getNativeData().getCPointer());
+        return internal_native_GetMaxHeightValue(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -109,7 +109,7 @@ return returnedJSObj;
     public static native float internal_native_GetMaxHeightValue(int this_addr);
 
     public void GetHeights(int inX, int inY, int inSizeX, int inSizeY, FloatMemRef outHeights, int inHeightsStride) {
-        internal_native_GetHeights((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (outHeights != null ? outHeights.getNativeData().getCPointer() : 0), inHeightsStride);
+        internal_native_GetHeights(native_address, inX, inY, inSizeX, inSizeY, (outHeights != null ? outHeights.native_address : 0), inHeightsStride);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -120,7 +120,7 @@ jsObj.GetHeights(inX, inY, inSizeX, inSizeY, outHeights_addr, inHeightsStride);
     public static native void internal_native_GetHeights(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int outHeights_addr, int inHeightsStride);
 
     public void SetHeights(int inX, int inY, int inSizeX, int inSizeY, FloatMemRef inHeights, int inHeightsStride, TempAllocator inAllocator, float inActiveEdgeCosThresholdAngle) {
-        internal_native_SetHeights((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (inHeights != null ? inHeights.getNativeData().getCPointer() : 0), inHeightsStride, (int) (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0), inActiveEdgeCosThresholdAngle);
+        internal_native_SetHeights(native_address, inX, inY, inSizeX, inSizeY, (inHeights != null ? inHeights.native_address : 0), inHeightsStride, (inAllocator != null ? inAllocator.native_address : 0), inActiveEdgeCosThresholdAngle);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -131,7 +131,7 @@ jsObj.SetHeights(inX, inY, inSizeX, inSizeY, inHeights_addr, inHeightsStride, in
     public static native void internal_native_SetHeights(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int inHeights_addr, int inHeightsStride, int inAllocator_addr, float inActiveEdgeCosThresholdAngle);
 
     public void SetHeights(int inX, int inY, int inSizeX, int inSizeY, FloatMemRef inHeights, int inHeightsStride, TempAllocator inAllocator) {
-        internal_native_SetHeights((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (inHeights != null ? inHeights.getNativeData().getCPointer() : 0), inHeightsStride, (int) (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        internal_native_SetHeights(native_address, inX, inY, inSizeX, inSizeY, (inHeights != null ? inHeights.native_address : 0), inHeightsStride, (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -142,7 +142,7 @@ jsObj.SetHeights(inX, inY, inSizeX, inSizeY, inHeights_addr, inHeightsStride, in
     public static native void internal_native_SetHeights(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int inHeights_addr, int inHeightsStride, int inAllocator_addr);
 
     public void GetMaterials(int inX, int inY, int inSizeX, int inSizeY, Uint8MemRef outMaterials, int inMaterialsStride) {
-        internal_native_GetMaterials((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (outMaterials != null ? outMaterials.getNativeData().getCPointer() : 0), inMaterialsStride);
+        internal_native_GetMaterials(native_address, inX, inY, inSizeX, inSizeY, (outMaterials != null ? outMaterials.native_address : 0), inMaterialsStride);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -153,7 +153,7 @@ jsObj.GetMaterials(inX, inY, inSizeX, inSizeY, outMaterials_addr, inMaterialsStr
     public static native void internal_native_GetMaterials(int this_addr, int inX, int inY, int inSizeX, int inSizeY, int outMaterials_addr, int inMaterialsStride);
 
     public boolean SetMaterials(int inX, int inY, int inSizeX, int inSizeY, Uint8MemRef inMaterials, int inMaterialsStride, PhysicsMaterialList inMaterialList, TempAllocator inAllocator) {
-        return internal_native_SetMaterials((int) (long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (int) (long) (inMaterials != null ? inMaterials.getNativeData().getCPointer() : 0), inMaterialsStride, (int) (long) (inMaterialList != null ? inMaterialList.getNativeData().getCPointer() : 0), (int) (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        return internal_native_SetMaterials(native_address, inX, inY, inSizeX, inSizeY, (inMaterials != null ? inMaterials.native_address : 0), inMaterialsStride, (inMaterialList != null ? inMaterialList.native_address : 0), (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

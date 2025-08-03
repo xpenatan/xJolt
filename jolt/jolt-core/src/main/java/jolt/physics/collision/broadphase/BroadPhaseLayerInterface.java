@@ -22,16 +22,8 @@ public class BroadPhaseLayerInterface extends IDLBase {
     public BroadPhaseLayerInterface(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -41,7 +33,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int GetNumBroadPhaseLayers() {
-        return internal_native_GetNumBroadPhaseLayers((long) getNativeData().getCPointer());
+        return internal_native_GetNumBroadPhaseLayers(native_address);
     }
 
     /*[-JNI;-NATIVE]

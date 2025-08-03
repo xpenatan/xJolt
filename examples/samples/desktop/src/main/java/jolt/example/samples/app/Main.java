@@ -8,7 +8,7 @@ public class Main {
         Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
         config.setWindowedMode(1444, 800);
         config.setTitle("Jolt Samples");
-        config.useVsync(true);
+        config.useVsync(false);
         config.setOpenGLEmulation(Lwjgl3ApplicationConfiguration.GLEmulation.GL30, 3, 0);
         new Lwjgl3Application(new JoltGame(), config);
     }

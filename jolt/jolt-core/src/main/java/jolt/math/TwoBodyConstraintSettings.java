@@ -28,12 +28,12 @@ public class TwoBodyConstraintSettings extends ConstraintSettings {
     }
 
     public Constraint Create(Body inBody1, Body inBody2) {
-        long pointer = internal_native_Create((long) getNativeData().getCPointer(), (long) (inBody1 != null ? inBody1.getNativeData().getCPointer() : 0), (long) (inBody2 != null ? inBody2.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_Create(native_address, (inBody1 != null ? inBody1.native_address : 0), (inBody2 != null ? inBody2.native_address : 0));
         if (pointer == 0)
             return null;
         if (Constraint_TEMP_GEN_0 == null)
             Constraint_TEMP_GEN_0 = new Constraint((byte) 1, (char) 1);
-        Constraint_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Constraint_TEMP_GEN_0.internal_reset(pointer, false);
         return Constraint_TEMP_GEN_0;
     }
 

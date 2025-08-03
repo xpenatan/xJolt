@@ -20,16 +20,8 @@ public class ObjectVsBroadPhaseLayerFilterEm extends ObjectVsBroadPhaseLayerFilt
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -42,28 +34,28 @@ jolt.destroy(jsObj);
     public ObjectVsBroadPhaseLayerFilterEm() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
         ShouldCollide ShouldCollide = new ShouldCollide() {
 
-            public boolean ShouldCollide(int inLayer1, int inLayer2) {
-                return internal_ShouldCollide(inLayer1, inLayer2);
+            public boolean ShouldCollide(int inLayer1, int inLayer2_addr) {
+                return internal_ShouldCollide(inLayer1, inLayer2_addr);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), ShouldCollide);
+        internal_native_setupCallback(native_address, ShouldCollide);
     }
 
     protected boolean ShouldCollide(int inLayer1, BroadPhaseLayer inLayer2) {
         return false;
     }
 
-    private boolean internal_ShouldCollide(int inLayer1, long inLayer2) {
+    private boolean internal_ShouldCollide(int inLayer1, int inLayer2_addr) {
         if (BroadPhaseLayer_TEMP_STATIC_GEN_0 == null)
             BroadPhaseLayer_TEMP_STATIC_GEN_0 = new BroadPhaseLayer((byte) 1, (char) 1);
-        BroadPhaseLayer_TEMP_STATIC_GEN_0.getNativeData().reset(inLayer2, false);
+        BroadPhaseLayer_TEMP_STATIC_GEN_0.internal_reset(inLayer2_addr, false);
         return ShouldCollide(inLayer1, BroadPhaseLayer_TEMP_STATIC_GEN_0);
     }
 
@@ -80,6 +72,6 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSFunctor()
     public interface ShouldCollide extends org.teavm.jso.JSObject {
 
-        boolean ShouldCollide(int inLayer1, int inLayer2);
+        boolean ShouldCollide(int inLayer1, int inLayer2_addr);
     }
 }

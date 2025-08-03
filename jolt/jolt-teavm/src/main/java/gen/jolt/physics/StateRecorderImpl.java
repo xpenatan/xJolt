@@ -16,7 +16,7 @@ public class StateRecorderImpl extends StateRecorder {
     public StateRecorderImpl() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void Clear() {
-        internal_native_Clear((int) (long) getNativeData().getCPointer());
+        internal_native_Clear(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ jsObj.Clear();
     public static native void internal_native_Clear(int this_addr);
 
     public void Rewind() {
-        internal_native_Rewind((int) (long) getNativeData().getCPointer());
+        internal_native_Rewind(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ jsObj.Rewind();
     public static native void internal_native_Rewind(int this_addr);
 
     public boolean IsEqual(StateRecorderImpl inReference) {
-        return internal_native_IsEqual((int) (long) getNativeData().getCPointer(), (int) (long) (inReference != null ? inReference.getNativeData().getCPointer() : 0));
+        return internal_native_IsEqual(native_address, (inReference != null ? inReference.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

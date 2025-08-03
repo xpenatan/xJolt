@@ -19,7 +19,7 @@ public class Vector2 extends IDLBase {
 
     public Vector2() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -36,16 +36,8 @@ return jolt.getPointer(jsObj);
     public Vector2(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +48,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void SetZero() {
-        internal_native_SetZero((int) (long) getNativeData().getCPointer());
+        internal_native_SetZero(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,7 +59,7 @@ jsObj.SetZero();
     public static native void internal_native_SetZero(int this_addr);
 
     public void IsZero() {
-        internal_native_IsZero((int) (long) getNativeData().getCPointer());
+        internal_native_IsZero(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -78,7 +70,7 @@ jsObj.IsZero();
     public static native void internal_native_IsZero(int this_addr);
 
     public void IsClose(Vector2 inV, float inMaxDistSq) {
-        internal_native_IsClose((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0), inMaxDistSq);
+        internal_native_IsClose(native_address, (inV != null ? inV.native_address : 0), inMaxDistSq);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -89,7 +81,7 @@ jsObj.IsClose(inV_addr, inMaxDistSq);
     public static native void internal_native_IsClose(int this_addr, int inV_addr, float inMaxDistSq);
 
     public void IsClose(Vector2 inV) {
-        internal_native_IsClose((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_IsClose(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -100,7 +92,7 @@ jsObj.IsClose(inV_addr);
     public static native void internal_native_IsClose(int this_addr, int inV_addr);
 
     public void IsNormalized(float inTolerance) {
-        internal_native_IsNormalized((int) (long) getNativeData().getCPointer(), inTolerance);
+        internal_native_IsNormalized(native_address, inTolerance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -111,7 +103,7 @@ jsObj.IsNormalized(inTolerance);
     public static native void internal_native_IsNormalized(int this_addr, float inTolerance);
 
     public void IsNormalized() {
-        internal_native_IsNormalized((int) (long) getNativeData().getCPointer());
+        internal_native_IsNormalized(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -122,12 +114,12 @@ jsObj.IsNormalized();
     public static native void internal_native_IsNormalized(int this_addr);
 
     public Vector2 Normalized() {
-        int pointer = internal_native_Normalized((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_Normalized(native_address);
         if (pointer == 0)
             return null;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = new Vector2((byte) 1, (char) 1);
-        Vector2_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vector2_TEMP_GEN_0.internal_reset(pointer, false);
         return Vector2_TEMP_GEN_0;
     }
 
@@ -141,7 +133,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Normalized(int this_addr);
 
     public float Dot(Vector2 inRHS) {
-        return internal_native_Dot((int) (long) getNativeData().getCPointer(), (int) (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        return internal_native_Dot(native_address, (inRHS != null ? inRHS.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

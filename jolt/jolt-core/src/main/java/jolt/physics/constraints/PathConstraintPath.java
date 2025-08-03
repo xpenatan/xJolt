@@ -22,16 +22,8 @@ public class PathConstraintPath extends IDLBase {
     public PathConstraintPath(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -41,7 +33,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public boolean IsLooping() {
-        return internal_native_IsLooping((long) getNativeData().getCPointer());
+        return internal_native_IsLooping(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ return nativeObject->IsLooping();
     public static native boolean internal_native_IsLooping(long this_addr);
 
     public void SetIsLooping(boolean inIsLooping) {
-        internal_native_SetIsLooping((long) getNativeData().getCPointer(), inIsLooping);
+        internal_native_SetIsLooping(native_address, inIsLooping);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ nativeObject->SetIsLooping(inIsLooping);
     public static native void internal_native_SetIsLooping(long this_addr, boolean inIsLooping);
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ return nativeObject->GetRefCount();
     public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -81,7 +73,7 @@ nativeObject->AddRef();
     public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
-        internal_native_Release((long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-JNI;-NATIVE]

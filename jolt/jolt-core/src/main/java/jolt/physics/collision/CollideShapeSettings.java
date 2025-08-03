@@ -18,7 +18,7 @@ public class CollideShapeSettings extends CollideSettingsBase {
     public CollideShapeSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -35,7 +35,7 @@ return (jlong)new CollideShapeSettings();
     }
 
     public float get_mMaxSeparationDistance() {
-        return internal_native_get_mMaxSeparationDistance((long) getNativeData().getCPointer());
+        return internal_native_get_mMaxSeparationDistance(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,7 +45,7 @@ return nativeObject->mMaxSeparationDistance;
     public static native float internal_native_get_mMaxSeparationDistance(long this_addr);
 
     public void set_mMaxSeparationDistance(float mMaxSeparationDistance) {
-        internal_native_set_mMaxSeparationDistance((long) getNativeData().getCPointer(), mMaxSeparationDistance);
+        internal_native_set_mMaxSeparationDistance(native_address, mMaxSeparationDistance);
     }
 
     /*[-JNI;-NATIVE]
@@ -55,7 +55,7 @@ nativeObject->mMaxSeparationDistance = mMaxSeparationDistance;
     public static native void internal_native_set_mMaxSeparationDistance(long this_addr, float mMaxSeparationDistance);
 
     public EBackFaceMode get_mBackFaceMode() {
-        int value = internal_native_get_mBackFaceMode((long) getNativeData().getCPointer());
+        int value = internal_native_get_mBackFaceMode(native_address);
         return EBackFaceMode.MAP.get(value);
     }
 
@@ -66,7 +66,7 @@ return (jint)nativeObject->mBackFaceMode;
     public static native int internal_native_get_mBackFaceMode(long this_addr);
 
     public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
-        internal_native_set_mBackFaceMode((long) getNativeData().getCPointer(), (long) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
+        internal_native_set_mBackFaceMode(native_address, (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]

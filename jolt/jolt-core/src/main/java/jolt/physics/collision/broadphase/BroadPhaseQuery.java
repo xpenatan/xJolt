@@ -31,16 +31,8 @@ public class BroadPhaseQuery extends IDLBase {
     public BroadPhaseQuery(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -50,7 +42,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void CastRay(RayCast inRay, RayCastBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CastRay((long) getNativeData().getCPointer(), (long) (inRay != null ? inRay.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CastRay(native_address, (inRay != null ? inRay.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -60,7 +52,7 @@ nativeObject->CastRay(*((RayCast* )inRay_addr), *((RayCastBodyCollector* )ioColl
     public static native void internal_native_CastRay(long this_addr, long inRay_addr, long ioCollector_addr, long inBroadPhaseFilter_addr, long inObjectLayerFilter_addr);
 
     public void CollideAABox(AABox inBox, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CollideAABox((long) getNativeData().getCPointer(), (long) (inBox != null ? inBox.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollideAABox(native_address, (inBox != null ? inBox.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -70,7 +62,7 @@ nativeObject->CollideAABox(*((AABox* )inBox_addr), *((CollideShapeBodyCollector*
     public static native void internal_native_CollideAABox(long this_addr, long inBox_addr, long ioCollector_addr, long inBroadPhaseFilter_addr, long inObjectLayerFilter_addr);
 
     public void CollideSphere(Vec3 inCenter, float inRadius, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CollideSphere((long) getNativeData().getCPointer(), (long) (inCenter != null ? inCenter.getNativeData().getCPointer() : 0), inRadius, (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollideSphere(native_address, (inCenter != null ? inCenter.native_address : 0), inRadius, (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -80,7 +72,7 @@ nativeObject->CollideSphere(*((Vec3* )inCenter_addr), (float)inRadius, *((Collid
     public static native void internal_native_CollideSphere(long this_addr, long inCenter_addr, float inRadius, long ioCollector_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr);
 
     public void CollidePoint(Vec3 inPoint, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CollidePoint((long) getNativeData().getCPointer(), (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollidePoint(native_address, (inPoint != null ? inPoint.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -90,7 +82,7 @@ nativeObject->CollidePoint(*((Vec3* )inPoint_addr), *((CollideShapeBodyCollector
     public static native void internal_native_CollidePoint(long this_addr, long inPoint_addr, long ioCollector_addr, long inBroadPhaseFilter_addr, long inObjectLayerFilter_addr);
 
     public void CollideOrientedBox(OrientedBox inBox, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CollideOrientedBox((long) getNativeData().getCPointer(), (long) (inBox != null ? inBox.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollideOrientedBox(native_address, (inBox != null ? inBox.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -100,7 +92,7 @@ nativeObject->CollideOrientedBox(*((OrientedBox* )inBox_addr), *((CollideShapeBo
     public static native void internal_native_CollideOrientedBox(long this_addr, long inBox_addr, long ioCollector_addr, long inBroadPhaseFilter_addr, long inObjectLayerFilter_addr);
 
     public void CastAABox(AABoxCast inBox, CastShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CastAABox((long) getNativeData().getCPointer(), (long) (inBox != null ? inBox.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CastAABox(native_address, (inBox != null ? inBox.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

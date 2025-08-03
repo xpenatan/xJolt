@@ -30,7 +30,7 @@ public class SkeletonPose extends IDLBase {
 
     public SkeletonPose() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -47,16 +47,8 @@ return jolt.getPointer(jsObj);
     public SkeletonPose(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,7 +59,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void SetSkeleton(Skeleton inSkeleton) {
-        internal_native_SetSkeleton((int) (long) getNativeData().getCPointer(), (int) (long) (inSkeleton != null ? inSkeleton.getNativeData().getCPointer() : 0));
+        internal_native_SetSkeleton(native_address, (inSkeleton != null ? inSkeleton.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -78,12 +70,12 @@ jsObj.SetSkeleton(inSkeleton_addr);
     public static native void internal_native_SetSkeleton(int this_addr, int inSkeleton_addr);
 
     public Skeleton GetSkeleton() {
-        int pointer = internal_native_GetSkeleton((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetSkeleton(native_address);
         if (pointer == 0)
             return null;
         if (Skeleton_TEMP_GEN_0 == null)
             Skeleton_TEMP_GEN_0 = new Skeleton((byte) 1, (char) 1);
-        Skeleton_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Skeleton_TEMP_GEN_0.internal_reset(pointer, false);
         return Skeleton_TEMP_GEN_0;
     }
 
@@ -97,7 +89,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetSkeleton(int this_addr);
 
     public void SetRootOffset(Vec3 inOffset) {
-        internal_native_SetRootOffset((int) (long) getNativeData().getCPointer(), (int) (long) (inOffset != null ? inOffset.getNativeData().getCPointer() : 0));
+        internal_native_SetRootOffset(native_address, (inOffset != null ? inOffset.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -108,12 +100,12 @@ jsObj.SetRootOffset(inOffset_addr);
     public static native void internal_native_SetRootOffset(int this_addr, int inOffset_addr);
 
     public Vec3 GetRootOffset() {
-        int pointer = internal_native_GetRootOffset((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetRootOffset(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -127,7 +119,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRootOffset(int this_addr);
 
     public int GetJointCount() {
-        return internal_native_GetJointCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetJointCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -139,12 +131,12 @@ return returnedJSObj;
     public static native int internal_native_GetJointCount(int this_addr);
 
     public SkeletalAnimationJointState GetJoint(int inJoint) {
-        int pointer = internal_native_GetJoint((int) (long) getNativeData().getCPointer(), inJoint);
+        int pointer = internal_native_GetJoint(native_address, inJoint);
         if (pointer == 0)
             return null;
         if (SkeletalAnimationJointState_TEMP_GEN_0 == null)
             SkeletalAnimationJointState_TEMP_GEN_0 = new SkeletalAnimationJointState((byte) 1, (char) 1);
-        SkeletalAnimationJointState_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SkeletalAnimationJointState_TEMP_GEN_0.internal_reset(pointer, false);
         return SkeletalAnimationJointState_TEMP_GEN_0;
     }
 
@@ -158,12 +150,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetJoint(int this_addr, int inJoint);
 
     public ArrayMat44 GetJointMatrices() {
-        int pointer = internal_native_GetJointMatrices((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetJointMatrices(native_address);
         if (pointer == 0)
             return null;
         if (ArrayMat44_TEMP_GEN_0 == null)
             ArrayMat44_TEMP_GEN_0 = new ArrayMat44((byte) 1, (char) 1);
-        ArrayMat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayMat44_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayMat44_TEMP_GEN_0;
     }
 
@@ -177,12 +169,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetJointMatrices(int this_addr);
 
     public Mat44 GetJointMatrix(int inJoint) {
-        int pointer = internal_native_GetJointMatrix((int) (long) getNativeData().getCPointer(), inJoint);
+        int pointer = internal_native_GetJointMatrix(native_address, inJoint);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -196,7 +188,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetJointMatrix(int this_addr, int inJoint);
 
     public void CalculateJointMatrices() {
-        internal_native_CalculateJointMatrices((int) (long) getNativeData().getCPointer());
+        internal_native_CalculateJointMatrices(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -207,7 +199,7 @@ jsObj.CalculateJointMatrices();
     public static native void internal_native_CalculateJointMatrices(int this_addr);
 
     public void CalculateJointStates() {
-        internal_native_CalculateJointStates((int) (long) getNativeData().getCPointer());
+        internal_native_CalculateJointStates(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

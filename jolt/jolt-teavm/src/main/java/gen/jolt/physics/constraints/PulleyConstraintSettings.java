@@ -28,7 +28,7 @@ public class PulleyConstraintSettings extends TwoBodyConstraintSettings {
     public PulleyConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -46,16 +46,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,7 +58,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public EConstraintSpace get_mSpace() {
-        int value = internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mSpace(native_address);
         return EConstraintSpace.MAP.get(value);
     }
 
@@ -78,7 +70,7 @@ return jsObj.get_mSpace();
     public static native int internal_native_get_mSpace(int this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
-        internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), (int) (long) (mSpace != null ? mSpace.getValue() : 0));
+        internal_native_set_mSpace(native_address, (int) (mSpace != null ? mSpace.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -89,12 +81,12 @@ jsObj.set_mSpace(mSpace);
     public static native void internal_native_set_mSpace(int this_addr, int mSpace);
 
     public Vec3 get_mBodyPoint1() {
-        int pointer = internal_native_get_mBodyPoint1((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mBodyPoint1(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -108,7 +100,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mBodyPoint1(int this_addr);
 
     public void set_mBodyPoint1(Vec3 mBodyPoint1) {
-        internal_native_set_mBodyPoint1((int) (long) getNativeData().getCPointer(), (int) (long) (mBodyPoint1 != null ? mBodyPoint1.getNativeData().getCPointer() : 0));
+        internal_native_set_mBodyPoint1(native_address, (mBodyPoint1 != null ? mBodyPoint1.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -119,12 +111,12 @@ jsObj.set_mBodyPoint1(mBodyPoint1_addr);
     public static native void internal_native_set_mBodyPoint1(int this_addr, int mBodyPoint1_addr);
 
     public Vec3 get_mFixedPoint1() {
-        int pointer = internal_native_get_mFixedPoint1((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mFixedPoint1(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -138,7 +130,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mFixedPoint1(int this_addr);
 
     public void set_mFixedPoint1(Vec3 mFixedPoint1) {
-        internal_native_set_mFixedPoint1((int) (long) getNativeData().getCPointer(), (int) (long) (mFixedPoint1 != null ? mFixedPoint1.getNativeData().getCPointer() : 0));
+        internal_native_set_mFixedPoint1(native_address, (mFixedPoint1 != null ? mFixedPoint1.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -149,12 +141,12 @@ jsObj.set_mFixedPoint1(mFixedPoint1_addr);
     public static native void internal_native_set_mFixedPoint1(int this_addr, int mFixedPoint1_addr);
 
     public Vec3 get_mBodyPoint2() {
-        int pointer = internal_native_get_mBodyPoint2((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mBodyPoint2(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -168,7 +160,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mBodyPoint2(int this_addr);
 
     public void set_mBodyPoint2(Vec3 mBodyPoint2) {
-        internal_native_set_mBodyPoint2((int) (long) getNativeData().getCPointer(), (int) (long) (mBodyPoint2 != null ? mBodyPoint2.getNativeData().getCPointer() : 0));
+        internal_native_set_mBodyPoint2(native_address, (mBodyPoint2 != null ? mBodyPoint2.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -179,12 +171,12 @@ jsObj.set_mBodyPoint2(mBodyPoint2_addr);
     public static native void internal_native_set_mBodyPoint2(int this_addr, int mBodyPoint2_addr);
 
     public Vec3 get_mFixedPoint2() {
-        int pointer = internal_native_get_mFixedPoint2((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mFixedPoint2(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -198,7 +190,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mFixedPoint2(int this_addr);
 
     public void set_mFixedPoint2(Vec3 mFixedPoint2) {
-        internal_native_set_mFixedPoint2((int) (long) getNativeData().getCPointer(), (int) (long) (mFixedPoint2 != null ? mFixedPoint2.getNativeData().getCPointer() : 0));
+        internal_native_set_mFixedPoint2(native_address, (mFixedPoint2 != null ? mFixedPoint2.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -209,7 +201,7 @@ jsObj.set_mFixedPoint2(mFixedPoint2_addr);
     public static native void internal_native_set_mFixedPoint2(int this_addr, int mFixedPoint2_addr);
 
     public float get_mRatio() {
-        return internal_native_get_mRatio((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mRatio(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -220,7 +212,7 @@ return jsObj.get_mRatio();
     public static native float internal_native_get_mRatio(int this_addr);
 
     public void set_mRatio(float mRatio) {
-        internal_native_set_mRatio((int) (long) getNativeData().getCPointer(), mRatio);
+        internal_native_set_mRatio(native_address, mRatio);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -231,7 +223,7 @@ jsObj.set_mRatio(mRatio);
     public static native void internal_native_set_mRatio(int this_addr, float mRatio);
 
     public float get_mMinLength() {
-        return internal_native_get_mMinLength((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMinLength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -242,7 +234,7 @@ return jsObj.get_mMinLength();
     public static native float internal_native_get_mMinLength(int this_addr);
 
     public void set_mMinLength(float mMinLength) {
-        internal_native_set_mMinLength((int) (long) getNativeData().getCPointer(), mMinLength);
+        internal_native_set_mMinLength(native_address, mMinLength);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -253,7 +245,7 @@ jsObj.set_mMinLength(mMinLength);
     public static native void internal_native_set_mMinLength(int this_addr, float mMinLength);
 
     public float get_mMaxLength() {
-        return internal_native_get_mMaxLength((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxLength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -264,7 +256,7 @@ return jsObj.get_mMaxLength();
     public static native float internal_native_get_mMaxLength(int this_addr);
 
     public void set_mMaxLength(float mMaxLength) {
-        internal_native_set_mMaxLength((int) (long) getNativeData().getCPointer(), mMaxLength);
+        internal_native_set_mMaxLength(native_address, mMaxLength);
     }
 
     /*[-TEAVM;-NATIVE]

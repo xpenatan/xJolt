@@ -18,16 +18,8 @@ public class PhysicsStepListener extends IDLBase {
     public PhysicsStepListener(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -39,27 +31,27 @@ jolt.destroy(jsObj);
 
     public PhysicsStepListener() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
         OnStep OnStep = new OnStep() {
 
-            public void OnStep(int inContext) {
-                internal_OnStep(inContext);
+            public void OnStep(int inContext_addr) {
+                internal_OnStep(inContext_addr);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), OnStep);
+        internal_native_setupCallback(native_address, OnStep);
     }
 
     protected void OnStep(PhysicsStepListenerContext inContext) {
     }
 
-    private void internal_OnStep(long inContext) {
+    private void internal_OnStep(int inContext_addr) {
         if (PhysicsStepListenerContext_TEMP_STATIC_GEN_0 == null)
             PhysicsStepListenerContext_TEMP_STATIC_GEN_0 = new PhysicsStepListenerContext((byte) 1, (char) 1);
-        PhysicsStepListenerContext_TEMP_STATIC_GEN_0.getNativeData().reset(inContext, false);
+        PhysicsStepListenerContext_TEMP_STATIC_GEN_0.internal_reset(inContext_addr, false);
         OnStep(PhysicsStepListenerContext_TEMP_STATIC_GEN_0);
     }
 
@@ -76,6 +68,6 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSFunctor()
     public interface OnStep extends org.teavm.jso.JSObject {
 
-        void OnStep(int inContext);
+        void OnStep(int inContext_addr);
     }
 }

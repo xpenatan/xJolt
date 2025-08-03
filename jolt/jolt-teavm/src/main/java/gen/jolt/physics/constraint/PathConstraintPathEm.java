@@ -28,16 +28,8 @@ public class PathConstraintPathEm extends PathConstraintPath {
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -50,7 +42,7 @@ jolt.destroy(jsObj);
     public PathConstraintPathEm() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
@@ -63,17 +55,17 @@ jolt.destroy(jsObj);
         };
         GetClosestPoint GetClosestPoint = new GetClosestPoint() {
 
-            public float GetClosestPoint(int inPosition, float inFractionHint) {
-                return internal_GetClosestPoint(inPosition, inFractionHint);
+            public float GetClosestPoint(int inPosition_addr, float inFractionHint) {
+                return internal_GetClosestPoint(inPosition_addr, inFractionHint);
             }
         };
         GetPointOnPath GetPointOnPath = new GetPointOnPath() {
 
-            public void GetPointOnPath(float inFraction, int outPathPosition, int outPathTangent, int outPathNormal, int outPathBinormal) {
-                internal_GetPointOnPath(inFraction, outPathPosition, outPathTangent, outPathNormal, outPathBinormal);
+            public void GetPointOnPath(float inFraction, int outPathPosition_addr, int outPathTangent_addr, int outPathNormal_addr, int outPathBinormal_addr) {
+                internal_GetPointOnPath(inFraction, outPathPosition_addr, outPathTangent_addr, outPathNormal_addr, outPathBinormal_addr);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), GetPathMaxFraction, GetClosestPoint, GetPointOnPath);
+        internal_native_setupCallback(native_address, GetPathMaxFraction, GetClosestPoint, GetPointOnPath);
     }
 
     protected float GetPathMaxFraction() {
@@ -88,29 +80,29 @@ jolt.destroy(jsObj);
         return 0;
     }
 
-    private float internal_GetClosestPoint(long inPosition, float inFractionHint) {
+    private float internal_GetClosestPoint(int inPosition_addr, float inFractionHint) {
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_0.getNativeData().reset(inPosition, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(inPosition_addr, false);
         return GetClosestPoint(Vec3_TEMP_STATIC_GEN_0, inFractionHint);
     }
 
     protected void GetPointOnPath(float inFraction, Vec3 outPathPosition, Vec3 outPathTangent, Vec3 outPathNormal, Vec3 outPathBinormal) {
     }
 
-    private void internal_GetPointOnPath(float inFraction, long outPathPosition, long outPathTangent, long outPathNormal, long outPathBinormal) {
+    private void internal_GetPointOnPath(float inFraction, int outPathPosition_addr, int outPathTangent_addr, int outPathNormal_addr, int outPathBinormal_addr) {
         if (Vec3_TEMP_STATIC_GEN_1 == null)
             Vec3_TEMP_STATIC_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_1.getNativeData().reset(outPathPosition, false);
+        Vec3_TEMP_STATIC_GEN_1.internal_reset(outPathPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_2.getNativeData().reset(outPathTangent, false);
+        Vec3_TEMP_STATIC_GEN_2.internal_reset(outPathTangent_addr, false);
         if (Vec3_TEMP_STATIC_GEN_3 == null)
             Vec3_TEMP_STATIC_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_3.getNativeData().reset(outPathNormal, false);
+        Vec3_TEMP_STATIC_GEN_3.internal_reset(outPathNormal_addr, false);
         if (Vec3_TEMP_STATIC_GEN_4 == null)
             Vec3_TEMP_STATIC_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_4.getNativeData().reset(outPathBinormal, false);
+        Vec3_TEMP_STATIC_GEN_4.internal_reset(outPathBinormal_addr, false);
         GetPointOnPath(inFraction, Vec3_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4);
     }
 
@@ -133,12 +125,12 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSFunctor()
     public interface GetClosestPoint extends org.teavm.jso.JSObject {
 
-        float GetClosestPoint(int inPosition, float inFractionHint);
+        float GetClosestPoint(int inPosition_addr, float inFractionHint);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface GetPointOnPath extends org.teavm.jso.JSObject {
 
-        void GetPointOnPath(float inFraction, int outPathPosition, int outPathTangent, int outPathNormal, int outPathBinormal);
+        void GetPointOnPath(float inFraction, int outPathPosition_addr, int outPathTangent_addr, int outPathNormal_addr, int outPathBinormal_addr);
     }
 }

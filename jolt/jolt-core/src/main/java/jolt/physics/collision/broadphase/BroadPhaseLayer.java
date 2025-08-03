@@ -17,7 +17,7 @@ public class BroadPhaseLayer extends IDLBase {
 
     public BroadPhaseLayer(short inLayer) {
         long addr = internal_native_create_short(inLayer);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new BroadPhaseLayer(inLayer);
     public BroadPhaseLayer(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public short GetValue() {
-        return internal_native_GetValue((long) getNativeData().getCPointer());
+        return internal_native_GetValue(native_address);
     }
 
     /*[-JNI;-NATIVE]

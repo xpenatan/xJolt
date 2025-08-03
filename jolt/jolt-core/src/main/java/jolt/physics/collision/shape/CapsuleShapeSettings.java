@@ -17,8 +17,8 @@ public class CapsuleShapeSettings extends ConvexShapeSettings {
 
     public CapsuleShapeSettings(float inHalfHeight, float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -29,7 +29,7 @@ return (jlong)new CapsuleShapeSettings((float)inHalfHeight, (float)inRadius, (Ph
     public CapsuleShapeSettings(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float(inHalfHeight, inRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -46,7 +46,7 @@ return (jlong)new CapsuleShapeSettings((float)inHalfHeight, (float)inRadius);
     }
 
     public float get_mRadius() {
-        return internal_native_get_mRadius((long) getNativeData().getCPointer());
+        return internal_native_get_mRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -56,7 +56,7 @@ return nativeObject->mRadius;
     public static native float internal_native_get_mRadius(long this_addr);
 
     public void set_mRadius(float mRadius) {
-        internal_native_set_mRadius((long) getNativeData().getCPointer(), mRadius);
+        internal_native_set_mRadius(native_address, mRadius);
     }
 
     /*[-JNI;-NATIVE]
@@ -66,7 +66,7 @@ nativeObject->mRadius = mRadius;
     public static native void internal_native_set_mRadius(long this_addr, float mRadius);
 
     public float get_mHalfHeightOfCylinder() {
-        return internal_native_get_mHalfHeightOfCylinder((long) getNativeData().getCPointer());
+        return internal_native_get_mHalfHeightOfCylinder(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -76,7 +76,7 @@ return nativeObject->mHalfHeightOfCylinder;
     public static native float internal_native_get_mHalfHeightOfCylinder(long this_addr);
 
     public void set_mHalfHeightOfCylinder(float mHalfHeightOfCylinder) {
-        internal_native_set_mHalfHeightOfCylinder((long) getNativeData().getCPointer(), mHalfHeightOfCylinder);
+        internal_native_set_mHalfHeightOfCylinder(native_address, mHalfHeightOfCylinder);
     }
 
     /*[-JNI;-NATIVE]

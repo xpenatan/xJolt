@@ -17,7 +17,7 @@ public class VehicleAntiRollBar extends IDLBase {
 
     public VehicleAntiRollBar() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
     public VehicleAntiRollBar(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mLeftWheel() {
-        return internal_native_get_mLeftWheel((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLeftWheel(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ return jsObj.get_mLeftWheel();
     public static native int internal_native_get_mLeftWheel(int this_addr);
 
     public void set_mLeftWheel(int mLeftWheel) {
-        internal_native_set_mLeftWheel((int) (long) getNativeData().getCPointer(), mLeftWheel);
+        internal_native_set_mLeftWheel(native_address, mLeftWheel);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ jsObj.set_mLeftWheel(mLeftWheel);
     public static native void internal_native_set_mLeftWheel(int this_addr, int mLeftWheel);
 
     public int get_mRightWheel() {
-        return internal_native_get_mRightWheel((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mRightWheel(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +79,7 @@ return jsObj.get_mRightWheel();
     public static native int internal_native_get_mRightWheel(int this_addr);
 
     public void set_mRightWheel(int mRightWheel) {
-        internal_native_set_mRightWheel((int) (long) getNativeData().getCPointer(), mRightWheel);
+        internal_native_set_mRightWheel(native_address, mRightWheel);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -98,7 +90,7 @@ jsObj.set_mRightWheel(mRightWheel);
     public static native void internal_native_set_mRightWheel(int this_addr, int mRightWheel);
 
     public float get_mStiffness() {
-        return internal_native_get_mStiffness((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mStiffness(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -109,7 +101,7 @@ return jsObj.get_mStiffness();
     public static native float internal_native_get_mStiffness(int this_addr);
 
     public void set_mStiffness(float mStiffness) {
-        internal_native_set_mStiffness((int) (long) getNativeData().getCPointer(), mStiffness);
+        internal_native_set_mStiffness(native_address, mStiffness);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -18,7 +18,7 @@ public class SpecifiedObjectLayerFilter extends ObjectLayerFilter {
     public SpecifiedObjectLayerFilter(int inObjectLayer) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int(inObjectLayer);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -36,16 +36,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -20,7 +20,7 @@ public class EmptyShapeSettings extends ShapeSettings {
     public EmptyShapeSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -36,16 +36,8 @@ return (jlong)new EmptyShapeSettings();
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -55,12 +47,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mCenterOfMass() {
-        long pointer = internal_native_get_mCenterOfMass((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mCenterOfMass(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -71,7 +63,7 @@ return (jlong)&nativeObject->mCenterOfMass;
     public static native long internal_native_get_mCenterOfMass(long this_addr);
 
     public void set_mCenterOfMass(Vec3 mCenterOfMass) {
-        internal_native_set_mCenterOfMass((long) getNativeData().getCPointer(), (long) (mCenterOfMass != null ? mCenterOfMass.getNativeData().getCPointer() : 0));
+        internal_native_set_mCenterOfMass(native_address, (mCenterOfMass != null ? mCenterOfMass.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

@@ -25,8 +25,8 @@ public class SoftBodyCreationSettings extends IDLBase {
     static public final SoftBodyCreationSettings T_03 = new SoftBodyCreationSettings((byte) 1, (char) 1);
 
     public SoftBodyCreationSettings(SoftBodySharedSettings inSettings, Vec3 inPosition, Quat inRotation, int inObjectLayer) {
-        int addr = internal_native_create_SoftBodySharedSettings_Vec3_Quat_int((int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inObjectLayer);
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_SoftBodySharedSettings_Vec3_Quat_int((inSettings != null ? inSettings.native_address : 0), (inPosition != null ? inPosition.native_address : 0), (inRotation != null ? inRotation.native_address : 0), inObjectLayer);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -43,16 +43,8 @@ return jolt.getPointer(jsObj);
     public SoftBodyCreationSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -63,12 +55,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mPosition() {
-        int pointer = internal_native_get_mPosition((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -82,7 +74,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPosition(int this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
-        internal_native_set_mPosition((int) (long) getNativeData().getCPointer(), (int) (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
+        internal_native_set_mPosition(native_address, (mPosition != null ? mPosition.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -93,12 +85,12 @@ jsObj.set_mPosition(mPosition_addr);
     public static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
 
     public Quat get_mRotation() {
-        int pointer = internal_native_get_mRotation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mRotation(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -112,7 +104,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mRotation(int this_addr);
 
     public void set_mRotation(Quat mRotation) {
-        internal_native_set_mRotation((int) (long) getNativeData().getCPointer(), (int) (long) (mRotation != null ? mRotation.getNativeData().getCPointer() : 0));
+        internal_native_set_mRotation(native_address, (mRotation != null ? mRotation.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -123,7 +115,7 @@ jsObj.set_mRotation(mRotation_addr);
     public static native void internal_native_set_mRotation(int this_addr, int mRotation_addr);
 
     public long get_mUserData() {
-        return internal_native_get_mUserData((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mUserData(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -134,7 +126,7 @@ return jsObj.get_mUserData();
     public static native int internal_native_get_mUserData(int this_addr);
 
     public void set_mUserData(long mUserData) {
-        internal_native_set_mUserData((int) (long) getNativeData().getCPointer(), (int) mUserData);
+        internal_native_set_mUserData(native_address, (int) mUserData);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -145,7 +137,7 @@ jsObj.set_mUserData(mUserData);
     public static native void internal_native_set_mUserData(int this_addr, int mUserData);
 
     public int get_mObjectLayer() {
-        return internal_native_get_mObjectLayer((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mObjectLayer(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -156,7 +148,7 @@ return jsObj.get_mObjectLayer();
     public static native int internal_native_get_mObjectLayer(int this_addr);
 
     public void set_mObjectLayer(int mObjectLayer) {
-        internal_native_set_mObjectLayer((int) (long) getNativeData().getCPointer(), mObjectLayer);
+        internal_native_set_mObjectLayer(native_address, mObjectLayer);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -167,12 +159,12 @@ jsObj.set_mObjectLayer(mObjectLayer);
     public static native void internal_native_set_mObjectLayer(int this_addr, int mObjectLayer);
 
     public CollisionGroup get_mCollisionGroup() {
-        int pointer = internal_native_get_mCollisionGroup((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mCollisionGroup(native_address);
         if (pointer == 0)
             return null;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = new CollisionGroup((byte) 1, (char) 1);
-        CollisionGroup_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);
         return CollisionGroup_TEMP_GEN_0;
     }
 
@@ -186,7 +178,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mCollisionGroup(int this_addr);
 
     public void set_mCollisionGroup(CollisionGroup mCollisionGroup) {
-        internal_native_set_mCollisionGroup((int) (long) getNativeData().getCPointer(), (int) (long) (mCollisionGroup != null ? mCollisionGroup.getNativeData().getCPointer() : 0));
+        internal_native_set_mCollisionGroup(native_address, (mCollisionGroup != null ? mCollisionGroup.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -197,7 +189,7 @@ jsObj.set_mCollisionGroup(mCollisionGroup_addr);
     public static native void internal_native_set_mCollisionGroup(int this_addr, int mCollisionGroup_addr);
 
     public int get_mNumIterations() {
-        return internal_native_get_mNumIterations((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mNumIterations(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -208,7 +200,7 @@ return jsObj.get_mNumIterations();
     public static native int internal_native_get_mNumIterations(int this_addr);
 
     public void set_mNumIterations(int mNumIterations) {
-        internal_native_set_mNumIterations((int) (long) getNativeData().getCPointer(), mNumIterations);
+        internal_native_set_mNumIterations(native_address, mNumIterations);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -219,7 +211,7 @@ jsObj.set_mNumIterations(mNumIterations);
     public static native void internal_native_set_mNumIterations(int this_addr, int mNumIterations);
 
     public float get_mLinearDamping() {
-        return internal_native_get_mLinearDamping((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLinearDamping(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -230,7 +222,7 @@ return jsObj.get_mLinearDamping();
     public static native float internal_native_get_mLinearDamping(int this_addr);
 
     public void set_mLinearDamping(float mLinearDamping) {
-        internal_native_set_mLinearDamping((int) (long) getNativeData().getCPointer(), mLinearDamping);
+        internal_native_set_mLinearDamping(native_address, mLinearDamping);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -241,7 +233,7 @@ jsObj.set_mLinearDamping(mLinearDamping);
     public static native void internal_native_set_mLinearDamping(int this_addr, float mLinearDamping);
 
     public float get_mMaxLinearVelocity() {
-        return internal_native_get_mMaxLinearVelocity((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxLinearVelocity(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -252,7 +244,7 @@ return jsObj.get_mMaxLinearVelocity();
     public static native float internal_native_get_mMaxLinearVelocity(int this_addr);
 
     public void set_mMaxLinearVelocity(float mMaxLinearVelocity) {
-        internal_native_set_mMaxLinearVelocity((int) (long) getNativeData().getCPointer(), mMaxLinearVelocity);
+        internal_native_set_mMaxLinearVelocity(native_address, mMaxLinearVelocity);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -263,7 +255,7 @@ jsObj.set_mMaxLinearVelocity(mMaxLinearVelocity);
     public static native void internal_native_set_mMaxLinearVelocity(int this_addr, float mMaxLinearVelocity);
 
     public float get_mRestitution() {
-        return internal_native_get_mRestitution((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mRestitution(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -274,7 +266,7 @@ return jsObj.get_mRestitution();
     public static native float internal_native_get_mRestitution(int this_addr);
 
     public void set_mRestitution(float mRestitution) {
-        internal_native_set_mRestitution((int) (long) getNativeData().getCPointer(), mRestitution);
+        internal_native_set_mRestitution(native_address, mRestitution);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -285,7 +277,7 @@ jsObj.set_mRestitution(mRestitution);
     public static native void internal_native_set_mRestitution(int this_addr, float mRestitution);
 
     public float get_mFriction() {
-        return internal_native_get_mFriction((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mFriction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -296,7 +288,7 @@ return jsObj.get_mFriction();
     public static native float internal_native_get_mFriction(int this_addr);
 
     public void set_mFriction(float mFriction) {
-        internal_native_set_mFriction((int) (long) getNativeData().getCPointer(), mFriction);
+        internal_native_set_mFriction(native_address, mFriction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -307,7 +299,7 @@ jsObj.set_mFriction(mFriction);
     public static native void internal_native_set_mFriction(int this_addr, float mFriction);
 
     public float get_mPressure() {
-        return internal_native_get_mPressure((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mPressure(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -318,7 +310,7 @@ return jsObj.get_mPressure();
     public static native float internal_native_get_mPressure(int this_addr);
 
     public void set_mPressure(float mPressure) {
-        internal_native_set_mPressure((int) (long) getNativeData().getCPointer(), mPressure);
+        internal_native_set_mPressure(native_address, mPressure);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -329,7 +321,7 @@ jsObj.set_mPressure(mPressure);
     public static native void internal_native_set_mPressure(int this_addr, float mPressure);
 
     public float get_mGravityFactor() {
-        return internal_native_get_mGravityFactor((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mGravityFactor(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -340,7 +332,7 @@ return jsObj.get_mGravityFactor();
     public static native float internal_native_get_mGravityFactor(int this_addr);
 
     public void set_mGravityFactor(float mGravityFactor) {
-        internal_native_set_mGravityFactor((int) (long) getNativeData().getCPointer(), mGravityFactor);
+        internal_native_set_mGravityFactor(native_address, mGravityFactor);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -351,7 +343,7 @@ jsObj.set_mGravityFactor(mGravityFactor);
     public static native void internal_native_set_mGravityFactor(int this_addr, float mGravityFactor);
 
     public boolean get_mUpdatePosition() {
-        return internal_native_get_mUpdatePosition((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mUpdatePosition(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -362,7 +354,7 @@ return jsObj.get_mUpdatePosition();
     public static native boolean internal_native_get_mUpdatePosition(int this_addr);
 
     public void set_mUpdatePosition(boolean mUpdatePosition) {
-        internal_native_set_mUpdatePosition((int) (long) getNativeData().getCPointer(), mUpdatePosition);
+        internal_native_set_mUpdatePosition(native_address, mUpdatePosition);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -373,7 +365,7 @@ jsObj.set_mUpdatePosition(mUpdatePosition);
     public static native void internal_native_set_mUpdatePosition(int this_addr, boolean mUpdatePosition);
 
     public boolean get_mMakeRotationIdentity() {
-        return internal_native_get_mMakeRotationIdentity((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMakeRotationIdentity(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -384,7 +376,7 @@ return jsObj.get_mMakeRotationIdentity();
     public static native boolean internal_native_get_mMakeRotationIdentity(int this_addr);
 
     public void set_mMakeRotationIdentity(boolean mMakeRotationIdentity) {
-        internal_native_set_mMakeRotationIdentity((int) (long) getNativeData().getCPointer(), mMakeRotationIdentity);
+        internal_native_set_mMakeRotationIdentity(native_address, mMakeRotationIdentity);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -395,7 +387,7 @@ jsObj.set_mMakeRotationIdentity(mMakeRotationIdentity);
     public static native void internal_native_set_mMakeRotationIdentity(int this_addr, boolean mMakeRotationIdentity);
 
     public boolean get_mAllowSleeping() {
-        return internal_native_get_mAllowSleeping((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mAllowSleeping(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -406,7 +398,7 @@ return jsObj.get_mAllowSleeping();
     public static native boolean internal_native_get_mAllowSleeping(int this_addr);
 
     public void set_mAllowSleeping(boolean mAllowSleeping) {
-        internal_native_set_mAllowSleeping((int) (long) getNativeData().getCPointer(), mAllowSleeping);
+        internal_native_set_mAllowSleeping(native_address, mAllowSleeping);
     }
 
     /*[-TEAVM;-NATIVE]

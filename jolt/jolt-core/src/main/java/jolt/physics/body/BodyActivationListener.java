@@ -44,16 +44,8 @@ virtual void OnBodyDeactivated(const BodyID& inBodyID, uint64 inBodyUserData) {
     public BodyActivationListener(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,31 +56,31 @@ delete nativeObject;
 
     public BodyActivationListener() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected void OnBodyActivated(BodyID inBodyID, long inBodyUserData) {
     }
 
-    private void internal_OnBodyActivated(long inBodyID, long inBodyUserData) {
+    private void internal_OnBodyActivated(long inBodyID_addr, long inBodyUserData) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
             BodyID_TEMP_STATIC_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_0.getNativeData().reset(inBodyID, false);
+        BodyID_TEMP_STATIC_GEN_0.internal_reset(inBodyID_addr, false);
         OnBodyActivated(BodyID_TEMP_STATIC_GEN_0, inBodyUserData);
     }
 
     protected void OnBodyDeactivated(BodyID inBodyID, long inBodyUserData) {
     }
 
-    private void internal_OnBodyDeactivated(long inBodyID, long inBodyUserData) {
+    private void internal_OnBodyDeactivated(long inBodyID_addr, long inBodyUserData) {
         if (BodyID_TEMP_STATIC_GEN_1 == null)
             BodyID_TEMP_STATIC_GEN_1 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_1.getNativeData().reset(inBodyID, false);
+        BodyID_TEMP_STATIC_GEN_1.internal_reset(inBodyID_addr, false);
         OnBodyDeactivated(BodyID_TEMP_STATIC_GEN_1, inBodyUserData);
     }
 

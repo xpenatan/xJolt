@@ -25,16 +25,8 @@ public class VehicleTrackSettings extends IDLBase {
     public VehicleTrackSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -45,7 +37,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mDrivenWheel() {
-        return internal_native_get_mDrivenWheel((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrivenWheel(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +48,7 @@ return jsObj.get_mDrivenWheel();
     public static native int internal_native_get_mDrivenWheel(int this_addr);
 
     public void set_mDrivenWheel(int mDrivenWheel) {
-        internal_native_set_mDrivenWheel((int) (long) getNativeData().getCPointer(), mDrivenWheel);
+        internal_native_set_mDrivenWheel(native_address, mDrivenWheel);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,12 +59,12 @@ jsObj.set_mDrivenWheel(mDrivenWheel);
     public static native void internal_native_set_mDrivenWheel(int this_addr, int mDrivenWheel);
 
     public ArrayUint get_mWheels() {
-        int pointer = internal_native_get_mWheels((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mWheels(native_address);
         if (pointer == 0)
             return null;
         if (ArrayUint_TEMP_GEN_0 == null)
             ArrayUint_TEMP_GEN_0 = new ArrayUint((byte) 1, (char) 1);
-        ArrayUint_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayUint_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayUint_TEMP_GEN_0;
     }
 
@@ -86,7 +78,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mWheels(int this_addr);
 
     public void set_mWheels(ArrayUint mWheels) {
-        internal_native_set_mWheels((int) (long) getNativeData().getCPointer(), (int) (long) (mWheels != null ? mWheels.getNativeData().getCPointer() : 0));
+        internal_native_set_mWheels(native_address, (mWheels != null ? mWheels.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,7 +89,7 @@ jsObj.set_mWheels(mWheels_addr);
     public static native void internal_native_set_mWheels(int this_addr, int mWheels_addr);
 
     public float get_mInertia() {
-        return internal_native_get_mInertia((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mInertia(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -108,7 +100,7 @@ return jsObj.get_mInertia();
     public static native float internal_native_get_mInertia(int this_addr);
 
     public void set_mInertia(float mInertia) {
-        internal_native_set_mInertia((int) (long) getNativeData().getCPointer(), mInertia);
+        internal_native_set_mInertia(native_address, mInertia);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -119,7 +111,7 @@ jsObj.set_mInertia(mInertia);
     public static native void internal_native_set_mInertia(int this_addr, float mInertia);
 
     public float get_mAngularDamping() {
-        return internal_native_get_mAngularDamping((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mAngularDamping(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -130,7 +122,7 @@ return jsObj.get_mAngularDamping();
     public static native float internal_native_get_mAngularDamping(int this_addr);
 
     public void set_mAngularDamping(float mAngularDamping) {
-        internal_native_set_mAngularDamping((int) (long) getNativeData().getCPointer(), mAngularDamping);
+        internal_native_set_mAngularDamping(native_address, mAngularDamping);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -141,7 +133,7 @@ jsObj.set_mAngularDamping(mAngularDamping);
     public static native void internal_native_set_mAngularDamping(int this_addr, float mAngularDamping);
 
     public float get_mMaxBrakeTorque() {
-        return internal_native_get_mMaxBrakeTorque((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxBrakeTorque(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -152,7 +144,7 @@ return jsObj.get_mMaxBrakeTorque();
     public static native float internal_native_get_mMaxBrakeTorque(int this_addr);
 
     public void set_mMaxBrakeTorque(float mMaxBrakeTorque) {
-        internal_native_set_mMaxBrakeTorque((int) (long) getNativeData().getCPointer(), mMaxBrakeTorque);
+        internal_native_set_mMaxBrakeTorque(native_address, mMaxBrakeTorque);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -163,7 +155,7 @@ jsObj.set_mMaxBrakeTorque(mMaxBrakeTorque);
     public static native void internal_native_set_mMaxBrakeTorque(int this_addr, float mMaxBrakeTorque);
 
     public float get_mDifferentialRatio() {
-        return internal_native_get_mDifferentialRatio((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDifferentialRatio(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -174,7 +166,7 @@ return jsObj.get_mDifferentialRatio();
     public static native float internal_native_get_mDifferentialRatio(int this_addr);
 
     public void set_mDifferentialRatio(float mDifferentialRatio) {
-        internal_native_set_mDifferentialRatio((int) (long) getNativeData().getCPointer(), mDifferentialRatio);
+        internal_native_set_mDifferentialRatio(native_address, mDifferentialRatio);
     }
 
     /*[-TEAVM;-NATIVE]

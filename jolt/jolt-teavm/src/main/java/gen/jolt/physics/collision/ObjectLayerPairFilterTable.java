@@ -16,7 +16,7 @@ public class ObjectLayerPairFilterTable extends ObjectLayerPairFilter {
     public ObjectLayerPairFilterTable(int inNumObjectLayers) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int(inNumObjectLayers);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -35,7 +35,7 @@ return jolt.getPointer(jsObj);
     }
 
     public int GetNumObjectLayers() {
-        return internal_native_GetNumObjectLayers((int) (long) getNativeData().getCPointer());
+        return internal_native_GetNumObjectLayers(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -47,7 +47,7 @@ return returnedJSObj;
     public static native int internal_native_GetNumObjectLayers(int this_addr);
 
     public void DisableCollision(int inLayer1, int inLayer2) {
-        internal_native_DisableCollision((int) (long) getNativeData().getCPointer(), inLayer1, inLayer2);
+        internal_native_DisableCollision(native_address, inLayer1, inLayer2);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -58,7 +58,7 @@ jsObj.DisableCollision(inLayer1, inLayer2);
     public static native void internal_native_DisableCollision(int this_addr, int inLayer1, int inLayer2);
 
     public void EnableCollision(int inLayer1, int inLayer2) {
-        internal_native_EnableCollision((int) (long) getNativeData().getCPointer(), inLayer1, inLayer2);
+        internal_native_EnableCollision(native_address, inLayer1, inLayer2);
     }
 
     /*[-TEAVM;-NATIVE]

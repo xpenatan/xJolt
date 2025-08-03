@@ -45,16 +45,8 @@ public class ContactListenerEm extends ContactListener {
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,103 +59,103 @@ jolt.destroy(jsObj);
     public ContactListenerEm() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
         OnContactValidate OnContactValidate = new OnContactValidate() {
 
-            public int OnContactValidate(int inBody1, int inBody2, int inBaseOffset, int inCollisionResult) {
-                return internal_OnContactValidate(inBody1, inBody2, inBaseOffset, inCollisionResult);
+            public int OnContactValidate(int inBody1_addr, int inBody2_addr, int inBaseOffset_addr, int inCollisionResult_addr) {
+                return internal_OnContactValidate(inBody1_addr, inBody2_addr, inBaseOffset_addr, inCollisionResult_addr);
             }
         };
         OnContactAdded OnContactAdded = new OnContactAdded() {
 
-            public void OnContactAdded(int inBody1, int inBody2, int inManifold, int ioSettings) {
-                internal_OnContactAdded(inBody1, inBody2, inManifold, ioSettings);
+            public void OnContactAdded(int inBody1_addr, int inBody2_addr, int inManifold_addr, int ioSettings_addr) {
+                internal_OnContactAdded(inBody1_addr, inBody2_addr, inManifold_addr, ioSettings_addr);
             }
         };
         OnContactPersisted OnContactPersisted = new OnContactPersisted() {
 
-            public void OnContactPersisted(int inBody1, int inBody2, int inManifold, int ioSettings) {
-                internal_OnContactPersisted(inBody1, inBody2, inManifold, ioSettings);
+            public void OnContactPersisted(int inBody1_addr, int inBody2_addr, int inManifold_addr, int ioSettings_addr) {
+                internal_OnContactPersisted(inBody1_addr, inBody2_addr, inManifold_addr, ioSettings_addr);
             }
         };
         OnContactRemoved OnContactRemoved = new OnContactRemoved() {
 
-            public void OnContactRemoved(int inSubShapePair) {
-                internal_OnContactRemoved(inSubShapePair);
+            public void OnContactRemoved(int inSubShapePair_addr) {
+                internal_OnContactRemoved(inSubShapePair_addr);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), OnContactValidate, OnContactAdded, OnContactPersisted, OnContactRemoved);
+        internal_native_setupCallback(native_address, OnContactValidate, OnContactAdded, OnContactPersisted, OnContactRemoved);
     }
 
     protected int OnContactValidate(Body inBody1, Body inBody2, Vec3 inBaseOffset, CollideShapeResult inCollisionResult) {
         return 0;
     }
 
-    private int internal_OnContactValidate(long inBody1, long inBody2, long inBaseOffset, long inCollisionResult) {
+    private int internal_OnContactValidate(int inBody1_addr, int inBody2_addr, int inBaseOffset_addr, int inCollisionResult_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
             Body_TEMP_STATIC_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_0.getNativeData().reset(inBody1, false);
+        Body_TEMP_STATIC_GEN_0.internal_reset(inBody1_addr, false);
         if (Body_TEMP_STATIC_GEN_1 == null)
             Body_TEMP_STATIC_GEN_1 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_1.getNativeData().reset(inBody2, false);
+        Body_TEMP_STATIC_GEN_1.internal_reset(inBody2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_0.getNativeData().reset(inBaseOffset, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(inBaseOffset_addr, false);
         if (CollideShapeResult_TEMP_STATIC_GEN_0 == null)
             CollideShapeResult_TEMP_STATIC_GEN_0 = new CollideShapeResult((byte) 1, (char) 1);
-        CollideShapeResult_TEMP_STATIC_GEN_0.getNativeData().reset(inCollisionResult, false);
+        CollideShapeResult_TEMP_STATIC_GEN_0.internal_reset(inCollisionResult_addr, false);
         return OnContactValidate(Body_TEMP_STATIC_GEN_0, Body_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_0, CollideShapeResult_TEMP_STATIC_GEN_0);
     }
 
     protected void OnContactAdded(Body inBody1, Body inBody2, ContactManifold inManifold, ContactSettings ioSettings) {
     }
 
-    private void internal_OnContactAdded(long inBody1, long inBody2, long inManifold, long ioSettings) {
+    private void internal_OnContactAdded(int inBody1_addr, int inBody2_addr, int inManifold_addr, int ioSettings_addr) {
         if (Body_TEMP_STATIC_GEN_2 == null)
             Body_TEMP_STATIC_GEN_2 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_2.getNativeData().reset(inBody1, false);
+        Body_TEMP_STATIC_GEN_2.internal_reset(inBody1_addr, false);
         if (Body_TEMP_STATIC_GEN_3 == null)
             Body_TEMP_STATIC_GEN_3 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_3.getNativeData().reset(inBody2, false);
+        Body_TEMP_STATIC_GEN_3.internal_reset(inBody2_addr, false);
         if (ContactManifold_TEMP_STATIC_GEN_0 == null)
             ContactManifold_TEMP_STATIC_GEN_0 = new ContactManifold((byte) 1, (char) 1);
-        ContactManifold_TEMP_STATIC_GEN_0.getNativeData().reset(inManifold, false);
+        ContactManifold_TEMP_STATIC_GEN_0.internal_reset(inManifold_addr, false);
         if (ContactSettings_TEMP_STATIC_GEN_0 == null)
             ContactSettings_TEMP_STATIC_GEN_0 = new ContactSettings((byte) 1, (char) 1);
-        ContactSettings_TEMP_STATIC_GEN_0.getNativeData().reset(ioSettings, false);
+        ContactSettings_TEMP_STATIC_GEN_0.internal_reset(ioSettings_addr, false);
         OnContactAdded(Body_TEMP_STATIC_GEN_2, Body_TEMP_STATIC_GEN_3, ContactManifold_TEMP_STATIC_GEN_0, ContactSettings_TEMP_STATIC_GEN_0);
     }
 
     protected void OnContactPersisted(Body inBody1, Body inBody2, ContactManifold inManifold, ContactSettings ioSettings) {
     }
 
-    private void internal_OnContactPersisted(long inBody1, long inBody2, long inManifold, long ioSettings) {
+    private void internal_OnContactPersisted(int inBody1_addr, int inBody2_addr, int inManifold_addr, int ioSettings_addr) {
         if (Body_TEMP_STATIC_GEN_4 == null)
             Body_TEMP_STATIC_GEN_4 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_4.getNativeData().reset(inBody1, false);
+        Body_TEMP_STATIC_GEN_4.internal_reset(inBody1_addr, false);
         if (Body_TEMP_STATIC_GEN_5 == null)
             Body_TEMP_STATIC_GEN_5 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_5.getNativeData().reset(inBody2, false);
+        Body_TEMP_STATIC_GEN_5.internal_reset(inBody2_addr, false);
         if (ContactManifold_TEMP_STATIC_GEN_1 == null)
             ContactManifold_TEMP_STATIC_GEN_1 = new ContactManifold((byte) 1, (char) 1);
-        ContactManifold_TEMP_STATIC_GEN_1.getNativeData().reset(inManifold, false);
+        ContactManifold_TEMP_STATIC_GEN_1.internal_reset(inManifold_addr, false);
         if (ContactSettings_TEMP_STATIC_GEN_1 == null)
             ContactSettings_TEMP_STATIC_GEN_1 = new ContactSettings((byte) 1, (char) 1);
-        ContactSettings_TEMP_STATIC_GEN_1.getNativeData().reset(ioSettings, false);
+        ContactSettings_TEMP_STATIC_GEN_1.internal_reset(ioSettings_addr, false);
         OnContactPersisted(Body_TEMP_STATIC_GEN_4, Body_TEMP_STATIC_GEN_5, ContactManifold_TEMP_STATIC_GEN_1, ContactSettings_TEMP_STATIC_GEN_1);
     }
 
     protected void OnContactRemoved(SubShapeIDPair inSubShapePair) {
     }
 
-    private void internal_OnContactRemoved(long inSubShapePair) {
+    private void internal_OnContactRemoved(int inSubShapePair_addr) {
         if (SubShapeIDPair_TEMP_STATIC_GEN_0 == null)
             SubShapeIDPair_TEMP_STATIC_GEN_0 = new SubShapeIDPair((byte) 1, (char) 1);
-        SubShapeIDPair_TEMP_STATIC_GEN_0.getNativeData().reset(inSubShapePair, false);
+        SubShapeIDPair_TEMP_STATIC_GEN_0.internal_reset(inSubShapePair_addr, false);
         OnContactRemoved(SubShapeIDPair_TEMP_STATIC_GEN_0);
     }
 
@@ -180,24 +172,24 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSFunctor()
     public interface OnContactValidate extends org.teavm.jso.JSObject {
 
-        int OnContactValidate(int inBody1, int inBody2, int inBaseOffset, int inCollisionResult);
+        int OnContactValidate(int inBody1_addr, int inBody2_addr, int inBaseOffset_addr, int inCollisionResult_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface OnContactAdded extends org.teavm.jso.JSObject {
 
-        void OnContactAdded(int inBody1, int inBody2, int inManifold, int ioSettings);
+        void OnContactAdded(int inBody1_addr, int inBody2_addr, int inManifold_addr, int ioSettings_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface OnContactPersisted extends org.teavm.jso.JSObject {
 
-        void OnContactPersisted(int inBody1, int inBody2, int inManifold, int ioSettings);
+        void OnContactPersisted(int inBody1_addr, int inBody2_addr, int inManifold_addr, int ioSettings_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface OnContactRemoved extends org.teavm.jso.JSObject {
 
-        void OnContactRemoved(int inSubShapePair);
+        void OnContactRemoved(int inSubShapePair_addr);
     }
 }

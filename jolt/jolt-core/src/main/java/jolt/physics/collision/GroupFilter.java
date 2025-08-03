@@ -39,16 +39,8 @@ virtual bool CanCollide(const CollisionGroup& inGroup1, const CollisionGroup& in
     public GroupFilter(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -58,7 +50,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -68,7 +60,7 @@ return nativeObject->GetRefCount();
     public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -78,7 +70,7 @@ nativeObject->AddRef();
     public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
-        internal_native_Release((long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -89,25 +81,25 @@ nativeObject->Release();
 
     public GroupFilter() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected boolean CanCollide(CollisionGroup inGroup1, CollisionGroup inGroup2) {
         return false;
     }
 
-    private boolean internal_CanCollide(long inGroup1, long inGroup2) {
+    private boolean internal_CanCollide(long inGroup1_addr, long inGroup2_addr) {
         if (CollisionGroup_TEMP_STATIC_GEN_0 == null)
             CollisionGroup_TEMP_STATIC_GEN_0 = new CollisionGroup((byte) 1, (char) 1);
-        CollisionGroup_TEMP_STATIC_GEN_0.getNativeData().reset(inGroup1, false);
+        CollisionGroup_TEMP_STATIC_GEN_0.internal_reset(inGroup1_addr, false);
         if (CollisionGroup_TEMP_STATIC_GEN_1 == null)
             CollisionGroup_TEMP_STATIC_GEN_1 = new CollisionGroup((byte) 1, (char) 1);
-        CollisionGroup_TEMP_STATIC_GEN_1.getNativeData().reset(inGroup2, false);
+        CollisionGroup_TEMP_STATIC_GEN_1.internal_reset(inGroup2_addr, false);
         return CanCollide(CollisionGroup_TEMP_STATIC_GEN_0, CollisionGroup_TEMP_STATIC_GEN_1);
     }
 

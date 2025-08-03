@@ -22,7 +22,7 @@ public class WheelSettingsWV extends WheelSettings {
     public WheelSettingsWV() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     }
 
     public float get_mInertia() {
-        return internal_native_get_mInertia((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mInertia(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -52,7 +52,7 @@ return jsObj.get_mInertia();
     public static native float internal_native_get_mInertia(int this_addr);
 
     public void set_mInertia(float mInertia) {
-        internal_native_set_mInertia((int) (long) getNativeData().getCPointer(), mInertia);
+        internal_native_set_mInertia(native_address, mInertia);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -63,7 +63,7 @@ jsObj.set_mInertia(mInertia);
     public static native void internal_native_set_mInertia(int this_addr, float mInertia);
 
     public float get_mAngularDamping() {
-        return internal_native_get_mAngularDamping((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mAngularDamping(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -74,7 +74,7 @@ return jsObj.get_mAngularDamping();
     public static native float internal_native_get_mAngularDamping(int this_addr);
 
     public void set_mAngularDamping(float mAngularDamping) {
-        internal_native_set_mAngularDamping((int) (long) getNativeData().getCPointer(), mAngularDamping);
+        internal_native_set_mAngularDamping(native_address, mAngularDamping);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -85,7 +85,7 @@ jsObj.set_mAngularDamping(mAngularDamping);
     public static native void internal_native_set_mAngularDamping(int this_addr, float mAngularDamping);
 
     public float get_mMaxSteerAngle() {
-        return internal_native_get_mMaxSteerAngle((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxSteerAngle(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -96,7 +96,7 @@ return jsObj.get_mMaxSteerAngle();
     public static native float internal_native_get_mMaxSteerAngle(int this_addr);
 
     public void set_mMaxSteerAngle(float mMaxSteerAngle) {
-        internal_native_set_mMaxSteerAngle((int) (long) getNativeData().getCPointer(), mMaxSteerAngle);
+        internal_native_set_mMaxSteerAngle(native_address, mMaxSteerAngle);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -107,12 +107,12 @@ jsObj.set_mMaxSteerAngle(mMaxSteerAngle);
     public static native void internal_native_set_mMaxSteerAngle(int this_addr, float mMaxSteerAngle);
 
     public LinearCurve get_mLongitudinalFriction() {
-        int pointer = internal_native_get_mLongitudinalFriction((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mLongitudinalFriction(native_address);
         if (pointer == 0)
             return null;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = new LinearCurve((byte) 1, (char) 1);
-        LinearCurve_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);
         return LinearCurve_TEMP_GEN_0;
     }
 
@@ -126,7 +126,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mLongitudinalFriction(int this_addr);
 
     public void set_mLongitudinalFriction(LinearCurve mLongitudinalFriction) {
-        internal_native_set_mLongitudinalFriction((int) (long) getNativeData().getCPointer(), (int) (long) (mLongitudinalFriction != null ? mLongitudinalFriction.getNativeData().getCPointer() : 0));
+        internal_native_set_mLongitudinalFriction(native_address, (mLongitudinalFriction != null ? mLongitudinalFriction.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -137,12 +137,12 @@ jsObj.set_mLongitudinalFriction(mLongitudinalFriction_addr);
     public static native void internal_native_set_mLongitudinalFriction(int this_addr, int mLongitudinalFriction_addr);
 
     public LinearCurve get_mLateralFriction() {
-        int pointer = internal_native_get_mLateralFriction((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mLateralFriction(native_address);
         if (pointer == 0)
             return null;
         if (LinearCurve_TEMP_GEN_1 == null)
             LinearCurve_TEMP_GEN_1 = new LinearCurve((byte) 1, (char) 1);
-        LinearCurve_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        LinearCurve_TEMP_GEN_1.internal_reset(pointer, false);
         return LinearCurve_TEMP_GEN_1;
     }
 
@@ -156,7 +156,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mLateralFriction(int this_addr);
 
     public void set_mLateralFriction(LinearCurve mLateralFriction) {
-        internal_native_set_mLateralFriction((int) (long) getNativeData().getCPointer(), (int) (long) (mLateralFriction != null ? mLateralFriction.getNativeData().getCPointer() : 0));
+        internal_native_set_mLateralFriction(native_address, (mLateralFriction != null ? mLateralFriction.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -167,7 +167,7 @@ jsObj.set_mLateralFriction(mLateralFriction_addr);
     public static native void internal_native_set_mLateralFriction(int this_addr, int mLateralFriction_addr);
 
     public float get_mMaxBrakeTorque() {
-        return internal_native_get_mMaxBrakeTorque((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxBrakeTorque(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -178,7 +178,7 @@ return jsObj.get_mMaxBrakeTorque();
     public static native float internal_native_get_mMaxBrakeTorque(int this_addr);
 
     public void set_mMaxBrakeTorque(float mMaxBrakeTorque) {
-        internal_native_set_mMaxBrakeTorque((int) (long) getNativeData().getCPointer(), mMaxBrakeTorque);
+        internal_native_set_mMaxBrakeTorque(native_address, mMaxBrakeTorque);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -189,7 +189,7 @@ jsObj.set_mMaxBrakeTorque(mMaxBrakeTorque);
     public static native void internal_native_set_mMaxBrakeTorque(int this_addr, float mMaxBrakeTorque);
 
     public float get_mMaxHandBrakeTorque() {
-        return internal_native_get_mMaxHandBrakeTorque((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxHandBrakeTorque(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -200,7 +200,7 @@ return jsObj.get_mMaxHandBrakeTorque();
     public static native float internal_native_get_mMaxHandBrakeTorque(int this_addr);
 
     public void set_mMaxHandBrakeTorque(float mMaxHandBrakeTorque) {
-        internal_native_set_mMaxHandBrakeTorque((int) (long) getNativeData().getCPointer(), mMaxHandBrakeTorque);
+        internal_native_set_mMaxHandBrakeTorque(native_address, mMaxHandBrakeTorque);
     }
 
     /*[-TEAVM;-NATIVE]

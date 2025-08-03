@@ -27,7 +27,7 @@ public class MutableCompoundShape extends CompoundShape {
     }
 
     public int AddShape(Vec3 inPosition, Quat inRotation, Shape inShape, int inUserData) {
-        return internal_native_AddShape((long) getNativeData().getCPointer(), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), inUserData);
+        return internal_native_AddShape(native_address, (inPosition != null ? inPosition.native_address : 0), (inRotation != null ? inRotation.native_address : 0), (inShape != null ? inShape.native_address : 0), inUserData);
     }
 
     /*[-JNI;-NATIVE]
@@ -37,7 +37,7 @@ return nativeObject->AddShape(*((Vec3* )inPosition_addr), *((Quat* )inRotation_a
     public static native int internal_native_AddShape(long this_addr, long inPosition_addr, long inRotation_addr, long inShape_addr, int inUserData);
 
     public void RemoveShape(int inIndex) {
-        internal_native_RemoveShape((long) getNativeData().getCPointer(), inIndex);
+        internal_native_RemoveShape(native_address, inIndex);
     }
 
     /*[-JNI;-NATIVE]
@@ -47,7 +47,7 @@ nativeObject->RemoveShape(inIndex);
     public static native void internal_native_RemoveShape(long this_addr, int inIndex);
 
     public void ModifyShape(int inIndex, Vec3 inPosition, Quat inRotation) {
-        internal_native_ModifyShape((long) getNativeData().getCPointer(), inIndex, (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0));
+        internal_native_ModifyShape(native_address, inIndex, (inPosition != null ? inPosition.native_address : 0), (inRotation != null ? inRotation.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -57,7 +57,7 @@ nativeObject->ModifyShape(inIndex, *((Vec3* )inPosition_addr), *((Quat* )inRotat
     public static native void internal_native_ModifyShape(long this_addr, int inIndex, long inPosition_addr, long inRotation_addr);
 
     public void ModifyShape(int inIndex, Vec3 inPosition, Quat inRotation, Shape inShape) {
-        internal_native_ModifyShape((long) getNativeData().getCPointer(), inIndex, (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0));
+        internal_native_ModifyShape(native_address, inIndex, (inPosition != null ? inPosition.native_address : 0), (inRotation != null ? inRotation.native_address : 0), (inShape != null ? inShape.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -67,7 +67,7 @@ nativeObject->ModifyShape(inIndex, *((Vec3* )inPosition_addr), *((Quat* )inRotat
     public static native void internal_native_ModifyShape(long this_addr, int inIndex, long inPosition_addr, long inRotation_addr, long inShape_addr);
 
     public void ModifyShapes(int inStartIndex, int inNumber, Vec3MemRef inPositions, QuatMemRef inRotations) {
-        internal_native_ModifyShapes((long) getNativeData().getCPointer(), inStartIndex, inNumber, (long) (inPositions != null ? inPositions.getNativeData().getCPointer() : 0), (long) (inRotations != null ? inRotations.getNativeData().getCPointer() : 0));
+        internal_native_ModifyShapes(native_address, inStartIndex, inNumber, (inPositions != null ? inPositions.native_address : 0), (inRotations != null ? inRotations.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -77,7 +77,7 @@ nativeObject->ModifyShapes(inStartIndex, inNumber, (Vec3MemRef* )inPositions_add
     public static native void internal_native_ModifyShapes(long this_addr, int inStartIndex, int inNumber, long inPositions_addr, long inRotations_addr);
 
     public void AdjustCenterOfMass() {
-        internal_native_AdjustCenterOfMass((long) getNativeData().getCPointer());
+        internal_native_AdjustCenterOfMass(native_address);
     }
 
     /*[-JNI;-NATIVE]

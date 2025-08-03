@@ -24,16 +24,8 @@ public class DebugArrayTriangle extends IDLBase {
     public DebugArrayTriangle(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -43,7 +35,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int size() {
-        return internal_native_size((long) getNativeData().getCPointer());
+        return internal_native_size(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,12 +45,12 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public DebugRendererTriangle at(int inIndex) {
-        long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
+        long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
             return null;
         if (DebugRendererTriangle_TEMP_GEN_0 == null)
             DebugRendererTriangle_TEMP_GEN_0 = new DebugRendererTriangle((byte) 1, (char) 1);
-        DebugRendererTriangle_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        DebugRendererTriangle_TEMP_GEN_0.internal_reset(pointer, false);
         return DebugRendererTriangle_TEMP_GEN_0;
     }
 

@@ -26,7 +26,7 @@ public class DistanceConstraintSettings extends TwoBodyConstraintSettings {
     public DistanceConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -44,16 +44,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -64,7 +56,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public EConstraintSpace get_mSpace() {
-        int value = internal_native_get_mSpace((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mSpace(native_address);
         return EConstraintSpace.MAP.get(value);
     }
 
@@ -76,7 +68,7 @@ return jsObj.get_mSpace();
     public static native int internal_native_get_mSpace(int this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
-        internal_native_set_mSpace((int) (long) getNativeData().getCPointer(), (int) (long) (mSpace != null ? mSpace.getValue() : 0));
+        internal_native_set_mSpace(native_address, (int) (mSpace != null ? mSpace.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,12 +79,12 @@ jsObj.set_mSpace(mSpace);
     public static native void internal_native_set_mSpace(int this_addr, int mSpace);
 
     public Vec3 get_mPoint1() {
-        int pointer = internal_native_get_mPoint1((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPoint1(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -106,7 +98,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPoint1(int this_addr);
 
     public void set_mPoint1(Vec3 mPoint1) {
-        internal_native_set_mPoint1((int) (long) getNativeData().getCPointer(), (int) (long) (mPoint1 != null ? mPoint1.getNativeData().getCPointer() : 0));
+        internal_native_set_mPoint1(native_address, (mPoint1 != null ? mPoint1.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -117,12 +109,12 @@ jsObj.set_mPoint1(mPoint1_addr);
     public static native void internal_native_set_mPoint1(int this_addr, int mPoint1_addr);
 
     public Vec3 get_mPoint2() {
-        int pointer = internal_native_get_mPoint2((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPoint2(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -136,7 +128,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPoint2(int this_addr);
 
     public void set_mPoint2(Vec3 mPoint2) {
-        internal_native_set_mPoint2((int) (long) getNativeData().getCPointer(), (int) (long) (mPoint2 != null ? mPoint2.getNativeData().getCPointer() : 0));
+        internal_native_set_mPoint2(native_address, (mPoint2 != null ? mPoint2.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -147,7 +139,7 @@ jsObj.set_mPoint2(mPoint2_addr);
     public static native void internal_native_set_mPoint2(int this_addr, int mPoint2_addr);
 
     public float get_mMinDistance() {
-        return internal_native_get_mMinDistance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMinDistance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -158,7 +150,7 @@ return jsObj.get_mMinDistance();
     public static native float internal_native_get_mMinDistance(int this_addr);
 
     public void set_mMinDistance(float mMinDistance) {
-        internal_native_set_mMinDistance((int) (long) getNativeData().getCPointer(), mMinDistance);
+        internal_native_set_mMinDistance(native_address, mMinDistance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -169,7 +161,7 @@ jsObj.set_mMinDistance(mMinDistance);
     public static native void internal_native_set_mMinDistance(int this_addr, float mMinDistance);
 
     public float get_mMaxDistance() {
-        return internal_native_get_mMaxDistance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxDistance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -180,7 +172,7 @@ return jsObj.get_mMaxDistance();
     public static native float internal_native_get_mMaxDistance(int this_addr);
 
     public void set_mMaxDistance(float mMaxDistance) {
-        internal_native_set_mMaxDistance((int) (long) getNativeData().getCPointer(), mMaxDistance);
+        internal_native_set_mMaxDistance(native_address, mMaxDistance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -191,12 +183,12 @@ jsObj.set_mMaxDistance(mMaxDistance);
     public static native void internal_native_set_mMaxDistance(int this_addr, float mMaxDistance);
 
     public SpringSettings get_mLimitsSpringSettings() {
-        int pointer = internal_native_get_mLimitsSpringSettings((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mLimitsSpringSettings(native_address);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
-        SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -210,7 +202,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mLimitsSpringSettings(int this_addr);
 
     public void set_mLimitsSpringSettings(SpringSettings mLimitsSpringSettings) {
-        internal_native_set_mLimitsSpringSettings((int) (long) getNativeData().getCPointer(), (int) (long) (mLimitsSpringSettings != null ? mLimitsSpringSettings.getNativeData().getCPointer() : 0));
+        internal_native_set_mLimitsSpringSettings(native_address, (mLimitsSpringSettings != null ? mLimitsSpringSettings.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

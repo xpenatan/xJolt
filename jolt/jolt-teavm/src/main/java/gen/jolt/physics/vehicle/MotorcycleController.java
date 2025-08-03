@@ -15,8 +15,8 @@ public class MotorcycleController extends WheeledVehicleController {
 
     public MotorcycleController(MotorcycleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_MotorcycleControllerSettings_VehicleConstraint((int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (int) (long) (inConstraint != null ? inConstraint.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_MotorcycleControllerSettings_VehicleConstraint((inSettings != null ? inSettings.native_address : 0), (inConstraint != null ? inConstraint.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public float GetWheelBase() {
-        return internal_native_GetWheelBase((int) (long) getNativeData().getCPointer());
+        return internal_native_GetWheelBase(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,7 +58,7 @@ return returnedJSObj;
     public static native float internal_native_GetWheelBase(int this_addr);
 
     public void EnableLeanController(boolean inEnable) {
-        internal_native_EnableLeanController((int) (long) getNativeData().getCPointer(), inEnable);
+        internal_native_EnableLeanController(native_address, inEnable);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -77,7 +69,7 @@ jsObj.EnableLeanController(inEnable);
     public static native void internal_native_EnableLeanController(int this_addr, boolean inEnable);
 
     public boolean IsLeanControllerEnabled() {
-        return internal_native_IsLeanControllerEnabled((int) (long) getNativeData().getCPointer());
+        return internal_native_IsLeanControllerEnabled(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

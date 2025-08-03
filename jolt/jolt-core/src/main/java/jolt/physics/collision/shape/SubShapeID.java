@@ -17,7 +17,7 @@ public class SubShapeID extends IDLBase {
 
     public SubShapeID() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new SubShapeID();
     public SubShapeID(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int GetValue() {
-        return internal_native_GetValue((long) getNativeData().getCPointer());
+        return internal_native_GetValue(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ return nativeObject->GetValue();
     public static native int internal_native_GetValue(long this_addr);
 
     public void SetValue(int inValue) {
-        internal_native_SetValue((long) getNativeData().getCPointer(), inValue);
+        internal_native_SetValue(native_address, inValue);
     }
 
     /*[-JNI;-NATIVE]

@@ -16,7 +16,7 @@ public class BroadPhaseLayerInterfaceMask extends BroadPhaseLayerInterface {
     public BroadPhaseLayerInterfaceMask(int inNumBroadPhaseLayers) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int(inNumBroadPhaseLayers);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new BroadPhaseLayerInterfaceMask(inNumBroadPhaseLayers);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void ConfigureLayer(BroadPhaseLayer inBroadPhaseLayer, int inGroupsToInclude, int inGroupsToExclude) {
-        internal_native_ConfigureLayer((long) getNativeData().getCPointer(), (long) (inBroadPhaseLayer != null ? inBroadPhaseLayer.getNativeData().getCPointer() : 0), inGroupsToInclude, inGroupsToExclude);
+        internal_native_ConfigureLayer(native_address, (inBroadPhaseLayer != null ? inBroadPhaseLayer.native_address : 0), inGroupsToInclude, inGroupsToExclude);
     }
 
     /*[-JNI;-NATIVE]

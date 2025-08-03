@@ -29,8 +29,8 @@ public class ShapeCast extends IDLBase {
     static public final ShapeCast T_03 = new ShapeCast((byte) 1, (char) 1);
 
     public ShapeCast(Shape inShape, Vec3 inScale, Mat44 inCenterOfMassStart, Vec3 inDirection) {
-        long addr = internal_native_create_Shape_Vec3_Mat44_Vec3((long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0), (long) (inCenterOfMassStart != null ? inCenterOfMassStart.getNativeData().getCPointer() : 0), (long) (inDirection != null ? inDirection.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_Shape_Vec3_Mat44_Vec3((inShape != null ? inShape.native_address : 0), (inScale != null ? inScale.native_address : 0), (inCenterOfMassStart != null ? inCenterOfMassStart.native_address : 0), (inDirection != null ? inDirection.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,16 +45,8 @@ return (jlong)new ShapeCast((Shape* )inShape_addr, *((Vec3* )inScale_addr), *((M
     public ShapeCast(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,12 +56,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 GetPointOnRay(float inFraction) {
-        long pointer = internal_native_GetPointOnRay((long) getNativeData().getCPointer(), inFraction);
+        long pointer = internal_native_GetPointOnRay(native_address, inFraction);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -81,12 +73,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetPointOnRay(long this_addr, float inFraction);
 
     public Shape get_mShape() {
-        long pointer = internal_native_get_mShape((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mShape(native_address);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
-        Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -98,12 +90,12 @@ return (jlong)attr;
     public static native long internal_native_get_mShape(long this_addr);
 
     public Vec3 get_mScale() {
-        long pointer = internal_native_get_mScale((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mScale(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -114,12 +106,12 @@ return (jlong)&nativeObject->mScale;
     public static native long internal_native_get_mScale(long this_addr);
 
     public Mat44 get_mCenterOfMassStart() {
-        long pointer = internal_native_get_mCenterOfMassStart((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mCenterOfMassStart(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -130,12 +122,12 @@ return (jlong)&nativeObject->mCenterOfMassStart;
     public static native long internal_native_get_mCenterOfMassStart(long this_addr);
 
     public Vec3 get_mDirection() {
-        long pointer = internal_native_get_mDirection((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mDirection(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 

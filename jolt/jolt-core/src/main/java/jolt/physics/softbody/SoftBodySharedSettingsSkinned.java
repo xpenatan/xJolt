@@ -24,16 +24,8 @@ public class SoftBodySharedSettingsSkinned extends IDLBase {
     public SoftBodySharedSettingsSkinned(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -43,7 +35,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mVertex() {
-        return internal_native_get_mVertex((long) getNativeData().getCPointer());
+        return internal_native_get_mVertex(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,7 +45,7 @@ return nativeObject->mVertex;
     public static native int internal_native_get_mVertex(long this_addr);
 
     public void set_mVertex(int mVertex) {
-        internal_native_set_mVertex((long) getNativeData().getCPointer(), mVertex);
+        internal_native_set_mVertex(native_address, mVertex);
     }
 
     /*[-JNI;-NATIVE]
@@ -63,12 +55,12 @@ nativeObject->mVertex = mVertex;
     public static native void internal_native_set_mVertex(long this_addr, int mVertex);
 
     public SoftBodySharedSettingsSkinWeight get_mWeights(int index) {
-        long pointer = internal_native_get_mWeights((long) getNativeData().getCPointer(), index);
+        long pointer = internal_native_get_mWeights(native_address, index);
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 == null)
             SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 = new SoftBodySharedSettingsSkinWeight((byte) 1, (char) 1);
-        SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsSkinWeight_TEMP_GEN_0;
     }
 
@@ -79,7 +71,7 @@ return (jlong)&nativeObject->mWeights[index];
     public static native long internal_native_get_mWeights(long this_addr, int index);
 
     public void set_mWeights(int index, SoftBodySharedSettingsSkinWeight mWeights) {
-        internal_native_set_mWeights((long) getNativeData().getCPointer(), index, (long) (mWeights != null ? mWeights.getNativeData().getCPointer() : 0));
+        internal_native_set_mWeights(native_address, index, (mWeights != null ? mWeights.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -89,7 +81,7 @@ nativeObject->mWeights[index] = *((SoftBodySharedSettingsSkinWeight*)mWeights_ad
     public static native void internal_native_set_mWeights(long this_addr, int index, long mWeights_addr);
 
     public float get_mMaxDistance() {
-        return internal_native_get_mMaxDistance((long) getNativeData().getCPointer());
+        return internal_native_get_mMaxDistance(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -99,7 +91,7 @@ return nativeObject->mMaxDistance;
     public static native float internal_native_get_mMaxDistance(long this_addr);
 
     public void set_mMaxDistance(float mMaxDistance) {
-        internal_native_set_mMaxDistance((long) getNativeData().getCPointer(), mMaxDistance);
+        internal_native_set_mMaxDistance(native_address, mMaxDistance);
     }
 
     /*[-JNI;-NATIVE]
@@ -109,7 +101,7 @@ nativeObject->mMaxDistance = mMaxDistance;
     public static native void internal_native_set_mMaxDistance(long this_addr, float mMaxDistance);
 
     public float get_mBackStopDistance() {
-        return internal_native_get_mBackStopDistance((long) getNativeData().getCPointer());
+        return internal_native_get_mBackStopDistance(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -119,7 +111,7 @@ return nativeObject->mBackStopDistance;
     public static native float internal_native_get_mBackStopDistance(long this_addr);
 
     public void set_mBackStopDistance(float mBackStopDistance) {
-        internal_native_set_mBackStopDistance((long) getNativeData().getCPointer(), mBackStopDistance);
+        internal_native_set_mBackStopDistance(native_address, mBackStopDistance);
     }
 
     /*[-JNI;-NATIVE]
@@ -129,7 +121,7 @@ nativeObject->mBackStopDistance = mBackStopDistance;
     public static native void internal_native_set_mBackStopDistance(long this_addr, float mBackStopDistance);
 
     public float get_mBackStopRadius() {
-        return internal_native_get_mBackStopRadius((long) getNativeData().getCPointer());
+        return internal_native_get_mBackStopRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -139,7 +131,7 @@ return nativeObject->mBackStopRadius;
     public static native float internal_native_get_mBackStopRadius(long this_addr);
 
     public void set_mBackStopRadius(float mBackStopRadius) {
-        internal_native_set_mBackStopRadius((long) getNativeData().getCPointer(), mBackStopRadius);
+        internal_native_set_mBackStopRadius(native_address, mBackStopRadius);
     }
 
     /*[-JNI;-NATIVE]

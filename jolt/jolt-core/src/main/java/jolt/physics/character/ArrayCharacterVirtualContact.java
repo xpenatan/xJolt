@@ -24,16 +24,8 @@ public class ArrayCharacterVirtualContact extends IDLBase {
     public ArrayCharacterVirtualContact(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -43,7 +35,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public boolean empty() {
-        return internal_native_empty((long) getNativeData().getCPointer());
+        return internal_native_empty(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,7 +45,7 @@ return nativeObject->empty();
     public static native boolean internal_native_empty(long this_addr);
 
     public int size() {
-        return internal_native_size((long) getNativeData().getCPointer());
+        return internal_native_size(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -63,12 +55,12 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public CharacterVirtualContact at(int inIndex) {
-        long pointer = internal_native_at((long) getNativeData().getCPointer(), inIndex);
+        long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
             return null;
         if (CharacterVirtualContact_TEMP_GEN_0 == null)
             CharacterVirtualContact_TEMP_GEN_0 = new CharacterVirtualContact((byte) 1, (char) 1);
-        CharacterVirtualContact_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        CharacterVirtualContact_TEMP_GEN_0.internal_reset(pointer, false);
         return CharacterVirtualContact_TEMP_GEN_0;
     }
 

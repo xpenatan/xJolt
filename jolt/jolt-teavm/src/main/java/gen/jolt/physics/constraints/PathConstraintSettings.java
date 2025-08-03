@@ -29,7 +29,7 @@ public class PathConstraintSettings extends TwoBodyConstraintSettings {
     public PathConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -47,16 +47,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,12 +59,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public PathConstraintPath get_mPath() {
-        int pointer = internal_native_get_mPath((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPath(native_address);
         if (pointer == 0)
             return null;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = new PathConstraintPath((byte) 1, (char) 1);
-        PathConstraintPath_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
         return PathConstraintPath_TEMP_GEN_0;
     }
 
@@ -86,7 +78,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPath(int this_addr);
 
     public void set_mPath(PathConstraintPath mPath) {
-        internal_native_set_mPath((int) (long) getNativeData().getCPointer(), (int) (long) (mPath != null ? mPath.getNativeData().getCPointer() : 0));
+        internal_native_set_mPath(native_address, (mPath != null ? mPath.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,12 +89,12 @@ jsObj.set_mPath(mPath_addr);
     public static native void internal_native_set_mPath(int this_addr, int mPath_addr);
 
     public Vec3 get_mPathPosition() {
-        int pointer = internal_native_get_mPathPosition((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPathPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -116,7 +108,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPathPosition(int this_addr);
 
     public void set_mPathPosition(Vec3 mPathPosition) {
-        internal_native_set_mPathPosition((int) (long) getNativeData().getCPointer(), (int) (long) (mPathPosition != null ? mPathPosition.getNativeData().getCPointer() : 0));
+        internal_native_set_mPathPosition(native_address, (mPathPosition != null ? mPathPosition.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -127,12 +119,12 @@ jsObj.set_mPathPosition(mPathPosition_addr);
     public static native void internal_native_set_mPathPosition(int this_addr, int mPathPosition_addr);
 
     public Quat get_mPathRotation() {
-        int pointer = internal_native_get_mPathRotation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPathRotation(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -146,7 +138,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPathRotation(int this_addr);
 
     public void set_mPathRotation(Quat mPathRotation) {
-        internal_native_set_mPathRotation((int) (long) getNativeData().getCPointer(), (int) (long) (mPathRotation != null ? mPathRotation.getNativeData().getCPointer() : 0));
+        internal_native_set_mPathRotation(native_address, (mPathRotation != null ? mPathRotation.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -157,7 +149,7 @@ jsObj.set_mPathRotation(mPathRotation_addr);
     public static native void internal_native_set_mPathRotation(int this_addr, int mPathRotation_addr);
 
     public float get_mPathFraction() {
-        return internal_native_get_mPathFraction((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mPathFraction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -168,7 +160,7 @@ return jsObj.get_mPathFraction();
     public static native float internal_native_get_mPathFraction(int this_addr);
 
     public void set_mPathFraction(float mPathFraction) {
-        internal_native_set_mPathFraction((int) (long) getNativeData().getCPointer(), mPathFraction);
+        internal_native_set_mPathFraction(native_address, mPathFraction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -179,7 +171,7 @@ jsObj.set_mPathFraction(mPathFraction);
     public static native void internal_native_set_mPathFraction(int this_addr, float mPathFraction);
 
     public float get_mMaxFrictionForce() {
-        return internal_native_get_mMaxFrictionForce((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxFrictionForce(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -190,7 +182,7 @@ return jsObj.get_mMaxFrictionForce();
     public static native float internal_native_get_mMaxFrictionForce(int this_addr);
 
     public void set_mMaxFrictionForce(float mMaxFrictionForce) {
-        internal_native_set_mMaxFrictionForce((int) (long) getNativeData().getCPointer(), mMaxFrictionForce);
+        internal_native_set_mMaxFrictionForce(native_address, mMaxFrictionForce);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -201,7 +193,7 @@ jsObj.set_mMaxFrictionForce(mMaxFrictionForce);
     public static native void internal_native_set_mMaxFrictionForce(int this_addr, float mMaxFrictionForce);
 
     public EPathRotationConstraintType get_mRotationConstraintType() {
-        int value = internal_native_get_mRotationConstraintType((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mRotationConstraintType(native_address);
         return EPathRotationConstraintType.MAP.get(value);
     }
 
@@ -213,7 +205,7 @@ return jsObj.get_mRotationConstraintType();
     public static native int internal_native_get_mRotationConstraintType(int this_addr);
 
     public void set_mRotationConstraintType(EPathRotationConstraintType mRotationConstraintType) {
-        internal_native_set_mRotationConstraintType((int) (long) getNativeData().getCPointer(), (int) (long) (mRotationConstraintType != null ? mRotationConstraintType.getValue() : 0));
+        internal_native_set_mRotationConstraintType(native_address, (int) (mRotationConstraintType != null ? mRotationConstraintType.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -224,12 +216,12 @@ jsObj.set_mRotationConstraintType(mRotationConstraintType);
     public static native void internal_native_set_mRotationConstraintType(int this_addr, int mRotationConstraintType);
 
     public MotorSettings get_mPositionMotorSettings() {
-        int pointer = internal_native_get_mPositionMotorSettings((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPositionMotorSettings(native_address);
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
-        MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -243,7 +235,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPositionMotorSettings(int this_addr);
 
     public void set_mPositionMotorSettings(MotorSettings mPositionMotorSettings) {
-        internal_native_set_mPositionMotorSettings((int) (long) getNativeData().getCPointer(), (int) (long) (mPositionMotorSettings != null ? mPositionMotorSettings.getNativeData().getCPointer() : 0));
+        internal_native_set_mPositionMotorSettings(native_address, (mPositionMotorSettings != null ? mPositionMotorSettings.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

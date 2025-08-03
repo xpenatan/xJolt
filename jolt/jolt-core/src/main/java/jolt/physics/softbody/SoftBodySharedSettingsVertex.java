@@ -22,7 +22,7 @@ public class SoftBodySharedSettingsVertex extends IDLBase {
 
     public SoftBodySharedSettingsVertex() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -37,16 +37,8 @@ return (jlong)new SoftBodySharedSettingsVertex();
     public SoftBodySharedSettingsVertex(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -56,12 +48,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Float3 get_mPosition() {
-        long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = new Float3((byte) 1, (char) 1);
-        Float3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(pointer, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -72,7 +64,7 @@ return (jlong)&nativeObject->mPosition;
     public static native long internal_native_get_mPosition(long this_addr);
 
     public void set_mPosition(Float3 mPosition) {
-        internal_native_set_mPosition((long) getNativeData().getCPointer(), (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
+        internal_native_set_mPosition(native_address, (mPosition != null ? mPosition.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -82,12 +74,12 @@ nativeObject->mPosition = *((Float3*)mPosition_addr);
     public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Float3 get_mVelocity() {
-        long pointer = internal_native_get_mVelocity((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mVelocity(native_address);
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = new Float3((byte) 1, (char) 1);
-        Float3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Float3_TEMP_GEN_1.internal_reset(pointer, false);
         return Float3_TEMP_GEN_1;
     }
 
@@ -98,7 +90,7 @@ return (jlong)&nativeObject->mVelocity;
     public static native long internal_native_get_mVelocity(long this_addr);
 
     public void set_mVelocity(Float3 mVelocity) {
-        internal_native_set_mVelocity((long) getNativeData().getCPointer(), (long) (mVelocity != null ? mVelocity.getNativeData().getCPointer() : 0));
+        internal_native_set_mVelocity(native_address, (mVelocity != null ? mVelocity.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -108,7 +100,7 @@ nativeObject->mVelocity = *((Float3*)mVelocity_addr);
     public static native void internal_native_set_mVelocity(long this_addr, long mVelocity_addr);
 
     public float get_mInvMass() {
-        return internal_native_get_mInvMass((long) getNativeData().getCPointer());
+        return internal_native_get_mInvMass(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -118,7 +110,7 @@ return nativeObject->mInvMass;
     public static native float internal_native_get_mInvMass(long this_addr);
 
     public void set_mInvMass(float mInvMass) {
-        internal_native_set_mInvMass((long) getNativeData().getCPointer(), mInvMass);
+        internal_native_set_mInvMass(native_address, mInvMass);
     }
 
     /*[-JNI;-NATIVE]

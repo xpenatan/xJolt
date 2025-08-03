@@ -22,8 +22,8 @@ public class PlaneShapeSettings extends ShapeSettings {
 
     public PlaneShapeSettings(Plane inPlane, PhysicsMaterial inMaterial, float inHalfExtent) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Plane_PhysicsMaterial_float((int) (long) (inPlane != null ? inPlane.getNativeData().getCPointer() : 0), (int) (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0), inHalfExtent);
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_Plane_PhysicsMaterial_float((inPlane != null ? inPlane.native_address : 0), (inMaterial != null ? inMaterial.native_address : 0), inHalfExtent);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -35,8 +35,8 @@ return jolt.getPointer(jsObj);
 
     public PlaneShapeSettings(Plane inPlane, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Plane_PhysicsMaterial((int) (long) (inPlane != null ? inPlane.getNativeData().getCPointer() : 0), (int) (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_Plane_PhysicsMaterial((inPlane != null ? inPlane.native_address : 0), (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -48,8 +48,8 @@ return jolt.getPointer(jsObj);
 
     public PlaneShapeSettings(Plane inPlane) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Plane((int) (long) (inPlane != null ? inPlane.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_Plane((inPlane != null ? inPlane.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,16 +67,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,12 +79,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Plane get_mPlane() {
-        int pointer = internal_native_get_mPlane((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPlane(native_address);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(pointer, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -106,7 +98,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPlane(int this_addr);
 
     public void set_mPlane(Plane mPlane) {
-        internal_native_set_mPlane((int) (long) getNativeData().getCPointer(), (int) (long) (mPlane != null ? mPlane.getNativeData().getCPointer() : 0));
+        internal_native_set_mPlane(native_address, (mPlane != null ? mPlane.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -117,12 +109,12 @@ jsObj.set_mPlane(mPlane_addr);
     public static native void internal_native_set_mPlane(int this_addr, int mPlane_addr);
 
     public PhysicsMaterial get_mMaterial() {
-        int pointer = internal_native_get_mMaterial((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mMaterial(native_address);
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = new PhysicsMaterial((byte) 1, (char) 1);
-        PhysicsMaterial_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -136,7 +128,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mMaterial(int this_addr);
 
     public void set_mMaterial(PhysicsMaterial mMaterial) {
-        internal_native_set_mMaterial((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterial != null ? mMaterial.getNativeData().getCPointer() : 0));
+        internal_native_set_mMaterial(native_address, (mMaterial != null ? mMaterial.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -147,7 +139,7 @@ jsObj.set_mMaterial(mMaterial_addr);
     public static native void internal_native_set_mMaterial(int this_addr, int mMaterial_addr);
 
     public float get_mHalfExtent() {
-        return internal_native_get_mHalfExtent((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mHalfExtent(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -158,7 +150,7 @@ return jsObj.get_mHalfExtent();
     public static native float internal_native_get_mHalfExtent(int this_addr);
 
     public void set_mHalfExtent(float mHalfExtent) {
-        internal_native_set_mHalfExtent((int) (long) getNativeData().getCPointer(), mHalfExtent);
+        internal_native_set_mHalfExtent(native_address, mHalfExtent);
     }
 
     /*[-TEAVM;-NATIVE]

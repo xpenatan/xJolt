@@ -19,8 +19,8 @@ public class OffsetCenterOfMassShapeSettings extends DecoratedShapeSettings {
 
     public OffsetCenterOfMassShapeSettings(Vec3 inOffset, Shape inShape) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Vec3_Shape((int) (long) (inOffset != null ? inOffset.getNativeData().getCPointer() : 0), (int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_Vec3_Shape((inOffset != null ? inOffset.native_address : 0), (inShape != null ? inShape.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -39,12 +39,12 @@ return jolt.getPointer(jsObj);
     }
 
     public Vec3 get_mOffset() {
-        int pointer = internal_native_get_mOffset((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mOffset(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -58,7 +58,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mOffset(int this_addr);
 
     public void set_mOffset(Vec3 mOffset) {
-        internal_native_set_mOffset((int) (long) getNativeData().getCPointer(), (int) (long) (mOffset != null ? mOffset.getNativeData().getCPointer() : 0));
+        internal_native_set_mOffset(native_address, (mOffset != null ? mOffset.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

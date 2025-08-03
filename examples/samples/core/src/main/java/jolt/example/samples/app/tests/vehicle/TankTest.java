@@ -164,8 +164,9 @@ public class TankTest extends VehicleTest {
         turret_hinge.set_mNormalAxis1(Vec3.sAxisZ());
         turret_hinge.set_mNormalAxis2(Vec3.sAxisZ());
         turret_hinge.set_mMotorSettings(new MotorSettings(0.5f, 1.0f));
-        HingeConstraint.T_01.getNativeData().reset(turret_hinge.Create(mTankBody, mTurretBody).getNativeData().getCPointer(), true);
-        mTurretHinge = HingeConstraint.T_01;
+        mTurretHinge = new HingeConstraint((byte)1, (char)1);
+        mTurretHinge.native_copy(turret_hinge.Create(mTankBody, mTurretBody)); // TODO create return TwoBodyConstraint ?
+        mTurretHinge.native_takeOwnership();
         mTurretHinge.SetMotorState(EMotorState.Position);
         mPhysicsSystem.AddConstraint(mTurretHinge);
 
@@ -193,8 +194,10 @@ public class TankTest extends VehicleTest {
         barrel_hinge.set_mLimitsMin(MathUtils.degreesToRadians * -10.0f);
         barrel_hinge.set_mLimitsMax(MathUtils.degreesToRadians * 40.0f);
         barrel_hinge.set_mMotorSettings(new MotorSettings(10.0f, 1.0f));
-        HingeConstraint.T_02.getNativeData().reset(barrel_hinge.Create(mTurretBody, mBarrelBody).getNativeData().getCPointer(), true);
-        mBarrelHinge = HingeConstraint.T_02;
+
+        mBarrelHinge = new HingeConstraint((byte)1, (char)1);
+        mBarrelHinge.native_copy(barrel_hinge.Create(mTurretBody, mBarrelBody)); // TODO create return TwoBodyConstraint ?
+        mBarrelHinge.native_takeOwnership();
         mBarrelHinge.SetMotorState(EMotorState.Position);
         mPhysicsSystem.AddConstraint(mBarrelHinge);
     }
@@ -209,7 +212,7 @@ public class TankTest extends VehicleTest {
         // Pass the input on to the constraint
         VehicleController vehicleController = mVehicleConstraint.GetController();
         TrackedVehicleController controller = TrackedVehicleController.T_01;
-        controller.getNativeData().reset(vehicleController.getNativeData().getCPointer(), false);
+        controller.native_copy(vehicleController);
 
         controller.SetDriverInput(mForward, mLeftRatio, mRightRatio, mBrake);
 

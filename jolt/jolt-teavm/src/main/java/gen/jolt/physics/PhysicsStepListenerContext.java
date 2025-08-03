@@ -22,16 +22,8 @@ public class PhysicsStepListenerContext extends IDLBase {
     public PhysicsStepListenerContext(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -42,7 +34,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mDeltaTime() {
-        return internal_native_get_mDeltaTime((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDeltaTime(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -53,7 +45,7 @@ return jsObj.get_mDeltaTime();
     public static native float internal_native_get_mDeltaTime(int this_addr);
 
     public void set_mDeltaTime(float mDeltaTime) {
-        internal_native_set_mDeltaTime((int) (long) getNativeData().getCPointer(), mDeltaTime);
+        internal_native_set_mDeltaTime(native_address, mDeltaTime);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -64,7 +56,7 @@ jsObj.set_mDeltaTime(mDeltaTime);
     public static native void internal_native_set_mDeltaTime(int this_addr, float mDeltaTime);
 
     public boolean get_mIsFirstStep() {
-        return internal_native_get_mIsFirstStep((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mIsFirstStep(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -75,7 +67,7 @@ return jsObj.get_mIsFirstStep();
     public static native boolean internal_native_get_mIsFirstStep(int this_addr);
 
     public void set_mIsFirstStep(boolean mIsFirstStep) {
-        internal_native_set_mIsFirstStep((int) (long) getNativeData().getCPointer(), mIsFirstStep);
+        internal_native_set_mIsFirstStep(native_address, mIsFirstStep);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -86,7 +78,7 @@ jsObj.set_mIsFirstStep(mIsFirstStep);
     public static native void internal_native_set_mIsFirstStep(int this_addr, boolean mIsFirstStep);
 
     public boolean get_mIsLastStep() {
-        return internal_native_get_mIsLastStep((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mIsLastStep(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,7 +89,7 @@ return jsObj.get_mIsLastStep();
     public static native boolean internal_native_get_mIsLastStep(int this_addr);
 
     public void set_mIsLastStep(boolean mIsLastStep) {
-        internal_native_set_mIsLastStep((int) (long) getNativeData().getCPointer(), mIsLastStep);
+        internal_native_set_mIsLastStep(native_address, mIsLastStep);
     }
 
     /*[-TEAVM;-NATIVE]

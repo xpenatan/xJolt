@@ -24,16 +24,8 @@ public class DebugRendererTriangle extends IDLBase {
     public DebugRendererTriangle(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -44,12 +36,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public DebugRendererVertex get_mV(int index) {
-        int pointer = internal_native_get_mV((int) (long) getNativeData().getCPointer(), index);
+        int pointer = internal_native_get_mV(native_address, index);
         if (pointer == 0)
             return null;
         if (DebugRendererVertex_TEMP_GEN_0 == null)
             DebugRendererVertex_TEMP_GEN_0 = new DebugRendererVertex((byte) 1, (char) 1);
-        DebugRendererVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        DebugRendererVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return DebugRendererVertex_TEMP_GEN_0;
     }
 
@@ -63,7 +55,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mV(int this_addr, int index);
 
     public void set_mV(int index, DebugRendererVertex mV) {
-        internal_native_set_mV((int) (long) getNativeData().getCPointer(), index, (int) (long) (mV != null ? mV.getNativeData().getCPointer() : 0));
+        internal_native_set_mV(native_address, index, (mV != null ? mV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

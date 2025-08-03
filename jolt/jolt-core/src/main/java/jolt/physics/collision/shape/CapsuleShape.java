@@ -17,8 +17,8 @@ public class CapsuleShape extends ConvexShape {
 
     public CapsuleShape(float inHalfHeight, float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -29,7 +29,7 @@ return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius, (PhysicsMat
     public CapsuleShape(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float(inHalfHeight, inRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -46,7 +46,7 @@ return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius);
     }
 
     public float GetRadius() {
-        return internal_native_GetRadius((long) getNativeData().getCPointer());
+        return internal_native_GetRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -56,7 +56,7 @@ return nativeObject->GetRadius();
     public static native float internal_native_GetRadius(long this_addr);
 
     public float GetHalfHeightOfCylinder() {
-        return internal_native_GetHalfHeightOfCylinder((long) getNativeData().getCPointer());
+        return internal_native_GetHalfHeightOfCylinder(native_address);
     }
 
     /*[-JNI;-NATIVE]

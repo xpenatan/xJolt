@@ -16,7 +16,7 @@ public class MutableCompoundShapeSettings extends CompoundShapeSettings {
     public MutableCompoundShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]

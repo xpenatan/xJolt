@@ -20,16 +20,8 @@ public class BodyActivationListener extends IDLBase {
     public BodyActivationListener(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -41,43 +33,43 @@ jolt.destroy(jsObj);
 
     public BodyActivationListener() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
         OnBodyActivated OnBodyActivated = new OnBodyActivated() {
 
-            public void OnBodyActivated(int inBodyID, int inBodyUserData) {
-                internal_OnBodyActivated(inBodyID, inBodyUserData);
+            public void OnBodyActivated(int inBodyID_addr, int inBodyUserData) {
+                internal_OnBodyActivated(inBodyID_addr, inBodyUserData);
             }
         };
         OnBodyDeactivated OnBodyDeactivated = new OnBodyDeactivated() {
 
-            public void OnBodyDeactivated(int inBodyID, int inBodyUserData) {
-                internal_OnBodyDeactivated(inBodyID, inBodyUserData);
+            public void OnBodyDeactivated(int inBodyID_addr, int inBodyUserData) {
+                internal_OnBodyDeactivated(inBodyID_addr, inBodyUserData);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), OnBodyActivated, OnBodyDeactivated);
+        internal_native_setupCallback(native_address, OnBodyActivated, OnBodyDeactivated);
     }
 
     protected void OnBodyActivated(BodyID inBodyID, long inBodyUserData) {
     }
 
-    private void internal_OnBodyActivated(long inBodyID, long inBodyUserData) {
+    private void internal_OnBodyActivated(int inBodyID_addr, long inBodyUserData) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
             BodyID_TEMP_STATIC_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_0.getNativeData().reset(inBodyID, false);
+        BodyID_TEMP_STATIC_GEN_0.internal_reset(inBodyID_addr, false);
         OnBodyActivated(BodyID_TEMP_STATIC_GEN_0, inBodyUserData);
     }
 
     protected void OnBodyDeactivated(BodyID inBodyID, long inBodyUserData) {
     }
 
-    private void internal_OnBodyDeactivated(long inBodyID, long inBodyUserData) {
+    private void internal_OnBodyDeactivated(int inBodyID_addr, long inBodyUserData) {
         if (BodyID_TEMP_STATIC_GEN_1 == null)
             BodyID_TEMP_STATIC_GEN_1 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_1.getNativeData().reset(inBodyID, false);
+        BodyID_TEMP_STATIC_GEN_1.internal_reset(inBodyID_addr, false);
         OnBodyDeactivated(BodyID_TEMP_STATIC_GEN_1, inBodyUserData);
     }
 
@@ -94,12 +86,12 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSFunctor()
     public interface OnBodyActivated extends org.teavm.jso.JSObject {
 
-        void OnBodyActivated(int inBodyID, int inBodyUserData);
+        void OnBodyActivated(int inBodyID_addr, int inBodyUserData);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface OnBodyDeactivated extends org.teavm.jso.JSObject {
 
-        void OnBodyDeactivated(int inBodyID, int inBodyUserData);
+        void OnBodyDeactivated(int inBodyID_addr, int inBodyUserData);
     }
 }

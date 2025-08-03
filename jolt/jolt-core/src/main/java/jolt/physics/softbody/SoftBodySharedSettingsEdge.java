@@ -17,7 +17,7 @@ public class SoftBodySharedSettingsEdge extends IDLBase {
 
     public SoftBodySharedSettingsEdge(int inVertex1, int inVertex2, float inCompliance) {
         long addr = internal_native_create_int_int_float(inVertex1, inVertex2, inCompliance);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new SoftBodySharedSettingsEdge(inVertex1, inVertex2, (float)inComp
     public SoftBodySharedSettingsEdge(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mVertex(int index) {
-        return internal_native_get_mVertex((long) getNativeData().getCPointer(), index);
+        return internal_native_get_mVertex(native_address, index);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ return nativeObject->mVertex[index];
     public static native int internal_native_get_mVertex(long this_addr, int index);
 
     public void set_mVertex(int index, int mVertex) {
-        internal_native_set_mVertex((long) getNativeData().getCPointer(), index, mVertex);
+        internal_native_set_mVertex(native_address, index, mVertex);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ nativeObject->mVertex[index] = mVertex;
     public static native void internal_native_set_mVertex(long this_addr, int index, int mVertex);
 
     public float get_mRestLength() {
-        return internal_native_get_mRestLength((long) getNativeData().getCPointer());
+        return internal_native_get_mRestLength(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -81,7 +73,7 @@ return nativeObject->mRestLength;
     public static native float internal_native_get_mRestLength(long this_addr);
 
     public void set_mRestLength(float mRestLength) {
-        internal_native_set_mRestLength((long) getNativeData().getCPointer(), mRestLength);
+        internal_native_set_mRestLength(native_address, mRestLength);
     }
 
     /*[-JNI;-NATIVE]
@@ -91,7 +83,7 @@ nativeObject->mRestLength = mRestLength;
     public static native void internal_native_set_mRestLength(long this_addr, float mRestLength);
 
     public float get_mCompliance() {
-        return internal_native_get_mCompliance((long) getNativeData().getCPointer());
+        return internal_native_get_mCompliance(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -101,7 +93,7 @@ return nativeObject->mCompliance;
     public static native float internal_native_get_mCompliance(long this_addr);
 
     public void set_mCompliance(float mCompliance) {
-        internal_native_set_mCompliance((long) getNativeData().getCPointer(), mCompliance);
+        internal_native_set_mCompliance(native_address, mCompliance);
     }
 
     /*[-JNI;-NATIVE]

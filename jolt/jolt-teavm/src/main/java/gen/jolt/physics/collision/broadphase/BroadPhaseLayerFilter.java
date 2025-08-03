@@ -17,7 +17,7 @@ public class BroadPhaseLayerFilter extends IDLBase {
 
     public BroadPhaseLayerFilter() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
     public BroadPhaseLayerFilter(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

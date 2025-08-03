@@ -19,8 +19,8 @@ public class OffsetCenterOfMassShapeSettings extends DecoratedShapeSettings {
 
     public OffsetCenterOfMassShapeSettings(Vec3 inOffset, Shape inShape) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3_Shape((long) (inOffset != null ? inOffset.getNativeData().getCPointer() : 0), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_Vec3_Shape((inOffset != null ? inOffset.native_address : 0), (inShape != null ? inShape.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -37,12 +37,12 @@ return (jlong)new OffsetCenterOfMassShapeSettings(*((Vec3* )inOffset_addr), (Sha
     }
 
     public Vec3 get_mOffset() {
-        long pointer = internal_native_get_mOffset((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mOffset(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -53,7 +53,7 @@ return (jlong)&nativeObject->mOffset;
     public static native long internal_native_get_mOffset(long this_addr);
 
     public void set_mOffset(Vec3 mOffset) {
-        internal_native_set_mOffset((long) getNativeData().getCPointer(), (long) (mOffset != null ? mOffset.getNativeData().getCPointer() : 0));
+        internal_native_set_mOffset(native_address, (mOffset != null ? mOffset.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

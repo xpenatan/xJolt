@@ -35,16 +35,8 @@ virtual bool ShouldCollide(unsigned int inLayer1, unsigned int inLayer2) const {
     public ObjectLayerPairFilter(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -55,12 +47,12 @@ delete nativeObject;
 
     public ObjectLayerPairFilter() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected boolean ShouldCollide(int inLayer1, int inLayer2) {

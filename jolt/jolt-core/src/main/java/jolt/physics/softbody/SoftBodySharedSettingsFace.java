@@ -17,7 +17,7 @@ public class SoftBodySharedSettingsFace extends IDLBase {
 
     public SoftBodySharedSettingsFace(int inVertex1, int inVertex2, int inVertex3, int inMaterialIndex) {
         long addr = internal_native_create_int_int_int_int(inVertex1, inVertex2, inVertex3, inMaterialIndex);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new SoftBodySharedSettingsFace(inVertex1, inVertex2, inVertex3, in
     public SoftBodySharedSettingsFace(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mVertex(int index) {
-        return internal_native_get_mVertex((long) getNativeData().getCPointer(), index);
+        return internal_native_get_mVertex(native_address, index);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ return nativeObject->mVertex[index];
     public static native int internal_native_get_mVertex(long this_addr, int index);
 
     public void set_mVertex(int index, int mVertex) {
-        internal_native_set_mVertex((long) getNativeData().getCPointer(), index, mVertex);
+        internal_native_set_mVertex(native_address, index, mVertex);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ nativeObject->mVertex[index] = mVertex;
     public static native void internal_native_set_mVertex(long this_addr, int index, int mVertex);
 
     public int get_mMaterialIndex() {
-        return internal_native_get_mMaterialIndex((long) getNativeData().getCPointer());
+        return internal_native_get_mMaterialIndex(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -81,7 +73,7 @@ return nativeObject->mMaterialIndex;
     public static native int internal_native_get_mMaterialIndex(long this_addr);
 
     public void set_mMaterialIndex(int mMaterialIndex) {
-        internal_native_set_mMaterialIndex((long) getNativeData().getCPointer(), mMaterialIndex);
+        internal_native_set_mMaterialIndex(native_address, mMaterialIndex);
     }
 
     /*[-JNI;-NATIVE]

@@ -25,7 +25,7 @@ public class SoftBodyShape extends Shape {
     }
 
     public int GetSubShapeIDBits() {
-        return internal_native_GetSubShapeIDBits((long) getNativeData().getCPointer());
+        return internal_native_GetSubShapeIDBits(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -35,7 +35,7 @@ return nativeObject->GetSubShapeIDBits();
     public static native int internal_native_GetSubShapeIDBits(long this_addr);
 
     public int GetFaceIndex(SubShapeID inSubShapeID) {
-        return internal_native_GetFaceIndex((long) getNativeData().getCPointer(), (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0));
+        return internal_native_GetFaceIndex(native_address, (inSubShapeID != null ? inSubShapeID.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

@@ -22,16 +22,8 @@ public class PathConstraintPath extends IDLBase {
     public PathConstraintPath(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -42,7 +34,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public boolean IsLooping() {
-        return internal_native_IsLooping((int) (long) getNativeData().getCPointer());
+        return internal_native_IsLooping(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsLooping(int this_addr);
 
     public void SetIsLooping(boolean inIsLooping) {
-        internal_native_SetIsLooping((int) (long) getNativeData().getCPointer(), inIsLooping);
+        internal_native_SetIsLooping(native_address, inIsLooping);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ jsObj.SetIsLooping(inIsLooping);
     public static native void internal_native_SetIsLooping(int this_addr, boolean inIsLooping);
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -77,7 +69,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -88,7 +80,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -19,7 +19,7 @@ public class MotorSettings extends IDLBase {
 
     public MotorSettings() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -31,7 +31,7 @@ return jolt.getPointer(jsObj);
 
     public MotorSettings(float inFrequency, float inDamping) {
         int addr = internal_native_create_float_float(inFrequency, inDamping);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
 
     public MotorSettings(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit) {
         int addr = internal_native_create_float_float_float_float(inFrequency, inDamping, inForceLimit, inTorqueLimit);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -60,16 +60,8 @@ return jolt.getPointer(jsObj);
     public MotorSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -80,12 +72,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public SpringSettings get_mSpringSettings() {
-        int pointer = internal_native_get_mSpringSettings((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSpringSettings(native_address);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
-        SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -99,7 +91,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSpringSettings(int this_addr);
 
     public void set_mSpringSettings(SpringSettings mSpringSettings) {
-        internal_native_set_mSpringSettings((int) (long) getNativeData().getCPointer(), (int) (long) (mSpringSettings != null ? mSpringSettings.getNativeData().getCPointer() : 0));
+        internal_native_set_mSpringSettings(native_address, (mSpringSettings != null ? mSpringSettings.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -110,7 +102,7 @@ jsObj.set_mSpringSettings(mSpringSettings_addr);
     public static native void internal_native_set_mSpringSettings(int this_addr, int mSpringSettings_addr);
 
     public float get_mMinForceLimit() {
-        return internal_native_get_mMinForceLimit((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMinForceLimit(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -121,7 +113,7 @@ return jsObj.get_mMinForceLimit();
     public static native float internal_native_get_mMinForceLimit(int this_addr);
 
     public void set_mMinForceLimit(float mMinForceLimit) {
-        internal_native_set_mMinForceLimit((int) (long) getNativeData().getCPointer(), mMinForceLimit);
+        internal_native_set_mMinForceLimit(native_address, mMinForceLimit);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -132,7 +124,7 @@ jsObj.set_mMinForceLimit(mMinForceLimit);
     public static native void internal_native_set_mMinForceLimit(int this_addr, float mMinForceLimit);
 
     public float get_mMaxForceLimit() {
-        return internal_native_get_mMaxForceLimit((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxForceLimit(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -143,7 +135,7 @@ return jsObj.get_mMaxForceLimit();
     public static native float internal_native_get_mMaxForceLimit(int this_addr);
 
     public void set_mMaxForceLimit(float mMaxForceLimit) {
-        internal_native_set_mMaxForceLimit((int) (long) getNativeData().getCPointer(), mMaxForceLimit);
+        internal_native_set_mMaxForceLimit(native_address, mMaxForceLimit);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -154,7 +146,7 @@ jsObj.set_mMaxForceLimit(mMaxForceLimit);
     public static native void internal_native_set_mMaxForceLimit(int this_addr, float mMaxForceLimit);
 
     public float get_mMinTorqueLimit() {
-        return internal_native_get_mMinTorqueLimit((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMinTorqueLimit(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -165,7 +157,7 @@ return jsObj.get_mMinTorqueLimit();
     public static native float internal_native_get_mMinTorqueLimit(int this_addr);
 
     public void set_mMinTorqueLimit(float mMinTorqueLimit) {
-        internal_native_set_mMinTorqueLimit((int) (long) getNativeData().getCPointer(), mMinTorqueLimit);
+        internal_native_set_mMinTorqueLimit(native_address, mMinTorqueLimit);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -176,7 +168,7 @@ jsObj.set_mMinTorqueLimit(mMinTorqueLimit);
     public static native void internal_native_set_mMinTorqueLimit(int this_addr, float mMinTorqueLimit);
 
     public float get_mMaxTorqueLimit() {
-        return internal_native_get_mMaxTorqueLimit((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxTorqueLimit(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -187,7 +179,7 @@ return jsObj.get_mMaxTorqueLimit();
     public static native float internal_native_get_mMaxTorqueLimit(int this_addr);
 
     public void set_mMaxTorqueLimit(float mMaxTorqueLimit) {
-        internal_native_set_mMaxTorqueLimit((int) (long) getNativeData().getCPointer(), mMaxTorqueLimit);
+        internal_native_set_mMaxTorqueLimit(native_address, mMaxTorqueLimit);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -16,7 +16,7 @@ public class BroadPhaseLayerInterfaceTable extends BroadPhaseLayerInterface {
     public BroadPhaseLayerInterfaceTable(int inNumObjectLayers, int inNumBroadPhaseLayers) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int_int(inNumObjectLayers, inNumBroadPhaseLayers);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -35,7 +35,7 @@ return jolt.getPointer(jsObj);
     }
 
     public void MapObjectToBroadPhaseLayer(int inObjectLayer, BroadPhaseLayer inBroadPhaseLayer) {
-        internal_native_MapObjectToBroadPhaseLayer((int) (long) getNativeData().getCPointer(), inObjectLayer, (int) (long) (inBroadPhaseLayer != null ? inBroadPhaseLayer.getNativeData().getCPointer() : 0));
+        internal_native_MapObjectToBroadPhaseLayer(native_address, inObjectLayer, (inBroadPhaseLayer != null ? inBroadPhaseLayer.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

@@ -26,16 +26,8 @@ public class RagdollPart extends BodyCreationSettings {
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -46,12 +38,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public TwoBodyConstraintSettings get_mToParent() {
-        int pointer = internal_native_get_mToParent((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mToParent(native_address);
         if (pointer == 0)
             return null;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
             TwoBodyConstraintSettings_TEMP_GEN_0 = new TwoBodyConstraintSettings((byte) 1, (char) 1);
-        TwoBodyConstraintSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return TwoBodyConstraintSettings_TEMP_GEN_0;
     }
 
@@ -65,7 +57,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mToParent(int this_addr);
 
     public void set_mToParent(TwoBodyConstraintSettings mToParent) {
-        internal_native_set_mToParent((int) (long) getNativeData().getCPointer(), (int) (long) (mToParent != null ? mToParent.getNativeData().getCPointer() : 0));
+        internal_native_set_mToParent(native_address, (mToParent != null ? mToParent.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

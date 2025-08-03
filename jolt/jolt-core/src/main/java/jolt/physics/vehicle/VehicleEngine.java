@@ -21,16 +21,8 @@ public class VehicleEngine extends VehicleEngineSettings {
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,7 +32,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void ClampRPM() {
-        internal_native_ClampRPM((long) getNativeData().getCPointer());
+        internal_native_ClampRPM(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -50,7 +42,7 @@ nativeObject->ClampRPM();
     public static native void internal_native_ClampRPM(long this_addr);
 
     public float GetCurrentRPM() {
-        return internal_native_GetCurrentRPM((long) getNativeData().getCPointer());
+        return internal_native_GetCurrentRPM(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -60,7 +52,7 @@ return nativeObject->GetCurrentRPM();
     public static native float internal_native_GetCurrentRPM(long this_addr);
 
     public void SetCurrentRPM(float inRPM) {
-        internal_native_SetCurrentRPM((long) getNativeData().getCPointer(), inRPM);
+        internal_native_SetCurrentRPM(native_address, inRPM);
     }
 
     /*[-JNI;-NATIVE]
@@ -70,7 +62,7 @@ nativeObject->SetCurrentRPM((float)inRPM);
     public static native void internal_native_SetCurrentRPM(long this_addr, float inRPM);
 
     public float GetAngularVelocity() {
-        return internal_native_GetAngularVelocity((long) getNativeData().getCPointer());
+        return internal_native_GetAngularVelocity(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -80,7 +72,7 @@ return nativeObject->GetAngularVelocity();
     public static native float internal_native_GetAngularVelocity(long this_addr);
 
     public float GetTorque(float inAcceleration) {
-        return internal_native_GetTorque((long) getNativeData().getCPointer(), inAcceleration);
+        return internal_native_GetTorque(native_address, inAcceleration);
     }
 
     /*[-JNI;-NATIVE]

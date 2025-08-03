@@ -17,7 +17,7 @@ public class SubShapeID extends IDLBase {
 
     public SubShapeID() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
     public SubShapeID(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int GetValue() {
-        return internal_native_GetValue((int) (long) getNativeData().getCPointer());
+        return internal_native_GetValue(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,7 +58,7 @@ return returnedJSObj;
     public static native int internal_native_GetValue(int this_addr);
 
     public void SetValue(int inValue) {
-        internal_native_SetValue((int) (long) getNativeData().getCPointer(), inValue);
+        internal_native_SetValue(native_address, inValue);
     }
 
     /*[-TEAVM;-NATIVE]

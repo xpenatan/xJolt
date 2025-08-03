@@ -15,7 +15,7 @@ buildscript {
     val kotlinVersion = "2.1.10"
 
     dependencies {
-        classpath("com.android.tools.build:gradle:8.0.1")
+        classpath("com.android.tools.build:gradle:8.3.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }
@@ -34,10 +34,10 @@ allprojects  {
         }
     }
 
-    configurations.configureEach {
-        // Check for updates every sync
-        resolutionStrategy.cacheChangingModulesFor(0, "seconds")
-    }
+//    configurations.configureEach {
+//        // Check for updates every sync
+//        resolutionStrategy.cacheChangingModulesFor(0, "seconds")
+//    }
 }
 
 configure(allprojects - project(":jolt:jolt-android") - project(":examples:samples:android")) {

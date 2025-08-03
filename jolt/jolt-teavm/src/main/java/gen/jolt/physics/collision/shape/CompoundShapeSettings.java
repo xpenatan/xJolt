@@ -25,7 +25,7 @@ public class CompoundShapeSettings extends ShapeSettings {
     }
 
     public void AddShape(Vec3 inPosition, Quat inRotation, ShapeSettings inShape, int inUserData) {
-        internal_native_AddShape((int) (long) getNativeData().getCPointer(), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), inUserData);
+        internal_native_AddShape(native_address, (inPosition != null ? inPosition.native_address : 0), (inRotation != null ? inRotation.native_address : 0), (inShape != null ? inShape.native_address : 0), inUserData);
     }
 
     /*[-TEAVM;-NATIVE]

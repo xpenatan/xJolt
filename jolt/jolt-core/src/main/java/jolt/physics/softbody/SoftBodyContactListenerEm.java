@@ -51,16 +51,8 @@ virtual void OnSoftBodyContactAdded(const Body& inSoftBody, const SoftBodyManifo
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -72,41 +64,41 @@ delete nativeObject;
     public SoftBodyContactListenerEm() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected int OnSoftBodyContactValidate(Body inSoftBody, Body inOtherBody, SoftBodyContactSettings ioSettings) {
         return 0;
     }
 
-    private int internal_OnSoftBodyContactValidate(long inSoftBody, long inOtherBody, long ioSettings) {
+    private int internal_OnSoftBodyContactValidate(long inSoftBody_addr, long inOtherBody_addr, long ioSettings_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
             Body_TEMP_STATIC_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_0.getNativeData().reset(inSoftBody, false);
+        Body_TEMP_STATIC_GEN_0.internal_reset(inSoftBody_addr, false);
         if (Body_TEMP_STATIC_GEN_1 == null)
             Body_TEMP_STATIC_GEN_1 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_1.getNativeData().reset(inOtherBody, false);
+        Body_TEMP_STATIC_GEN_1.internal_reset(inOtherBody_addr, false);
         if (SoftBodyContactSettings_TEMP_STATIC_GEN_0 == null)
             SoftBodyContactSettings_TEMP_STATIC_GEN_0 = new SoftBodyContactSettings((byte) 1, (char) 1);
-        SoftBodyContactSettings_TEMP_STATIC_GEN_0.getNativeData().reset(ioSettings, false);
+        SoftBodyContactSettings_TEMP_STATIC_GEN_0.internal_reset(ioSettings_addr, false);
         return OnSoftBodyContactValidate(Body_TEMP_STATIC_GEN_0, Body_TEMP_STATIC_GEN_1, SoftBodyContactSettings_TEMP_STATIC_GEN_0);
     }
 
     protected void OnSoftBodyContactAdded(Body inSoftBody, SoftBodyManifold inManifold) {
     }
 
-    private void internal_OnSoftBodyContactAdded(long inSoftBody, long inManifold) {
+    private void internal_OnSoftBodyContactAdded(long inSoftBody_addr, long inManifold_addr) {
         if (Body_TEMP_STATIC_GEN_2 == null)
             Body_TEMP_STATIC_GEN_2 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_2.getNativeData().reset(inSoftBody, false);
+        Body_TEMP_STATIC_GEN_2.internal_reset(inSoftBody_addr, false);
         if (SoftBodyManifold_TEMP_STATIC_GEN_0 == null)
             SoftBodyManifold_TEMP_STATIC_GEN_0 = new SoftBodyManifold((byte) 1, (char) 1);
-        SoftBodyManifold_TEMP_STATIC_GEN_0.getNativeData().reset(inManifold, false);
+        SoftBodyManifold_TEMP_STATIC_GEN_0.internal_reset(inManifold_addr, false);
         OnSoftBodyContactAdded(Body_TEMP_STATIC_GEN_2, SoftBodyManifold_TEMP_STATIC_GEN_0);
     }
 

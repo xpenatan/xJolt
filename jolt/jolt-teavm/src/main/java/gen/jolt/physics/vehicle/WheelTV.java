@@ -17,8 +17,8 @@ public class WheelTV extends Wheel {
 
     public WheelTV(WheelSettingsTV inWheel) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_WheelSettingsTV((int) (long) (inWheel != null ? inWheel.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_WheelSettingsTV((inWheel != null ? inWheel.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -36,16 +36,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,12 +48,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public WheelSettingsTV GetSettings() {
-        int pointer = internal_native_GetSettings((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetSettings(native_address);
         if (pointer == 0)
             return null;
         if (WheelSettingsTV_TEMP_GEN_0 == null)
             WheelSettingsTV_TEMP_GEN_0 = new WheelSettingsTV((byte) 1, (char) 1);
-        WheelSettingsTV_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        WheelSettingsTV_TEMP_GEN_0.internal_reset(pointer, false);
         return WheelSettingsTV_TEMP_GEN_0;
     }
 
@@ -75,7 +67,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetSettings(int this_addr);
 
     public int get_mTrackIndex() {
-        return internal_native_get_mTrackIndex((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mTrackIndex(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -86,7 +78,7 @@ return jsObj.get_mTrackIndex();
     public static native int internal_native_get_mTrackIndex(int this_addr);
 
     public void set_mTrackIndex(int mTrackIndex) {
-        internal_native_set_mTrackIndex((int) (long) getNativeData().getCPointer(), mTrackIndex);
+        internal_native_set_mTrackIndex(native_address, mTrackIndex);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,7 +89,7 @@ jsObj.set_mTrackIndex(mTrackIndex);
     public static native void internal_native_set_mTrackIndex(int this_addr, int mTrackIndex);
 
     public float get_mCombinedLongitudinalFriction() {
-        return internal_native_get_mCombinedLongitudinalFriction((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCombinedLongitudinalFriction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -108,7 +100,7 @@ return jsObj.get_mCombinedLongitudinalFriction();
     public static native float internal_native_get_mCombinedLongitudinalFriction(int this_addr);
 
     public void set_mCombinedLongitudinalFriction(float mCombinedLongitudinalFriction) {
-        internal_native_set_mCombinedLongitudinalFriction((int) (long) getNativeData().getCPointer(), mCombinedLongitudinalFriction);
+        internal_native_set_mCombinedLongitudinalFriction(native_address, mCombinedLongitudinalFriction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -119,7 +111,7 @@ jsObj.set_mCombinedLongitudinalFriction(mCombinedLongitudinalFriction);
     public static native void internal_native_set_mCombinedLongitudinalFriction(int this_addr, float mCombinedLongitudinalFriction);
 
     public float get_mCombinedLateralFriction() {
-        return internal_native_get_mCombinedLateralFriction((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCombinedLateralFriction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -130,7 +122,7 @@ return jsObj.get_mCombinedLateralFriction();
     public static native float internal_native_get_mCombinedLateralFriction(int this_addr);
 
     public void set_mCombinedLateralFriction(float mCombinedLateralFriction) {
-        internal_native_set_mCombinedLateralFriction((int) (long) getNativeData().getCPointer(), mCombinedLateralFriction);
+        internal_native_set_mCombinedLateralFriction(native_address, mCombinedLateralFriction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -141,7 +133,7 @@ jsObj.set_mCombinedLateralFriction(mCombinedLateralFriction);
     public static native void internal_native_set_mCombinedLateralFriction(int this_addr, float mCombinedLateralFriction);
 
     public float get_mBrakeImpulse() {
-        return internal_native_get_mBrakeImpulse((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mBrakeImpulse(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -152,7 +144,7 @@ return jsObj.get_mBrakeImpulse();
     public static native float internal_native_get_mBrakeImpulse(int this_addr);
 
     public void set_mBrakeImpulse(float mBrakeImpulse) {
-        internal_native_set_mBrakeImpulse((int) (long) getNativeData().getCPointer(), mBrakeImpulse);
+        internal_native_set_mBrakeImpulse(native_address, mBrakeImpulse);
     }
 
     /*[-TEAVM;-NATIVE]

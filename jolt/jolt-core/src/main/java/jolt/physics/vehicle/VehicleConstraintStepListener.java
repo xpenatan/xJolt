@@ -17,8 +17,8 @@ public class VehicleConstraintStepListener extends PhysicsStepListener {
 
     public VehicleConstraintStepListener(VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_VehicleConstraint((long) (inConstraint != null ? inConstraint.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_VehicleConstraint((inConstraint != null ? inConstraint.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,16 +34,8 @@ return (jlong)new VehicleConstraintStepListener((VehicleConstraint* )inConstrain
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]

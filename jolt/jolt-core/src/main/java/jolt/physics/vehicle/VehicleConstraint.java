@@ -42,8 +42,8 @@ public class VehicleConstraint extends Constraint {
 
     public VehicleConstraint(Body inVehicleBody, VehicleConstraintSettings inSettings) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Body_VehicleConstraintSettings((long) (inVehicleBody != null ? inVehicleBody.getNativeData().getCPointer() : 0), (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_Body_VehicleConstraintSettings((inVehicleBody != null ? inVehicleBody.native_address : 0), (inSettings != null ? inSettings.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -60,7 +60,7 @@ return (jlong)new VehicleConstraint(*((Body* )inVehicleBody_addr), *((VehicleCon
     }
 
     public void SetMaxPitchRollAngle(float inMaxPitchRollAngle) {
-        internal_native_SetMaxPitchRollAngle((long) getNativeData().getCPointer(), inMaxPitchRollAngle);
+        internal_native_SetMaxPitchRollAngle(native_address, inMaxPitchRollAngle);
     }
 
     /*[-JNI;-NATIVE]
@@ -70,7 +70,7 @@ nativeObject->SetMaxPitchRollAngle((float)inMaxPitchRollAngle);
     public static native void internal_native_SetMaxPitchRollAngle(long this_addr, float inMaxPitchRollAngle);
 
     public void SetVehicleCollisionTester(VehicleCollisionTester inTester) {
-        internal_native_SetVehicleCollisionTester((long) getNativeData().getCPointer(), (long) (inTester != null ? inTester.getNativeData().getCPointer() : 0));
+        internal_native_SetVehicleCollisionTester(native_address, (inTester != null ? inTester.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -80,7 +80,7 @@ nativeObject->SetVehicleCollisionTester((VehicleCollisionTester* )inTester_addr)
     public static native void internal_native_SetVehicleCollisionTester(long this_addr, long inTester_addr);
 
     public void OverrideGravity(Vec3 inGravity) {
-        internal_native_OverrideGravity((long) getNativeData().getCPointer(), (long) (inGravity != null ? inGravity.getNativeData().getCPointer() : 0));
+        internal_native_OverrideGravity(native_address, (inGravity != null ? inGravity.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -90,7 +90,7 @@ nativeObject->OverrideGravity(*((Vec3* )inGravity_addr));
     public static native void internal_native_OverrideGravity(long this_addr, long inGravity_addr);
 
     public boolean IsGravityOverridden() {
-        return internal_native_IsGravityOverridden((long) getNativeData().getCPointer());
+        return internal_native_IsGravityOverridden(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -100,12 +100,12 @@ return nativeObject->IsGravityOverridden();
     public static native boolean internal_native_IsGravityOverridden(long this_addr);
 
     public Vec3 GetGravityOverride() {
-        long pointer = internal_native_GetGravityOverride((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetGravityOverride(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -117,7 +117,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetGravityOverride(long this_addr);
 
     public void ResetGravityOverride() {
-        internal_native_ResetGravityOverride((long) getNativeData().getCPointer());
+        internal_native_ResetGravityOverride(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -127,12 +127,12 @@ nativeObject->ResetGravityOverride();
     public static native void internal_native_ResetGravityOverride(long this_addr);
 
     public Vec3 GetLocalUp() {
-        long pointer = internal_native_GetLocalUp((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetLocalUp(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -144,12 +144,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetLocalUp(long this_addr);
 
     public Vec3 GetLocalForward() {
-        long pointer = internal_native_GetLocalForward((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetLocalForward(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -161,12 +161,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetLocalForward(long this_addr);
 
     public Vec3 GetWorldUp() {
-        long pointer = internal_native_GetWorldUp((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetWorldUp(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -178,12 +178,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetWorldUp(long this_addr);
 
     public Body GetVehicleBody() {
-        long pointer = internal_native_GetVehicleBody((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetVehicleBody(native_address);
         if (pointer == 0)
             return null;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Body_TEMP_GEN_0.internal_reset(pointer, false);
         return Body_TEMP_GEN_0;
     }
 
@@ -195,12 +195,12 @@ return (jlong)obj;
     public static native long internal_native_GetVehicleBody(long this_addr);
 
     public VehicleController GetController() {
-        long pointer = internal_native_GetController((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetController(native_address);
         if (pointer == 0)
             return null;
         if (VehicleController_TEMP_GEN_0 == null)
             VehicleController_TEMP_GEN_0 = new VehicleController((byte) 1, (char) 1);
-        VehicleController_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VehicleController_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleController_TEMP_GEN_0;
     }
 
@@ -212,12 +212,12 @@ return (jlong)obj;
     public static native long internal_native_GetController(long this_addr);
 
     public Wheels GetWheels() {
-        long pointer = internal_native_GetWheels((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetWheels(native_address);
         if (pointer == 0)
             return null;
         if (Wheels_TEMP_GEN_0 == null)
             Wheels_TEMP_GEN_0 = new Wheels((byte) 1, (char) 1);
-        Wheels_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Wheels_TEMP_GEN_0.internal_reset(pointer, false);
         return Wheels_TEMP_GEN_0;
     }
 
@@ -228,12 +228,12 @@ return (jlong)&nativeObject->GetWheels();
     public static native long internal_native_GetWheels(long this_addr);
 
     public Wheel GetWheel(int inIdx) {
-        long pointer = internal_native_GetWheel((long) getNativeData().getCPointer(), inIdx);
+        long pointer = internal_native_GetWheel(native_address, inIdx);
         if (pointer == 0)
             return null;
         if (Wheel_TEMP_GEN_0 == null)
             Wheel_TEMP_GEN_0 = new Wheel((byte) 1, (char) 1);
-        Wheel_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Wheel_TEMP_GEN_0.internal_reset(pointer, false);
         return Wheel_TEMP_GEN_0;
     }
 
@@ -245,12 +245,12 @@ return (jlong)obj;
     public static native long internal_native_GetWheel(long this_addr, int inIdx);
 
     public Mat44 GetWheelLocalTransform(int inWheelIndex, Vec3 inWheelRight, Vec3 inWheelUp) {
-        long pointer = internal_native_GetWheelLocalTransform((long) getNativeData().getCPointer(), inWheelIndex, (long) (inWheelRight != null ? inWheelRight.getNativeData().getCPointer() : 0), (long) (inWheelUp != null ? inWheelUp.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_GetWheelLocalTransform(native_address, inWheelIndex, (inWheelRight != null ? inWheelRight.native_address : 0), (inWheelUp != null ? inWheelUp.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -262,12 +262,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetWheelLocalTransform(long this_addr, int inWheelIndex, long inWheelRight_addr, long inWheelUp_addr);
 
     public Mat44 GetWheelWorldTransform(int inWheelIndex, Vec3 inWheelRight, Vec3 inWheelUp) {
-        long pointer = internal_native_GetWheelWorldTransform((long) getNativeData().getCPointer(), inWheelIndex, (long) (inWheelRight != null ? inWheelRight.getNativeData().getCPointer() : 0), (long) (inWheelUp != null ? inWheelUp.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_GetWheelWorldTransform(native_address, inWheelIndex, (inWheelRight != null ? inWheelRight.native_address : 0), (inWheelUp != null ? inWheelUp.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -279,12 +279,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetWheelWorldTransform(long this_addr, int inWheelIndex, long inWheelRight_addr, long inWheelUp_addr);
 
     public ArrayVehicleAntiRollBar GetAntiRollBars() {
-        long pointer = internal_native_GetAntiRollBars((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetAntiRollBars(native_address);
         if (pointer == 0)
             return null;
         if (ArrayVehicleAntiRollBar_TEMP_GEN_0 == null)
             ArrayVehicleAntiRollBar_TEMP_GEN_0 = new ArrayVehicleAntiRollBar((byte) 1, (char) 1);
-        ArrayVehicleAntiRollBar_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayVehicleAntiRollBar_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayVehicleAntiRollBar_TEMP_GEN_0;
     }
 
@@ -295,7 +295,7 @@ return (jlong)&nativeObject->GetAntiRollBars();
     public static native long internal_native_GetAntiRollBars(long this_addr);
 
     public void SetNumStepsBetweenCollisionTestActive(int inSteps) {
-        internal_native_SetNumStepsBetweenCollisionTestActive((long) getNativeData().getCPointer(), inSteps);
+        internal_native_SetNumStepsBetweenCollisionTestActive(native_address, inSteps);
     }
 
     /*[-JNI;-NATIVE]
@@ -305,7 +305,7 @@ nativeObject->SetNumStepsBetweenCollisionTestActive(inSteps);
     public static native void internal_native_SetNumStepsBetweenCollisionTestActive(long this_addr, int inSteps);
 
     public int GetNumStepsBetweenCollisionTestActive() {
-        return internal_native_GetNumStepsBetweenCollisionTestActive((long) getNativeData().getCPointer());
+        return internal_native_GetNumStepsBetweenCollisionTestActive(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -315,7 +315,7 @@ return nativeObject->GetNumStepsBetweenCollisionTestActive();
     public static native int internal_native_GetNumStepsBetweenCollisionTestActive(long this_addr);
 
     public void SetNumStepsBetweenCollisionTestInactive(int inSteps) {
-        internal_native_SetNumStepsBetweenCollisionTestInactive((long) getNativeData().getCPointer(), inSteps);
+        internal_native_SetNumStepsBetweenCollisionTestInactive(native_address, inSteps);
     }
 
     /*[-JNI;-NATIVE]
@@ -325,7 +325,7 @@ nativeObject->SetNumStepsBetweenCollisionTestInactive(inSteps);
     public static native void internal_native_SetNumStepsBetweenCollisionTestInactive(long this_addr, int inSteps);
 
     public int GetNumStepsBetweenCollisionTestInactive() {
-        return internal_native_GetNumStepsBetweenCollisionTestInactive((long) getNativeData().getCPointer());
+        return internal_native_GetNumStepsBetweenCollisionTestInactive(native_address);
     }
 
     /*[-JNI;-NATIVE]

@@ -35,16 +35,8 @@ public class NarrowPhaseQuery extends IDLBase {
     public NarrowPhaseQuery(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,7 +46,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
-        internal_native_CastRay((long) getNativeData().getCPointer(), (long) (inRay != null ? inRay.getNativeData().getCPointer() : 0), (long) (inRayCastSettings != null ? inRayCastSettings.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0));
+        internal_native_CastRay(native_address, (inRay != null ? inRay.native_address : 0), (inRayCastSettings != null ? inRayCastSettings.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -64,7 +56,7 @@ nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastSettings* )inRayCastS
     public static native void internal_native_CastRay(long this_addr, long inRay_addr, long inRayCastSettings_addr, long ioCollector_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr);
 
     public void CollidePoint(Vec3 inPoint, CollidePointCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
-        internal_native_CollidePoint((long) getNativeData().getCPointer(), (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollidePoint(native_address, (inPoint != null ? inPoint.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -74,7 +66,7 @@ nativeObject->CollidePoint(*((Vec3* )inPoint_addr), *((CollidePointCollector* )i
     public static native void internal_native_CollidePoint(long this_addr, long inPoint_addr, long ioCollector_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr);
 
     public void CollideShape(Shape inShape, Vec3 inShapeScale, Mat44 inCenterOfMassTransform, CollideShapeSettings inCollideShapeSettings, Vec3 inBaseOffset, CollideShapeCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
-        internal_native_CollideShape((long) getNativeData().getCPointer(), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (long) (inShapeScale != null ? inShapeScale.getNativeData().getCPointer() : 0), (long) (inCenterOfMassTransform != null ? inCenterOfMassTransform.getNativeData().getCPointer() : 0), (long) (inCollideShapeSettings != null ? inCollideShapeSettings.getNativeData().getCPointer() : 0), (long) (inBaseOffset != null ? inBaseOffset.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollideShape(native_address, (inShape != null ? inShape.native_address : 0), (inShapeScale != null ? inShapeScale.native_address : 0), (inCenterOfMassTransform != null ? inCenterOfMassTransform.native_address : 0), (inCollideShapeSettings != null ? inCollideShapeSettings.native_address : 0), (inBaseOffset != null ? inBaseOffset.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -84,7 +76,7 @@ nativeObject->CollideShape((Shape* )inShape_addr, *((Vec3* )inShapeScale_addr), 
     public static native void internal_native_CollideShape(long this_addr, long inShape_addr, long inShapeScale_addr, long inCenterOfMassTransform_addr, long inCollideShapeSettings_addr, long inBaseOffset_addr, long ioCollector_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr);
 
     public void CastShape(RShapeCast inShapeCast, ShapeCastSettings inShapeCastSettings, Vec3 inBaseOffset, CastShapeCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
-        internal_native_CastShape((long) getNativeData().getCPointer(), (long) (inShapeCast != null ? inShapeCast.getNativeData().getCPointer() : 0), (long) (inShapeCastSettings != null ? inShapeCastSettings.getNativeData().getCPointer() : 0), (long) (inBaseOffset != null ? inBaseOffset.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0));
+        internal_native_CastShape(native_address, (inShapeCast != null ? inShapeCast.native_address : 0), (inShapeCastSettings != null ? inShapeCastSettings.native_address : 0), (inBaseOffset != null ? inBaseOffset.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -94,7 +86,7 @@ nativeObject->CastShape(*((RShapeCast* )inShapeCast_addr), *((ShapeCastSettings*
     public static native void internal_native_CastShape(long this_addr, long inShapeCast_addr, long inShapeCastSettings_addr, long inBaseOffset_addr, long ioCollector_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr);
 
     public void CollectTransformedShapes(AABox inBox, TransformedShapeCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
-        internal_native_CollectTransformedShapes((long) getNativeData().getCPointer(), (long) (inBox != null ? inBox.getNativeData().getCPointer() : 0), (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollectTransformedShapes(native_address, (inBox != null ? inBox.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

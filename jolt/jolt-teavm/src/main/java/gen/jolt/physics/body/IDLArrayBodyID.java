@@ -19,7 +19,7 @@ public class IDLArrayBodyID extends IDLBase {
 
     public IDLArrayBodyID(int size) {
         int addr = internal_native_create_int(size);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -36,16 +36,8 @@ return jolt.getPointer(jsObj);
     public IDLArrayBodyID(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +48,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void resize(int size) {
-        internal_native_resize((int) (long) getNativeData().getCPointer(), size);
+        internal_native_resize(native_address, size);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,7 +59,7 @@ jsObj.resize(size);
     public static native void internal_native_resize(int this_addr, int size);
 
     public void clear() {
-        internal_native_clear((int) (long) getNativeData().getCPointer());
+        internal_native_clear(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -78,12 +70,12 @@ jsObj.clear();
     public static native void internal_native_clear(int this_addr);
 
     public BodyID getValue(int index) {
-        int pointer = internal_native_getValue((int) (long) getNativeData().getCPointer(), index);
+        int pointer = internal_native_getValue(native_address, index);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -97,7 +89,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_getValue(int this_addr, int index);
 
     public void setValue(int index, BodyID value) {
-        internal_native_setValue((int) (long) getNativeData().getCPointer(), index, (int) (long) (value != null ? value.getNativeData().getCPointer() : 0));
+        internal_native_setValue(native_address, index, (value != null ? value.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -108,7 +100,7 @@ jsObj.setValue(index, value_addr);
     public static native void internal_native_setValue(int this_addr, int index, int value_addr);
 
     public int getSize() {
-        return internal_native_getSize((int) (long) getNativeData().getCPointer());
+        return internal_native_getSize(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -119,8 +111,8 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);var returnedJSObj = jsObj.getSize();return returnedJSObj;")
     public static native int internal_native_getSize(int this_addr);
 
-    public long getPointer() {
-        return internal_native_getPointer((int) (long) getNativeData().getCPointer());
+    public int getPointer() {
+        return internal_native_getPointer(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

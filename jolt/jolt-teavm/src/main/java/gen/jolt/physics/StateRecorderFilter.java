@@ -31,16 +31,8 @@ public class StateRecorderFilter extends IDLBase {
     public StateRecorderFilter(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -52,46 +44,46 @@ jolt.destroy(jsObj);
 
     public StateRecorderFilter() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
         ShouldSaveBody ShouldSaveBody = new ShouldSaveBody() {
 
-            public boolean ShouldSaveBody(int inBody) {
-                return internal_ShouldSaveBody(inBody);
+            public boolean ShouldSaveBody(int inBody_addr) {
+                return internal_ShouldSaveBody(inBody_addr);
             }
         };
         ShouldSaveConstraint ShouldSaveConstraint = new ShouldSaveConstraint() {
 
-            public boolean ShouldSaveConstraint(int inConstraint) {
-                return internal_ShouldSaveConstraint(inConstraint);
+            public boolean ShouldSaveConstraint(int inConstraint_addr) {
+                return internal_ShouldSaveConstraint(inConstraint_addr);
             }
         };
         ShouldSaveContact ShouldSaveContact = new ShouldSaveContact() {
 
-            public boolean ShouldSaveContact(int inBody1, int inBody2) {
-                return internal_ShouldSaveContact(inBody1, inBody2);
+            public boolean ShouldSaveContact(int inBody1_addr, int inBody2_addr) {
+                return internal_ShouldSaveContact(inBody1_addr, inBody2_addr);
             }
         };
         ShouldRestoreContact ShouldRestoreContact = new ShouldRestoreContact() {
 
-            public boolean ShouldRestoreContact(int inBody1, int inBody2) {
-                return internal_ShouldRestoreContact(inBody1, inBody2);
+            public boolean ShouldRestoreContact(int inBody1_addr, int inBody2_addr) {
+                return internal_ShouldRestoreContact(inBody1_addr, inBody2_addr);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), ShouldSaveBody, ShouldSaveConstraint, ShouldSaveContact, ShouldRestoreContact);
+        internal_native_setupCallback(native_address, ShouldSaveBody, ShouldSaveConstraint, ShouldSaveContact, ShouldRestoreContact);
     }
 
     protected boolean ShouldSaveBody(Body inBody) {
         return false;
     }
 
-    private boolean internal_ShouldSaveBody(long inBody) {
+    private boolean internal_ShouldSaveBody(int inBody_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
             Body_TEMP_STATIC_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_0.getNativeData().reset(inBody, false);
+        Body_TEMP_STATIC_GEN_0.internal_reset(inBody_addr, false);
         return ShouldSaveBody(Body_TEMP_STATIC_GEN_0);
     }
 
@@ -99,10 +91,10 @@ jolt.destroy(jsObj);
         return false;
     }
 
-    private boolean internal_ShouldSaveConstraint(long inConstraint) {
+    private boolean internal_ShouldSaveConstraint(int inConstraint_addr) {
         if (Constraint_TEMP_STATIC_GEN_0 == null)
             Constraint_TEMP_STATIC_GEN_0 = new Constraint((byte) 1, (char) 1);
-        Constraint_TEMP_STATIC_GEN_0.getNativeData().reset(inConstraint, false);
+        Constraint_TEMP_STATIC_GEN_0.internal_reset(inConstraint_addr, false);
         return ShouldSaveConstraint(Constraint_TEMP_STATIC_GEN_0);
     }
 
@@ -110,13 +102,13 @@ jolt.destroy(jsObj);
         return false;
     }
 
-    private boolean internal_ShouldSaveContact(long inBody1, long inBody2) {
+    private boolean internal_ShouldSaveContact(int inBody1_addr, int inBody2_addr) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
             BodyID_TEMP_STATIC_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_0.getNativeData().reset(inBody1, false);
+        BodyID_TEMP_STATIC_GEN_0.internal_reset(inBody1_addr, false);
         if (BodyID_TEMP_STATIC_GEN_1 == null)
             BodyID_TEMP_STATIC_GEN_1 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_1.getNativeData().reset(inBody2, false);
+        BodyID_TEMP_STATIC_GEN_1.internal_reset(inBody2_addr, false);
         return ShouldSaveContact(BodyID_TEMP_STATIC_GEN_0, BodyID_TEMP_STATIC_GEN_1);
     }
 
@@ -124,13 +116,13 @@ jolt.destroy(jsObj);
         return false;
     }
 
-    private boolean internal_ShouldRestoreContact(long inBody1, long inBody2) {
+    private boolean internal_ShouldRestoreContact(int inBody1_addr, int inBody2_addr) {
         if (BodyID_TEMP_STATIC_GEN_2 == null)
             BodyID_TEMP_STATIC_GEN_2 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_2.getNativeData().reset(inBody1, false);
+        BodyID_TEMP_STATIC_GEN_2.internal_reset(inBody1_addr, false);
         if (BodyID_TEMP_STATIC_GEN_3 == null)
             BodyID_TEMP_STATIC_GEN_3 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_3.getNativeData().reset(inBody2, false);
+        BodyID_TEMP_STATIC_GEN_3.internal_reset(inBody2_addr, false);
         return ShouldRestoreContact(BodyID_TEMP_STATIC_GEN_2, BodyID_TEMP_STATIC_GEN_3);
     }
 
@@ -147,24 +139,24 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSFunctor()
     public interface ShouldSaveBody extends org.teavm.jso.JSObject {
 
-        boolean ShouldSaveBody(int inBody);
+        boolean ShouldSaveBody(int inBody_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface ShouldSaveConstraint extends org.teavm.jso.JSObject {
 
-        boolean ShouldSaveConstraint(int inConstraint);
+        boolean ShouldSaveConstraint(int inConstraint_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface ShouldSaveContact extends org.teavm.jso.JSObject {
 
-        boolean ShouldSaveContact(int inBody1, int inBody2);
+        boolean ShouldSaveContact(int inBody1_addr, int inBody2_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface ShouldRestoreContact extends org.teavm.jso.JSObject {
 
-        boolean ShouldRestoreContact(int inBody1, int inBody2);
+        boolean ShouldRestoreContact(int inBody1_addr, int inBody2_addr);
     }
 }

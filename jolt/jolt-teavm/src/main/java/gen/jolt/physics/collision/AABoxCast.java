@@ -23,7 +23,7 @@ public class AABoxCast extends IDLBase {
 
     public AABoxCast() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -40,16 +40,8 @@ return jolt.getPointer(jsObj);
     public AABoxCast(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -60,12 +52,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public AABox get_mBox() {
-        int pointer = internal_native_get_mBox((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mBox(native_address);
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -79,7 +71,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mBox(int this_addr);
 
     public void set_mBox(AABox mBox) {
-        internal_native_set_mBox((int) (long) getNativeData().getCPointer(), (int) (long) (mBox != null ? mBox.getNativeData().getCPointer() : 0));
+        internal_native_set_mBox(native_address, (mBox != null ? mBox.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -90,12 +82,12 @@ jsObj.set_mBox(mBox_addr);
     public static native void internal_native_set_mBox(int this_addr, int mBox_addr);
 
     public Vec3 get_mDirection() {
-        int pointer = internal_native_get_mDirection((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mDirection(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -109,7 +101,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mDirection(int this_addr);
 
     public void set_mDirection(Vec3 mDirection) {
-        internal_native_set_mDirection((int) (long) getNativeData().getCPointer(), (int) (long) (mDirection != null ? mDirection.getNativeData().getCPointer() : 0));
+        internal_native_set_mDirection(native_address, (mDirection != null ? mDirection.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

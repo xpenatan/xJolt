@@ -17,7 +17,7 @@ public class CharacterContactSettings extends IDLBase {
 
     public CharacterContactSettings() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
     public CharacterContactSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public boolean get_mCanPushCharacter() {
-        return internal_native_get_mCanPushCharacter((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCanPushCharacter(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ return jsObj.get_mCanPushCharacter();
     public static native boolean internal_native_get_mCanPushCharacter(int this_addr);
 
     public void set_mCanPushCharacter(boolean mCanPushCharacter) {
-        internal_native_set_mCanPushCharacter((int) (long) getNativeData().getCPointer(), mCanPushCharacter);
+        internal_native_set_mCanPushCharacter(native_address, mCanPushCharacter);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ jsObj.set_mCanPushCharacter(mCanPushCharacter);
     public static native void internal_native_set_mCanPushCharacter(int this_addr, boolean mCanPushCharacter);
 
     public boolean get_mCanReceiveImpulses() {
-        return internal_native_get_mCanReceiveImpulses((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCanReceiveImpulses(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +79,7 @@ return jsObj.get_mCanReceiveImpulses();
     public static native boolean internal_native_get_mCanReceiveImpulses(int this_addr);
 
     public void set_mCanReceiveImpulses(boolean mCanReceiveImpulses) {
-        internal_native_set_mCanReceiveImpulses((int) (long) getNativeData().getCPointer(), mCanReceiveImpulses);
+        internal_native_set_mCanReceiveImpulses(native_address, mCanReceiveImpulses);
     }
 
     /*[-TEAVM;-NATIVE]

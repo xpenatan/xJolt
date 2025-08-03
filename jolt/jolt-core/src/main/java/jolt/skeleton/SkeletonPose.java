@@ -30,7 +30,7 @@ public class SkeletonPose extends IDLBase {
 
     public SkeletonPose() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,16 +45,8 @@ return (jlong)new SkeletonPose();
     public SkeletonPose(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,7 +56,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void SetSkeleton(Skeleton inSkeleton) {
-        internal_native_SetSkeleton((long) getNativeData().getCPointer(), (long) (inSkeleton != null ? inSkeleton.getNativeData().getCPointer() : 0));
+        internal_native_SetSkeleton(native_address, (inSkeleton != null ? inSkeleton.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -74,12 +66,12 @@ nativeObject->SetSkeleton((Skeleton* )inSkeleton_addr);
     public static native void internal_native_SetSkeleton(long this_addr, long inSkeleton_addr);
 
     public Skeleton GetSkeleton() {
-        long pointer = internal_native_GetSkeleton((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetSkeleton(native_address);
         if (pointer == 0)
             return null;
         if (Skeleton_TEMP_GEN_0 == null)
             Skeleton_TEMP_GEN_0 = new Skeleton((byte) 1, (char) 1);
-        Skeleton_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Skeleton_TEMP_GEN_0.internal_reset(pointer, false);
         return Skeleton_TEMP_GEN_0;
     }
 
@@ -91,7 +83,7 @@ return (jlong)obj;
     public static native long internal_native_GetSkeleton(long this_addr);
 
     public void SetRootOffset(Vec3 inOffset) {
-        internal_native_SetRootOffset((long) getNativeData().getCPointer(), (long) (inOffset != null ? inOffset.getNativeData().getCPointer() : 0));
+        internal_native_SetRootOffset(native_address, (inOffset != null ? inOffset.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -101,12 +93,12 @@ nativeObject->SetRootOffset(*((Vec3* )inOffset_addr));
     public static native void internal_native_SetRootOffset(long this_addr, long inOffset_addr);
 
     public Vec3 GetRootOffset() {
-        long pointer = internal_native_GetRootOffset((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetRootOffset(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -118,7 +110,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetRootOffset(long this_addr);
 
     public int GetJointCount() {
-        return internal_native_GetJointCount((long) getNativeData().getCPointer());
+        return internal_native_GetJointCount(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -128,12 +120,12 @@ return nativeObject->GetJointCount();
     public static native int internal_native_GetJointCount(long this_addr);
 
     public SkeletalAnimationJointState GetJoint(int inJoint) {
-        long pointer = internal_native_GetJoint((long) getNativeData().getCPointer(), inJoint);
+        long pointer = internal_native_GetJoint(native_address, inJoint);
         if (pointer == 0)
             return null;
         if (SkeletalAnimationJointState_TEMP_GEN_0 == null)
             SkeletalAnimationJointState_TEMP_GEN_0 = new SkeletalAnimationJointState((byte) 1, (char) 1);
-        SkeletalAnimationJointState_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SkeletalAnimationJointState_TEMP_GEN_0.internal_reset(pointer, false);
         return SkeletalAnimationJointState_TEMP_GEN_0;
     }
 
@@ -144,12 +136,12 @@ return (jlong)&nativeObject->GetJoint((int)inJoint);
     public static native long internal_native_GetJoint(long this_addr, int inJoint);
 
     public ArrayMat44 GetJointMatrices() {
-        long pointer = internal_native_GetJointMatrices((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetJointMatrices(native_address);
         if (pointer == 0)
             return null;
         if (ArrayMat44_TEMP_GEN_0 == null)
             ArrayMat44_TEMP_GEN_0 = new ArrayMat44((byte) 1, (char) 1);
-        ArrayMat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayMat44_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayMat44_TEMP_GEN_0;
     }
 
@@ -160,12 +152,12 @@ return (jlong)&nativeObject->GetJointMatrices();
     public static native long internal_native_GetJointMatrices(long this_addr);
 
     public Mat44 GetJointMatrix(int inJoint) {
-        long pointer = internal_native_GetJointMatrix((long) getNativeData().getCPointer(), inJoint);
+        long pointer = internal_native_GetJointMatrix(native_address, inJoint);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -176,7 +168,7 @@ return (jlong)&nativeObject->GetJointMatrix((int)inJoint);
     public static native long internal_native_GetJointMatrix(long this_addr, int inJoint);
 
     public void CalculateJointMatrices() {
-        internal_native_CalculateJointMatrices((long) getNativeData().getCPointer());
+        internal_native_CalculateJointMatrices(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -186,7 +178,7 @@ nativeObject->CalculateJointMatrices();
     public static native void internal_native_CalculateJointMatrices(long this_addr);
 
     public void CalculateJointStates() {
-        internal_native_CalculateJointStates((long) getNativeData().getCPointer());
+        internal_native_CalculateJointStates(native_address);
     }
 
     /*[-JNI;-NATIVE]

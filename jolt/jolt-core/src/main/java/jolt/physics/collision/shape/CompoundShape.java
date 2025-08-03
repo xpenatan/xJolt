@@ -24,7 +24,7 @@ public class CompoundShape extends Shape {
     }
 
     public int GetNumSubShapes() {
-        return internal_native_GetNumSubShapes((long) getNativeData().getCPointer());
+        return internal_native_GetNumSubShapes(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,12 +34,12 @@ return nativeObject->GetNumSubShapes();
     public static native int internal_native_GetNumSubShapes(long this_addr);
 
     public CompoundShapeSubShape GetSubShape(int inIdx) {
-        long pointer = internal_native_GetSubShape((long) getNativeData().getCPointer(), inIdx);
+        long pointer = internal_native_GetSubShape(native_address, inIdx);
         if (pointer == 0)
             return null;
         if (CompoundShapeSubShape_TEMP_GEN_0 == null)
             CompoundShapeSubShape_TEMP_GEN_0 = new CompoundShapeSubShape((byte) 1, (char) 1);
-        CompoundShapeSubShape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        CompoundShapeSubShape_TEMP_GEN_0.internal_reset(pointer, false);
         return CompoundShapeSubShape_TEMP_GEN_0;
     }
 

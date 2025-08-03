@@ -12,6 +12,7 @@ import jolt.math.Mat44;
 import jolt.core.Color;
 import jolt.enums.ECastShadow;
 import jolt.enums.EDrawMode;
+import jolt.idl.helper.IDLFloatArray;
 import jolt.enums.ECullMode;
 import jolt.math.Vec3;
 
@@ -19,7 +20,7 @@ public class DebugRendererEm extends IDLBase {
 
     static private Mat44 Mat44_TEMP_STATIC_GEN_0;
 
-    static private DebugArrayTriangle DebugArrayTriangle_TEMP_STATIC_GEN_0;
+    static private IDLFloatArray IDLFloatArray_TEMP_STATIC_GEN_0;
 
     static private Color Color_TEMP_STATIC_GEN_0;
 
@@ -64,8 +65,8 @@ void setupCallback(JNIEnv* env, jobject obj) {
 		DebugRendererImplCustom::DrawText3DJJIJF_ID = env->GetMethodID(jClassID, "internal_DrawText3D", "(JJIJF)V");
 	}
 }
-virtual void DrawMesh(int id, const Mat44& inModelMatrix, const DebugArrayTriangle& triangleArray, const Color& inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
-   env->CallVoidMethod(obj, DebugRendererImplCustom::DrawMeshIJJJII_ID, id, (jlong)&inModelMatrix, (jlong)&triangleArray, (jlong)&inModelColor, inCullMode, inDrawMode);
+virtual void DrawMesh(int id, const Mat44& inModelMatrix, const IDLFloatArray* vertices, const Color& inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
+   env->CallVoidMethod(obj, DebugRendererImplCustom::DrawMeshIJJJII_ID, id, (jlong)&inModelMatrix, (jlong)vertices, (jlong)&inModelColor, inCullMode, inDrawMode);
 }
 virtual void DrawLine(const Vec3* inFrom, const Vec3* inTo, const Color* inColor) {
    env->CallVoidMethod(obj, DebugRendererImplCustom::DrawLineJJJ_ID, (jlong)inFrom, (jlong)inTo, (jlong)inColor);
@@ -82,16 +83,8 @@ virtual void DrawText3D(const Vec3* inPosition, const void* inString, unsigned i
     public DebugRendererEm(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -101,7 +94,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void DrawBodies(PhysicsSystem system, BodyManagerDrawSettings inDrawSettings) {
-        internal_native_DrawBodies((long) getNativeData().getCPointer(), (long) (system != null ? system.getNativeData().getCPointer() : 0), (long) (inDrawSettings != null ? inDrawSettings.getNativeData().getCPointer() : 0));
+        internal_native_DrawBodies(native_address, (system != null ? system.native_address : 0), (inDrawSettings != null ? inDrawSettings.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -111,7 +104,7 @@ nativeObject->DrawBodies((PhysicsSystem* )system_addr, (BodyManagerDrawSettings*
     public static native void internal_native_DrawBodies(long this_addr, long system_addr, long inDrawSettings_addr);
 
     public void DrawBodies(PhysicsSystem system) {
-        internal_native_DrawBodies((long) getNativeData().getCPointer(), (long) (system != null ? system.getNativeData().getCPointer() : 0));
+        internal_native_DrawBodies(native_address, (system != null ? system.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -121,7 +114,7 @@ nativeObject->DrawBodies((PhysicsSystem* )system_addr);
     public static native void internal_native_DrawBodies(long this_addr, long system_addr);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow, EDrawMode inDrawMode) {
-        internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (long) (inCastShadow != null ? inCastShadow.getValue() : 0), (long) (inDrawMode != null ? inDrawMode.getValue() : 0));
+        internal_native_DrawCylinder(native_address, (inMatrix != null ? inMatrix.native_address : 0), inHalfHeight, inRadius, (inColor != null ? inColor.native_address : 0), (inCastShadow != null ? inCastShadow.getValue() : 0), (inDrawMode != null ? inDrawMode.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -131,7 +124,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
     public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow, long inDrawMode);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow) {
-        internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (long) (inCastShadow != null ? inCastShadow.getValue() : 0));
+        internal_native_DrawCylinder(native_address, (inMatrix != null ? inMatrix.native_address : 0), inHalfHeight, inRadius, (inColor != null ? inColor.native_address : 0), (inCastShadow != null ? inCastShadow.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -141,7 +134,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
     public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor) {
-        internal_native_DrawCylinder((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0));
+        internal_native_DrawCylinder(native_address, (inMatrix != null ? inMatrix.native_address : 0), inHalfHeight, inRadius, (inColor != null ? inColor.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -152,75 +145,75 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
 
     public DebugRendererEm() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
-    protected void DrawMesh(int id, Mat44 inModelMatrix, DebugArrayTriangle triangleArray, Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
+    protected void DrawMesh(int id, Mat44 inModelMatrix, IDLFloatArray vertices, Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
     }
 
-    private void internal_DrawMesh(int id, long inModelMatrix, long triangleArray, long inModelColor, int inCullMode, int inDrawMode) {
+    private void internal_DrawMesh(int id, long inModelMatrix_addr, long vertices_addr, long inModelColor_addr, int inCullMode_addr, int inDrawMode_addr) {
         if (Mat44_TEMP_STATIC_GEN_0 == null)
             Mat44_TEMP_STATIC_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_0.getNativeData().reset(inModelMatrix, false);
-        if (DebugArrayTriangle_TEMP_STATIC_GEN_0 == null)
-            DebugArrayTriangle_TEMP_STATIC_GEN_0 = new DebugArrayTriangle((byte) 1, (char) 1);
-        DebugArrayTriangle_TEMP_STATIC_GEN_0.getNativeData().reset(triangleArray, false);
+        Mat44_TEMP_STATIC_GEN_0.internal_reset(inModelMatrix_addr, false);
+        if (IDLFloatArray_TEMP_STATIC_GEN_0 == null)
+            IDLFloatArray_TEMP_STATIC_GEN_0 = new IDLFloatArray((byte) 1, (char) 1);
+        IDLFloatArray_TEMP_STATIC_GEN_0.internal_reset(vertices_addr, false);
         if (Color_TEMP_STATIC_GEN_0 == null)
             Color_TEMP_STATIC_GEN_0 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_0.getNativeData().reset(inModelColor, false);
-        DrawMesh(id, Mat44_TEMP_STATIC_GEN_0, DebugArrayTriangle_TEMP_STATIC_GEN_0, Color_TEMP_STATIC_GEN_0, ECullMode.MAP.get(inCullMode), EDrawMode.MAP.get(inDrawMode));
+        Color_TEMP_STATIC_GEN_0.internal_reset(inModelColor_addr, false);
+        DrawMesh(id, Mat44_TEMP_STATIC_GEN_0, IDLFloatArray_TEMP_STATIC_GEN_0, Color_TEMP_STATIC_GEN_0, ECullMode.MAP.get(inCullMode_addr), EDrawMode.MAP.get(inDrawMode_addr));
     }
 
     protected void DrawLine(Vec3 inFrom, Vec3 inTo, Color inColor) {
     }
 
-    private void internal_DrawLine(long inFrom, long inTo, long inColor) {
+    private void internal_DrawLine(long inFrom_addr, long inTo_addr, long inColor_addr) {
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_0.getNativeData().reset(inFrom, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(inFrom_addr, false);
         if (Vec3_TEMP_STATIC_GEN_1 == null)
             Vec3_TEMP_STATIC_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_1.getNativeData().reset(inTo, false);
+        Vec3_TEMP_STATIC_GEN_1.internal_reset(inTo_addr, false);
         if (Color_TEMP_STATIC_GEN_1 == null)
             Color_TEMP_STATIC_GEN_1 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_1.getNativeData().reset(inColor, false);
+        Color_TEMP_STATIC_GEN_1.internal_reset(inColor_addr, false);
         DrawLine(Vec3_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_1, Color_TEMP_STATIC_GEN_1);
     }
 
     protected void DrawTriangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, Color inColor, ECastShadow inCastShadow) {
     }
 
-    private void internal_DrawTriangle(long inV1, long inV2, long inV3, long inColor, int inCastShadow) {
+    private void internal_DrawTriangle(long inV1_addr, long inV2_addr, long inV3_addr, long inColor_addr, int inCastShadow_addr) {
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_2.getNativeData().reset(inV1, false);
+        Vec3_TEMP_STATIC_GEN_2.internal_reset(inV1_addr, false);
         if (Vec3_TEMP_STATIC_GEN_3 == null)
             Vec3_TEMP_STATIC_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_3.getNativeData().reset(inV2, false);
+        Vec3_TEMP_STATIC_GEN_3.internal_reset(inV2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_4 == null)
             Vec3_TEMP_STATIC_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_4.getNativeData().reset(inV3, false);
+        Vec3_TEMP_STATIC_GEN_4.internal_reset(inV3_addr, false);
         if (Color_TEMP_STATIC_GEN_2 == null)
             Color_TEMP_STATIC_GEN_2 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_2.getNativeData().reset(inColor, false);
-        DrawTriangle(Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Color_TEMP_STATIC_GEN_2, ECastShadow.MAP.get(inCastShadow));
+        Color_TEMP_STATIC_GEN_2.internal_reset(inColor_addr, false);
+        DrawTriangle(Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Color_TEMP_STATIC_GEN_2, ECastShadow.MAP.get(inCastShadow_addr));
     }
 
     protected void DrawText3D(Vec3 inPosition, long inString, int inStringLen, Color inColor, float inHeight) {
     }
 
-    private void internal_DrawText3D(long inPosition, long inString, int inStringLen, long inColor, float inHeight) {
+    private void internal_DrawText3D(long inPosition_addr, long inString, int inStringLen, long inColor_addr, float inHeight) {
         if (Vec3_TEMP_STATIC_GEN_5 == null)
             Vec3_TEMP_STATIC_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_5.getNativeData().reset(inPosition, false);
+        Vec3_TEMP_STATIC_GEN_5.internal_reset(inPosition_addr, false);
         if (Color_TEMP_STATIC_GEN_3 == null)
             Color_TEMP_STATIC_GEN_3 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_3.getNativeData().reset(inColor, false);
+        Color_TEMP_STATIC_GEN_3.internal_reset(inColor_addr, false);
         DrawText3D(Vec3_TEMP_STATIC_GEN_5, inString, inStringLen, Color_TEMP_STATIC_GEN_3, inHeight);
     }
 

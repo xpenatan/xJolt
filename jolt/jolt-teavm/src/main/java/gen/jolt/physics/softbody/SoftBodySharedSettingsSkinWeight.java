@@ -22,16 +22,8 @@ public class SoftBodySharedSettingsSkinWeight extends IDLBase {
     public SoftBodySharedSettingsSkinWeight(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -42,7 +34,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mInvBindIndex() {
-        return internal_native_get_mInvBindIndex((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mInvBindIndex(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -53,7 +45,7 @@ return jsObj.get_mInvBindIndex();
     public static native int internal_native_get_mInvBindIndex(int this_addr);
 
     public void set_mInvBindIndex(int mInvBindIndex) {
-        internal_native_set_mInvBindIndex((int) (long) getNativeData().getCPointer(), mInvBindIndex);
+        internal_native_set_mInvBindIndex(native_address, mInvBindIndex);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -64,7 +56,7 @@ jsObj.set_mInvBindIndex(mInvBindIndex);
     public static native void internal_native_set_mInvBindIndex(int this_addr, int mInvBindIndex);
 
     public float get_mWeight() {
-        return internal_native_get_mWeight((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mWeight(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -75,7 +67,7 @@ return jsObj.get_mWeight();
     public static native float internal_native_get_mWeight(int this_addr);
 
     public void set_mWeight(float mWeight) {
-        internal_native_set_mWeight((int) (long) getNativeData().getCPointer(), mWeight);
+        internal_native_set_mWeight(native_address, mWeight);
     }
 
     /*[-TEAVM;-NATIVE]

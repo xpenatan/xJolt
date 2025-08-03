@@ -16,7 +16,7 @@ public class MotorcycleControllerSettings extends WheeledVehicleControllerSettin
     public MotorcycleControllerSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mMaxLeanAngle() {
-        return internal_native_get_mMaxLeanAngle((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxLeanAngle(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ return jsObj.get_mMaxLeanAngle();
     public static native float internal_native_get_mMaxLeanAngle(int this_addr);
 
     public void set_mMaxLeanAngle(float mMaxLeanAngle) {
-        internal_native_set_mMaxLeanAngle((int) (long) getNativeData().getCPointer(), mMaxLeanAngle);
+        internal_native_set_mMaxLeanAngle(native_address, mMaxLeanAngle);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ jsObj.set_mMaxLeanAngle(mMaxLeanAngle);
     public static native void internal_native_set_mMaxLeanAngle(int this_addr, float mMaxLeanAngle);
 
     public float get_mLeanSpringConstant() {
-        return internal_native_get_mLeanSpringConstant((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLeanSpringConstant(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +79,7 @@ return jsObj.get_mLeanSpringConstant();
     public static native float internal_native_get_mLeanSpringConstant(int this_addr);
 
     public void set_mLeanSpringConstant(float mLeanSpringConstant) {
-        internal_native_set_mLeanSpringConstant((int) (long) getNativeData().getCPointer(), mLeanSpringConstant);
+        internal_native_set_mLeanSpringConstant(native_address, mLeanSpringConstant);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -98,7 +90,7 @@ jsObj.set_mLeanSpringConstant(mLeanSpringConstant);
     public static native void internal_native_set_mLeanSpringConstant(int this_addr, float mLeanSpringConstant);
 
     public float get_mLeanSpringDamping() {
-        return internal_native_get_mLeanSpringDamping((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLeanSpringDamping(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -109,7 +101,7 @@ return jsObj.get_mLeanSpringDamping();
     public static native float internal_native_get_mLeanSpringDamping(int this_addr);
 
     public void set_mLeanSpringDamping(float mLeanSpringDamping) {
-        internal_native_set_mLeanSpringDamping((int) (long) getNativeData().getCPointer(), mLeanSpringDamping);
+        internal_native_set_mLeanSpringDamping(native_address, mLeanSpringDamping);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -120,7 +112,7 @@ jsObj.set_mLeanSpringDamping(mLeanSpringDamping);
     public static native void internal_native_set_mLeanSpringDamping(int this_addr, float mLeanSpringDamping);
 
     public float get_mLeanSpringIntegrationCoefficient() {
-        return internal_native_get_mLeanSpringIntegrationCoefficient((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLeanSpringIntegrationCoefficient(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -131,7 +123,7 @@ return jsObj.get_mLeanSpringIntegrationCoefficient();
     public static native float internal_native_get_mLeanSpringIntegrationCoefficient(int this_addr);
 
     public void set_mLeanSpringIntegrationCoefficient(float mLeanSpringIntegrationCoefficient) {
-        internal_native_set_mLeanSpringIntegrationCoefficient((int) (long) getNativeData().getCPointer(), mLeanSpringIntegrationCoefficient);
+        internal_native_set_mLeanSpringIntegrationCoefficient(native_address, mLeanSpringIntegrationCoefficient);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -142,7 +134,7 @@ jsObj.set_mLeanSpringIntegrationCoefficient(mLeanSpringIntegrationCoefficient);
     public static native void internal_native_set_mLeanSpringIntegrationCoefficient(int this_addr, float mLeanSpringIntegrationCoefficient);
 
     public float get_mLeanSpringIntegrationCoefficientDecay() {
-        return internal_native_get_mLeanSpringIntegrationCoefficientDecay((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLeanSpringIntegrationCoefficientDecay(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -153,7 +145,7 @@ return jsObj.get_mLeanSpringIntegrationCoefficientDecay();
     public static native float internal_native_get_mLeanSpringIntegrationCoefficientDecay(int this_addr);
 
     public void set_mLeanSpringIntegrationCoefficientDecay(float mLeanSpringIntegrationCoefficientDecay) {
-        internal_native_set_mLeanSpringIntegrationCoefficientDecay((int) (long) getNativeData().getCPointer(), mLeanSpringIntegrationCoefficientDecay);
+        internal_native_set_mLeanSpringIntegrationCoefficientDecay(native_address, mLeanSpringIntegrationCoefficientDecay);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -164,7 +156,7 @@ jsObj.set_mLeanSpringIntegrationCoefficientDecay(mLeanSpringIntegrationCoefficie
     public static native void internal_native_set_mLeanSpringIntegrationCoefficientDecay(int this_addr, float mLeanSpringIntegrationCoefficientDecay);
 
     public float get_mLeanSmoothingFactor() {
-        return internal_native_get_mLeanSmoothingFactor((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLeanSmoothingFactor(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -175,7 +167,7 @@ return jsObj.get_mLeanSmoothingFactor();
     public static native float internal_native_get_mLeanSmoothingFactor(int this_addr);
 
     public void set_mLeanSmoothingFactor(float mLeanSmoothingFactor) {
-        internal_native_set_mLeanSmoothingFactor((int) (long) getNativeData().getCPointer(), mLeanSmoothingFactor);
+        internal_native_set_mLeanSmoothingFactor(native_address, mLeanSmoothingFactor);
     }
 
     /*[-TEAVM;-NATIVE]

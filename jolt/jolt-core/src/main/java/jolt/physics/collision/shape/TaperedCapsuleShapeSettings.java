@@ -17,8 +17,8 @@ public class TaperedCapsuleShapeSettings extends ConvexShapeSettings {
 
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -29,7 +29,7 @@ return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylind
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float_float(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -46,7 +46,7 @@ return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylind
     }
 
     public float get_mHalfHeightOfTaperedCylinder() {
-        return internal_native_get_mHalfHeightOfTaperedCylinder((long) getNativeData().getCPointer());
+        return internal_native_get_mHalfHeightOfTaperedCylinder(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -56,7 +56,7 @@ return nativeObject->mHalfHeightOfTaperedCylinder;
     public static native float internal_native_get_mHalfHeightOfTaperedCylinder(long this_addr);
 
     public void set_mHalfHeightOfTaperedCylinder(float mHalfHeightOfTaperedCylinder) {
-        internal_native_set_mHalfHeightOfTaperedCylinder((long) getNativeData().getCPointer(), mHalfHeightOfTaperedCylinder);
+        internal_native_set_mHalfHeightOfTaperedCylinder(native_address, mHalfHeightOfTaperedCylinder);
     }
 
     /*[-JNI;-NATIVE]
@@ -66,7 +66,7 @@ nativeObject->mHalfHeightOfTaperedCylinder = mHalfHeightOfTaperedCylinder;
     public static native void internal_native_set_mHalfHeightOfTaperedCylinder(long this_addr, float mHalfHeightOfTaperedCylinder);
 
     public float get_mTopRadius() {
-        return internal_native_get_mTopRadius((long) getNativeData().getCPointer());
+        return internal_native_get_mTopRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -76,7 +76,7 @@ return nativeObject->mTopRadius;
     public static native float internal_native_get_mTopRadius(long this_addr);
 
     public void set_mTopRadius(float mTopRadius) {
-        internal_native_set_mTopRadius((long) getNativeData().getCPointer(), mTopRadius);
+        internal_native_set_mTopRadius(native_address, mTopRadius);
     }
 
     /*[-JNI;-NATIVE]
@@ -86,7 +86,7 @@ nativeObject->mTopRadius = mTopRadius;
     public static native void internal_native_set_mTopRadius(long this_addr, float mTopRadius);
 
     public float get_mBottomRadius() {
-        return internal_native_get_mBottomRadius((long) getNativeData().getCPointer());
+        return internal_native_get_mBottomRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -96,7 +96,7 @@ return nativeObject->mBottomRadius;
     public static native float internal_native_get_mBottomRadius(long this_addr);
 
     public void set_mBottomRadius(float mBottomRadius) {
-        internal_native_set_mBottomRadius((long) getNativeData().getCPointer(), mBottomRadius);
+        internal_native_set_mBottomRadius(native_address, mBottomRadius);
     }
 
     /*[-JNI;-NATIVE]

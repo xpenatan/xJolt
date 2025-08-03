@@ -29,7 +29,7 @@ public class CharacterVirtualSettings extends CharacterBaseSettings {
     public CharacterVirtualSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -48,12 +48,12 @@ return jolt.getPointer(jsObj);
     }
 
     public CharacterID get_mID() {
-        int pointer = internal_native_get_mID((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mID(native_address);
         if (pointer == 0)
             return null;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = new CharacterID((byte) 1, (char) 1);
-        CharacterID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
         return CharacterID_TEMP_GEN_0;
     }
 
@@ -67,7 +67,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mID(int this_addr);
 
     public void set_mID(CharacterID mID) {
-        internal_native_set_mID((int) (long) getNativeData().getCPointer(), (int) (long) (mID != null ? mID.getNativeData().getCPointer() : 0));
+        internal_native_set_mID(native_address, (mID != null ? mID.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -78,7 +78,7 @@ jsObj.set_mID(mID_addr);
     public static native void internal_native_set_mID(int this_addr, int mID_addr);
 
     public float get_mMass() {
-        return internal_native_get_mMass((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMass(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -89,7 +89,7 @@ return jsObj.get_mMass();
     public static native float internal_native_get_mMass(int this_addr);
 
     public void set_mMass(float mMass) {
-        internal_native_set_mMass((int) (long) getNativeData().getCPointer(), mMass);
+        internal_native_set_mMass(native_address, mMass);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -100,7 +100,7 @@ jsObj.set_mMass(mMass);
     public static native void internal_native_set_mMass(int this_addr, float mMass);
 
     public float get_mMaxStrength() {
-        return internal_native_get_mMaxStrength((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxStrength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -111,7 +111,7 @@ return jsObj.get_mMaxStrength();
     public static native float internal_native_get_mMaxStrength(int this_addr);
 
     public void set_mMaxStrength(float mMaxStrength) {
-        internal_native_set_mMaxStrength((int) (long) getNativeData().getCPointer(), mMaxStrength);
+        internal_native_set_mMaxStrength(native_address, mMaxStrength);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -122,12 +122,12 @@ jsObj.set_mMaxStrength(mMaxStrength);
     public static native void internal_native_set_mMaxStrength(int this_addr, float mMaxStrength);
 
     public Vec3 get_mShapeOffset() {
-        int pointer = internal_native_get_mShapeOffset((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mShapeOffset(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -141,7 +141,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mShapeOffset(int this_addr);
 
     public void set_mShapeOffset(Vec3 mShapeOffset) {
-        internal_native_set_mShapeOffset((int) (long) getNativeData().getCPointer(), (int) (long) (mShapeOffset != null ? mShapeOffset.getNativeData().getCPointer() : 0));
+        internal_native_set_mShapeOffset(native_address, (mShapeOffset != null ? mShapeOffset.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -152,7 +152,7 @@ jsObj.set_mShapeOffset(mShapeOffset_addr);
     public static native void internal_native_set_mShapeOffset(int this_addr, int mShapeOffset_addr);
 
     public EBackFaceMode get_mBackFaceMode() {
-        int value = internal_native_get_mBackFaceMode((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mBackFaceMode(native_address);
         return EBackFaceMode.MAP.get(value);
     }
 
@@ -164,7 +164,7 @@ return jsObj.get_mBackFaceMode();
     public static native int internal_native_get_mBackFaceMode(int this_addr);
 
     public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
-        internal_native_set_mBackFaceMode((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
+        internal_native_set_mBackFaceMode(native_address, (int) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -175,7 +175,7 @@ jsObj.set_mBackFaceMode(mBackFaceMode);
     public static native void internal_native_set_mBackFaceMode(int this_addr, int mBackFaceMode);
 
     public float get_mPredictiveContactDistance() {
-        return internal_native_get_mPredictiveContactDistance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mPredictiveContactDistance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -186,7 +186,7 @@ return jsObj.get_mPredictiveContactDistance();
     public static native float internal_native_get_mPredictiveContactDistance(int this_addr);
 
     public void set_mPredictiveContactDistance(float mPredictiveContactDistance) {
-        internal_native_set_mPredictiveContactDistance((int) (long) getNativeData().getCPointer(), mPredictiveContactDistance);
+        internal_native_set_mPredictiveContactDistance(native_address, mPredictiveContactDistance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -197,7 +197,7 @@ jsObj.set_mPredictiveContactDistance(mPredictiveContactDistance);
     public static native void internal_native_set_mPredictiveContactDistance(int this_addr, float mPredictiveContactDistance);
 
     public int get_mMaxCollisionIterations() {
-        return internal_native_get_mMaxCollisionIterations((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxCollisionIterations(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -208,7 +208,7 @@ return jsObj.get_mMaxCollisionIterations();
     public static native int internal_native_get_mMaxCollisionIterations(int this_addr);
 
     public void set_mMaxCollisionIterations(int mMaxCollisionIterations) {
-        internal_native_set_mMaxCollisionIterations((int) (long) getNativeData().getCPointer(), mMaxCollisionIterations);
+        internal_native_set_mMaxCollisionIterations(native_address, mMaxCollisionIterations);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -219,7 +219,7 @@ jsObj.set_mMaxCollisionIterations(mMaxCollisionIterations);
     public static native void internal_native_set_mMaxCollisionIterations(int this_addr, int mMaxCollisionIterations);
 
     public int get_mMaxConstraintIterations() {
-        return internal_native_get_mMaxConstraintIterations((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxConstraintIterations(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -230,7 +230,7 @@ return jsObj.get_mMaxConstraintIterations();
     public static native int internal_native_get_mMaxConstraintIterations(int this_addr);
 
     public void set_mMaxConstraintIterations(int mMaxConstraintIterations) {
-        internal_native_set_mMaxConstraintIterations((int) (long) getNativeData().getCPointer(), mMaxConstraintIterations);
+        internal_native_set_mMaxConstraintIterations(native_address, mMaxConstraintIterations);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -241,7 +241,7 @@ jsObj.set_mMaxConstraintIterations(mMaxConstraintIterations);
     public static native void internal_native_set_mMaxConstraintIterations(int this_addr, int mMaxConstraintIterations);
 
     public float get_mMinTimeRemaining() {
-        return internal_native_get_mMinTimeRemaining((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMinTimeRemaining(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -252,7 +252,7 @@ return jsObj.get_mMinTimeRemaining();
     public static native float internal_native_get_mMinTimeRemaining(int this_addr);
 
     public void set_mMinTimeRemaining(float mMinTimeRemaining) {
-        internal_native_set_mMinTimeRemaining((int) (long) getNativeData().getCPointer(), mMinTimeRemaining);
+        internal_native_set_mMinTimeRemaining(native_address, mMinTimeRemaining);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -263,7 +263,7 @@ jsObj.set_mMinTimeRemaining(mMinTimeRemaining);
     public static native void internal_native_set_mMinTimeRemaining(int this_addr, float mMinTimeRemaining);
 
     public float get_mCollisionTolerance() {
-        return internal_native_get_mCollisionTolerance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCollisionTolerance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -274,7 +274,7 @@ return jsObj.get_mCollisionTolerance();
     public static native float internal_native_get_mCollisionTolerance(int this_addr);
 
     public void set_mCollisionTolerance(float mCollisionTolerance) {
-        internal_native_set_mCollisionTolerance((int) (long) getNativeData().getCPointer(), mCollisionTolerance);
+        internal_native_set_mCollisionTolerance(native_address, mCollisionTolerance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -285,7 +285,7 @@ jsObj.set_mCollisionTolerance(mCollisionTolerance);
     public static native void internal_native_set_mCollisionTolerance(int this_addr, float mCollisionTolerance);
 
     public float get_mCharacterPadding() {
-        return internal_native_get_mCharacterPadding((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCharacterPadding(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -296,7 +296,7 @@ return jsObj.get_mCharacterPadding();
     public static native float internal_native_get_mCharacterPadding(int this_addr);
 
     public void set_mCharacterPadding(float mCharacterPadding) {
-        internal_native_set_mCharacterPadding((int) (long) getNativeData().getCPointer(), mCharacterPadding);
+        internal_native_set_mCharacterPadding(native_address, mCharacterPadding);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -307,7 +307,7 @@ jsObj.set_mCharacterPadding(mCharacterPadding);
     public static native void internal_native_set_mCharacterPadding(int this_addr, float mCharacterPadding);
 
     public int get_mMaxNumHits() {
-        return internal_native_get_mMaxNumHits((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxNumHits(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -318,7 +318,7 @@ return jsObj.get_mMaxNumHits();
     public static native int internal_native_get_mMaxNumHits(int this_addr);
 
     public void set_mMaxNumHits(int mMaxNumHits) {
-        internal_native_set_mMaxNumHits((int) (long) getNativeData().getCPointer(), mMaxNumHits);
+        internal_native_set_mMaxNumHits(native_address, mMaxNumHits);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -329,7 +329,7 @@ jsObj.set_mMaxNumHits(mMaxNumHits);
     public static native void internal_native_set_mMaxNumHits(int this_addr, int mMaxNumHits);
 
     public float get_mHitReductionCosMaxAngle() {
-        return internal_native_get_mHitReductionCosMaxAngle((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mHitReductionCosMaxAngle(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -340,7 +340,7 @@ return jsObj.get_mHitReductionCosMaxAngle();
     public static native float internal_native_get_mHitReductionCosMaxAngle(int this_addr);
 
     public void set_mHitReductionCosMaxAngle(float mHitReductionCosMaxAngle) {
-        internal_native_set_mHitReductionCosMaxAngle((int) (long) getNativeData().getCPointer(), mHitReductionCosMaxAngle);
+        internal_native_set_mHitReductionCosMaxAngle(native_address, mHitReductionCosMaxAngle);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -351,7 +351,7 @@ jsObj.set_mHitReductionCosMaxAngle(mHitReductionCosMaxAngle);
     public static native void internal_native_set_mHitReductionCosMaxAngle(int this_addr, float mHitReductionCosMaxAngle);
 
     public float get_mPenetrationRecoverySpeed() {
-        return internal_native_get_mPenetrationRecoverySpeed((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mPenetrationRecoverySpeed(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -362,7 +362,7 @@ return jsObj.get_mPenetrationRecoverySpeed();
     public static native float internal_native_get_mPenetrationRecoverySpeed(int this_addr);
 
     public void set_mPenetrationRecoverySpeed(float mPenetrationRecoverySpeed) {
-        internal_native_set_mPenetrationRecoverySpeed((int) (long) getNativeData().getCPointer(), mPenetrationRecoverySpeed);
+        internal_native_set_mPenetrationRecoverySpeed(native_address, mPenetrationRecoverySpeed);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -373,12 +373,12 @@ jsObj.set_mPenetrationRecoverySpeed(mPenetrationRecoverySpeed);
     public static native void internal_native_set_mPenetrationRecoverySpeed(int this_addr, float mPenetrationRecoverySpeed);
 
     public Shape get_mInnerBodyShape() {
-        int pointer = internal_native_get_mInnerBodyShape((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mInnerBodyShape(native_address);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
-        Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -392,7 +392,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mInnerBodyShape(int this_addr);
 
     public void set_mInnerBodyShape(Shape mInnerBodyShape) {
-        internal_native_set_mInnerBodyShape((int) (long) getNativeData().getCPointer(), (int) (long) (mInnerBodyShape != null ? mInnerBodyShape.getNativeData().getCPointer() : 0));
+        internal_native_set_mInnerBodyShape(native_address, (mInnerBodyShape != null ? mInnerBodyShape.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -403,12 +403,12 @@ jsObj.set_mInnerBodyShape(mInnerBodyShape_addr);
     public static native void internal_native_set_mInnerBodyShape(int this_addr, int mInnerBodyShape_addr);
 
     public BodyID get_mInnerBodyIDOverride() {
-        int pointer = internal_native_get_mInnerBodyIDOverride((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mInnerBodyIDOverride(native_address);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -422,7 +422,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mInnerBodyIDOverride(int this_addr);
 
     public void set_mInnerBodyIDOverride(BodyID mInnerBodyIDOverride) {
-        internal_native_set_mInnerBodyIDOverride((int) (long) getNativeData().getCPointer(), (int) (long) (mInnerBodyIDOverride != null ? mInnerBodyIDOverride.getNativeData().getCPointer() : 0));
+        internal_native_set_mInnerBodyIDOverride(native_address, (mInnerBodyIDOverride != null ? mInnerBodyIDOverride.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -433,7 +433,7 @@ jsObj.set_mInnerBodyIDOverride(mInnerBodyIDOverride_addr);
     public static native void internal_native_set_mInnerBodyIDOverride(int this_addr, int mInnerBodyIDOverride_addr);
 
     public int get_mInnerBodyLayer() {
-        return internal_native_get_mInnerBodyLayer((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mInnerBodyLayer(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -444,7 +444,7 @@ return jsObj.get_mInnerBodyLayer();
     public static native int internal_native_get_mInnerBodyLayer(int this_addr);
 
     public void set_mInnerBodyLayer(int mInnerBodyLayer) {
-        internal_native_set_mInnerBodyLayer((int) (long) getNativeData().getCPointer(), mInnerBodyLayer);
+        internal_native_set_mInnerBodyLayer(native_address, mInnerBodyLayer);
     }
 
     /*[-TEAVM;-NATIVE]

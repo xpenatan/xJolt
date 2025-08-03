@@ -22,7 +22,7 @@ public class ContactSettings extends IDLBase {
 
     public ContactSettings() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -39,16 +39,8 @@ return jolt.getPointer(jsObj);
     public ContactSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -59,7 +51,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mCombinedFriction() {
-        return internal_native_get_mCombinedFriction((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCombinedFriction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -70,7 +62,7 @@ return jsObj.get_mCombinedFriction();
     public static native float internal_native_get_mCombinedFriction(int this_addr);
 
     public void set_mCombinedFriction(float mCombinedFriction) {
-        internal_native_set_mCombinedFriction((int) (long) getNativeData().getCPointer(), mCombinedFriction);
+        internal_native_set_mCombinedFriction(native_address, mCombinedFriction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -81,7 +73,7 @@ jsObj.set_mCombinedFriction(mCombinedFriction);
     public static native void internal_native_set_mCombinedFriction(int this_addr, float mCombinedFriction);
 
     public float get_mCombinedRestitution() {
-        return internal_native_get_mCombinedRestitution((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCombinedRestitution(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -92,7 +84,7 @@ return jsObj.get_mCombinedRestitution();
     public static native float internal_native_get_mCombinedRestitution(int this_addr);
 
     public void set_mCombinedRestitution(float mCombinedRestitution) {
-        internal_native_set_mCombinedRestitution((int) (long) getNativeData().getCPointer(), mCombinedRestitution);
+        internal_native_set_mCombinedRestitution(native_address, mCombinedRestitution);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -103,7 +95,7 @@ jsObj.set_mCombinedRestitution(mCombinedRestitution);
     public static native void internal_native_set_mCombinedRestitution(int this_addr, float mCombinedRestitution);
 
     public float get_mInvMassScale1() {
-        return internal_native_get_mInvMassScale1((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mInvMassScale1(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -114,7 +106,7 @@ return jsObj.get_mInvMassScale1();
     public static native float internal_native_get_mInvMassScale1(int this_addr);
 
     public void set_mInvMassScale1(float mInvMassScale1) {
-        internal_native_set_mInvMassScale1((int) (long) getNativeData().getCPointer(), mInvMassScale1);
+        internal_native_set_mInvMassScale1(native_address, mInvMassScale1);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -125,7 +117,7 @@ jsObj.set_mInvMassScale1(mInvMassScale1);
     public static native void internal_native_set_mInvMassScale1(int this_addr, float mInvMassScale1);
 
     public float get_mInvInertiaScale1() {
-        return internal_native_get_mInvInertiaScale1((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mInvInertiaScale1(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -136,7 +128,7 @@ return jsObj.get_mInvInertiaScale1();
     public static native float internal_native_get_mInvInertiaScale1(int this_addr);
 
     public void set_mInvInertiaScale1(float mInvInertiaScale1) {
-        internal_native_set_mInvInertiaScale1((int) (long) getNativeData().getCPointer(), mInvInertiaScale1);
+        internal_native_set_mInvInertiaScale1(native_address, mInvInertiaScale1);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -147,7 +139,7 @@ jsObj.set_mInvInertiaScale1(mInvInertiaScale1);
     public static native void internal_native_set_mInvInertiaScale1(int this_addr, float mInvInertiaScale1);
 
     public float get_mInvMassScale2() {
-        return internal_native_get_mInvMassScale2((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mInvMassScale2(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -158,7 +150,7 @@ return jsObj.get_mInvMassScale2();
     public static native float internal_native_get_mInvMassScale2(int this_addr);
 
     public void set_mInvMassScale2(float mInvMassScale2) {
-        internal_native_set_mInvMassScale2((int) (long) getNativeData().getCPointer(), mInvMassScale2);
+        internal_native_set_mInvMassScale2(native_address, mInvMassScale2);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -169,7 +161,7 @@ jsObj.set_mInvMassScale2(mInvMassScale2);
     public static native void internal_native_set_mInvMassScale2(int this_addr, float mInvMassScale2);
 
     public float get_mInvInertiaScale2() {
-        return internal_native_get_mInvInertiaScale2((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mInvInertiaScale2(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -180,7 +172,7 @@ return jsObj.get_mInvInertiaScale2();
     public static native float internal_native_get_mInvInertiaScale2(int this_addr);
 
     public void set_mInvInertiaScale2(float mInvInertiaScale2) {
-        internal_native_set_mInvInertiaScale2((int) (long) getNativeData().getCPointer(), mInvInertiaScale2);
+        internal_native_set_mInvInertiaScale2(native_address, mInvInertiaScale2);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -191,7 +183,7 @@ jsObj.set_mInvInertiaScale2(mInvInertiaScale2);
     public static native void internal_native_set_mInvInertiaScale2(int this_addr, float mInvInertiaScale2);
 
     public boolean get_mIsSensor() {
-        return internal_native_get_mIsSensor((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mIsSensor(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -202,7 +194,7 @@ return jsObj.get_mIsSensor();
     public static native boolean internal_native_get_mIsSensor(int this_addr);
 
     public void set_mIsSensor(boolean mIsSensor) {
-        internal_native_set_mIsSensor((int) (long) getNativeData().getCPointer(), mIsSensor);
+        internal_native_set_mIsSensor(native_address, mIsSensor);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -213,12 +205,12 @@ jsObj.set_mIsSensor(mIsSensor);
     public static native void internal_native_set_mIsSensor(int this_addr, boolean mIsSensor);
 
     public Vec3 get_mRelativeLinearSurfaceVelocity() {
-        int pointer = internal_native_get_mRelativeLinearSurfaceVelocity((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mRelativeLinearSurfaceVelocity(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -232,7 +224,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mRelativeLinearSurfaceVelocity(int this_addr);
 
     public void set_mRelativeLinearSurfaceVelocity(Vec3 mRelativeLinearSurfaceVelocity) {
-        internal_native_set_mRelativeLinearSurfaceVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (mRelativeLinearSurfaceVelocity != null ? mRelativeLinearSurfaceVelocity.getNativeData().getCPointer() : 0));
+        internal_native_set_mRelativeLinearSurfaceVelocity(native_address, (mRelativeLinearSurfaceVelocity != null ? mRelativeLinearSurfaceVelocity.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -243,12 +235,12 @@ jsObj.set_mRelativeLinearSurfaceVelocity(mRelativeLinearSurfaceVelocity_addr);
     public static native void internal_native_set_mRelativeLinearSurfaceVelocity(int this_addr, int mRelativeLinearSurfaceVelocity_addr);
 
     public Vec3 get_mRelativeAngularSurfaceVelocity() {
-        int pointer = internal_native_get_mRelativeAngularSurfaceVelocity((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mRelativeAngularSurfaceVelocity(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -262,7 +254,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mRelativeAngularSurfaceVelocity(int this_addr);
 
     public void set_mRelativeAngularSurfaceVelocity(Vec3 mRelativeAngularSurfaceVelocity) {
-        internal_native_set_mRelativeAngularSurfaceVelocity((int) (long) getNativeData().getCPointer(), (int) (long) (mRelativeAngularSurfaceVelocity != null ? mRelativeAngularSurfaceVelocity.getNativeData().getCPointer() : 0));
+        internal_native_set_mRelativeAngularSurfaceVelocity(native_address, (mRelativeAngularSurfaceVelocity != null ? mRelativeAngularSurfaceVelocity.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

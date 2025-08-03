@@ -24,16 +24,8 @@ public class ArrayFloat extends IDLBase {
     public ArrayFloat(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -44,7 +36,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public boolean empty() {
-        return internal_native_empty((int) (long) getNativeData().getCPointer());
+        return internal_native_empty(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +48,7 @@ return returnedJSObj;
     public static native boolean internal_native_empty(int this_addr);
 
     public int size() {
-        return internal_native_size((int) (long) getNativeData().getCPointer());
+        return internal_native_size(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -68,7 +60,7 @@ return returnedJSObj;
     public static native int internal_native_size(int this_addr);
 
     public float at(int inIndex) {
-        return internal_native_at((int) (long) getNativeData().getCPointer(), inIndex);
+        return internal_native_at(native_address, inIndex);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -80,7 +72,7 @@ return returnedJSObj;
     public static native float internal_native_at(int this_addr, int inIndex);
 
     public void push_back(float inValue) {
-        internal_native_push_back((int) (long) getNativeData().getCPointer(), inValue);
+        internal_native_push_back(native_address, inValue);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -91,7 +83,7 @@ jsObj.push_back(inValue);
     public static native void internal_native_push_back(int this_addr, float inValue);
 
     public void reserve(int inSize) {
-        internal_native_reserve((int) (long) getNativeData().getCPointer(), inSize);
+        internal_native_reserve(native_address, inSize);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -102,7 +94,7 @@ jsObj.reserve(inSize);
     public static native void internal_native_reserve(int this_addr, int inSize);
 
     public void resize(int inSize) {
-        internal_native_resize((int) (long) getNativeData().getCPointer(), inSize);
+        internal_native_resize(native_address, inSize);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -113,7 +105,7 @@ jsObj.resize(inSize);
     public static native void internal_native_resize(int this_addr, int inSize);
 
     public void clear() {
-        internal_native_clear((int) (long) getNativeData().getCPointer());
+        internal_native_clear(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -124,12 +116,12 @@ jsObj.clear();
     public static native void internal_native_clear(int this_addr);
 
     public FloatMemRef data() {
-        int pointer = internal_native_data((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_data(native_address);
         if (pointer == 0)
             return null;
         if (FloatMemRef_TEMP_GEN_0 == null)
             FloatMemRef_TEMP_GEN_0 = new FloatMemRef((byte) 1, (char) 1);
-        FloatMemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        FloatMemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return FloatMemRef_TEMP_GEN_0;
     }
 

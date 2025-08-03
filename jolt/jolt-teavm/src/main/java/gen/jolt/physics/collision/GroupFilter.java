@@ -20,16 +20,8 @@ public class GroupFilter extends IDLBase {
     public GroupFilter(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -40,7 +32,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -52,7 +44,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -63,7 +55,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -75,31 +67,31 @@ jsObj.Release();
 
     public GroupFilter() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
         CanCollide CanCollide = new CanCollide() {
 
-            public boolean CanCollide(int inGroup1, int inGroup2) {
-                return internal_CanCollide(inGroup1, inGroup2);
+            public boolean CanCollide(int inGroup1_addr, int inGroup2_addr) {
+                return internal_CanCollide(inGroup1_addr, inGroup2_addr);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), CanCollide);
+        internal_native_setupCallback(native_address, CanCollide);
     }
 
     protected boolean CanCollide(CollisionGroup inGroup1, CollisionGroup inGroup2) {
         return false;
     }
 
-    private boolean internal_CanCollide(long inGroup1, long inGroup2) {
+    private boolean internal_CanCollide(int inGroup1_addr, int inGroup2_addr) {
         if (CollisionGroup_TEMP_STATIC_GEN_0 == null)
             CollisionGroup_TEMP_STATIC_GEN_0 = new CollisionGroup((byte) 1, (char) 1);
-        CollisionGroup_TEMP_STATIC_GEN_0.getNativeData().reset(inGroup1, false);
+        CollisionGroup_TEMP_STATIC_GEN_0.internal_reset(inGroup1_addr, false);
         if (CollisionGroup_TEMP_STATIC_GEN_1 == null)
             CollisionGroup_TEMP_STATIC_GEN_1 = new CollisionGroup((byte) 1, (char) 1);
-        CollisionGroup_TEMP_STATIC_GEN_1.getNativeData().reset(inGroup2, false);
+        CollisionGroup_TEMP_STATIC_GEN_1.internal_reset(inGroup2_addr, false);
         return CanCollide(CollisionGroup_TEMP_STATIC_GEN_0, CollisionGroup_TEMP_STATIC_GEN_1);
     }
 
@@ -116,6 +108,6 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSFunctor()
     public interface CanCollide extends org.teavm.jso.JSObject {
 
-        boolean CanCollide(int inGroup1, int inGroup2);
+        boolean CanCollide(int inGroup1_addr, int inGroup2_addr);
     }
 }

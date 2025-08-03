@@ -25,7 +25,7 @@ public class Constraint extends IDLBase {
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -37,7 +37,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -48,7 +48,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -59,7 +59,7 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public EConstraintType GetType() {
-        int value = internal_native_GetType((int) (long) getNativeData().getCPointer());
+        int value = internal_native_GetType(native_address);
         return EConstraintType.MAP.get(value);
     }
 
@@ -72,7 +72,7 @@ return returnedJSObj;
     public static native int internal_native_GetType(int this_addr);
 
     public EConstraintSubType GetSubType() {
-        int value = internal_native_GetSubType((int) (long) getNativeData().getCPointer());
+        int value = internal_native_GetSubType(native_address);
         return EConstraintSubType.MAP.get(value);
     }
 
@@ -85,7 +85,7 @@ return returnedJSObj;
     public static native int internal_native_GetSubType(int this_addr);
 
     public int GetConstraintPriority() {
-        return internal_native_GetConstraintPriority((int) (long) getNativeData().getCPointer());
+        return internal_native_GetConstraintPriority(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,7 +97,7 @@ return returnedJSObj;
     public static native int internal_native_GetConstraintPriority(int this_addr);
 
     public void SetConstraintPriority(int inPriority) {
-        internal_native_SetConstraintPriority((int) (long) getNativeData().getCPointer(), inPriority);
+        internal_native_SetConstraintPriority(native_address, inPriority);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -108,7 +108,7 @@ jsObj.SetConstraintPriority(inPriority);
     public static native void internal_native_SetConstraintPriority(int this_addr, int inPriority);
 
     public void SetNumVelocityStepsOverride(int inN) {
-        internal_native_SetNumVelocityStepsOverride((int) (long) getNativeData().getCPointer(), inN);
+        internal_native_SetNumVelocityStepsOverride(native_address, inN);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -119,7 +119,7 @@ jsObj.SetNumVelocityStepsOverride(inN);
     public static native void internal_native_SetNumVelocityStepsOverride(int this_addr, int inN);
 
     public int GetNumVelocityStepsOverride() {
-        return internal_native_GetNumVelocityStepsOverride((int) (long) getNativeData().getCPointer());
+        return internal_native_GetNumVelocityStepsOverride(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -131,7 +131,7 @@ return returnedJSObj;
     public static native int internal_native_GetNumVelocityStepsOverride(int this_addr);
 
     public void SetNumPositionStepsOverride(int inN) {
-        internal_native_SetNumPositionStepsOverride((int) (long) getNativeData().getCPointer(), inN);
+        internal_native_SetNumPositionStepsOverride(native_address, inN);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -142,7 +142,7 @@ jsObj.SetNumPositionStepsOverride(inN);
     public static native void internal_native_SetNumPositionStepsOverride(int this_addr, int inN);
 
     public int GetNumPositionStepsOverride() {
-        return internal_native_GetNumPositionStepsOverride((int) (long) getNativeData().getCPointer());
+        return internal_native_GetNumPositionStepsOverride(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -154,7 +154,7 @@ return returnedJSObj;
     public static native int internal_native_GetNumPositionStepsOverride(int this_addr);
 
     public void SetEnabled(boolean inEnabled) {
-        internal_native_SetEnabled((int) (long) getNativeData().getCPointer(), inEnabled);
+        internal_native_SetEnabled(native_address, inEnabled);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -165,7 +165,7 @@ jsObj.SetEnabled(inEnabled);
     public static native void internal_native_SetEnabled(int this_addr, boolean inEnabled);
 
     public boolean GetEnabled() {
-        return internal_native_GetEnabled((int) (long) getNativeData().getCPointer());
+        return internal_native_GetEnabled(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -177,7 +177,7 @@ return returnedJSObj;
     public static native boolean internal_native_GetEnabled(int this_addr);
 
     public boolean IsActive() {
-        return internal_native_IsActive((int) (long) getNativeData().getCPointer());
+        return internal_native_IsActive(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -189,7 +189,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsActive(int this_addr);
 
     public long GetUserData() {
-        return internal_native_GetUserData((int) (long) getNativeData().getCPointer());
+        return internal_native_GetUserData(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -201,7 +201,7 @@ return returnedJSObj;
     public static native int internal_native_GetUserData(int this_addr);
 
     public void SetUserData(long inUserData) {
-        internal_native_SetUserData((int) (long) getNativeData().getCPointer(), (int) inUserData);
+        internal_native_SetUserData(native_address, (int) inUserData);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -212,7 +212,7 @@ jsObj.SetUserData(inUserData);
     public static native void internal_native_SetUserData(int this_addr, int inUserData);
 
     public void ResetWarmStart() {
-        internal_native_ResetWarmStart((int) (long) getNativeData().getCPointer());
+        internal_native_ResetWarmStart(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

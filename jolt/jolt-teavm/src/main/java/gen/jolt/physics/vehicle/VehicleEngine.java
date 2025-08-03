@@ -21,16 +21,8 @@ public class VehicleEngine extends VehicleEngineSettings {
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -41,7 +33,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void ClampRPM() {
-        internal_native_ClampRPM((int) (long) getNativeData().getCPointer());
+        internal_native_ClampRPM(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -52,7 +44,7 @@ jsObj.ClampRPM();
     public static native void internal_native_ClampRPM(int this_addr);
 
     public float GetCurrentRPM() {
-        return internal_native_GetCurrentRPM((int) (long) getNativeData().getCPointer());
+        return internal_native_GetCurrentRPM(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -64,7 +56,7 @@ return returnedJSObj;
     public static native float internal_native_GetCurrentRPM(int this_addr);
 
     public void SetCurrentRPM(float inRPM) {
-        internal_native_SetCurrentRPM((int) (long) getNativeData().getCPointer(), inRPM);
+        internal_native_SetCurrentRPM(native_address, inRPM);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -75,7 +67,7 @@ jsObj.SetCurrentRPM(inRPM);
     public static native void internal_native_SetCurrentRPM(int this_addr, float inRPM);
 
     public float GetAngularVelocity() {
-        return internal_native_GetAngularVelocity((int) (long) getNativeData().getCPointer());
+        return internal_native_GetAngularVelocity(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +79,7 @@ return returnedJSObj;
     public static native float internal_native_GetAngularVelocity(int this_addr);
 
     public float GetTorque(float inAcceleration) {
-        return internal_native_GetTorque((int) (long) getNativeData().getCPointer(), inAcceleration);
+        return internal_native_GetTorque(native_address, inAcceleration);
     }
 
     /*[-TEAVM;-NATIVE]

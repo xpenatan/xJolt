@@ -17,8 +17,8 @@ public class CylinderShape extends ConvexShape {
 
     public CylinderShape(float inHalfHeight, float inRadius, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeight, inRadius, inConvexRadius, (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeight, inRadius, inConvexRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -29,7 +29,7 @@ return (jlong)new CylinderShape((float)inHalfHeight, (float)inRadius, (float)inC
     public CylinderShape(float inHalfHeight, float inRadius, float inConvexRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float_float(inHalfHeight, inRadius, inConvexRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,7 +40,7 @@ return (jlong)new CylinderShape((float)inHalfHeight, (float)inRadius, (float)inC
     public CylinderShape(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float(inHalfHeight, inRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -57,7 +57,7 @@ return (jlong)new CylinderShape((float)inHalfHeight, (float)inRadius);
     }
 
     public float GetRadius() {
-        return internal_native_GetRadius((long) getNativeData().getCPointer());
+        return internal_native_GetRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -67,7 +67,7 @@ return nativeObject->GetRadius();
     public static native float internal_native_GetRadius(long this_addr);
 
     public float GetHalfHeight() {
-        return internal_native_GetHalfHeight((long) getNativeData().getCPointer());
+        return internal_native_GetHalfHeight(native_address);
     }
 
     /*[-JNI;-NATIVE]

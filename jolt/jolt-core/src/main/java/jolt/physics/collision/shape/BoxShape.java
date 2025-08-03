@@ -20,8 +20,8 @@ public class BoxShape extends ConvexShape {
 
     public BoxShape(Vec3 inHalfExtent, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3_float_PhysicsMaterial((long) (inHalfExtent != null ? inHalfExtent.getNativeData().getCPointer() : 0), inConvexRadius, (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_Vec3_float_PhysicsMaterial((inHalfExtent != null ? inHalfExtent.native_address : 0), inConvexRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -31,8 +31,8 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius, 
 
     public BoxShape(Vec3 inHalfExtent, float inConvexRadius) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3_float((long) (inHalfExtent != null ? inHalfExtent.getNativeData().getCPointer() : 0), inConvexRadius);
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_Vec3_float((inHalfExtent != null ? inHalfExtent.native_address : 0), inConvexRadius);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -42,8 +42,8 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius);
 
     public BoxShape(Vec3 inHalfExtent) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3((long) (inHalfExtent != null ? inHalfExtent.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_Vec3((inHalfExtent != null ? inHalfExtent.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -60,12 +60,12 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr));
     }
 
     public Vec3 GetHalfExtent() {
-        long pointer = internal_native_GetHalfExtent((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetHalfExtent(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 

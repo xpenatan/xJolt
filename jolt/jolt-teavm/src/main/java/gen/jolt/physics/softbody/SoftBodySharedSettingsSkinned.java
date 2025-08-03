@@ -24,16 +24,8 @@ public class SoftBodySharedSettingsSkinned extends IDLBase {
     public SoftBodySharedSettingsSkinned(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -44,7 +36,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mVertex() {
-        return internal_native_get_mVertex((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mVertex(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -55,7 +47,7 @@ return jsObj.get_mVertex();
     public static native int internal_native_get_mVertex(int this_addr);
 
     public void set_mVertex(int mVertex) {
-        internal_native_set_mVertex((int) (long) getNativeData().getCPointer(), mVertex);
+        internal_native_set_mVertex(native_address, mVertex);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,12 +58,12 @@ jsObj.set_mVertex(mVertex);
     public static native void internal_native_set_mVertex(int this_addr, int mVertex);
 
     public SoftBodySharedSettingsSkinWeight get_mWeights(int index) {
-        int pointer = internal_native_get_mWeights((int) (long) getNativeData().getCPointer(), index);
+        int pointer = internal_native_get_mWeights(native_address, index);
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 == null)
             SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 = new SoftBodySharedSettingsSkinWeight((byte) 1, (char) 1);
-        SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsSkinWeight_TEMP_GEN_0;
     }
 
@@ -85,7 +77,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mWeights(int this_addr, int index);
 
     public void set_mWeights(int index, SoftBodySharedSettingsSkinWeight mWeights) {
-        internal_native_set_mWeights((int) (long) getNativeData().getCPointer(), index, (int) (long) (mWeights != null ? mWeights.getNativeData().getCPointer() : 0));
+        internal_native_set_mWeights(native_address, index, (mWeights != null ? mWeights.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -96,7 +88,7 @@ jsObj.set_mWeights(index, mWeights_addr);
     public static native void internal_native_set_mWeights(int this_addr, int index, int mWeights_addr);
 
     public float get_mMaxDistance() {
-        return internal_native_get_mMaxDistance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxDistance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -107,7 +99,7 @@ return jsObj.get_mMaxDistance();
     public static native float internal_native_get_mMaxDistance(int this_addr);
 
     public void set_mMaxDistance(float mMaxDistance) {
-        internal_native_set_mMaxDistance((int) (long) getNativeData().getCPointer(), mMaxDistance);
+        internal_native_set_mMaxDistance(native_address, mMaxDistance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -118,7 +110,7 @@ jsObj.set_mMaxDistance(mMaxDistance);
     public static native void internal_native_set_mMaxDistance(int this_addr, float mMaxDistance);
 
     public float get_mBackStopDistance() {
-        return internal_native_get_mBackStopDistance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mBackStopDistance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -129,7 +121,7 @@ return jsObj.get_mBackStopDistance();
     public static native float internal_native_get_mBackStopDistance(int this_addr);
 
     public void set_mBackStopDistance(float mBackStopDistance) {
-        internal_native_set_mBackStopDistance((int) (long) getNativeData().getCPointer(), mBackStopDistance);
+        internal_native_set_mBackStopDistance(native_address, mBackStopDistance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -140,7 +132,7 @@ jsObj.set_mBackStopDistance(mBackStopDistance);
     public static native void internal_native_set_mBackStopDistance(int this_addr, float mBackStopDistance);
 
     public float get_mBackStopRadius() {
-        return internal_native_get_mBackStopRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mBackStopRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -151,7 +143,7 @@ return jsObj.get_mBackStopRadius();
     public static native float internal_native_get_mBackStopRadius(int this_addr);
 
     public void set_mBackStopRadius(float mBackStopRadius) {
-        internal_native_set_mBackStopRadius((int) (long) getNativeData().getCPointer(), mBackStopRadius);
+        internal_native_set_mBackStopRadius(native_address, mBackStopRadius);
     }
 
     /*[-TEAVM;-NATIVE]

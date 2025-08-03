@@ -28,7 +28,7 @@ public class PathConstraint extends TwoBodyConstraint {
     }
 
     public void SetPath(PathConstraintPath inPath, float inPathFraction) {
-        internal_native_SetPath((int) (long) getNativeData().getCPointer(), (int) (long) (inPath != null ? inPath.getNativeData().getCPointer() : 0), inPathFraction);
+        internal_native_SetPath(native_address, (inPath != null ? inPath.native_address : 0), inPathFraction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -39,12 +39,12 @@ jsObj.SetPath(inPath_addr, inPathFraction);
     public static native void internal_native_SetPath(int this_addr, int inPath_addr, float inPathFraction);
 
     public PathConstraintPath GetPath() {
-        int pointer = internal_native_GetPath((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetPath(native_address);
         if (pointer == 0)
             return null;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = new PathConstraintPath((byte) 1, (char) 1);
-        PathConstraintPath_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
         return PathConstraintPath_TEMP_GEN_0;
     }
 
@@ -58,7 +58,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetPath(int this_addr);
 
     public float GetPathFraction() {
-        return internal_native_GetPathFraction((int) (long) getNativeData().getCPointer());
+        return internal_native_GetPathFraction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -70,7 +70,7 @@ return returnedJSObj;
     public static native float internal_native_GetPathFraction(int this_addr);
 
     public void SetMaxFrictionForce(float inFrictionForce) {
-        internal_native_SetMaxFrictionForce((int) (long) getNativeData().getCPointer(), inFrictionForce);
+        internal_native_SetMaxFrictionForce(native_address, inFrictionForce);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -81,7 +81,7 @@ jsObj.SetMaxFrictionForce(inFrictionForce);
     public static native void internal_native_SetMaxFrictionForce(int this_addr, float inFrictionForce);
 
     public float GetMaxFrictionForce() {
-        return internal_native_GetMaxFrictionForce((int) (long) getNativeData().getCPointer());
+        return internal_native_GetMaxFrictionForce(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -93,12 +93,12 @@ return returnedJSObj;
     public static native float internal_native_GetMaxFrictionForce(int this_addr);
 
     public MotorSettings GetPositionMotorSettings() {
-        int pointer = internal_native_GetPositionMotorSettings((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetPositionMotorSettings(native_address);
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
-        MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -112,7 +112,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetPositionMotorSettings(int this_addr);
 
     public void SetPositionMotorState(EMotorState inState) {
-        internal_native_SetPositionMotorState((int) (long) getNativeData().getCPointer(), (int) (long) (inState != null ? inState.getValue() : 0));
+        internal_native_SetPositionMotorState(native_address, (int) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -123,7 +123,7 @@ jsObj.SetPositionMotorState(inState);
     public static native void internal_native_SetPositionMotorState(int this_addr, int inState);
 
     public EMotorState GetPositionMotorState() {
-        int value = internal_native_GetPositionMotorState((int) (long) getNativeData().getCPointer());
+        int value = internal_native_GetPositionMotorState(native_address);
         return EMotorState.MAP.get(value);
     }
 
@@ -136,7 +136,7 @@ return returnedJSObj;
     public static native int internal_native_GetPositionMotorState(int this_addr);
 
     public void SetTargetVelocity(float inVelocity) {
-        internal_native_SetTargetVelocity((int) (long) getNativeData().getCPointer(), inVelocity);
+        internal_native_SetTargetVelocity(native_address, inVelocity);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -147,7 +147,7 @@ jsObj.SetTargetVelocity(inVelocity);
     public static native void internal_native_SetTargetVelocity(int this_addr, float inVelocity);
 
     public float GetTargetVelocity() {
-        return internal_native_GetTargetVelocity((int) (long) getNativeData().getCPointer());
+        return internal_native_GetTargetVelocity(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -159,7 +159,7 @@ return returnedJSObj;
     public static native float internal_native_GetTargetVelocity(int this_addr);
 
     public void SetTargetPathFraction(float inFraction) {
-        internal_native_SetTargetPathFraction((int) (long) getNativeData().getCPointer(), inFraction);
+        internal_native_SetTargetPathFraction(native_address, inFraction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -170,7 +170,7 @@ jsObj.SetTargetPathFraction(inFraction);
     public static native void internal_native_SetTargetPathFraction(int this_addr, float inFraction);
 
     public float GetTargetPathFraction() {
-        return internal_native_GetTargetPathFraction((int) (long) getNativeData().getCPointer());
+        return internal_native_GetTargetPathFraction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

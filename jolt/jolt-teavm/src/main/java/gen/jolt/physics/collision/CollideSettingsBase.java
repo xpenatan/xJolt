@@ -27,16 +27,8 @@ public class CollideSettingsBase extends IDLBase {
     public CollideSettingsBase(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -47,7 +39,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public EActiveEdgeMode get_mActiveEdgeMode() {
-        int value = internal_native_get_mActiveEdgeMode((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mActiveEdgeMode(native_address);
         return EActiveEdgeMode.MAP.get(value);
     }
 
@@ -59,7 +51,7 @@ return jsObj.get_mActiveEdgeMode();
     public static native int internal_native_get_mActiveEdgeMode(int this_addr);
 
     public void set_mActiveEdgeMode(EActiveEdgeMode mActiveEdgeMode) {
-        internal_native_set_mActiveEdgeMode((int) (long) getNativeData().getCPointer(), (int) (long) (mActiveEdgeMode != null ? mActiveEdgeMode.getValue() : 0));
+        internal_native_set_mActiveEdgeMode(native_address, (int) (mActiveEdgeMode != null ? mActiveEdgeMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -70,7 +62,7 @@ jsObj.set_mActiveEdgeMode(mActiveEdgeMode);
     public static native void internal_native_set_mActiveEdgeMode(int this_addr, int mActiveEdgeMode);
 
     public ECollectFacesMode get_mCollectFacesMode() {
-        int value = internal_native_get_mCollectFacesMode((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mCollectFacesMode(native_address);
         return ECollectFacesMode.MAP.get(value);
     }
 
@@ -82,7 +74,7 @@ return jsObj.get_mCollectFacesMode();
     public static native int internal_native_get_mCollectFacesMode(int this_addr);
 
     public void set_mCollectFacesMode(ECollectFacesMode mCollectFacesMode) {
-        internal_native_set_mCollectFacesMode((int) (long) getNativeData().getCPointer(), (int) (long) (mCollectFacesMode != null ? mCollectFacesMode.getValue() : 0));
+        internal_native_set_mCollectFacesMode(native_address, (int) (mCollectFacesMode != null ? mCollectFacesMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -93,7 +85,7 @@ jsObj.set_mCollectFacesMode(mCollectFacesMode);
     public static native void internal_native_set_mCollectFacesMode(int this_addr, int mCollectFacesMode);
 
     public float get_mCollisionTolerance() {
-        return internal_native_get_mCollisionTolerance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCollisionTolerance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -104,7 +96,7 @@ return jsObj.get_mCollisionTolerance();
     public static native float internal_native_get_mCollisionTolerance(int this_addr);
 
     public void set_mCollisionTolerance(float mCollisionTolerance) {
-        internal_native_set_mCollisionTolerance((int) (long) getNativeData().getCPointer(), mCollisionTolerance);
+        internal_native_set_mCollisionTolerance(native_address, mCollisionTolerance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -115,7 +107,7 @@ jsObj.set_mCollisionTolerance(mCollisionTolerance);
     public static native void internal_native_set_mCollisionTolerance(int this_addr, float mCollisionTolerance);
 
     public float get_mPenetrationTolerance() {
-        return internal_native_get_mPenetrationTolerance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mPenetrationTolerance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -126,7 +118,7 @@ return jsObj.get_mPenetrationTolerance();
     public static native float internal_native_get_mPenetrationTolerance(int this_addr);
 
     public void set_mPenetrationTolerance(float mPenetrationTolerance) {
-        internal_native_set_mPenetrationTolerance((int) (long) getNativeData().getCPointer(), mPenetrationTolerance);
+        internal_native_set_mPenetrationTolerance(native_address, mPenetrationTolerance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -137,12 +129,12 @@ jsObj.set_mPenetrationTolerance(mPenetrationTolerance);
     public static native void internal_native_set_mPenetrationTolerance(int this_addr, float mPenetrationTolerance);
 
     public Vec3 get_mActiveEdgeMovementDirection() {
-        int pointer = internal_native_get_mActiveEdgeMovementDirection((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mActiveEdgeMovementDirection(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -156,7 +148,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mActiveEdgeMovementDirection(int this_addr);
 
     public void set_mActiveEdgeMovementDirection(Vec3 mActiveEdgeMovementDirection) {
-        internal_native_set_mActiveEdgeMovementDirection((int) (long) getNativeData().getCPointer(), (int) (long) (mActiveEdgeMovementDirection != null ? mActiveEdgeMovementDirection.getNativeData().getCPointer() : 0));
+        internal_native_set_mActiveEdgeMovementDirection(native_address, (mActiveEdgeMovementDirection != null ? mActiveEdgeMovementDirection.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

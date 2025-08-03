@@ -17,8 +17,8 @@ public class EmptyShape extends Shape {
 
     public EmptyShape(Vec3 inCenterOfMass) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3((long) (inCenterOfMass != null ? inCenterOfMass.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_Vec3((inCenterOfMass != null ? inCenterOfMass.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -29,7 +29,7 @@ return (jlong)new EmptyShape(*((Vec3* )inCenterOfMass_addr));
     public EmptyShape() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,16 +45,8 @@ return (jlong)new EmptyShape();
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]

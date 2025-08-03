@@ -18,7 +18,7 @@ public class CollideShapeSettings extends CollideSettingsBase {
     public CollideShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -37,7 +37,7 @@ return jolt.getPointer(jsObj);
     }
 
     public float get_mMaxSeparationDistance() {
-        return internal_native_get_mMaxSeparationDistance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxSeparationDistance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -48,7 +48,7 @@ return jsObj.get_mMaxSeparationDistance();
     public static native float internal_native_get_mMaxSeparationDistance(int this_addr);
 
     public void set_mMaxSeparationDistance(float mMaxSeparationDistance) {
-        internal_native_set_mMaxSeparationDistance((int) (long) getNativeData().getCPointer(), mMaxSeparationDistance);
+        internal_native_set_mMaxSeparationDistance(native_address, mMaxSeparationDistance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -59,7 +59,7 @@ jsObj.set_mMaxSeparationDistance(mMaxSeparationDistance);
     public static native void internal_native_set_mMaxSeparationDistance(int this_addr, float mMaxSeparationDistance);
 
     public EBackFaceMode get_mBackFaceMode() {
-        int value = internal_native_get_mBackFaceMode((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mBackFaceMode(native_address);
         return EBackFaceMode.MAP.get(value);
     }
 
@@ -71,7 +71,7 @@ return jsObj.get_mBackFaceMode();
     public static native int internal_native_get_mBackFaceMode(int this_addr);
 
     public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
-        internal_native_set_mBackFaceMode((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
+        internal_native_set_mBackFaceMode(native_address, (int) (mBackFaceMode != null ? mBackFaceMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]

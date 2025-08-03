@@ -17,8 +17,8 @@ public class WheelTV extends Wheel {
 
     public WheelTV(WheelSettingsTV inWheel) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_WheelSettingsTV((long) (inWheel != null ? inWheel.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_WheelSettingsTV((inWheel != null ? inWheel.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,16 +34,8 @@ return (jlong)new WheelTV(*((WheelSettingsTV* )inWheel_addr));
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,12 +45,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public WheelSettingsTV GetSettings() {
-        long pointer = internal_native_GetSettings((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetSettings(native_address);
         if (pointer == 0)
             return null;
         if (WheelSettingsTV_TEMP_GEN_0 == null)
             WheelSettingsTV_TEMP_GEN_0 = new WheelSettingsTV((byte) 1, (char) 1);
-        WheelSettingsTV_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        WheelSettingsTV_TEMP_GEN_0.internal_reset(pointer, false);
         return WheelSettingsTV_TEMP_GEN_0;
     }
 
@@ -70,7 +62,7 @@ return (jlong)obj;
     public static native long internal_native_GetSettings(long this_addr);
 
     public int get_mTrackIndex() {
-        return internal_native_get_mTrackIndex((long) getNativeData().getCPointer());
+        return internal_native_get_mTrackIndex(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -80,7 +72,7 @@ return nativeObject->mTrackIndex;
     public static native int internal_native_get_mTrackIndex(long this_addr);
 
     public void set_mTrackIndex(int mTrackIndex) {
-        internal_native_set_mTrackIndex((long) getNativeData().getCPointer(), mTrackIndex);
+        internal_native_set_mTrackIndex(native_address, mTrackIndex);
     }
 
     /*[-JNI;-NATIVE]
@@ -90,7 +82,7 @@ nativeObject->mTrackIndex = mTrackIndex;
     public static native void internal_native_set_mTrackIndex(long this_addr, int mTrackIndex);
 
     public float get_mCombinedLongitudinalFriction() {
-        return internal_native_get_mCombinedLongitudinalFriction((long) getNativeData().getCPointer());
+        return internal_native_get_mCombinedLongitudinalFriction(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -100,7 +92,7 @@ return nativeObject->mCombinedLongitudinalFriction;
     public static native float internal_native_get_mCombinedLongitudinalFriction(long this_addr);
 
     public void set_mCombinedLongitudinalFriction(float mCombinedLongitudinalFriction) {
-        internal_native_set_mCombinedLongitudinalFriction((long) getNativeData().getCPointer(), mCombinedLongitudinalFriction);
+        internal_native_set_mCombinedLongitudinalFriction(native_address, mCombinedLongitudinalFriction);
     }
 
     /*[-JNI;-NATIVE]
@@ -110,7 +102,7 @@ nativeObject->mCombinedLongitudinalFriction = mCombinedLongitudinalFriction;
     public static native void internal_native_set_mCombinedLongitudinalFriction(long this_addr, float mCombinedLongitudinalFriction);
 
     public float get_mCombinedLateralFriction() {
-        return internal_native_get_mCombinedLateralFriction((long) getNativeData().getCPointer());
+        return internal_native_get_mCombinedLateralFriction(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -120,7 +112,7 @@ return nativeObject->mCombinedLateralFriction;
     public static native float internal_native_get_mCombinedLateralFriction(long this_addr);
 
     public void set_mCombinedLateralFriction(float mCombinedLateralFriction) {
-        internal_native_set_mCombinedLateralFriction((long) getNativeData().getCPointer(), mCombinedLateralFriction);
+        internal_native_set_mCombinedLateralFriction(native_address, mCombinedLateralFriction);
     }
 
     /*[-JNI;-NATIVE]
@@ -130,7 +122,7 @@ nativeObject->mCombinedLateralFriction = mCombinedLateralFriction;
     public static native void internal_native_set_mCombinedLateralFriction(long this_addr, float mCombinedLateralFriction);
 
     public float get_mBrakeImpulse() {
-        return internal_native_get_mBrakeImpulse((long) getNativeData().getCPointer());
+        return internal_native_get_mBrakeImpulse(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -140,7 +132,7 @@ return nativeObject->mBrakeImpulse;
     public static native float internal_native_get_mBrakeImpulse(long this_addr);
 
     public void set_mBrakeImpulse(float mBrakeImpulse) {
-        internal_native_set_mBrakeImpulse((long) getNativeData().getCPointer(), mBrakeImpulse);
+        internal_native_set_mBrakeImpulse(native_address, mBrakeImpulse);
     }
 
     /*[-JNI;-NATIVE]

@@ -17,7 +17,7 @@ public class LinearCurve extends IDLBase {
 
     public LinearCurve() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new LinearCurve();
     public LinearCurve(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void Clear() {
-        internal_native_Clear((long) getNativeData().getCPointer());
+        internal_native_Clear(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ nativeObject->Clear();
     public static native void internal_native_Clear(long this_addr);
 
     public void Reserve(int inSize) {
-        internal_native_Reserve((long) getNativeData().getCPointer(), inSize);
+        internal_native_Reserve(native_address, inSize);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ nativeObject->Reserve(inSize);
     public static native void internal_native_Reserve(long this_addr, int inSize);
 
     public void AddPoint(float inX, float inY) {
-        internal_native_AddPoint((long) getNativeData().getCPointer(), inX, inY);
+        internal_native_AddPoint(native_address, inX, inY);
     }
 
     /*[-JNI;-NATIVE]
@@ -81,7 +73,7 @@ nativeObject->AddPoint((float)inX, (float)inY);
     public static native void internal_native_AddPoint(long this_addr, float inX, float inY);
 
     public void Sort() {
-        internal_native_Sort((long) getNativeData().getCPointer());
+        internal_native_Sort(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -91,7 +83,7 @@ nativeObject->Sort();
     public static native void internal_native_Sort(long this_addr);
 
     public float GetMinX() {
-        return internal_native_GetMinX((long) getNativeData().getCPointer());
+        return internal_native_GetMinX(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -101,7 +93,7 @@ return nativeObject->GetMinX();
     public static native float internal_native_GetMinX(long this_addr);
 
     public float GetMaxX() {
-        return internal_native_GetMaxX((long) getNativeData().getCPointer());
+        return internal_native_GetMaxX(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -111,7 +103,7 @@ return nativeObject->GetMaxX();
     public static native float internal_native_GetMaxX(long this_addr);
 
     public float GetValue(float inX) {
-        return internal_native_GetValue((long) getNativeData().getCPointer(), inX);
+        return internal_native_GetValue(native_address, inX);
     }
 
     /*[-JNI;-NATIVE]

@@ -17,8 +17,8 @@ public class TaperedCapsuleShapeSettings extends ConvexShapeSettings {
 
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, (int) (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -31,7 +31,7 @@ return jolt.getPointer(jsObj);
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float_float_float(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -50,7 +50,7 @@ return jolt.getPointer(jsObj);
     }
 
     public float get_mHalfHeightOfTaperedCylinder() {
-        return internal_native_get_mHalfHeightOfTaperedCylinder((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mHalfHeightOfTaperedCylinder(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -61,7 +61,7 @@ return jsObj.get_mHalfHeightOfTaperedCylinder();
     public static native float internal_native_get_mHalfHeightOfTaperedCylinder(int this_addr);
 
     public void set_mHalfHeightOfTaperedCylinder(float mHalfHeightOfTaperedCylinder) {
-        internal_native_set_mHalfHeightOfTaperedCylinder((int) (long) getNativeData().getCPointer(), mHalfHeightOfTaperedCylinder);
+        internal_native_set_mHalfHeightOfTaperedCylinder(native_address, mHalfHeightOfTaperedCylinder);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -72,7 +72,7 @@ jsObj.set_mHalfHeightOfTaperedCylinder(mHalfHeightOfTaperedCylinder);
     public static native void internal_native_set_mHalfHeightOfTaperedCylinder(int this_addr, float mHalfHeightOfTaperedCylinder);
 
     public float get_mTopRadius() {
-        return internal_native_get_mTopRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mTopRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -83,7 +83,7 @@ return jsObj.get_mTopRadius();
     public static native float internal_native_get_mTopRadius(int this_addr);
 
     public void set_mTopRadius(float mTopRadius) {
-        internal_native_set_mTopRadius((int) (long) getNativeData().getCPointer(), mTopRadius);
+        internal_native_set_mTopRadius(native_address, mTopRadius);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -94,7 +94,7 @@ jsObj.set_mTopRadius(mTopRadius);
     public static native void internal_native_set_mTopRadius(int this_addr, float mTopRadius);
 
     public float get_mBottomRadius() {
-        return internal_native_get_mBottomRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mBottomRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -105,7 +105,7 @@ return jsObj.get_mBottomRadius();
     public static native float internal_native_get_mBottomRadius(int this_addr);
 
     public void set_mBottomRadius(float mBottomRadius) {
-        internal_native_set_mBottomRadius((int) (long) getNativeData().getCPointer(), mBottomRadius);
+        internal_native_set_mBottomRadius(native_address, mBottomRadius);
     }
 
     /*[-TEAVM;-NATIVE]

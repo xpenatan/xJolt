@@ -29,7 +29,7 @@ public class IDLStringView extends IDLBase {
     }
 
     public String data() {
-        String text = internal_native_data(getNativeData().getCPointer());
+        String text = internal_native_data(native_address);
         return text;
     }
 
@@ -44,7 +44,7 @@ public class IDLStringView extends IDLBase {
 
     public IDLStringView(String text) {
         long addr = internal_native_create_String(text);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*
@@ -55,7 +55,7 @@ public class IDLStringView extends IDLBase {
 
     public IDLStringView(String text, int size) {
         long addr = internal_native_create_String_int(text, size);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*
@@ -64,16 +64,8 @@ public class IDLStringView extends IDLBase {
     */
     public static native long internal_native_create_String_int(String text, int size);
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*
@@ -84,7 +76,7 @@ public class IDLStringView extends IDLBase {
     public static native void internal_native_deleteNative(long this_addr);
 
     public int size() {
-        return internal_native_size((long) getNativeData().getCPointer());
+        return internal_native_size(native_address);
     }
 
     /*
@@ -95,7 +87,7 @@ public class IDLStringView extends IDLBase {
     public static native int internal_native_size(long this_addr);
 
     public byte at(int index) {
-        return internal_native_at((long) getNativeData().getCPointer(), index);
+        return internal_native_at(native_address, index);
     }
 
     /*

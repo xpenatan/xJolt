@@ -29,7 +29,7 @@ public class RagdollSettings extends IDLBase {
 
     public RagdollSettings() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,7 +45,7 @@ return (jlong)new RagdollSettings();
     }
 
     public boolean Stabilize() {
-        return internal_native_Stabilize((long) getNativeData().getCPointer());
+        return internal_native_Stabilize(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -55,12 +55,12 @@ return nativeObject->Stabilize();
     public static native boolean internal_native_Stabilize(long this_addr);
 
     public Ragdoll CreateRagdoll(int inCollisionGroup, int inUserData, PhysicsSystem inSystem) {
-        long pointer = internal_native_CreateRagdoll((long) getNativeData().getCPointer(), inCollisionGroup, inUserData, (long) (inSystem != null ? inSystem.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_CreateRagdoll(native_address, inCollisionGroup, inUserData, (inSystem != null ? inSystem.native_address : 0));
         if (pointer == 0)
             return null;
         if (Ragdoll_TEMP_GEN_0 == null)
             Ragdoll_TEMP_GEN_0 = new Ragdoll((byte) 1, (char) 1);
-        Ragdoll_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Ragdoll_TEMP_GEN_0.internal_reset(pointer, false);
         return Ragdoll_TEMP_GEN_0;
     }
 
@@ -72,12 +72,12 @@ return (jlong)obj;
     public static native long internal_native_CreateRagdoll(long this_addr, int inCollisionGroup, int inUserData, long inSystem_addr);
 
     public Skeleton GetSkeleton() {
-        long pointer = internal_native_GetSkeleton((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetSkeleton(native_address);
         if (pointer == 0)
             return null;
         if (Skeleton_TEMP_GEN_0 == null)
             Skeleton_TEMP_GEN_0 = new Skeleton((byte) 1, (char) 1);
-        Skeleton_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Skeleton_TEMP_GEN_0.internal_reset(pointer, false);
         return Skeleton_TEMP_GEN_0;
     }
 
@@ -89,7 +89,7 @@ return (jlong)obj;
     public static native long internal_native_GetSkeleton(long this_addr);
 
     public void DisableParentChildCollisions(Mat44MemRef inJointMatrices, float inMinSeparationDistance) {
-        internal_native_DisableParentChildCollisions((long) getNativeData().getCPointer(), (long) (inJointMatrices != null ? inJointMatrices.getNativeData().getCPointer() : 0), inMinSeparationDistance);
+        internal_native_DisableParentChildCollisions(native_address, (inJointMatrices != null ? inJointMatrices.native_address : 0), inMinSeparationDistance);
     }
 
     /*[-JNI;-NATIVE]
@@ -99,7 +99,7 @@ nativeObject->DisableParentChildCollisions((Mat44MemRef* )inJointMatrices_addr, 
     public static native void internal_native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr, float inMinSeparationDistance);
 
     public void DisableParentChildCollisions(Mat44MemRef inJointMatrices) {
-        internal_native_DisableParentChildCollisions((long) getNativeData().getCPointer(), (long) (inJointMatrices != null ? inJointMatrices.getNativeData().getCPointer() : 0));
+        internal_native_DisableParentChildCollisions(native_address, (inJointMatrices != null ? inJointMatrices.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -109,7 +109,7 @@ nativeObject->DisableParentChildCollisions((Mat44MemRef* )inJointMatrices_addr);
     public static native void internal_native_DisableParentChildCollisions(long this_addr, long inJointMatrices_addr);
 
     public void DisableParentChildCollisions() {
-        internal_native_DisableParentChildCollisions((long) getNativeData().getCPointer());
+        internal_native_DisableParentChildCollisions(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -119,7 +119,7 @@ nativeObject->DisableParentChildCollisions();
     public static native void internal_native_DisableParentChildCollisions(long this_addr);
 
     public void CalculateBodyIndexToConstraintIndex() {
-        internal_native_CalculateBodyIndexToConstraintIndex((long) getNativeData().getCPointer());
+        internal_native_CalculateBodyIndexToConstraintIndex(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -129,7 +129,7 @@ nativeObject->CalculateBodyIndexToConstraintIndex();
     public static native void internal_native_CalculateBodyIndexToConstraintIndex(long this_addr);
 
     public void CalculateConstraintIndexToBodyIdxPair() {
-        internal_native_CalculateConstraintIndexToBodyIdxPair((long) getNativeData().getCPointer());
+        internal_native_CalculateConstraintIndexToBodyIdxPair(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -139,12 +139,12 @@ nativeObject->CalculateConstraintIndexToBodyIdxPair();
     public static native void internal_native_CalculateConstraintIndexToBodyIdxPair(long this_addr);
 
     public ArrayRagdollPart get_mParts() {
-        long pointer = internal_native_get_mParts((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mParts(native_address);
         if (pointer == 0)
             return null;
         if (ArrayRagdollPart_TEMP_GEN_0 == null)
             ArrayRagdollPart_TEMP_GEN_0 = new ArrayRagdollPart((byte) 1, (char) 1);
-        ArrayRagdollPart_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayRagdollPart_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayRagdollPart_TEMP_GEN_0;
     }
 
@@ -155,7 +155,7 @@ return (jlong)&nativeObject->mParts;
     public static native long internal_native_get_mParts(long this_addr);
 
     public void set_mParts(ArrayRagdollPart mParts) {
-        internal_native_set_mParts((long) getNativeData().getCPointer(), (long) (mParts != null ? mParts.getNativeData().getCPointer() : 0));
+        internal_native_set_mParts(native_address, (mParts != null ? mParts.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -165,12 +165,12 @@ nativeObject->mParts = *((ArrayRagdollPart*)mParts_addr);
     public static native void internal_native_set_mParts(long this_addr, long mParts_addr);
 
     public ArrayRagdollAdditionalConstraint get_mAdditionalConstraints() {
-        long pointer = internal_native_get_mAdditionalConstraints((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mAdditionalConstraints(native_address);
         if (pointer == 0)
             return null;
         if (ArrayRagdollAdditionalConstraint_TEMP_GEN_0 == null)
             ArrayRagdollAdditionalConstraint_TEMP_GEN_0 = new ArrayRagdollAdditionalConstraint((byte) 1, (char) 1);
-        ArrayRagdollAdditionalConstraint_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayRagdollAdditionalConstraint_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayRagdollAdditionalConstraint_TEMP_GEN_0;
     }
 
@@ -181,7 +181,7 @@ return (jlong)&nativeObject->mAdditionalConstraints;
     public static native long internal_native_get_mAdditionalConstraints(long this_addr);
 
     public void set_mAdditionalConstraints(ArrayRagdollAdditionalConstraint mAdditionalConstraints) {
-        internal_native_set_mAdditionalConstraints((long) getNativeData().getCPointer(), (long) (mAdditionalConstraints != null ? mAdditionalConstraints.getNativeData().getCPointer() : 0));
+        internal_native_set_mAdditionalConstraints(native_address, (mAdditionalConstraints != null ? mAdditionalConstraints.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

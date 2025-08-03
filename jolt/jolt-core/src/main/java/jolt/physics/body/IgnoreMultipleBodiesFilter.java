@@ -16,7 +16,7 @@ public class IgnoreMultipleBodiesFilter extends BodyFilter {
     public IgnoreMultipleBodiesFilter() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new IgnoreMultipleBodiesFilter();
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void Clear() {
-        internal_native_Clear((long) getNativeData().getCPointer());
+        internal_native_Clear(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ nativeObject->Clear();
     public static native void internal_native_Clear(long this_addr);
 
     public void Reserve(int inSize) {
-        internal_native_Reserve((long) getNativeData().getCPointer(), inSize);
+        internal_native_Reserve(native_address, inSize);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ nativeObject->Reserve(inSize);
     public static native void internal_native_Reserve(long this_addr, int inSize);
 
     public void IgnoreBody(BodyID inBodyID) {
-        internal_native_IgnoreBody((long) getNativeData().getCPointer(), (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+        internal_native_IgnoreBody(native_address, (inBodyID != null ? inBodyID.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

@@ -20,8 +20,8 @@ public class BoxShapeSettings extends ConvexShapeSettings {
 
     public BoxShapeSettings(Vec3 inHalfExtent, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Vec3_float_PhysicsMaterial((int) (long) (inHalfExtent != null ? inHalfExtent.getNativeData().getCPointer() : 0), inConvexRadius, (int) (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_Vec3_float_PhysicsMaterial((inHalfExtent != null ? inHalfExtent.native_address : 0), inConvexRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -33,8 +33,8 @@ return jolt.getPointer(jsObj);
 
     public BoxShapeSettings(Vec3 inHalfExtent, float inConvexRadius) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Vec3_float((int) (long) (inHalfExtent != null ? inHalfExtent.getNativeData().getCPointer() : 0), inConvexRadius);
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_Vec3_float((inHalfExtent != null ? inHalfExtent.native_address : 0), inConvexRadius);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -46,8 +46,8 @@ return jolt.getPointer(jsObj);
 
     public BoxShapeSettings(Vec3 inHalfExtent) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Vec3((int) (long) (inHalfExtent != null ? inHalfExtent.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_Vec3((inHalfExtent != null ? inHalfExtent.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,12 +66,12 @@ return jolt.getPointer(jsObj);
     }
 
     public Vec3 get_mHalfExtent() {
-        int pointer = internal_native_get_mHalfExtent((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mHalfExtent(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -85,7 +85,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mHalfExtent(int this_addr);
 
     public void set_mHalfExtent(Vec3 mHalfExtent) {
-        internal_native_set_mHalfExtent((int) (long) getNativeData().getCPointer(), (int) (long) (mHalfExtent != null ? mHalfExtent.getNativeData().getCPointer() : 0));
+        internal_native_set_mHalfExtent(native_address, (mHalfExtent != null ? mHalfExtent.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -96,7 +96,7 @@ jsObj.set_mHalfExtent(mHalfExtent_addr);
     public static native void internal_native_set_mHalfExtent(int this_addr, int mHalfExtent_addr);
 
     public float get_mConvexRadius() {
-        return internal_native_get_mConvexRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mConvexRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -107,7 +107,7 @@ return jsObj.get_mConvexRadius();
     public static native float internal_native_get_mConvexRadius(int this_addr);
 
     public void set_mConvexRadius(float mConvexRadius) {
-        internal_native_set_mConvexRadius((int) (long) getNativeData().getCPointer(), mConvexRadius);
+        internal_native_set_mConvexRadius(native_address, mConvexRadius);
     }
 
     /*[-TEAVM;-NATIVE]

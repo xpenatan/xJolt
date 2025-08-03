@@ -21,16 +21,8 @@ public class JobSystemThreadPool extends JobSystemWithBarrier {
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -41,7 +33,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int GetMaxConcurrency() {
-        return internal_native_GetMaxConcurrency((int) (long) getNativeData().getCPointer());
+        return internal_native_GetMaxConcurrency(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -53,7 +45,7 @@ return returnedJSObj;
     public static native int internal_native_GetMaxConcurrency(int this_addr);
 
     public void SetNumThreads(int inNumThreads) {
-        internal_native_SetNumThreads((int) (long) getNativeData().getCPointer(), inNumThreads);
+        internal_native_SetNumThreads(native_address, inNumThreads);
     }
 
     /*[-TEAVM;-NATIVE]

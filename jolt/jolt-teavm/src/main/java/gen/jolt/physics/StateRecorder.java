@@ -22,16 +22,8 @@ public class StateRecorder extends IDLBase {
     public StateRecorder(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -42,7 +34,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void SetValidating(boolean inValidating) {
-        internal_native_SetValidating((int) (long) getNativeData().getCPointer(), inValidating);
+        internal_native_SetValidating(native_address, inValidating);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -53,7 +45,7 @@ jsObj.SetValidating(inValidating);
     public static native void internal_native_SetValidating(int this_addr, boolean inValidating);
 
     public boolean IsValidating() {
-        return internal_native_IsValidating((int) (long) getNativeData().getCPointer());
+        return internal_native_IsValidating(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

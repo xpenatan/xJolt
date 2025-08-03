@@ -21,7 +21,7 @@ public class CastShapeClosestHitCollisionCollector extends CastShapeCollector {
     public CastShapeClosestHitCollisionCollector() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -37,16 +37,8 @@ return (jlong)new CastShapeClosestHitCollisionCollector();
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -56,7 +48,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public boolean HadHit() {
-        return internal_native_HadHit((long) getNativeData().getCPointer());
+        return internal_native_HadHit(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -66,12 +58,12 @@ return nativeObject->HadHit();
     public static native boolean internal_native_HadHit(long this_addr);
 
     public ShapeCastResult get_mHit() {
-        long pointer = internal_native_get_mHit((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mHit(native_address);
         if (pointer == 0)
             return null;
         if (ShapeCastResult_TEMP_GEN_0 == null)
             ShapeCastResult_TEMP_GEN_0 = new ShapeCastResult((byte) 1, (char) 1);
-        ShapeCastResult_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ShapeCastResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ShapeCastResult_TEMP_GEN_0;
     }
 
@@ -82,7 +74,7 @@ return (jlong)&nativeObject->mHit;
     public static native long internal_native_get_mHit(long this_addr);
 
     public void set_mHit(ShapeCastResult mHit) {
-        internal_native_set_mHit((long) getNativeData().getCPointer(), (long) (mHit != null ? mHit.getNativeData().getCPointer() : 0));
+        internal_native_set_mHit(native_address, (mHit != null ? mHit.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

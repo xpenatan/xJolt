@@ -38,7 +38,7 @@ public class SixDOFConstraintSettings extends TwoBodyConstraintSettings {
     public SixDOFConstraintSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,16 +54,8 @@ return (jlong)new SixDOFConstraintSettings();
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -73,7 +65,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void MakeFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        internal_native_MakeFreeAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0));
+        internal_native_MakeFreeAxis(native_address, (inAxis != null ? inAxis.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -83,7 +75,7 @@ nativeObject->MakeFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
     public static native void internal_native_MakeFreeAxis(long this_addr, long inAxis);
 
     public boolean IsFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_IsFreeAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0));
+        return internal_native_IsFreeAxis(native_address, (inAxis != null ? inAxis.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -93,7 +85,7 @@ return nativeObject->IsFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
     public static native boolean internal_native_IsFreeAxis(long this_addr, long inAxis);
 
     public void MakeFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        internal_native_MakeFixedAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0));
+        internal_native_MakeFixedAxis(native_address, (inAxis != null ? inAxis.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -103,7 +95,7 @@ nativeObject->MakeFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
     public static native void internal_native_MakeFixedAxis(long this_addr, long inAxis);
 
     public boolean IsFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_IsFixedAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0));
+        return internal_native_IsFixedAxis(native_address, (inAxis != null ? inAxis.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -113,7 +105,7 @@ return nativeObject->IsFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
     public static native boolean internal_native_IsFixedAxis(long this_addr, long inAxis);
 
     public void SetLimitedAxis(SixDOFConstraintSettings_EAxis inAxis, float inMin, float inMax) {
-        internal_native_SetLimitedAxis((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getValue() : 0), inMin, inMax);
+        internal_native_SetLimitedAxis(native_address, (inAxis != null ? inAxis.getValue() : 0), inMin, inMax);
     }
 
     /*[-JNI;-NATIVE]
@@ -123,7 +115,7 @@ nativeObject->SetLimitedAxis((::SixDOFConstraintSettings_EAxis)inAxis, (float)in
     public static native void internal_native_SetLimitedAxis(long this_addr, long inAxis, float inMin, float inMax);
 
     public EConstraintSpace get_mSpace() {
-        int value = internal_native_get_mSpace((long) getNativeData().getCPointer());
+        int value = internal_native_get_mSpace(native_address);
         return EConstraintSpace.MAP.get(value);
     }
 
@@ -134,7 +126,7 @@ return (jint)nativeObject->mSpace;
     public static native int internal_native_get_mSpace(long this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
-        internal_native_set_mSpace((long) getNativeData().getCPointer(), (long) (mSpace != null ? mSpace.getValue() : 0));
+        internal_native_set_mSpace(native_address, (mSpace != null ? mSpace.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -144,12 +136,12 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
     public static native void internal_native_set_mSpace(long this_addr, long mSpace);
 
     public Vec3 get_mPosition1() {
-        long pointer = internal_native_get_mPosition1((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mPosition1(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -160,7 +152,7 @@ return (jlong)&nativeObject->mPosition1;
     public static native long internal_native_get_mPosition1(long this_addr);
 
     public void set_mPosition1(Vec3 mPosition1) {
-        internal_native_set_mPosition1((long) getNativeData().getCPointer(), (long) (mPosition1 != null ? mPosition1.getNativeData().getCPointer() : 0));
+        internal_native_set_mPosition1(native_address, (mPosition1 != null ? mPosition1.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -170,12 +162,12 @@ nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
     public static native void internal_native_set_mPosition1(long this_addr, long mPosition1_addr);
 
     public Vec3 get_mAxisX1() {
-        long pointer = internal_native_get_mAxisX1((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mAxisX1(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -186,7 +178,7 @@ return (jlong)&nativeObject->mAxisX1;
     public static native long internal_native_get_mAxisX1(long this_addr);
 
     public void set_mAxisX1(Vec3 mAxisX1) {
-        internal_native_set_mAxisX1((long) getNativeData().getCPointer(), (long) (mAxisX1 != null ? mAxisX1.getNativeData().getCPointer() : 0));
+        internal_native_set_mAxisX1(native_address, (mAxisX1 != null ? mAxisX1.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -196,12 +188,12 @@ nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
     public static native void internal_native_set_mAxisX1(long this_addr, long mAxisX1_addr);
 
     public Vec3 get_mAxisY1() {
-        long pointer = internal_native_get_mAxisY1((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mAxisY1(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -212,7 +204,7 @@ return (jlong)&nativeObject->mAxisY1;
     public static native long internal_native_get_mAxisY1(long this_addr);
 
     public void set_mAxisY1(Vec3 mAxisY1) {
-        internal_native_set_mAxisY1((long) getNativeData().getCPointer(), (long) (mAxisY1 != null ? mAxisY1.getNativeData().getCPointer() : 0));
+        internal_native_set_mAxisY1(native_address, (mAxisY1 != null ? mAxisY1.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -222,12 +214,12 @@ nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
     public static native void internal_native_set_mAxisY1(long this_addr, long mAxisY1_addr);
 
     public Vec3 get_mPosition2() {
-        long pointer = internal_native_get_mPosition2((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mPosition2(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -238,7 +230,7 @@ return (jlong)&nativeObject->mPosition2;
     public static native long internal_native_get_mPosition2(long this_addr);
 
     public void set_mPosition2(Vec3 mPosition2) {
-        internal_native_set_mPosition2((long) getNativeData().getCPointer(), (long) (mPosition2 != null ? mPosition2.getNativeData().getCPointer() : 0));
+        internal_native_set_mPosition2(native_address, (mPosition2 != null ? mPosition2.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -248,12 +240,12 @@ nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
     public static native void internal_native_set_mPosition2(long this_addr, long mPosition2_addr);
 
     public Vec3 get_mAxisX2() {
-        long pointer = internal_native_get_mAxisX2((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mAxisX2(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -264,7 +256,7 @@ return (jlong)&nativeObject->mAxisX2;
     public static native long internal_native_get_mAxisX2(long this_addr);
 
     public void set_mAxisX2(Vec3 mAxisX2) {
-        internal_native_set_mAxisX2((long) getNativeData().getCPointer(), (long) (mAxisX2 != null ? mAxisX2.getNativeData().getCPointer() : 0));
+        internal_native_set_mAxisX2(native_address, (mAxisX2 != null ? mAxisX2.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -274,12 +266,12 @@ nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
     public static native void internal_native_set_mAxisX2(long this_addr, long mAxisX2_addr);
 
     public Vec3 get_mAxisY2() {
-        long pointer = internal_native_get_mAxisY2((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mAxisY2(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -290,7 +282,7 @@ return (jlong)&nativeObject->mAxisY2;
     public static native long internal_native_get_mAxisY2(long this_addr);
 
     public void set_mAxisY2(Vec3 mAxisY2) {
-        internal_native_set_mAxisY2((long) getNativeData().getCPointer(), (long) (mAxisY2 != null ? mAxisY2.getNativeData().getCPointer() : 0));
+        internal_native_set_mAxisY2(native_address, (mAxisY2 != null ? mAxisY2.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -300,7 +292,7 @@ nativeObject->mAxisY2 = *((Vec3*)mAxisY2_addr);
     public static native void internal_native_set_mAxisY2(long this_addr, long mAxisY2_addr);
 
     public float get_mMaxFriction(int index) {
-        return internal_native_get_mMaxFriction((long) getNativeData().getCPointer(), index);
+        return internal_native_get_mMaxFriction(native_address, index);
     }
 
     /*[-JNI;-NATIVE]
@@ -310,7 +302,7 @@ return nativeObject->mMaxFriction[index];
     public static native float internal_native_get_mMaxFriction(long this_addr, int index);
 
     public void set_mMaxFriction(int index, float mMaxFriction) {
-        internal_native_set_mMaxFriction((long) getNativeData().getCPointer(), index, mMaxFriction);
+        internal_native_set_mMaxFriction(native_address, index, mMaxFriction);
     }
 
     /*[-JNI;-NATIVE]
@@ -320,7 +312,7 @@ nativeObject->mMaxFriction[index] = mMaxFriction;
     public static native void internal_native_set_mMaxFriction(long this_addr, int index, float mMaxFriction);
 
     public ESwingType get_mSwingType() {
-        int value = internal_native_get_mSwingType((long) getNativeData().getCPointer());
+        int value = internal_native_get_mSwingType(native_address);
         return ESwingType.MAP.get(value);
     }
 
@@ -331,7 +323,7 @@ return (jint)nativeObject->mSwingType;
     public static native int internal_native_get_mSwingType(long this_addr);
 
     public void set_mSwingType(ESwingType mSwingType) {
-        internal_native_set_mSwingType((long) getNativeData().getCPointer(), (long) (mSwingType != null ? mSwingType.getValue() : 0));
+        internal_native_set_mSwingType(native_address, (mSwingType != null ? mSwingType.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -341,7 +333,7 @@ nativeObject->mSwingType = (::ESwingType)mSwingType;
     public static native void internal_native_set_mSwingType(long this_addr, long mSwingType);
 
     public float get_mLimitMin(int index) {
-        return internal_native_get_mLimitMin((long) getNativeData().getCPointer(), index);
+        return internal_native_get_mLimitMin(native_address, index);
     }
 
     /*[-JNI;-NATIVE]
@@ -351,7 +343,7 @@ return nativeObject->mLimitMin[index];
     public static native float internal_native_get_mLimitMin(long this_addr, int index);
 
     public void set_mLimitMin(int index, float mLimitMin) {
-        internal_native_set_mLimitMin((long) getNativeData().getCPointer(), index, mLimitMin);
+        internal_native_set_mLimitMin(native_address, index, mLimitMin);
     }
 
     /*[-JNI;-NATIVE]
@@ -361,7 +353,7 @@ nativeObject->mLimitMin[index] = mLimitMin;
     public static native void internal_native_set_mLimitMin(long this_addr, int index, float mLimitMin);
 
     public float get_mLimitMax(int index) {
-        return internal_native_get_mLimitMax((long) getNativeData().getCPointer(), index);
+        return internal_native_get_mLimitMax(native_address, index);
     }
 
     /*[-JNI;-NATIVE]
@@ -371,7 +363,7 @@ return nativeObject->mLimitMax[index];
     public static native float internal_native_get_mLimitMax(long this_addr, int index);
 
     public void set_mLimitMax(int index, float mLimitMax) {
-        internal_native_set_mLimitMax((long) getNativeData().getCPointer(), index, mLimitMax);
+        internal_native_set_mLimitMax(native_address, index, mLimitMax);
     }
 
     /*[-JNI;-NATIVE]
@@ -381,12 +373,12 @@ nativeObject->mLimitMax[index] = mLimitMax;
     public static native void internal_native_set_mLimitMax(long this_addr, int index, float mLimitMax);
 
     public SpringSettings get_mLimitsSpringSettings(int index) {
-        long pointer = internal_native_get_mLimitsSpringSettings((long) getNativeData().getCPointer(), index);
+        long pointer = internal_native_get_mLimitsSpringSettings(native_address, index);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
-        SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -397,7 +389,7 @@ return (jlong)&nativeObject->mLimitsSpringSettings[index];
     public static native long internal_native_get_mLimitsSpringSettings(long this_addr, int index);
 
     public void set_mLimitsSpringSettings(int index, SpringSettings mLimitsSpringSettings) {
-        internal_native_set_mLimitsSpringSettings((long) getNativeData().getCPointer(), index, (long) (mLimitsSpringSettings != null ? mLimitsSpringSettings.getNativeData().getCPointer() : 0));
+        internal_native_set_mLimitsSpringSettings(native_address, index, (mLimitsSpringSettings != null ? mLimitsSpringSettings.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -407,12 +399,12 @@ nativeObject->mLimitsSpringSettings[index] = *((SpringSettings*)mLimitsSpringSet
     public static native void internal_native_set_mLimitsSpringSettings(long this_addr, int index, long mLimitsSpringSettings_addr);
 
     public MotorSettings get_mMotorSettings(int index) {
-        long pointer = internal_native_get_mMotorSettings((long) getNativeData().getCPointer(), index);
+        long pointer = internal_native_get_mMotorSettings(native_address, index);
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
-        MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -423,7 +415,7 @@ return (jlong)&nativeObject->mMotorSettings[index];
     public static native long internal_native_get_mMotorSettings(long this_addr, int index);
 
     public void set_mMotorSettings(int index, MotorSettings mMotorSettings) {
-        internal_native_set_mMotorSettings((long) getNativeData().getCPointer(), index, (long) (mMotorSettings != null ? mMotorSettings.getNativeData().getCPointer() : 0));
+        internal_native_set_mMotorSettings(native_address, index, (mMotorSettings != null ? mMotorSettings.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

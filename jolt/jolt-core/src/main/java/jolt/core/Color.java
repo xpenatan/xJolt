@@ -52,7 +52,7 @@ public class Color extends IDLBase {
 
     public Color() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -67,16 +67,8 @@ return (jlong)new Color();
     public Color(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -86,12 +78,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Color MulColor(Color other) {
-        long pointer = internal_native_MulColor((long) getNativeData().getCPointer(), (long) (other != null ? other.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_MulColor(native_address, (other != null ? other.native_address : 0));
         if (pointer == 0)
             return null;
         if (Color_TEMP_GEN_0 == null)
             Color_TEMP_GEN_0 = new Color((byte) 1, (char) 1);
-        Color_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Color_TEMP_GEN_0.internal_reset(pointer, false);
         return Color_TEMP_GEN_0;
     }
 
@@ -103,12 +95,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_MulColor(long this_addr, long other_addr);
 
     public Vec4 ToVec4() {
-        long pointer = internal_native_ToVec4((long) getNativeData().getCPointer());
+        long pointer = internal_native_ToVec4(native_address);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_0;
     }
 
@@ -120,7 +112,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_ToVec4(long this_addr);
 
     public int get_mU32() {
-        return internal_native_get_mU32((long) getNativeData().getCPointer());
+        return internal_native_get_mU32(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -130,7 +122,7 @@ return nativeObject->mU32;
     public static native int internal_native_get_mU32(long this_addr);
 
     public void set_mU32(int mU32) {
-        internal_native_set_mU32((long) getNativeData().getCPointer(), mU32);
+        internal_native_set_mU32(native_address, mU32);
     }
 
     /*[-JNI;-NATIVE]
@@ -145,7 +137,7 @@ nativeObject->mU32 = mU32;
             return null;
         if (Color_TEMP_STATIC_GEN_0 == null)
             Color_TEMP_STATIC_GEN_0 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_0;
     }
 
@@ -160,7 +152,7 @@ return (jlong)&Color::sBlack;
             return null;
         if (Color_TEMP_STATIC_GEN_1 == null)
             Color_TEMP_STATIC_GEN_1 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_1;
     }
 
@@ -175,7 +167,7 @@ return (jlong)&Color::sDarkRed;
             return null;
         if (Color_TEMP_STATIC_GEN_2 == null)
             Color_TEMP_STATIC_GEN_2 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_2;
     }
 
@@ -190,7 +182,7 @@ return (jlong)&Color::sRed;
             return null;
         if (Color_TEMP_STATIC_GEN_3 == null)
             Color_TEMP_STATIC_GEN_3 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_3;
     }
 
@@ -205,7 +197,7 @@ return (jlong)&Color::sDarkGreen;
             return null;
         if (Color_TEMP_STATIC_GEN_4 == null)
             Color_TEMP_STATIC_GEN_4 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_4;
     }
 
@@ -220,7 +212,7 @@ return (jlong)&Color::sGreen;
             return null;
         if (Color_TEMP_STATIC_GEN_5 == null)
             Color_TEMP_STATIC_GEN_5 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_5.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_5;
     }
 
@@ -235,7 +227,7 @@ return (jlong)&Color::sDarkBlue;
             return null;
         if (Color_TEMP_STATIC_GEN_6 == null)
             Color_TEMP_STATIC_GEN_6 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_6.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_6;
     }
 
@@ -250,7 +242,7 @@ return (jlong)&Color::sBlue;
             return null;
         if (Color_TEMP_STATIC_GEN_7 == null)
             Color_TEMP_STATIC_GEN_7 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_7.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_7;
     }
 
@@ -265,7 +257,7 @@ return (jlong)&Color::sYellow;
             return null;
         if (Color_TEMP_STATIC_GEN_8 == null)
             Color_TEMP_STATIC_GEN_8 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_8.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_8;
     }
 
@@ -280,7 +272,7 @@ return (jlong)&Color::sPurple;
             return null;
         if (Color_TEMP_STATIC_GEN_9 == null)
             Color_TEMP_STATIC_GEN_9 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_9.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_9;
     }
 
@@ -295,7 +287,7 @@ return (jlong)&Color::sCyan;
             return null;
         if (Color_TEMP_STATIC_GEN_10 == null)
             Color_TEMP_STATIC_GEN_10 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_10.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_10;
     }
 
@@ -310,7 +302,7 @@ return (jlong)&Color::sOrange;
             return null;
         if (Color_TEMP_STATIC_GEN_11 == null)
             Color_TEMP_STATIC_GEN_11 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_11.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_11;
     }
 
@@ -325,7 +317,7 @@ return (jlong)&Color::sDarkOrange;
             return null;
         if (Color_TEMP_STATIC_GEN_12 == null)
             Color_TEMP_STATIC_GEN_12 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_12.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_12.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_12;
     }
 
@@ -340,7 +332,7 @@ return (jlong)&Color::sGrey;
             return null;
         if (Color_TEMP_STATIC_GEN_13 == null)
             Color_TEMP_STATIC_GEN_13 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_13.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_13.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_13;
     }
 
@@ -355,7 +347,7 @@ return (jlong)&Color::sLightGrey;
             return null;
         if (Color_TEMP_STATIC_GEN_14 == null)
             Color_TEMP_STATIC_GEN_14 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_14.getNativeData().reset(pointer, false);
+        Color_TEMP_STATIC_GEN_14.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_14;
     }
 

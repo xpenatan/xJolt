@@ -2,8 +2,9 @@ val moduleName = "jolt-wgpu"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}")
+    api("io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:${LibExt.gdxWebGPUVersion}")
     implementation(project(":jolt:jolt-core"))
-    implementation(project(":jolt-gdx"))
+    api(project(":jolt-gdx"))
 }
 
 publishing {

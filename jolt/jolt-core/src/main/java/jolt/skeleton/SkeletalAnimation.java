@@ -19,7 +19,7 @@ public class SkeletalAnimation extends IDLBase {
 
     public SkeletalAnimation() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -35,7 +35,7 @@ return (jlong)new SkeletalAnimation();
     }
 
     public float GetDuration() {
-        return internal_native_GetDuration((long) getNativeData().getCPointer());
+        return internal_native_GetDuration(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,7 +45,7 @@ return nativeObject->GetDuration();
     public static native float internal_native_GetDuration(long this_addr);
 
     public void ScaleJoints(float inScale) {
-        internal_native_ScaleJoints((long) getNativeData().getCPointer(), inScale);
+        internal_native_ScaleJoints(native_address, inScale);
     }
 
     /*[-JNI;-NATIVE]
@@ -55,7 +55,7 @@ nativeObject->ScaleJoints((float)inScale);
     public static native void internal_native_ScaleJoints(long this_addr, float inScale);
 
     public void Sample(float inTime, SkeletonPose ioPose) {
-        internal_native_Sample((long) getNativeData().getCPointer(), inTime, (long) (ioPose != null ? ioPose.getNativeData().getCPointer() : 0));
+        internal_native_Sample(native_address, inTime, (ioPose != null ? ioPose.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -65,12 +65,12 @@ nativeObject->Sample((float)inTime, *((SkeletonPose* )ioPose_addr));
     public static native void internal_native_Sample(long this_addr, float inTime, long ioPose_addr);
 
     public ArraySkeletonAnimatedJoint GetAnimatedJoints() {
-        long pointer = internal_native_GetAnimatedJoints((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetAnimatedJoints(native_address);
         if (pointer == 0)
             return null;
         if (ArraySkeletonAnimatedJoint_TEMP_GEN_0 == null)
             ArraySkeletonAnimatedJoint_TEMP_GEN_0 = new ArraySkeletonAnimatedJoint((byte) 1, (char) 1);
-        ArraySkeletonAnimatedJoint_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySkeletonAnimatedJoint_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySkeletonAnimatedJoint_TEMP_GEN_0;
     }
 
