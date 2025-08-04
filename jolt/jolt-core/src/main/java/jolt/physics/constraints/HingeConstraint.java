@@ -34,7 +34,7 @@ public class HingeConstraint extends TwoBodyConstraint {
     }
 
     public float GetCurrentAngle() {
-        return internal_native_GetCurrentAngle((long) getNativeData().getCPointer());
+        return internal_native_GetCurrentAngle(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -44,7 +44,7 @@ return nativeObject->GetCurrentAngle();
     public static native float internal_native_GetCurrentAngle(long this_addr);
 
     public void SetMaxFrictionTorque(float inFrictionTorque) {
-        internal_native_SetMaxFrictionTorque((long) getNativeData().getCPointer(), inFrictionTorque);
+        internal_native_SetMaxFrictionTorque(native_address, inFrictionTorque);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,7 +54,7 @@ nativeObject->SetMaxFrictionTorque((float)inFrictionTorque);
     public static native void internal_native_SetMaxFrictionTorque(long this_addr, float inFrictionTorque);
 
     public float GetMaxFrictionTorque() {
-        return internal_native_GetMaxFrictionTorque((long) getNativeData().getCPointer());
+        return internal_native_GetMaxFrictionTorque(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,12 +64,12 @@ return nativeObject->GetMaxFrictionTorque();
     public static native float internal_native_GetMaxFrictionTorque(long this_addr);
 
     public MotorSettings GetMotorSettings() {
-        long pointer = internal_native_GetMotorSettings((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetMotorSettings(native_address);
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
-        MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -80,7 +80,7 @@ return (jlong)&nativeObject->GetMotorSettings();
     public static native long internal_native_GetMotorSettings(long this_addr);
 
     public void SetMotorState(EMotorState inState) {
-        internal_native_SetMotorState((long) getNativeData().getCPointer(), (long) (inState != null ? inState.getValue() : 0));
+        internal_native_SetMotorState(native_address, (inState != null ? inState.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -90,7 +90,7 @@ nativeObject->SetMotorState((::EMotorState)inState);
     public static native void internal_native_SetMotorState(long this_addr, long inState);
 
     public EMotorState GetMotorState() {
-        int value = internal_native_GetMotorState((long) getNativeData().getCPointer());
+        int value = internal_native_GetMotorState(native_address);
         return EMotorState.MAP.get(value);
     }
 
@@ -101,7 +101,7 @@ return (int)nativeObject->GetMotorState();
     public static native int internal_native_GetMotorState(long this_addr);
 
     public void SetTargetAngularVelocity(float inAngularVelocity) {
-        internal_native_SetTargetAngularVelocity((long) getNativeData().getCPointer(), inAngularVelocity);
+        internal_native_SetTargetAngularVelocity(native_address, inAngularVelocity);
     }
 
     /*[-JNI;-NATIVE]
@@ -111,7 +111,7 @@ nativeObject->SetTargetAngularVelocity((float)inAngularVelocity);
     public static native void internal_native_SetTargetAngularVelocity(long this_addr, float inAngularVelocity);
 
     public float GetTargetAngularVelocity() {
-        return internal_native_GetTargetAngularVelocity((long) getNativeData().getCPointer());
+        return internal_native_GetTargetAngularVelocity(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -121,7 +121,7 @@ return nativeObject->GetTargetAngularVelocity();
     public static native float internal_native_GetTargetAngularVelocity(long this_addr);
 
     public void SetTargetAngle(float inAngle) {
-        internal_native_SetTargetAngle((long) getNativeData().getCPointer(), inAngle);
+        internal_native_SetTargetAngle(native_address, inAngle);
     }
 
     /*[-JNI;-NATIVE]
@@ -131,7 +131,7 @@ nativeObject->SetTargetAngle((float)inAngle);
     public static native void internal_native_SetTargetAngle(long this_addr, float inAngle);
 
     public float GetTargetAngle() {
-        return internal_native_GetTargetAngle((long) getNativeData().getCPointer());
+        return internal_native_GetTargetAngle(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -141,7 +141,7 @@ return nativeObject->GetTargetAngle();
     public static native float internal_native_GetTargetAngle(long this_addr);
 
     public void SetLimits(float inLimitsMin, float inLimitsMax) {
-        internal_native_SetLimits((long) getNativeData().getCPointer(), inLimitsMin, inLimitsMax);
+        internal_native_SetLimits(native_address, inLimitsMin, inLimitsMax);
     }
 
     /*[-JNI;-NATIVE]
@@ -151,7 +151,7 @@ nativeObject->SetLimits((float)inLimitsMin, (float)inLimitsMax);
     public static native void internal_native_SetLimits(long this_addr, float inLimitsMin, float inLimitsMax);
 
     public float GetLimitsMin() {
-        return internal_native_GetLimitsMin((long) getNativeData().getCPointer());
+        return internal_native_GetLimitsMin(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -161,7 +161,7 @@ return nativeObject->GetLimitsMin();
     public static native float internal_native_GetLimitsMin(long this_addr);
 
     public float GetLimitsMax() {
-        return internal_native_GetLimitsMax((long) getNativeData().getCPointer());
+        return internal_native_GetLimitsMax(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -171,7 +171,7 @@ return nativeObject->GetLimitsMax();
     public static native float internal_native_GetLimitsMax(long this_addr);
 
     public boolean HasLimits() {
-        return internal_native_HasLimits((long) getNativeData().getCPointer());
+        return internal_native_HasLimits(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -181,12 +181,12 @@ return nativeObject->HasLimits();
     public static native boolean internal_native_HasLimits(long this_addr);
 
     public SpringSettings GetLimitsSpringSettings() {
-        long pointer = internal_native_GetLimitsSpringSettings((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetLimitsSpringSettings(native_address);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
-        SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -197,7 +197,7 @@ return (jlong)&nativeObject->GetLimitsSpringSettings();
     public static native long internal_native_GetLimitsSpringSettings(long this_addr);
 
     public void SetLimitsSpringSettings(SpringSettings inLimitsSpringSettings) {
-        internal_native_SetLimitsSpringSettings((long) getNativeData().getCPointer(), (long) (inLimitsSpringSettings != null ? inLimitsSpringSettings.getNativeData().getCPointer() : 0));
+        internal_native_SetLimitsSpringSettings(native_address, (inLimitsSpringSettings != null ? inLimitsSpringSettings.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -207,12 +207,12 @@ nativeObject->SetLimitsSpringSettings(*((SpringSettings* )inLimitsSpringSettings
     public static native void internal_native_SetLimitsSpringSettings(long this_addr, long inLimitsSpringSettings_addr);
 
     public Vec3 GetTotalLambdaPosition() {
-        long pointer = internal_native_GetTotalLambdaPosition((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetTotalLambdaPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -224,12 +224,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetTotalLambdaPosition(long this_addr);
 
     public Vector2 GetTotalLambdaRotation() {
-        long pointer = internal_native_GetTotalLambdaRotation((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetTotalLambdaRotation(native_address);
         if (pointer == 0)
             return null;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = new Vector2((byte) 1, (char) 1);
-        Vector2_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vector2_TEMP_GEN_0.internal_reset(pointer, false);
         return Vector2_TEMP_GEN_0;
     }
 
@@ -241,7 +241,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetTotalLambdaRotation(long this_addr);
 
     public float GetTotalLambdaRotationLimits() {
-        return internal_native_GetTotalLambdaRotationLimits((long) getNativeData().getCPointer());
+        return internal_native_GetTotalLambdaRotationLimits(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -251,7 +251,7 @@ return nativeObject->GetTotalLambdaRotationLimits();
     public static native float internal_native_GetTotalLambdaRotationLimits(long this_addr);
 
     public float GetTotalLambdaMotor() {
-        return internal_native_GetTotalLambdaMotor((long) getNativeData().getCPointer());
+        return internal_native_GetTotalLambdaMotor(native_address);
     }
 
     /*[-JNI;-NATIVE]

@@ -15,8 +15,8 @@ public class IgnoreSingleBodyFilter extends BodyFilter {
 
     public IgnoreSingleBodyFilter(BodyID inBodyID) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_BodyID((int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_BodyID((inBodyID != null ? inBodyID.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

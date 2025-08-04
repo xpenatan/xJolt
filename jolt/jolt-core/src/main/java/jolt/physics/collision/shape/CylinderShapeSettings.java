@@ -17,8 +17,8 @@ public class CylinderShapeSettings extends ConvexShapeSettings {
 
     public CylinderShapeSettings(float inHalfHeight, float inRadius, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeight, inRadius, inConvexRadius, (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeight, inRadius, inConvexRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -29,7 +29,7 @@ return (jlong)new CylinderShapeSettings((float)inHalfHeight, (float)inRadius, (f
     public CylinderShapeSettings(float inHalfHeight, float inRadius, float inConvexRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float_float(inHalfHeight, inRadius, inConvexRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,7 +40,7 @@ return (jlong)new CylinderShapeSettings((float)inHalfHeight, (float)inRadius, (f
     public CylinderShapeSettings(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float(inHalfHeight, inRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -57,7 +57,7 @@ return (jlong)new CylinderShapeSettings((float)inHalfHeight, (float)inRadius);
     }
 
     public float get_mHalfHeight() {
-        return internal_native_get_mHalfHeight((long) getNativeData().getCPointer());
+        return internal_native_get_mHalfHeight(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -67,7 +67,7 @@ return nativeObject->mHalfHeight;
     public static native float internal_native_get_mHalfHeight(long this_addr);
 
     public void set_mHalfHeight(float mHalfHeight) {
-        internal_native_set_mHalfHeight((long) getNativeData().getCPointer(), mHalfHeight);
+        internal_native_set_mHalfHeight(native_address, mHalfHeight);
     }
 
     /*[-JNI;-NATIVE]
@@ -77,7 +77,7 @@ nativeObject->mHalfHeight = mHalfHeight;
     public static native void internal_native_set_mHalfHeight(long this_addr, float mHalfHeight);
 
     public float get_mRadius() {
-        return internal_native_get_mRadius((long) getNativeData().getCPointer());
+        return internal_native_get_mRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -87,7 +87,7 @@ return nativeObject->mRadius;
     public static native float internal_native_get_mRadius(long this_addr);
 
     public void set_mRadius(float mRadius) {
-        internal_native_set_mRadius((long) getNativeData().getCPointer(), mRadius);
+        internal_native_set_mRadius(native_address, mRadius);
     }
 
     /*[-JNI;-NATIVE]
@@ -97,7 +97,7 @@ nativeObject->mRadius = mRadius;
     public static native void internal_native_set_mRadius(long this_addr, float mRadius);
 
     public float get_mConvexRadius() {
-        return internal_native_get_mConvexRadius((long) getNativeData().getCPointer());
+        return internal_native_get_mConvexRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -107,7 +107,7 @@ return nativeObject->mConvexRadius;
     public static native float internal_native_get_mConvexRadius(long this_addr);
 
     public void set_mConvexRadius(float mConvexRadius) {
-        internal_native_set_mConvexRadius((long) getNativeData().getCPointer(), mConvexRadius);
+        internal_native_set_mConvexRadius(native_address, mConvexRadius);
     }
 
     /*[-JNI;-NATIVE]

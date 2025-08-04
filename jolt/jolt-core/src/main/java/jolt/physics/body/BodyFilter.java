@@ -44,16 +44,8 @@ virtual bool ShouldCollideLocked(const Body& inBody) const {
     public BodyFilter(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,22 +56,22 @@ delete nativeObject;
 
     public BodyFilter() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected boolean ShouldCollide(BodyID inBodyID) {
         return false;
     }
 
-    private boolean internal_ShouldCollide(long inBodyID) {
+    private boolean internal_ShouldCollide(long inBodyID_addr) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
             BodyID_TEMP_STATIC_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_0.getNativeData().reset(inBodyID, false);
+        BodyID_TEMP_STATIC_GEN_0.internal_reset(inBodyID_addr, false);
         return ShouldCollide(BodyID_TEMP_STATIC_GEN_0);
     }
 
@@ -87,10 +79,10 @@ delete nativeObject;
         return false;
     }
 
-    private boolean internal_ShouldCollideLocked(long inBody) {
+    private boolean internal_ShouldCollideLocked(long inBody_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
             Body_TEMP_STATIC_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_0.getNativeData().reset(inBody, false);
+        Body_TEMP_STATIC_GEN_0.internal_reset(inBody_addr, false);
         return ShouldCollideLocked(Body_TEMP_STATIC_GEN_0);
     }
 

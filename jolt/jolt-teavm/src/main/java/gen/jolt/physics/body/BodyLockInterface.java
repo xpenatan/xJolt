@@ -32,16 +32,8 @@ public class BodyLockInterface extends IDLBase {
     public BodyLockInterface(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -52,12 +44,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Body TryGetBody(BodyID inBodyID) {
-        int pointer = internal_native_TryGetBody((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_TryGetBody(native_address, (inBodyID != null ? inBodyID.native_address : 0));
         if (pointer == 0)
             return null;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Body_TEMP_GEN_0.internal_reset(pointer, false);
         return Body_TEMP_GEN_0;
     }
 
@@ -71,12 +63,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_TryGetBody(int this_addr, int inBodyID_addr);
 
     public SharedMutex LockRead(BodyID inBodyID) {
-        int pointer = internal_native_LockRead((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_LockRead(native_address, (inBodyID != null ? inBodyID.native_address : 0));
         if (pointer == 0)
             return null;
         if (SharedMutex_TEMP_GEN_0 == null)
             SharedMutex_TEMP_GEN_0 = new SharedMutex((byte) 1, (char) 1);
-        SharedMutex_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SharedMutex_TEMP_GEN_0.internal_reset(pointer, false);
         return SharedMutex_TEMP_GEN_0;
     }
 
@@ -90,7 +82,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_LockRead(int this_addr, int inBodyID_addr);
 
     public void UnlockRead(SharedMutex inMutex) {
-        internal_native_UnlockRead((int) (long) getNativeData().getCPointer(), (int) (long) (inMutex != null ? inMutex.getNativeData().getCPointer() : 0));
+        internal_native_UnlockRead(native_address, (inMutex != null ? inMutex.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -101,12 +93,12 @@ jsObj.UnlockRead(inMutex_addr);
     public static native void internal_native_UnlockRead(int this_addr, int inMutex_addr);
 
     public SharedMutex LockWrite(BodyID inBodyID) {
-        int pointer = internal_native_LockWrite((int) (long) getNativeData().getCPointer(), (int) (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_LockWrite(native_address, (inBodyID != null ? inBodyID.native_address : 0));
         if (pointer == 0)
             return null;
         if (SharedMutex_TEMP_GEN_1 == null)
             SharedMutex_TEMP_GEN_1 = new SharedMutex((byte) 1, (char) 1);
-        SharedMutex_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        SharedMutex_TEMP_GEN_1.internal_reset(pointer, false);
         return SharedMutex_TEMP_GEN_1;
     }
 
@@ -120,7 +112,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_LockWrite(int this_addr, int inBodyID_addr);
 
     public void UnlockWrite(SharedMutex inMutex) {
-        internal_native_UnlockWrite((int) (long) getNativeData().getCPointer(), (int) (long) (inMutex != null ? inMutex.getNativeData().getCPointer() : 0));
+        internal_native_UnlockWrite(native_address, (inMutex != null ? inMutex.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -131,12 +123,12 @@ jsObj.UnlockWrite(inMutex_addr);
     public static native void internal_native_UnlockWrite(int this_addr, int inMutex_addr);
 
     public MutexMask GetMutexMask(IDLArrayBodyID inBodies, int inNumber) {
-        int pointer = internal_native_GetMutexMask((int) (long) getNativeData().getCPointer(), (int) (long) (inBodies != null ? inBodies.getPointer() : 0), inNumber);
+        int pointer = internal_native_GetMutexMask(native_address, (inBodies != null ? inBodies.getPointer() : 0), inNumber);
         if (pointer == 0)
             return null;
         if (MutexMask_TEMP_GEN_0 == null)
             MutexMask_TEMP_GEN_0 = new MutexMask((byte) 1, (char) 1);
-        MutexMask_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        MutexMask_TEMP_GEN_0.internal_reset(pointer, false);
         return MutexMask_TEMP_GEN_0;
     }
 
@@ -150,7 +142,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetMutexMask(int this_addr, int inBodies_addr, int inNumber);
 
     public void LockRead(MutexMask inMutexMask) {
-        internal_native_LockRead_0((int) (long) getNativeData().getCPointer(), (int) (long) (inMutexMask != null ? inMutexMask.getNativeData().getCPointer() : 0));
+        internal_native_LockRead_0(native_address, (inMutexMask != null ? inMutexMask.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -161,7 +153,7 @@ jsObj.LockRead_0(inMutexMask_addr);
     public static native void internal_native_LockRead_0(int this_addr, int inMutexMask_addr);
 
     public void UnlockRead(MutexMask inMutexMask) {
-        internal_native_UnlockRead_0((int) (long) getNativeData().getCPointer(), (int) (long) (inMutexMask != null ? inMutexMask.getNativeData().getCPointer() : 0));
+        internal_native_UnlockRead_0(native_address, (inMutexMask != null ? inMutexMask.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -172,7 +164,7 @@ jsObj.UnlockRead_0(inMutexMask_addr);
     public static native void internal_native_UnlockRead_0(int this_addr, int inMutexMask_addr);
 
     public void LockWrite(MutexMask inMutexMask) {
-        internal_native_LockWrite_0((int) (long) getNativeData().getCPointer(), (int) (long) (inMutexMask != null ? inMutexMask.getNativeData().getCPointer() : 0));
+        internal_native_LockWrite_0(native_address, (inMutexMask != null ? inMutexMask.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -183,7 +175,7 @@ jsObj.LockWrite_0(inMutexMask_addr);
     public static native void internal_native_LockWrite_0(int this_addr, int inMutexMask_addr);
 
     public void UnlockWrite(MutexMask inMutexMask) {
-        internal_native_UnlockWrite_0((int) (long) getNativeData().getCPointer(), (int) (long) (inMutexMask != null ? inMutexMask.getNativeData().getCPointer() : 0));
+        internal_native_UnlockWrite_0(native_address, (inMutexMask != null ? inMutexMask.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

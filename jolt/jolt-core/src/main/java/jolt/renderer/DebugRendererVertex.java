@@ -33,16 +33,8 @@ public class DebugRendererVertex extends IDLBase {
     public DebugRendererVertex(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -52,12 +44,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Float3 get_mPosition() {
-        long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = new Float3((byte) 1, (char) 1);
-        Float3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(pointer, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -68,12 +60,12 @@ return (jlong)&nativeObject->mPosition;
     public static native long internal_native_get_mPosition(long this_addr);
 
     public Float3 get_mNormal() {
-        long pointer = internal_native_get_mNormal((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mNormal(native_address);
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = new Float3((byte) 1, (char) 1);
-        Float3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Float3_TEMP_GEN_1.internal_reset(pointer, false);
         return Float3_TEMP_GEN_1;
     }
 
@@ -84,12 +76,12 @@ return (jlong)&nativeObject->mNormal;
     public static native long internal_native_get_mNormal(long this_addr);
 
     public Float2 get_mUV() {
-        long pointer = internal_native_get_mUV((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mUV(native_address);
         if (pointer == 0)
             return null;
         if (Float2_TEMP_GEN_0 == null)
             Float2_TEMP_GEN_0 = new Float2((byte) 1, (char) 1);
-        Float2_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Float2_TEMP_GEN_0.internal_reset(pointer, false);
         return Float2_TEMP_GEN_0;
     }
 
@@ -100,12 +92,12 @@ return (jlong)&nativeObject->mUV;
     public static native long internal_native_get_mUV(long this_addr);
 
     public Color get_mColor() {
-        long pointer = internal_native_get_mColor((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mColor(native_address);
         if (pointer == 0)
             return null;
         if (Color_TEMP_GEN_0 == null)
             Color_TEMP_GEN_0 = new Color((byte) 1, (char) 1);
-        Color_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Color_TEMP_GEN_0.internal_reset(pointer, false);
         return Color_TEMP_GEN_0;
     }
 

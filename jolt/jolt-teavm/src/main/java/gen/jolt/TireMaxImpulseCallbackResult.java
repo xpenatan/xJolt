@@ -22,16 +22,8 @@ public class TireMaxImpulseCallbackResult extends IDLBase {
     public TireMaxImpulseCallbackResult(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -42,7 +34,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mLongitudinalImpulse() {
-        return internal_native_get_mLongitudinalImpulse((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLongitudinalImpulse(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -53,7 +45,7 @@ return jsObj.get_mLongitudinalImpulse();
     public static native float internal_native_get_mLongitudinalImpulse(int this_addr);
 
     public void set_mLongitudinalImpulse(float mLongitudinalImpulse) {
-        internal_native_set_mLongitudinalImpulse((int) (long) getNativeData().getCPointer(), mLongitudinalImpulse);
+        internal_native_set_mLongitudinalImpulse(native_address, mLongitudinalImpulse);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -64,7 +56,7 @@ jsObj.set_mLongitudinalImpulse(mLongitudinalImpulse);
     public static native void internal_native_set_mLongitudinalImpulse(int this_addr, float mLongitudinalImpulse);
 
     public float get_mLateralImpulse() {
-        return internal_native_get_mLateralImpulse((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLateralImpulse(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -75,7 +67,7 @@ return jsObj.get_mLateralImpulse();
     public static native float internal_native_get_mLateralImpulse(int this_addr);
 
     public void set_mLateralImpulse(float mLateralImpulse) {
-        internal_native_set_mLateralImpulse((int) (long) getNativeData().getCPointer(), mLateralImpulse);
+        internal_native_set_mLateralImpulse(native_address, mLateralImpulse);
     }
 
     /*[-TEAVM;-NATIVE]

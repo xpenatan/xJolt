@@ -18,7 +18,7 @@ public class RayCastSettings extends IDLBase {
 
     public RayCastSettings() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -33,16 +33,8 @@ return (jlong)new RayCastSettings();
     public RayCastSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -52,7 +44,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public EBackFaceMode get_mBackFaceModeTriangles() {
-        int value = internal_native_get_mBackFaceModeTriangles((long) getNativeData().getCPointer());
+        int value = internal_native_get_mBackFaceModeTriangles(native_address);
         return EBackFaceMode.MAP.get(value);
     }
 
@@ -63,7 +55,7 @@ return (jint)nativeObject->mBackFaceModeTriangles;
     public static native int internal_native_get_mBackFaceModeTriangles(long this_addr);
 
     public void set_mBackFaceModeTriangles(EBackFaceMode mBackFaceModeTriangles) {
-        internal_native_set_mBackFaceModeTriangles((long) getNativeData().getCPointer(), (long) (mBackFaceModeTriangles != null ? mBackFaceModeTriangles.getValue() : 0));
+        internal_native_set_mBackFaceModeTriangles(native_address, (mBackFaceModeTriangles != null ? mBackFaceModeTriangles.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -73,7 +65,7 @@ nativeObject->mBackFaceModeTriangles = (::EBackFaceMode)mBackFaceModeTriangles;
     public static native void internal_native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles);
 
     public EBackFaceMode get_mBackFaceModeConvex() {
-        int value = internal_native_get_mBackFaceModeConvex((long) getNativeData().getCPointer());
+        int value = internal_native_get_mBackFaceModeConvex(native_address);
         return EBackFaceMode.MAP.get(value);
     }
 
@@ -84,7 +76,7 @@ return (jint)nativeObject->mBackFaceModeConvex;
     public static native int internal_native_get_mBackFaceModeConvex(long this_addr);
 
     public void set_mBackFaceModeConvex(EBackFaceMode mBackFaceModeConvex) {
-        internal_native_set_mBackFaceModeConvex((long) getNativeData().getCPointer(), (long) (mBackFaceModeConvex != null ? mBackFaceModeConvex.getValue() : 0));
+        internal_native_set_mBackFaceModeConvex(native_address, (mBackFaceModeConvex != null ? mBackFaceModeConvex.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -94,7 +86,7 @@ nativeObject->mBackFaceModeConvex = (::EBackFaceMode)mBackFaceModeConvex;
     public static native void internal_native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex);
 
     public boolean get_mTreatConvexAsSolid() {
-        return internal_native_get_mTreatConvexAsSolid((long) getNativeData().getCPointer());
+        return internal_native_get_mTreatConvexAsSolid(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -104,7 +96,7 @@ return nativeObject->mTreatConvexAsSolid;
     public static native boolean internal_native_get_mTreatConvexAsSolid(long this_addr);
 
     public void set_mTreatConvexAsSolid(boolean mTreatConvexAsSolid) {
-        internal_native_set_mTreatConvexAsSolid((long) getNativeData().getCPointer(), mTreatConvexAsSolid);
+        internal_native_set_mTreatConvexAsSolid(native_address, mTreatConvexAsSolid);
     }
 
     /*[-JNI;-NATIVE]

@@ -12,9 +12,11 @@ dependencies {
 
     if(LibExt.exampleUseRepoLibs) {
         implementation("com.github.xpenatan.gdx-jolt:jolt-teavm:-SNAPSHOT")
+        implementation("com.github.xpenatan.gdx-jolt:jolt-wgpu:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-teavm"))
+        implementation(project(":jolt-gdx"))
     }
 
     implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}")

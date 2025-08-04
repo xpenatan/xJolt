@@ -20,7 +20,7 @@ public class CollidePointAllHitCollisionCollector extends CollidePointCollector 
     public CollidePointAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -36,16 +36,8 @@ return (jlong)new CollidePointAllHitCollisionCollector();
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -55,7 +47,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void Sort() {
-        internal_native_Sort((long) getNativeData().getCPointer());
+        internal_native_Sort(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -65,7 +57,7 @@ nativeObject->Sort();
     public static native void internal_native_Sort(long this_addr);
 
     public boolean HadHit() {
-        return internal_native_HadHit((long) getNativeData().getCPointer());
+        return internal_native_HadHit(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -75,12 +67,12 @@ return nativeObject->HadHit();
     public static native boolean internal_native_HadHit(long this_addr);
 
     public ArrayCollidePointResult get_mHits() {
-        long pointer = internal_native_get_mHits((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mHits(native_address);
         if (pointer == 0)
             return null;
         if (ArrayCollidePointResult_TEMP_GEN_0 == null)
             ArrayCollidePointResult_TEMP_GEN_0 = new ArrayCollidePointResult((byte) 1, (char) 1);
-        ArrayCollidePointResult_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayCollidePointResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayCollidePointResult_TEMP_GEN_0;
     }
 
@@ -91,7 +83,7 @@ return (jlong)&nativeObject->mHits;
     public static native long internal_native_get_mHits(long this_addr);
 
     public void set_mHits(ArrayCollidePointResult mHits) {
-        internal_native_set_mHits((long) getNativeData().getCPointer(), (long) (mHits != null ? mHits.getNativeData().getCPointer() : 0));
+        internal_native_set_mHits(native_address, (mHits != null ? mHits.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

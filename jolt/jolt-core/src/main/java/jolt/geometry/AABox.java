@@ -44,7 +44,7 @@ public class AABox extends IDLBase {
 
     public AABox() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,8 +53,8 @@ return (jlong)new AABox();
     public static native long internal_native_create();
 
     public AABox(Vec3 inMin, Vec3 inMax) {
-        long addr = internal_native_create_Vec3_Vec3((long) (inMin != null ? inMin.getNativeData().getCPointer() : 0), (long) (inMax != null ? inMax.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_Vec3_Vec3((inMin != null ? inMin.native_address : 0), (inMax != null ? inMax.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -69,16 +69,8 @@ return (jlong)new AABox(*((Vec3* )inMin_addr), *((Vec3* )inMax_addr));
     public AABox(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -93,7 +85,7 @@ delete nativeObject;
             return null;
         if (AABox_TEMP_STATIC_GEN_0 == null)
             AABox_TEMP_STATIC_GEN_0 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        AABox_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_STATIC_GEN_0;
     }
 
@@ -104,12 +96,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sBiggest();
 
     public static AABox sFromTwoPoints(Vec3 inP1, Vec3 inP2) {
-        long pointer = internal_native_sFromTwoPoints((long) (inP1 != null ? inP1.getNativeData().getCPointer() : 0), (long) (inP2 != null ? inP2.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sFromTwoPoints((inP1 != null ? inP1.native_address : 0), (inP2 != null ? inP2.native_address : 0));
         if (pointer == 0)
             return null;
         if (AABox_TEMP_STATIC_GEN_1 == null)
             AABox_TEMP_STATIC_GEN_1 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
+        AABox_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return AABox_TEMP_STATIC_GEN_1;
     }
 
@@ -120,12 +112,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sFromTwoPoints(long inP1_addr, long inP2_addr);
 
     public static AABox sFromTriangle(VertexList inVertices, IndexedTriangle inTriangle) {
-        long pointer = internal_native_sFromTriangle((long) (inVertices != null ? inVertices.getNativeData().getCPointer() : 0), (long) (inTriangle != null ? inTriangle.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sFromTriangle((inVertices != null ? inVertices.native_address : 0), (inTriangle != null ? inTriangle.native_address : 0));
         if (pointer == 0)
             return null;
         if (AABox_TEMP_STATIC_GEN_2 == null)
             AABox_TEMP_STATIC_GEN_2 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
+        AABox_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return AABox_TEMP_STATIC_GEN_2;
     }
 
@@ -136,7 +128,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sFromTriangle(long inVertices_addr, long inTriangle_addr);
 
     public boolean Equals(AABox inB) {
-        return internal_native_Equals((long) getNativeData().getCPointer(), (long) (inB != null ? inB.getNativeData().getCPointer() : 0));
+        return internal_native_Equals(native_address, (inB != null ? inB.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -145,7 +137,7 @@ return ((*nativeObject == *((AABox* )inB_addr)));*/
     public static native boolean internal_native_Equals(long this_addr, long inB_addr);
 
     public boolean NotEquals(AABox inB) {
-        return internal_native_NotEquals((long) getNativeData().getCPointer(), (long) (inB != null ? inB.getNativeData().getCPointer() : 0));
+        return internal_native_NotEquals(native_address, (inB != null ? inB.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -154,7 +146,7 @@ return ((*nativeObject != *((AABox* )inB_addr)));*/
     public static native boolean internal_native_NotEquals(long this_addr, long inB_addr);
 
     public void SetEmpty() {
-        internal_native_SetEmpty((long) getNativeData().getCPointer());
+        internal_native_SetEmpty(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -164,7 +156,7 @@ nativeObject->SetEmpty();
     public static native void internal_native_SetEmpty(long this_addr);
 
     public boolean IsValid() {
-        return internal_native_IsValid((long) getNativeData().getCPointer());
+        return internal_native_IsValid(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -174,7 +166,7 @@ return nativeObject->IsValid();
     public static native boolean internal_native_IsValid(long this_addr);
 
     public void EncapsulateVec3(Vec3 inV) {
-        internal_native_EncapsulateVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_EncapsulateVec3(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -184,7 +176,7 @@ nativeObject->Encapsulate(*((Vec3* )inV_addr));
     public static native void internal_native_EncapsulateVec3(long this_addr, long inV_addr);
 
     public void EncapsulateAABox(AABox inBox) {
-        internal_native_EncapsulateAABox((long) getNativeData().getCPointer(), (long) (inBox != null ? inBox.getNativeData().getCPointer() : 0));
+        internal_native_EncapsulateAABox(native_address, (inBox != null ? inBox.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -194,7 +186,7 @@ nativeObject->Encapsulate(*((AABox* )inBox_addr));
     public static native void internal_native_EncapsulateAABox(long this_addr, long inBox_addr);
 
     public void EncapsulateTriangle(Triangle inTriangle) {
-        internal_native_EncapsulateTriangle((long) getNativeData().getCPointer(), (long) (inTriangle != null ? inTriangle.getNativeData().getCPointer() : 0));
+        internal_native_EncapsulateTriangle(native_address, (inTriangle != null ? inTriangle.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -204,7 +196,7 @@ nativeObject->Encapsulate(*((Triangle* )inTriangle_addr));
     public static native void internal_native_EncapsulateTriangle(long this_addr, long inTriangle_addr);
 
     public void EncapsulateIndexedTriangle(VertexList inVertices, IndexedTriangle inTriangle) {
-        internal_native_EncapsulateIndexedTriangle((long) getNativeData().getCPointer(), (long) (inVertices != null ? inVertices.getNativeData().getCPointer() : 0), (long) (inTriangle != null ? inTriangle.getNativeData().getCPointer() : 0));
+        internal_native_EncapsulateIndexedTriangle(native_address, (inVertices != null ? inVertices.native_address : 0), (inTriangle != null ? inTriangle.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -214,12 +206,12 @@ nativeObject->Encapsulate(*((VertexList* )inVertices_addr), *((IndexedTriangle* 
     public static native void internal_native_EncapsulateIndexedTriangle(long this_addr, long inVertices_addr, long inTriangle_addr);
 
     public AABox Intersect(AABox inOther) {
-        long pointer = internal_native_Intersect((long) getNativeData().getCPointer(), (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_Intersect(native_address, (inOther != null ? inOther.native_address : 0));
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -231,7 +223,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_Intersect(long this_addr, long inOther_addr);
 
     public void EnsureMinimalEdgeLength(float inMinEdgeLength) {
-        internal_native_EnsureMinimalEdgeLength((long) getNativeData().getCPointer(), inMinEdgeLength);
+        internal_native_EnsureMinimalEdgeLength(native_address, inMinEdgeLength);
     }
 
     /*[-JNI;-NATIVE]
@@ -241,7 +233,7 @@ nativeObject->EnsureMinimalEdgeLength((float)inMinEdgeLength);
     public static native void internal_native_EnsureMinimalEdgeLength(long this_addr, float inMinEdgeLength);
 
     public void ExpandBy(Vec3 inV) {
-        internal_native_ExpandBy((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_ExpandBy(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -251,12 +243,12 @@ nativeObject->ExpandBy(*((Vec3* )inV_addr));
     public static native void internal_native_ExpandBy(long this_addr, long inV_addr);
 
     public Vec3 GetCenter() {
-        long pointer = internal_native_GetCenter((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetCenter(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -268,12 +260,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetCenter(long this_addr);
 
     public Vec3 GetExtent() {
-        long pointer = internal_native_GetExtent((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetExtent(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -285,12 +277,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetExtent(long this_addr);
 
     public Vec3 GetSize() {
-        long pointer = internal_native_GetSize((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetSize(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -302,7 +294,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetSize(long this_addr);
 
     public float GetSurfaceArea() {
-        return internal_native_GetSurfaceArea((long) getNativeData().getCPointer());
+        return internal_native_GetSurfaceArea(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -312,7 +304,7 @@ return nativeObject->GetSurfaceArea();
     public static native float internal_native_GetSurfaceArea(long this_addr);
 
     public float GetVolume() {
-        return internal_native_GetVolume((long) getNativeData().getCPointer());
+        return internal_native_GetVolume(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -322,7 +314,7 @@ return nativeObject->GetVolume();
     public static native float internal_native_GetVolume(long this_addr);
 
     public boolean ContainsVec3(Vec3 inOther) {
-        return internal_native_ContainsVec3((long) getNativeData().getCPointer(), (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
+        return internal_native_ContainsVec3(native_address, (inOther != null ? inOther.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -332,7 +324,7 @@ return nativeObject->Contains(*((Vec3* )inOther_addr));
     public static native boolean internal_native_ContainsVec3(long this_addr, long inOther_addr);
 
     public boolean OverlapsAABox(AABox inOther) {
-        return internal_native_OverlapsAABox((long) getNativeData().getCPointer(), (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
+        return internal_native_OverlapsAABox(native_address, (inOther != null ? inOther.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -342,7 +334,7 @@ return nativeObject->Overlaps(*((AABox* )inOther_addr));
     public static native boolean internal_native_OverlapsAABox(long this_addr, long inOther_addr);
 
     public boolean OverlapsPlane(AABox inOther) {
-        return internal_native_OverlapsPlane((long) getNativeData().getCPointer(), (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
+        return internal_native_OverlapsPlane(native_address, (inOther != null ? inOther.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -352,7 +344,7 @@ return nativeObject->Overlaps(*((AABox* )inOther_addr));
     public static native boolean internal_native_OverlapsPlane(long this_addr, long inOther_addr);
 
     public void TranslateVec3(Vec3 inOther) {
-        internal_native_TranslateVec3((long) getNativeData().getCPointer(), (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
+        internal_native_TranslateVec3(native_address, (inOther != null ? inOther.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -362,12 +354,12 @@ nativeObject->Translate(*((Vec3* )inOther_addr));
     public static native void internal_native_TranslateVec3(long this_addr, long inOther_addr);
 
     public AABox TransformedMat44(Mat44 inOther) {
-        long pointer = internal_native_TransformedMat44((long) getNativeData().getCPointer(), (long) (inOther != null ? inOther.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_TransformedMat44(native_address, (inOther != null ? inOther.native_address : 0));
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        AABox_TEMP_GEN_1.internal_reset(pointer, false);
         return AABox_TEMP_GEN_1;
     }
 
@@ -379,12 +371,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_TransformedMat44(long this_addr, long inOther_addr);
 
     public AABox Scaled(Vec3 inScale) {
-        long pointer = internal_native_Scaled((long) getNativeData().getCPointer(), (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_Scaled(native_address, (inScale != null ? inScale.native_address : 0));
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_2 == null)
             AABox_TEMP_GEN_2 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        AABox_TEMP_GEN_2.internal_reset(pointer, false);
         return AABox_TEMP_GEN_2;
     }
 
@@ -396,12 +388,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_Scaled(long this_addr, long inScale_addr);
 
     public Vec3 GetClosestPoint(Vec3 inV) {
-        long pointer = internal_native_GetClosestPoint((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_GetClosestPoint(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -413,7 +405,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetClosestPoint(long this_addr, long inV_addr);
 
     public float GetSqDistanceTo(Vec3 inV) {
-        return internal_native_GetSqDistanceTo((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        return internal_native_GetSqDistanceTo(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -423,12 +415,12 @@ return nativeObject->GetSqDistanceTo(*((Vec3* )inV_addr));
     public static native float internal_native_GetSqDistanceTo(long this_addr, long inV_addr);
 
     public Vec3 get_mMin() {
-        long pointer = internal_native_get_mMin((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mMin(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -439,7 +431,7 @@ return (jlong)&nativeObject->mMin;
     public static native long internal_native_get_mMin(long this_addr);
 
     public void set_mMin(Vec3 mMin) {
-        internal_native_set_mMin((long) getNativeData().getCPointer(), (long) (mMin != null ? mMin.getNativeData().getCPointer() : 0));
+        internal_native_set_mMin(native_address, (mMin != null ? mMin.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -449,12 +441,12 @@ nativeObject->mMin = *((Vec3*)mMin_addr);
     public static native void internal_native_set_mMin(long this_addr, long mMin_addr);
 
     public Vec3 get_mMax() {
-        long pointer = internal_native_get_mMax((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mMax(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -465,7 +457,7 @@ return (jlong)&nativeObject->mMax;
     public static native long internal_native_get_mMax(long this_addr);
 
     public void set_mMax(Vec3 mMax) {
-        internal_native_set_mMax((long) getNativeData().getCPointer(), (long) (mMax != null ? mMax.getNativeData().getCPointer() : 0));
+        internal_native_set_mMax(native_address, (mMax != null ? mMax.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

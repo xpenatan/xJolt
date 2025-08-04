@@ -17,7 +17,7 @@ public class LinearCurve extends IDLBase {
 
     public LinearCurve() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
     public LinearCurve(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void Clear() {
-        internal_native_Clear((int) (long) getNativeData().getCPointer());
+        internal_native_Clear(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ jsObj.Clear();
     public static native void internal_native_Clear(int this_addr);
 
     public void Reserve(int inSize) {
-        internal_native_Reserve((int) (long) getNativeData().getCPointer(), inSize);
+        internal_native_Reserve(native_address, inSize);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ jsObj.Reserve(inSize);
     public static native void internal_native_Reserve(int this_addr, int inSize);
 
     public void AddPoint(float inX, float inY) {
-        internal_native_AddPoint((int) (long) getNativeData().getCPointer(), inX, inY);
+        internal_native_AddPoint(native_address, inX, inY);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +79,7 @@ jsObj.AddPoint(inX, inY);
     public static native void internal_native_AddPoint(int this_addr, float inX, float inY);
 
     public void Sort() {
-        internal_native_Sort((int) (long) getNativeData().getCPointer());
+        internal_native_Sort(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -98,7 +90,7 @@ jsObj.Sort();
     public static native void internal_native_Sort(int this_addr);
 
     public float GetMinX() {
-        return internal_native_GetMinX((int) (long) getNativeData().getCPointer());
+        return internal_native_GetMinX(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -110,7 +102,7 @@ return returnedJSObj;
     public static native float internal_native_GetMinX(int this_addr);
 
     public float GetMaxX() {
-        return internal_native_GetMaxX((int) (long) getNativeData().getCPointer());
+        return internal_native_GetMaxX(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -122,7 +114,7 @@ return returnedJSObj;
     public static native float internal_native_GetMaxX(int this_addr);
 
     public float GetValue(float inX) {
-        return internal_native_GetValue((int) (long) getNativeData().getCPointer(), inX);
+        return internal_native_GetValue(native_address, inX);
     }
 
     /*[-TEAVM;-NATIVE]

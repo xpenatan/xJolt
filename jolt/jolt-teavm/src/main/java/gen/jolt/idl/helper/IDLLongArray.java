@@ -13,7 +13,7 @@ public class IDLLongArray extends IDLBase {
 
     public IDLLongArray(int size) {
         int addr = internal_native_create_int(size);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     public void copy(long[] array) {
@@ -40,16 +40,8 @@ public class IDLLongArray extends IDLBase {
     public IDLLongArray(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*
@@ -61,7 +53,7 @@ public class IDLLongArray extends IDLBase {
     public static native void internal_native_deleteNative(int this_addr);
 
     public void resize(int size) {
-        internal_native_resize((int) (long) getNativeData().getCPointer(), size);
+        internal_native_resize(native_address, size);
     }
 
     /*
@@ -73,7 +65,7 @@ public class IDLLongArray extends IDLBase {
     public static native void internal_native_resize(int this_addr, int size);
 
     public void clear() {
-        internal_native_clear((int) (long) getNativeData().getCPointer());
+        internal_native_clear(native_address);
     }
 
     /*
@@ -85,7 +77,7 @@ public class IDLLongArray extends IDLBase {
     public static native void internal_native_clear(int this_addr);
 
     public long getValue(int index) {
-        return internal_native_getValue((int) (long) getNativeData().getCPointer(), index);
+        return internal_native_getValue(native_address, index);
     }
 
     /*
@@ -98,7 +90,7 @@ public class IDLLongArray extends IDLBase {
     public static native int internal_native_getValue(int this_addr, int index);
 
     public void setValue(int index, long value) {
-        internal_native_setValue((int) (long) getNativeData().getCPointer(), index, (int) value);
+        internal_native_setValue(native_address, index, (int) value);
     }
 
     /*
@@ -110,7 +102,7 @@ public class IDLLongArray extends IDLBase {
     public static native void internal_native_setValue(int this_addr, int index, int value);
 
     public int getSize() {
-        return internal_native_getSize((int) (long) getNativeData().getCPointer());
+        return internal_native_getSize(native_address);
     }
 
     /*
@@ -122,8 +114,8 @@ public class IDLLongArray extends IDLBase {
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLLongArray);var returnedJSObj = jsObj.getSize();return returnedJSObj;")
     public static native int internal_native_getSize(int this_addr);
 
-    public long getPointer() {
-        return internal_native_getPointer((int) (long) getNativeData().getCPointer());
+    public int getPointer() {
+        return internal_native_getPointer(native_address);
     }
 
     /*
@@ -136,7 +128,7 @@ public class IDLLongArray extends IDLBase {
     public static native int internal_native_getPointer(int this_addr);
 
     public void copy(IDLLongArray src, int srcOffset, int destOffset, int length) {
-        internal_native_copy((int) (long) getNativeData().getCPointer(), (int) (long) (src != null ? src.getNativeData().getCPointer() : 0), srcOffset, destOffset, length);
+        internal_native_copy(native_address, (src != null ? src.native_address : 0), srcOffset, destOffset, length);
     }
 
     /*

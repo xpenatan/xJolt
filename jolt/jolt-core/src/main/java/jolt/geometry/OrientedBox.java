@@ -23,7 +23,7 @@ public class OrientedBox extends IDLBase {
 
     public OrientedBox() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,8 +32,8 @@ return (jlong)new OrientedBox();
     public static native long internal_native_create();
 
     public OrientedBox(Mat44 inOrientation, Vec3 inHalfExtents) {
-        long addr = internal_native_create_Mat44_Vec3((long) (inOrientation != null ? inOrientation.getNativeData().getCPointer() : 0), (long) (inHalfExtents != null ? inHalfExtents.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_Mat44_Vec3((inOrientation != null ? inOrientation.native_address : 0), (inHalfExtents != null ? inHalfExtents.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -48,16 +48,8 @@ return (jlong)new OrientedBox(*((Mat44* )inOrientation_addr), *((Vec3* )inHalfEx
     public OrientedBox(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -67,12 +59,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Mat44 get_mOrientation() {
-        long pointer = internal_native_get_mOrientation((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mOrientation(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -83,7 +75,7 @@ return (jlong)&nativeObject->mOrientation;
     public static native long internal_native_get_mOrientation(long this_addr);
 
     public void set_mOrientation(Mat44 mOrientation) {
-        internal_native_set_mOrientation((long) getNativeData().getCPointer(), (long) (mOrientation != null ? mOrientation.getNativeData().getCPointer() : 0));
+        internal_native_set_mOrientation(native_address, (mOrientation != null ? mOrientation.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -93,12 +85,12 @@ nativeObject->mOrientation = *((Mat44*)mOrientation_addr);
     public static native void internal_native_set_mOrientation(long this_addr, long mOrientation_addr);
 
     public Vec3 get_mHalfExtents() {
-        long pointer = internal_native_get_mHalfExtents((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mHalfExtents(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -109,7 +101,7 @@ return (jlong)&nativeObject->mHalfExtents;
     public static native long internal_native_get_mHalfExtents(long this_addr);
 
     public void set_mHalfExtents(Vec3 mHalfExtents) {
-        internal_native_set_mHalfExtents((long) getNativeData().getCPointer(), (long) (mHalfExtents != null ? mHalfExtents.getNativeData().getCPointer() : 0));
+        internal_native_set_mHalfExtents(native_address, (mHalfExtents != null ? mHalfExtents.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

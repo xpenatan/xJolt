@@ -20,16 +20,8 @@ public class BodyFilter extends IDLBase {
     public BodyFilter(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -41,34 +33,34 @@ jolt.destroy(jsObj);
 
     public BodyFilter() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
         ShouldCollide ShouldCollide = new ShouldCollide() {
 
-            public boolean ShouldCollide(int inBodyID) {
-                return internal_ShouldCollide(inBodyID);
+            public boolean ShouldCollide(int inBodyID_addr) {
+                return internal_ShouldCollide(inBodyID_addr);
             }
         };
         ShouldCollideLocked ShouldCollideLocked = new ShouldCollideLocked() {
 
-            public boolean ShouldCollideLocked(int inBody) {
-                return internal_ShouldCollideLocked(inBody);
+            public boolean ShouldCollideLocked(int inBody_addr) {
+                return internal_ShouldCollideLocked(inBody_addr);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), ShouldCollide, ShouldCollideLocked);
+        internal_native_setupCallback(native_address, ShouldCollide, ShouldCollideLocked);
     }
 
     protected boolean ShouldCollide(BodyID inBodyID) {
         return false;
     }
 
-    private boolean internal_ShouldCollide(long inBodyID) {
+    private boolean internal_ShouldCollide(int inBodyID_addr) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
             BodyID_TEMP_STATIC_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_STATIC_GEN_0.getNativeData().reset(inBodyID, false);
+        BodyID_TEMP_STATIC_GEN_0.internal_reset(inBodyID_addr, false);
         return ShouldCollide(BodyID_TEMP_STATIC_GEN_0);
     }
 
@@ -76,10 +68,10 @@ jolt.destroy(jsObj);
         return false;
     }
 
-    private boolean internal_ShouldCollideLocked(long inBody) {
+    private boolean internal_ShouldCollideLocked(int inBody_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
             Body_TEMP_STATIC_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_0.getNativeData().reset(inBody, false);
+        Body_TEMP_STATIC_GEN_0.internal_reset(inBody_addr, false);
         return ShouldCollideLocked(Body_TEMP_STATIC_GEN_0);
     }
 
@@ -96,12 +88,12 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSFunctor()
     public interface ShouldCollide extends org.teavm.jso.JSObject {
 
-        boolean ShouldCollide(int inBodyID);
+        boolean ShouldCollide(int inBodyID_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface ShouldCollideLocked extends org.teavm.jso.JSObject {
 
-        boolean ShouldCollideLocked(int inBody);
+        boolean ShouldCollideLocked(int inBody_addr);
     }
 }

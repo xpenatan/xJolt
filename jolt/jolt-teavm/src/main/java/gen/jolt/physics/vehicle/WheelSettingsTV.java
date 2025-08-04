@@ -16,7 +16,7 @@ public class WheelSettingsTV extends WheelSettings {
     public WheelSettingsTV() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -35,7 +35,7 @@ return jolt.getPointer(jsObj);
     }
 
     public float get_mLongitudinalFriction() {
-        return internal_native_get_mLongitudinalFriction((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLongitudinalFriction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -46,7 +46,7 @@ return jsObj.get_mLongitudinalFriction();
     public static native float internal_native_get_mLongitudinalFriction(int this_addr);
 
     public void set_mLongitudinalFriction(float mLongitudinalFriction) {
-        internal_native_set_mLongitudinalFriction((int) (long) getNativeData().getCPointer(), mLongitudinalFriction);
+        internal_native_set_mLongitudinalFriction(native_address, mLongitudinalFriction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -57,7 +57,7 @@ jsObj.set_mLongitudinalFriction(mLongitudinalFriction);
     public static native void internal_native_set_mLongitudinalFriction(int this_addr, float mLongitudinalFriction);
 
     public float get_mLateralFriction() {
-        return internal_native_get_mLateralFriction((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLateralFriction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -68,7 +68,7 @@ return jsObj.get_mLateralFriction();
     public static native float internal_native_get_mLateralFriction(int this_addr);
 
     public void set_mLateralFriction(float mLateralFriction) {
-        internal_native_set_mLateralFriction((int) (long) getNativeData().getCPointer(), mLateralFriction);
+        internal_native_set_mLateralFriction(native_address, mLateralFriction);
     }
 
     /*[-TEAVM;-NATIVE]

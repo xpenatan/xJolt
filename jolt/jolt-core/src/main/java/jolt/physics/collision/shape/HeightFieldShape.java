@@ -30,7 +30,7 @@ public class HeightFieldShape extends Shape {
     }
 
     public int GetSampleCount() {
-        return internal_native_GetSampleCount((long) getNativeData().getCPointer());
+        return internal_native_GetSampleCount(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,7 +40,7 @@ return nativeObject->GetSampleCount();
     public static native int internal_native_GetSampleCount(long this_addr);
 
     public int GetBlockSize() {
-        return internal_native_GetBlockSize((long) getNativeData().getCPointer());
+        return internal_native_GetBlockSize(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -50,12 +50,12 @@ return nativeObject->GetBlockSize();
     public static native int internal_native_GetBlockSize(long this_addr);
 
     public Vec3 GetPosition(int inX, int inY) {
-        long pointer = internal_native_GetPosition((long) getNativeData().getCPointer(), inX, inY);
+        long pointer = internal_native_GetPosition(native_address, inX, inY);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -67,7 +67,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetPosition(long this_addr, int inX, int inY);
 
     public boolean IsNoCollision(int inX, int inY) {
-        return internal_native_IsNoCollision((long) getNativeData().getCPointer(), inX, inY);
+        return internal_native_IsNoCollision(native_address, inX, inY);
     }
 
     /*[-JNI;-NATIVE]
@@ -77,7 +77,7 @@ return nativeObject->IsNoCollision((int)inX, (int)inY);
     public static native boolean internal_native_IsNoCollision(long this_addr, int inX, int inY);
 
     public float GetMinHeightValue() {
-        return internal_native_GetMinHeightValue((long) getNativeData().getCPointer());
+        return internal_native_GetMinHeightValue(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -87,7 +87,7 @@ return nativeObject->GetMinHeightValue();
     public static native float internal_native_GetMinHeightValue(long this_addr);
 
     public float GetMaxHeightValue() {
-        return internal_native_GetMaxHeightValue((long) getNativeData().getCPointer());
+        return internal_native_GetMaxHeightValue(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -97,7 +97,7 @@ return nativeObject->GetMaxHeightValue();
     public static native float internal_native_GetMaxHeightValue(long this_addr);
 
     public void GetHeights(int inX, int inY, int inSizeX, int inSizeY, FloatMemRef outHeights, int inHeightsStride) {
-        internal_native_GetHeights((long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (long) (outHeights != null ? outHeights.getNativeData().getCPointer() : 0), inHeightsStride);
+        internal_native_GetHeights(native_address, inX, inY, inSizeX, inSizeY, (outHeights != null ? outHeights.native_address : 0), inHeightsStride);
     }
 
     /*[-JNI;-NATIVE]
@@ -107,7 +107,7 @@ nativeObject->GetHeights((int)inX, (int)inY, (int)inSizeX, (int)inSizeY, (FloatM
     public static native void internal_native_GetHeights(long this_addr, int inX, int inY, int inSizeX, int inSizeY, long outHeights_addr, int inHeightsStride);
 
     public void SetHeights(int inX, int inY, int inSizeX, int inSizeY, FloatMemRef inHeights, int inHeightsStride, TempAllocator inAllocator, float inActiveEdgeCosThresholdAngle) {
-        internal_native_SetHeights((long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (long) (inHeights != null ? inHeights.getNativeData().getCPointer() : 0), inHeightsStride, (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0), inActiveEdgeCosThresholdAngle);
+        internal_native_SetHeights(native_address, inX, inY, inSizeX, inSizeY, (inHeights != null ? inHeights.native_address : 0), inHeightsStride, (inAllocator != null ? inAllocator.native_address : 0), inActiveEdgeCosThresholdAngle);
     }
 
     /*[-JNI;-NATIVE]
@@ -117,7 +117,7 @@ nativeObject->SetHeights((int)inX, (int)inY, (int)inSizeX, (int)inSizeY, (FloatM
     public static native void internal_native_SetHeights(long this_addr, int inX, int inY, int inSizeX, int inSizeY, long inHeights_addr, int inHeightsStride, long inAllocator_addr, float inActiveEdgeCosThresholdAngle);
 
     public void SetHeights(int inX, int inY, int inSizeX, int inSizeY, FloatMemRef inHeights, int inHeightsStride, TempAllocator inAllocator) {
-        internal_native_SetHeights((long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (long) (inHeights != null ? inHeights.getNativeData().getCPointer() : 0), inHeightsStride, (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        internal_native_SetHeights(native_address, inX, inY, inSizeX, inSizeY, (inHeights != null ? inHeights.native_address : 0), inHeightsStride, (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -127,7 +127,7 @@ nativeObject->SetHeights((int)inX, (int)inY, (int)inSizeX, (int)inSizeY, (FloatM
     public static native void internal_native_SetHeights(long this_addr, int inX, int inY, int inSizeX, int inSizeY, long inHeights_addr, int inHeightsStride, long inAllocator_addr);
 
     public void GetMaterials(int inX, int inY, int inSizeX, int inSizeY, Uint8MemRef outMaterials, int inMaterialsStride) {
-        internal_native_GetMaterials((long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (long) (outMaterials != null ? outMaterials.getNativeData().getCPointer() : 0), inMaterialsStride);
+        internal_native_GetMaterials(native_address, inX, inY, inSizeX, inSizeY, (outMaterials != null ? outMaterials.native_address : 0), inMaterialsStride);
     }
 
     /*[-JNI;-NATIVE]
@@ -137,7 +137,7 @@ nativeObject->GetMaterials((int)inX, (int)inY, (int)inSizeX, (int)inSizeY, (Uint
     public static native void internal_native_GetMaterials(long this_addr, int inX, int inY, int inSizeX, int inSizeY, long outMaterials_addr, int inMaterialsStride);
 
     public boolean SetMaterials(int inX, int inY, int inSizeX, int inSizeY, Uint8MemRef inMaterials, int inMaterialsStride, PhysicsMaterialList inMaterialList, TempAllocator inAllocator) {
-        return internal_native_SetMaterials((long) getNativeData().getCPointer(), inX, inY, inSizeX, inSizeY, (long) (inMaterials != null ? inMaterials.getNativeData().getCPointer() : 0), inMaterialsStride, (long) (inMaterialList != null ? inMaterialList.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        return internal_native_SetMaterials(native_address, inX, inY, inSizeX, inSizeY, (inMaterials != null ? inMaterials.native_address : 0), inMaterialsStride, (inMaterialList != null ? inMaterialList.native_address : 0), (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

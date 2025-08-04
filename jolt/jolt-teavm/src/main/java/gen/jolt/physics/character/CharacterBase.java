@@ -42,7 +42,7 @@ public class CharacterBase extends IDLBase {
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +54,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +65,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +76,7 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public void SetMaxSlopeAngle(float inMaxSlopeAngle) {
-        internal_native_SetMaxSlopeAngle((int) (long) getNativeData().getCPointer(), inMaxSlopeAngle);
+        internal_native_SetMaxSlopeAngle(native_address, inMaxSlopeAngle);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +87,7 @@ jsObj.SetMaxSlopeAngle(inMaxSlopeAngle);
     public static native void internal_native_SetMaxSlopeAngle(int this_addr, float inMaxSlopeAngle);
 
     public float GetCosMaxSlopeAngle() {
-        return internal_native_GetCosMaxSlopeAngle((int) (long) getNativeData().getCPointer());
+        return internal_native_GetCosMaxSlopeAngle(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -99,7 +99,7 @@ return returnedJSObj;
     public static native float internal_native_GetCosMaxSlopeAngle(int this_addr);
 
     public void SetUp(Vec3 inUp) {
-        internal_native_SetUp((int) (long) getNativeData().getCPointer(), (int) (long) (inUp != null ? inUp.getNativeData().getCPointer() : 0));
+        internal_native_SetUp(native_address, (inUp != null ? inUp.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -110,12 +110,12 @@ jsObj.SetUp(inUp_addr);
     public static native void internal_native_SetUp(int this_addr, int inUp_addr);
 
     public Vec3 GetUp() {
-        int pointer = internal_native_GetUp((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetUp(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -129,12 +129,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetUp(int this_addr);
 
     public Shape GetShape() {
-        int pointer = internal_native_GetShape((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetShape(native_address);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
-        Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -148,7 +148,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetShape(int this_addr);
 
     public EGroundState GetGroundState() {
-        int value = internal_native_GetGroundState((int) (long) getNativeData().getCPointer());
+        int value = internal_native_GetGroundState(native_address);
         return EGroundState.MAP.get(value);
     }
 
@@ -161,7 +161,7 @@ return returnedJSObj;
     public static native int internal_native_GetGroundState(int this_addr);
 
     public boolean IsSlopeTooSteep(Vec3 inNormal) {
-        return internal_native_IsSlopeTooSteep((int) (long) getNativeData().getCPointer(), (int) (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
+        return internal_native_IsSlopeTooSteep(native_address, (inNormal != null ? inNormal.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -173,7 +173,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsSlopeTooSteep(int this_addr, int inNormal_addr);
 
     public boolean IsSupported() {
-        return internal_native_IsSupported((int) (long) getNativeData().getCPointer());
+        return internal_native_IsSupported(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -185,12 +185,12 @@ return returnedJSObj;
     public static native boolean internal_native_IsSupported(int this_addr);
 
     public Vec3 GetGroundPosition() {
-        int pointer = internal_native_GetGroundPosition((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetGroundPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -204,12 +204,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetGroundPosition(int this_addr);
 
     public Vec3 GetGroundNormal() {
-        int pointer = internal_native_GetGroundNormal((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetGroundNormal(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -223,12 +223,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetGroundNormal(int this_addr);
 
     public Vec3 GetGroundVelocity() {
-        int pointer = internal_native_GetGroundVelocity((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetGroundVelocity(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -242,12 +242,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetGroundVelocity(int this_addr);
 
     public PhysicsMaterial GetGroundMaterial() {
-        int pointer = internal_native_GetGroundMaterial((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetGroundMaterial(native_address);
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = new PhysicsMaterial((byte) 1, (char) 1);
-        PhysicsMaterial_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -261,12 +261,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetGroundMaterial(int this_addr);
 
     public BodyID GetGroundBodyID() {
-        int pointer = internal_native_GetGroundBodyID((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetGroundBodyID(native_address);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 

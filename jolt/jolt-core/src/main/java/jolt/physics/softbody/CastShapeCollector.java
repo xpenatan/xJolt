@@ -54,16 +54,8 @@ virtual void AddHit(const ShapeCastResult& inResult) {
     public CastShapeCollector(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -73,7 +65,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void SetContext(TransformedShape inContext) {
-        internal_native_SetContext((long) getNativeData().getCPointer(), (long) (inContext != null ? inContext.getNativeData().getCPointer() : 0));
+        internal_native_SetContext(native_address, (inContext != null ? inContext.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -83,12 +75,12 @@ nativeObject->SetContext((TransformedShape* )inContext_addr);
     public static native void internal_native_SetContext(long this_addr, long inContext_addr);
 
     public TransformedShape GetContext() {
-        long pointer = internal_native_GetContext((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetContext(native_address);
         if (pointer == 0)
             return null;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = new TransformedShape((byte) 1, (char) 1);
-        TransformedShape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
         return TransformedShape_TEMP_GEN_0;
     }
 
@@ -100,7 +92,7 @@ return (jlong)obj;
     public static native long internal_native_GetContext(long this_addr);
 
     public void UpdateEarlyOutFraction(float inFraction) {
-        internal_native_UpdateEarlyOutFraction((long) getNativeData().getCPointer(), inFraction);
+        internal_native_UpdateEarlyOutFraction(native_address, inFraction);
     }
 
     /*[-JNI;-NATIVE]
@@ -110,7 +102,7 @@ nativeObject->UpdateEarlyOutFraction((float)inFraction);
     public static native void internal_native_UpdateEarlyOutFraction(long this_addr, float inFraction);
 
     public void ResetEarlyOutFraction(float inFraction) {
-        internal_native_ResetEarlyOutFraction((long) getNativeData().getCPointer(), inFraction);
+        internal_native_ResetEarlyOutFraction(native_address, inFraction);
     }
 
     /*[-JNI;-NATIVE]
@@ -120,7 +112,7 @@ nativeObject->ResetEarlyOutFraction((float)inFraction);
     public static native void internal_native_ResetEarlyOutFraction(long this_addr, float inFraction);
 
     public void ResetEarlyOutFraction() {
-        internal_native_ResetEarlyOutFraction((long) getNativeData().getCPointer());
+        internal_native_ResetEarlyOutFraction(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -130,7 +122,7 @@ nativeObject->ResetEarlyOutFraction();
     public static native void internal_native_ResetEarlyOutFraction(long this_addr);
 
     public void ForceEarlyOut() {
-        internal_native_ForceEarlyOut((long) getNativeData().getCPointer());
+        internal_native_ForceEarlyOut(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -140,7 +132,7 @@ nativeObject->ForceEarlyOut();
     public static native void internal_native_ForceEarlyOut(long this_addr);
 
     public boolean ShouldEarlyOut() {
-        return internal_native_ShouldEarlyOut((long) getNativeData().getCPointer());
+        return internal_native_ShouldEarlyOut(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -150,7 +142,7 @@ return nativeObject->ShouldEarlyOut();
     public static native boolean internal_native_ShouldEarlyOut(long this_addr);
 
     public float GetEarlyOutFraction() {
-        return internal_native_GetEarlyOutFraction((long) getNativeData().getCPointer());
+        return internal_native_GetEarlyOutFraction(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -160,7 +152,7 @@ return nativeObject->GetEarlyOutFraction();
     public static native float internal_native_GetEarlyOutFraction(long this_addr);
 
     public float GetPositiveEarlyOutFraction() {
-        return internal_native_GetPositiveEarlyOutFraction((long) getNativeData().getCPointer());
+        return internal_native_GetPositiveEarlyOutFraction(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -171,12 +163,12 @@ return nativeObject->GetPositiveEarlyOutFraction();
 
     public CastShapeCollector() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected void Reset() {
@@ -189,20 +181,20 @@ return nativeObject->GetPositiveEarlyOutFraction();
     protected void OnBody(Body inBody) {
     }
 
-    private void internal_OnBody(long inBody) {
+    private void internal_OnBody(long inBody_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
             Body_TEMP_STATIC_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_0.getNativeData().reset(inBody, false);
+        Body_TEMP_STATIC_GEN_0.internal_reset(inBody_addr, false);
         OnBody(Body_TEMP_STATIC_GEN_0);
     }
 
     protected void AddHit(ShapeCastResult inResult) {
     }
 
-    private void internal_AddHit(long inResult) {
+    private void internal_AddHit(long inResult_addr) {
         if (ShapeCastResult_TEMP_STATIC_GEN_0 == null)
             ShapeCastResult_TEMP_STATIC_GEN_0 = new ShapeCastResult((byte) 1, (char) 1);
-        ShapeCastResult_TEMP_STATIC_GEN_0.getNativeData().reset(inResult, false);
+        ShapeCastResult_TEMP_STATIC_GEN_0.internal_reset(inResult_addr, false);
         AddHit(ShapeCastResult_TEMP_STATIC_GEN_0);
     }
 

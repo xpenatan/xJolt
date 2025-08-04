@@ -25,16 +25,8 @@ public class RagdollAdditionalConstraint extends IDLBase {
     public RagdollAdditionalConstraint(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -44,7 +36,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mBodyIdx(int index) {
-        return internal_native_get_mBodyIdx((long) getNativeData().getCPointer(), index);
+        return internal_native_get_mBodyIdx(native_address, index);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,7 +46,7 @@ return nativeObject->mBodyIdx[index];
     public static native int internal_native_get_mBodyIdx(long this_addr, int index);
 
     public void set_mBodyIdx(int index, int mBodyIdx) {
-        internal_native_set_mBodyIdx((long) getNativeData().getCPointer(), index, mBodyIdx);
+        internal_native_set_mBodyIdx(native_address, index, mBodyIdx);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,12 +56,12 @@ nativeObject->mBodyIdx[index] = mBodyIdx;
     public static native void internal_native_set_mBodyIdx(long this_addr, int index, int mBodyIdx);
 
     public TwoBodyConstraintSettings get_mConstraint() {
-        long pointer = internal_native_get_mConstraint((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mConstraint(native_address);
         if (pointer == 0)
             return null;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
             TwoBodyConstraintSettings_TEMP_GEN_0 = new TwoBodyConstraintSettings((byte) 1, (char) 1);
-        TwoBodyConstraintSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return TwoBodyConstraintSettings_TEMP_GEN_0;
     }
 
@@ -81,7 +73,7 @@ return (jlong)attr;
     public static native long internal_native_get_mConstraint(long this_addr);
 
     public void set_mConstraint(TwoBodyConstraintSettings mConstraint) {
-        internal_native_set_mConstraint((long) getNativeData().getCPointer(), (long) (mConstraint != null ? mConstraint.getNativeData().getCPointer() : 0));
+        internal_native_set_mConstraint(native_address, (mConstraint != null ? mConstraint.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

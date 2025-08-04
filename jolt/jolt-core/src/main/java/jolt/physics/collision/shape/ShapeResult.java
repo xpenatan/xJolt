@@ -27,16 +27,8 @@ public class ShapeResult extends IDLBase {
     public ShapeResult(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -46,7 +38,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public boolean IsValid() {
-        return internal_native_IsValid((long) getNativeData().getCPointer());
+        return internal_native_IsValid(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -56,7 +48,7 @@ return nativeObject->IsValid();
     public static native boolean internal_native_IsValid(long this_addr);
 
     public boolean HasError() {
-        return internal_native_HasError((long) getNativeData().getCPointer());
+        return internal_native_HasError(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -66,12 +58,12 @@ return nativeObject->HasError();
     public static native boolean internal_native_HasError(long this_addr);
 
     public IDLString GetError() {
-        long pointer = internal_native_GetError((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetError(native_address);
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = new IDLString((byte) 1, (char) 1);
-        IDLString_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -82,12 +74,12 @@ return (jlong)&nativeObject->GetError();
     public static native long internal_native_GetError(long this_addr);
 
     public Shape Get() {
-        long pointer = internal_native_Get((long) getNativeData().getCPointer());
+        long pointer = internal_native_Get(native_address);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
-        Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -99,7 +91,7 @@ return (jlong)obj;
     public static native long internal_native_Get(long this_addr);
 
     public void Clear() {
-        internal_native_Clear((long) getNativeData().getCPointer());
+        internal_native_Clear(native_address);
     }
 
     /*[-JNI;-NATIVE]

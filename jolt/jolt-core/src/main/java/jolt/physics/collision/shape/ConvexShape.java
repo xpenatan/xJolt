@@ -22,7 +22,7 @@ public class ConvexShape extends Shape {
     }
 
     public float GetDensity() {
-        return internal_native_GetDensity((long) getNativeData().getCPointer());
+        return internal_native_GetDensity(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,7 +32,7 @@ return nativeObject->GetDensity();
     public static native float internal_native_GetDensity(long this_addr);
 
     public void SetDensity(float inDensity) {
-        internal_native_SetDensity((long) getNativeData().getCPointer(), inDensity);
+        internal_native_SetDensity(native_address, inDensity);
     }
 
     /*[-JNI;-NATIVE]

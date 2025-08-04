@@ -52,16 +52,8 @@ public class Vec4 extends IDLBase {
     public Vec4(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -77,7 +69,7 @@ jolt.destroy(jsObj);
             return null;
         if (Vec4_TEMP_STATIC_GEN_0 == null)
             Vec4_TEMP_STATIC_GEN_0 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_0;
     }
 
@@ -95,7 +87,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (Vec4_TEMP_STATIC_GEN_1 == null)
             Vec4_TEMP_STATIC_GEN_1 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_1;
     }
 
@@ -113,7 +105,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (Vec4_TEMP_STATIC_GEN_2 == null)
             Vec4_TEMP_STATIC_GEN_2 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_2;
     }
 
@@ -126,12 +118,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sReplicate(float inV);
 
     public static Vec4 sMin(Vec4 inLHS, Vec4 inRHS) {
-        int pointer = internal_native_sMin((int) (long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (int) (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sMin((inLHS != null ? inLHS.native_address : 0), (inRHS != null ? inRHS.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_3 == null)
             Vec4_TEMP_STATIC_GEN_3 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_3;
     }
 
@@ -144,12 +136,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sMin(int inLHS_addr, int inRHS_addr);
 
     public static Vec4 sMax(Vec4 inLHS, Vec4 inRHS) {
-        int pointer = internal_native_sMax((int) (long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (int) (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sMax((inLHS != null ? inLHS.native_address : 0), (inRHS != null ? inRHS.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_4 == null)
             Vec4_TEMP_STATIC_GEN_4 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_4;
     }
 
@@ -162,12 +154,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sMax(int inLHS_addr, int inRHS_addr);
 
     public static Vec4 sFusedMultiplyAdd(Vec4 inMul1, Vec4 inMul2, Vec4 inAdd) {
-        int pointer = internal_native_sFusedMultiplyAdd((int) (long) (inMul1 != null ? inMul1.getNativeData().getCPointer() : 0), (int) (long) (inMul2 != null ? inMul2.getNativeData().getCPointer() : 0), (int) (long) (inAdd != null ? inAdd.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sFusedMultiplyAdd((inMul1 != null ? inMul1.native_address : 0), (inMul2 != null ? inMul2.native_address : 0), (inAdd != null ? inAdd.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_5 == null)
             Vec4_TEMP_STATIC_GEN_5 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_STATIC_GEN_5.getNativeData().reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_5;
     }
 
@@ -180,12 +172,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sFusedMultiplyAdd(int inMul1_addr, int inMul2_addr, int inAdd_addr);
 
     public static Vec4 sOr(Vec4 inV1, Vec4 inV2) {
-        int pointer = internal_native_sOr((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sOr((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_6 == null)
             Vec4_TEMP_STATIC_GEN_6 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_STATIC_GEN_6.getNativeData().reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_6;
     }
 
@@ -198,12 +190,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sOr(int inV1_addr, int inV2_addr);
 
     public static Vec4 sXor(Vec4 inV1, Vec4 inV2) {
-        int pointer = internal_native_sXor((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sXor((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_7 == null)
             Vec4_TEMP_STATIC_GEN_7 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_STATIC_GEN_7.getNativeData().reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_7;
     }
 
@@ -216,12 +208,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sXor(int inV1_addr, int inV2_addr);
 
     public static Vec4 sAnd(Vec4 inV1, Vec4 inV2) {
-        int pointer = internal_native_sAnd((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sAnd((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_8 == null)
             Vec4_TEMP_STATIC_GEN_8 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_STATIC_GEN_8.getNativeData().reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_8;
     }
 
@@ -234,7 +226,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sAnd(int inV1_addr, int inV2_addr);
 
     public float GetX() {
-        return internal_native_GetX((int) (long) getNativeData().getCPointer());
+        return internal_native_GetX(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -246,7 +238,7 @@ return returnedJSObj;
     public static native float internal_native_GetX(int this_addr);
 
     public float GetY() {
-        return internal_native_GetY((int) (long) getNativeData().getCPointer());
+        return internal_native_GetY(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -258,7 +250,7 @@ return returnedJSObj;
     public static native float internal_native_GetY(int this_addr);
 
     public float GetZ() {
-        return internal_native_GetZ((int) (long) getNativeData().getCPointer());
+        return internal_native_GetZ(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -270,7 +262,7 @@ return returnedJSObj;
     public static native float internal_native_GetZ(int this_addr);
 
     public float GetW() {
-        return internal_native_GetW((int) (long) getNativeData().getCPointer());
+        return internal_native_GetW(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -282,7 +274,7 @@ return returnedJSObj;
     public static native float internal_native_GetW(int this_addr);
 
     public void SetX(float inX) {
-        internal_native_SetX((int) (long) getNativeData().getCPointer(), inX);
+        internal_native_SetX(native_address, inX);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -293,7 +285,7 @@ jsObj.SetX(inX);
     public static native void internal_native_SetX(int this_addr, float inX);
 
     public void SetY(float inY) {
-        internal_native_SetY((int) (long) getNativeData().getCPointer(), inY);
+        internal_native_SetY(native_address, inY);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -304,7 +296,7 @@ jsObj.SetY(inY);
     public static native void internal_native_SetY(int this_addr, float inY);
 
     public void SetZ(float inZ) {
-        internal_native_SetZ((int) (long) getNativeData().getCPointer(), inZ);
+        internal_native_SetZ(native_address, inZ);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -315,7 +307,7 @@ jsObj.SetZ(inZ);
     public static native void internal_native_SetZ(int this_addr, float inZ);
 
     public void SetW(float inW) {
-        internal_native_SetW((int) (long) getNativeData().getCPointer(), inW);
+        internal_native_SetW(native_address, inW);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -326,7 +318,7 @@ jsObj.SetW(inW);
     public static native void internal_native_SetW(int this_addr, float inW);
 
     public void Set(float inX, float inY, float inZ, float inW) {
-        internal_native_Set((int) (long) getNativeData().getCPointer(), inX, inY, inZ, inW);
+        internal_native_Set(native_address, inX, inY, inZ, inW);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -337,7 +329,7 @@ jsObj.Set(inX, inY, inZ, inW);
     public static native void internal_native_Set(int this_addr, float inX, float inY, float inZ, float inW);
 
     public float GetComponent(int inCoordinate) {
-        return internal_native_GetComponent((int) (long) getNativeData().getCPointer(), inCoordinate);
+        return internal_native_GetComponent(native_address, inCoordinate);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -349,7 +341,7 @@ return returnedJSObj;
     public static native float internal_native_GetComponent(int this_addr, int inCoordinate);
 
     public boolean IsClose(Vec4 inV, float inMaxDistSq) {
-        return internal_native_IsClose((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0), inMaxDistSq);
+        return internal_native_IsClose(native_address, (inV != null ? inV.native_address : 0), inMaxDistSq);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -361,7 +353,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsClose(int this_addr, int inV_addr, float inMaxDistSq);
 
     public boolean IsClose(Vec4 inV) {
-        return internal_native_IsClose((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        return internal_native_IsClose(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -373,7 +365,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsClose(int this_addr, int inV_addr);
 
     public boolean IsNormalized(float inTolerance) {
-        return internal_native_IsNormalized((int) (long) getNativeData().getCPointer(), inTolerance);
+        return internal_native_IsNormalized(native_address, inTolerance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -385,7 +377,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsNormalized(int this_addr, float inTolerance);
 
     public boolean IsNormalized() {
-        return internal_native_IsNormalized((int) (long) getNativeData().getCPointer());
+        return internal_native_IsNormalized(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -397,7 +389,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsNormalized(int this_addr);
 
     public Vec4 Add(Vec4 inV) {
-        internal_native_Add((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_Add(native_address, (inV != null ? inV.native_address : 0));
         return this;
     }
 
@@ -411,7 +403,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Add(int this_addr, int inV_addr);
 
     public Vec4 Sub(Vec4 inV) {
-        internal_native_Sub((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_Sub(native_address, (inV != null ? inV.native_address : 0));
         return this;
     }
 
@@ -425,7 +417,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Sub(int this_addr, int inV_addr);
 
     public Vec4 Mul(float inV) {
-        internal_native_Mul((int) (long) getNativeData().getCPointer(), inV);
+        internal_native_Mul(native_address, inV);
         return this;
     }
 
@@ -439,7 +431,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Mul(int this_addr, float inV);
 
     public Vec4 Div(float inV) {
-        internal_native_Div((int) (long) getNativeData().getCPointer(), inV);
+        internal_native_Div(native_address, inV);
         return this;
     }
 
@@ -453,12 +445,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Div(int this_addr, float inV);
 
     public Vec4 MulVec4(Vec4 inV) {
-        int pointer = internal_native_MulVec4((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_MulVec4(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_0;
     }
 
@@ -472,12 +464,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_MulVec4(int this_addr, int inV_addr);
 
     public Vec4 MulFloat(float inV) {
-        int pointer = internal_native_MulFloat((int) (long) getNativeData().getCPointer(), inV);
+        int pointer = internal_native_MulFloat(native_address, inV);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_1 == null)
             Vec4_TEMP_GEN_1 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_1;
     }
 
@@ -491,12 +483,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_MulFloat(int this_addr, float inV);
 
     public Vec4 DivVec4(Vec4 inV) {
-        int pointer = internal_native_DivVec4((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_DivVec4(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_2 == null)
             Vec4_TEMP_GEN_2 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_2;
     }
 
@@ -510,12 +502,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_DivVec4(int this_addr, int inV_addr);
 
     public Vec4 DivFloat(float inV) {
-        int pointer = internal_native_DivFloat((int) (long) getNativeData().getCPointer(), inV);
+        int pointer = internal_native_DivFloat(native_address, inV);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_3 == null)
             Vec4_TEMP_GEN_3 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_3;
     }
 
@@ -529,12 +521,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_DivFloat(int this_addr, float inV);
 
     public Vec4 AddVec4(Vec4 inV) {
-        int pointer = internal_native_AddVec4((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_AddVec4(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_4 == null)
             Vec4_TEMP_GEN_4 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_4;
     }
 
@@ -548,12 +540,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_AddVec4(int this_addr, int inV_addr);
 
     public Vec4 SubVec4(Vec4 inV) {
-        int pointer = internal_native_SubVec4((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_SubVec4(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_5 == null)
             Vec4_TEMP_GEN_5 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_5;
     }
 

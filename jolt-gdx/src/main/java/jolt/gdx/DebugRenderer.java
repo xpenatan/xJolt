@@ -10,7 +10,6 @@ import com.badlogic.gdx.graphics.VertexAttributes;
 import com.badlogic.gdx.graphics.g3d.Environment;
 import com.badlogic.gdx.graphics.g3d.Material;
 import com.badlogic.gdx.graphics.g3d.Model;
-import com.badlogic.gdx.graphics.g3d.ModelBatch;
 import com.badlogic.gdx.graphics.g3d.Renderable;
 import com.badlogic.gdx.graphics.g3d.RenderableProvider;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
@@ -19,31 +18,26 @@ import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.model.Node;
 import com.badlogic.gdx.graphics.g3d.model.NodePart;
+import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.FloatArray;
 import com.badlogic.gdx.utils.IntMap;
 import com.badlogic.gdx.utils.Pool;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import java.util.ArrayList;
 import jolt.core.Color;
 import jolt.enums.ECastShadow;
 import jolt.enums.ECullMode;
 import jolt.enums.EDrawMode;
-import jolt.math.Float2;
-import jolt.math.Float3;
+import jolt.idl.helper.IDLFloatArray;
 import jolt.math.Mat44;
 import jolt.math.Vec4;
 import jolt.physics.PhysicsSystem;
 import jolt.physics.body.BodyManagerDrawSettings;
-import jolt.renderer.DebugArrayTriangle;
 import jolt.renderer.DebugRendererEm;
-import jolt.renderer.DebugRendererTriangle;
-import jolt.renderer.DebugRendererVertex;
 
 public class DebugRenderer extends DebugRendererEm {
 
-    private ModelBatch batch;
+    private ModelBatchExt batch;
     protected Environment environment;
 
     private Texture checkerboardTexture;
@@ -53,8 +47,14 @@ public class DebugRenderer extends DebugRendererEm {
 
     // Cache for models, keyed by triangle array hash and draw mode
     private IntMap<Model> modelBatch = new IntMap<>();
-    private ArrayList<ModelRenderer> modelRendererList = new ArrayList<>();
-    private ArrayList<ModelRenderer> poolRenderer = new ArrayList<>();
+    private Array<ModelRenderer> modelRendererList = new Array<>();
+
+    private Pool<ModelRenderer> modelInstancePool = new Pool<>() {
+        @Override
+        protected ModelRenderer newObject() {
+            return new ModelRenderer();
+        }
+    };
 
     public static Texture createCheckerBoardTexture() {
         // Create a simple 2x2 checkerboard texture
@@ -65,34 +65,38 @@ public class DebugRenderer extends DebugRendererEm {
         pixmap.setColor(0.7f, 0.7f, 0.7f, 1f); // Light gray
         pixmap.fillRectangle(1, 0, 1, 1); // Top-right
         pixmap.fillRectangle(0, 1, 1, 1); // Bottom-left
-        Texture checkerboardTexture = new Texture(pixmap, true); // Enable mipmapping for smoothness
+        Texture checkerboardTexture = GraphicManagerApi.graphicApi.createTexture(pixmap, true); // Enable mipmapping for smoothness
         checkerboardTexture.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         pixmap.dispose();
         return checkerboardTexture;
     }
 
-    public DebugRenderer() {
-        this(true);
+    public DebugRenderer(ModelBatchExt batch) {
+        this(batch, true);
     }
 
-    public DebugRenderer(boolean enable) {
+    public DebugRenderer(ModelBatchExt batch, boolean enable) {
+        this.batch = batch;
         this.enable = enable;
-        batch = new ModelBatch();
         environment = new Environment();
         environment.set(new ColorAttribute(ColorAttribute.AmbientLight, 0.4f, 0.4f, 0.4f, 1.f));
         environment.add(new DirectionalLight().set(0.8f, 0.8f, 0.8f, -0.5f, -1.0f, -0.8f));
         checkerboardTexture = createCheckerBoardTexture();
     }
 
+    ModelBuilder modelBuilder = GraphicManagerApi.graphicApi.createModelBuilder();
+    MeshBuilderExt meshBuilder = GraphicManagerApi.graphicApi.createMeshBuilder();
+
     @Override
-    protected void DrawMesh(int id, Mat44 inModelMatrix, DebugArrayTriangle triangleArray, Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
-        if (!enable || triangleArray.size() == 0) {
+    protected void DrawMesh(int id, Mat44 inModelMatrix, IDLFloatArray vertices, Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
+        int verticesSize = vertices.getSize();
+        if (!enable || verticesSize == 0) {
             return;
         }
 
         Model model = modelBatch.get(id);
         if(model == null) {
-            model = createModel(triangleArray, GL20.GL_TRIANGLES);
+            model = createModel(vertices, GL20.GL_TRIANGLES);
             modelBatch.put(id, model);
         }
 
@@ -103,59 +107,35 @@ public class DebugRenderer extends DebugRendererEm {
         float a1 = vec4.GetW();
 
         int primitiveType = inDrawMode == EDrawMode.EDrawMode_Wireframe ? GL20.GL_LINES : GL20.GL_TRIANGLES;
-        ModelRenderer modelRenderer = obtain();
+        ModelRenderer modelRenderer = modelInstancePool.obtain();
         modelRenderer.setModel(model, primitiveType);
         JoltGdx.mat44_to_matrix4(inModelMatrix, modelRenderer.transform);
         modelRenderer.diffuseColor.color.set(r1, g1, b1, a1);
         modelRendererList.add(modelRenderer);
     }
 
-    private Model createModel(DebugArrayTriangle triangleArray, int primitiveType) {
-        FloatArray localVertices = new FloatArray();
-        int size = triangleArray.size();
-        for (int i = 0; i < size; i++) {
-            DebugRendererTriangle triangle = triangleArray.at(i);
-            for (int j = 0; j < 3; j++) {
-                DebugRendererVertex mV = triangle.get_mV(j);
-                // Position (local space)
-                Float3 localPos = mV.get_mPosition();
-                localVertices.add(localPos.get_x());
-                localVertices.add(localPos.get_y());
-                localVertices.add(localPos.get_z());
-                // Normal (local space)
-                Float3 localNormal = mV.get_mNormal();
-                localVertices.add(localNormal.get_x());
-                localVertices.add(localNormal.get_y());
-                localVertices.add(localNormal.get_z());
-                // UV
-                Float2 mUV = mV.get_mUV();
-                localVertices.add(mUV.get_x());
-                localVertices.add(mUV.get_y());
-                // Vertex color
-                Color vertexColor = mV.get_mColor();
-                Vec4 colorVec = vertexColor.ToVec4();
-                localVertices.add(colorVec.GetX());
-                localVertices.add(colorVec.GetY());
-                localVertices.add(colorVec.GetZ());
-                localVertices.add(colorVec.GetW());
-            }
+    private Model createModel(IDLFloatArray vertices, int primitiveType) {
+
+        float [] array = new float[vertices.getSize()];
+        for(int i = 0; i < vertices.getSize(); i++) {
+            array[i] = vertices.getValue(i);
         }
 
-        int localVerticesSize = localVertices.size;
-        Mesh mesh = new Mesh(true, localVerticesSize / 12, 0, // 12 floats per vertex
+        int localVerticesSize = vertices.getSize();
+        Mesh mesh = GraphicManagerApi.graphicApi.createMesh(true, localVerticesSize / 12, 0, // 12 floats per vertex
                 new VertexAttribute(VertexAttributes.Usage.Position, 3, "a_position"),
                 new VertexAttribute(VertexAttributes.Usage.Normal, 3, "a_normal"),
                 new VertexAttribute(VertexAttributes.Usage.TextureCoordinates, 2, "a_texCoord0"),
                 new VertexAttribute(VertexAttributes.Usage.ColorUnpacked, 4, "a_color"));
-        mesh.setVertices(localVertices.toArray());
-        MeshPart meshPart = new MeshPart("meshpart1", mesh, 0, localVerticesSize / 12, primitiveType);
+        mesh.setVertices(array);
+        MeshPart meshPart = GraphicManagerApi.graphicApi.createMeshPart("meshpart1", mesh, 0, localVerticesSize / 12, primitiveType);
         Material material = new Material(TextureAttribute.createDiffuse(checkerboardTexture));
         ColorAttribute diffuseColor = ColorAttribute.createDiffuse(1, 1, 1, 1);
         material.set(diffuseColor);
         Node node = new Node();
         node.id = "node1";
         node.parts.add(new NodePart(meshPart, material));
-        Model model = new Model();
+        Model model = GraphicManagerApi.graphicApi.createModel();
         model.nodes.add(node);
         model.meshes.add(mesh);
         model.materials.add(material);
@@ -168,7 +148,7 @@ public class DebugRenderer extends DebugRendererEm {
             entry.value.dispose();
         }
         modelBatch.clear();
-        poolRenderer.clear();
+        modelInstancePool.clear();
         modelRendererList.clear();
     }
 
@@ -181,16 +161,16 @@ public class DebugRenderer extends DebugRendererEm {
     }
 
     public void end() {
-        for (ModelRenderer instance : modelRendererList) {
+        for (RenderableProvider instance : modelRendererList) {
             batch.render(instance, environment);
         }
-        poolRenderer.addAll(modelRendererList);
-        modelRendererList.clear();
         batch.end();
+        modelInstancePool.freeAll(modelRendererList);
+        modelRendererList.clear();
     }
 
     @Override
-    public void dispose() {
+    public void onNativeDispose() {
         batch.dispose();
         checkerboardTexture.dispose();
         clear();
@@ -243,18 +223,6 @@ public class DebugRenderer extends DebugRendererEm {
         }
     }
 
-    private ModelRenderer obtain() {
-        ModelRenderer renderer = null;
-        if(poolRenderer.isEmpty()) {
-            renderer = new ModelRenderer();
-        }
-        else {
-            renderer = poolRenderer.remove(0);
-        }
-        renderer.model = null;
-        return renderer;
-    }
-
     class ModelRenderer implements RenderableProvider {
         private Model model;
         private final Matrix4 transform = new Matrix4();
@@ -268,7 +236,7 @@ public class DebugRenderer extends DebugRendererEm {
             if(diffuseColor == null) {
                 Material material = model.materials.get(0).copy();
                 diffuseColor = (ColorAttribute)material.get(ColorAttribute.Diffuse);
-                meshPart = new MeshPart();
+                meshPart = GraphicManagerApi.graphicApi.createMeshPart();
                 nodePart = new NodePart(meshPart, material);
 
             }

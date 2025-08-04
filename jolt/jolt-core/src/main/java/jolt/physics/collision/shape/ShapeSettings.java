@@ -25,7 +25,7 @@ public class ShapeSettings extends IDLBase {
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -35,7 +35,7 @@ return nativeObject->GetRefCount();
     public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,7 +45,7 @@ nativeObject->AddRef();
     public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
-        internal_native_Release((long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -55,12 +55,12 @@ nativeObject->Release();
     public static native void internal_native_Release(long this_addr);
 
     public ShapeResult Create() {
-        long pointer = internal_native_Create((long) getNativeData().getCPointer());
+        long pointer = internal_native_Create(native_address);
         if (pointer == 0)
             return null;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = new ShapeResult((byte) 1, (char) 1);
-        ShapeResult_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ShapeResult_TEMP_GEN_0;
     }
 
@@ -72,7 +72,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_Create(long this_addr);
 
     public void ClearCachedResult() {
-        internal_native_ClearCachedResult((long) getNativeData().getCPointer());
+        internal_native_ClearCachedResult(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -82,7 +82,7 @@ nativeObject->ClearCachedResult();
     public static native void internal_native_ClearCachedResult(long this_addr);
 
     public long get_mUserData() {
-        return internal_native_get_mUserData((long) getNativeData().getCPointer());
+        return internal_native_get_mUserData(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -92,7 +92,7 @@ return nativeObject->mUserData;
     public static native long internal_native_get_mUserData(long this_addr);
 
     public void set_mUserData(long mUserData) {
-        internal_native_set_mUserData((long) getNativeData().getCPointer(), mUserData);
+        internal_native_set_mUserData(native_address, mUserData);
     }
 
     /*[-JNI;-NATIVE]

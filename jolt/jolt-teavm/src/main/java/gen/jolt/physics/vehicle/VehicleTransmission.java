@@ -21,16 +21,8 @@ public class VehicleTransmission extends VehicleTransmissionSettings {
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -41,7 +33,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void Set(int inCurrentGear, float inClutchFriction) {
-        internal_native_Set((int) (long) getNativeData().getCPointer(), inCurrentGear, inClutchFriction);
+        internal_native_Set(native_address, inCurrentGear, inClutchFriction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -52,7 +44,7 @@ jsObj.Set(inCurrentGear, inClutchFriction);
     public static native void internal_native_Set(int this_addr, int inCurrentGear, float inClutchFriction);
 
     public int GetCurrentGear() {
-        return internal_native_GetCurrentGear((int) (long) getNativeData().getCPointer());
+        return internal_native_GetCurrentGear(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -64,7 +56,7 @@ return returnedJSObj;
     public static native int internal_native_GetCurrentGear(int this_addr);
 
     public float GetClutchFriction() {
-        return internal_native_GetClutchFriction((int) (long) getNativeData().getCPointer());
+        return internal_native_GetClutchFriction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ return returnedJSObj;
     public static native float internal_native_GetClutchFriction(int this_addr);
 
     public boolean IsSwitchingGear() {
-        return internal_native_IsSwitchingGear((int) (long) getNativeData().getCPointer());
+        return internal_native_IsSwitchingGear(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -88,7 +80,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsSwitchingGear(int this_addr);
 
     public float GetCurrentRatio() {
-        return internal_native_GetCurrentRatio((int) (long) getNativeData().getCPointer());
+        return internal_native_GetCurrentRatio(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

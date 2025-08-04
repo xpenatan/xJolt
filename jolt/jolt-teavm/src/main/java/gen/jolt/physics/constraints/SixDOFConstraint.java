@@ -57,7 +57,7 @@ public class SixDOFConstraint extends TwoBodyConstraint {
     }
 
     public void SetTranslationLimits(Vec3 inLimitMin, Vec3 inLimitMax) {
-        internal_native_SetTranslationLimits((int) (long) getNativeData().getCPointer(), (int) (long) (inLimitMin != null ? inLimitMin.getNativeData().getCPointer() : 0), (int) (long) (inLimitMax != null ? inLimitMax.getNativeData().getCPointer() : 0));
+        internal_native_SetTranslationLimits(native_address, (inLimitMin != null ? inLimitMin.native_address : 0), (inLimitMax != null ? inLimitMax.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -68,7 +68,7 @@ jsObj.SetTranslationLimits(inLimitMin_addr, inLimitMax_addr);
     public static native void internal_native_SetTranslationLimits(int this_addr, int inLimitMin_addr, int inLimitMax_addr);
 
     public void SetRotationLimits(Vec3 inLimitMin, Vec3 inLimitMax) {
-        internal_native_SetRotationLimits((int) (long) getNativeData().getCPointer(), (int) (long) (inLimitMin != null ? inLimitMin.getNativeData().getCPointer() : 0), (int) (long) (inLimitMax != null ? inLimitMax.getNativeData().getCPointer() : 0));
+        internal_native_SetRotationLimits(native_address, (inLimitMin != null ? inLimitMin.native_address : 0), (inLimitMax != null ? inLimitMax.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -79,7 +79,7 @@ jsObj.SetRotationLimits(inLimitMin_addr, inLimitMax_addr);
     public static native void internal_native_SetRotationLimits(int this_addr, int inLimitMin_addr, int inLimitMax_addr);
 
     public float GetLimitsMin(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_GetLimitsMin((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
+        return internal_native_GetLimitsMin(native_address, (int) (inAxis != null ? inAxis.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -91,7 +91,7 @@ return returnedJSObj;
     public static native float internal_native_GetLimitsMin(int this_addr, int inAxis);
 
     public float GetLimitsMax(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_GetLimitsMax((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
+        return internal_native_GetLimitsMax(native_address, (int) (inAxis != null ? inAxis.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -103,12 +103,12 @@ return returnedJSObj;
     public static native float internal_native_GetLimitsMax(int this_addr, int inAxis);
 
     public Vec3 GetTranslationLimitsMin() {
-        int pointer = internal_native_GetTranslationLimitsMin((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTranslationLimitsMin(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -122,12 +122,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTranslationLimitsMin(int this_addr);
 
     public Vec3 GetTranslationLimitsMax() {
-        int pointer = internal_native_GetTranslationLimitsMax((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTranslationLimitsMax(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -141,12 +141,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTranslationLimitsMax(int this_addr);
 
     public Vec3 GetRotationLimitsMin() {
-        int pointer = internal_native_GetRotationLimitsMin((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetRotationLimitsMin(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -160,12 +160,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotationLimitsMin(int this_addr);
 
     public Vec3 GetRotationLimitsMax() {
-        int pointer = internal_native_GetRotationLimitsMax((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetRotationLimitsMax(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -179,7 +179,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotationLimitsMax(int this_addr);
 
     public boolean IsFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_IsFixedAxis((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
+        return internal_native_IsFixedAxis(native_address, (int) (inAxis != null ? inAxis.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -191,7 +191,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsFixedAxis(int this_addr, int inAxis);
 
     public boolean IsFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_IsFreeAxis((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
+        return internal_native_IsFreeAxis(native_address, (int) (inAxis != null ? inAxis.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -203,12 +203,12 @@ return returnedJSObj;
     public static native boolean internal_native_IsFreeAxis(int this_addr, int inAxis);
 
     public SpringSettings GetLimitsSpringSettings(SixDOFConstraintSettings_EAxis inAxis) {
-        int pointer = internal_native_GetLimitsSpringSettings((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
+        int pointer = internal_native_GetLimitsSpringSettings(native_address, (int) (inAxis != null ? inAxis.getValue() : 0));
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
-        SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -222,7 +222,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetLimitsSpringSettings(int this_addr, int inAxis);
 
     public void SetLimitsSpringSettings(SixDOFConstraintSettings_EAxis inAxis, SpringSettings inLimitsSpringSettings) {
-        internal_native_SetLimitsSpringSettings((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0), (int) (long) (inLimitsSpringSettings != null ? inLimitsSpringSettings.getNativeData().getCPointer() : 0));
+        internal_native_SetLimitsSpringSettings(native_address, (int) (inAxis != null ? inAxis.getValue() : 0), (inLimitsSpringSettings != null ? inLimitsSpringSettings.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -233,7 +233,7 @@ jsObj.SetLimitsSpringSettings(inAxis, inLimitsSpringSettings_addr);
     public static native void internal_native_SetLimitsSpringSettings(int this_addr, int inAxis, int inLimitsSpringSettings_addr);
 
     public void SetMaxFriction(SixDOFConstraintSettings_EAxis inAxis, float inFriction) {
-        internal_native_SetMaxFriction((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0), inFriction);
+        internal_native_SetMaxFriction(native_address, (int) (inAxis != null ? inAxis.getValue() : 0), inFriction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -244,7 +244,7 @@ jsObj.SetMaxFriction(inAxis, inFriction);
     public static native void internal_native_SetMaxFriction(int this_addr, int inAxis, float inFriction);
 
     public float GetMaxFriction(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_GetMaxFriction((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
+        return internal_native_GetMaxFriction(native_address, (int) (inAxis != null ? inAxis.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -256,12 +256,12 @@ return returnedJSObj;
     public static native float internal_native_GetMaxFriction(int this_addr, int inAxis);
 
     public Quat GetRotationInConstraintSpace() {
-        int pointer = internal_native_GetRotationInConstraintSpace((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetRotationInConstraintSpace(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -275,12 +275,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotationInConstraintSpace(int this_addr);
 
     public MotorSettings GetMotorSettings(SixDOFConstraintSettings_EAxis inAxis) {
-        int pointer = internal_native_GetMotorSettings((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
+        int pointer = internal_native_GetMotorSettings(native_address, (int) (inAxis != null ? inAxis.getValue() : 0));
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = new MotorSettings((byte) 1, (char) 1);
-        MotorSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -294,7 +294,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetMotorSettings(int this_addr, int inAxis);
 
     public void SetMotorState(SixDOFConstraintSettings_EAxis inAxis, EMotorState inState) {
-        internal_native_SetMotorState((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0), (int) (long) (inState != null ? inState.getValue() : 0));
+        internal_native_SetMotorState(native_address, (int) (inAxis != null ? inAxis.getValue() : 0), (int) (inState != null ? inState.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -305,7 +305,7 @@ jsObj.SetMotorState(inAxis, inState);
     public static native void internal_native_SetMotorState(int this_addr, int inAxis, int inState);
 
     public EMotorState GetMotorState(SixDOFConstraintSettings_EAxis inAxis) {
-        int value = internal_native_GetMotorState((int) (long) getNativeData().getCPointer(), (int) (long) (inAxis != null ? inAxis.getValue() : 0));
+        int value = internal_native_GetMotorState(native_address, (int) (inAxis != null ? inAxis.getValue() : 0));
         return EMotorState.MAP.get(value);
     }
 
@@ -318,12 +318,12 @@ return returnedJSObj;
     public static native int internal_native_GetMotorState(int this_addr, int inAxis);
 
     public Vec3 GetTargetVelocityCS() {
-        int pointer = internal_native_GetTargetVelocityCS((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTargetVelocityCS(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -337,7 +337,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTargetVelocityCS(int this_addr);
 
     public void SetTargetVelocityCS(Vec3 inVelocity) {
-        internal_native_SetTargetVelocityCS((int) (long) getNativeData().getCPointer(), (int) (long) (inVelocity != null ? inVelocity.getNativeData().getCPointer() : 0));
+        internal_native_SetTargetVelocityCS(native_address, (inVelocity != null ? inVelocity.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -348,7 +348,7 @@ jsObj.SetTargetVelocityCS(inVelocity_addr);
     public static native void internal_native_SetTargetVelocityCS(int this_addr, int inVelocity_addr);
 
     public void SetTargetAngularVelocityCS(Vec3 inAngularVelocity) {
-        internal_native_SetTargetAngularVelocityCS((int) (long) getNativeData().getCPointer(), (int) (long) (inAngularVelocity != null ? inAngularVelocity.getNativeData().getCPointer() : 0));
+        internal_native_SetTargetAngularVelocityCS(native_address, (inAngularVelocity != null ? inAngularVelocity.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -359,12 +359,12 @@ jsObj.SetTargetAngularVelocityCS(inAngularVelocity_addr);
     public static native void internal_native_SetTargetAngularVelocityCS(int this_addr, int inAngularVelocity_addr);
 
     public Vec3 GetTargetAngularVelocityCS() {
-        int pointer = internal_native_GetTargetAngularVelocityCS((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTargetAngularVelocityCS(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -378,12 +378,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTargetAngularVelocityCS(int this_addr);
 
     public Vec3 GetTargetPositionCS() {
-        int pointer = internal_native_GetTargetPositionCS((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTargetPositionCS(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_6;
     }
 
@@ -397,7 +397,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTargetPositionCS(int this_addr);
 
     public void SetTargetPositionCS(Vec3 inPosition) {
-        internal_native_SetTargetPositionCS((int) (long) getNativeData().getCPointer(), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0));
+        internal_native_SetTargetPositionCS(native_address, (inPosition != null ? inPosition.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -408,7 +408,7 @@ jsObj.SetTargetPositionCS(inPosition_addr);
     public static native void internal_native_SetTargetPositionCS(int this_addr, int inPosition_addr);
 
     public void SetTargetOrientationCS(Quat inOrientation) {
-        internal_native_SetTargetOrientationCS((int) (long) getNativeData().getCPointer(), (int) (long) (inOrientation != null ? inOrientation.getNativeData().getCPointer() : 0));
+        internal_native_SetTargetOrientationCS(native_address, (inOrientation != null ? inOrientation.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -419,12 +419,12 @@ jsObj.SetTargetOrientationCS(inOrientation_addr);
     public static native void internal_native_SetTargetOrientationCS(int this_addr, int inOrientation_addr);
 
     public Quat GetTargetOrientationCS() {
-        int pointer = internal_native_GetTargetOrientationCS((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTargetOrientationCS(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_1 == null)
             Quat_TEMP_GEN_1 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_1.internal_reset(pointer, false);
         return Quat_TEMP_GEN_1;
     }
 
@@ -438,7 +438,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTargetOrientationCS(int this_addr);
 
     public void SetTargetOrientationBS(Quat inOrientation) {
-        internal_native_SetTargetOrientationBS((int) (long) getNativeData().getCPointer(), (int) (long) (inOrientation != null ? inOrientation.getNativeData().getCPointer() : 0));
+        internal_native_SetTargetOrientationBS(native_address, (inOrientation != null ? inOrientation.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -449,12 +449,12 @@ jsObj.SetTargetOrientationBS(inOrientation_addr);
     public static native void internal_native_SetTargetOrientationBS(int this_addr, int inOrientation_addr);
 
     public Vec3 GetTotalLambdaPosition() {
-        int pointer = internal_native_GetTotalLambdaPosition((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTotalLambdaPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_7.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_7.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_7;
     }
 
@@ -468,12 +468,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTotalLambdaPosition(int this_addr);
 
     public Vec3 GetTotalLambdaRotation() {
-        int pointer = internal_native_GetTotalLambdaRotation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTotalLambdaRotation(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_8.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_8.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_8;
     }
 
@@ -487,12 +487,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTotalLambdaRotation(int this_addr);
 
     public Vec3 GetTotalLambdaMotorTranslation() {
-        int pointer = internal_native_GetTotalLambdaMotorTranslation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTotalLambdaMotorTranslation(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_9 == null)
             Vec3_TEMP_GEN_9 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_9.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_9.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_9;
     }
 
@@ -506,12 +506,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTotalLambdaMotorTranslation(int this_addr);
 
     public Vec3 GetTotalLambdaMotorRotation() {
-        int pointer = internal_native_GetTotalLambdaMotorRotation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTotalLambdaMotorRotation(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_10 == null)
             Vec3_TEMP_GEN_10 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_10.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_10.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_10;
     }
 

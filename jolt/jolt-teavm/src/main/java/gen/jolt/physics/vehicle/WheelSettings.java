@@ -33,7 +33,7 @@ public class WheelSettings extends IDLBase {
 
     public WheelSettings() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -51,7 +51,7 @@ return jolt.getPointer(jsObj);
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -63,7 +63,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -74,7 +74,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -85,12 +85,12 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public Vec3 get_mPosition() {
-        int pointer = internal_native_get_mPosition((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -104,7 +104,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPosition(int this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
-        internal_native_set_mPosition((int) (long) getNativeData().getCPointer(), (int) (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
+        internal_native_set_mPosition(native_address, (mPosition != null ? mPosition.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -115,12 +115,12 @@ jsObj.set_mPosition(mPosition_addr);
     public static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
 
     public Vec3 get_mSuspensionForcePoint() {
-        int pointer = internal_native_get_mSuspensionForcePoint((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSuspensionForcePoint(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -134,7 +134,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSuspensionForcePoint(int this_addr);
 
     public void set_mSuspensionForcePoint(Vec3 mSuspensionForcePoint) {
-        internal_native_set_mSuspensionForcePoint((int) (long) getNativeData().getCPointer(), (int) (long) (mSuspensionForcePoint != null ? mSuspensionForcePoint.getNativeData().getCPointer() : 0));
+        internal_native_set_mSuspensionForcePoint(native_address, (mSuspensionForcePoint != null ? mSuspensionForcePoint.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -145,12 +145,12 @@ jsObj.set_mSuspensionForcePoint(mSuspensionForcePoint_addr);
     public static native void internal_native_set_mSuspensionForcePoint(int this_addr, int mSuspensionForcePoint_addr);
 
     public Vec3 get_mSuspensionDirection() {
-        int pointer = internal_native_get_mSuspensionDirection((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSuspensionDirection(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -164,7 +164,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSuspensionDirection(int this_addr);
 
     public void set_mSuspensionDirection(Vec3 mSuspensionDirection) {
-        internal_native_set_mSuspensionDirection((int) (long) getNativeData().getCPointer(), (int) (long) (mSuspensionDirection != null ? mSuspensionDirection.getNativeData().getCPointer() : 0));
+        internal_native_set_mSuspensionDirection(native_address, (mSuspensionDirection != null ? mSuspensionDirection.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -175,12 +175,12 @@ jsObj.set_mSuspensionDirection(mSuspensionDirection_addr);
     public static native void internal_native_set_mSuspensionDirection(int this_addr, int mSuspensionDirection_addr);
 
     public Vec3 get_mSteeringAxis() {
-        int pointer = internal_native_get_mSteeringAxis((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSteeringAxis(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -194,7 +194,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSteeringAxis(int this_addr);
 
     public void set_mSteeringAxis(Vec3 mSteeringAxis) {
-        internal_native_set_mSteeringAxis((int) (long) getNativeData().getCPointer(), (int) (long) (mSteeringAxis != null ? mSteeringAxis.getNativeData().getCPointer() : 0));
+        internal_native_set_mSteeringAxis(native_address, (mSteeringAxis != null ? mSteeringAxis.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -205,12 +205,12 @@ jsObj.set_mSteeringAxis(mSteeringAxis_addr);
     public static native void internal_native_set_mSteeringAxis(int this_addr, int mSteeringAxis_addr);
 
     public Vec3 get_mWheelUp() {
-        int pointer = internal_native_get_mWheelUp((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mWheelUp(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -224,7 +224,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mWheelUp(int this_addr);
 
     public void set_mWheelUp(Vec3 mWheelUp) {
-        internal_native_set_mWheelUp((int) (long) getNativeData().getCPointer(), (int) (long) (mWheelUp != null ? mWheelUp.getNativeData().getCPointer() : 0));
+        internal_native_set_mWheelUp(native_address, (mWheelUp != null ? mWheelUp.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -235,12 +235,12 @@ jsObj.set_mWheelUp(mWheelUp_addr);
     public static native void internal_native_set_mWheelUp(int this_addr, int mWheelUp_addr);
 
     public Vec3 get_mWheelForward() {
-        int pointer = internal_native_get_mWheelForward((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mWheelForward(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -254,7 +254,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mWheelForward(int this_addr);
 
     public void set_mWheelForward(Vec3 mWheelForward) {
-        internal_native_set_mWheelForward((int) (long) getNativeData().getCPointer(), (int) (long) (mWheelForward != null ? mWheelForward.getNativeData().getCPointer() : 0));
+        internal_native_set_mWheelForward(native_address, (mWheelForward != null ? mWheelForward.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -265,12 +265,12 @@ jsObj.set_mWheelForward(mWheelForward_addr);
     public static native void internal_native_set_mWheelForward(int this_addr, int mWheelForward_addr);
 
     public SpringSettings get_mSuspensionSpring() {
-        int pointer = internal_native_get_mSuspensionSpring((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSuspensionSpring(native_address);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
-        SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -284,7 +284,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSuspensionSpring(int this_addr);
 
     public void set_mSuspensionSpring(SpringSettings mSuspensionSpring) {
-        internal_native_set_mSuspensionSpring((int) (long) getNativeData().getCPointer(), (int) (long) (mSuspensionSpring != null ? mSuspensionSpring.getNativeData().getCPointer() : 0));
+        internal_native_set_mSuspensionSpring(native_address, (mSuspensionSpring != null ? mSuspensionSpring.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -295,7 +295,7 @@ jsObj.set_mSuspensionSpring(mSuspensionSpring_addr);
     public static native void internal_native_set_mSuspensionSpring(int this_addr, int mSuspensionSpring_addr);
 
     public float get_mSuspensionMinLength() {
-        return internal_native_get_mSuspensionMinLength((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mSuspensionMinLength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -306,7 +306,7 @@ return jsObj.get_mSuspensionMinLength();
     public static native float internal_native_get_mSuspensionMinLength(int this_addr);
 
     public void set_mSuspensionMinLength(float mSuspensionMinLength) {
-        internal_native_set_mSuspensionMinLength((int) (long) getNativeData().getCPointer(), mSuspensionMinLength);
+        internal_native_set_mSuspensionMinLength(native_address, mSuspensionMinLength);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -317,7 +317,7 @@ jsObj.set_mSuspensionMinLength(mSuspensionMinLength);
     public static native void internal_native_set_mSuspensionMinLength(int this_addr, float mSuspensionMinLength);
 
     public float get_mSuspensionMaxLength() {
-        return internal_native_get_mSuspensionMaxLength((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mSuspensionMaxLength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -328,7 +328,7 @@ return jsObj.get_mSuspensionMaxLength();
     public static native float internal_native_get_mSuspensionMaxLength(int this_addr);
 
     public void set_mSuspensionMaxLength(float mSuspensionMaxLength) {
-        internal_native_set_mSuspensionMaxLength((int) (long) getNativeData().getCPointer(), mSuspensionMaxLength);
+        internal_native_set_mSuspensionMaxLength(native_address, mSuspensionMaxLength);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -339,7 +339,7 @@ jsObj.set_mSuspensionMaxLength(mSuspensionMaxLength);
     public static native void internal_native_set_mSuspensionMaxLength(int this_addr, float mSuspensionMaxLength);
 
     public float get_mSuspensionPreloadLength() {
-        return internal_native_get_mSuspensionPreloadLength((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mSuspensionPreloadLength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -350,7 +350,7 @@ return jsObj.get_mSuspensionPreloadLength();
     public static native float internal_native_get_mSuspensionPreloadLength(int this_addr);
 
     public void set_mSuspensionPreloadLength(float mSuspensionPreloadLength) {
-        internal_native_set_mSuspensionPreloadLength((int) (long) getNativeData().getCPointer(), mSuspensionPreloadLength);
+        internal_native_set_mSuspensionPreloadLength(native_address, mSuspensionPreloadLength);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -361,7 +361,7 @@ jsObj.set_mSuspensionPreloadLength(mSuspensionPreloadLength);
     public static native void internal_native_set_mSuspensionPreloadLength(int this_addr, float mSuspensionPreloadLength);
 
     public float get_mRadius() {
-        return internal_native_get_mRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -372,7 +372,7 @@ return jsObj.get_mRadius();
     public static native float internal_native_get_mRadius(int this_addr);
 
     public void set_mRadius(float mRadius) {
-        internal_native_set_mRadius((int) (long) getNativeData().getCPointer(), mRadius);
+        internal_native_set_mRadius(native_address, mRadius);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -383,7 +383,7 @@ jsObj.set_mRadius(mRadius);
     public static native void internal_native_set_mRadius(int this_addr, float mRadius);
 
     public float get_mWidth() {
-        return internal_native_get_mWidth((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mWidth(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -394,7 +394,7 @@ return jsObj.get_mWidth();
     public static native float internal_native_get_mWidth(int this_addr);
 
     public void set_mWidth(float mWidth) {
-        internal_native_set_mWidth((int) (long) getNativeData().getCPointer(), mWidth);
+        internal_native_set_mWidth(native_address, mWidth);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -405,7 +405,7 @@ jsObj.set_mWidth(mWidth);
     public static native void internal_native_set_mWidth(int this_addr, float mWidth);
 
     public boolean get_mEnableSuspensionForcePoint() {
-        return internal_native_get_mEnableSuspensionForcePoint((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mEnableSuspensionForcePoint(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -416,7 +416,7 @@ return jsObj.get_mEnableSuspensionForcePoint();
     public static native boolean internal_native_get_mEnableSuspensionForcePoint(int this_addr);
 
     public void set_mEnableSuspensionForcePoint(boolean mEnableSuspensionForcePoint) {
-        internal_native_set_mEnableSuspensionForcePoint((int) (long) getNativeData().getCPointer(), mEnableSuspensionForcePoint);
+        internal_native_set_mEnableSuspensionForcePoint(native_address, mEnableSuspensionForcePoint);
     }
 
     /*[-TEAVM;-NATIVE]

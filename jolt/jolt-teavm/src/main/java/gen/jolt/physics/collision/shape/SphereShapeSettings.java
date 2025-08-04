@@ -17,8 +17,8 @@ public class SphereShapeSettings extends ConvexShapeSettings {
 
     public SphereShapeSettings(float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_float_PhysicsMaterial(inRadius, (int) (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_float_PhysicsMaterial(inRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -31,7 +31,7 @@ return jolt.getPointer(jsObj);
     public SphereShapeSettings(float inRadius) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float(inRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -50,7 +50,7 @@ return jolt.getPointer(jsObj);
     }
 
     public float get_mRadius() {
-        return internal_native_get_mRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -61,7 +61,7 @@ return jsObj.get_mRadius();
     public static native float internal_native_get_mRadius(int this_addr);
 
     public void set_mRadius(float mRadius) {
-        internal_native_set_mRadius((int) (long) getNativeData().getCPointer(), mRadius);
+        internal_native_set_mRadius(native_address, mRadius);
     }
 
     /*[-TEAVM;-NATIVE]

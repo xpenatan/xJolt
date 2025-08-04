@@ -28,16 +28,8 @@ public class VehicleTransmissionSettings extends IDLBase {
     public VehicleTransmissionSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -47,7 +39,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public ETransmissionMode get_mMode() {
-        int value = internal_native_get_mMode((long) getNativeData().getCPointer());
+        int value = internal_native_get_mMode(native_address);
         return ETransmissionMode.MAP.get(value);
     }
 
@@ -58,7 +50,7 @@ return (jint)nativeObject->mMode;
     public static native int internal_native_get_mMode(long this_addr);
 
     public void set_mMode(ETransmissionMode mMode) {
-        internal_native_set_mMode((long) getNativeData().getCPointer(), (long) (mMode != null ? mMode.getValue() : 0));
+        internal_native_set_mMode(native_address, (mMode != null ? mMode.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -68,12 +60,12 @@ nativeObject->mMode = (::ETransmissionMode)mMode;
     public static native void internal_native_set_mMode(long this_addr, long mMode);
 
     public ArrayFloat get_mGearRatios() {
-        long pointer = internal_native_get_mGearRatios((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mGearRatios(native_address);
         if (pointer == 0)
             return null;
         if (ArrayFloat_TEMP_GEN_0 == null)
             ArrayFloat_TEMP_GEN_0 = new ArrayFloat((byte) 1, (char) 1);
-        ArrayFloat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayFloat_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayFloat_TEMP_GEN_0;
     }
 
@@ -84,7 +76,7 @@ return (jlong)&nativeObject->mGearRatios;
     public static native long internal_native_get_mGearRatios(long this_addr);
 
     public void set_mGearRatios(ArrayFloat mGearRatios) {
-        internal_native_set_mGearRatios((long) getNativeData().getCPointer(), (long) (mGearRatios != null ? mGearRatios.getNativeData().getCPointer() : 0));
+        internal_native_set_mGearRatios(native_address, (mGearRatios != null ? mGearRatios.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -94,12 +86,12 @@ nativeObject->mGearRatios = *((ArrayFloat*)mGearRatios_addr);
     public static native void internal_native_set_mGearRatios(long this_addr, long mGearRatios_addr);
 
     public ArrayFloat get_mReverseGearRatios() {
-        long pointer = internal_native_get_mReverseGearRatios((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mReverseGearRatios(native_address);
         if (pointer == 0)
             return null;
         if (ArrayFloat_TEMP_GEN_1 == null)
             ArrayFloat_TEMP_GEN_1 = new ArrayFloat((byte) 1, (char) 1);
-        ArrayFloat_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        ArrayFloat_TEMP_GEN_1.internal_reset(pointer, false);
         return ArrayFloat_TEMP_GEN_1;
     }
 
@@ -110,7 +102,7 @@ return (jlong)&nativeObject->mReverseGearRatios;
     public static native long internal_native_get_mReverseGearRatios(long this_addr);
 
     public void set_mReverseGearRatios(ArrayFloat mReverseGearRatios) {
-        internal_native_set_mReverseGearRatios((long) getNativeData().getCPointer(), (long) (mReverseGearRatios != null ? mReverseGearRatios.getNativeData().getCPointer() : 0));
+        internal_native_set_mReverseGearRatios(native_address, (mReverseGearRatios != null ? mReverseGearRatios.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -120,7 +112,7 @@ nativeObject->mReverseGearRatios = *((ArrayFloat*)mReverseGearRatios_addr);
     public static native void internal_native_set_mReverseGearRatios(long this_addr, long mReverseGearRatios_addr);
 
     public float get_mSwitchTime() {
-        return internal_native_get_mSwitchTime((long) getNativeData().getCPointer());
+        return internal_native_get_mSwitchTime(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -130,7 +122,7 @@ return nativeObject->mSwitchTime;
     public static native float internal_native_get_mSwitchTime(long this_addr);
 
     public void set_mSwitchTime(float mSwitchTime) {
-        internal_native_set_mSwitchTime((long) getNativeData().getCPointer(), mSwitchTime);
+        internal_native_set_mSwitchTime(native_address, mSwitchTime);
     }
 
     /*[-JNI;-NATIVE]
@@ -140,7 +132,7 @@ nativeObject->mSwitchTime = mSwitchTime;
     public static native void internal_native_set_mSwitchTime(long this_addr, float mSwitchTime);
 
     public float get_mClutchReleaseTime() {
-        return internal_native_get_mClutchReleaseTime((long) getNativeData().getCPointer());
+        return internal_native_get_mClutchReleaseTime(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -150,7 +142,7 @@ return nativeObject->mClutchReleaseTime;
     public static native float internal_native_get_mClutchReleaseTime(long this_addr);
 
     public void set_mClutchReleaseTime(float mClutchReleaseTime) {
-        internal_native_set_mClutchReleaseTime((long) getNativeData().getCPointer(), mClutchReleaseTime);
+        internal_native_set_mClutchReleaseTime(native_address, mClutchReleaseTime);
     }
 
     /*[-JNI;-NATIVE]
@@ -160,7 +152,7 @@ nativeObject->mClutchReleaseTime = mClutchReleaseTime;
     public static native void internal_native_set_mClutchReleaseTime(long this_addr, float mClutchReleaseTime);
 
     public float get_mSwitchLatency() {
-        return internal_native_get_mSwitchLatency((long) getNativeData().getCPointer());
+        return internal_native_get_mSwitchLatency(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -170,7 +162,7 @@ return nativeObject->mSwitchLatency;
     public static native float internal_native_get_mSwitchLatency(long this_addr);
 
     public void set_mSwitchLatency(float mSwitchLatency) {
-        internal_native_set_mSwitchLatency((long) getNativeData().getCPointer(), mSwitchLatency);
+        internal_native_set_mSwitchLatency(native_address, mSwitchLatency);
     }
 
     /*[-JNI;-NATIVE]
@@ -180,7 +172,7 @@ nativeObject->mSwitchLatency = mSwitchLatency;
     public static native void internal_native_set_mSwitchLatency(long this_addr, float mSwitchLatency);
 
     public float get_mShiftUpRPM() {
-        return internal_native_get_mShiftUpRPM((long) getNativeData().getCPointer());
+        return internal_native_get_mShiftUpRPM(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -190,7 +182,7 @@ return nativeObject->mShiftUpRPM;
     public static native float internal_native_get_mShiftUpRPM(long this_addr);
 
     public void set_mShiftUpRPM(float mShiftUpRPM) {
-        internal_native_set_mShiftUpRPM((long) getNativeData().getCPointer(), mShiftUpRPM);
+        internal_native_set_mShiftUpRPM(native_address, mShiftUpRPM);
     }
 
     /*[-JNI;-NATIVE]
@@ -200,7 +192,7 @@ nativeObject->mShiftUpRPM = mShiftUpRPM;
     public static native void internal_native_set_mShiftUpRPM(long this_addr, float mShiftUpRPM);
 
     public float get_mShiftDownRPM() {
-        return internal_native_get_mShiftDownRPM((long) getNativeData().getCPointer());
+        return internal_native_get_mShiftDownRPM(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -210,7 +202,7 @@ return nativeObject->mShiftDownRPM;
     public static native float internal_native_get_mShiftDownRPM(long this_addr);
 
     public void set_mShiftDownRPM(float mShiftDownRPM) {
-        internal_native_set_mShiftDownRPM((long) getNativeData().getCPointer(), mShiftDownRPM);
+        internal_native_set_mShiftDownRPM(native_address, mShiftDownRPM);
     }
 
     /*[-JNI;-NATIVE]
@@ -220,7 +212,7 @@ nativeObject->mShiftDownRPM = mShiftDownRPM;
     public static native void internal_native_set_mShiftDownRPM(long this_addr, float mShiftDownRPM);
 
     public float get_mClutchStrength() {
-        return internal_native_get_mClutchStrength((long) getNativeData().getCPointer());
+        return internal_native_get_mClutchStrength(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -230,7 +222,7 @@ return nativeObject->mClutchStrength;
     public static native float internal_native_get_mClutchStrength(long this_addr);
 
     public void set_mClutchStrength(float mClutchStrength) {
-        internal_native_set_mClutchStrength((long) getNativeData().getCPointer(), mClutchStrength);
+        internal_native_set_mClutchStrength(native_address, mClutchStrength);
     }
 
     /*[-JNI;-NATIVE]

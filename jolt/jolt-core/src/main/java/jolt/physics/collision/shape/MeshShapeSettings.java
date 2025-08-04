@@ -28,7 +28,7 @@ public class MeshShapeSettings extends ShapeSettings {
     public MeshShapeSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -38,8 +38,8 @@ return (jlong)new MeshShapeSettings();
 
     public MeshShapeSettings(TriangleList inTriangleList, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_TriangleList_PhysicsMaterialList((long) (inTriangleList != null ? inTriangleList.getNativeData().getCPointer() : 0), (long) (inMaterialList != null ? inMaterialList.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_TriangleList_PhysicsMaterialList((inTriangleList != null ? inTriangleList.native_address : 0), (inMaterialList != null ? inMaterialList.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -49,8 +49,8 @@ return (jlong)new MeshShapeSettings(*((TriangleList* )inTriangleList_addr), *((P
 
     public MeshShapeSettings(TriangleList inTriangleList) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_TriangleList((long) (inTriangleList != null ? inTriangleList.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_TriangleList((inTriangleList != null ? inTriangleList.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -60,8 +60,8 @@ return (jlong)new MeshShapeSettings(*((TriangleList* )inTriangleList_addr));
 
     public MeshShapeSettings(VertexList inVertices, IndexedTriangleList inTriangles, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList((long) (inVertices != null ? inVertices.getNativeData().getCPointer() : 0), (long) (inTriangles != null ? inTriangles.getNativeData().getCPointer() : 0), (long) (inMaterialList != null ? inMaterialList.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList((inVertices != null ? inVertices.native_address : 0), (inTriangles != null ? inTriangles.native_address : 0), (inMaterialList != null ? inMaterialList.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -78,7 +78,7 @@ return (jlong)new MeshShapeSettings(*((VertexList* )inVertices_addr), *((Indexed
     }
 
     public void Sanitize() {
-        internal_native_Sanitize((long) getNativeData().getCPointer());
+        internal_native_Sanitize(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -88,12 +88,12 @@ nativeObject->Sanitize();
     public static native void internal_native_Sanitize(long this_addr);
 
     public VertexList get_mTriangleVertices() {
-        long pointer = internal_native_get_mTriangleVertices((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mTriangleVertices(native_address);
         if (pointer == 0)
             return null;
         if (VertexList_TEMP_GEN_0 == null)
             VertexList_TEMP_GEN_0 = new VertexList((byte) 1, (char) 1);
-        VertexList_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VertexList_TEMP_GEN_0.internal_reset(pointer, false);
         return VertexList_TEMP_GEN_0;
     }
 
@@ -104,7 +104,7 @@ return (jlong)&nativeObject->mTriangleVertices;
     public static native long internal_native_get_mTriangleVertices(long this_addr);
 
     public void set_mTriangleVertices(VertexList mTriangleVertices) {
-        internal_native_set_mTriangleVertices((long) getNativeData().getCPointer(), (long) (mTriangleVertices != null ? mTriangleVertices.getNativeData().getCPointer() : 0));
+        internal_native_set_mTriangleVertices(native_address, (mTriangleVertices != null ? mTriangleVertices.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -114,12 +114,12 @@ nativeObject->mTriangleVertices = *((VertexList*)mTriangleVertices_addr);
     public static native void internal_native_set_mTriangleVertices(long this_addr, long mTriangleVertices_addr);
 
     public IndexedTriangleList get_mIndexedTriangles() {
-        long pointer = internal_native_get_mIndexedTriangles((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mIndexedTriangles(native_address);
         if (pointer == 0)
             return null;
         if (IndexedTriangleList_TEMP_GEN_0 == null)
             IndexedTriangleList_TEMP_GEN_0 = new IndexedTriangleList((byte) 1, (char) 1);
-        IndexedTriangleList_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        IndexedTriangleList_TEMP_GEN_0.internal_reset(pointer, false);
         return IndexedTriangleList_TEMP_GEN_0;
     }
 
@@ -130,7 +130,7 @@ return (jlong)&nativeObject->mIndexedTriangles;
     public static native long internal_native_get_mIndexedTriangles(long this_addr);
 
     public void set_mIndexedTriangles(IndexedTriangleList mIndexedTriangles) {
-        internal_native_set_mIndexedTriangles((long) getNativeData().getCPointer(), (long) (mIndexedTriangles != null ? mIndexedTriangles.getNativeData().getCPointer() : 0));
+        internal_native_set_mIndexedTriangles(native_address, (mIndexedTriangles != null ? mIndexedTriangles.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -140,12 +140,12 @@ nativeObject->mIndexedTriangles = *((IndexedTriangleList*)mIndexedTriangles_addr
     public static native void internal_native_set_mIndexedTriangles(long this_addr, long mIndexedTriangles_addr);
 
     public PhysicsMaterialList get_mMaterials() {
-        long pointer = internal_native_get_mMaterials((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mMaterials(native_address);
         if (pointer == 0)
             return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
-        PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
 
@@ -156,7 +156,7 @@ return (jlong)&nativeObject->mMaterials;
     public static native long internal_native_get_mMaterials(long this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
-        internal_native_set_mMaterials((long) getNativeData().getCPointer(), (long) (mMaterials != null ? mMaterials.getNativeData().getCPointer() : 0));
+        internal_native_set_mMaterials(native_address, (mMaterials != null ? mMaterials.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -166,7 +166,7 @@ nativeObject->mMaterials = *((PhysicsMaterialList*)mMaterials_addr);
     public static native void internal_native_set_mMaterials(long this_addr, long mMaterials_addr);
 
     public int get_mMaxTrianglesPerLeaf() {
-        return internal_native_get_mMaxTrianglesPerLeaf((long) getNativeData().getCPointer());
+        return internal_native_get_mMaxTrianglesPerLeaf(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -176,7 +176,7 @@ return nativeObject->mMaxTrianglesPerLeaf;
     public static native int internal_native_get_mMaxTrianglesPerLeaf(long this_addr);
 
     public void set_mMaxTrianglesPerLeaf(int mMaxTrianglesPerLeaf) {
-        internal_native_set_mMaxTrianglesPerLeaf((long) getNativeData().getCPointer(), mMaxTrianglesPerLeaf);
+        internal_native_set_mMaxTrianglesPerLeaf(native_address, mMaxTrianglesPerLeaf);
     }
 
     /*[-JNI;-NATIVE]
@@ -186,7 +186,7 @@ nativeObject->mMaxTrianglesPerLeaf = mMaxTrianglesPerLeaf;
     public static native void internal_native_set_mMaxTrianglesPerLeaf(long this_addr, int mMaxTrianglesPerLeaf);
 
     public float get_mActiveEdgeCosThresholdAngle() {
-        return internal_native_get_mActiveEdgeCosThresholdAngle((long) getNativeData().getCPointer());
+        return internal_native_get_mActiveEdgeCosThresholdAngle(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -196,7 +196,7 @@ return nativeObject->mActiveEdgeCosThresholdAngle;
     public static native float internal_native_get_mActiveEdgeCosThresholdAngle(long this_addr);
 
     public void set_mActiveEdgeCosThresholdAngle(float mActiveEdgeCosThresholdAngle) {
-        internal_native_set_mActiveEdgeCosThresholdAngle((long) getNativeData().getCPointer(), mActiveEdgeCosThresholdAngle);
+        internal_native_set_mActiveEdgeCosThresholdAngle(native_address, mActiveEdgeCosThresholdAngle);
     }
 
     /*[-JNI;-NATIVE]
@@ -206,7 +206,7 @@ nativeObject->mActiveEdgeCosThresholdAngle = mActiveEdgeCosThresholdAngle;
     public static native void internal_native_set_mActiveEdgeCosThresholdAngle(long this_addr, float mActiveEdgeCosThresholdAngle);
 
     public boolean get_mPerTriangleUserData() {
-        return internal_native_get_mPerTriangleUserData((long) getNativeData().getCPointer());
+        return internal_native_get_mPerTriangleUserData(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -216,7 +216,7 @@ return nativeObject->mPerTriangleUserData;
     public static native boolean internal_native_get_mPerTriangleUserData(long this_addr);
 
     public void set_mPerTriangleUserData(boolean mPerTriangleUserData) {
-        internal_native_set_mPerTriangleUserData((long) getNativeData().getCPointer(), mPerTriangleUserData);
+        internal_native_set_mPerTriangleUserData(native_address, mPerTriangleUserData);
     }
 
     /*[-JNI;-NATIVE]
@@ -226,7 +226,7 @@ nativeObject->mPerTriangleUserData = mPerTriangleUserData;
     public static native void internal_native_set_mPerTriangleUserData(long this_addr, boolean mPerTriangleUserData);
 
     public MeshShapeSettings_EBuildQuality get_mBuildQuality() {
-        int value = internal_native_get_mBuildQuality((long) getNativeData().getCPointer());
+        int value = internal_native_get_mBuildQuality(native_address);
         return MeshShapeSettings_EBuildQuality.MAP.get(value);
     }
 
@@ -237,7 +237,7 @@ return (jint)nativeObject->mBuildQuality;
     public static native int internal_native_get_mBuildQuality(long this_addr);
 
     public void set_mBuildQuality(MeshShapeSettings_EBuildQuality mBuildQuality) {
-        internal_native_set_mBuildQuality((long) getNativeData().getCPointer(), (long) (mBuildQuality != null ? mBuildQuality.getValue() : 0));
+        internal_native_set_mBuildQuality(native_address, (mBuildQuality != null ? mBuildQuality.getValue() : 0));
     }
 
     /*[-JNI;-NATIVE]

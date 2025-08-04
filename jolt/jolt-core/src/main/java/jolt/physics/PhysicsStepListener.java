@@ -37,16 +37,8 @@ virtual void OnStep(const PhysicsStepListenerContext& inContext) {
     public PhysicsStepListener(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -57,21 +49,21 @@ delete nativeObject;
 
     public PhysicsStepListener() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected void OnStep(PhysicsStepListenerContext inContext) {
     }
 
-    private void internal_OnStep(long inContext) {
+    private void internal_OnStep(long inContext_addr) {
         if (PhysicsStepListenerContext_TEMP_STATIC_GEN_0 == null)
             PhysicsStepListenerContext_TEMP_STATIC_GEN_0 = new PhysicsStepListenerContext((byte) 1, (char) 1);
-        PhysicsStepListenerContext_TEMP_STATIC_GEN_0.getNativeData().reset(inContext, false);
+        PhysicsStepListenerContext_TEMP_STATIC_GEN_0.internal_reset(inContext_addr, false);
         OnStep(PhysicsStepListenerContext_TEMP_STATIC_GEN_0);
     }
 

@@ -28,8 +28,8 @@ public class Plane extends IDLBase {
     static public final Plane T_03 = new Plane((byte) 1, (char) 1);
 
     public Plane(Vec3 inNormal, float inConstant) {
-        long addr = internal_native_create_Vec3_float((long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0), inConstant);
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_Vec3_float((inNormal != null ? inNormal.native_address : 0), inConstant);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -44,16 +44,8 @@ return (jlong)new Plane(*((Vec3* )inNormal_addr), (float)inConstant);
     public Plane(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -63,12 +55,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 GetNormal() {
-        long pointer = internal_native_GetNormal((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetNormal(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -80,7 +72,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetNormal(long this_addr);
 
     public void SetNormal(Vec3 inNormal) {
-        internal_native_SetNormal((long) getNativeData().getCPointer(), (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
+        internal_native_SetNormal(native_address, (inNormal != null ? inNormal.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -90,7 +82,7 @@ nativeObject->SetNormal(*((Vec3* )inNormal_addr));
     public static native void internal_native_SetNormal(long this_addr, long inNormal_addr);
 
     public float GetConstant() {
-        return internal_native_GetConstant((long) getNativeData().getCPointer());
+        return internal_native_GetConstant(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -100,7 +92,7 @@ return nativeObject->GetConstant();
     public static native float internal_native_GetConstant(long this_addr);
 
     public void SetConstant(float inConstant) {
-        internal_native_SetConstant((long) getNativeData().getCPointer(), inConstant);
+        internal_native_SetConstant(native_address, inConstant);
     }
 
     /*[-JNI;-NATIVE]
@@ -110,12 +102,12 @@ nativeObject->SetConstant((float)inConstant);
     public static native void internal_native_SetConstant(long this_addr, float inConstant);
 
     public Plane sFromPointAndNormal(Vec3 inPoint, Vec3 inNormal) {
-        long pointer = internal_native_sFromPointAndNormal((long) getNativeData().getCPointer(), (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sFromPointAndNormal(native_address, (inPoint != null ? inPoint.native_address : 0), (inNormal != null ? inNormal.native_address : 0));
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(pointer, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -127,12 +119,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sFromPointAndNormal(long this_addr, long inPoint_addr, long inNormal_addr);
 
     public Plane sFromPointsCCW(Vec3 inPoint1, Vec3 inPoint2, Vec3 inPoint3) {
-        long pointer = internal_native_sFromPointsCCW((long) getNativeData().getCPointer(), (long) (inPoint1 != null ? inPoint1.getNativeData().getCPointer() : 0), (long) (inPoint2 != null ? inPoint2.getNativeData().getCPointer() : 0), (long) (inPoint3 != null ? inPoint3.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sFromPointsCCW(native_address, (inPoint1 != null ? inPoint1.native_address : 0), (inPoint2 != null ? inPoint2.native_address : 0), (inPoint3 != null ? inPoint3.native_address : 0));
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_1 == null)
             Plane_TEMP_GEN_1 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_1.internal_reset(pointer, false);
         return Plane_TEMP_GEN_1;
     }
 
@@ -144,12 +136,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sFromPointsCCW(long this_addr, long inPoint1_addr, long inPoint2_addr, long inPoint3_addr);
 
     public Plane Offset(float inDistance) {
-        long pointer = internal_native_Offset((long) getNativeData().getCPointer(), inDistance);
+        long pointer = internal_native_Offset(native_address, inDistance);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_2 == null)
             Plane_TEMP_GEN_2 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_2.internal_reset(pointer, false);
         return Plane_TEMP_GEN_2;
     }
 
@@ -161,12 +153,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_Offset(long this_addr, float inDistance);
 
     public Plane GetTransformed(Mat44 inTransform) {
-        long pointer = internal_native_GetTransformed((long) getNativeData().getCPointer(), (long) (inTransform != null ? inTransform.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_GetTransformed(native_address, (inTransform != null ? inTransform.native_address : 0));
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_3 == null)
             Plane_TEMP_GEN_3 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_3.internal_reset(pointer, false);
         return Plane_TEMP_GEN_3;
     }
 
@@ -178,7 +170,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetTransformed(long this_addr, long inTransform_addr);
 
     public float SignedDistance(Vec3 inPoint) {
-        return internal_native_SignedDistance((long) getNativeData().getCPointer(), (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0));
+        return internal_native_SignedDistance(native_address, (inPoint != null ? inPoint.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

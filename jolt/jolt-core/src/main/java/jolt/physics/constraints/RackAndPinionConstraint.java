@@ -22,7 +22,7 @@ public class RackAndPinionConstraint extends TwoBodyConstraint {
     }
 
     public void SetConstraints(Constraint inPinion, Constraint inRack) {
-        internal_native_SetConstraints((long) getNativeData().getCPointer(), (long) (inPinion != null ? inPinion.getNativeData().getCPointer() : 0), (long) (inRack != null ? inRack.getNativeData().getCPointer() : 0));
+        internal_native_SetConstraints(native_address, (inPinion != null ? inPinion.native_address : 0), (inRack != null ? inRack.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -32,7 +32,7 @@ nativeObject->SetConstraints((Constraint* )inPinion_addr, (Constraint* )inRack_a
     public static native void internal_native_SetConstraints(long this_addr, long inPinion_addr, long inRack_addr);
 
     public float GetTotalLambda() {
-        return internal_native_GetTotalLambda((long) getNativeData().getCPointer());
+        return internal_native_GetTotalLambda(native_address);
     }
 
     /*[-JNI;-NATIVE]

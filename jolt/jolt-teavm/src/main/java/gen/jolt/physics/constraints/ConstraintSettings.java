@@ -22,16 +22,8 @@ public class ConstraintSettings extends IDLBase {
     public ConstraintSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -42,7 +34,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public boolean get_mEnabled() {
-        return internal_native_get_mEnabled((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mEnabled(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +79,7 @@ return jsObj.get_mEnabled();
     public static native boolean internal_native_get_mEnabled(int this_addr);
 
     public void set_mEnabled(boolean mEnabled) {
-        internal_native_set_mEnabled((int) (long) getNativeData().getCPointer(), mEnabled);
+        internal_native_set_mEnabled(native_address, mEnabled);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -98,7 +90,7 @@ jsObj.set_mEnabled(mEnabled);
     public static native void internal_native_set_mEnabled(int this_addr, boolean mEnabled);
 
     public int get_mConstraintPriority() {
-        return internal_native_get_mConstraintPriority((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mConstraintPriority(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -109,7 +101,7 @@ return jsObj.get_mConstraintPriority();
     public static native int internal_native_get_mConstraintPriority(int this_addr);
 
     public void set_mConstraintPriority(int mConstraintPriority) {
-        internal_native_set_mConstraintPriority((int) (long) getNativeData().getCPointer(), mConstraintPriority);
+        internal_native_set_mConstraintPriority(native_address, mConstraintPriority);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -120,7 +112,7 @@ jsObj.set_mConstraintPriority(mConstraintPriority);
     public static native void internal_native_set_mConstraintPriority(int this_addr, int mConstraintPriority);
 
     public int get_mNumVelocityStepsOverride() {
-        return internal_native_get_mNumVelocityStepsOverride((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mNumVelocityStepsOverride(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -131,7 +123,7 @@ return jsObj.get_mNumVelocityStepsOverride();
     public static native int internal_native_get_mNumVelocityStepsOverride(int this_addr);
 
     public void set_mNumVelocityStepsOverride(int mNumVelocityStepsOverride) {
-        internal_native_set_mNumVelocityStepsOverride((int) (long) getNativeData().getCPointer(), mNumVelocityStepsOverride);
+        internal_native_set_mNumVelocityStepsOverride(native_address, mNumVelocityStepsOverride);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -142,7 +134,7 @@ jsObj.set_mNumVelocityStepsOverride(mNumVelocityStepsOverride);
     public static native void internal_native_set_mNumVelocityStepsOverride(int this_addr, int mNumVelocityStepsOverride);
 
     public int get_mNumPositionStepsOverride() {
-        return internal_native_get_mNumPositionStepsOverride((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mNumPositionStepsOverride(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -153,7 +145,7 @@ return jsObj.get_mNumPositionStepsOverride();
     public static native int internal_native_get_mNumPositionStepsOverride(int this_addr);
 
     public void set_mNumPositionStepsOverride(int mNumPositionStepsOverride) {
-        internal_native_set_mNumPositionStepsOverride((int) (long) getNativeData().getCPointer(), mNumPositionStepsOverride);
+        internal_native_set_mNumPositionStepsOverride(native_address, mNumPositionStepsOverride);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -164,7 +156,7 @@ jsObj.set_mNumPositionStepsOverride(mNumPositionStepsOverride);
     public static native void internal_native_set_mNumPositionStepsOverride(int this_addr, int mNumPositionStepsOverride);
 
     public float get_mDrawConstraintSize() {
-        return internal_native_get_mDrawConstraintSize((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawConstraintSize(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -175,7 +167,7 @@ return jsObj.get_mDrawConstraintSize();
     public static native float internal_native_get_mDrawConstraintSize(int this_addr);
 
     public void set_mDrawConstraintSize(float mDrawConstraintSize) {
-        internal_native_set_mDrawConstraintSize((int) (long) getNativeData().getCPointer(), mDrawConstraintSize);
+        internal_native_set_mDrawConstraintSize(native_address, mDrawConstraintSize);
     }
 
     /*[-TEAVM;-NATIVE]

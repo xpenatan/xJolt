@@ -21,16 +21,8 @@ public class VehicleTransmission extends VehicleTransmissionSettings {
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,7 +32,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void Set(int inCurrentGear, float inClutchFriction) {
-        internal_native_Set((long) getNativeData().getCPointer(), inCurrentGear, inClutchFriction);
+        internal_native_Set(native_address, inCurrentGear, inClutchFriction);
     }
 
     /*[-JNI;-NATIVE]
@@ -50,7 +42,7 @@ nativeObject->Set((int)inCurrentGear, (float)inClutchFriction);
     public static native void internal_native_Set(long this_addr, int inCurrentGear, float inClutchFriction);
 
     public int GetCurrentGear() {
-        return internal_native_GetCurrentGear((long) getNativeData().getCPointer());
+        return internal_native_GetCurrentGear(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -60,7 +52,7 @@ return nativeObject->GetCurrentGear();
     public static native int internal_native_GetCurrentGear(long this_addr);
 
     public float GetClutchFriction() {
-        return internal_native_GetClutchFriction((long) getNativeData().getCPointer());
+        return internal_native_GetClutchFriction(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -70,7 +62,7 @@ return nativeObject->GetClutchFriction();
     public static native float internal_native_GetClutchFriction(long this_addr);
 
     public boolean IsSwitchingGear() {
-        return internal_native_IsSwitchingGear((long) getNativeData().getCPointer());
+        return internal_native_IsSwitchingGear(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -80,7 +72,7 @@ return nativeObject->IsSwitchingGear();
     public static native boolean internal_native_IsSwitchingGear(long this_addr);
 
     public float GetCurrentRatio() {
-        return internal_native_GetCurrentRatio((long) getNativeData().getCPointer());
+        return internal_native_GetCurrentRatio(native_address);
     }
 
     /*[-JNI;-NATIVE]

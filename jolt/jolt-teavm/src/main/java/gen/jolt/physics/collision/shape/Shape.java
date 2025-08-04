@@ -52,7 +52,7 @@ public class Shape extends IDLBase {
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -64,7 +64,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -75,7 +75,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -86,7 +86,7 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public EShapeType GetType() {
-        int value = internal_native_GetType((int) (long) getNativeData().getCPointer());
+        int value = internal_native_GetType(native_address);
         return EShapeType.MAP.get(value);
     }
 
@@ -99,7 +99,7 @@ return returnedJSObj;
     public static native int internal_native_GetType(int this_addr);
 
     public EShapeSubType GetSubType() {
-        int value = internal_native_GetSubType((int) (long) getNativeData().getCPointer());
+        int value = internal_native_GetSubType(native_address);
         return EShapeSubType.MAP.get(value);
     }
 
@@ -112,7 +112,7 @@ return returnedJSObj;
     public static native int internal_native_GetSubType(int this_addr);
 
     public boolean MustBeStatic() {
-        return internal_native_MustBeStatic((int) (long) getNativeData().getCPointer());
+        return internal_native_MustBeStatic(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -124,12 +124,12 @@ return returnedJSObj;
     public static native boolean internal_native_MustBeStatic(int this_addr);
 
     public AABox GetLocalBounds() {
-        int pointer = internal_native_GetLocalBounds((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetLocalBounds(native_address);
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -143,12 +143,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetLocalBounds(int this_addr);
 
     public AABox GetWorldSpaceBounds(Mat44 inCenterOfMassTransform, Vec3 inScale) {
-        int pointer = internal_native_GetWorldSpaceBounds((int) (long) getNativeData().getCPointer(), (int) (long) (inCenterOfMassTransform != null ? inCenterOfMassTransform.getNativeData().getCPointer() : 0), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_GetWorldSpaceBounds(native_address, (inCenterOfMassTransform != null ? inCenterOfMassTransform.native_address : 0), (inScale != null ? inScale.native_address : 0));
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        AABox_TEMP_GEN_1.internal_reset(pointer, false);
         return AABox_TEMP_GEN_1;
     }
 
@@ -162,12 +162,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetWorldSpaceBounds(int this_addr, int inCenterOfMassTransform_addr, int inScale_addr);
 
     public Vec3 GetCenterOfMass() {
-        int pointer = internal_native_GetCenterOfMass((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetCenterOfMass(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -181,7 +181,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetCenterOfMass(int this_addr);
 
     public long GetUserData() {
-        return internal_native_GetUserData((int) (long) getNativeData().getCPointer());
+        return internal_native_GetUserData(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -193,7 +193,7 @@ return returnedJSObj;
     public static native int internal_native_GetUserData(int this_addr);
 
     public void SetUserData(long inUserData) {
-        internal_native_SetUserData((int) (long) getNativeData().getCPointer(), (int) inUserData);
+        internal_native_SetUserData(native_address, (int) inUserData);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -204,7 +204,7 @@ jsObj.SetUserData(inUserData);
     public static native void internal_native_SetUserData(int this_addr, int inUserData);
 
     public int GetSubShapeIDBitsRecursive() {
-        return internal_native_GetSubShapeIDBitsRecursive((int) (long) getNativeData().getCPointer());
+        return internal_native_GetSubShapeIDBitsRecursive(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -216,7 +216,7 @@ return returnedJSObj;
     public static native int internal_native_GetSubShapeIDBitsRecursive(int this_addr);
 
     public float GetInnerRadius() {
-        return internal_native_GetInnerRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_GetInnerRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -228,12 +228,12 @@ return returnedJSObj;
     public static native float internal_native_GetInnerRadius(int this_addr);
 
     public MassProperties GetMassProperties() {
-        int pointer = internal_native_GetMassProperties((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetMassProperties(native_address);
         if (pointer == 0)
             return null;
         if (MassProperties_TEMP_GEN_0 == null)
             MassProperties_TEMP_GEN_0 = new MassProperties((byte) 1, (char) 1);
-        MassProperties_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        MassProperties_TEMP_GEN_0.internal_reset(pointer, false);
         return MassProperties_TEMP_GEN_0;
     }
 
@@ -247,12 +247,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetMassProperties(int this_addr);
 
     public Shape GetLeafShape(SubShapeID inSubShapeID, SubShapeID outRemainder) {
-        int pointer = internal_native_GetLeafShape((int) (long) getNativeData().getCPointer(), (int) (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0), (int) (long) (outRemainder != null ? outRemainder.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_GetLeafShape(native_address, (inSubShapeID != null ? inSubShapeID.native_address : 0), (outRemainder != null ? outRemainder.native_address : 0));
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
-        Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -266,12 +266,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetLeafShape(int this_addr, int inSubShapeID_addr, int outRemainder_addr);
 
     public PhysicsMaterial GetMaterial(SubShapeID inSubShapeID) {
-        int pointer = internal_native_GetMaterial((int) (long) getNativeData().getCPointer(), (int) (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_GetMaterial(native_address, (inSubShapeID != null ? inSubShapeID.native_address : 0));
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = new PhysicsMaterial((byte) 1, (char) 1);
-        PhysicsMaterial_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -285,12 +285,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetMaterial(int this_addr, int inSubShapeID_addr);
 
     public Vec3 GetSurfaceNormal(SubShapeID inSubShapeID, Vec3 inLocalSurfacePosition) {
-        int pointer = internal_native_GetSurfaceNormal((int) (long) getNativeData().getCPointer(), (int) (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0), (int) (long) (inLocalSurfacePosition != null ? inLocalSurfacePosition.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_GetSurfaceNormal(native_address, (inSubShapeID != null ? inSubShapeID.native_address : 0), (inLocalSurfacePosition != null ? inLocalSurfacePosition.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -304,7 +304,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetSurfaceNormal(int this_addr, int inSubShapeID_addr, int inLocalSurfacePosition_addr);
 
     public long GetSubShapeUserData(SubShapeID inSubShapeID) {
-        return internal_native_GetSubShapeUserData((int) (long) getNativeData().getCPointer(), (int) (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0));
+        return internal_native_GetSubShapeUserData(native_address, (inSubShapeID != null ? inSubShapeID.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -316,12 +316,12 @@ return returnedJSObj;
     public static native int internal_native_GetSubShapeUserData(int this_addr, int inSubShapeID_addr);
 
     public TransformedShape GetSubShapeTransformedShape(SubShapeID inSubShapeID, Vec3 inPositionCOM, Quat inRotation, Vec3 inScale, SubShapeID outRemainder) {
-        int pointer = internal_native_GetSubShapeTransformedShape((int) (long) getNativeData().getCPointer(), (int) (long) (inSubShapeID != null ? inSubShapeID.getNativeData().getCPointer() : 0), (int) (long) (inPositionCOM != null ? inPositionCOM.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0), (int) (long) (outRemainder != null ? outRemainder.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_GetSubShapeTransformedShape(native_address, (inSubShapeID != null ? inSubShapeID.native_address : 0), (inPositionCOM != null ? inPositionCOM.native_address : 0), (inRotation != null ? inRotation.native_address : 0), (inScale != null ? inScale.native_address : 0), (outRemainder != null ? outRemainder.native_address : 0));
         if (pointer == 0)
             return null;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = new TransformedShape((byte) 1, (char) 1);
-        TransformedShape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
         return TransformedShape_TEMP_GEN_0;
     }
 
@@ -335,7 +335,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetSubShapeTransformedShape(int this_addr, int inSubShapeID_addr, int inPositionCOM_addr, int inRotation_addr, int inScale_addr, int outRemainder_addr);
 
     public float GetVolume() {
-        return internal_native_GetVolume((int) (long) getNativeData().getCPointer());
+        return internal_native_GetVolume(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -347,7 +347,7 @@ return returnedJSObj;
     public static native float internal_native_GetVolume(int this_addr);
 
     public boolean IsValidScale(Vec3 inScale) {
-        return internal_native_IsValidScale((int) (long) getNativeData().getCPointer(), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
+        return internal_native_IsValidScale(native_address, (inScale != null ? inScale.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -359,12 +359,12 @@ return returnedJSObj;
     public static native boolean internal_native_IsValidScale(int this_addr, int inScale_addr);
 
     public Vec3 MakeScaleValid(Vec3 inScale) {
-        int pointer = internal_native_MakeScaleValid((int) (long) getNativeData().getCPointer(), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_MakeScaleValid(native_address, (inScale != null ? inScale.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -378,12 +378,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_MakeScaleValid(int this_addr, int inScale_addr);
 
     public ShapeResult ScaleShape(Vec3 inScale) {
-        int pointer = internal_native_ScaleShape((int) (long) getNativeData().getCPointer(), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_ScaleShape(native_address, (inScale != null ? inScale.native_address : 0));
         if (pointer == 0)
             return null;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = new ShapeResult((byte) 1, (char) 1);
-        ShapeResult_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ShapeResult_TEMP_GEN_0;
     }
 

@@ -25,7 +25,7 @@ public class Constraint extends IDLBase {
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -35,7 +35,7 @@ return nativeObject->GetRefCount();
     public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,7 +45,7 @@ nativeObject->AddRef();
     public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
-        internal_native_Release((long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -55,7 +55,7 @@ nativeObject->Release();
     public static native void internal_native_Release(long this_addr);
 
     public EConstraintType GetType() {
-        int value = internal_native_GetType((long) getNativeData().getCPointer());
+        int value = internal_native_GetType(native_address);
         return EConstraintType.MAP.get(value);
     }
 
@@ -66,7 +66,7 @@ return (int)nativeObject->GetType();
     public static native int internal_native_GetType(long this_addr);
 
     public EConstraintSubType GetSubType() {
-        int value = internal_native_GetSubType((long) getNativeData().getCPointer());
+        int value = internal_native_GetSubType(native_address);
         return EConstraintSubType.MAP.get(value);
     }
 
@@ -77,7 +77,7 @@ return (int)nativeObject->GetSubType();
     public static native int internal_native_GetSubType(long this_addr);
 
     public int GetConstraintPriority() {
-        return internal_native_GetConstraintPriority((long) getNativeData().getCPointer());
+        return internal_native_GetConstraintPriority(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -87,7 +87,7 @@ return nativeObject->GetConstraintPriority();
     public static native int internal_native_GetConstraintPriority(long this_addr);
 
     public void SetConstraintPriority(int inPriority) {
-        internal_native_SetConstraintPriority((long) getNativeData().getCPointer(), inPriority);
+        internal_native_SetConstraintPriority(native_address, inPriority);
     }
 
     /*[-JNI;-NATIVE]
@@ -97,7 +97,7 @@ nativeObject->SetConstraintPriority(inPriority);
     public static native void internal_native_SetConstraintPriority(long this_addr, int inPriority);
 
     public void SetNumVelocityStepsOverride(int inN) {
-        internal_native_SetNumVelocityStepsOverride((long) getNativeData().getCPointer(), inN);
+        internal_native_SetNumVelocityStepsOverride(native_address, inN);
     }
 
     /*[-JNI;-NATIVE]
@@ -107,7 +107,7 @@ nativeObject->SetNumVelocityStepsOverride((int)inN);
     public static native void internal_native_SetNumVelocityStepsOverride(long this_addr, int inN);
 
     public int GetNumVelocityStepsOverride() {
-        return internal_native_GetNumVelocityStepsOverride((long) getNativeData().getCPointer());
+        return internal_native_GetNumVelocityStepsOverride(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -117,7 +117,7 @@ return nativeObject->GetNumVelocityStepsOverride();
     public static native int internal_native_GetNumVelocityStepsOverride(long this_addr);
 
     public void SetNumPositionStepsOverride(int inN) {
-        internal_native_SetNumPositionStepsOverride((long) getNativeData().getCPointer(), inN);
+        internal_native_SetNumPositionStepsOverride(native_address, inN);
     }
 
     /*[-JNI;-NATIVE]
@@ -127,7 +127,7 @@ nativeObject->SetNumPositionStepsOverride((int)inN);
     public static native void internal_native_SetNumPositionStepsOverride(long this_addr, int inN);
 
     public int GetNumPositionStepsOverride() {
-        return internal_native_GetNumPositionStepsOverride((long) getNativeData().getCPointer());
+        return internal_native_GetNumPositionStepsOverride(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -137,7 +137,7 @@ return nativeObject->GetNumPositionStepsOverride();
     public static native int internal_native_GetNumPositionStepsOverride(long this_addr);
 
     public void SetEnabled(boolean inEnabled) {
-        internal_native_SetEnabled((long) getNativeData().getCPointer(), inEnabled);
+        internal_native_SetEnabled(native_address, inEnabled);
     }
 
     /*[-JNI;-NATIVE]
@@ -147,7 +147,7 @@ nativeObject->SetEnabled(inEnabled);
     public static native void internal_native_SetEnabled(long this_addr, boolean inEnabled);
 
     public boolean GetEnabled() {
-        return internal_native_GetEnabled((long) getNativeData().getCPointer());
+        return internal_native_GetEnabled(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -157,7 +157,7 @@ return nativeObject->GetEnabled();
     public static native boolean internal_native_GetEnabled(long this_addr);
 
     public boolean IsActive() {
-        return internal_native_IsActive((long) getNativeData().getCPointer());
+        return internal_native_IsActive(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -167,7 +167,7 @@ return nativeObject->IsActive();
     public static native boolean internal_native_IsActive(long this_addr);
 
     public long GetUserData() {
-        return internal_native_GetUserData((long) getNativeData().getCPointer());
+        return internal_native_GetUserData(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -177,7 +177,7 @@ return nativeObject->GetUserData();
     public static native long internal_native_GetUserData(long this_addr);
 
     public void SetUserData(long inUserData) {
-        internal_native_SetUserData((long) getNativeData().getCPointer(), inUserData);
+        internal_native_SetUserData(native_address, inUserData);
     }
 
     /*[-JNI;-NATIVE]
@@ -187,7 +187,7 @@ nativeObject->SetUserData(inUserData);
     public static native void internal_native_SetUserData(long this_addr, long inUserData);
 
     public void ResetWarmStart() {
-        internal_native_ResetWarmStart((long) getNativeData().getCPointer());
+        internal_native_ResetWarmStart(native_address);
     }
 
     /*[-JNI;-NATIVE]

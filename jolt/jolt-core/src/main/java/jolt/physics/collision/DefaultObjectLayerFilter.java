@@ -15,8 +15,8 @@ public class DefaultObjectLayerFilter extends ObjectLayerFilter {
 
     public DefaultObjectLayerFilter(ObjectLayerPairFilter inFilter, int inObjectLayer) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_ObjectLayerPairFilter_int((long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0), inObjectLayer);
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_ObjectLayerPairFilter_int((inFilter != null ? inFilter.native_address : 0), inObjectLayer);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new DefaultObjectLayerFilter(*((ObjectLayerPairFilter* )inFilter_a
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]

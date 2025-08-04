@@ -22,7 +22,7 @@ public class GearConstraint extends TwoBodyConstraint {
     }
 
     public void SetConstraints(Constraint inGear1, Constraint inGear2) {
-        internal_native_SetConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (inGear1 != null ? inGear1.getNativeData().getCPointer() : 0), (int) (long) (inGear2 != null ? inGear2.getNativeData().getCPointer() : 0));
+        internal_native_SetConstraints(native_address, (inGear1 != null ? inGear1.native_address : 0), (inGear2 != null ? inGear2.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -33,7 +33,7 @@ jsObj.SetConstraints(inGear1_addr, inGear2_addr);
     public static native void internal_native_SetConstraints(int this_addr, int inGear1_addr, int inGear2_addr);
 
     public float GetTotalLambda() {
-        return internal_native_GetTotalLambda((int) (long) getNativeData().getCPointer());
+        return internal_native_GetTotalLambda(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

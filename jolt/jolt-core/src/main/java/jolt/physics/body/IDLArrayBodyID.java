@@ -19,7 +19,7 @@ public class IDLArrayBodyID extends IDLBase {
 
     public IDLArrayBodyID(int size) {
         long addr = internal_native_create_int(size);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,16 +34,8 @@ return (jlong)new IDLArrayBodyID((int)size);
     public IDLArrayBodyID(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,7 +45,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void resize(int size) {
-        internal_native_resize((long) getNativeData().getCPointer(), size);
+        internal_native_resize(native_address, size);
     }
 
     /*[-JNI;-NATIVE]
@@ -63,7 +55,7 @@ nativeObject->resize((int)size);
     public static native void internal_native_resize(long this_addr, int size);
 
     public void clear() {
-        internal_native_clear((long) getNativeData().getCPointer());
+        internal_native_clear(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -73,12 +65,12 @@ nativeObject->clear();
     public static native void internal_native_clear(long this_addr);
 
     public BodyID getValue(int index) {
-        long pointer = internal_native_getValue((long) getNativeData().getCPointer(), index);
+        long pointer = internal_native_getValue(native_address, index);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -90,7 +82,7 @@ return (jlong)obj;
     public static native long internal_native_getValue(long this_addr, int index);
 
     public void setValue(int index, BodyID value) {
-        internal_native_setValue((long) getNativeData().getCPointer(), index, (long) (value != null ? value.getNativeData().getCPointer() : 0));
+        internal_native_setValue(native_address, index, (value != null ? value.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -100,7 +92,7 @@ nativeObject->setValue((int)index, (BodyID* )value_addr);
     public static native void internal_native_setValue(long this_addr, int index, long value_addr);
 
     public int getSize() {
-        return internal_native_getSize((long) getNativeData().getCPointer());
+        return internal_native_getSize(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -110,7 +102,7 @@ return nativeObject->getSize();
     public static native int internal_native_getSize(long this_addr);
 
     public long getPointer() {
-        return internal_native_getPointer((long) getNativeData().getCPointer());
+        return internal_native_getPointer(native_address);
     }
 
     /*[-JNI;-NATIVE]

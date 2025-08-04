@@ -32,8 +32,8 @@ public class Wheel extends IDLBase {
     static public final Wheel T_03 = new Wheel((byte) 1, (char) 1);
 
     public Wheel(WheelSettings inSettings) {
-        int addr = internal_native_create_WheelSettings((int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_WheelSettings((inSettings != null ? inSettings.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -50,16 +50,8 @@ return jolt.getPointer(jsObj);
     public Wheel(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -70,12 +62,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public WheelSettings GetSettings() {
-        int pointer = internal_native_GetSettings((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetSettings(native_address);
         if (pointer == 0)
             return null;
         if (WheelSettings_TEMP_GEN_0 == null)
             WheelSettings_TEMP_GEN_0 = new WheelSettings((byte) 1, (char) 1);
-        WheelSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        WheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return WheelSettings_TEMP_GEN_0;
     }
 
@@ -89,7 +81,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetSettings(int this_addr);
 
     public float GetAngularVelocity() {
-        return internal_native_GetAngularVelocity((int) (long) getNativeData().getCPointer());
+        return internal_native_GetAngularVelocity(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -101,7 +93,7 @@ return returnedJSObj;
     public static native float internal_native_GetAngularVelocity(int this_addr);
 
     public void SetAngularVelocity(float inVel) {
-        internal_native_SetAngularVelocity((int) (long) getNativeData().getCPointer(), inVel);
+        internal_native_SetAngularVelocity(native_address, inVel);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -112,7 +104,7 @@ jsObj.SetAngularVelocity(inVel);
     public static native void internal_native_SetAngularVelocity(int this_addr, float inVel);
 
     public float GetRotationAngle() {
-        return internal_native_GetRotationAngle((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRotationAngle(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -124,7 +116,7 @@ return returnedJSObj;
     public static native float internal_native_GetRotationAngle(int this_addr);
 
     public void SetRotationAngle(float inAngle) {
-        internal_native_SetRotationAngle((int) (long) getNativeData().getCPointer(), inAngle);
+        internal_native_SetRotationAngle(native_address, inAngle);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -135,7 +127,7 @@ jsObj.SetRotationAngle(inAngle);
     public static native void internal_native_SetRotationAngle(int this_addr, float inAngle);
 
     public float GetSteerAngle() {
-        return internal_native_GetSteerAngle((int) (long) getNativeData().getCPointer());
+        return internal_native_GetSteerAngle(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -147,7 +139,7 @@ return returnedJSObj;
     public static native float internal_native_GetSteerAngle(int this_addr);
 
     public void SetSteerAngle(float inAngle) {
-        internal_native_SetSteerAngle((int) (long) getNativeData().getCPointer(), inAngle);
+        internal_native_SetSteerAngle(native_address, inAngle);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -158,7 +150,7 @@ jsObj.SetSteerAngle(inAngle);
     public static native void internal_native_SetSteerAngle(int this_addr, float inAngle);
 
     public boolean HasContact() {
-        return internal_native_HasContact((int) (long) getNativeData().getCPointer());
+        return internal_native_HasContact(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -170,12 +162,12 @@ return returnedJSObj;
     public static native boolean internal_native_HasContact(int this_addr);
 
     public BodyID GetContactBodyID() {
-        int pointer = internal_native_GetContactBodyID((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetContactBodyID(native_address);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -189,12 +181,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetContactBodyID(int this_addr);
 
     public Vec3 GetContactPosition() {
-        int pointer = internal_native_GetContactPosition((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetContactPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -208,12 +200,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetContactPosition(int this_addr);
 
     public Vec3 GetContactPointVelocity() {
-        int pointer = internal_native_GetContactPointVelocity((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetContactPointVelocity(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -227,12 +219,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetContactPointVelocity(int this_addr);
 
     public Vec3 GetContactNormal() {
-        int pointer = internal_native_GetContactNormal((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetContactNormal(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -246,12 +238,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetContactNormal(int this_addr);
 
     public Vec3 GetContactLongitudinal() {
-        int pointer = internal_native_GetContactLongitudinal((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetContactLongitudinal(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -265,12 +257,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetContactLongitudinal(int this_addr);
 
     public Vec3 GetContactLateral() {
-        int pointer = internal_native_GetContactLateral((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetContactLateral(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -284,7 +276,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetContactLateral(int this_addr);
 
     public float GetSuspensionLength() {
-        return internal_native_GetSuspensionLength((int) (long) getNativeData().getCPointer());
+        return internal_native_GetSuspensionLength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -296,7 +288,7 @@ return returnedJSObj;
     public static native float internal_native_GetSuspensionLength(int this_addr);
 
     public boolean HasHitHardPoint() {
-        return internal_native_HasHitHardPoint((int) (long) getNativeData().getCPointer());
+        return internal_native_HasHitHardPoint(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -308,7 +300,7 @@ return returnedJSObj;
     public static native boolean internal_native_HasHitHardPoint(int this_addr);
 
     public float GetSuspensionLambda() {
-        return internal_native_GetSuspensionLambda((int) (long) getNativeData().getCPointer());
+        return internal_native_GetSuspensionLambda(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -320,7 +312,7 @@ return returnedJSObj;
     public static native float internal_native_GetSuspensionLambda(int this_addr);
 
     public float GetLongitudinalLambda() {
-        return internal_native_GetLongitudinalLambda((int) (long) getNativeData().getCPointer());
+        return internal_native_GetLongitudinalLambda(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -332,7 +324,7 @@ return returnedJSObj;
     public static native float internal_native_GetLongitudinalLambda(int this_addr);
 
     public float GetLateralLambda() {
-        return internal_native_GetLateralLambda((int) (long) getNativeData().getCPointer());
+        return internal_native_GetLateralLambda(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -24,7 +24,7 @@ public class DistanceConstraint extends TwoBodyConstraint {
     }
 
     public void SetDistance(float inMinDistance, float inMaxDistance) {
-        internal_native_SetDistance((long) getNativeData().getCPointer(), inMinDistance, inMaxDistance);
+        internal_native_SetDistance(native_address, inMinDistance, inMaxDistance);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,7 +34,7 @@ nativeObject->SetDistance((float)inMinDistance, (float)inMaxDistance);
     public static native void internal_native_SetDistance(long this_addr, float inMinDistance, float inMaxDistance);
 
     public float GetMinDistance() {
-        return internal_native_GetMinDistance((long) getNativeData().getCPointer());
+        return internal_native_GetMinDistance(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -44,7 +44,7 @@ return nativeObject->GetMinDistance();
     public static native float internal_native_GetMinDistance(long this_addr);
 
     public float GetMaxDistance() {
-        return internal_native_GetMaxDistance((long) getNativeData().getCPointer());
+        return internal_native_GetMaxDistance(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,12 +54,12 @@ return nativeObject->GetMaxDistance();
     public static native float internal_native_GetMaxDistance(long this_addr);
 
     public SpringSettings GetLimitsSpringSettings() {
-        long pointer = internal_native_GetLimitsSpringSettings((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetLimitsSpringSettings(native_address);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
-        SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -70,7 +70,7 @@ return (jlong)&nativeObject->GetLimitsSpringSettings();
     public static native long internal_native_GetLimitsSpringSettings(long this_addr);
 
     public void SetLimitsSpringSettings(SpringSettings inSettings) {
-        internal_native_SetLimitsSpringSettings((long) getNativeData().getCPointer(), (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0));
+        internal_native_SetLimitsSpringSettings(native_address, (inSettings != null ? inSettings.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -80,7 +80,7 @@ nativeObject->SetLimitsSpringSettings(*((SpringSettings* )inSettings_addr));
     public static native void internal_native_SetLimitsSpringSettings(long this_addr, long inSettings_addr);
 
     public float GetTotalLambdaPosition() {
-        return internal_native_GetTotalLambdaPosition((long) getNativeData().getCPointer());
+        return internal_native_GetTotalLambdaPosition(native_address);
     }
 
     /*[-JNI;-NATIVE]

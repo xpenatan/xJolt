@@ -44,16 +44,8 @@ public class SoftBodyMotionProperties extends MotionProperties {
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -64,12 +56,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public SoftBodySharedSettings GetSettings() {
-        int pointer = internal_native_GetSettings((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetSettings(native_address);
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettings_TEMP_GEN_0 == null)
             SoftBodySharedSettings_TEMP_GEN_0 = new SoftBodySharedSettings((byte) 1, (char) 1);
-        SoftBodySharedSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SoftBodySharedSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettings_TEMP_GEN_0;
     }
 
@@ -83,12 +75,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetSettings(int this_addr);
 
     public ArraySoftBodyVertex GetVertices() {
-        int pointer = internal_native_GetVertices((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetVertices(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
             ArraySoftBodyVertex_TEMP_GEN_0 = new ArraySoftBodyVertex((byte) 1, (char) 1);
-        ArraySoftBodyVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodyVertex_TEMP_GEN_0;
     }
 
@@ -102,12 +94,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetVertices(int this_addr);
 
     public SoftBodyVertex GetVertex(int inIndex) {
-        int pointer = internal_native_GetVertex((int) (long) getNativeData().getCPointer(), inIndex);
+        int pointer = internal_native_GetVertex(native_address, inIndex);
         if (pointer == 0)
             return null;
         if (SoftBodyVertex_TEMP_GEN_0 == null)
             SoftBodyVertex_TEMP_GEN_0 = new SoftBodyVertex((byte) 1, (char) 1);
-        SoftBodyVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodyVertex_TEMP_GEN_0;
     }
 
@@ -121,12 +113,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetVertex(int this_addr, int inIndex);
 
     public PhysicsMaterialList GetMaterials() {
-        int pointer = internal_native_GetMaterials((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetMaterials(native_address);
         if (pointer == 0)
             return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
-        PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
 
@@ -140,12 +132,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetMaterials(int this_addr);
 
     public ArraySoftBodySharedSettingsFace GetFaces() {
-        int pointer = internal_native_GetFaces((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetFaces(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = new ArraySoftBodySharedSettingsFace((byte) 1, (char) 1);
-        ArraySoftBodySharedSettingsFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsFace_TEMP_GEN_0;
     }
 
@@ -159,12 +151,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetFaces(int this_addr);
 
     public SoftBodySharedSettingsFace GetFace(int inIndex) {
-        int pointer = internal_native_GetFace((int) (long) getNativeData().getCPointer(), inIndex);
+        int pointer = internal_native_GetFace(native_address, inIndex);
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             SoftBodySharedSettingsFace_TEMP_GEN_0 = new SoftBodySharedSettingsFace((byte) 1, (char) 1);
-        SoftBodySharedSettingsFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsFace_TEMP_GEN_0;
     }
 
@@ -178,7 +170,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetFace(int this_addr, int inIndex);
 
     public int GetNumIterations() {
-        return internal_native_GetNumIterations((int) (long) getNativeData().getCPointer());
+        return internal_native_GetNumIterations(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -190,7 +182,7 @@ return returnedJSObj;
     public static native int internal_native_GetNumIterations(int this_addr);
 
     public void SetNumIterations(int inNumIterations) {
-        internal_native_SetNumIterations((int) (long) getNativeData().getCPointer(), inNumIterations);
+        internal_native_SetNumIterations(native_address, inNumIterations);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -201,7 +193,7 @@ jsObj.SetNumIterations(inNumIterations);
     public static native void internal_native_SetNumIterations(int this_addr, int inNumIterations);
 
     public float GetPressure() {
-        return internal_native_GetPressure((int) (long) getNativeData().getCPointer());
+        return internal_native_GetPressure(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -213,7 +205,7 @@ return returnedJSObj;
     public static native float internal_native_GetPressure(int this_addr);
 
     public void SetPressure(float inPressure) {
-        internal_native_SetPressure((int) (long) getNativeData().getCPointer(), inPressure);
+        internal_native_SetPressure(native_address, inPressure);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -224,7 +216,7 @@ jsObj.SetPressure(inPressure);
     public static native void internal_native_SetPressure(int this_addr, float inPressure);
 
     public boolean GetUpdatePosition() {
-        return internal_native_GetUpdatePosition((int) (long) getNativeData().getCPointer());
+        return internal_native_GetUpdatePosition(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -236,7 +228,7 @@ return returnedJSObj;
     public static native boolean internal_native_GetUpdatePosition(int this_addr);
 
     public void SetUpdatePosition(boolean inUpdatePosition) {
-        internal_native_SetUpdatePosition((int) (long) getNativeData().getCPointer(), inUpdatePosition);
+        internal_native_SetUpdatePosition(native_address, inUpdatePosition);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -247,7 +239,7 @@ jsObj.SetUpdatePosition(inUpdatePosition);
     public static native void internal_native_SetUpdatePosition(int this_addr, boolean inUpdatePosition);
 
     public boolean GetEnableSkinConstraints() {
-        return internal_native_GetEnableSkinConstraints((int) (long) getNativeData().getCPointer());
+        return internal_native_GetEnableSkinConstraints(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -259,7 +251,7 @@ return returnedJSObj;
     public static native boolean internal_native_GetEnableSkinConstraints(int this_addr);
 
     public void SetEnableSkinConstraints(boolean inEnableSkinConstraints) {
-        internal_native_SetEnableSkinConstraints((int) (long) getNativeData().getCPointer(), inEnableSkinConstraints);
+        internal_native_SetEnableSkinConstraints(native_address, inEnableSkinConstraints);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -270,7 +262,7 @@ jsObj.SetEnableSkinConstraints(inEnableSkinConstraints);
     public static native void internal_native_SetEnableSkinConstraints(int this_addr, boolean inEnableSkinConstraints);
 
     public float GetSkinnedMaxDistanceMultiplier() {
-        return internal_native_GetSkinnedMaxDistanceMultiplier((int) (long) getNativeData().getCPointer());
+        return internal_native_GetSkinnedMaxDistanceMultiplier(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -282,7 +274,7 @@ return returnedJSObj;
     public static native float internal_native_GetSkinnedMaxDistanceMultiplier(int this_addr);
 
     public void SetSkinnedMaxDistanceMultiplier(float inSkinnedMaxDistanceMultiplier) {
-        internal_native_SetSkinnedMaxDistanceMultiplier((int) (long) getNativeData().getCPointer(), inSkinnedMaxDistanceMultiplier);
+        internal_native_SetSkinnedMaxDistanceMultiplier(native_address, inSkinnedMaxDistanceMultiplier);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -293,12 +285,12 @@ jsObj.SetSkinnedMaxDistanceMultiplier(inSkinnedMaxDistanceMultiplier);
     public static native void internal_native_SetSkinnedMaxDistanceMultiplier(int this_addr, float inSkinnedMaxDistanceMultiplier);
 
     public AABox GetLocalBounds() {
-        int pointer = internal_native_GetLocalBounds((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetLocalBounds(native_address);
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = new AABox((byte) 1, (char) 1);
-        AABox_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -312,7 +304,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetLocalBounds(int this_addr);
 
     public void CustomUpdate(float inDeltaTime, Body ioSoftBody, PhysicsSystem inSystem) {
-        internal_native_CustomUpdate((int) (long) getNativeData().getCPointer(), inDeltaTime, (int) (long) (ioSoftBody != null ? ioSoftBody.getNativeData().getCPointer() : 0), (int) (long) (inSystem != null ? inSystem.getNativeData().getCPointer() : 0));
+        internal_native_CustomUpdate(native_address, inDeltaTime, (ioSoftBody != null ? ioSoftBody.native_address : 0), (inSystem != null ? inSystem.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -323,7 +315,7 @@ jsObj.CustomUpdate(inDeltaTime, ioSoftBody_addr, inSystem_addr);
     public static native void internal_native_CustomUpdate(int this_addr, float inDeltaTime, int ioSoftBody_addr, int inSystem_addr);
 
     public void SkinVertices(Mat44 inRootTransform, Mat44MemRef inJointMatrices, int inNumJoints, boolean inHardSkinAll, TempAllocator ioTempAllocator) {
-        internal_native_SkinVertices((int) (long) getNativeData().getCPointer(), (int) (long) (inRootTransform != null ? inRootTransform.getNativeData().getCPointer() : 0), (int) (long) (inJointMatrices != null ? inJointMatrices.getNativeData().getCPointer() : 0), inNumJoints, inHardSkinAll, (int) (long) (ioTempAllocator != null ? ioTempAllocator.getNativeData().getCPointer() : 0));
+        internal_native_SkinVertices(native_address, (inRootTransform != null ? inRootTransform.native_address : 0), (inJointMatrices != null ? inJointMatrices.native_address : 0), inNumJoints, inHardSkinAll, (ioTempAllocator != null ? ioTempAllocator.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

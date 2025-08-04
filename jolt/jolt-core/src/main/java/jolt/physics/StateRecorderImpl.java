@@ -16,7 +16,7 @@ public class StateRecorderImpl extends StateRecorder {
     public StateRecorderImpl() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new StateRecorderImpl();
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void Clear() {
-        internal_native_Clear((long) getNativeData().getCPointer());
+        internal_native_Clear(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ nativeObject->Clear();
     public static native void internal_native_Clear(long this_addr);
 
     public void Rewind() {
-        internal_native_Rewind((long) getNativeData().getCPointer());
+        internal_native_Rewind(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ nativeObject->Rewind();
     public static native void internal_native_Rewind(long this_addr);
 
     public boolean IsEqual(StateRecorderImpl inReference) {
-        return internal_native_IsEqual((long) getNativeData().getCPointer(), (long) (inReference != null ? inReference.getNativeData().getCPointer() : 0));
+        return internal_native_IsEqual(native_address, (inReference != null ? inReference.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

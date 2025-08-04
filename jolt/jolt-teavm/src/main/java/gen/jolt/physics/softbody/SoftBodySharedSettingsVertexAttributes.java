@@ -18,7 +18,7 @@ public class SoftBodySharedSettingsVertexAttributes extends IDLBase {
 
     public SoftBodySharedSettingsVertexAttributes() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -35,16 +35,8 @@ return jolt.getPointer(jsObj);
     public SoftBodySharedSettingsVertexAttributes(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -55,7 +47,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mCompliance() {
-        return internal_native_get_mCompliance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCompliance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,7 +58,7 @@ return jsObj.get_mCompliance();
     public static native float internal_native_get_mCompliance(int this_addr);
 
     public void set_mCompliance(float mCompliance) {
-        internal_native_set_mCompliance((int) (long) getNativeData().getCPointer(), mCompliance);
+        internal_native_set_mCompliance(native_address, mCompliance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -77,7 +69,7 @@ jsObj.set_mCompliance(mCompliance);
     public static native void internal_native_set_mCompliance(int this_addr, float mCompliance);
 
     public float get_mShearCompliance() {
-        return internal_native_get_mShearCompliance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mShearCompliance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -88,7 +80,7 @@ return jsObj.get_mShearCompliance();
     public static native float internal_native_get_mShearCompliance(int this_addr);
 
     public void set_mShearCompliance(float mShearCompliance) {
-        internal_native_set_mShearCompliance((int) (long) getNativeData().getCPointer(), mShearCompliance);
+        internal_native_set_mShearCompliance(native_address, mShearCompliance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -99,7 +91,7 @@ jsObj.set_mShearCompliance(mShearCompliance);
     public static native void internal_native_set_mShearCompliance(int this_addr, float mShearCompliance);
 
     public float get_mBendCompliance() {
-        return internal_native_get_mBendCompliance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mBendCompliance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -110,7 +102,7 @@ return jsObj.get_mBendCompliance();
     public static native float internal_native_get_mBendCompliance(int this_addr);
 
     public void set_mBendCompliance(float mBendCompliance) {
-        internal_native_set_mBendCompliance((int) (long) getNativeData().getCPointer(), mBendCompliance);
+        internal_native_set_mBendCompliance(native_address, mBendCompliance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -121,7 +113,7 @@ jsObj.set_mBendCompliance(mBendCompliance);
     public static native void internal_native_set_mBendCompliance(int this_addr, float mBendCompliance);
 
     public SoftBodySharedSettings_ELRAType get_mLRAType() {
-        int value = internal_native_get_mLRAType((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mLRAType(native_address);
         return SoftBodySharedSettings_ELRAType.MAP.get(value);
     }
 
@@ -133,7 +125,7 @@ return jsObj.get_mLRAType();
     public static native int internal_native_get_mLRAType(int this_addr);
 
     public void set_mLRAType(SoftBodySharedSettings_ELRAType mLRAType) {
-        internal_native_set_mLRAType((int) (long) getNativeData().getCPointer(), (int) (long) (mLRAType != null ? mLRAType.getValue() : 0));
+        internal_native_set_mLRAType(native_address, (int) (mLRAType != null ? mLRAType.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -144,7 +136,7 @@ jsObj.set_mLRAType(mLRAType);
     public static native void internal_native_set_mLRAType(int this_addr, int mLRAType);
 
     public float get_mLRAMaxDistanceMultiplier() {
-        return internal_native_get_mLRAMaxDistanceMultiplier((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mLRAMaxDistanceMultiplier(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -155,7 +147,7 @@ return jsObj.get_mLRAMaxDistanceMultiplier();
     public static native float internal_native_get_mLRAMaxDistanceMultiplier(int this_addr);
 
     public void set_mLRAMaxDistanceMultiplier(float mLRAMaxDistanceMultiplier) {
-        internal_native_set_mLRAMaxDistanceMultiplier((int) (long) getNativeData().getCPointer(), mLRAMaxDistanceMultiplier);
+        internal_native_set_mLRAMaxDistanceMultiplier(native_address, mLRAMaxDistanceMultiplier);
     }
 
     /*[-TEAVM;-NATIVE]

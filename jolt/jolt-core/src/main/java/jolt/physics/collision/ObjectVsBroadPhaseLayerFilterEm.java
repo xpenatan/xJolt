@@ -39,16 +39,8 @@ virtual bool ShouldCollide(unsigned int inLayer1, BroadPhaseLayer* inLayer2) con
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -60,22 +52,22 @@ delete nativeObject;
     public ObjectVsBroadPhaseLayerFilterEm() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected boolean ShouldCollide(int inLayer1, BroadPhaseLayer inLayer2) {
         return false;
     }
 
-    private boolean internal_ShouldCollide(int inLayer1, long inLayer2) {
+    private boolean internal_ShouldCollide(int inLayer1, long inLayer2_addr) {
         if (BroadPhaseLayer_TEMP_STATIC_GEN_0 == null)
             BroadPhaseLayer_TEMP_STATIC_GEN_0 = new BroadPhaseLayer((byte) 1, (char) 1);
-        BroadPhaseLayer_TEMP_STATIC_GEN_0.getNativeData().reset(inLayer2, false);
+        BroadPhaseLayer_TEMP_STATIC_GEN_0.internal_reset(inLayer2_addr, false);
         return ShouldCollide(inLayer1, BroadPhaseLayer_TEMP_STATIC_GEN_0);
     }
 

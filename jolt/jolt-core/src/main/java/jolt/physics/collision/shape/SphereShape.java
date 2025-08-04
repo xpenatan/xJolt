@@ -17,8 +17,8 @@ public class SphereShape extends ConvexShape {
 
     public SphereShape(float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_PhysicsMaterial(inRadius, (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_float_PhysicsMaterial(inRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -29,7 +29,7 @@ return (jlong)new SphereShape((float)inRadius, (PhysicsMaterial* )inMaterial_add
     public SphereShape(float inRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float(inRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -46,7 +46,7 @@ return (jlong)new SphereShape((float)inRadius);
     }
 
     public float GetRadius() {
-        return internal_native_GetRadius((long) getNativeData().getCPointer());
+        return internal_native_GetRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]

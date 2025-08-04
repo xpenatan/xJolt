@@ -31,16 +31,8 @@ public class BroadPhaseQuery extends IDLBase {
     public BroadPhaseQuery(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -51,7 +43,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void CastRay(RayCast inRay, RayCastBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CastRay((int) (long) getNativeData().getCPointer(), (int) (long) (inRay != null ? inRay.getNativeData().getCPointer() : 0), (int) (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (int) (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (int) (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CastRay(native_address, (inRay != null ? inRay.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -62,7 +54,7 @@ jsObj.CastRay(inRay_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObjectLay
     public static native void internal_native_CastRay(int this_addr, int inRay_addr, int ioCollector_addr, int inBroadPhaseFilter_addr, int inObjectLayerFilter_addr);
 
     public void CollideAABox(AABox inBox, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CollideAABox((int) (long) getNativeData().getCPointer(), (int) (long) (inBox != null ? inBox.getNativeData().getCPointer() : 0), (int) (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (int) (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (int) (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollideAABox(native_address, (inBox != null ? inBox.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -73,7 +65,7 @@ jsObj.CollideAABox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObje
     public static native void internal_native_CollideAABox(int this_addr, int inBox_addr, int ioCollector_addr, int inBroadPhaseFilter_addr, int inObjectLayerFilter_addr);
 
     public void CollideSphere(Vec3 inCenter, float inRadius, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CollideSphere((int) (long) getNativeData().getCPointer(), (int) (long) (inCenter != null ? inCenter.getNativeData().getCPointer() : 0), inRadius, (int) (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (int) (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (int) (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollideSphere(native_address, (inCenter != null ? inCenter.native_address : 0), inRadius, (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -84,7 +76,7 @@ jsObj.CollideSphere(inCenter_addr, inRadius, ioCollector_addr, inBroadPhaseLayer
     public static native void internal_native_CollideSphere(int this_addr, int inCenter_addr, float inRadius, int ioCollector_addr, int inBroadPhaseLayerFilter_addr, int inObjectLayerFilter_addr);
 
     public void CollidePoint(Vec3 inPoint, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CollidePoint((int) (long) getNativeData().getCPointer(), (int) (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), (int) (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (int) (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (int) (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollidePoint(native_address, (inPoint != null ? inPoint.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -95,7 +87,7 @@ jsObj.CollidePoint(inPoint_addr, ioCollector_addr, inBroadPhaseFilter_addr, inOb
     public static native void internal_native_CollidePoint(int this_addr, int inPoint_addr, int ioCollector_addr, int inBroadPhaseFilter_addr, int inObjectLayerFilter_addr);
 
     public void CollideOrientedBox(OrientedBox inBox, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CollideOrientedBox((int) (long) getNativeData().getCPointer(), (int) (long) (inBox != null ? inBox.getNativeData().getCPointer() : 0), (int) (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (int) (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (int) (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CollideOrientedBox(native_address, (inBox != null ? inBox.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -106,7 +98,7 @@ jsObj.CollideOrientedBox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr, 
     public static native void internal_native_CollideOrientedBox(int this_addr, int inBox_addr, int ioCollector_addr, int inBroadPhaseFilter_addr, int inObjectLayerFilter_addr);
 
     public void CastAABox(AABoxCast inBox, CastShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
-        internal_native_CastAABox((int) (long) getNativeData().getCPointer(), (int) (long) (inBox != null ? inBox.getNativeData().getCPointer() : 0), (int) (long) (ioCollector != null ? ioCollector.getNativeData().getCPointer() : 0), (int) (long) (inBroadPhaseFilter != null ? inBroadPhaseFilter.getNativeData().getCPointer() : 0), (int) (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0));
+        internal_native_CastAABox(native_address, (inBox != null ? inBox.native_address : 0), (ioCollector != null ? ioCollector.native_address : 0), (inBroadPhaseFilter != null ? inBroadPhaseFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

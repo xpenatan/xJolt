@@ -17,8 +17,8 @@ public class VehicleCollisionTesterCastSphere extends VehicleCollisionTester {
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp, float inMaxSlopeAngle) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int_float_Vec3_float(inObjectLayer, inRadius, (int) (long) (inUp != null ? inUp.getNativeData().getCPointer() : 0), inMaxSlopeAngle);
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_int_float_Vec3_float(inObjectLayer, inRadius, (inUp != null ? inUp.native_address : 0), inMaxSlopeAngle);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -30,8 +30,8 @@ return jolt.getPointer(jsObj);
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int_float_Vec3(inObjectLayer, inRadius, (int) (long) (inUp != null ? inUp.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_int_float_Vec3(inObjectLayer, inRadius, (inUp != null ? inUp.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -44,7 +44,7 @@ return jolt.getPointer(jsObj);
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int_float(inObjectLayer, inRadius);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]

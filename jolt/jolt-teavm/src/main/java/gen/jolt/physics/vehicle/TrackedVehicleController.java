@@ -19,8 +19,8 @@ public class TrackedVehicleController extends VehicleController {
 
     public TrackedVehicleController(TrackedVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint((int) (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (int) (long) (inConstraint != null ? inConstraint.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint((inSettings != null ? inSettings.native_address : 0), (inConstraint != null ? inConstraint.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     }
 
     public void SetDriverInput(float inForward, float inLeftRatio, float inRightRatio, float inBrake) {
-        internal_native_SetDriverInput((int) (long) getNativeData().getCPointer(), inForward, inLeftRatio, inRightRatio, inBrake);
+        internal_native_SetDriverInput(native_address, inForward, inLeftRatio, inRightRatio, inBrake);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -50,7 +50,7 @@ jsObj.SetDriverInput(inForward, inLeftRatio, inRightRatio, inBrake);
     public static native void internal_native_SetDriverInput(int this_addr, float inForward, float inLeftRatio, float inRightRatio, float inBrake);
 
     public void SetForwardInput(float inForward) {
-        internal_native_SetForwardInput((int) (long) getNativeData().getCPointer(), inForward);
+        internal_native_SetForwardInput(native_address, inForward);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -61,7 +61,7 @@ jsObj.SetForwardInput(inForward);
     public static native void internal_native_SetForwardInput(int this_addr, float inForward);
 
     public float GetForwardInput() {
-        return internal_native_GetForwardInput((int) (long) getNativeData().getCPointer());
+        return internal_native_GetForwardInput(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -73,7 +73,7 @@ return returnedJSObj;
     public static native float internal_native_GetForwardInput(int this_addr);
 
     public void SetLeftRatio(float inLeftRatio) {
-        internal_native_SetLeftRatio((int) (long) getNativeData().getCPointer(), inLeftRatio);
+        internal_native_SetLeftRatio(native_address, inLeftRatio);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -84,7 +84,7 @@ jsObj.SetLeftRatio(inLeftRatio);
     public static native void internal_native_SetLeftRatio(int this_addr, float inLeftRatio);
 
     public float GetLeftRatio() {
-        return internal_native_GetLeftRatio((int) (long) getNativeData().getCPointer());
+        return internal_native_GetLeftRatio(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -96,7 +96,7 @@ return returnedJSObj;
     public static native float internal_native_GetLeftRatio(int this_addr);
 
     public void SetRightRatio(float inRightRatio) {
-        internal_native_SetRightRatio((int) (long) getNativeData().getCPointer(), inRightRatio);
+        internal_native_SetRightRatio(native_address, inRightRatio);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -107,7 +107,7 @@ jsObj.SetRightRatio(inRightRatio);
     public static native void internal_native_SetRightRatio(int this_addr, float inRightRatio);
 
     public float GetRightRatio() {
-        return internal_native_GetRightRatio((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRightRatio(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -119,7 +119,7 @@ return returnedJSObj;
     public static native float internal_native_GetRightRatio(int this_addr);
 
     public void SetBrakeInput(float inBrake) {
-        internal_native_SetBrakeInput((int) (long) getNativeData().getCPointer(), inBrake);
+        internal_native_SetBrakeInput(native_address, inBrake);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -130,7 +130,7 @@ jsObj.SetBrakeInput(inBrake);
     public static native void internal_native_SetBrakeInput(int this_addr, float inBrake);
 
     public float GetBrakeInput() {
-        return internal_native_GetBrakeInput((int) (long) getNativeData().getCPointer());
+        return internal_native_GetBrakeInput(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -142,12 +142,12 @@ return returnedJSObj;
     public static native float internal_native_GetBrakeInput(int this_addr);
 
     public VehicleEngine GetEngine() {
-        int pointer = internal_native_GetEngine((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetEngine(native_address);
         if (pointer == 0)
             return null;
         if (VehicleEngine_TEMP_GEN_0 == null)
             VehicleEngine_TEMP_GEN_0 = new VehicleEngine((byte) 1, (char) 1);
-        VehicleEngine_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VehicleEngine_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleEngine_TEMP_GEN_0;
     }
 
@@ -161,12 +161,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetEngine(int this_addr);
 
     public VehicleTransmission GetTransmission() {
-        int pointer = internal_native_GetTransmission((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTransmission(native_address);
         if (pointer == 0)
             return null;
         if (VehicleTransmission_TEMP_GEN_0 == null)
             VehicleTransmission_TEMP_GEN_0 = new VehicleTransmission((byte) 1, (char) 1);
-        VehicleTransmission_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VehicleTransmission_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleTransmission_TEMP_GEN_0;
     }
 

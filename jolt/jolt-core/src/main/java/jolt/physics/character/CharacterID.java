@@ -19,7 +19,7 @@ public class CharacterID extends IDLBase {
 
     public CharacterID() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,16 +34,8 @@ return (jlong)new CharacterID();
     public CharacterID(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,7 +45,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int GetValue() {
-        return internal_native_GetValue((long) getNativeData().getCPointer());
+        return internal_native_GetValue(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -63,7 +55,7 @@ return nativeObject->GetValue();
     public static native int internal_native_GetValue(long this_addr);
 
     public boolean IsInvalid() {
-        return internal_native_IsInvalid((long) getNativeData().getCPointer());
+        return internal_native_IsInvalid(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -78,7 +70,7 @@ return nativeObject->IsInvalid();
             return null;
         if (CharacterID_TEMP_STATIC_GEN_0 == null)
             CharacterID_TEMP_STATIC_GEN_0 = new CharacterID((byte) 1, (char) 1);
-        CharacterID_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        CharacterID_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return CharacterID_TEMP_STATIC_GEN_0;
     }
 

@@ -25,16 +25,8 @@ public class SoftBodySharedSettingsInvBind extends IDLBase {
     public SoftBodySharedSettingsInvBind(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -45,7 +37,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mJointIndex() {
-        return internal_native_get_mJointIndex((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mJointIndex(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +48,7 @@ return jsObj.get_mJointIndex();
     public static native int internal_native_get_mJointIndex(int this_addr);
 
     public void set_mJointIndex(int mJointIndex) {
-        internal_native_set_mJointIndex((int) (long) getNativeData().getCPointer(), mJointIndex);
+        internal_native_set_mJointIndex(native_address, mJointIndex);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,12 +59,12 @@ jsObj.set_mJointIndex(mJointIndex);
     public static native void internal_native_set_mJointIndex(int this_addr, int mJointIndex);
 
     public Mat44 get_mInvBind() {
-        int pointer = internal_native_get_mInvBind((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mInvBind(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -86,7 +78,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mInvBind(int this_addr);
 
     public void set_mInvBind(Mat44 mInvBind) {
-        internal_native_set_mInvBind((int) (long) getNativeData().getCPointer(), (int) (long) (mInvBind != null ? mInvBind.getNativeData().getCPointer() : 0));
+        internal_native_set_mInvBind(native_address, (mInvBind != null ? mInvBind.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

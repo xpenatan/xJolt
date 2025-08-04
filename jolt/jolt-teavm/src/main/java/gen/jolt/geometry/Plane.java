@@ -28,8 +28,8 @@ public class Plane extends IDLBase {
     static public final Plane T_03 = new Plane((byte) 1, (char) 1);
 
     public Plane(Vec3 inNormal, float inConstant) {
-        int addr = internal_native_create_Vec3_float((int) (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0), inConstant);
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_Vec3_float((inNormal != null ? inNormal.native_address : 0), inConstant);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -46,16 +46,8 @@ return jolt.getPointer(jsObj);
     public Plane(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,12 +58,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 GetNormal() {
-        int pointer = internal_native_GetNormal((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetNormal(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -85,7 +77,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetNormal(int this_addr);
 
     public void SetNormal(Vec3 inNormal) {
-        internal_native_SetNormal((int) (long) getNativeData().getCPointer(), (int) (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
+        internal_native_SetNormal(native_address, (inNormal != null ? inNormal.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -96,7 +88,7 @@ jsObj.SetNormal(inNormal_addr);
     public static native void internal_native_SetNormal(int this_addr, int inNormal_addr);
 
     public float GetConstant() {
-        return internal_native_GetConstant((int) (long) getNativeData().getCPointer());
+        return internal_native_GetConstant(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -108,7 +100,7 @@ return returnedJSObj;
     public static native float internal_native_GetConstant(int this_addr);
 
     public void SetConstant(float inConstant) {
-        internal_native_SetConstant((int) (long) getNativeData().getCPointer(), inConstant);
+        internal_native_SetConstant(native_address, inConstant);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -119,12 +111,12 @@ jsObj.SetConstant(inConstant);
     public static native void internal_native_SetConstant(int this_addr, float inConstant);
 
     public Plane sFromPointAndNormal(Vec3 inPoint, Vec3 inNormal) {
-        int pointer = internal_native_sFromPointAndNormal((int) (long) getNativeData().getCPointer(), (int) (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0), (int) (long) (inNormal != null ? inNormal.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sFromPointAndNormal(native_address, (inPoint != null ? inPoint.native_address : 0), (inNormal != null ? inNormal.native_address : 0));
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(pointer, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -138,12 +130,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sFromPointAndNormal(int this_addr, int inPoint_addr, int inNormal_addr);
 
     public Plane sFromPointsCCW(Vec3 inPoint1, Vec3 inPoint2, Vec3 inPoint3) {
-        int pointer = internal_native_sFromPointsCCW((int) (long) getNativeData().getCPointer(), (int) (long) (inPoint1 != null ? inPoint1.getNativeData().getCPointer() : 0), (int) (long) (inPoint2 != null ? inPoint2.getNativeData().getCPointer() : 0), (int) (long) (inPoint3 != null ? inPoint3.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sFromPointsCCW(native_address, (inPoint1 != null ? inPoint1.native_address : 0), (inPoint2 != null ? inPoint2.native_address : 0), (inPoint3 != null ? inPoint3.native_address : 0));
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_1 == null)
             Plane_TEMP_GEN_1 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_1.internal_reset(pointer, false);
         return Plane_TEMP_GEN_1;
     }
 
@@ -157,12 +149,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sFromPointsCCW(int this_addr, int inPoint1_addr, int inPoint2_addr, int inPoint3_addr);
 
     public Plane Offset(float inDistance) {
-        int pointer = internal_native_Offset((int) (long) getNativeData().getCPointer(), inDistance);
+        int pointer = internal_native_Offset(native_address, inDistance);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_2 == null)
             Plane_TEMP_GEN_2 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_2.internal_reset(pointer, false);
         return Plane_TEMP_GEN_2;
     }
 
@@ -176,12 +168,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Offset(int this_addr, float inDistance);
 
     public Plane GetTransformed(Mat44 inTransform) {
-        int pointer = internal_native_GetTransformed((int) (long) getNativeData().getCPointer(), (int) (long) (inTransform != null ? inTransform.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_GetTransformed(native_address, (inTransform != null ? inTransform.native_address : 0));
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_3 == null)
             Plane_TEMP_GEN_3 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_3.internal_reset(pointer, false);
         return Plane_TEMP_GEN_3;
     }
 
@@ -195,7 +187,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTransformed(int this_addr, int inTransform_addr);
 
     public float SignedDistance(Vec3 inPoint) {
-        return internal_native_SignedDistance((int) (long) getNativeData().getCPointer(), (int) (long) (inPoint != null ? inPoint.getNativeData().getCPointer() : 0));
+        return internal_native_SignedDistance(native_address, (inPoint != null ? inPoint.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

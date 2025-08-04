@@ -13,7 +13,9 @@ import com.badlogic.gdx.utils.ScreenUtils;
 //import imgui.ImGuiStyle;
 //import imgui.gdx.ImGuiGdxImpl;
 //import imgui.gdx.ImGuiGdxInput;
+import jolt.example.samples.app.tests.shapes.BoxShapeTest;
 import jolt.example.samples.app.tests.vehicle.TankTest;
+import jolt.gdx.GraphicManagerApi;
 import static com.badlogic.gdx.Gdx.input;
 
 public class GameScreen extends ScreenAdapter {
@@ -47,7 +49,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        ScreenUtils.clear(0.1f, 0.1f, 0.8f, 1, true);
+        GraphicManagerApi.graphicApi.clearScreen(0.1f, 0.1f, 0.8f, 1, true);
         samplesApp.render(delta);
         fpsLogger.log();
 //        impl.newFrame();

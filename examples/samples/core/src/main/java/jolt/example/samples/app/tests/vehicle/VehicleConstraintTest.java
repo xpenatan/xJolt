@@ -255,7 +255,7 @@ public class VehicleConstraintTest extends VehicleTest {
 
         VehicleController vehicleController = mVehicleConstraint.GetController();
         WheeledVehicleController controller = WheeledVehicleController.T_01;
-        controller.getNativeData().reset(vehicleController.getNativeData().getCPointer(), false);
+        controller.native_copy(vehicleController);
 
         // Update vehicle statistics
         controller.GetEngine().set_mMaxTorque(sMaxEngineTorque);

@@ -32,7 +32,7 @@ public class CharacterBaseSettings extends IDLBase {
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -44,7 +44,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -55,7 +55,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,12 +66,12 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public Vec3 get_mUp() {
-        int pointer = internal_native_get_mUp((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mUp(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -85,7 +85,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mUp(int this_addr);
 
     public void set_mUp(Vec3 mUp) {
-        internal_native_set_mUp((int) (long) getNativeData().getCPointer(), (int) (long) (mUp != null ? mUp.getNativeData().getCPointer() : 0));
+        internal_native_set_mUp(native_address, (mUp != null ? mUp.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -96,12 +96,12 @@ jsObj.set_mUp(mUp_addr);
     public static native void internal_native_set_mUp(int this_addr, int mUp_addr);
 
     public Plane get_mSupportingVolume() {
-        int pointer = internal_native_get_mSupportingVolume((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSupportingVolume(native_address);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(pointer, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -115,7 +115,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSupportingVolume(int this_addr);
 
     public void set_mSupportingVolume(Plane mSupportingVolume) {
-        internal_native_set_mSupportingVolume((int) (long) getNativeData().getCPointer(), (int) (long) (mSupportingVolume != null ? mSupportingVolume.getNativeData().getCPointer() : 0));
+        internal_native_set_mSupportingVolume(native_address, (mSupportingVolume != null ? mSupportingVolume.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -126,7 +126,7 @@ jsObj.set_mSupportingVolume(mSupportingVolume_addr);
     public static native void internal_native_set_mSupportingVolume(int this_addr, int mSupportingVolume_addr);
 
     public float get_mMaxSlopeAngle() {
-        return internal_native_get_mMaxSlopeAngle((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxSlopeAngle(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -137,7 +137,7 @@ return jsObj.get_mMaxSlopeAngle();
     public static native float internal_native_get_mMaxSlopeAngle(int this_addr);
 
     public void set_mMaxSlopeAngle(float mMaxSlopeAngle) {
-        internal_native_set_mMaxSlopeAngle((int) (long) getNativeData().getCPointer(), mMaxSlopeAngle);
+        internal_native_set_mMaxSlopeAngle(native_address, mMaxSlopeAngle);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -148,7 +148,7 @@ jsObj.set_mMaxSlopeAngle(mMaxSlopeAngle);
     public static native void internal_native_set_mMaxSlopeAngle(int this_addr, float mMaxSlopeAngle);
 
     public boolean get_mEnhancedInternalEdgeRemoval() {
-        return internal_native_get_mEnhancedInternalEdgeRemoval((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mEnhancedInternalEdgeRemoval(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -159,7 +159,7 @@ return jsObj.get_mEnhancedInternalEdgeRemoval();
     public static native boolean internal_native_get_mEnhancedInternalEdgeRemoval(int this_addr);
 
     public void set_mEnhancedInternalEdgeRemoval(boolean mEnhancedInternalEdgeRemoval) {
-        internal_native_set_mEnhancedInternalEdgeRemoval((int) (long) getNativeData().getCPointer(), mEnhancedInternalEdgeRemoval);
+        internal_native_set_mEnhancedInternalEdgeRemoval(native_address, mEnhancedInternalEdgeRemoval);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -170,12 +170,12 @@ jsObj.set_mEnhancedInternalEdgeRemoval(mEnhancedInternalEdgeRemoval);
     public static native void internal_native_set_mEnhancedInternalEdgeRemoval(int this_addr, boolean mEnhancedInternalEdgeRemoval);
 
     public Shape get_mShape() {
-        int pointer = internal_native_get_mShape((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mShape(native_address);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
-        Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -189,7 +189,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mShape(int this_addr);
 
     public void set_mShape(Shape mShape) {
-        internal_native_set_mShape((int) (long) getNativeData().getCPointer(), (int) (long) (mShape != null ? mShape.getNativeData().getCPointer() : 0));
+        internal_native_set_mShape(native_address, (mShape != null ? mShape.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

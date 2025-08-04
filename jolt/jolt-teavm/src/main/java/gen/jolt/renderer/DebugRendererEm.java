@@ -12,6 +12,7 @@ import gen.jolt.math.Mat44;
 import gen.jolt.core.Color;
 import gen.jolt.enums.ECastShadow;
 import gen.jolt.enums.EDrawMode;
+import gen.jolt.idl.helper.IDLFloatArray;
 import gen.jolt.enums.ECullMode;
 import gen.jolt.math.Vec3;
 
@@ -19,7 +20,7 @@ public class DebugRendererEm extends IDLBase {
 
     static private Mat44 Mat44_TEMP_STATIC_GEN_0;
 
-    static private DebugArrayTriangle DebugArrayTriangle_TEMP_STATIC_GEN_0;
+    static private IDLFloatArray IDLFloatArray_TEMP_STATIC_GEN_0;
 
     static private Color Color_TEMP_STATIC_GEN_0;
 
@@ -48,16 +49,8 @@ public class DebugRendererEm extends IDLBase {
     public DebugRendererEm(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -68,7 +61,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void DrawBodies(PhysicsSystem system, BodyManagerDrawSettings inDrawSettings) {
-        internal_native_DrawBodies((int) (long) getNativeData().getCPointer(), (int) (long) (system != null ? system.getNativeData().getCPointer() : 0), (int) (long) (inDrawSettings != null ? inDrawSettings.getNativeData().getCPointer() : 0));
+        internal_native_DrawBodies(native_address, (system != null ? system.native_address : 0), (inDrawSettings != null ? inDrawSettings.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -79,7 +72,7 @@ jsObj.DrawBodies(system_addr, inDrawSettings_addr);
     public static native void internal_native_DrawBodies(int this_addr, int system_addr, int inDrawSettings_addr);
 
     public void DrawBodies(PhysicsSystem system) {
-        internal_native_DrawBodies((int) (long) getNativeData().getCPointer(), (int) (long) (system != null ? system.getNativeData().getCPointer() : 0));
+        internal_native_DrawBodies(native_address, (system != null ? system.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -90,7 +83,7 @@ jsObj.DrawBodies(system_addr);
     public static native void internal_native_DrawBodies(int this_addr, int system_addr);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow, EDrawMode inDrawMode) {
-        internal_native_DrawCylinder((int) (long) getNativeData().getCPointer(), (int) (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (int) (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (int) (long) (inCastShadow != null ? inCastShadow.getValue() : 0), (int) (long) (inDrawMode != null ? inDrawMode.getValue() : 0));
+        internal_native_DrawCylinder(native_address, (inMatrix != null ? inMatrix.native_address : 0), inHalfHeight, inRadius, (inColor != null ? inColor.native_address : 0), (int) (inCastShadow != null ? inCastShadow.getValue() : 0), (int) (inDrawMode != null ? inDrawMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -101,7 +94,7 @@ jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastSh
     public static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr, int inCastShadow, int inDrawMode);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow) {
-        internal_native_DrawCylinder((int) (long) getNativeData().getCPointer(), (int) (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (int) (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0), (int) (long) (inCastShadow != null ? inCastShadow.getValue() : 0));
+        internal_native_DrawCylinder(native_address, (inMatrix != null ? inMatrix.native_address : 0), inHalfHeight, inRadius, (inColor != null ? inColor.native_address : 0), (int) (inCastShadow != null ? inCastShadow.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -112,7 +105,7 @@ jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastSh
     public static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr, int inCastShadow);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor) {
-        internal_native_DrawCylinder((int) (long) getNativeData().getCPointer(), (int) (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0), inHalfHeight, inRadius, (int) (long) (inColor != null ? inColor.getNativeData().getCPointer() : 0));
+        internal_native_DrawCylinder(native_address, (inMatrix != null ? inMatrix.native_address : 0), inHalfHeight, inRadius, (inColor != null ? inColor.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -124,99 +117,99 @@ jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr);
 
     public DebugRendererEm() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
         DrawMesh DrawMesh = new DrawMesh() {
 
-            public void DrawMesh(int id, int inModelMatrix, int triangleArray, int inModelColor, int inCullMode, int inDrawMode) {
-                internal_DrawMesh(id, inModelMatrix, triangleArray, inModelColor, inCullMode, inDrawMode);
+            public void DrawMesh(int id, int inModelMatrix_addr, int vertices_addr, int inModelColor_addr, int inCullMode_addr, int inDrawMode_addr) {
+                internal_DrawMesh(id, inModelMatrix_addr, vertices_addr, inModelColor_addr, inCullMode_addr, inDrawMode_addr);
             }
         };
         DrawLine DrawLine = new DrawLine() {
 
-            public void DrawLine(int inFrom, int inTo, int inColor) {
-                internal_DrawLine(inFrom, inTo, inColor);
+            public void DrawLine(int inFrom_addr, int inTo_addr, int inColor_addr) {
+                internal_DrawLine(inFrom_addr, inTo_addr, inColor_addr);
             }
         };
         DrawTriangle DrawTriangle = new DrawTriangle() {
 
-            public void DrawTriangle(int inV1, int inV2, int inV3, int inColor, int inCastShadow) {
-                internal_DrawTriangle(inV1, inV2, inV3, inColor, inCastShadow);
+            public void DrawTriangle(int inV1_addr, int inV2_addr, int inV3_addr, int inColor_addr, int inCastShadow_addr) {
+                internal_DrawTriangle(inV1_addr, inV2_addr, inV3_addr, inColor_addr, inCastShadow_addr);
             }
         };
         DrawText3D DrawText3D = new DrawText3D() {
 
-            public void DrawText3D(int inPosition, int inString, int inStringLen, int inColor, float inHeight) {
-                internal_DrawText3D(inPosition, inString, inStringLen, inColor, inHeight);
+            public void DrawText3D(int inPosition_addr, int inString, int inStringLen, int inColor_addr, float inHeight) {
+                internal_DrawText3D(inPosition_addr, inString, inStringLen, inColor_addr, inHeight);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), DrawMesh, DrawLine, DrawTriangle, DrawText3D);
+        internal_native_setupCallback(native_address, DrawMesh, DrawLine, DrawTriangle, DrawText3D);
     }
 
-    protected void DrawMesh(int id, Mat44 inModelMatrix, DebugArrayTriangle triangleArray, Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
+    protected void DrawMesh(int id, Mat44 inModelMatrix, IDLFloatArray vertices, Color inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
     }
 
-    private void internal_DrawMesh(int id, long inModelMatrix, long triangleArray, long inModelColor, int inCullMode, int inDrawMode) {
+    private void internal_DrawMesh(int id, int inModelMatrix_addr, int vertices_addr, int inModelColor_addr, int inCullMode_addr, int inDrawMode_addr) {
         if (Mat44_TEMP_STATIC_GEN_0 == null)
             Mat44_TEMP_STATIC_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_0.getNativeData().reset(inModelMatrix, false);
-        if (DebugArrayTriangle_TEMP_STATIC_GEN_0 == null)
-            DebugArrayTriangle_TEMP_STATIC_GEN_0 = new DebugArrayTriangle((byte) 1, (char) 1);
-        DebugArrayTriangle_TEMP_STATIC_GEN_0.getNativeData().reset(triangleArray, false);
+        Mat44_TEMP_STATIC_GEN_0.internal_reset(inModelMatrix_addr, false);
+        if (IDLFloatArray_TEMP_STATIC_GEN_0 == null)
+            IDLFloatArray_TEMP_STATIC_GEN_0 = new IDLFloatArray((byte) 1, (char) 1);
+        IDLFloatArray_TEMP_STATIC_GEN_0.internal_reset(vertices_addr, false);
         if (Color_TEMP_STATIC_GEN_0 == null)
             Color_TEMP_STATIC_GEN_0 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_0.getNativeData().reset(inModelColor, false);
-        DrawMesh(id, Mat44_TEMP_STATIC_GEN_0, DebugArrayTriangle_TEMP_STATIC_GEN_0, Color_TEMP_STATIC_GEN_0, ECullMode.MAP.get(inCullMode), EDrawMode.MAP.get(inDrawMode));
+        Color_TEMP_STATIC_GEN_0.internal_reset(inModelColor_addr, false);
+        DrawMesh(id, Mat44_TEMP_STATIC_GEN_0, IDLFloatArray_TEMP_STATIC_GEN_0, Color_TEMP_STATIC_GEN_0, ECullMode.MAP.get(inCullMode_addr), EDrawMode.MAP.get(inDrawMode_addr));
     }
 
     protected void DrawLine(Vec3 inFrom, Vec3 inTo, Color inColor) {
     }
 
-    private void internal_DrawLine(long inFrom, long inTo, long inColor) {
+    private void internal_DrawLine(int inFrom_addr, int inTo_addr, int inColor_addr) {
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_0.getNativeData().reset(inFrom, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(inFrom_addr, false);
         if (Vec3_TEMP_STATIC_GEN_1 == null)
             Vec3_TEMP_STATIC_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_1.getNativeData().reset(inTo, false);
+        Vec3_TEMP_STATIC_GEN_1.internal_reset(inTo_addr, false);
         if (Color_TEMP_STATIC_GEN_1 == null)
             Color_TEMP_STATIC_GEN_1 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_1.getNativeData().reset(inColor, false);
+        Color_TEMP_STATIC_GEN_1.internal_reset(inColor_addr, false);
         DrawLine(Vec3_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_1, Color_TEMP_STATIC_GEN_1);
     }
 
     protected void DrawTriangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, Color inColor, ECastShadow inCastShadow) {
     }
 
-    private void internal_DrawTriangle(long inV1, long inV2, long inV3, long inColor, int inCastShadow) {
+    private void internal_DrawTriangle(int inV1_addr, int inV2_addr, int inV3_addr, int inColor_addr, int inCastShadow_addr) {
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_2.getNativeData().reset(inV1, false);
+        Vec3_TEMP_STATIC_GEN_2.internal_reset(inV1_addr, false);
         if (Vec3_TEMP_STATIC_GEN_3 == null)
             Vec3_TEMP_STATIC_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_3.getNativeData().reset(inV2, false);
+        Vec3_TEMP_STATIC_GEN_3.internal_reset(inV2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_4 == null)
             Vec3_TEMP_STATIC_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_4.getNativeData().reset(inV3, false);
+        Vec3_TEMP_STATIC_GEN_4.internal_reset(inV3_addr, false);
         if (Color_TEMP_STATIC_GEN_2 == null)
             Color_TEMP_STATIC_GEN_2 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_2.getNativeData().reset(inColor, false);
-        DrawTriangle(Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Color_TEMP_STATIC_GEN_2, ECastShadow.MAP.get(inCastShadow));
+        Color_TEMP_STATIC_GEN_2.internal_reset(inColor_addr, false);
+        DrawTriangle(Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Color_TEMP_STATIC_GEN_2, ECastShadow.MAP.get(inCastShadow_addr));
     }
 
     protected void DrawText3D(Vec3 inPosition, long inString, int inStringLen, Color inColor, float inHeight) {
     }
 
-    private void internal_DrawText3D(long inPosition, long inString, int inStringLen, long inColor, float inHeight) {
+    private void internal_DrawText3D(int inPosition_addr, long inString, int inStringLen, int inColor_addr, float inHeight) {
         if (Vec3_TEMP_STATIC_GEN_5 == null)
             Vec3_TEMP_STATIC_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_5.getNativeData().reset(inPosition, false);
+        Vec3_TEMP_STATIC_GEN_5.internal_reset(inPosition_addr, false);
         if (Color_TEMP_STATIC_GEN_3 == null)
             Color_TEMP_STATIC_GEN_3 = new Color((byte) 1, (char) 1);
-        Color_TEMP_STATIC_GEN_3.getNativeData().reset(inColor, false);
+        Color_TEMP_STATIC_GEN_3.internal_reset(inColor_addr, false);
         DrawText3D(Vec3_TEMP_STATIC_GEN_5, inString, inStringLen, Color_TEMP_STATIC_GEN_3, inHeight);
     }
 
@@ -233,24 +226,24 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSFunctor()
     public interface DrawMesh extends org.teavm.jso.JSObject {
 
-        void DrawMesh(int id, int inModelMatrix, int triangleArray, int inModelColor, int inCullMode, int inDrawMode);
+        void DrawMesh(int id, int inModelMatrix_addr, int vertices_addr, int inModelColor_addr, int inCullMode_addr, int inDrawMode_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface DrawLine extends org.teavm.jso.JSObject {
 
-        void DrawLine(int inFrom, int inTo, int inColor);
+        void DrawLine(int inFrom_addr, int inTo_addr, int inColor_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface DrawTriangle extends org.teavm.jso.JSObject {
 
-        void DrawTriangle(int inV1, int inV2, int inV3, int inColor, int inCastShadow);
+        void DrawTriangle(int inV1_addr, int inV2_addr, int inV3_addr, int inColor_addr, int inCastShadow_addr);
     }
 
     @org.teavm.jso.JSFunctor()
     public interface DrawText3D extends org.teavm.jso.JSObject {
 
-        void DrawText3D(int inPosition, int inString, int inStringLen, int inColor, float inHeight);
+        void DrawText3D(int inPosition_addr, int inString, int inStringLen, int inColor_addr, float inHeight);
     }
 }

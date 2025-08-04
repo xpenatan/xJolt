@@ -32,16 +32,8 @@ public class SoftBodyManifold extends IDLBase {
     public SoftBodyManifold(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -52,12 +44,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public ArraySoftBodyVertex GetVertices() {
-        int pointer = internal_native_GetVertices((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetVertices(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
             ArraySoftBodyVertex_TEMP_GEN_0 = new ArraySoftBodyVertex((byte) 1, (char) 1);
-        ArraySoftBodyVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodyVertex_TEMP_GEN_0;
     }
 
@@ -71,7 +63,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetVertices(int this_addr);
 
     public boolean HasContact(SoftBodyVertex inVertex) {
-        return internal_native_HasContact((int) (long) getNativeData().getCPointer(), (int) (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
+        return internal_native_HasContact(native_address, (inVertex != null ? inVertex.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -83,12 +75,12 @@ return returnedJSObj;
     public static native boolean internal_native_HasContact(int this_addr, int inVertex_addr);
 
     public Vec3 GetLocalContactPoint(SoftBodyVertex inVertex) {
-        int pointer = internal_native_GetLocalContactPoint((int) (long) getNativeData().getCPointer(), (int) (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_GetLocalContactPoint(native_address, (inVertex != null ? inVertex.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -102,12 +94,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetLocalContactPoint(int this_addr, int inVertex_addr);
 
     public Vec3 GetContactNormal(SoftBodyVertex inVertex) {
-        int pointer = internal_native_GetContactNormal((int) (long) getNativeData().getCPointer(), (int) (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_GetContactNormal(native_address, (inVertex != null ? inVertex.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -121,12 +113,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetContactNormal(int this_addr, int inVertex_addr);
 
     public BodyID GetContactBodyID(SoftBodyVertex inVertex) {
-        int pointer = internal_native_GetContactBodyID((int) (long) getNativeData().getCPointer(), (int) (long) (inVertex != null ? inVertex.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_GetContactBodyID(native_address, (inVertex != null ? inVertex.native_address : 0));
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 

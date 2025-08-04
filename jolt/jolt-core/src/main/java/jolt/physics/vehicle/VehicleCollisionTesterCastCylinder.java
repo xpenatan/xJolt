@@ -16,7 +16,7 @@ public class VehicleCollisionTesterCastCylinder extends VehicleCollisionTester {
     public VehicleCollisionTesterCastCylinder(int inObjectLayer, float inConvexRadiusFraction) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int_float(inObjectLayer, inConvexRadiusFraction);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -27,7 +27,7 @@ return (jlong)new VehicleCollisionTesterCastCylinder(inObjectLayer, (float)inCon
     public VehicleCollisionTesterCastCylinder(int inObjectLayer) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int(inObjectLayer);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]

@@ -22,7 +22,7 @@ public class SkeletalAnimationAnimatedJoint extends IDLBase {
 
     public SkeletalAnimationAnimatedJoint() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -39,16 +39,8 @@ return jolt.getPointer(jsObj);
     public SkeletalAnimationAnimatedJoint(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -59,12 +51,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public IDLString get_mJointName() {
-        int pointer = internal_native_get_mJointName((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mJointName(native_address);
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = new IDLString((byte) 1, (char) 1);
-        IDLString_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -78,7 +70,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mJointName(int this_addr);
 
     public void set_mJointName(IDLString mJointName) {
-        internal_native_set_mJointName((int) (long) getNativeData().getCPointer(), (int) (long) (mJointName != null ? mJointName.getNativeData().getCPointer() : 0));
+        internal_native_set_mJointName(native_address, (mJointName != null ? mJointName.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -89,12 +81,12 @@ jsObj.set_mJointName(mJointName_addr);
     public static native void internal_native_set_mJointName(int this_addr, int mJointName_addr);
 
     public ArraySkeletonKeyframe get_mKeyframes() {
-        int pointer = internal_native_get_mKeyframes((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mKeyframes(native_address);
         if (pointer == 0)
             return null;
         if (ArraySkeletonKeyframe_TEMP_GEN_0 == null)
             ArraySkeletonKeyframe_TEMP_GEN_0 = new ArraySkeletonKeyframe((byte) 1, (char) 1);
-        ArraySkeletonKeyframe_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySkeletonKeyframe_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySkeletonKeyframe_TEMP_GEN_0;
     }
 
@@ -108,7 +100,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mKeyframes(int this_addr);
 
     public void set_mKeyframes(ArraySkeletonKeyframe mKeyframes) {
-        internal_native_set_mKeyframes((int) (long) getNativeData().getCPointer(), (int) (long) (mKeyframes != null ? mKeyframes.getNativeData().getCPointer() : 0));
+        internal_native_set_mKeyframes(native_address, (mKeyframes != null ? mKeyframes.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

@@ -26,7 +26,7 @@ public class ConeConstraint extends TwoBodyConstraint {
     }
 
     public void SetHalfConeAngle(float inHalfConeAngle) {
-        internal_native_SetHalfConeAngle((long) getNativeData().getCPointer(), inHalfConeAngle);
+        internal_native_SetHalfConeAngle(native_address, inHalfConeAngle);
     }
 
     /*[-JNI;-NATIVE]
@@ -36,7 +36,7 @@ nativeObject->SetHalfConeAngle((float)inHalfConeAngle);
     public static native void internal_native_SetHalfConeAngle(long this_addr, float inHalfConeAngle);
 
     public float GetCosHalfConeAngle() {
-        return internal_native_GetCosHalfConeAngle((long) getNativeData().getCPointer());
+        return internal_native_GetCosHalfConeAngle(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -46,12 +46,12 @@ return nativeObject->GetCosHalfConeAngle();
     public static native float internal_native_GetCosHalfConeAngle(long this_addr);
 
     public Vec3 GetTotalLambdaPosition() {
-        long pointer = internal_native_GetTotalLambdaPosition((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetTotalLambdaPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -63,7 +63,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetTotalLambdaPosition(long this_addr);
 
     public float GetTotalLambdaRotation() {
-        return internal_native_GetTotalLambdaRotation((long) getNativeData().getCPointer());
+        return internal_native_GetTotalLambdaRotation(native_address);
     }
 
     /*[-JNI;-NATIVE]

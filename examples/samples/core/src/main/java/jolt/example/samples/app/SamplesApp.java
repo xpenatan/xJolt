@@ -18,6 +18,7 @@ import jolt.example.samples.app.tests.Test;
 import jolt.example.samples.app.tests.TestGroup;
 import jolt.example.samples.app.tests.Tests;
 import jolt.gdx.DebugRenderer;
+import jolt.gdx.GraphicManagerApi;
 import jolt.physics.body.BodyManagerDrawSettings;
 
 public class SamplesApp extends InputAdapter {
@@ -48,7 +49,7 @@ public class SamplesApp extends InputAdapter {
         settingsRenderer = new ImGuiSettingsRenderer();
 
         joltInstance = new JoltInstance();
-        debugRenderer = new DebugRenderer();
+        debugRenderer = GraphicManagerApi.graphicApi.createDebugRenderer();
         debugSettings = new BodyManagerDrawSettings();
 
         camera = new PerspectiveCamera();

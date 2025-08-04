@@ -16,7 +16,7 @@ public class GroupFilterTable extends GroupFilter {
     public GroupFilterTable(int inNumGroups) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int(inNumGroups);
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -27,7 +27,7 @@ return (jlong)new GroupFilterTable(inNumGroups);
     public GroupFilterTable() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -44,7 +44,7 @@ return (jlong)new GroupFilterTable();
     }
 
     public void DisableCollision(int inSubGroup1, int inSubGroup2) {
-        internal_native_DisableCollision((long) getNativeData().getCPointer(), inSubGroup1, inSubGroup2);
+        internal_native_DisableCollision(native_address, inSubGroup1, inSubGroup2);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,7 +54,7 @@ nativeObject->DisableCollision(inSubGroup1, inSubGroup2);
     public static native void internal_native_DisableCollision(long this_addr, int inSubGroup1, int inSubGroup2);
 
     public void EnableCollision(int inSubGroup1, int inSubGroup2) {
-        internal_native_EnableCollision((long) getNativeData().getCPointer(), inSubGroup1, inSubGroup2);
+        internal_native_EnableCollision(native_address, inSubGroup1, inSubGroup2);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,7 +64,7 @@ nativeObject->EnableCollision(inSubGroup1, inSubGroup2);
     public static native void internal_native_EnableCollision(long this_addr, int inSubGroup1, int inSubGroup2);
 
     public boolean IsCollisionEnabled(int inSubGroup1, int inSubGroup2) {
-        return internal_native_IsCollisionEnabled((long) getNativeData().getCPointer(), inSubGroup1, inSubGroup2);
+        return internal_native_IsCollisionEnabled(native_address, inSubGroup1, inSubGroup2);
     }
 
     /*[-JNI;-NATIVE]

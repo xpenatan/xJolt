@@ -21,7 +21,7 @@ public class Triangle extends IDLBase {
 
     public Triangle() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -32,8 +32,8 @@ return jolt.getPointer(jsObj);
     public static native int internal_native_create();
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, int inMaterialIndex, int inUserData) {
-        int addr = internal_native_create_Vec3_Vec3_Vec3_int_int((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0), (int) (long) (inV3 != null ? inV3.getNativeData().getCPointer() : 0), inMaterialIndex, inUserData);
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_Vec3_Vec3_Vec3_int_int((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0), (inV3 != null ? inV3.native_address : 0), inMaterialIndex, inUserData);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -44,8 +44,8 @@ return jolt.getPointer(jsObj);
     public static native int internal_native_create_Vec3_Vec3_Vec3_int_int(int inV1_addr, int inV2_addr, int inV3_addr, int inMaterialIndex, int inUserData);
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, int inMaterialIndex) {
-        int addr = internal_native_create_Vec3_Vec3_Vec3_int((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0), (int) (long) (inV3 != null ? inV3.getNativeData().getCPointer() : 0), inMaterialIndex);
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_Vec3_Vec3_Vec3_int((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0), (inV3 != null ? inV3.native_address : 0), inMaterialIndex);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,8 +56,8 @@ return jolt.getPointer(jsObj);
     public static native int internal_native_create_Vec3_Vec3_Vec3_int(int inV1_addr, int inV2_addr, int inV3_addr, int inMaterialIndex);
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3) {
-        int addr = internal_native_create_Vec3_Vec3_Vec3((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0), (int) (long) (inV3 != null ? inV3.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        int addr = internal_native_create_Vec3_Vec3_Vec3((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0), (inV3 != null ? inV3.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -74,16 +74,8 @@ return jolt.getPointer(jsObj);
     public Triangle(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -94,12 +86,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Float3 get_mV(int index) {
-        int pointer = internal_native_get_mV((int) (long) getNativeData().getCPointer(), index);
+        int pointer = internal_native_get_mV(native_address, index);
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = new Float3((byte) 1, (char) 1);
-        Float3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(pointer, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -113,7 +105,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mV(int this_addr, int index);
 
     public void set_mV(int index, Float3 mV) {
-        internal_native_set_mV((int) (long) getNativeData().getCPointer(), index, (int) (long) (mV != null ? mV.getNativeData().getCPointer() : 0));
+        internal_native_set_mV(native_address, index, (mV != null ? mV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -124,7 +116,7 @@ jsObj.set_mV(index, mV_addr);
     public static native void internal_native_set_mV(int this_addr, int index, int mV_addr);
 
     public int get_mMaterialIndex() {
-        return internal_native_get_mMaterialIndex((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaterialIndex(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -135,7 +127,7 @@ return jsObj.get_mMaterialIndex();
     public static native int internal_native_get_mMaterialIndex(int this_addr);
 
     public void set_mMaterialIndex(int mMaterialIndex) {
-        internal_native_set_mMaterialIndex((int) (long) getNativeData().getCPointer(), mMaterialIndex);
+        internal_native_set_mMaterialIndex(native_address, mMaterialIndex);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -146,7 +138,7 @@ jsObj.set_mMaterialIndex(mMaterialIndex);
     public static native void internal_native_set_mMaterialIndex(int this_addr, int mMaterialIndex);
 
     public int get_mUserData() {
-        return internal_native_get_mUserData((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mUserData(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -157,7 +149,7 @@ return jsObj.get_mUserData();
     public static native int internal_native_get_mUserData(int this_addr);
 
     public void set_mUserData(int mUserData) {
-        internal_native_set_mUserData((int) (long) getNativeData().getCPointer(), mUserData);
+        internal_native_set_mUserData(native_address, mUserData);
     }
 
     /*[-TEAVM;-NATIVE]

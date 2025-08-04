@@ -25,16 +25,8 @@ public class VehicleEngineSettings extends IDLBase {
     public VehicleEngineSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -44,7 +36,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mMaxTorque() {
-        return internal_native_get_mMaxTorque((long) getNativeData().getCPointer());
+        return internal_native_get_mMaxTorque(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,7 +46,7 @@ return nativeObject->mMaxTorque;
     public static native float internal_native_get_mMaxTorque(long this_addr);
 
     public void set_mMaxTorque(float mMaxTorque) {
-        internal_native_set_mMaxTorque((long) getNativeData().getCPointer(), mMaxTorque);
+        internal_native_set_mMaxTorque(native_address, mMaxTorque);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,7 +56,7 @@ nativeObject->mMaxTorque = mMaxTorque;
     public static native void internal_native_set_mMaxTorque(long this_addr, float mMaxTorque);
 
     public float get_mMinRPM() {
-        return internal_native_get_mMinRPM((long) getNativeData().getCPointer());
+        return internal_native_get_mMinRPM(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -74,7 +66,7 @@ return nativeObject->mMinRPM;
     public static native float internal_native_get_mMinRPM(long this_addr);
 
     public void set_mMinRPM(float mMinRPM) {
-        internal_native_set_mMinRPM((long) getNativeData().getCPointer(), mMinRPM);
+        internal_native_set_mMinRPM(native_address, mMinRPM);
     }
 
     /*[-JNI;-NATIVE]
@@ -84,7 +76,7 @@ nativeObject->mMinRPM = mMinRPM;
     public static native void internal_native_set_mMinRPM(long this_addr, float mMinRPM);
 
     public float get_mMaxRPM() {
-        return internal_native_get_mMaxRPM((long) getNativeData().getCPointer());
+        return internal_native_get_mMaxRPM(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -94,7 +86,7 @@ return nativeObject->mMaxRPM;
     public static native float internal_native_get_mMaxRPM(long this_addr);
 
     public void set_mMaxRPM(float mMaxRPM) {
-        internal_native_set_mMaxRPM((long) getNativeData().getCPointer(), mMaxRPM);
+        internal_native_set_mMaxRPM(native_address, mMaxRPM);
     }
 
     /*[-JNI;-NATIVE]
@@ -104,12 +96,12 @@ nativeObject->mMaxRPM = mMaxRPM;
     public static native void internal_native_set_mMaxRPM(long this_addr, float mMaxRPM);
 
     public LinearCurve get_mNormalizedTorque() {
-        long pointer = internal_native_get_mNormalizedTorque((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mNormalizedTorque(native_address);
         if (pointer == 0)
             return null;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = new LinearCurve((byte) 1, (char) 1);
-        LinearCurve_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);
         return LinearCurve_TEMP_GEN_0;
     }
 
@@ -120,7 +112,7 @@ return (jlong)&nativeObject->mNormalizedTorque;
     public static native long internal_native_get_mNormalizedTorque(long this_addr);
 
     public void set_mNormalizedTorque(LinearCurve mNormalizedTorque) {
-        internal_native_set_mNormalizedTorque((long) getNativeData().getCPointer(), (long) (mNormalizedTorque != null ? mNormalizedTorque.getNativeData().getCPointer() : 0));
+        internal_native_set_mNormalizedTorque(native_address, (mNormalizedTorque != null ? mNormalizedTorque.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -130,7 +122,7 @@ nativeObject->mNormalizedTorque = *((LinearCurve*)mNormalizedTorque_addr);
     public static native void internal_native_set_mNormalizedTorque(long this_addr, long mNormalizedTorque_addr);
 
     public float get_mInertia() {
-        return internal_native_get_mInertia((long) getNativeData().getCPointer());
+        return internal_native_get_mInertia(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -140,7 +132,7 @@ return nativeObject->mInertia;
     public static native float internal_native_get_mInertia(long this_addr);
 
     public void set_mInertia(float mInertia) {
-        internal_native_set_mInertia((long) getNativeData().getCPointer(), mInertia);
+        internal_native_set_mInertia(native_address, mInertia);
     }
 
     /*[-JNI;-NATIVE]
@@ -150,7 +142,7 @@ nativeObject->mInertia = mInertia;
     public static native void internal_native_set_mInertia(long this_addr, float mInertia);
 
     public float get_mAngularDamping() {
-        return internal_native_get_mAngularDamping((long) getNativeData().getCPointer());
+        return internal_native_get_mAngularDamping(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -160,7 +152,7 @@ return nativeObject->mAngularDamping;
     public static native float internal_native_get_mAngularDamping(long this_addr);
 
     public void set_mAngularDamping(float mAngularDamping) {
-        internal_native_set_mAngularDamping((long) getNativeData().getCPointer(), mAngularDamping);
+        internal_native_set_mAngularDamping(native_address, mAngularDamping);
     }
 
     /*[-JNI;-NATIVE]

@@ -15,8 +15,8 @@ public class MotorcycleController extends WheeledVehicleController {
 
     public MotorcycleController(MotorcycleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_MotorcycleControllerSettings_VehicleConstraint((long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (long) (inConstraint != null ? inConstraint.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_MotorcycleControllerSettings_VehicleConstraint((inSettings != null ? inSettings.native_address : 0), (inConstraint != null ? inConstraint.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -32,16 +32,8 @@ return (jlong)new MotorcycleController(*((MotorcycleControllerSettings* )inSetti
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public float GetWheelBase() {
-        return internal_native_GetWheelBase((long) getNativeData().getCPointer());
+        return internal_native_GetWheelBase(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ return nativeObject->GetWheelBase();
     public static native float internal_native_GetWheelBase(long this_addr);
 
     public void EnableLeanController(boolean inEnable) {
-        internal_native_EnableLeanController((long) getNativeData().getCPointer(), inEnable);
+        internal_native_EnableLeanController(native_address, inEnable);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ nativeObject->EnableLeanController(inEnable);
     public static native void internal_native_EnableLeanController(long this_addr, boolean inEnable);
 
     public boolean IsLeanControllerEnabled() {
-        return internal_native_IsLeanControllerEnabled((long) getNativeData().getCPointer());
+        return internal_native_IsLeanControllerEnabled(native_address);
     }
 
     /*[-JNI;-NATIVE]

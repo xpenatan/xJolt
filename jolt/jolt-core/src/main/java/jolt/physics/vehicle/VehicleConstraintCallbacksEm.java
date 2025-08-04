@@ -70,16 +70,8 @@ virtual void OnPostStepCallback(VehicleConstraint& inVehicle, const PhysicsStepL
     public VehicleConstraintCallbacksEm(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -89,7 +81,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void SetVehicleConstraint(VehicleConstraint inConstraint) {
-        internal_native_SetVehicleConstraint((long) getNativeData().getCPointer(), (long) (inConstraint != null ? inConstraint.getNativeData().getCPointer() : 0));
+        internal_native_SetVehicleConstraint(native_address, (inConstraint != null ? inConstraint.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -100,64 +92,64 @@ nativeObject->SetVehicleConstraint(*((VehicleConstraint* )inConstraint_addr));
 
     public VehicleConstraintCallbacksEm() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected float GetCombinedFriction(int inWheelIndex, ETireFrictionDirection inTireFrictionDirection, float inTireFriction, Body inBody2, SubShapeID inSubShapeID2) {
         return 0;
     }
 
-    private float internal_GetCombinedFriction(int inWheelIndex, int inTireFrictionDirection, float inTireFriction, long inBody2, long inSubShapeID2) {
+    private float internal_GetCombinedFriction(int inWheelIndex, int inTireFrictionDirection_addr, float inTireFriction, long inBody2_addr, long inSubShapeID2_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
             Body_TEMP_STATIC_GEN_0 = new Body((byte) 1, (char) 1);
-        Body_TEMP_STATIC_GEN_0.getNativeData().reset(inBody2, false);
+        Body_TEMP_STATIC_GEN_0.internal_reset(inBody2_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_0 == null)
             SubShapeID_TEMP_STATIC_GEN_0 = new SubShapeID((byte) 1, (char) 1);
-        SubShapeID_TEMP_STATIC_GEN_0.getNativeData().reset(inSubShapeID2, false);
-        return GetCombinedFriction(inWheelIndex, ETireFrictionDirection.MAP.get(inTireFrictionDirection), inTireFriction, Body_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_0);
+        SubShapeID_TEMP_STATIC_GEN_0.internal_reset(inSubShapeID2_addr, false);
+        return GetCombinedFriction(inWheelIndex, ETireFrictionDirection.MAP.get(inTireFrictionDirection_addr), inTireFriction, Body_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_0);
     }
 
     protected void OnPreStepCallback(VehicleConstraint inVehicle, PhysicsStepListenerContext inContext) {
     }
 
-    private void internal_OnPreStepCallback(long inVehicle, long inContext) {
+    private void internal_OnPreStepCallback(long inVehicle_addr, long inContext_addr) {
         if (VehicleConstraint_TEMP_STATIC_GEN_0 == null)
             VehicleConstraint_TEMP_STATIC_GEN_0 = new VehicleConstraint((byte) 1, (char) 1);
-        VehicleConstraint_TEMP_STATIC_GEN_0.getNativeData().reset(inVehicle, false);
+        VehicleConstraint_TEMP_STATIC_GEN_0.internal_reset(inVehicle_addr, false);
         if (PhysicsStepListenerContext_TEMP_STATIC_GEN_0 == null)
             PhysicsStepListenerContext_TEMP_STATIC_GEN_0 = new PhysicsStepListenerContext((byte) 1, (char) 1);
-        PhysicsStepListenerContext_TEMP_STATIC_GEN_0.getNativeData().reset(inContext, false);
+        PhysicsStepListenerContext_TEMP_STATIC_GEN_0.internal_reset(inContext_addr, false);
         OnPreStepCallback(VehicleConstraint_TEMP_STATIC_GEN_0, PhysicsStepListenerContext_TEMP_STATIC_GEN_0);
     }
 
     protected void OnPostCollideCallback(VehicleConstraint inVehicle, PhysicsStepListenerContext inContext) {
     }
 
-    private void internal_OnPostCollideCallback(long inVehicle, long inContext) {
+    private void internal_OnPostCollideCallback(long inVehicle_addr, long inContext_addr) {
         if (VehicleConstraint_TEMP_STATIC_GEN_1 == null)
             VehicleConstraint_TEMP_STATIC_GEN_1 = new VehicleConstraint((byte) 1, (char) 1);
-        VehicleConstraint_TEMP_STATIC_GEN_1.getNativeData().reset(inVehicle, false);
+        VehicleConstraint_TEMP_STATIC_GEN_1.internal_reset(inVehicle_addr, false);
         if (PhysicsStepListenerContext_TEMP_STATIC_GEN_1 == null)
             PhysicsStepListenerContext_TEMP_STATIC_GEN_1 = new PhysicsStepListenerContext((byte) 1, (char) 1);
-        PhysicsStepListenerContext_TEMP_STATIC_GEN_1.getNativeData().reset(inContext, false);
+        PhysicsStepListenerContext_TEMP_STATIC_GEN_1.internal_reset(inContext_addr, false);
         OnPostCollideCallback(VehicleConstraint_TEMP_STATIC_GEN_1, PhysicsStepListenerContext_TEMP_STATIC_GEN_1);
     }
 
     protected void OnPostStepCallback(VehicleConstraint inVehicle, PhysicsStepListenerContext inContext) {
     }
 
-    private void internal_OnPostStepCallback(long inVehicle, long inContext) {
+    private void internal_OnPostStepCallback(long inVehicle_addr, long inContext_addr) {
         if (VehicleConstraint_TEMP_STATIC_GEN_2 == null)
             VehicleConstraint_TEMP_STATIC_GEN_2 = new VehicleConstraint((byte) 1, (char) 1);
-        VehicleConstraint_TEMP_STATIC_GEN_2.getNativeData().reset(inVehicle, false);
+        VehicleConstraint_TEMP_STATIC_GEN_2.internal_reset(inVehicle_addr, false);
         if (PhysicsStepListenerContext_TEMP_STATIC_GEN_2 == null)
             PhysicsStepListenerContext_TEMP_STATIC_GEN_2 = new PhysicsStepListenerContext((byte) 1, (char) 1);
-        PhysicsStepListenerContext_TEMP_STATIC_GEN_2.getNativeData().reset(inContext, false);
+        PhysicsStepListenerContext_TEMP_STATIC_GEN_2.internal_reset(inContext_addr, false);
         OnPostStepCallback(VehicleConstraint_TEMP_STATIC_GEN_2, PhysicsStepListenerContext_TEMP_STATIC_GEN_2);
     }
 

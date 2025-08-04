@@ -17,7 +17,7 @@ public class SoftBodySharedSettingsFace extends IDLBase {
 
     public SoftBodySharedSettingsFace(int inVertex1, int inVertex2, int inVertex3, int inMaterialIndex) {
         int addr = internal_native_create_int_int_int_int(inVertex1, inVertex2, inVertex3, inMaterialIndex);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
     public SoftBodySharedSettingsFace(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mVertex(int index) {
-        return internal_native_get_mVertex((int) (long) getNativeData().getCPointer(), index);
+        return internal_native_get_mVertex(native_address, index);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ return jsObj.get_mVertex(index);
     public static native int internal_native_get_mVertex(int this_addr, int index);
 
     public void set_mVertex(int index, int mVertex) {
-        internal_native_set_mVertex((int) (long) getNativeData().getCPointer(), index, mVertex);
+        internal_native_set_mVertex(native_address, index, mVertex);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ jsObj.set_mVertex(index, mVertex);
     public static native void internal_native_set_mVertex(int this_addr, int index, int mVertex);
 
     public int get_mMaterialIndex() {
-        return internal_native_get_mMaterialIndex((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaterialIndex(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +79,7 @@ return jsObj.get_mMaterialIndex();
     public static native int internal_native_get_mMaterialIndex(int this_addr);
 
     public void set_mMaterialIndex(int mMaterialIndex) {
-        internal_native_set_mMaterialIndex((int) (long) getNativeData().getCPointer(), mMaterialIndex);
+        internal_native_set_mMaterialIndex(native_address, mMaterialIndex);
     }
 
     /*[-TEAVM;-NATIVE]

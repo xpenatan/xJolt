@@ -23,7 +23,7 @@ public class MassProperties extends IDLBase {
 
     public MassProperties() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -38,16 +38,8 @@ return (jlong)new MassProperties();
     public MassProperties(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -57,7 +49,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void SetMassAndInertiaOfSolidBox(Vec3 inBoxSize, float inDensity) {
-        internal_native_SetMassAndInertiaOfSolidBox((long) getNativeData().getCPointer(), (long) (inBoxSize != null ? inBoxSize.getNativeData().getCPointer() : 0), inDensity);
+        internal_native_SetMassAndInertiaOfSolidBox(native_address, (inBoxSize != null ? inBoxSize.native_address : 0), inDensity);
     }
 
     /*[-JNI;-NATIVE]
@@ -67,7 +59,7 @@ nativeObject->SetMassAndInertiaOfSolidBox(*((Vec3* )inBoxSize_addr), (float)inDe
     public static native void internal_native_SetMassAndInertiaOfSolidBox(long this_addr, long inBoxSize_addr, float inDensity);
 
     public void ScaleToMass(float inMass) {
-        internal_native_ScaleToMass((long) getNativeData().getCPointer(), inMass);
+        internal_native_ScaleToMass(native_address, inMass);
     }
 
     /*[-JNI;-NATIVE]
@@ -77,12 +69,12 @@ nativeObject->ScaleToMass((float)inMass);
     public static native void internal_native_ScaleToMass(long this_addr, float inMass);
 
     public static Vec3 sGetEquivalentSolidBoxSize(float inMass, Vec3 inInertiaDiagonal) {
-        long pointer = internal_native_sGetEquivalentSolidBoxSize(inMass, (long) (inInertiaDiagonal != null ? inInertiaDiagonal.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sGetEquivalentSolidBoxSize(inMass, (inInertiaDiagonal != null ? inInertiaDiagonal.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_0;
     }
 
@@ -93,7 +85,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sGetEquivalentSolidBoxSize(float inMass, long inInertiaDiagonal_addr);
 
     public void Rotate(Mat44 inRotation) {
-        internal_native_Rotate((long) getNativeData().getCPointer(), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0));
+        internal_native_Rotate(native_address, (inRotation != null ? inRotation.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -103,7 +95,7 @@ nativeObject->Rotate(*((Mat44* )inRotation_addr));
     public static native void internal_native_Rotate(long this_addr, long inRotation_addr);
 
     public void Translate(Vec3 inTranslation) {
-        internal_native_Translate((long) getNativeData().getCPointer(), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
+        internal_native_Translate(native_address, (inTranslation != null ? inTranslation.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -113,7 +105,7 @@ nativeObject->Translate(*((Vec3* )inTranslation_addr));
     public static native void internal_native_Translate(long this_addr, long inTranslation_addr);
 
     public void Scale(Vec3 inScale) {
-        internal_native_Scale((long) getNativeData().getCPointer(), (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
+        internal_native_Scale(native_address, (inScale != null ? inScale.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -123,7 +115,7 @@ nativeObject->Scale(*((Vec3* )inScale_addr));
     public static native void internal_native_Scale(long this_addr, long inScale_addr);
 
     public float get_mMass() {
-        return internal_native_get_mMass((long) getNativeData().getCPointer());
+        return internal_native_get_mMass(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -133,7 +125,7 @@ return nativeObject->mMass;
     public static native float internal_native_get_mMass(long this_addr);
 
     public void set_mMass(float mMass) {
-        internal_native_set_mMass((long) getNativeData().getCPointer(), mMass);
+        internal_native_set_mMass(native_address, mMass);
     }
 
     /*[-JNI;-NATIVE]
@@ -143,12 +135,12 @@ nativeObject->mMass = mMass;
     public static native void internal_native_set_mMass(long this_addr, float mMass);
 
     public Mat44 get_mInertia() {
-        long pointer = internal_native_get_mInertia((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mInertia(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -159,7 +151,7 @@ return (jlong)&nativeObject->mInertia;
     public static native long internal_native_get_mInertia(long this_addr);
 
     public void set_mInertia(Mat44 mInertia) {
-        internal_native_set_mInertia((long) getNativeData().getCPointer(), (long) (mInertia != null ? mInertia.getNativeData().getCPointer() : 0));
+        internal_native_set_mInertia(native_address, (mInertia != null ? mInertia.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

@@ -17,7 +17,7 @@ public class SoftBodySharedSettingsVolume extends IDLBase {
 
     public SoftBodySharedSettingsVolume(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance) {
         int addr = internal_native_create_int_int_int_int_float(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
     public SoftBodySharedSettingsVolume(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mVertex(int index) {
-        return internal_native_get_mVertex((int) (long) getNativeData().getCPointer(), index);
+        return internal_native_get_mVertex(native_address, index);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ return jsObj.get_mVertex(index);
     public static native int internal_native_get_mVertex(int this_addr, int index);
 
     public void set_mVertex(int index, int mVertex) {
-        internal_native_set_mVertex((int) (long) getNativeData().getCPointer(), index, mVertex);
+        internal_native_set_mVertex(native_address, index, mVertex);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ jsObj.set_mVertex(index, mVertex);
     public static native void internal_native_set_mVertex(int this_addr, int index, int mVertex);
 
     public float get_mSixRestVolume() {
-        return internal_native_get_mSixRestVolume((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mSixRestVolume(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +79,7 @@ return jsObj.get_mSixRestVolume();
     public static native float internal_native_get_mSixRestVolume(int this_addr);
 
     public void set_mSixRestVolume(float mSixRestVolume) {
-        internal_native_set_mSixRestVolume((int) (long) getNativeData().getCPointer(), mSixRestVolume);
+        internal_native_set_mSixRestVolume(native_address, mSixRestVolume);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -98,7 +90,7 @@ jsObj.set_mSixRestVolume(mSixRestVolume);
     public static native void internal_native_set_mSixRestVolume(int this_addr, float mSixRestVolume);
 
     public float get_mCompliance() {
-        return internal_native_get_mCompliance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mCompliance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -109,7 +101,7 @@ return jsObj.get_mCompliance();
     public static native float internal_native_get_mCompliance(int this_addr);
 
     public void set_mCompliance(float mCompliance) {
-        internal_native_set_mCompliance((int) (long) getNativeData().getCPointer(), mCompliance);
+        internal_native_set_mCompliance(native_address, mCompliance);
     }
 
     /*[-TEAVM;-NATIVE]

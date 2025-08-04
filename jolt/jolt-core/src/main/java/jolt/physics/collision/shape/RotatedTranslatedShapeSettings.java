@@ -22,8 +22,8 @@ public class RotatedTranslatedShapeSettings extends DecoratedShapeSettings {
 
     public RotatedTranslatedShapeSettings(Vec3 inPosition, Quat inRotation, ShapeSettings inShape) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3_Quat_ShapeSettings((long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_Vec3_Quat_ShapeSettings((inPosition != null ? inPosition.native_address : 0), (inRotation != null ? inRotation.native_address : 0), (inShape != null ? inShape.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,12 +40,12 @@ return (jlong)new RotatedTranslatedShapeSettings(*((Vec3* )inPosition_addr), *((
     }
 
     public Vec3 get_mPosition() {
-        long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -56,7 +56,7 @@ return (jlong)&nativeObject->mPosition;
     public static native long internal_native_get_mPosition(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
-        internal_native_set_mPosition((long) getNativeData().getCPointer(), (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
+        internal_native_set_mPosition(native_address, (mPosition != null ? mPosition.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -66,12 +66,12 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Quat get_mRotation() {
-        long pointer = internal_native_get_mRotation((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mRotation(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -82,7 +82,7 @@ return (jlong)&nativeObject->mRotation;
     public static native long internal_native_get_mRotation(long this_addr);
 
     public void set_mRotation(Quat mRotation) {
-        internal_native_set_mRotation((long) getNativeData().getCPointer(), (long) (mRotation != null ? mRotation.getNativeData().getCPointer() : 0));
+        internal_native_set_mRotation(native_address, (mRotation != null ? mRotation.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

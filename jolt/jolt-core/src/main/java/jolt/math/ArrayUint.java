@@ -24,16 +24,8 @@ public class ArrayUint extends IDLBase {
     public ArrayUint(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -43,7 +35,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public boolean empty() {
-        return internal_native_empty((long) getNativeData().getCPointer());
+        return internal_native_empty(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,7 +45,7 @@ return nativeObject->empty();
     public static native boolean internal_native_empty(long this_addr);
 
     public int size() {
-        return internal_native_size((long) getNativeData().getCPointer());
+        return internal_native_size(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -63,7 +55,7 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public int at(int inIndex) {
-        return internal_native_at((long) getNativeData().getCPointer(), inIndex);
+        return internal_native_at(native_address, inIndex);
     }
 
     /*[-JNI;-NATIVE]
@@ -73,7 +65,7 @@ return nativeObject->at((int)inIndex);
     public static native int internal_native_at(long this_addr, int inIndex);
 
     public void push_back(int inValue) {
-        internal_native_push_back((long) getNativeData().getCPointer(), inValue);
+        internal_native_push_back(native_address, inValue);
     }
 
     /*[-JNI;-NATIVE]
@@ -83,7 +75,7 @@ nativeObject->push_back(inValue);
     public static native void internal_native_push_back(long this_addr, int inValue);
 
     public void reserve(int inSize) {
-        internal_native_reserve((long) getNativeData().getCPointer(), inSize);
+        internal_native_reserve(native_address, inSize);
     }
 
     /*[-JNI;-NATIVE]
@@ -93,7 +85,7 @@ nativeObject->reserve(inSize);
     public static native void internal_native_reserve(long this_addr, int inSize);
 
     public void resize(int inSize) {
-        internal_native_resize((long) getNativeData().getCPointer(), inSize);
+        internal_native_resize(native_address, inSize);
     }
 
     /*[-JNI;-NATIVE]
@@ -103,7 +95,7 @@ nativeObject->resize(inSize);
     public static native void internal_native_resize(long this_addr, int inSize);
 
     public void clear() {
-        internal_native_clear((long) getNativeData().getCPointer());
+        internal_native_clear(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -113,12 +105,12 @@ nativeObject->clear();
     public static native void internal_native_clear(long this_addr);
 
     public UintMemRef data() {
-        long pointer = internal_native_data((long) getNativeData().getCPointer());
+        long pointer = internal_native_data(native_address);
         if (pointer == 0)
             return null;
         if (UintMemRef_TEMP_GEN_0 == null)
             UintMemRef_TEMP_GEN_0 = new UintMemRef((byte) 1, (char) 1);
-        UintMemRef_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        UintMemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return UintMemRef_TEMP_GEN_0;
     }
 

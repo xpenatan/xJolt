@@ -41,16 +41,8 @@ public class Jolt extends IDLBase {
     public Jolt(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         PhysicsSystem PhysicsSystem_NEW = new PhysicsSystem((byte) 1, (char) 1);
-        PhysicsSystem_NEW.getNativeData().reset(pointer, true);
+        PhysicsSystem_NEW.internal_reset(pointer, true);
         return PhysicsSystem_NEW;
     }
 
@@ -82,7 +74,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         Factory Factory_NEW = new Factory((byte) 1, (char) 1);
-        Factory_NEW.getNativeData().reset(pointer, true);
+        Factory_NEW.internal_reset(pointer, true);
         return Factory_NEW;
     }
 
@@ -99,7 +91,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         TempAllocatorImpl TempAllocatorImpl_NEW = new TempAllocatorImpl((byte) 1, (char) 1);
-        TempAllocatorImpl_NEW.getNativeData().reset(pointer, true);
+        TempAllocatorImpl_NEW.internal_reset(pointer, true);
         return TempAllocatorImpl_NEW;
     }
 
@@ -116,7 +108,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         JobSystemThreadPool JobSystemThreadPool_NEW = new JobSystemThreadPool((byte) 1, (char) 1);
-        JobSystemThreadPool_NEW.getNativeData().reset(pointer, true);
+        JobSystemThreadPool_NEW.internal_reset(pointer, true);
         return JobSystemThreadPool_NEW;
     }
 
@@ -134,7 +126,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_0 == null)
             JobSystemThreadPool_TEMP_STATIC_GEN_0 = new JobSystemThreadPool((byte) 1, (char) 1);
-        JobSystemThreadPool_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        JobSystemThreadPool_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return JobSystemThreadPool_TEMP_STATIC_GEN_0;
     }
 
@@ -152,7 +144,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_1 == null)
             JobSystemThreadPool_TEMP_STATIC_GEN_1 = new JobSystemThreadPool((byte) 1, (char) 1);
-        JobSystemThreadPool_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
+        JobSystemThreadPool_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return JobSystemThreadPool_TEMP_STATIC_GEN_1;
     }
 
@@ -170,7 +162,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_2 == null)
             JobSystemThreadPool_TEMP_STATIC_GEN_2 = new JobSystemThreadPool((byte) 1, (char) 1);
-        JobSystemThreadPool_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
+        JobSystemThreadPool_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return JobSystemThreadPool_TEMP_STATIC_GEN_2;
     }
 
@@ -187,7 +179,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
-        BodyCreationSettings_NEW.getNativeData().reset(pointer, true);
+        BodyCreationSettings_NEW.internal_reset(pointer, true);
         return BodyCreationSettings_NEW;
     }
 
@@ -200,11 +192,11 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_New_BodyCreationSettings_0();
 
     public static BodyCreationSettings New_BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        int pointer = internal_native_New_BodyCreationSettings_1((int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
+        int pointer = internal_native_New_BodyCreationSettings_1((inShape != null ? inShape.native_address : 0), (inPosition != null ? inPosition.native_address : 0), (inRotation != null ? inRotation.native_address : 0), (int) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
         if (pointer == 0)
             return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
-        BodyCreationSettings_NEW.getNativeData().reset(pointer, true);
+        BodyCreationSettings_NEW.internal_reset(pointer, true);
         return BodyCreationSettings_NEW;
     }
 
@@ -217,11 +209,11 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_New_BodyCreationSettings_1(int inShape_addr, int inPosition_addr, int inRotation_addr, int inMotionType, int inObjectLayer);
 
     public static BodyCreationSettings New_BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        int pointer = internal_native_New_BodyCreationSettings_2((int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (int) (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
+        int pointer = internal_native_New_BodyCreationSettings_2((inShape != null ? inShape.native_address : 0), (inPosition != null ? inPosition.native_address : 0), (inRotation != null ? inRotation.native_address : 0), (int) (inMotionType != null ? inMotionType.getValue() : 0), inObjectLayer);
         if (pointer == 0)
             return null;
         BodyCreationSettings BodyCreationSettings_NEW = new BodyCreationSettings((byte) 1, (char) 1);
-        BodyCreationSettings_NEW.getNativeData().reset(pointer, true);
+        BodyCreationSettings_NEW.internal_reset(pointer, true);
         return BodyCreationSettings_NEW;
     }
 
@@ -238,7 +230,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         Mat44 Mat44_NEW = new Mat44((byte) 1, (char) 1);
-        Mat44_NEW.getNativeData().reset(pointer, true);
+        Mat44_NEW.internal_reset(pointer, true);
         return Mat44_NEW;
     }
 
@@ -251,11 +243,11 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_New_Mat44_0();
 
     public static Mat44 New_Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec4 inC4) {
-        int pointer = internal_native_New_Mat44_1((int) (long) (inC1 != null ? inC1.getNativeData().getCPointer() : 0), (int) (long) (inC2 != null ? inC2.getNativeData().getCPointer() : 0), (int) (long) (inC3 != null ? inC3.getNativeData().getCPointer() : 0), (int) (long) (inC4 != null ? inC4.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_New_Mat44_1((inC1 != null ? inC1.native_address : 0), (inC2 != null ? inC2.native_address : 0), (inC3 != null ? inC3.native_address : 0), (inC4 != null ? inC4.native_address : 0));
         if (pointer == 0)
             return null;
         Mat44 Mat44_NEW = new Mat44((byte) 1, (char) 1);
-        Mat44_NEW.getNativeData().reset(pointer, true);
+        Mat44_NEW.internal_reset(pointer, true);
         return Mat44_NEW;
     }
 
@@ -268,11 +260,11 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_New_Mat44_1(int inC1_addr, int inC2_addr, int inC3_addr, int inC4_addr);
 
     public static Mat44 New_Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec3 inC4) {
-        int pointer = internal_native_New_Mat44_2((int) (long) (inC1 != null ? inC1.getNativeData().getCPointer() : 0), (int) (long) (inC2 != null ? inC2.getNativeData().getCPointer() : 0), (int) (long) (inC3 != null ? inC3.getNativeData().getCPointer() : 0), (int) (long) (inC4 != null ? inC4.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_New_Mat44_2((inC1 != null ? inC1.native_address : 0), (inC2 != null ? inC2.native_address : 0), (inC3 != null ? inC3.native_address : 0), (inC4 != null ? inC4.native_address : 0));
         if (pointer == 0)
             return null;
         Mat44 Mat44_NEW = new Mat44((byte) 1, (char) 1);
-        Mat44_NEW.getNativeData().reset(pointer, true);
+        Mat44_NEW.internal_reset(pointer, true);
         return Mat44_NEW;
     }
 
@@ -289,7 +281,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         Vec3 Vec3_NEW = new Vec3((byte) 1, (char) 1);
-        Vec3_NEW.getNativeData().reset(pointer, true);
+        Vec3_NEW.internal_reset(pointer, true);
         return Vec3_NEW;
     }
 
@@ -306,7 +298,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         Vec3 Vec3_NEW = new Vec3((byte) 1, (char) 1);
-        Vec3_NEW.getNativeData().reset(pointer, true);
+        Vec3_NEW.internal_reset(pointer, true);
         return Vec3_NEW;
     }
 
@@ -319,11 +311,11 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_New_Vec3_1(float inX, float inY, float inZ);
 
     public static Vec3 New_Vec3(Vec3 inRHS) {
-        int pointer = internal_native_New_Vec3_2((int) (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_New_Vec3_2((inRHS != null ? inRHS.native_address : 0));
         if (pointer == 0)
             return null;
         Vec3 Vec3_NEW = new Vec3((byte) 1, (char) 1);
-        Vec3_NEW.getNativeData().reset(pointer, true);
+        Vec3_NEW.internal_reset(pointer, true);
         return Vec3_NEW;
     }
 
@@ -336,11 +328,11 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_New_Vec3_2(int inRHS_addr);
 
     public static Vec3 New_Vec3(Float3 inV) {
-        int pointer = internal_native_New_Vec3_3((int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_New_Vec3_3((inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         Vec3 Vec3_NEW = new Vec3((byte) 1, (char) 1);
-        Vec3_NEW.getNativeData().reset(pointer, true);
+        Vec3_NEW.internal_reset(pointer, true);
         return Vec3_NEW;
     }
 
@@ -357,7 +349,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         Vec4 Vec4_NEW = new Vec4((byte) 1, (char) 1);
-        Vec4_NEW.getNativeData().reset(pointer, true);
+        Vec4_NEW.internal_reset(pointer, true);
         return Vec4_NEW;
     }
 
@@ -374,7 +366,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         Vec4 Vec4_NEW = new Vec4((byte) 1, (char) 1);
-        Vec4_NEW.getNativeData().reset(pointer, true);
+        Vec4_NEW.internal_reset(pointer, true);
         return Vec4_NEW;
     }
 
@@ -387,11 +379,11 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_New_Vec4_1(float inX, float inY, float inZ, float inW);
 
     public static Vec4 New_Vec4(Vec4 inV) {
-        int pointer = internal_native_New_Vec4_2((int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_New_Vec4_2((inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         Vec4 Vec4_NEW = new Vec4((byte) 1, (char) 1);
-        Vec4_NEW.getNativeData().reset(pointer, true);
+        Vec4_NEW.internal_reset(pointer, true);
         return Vec4_NEW;
     }
 
@@ -404,11 +396,11 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_New_Vec4_2(int inV_addr);
 
     public static Vec4 New_Vec4(Vec3 inV, float inW) {
-        int pointer = internal_native_New_Vec4_3((int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0), inW);
+        int pointer = internal_native_New_Vec4_3((inV != null ? inV.native_address : 0), inW);
         if (pointer == 0)
             return null;
         Vec4 Vec4_NEW = new Vec4((byte) 1, (char) 1);
-        Vec4_NEW.getNativeData().reset(pointer, true);
+        Vec4_NEW.internal_reset(pointer, true);
         return Vec4_NEW;
     }
 
@@ -451,7 +443,7 @@ jolt.Jolt.prototype.UnregisterTypes();
     public static native void internal_native_UnregisterTypes();
 
     public static void ClearWorld(PhysicsSystem physicsSystem) {
-        internal_native_ClearWorld((int) (long) (physicsSystem != null ? physicsSystem.getNativeData().getCPointer() : 0));
+        internal_native_ClearWorld((physicsSystem != null ? physicsSystem.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

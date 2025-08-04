@@ -33,7 +33,7 @@ public class WheelSettings extends IDLBase {
 
     public WheelSettings() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -49,7 +49,7 @@ return (jlong)new WheelSettings();
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -59,7 +59,7 @@ return nativeObject->GetRefCount();
     public static native int internal_native_GetRefCount(long this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -69,7 +69,7 @@ nativeObject->AddRef();
     public static native void internal_native_AddRef(long this_addr);
 
     public void Release() {
-        internal_native_Release((long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -79,12 +79,12 @@ nativeObject->Release();
     public static native void internal_native_Release(long this_addr);
 
     public Vec3 get_mPosition() {
-        long pointer = internal_native_get_mPosition((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -95,7 +95,7 @@ return (jlong)&nativeObject->mPosition;
     public static native long internal_native_get_mPosition(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
-        internal_native_set_mPosition((long) getNativeData().getCPointer(), (long) (mPosition != null ? mPosition.getNativeData().getCPointer() : 0));
+        internal_native_set_mPosition(native_address, (mPosition != null ? mPosition.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -105,12 +105,12 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Vec3 get_mSuspensionForcePoint() {
-        long pointer = internal_native_get_mSuspensionForcePoint((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mSuspensionForcePoint(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -121,7 +121,7 @@ return (jlong)&nativeObject->mSuspensionForcePoint;
     public static native long internal_native_get_mSuspensionForcePoint(long this_addr);
 
     public void set_mSuspensionForcePoint(Vec3 mSuspensionForcePoint) {
-        internal_native_set_mSuspensionForcePoint((long) getNativeData().getCPointer(), (long) (mSuspensionForcePoint != null ? mSuspensionForcePoint.getNativeData().getCPointer() : 0));
+        internal_native_set_mSuspensionForcePoint(native_address, (mSuspensionForcePoint != null ? mSuspensionForcePoint.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -131,12 +131,12 @@ nativeObject->mSuspensionForcePoint = *((Vec3*)mSuspensionForcePoint_addr);
     public static native void internal_native_set_mSuspensionForcePoint(long this_addr, long mSuspensionForcePoint_addr);
 
     public Vec3 get_mSuspensionDirection() {
-        long pointer = internal_native_get_mSuspensionDirection((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mSuspensionDirection(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -147,7 +147,7 @@ return (jlong)&nativeObject->mSuspensionDirection;
     public static native long internal_native_get_mSuspensionDirection(long this_addr);
 
     public void set_mSuspensionDirection(Vec3 mSuspensionDirection) {
-        internal_native_set_mSuspensionDirection((long) getNativeData().getCPointer(), (long) (mSuspensionDirection != null ? mSuspensionDirection.getNativeData().getCPointer() : 0));
+        internal_native_set_mSuspensionDirection(native_address, (mSuspensionDirection != null ? mSuspensionDirection.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -157,12 +157,12 @@ nativeObject->mSuspensionDirection = *((Vec3*)mSuspensionDirection_addr);
     public static native void internal_native_set_mSuspensionDirection(long this_addr, long mSuspensionDirection_addr);
 
     public Vec3 get_mSteeringAxis() {
-        long pointer = internal_native_get_mSteeringAxis((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mSteeringAxis(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -173,7 +173,7 @@ return (jlong)&nativeObject->mSteeringAxis;
     public static native long internal_native_get_mSteeringAxis(long this_addr);
 
     public void set_mSteeringAxis(Vec3 mSteeringAxis) {
-        internal_native_set_mSteeringAxis((long) getNativeData().getCPointer(), (long) (mSteeringAxis != null ? mSteeringAxis.getNativeData().getCPointer() : 0));
+        internal_native_set_mSteeringAxis(native_address, (mSteeringAxis != null ? mSteeringAxis.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -183,12 +183,12 @@ nativeObject->mSteeringAxis = *((Vec3*)mSteeringAxis_addr);
     public static native void internal_native_set_mSteeringAxis(long this_addr, long mSteeringAxis_addr);
 
     public Vec3 get_mWheelUp() {
-        long pointer = internal_native_get_mWheelUp((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mWheelUp(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -199,7 +199,7 @@ return (jlong)&nativeObject->mWheelUp;
     public static native long internal_native_get_mWheelUp(long this_addr);
 
     public void set_mWheelUp(Vec3 mWheelUp) {
-        internal_native_set_mWheelUp((long) getNativeData().getCPointer(), (long) (mWheelUp != null ? mWheelUp.getNativeData().getCPointer() : 0));
+        internal_native_set_mWheelUp(native_address, (mWheelUp != null ? mWheelUp.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -209,12 +209,12 @@ nativeObject->mWheelUp = *((Vec3*)mWheelUp_addr);
     public static native void internal_native_set_mWheelUp(long this_addr, long mWheelUp_addr);
 
     public Vec3 get_mWheelForward() {
-        long pointer = internal_native_get_mWheelForward((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mWheelForward(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -225,7 +225,7 @@ return (jlong)&nativeObject->mWheelForward;
     public static native long internal_native_get_mWheelForward(long this_addr);
 
     public void set_mWheelForward(Vec3 mWheelForward) {
-        internal_native_set_mWheelForward((long) getNativeData().getCPointer(), (long) (mWheelForward != null ? mWheelForward.getNativeData().getCPointer() : 0));
+        internal_native_set_mWheelForward(native_address, (mWheelForward != null ? mWheelForward.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -235,12 +235,12 @@ nativeObject->mWheelForward = *((Vec3*)mWheelForward_addr);
     public static native void internal_native_set_mWheelForward(long this_addr, long mWheelForward_addr);
 
     public SpringSettings get_mSuspensionSpring() {
-        long pointer = internal_native_get_mSuspensionSpring((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mSuspensionSpring(native_address);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = new SpringSettings((byte) 1, (char) 1);
-        SpringSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -251,7 +251,7 @@ return (jlong)&nativeObject->mSuspensionSpring;
     public static native long internal_native_get_mSuspensionSpring(long this_addr);
 
     public void set_mSuspensionSpring(SpringSettings mSuspensionSpring) {
-        internal_native_set_mSuspensionSpring((long) getNativeData().getCPointer(), (long) (mSuspensionSpring != null ? mSuspensionSpring.getNativeData().getCPointer() : 0));
+        internal_native_set_mSuspensionSpring(native_address, (mSuspensionSpring != null ? mSuspensionSpring.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -261,7 +261,7 @@ nativeObject->mSuspensionSpring = *((SpringSettings*)mSuspensionSpring_addr);
     public static native void internal_native_set_mSuspensionSpring(long this_addr, long mSuspensionSpring_addr);
 
     public float get_mSuspensionMinLength() {
-        return internal_native_get_mSuspensionMinLength((long) getNativeData().getCPointer());
+        return internal_native_get_mSuspensionMinLength(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -271,7 +271,7 @@ return nativeObject->mSuspensionMinLength;
     public static native float internal_native_get_mSuspensionMinLength(long this_addr);
 
     public void set_mSuspensionMinLength(float mSuspensionMinLength) {
-        internal_native_set_mSuspensionMinLength((long) getNativeData().getCPointer(), mSuspensionMinLength);
+        internal_native_set_mSuspensionMinLength(native_address, mSuspensionMinLength);
     }
 
     /*[-JNI;-NATIVE]
@@ -281,7 +281,7 @@ nativeObject->mSuspensionMinLength = mSuspensionMinLength;
     public static native void internal_native_set_mSuspensionMinLength(long this_addr, float mSuspensionMinLength);
 
     public float get_mSuspensionMaxLength() {
-        return internal_native_get_mSuspensionMaxLength((long) getNativeData().getCPointer());
+        return internal_native_get_mSuspensionMaxLength(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -291,7 +291,7 @@ return nativeObject->mSuspensionMaxLength;
     public static native float internal_native_get_mSuspensionMaxLength(long this_addr);
 
     public void set_mSuspensionMaxLength(float mSuspensionMaxLength) {
-        internal_native_set_mSuspensionMaxLength((long) getNativeData().getCPointer(), mSuspensionMaxLength);
+        internal_native_set_mSuspensionMaxLength(native_address, mSuspensionMaxLength);
     }
 
     /*[-JNI;-NATIVE]
@@ -301,7 +301,7 @@ nativeObject->mSuspensionMaxLength = mSuspensionMaxLength;
     public static native void internal_native_set_mSuspensionMaxLength(long this_addr, float mSuspensionMaxLength);
 
     public float get_mSuspensionPreloadLength() {
-        return internal_native_get_mSuspensionPreloadLength((long) getNativeData().getCPointer());
+        return internal_native_get_mSuspensionPreloadLength(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -311,7 +311,7 @@ return nativeObject->mSuspensionPreloadLength;
     public static native float internal_native_get_mSuspensionPreloadLength(long this_addr);
 
     public void set_mSuspensionPreloadLength(float mSuspensionPreloadLength) {
-        internal_native_set_mSuspensionPreloadLength((long) getNativeData().getCPointer(), mSuspensionPreloadLength);
+        internal_native_set_mSuspensionPreloadLength(native_address, mSuspensionPreloadLength);
     }
 
     /*[-JNI;-NATIVE]
@@ -321,7 +321,7 @@ nativeObject->mSuspensionPreloadLength = mSuspensionPreloadLength;
     public static native void internal_native_set_mSuspensionPreloadLength(long this_addr, float mSuspensionPreloadLength);
 
     public float get_mRadius() {
-        return internal_native_get_mRadius((long) getNativeData().getCPointer());
+        return internal_native_get_mRadius(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -331,7 +331,7 @@ return nativeObject->mRadius;
     public static native float internal_native_get_mRadius(long this_addr);
 
     public void set_mRadius(float mRadius) {
-        internal_native_set_mRadius((long) getNativeData().getCPointer(), mRadius);
+        internal_native_set_mRadius(native_address, mRadius);
     }
 
     /*[-JNI;-NATIVE]
@@ -341,7 +341,7 @@ nativeObject->mRadius = mRadius;
     public static native void internal_native_set_mRadius(long this_addr, float mRadius);
 
     public float get_mWidth() {
-        return internal_native_get_mWidth((long) getNativeData().getCPointer());
+        return internal_native_get_mWidth(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -351,7 +351,7 @@ return nativeObject->mWidth;
     public static native float internal_native_get_mWidth(long this_addr);
 
     public void set_mWidth(float mWidth) {
-        internal_native_set_mWidth((long) getNativeData().getCPointer(), mWidth);
+        internal_native_set_mWidth(native_address, mWidth);
     }
 
     /*[-JNI;-NATIVE]
@@ -361,7 +361,7 @@ nativeObject->mWidth = mWidth;
     public static native void internal_native_set_mWidth(long this_addr, float mWidth);
 
     public boolean get_mEnableSuspensionForcePoint() {
-        return internal_native_get_mEnableSuspensionForcePoint((long) getNativeData().getCPointer());
+        return internal_native_get_mEnableSuspensionForcePoint(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -371,7 +371,7 @@ return nativeObject->mEnableSuspensionForcePoint;
     public static native boolean internal_native_get_mEnableSuspensionForcePoint(long this_addr);
 
     public void set_mEnableSuspensionForcePoint(boolean mEnableSuspensionForcePoint) {
-        internal_native_set_mEnableSuspensionForcePoint((long) getNativeData().getCPointer(), mEnableSuspensionForcePoint);
+        internal_native_set_mEnableSuspensionForcePoint(native_address, mEnableSuspensionForcePoint);
     }
 
     /*[-JNI;-NATIVE]

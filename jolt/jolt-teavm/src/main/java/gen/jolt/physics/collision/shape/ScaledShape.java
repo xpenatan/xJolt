@@ -19,8 +19,8 @@ public class ScaledShape extends DecoratedShape {
 
     public ScaledShape(Shape inShape, Vec3 inScale) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Shape_Vec3((int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_Shape_Vec3((inShape != null ? inShape.native_address : 0), (inScale != null ? inScale.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -39,12 +39,12 @@ return jolt.getPointer(jsObj);
     }
 
     public Vec3 GetScale() {
-        int pointer = internal_native_GetScale((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetScale(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 

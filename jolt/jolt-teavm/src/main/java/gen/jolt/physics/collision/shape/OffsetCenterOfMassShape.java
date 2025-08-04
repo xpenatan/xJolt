@@ -17,8 +17,8 @@ public class OffsetCenterOfMassShape extends DecoratedShape {
 
     public OffsetCenterOfMassShape(Shape inShape, Vec3 inOffset) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Shape_Vec3((int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (int) (long) (inOffset != null ? inOffset.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_Shape_Vec3((inShape != null ? inShape.native_address : 0), (inOffset != null ? inOffset.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]

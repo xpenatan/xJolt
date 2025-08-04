@@ -21,16 +21,8 @@ public class CharacterVsCharacterCollisionSimple extends CharacterVsCharacterCol
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,7 +32,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void Add(CharacterVirtual inCharacter) {
-        internal_native_Add((long) getNativeData().getCPointer(), (long) (inCharacter != null ? inCharacter.getNativeData().getCPointer() : 0));
+        internal_native_Add(native_address, (inCharacter != null ? inCharacter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -50,7 +42,7 @@ nativeObject->Add((CharacterVirtual* )inCharacter_addr);
     public static native void internal_native_Add(long this_addr, long inCharacter_addr);
 
     public void Remove(CharacterVirtual inCharacter) {
-        internal_native_Remove((long) getNativeData().getCPointer(), (long) (inCharacter != null ? inCharacter.getNativeData().getCPointer() : 0));
+        internal_native_Remove(native_address, (inCharacter != null ? inCharacter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

@@ -30,16 +30,8 @@ public class CompoundShapeSubShape extends IDLBase {
     public CompoundShapeSubShape(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -50,12 +42,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 GetPositionCOM() {
-        int pointer = internal_native_GetPositionCOM((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetPositionCOM(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -69,12 +61,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetPositionCOM(int this_addr);
 
     public Quat GetRotation() {
-        int pointer = internal_native_GetRotation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetRotation(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -88,12 +80,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotation(int this_addr);
 
     public Shape get_mShape() {
-        int pointer = internal_native_get_mShape((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mShape(native_address);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
-        Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -107,7 +99,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mShape(int this_addr);
 
     public void set_mShape(Shape mShape) {
-        internal_native_set_mShape((int) (long) getNativeData().getCPointer(), (int) (long) (mShape != null ? mShape.getNativeData().getCPointer() : 0));
+        internal_native_set_mShape(native_address, (mShape != null ? mShape.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -118,7 +110,7 @@ jsObj.set_mShape(mShape_addr);
     public static native void internal_native_set_mShape(int this_addr, int mShape_addr);
 
     public int get_mUserData() {
-        return internal_native_get_mUserData((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mUserData(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -129,7 +121,7 @@ return jsObj.get_mUserData();
     public static native int internal_native_get_mUserData(int this_addr);
 
     public void set_mUserData(int mUserData) {
-        internal_native_set_mUserData((int) (long) getNativeData().getCPointer(), mUserData);
+        internal_native_set_mUserData(native_address, mUserData);
     }
 
     /*[-TEAVM;-NATIVE]

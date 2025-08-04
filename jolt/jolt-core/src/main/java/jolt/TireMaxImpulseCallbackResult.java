@@ -22,16 +22,8 @@ public class TireMaxImpulseCallbackResult extends IDLBase {
     public TireMaxImpulseCallbackResult(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -41,7 +33,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mLongitudinalImpulse() {
-        return internal_native_get_mLongitudinalImpulse((long) getNativeData().getCPointer());
+        return internal_native_get_mLongitudinalImpulse(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -51,7 +43,7 @@ return nativeObject->mLongitudinalImpulse;
     public static native float internal_native_get_mLongitudinalImpulse(long this_addr);
 
     public void set_mLongitudinalImpulse(float mLongitudinalImpulse) {
-        internal_native_set_mLongitudinalImpulse((long) getNativeData().getCPointer(), mLongitudinalImpulse);
+        internal_native_set_mLongitudinalImpulse(native_address, mLongitudinalImpulse);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ nativeObject->mLongitudinalImpulse = mLongitudinalImpulse;
     public static native void internal_native_set_mLongitudinalImpulse(long this_addr, float mLongitudinalImpulse);
 
     public float get_mLateralImpulse() {
-        return internal_native_get_mLateralImpulse((long) getNativeData().getCPointer());
+        return internal_native_get_mLateralImpulse(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ return nativeObject->mLateralImpulse;
     public static native float internal_native_get_mLateralImpulse(long this_addr);
 
     public void set_mLateralImpulse(float mLateralImpulse) {
-        internal_native_set_mLateralImpulse((long) getNativeData().getCPointer(), mLateralImpulse);
+        internal_native_set_mLateralImpulse(native_address, mLateralImpulse);
     }
 
     /*[-JNI;-NATIVE]

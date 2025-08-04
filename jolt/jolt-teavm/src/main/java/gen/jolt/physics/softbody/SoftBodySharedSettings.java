@@ -37,7 +37,7 @@ public class SoftBodySharedSettings extends IDLBase {
 
     public SoftBodySharedSettings() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -55,7 +55,7 @@ return jolt.getPointer(jsObj);
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,7 +67,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -78,7 +78,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -89,7 +89,7 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType, float inAngleTolerance) {
-        internal_native_CreateConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, (int) (long) (inBendType != null ? inBendType.getValue() : 0), inAngleTolerance);
+        internal_native_CreateConstraints(native_address, (inVertexAttributes != null ? inVertexAttributes.native_address : 0), inVertexAttributesLength, (int) (inBendType != null ? inBendType.getValue() : 0), inAngleTolerance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -100,7 +100,7 @@ jsObj.CreateConstraints(inVertexAttributes_addr, inVertexAttributesLength, inBen
     public static native void internal_native_CreateConstraints(int this_addr, int inVertexAttributes_addr, int inVertexAttributesLength, int inBendType, float inAngleTolerance);
 
     public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType) {
-        internal_native_CreateConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength, (int) (long) (inBendType != null ? inBendType.getValue() : 0));
+        internal_native_CreateConstraints(native_address, (inVertexAttributes != null ? inVertexAttributes.native_address : 0), inVertexAttributesLength, (int) (inBendType != null ? inBendType.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -111,7 +111,7 @@ jsObj.CreateConstraints(inVertexAttributes_addr, inVertexAttributesLength, inBen
     public static native void internal_native_CreateConstraints(int this_addr, int inVertexAttributes_addr, int inVertexAttributesLength, int inBendType);
 
     public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength) {
-        internal_native_CreateConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (inVertexAttributes != null ? inVertexAttributes.getNativeData().getCPointer() : 0), inVertexAttributesLength);
+        internal_native_CreateConstraints(native_address, (inVertexAttributes != null ? inVertexAttributes.native_address : 0), inVertexAttributesLength);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -122,7 +122,7 @@ jsObj.CreateConstraints(inVertexAttributes_addr, inVertexAttributesLength);
     public static native void internal_native_CreateConstraints(int this_addr, int inVertexAttributes_addr, int inVertexAttributesLength);
 
     public void AddFace(SoftBodySharedSettingsFace inFace) {
-        internal_native_AddFace((int) (long) getNativeData().getCPointer(), (int) (long) (inFace != null ? inFace.getNativeData().getCPointer() : 0));
+        internal_native_AddFace(native_address, (inFace != null ? inFace.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -133,7 +133,7 @@ jsObj.AddFace(inFace_addr);
     public static native void internal_native_AddFace(int this_addr, int inFace_addr);
 
     public void CalculateEdgeLengths() {
-        internal_native_CalculateEdgeLengths((int) (long) getNativeData().getCPointer());
+        internal_native_CalculateEdgeLengths(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -144,7 +144,7 @@ jsObj.CalculateEdgeLengths();
     public static native void internal_native_CalculateEdgeLengths(int this_addr);
 
     public void CalculateLRALengths() {
-        internal_native_CalculateLRALengths((int) (long) getNativeData().getCPointer());
+        internal_native_CalculateLRALengths(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -155,7 +155,7 @@ jsObj.CalculateLRALengths();
     public static native void internal_native_CalculateLRALengths(int this_addr);
 
     public void CalculateBendConstraintConstants() {
-        internal_native_CalculateBendConstraintConstants((int) (long) getNativeData().getCPointer());
+        internal_native_CalculateBendConstraintConstants(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -166,7 +166,7 @@ jsObj.CalculateBendConstraintConstants();
     public static native void internal_native_CalculateBendConstraintConstants(int this_addr);
 
     public void CalculateVolumeConstraintVolumes() {
-        internal_native_CalculateVolumeConstraintVolumes((int) (long) getNativeData().getCPointer());
+        internal_native_CalculateVolumeConstraintVolumes(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -177,7 +177,7 @@ jsObj.CalculateVolumeConstraintVolumes();
     public static native void internal_native_CalculateVolumeConstraintVolumes(int this_addr);
 
     public void CalculateSkinnedConstraintNormals() {
-        internal_native_CalculateSkinnedConstraintNormals((int) (long) getNativeData().getCPointer());
+        internal_native_CalculateSkinnedConstraintNormals(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -188,7 +188,7 @@ jsObj.CalculateSkinnedConstraintNormals();
     public static native void internal_native_CalculateSkinnedConstraintNormals(int this_addr);
 
     public void Optimize() {
-        internal_native_Optimize((int) (long) getNativeData().getCPointer());
+        internal_native_Optimize(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -199,11 +199,11 @@ jsObj.Optimize();
     public static native void internal_native_Optimize(int this_addr);
 
     public SoftBodySharedSettings Clone() {
-        int pointer = internal_native_Clone((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_Clone(native_address);
         if (pointer == 0)
             return null;
         SoftBodySharedSettings SoftBodySharedSettings_NEW = new SoftBodySharedSettings((byte) 1, (char) 1);
-        SoftBodySharedSettings_NEW.getNativeData().reset(pointer, false);
+        SoftBodySharedSettings_NEW.internal_reset(pointer, false);
         return SoftBodySharedSettings_NEW;
     }
 
@@ -217,12 +217,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Clone(int this_addr);
 
     public ArraySoftBodySharedSettingsVertex get_mVertices() {
-        int pointer = internal_native_get_mVertices((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mVertices(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 = new ArraySoftBodySharedSettingsVertex((byte) 1, (char) 1);
-        ArraySoftBodySharedSettingsVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodySharedSettingsVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsVertex_TEMP_GEN_0;
     }
 
@@ -236,7 +236,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mVertices(int this_addr);
 
     public void set_mVertices(ArraySoftBodySharedSettingsVertex mVertices) {
-        internal_native_set_mVertices((int) (long) getNativeData().getCPointer(), (int) (long) (mVertices != null ? mVertices.getNativeData().getCPointer() : 0));
+        internal_native_set_mVertices(native_address, (mVertices != null ? mVertices.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -247,12 +247,12 @@ jsObj.set_mVertices(mVertices_addr);
     public static native void internal_native_set_mVertices(int this_addr, int mVertices_addr);
 
     public ArraySoftBodySharedSettingsFace get_mFaces() {
-        int pointer = internal_native_get_mFaces((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mFaces(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = new ArraySoftBodySharedSettingsFace((byte) 1, (char) 1);
-        ArraySoftBodySharedSettingsFace_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsFace_TEMP_GEN_0;
     }
 
@@ -266,7 +266,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mFaces(int this_addr);
 
     public void set_mFaces(ArraySoftBodySharedSettingsFace mFaces) {
-        internal_native_set_mFaces((int) (long) getNativeData().getCPointer(), (int) (long) (mFaces != null ? mFaces.getNativeData().getCPointer() : 0));
+        internal_native_set_mFaces(native_address, (mFaces != null ? mFaces.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -277,12 +277,12 @@ jsObj.set_mFaces(mFaces_addr);
     public static native void internal_native_set_mFaces(int this_addr, int mFaces_addr);
 
     public ArraySoftBodySharedSettingsEdge get_mEdgeConstraints() {
-        int pointer = internal_native_get_mEdgeConstraints((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mEdgeConstraints(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 = new ArraySoftBodySharedSettingsEdge((byte) 1, (char) 1);
-        ArraySoftBodySharedSettingsEdge_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodySharedSettingsEdge_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsEdge_TEMP_GEN_0;
     }
 
@@ -296,7 +296,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mEdgeConstraints(int this_addr);
 
     public void set_mEdgeConstraints(ArraySoftBodySharedSettingsEdge mEdgeConstraints) {
-        internal_native_set_mEdgeConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (mEdgeConstraints != null ? mEdgeConstraints.getNativeData().getCPointer() : 0));
+        internal_native_set_mEdgeConstraints(native_address, (mEdgeConstraints != null ? mEdgeConstraints.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -307,12 +307,12 @@ jsObj.set_mEdgeConstraints(mEdgeConstraints_addr);
     public static native void internal_native_set_mEdgeConstraints(int this_addr, int mEdgeConstraints_addr);
 
     public ArraySoftBodySharedSettingsDihedralBend get_mDihedralBendConstraints() {
-        int pointer = internal_native_get_mDihedralBendConstraints((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mDihedralBendConstraints(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = new ArraySoftBodySharedSettingsDihedralBend((byte) 1, (char) 1);
-        ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0;
     }
 
@@ -326,7 +326,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mDihedralBendConstraints(int this_addr);
 
     public void set_mDihedralBendConstraints(ArraySoftBodySharedSettingsDihedralBend mDihedralBendConstraints) {
-        internal_native_set_mDihedralBendConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (mDihedralBendConstraints != null ? mDihedralBendConstraints.getNativeData().getCPointer() : 0));
+        internal_native_set_mDihedralBendConstraints(native_address, (mDihedralBendConstraints != null ? mDihedralBendConstraints.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -337,12 +337,12 @@ jsObj.set_mDihedralBendConstraints(mDihedralBendConstraints_addr);
     public static native void internal_native_set_mDihedralBendConstraints(int this_addr, int mDihedralBendConstraints_addr);
 
     public ArraySoftBodySharedSettingsVolume get_mVolumeConstraints() {
-        int pointer = internal_native_get_mVolumeConstraints((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mVolumeConstraints(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 = new ArraySoftBodySharedSettingsVolume((byte) 1, (char) 1);
-        ArraySoftBodySharedSettingsVolume_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodySharedSettingsVolume_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsVolume_TEMP_GEN_0;
     }
 
@@ -356,7 +356,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mVolumeConstraints(int this_addr);
 
     public void set_mVolumeConstraints(ArraySoftBodySharedSettingsVolume mVolumeConstraints) {
-        internal_native_set_mVolumeConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (mVolumeConstraints != null ? mVolumeConstraints.getNativeData().getCPointer() : 0));
+        internal_native_set_mVolumeConstraints(native_address, (mVolumeConstraints != null ? mVolumeConstraints.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -367,12 +367,12 @@ jsObj.set_mVolumeConstraints(mVolumeConstraints_addr);
     public static native void internal_native_set_mVolumeConstraints(int this_addr, int mVolumeConstraints_addr);
 
     public ArraySoftBodySharedSettingsSkinned get_mSkinnedConstraints() {
-        int pointer = internal_native_get_mSkinnedConstraints((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSkinnedConstraints(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 = new ArraySoftBodySharedSettingsSkinned((byte) 1, (char) 1);
-        ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0;
     }
 
@@ -386,7 +386,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSkinnedConstraints(int this_addr);
 
     public void set_mSkinnedConstraints(ArraySoftBodySharedSettingsSkinned mSkinnedConstraints) {
-        internal_native_set_mSkinnedConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (mSkinnedConstraints != null ? mSkinnedConstraints.getNativeData().getCPointer() : 0));
+        internal_native_set_mSkinnedConstraints(native_address, (mSkinnedConstraints != null ? mSkinnedConstraints.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -397,12 +397,12 @@ jsObj.set_mSkinnedConstraints(mSkinnedConstraints_addr);
     public static native void internal_native_set_mSkinnedConstraints(int this_addr, int mSkinnedConstraints_addr);
 
     public ArraySoftBodySharedSettingsInvBind get_mInvBindMatrices() {
-        int pointer = internal_native_get_mInvBindMatrices((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mInvBindMatrices(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 = new ArraySoftBodySharedSettingsInvBind((byte) 1, (char) 1);
-        ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0;
     }
 
@@ -416,7 +416,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mInvBindMatrices(int this_addr);
 
     public void set_mInvBindMatrices(ArraySoftBodySharedSettingsInvBind mInvBindMatrices) {
-        internal_native_set_mInvBindMatrices((int) (long) getNativeData().getCPointer(), (int) (long) (mInvBindMatrices != null ? mInvBindMatrices.getNativeData().getCPointer() : 0));
+        internal_native_set_mInvBindMatrices(native_address, (mInvBindMatrices != null ? mInvBindMatrices.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -427,12 +427,12 @@ jsObj.set_mInvBindMatrices(mInvBindMatrices_addr);
     public static native void internal_native_set_mInvBindMatrices(int this_addr, int mInvBindMatrices_addr);
 
     public ArraySoftBodySharedSettingsLRA get_mLRAConstraints() {
-        int pointer = internal_native_get_mLRAConstraints((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mLRAConstraints(native_address);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 = new ArraySoftBodySharedSettingsLRA((byte) 1, (char) 1);
-        ArraySoftBodySharedSettingsLRA_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArraySoftBodySharedSettingsLRA_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsLRA_TEMP_GEN_0;
     }
 
@@ -446,7 +446,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mLRAConstraints(int this_addr);
 
     public void set_mLRAConstraints(ArraySoftBodySharedSettingsLRA mLRAConstraints) {
-        internal_native_set_mLRAConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (mLRAConstraints != null ? mLRAConstraints.getNativeData().getCPointer() : 0));
+        internal_native_set_mLRAConstraints(native_address, (mLRAConstraints != null ? mLRAConstraints.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -457,12 +457,12 @@ jsObj.set_mLRAConstraints(mLRAConstraints_addr);
     public static native void internal_native_set_mLRAConstraints(int this_addr, int mLRAConstraints_addr);
 
     public PhysicsMaterialList get_mMaterials() {
-        int pointer = internal_native_get_mMaterials((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mMaterials(native_address);
         if (pointer == 0)
             return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
-        PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
 
@@ -476,7 +476,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mMaterials(int this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
-        internal_native_set_mMaterials((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterials != null ? mMaterials.getNativeData().getCPointer() : 0));
+        internal_native_set_mMaterials(native_address, (mMaterials != null ? mMaterials.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -487,7 +487,7 @@ jsObj.set_mMaterials(mMaterials_addr);
     public static native void internal_native_set_mMaterials(int this_addr, int mMaterials_addr);
 
     public float get_mVertexRadius() {
-        return internal_native_get_mVertexRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mVertexRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -498,7 +498,7 @@ return jsObj.get_mVertexRadius();
     public static native float internal_native_get_mVertexRadius(int this_addr);
 
     public void set_mVertexRadius(float mVertexRadius) {
-        internal_native_set_mVertexRadius((int) (long) getNativeData().getCPointer(), mVertexRadius);
+        internal_native_set_mVertexRadius(native_address, mVertexRadius);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -31,16 +31,8 @@ public class SkeletalAnimationJointState extends IDLBase {
     public SkeletalAnimationJointState(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -50,7 +42,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void FromMatrix(Mat44 inMatrix) {
-        internal_native_FromMatrix((long) getNativeData().getCPointer(), (long) (inMatrix != null ? inMatrix.getNativeData().getCPointer() : 0));
+        internal_native_FromMatrix(native_address, (inMatrix != null ? inMatrix.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -60,12 +52,12 @@ nativeObject->FromMatrix(*((Mat44* )inMatrix_addr));
     public static native void internal_native_FromMatrix(long this_addr, long inMatrix_addr);
 
     public Mat44 ToMatrix() {
-        long pointer = internal_native_ToMatrix((long) getNativeData().getCPointer());
+        long pointer = internal_native_ToMatrix(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -77,12 +69,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_ToMatrix(long this_addr);
 
     public Vec3 get_mTranslation() {
-        long pointer = internal_native_get_mTranslation((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mTranslation(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -93,7 +85,7 @@ return (jlong)&nativeObject->mTranslation;
     public static native long internal_native_get_mTranslation(long this_addr);
 
     public void set_mTranslation(Vec3 mTranslation) {
-        internal_native_set_mTranslation((long) getNativeData().getCPointer(), (long) (mTranslation != null ? mTranslation.getNativeData().getCPointer() : 0));
+        internal_native_set_mTranslation(native_address, (mTranslation != null ? mTranslation.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -103,12 +95,12 @@ nativeObject->mTranslation = *((Vec3*)mTranslation_addr);
     public static native void internal_native_set_mTranslation(long this_addr, long mTranslation_addr);
 
     public Quat get_mRotation() {
-        long pointer = internal_native_get_mRotation((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mRotation(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -119,7 +111,7 @@ return (jlong)&nativeObject->mRotation;
     public static native long internal_native_get_mRotation(long this_addr);
 
     public void set_mRotation(Quat mRotation) {
-        internal_native_set_mRotation((long) getNativeData().getCPointer(), (long) (mRotation != null ? mRotation.getNativeData().getCPointer() : 0));
+        internal_native_set_mRotation(native_address, (mRotation != null ? mRotation.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

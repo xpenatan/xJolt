@@ -21,8 +21,8 @@ public class WheeledVehicleController extends VehicleController {
 
     public WheeledVehicleController(WheeledVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint((long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (long) (inConstraint != null ? inConstraint.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint((inSettings != null ? inSettings.native_address : 0), (inConstraint != null ? inConstraint.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -39,7 +39,7 @@ return (jlong)new WheeledVehicleController(*((WheeledVehicleControllerSettings* 
     }
 
     public void SetDriverInput(float inForward, float inRight, float inBrake, float inHandBrake) {
-        internal_native_SetDriverInput((long) getNativeData().getCPointer(), inForward, inRight, inBrake, inHandBrake);
+        internal_native_SetDriverInput(native_address, inForward, inRight, inBrake, inHandBrake);
     }
 
     /*[-JNI;-NATIVE]
@@ -49,7 +49,7 @@ nativeObject->SetDriverInput((float)inForward, (float)inRight, (float)inBrake, (
     public static native void internal_native_SetDriverInput(long this_addr, float inForward, float inRight, float inBrake, float inHandBrake);
 
     public void SetForwardInput(float inForward) {
-        internal_native_SetForwardInput((long) getNativeData().getCPointer(), inForward);
+        internal_native_SetForwardInput(native_address, inForward);
     }
 
     /*[-JNI;-NATIVE]
@@ -59,7 +59,7 @@ nativeObject->SetForwardInput((float)inForward);
     public static native void internal_native_SetForwardInput(long this_addr, float inForward);
 
     public float GetForwardInput() {
-        return internal_native_GetForwardInput((long) getNativeData().getCPointer());
+        return internal_native_GetForwardInput(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -69,7 +69,7 @@ return nativeObject->GetForwardInput();
     public static native float internal_native_GetForwardInput(long this_addr);
 
     public void SetRightInput(float inRight) {
-        internal_native_SetRightInput((long) getNativeData().getCPointer(), inRight);
+        internal_native_SetRightInput(native_address, inRight);
     }
 
     /*[-JNI;-NATIVE]
@@ -79,7 +79,7 @@ nativeObject->SetRightInput((float)inRight);
     public static native void internal_native_SetRightInput(long this_addr, float inRight);
 
     public float GetRightInput() {
-        return internal_native_GetRightInput((long) getNativeData().getCPointer());
+        return internal_native_GetRightInput(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -89,7 +89,7 @@ return nativeObject->GetRightInput();
     public static native float internal_native_GetRightInput(long this_addr);
 
     public void SetBrakeInput(float inBrake) {
-        internal_native_SetBrakeInput((long) getNativeData().getCPointer(), inBrake);
+        internal_native_SetBrakeInput(native_address, inBrake);
     }
 
     /*[-JNI;-NATIVE]
@@ -99,7 +99,7 @@ nativeObject->SetBrakeInput((float)inBrake);
     public static native void internal_native_SetBrakeInput(long this_addr, float inBrake);
 
     public float GetBrakeInput() {
-        return internal_native_GetBrakeInput((long) getNativeData().getCPointer());
+        return internal_native_GetBrakeInput(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -109,7 +109,7 @@ return nativeObject->GetBrakeInput();
     public static native float internal_native_GetBrakeInput(long this_addr);
 
     public void SetHandBrakeInput(float inHandBrake) {
-        internal_native_SetHandBrakeInput((long) getNativeData().getCPointer(), inHandBrake);
+        internal_native_SetHandBrakeInput(native_address, inHandBrake);
     }
 
     /*[-JNI;-NATIVE]
@@ -119,7 +119,7 @@ nativeObject->SetHandBrakeInput((float)inHandBrake);
     public static native void internal_native_SetHandBrakeInput(long this_addr, float inHandBrake);
 
     public float GetHandBrakeInput() {
-        return internal_native_GetHandBrakeInput((long) getNativeData().getCPointer());
+        return internal_native_GetHandBrakeInput(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -129,12 +129,12 @@ return nativeObject->GetHandBrakeInput();
     public static native float internal_native_GetHandBrakeInput(long this_addr);
 
     public VehicleEngine GetEngine() {
-        long pointer = internal_native_GetEngine((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetEngine(native_address);
         if (pointer == 0)
             return null;
         if (VehicleEngine_TEMP_GEN_0 == null)
             VehicleEngine_TEMP_GEN_0 = new VehicleEngine((byte) 1, (char) 1);
-        VehicleEngine_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VehicleEngine_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleEngine_TEMP_GEN_0;
     }
 
@@ -145,12 +145,12 @@ return (jlong)&nativeObject->GetEngine();
     public static native long internal_native_GetEngine(long this_addr);
 
     public VehicleTransmission GetTransmission() {
-        long pointer = internal_native_GetTransmission((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetTransmission(native_address);
         if (pointer == 0)
             return null;
         if (VehicleTransmission_TEMP_GEN_0 == null)
             VehicleTransmission_TEMP_GEN_0 = new VehicleTransmission((byte) 1, (char) 1);
-        VehicleTransmission_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VehicleTransmission_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleTransmission_TEMP_GEN_0;
     }
 
@@ -161,12 +161,12 @@ return (jlong)&nativeObject->GetTransmission();
     public static native long internal_native_GetTransmission(long this_addr);
 
     public ArrayVehicleDifferentialSettings GetDifferentials() {
-        long pointer = internal_native_GetDifferentials((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetDifferentials(native_address);
         if (pointer == 0)
             return null;
         if (ArrayVehicleDifferentialSettings_TEMP_GEN_0 == null)
             ArrayVehicleDifferentialSettings_TEMP_GEN_0 = new ArrayVehicleDifferentialSettings((byte) 1, (char) 1);
-        ArrayVehicleDifferentialSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayVehicleDifferentialSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayVehicleDifferentialSettings_TEMP_GEN_0;
     }
 
@@ -177,7 +177,7 @@ return (jlong)&nativeObject->GetDifferentials();
     public static native long internal_native_GetDifferentials(long this_addr);
 
     public float GetDifferentialLimitedSlipRatio() {
-        return internal_native_GetDifferentialLimitedSlipRatio((long) getNativeData().getCPointer());
+        return internal_native_GetDifferentialLimitedSlipRatio(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -187,7 +187,7 @@ return nativeObject->GetDifferentialLimitedSlipRatio();
     public static native float internal_native_GetDifferentialLimitedSlipRatio(long this_addr);
 
     public void SetDifferentialLimitedSlipRatio(float inV) {
-        internal_native_SetDifferentialLimitedSlipRatio((long) getNativeData().getCPointer(), inV);
+        internal_native_SetDifferentialLimitedSlipRatio(native_address, inV);
     }
 
     /*[-JNI;-NATIVE]
@@ -197,7 +197,7 @@ nativeObject->SetDifferentialLimitedSlipRatio((float)inV);
     public static native void internal_native_SetDifferentialLimitedSlipRatio(long this_addr, float inV);
 
     public float GetWheelSpeedAtClutch() {
-        return internal_native_GetWheelSpeedAtClutch((long) getNativeData().getCPointer());
+        return internal_native_GetWheelSpeedAtClutch(native_address);
     }
 
     /*[-JNI;-NATIVE]

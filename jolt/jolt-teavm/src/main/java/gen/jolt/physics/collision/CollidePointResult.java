@@ -23,7 +23,7 @@ public class CollidePointResult extends IDLBase {
 
     public CollidePointResult() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -40,16 +40,8 @@ return jolt.getPointer(jsObj);
     public CollidePointResult(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -60,12 +52,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public BodyID get_mBodyID() {
-        int pointer = internal_native_get_mBodyID((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mBodyID(native_address);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -79,7 +71,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mBodyID(int this_addr);
 
     public void set_mBodyID(BodyID mBodyID) {
-        internal_native_set_mBodyID((int) (long) getNativeData().getCPointer(), (int) (long) (mBodyID != null ? mBodyID.getNativeData().getCPointer() : 0));
+        internal_native_set_mBodyID(native_address, (mBodyID != null ? mBodyID.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -90,12 +82,12 @@ jsObj.set_mBodyID(mBodyID_addr);
     public static native void internal_native_set_mBodyID(int this_addr, int mBodyID_addr);
 
     public SubShapeID get_mSubShapeID2() {
-        int pointer = internal_native_get_mSubShapeID2((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mSubShapeID2(native_address);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = new SubShapeID((byte) 1, (char) 1);
-        SubShapeID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_0;
     }
 
@@ -109,7 +101,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mSubShapeID2(int this_addr);
 
     public void set_mSubShapeID2(SubShapeID mSubShapeID2) {
-        internal_native_set_mSubShapeID2((int) (long) getNativeData().getCPointer(), (int) (long) (mSubShapeID2 != null ? mSubShapeID2.getNativeData().getCPointer() : 0));
+        internal_native_set_mSubShapeID2(native_address, (mSubShapeID2 != null ? mSubShapeID2.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

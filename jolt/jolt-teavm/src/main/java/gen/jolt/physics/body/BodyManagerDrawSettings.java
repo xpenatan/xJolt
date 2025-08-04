@@ -19,7 +19,7 @@ public class BodyManagerDrawSettings extends IDLBase {
 
     public BodyManagerDrawSettings() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -36,16 +36,8 @@ return jolt.getPointer(jsObj);
     public BodyManagerDrawSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +48,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public boolean get_mDrawGetSupportFunction() {
-        return internal_native_get_mDrawGetSupportFunction((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawGetSupportFunction(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,7 +59,7 @@ return jsObj.get_mDrawGetSupportFunction();
     public static native boolean internal_native_get_mDrawGetSupportFunction(int this_addr);
 
     public void set_mDrawGetSupportFunction(boolean mDrawGetSupportFunction) {
-        internal_native_set_mDrawGetSupportFunction((int) (long) getNativeData().getCPointer(), mDrawGetSupportFunction);
+        internal_native_set_mDrawGetSupportFunction(native_address, mDrawGetSupportFunction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -78,7 +70,7 @@ jsObj.set_mDrawGetSupportFunction(mDrawGetSupportFunction);
     public static native void internal_native_set_mDrawGetSupportFunction(int this_addr, boolean mDrawGetSupportFunction);
 
     public boolean get_mDrawSupportDirection() {
-        return internal_native_get_mDrawSupportDirection((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSupportDirection(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -89,7 +81,7 @@ return jsObj.get_mDrawSupportDirection();
     public static native boolean internal_native_get_mDrawSupportDirection(int this_addr);
 
     public void set_mDrawSupportDirection(boolean mDrawSupportDirection) {
-        internal_native_set_mDrawSupportDirection((int) (long) getNativeData().getCPointer(), mDrawSupportDirection);
+        internal_native_set_mDrawSupportDirection(native_address, mDrawSupportDirection);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -100,7 +92,7 @@ jsObj.set_mDrawSupportDirection(mDrawSupportDirection);
     public static native void internal_native_set_mDrawSupportDirection(int this_addr, boolean mDrawSupportDirection);
 
     public boolean get_mDrawGetSupportingFace() {
-        return internal_native_get_mDrawGetSupportingFace((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawGetSupportingFace(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -111,7 +103,7 @@ return jsObj.get_mDrawGetSupportingFace();
     public static native boolean internal_native_get_mDrawGetSupportingFace(int this_addr);
 
     public void set_mDrawGetSupportingFace(boolean mDrawGetSupportingFace) {
-        internal_native_set_mDrawGetSupportingFace((int) (long) getNativeData().getCPointer(), mDrawGetSupportingFace);
+        internal_native_set_mDrawGetSupportingFace(native_address, mDrawGetSupportingFace);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -122,7 +114,7 @@ jsObj.set_mDrawGetSupportingFace(mDrawGetSupportingFace);
     public static native void internal_native_set_mDrawGetSupportingFace(int this_addr, boolean mDrawGetSupportingFace);
 
     public boolean get_mDrawShape() {
-        return internal_native_get_mDrawShape((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawShape(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -133,7 +125,7 @@ return jsObj.get_mDrawShape();
     public static native boolean internal_native_get_mDrawShape(int this_addr);
 
     public void set_mDrawShape(boolean mDrawShape) {
-        internal_native_set_mDrawShape((int) (long) getNativeData().getCPointer(), mDrawShape);
+        internal_native_set_mDrawShape(native_address, mDrawShape);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -144,7 +136,7 @@ jsObj.set_mDrawShape(mDrawShape);
     public static native void internal_native_set_mDrawShape(int this_addr, boolean mDrawShape);
 
     public boolean get_mDrawShapeWireframe() {
-        return internal_native_get_mDrawShapeWireframe((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawShapeWireframe(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -155,7 +147,7 @@ return jsObj.get_mDrawShapeWireframe();
     public static native boolean internal_native_get_mDrawShapeWireframe(int this_addr);
 
     public void set_mDrawShapeWireframe(boolean mDrawShapeWireframe) {
-        internal_native_set_mDrawShapeWireframe((int) (long) getNativeData().getCPointer(), mDrawShapeWireframe);
+        internal_native_set_mDrawShapeWireframe(native_address, mDrawShapeWireframe);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -166,7 +158,7 @@ jsObj.set_mDrawShapeWireframe(mDrawShapeWireframe);
     public static native void internal_native_set_mDrawShapeWireframe(int this_addr, boolean mDrawShapeWireframe);
 
     public EShapeColor get_mDrawShapeColor() {
-        int value = internal_native_get_mDrawShapeColor((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mDrawShapeColor(native_address);
         return EShapeColor.MAP.get(value);
     }
 
@@ -178,7 +170,7 @@ return jsObj.get_mDrawShapeColor();
     public static native int internal_native_get_mDrawShapeColor(int this_addr);
 
     public void set_mDrawShapeColor(EShapeColor mDrawShapeColor) {
-        internal_native_set_mDrawShapeColor((int) (long) getNativeData().getCPointer(), (int) (long) (mDrawShapeColor != null ? mDrawShapeColor.getValue() : 0));
+        internal_native_set_mDrawShapeColor(native_address, (int) (mDrawShapeColor != null ? mDrawShapeColor.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -189,7 +181,7 @@ jsObj.set_mDrawShapeColor(mDrawShapeColor);
     public static native void internal_native_set_mDrawShapeColor(int this_addr, int mDrawShapeColor);
 
     public boolean get_mDrawBoundingBox() {
-        return internal_native_get_mDrawBoundingBox((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawBoundingBox(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -200,7 +192,7 @@ return jsObj.get_mDrawBoundingBox();
     public static native boolean internal_native_get_mDrawBoundingBox(int this_addr);
 
     public void set_mDrawBoundingBox(boolean mDrawBoundingBox) {
-        internal_native_set_mDrawBoundingBox((int) (long) getNativeData().getCPointer(), mDrawBoundingBox);
+        internal_native_set_mDrawBoundingBox(native_address, mDrawBoundingBox);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -211,7 +203,7 @@ jsObj.set_mDrawBoundingBox(mDrawBoundingBox);
     public static native void internal_native_set_mDrawBoundingBox(int this_addr, boolean mDrawBoundingBox);
 
     public boolean get_mDrawCenterOfMassTransform() {
-        return internal_native_get_mDrawCenterOfMassTransform((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawCenterOfMassTransform(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -222,7 +214,7 @@ return jsObj.get_mDrawCenterOfMassTransform();
     public static native boolean internal_native_get_mDrawCenterOfMassTransform(int this_addr);
 
     public void set_mDrawCenterOfMassTransform(boolean mDrawCenterOfMassTransform) {
-        internal_native_set_mDrawCenterOfMassTransform((int) (long) getNativeData().getCPointer(), mDrawCenterOfMassTransform);
+        internal_native_set_mDrawCenterOfMassTransform(native_address, mDrawCenterOfMassTransform);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -233,7 +225,7 @@ jsObj.set_mDrawCenterOfMassTransform(mDrawCenterOfMassTransform);
     public static native void internal_native_set_mDrawCenterOfMassTransform(int this_addr, boolean mDrawCenterOfMassTransform);
 
     public boolean get_mDrawWorldTransform() {
-        return internal_native_get_mDrawWorldTransform((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawWorldTransform(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -244,7 +236,7 @@ return jsObj.get_mDrawWorldTransform();
     public static native boolean internal_native_get_mDrawWorldTransform(int this_addr);
 
     public void set_mDrawWorldTransform(boolean mDrawWorldTransform) {
-        internal_native_set_mDrawWorldTransform((int) (long) getNativeData().getCPointer(), mDrawWorldTransform);
+        internal_native_set_mDrawWorldTransform(native_address, mDrawWorldTransform);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -255,7 +247,7 @@ jsObj.set_mDrawWorldTransform(mDrawWorldTransform);
     public static native void internal_native_set_mDrawWorldTransform(int this_addr, boolean mDrawWorldTransform);
 
     public boolean get_mDrawVelocity() {
-        return internal_native_get_mDrawVelocity((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawVelocity(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -266,7 +258,7 @@ return jsObj.get_mDrawVelocity();
     public static native boolean internal_native_get_mDrawVelocity(int this_addr);
 
     public void set_mDrawVelocity(boolean mDrawVelocity) {
-        internal_native_set_mDrawVelocity((int) (long) getNativeData().getCPointer(), mDrawVelocity);
+        internal_native_set_mDrawVelocity(native_address, mDrawVelocity);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -277,7 +269,7 @@ jsObj.set_mDrawVelocity(mDrawVelocity);
     public static native void internal_native_set_mDrawVelocity(int this_addr, boolean mDrawVelocity);
 
     public boolean get_mDrawMassAndInertia() {
-        return internal_native_get_mDrawMassAndInertia((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawMassAndInertia(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -288,7 +280,7 @@ return jsObj.get_mDrawMassAndInertia();
     public static native boolean internal_native_get_mDrawMassAndInertia(int this_addr);
 
     public void set_mDrawMassAndInertia(boolean mDrawMassAndInertia) {
-        internal_native_set_mDrawMassAndInertia((int) (long) getNativeData().getCPointer(), mDrawMassAndInertia);
+        internal_native_set_mDrawMassAndInertia(native_address, mDrawMassAndInertia);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -299,7 +291,7 @@ jsObj.set_mDrawMassAndInertia(mDrawMassAndInertia);
     public static native void internal_native_set_mDrawMassAndInertia(int this_addr, boolean mDrawMassAndInertia);
 
     public boolean get_mDrawSleepStats() {
-        return internal_native_get_mDrawSleepStats((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSleepStats(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -310,7 +302,7 @@ return jsObj.get_mDrawSleepStats();
     public static native boolean internal_native_get_mDrawSleepStats(int this_addr);
 
     public void set_mDrawSleepStats(boolean mDrawSleepStats) {
-        internal_native_set_mDrawSleepStats((int) (long) getNativeData().getCPointer(), mDrawSleepStats);
+        internal_native_set_mDrawSleepStats(native_address, mDrawSleepStats);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -321,7 +313,7 @@ jsObj.set_mDrawSleepStats(mDrawSleepStats);
     public static native void internal_native_set_mDrawSleepStats(int this_addr, boolean mDrawSleepStats);
 
     public boolean get_mDrawSoftBodyVertices() {
-        return internal_native_get_mDrawSoftBodyVertices((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSoftBodyVertices(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -332,7 +324,7 @@ return jsObj.get_mDrawSoftBodyVertices();
     public static native boolean internal_native_get_mDrawSoftBodyVertices(int this_addr);
 
     public void set_mDrawSoftBodyVertices(boolean mDrawSoftBodyVertices) {
-        internal_native_set_mDrawSoftBodyVertices((int) (long) getNativeData().getCPointer(), mDrawSoftBodyVertices);
+        internal_native_set_mDrawSoftBodyVertices(native_address, mDrawSoftBodyVertices);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -343,7 +335,7 @@ jsObj.set_mDrawSoftBodyVertices(mDrawSoftBodyVertices);
     public static native void internal_native_set_mDrawSoftBodyVertices(int this_addr, boolean mDrawSoftBodyVertices);
 
     public boolean get_mDrawSoftBodyVertexVelocities() {
-        return internal_native_get_mDrawSoftBodyVertexVelocities((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSoftBodyVertexVelocities(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -354,7 +346,7 @@ return jsObj.get_mDrawSoftBodyVertexVelocities();
     public static native boolean internal_native_get_mDrawSoftBodyVertexVelocities(int this_addr);
 
     public void set_mDrawSoftBodyVertexVelocities(boolean mDrawSoftBodyVertexVelocities) {
-        internal_native_set_mDrawSoftBodyVertexVelocities((int) (long) getNativeData().getCPointer(), mDrawSoftBodyVertexVelocities);
+        internal_native_set_mDrawSoftBodyVertexVelocities(native_address, mDrawSoftBodyVertexVelocities);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -365,7 +357,7 @@ jsObj.set_mDrawSoftBodyVertexVelocities(mDrawSoftBodyVertexVelocities);
     public static native void internal_native_set_mDrawSoftBodyVertexVelocities(int this_addr, boolean mDrawSoftBodyVertexVelocities);
 
     public boolean get_mDrawSoftBodyEdgeConstraints() {
-        return internal_native_get_mDrawSoftBodyEdgeConstraints((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSoftBodyEdgeConstraints(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -376,7 +368,7 @@ return jsObj.get_mDrawSoftBodyEdgeConstraints();
     public static native boolean internal_native_get_mDrawSoftBodyEdgeConstraints(int this_addr);
 
     public void set_mDrawSoftBodyEdgeConstraints(boolean mDrawSoftBodyEdgeConstraints) {
-        internal_native_set_mDrawSoftBodyEdgeConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodyEdgeConstraints);
+        internal_native_set_mDrawSoftBodyEdgeConstraints(native_address, mDrawSoftBodyEdgeConstraints);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -387,7 +379,7 @@ jsObj.set_mDrawSoftBodyEdgeConstraints(mDrawSoftBodyEdgeConstraints);
     public static native void internal_native_set_mDrawSoftBodyEdgeConstraints(int this_addr, boolean mDrawSoftBodyEdgeConstraints);
 
     public boolean get_mDrawSoftBodyBendConstraints() {
-        return internal_native_get_mDrawSoftBodyBendConstraints((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSoftBodyBendConstraints(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -398,7 +390,7 @@ return jsObj.get_mDrawSoftBodyBendConstraints();
     public static native boolean internal_native_get_mDrawSoftBodyBendConstraints(int this_addr);
 
     public void set_mDrawSoftBodyBendConstraints(boolean mDrawSoftBodyBendConstraints) {
-        internal_native_set_mDrawSoftBodyBendConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodyBendConstraints);
+        internal_native_set_mDrawSoftBodyBendConstraints(native_address, mDrawSoftBodyBendConstraints);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -409,7 +401,7 @@ jsObj.set_mDrawSoftBodyBendConstraints(mDrawSoftBodyBendConstraints);
     public static native void internal_native_set_mDrawSoftBodyBendConstraints(int this_addr, boolean mDrawSoftBodyBendConstraints);
 
     public boolean get_mDrawSoftBodyVolumeConstraints() {
-        return internal_native_get_mDrawSoftBodyVolumeConstraints((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSoftBodyVolumeConstraints(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -420,7 +412,7 @@ return jsObj.get_mDrawSoftBodyVolumeConstraints();
     public static native boolean internal_native_get_mDrawSoftBodyVolumeConstraints(int this_addr);
 
     public void set_mDrawSoftBodyVolumeConstraints(boolean mDrawSoftBodyVolumeConstraints) {
-        internal_native_set_mDrawSoftBodyVolumeConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodyVolumeConstraints);
+        internal_native_set_mDrawSoftBodyVolumeConstraints(native_address, mDrawSoftBodyVolumeConstraints);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -431,7 +423,7 @@ jsObj.set_mDrawSoftBodyVolumeConstraints(mDrawSoftBodyVolumeConstraints);
     public static native void internal_native_set_mDrawSoftBodyVolumeConstraints(int this_addr, boolean mDrawSoftBodyVolumeConstraints);
 
     public boolean get_mDrawSoftBodySkinConstraints() {
-        return internal_native_get_mDrawSoftBodySkinConstraints((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSoftBodySkinConstraints(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -442,7 +434,7 @@ return jsObj.get_mDrawSoftBodySkinConstraints();
     public static native boolean internal_native_get_mDrawSoftBodySkinConstraints(int this_addr);
 
     public void set_mDrawSoftBodySkinConstraints(boolean mDrawSoftBodySkinConstraints) {
-        internal_native_set_mDrawSoftBodySkinConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodySkinConstraints);
+        internal_native_set_mDrawSoftBodySkinConstraints(native_address, mDrawSoftBodySkinConstraints);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -453,7 +445,7 @@ jsObj.set_mDrawSoftBodySkinConstraints(mDrawSoftBodySkinConstraints);
     public static native void internal_native_set_mDrawSoftBodySkinConstraints(int this_addr, boolean mDrawSoftBodySkinConstraints);
 
     public boolean get_mDrawSoftBodyLRAConstraints() {
-        return internal_native_get_mDrawSoftBodyLRAConstraints((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSoftBodyLRAConstraints(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -464,7 +456,7 @@ return jsObj.get_mDrawSoftBodyLRAConstraints();
     public static native boolean internal_native_get_mDrawSoftBodyLRAConstraints(int this_addr);
 
     public void set_mDrawSoftBodyLRAConstraints(boolean mDrawSoftBodyLRAConstraints) {
-        internal_native_set_mDrawSoftBodyLRAConstraints((int) (long) getNativeData().getCPointer(), mDrawSoftBodyLRAConstraints);
+        internal_native_set_mDrawSoftBodyLRAConstraints(native_address, mDrawSoftBodyLRAConstraints);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -475,7 +467,7 @@ jsObj.set_mDrawSoftBodyLRAConstraints(mDrawSoftBodyLRAConstraints);
     public static native void internal_native_set_mDrawSoftBodyLRAConstraints(int this_addr, boolean mDrawSoftBodyLRAConstraints);
 
     public boolean get_mDrawSoftBodyPredictedBounds() {
-        return internal_native_get_mDrawSoftBodyPredictedBounds((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDrawSoftBodyPredictedBounds(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -486,7 +478,7 @@ return jsObj.get_mDrawSoftBodyPredictedBounds();
     public static native boolean internal_native_get_mDrawSoftBodyPredictedBounds(int this_addr);
 
     public void set_mDrawSoftBodyPredictedBounds(boolean mDrawSoftBodyPredictedBounds) {
-        internal_native_set_mDrawSoftBodyPredictedBounds((int) (long) getNativeData().getCPointer(), mDrawSoftBodyPredictedBounds);
+        internal_native_set_mDrawSoftBodyPredictedBounds(native_address, mDrawSoftBodyPredictedBounds);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -497,7 +489,7 @@ jsObj.set_mDrawSoftBodyPredictedBounds(mDrawSoftBodyPredictedBounds);
     public static native void internal_native_set_mDrawSoftBodyPredictedBounds(int this_addr, boolean mDrawSoftBodyPredictedBounds);
 
     public ESoftBodyConstraintColor get_mDrawSoftBodyConstraintColor() {
-        int value = internal_native_get_mDrawSoftBodyConstraintColor((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mDrawSoftBodyConstraintColor(native_address);
         return ESoftBodyConstraintColor.MAP.get(value);
     }
 
@@ -509,7 +501,7 @@ return jsObj.get_mDrawSoftBodyConstraintColor();
     public static native int internal_native_get_mDrawSoftBodyConstraintColor(int this_addr);
 
     public void set_mDrawSoftBodyConstraintColor(ESoftBodyConstraintColor mDrawSoftBodyConstraintColor) {
-        internal_native_set_mDrawSoftBodyConstraintColor((int) (long) getNativeData().getCPointer(), (int) (long) (mDrawSoftBodyConstraintColor != null ? mDrawSoftBodyConstraintColor.getValue() : 0));
+        internal_native_set_mDrawSoftBodyConstraintColor(native_address, (int) (mDrawSoftBodyConstraintColor != null ? mDrawSoftBodyConstraintColor.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]

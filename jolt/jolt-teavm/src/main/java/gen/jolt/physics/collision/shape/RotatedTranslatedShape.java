@@ -29,12 +29,12 @@ public class RotatedTranslatedShape extends DecoratedShape {
     }
 
     public Quat GetRotation() {
-        int pointer = internal_native_GetRotation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetRotation(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -48,12 +48,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotation(int this_addr);
 
     public Vec3 GetPosition() {
-        int pointer = internal_native_GetPosition((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 

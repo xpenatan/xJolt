@@ -22,7 +22,7 @@ public class GearConstraint extends TwoBodyConstraint {
     }
 
     public void SetConstraints(Constraint inGear1, Constraint inGear2) {
-        internal_native_SetConstraints((long) getNativeData().getCPointer(), (long) (inGear1 != null ? inGear1.getNativeData().getCPointer() : 0), (long) (inGear2 != null ? inGear2.getNativeData().getCPointer() : 0));
+        internal_native_SetConstraints(native_address, (inGear1 != null ? inGear1.native_address : 0), (inGear2 != null ? inGear2.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -32,7 +32,7 @@ nativeObject->SetConstraints((Constraint* )inGear1_addr, (Constraint* )inGear2_a
     public static native void internal_native_SetConstraints(long this_addr, long inGear1_addr, long inGear2_addr);
 
     public float GetTotalLambda() {
-        return internal_native_GetTotalLambda((long) getNativeData().getCPointer());
+        return internal_native_GetTotalLambda(native_address);
     }
 
     /*[-JNI;-NATIVE]

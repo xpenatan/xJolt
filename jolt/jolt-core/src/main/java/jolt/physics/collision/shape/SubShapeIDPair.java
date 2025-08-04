@@ -26,7 +26,7 @@ public class SubShapeIDPair extends IDLBase {
 
     public SubShapeIDPair() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -41,16 +41,8 @@ return (jlong)new SubShapeIDPair();
     public SubShapeIDPair(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -60,12 +52,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public BodyID GetBody1ID() {
-        long pointer = internal_native_GetBody1ID((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetBody1ID(native_address);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -76,12 +68,12 @@ return (jlong)&nativeObject->GetBody1ID();
     public static native long internal_native_GetBody1ID(long this_addr);
 
     public SubShapeID GetSubShapeID1() {
-        long pointer = internal_native_GetSubShapeID1((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetSubShapeID1(native_address);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = new SubShapeID((byte) 1, (char) 1);
-        SubShapeID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_0;
     }
 
@@ -92,12 +84,12 @@ return (jlong)&nativeObject->GetSubShapeID1();
     public static native long internal_native_GetSubShapeID1(long this_addr);
 
     public BodyID GetBody2ID() {
-        long pointer = internal_native_GetBody2ID((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetBody2ID(native_address);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_1 == null)
             BodyID_TEMP_GEN_1 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_1.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_1;
     }
 
@@ -108,12 +100,12 @@ return (jlong)&nativeObject->GetBody2ID();
     public static native long internal_native_GetBody2ID(long this_addr);
 
     public SubShapeID GetSubShapeID2() {
-        long pointer = internal_native_GetSubShapeID2((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetSubShapeID2(native_address);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = new SubShapeID((byte) 1, (char) 1);
-        SubShapeID_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        SubShapeID_TEMP_GEN_1.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_1;
     }
 

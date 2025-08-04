@@ -18,7 +18,7 @@ public class SpringSettings extends IDLBase {
 
     public SpringSettings() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -35,16 +35,8 @@ return jolt.getPointer(jsObj);
     public SpringSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -55,7 +47,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public boolean HasStiffness() {
-        return internal_native_HasStiffness((int) (long) getNativeData().getCPointer());
+        return internal_native_HasStiffness(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,7 +59,7 @@ return returnedJSObj;
     public static native boolean internal_native_HasStiffness(int this_addr);
 
     public ESpringMode get_mMode() {
-        int value = internal_native_get_mMode((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mMode(native_address);
         return ESpringMode.MAP.get(value);
     }
 
@@ -79,7 +71,7 @@ return jsObj.get_mMode();
     public static native int internal_native_get_mMode(int this_addr);
 
     public void set_mMode(ESpringMode mMode) {
-        internal_native_set_mMode((int) (long) getNativeData().getCPointer(), (int) (long) (mMode != null ? mMode.getValue() : 0));
+        internal_native_set_mMode(native_address, (int) (mMode != null ? mMode.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -90,7 +82,7 @@ jsObj.set_mMode(mMode);
     public static native void internal_native_set_mMode(int this_addr, int mMode);
 
     public float get_mFrequency() {
-        return internal_native_get_mFrequency((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mFrequency(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -101,7 +93,7 @@ return jsObj.get_mFrequency();
     public static native float internal_native_get_mFrequency(int this_addr);
 
     public void set_mFrequency(float mFrequency) {
-        internal_native_set_mFrequency((int) (long) getNativeData().getCPointer(), mFrequency);
+        internal_native_set_mFrequency(native_address, mFrequency);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -112,7 +104,7 @@ jsObj.set_mFrequency(mFrequency);
     public static native void internal_native_set_mFrequency(int this_addr, float mFrequency);
 
     public float get_mStiffness() {
-        return internal_native_get_mStiffness((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mStiffness(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -123,7 +115,7 @@ return jsObj.get_mStiffness();
     public static native float internal_native_get_mStiffness(int this_addr);
 
     public void set_mStiffness(float mStiffness) {
-        internal_native_set_mStiffness((int) (long) getNativeData().getCPointer(), mStiffness);
+        internal_native_set_mStiffness(native_address, mStiffness);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -134,7 +126,7 @@ jsObj.set_mStiffness(mStiffness);
     public static native void internal_native_set_mStiffness(int this_addr, float mStiffness);
 
     public float get_mDamping() {
-        return internal_native_get_mDamping((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDamping(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -145,7 +137,7 @@ return jsObj.get_mDamping();
     public static native float internal_native_get_mDamping(int this_addr);
 
     public void set_mDamping(float mDamping) {
-        internal_native_set_mDamping((int) (long) getNativeData().getCPointer(), mDamping);
+        internal_native_set_mDamping(native_address, mDamping);
     }
 
     /*[-TEAVM;-NATIVE]

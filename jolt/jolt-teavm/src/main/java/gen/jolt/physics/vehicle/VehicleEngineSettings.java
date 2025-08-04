@@ -25,16 +25,8 @@ public class VehicleEngineSettings extends IDLBase {
     public VehicleEngineSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -45,7 +37,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mMaxTorque() {
-        return internal_native_get_mMaxTorque((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxTorque(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +48,7 @@ return jsObj.get_mMaxTorque();
     public static native float internal_native_get_mMaxTorque(int this_addr);
 
     public void set_mMaxTorque(float mMaxTorque) {
-        internal_native_set_mMaxTorque((int) (long) getNativeData().getCPointer(), mMaxTorque);
+        internal_native_set_mMaxTorque(native_address, mMaxTorque);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,7 +59,7 @@ jsObj.set_mMaxTorque(mMaxTorque);
     public static native void internal_native_set_mMaxTorque(int this_addr, float mMaxTorque);
 
     public float get_mMinRPM() {
-        return internal_native_get_mMinRPM((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMinRPM(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -78,7 +70,7 @@ return jsObj.get_mMinRPM();
     public static native float internal_native_get_mMinRPM(int this_addr);
 
     public void set_mMinRPM(float mMinRPM) {
-        internal_native_set_mMinRPM((int) (long) getNativeData().getCPointer(), mMinRPM);
+        internal_native_set_mMinRPM(native_address, mMinRPM);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -89,7 +81,7 @@ jsObj.set_mMinRPM(mMinRPM);
     public static native void internal_native_set_mMinRPM(int this_addr, float mMinRPM);
 
     public float get_mMaxRPM() {
-        return internal_native_get_mMaxRPM((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxRPM(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -100,7 +92,7 @@ return jsObj.get_mMaxRPM();
     public static native float internal_native_get_mMaxRPM(int this_addr);
 
     public void set_mMaxRPM(float mMaxRPM) {
-        internal_native_set_mMaxRPM((int) (long) getNativeData().getCPointer(), mMaxRPM);
+        internal_native_set_mMaxRPM(native_address, mMaxRPM);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -111,12 +103,12 @@ jsObj.set_mMaxRPM(mMaxRPM);
     public static native void internal_native_set_mMaxRPM(int this_addr, float mMaxRPM);
 
     public LinearCurve get_mNormalizedTorque() {
-        int pointer = internal_native_get_mNormalizedTorque((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mNormalizedTorque(native_address);
         if (pointer == 0)
             return null;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = new LinearCurve((byte) 1, (char) 1);
-        LinearCurve_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);
         return LinearCurve_TEMP_GEN_0;
     }
 
@@ -130,7 +122,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mNormalizedTorque(int this_addr);
 
     public void set_mNormalizedTorque(LinearCurve mNormalizedTorque) {
-        internal_native_set_mNormalizedTorque((int) (long) getNativeData().getCPointer(), (int) (long) (mNormalizedTorque != null ? mNormalizedTorque.getNativeData().getCPointer() : 0));
+        internal_native_set_mNormalizedTorque(native_address, (mNormalizedTorque != null ? mNormalizedTorque.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -141,7 +133,7 @@ jsObj.set_mNormalizedTorque(mNormalizedTorque_addr);
     public static native void internal_native_set_mNormalizedTorque(int this_addr, int mNormalizedTorque_addr);
 
     public float get_mInertia() {
-        return internal_native_get_mInertia((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mInertia(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -152,7 +144,7 @@ return jsObj.get_mInertia();
     public static native float internal_native_get_mInertia(int this_addr);
 
     public void set_mInertia(float mInertia) {
-        internal_native_set_mInertia((int) (long) getNativeData().getCPointer(), mInertia);
+        internal_native_set_mInertia(native_address, mInertia);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -163,7 +155,7 @@ jsObj.set_mInertia(mInertia);
     public static native void internal_native_set_mInertia(int this_addr, float mInertia);
 
     public float get_mAngularDamping() {
-        return internal_native_get_mAngularDamping((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mAngularDamping(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -174,7 +166,7 @@ return jsObj.get_mAngularDamping();
     public static native float internal_native_get_mAngularDamping(int this_addr);
 
     public void set_mAngularDamping(float mAngularDamping) {
-        internal_native_set_mAngularDamping((int) (long) getNativeData().getCPointer(), mAngularDamping);
+        internal_native_set_mAngularDamping(native_address, mAngularDamping);
     }
 
     /*[-TEAVM;-NATIVE]

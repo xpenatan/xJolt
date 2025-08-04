@@ -29,7 +29,7 @@ public class IDLStringView extends IDLBase {
     }
 
     public String data() {
-        String text = internal_native_data((int) getNativeData().getCPointer());
+        String text = internal_native_data(native_address);
         return text;
     }
 
@@ -44,7 +44,7 @@ public class IDLStringView extends IDLBase {
 
     public IDLStringView(String text) {
         int addr = internal_native_create_String(text);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*
@@ -57,7 +57,7 @@ public class IDLStringView extends IDLBase {
 
     public IDLStringView(String text, int size) {
         int addr = internal_native_create_String_int(text, size);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*
@@ -68,16 +68,8 @@ public class IDLStringView extends IDLBase {
     @org.teavm.jso.JSBody(params = {"text", "size"}, script = "var jsObj = new jolt.IDLStringView(text, size);return jolt.getPointer(jsObj);")
     public static native int internal_native_create_String_int(String text, int size);
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*
@@ -89,7 +81,7 @@ public class IDLStringView extends IDLBase {
     public static native void internal_native_deleteNative(int this_addr);
 
     public int size() {
-        return internal_native_size((int) (long) getNativeData().getCPointer());
+        return internal_native_size(native_address);
     }
 
     /*
@@ -102,7 +94,7 @@ public class IDLStringView extends IDLBase {
     public static native int internal_native_size(int this_addr);
 
     public byte at(int index) {
-        return internal_native_at((int) (long) getNativeData().getCPointer(), index);
+        return internal_native_at(native_address, index);
     }
 
     /*

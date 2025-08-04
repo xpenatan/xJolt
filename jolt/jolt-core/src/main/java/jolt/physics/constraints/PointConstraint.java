@@ -30,12 +30,12 @@ public class PointConstraint extends TwoBodyConstraint {
     }
 
     public Vec3 GetLocalSpacePoint1() {
-        long pointer = internal_native_GetLocalSpacePoint1((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetLocalSpacePoint1(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -47,12 +47,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetLocalSpacePoint1(long this_addr);
 
     public Vec3 GetLocalSpacePoint2() {
-        long pointer = internal_native_GetLocalSpacePoint2((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetLocalSpacePoint2(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -64,12 +64,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetLocalSpacePoint2(long this_addr);
 
     public Vec3 GetTotalLambdaPosition() {
-        long pointer = internal_native_GetTotalLambdaPosition((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetTotalLambdaPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 

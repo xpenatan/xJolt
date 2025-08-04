@@ -25,16 +25,8 @@ public class RagdollAdditionalConstraint extends IDLBase {
     public RagdollAdditionalConstraint(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -45,7 +37,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public int get_mBodyIdx(int index) {
-        return internal_native_get_mBodyIdx((int) (long) getNativeData().getCPointer(), index);
+        return internal_native_get_mBodyIdx(native_address, index);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +48,7 @@ return jsObj.get_mBodyIdx(index);
     public static native int internal_native_get_mBodyIdx(int this_addr, int index);
 
     public void set_mBodyIdx(int index, int mBodyIdx) {
-        internal_native_set_mBodyIdx((int) (long) getNativeData().getCPointer(), index, mBodyIdx);
+        internal_native_set_mBodyIdx(native_address, index, mBodyIdx);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,12 +59,12 @@ jsObj.set_mBodyIdx(index, mBodyIdx);
     public static native void internal_native_set_mBodyIdx(int this_addr, int index, int mBodyIdx);
 
     public TwoBodyConstraintSettings get_mConstraint() {
-        int pointer = internal_native_get_mConstraint((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mConstraint(native_address);
         if (pointer == 0)
             return null;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
             TwoBodyConstraintSettings_TEMP_GEN_0 = new TwoBodyConstraintSettings((byte) 1, (char) 1);
-        TwoBodyConstraintSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return TwoBodyConstraintSettings_TEMP_GEN_0;
     }
 
@@ -86,7 +78,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mConstraint(int this_addr);
 
     public void set_mConstraint(TwoBodyConstraintSettings mConstraint) {
-        internal_native_set_mConstraint((int) (long) getNativeData().getCPointer(), (int) (long) (mConstraint != null ? mConstraint.getNativeData().getCPointer() : 0));
+        internal_native_set_mConstraint(native_address, (mConstraint != null ? mConstraint.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

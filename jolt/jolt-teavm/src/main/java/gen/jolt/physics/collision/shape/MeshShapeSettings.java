@@ -28,7 +28,7 @@ public class MeshShapeSettings extends ShapeSettings {
     public MeshShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -40,8 +40,8 @@ return jolt.getPointer(jsObj);
 
     public MeshShapeSettings(TriangleList inTriangleList, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_TriangleList_PhysicsMaterialList((int) (long) (inTriangleList != null ? inTriangleList.getNativeData().getCPointer() : 0), (int) (long) (inMaterialList != null ? inMaterialList.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_TriangleList_PhysicsMaterialList((inTriangleList != null ? inTriangleList.native_address : 0), (inMaterialList != null ? inMaterialList.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -53,8 +53,8 @@ return jolt.getPointer(jsObj);
 
     public MeshShapeSettings(TriangleList inTriangleList) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_TriangleList((int) (long) (inTriangleList != null ? inTriangleList.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_TriangleList((inTriangleList != null ? inTriangleList.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -66,8 +66,8 @@ return jolt.getPointer(jsObj);
 
     public MeshShapeSettings(VertexList inVertices, IndexedTriangleList inTriangles, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList((int) (long) (inVertices != null ? inVertices.getNativeData().getCPointer() : 0), (int) (long) (inTriangles != null ? inTriangles.getNativeData().getCPointer() : 0), (int) (long) (inMaterialList != null ? inMaterialList.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList((inVertices != null ? inVertices.native_address : 0), (inTriangles != null ? inTriangles.native_address : 0), (inMaterialList != null ? inMaterialList.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -86,7 +86,7 @@ return jolt.getPointer(jsObj);
     }
 
     public void Sanitize() {
-        internal_native_Sanitize((int) (long) getNativeData().getCPointer());
+        internal_native_Sanitize(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,12 +97,12 @@ jsObj.Sanitize();
     public static native void internal_native_Sanitize(int this_addr);
 
     public VertexList get_mTriangleVertices() {
-        int pointer = internal_native_get_mTriangleVertices((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mTriangleVertices(native_address);
         if (pointer == 0)
             return null;
         if (VertexList_TEMP_GEN_0 == null)
             VertexList_TEMP_GEN_0 = new VertexList((byte) 1, (char) 1);
-        VertexList_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VertexList_TEMP_GEN_0.internal_reset(pointer, false);
         return VertexList_TEMP_GEN_0;
     }
 
@@ -116,7 +116,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mTriangleVertices(int this_addr);
 
     public void set_mTriangleVertices(VertexList mTriangleVertices) {
-        internal_native_set_mTriangleVertices((int) (long) getNativeData().getCPointer(), (int) (long) (mTriangleVertices != null ? mTriangleVertices.getNativeData().getCPointer() : 0));
+        internal_native_set_mTriangleVertices(native_address, (mTriangleVertices != null ? mTriangleVertices.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -127,12 +127,12 @@ jsObj.set_mTriangleVertices(mTriangleVertices_addr);
     public static native void internal_native_set_mTriangleVertices(int this_addr, int mTriangleVertices_addr);
 
     public IndexedTriangleList get_mIndexedTriangles() {
-        int pointer = internal_native_get_mIndexedTriangles((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mIndexedTriangles(native_address);
         if (pointer == 0)
             return null;
         if (IndexedTriangleList_TEMP_GEN_0 == null)
             IndexedTriangleList_TEMP_GEN_0 = new IndexedTriangleList((byte) 1, (char) 1);
-        IndexedTriangleList_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        IndexedTriangleList_TEMP_GEN_0.internal_reset(pointer, false);
         return IndexedTriangleList_TEMP_GEN_0;
     }
 
@@ -146,7 +146,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mIndexedTriangles(int this_addr);
 
     public void set_mIndexedTriangles(IndexedTriangleList mIndexedTriangles) {
-        internal_native_set_mIndexedTriangles((int) (long) getNativeData().getCPointer(), (int) (long) (mIndexedTriangles != null ? mIndexedTriangles.getNativeData().getCPointer() : 0));
+        internal_native_set_mIndexedTriangles(native_address, (mIndexedTriangles != null ? mIndexedTriangles.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -157,12 +157,12 @@ jsObj.set_mIndexedTriangles(mIndexedTriangles_addr);
     public static native void internal_native_set_mIndexedTriangles(int this_addr, int mIndexedTriangles_addr);
 
     public PhysicsMaterialList get_mMaterials() {
-        int pointer = internal_native_get_mMaterials((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mMaterials(native_address);
         if (pointer == 0)
             return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = new PhysicsMaterialList((byte) 1, (char) 1);
-        PhysicsMaterialList_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
 
@@ -176,7 +176,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mMaterials(int this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
-        internal_native_set_mMaterials((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterials != null ? mMaterials.getNativeData().getCPointer() : 0));
+        internal_native_set_mMaterials(native_address, (mMaterials != null ? mMaterials.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -187,7 +187,7 @@ jsObj.set_mMaterials(mMaterials_addr);
     public static native void internal_native_set_mMaterials(int this_addr, int mMaterials_addr);
 
     public int get_mMaxTrianglesPerLeaf() {
-        return internal_native_get_mMaxTrianglesPerLeaf((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxTrianglesPerLeaf(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -198,7 +198,7 @@ return jsObj.get_mMaxTrianglesPerLeaf();
     public static native int internal_native_get_mMaxTrianglesPerLeaf(int this_addr);
 
     public void set_mMaxTrianglesPerLeaf(int mMaxTrianglesPerLeaf) {
-        internal_native_set_mMaxTrianglesPerLeaf((int) (long) getNativeData().getCPointer(), mMaxTrianglesPerLeaf);
+        internal_native_set_mMaxTrianglesPerLeaf(native_address, mMaxTrianglesPerLeaf);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -209,7 +209,7 @@ jsObj.set_mMaxTrianglesPerLeaf(mMaxTrianglesPerLeaf);
     public static native void internal_native_set_mMaxTrianglesPerLeaf(int this_addr, int mMaxTrianglesPerLeaf);
 
     public float get_mActiveEdgeCosThresholdAngle() {
-        return internal_native_get_mActiveEdgeCosThresholdAngle((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mActiveEdgeCosThresholdAngle(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -220,7 +220,7 @@ return jsObj.get_mActiveEdgeCosThresholdAngle();
     public static native float internal_native_get_mActiveEdgeCosThresholdAngle(int this_addr);
 
     public void set_mActiveEdgeCosThresholdAngle(float mActiveEdgeCosThresholdAngle) {
-        internal_native_set_mActiveEdgeCosThresholdAngle((int) (long) getNativeData().getCPointer(), mActiveEdgeCosThresholdAngle);
+        internal_native_set_mActiveEdgeCosThresholdAngle(native_address, mActiveEdgeCosThresholdAngle);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -231,7 +231,7 @@ jsObj.set_mActiveEdgeCosThresholdAngle(mActiveEdgeCosThresholdAngle);
     public static native void internal_native_set_mActiveEdgeCosThresholdAngle(int this_addr, float mActiveEdgeCosThresholdAngle);
 
     public boolean get_mPerTriangleUserData() {
-        return internal_native_get_mPerTriangleUserData((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mPerTriangleUserData(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -242,7 +242,7 @@ return jsObj.get_mPerTriangleUserData();
     public static native boolean internal_native_get_mPerTriangleUserData(int this_addr);
 
     public void set_mPerTriangleUserData(boolean mPerTriangleUserData) {
-        internal_native_set_mPerTriangleUserData((int) (long) getNativeData().getCPointer(), mPerTriangleUserData);
+        internal_native_set_mPerTriangleUserData(native_address, mPerTriangleUserData);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -253,7 +253,7 @@ jsObj.set_mPerTriangleUserData(mPerTriangleUserData);
     public static native void internal_native_set_mPerTriangleUserData(int this_addr, boolean mPerTriangleUserData);
 
     public MeshShapeSettings_EBuildQuality get_mBuildQuality() {
-        int value = internal_native_get_mBuildQuality((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mBuildQuality(native_address);
         return MeshShapeSettings_EBuildQuality.MAP.get(value);
     }
 
@@ -265,7 +265,7 @@ return jsObj.get_mBuildQuality();
     public static native int internal_native_get_mBuildQuality(int this_addr);
 
     public void set_mBuildQuality(MeshShapeSettings_EBuildQuality mBuildQuality) {
-        internal_native_set_mBuildQuality((int) (long) getNativeData().getCPointer(), (int) (long) (mBuildQuality != null ? mBuildQuality.getValue() : 0));
+        internal_native_set_mBuildQuality(native_address, (int) (mBuildQuality != null ? mBuildQuality.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]

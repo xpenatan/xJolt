@@ -29,7 +29,7 @@ public class RayCast extends IDLBase {
 
     public RayCast() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -38,8 +38,8 @@ return (jlong)new RayCast();
     public static native long internal_native_create();
 
     public RayCast(Vec3 inOrigin, Vec3 inDirection) {
-        long addr = internal_native_create_Vec3_Vec3((long) (inOrigin != null ? inOrigin.getNativeData().getCPointer() : 0), (long) (inDirection != null ? inDirection.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_Vec3_Vec3((inOrigin != null ? inOrigin.native_address : 0), (inDirection != null ? inDirection.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,16 +54,8 @@ return (jlong)new RayCast(*((Vec3* )inOrigin_addr), *((Vec3* )inDirection_addr))
     public RayCast(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -73,12 +65,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public RayCast Transformed(Mat44 inTransform) {
-        long pointer = internal_native_Transformed((long) getNativeData().getCPointer(), (long) (inTransform != null ? inTransform.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_Transformed(native_address, (inTransform != null ? inTransform.native_address : 0));
         if (pointer == 0)
             return null;
         if (RayCast_TEMP_GEN_0 == null)
             RayCast_TEMP_GEN_0 = new RayCast((byte) 1, (char) 1);
-        RayCast_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        RayCast_TEMP_GEN_0.internal_reset(pointer, false);
         return RayCast_TEMP_GEN_0;
     }
 
@@ -90,12 +82,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_Transformed(long this_addr, long inTransform_addr);
 
     public RayCast Translated(Vec3 inTranslation) {
-        long pointer = internal_native_Translated((long) getNativeData().getCPointer(), (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_Translated(native_address, (inTranslation != null ? inTranslation.native_address : 0));
         if (pointer == 0)
             return null;
         if (RayCast_TEMP_GEN_1 == null)
             RayCast_TEMP_GEN_1 = new RayCast((byte) 1, (char) 1);
-        RayCast_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        RayCast_TEMP_GEN_1.internal_reset(pointer, false);
         return RayCast_TEMP_GEN_1;
     }
 
@@ -107,12 +99,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_Translated(long this_addr, long inTranslation_addr);
 
     public Vec3 GetPointOnRay(float inFraction) {
-        long pointer = internal_native_GetPointOnRay((long) getNativeData().getCPointer(), inFraction);
+        long pointer = internal_native_GetPointOnRay(native_address, inFraction);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -124,12 +116,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetPointOnRay(long this_addr, float inFraction);
 
     public Vec3 get_mOrigin() {
-        long pointer = internal_native_get_mOrigin((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mOrigin(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -140,7 +132,7 @@ return (jlong)&nativeObject->mOrigin;
     public static native long internal_native_get_mOrigin(long this_addr);
 
     public void set_mOrigin(Vec3 mOrigin) {
-        internal_native_set_mOrigin((long) getNativeData().getCPointer(), (long) (mOrigin != null ? mOrigin.getNativeData().getCPointer() : 0));
+        internal_native_set_mOrigin(native_address, (mOrigin != null ? mOrigin.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -150,12 +142,12 @@ nativeObject->mOrigin = *((Vec3*)mOrigin_addr);
     public static native void internal_native_set_mOrigin(long this_addr, long mOrigin_addr);
 
     public Vec3 get_mDirection() {
-        long pointer = internal_native_get_mDirection((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mDirection(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -166,7 +158,7 @@ return (jlong)&nativeObject->mDirection;
     public static native long internal_native_get_mDirection(long this_addr);
 
     public void set_mDirection(Vec3 mDirection) {
-        internal_native_set_mDirection((long) getNativeData().getCPointer(), (long) (mDirection != null ? mDirection.getNativeData().getCPointer() : 0));
+        internal_native_set_mDirection(native_address, (mDirection != null ? mDirection.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

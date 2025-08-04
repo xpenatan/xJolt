@@ -24,12 +24,12 @@ public class DecoratedShape extends Shape {
     }
 
     public Shape GetInnerShape() {
-        long pointer = internal_native_GetInnerShape((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetInnerShape(native_address);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
-        Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
 

@@ -16,7 +16,7 @@ public class SkeletalAnimationKeyframe extends SkeletalAnimationJointState {
     public SkeletalAnimationKeyframe() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mTime() {
-        return internal_native_get_mTime((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mTime(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ return jsObj.get_mTime();
     public static native float internal_native_get_mTime(int this_addr);
 
     public void set_mTime(float mTime) {
-        internal_native_set_mTime((int) (long) getNativeData().getCPointer(), mTime);
+        internal_native_set_mTime(native_address, mTime);
     }
 
     /*[-TEAVM;-NATIVE]

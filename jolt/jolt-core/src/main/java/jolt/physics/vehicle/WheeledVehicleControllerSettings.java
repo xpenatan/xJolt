@@ -22,7 +22,7 @@ public class WheeledVehicleControllerSettings extends VehicleControllerSettings 
     public WheeledVehicleControllerSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -39,12 +39,12 @@ return (jlong)new WheeledVehicleControllerSettings();
     }
 
     public VehicleEngineSettings get_mEngine() {
-        long pointer = internal_native_get_mEngine((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mEngine(native_address);
         if (pointer == 0)
             return null;
         if (VehicleEngineSettings_TEMP_GEN_0 == null)
             VehicleEngineSettings_TEMP_GEN_0 = new VehicleEngineSettings((byte) 1, (char) 1);
-        VehicleEngineSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VehicleEngineSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleEngineSettings_TEMP_GEN_0;
     }
 
@@ -55,7 +55,7 @@ return (jlong)&nativeObject->mEngine;
     public static native long internal_native_get_mEngine(long this_addr);
 
     public void set_mEngine(VehicleEngineSettings mEngine) {
-        internal_native_set_mEngine((long) getNativeData().getCPointer(), (long) (mEngine != null ? mEngine.getNativeData().getCPointer() : 0));
+        internal_native_set_mEngine(native_address, (mEngine != null ? mEngine.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -65,12 +65,12 @@ nativeObject->mEngine = *((VehicleEngineSettings*)mEngine_addr);
     public static native void internal_native_set_mEngine(long this_addr, long mEngine_addr);
 
     public VehicleTransmissionSettings get_mTransmission() {
-        long pointer = internal_native_get_mTransmission((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mTransmission(native_address);
         if (pointer == 0)
             return null;
         if (VehicleTransmissionSettings_TEMP_GEN_0 == null)
             VehicleTransmissionSettings_TEMP_GEN_0 = new VehicleTransmissionSettings((byte) 1, (char) 1);
-        VehicleTransmissionSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VehicleTransmissionSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleTransmissionSettings_TEMP_GEN_0;
     }
 
@@ -81,7 +81,7 @@ return (jlong)&nativeObject->mTransmission;
     public static native long internal_native_get_mTransmission(long this_addr);
 
     public void set_mTransmission(VehicleTransmissionSettings mTransmission) {
-        internal_native_set_mTransmission((long) getNativeData().getCPointer(), (long) (mTransmission != null ? mTransmission.getNativeData().getCPointer() : 0));
+        internal_native_set_mTransmission(native_address, (mTransmission != null ? mTransmission.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -91,12 +91,12 @@ nativeObject->mTransmission = *((VehicleTransmissionSettings*)mTransmission_addr
     public static native void internal_native_set_mTransmission(long this_addr, long mTransmission_addr);
 
     public ArrayVehicleDifferentialSettings get_mDifferentials() {
-        long pointer = internal_native_get_mDifferentials((long) getNativeData().getCPointer());
+        long pointer = internal_native_get_mDifferentials(native_address);
         if (pointer == 0)
             return null;
         if (ArrayVehicleDifferentialSettings_TEMP_GEN_0 == null)
             ArrayVehicleDifferentialSettings_TEMP_GEN_0 = new ArrayVehicleDifferentialSettings((byte) 1, (char) 1);
-        ArrayVehicleDifferentialSettings_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayVehicleDifferentialSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayVehicleDifferentialSettings_TEMP_GEN_0;
     }
 
@@ -107,7 +107,7 @@ return (jlong)&nativeObject->mDifferentials;
     public static native long internal_native_get_mDifferentials(long this_addr);
 
     public void set_mDifferentials(ArrayVehicleDifferentialSettings mDifferentials) {
-        internal_native_set_mDifferentials((long) getNativeData().getCPointer(), (long) (mDifferentials != null ? mDifferentials.getNativeData().getCPointer() : 0));
+        internal_native_set_mDifferentials(native_address, (mDifferentials != null ? mDifferentials.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -117,7 +117,7 @@ nativeObject->mDifferentials = *((ArrayVehicleDifferentialSettings*)mDifferentia
     public static native void internal_native_set_mDifferentials(long this_addr, long mDifferentials_addr);
 
     public float get_mDifferentialLimitedSlipRatio() {
-        return internal_native_get_mDifferentialLimitedSlipRatio((long) getNativeData().getCPointer());
+        return internal_native_get_mDifferentialLimitedSlipRatio(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -127,7 +127,7 @@ return nativeObject->mDifferentialLimitedSlipRatio;
     public static native float internal_native_get_mDifferentialLimitedSlipRatio(long this_addr);
 
     public void set_mDifferentialLimitedSlipRatio(float mDifferentialLimitedSlipRatio) {
-        internal_native_set_mDifferentialLimitedSlipRatio((long) getNativeData().getCPointer(), mDifferentialLimitedSlipRatio);
+        internal_native_set_mDifferentialLimitedSlipRatio(native_address, mDifferentialLimitedSlipRatio);
     }
 
     /*[-JNI;-NATIVE]

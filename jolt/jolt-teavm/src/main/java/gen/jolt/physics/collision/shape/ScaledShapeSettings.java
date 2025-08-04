@@ -19,8 +19,8 @@ public class ScaledShapeSettings extends DecoratedShapeSettings {
 
     public ScaledShapeSettings(ShapeSettings inShape, Vec3 inScale) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_ShapeSettings_Vec3((int) (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_ShapeSettings_Vec3((inShape != null ? inShape.native_address : 0), (inScale != null ? inScale.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -39,12 +39,12 @@ return jolt.getPointer(jsObj);
     }
 
     public Vec3 get_mScale() {
-        int pointer = internal_native_get_mScale((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mScale(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -58,7 +58,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mScale(int this_addr);
 
     public void set_mScale(Vec3 mScale) {
-        internal_native_set_mScale((int) (long) getNativeData().getCPointer(), (int) (long) (mScale != null ? mScale.getNativeData().getCPointer() : 0));
+        internal_native_set_mScale(native_address, (mScale != null ? mScale.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

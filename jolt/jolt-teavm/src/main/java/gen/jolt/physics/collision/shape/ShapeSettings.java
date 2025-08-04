@@ -25,7 +25,7 @@ public class ShapeSettings extends IDLBase {
     }
 
     public int GetRefCount() {
-        return internal_native_GetRefCount((int) (long) getNativeData().getCPointer());
+        return internal_native_GetRefCount(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -37,7 +37,7 @@ return returnedJSObj;
     public static native int internal_native_GetRefCount(int this_addr);
 
     public void AddRef() {
-        internal_native_AddRef((int) (long) getNativeData().getCPointer());
+        internal_native_AddRef(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -48,7 +48,7 @@ jsObj.AddRef();
     public static native void internal_native_AddRef(int this_addr);
 
     public void Release() {
-        internal_native_Release((int) (long) getNativeData().getCPointer());
+        internal_native_Release(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -59,12 +59,12 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public ShapeResult Create() {
-        int pointer = internal_native_Create((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_Create(native_address);
         if (pointer == 0)
             return null;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = new ShapeResult((byte) 1, (char) 1);
-        ShapeResult_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ShapeResult_TEMP_GEN_0;
     }
 
@@ -78,7 +78,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Create(int this_addr);
 
     public void ClearCachedResult() {
-        internal_native_ClearCachedResult((int) (long) getNativeData().getCPointer());
+        internal_native_ClearCachedResult(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -89,7 +89,7 @@ jsObj.ClearCachedResult();
     public static native void internal_native_ClearCachedResult(int this_addr);
 
     public long get_mUserData() {
-        return internal_native_get_mUserData((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mUserData(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -100,7 +100,7 @@ return jsObj.get_mUserData();
     public static native int internal_native_get_mUserData(int this_addr);
 
     public void set_mUserData(long mUserData) {
-        internal_native_set_mUserData((int) (long) getNativeData().getCPointer(), (int) mUserData);
+        internal_native_set_mUserData(native_address, (int) mUserData);
     }
 
     /*[-TEAVM;-NATIVE]

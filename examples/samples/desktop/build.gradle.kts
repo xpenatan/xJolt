@@ -5,9 +5,11 @@ dependencies {
 
     if(LibExt.exampleUseRepoLibs) {
         implementation("com.github.xpenatan.gdx-jolt:jolt-desktop:-SNAPSHOT")
+        implementation("com.github.xpenatan.gdx-jolt:jolt-gdx:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-desktop"))
+        implementation(project(":jolt-gdx"))
     }
 
     implementation("com.badlogicgames.gdx:gdx-backend-lwjgl3:${LibExt.gdxVersion}")

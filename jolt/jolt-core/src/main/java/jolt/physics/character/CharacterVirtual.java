@@ -54,8 +54,8 @@ public class CharacterVirtual extends CharacterBase {
 
     public CharacterVirtual(CharacterVirtualSettings inSettings, Vec3 inPosition, Quat inRotation, PhysicsSystem inSystem) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem((long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (long) (inSystem != null ? inSystem.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        long addr = internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem((inSettings != null ? inSettings.native_address : 0), (inPosition != null ? inPosition.native_address : 0), (inRotation != null ? inRotation.native_address : 0), (inSystem != null ? inSystem.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -72,12 +72,12 @@ return (jlong)new CharacterVirtual((CharacterVirtualSettings* )inSettings_addr, 
     }
 
     public CharacterID GetID() {
-        long pointer = internal_native_GetID((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetID(native_address);
         if (pointer == 0)
             return null;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = new CharacterID((byte) 1, (char) 1);
-        CharacterID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
         return CharacterID_TEMP_GEN_0;
     }
 
@@ -88,7 +88,7 @@ return (jlong)&nativeObject->GetID();
     public static native long internal_native_GetID(long this_addr);
 
     public void SetListener(CharacterContactListener inListener) {
-        internal_native_SetListener((long) getNativeData().getCPointer(), (long) (inListener != null ? inListener.getNativeData().getCPointer() : 0));
+        internal_native_SetListener(native_address, (inListener != null ? inListener.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -98,7 +98,7 @@ nativeObject->SetListener((CharacterContactListener* )inListener_addr);
     public static native void internal_native_SetListener(long this_addr, long inListener_addr);
 
     public void SetCharacterVsCharacterCollision(CharacterVsCharacterCollision inCharacterVsCharacterCollision) {
-        internal_native_SetCharacterVsCharacterCollision((long) getNativeData().getCPointer(), (long) (inCharacterVsCharacterCollision != null ? inCharacterVsCharacterCollision.getNativeData().getCPointer() : 0));
+        internal_native_SetCharacterVsCharacterCollision(native_address, (inCharacterVsCharacterCollision != null ? inCharacterVsCharacterCollision.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -108,12 +108,12 @@ nativeObject->SetCharacterVsCharacterCollision((CharacterVsCharacterCollision* )
     public static native void internal_native_SetCharacterVsCharacterCollision(long this_addr, long inCharacterVsCharacterCollision_addr);
 
     public CharacterContactListener GetListener() {
-        long pointer = internal_native_GetListener((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetListener(native_address);
         if (pointer == 0)
             return null;
         if (CharacterContactListener_TEMP_GEN_0 == null)
             CharacterContactListener_TEMP_GEN_0 = new CharacterContactListener((byte) 1, (char) 1);
-        CharacterContactListener_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        CharacterContactListener_TEMP_GEN_0.internal_reset(pointer, false);
         return CharacterContactListener_TEMP_GEN_0;
     }
 
@@ -125,12 +125,12 @@ return (jlong)obj;
     public static native long internal_native_GetListener(long this_addr);
 
     public Vec3 GetLinearVelocity() {
-        long pointer = internal_native_GetLinearVelocity((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetLinearVelocity(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -142,7 +142,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetLinearVelocity(long this_addr);
 
     public void SetLinearVelocity(Vec3 inLinearVelocity) {
-        internal_native_SetLinearVelocity((long) getNativeData().getCPointer(), (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0));
+        internal_native_SetLinearVelocity(native_address, (inLinearVelocity != null ? inLinearVelocity.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -152,12 +152,12 @@ nativeObject->SetLinearVelocity(*((Vec3* )inLinearVelocity_addr));
     public static native void internal_native_SetLinearVelocity(long this_addr, long inLinearVelocity_addr);
 
     public Vec3 GetPosition() {
-        long pointer = internal_native_GetPosition((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -169,7 +169,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetPosition(long this_addr);
 
     public void SetPosition(Vec3 inPosition) {
-        internal_native_SetPosition((long) getNativeData().getCPointer(), (long) (inPosition != null ? inPosition.getNativeData().getCPointer() : 0));
+        internal_native_SetPosition(native_address, (inPosition != null ? inPosition.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -179,12 +179,12 @@ nativeObject->SetPosition(*((Vec3* )inPosition_addr));
     public static native void internal_native_SetPosition(long this_addr, long inPosition_addr);
 
     public Quat GetRotation() {
-        long pointer = internal_native_GetRotation((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetRotation(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -196,7 +196,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetRotation(long this_addr);
 
     public void SetRotation(Quat inRotation) {
-        internal_native_SetRotation((long) getNativeData().getCPointer(), (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0));
+        internal_native_SetRotation(native_address, (inRotation != null ? inRotation.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -206,12 +206,12 @@ nativeObject->SetRotation(*((Quat* )inRotation_addr));
     public static native void internal_native_SetRotation(long this_addr, long inRotation_addr);
 
     public Vec3 GetCenterOfMassPosition() {
-        long pointer = internal_native_GetCenterOfMassPosition((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetCenterOfMassPosition(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -223,12 +223,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetCenterOfMassPosition(long this_addr);
 
     public Mat44 GetWorldTransform() {
-        long pointer = internal_native_GetWorldTransform((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetWorldTransform(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -240,12 +240,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetWorldTransform(long this_addr);
 
     public Mat44 GetCenterOfMassTransform() {
-        long pointer = internal_native_GetCenterOfMassTransform((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetCenterOfMassTransform(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -257,7 +257,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetCenterOfMassTransform(long this_addr);
 
     public float GetMass() {
-        return internal_native_GetMass((long) getNativeData().getCPointer());
+        return internal_native_GetMass(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -267,7 +267,7 @@ return nativeObject->GetMass();
     public static native float internal_native_GetMass(long this_addr);
 
     public void SetMass(float inMass) {
-        internal_native_SetMass((long) getNativeData().getCPointer(), inMass);
+        internal_native_SetMass(native_address, inMass);
     }
 
     /*[-JNI;-NATIVE]
@@ -277,7 +277,7 @@ nativeObject->SetMass((float)inMass);
     public static native void internal_native_SetMass(long this_addr, float inMass);
 
     public float GetMaxStrength() {
-        return internal_native_GetMaxStrength((long) getNativeData().getCPointer());
+        return internal_native_GetMaxStrength(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -287,7 +287,7 @@ return nativeObject->GetMaxStrength();
     public static native float internal_native_GetMaxStrength(long this_addr);
 
     public void SetMaxStrength(float inMaxStrength) {
-        internal_native_SetMaxStrength((long) getNativeData().getCPointer(), inMaxStrength);
+        internal_native_SetMaxStrength(native_address, inMaxStrength);
     }
 
     /*[-JNI;-NATIVE]
@@ -297,7 +297,7 @@ nativeObject->SetMaxStrength((float)inMaxStrength);
     public static native void internal_native_SetMaxStrength(long this_addr, float inMaxStrength);
 
     public float GetPenetrationRecoverySpeed() {
-        return internal_native_GetPenetrationRecoverySpeed((long) getNativeData().getCPointer());
+        return internal_native_GetPenetrationRecoverySpeed(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -307,7 +307,7 @@ return nativeObject->GetPenetrationRecoverySpeed();
     public static native float internal_native_GetPenetrationRecoverySpeed(long this_addr);
 
     public void SetPenetrationRecoverySpeed(float inSpeed) {
-        internal_native_SetPenetrationRecoverySpeed((long) getNativeData().getCPointer(), inSpeed);
+        internal_native_SetPenetrationRecoverySpeed(native_address, inSpeed);
     }
 
     /*[-JNI;-NATIVE]
@@ -317,7 +317,7 @@ nativeObject->SetPenetrationRecoverySpeed((float)inSpeed);
     public static native void internal_native_SetPenetrationRecoverySpeed(long this_addr, float inSpeed);
 
     public float GetCharacterPadding() {
-        return internal_native_GetCharacterPadding((long) getNativeData().getCPointer());
+        return internal_native_GetCharacterPadding(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -327,7 +327,7 @@ return nativeObject->GetCharacterPadding();
     public static native float internal_native_GetCharacterPadding(long this_addr);
 
     public int GetMaxNumHits() {
-        return internal_native_GetMaxNumHits((long) getNativeData().getCPointer());
+        return internal_native_GetMaxNumHits(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -337,7 +337,7 @@ return nativeObject->GetMaxNumHits();
     public static native int internal_native_GetMaxNumHits(long this_addr);
 
     public void SetMaxNumHits(int inMaxHits) {
-        internal_native_SetMaxNumHits((long) getNativeData().getCPointer(), inMaxHits);
+        internal_native_SetMaxNumHits(native_address, inMaxHits);
     }
 
     /*[-JNI;-NATIVE]
@@ -347,7 +347,7 @@ nativeObject->SetMaxNumHits(inMaxHits);
     public static native void internal_native_SetMaxNumHits(long this_addr, int inMaxHits);
 
     public float GetHitReductionCosMaxAngle() {
-        return internal_native_GetHitReductionCosMaxAngle((long) getNativeData().getCPointer());
+        return internal_native_GetHitReductionCosMaxAngle(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -357,7 +357,7 @@ return nativeObject->GetHitReductionCosMaxAngle();
     public static native float internal_native_GetHitReductionCosMaxAngle(long this_addr);
 
     public void SetHitReductionCosMaxAngle(float inCosMaxAngle) {
-        internal_native_SetHitReductionCosMaxAngle((long) getNativeData().getCPointer(), inCosMaxAngle);
+        internal_native_SetHitReductionCosMaxAngle(native_address, inCosMaxAngle);
     }
 
     /*[-JNI;-NATIVE]
@@ -367,7 +367,7 @@ nativeObject->SetHitReductionCosMaxAngle((float)inCosMaxAngle);
     public static native void internal_native_SetHitReductionCosMaxAngle(long this_addr, float inCosMaxAngle);
 
     public boolean GetMaxHitsExceeded() {
-        return internal_native_GetMaxHitsExceeded((long) getNativeData().getCPointer());
+        return internal_native_GetMaxHitsExceeded(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -377,12 +377,12 @@ return nativeObject->GetMaxHitsExceeded();
     public static native boolean internal_native_GetMaxHitsExceeded(long this_addr);
 
     public Vec3 GetShapeOffset() {
-        long pointer = internal_native_GetShapeOffset((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetShapeOffset(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -394,7 +394,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetShapeOffset(long this_addr);
 
     public void SetShapeOffset(Vec3 inShapeOffset) {
-        internal_native_SetShapeOffset((long) getNativeData().getCPointer(), (long) (inShapeOffset != null ? inShapeOffset.getNativeData().getCPointer() : 0));
+        internal_native_SetShapeOffset(native_address, (inShapeOffset != null ? inShapeOffset.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -404,7 +404,7 @@ nativeObject->SetShapeOffset(*((Vec3* )inShapeOffset_addr));
     public static native void internal_native_SetShapeOffset(long this_addr, long inShapeOffset_addr);
 
     public long GetUserData() {
-        return internal_native_GetUserData((long) getNativeData().getCPointer());
+        return internal_native_GetUserData(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -414,7 +414,7 @@ return nativeObject->GetUserData();
     public static native long internal_native_GetUserData(long this_addr);
 
     public void SetUserData(long inUserData) {
-        internal_native_SetUserData((long) getNativeData().getCPointer(), inUserData);
+        internal_native_SetUserData(native_address, inUserData);
     }
 
     /*[-JNI;-NATIVE]
@@ -424,12 +424,12 @@ nativeObject->SetUserData(inUserData);
     public static native void internal_native_SetUserData(long this_addr, long inUserData);
 
     public BodyID GetInnerBodyID() {
-        long pointer = internal_native_GetInnerBodyID((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetInnerBodyID(native_address);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = new BodyID((byte) 1, (char) 1);
-        BodyID_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -441,7 +441,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetInnerBodyID(long this_addr);
 
     public void StartTrackingContactChanges() {
-        internal_native_StartTrackingContactChanges((long) getNativeData().getCPointer());
+        internal_native_StartTrackingContactChanges(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -451,7 +451,7 @@ nativeObject->StartTrackingContactChanges();
     public static native void internal_native_StartTrackingContactChanges(long this_addr);
 
     public void FinishTrackingContactChanges() {
-        internal_native_FinishTrackingContactChanges((long) getNativeData().getCPointer());
+        internal_native_FinishTrackingContactChanges(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -461,12 +461,12 @@ nativeObject->FinishTrackingContactChanges();
     public static native void internal_native_FinishTrackingContactChanges(long this_addr);
 
     public Vec3 CancelVelocityTowardsSteepSlopes(Vec3 inDesiredVelocity) {
-        long pointer = internal_native_CancelVelocityTowardsSteepSlopes((long) getNativeData().getCPointer(), (long) (inDesiredVelocity != null ? inDesiredVelocity.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_CancelVelocityTowardsSteepSlopes(native_address, (inDesiredVelocity != null ? inDesiredVelocity.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -478,7 +478,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_CancelVelocityTowardsSteepSlopes(long this_addr, long inDesiredVelocity_addr);
 
     public void Update(float inDeltaTime, Vec3 inGravity, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
-        internal_native_Update((long) getNativeData().getCPointer(), inDeltaTime, (long) (inGravity != null ? inGravity.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        internal_native_Update(native_address, inDeltaTime, (inGravity != null ? inGravity.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0), (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -488,7 +488,7 @@ nativeObject->Update((float)inDeltaTime, *((Vec3* )inGravity_addr), *((BroadPhas
     public static native void internal_native_Update(long this_addr, float inDeltaTime, long inGravity_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public boolean CanWalkStairs(Vec3 inLinearVelocity) {
-        return internal_native_CanWalkStairs((long) getNativeData().getCPointer(), (long) (inLinearVelocity != null ? inLinearVelocity.getNativeData().getCPointer() : 0));
+        return internal_native_CanWalkStairs(native_address, (inLinearVelocity != null ? inLinearVelocity.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -498,7 +498,7 @@ return nativeObject->CanWalkStairs(*((Vec3* )inLinearVelocity_addr));
     public static native boolean internal_native_CanWalkStairs(long this_addr, long inLinearVelocity_addr);
 
     public boolean WalkStairs(float inDeltaTime, Vec3 inStepUp, Vec3 inStepForward, Vec3 inStepForwardTest, Vec3 inStepDownExtra, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
-        return internal_native_WalkStairs((long) getNativeData().getCPointer(), inDeltaTime, (long) (inStepUp != null ? inStepUp.getNativeData().getCPointer() : 0), (long) (inStepForward != null ? inStepForward.getNativeData().getCPointer() : 0), (long) (inStepForwardTest != null ? inStepForwardTest.getNativeData().getCPointer() : 0), (long) (inStepDownExtra != null ? inStepDownExtra.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        return internal_native_WalkStairs(native_address, inDeltaTime, (inStepUp != null ? inStepUp.native_address : 0), (inStepForward != null ? inStepForward.native_address : 0), (inStepForwardTest != null ? inStepForwardTest.native_address : 0), (inStepDownExtra != null ? inStepDownExtra.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0), (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -508,7 +508,7 @@ return nativeObject->WalkStairs((float)inDeltaTime, *((Vec3* )inStepUp_addr), *(
     public static native boolean internal_native_WalkStairs(long this_addr, float inDeltaTime, long inStepUp_addr, long inStepForward_addr, long inStepForwardTest_addr, long inStepDownExtra_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public boolean StickToFloor(Vec3 inStepDown, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
-        return internal_native_StickToFloor((long) getNativeData().getCPointer(), (long) (inStepDown != null ? inStepDown.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        return internal_native_StickToFloor(native_address, (inStepDown != null ? inStepDown.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0), (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -518,7 +518,7 @@ return nativeObject->StickToFloor(*((Vec3* )inStepDown_addr), *((BroadPhaseLayer
     public static native boolean internal_native_StickToFloor(long this_addr, long inStepDown_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public void ExtendedUpdate(float inDeltaTime, Vec3 inGravity, ExtendedUpdateSettings inSettings, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
-        internal_native_ExtendedUpdate((long) getNativeData().getCPointer(), inDeltaTime, (long) (inGravity != null ? inGravity.getNativeData().getCPointer() : 0), (long) (inSettings != null ? inSettings.getNativeData().getCPointer() : 0), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        internal_native_ExtendedUpdate(native_address, inDeltaTime, (inGravity != null ? inGravity.native_address : 0), (inSettings != null ? inSettings.native_address : 0), (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0), (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -528,7 +528,7 @@ nativeObject->ExtendedUpdate((float)inDeltaTime, *((Vec3* )inGravity_addr), *((C
     public static native void internal_native_ExtendedUpdate(long this_addr, float inDeltaTime, long inGravity_addr, long inSettings_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public void RefreshContacts(BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
-        internal_native_RefreshContacts((long) getNativeData().getCPointer(), (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        internal_native_RefreshContacts(native_address, (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0), (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -538,7 +538,7 @@ nativeObject->RefreshContacts(*((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter
     public static native void internal_native_RefreshContacts(long this_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public void UpdateGroundVelocity() {
-        internal_native_UpdateGroundVelocity((long) getNativeData().getCPointer());
+        internal_native_UpdateGroundVelocity(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -548,7 +548,7 @@ nativeObject->UpdateGroundVelocity();
     public static native void internal_native_UpdateGroundVelocity(long this_addr);
 
     public boolean SetShape(Shape inShape, float inMaxPenetrationDepth, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
-        return internal_native_SetShape((long) getNativeData().getCPointer(), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0), inMaxPenetrationDepth, (long) (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.getNativeData().getCPointer() : 0), (long) (inObjectLayerFilter != null ? inObjectLayerFilter.getNativeData().getCPointer() : 0), (long) (inBodyFilter != null ? inBodyFilter.getNativeData().getCPointer() : 0), (long) (inShapeFilter != null ? inShapeFilter.getNativeData().getCPointer() : 0), (long) (inAllocator != null ? inAllocator.getNativeData().getCPointer() : 0));
+        return internal_native_SetShape(native_address, (inShape != null ? inShape.native_address : 0), inMaxPenetrationDepth, (inBroadPhaseLayerFilter != null ? inBroadPhaseLayerFilter.native_address : 0), (inObjectLayerFilter != null ? inObjectLayerFilter.native_address : 0), (inBodyFilter != null ? inBodyFilter.native_address : 0), (inShapeFilter != null ? inShapeFilter.native_address : 0), (inAllocator != null ? inAllocator.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -558,7 +558,7 @@ return nativeObject->SetShape((Shape* )inShape_addr, (float)inMaxPenetrationDept
     public static native boolean internal_native_SetShape(long this_addr, long inShape_addr, float inMaxPenetrationDepth, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr, long inAllocator_addr);
 
     public void SetInnerBodyShape(Shape inShape) {
-        internal_native_SetInnerBodyShape((long) getNativeData().getCPointer(), (long) (inShape != null ? inShape.getNativeData().getCPointer() : 0));
+        internal_native_SetInnerBodyShape(native_address, (inShape != null ? inShape.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -568,12 +568,12 @@ nativeObject->SetInnerBodyShape((Shape* )inShape_addr);
     public static native void internal_native_SetInnerBodyShape(long this_addr, long inShape_addr);
 
     public TransformedShape GetTransformedShape() {
-        long pointer = internal_native_GetTransformedShape((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetTransformedShape(native_address);
         if (pointer == 0)
             return null;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = new TransformedShape((byte) 1, (char) 1);
-        TransformedShape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
         return TransformedShape_TEMP_GEN_0;
     }
 
@@ -585,7 +585,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetTransformedShape(long this_addr);
 
     public boolean HasCollidedWith(BodyID inBodyID) {
-        return internal_native_HasCollidedWith((long) getNativeData().getCPointer(), (long) (inBodyID != null ? inBodyID.getNativeData().getCPointer() : 0));
+        return internal_native_HasCollidedWith(native_address, (inBodyID != null ? inBodyID.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -595,7 +595,7 @@ return nativeObject->HasCollidedWith(*((BodyID* )inBodyID_addr));
     public static native boolean internal_native_HasCollidedWith(long this_addr, long inBodyID_addr);
 
     public boolean HasCollidedWithCharacterID(CharacterID inCharacterID) {
-        return internal_native_HasCollidedWithCharacterID((long) getNativeData().getCPointer(), (long) (inCharacterID != null ? inCharacterID.getNativeData().getCPointer() : 0));
+        return internal_native_HasCollidedWithCharacterID(native_address, (inCharacterID != null ? inCharacterID.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -605,7 +605,7 @@ return nativeObject->HasCollidedWith(*((CharacterID* )inCharacterID_addr));
     public static native boolean internal_native_HasCollidedWithCharacterID(long this_addr, long inCharacterID_addr);
 
     public boolean HasCollidedWithCharacter(CharacterVirtual inCharacter) {
-        return internal_native_HasCollidedWithCharacter((long) getNativeData().getCPointer(), (long) (inCharacter != null ? inCharacter.getNativeData().getCPointer() : 0));
+        return internal_native_HasCollidedWithCharacter(native_address, (inCharacter != null ? inCharacter.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -615,12 +615,12 @@ return nativeObject->HasCollidedWith((CharacterVirtual* )inCharacter_addr);
     public static native boolean internal_native_HasCollidedWithCharacter(long this_addr, long inCharacter_addr);
 
     public ArrayCharacterVirtualContact GetActiveContacts() {
-        long pointer = internal_native_GetActiveContacts((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetActiveContacts(native_address);
         if (pointer == 0)
             return null;
         if (ArrayCharacterVirtualContact_TEMP_GEN_0 == null)
             ArrayCharacterVirtualContact_TEMP_GEN_0 = new ArrayCharacterVirtualContact((byte) 1, (char) 1);
-        ArrayCharacterVirtualContact_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayCharacterVirtualContact_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayCharacterVirtualContact_TEMP_GEN_0;
     }
 

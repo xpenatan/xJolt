@@ -26,12 +26,12 @@ public class ConvexShapeSettings extends ShapeSettings {
     }
 
     public PhysicsMaterial get_mMaterial() {
-        int pointer = internal_native_get_mMaterial((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mMaterial(native_address);
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = new PhysicsMaterial((byte) 1, (char) 1);
-        PhysicsMaterial_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -45,7 +45,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mMaterial(int this_addr);
 
     public void set_mMaterial(PhysicsMaterial mMaterial) {
-        internal_native_set_mMaterial((int) (long) getNativeData().getCPointer(), (int) (long) (mMaterial != null ? mMaterial.getNativeData().getCPointer() : 0));
+        internal_native_set_mMaterial(native_address, (mMaterial != null ? mMaterial.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +56,7 @@ jsObj.set_mMaterial(mMaterial_addr);
     public static native void internal_native_set_mMaterial(int this_addr, int mMaterial_addr);
 
     public float get_mDensity() {
-        return internal_native_get_mDensity((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mDensity(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -67,7 +67,7 @@ return jsObj.get_mDensity();
     public static native float internal_native_get_mDensity(int this_addr);
 
     public void set_mDensity(float mDensity) {
-        internal_native_set_mDensity((int) (long) getNativeData().getCPointer(), mDensity);
+        internal_native_set_mDensity(native_address, mDensity);
     }
 
     /*[-TEAVM;-NATIVE]

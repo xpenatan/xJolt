@@ -17,7 +17,7 @@ public class BodyID extends IDLBase {
 
     public BodyID() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -27,7 +27,7 @@ return (jlong)new BodyID();
 
     public BodyID(int inIndexAndSequenceNumber) {
         long addr = internal_native_create_int(inIndexAndSequenceNumber);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -42,16 +42,8 @@ return (jlong)new BodyID(inIndexAndSequenceNumber);
     public BodyID(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -61,7 +53,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int GetIndex() {
-        return internal_native_GetIndex((long) getNativeData().getCPointer());
+        return internal_native_GetIndex(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ return nativeObject->GetIndex();
     public static native int internal_native_GetIndex(long this_addr);
 
     public int GetIndexAndSequenceNumber() {
-        return internal_native_GetIndexAndSequenceNumber((long) getNativeData().getCPointer());
+        return internal_native_GetIndexAndSequenceNumber(native_address);
     }
 
     /*[-JNI;-NATIVE]

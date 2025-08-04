@@ -38,16 +38,8 @@ virtual void OnTireMaxImpulseCallback(unsigned int inWheelIndex, TireMaxImpulseC
     public WheeledVehicleControllerCallbacksEm(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -57,7 +49,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void SetWheeledVehicleController(WheeledVehicleController inController) {
-        internal_native_SetWheeledVehicleController((long) getNativeData().getCPointer(), (long) (inController != null ? inController.getNativeData().getCPointer() : 0));
+        internal_native_SetWheeledVehicleController(native_address, (inController != null ? inController.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -68,21 +60,21 @@ nativeObject->SetWheeledVehicleController(*((WheeledVehicleController* )inContro
 
     public WheeledVehicleControllerCallbacksEm() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected void OnTireMaxImpulseCallback(int inWheelIndex, TireMaxImpulseCallbackResult outResult, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime) {
     }
 
-    private void internal_OnTireMaxImpulseCallback(int inWheelIndex, long outResult, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime) {
+    private void internal_OnTireMaxImpulseCallback(int inWheelIndex, long outResult_addr, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime) {
         if (TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0 == null)
             TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0 = new TireMaxImpulseCallbackResult((byte) 1, (char) 1);
-        TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0.getNativeData().reset(outResult, false);
+        TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0.internal_reset(outResult_addr, false);
         OnTireMaxImpulseCallback(inWheelIndex, TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0, inSuspensionImpulse, inLongitudinalFriction, inLateralFriction, inLongitudinalSlip, inLateralSlip, inDeltaTime);
     }
 

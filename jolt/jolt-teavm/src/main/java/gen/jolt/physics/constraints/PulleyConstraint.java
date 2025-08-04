@@ -22,7 +22,7 @@ public class PulleyConstraint extends TwoBodyConstraint {
     }
 
     public void SetLength(float inMinLength, float inMaxLength) {
-        internal_native_SetLength((int) (long) getNativeData().getCPointer(), inMinLength, inMaxLength);
+        internal_native_SetLength(native_address, inMinLength, inMaxLength);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -33,7 +33,7 @@ jsObj.SetLength(inMinLength, inMaxLength);
     public static native void internal_native_SetLength(int this_addr, float inMinLength, float inMaxLength);
 
     public float GetMinLength() {
-        return internal_native_GetMinLength((int) (long) getNativeData().getCPointer());
+        return internal_native_GetMinLength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -45,7 +45,7 @@ return returnedJSObj;
     public static native float internal_native_GetMinLength(int this_addr);
 
     public float GetMaxLength() {
-        return internal_native_GetMaxLength((int) (long) getNativeData().getCPointer());
+        return internal_native_GetMaxLength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -57,7 +57,7 @@ return returnedJSObj;
     public static native float internal_native_GetMaxLength(int this_addr);
 
     public float GetCurrentLength() {
-        return internal_native_GetCurrentLength((int) (long) getNativeData().getCPointer());
+        return internal_native_GetCurrentLength(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

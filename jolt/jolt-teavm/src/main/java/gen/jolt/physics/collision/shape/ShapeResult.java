@@ -27,16 +27,8 @@ public class ShapeResult extends IDLBase {
     public ShapeResult(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -47,7 +39,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public boolean IsValid() {
-        return internal_native_IsValid((int) (long) getNativeData().getCPointer());
+        return internal_native_IsValid(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -59,7 +51,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsValid(int this_addr);
 
     public boolean HasError() {
-        return internal_native_HasError((int) (long) getNativeData().getCPointer());
+        return internal_native_HasError(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -71,12 +63,12 @@ return returnedJSObj;
     public static native boolean internal_native_HasError(int this_addr);
 
     public IDLString GetError() {
-        int pointer = internal_native_GetError((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetError(native_address);
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = new IDLString((byte) 1, (char) 1);
-        IDLString_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -90,12 +82,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetError(int this_addr);
 
     public Shape Get() {
-        int pointer = internal_native_Get((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_Get(native_address);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = new Shape((byte) 1, (char) 1);
-        Shape_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -109,7 +101,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Get(int this_addr);
 
     public void Clear() {
-        internal_native_Clear((int) (long) getNativeData().getCPointer());
+        internal_native_Clear(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

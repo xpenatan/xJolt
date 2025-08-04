@@ -24,16 +24,8 @@ public class Factory extends IDLBase {
     public Factory(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -49,7 +41,7 @@ jolt.destroy(jsObj);
             return null;
         if (Factory_TEMP_STATIC_GEN_0 == null)
             Factory_TEMP_STATIC_GEN_0 = new Factory((byte) 1, (char) 1);
-        Factory_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        Factory_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Factory_TEMP_STATIC_GEN_0;
     }
 
@@ -62,7 +54,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_sInstance();
 
     public static void set_sInstance(Factory sInstance) {
-        internal_native_set_sInstance((int) (long) (sInstance != null ? sInstance.getNativeData().getCPointer() : 0));
+        internal_native_set_sInstance((sInstance != null ? sInstance.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

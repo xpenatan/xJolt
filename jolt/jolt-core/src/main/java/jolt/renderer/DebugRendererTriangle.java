@@ -24,16 +24,8 @@ public class DebugRendererTriangle extends IDLBase {
     public DebugRendererTriangle(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -43,12 +35,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public DebugRendererVertex get_mV(int index) {
-        long pointer = internal_native_get_mV((long) getNativeData().getCPointer(), index);
+        long pointer = internal_native_get_mV(native_address, index);
         if (pointer == 0)
             return null;
         if (DebugRendererVertex_TEMP_GEN_0 == null)
             DebugRendererVertex_TEMP_GEN_0 = new DebugRendererVertex((byte) 1, (char) 1);
-        DebugRendererVertex_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        DebugRendererVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return DebugRendererVertex_TEMP_GEN_0;
     }
 
@@ -59,7 +51,7 @@ return (jlong)&nativeObject->mV[index];
     public static native long internal_native_get_mV(long this_addr, int index);
 
     public void set_mV(int index, DebugRendererVertex mV) {
-        internal_native_set_mV((long) getNativeData().getCPointer(), index, (long) (mV != null ? mV.getNativeData().getCPointer() : 0));
+        internal_native_set_mV(native_address, index, (mV != null ? mV.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]

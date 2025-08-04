@@ -70,6 +70,8 @@ public class Build {
         String libBuildCPPPath = op.getModuleBuildCPPPath();
         String sourceDir = op.getSourceDir();
 
+        WindowsMSVCTarget.DEBUG_BUILD = true;
+
         // Make a static library
         WindowsMSVCTarget windowsTarget = new WindowsMSVCTarget();
         windowsTarget.isStatic = true;

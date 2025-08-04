@@ -57,16 +57,8 @@ virtual void GetPointOnPath(float inFraction, Vec3* outPathPosition, Vec3* outPa
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -78,12 +70,12 @@ delete nativeObject;
     public PathConstraintPathEm() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
     private void setupCallback() {
-        internal_native_setupCallback(getNativeData().getCPointer());
+        internal_native_setupCallback(native_address);
     }
 
     protected float GetPathMaxFraction() {
@@ -98,29 +90,29 @@ delete nativeObject;
         return 0;
     }
 
-    private float internal_GetClosestPoint(long inPosition, float inFractionHint) {
+    private float internal_GetClosestPoint(long inPosition_addr, float inFractionHint) {
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_0.getNativeData().reset(inPosition, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(inPosition_addr, false);
         return GetClosestPoint(Vec3_TEMP_STATIC_GEN_0, inFractionHint);
     }
 
     protected void GetPointOnPath(float inFraction, Vec3 outPathPosition, Vec3 outPathTangent, Vec3 outPathNormal, Vec3 outPathBinormal) {
     }
 
-    private void internal_GetPointOnPath(float inFraction, long outPathPosition, long outPathTangent, long outPathNormal, long outPathBinormal) {
+    private void internal_GetPointOnPath(float inFraction, long outPathPosition_addr, long outPathTangent_addr, long outPathNormal_addr, long outPathBinormal_addr) {
         if (Vec3_TEMP_STATIC_GEN_1 == null)
             Vec3_TEMP_STATIC_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_1.getNativeData().reset(outPathPosition, false);
+        Vec3_TEMP_STATIC_GEN_1.internal_reset(outPathPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_2.getNativeData().reset(outPathTangent, false);
+        Vec3_TEMP_STATIC_GEN_2.internal_reset(outPathTangent_addr, false);
         if (Vec3_TEMP_STATIC_GEN_3 == null)
             Vec3_TEMP_STATIC_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_3.getNativeData().reset(outPathNormal, false);
+        Vec3_TEMP_STATIC_GEN_3.internal_reset(outPathNormal_addr, false);
         if (Vec3_TEMP_STATIC_GEN_4 == null)
             Vec3_TEMP_STATIC_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_4.getNativeData().reset(outPathBinormal, false);
+        Vec3_TEMP_STATIC_GEN_4.internal_reset(outPathBinormal_addr, false);
         GetPointOnPath(inFraction, Vec3_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4);
     }
 

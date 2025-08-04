@@ -89,16 +89,8 @@ public class Vec3 extends IDLBase {
     public Vec3(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*
@@ -114,7 +106,7 @@ public class Vec3 extends IDLBase {
             return null;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_0;
     }
 
@@ -132,7 +124,7 @@ public class Vec3 extends IDLBase {
             return null;
         if (Vec3_TEMP_STATIC_GEN_1 == null)
             Vec3_TEMP_STATIC_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_1;
     }
 
@@ -150,7 +142,7 @@ public class Vec3 extends IDLBase {
             return null;
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_2;
     }
 
@@ -168,7 +160,7 @@ public class Vec3 extends IDLBase {
             return null;
         if (Vec3_TEMP_STATIC_GEN_3 == null)
             Vec3_TEMP_STATIC_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_3;
     }
 
@@ -186,7 +178,7 @@ public class Vec3 extends IDLBase {
             return null;
         if (Vec3_TEMP_STATIC_GEN_4 == null)
             Vec3_TEMP_STATIC_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_4;
     }
 
@@ -204,7 +196,7 @@ public class Vec3 extends IDLBase {
             return null;
         if (Vec3_TEMP_STATIC_GEN_5 == null)
             Vec3_TEMP_STATIC_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_5.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_5;
     }
 
@@ -217,12 +209,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_sReplicate(float inValue);
 
     public static Vec3 sMin(Vec3 inLHS, Vec3 inRHS) {
-        long pointer = internal_native_sMin((long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sMin((inLHS != null ? inLHS.native_address : 0), (inRHS != null ? inRHS.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_6 == null)
             Vec3_TEMP_STATIC_GEN_6 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_6.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_6;
     }
 
@@ -235,12 +227,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_sMin(long inLHS_addr, long inRHS_addr);
 
     public static Vec3 sMax(Vec3 inLHS, Vec3 inRHS) {
-        long pointer = internal_native_sMax((long) (inLHS != null ? inLHS.getNativeData().getCPointer() : 0), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sMax((inLHS != null ? inLHS.native_address : 0), (inRHS != null ? inRHS.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_7 == null)
             Vec3_TEMP_STATIC_GEN_7 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_7.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_7;
     }
 
@@ -253,12 +245,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_sMax(long inLHS_addr, long inRHS_addr);
 
     public static Vec3 sClamp(Vec3 inValue, Vec3 inMin, Vec3 inMax) {
-        long pointer = internal_native_sClamp((long) (inValue != null ? inValue.getNativeData().getCPointer() : 0), (long) (inMin != null ? inMin.getNativeData().getCPointer() : 0), (long) (inMax != null ? inMax.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sClamp((inValue != null ? inValue.native_address : 0), (inMin != null ? inMin.native_address : 0), (inMax != null ? inMax.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_8 == null)
             Vec3_TEMP_STATIC_GEN_8 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_8.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_8;
     }
 
@@ -271,12 +263,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_sClamp(long inValue_addr, long inMin_addr, long inMax_addr);
 
     public static Vec3 sFusedMultiplyAdd(Vec3 inMul1, Vec3 inMul2, Vec3 inAdd) {
-        long pointer = internal_native_sFusedMultiplyAdd((long) (inMul1 != null ? inMul1.getNativeData().getCPointer() : 0), (long) (inMul2 != null ? inMul2.getNativeData().getCPointer() : 0), (long) (inAdd != null ? inAdd.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sFusedMultiplyAdd((inMul1 != null ? inMul1.native_address : 0), (inMul2 != null ? inMul2.native_address : 0), (inAdd != null ? inAdd.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_9 == null)
             Vec3_TEMP_STATIC_GEN_9 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_9.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_9;
     }
 
@@ -289,12 +281,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_sFusedMultiplyAdd(long inMul1_addr, long inMul2_addr, long inAdd_addr);
 
     public static Vec3 sOr(Vec3 inV1, Vec3 inV2) {
-        long pointer = internal_native_sOr((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sOr((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_10 == null)
             Vec3_TEMP_STATIC_GEN_10 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_10.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_10;
     }
 
@@ -307,12 +299,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_sOr(long inV1_addr, long inV2_addr);
 
     public static Vec3 sXor(Vec3 inV1, Vec3 inV2) {
-        long pointer = internal_native_sXor((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sXor((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_11 == null)
             Vec3_TEMP_STATIC_GEN_11 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_11.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_11;
     }
 
@@ -325,12 +317,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_sXor(long inV1_addr, long inV2_addr);
 
     public static Vec3 sAnd(Vec3 inV1, Vec3 inV2) {
-        long pointer = internal_native_sAnd((long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sAnd((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_12 == null)
             Vec3_TEMP_STATIC_GEN_12 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_12.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_12.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_12;
     }
 
@@ -348,7 +340,7 @@ public class Vec3 extends IDLBase {
             return null;
         if (Vec3_TEMP_STATIC_GEN_13 == null)
             Vec3_TEMP_STATIC_GEN_13 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_STATIC_GEN_13.getNativeData().reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_13.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_13;
     }
 
@@ -361,7 +353,7 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_sUnitSpherical(float inTheta, float inPhi);
 
     public float GetComponent(int inCoordinate) {
-        return internal_native_GetComponent((long) getNativeData().getCPointer(), inCoordinate);
+        return internal_native_GetComponent(native_address, inCoordinate);
     }
 
     /*
@@ -372,7 +364,7 @@ public class Vec3 extends IDLBase {
     public static native float internal_native_GetComponent(long this_addr, int inCoordinate);
 
     public boolean Equals(Vec3 inV) {
-        return internal_native_Equals((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        return internal_native_Equals(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*
@@ -383,7 +375,7 @@ public class Vec3 extends IDLBase {
     public static native boolean internal_native_Equals(long this_addr, long inV_addr);
 
     public boolean NotEquals(Vec3 inV) {
-        return internal_native_NotEquals((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        return internal_native_NotEquals(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*
@@ -394,7 +386,7 @@ public class Vec3 extends IDLBase {
     public static native boolean internal_native_NotEquals(long this_addr, long inV_addr);
 
     public float LengthSq() {
-        return internal_native_LengthSq((long) getNativeData().getCPointer());
+        return internal_native_LengthSq(native_address);
     }
 
     /*
@@ -405,7 +397,7 @@ public class Vec3 extends IDLBase {
     public static native float internal_native_LengthSq(long this_addr);
 
     public float Length() {
-        return internal_native_Length((long) getNativeData().getCPointer());
+        return internal_native_Length(native_address);
     }
 
     /*
@@ -416,12 +408,12 @@ public class Vec3 extends IDLBase {
     public static native float internal_native_Length(long this_addr);
 
     public Vec3 Normalized() {
-        long pointer = internal_native_Normalized((long) getNativeData().getCPointer());
+        long pointer = internal_native_Normalized(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -435,12 +427,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_Normalized(long this_addr);
 
     public Vec3 NormalizedOr(Vec3 inZeroValue) {
-        long pointer = internal_native_NormalizedOr((long) getNativeData().getCPointer(), (long) (inZeroValue != null ? inZeroValue.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_NormalizedOr(native_address, (inZeroValue != null ? inZeroValue.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -454,12 +446,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_NormalizedOr(long this_addr, long inZeroValue_addr);
 
     public Vec3 GetNormalizedPerpendicular() {
-        long pointer = internal_native_GetNormalizedPerpendicular((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetNormalizedPerpendicular(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -473,7 +465,7 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_GetNormalizedPerpendicular(long this_addr);
 
     public float GetX() {
-        return internal_native_GetX((long) getNativeData().getCPointer());
+        return internal_native_GetX(native_address);
     }
 
     /*
@@ -484,7 +476,7 @@ public class Vec3 extends IDLBase {
     public static native float internal_native_GetX(long this_addr);
 
     public float GetY() {
-        return internal_native_GetY((long) getNativeData().getCPointer());
+        return internal_native_GetY(native_address);
     }
 
     /*
@@ -495,7 +487,7 @@ public class Vec3 extends IDLBase {
     public static native float internal_native_GetY(long this_addr);
 
     public float GetZ() {
-        return internal_native_GetZ((long) getNativeData().getCPointer());
+        return internal_native_GetZ(native_address);
     }
 
     /*
@@ -506,7 +498,7 @@ public class Vec3 extends IDLBase {
     public static native float internal_native_GetZ(long this_addr);
 
     public void SetX(float inX) {
-        internal_native_SetX((long) getNativeData().getCPointer(), inX);
+        internal_native_SetX(native_address, inX);
     }
 
     /*
@@ -517,7 +509,7 @@ public class Vec3 extends IDLBase {
     public static native void internal_native_SetX(long this_addr, float inX);
 
     public void SetY(float inY) {
-        internal_native_SetY((long) getNativeData().getCPointer(), inY);
+        internal_native_SetY(native_address, inY);
     }
 
     /*
@@ -528,7 +520,7 @@ public class Vec3 extends IDLBase {
     public static native void internal_native_SetY(long this_addr, float inY);
 
     public void SetZ(float inZ) {
-        internal_native_SetZ((long) getNativeData().getCPointer(), inZ);
+        internal_native_SetZ(native_address, inZ);
     }
 
     /*
@@ -539,7 +531,7 @@ public class Vec3 extends IDLBase {
     public static native void internal_native_SetZ(long this_addr, float inZ);
 
     public void Set(float inX, float inY, float inZ) {
-        internal_native_Set((long) getNativeData().getCPointer(), inX, inY, inZ);
+        internal_native_Set(native_address, inX, inY, inZ);
     }
 
     /*
@@ -550,7 +542,7 @@ public class Vec3 extends IDLBase {
     public static native void internal_native_Set(long this_addr, float inX, float inY, float inZ);
 
     public void SetComponent(int inCoordinate, float inValue) {
-        internal_native_SetComponent((long) getNativeData().getCPointer(), inCoordinate, inValue);
+        internal_native_SetComponent(native_address, inCoordinate, inValue);
     }
 
     /*
@@ -561,7 +553,7 @@ public class Vec3 extends IDLBase {
     public static native void internal_native_SetComponent(long this_addr, int inCoordinate, float inValue);
 
     public boolean IsNearZero(float inMaxDistSq) {
-        return internal_native_IsNearZero((long) getNativeData().getCPointer(), inMaxDistSq);
+        return internal_native_IsNearZero(native_address, inMaxDistSq);
     }
 
     /*
@@ -572,7 +564,7 @@ public class Vec3 extends IDLBase {
     public static native boolean internal_native_IsNearZero(long this_addr, float inMaxDistSq);
 
     public boolean IsNearZero() {
-        return internal_native_IsNearZero((long) getNativeData().getCPointer());
+        return internal_native_IsNearZero(native_address);
     }
 
     /*
@@ -583,7 +575,7 @@ public class Vec3 extends IDLBase {
     public static native boolean internal_native_IsNearZero(long this_addr);
 
     public boolean IsClose(Vec3 inV, float inMaxDistSq) {
-        return internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0), inMaxDistSq);
+        return internal_native_IsClose(native_address, (inV != null ? inV.native_address : 0), inMaxDistSq);
     }
 
     /*
@@ -594,7 +586,7 @@ public class Vec3 extends IDLBase {
     public static native boolean internal_native_IsClose(long this_addr, long inV_addr, float inMaxDistSq);
 
     public boolean IsClose(Vec3 inV) {
-        return internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        return internal_native_IsClose(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*
@@ -605,7 +597,7 @@ public class Vec3 extends IDLBase {
     public static native boolean internal_native_IsClose(long this_addr, long inV_addr);
 
     public boolean IsNormalized(float inTolerance) {
-        return internal_native_IsNormalized((long) getNativeData().getCPointer(), inTolerance);
+        return internal_native_IsNormalized(native_address, inTolerance);
     }
 
     /*
@@ -616,7 +608,7 @@ public class Vec3 extends IDLBase {
     public static native boolean internal_native_IsNormalized(long this_addr, float inTolerance);
 
     public boolean IsNormalized() {
-        return internal_native_IsNormalized((long) getNativeData().getCPointer());
+        return internal_native_IsNormalized(native_address);
     }
 
     /*
@@ -627,7 +619,7 @@ public class Vec3 extends IDLBase {
     public static native boolean internal_native_IsNormalized(long this_addr);
 
     public int GetLowestComponentIndex() {
-        return internal_native_GetLowestComponentIndex((long) getNativeData().getCPointer());
+        return internal_native_GetLowestComponentIndex(native_address);
     }
 
     /*
@@ -638,7 +630,7 @@ public class Vec3 extends IDLBase {
     public static native int internal_native_GetLowestComponentIndex(long this_addr);
 
     public int GetHighestComponentIndex() {
-        return internal_native_GetHighestComponentIndex((long) getNativeData().getCPointer());
+        return internal_native_GetHighestComponentIndex(native_address);
     }
 
     /*
@@ -649,12 +641,12 @@ public class Vec3 extends IDLBase {
     public static native int internal_native_GetHighestComponentIndex(long this_addr);
 
     public Vec3 Abs() {
-        long pointer = internal_native_Abs((long) getNativeData().getCPointer());
+        long pointer = internal_native_Abs(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -668,12 +660,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_Abs(long this_addr);
 
     public Vec3 Reciprocal() {
-        long pointer = internal_native_Reciprocal((long) getNativeData().getCPointer());
+        long pointer = internal_native_Reciprocal(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -687,12 +679,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_Reciprocal(long this_addr);
 
     public Vec3 Cross(Vec3 inRHS) {
-        long pointer = internal_native_Cross((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_Cross(native_address, (inRHS != null ? inRHS.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -706,7 +698,7 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_Cross(long this_addr, long inRHS_addr);
 
     public float Dot(Vec3 inRHS) {
-        return internal_native_Dot((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        return internal_native_Dot(native_address, (inRHS != null ? inRHS.native_address : 0));
     }
 
     /*
@@ -717,12 +709,12 @@ public class Vec3 extends IDLBase {
     public static native float internal_native_Dot(long this_addr, long inRHS_addr);
 
     public Vec3 DotV(Vec3 inRHS) {
-        long pointer = internal_native_DotV((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_DotV(native_address, (inRHS != null ? inRHS.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_6;
     }
 
@@ -736,12 +728,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_DotV(long this_addr, long inRHS_addr);
 
     public Vec4 DotV4(Vec3 inRHS) {
-        long pointer = internal_native_DotV4((long) getNativeData().getCPointer(), (long) (inRHS != null ? inRHS.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_DotV4(native_address, (inRHS != null ? inRHS.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_0;
     }
 
@@ -755,7 +747,7 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_DotV4(long this_addr, long inRHS_addr);
 
     public Vec3 Add(Vec3 inV) {
-        internal_native_Add((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_Add(native_address, (inV != null ? inV.native_address : 0));
         return this;
     }
 
@@ -767,7 +759,7 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_Add(long this_addr, long inV_addr);
 
     public Vec3 Sub(Vec3 inV) {
-        internal_native_Sub((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_Sub(native_address, (inV != null ? inV.native_address : 0));
         return this;
     }
 
@@ -779,7 +771,7 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_Sub(long this_addr, long inV_addr);
 
     public Vec3 Mul(float inV) {
-        internal_native_Mul((long) getNativeData().getCPointer(), inV);
+        internal_native_Mul(native_address, inV);
         return this;
     }
 
@@ -791,7 +783,7 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_Mul(long this_addr, float inV);
 
     public Vec3 Div(float inV) {
-        internal_native_Div((long) getNativeData().getCPointer(), inV);
+        internal_native_Div(native_address, inV);
         return this;
     }
 
@@ -803,12 +795,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_Div(long this_addr, float inV);
 
     public Vec3 MulVec3(Vec3 inV) {
-        long pointer = internal_native_MulVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_MulVec3(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_7.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_7.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_7;
     }
 
@@ -822,12 +814,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_MulVec3(long this_addr, long inV_addr);
 
     public Vec3 MulFloat(float inV) {
-        long pointer = internal_native_MulFloat((long) getNativeData().getCPointer(), inV);
+        long pointer = internal_native_MulFloat(native_address, inV);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_8.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_8.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_8;
     }
 
@@ -841,12 +833,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_MulFloat(long this_addr, float inV);
 
     public Vec3 DivVec3(Vec3 inV) {
-        long pointer = internal_native_DivVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_DivVec3(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_9 == null)
             Vec3_TEMP_GEN_9 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_9.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_9.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_9;
     }
 
@@ -860,12 +852,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_DivVec3(long this_addr, long inV_addr);
 
     public Vec3 DivFloat(float inV) {
-        long pointer = internal_native_DivFloat((long) getNativeData().getCPointer(), inV);
+        long pointer = internal_native_DivFloat(native_address, inV);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_10 == null)
             Vec3_TEMP_GEN_10 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_10.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_10.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_10;
     }
 
@@ -879,12 +871,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_DivFloat(long this_addr, float inV);
 
     public Vec3 AddVec3(Vec3 inV) {
-        long pointer = internal_native_AddVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_AddVec3(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_11 == null)
             Vec3_TEMP_GEN_11 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_11.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_11.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_11;
     }
 
@@ -898,12 +890,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_AddVec3(long this_addr, long inV_addr);
 
     public Vec3 SubVec3(Vec3 inV) {
-        long pointer = internal_native_SubVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_SubVec3(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_12 == null)
             Vec3_TEMP_GEN_12 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_12.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_12.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_12;
     }
 
@@ -917,12 +909,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_SubVec3(long this_addr, long inV_addr);
 
     public Vec4 SplatX() {
-        long pointer = internal_native_SplatX((long) getNativeData().getCPointer());
+        long pointer = internal_native_SplatX(native_address);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_1 == null)
             Vec4_TEMP_GEN_1 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_1;
     }
 
@@ -936,12 +928,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_SplatX(long this_addr);
 
     public Vec4 SplatY() {
-        long pointer = internal_native_SplatY((long) getNativeData().getCPointer());
+        long pointer = internal_native_SplatY(native_address);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_2 == null)
             Vec4_TEMP_GEN_2 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_2;
     }
 
@@ -955,12 +947,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_SplatY(long this_addr);
 
     public Vec4 SplatZ() {
-        long pointer = internal_native_SplatZ((long) getNativeData().getCPointer());
+        long pointer = internal_native_SplatZ(native_address);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_3 == null)
             Vec4_TEMP_GEN_3 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_3;
     }
 
@@ -974,7 +966,7 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_SplatZ(long this_addr);
 
     public float ReduceMin() {
-        return internal_native_ReduceMin((long) getNativeData().getCPointer());
+        return internal_native_ReduceMin(native_address);
     }
 
     /*
@@ -985,7 +977,7 @@ public class Vec3 extends IDLBase {
     public static native float internal_native_ReduceMin(long this_addr);
 
     public float ReduceMax() {
-        return internal_native_ReduceMax((long) getNativeData().getCPointer());
+        return internal_native_ReduceMax(native_address);
     }
 
     /*
@@ -996,12 +988,12 @@ public class Vec3 extends IDLBase {
     public static native float internal_native_ReduceMax(long this_addr);
 
     public Vec3 Sqrt() {
-        long pointer = internal_native_Sqrt((long) getNativeData().getCPointer());
+        long pointer = internal_native_Sqrt(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_13 == null)
             Vec3_TEMP_GEN_13 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_13.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_13.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_13;
     }
 
@@ -1015,12 +1007,12 @@ public class Vec3 extends IDLBase {
     public static native long internal_native_Sqrt(long this_addr);
 
     public Vec3 GetSign() {
-        long pointer = internal_native_GetSign((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetSign(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_14 == null)
             Vec3_TEMP_GEN_14 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_14.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_14.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_14;
     }
 

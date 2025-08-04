@@ -18,7 +18,7 @@ public class Skeleton extends IDLBase {
 
     public Skeleton() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,7 +34,7 @@ return (jlong)new Skeleton();
     }
 
     public int AddJoint(IDLString inName, int inParentIndex) {
-        return internal_native_AddJoint((long) getNativeData().getCPointer(), (long) (inName != null ? inName.getNativeData().getCPointer() : 0), inParentIndex);
+        return internal_native_AddJoint(native_address, (inName != null ? inName.native_address : 0), inParentIndex);
     }
 
     /*[-JNI;-NATIVE]
@@ -44,7 +44,7 @@ return nativeObject->AddJoint(*((IDLString* )inName_addr), (int)inParentIndex);
     public static native int internal_native_AddJoint(long this_addr, long inName_addr, int inParentIndex);
 
     public int GetJointCount() {
-        return internal_native_GetJointCount((long) getNativeData().getCPointer());
+        return internal_native_GetJointCount(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -54,7 +54,7 @@ return nativeObject->GetJointCount();
     public static native int internal_native_GetJointCount(long this_addr);
 
     public boolean AreJointsCorrectlyOrdered() {
-        return internal_native_AreJointsCorrectlyOrdered((long) getNativeData().getCPointer());
+        return internal_native_AreJointsCorrectlyOrdered(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,7 +64,7 @@ return nativeObject->AreJointsCorrectlyOrdered();
     public static native boolean internal_native_AreJointsCorrectlyOrdered(long this_addr);
 
     public void CalculateParentJointIndices() {
-        internal_native_CalculateParentJointIndices((long) getNativeData().getCPointer());
+        internal_native_CalculateParentJointIndices(native_address);
     }
 
     /*[-JNI;-NATIVE]

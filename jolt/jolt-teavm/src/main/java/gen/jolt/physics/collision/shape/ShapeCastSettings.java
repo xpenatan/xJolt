@@ -19,7 +19,7 @@ public class ShapeCastSettings extends CollideSettingsBase {
     public ShapeCastSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -37,16 +37,8 @@ return jolt.getPointer(jsObj);
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -57,7 +49,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public EBackFaceMode get_mBackFaceModeTriangles() {
-        int value = internal_native_get_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mBackFaceModeTriangles(native_address);
         return EBackFaceMode.MAP.get(value);
     }
 
@@ -69,7 +61,7 @@ return jsObj.get_mBackFaceModeTriangles();
     public static native int internal_native_get_mBackFaceModeTriangles(int this_addr);
 
     public void set_mBackFaceModeTriangles(EBackFaceMode mBackFaceModeTriangles) {
-        internal_native_set_mBackFaceModeTriangles((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceModeTriangles != null ? mBackFaceModeTriangles.getValue() : 0));
+        internal_native_set_mBackFaceModeTriangles(native_address, (int) (mBackFaceModeTriangles != null ? mBackFaceModeTriangles.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -80,7 +72,7 @@ jsObj.set_mBackFaceModeTriangles(mBackFaceModeTriangles);
     public static native void internal_native_set_mBackFaceModeTriangles(int this_addr, int mBackFaceModeTriangles);
 
     public EBackFaceMode get_mBackFaceModeConvex() {
-        int value = internal_native_get_mBackFaceModeConvex((int) (long) getNativeData().getCPointer());
+        int value = internal_native_get_mBackFaceModeConvex(native_address);
         return EBackFaceMode.MAP.get(value);
     }
 
@@ -92,7 +84,7 @@ return jsObj.get_mBackFaceModeConvex();
     public static native int internal_native_get_mBackFaceModeConvex(int this_addr);
 
     public void set_mBackFaceModeConvex(EBackFaceMode mBackFaceModeConvex) {
-        internal_native_set_mBackFaceModeConvex((int) (long) getNativeData().getCPointer(), (int) (long) (mBackFaceModeConvex != null ? mBackFaceModeConvex.getValue() : 0));
+        internal_native_set_mBackFaceModeConvex(native_address, (int) (mBackFaceModeConvex != null ? mBackFaceModeConvex.getValue() : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -103,7 +95,7 @@ jsObj.set_mBackFaceModeConvex(mBackFaceModeConvex);
     public static native void internal_native_set_mBackFaceModeConvex(int this_addr, int mBackFaceModeConvex);
 
     public boolean get_mUseShrunkenShapeAndConvexRadius() {
-        return internal_native_get_mUseShrunkenShapeAndConvexRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mUseShrunkenShapeAndConvexRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -114,7 +106,7 @@ return jsObj.get_mUseShrunkenShapeAndConvexRadius();
     public static native boolean internal_native_get_mUseShrunkenShapeAndConvexRadius(int this_addr);
 
     public void set_mUseShrunkenShapeAndConvexRadius(boolean mUseShrunkenShapeAndConvexRadius) {
-        internal_native_set_mUseShrunkenShapeAndConvexRadius((int) (long) getNativeData().getCPointer(), mUseShrunkenShapeAndConvexRadius);
+        internal_native_set_mUseShrunkenShapeAndConvexRadius(native_address, mUseShrunkenShapeAndConvexRadius);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -125,7 +117,7 @@ jsObj.set_mUseShrunkenShapeAndConvexRadius(mUseShrunkenShapeAndConvexRadius);
     public static native void internal_native_set_mUseShrunkenShapeAndConvexRadius(int this_addr, boolean mUseShrunkenShapeAndConvexRadius);
 
     public boolean get_mReturnDeepestPoint() {
-        return internal_native_get_mReturnDeepestPoint((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mReturnDeepestPoint(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -136,7 +128,7 @@ return jsObj.get_mReturnDeepestPoint();
     public static native boolean internal_native_get_mReturnDeepestPoint(int this_addr);
 
     public void set_mReturnDeepestPoint(boolean mReturnDeepestPoint) {
-        internal_native_set_mReturnDeepestPoint((int) (long) getNativeData().getCPointer(), mReturnDeepestPoint);
+        internal_native_set_mReturnDeepestPoint(native_address, mReturnDeepestPoint);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -17,8 +17,8 @@ public class DefaultBroadPhaseLayerFilter extends ObjectLayerFilter {
 
     public DefaultBroadPhaseLayerFilter(ObjectVsBroadPhaseLayerFilter inFilter, int inObjectLayer) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_ObjectVsBroadPhaseLayerFilter_int((long) (inFilter != null ? inFilter.getNativeData().getCPointer() : 0), inObjectLayer);
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_ObjectVsBroadPhaseLayerFilter_int((inFilter != null ? inFilter.native_address : 0), inObjectLayer);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,16 +34,8 @@ return (jlong)new DefaultBroadPhaseLayerFilter(*((ObjectVsBroadPhaseLayerFilter*
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]

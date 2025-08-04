@@ -25,12 +25,12 @@ public class VehicleController extends IDLBase {
     }
 
     public VehicleConstraint GetConstraint() {
-        int pointer = internal_native_GetConstraint((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetConstraint(native_address);
         if (pointer == 0)
             return null;
         if (VehicleConstraint_TEMP_GEN_0 == null)
             VehicleConstraint_TEMP_GEN_0 = new VehicleConstraint((byte) 1, (char) 1);
-        VehicleConstraint_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        VehicleConstraint_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleConstraint_TEMP_GEN_0;
     }
 

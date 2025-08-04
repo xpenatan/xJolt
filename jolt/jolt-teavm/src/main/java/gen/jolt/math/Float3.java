@@ -17,7 +17,7 @@ public class Float3 extends IDLBase {
 
     public Float3(float inX, float inY, float inZ) {
         int addr = internal_native_create_float_float_float(inX, inY, inZ);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -34,16 +34,8 @@ return jolt.getPointer(jsObj);
     public Float3(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -54,7 +46,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public float get_x() {
-        return internal_native_get_x((int) (long) getNativeData().getCPointer());
+        return internal_native_get_x(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -65,7 +57,7 @@ return jsObj.get_x();
     public static native float internal_native_get_x(int this_addr);
 
     public void set_x(float x) {
-        internal_native_set_x((int) (long) getNativeData().getCPointer(), x);
+        internal_native_set_x(native_address, x);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +68,7 @@ jsObj.set_x(x);
     public static native void internal_native_set_x(int this_addr, float x);
 
     public float get_y() {
-        return internal_native_get_y((int) (long) getNativeData().getCPointer());
+        return internal_native_get_y(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -87,7 +79,7 @@ return jsObj.get_y();
     public static native float internal_native_get_y(int this_addr);
 
     public void set_y(float y) {
-        internal_native_set_y((int) (long) getNativeData().getCPointer(), y);
+        internal_native_set_y(native_address, y);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -98,7 +90,7 @@ jsObj.set_y(y);
     public static native void internal_native_set_y(int this_addr, float y);
 
     public float get_z() {
-        return internal_native_get_z((int) (long) getNativeData().getCPointer());
+        return internal_native_get_z(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -109,7 +101,7 @@ return jsObj.get_z();
     public static native float internal_native_get_z(int this_addr);
 
     public void set_z(float z) {
-        internal_native_set_z((int) (long) getNativeData().getCPointer(), z);
+        internal_native_set_z(native_address, z);
     }
 
     /*[-TEAVM;-NATIVE]

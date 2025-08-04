@@ -17,7 +17,7 @@ public class IndexedTriangle extends IDLBase {
 
     public IndexedTriangle() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -27,7 +27,7 @@ return (jlong)new IndexedTriangle();
 
     public IndexedTriangle(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData) {
         long addr = internal_native_create_int_int_int_int_int(inI1, inI2, inI3, inMaterialIndex, inUserData);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -37,7 +37,7 @@ return (jlong)new IndexedTriangle(inI1, inI2, inI3, inMaterialIndex, inUserData)
 
     public IndexedTriangle(int inI1, int inI2, int inI3, int inMaterialIndex) {
         long addr = internal_native_create_int_int_int_int(inI1, inI2, inI3, inMaterialIndex);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -52,16 +52,8 @@ return (jlong)new IndexedTriangle(inI1, inI2, inI3, inMaterialIndex);
     public IndexedTriangle(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +63,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public int get_mIdx(int index) {
-        return internal_native_get_mIdx((long) getNativeData().getCPointer(), index);
+        return internal_native_get_mIdx(native_address, index);
     }
 
     /*[-JNI;-NATIVE]
@@ -81,7 +73,7 @@ return nativeObject->mIdx[index];
     public static native int internal_native_get_mIdx(long this_addr, int index);
 
     public void set_mIdx(int index, int mIdx) {
-        internal_native_set_mIdx((long) getNativeData().getCPointer(), index, mIdx);
+        internal_native_set_mIdx(native_address, index, mIdx);
     }
 
     /*[-JNI;-NATIVE]
@@ -91,7 +83,7 @@ nativeObject->mIdx[index] = mIdx;
     public static native void internal_native_set_mIdx(long this_addr, int index, int mIdx);
 
     public int get_mMaterialIndex() {
-        return internal_native_get_mMaterialIndex((long) getNativeData().getCPointer());
+        return internal_native_get_mMaterialIndex(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -101,7 +93,7 @@ return nativeObject->mMaterialIndex;
     public static native int internal_native_get_mMaterialIndex(long this_addr);
 
     public void set_mMaterialIndex(int mMaterialIndex) {
-        internal_native_set_mMaterialIndex((long) getNativeData().getCPointer(), mMaterialIndex);
+        internal_native_set_mMaterialIndex(native_address, mMaterialIndex);
     }
 
     /*[-JNI;-NATIVE]
@@ -111,7 +103,7 @@ nativeObject->mMaterialIndex = mMaterialIndex;
     public static native void internal_native_set_mMaterialIndex(long this_addr, int mMaterialIndex);
 
     public int get_mUserData() {
-        return internal_native_get_mUserData((long) getNativeData().getCPointer());
+        return internal_native_get_mUserData(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -121,7 +113,7 @@ return nativeObject->mUserData;
     public static native int internal_native_get_mUserData(long this_addr);
 
     public void set_mUserData(int mUserData) {
-        internal_native_set_mUserData((long) getNativeData().getCPointer(), mUserData);
+        internal_native_set_mUserData(native_address, mUserData);
     }
 
     /*[-JNI;-NATIVE]

@@ -18,7 +18,7 @@ public class ShapeCastResult extends CollideShapeResult {
     public ShapeCastResult() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,16 +34,8 @@ return (jlong)new ShapeCastResult();
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,7 +45,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mFraction() {
-        return internal_native_get_mFraction((long) getNativeData().getCPointer());
+        return internal_native_get_mFraction(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -63,7 +55,7 @@ return nativeObject->mFraction;
     public static native float internal_native_get_mFraction(long this_addr);
 
     public void set_mFraction(float mFraction) {
-        internal_native_set_mFraction((long) getNativeData().getCPointer(), mFraction);
+        internal_native_set_mFraction(native_address, mFraction);
     }
 
     /*[-JNI;-NATIVE]
@@ -73,7 +65,7 @@ nativeObject->mFraction = mFraction;
     public static native void internal_native_set_mFraction(long this_addr, float mFraction);
 
     public boolean get_mIsBackFaceHit() {
-        return internal_native_get_mIsBackFaceHit((long) getNativeData().getCPointer());
+        return internal_native_get_mIsBackFaceHit(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -83,7 +75,7 @@ return nativeObject->mIsBackFaceHit;
     public static native boolean internal_native_get_mIsBackFaceHit(long this_addr);
 
     public void set_mIsBackFaceHit(boolean mIsBackFaceHit) {
-        internal_native_set_mIsBackFaceHit((long) getNativeData().getCPointer(), mIsBackFaceHit);
+        internal_native_set_mIsBackFaceHit(native_address, mIsBackFaceHit);
     }
 
     /*[-JNI;-NATIVE]

@@ -61,7 +61,7 @@ public class Quat extends IDLBase {
 
     public Quat() {
         long addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -71,7 +71,7 @@ return (jlong)new Quat();
 
     public Quat(float inX, float inY, float inZ, float inW) {
         long addr = internal_native_create_float_float_float_float(inX, inY, inZ, inW);
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -86,16 +86,8 @@ return (jlong)new Quat((float)inX, (float)inY, (float)inZ, (float)inW);
     public Quat(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -110,7 +102,7 @@ delete nativeObject;
             return null;
         if (Quat_TEMP_STATIC_GEN_0 == null)
             Quat_TEMP_STATIC_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_0;
     }
 
@@ -126,7 +118,7 @@ return (jlong)&copy_addr;*/
             return null;
         if (Quat_TEMP_STATIC_GEN_1 == null)
             Quat_TEMP_STATIC_GEN_1 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_1;
     }
 
@@ -137,12 +129,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sIdentity();
 
     public static Quat sRotation(Vec3 inRotation, float inAngle) {
-        long pointer = internal_native_sRotation((long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), inAngle);
+        long pointer = internal_native_sRotation((inRotation != null ? inRotation.native_address : 0), inAngle);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_STATIC_GEN_2 == null)
             Quat_TEMP_STATIC_GEN_2 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_2;
     }
 
@@ -153,12 +145,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sRotation(long inRotation_addr, float inAngle);
 
     public static Quat sFromTo(Vec3 inFrom, Vec3 inTo) {
-        long pointer = internal_native_sFromTo((long) (inFrom != null ? inFrom.getNativeData().getCPointer() : 0), (long) (inTo != null ? inTo.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sFromTo((inFrom != null ? inFrom.native_address : 0), (inTo != null ? inTo.native_address : 0));
         if (pointer == 0)
             return null;
         if (Quat_TEMP_STATIC_GEN_3 == null)
             Quat_TEMP_STATIC_GEN_3 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_3;
     }
 
@@ -169,7 +161,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sFromTo(long inFrom_addr, long inTo_addr);
 
     public boolean Equals(Quat inQ) {
-        return internal_native_Equals((long) getNativeData().getCPointer(), (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
+        return internal_native_Equals(native_address, (inQ != null ? inQ.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -178,7 +170,7 @@ return ((*nativeObject == *((Quat* )inQ_addr)));*/
     public static native boolean internal_native_Equals(long this_addr, long inQ_addr);
 
     public boolean NotEquals(Quat inQ) {
-        return internal_native_NotEquals((long) getNativeData().getCPointer(), (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
+        return internal_native_NotEquals(native_address, (inQ != null ? inQ.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -187,12 +179,12 @@ return ((*nativeObject != *((Quat* )inQ_addr)));*/
     public static native boolean internal_native_NotEquals(long this_addr, long inQ_addr);
 
     public Quat MulQuat(Quat inQ) {
-        long pointer = internal_native_MulQuat((long) getNativeData().getCPointer(), (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_MulQuat(native_address, (inQ != null ? inQ.native_address : 0));
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -204,12 +196,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_MulQuat(long this_addr, long inQ_addr);
 
     public Vec3 MulVec3(Vec3 inV) {
-        long pointer = internal_native_MulVec3((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_MulVec3(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -221,12 +213,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_MulVec3(long this_addr, long inV_addr);
 
     public Quat MulFloat(float inV) {
-        long pointer = internal_native_MulFloat((long) getNativeData().getCPointer(), inV);
+        long pointer = internal_native_MulFloat(native_address, inV);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_1 == null)
             Quat_TEMP_GEN_1 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_1.internal_reset(pointer, false);
         return Quat_TEMP_GEN_1;
     }
 
@@ -238,7 +230,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_MulFloat(long this_addr, float inV);
 
     public boolean IsClose(Quat inQ, float inMaxDistSq) {
-        return internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0), inMaxDistSq);
+        return internal_native_IsClose(native_address, (inQ != null ? inQ.native_address : 0), inMaxDistSq);
     }
 
     /*[-JNI;-NATIVE]
@@ -248,7 +240,7 @@ return nativeObject->IsClose(*((Quat* )inQ_addr), (float)inMaxDistSq);
     public static native boolean internal_native_IsClose(long this_addr, long inQ_addr, float inMaxDistSq);
 
     public boolean IsClose(Quat inQ) {
-        return internal_native_IsClose((long) getNativeData().getCPointer(), (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
+        return internal_native_IsClose(native_address, (inQ != null ? inQ.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -258,7 +250,7 @@ return nativeObject->IsClose(*((Quat* )inQ_addr));
     public static native boolean internal_native_IsClose(long this_addr, long inQ_addr);
 
     public boolean IsNormalized(float inTolerance) {
-        return internal_native_IsNormalized((long) getNativeData().getCPointer(), inTolerance);
+        return internal_native_IsNormalized(native_address, inTolerance);
     }
 
     /*[-JNI;-NATIVE]
@@ -268,7 +260,7 @@ return nativeObject->IsNormalized((float)inTolerance);
     public static native boolean internal_native_IsNormalized(long this_addr, float inTolerance);
 
     public boolean IsNormalized() {
-        return internal_native_IsNormalized((long) getNativeData().getCPointer());
+        return internal_native_IsNormalized(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -278,7 +270,7 @@ return nativeObject->IsNormalized();
     public static native boolean internal_native_IsNormalized(long this_addr);
 
     public float Length() {
-        return internal_native_Length((long) getNativeData().getCPointer());
+        return internal_native_Length(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -288,7 +280,7 @@ return nativeObject->Length();
     public static native float internal_native_Length(long this_addr);
 
     public float LengthSq() {
-        return internal_native_LengthSq((long) getNativeData().getCPointer());
+        return internal_native_LengthSq(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -298,12 +290,12 @@ return nativeObject->LengthSq();
     public static native float internal_native_LengthSq(long this_addr);
 
     public Quat Normalized() {
-        long pointer = internal_native_Normalized((long) getNativeData().getCPointer());
+        long pointer = internal_native_Normalized(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_2 == null)
             Quat_TEMP_GEN_2 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_2.internal_reset(pointer, false);
         return Quat_TEMP_GEN_2;
     }
 
@@ -315,12 +307,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_Normalized(long this_addr);
 
     public static Quat sEulerAngles(Vec3 inInput) {
-        long pointer = internal_native_sEulerAngles((long) (inInput != null ? inInput.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_sEulerAngles((inInput != null ? inInput.native_address : 0));
         if (pointer == 0)
             return null;
         if (Quat_TEMP_STATIC_GEN_4 == null)
             Quat_TEMP_STATIC_GEN_4 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_4;
     }
 
@@ -331,12 +323,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_sEulerAngles(long inInput_addr);
 
     public Vec3 GetEulerAngles() {
-        long pointer = internal_native_GetEulerAngles((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetEulerAngles(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -348,7 +340,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetEulerAngles(long this_addr);
 
     public float GetX() {
-        return internal_native_GetX((long) getNativeData().getCPointer());
+        return internal_native_GetX(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -358,7 +350,7 @@ return nativeObject->GetX();
     public static native float internal_native_GetX(long this_addr);
 
     public float GetY() {
-        return internal_native_GetY((long) getNativeData().getCPointer());
+        return internal_native_GetY(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -368,7 +360,7 @@ return nativeObject->GetY();
     public static native float internal_native_GetY(long this_addr);
 
     public float GetZ() {
-        return internal_native_GetZ((long) getNativeData().getCPointer());
+        return internal_native_GetZ(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -378,7 +370,7 @@ return nativeObject->GetZ();
     public static native float internal_native_GetZ(long this_addr);
 
     public float GetW() {
-        return internal_native_GetW((long) getNativeData().getCPointer());
+        return internal_native_GetW(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -388,12 +380,12 @@ return nativeObject->GetW();
     public static native float internal_native_GetW(long this_addr);
 
     public Vec3 GetXYZ() {
-        long pointer = internal_native_GetXYZ((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetXYZ(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -405,7 +397,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetXYZ(long this_addr);
 
     public void SetX(float inX) {
-        internal_native_SetX((long) getNativeData().getCPointer(), inX);
+        internal_native_SetX(native_address, inX);
     }
 
     /*[-JNI;-NATIVE]
@@ -415,7 +407,7 @@ nativeObject->SetX((float)inX);
     public static native void internal_native_SetX(long this_addr, float inX);
 
     public void SetY(float inY) {
-        internal_native_SetY((long) getNativeData().getCPointer(), inY);
+        internal_native_SetY(native_address, inY);
     }
 
     /*[-JNI;-NATIVE]
@@ -425,7 +417,7 @@ nativeObject->SetY((float)inY);
     public static native void internal_native_SetY(long this_addr, float inY);
 
     public void SetZ(float inZ) {
-        internal_native_SetZ((long) getNativeData().getCPointer(), inZ);
+        internal_native_SetZ(native_address, inZ);
     }
 
     /*[-JNI;-NATIVE]
@@ -435,7 +427,7 @@ nativeObject->SetZ((float)inZ);
     public static native void internal_native_SetZ(long this_addr, float inZ);
 
     public void SetW(float inW) {
-        internal_native_SetW((long) getNativeData().getCPointer(), inW);
+        internal_native_SetW(native_address, inW);
     }
 
     /*[-JNI;-NATIVE]
@@ -445,7 +437,7 @@ nativeObject->SetW((float)inW);
     public static native void internal_native_SetW(long this_addr, float inW);
 
     public void Set(float inX, float inY, float inZ, float inW) {
-        internal_native_Set((long) getNativeData().getCPointer(), inX, inY, inZ, inW);
+        internal_native_Set(native_address, inX, inY, inZ, inW);
     }
 
     /*[-JNI;-NATIVE]
@@ -455,12 +447,12 @@ nativeObject->Set((float)inX, (float)inY, (float)inZ, (float)inW);
     public static native void internal_native_Set(long this_addr, float inX, float inY, float inZ, float inW);
 
     public Vec3 InverseRotate(Vec3 inV) {
-        long pointer = internal_native_InverseRotate((long) getNativeData().getCPointer(), (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_InverseRotate(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -472,12 +464,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_InverseRotate(long this_addr, long inV_addr);
 
     public Vec3 RotateAxisX() {
-        long pointer = internal_native_RotateAxisX((long) getNativeData().getCPointer());
+        long pointer = internal_native_RotateAxisX(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -489,12 +481,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_RotateAxisX(long this_addr);
 
     public Vec3 RotateAxisY() {
-        long pointer = internal_native_RotateAxisY((long) getNativeData().getCPointer());
+        long pointer = internal_native_RotateAxisY(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -506,12 +498,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_RotateAxisY(long this_addr);
 
     public Vec3 RotateAxisZ() {
-        long pointer = internal_native_RotateAxisZ((long) getNativeData().getCPointer());
+        long pointer = internal_native_RotateAxisZ(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_6;
     }
 
@@ -523,7 +515,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_RotateAxisZ(long this_addr);
 
     public float Dot(Quat inQ) {
-        return internal_native_Dot((long) getNativeData().getCPointer(), (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
+        return internal_native_Dot(native_address, (inQ != null ? inQ.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -533,12 +525,12 @@ return nativeObject->Dot(*((Quat* )inQ_addr));
     public static native float internal_native_Dot(long this_addr, long inQ_addr);
 
     public Quat Conjugated() {
-        long pointer = internal_native_Conjugated((long) getNativeData().getCPointer());
+        long pointer = internal_native_Conjugated(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_3 == null)
             Quat_TEMP_GEN_3 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_3.internal_reset(pointer, false);
         return Quat_TEMP_GEN_3;
     }
 
@@ -550,12 +542,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_Conjugated(long this_addr);
 
     public Quat Inversed() {
-        long pointer = internal_native_Inversed((long) getNativeData().getCPointer());
+        long pointer = internal_native_Inversed(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_4 == null)
             Quat_TEMP_GEN_4 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_4.internal_reset(pointer, false);
         return Quat_TEMP_GEN_4;
     }
 
@@ -567,12 +559,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_Inversed(long this_addr);
 
     public Quat EnsureWPositive() {
-        long pointer = internal_native_EnsureWPositive((long) getNativeData().getCPointer());
+        long pointer = internal_native_EnsureWPositive(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_5 == null)
             Quat_TEMP_GEN_5 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_5.internal_reset(pointer, false);
         return Quat_TEMP_GEN_5;
     }
 
@@ -584,12 +576,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_EnsureWPositive(long this_addr);
 
     public Quat GetPerpendicular() {
-        long pointer = internal_native_GetPerpendicular((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetPerpendicular(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_6 == null)
             Quat_TEMP_GEN_6 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_6.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_6.internal_reset(pointer, false);
         return Quat_TEMP_GEN_6;
     }
 
@@ -601,7 +593,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetPerpendicular(long this_addr);
 
     public float GetRotationAngle(Vec3 inAxis) {
-        return internal_native_GetRotationAngle((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getNativeData().getCPointer() : 0));
+        return internal_native_GetRotationAngle(native_address, (inAxis != null ? inAxis.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -611,12 +603,12 @@ return nativeObject->GetRotationAngle(*((Vec3* )inAxis_addr));
     public static native float internal_native_GetRotationAngle(long this_addr, long inAxis_addr);
 
     public Quat GetTwist(Vec3 inAxis) {
-        long pointer = internal_native_GetTwist((long) getNativeData().getCPointer(), (long) (inAxis != null ? inAxis.getNativeData().getCPointer() : 0));
+        long pointer = internal_native_GetTwist(native_address, (inAxis != null ? inAxis.native_address : 0));
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_7 == null)
             Quat_TEMP_GEN_7 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_7.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_7.internal_reset(pointer, false);
         return Quat_TEMP_GEN_7;
     }
 
@@ -628,7 +620,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetTwist(long this_addr, long inAxis_addr);
 
     public void GetSwingTwist(Quat outSwing, Quat outTwist) {
-        internal_native_GetSwingTwist((long) getNativeData().getCPointer(), (long) (outSwing != null ? outSwing.getNativeData().getCPointer() : 0), (long) (outTwist != null ? outTwist.getNativeData().getCPointer() : 0));
+        internal_native_GetSwingTwist(native_address, (outSwing != null ? outSwing.native_address : 0), (outTwist != null ? outTwist.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -638,12 +630,12 @@ nativeObject->GetSwingTwist(*((Quat* )outSwing_addr), *((Quat* )outTwist_addr));
     public static native void internal_native_GetSwingTwist(long this_addr, long outSwing_addr, long outTwist_addr);
 
     public Quat LERP(Quat inDestination, float inFraction) {
-        long pointer = internal_native_LERP((long) getNativeData().getCPointer(), (long) (inDestination != null ? inDestination.getNativeData().getCPointer() : 0), inFraction);
+        long pointer = internal_native_LERP(native_address, (inDestination != null ? inDestination.native_address : 0), inFraction);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_8 == null)
             Quat_TEMP_GEN_8 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_8.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_8.internal_reset(pointer, false);
         return Quat_TEMP_GEN_8;
     }
 
@@ -655,12 +647,12 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_LERP(long this_addr, long inDestination_addr, float inFraction);
 
     public Quat SLERP(Quat inDestination, float inFraction) {
-        long pointer = internal_native_SLERP((long) getNativeData().getCPointer(), (long) (inDestination != null ? inDestination.getNativeData().getCPointer() : 0), inFraction);
+        long pointer = internal_native_SLERP(native_address, (inDestination != null ? inDestination.native_address : 0), inFraction);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_9 == null)
             Quat_TEMP_GEN_9 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_9.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_9.internal_reset(pointer, false);
         return Quat_TEMP_GEN_9;
     }
 

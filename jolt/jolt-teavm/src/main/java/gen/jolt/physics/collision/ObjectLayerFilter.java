@@ -16,16 +16,8 @@ public class ObjectLayerFilter extends IDLBase {
     public ObjectLayerFilter(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -37,7 +29,7 @@ jolt.destroy(jsObj);
 
     public ObjectLayerFilter() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
         setupCallback();
     }
 
@@ -48,7 +40,7 @@ jolt.destroy(jsObj);
                 return internal_ShouldCollide(inLayer);
             }
         };
-        internal_native_setupCallback((int) getNativeData().getCPointer(), ShouldCollide);
+        internal_native_setupCallback(native_address, ShouldCollide);
     }
 
     protected boolean ShouldCollide(int inLayer) {

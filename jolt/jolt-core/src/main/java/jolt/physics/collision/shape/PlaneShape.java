@@ -20,8 +20,8 @@ public class PlaneShape extends Shape {
 
     public PlaneShape(Plane inPlane, PhysicsMaterial inMaterial, float inHalfExtent) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Plane_PhysicsMaterial_float((long) (inPlane != null ? inPlane.getNativeData().getCPointer() : 0), (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0), inHalfExtent);
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_Plane_PhysicsMaterial_float((inPlane != null ? inPlane.native_address : 0), (inMaterial != null ? inMaterial.native_address : 0), inHalfExtent);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -31,8 +31,8 @@ return (jlong)new PlaneShape(*((Plane* )inPlane_addr), (PhysicsMaterial* )inMate
 
     public PlaneShape(Plane inPlane, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Plane_PhysicsMaterial((long) (inPlane != null ? inPlane.getNativeData().getCPointer() : 0), (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_Plane_PhysicsMaterial((inPlane != null ? inPlane.native_address : 0), (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -42,8 +42,8 @@ return (jlong)new PlaneShape(*((Plane* )inPlane_addr), (PhysicsMaterial* )inMate
 
     public PlaneShape(Plane inPlane) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Plane((long) (inPlane != null ? inPlane.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, true);
+        long addr = internal_native_create_Plane((inPlane != null ? inPlane.native_address : 0));
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -59,16 +59,8 @@ return (jlong)new PlaneShape(*((Plane* )inPlane_addr));
         super((byte) 1, (char) 1);
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-JNI;-NATIVE]
@@ -78,7 +70,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public void SetMaterial(PhysicsMaterial inMaterial) {
-        internal_native_SetMaterial((long) getNativeData().getCPointer(), (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
+        internal_native_SetMaterial(native_address, (inMaterial != null ? inMaterial.native_address : 0));
     }
 
     /*[-JNI;-NATIVE]
@@ -88,12 +80,12 @@ nativeObject->SetMaterial((PhysicsMaterial* )inMaterial_addr);
     public static native void internal_native_SetMaterial(long this_addr, long inMaterial_addr);
 
     public Plane GetPlane() {
-        long pointer = internal_native_GetPlane((long) getNativeData().getCPointer());
+        long pointer = internal_native_GetPlane(native_address);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = new Plane((byte) 1, (char) 1);
-        Plane_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(pointer, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -105,7 +97,7 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetPlane(long this_addr);
 
     public float GetHalfExtent() {
-        return internal_native_GetHalfExtent((long) getNativeData().getCPointer());
+        return internal_native_GetHalfExtent(native_address);
     }
 
     /*[-JNI;-NATIVE]

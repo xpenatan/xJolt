@@ -21,7 +21,7 @@ public class ConvexHullShapeSettings extends ConvexShapeSettings {
     public ConvexHullShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        getNativeData().reset(addr, false);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -33,8 +33,8 @@ return jolt.getPointer(jsObj);
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_ArrayVec3_float_PhysicsMaterial((int) (long) (inPoints != null ? inPoints.getNativeData().getCPointer() : 0), inConvexRadius, (int) (long) (inMaterial != null ? inMaterial.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_ArrayVec3_float_PhysicsMaterial((inPoints != null ? inPoints.native_address : 0), inConvexRadius, (inMaterial != null ? inMaterial.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -46,8 +46,8 @@ return jolt.getPointer(jsObj);
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_ArrayVec3_float((int) (long) (inPoints != null ? inPoints.getNativeData().getCPointer() : 0), inConvexRadius);
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_ArrayVec3_float((inPoints != null ? inPoints.native_address : 0), inConvexRadius);
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -59,8 +59,8 @@ return jolt.getPointer(jsObj);
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_ArrayVec3((int) (long) (inPoints != null ? inPoints.getNativeData().getCPointer() : 0));
-        getNativeData().reset(addr, false);
+        int addr = internal_native_create_ArrayVec3((inPoints != null ? inPoints.native_address : 0));
+        internal_reset(addr, false);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -79,12 +79,12 @@ return jolt.getPointer(jsObj);
     }
 
     public ArrayVec3 get_mPoints() {
-        int pointer = internal_native_get_mPoints((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mPoints(native_address);
         if (pointer == 0)
             return null;
         if (ArrayVec3_TEMP_GEN_0 == null)
             ArrayVec3_TEMP_GEN_0 = new ArrayVec3((byte) 1, (char) 1);
-        ArrayVec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        ArrayVec3_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayVec3_TEMP_GEN_0;
     }
 
@@ -98,7 +98,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mPoints(int this_addr);
 
     public void set_mPoints(ArrayVec3 mPoints) {
-        internal_native_set_mPoints((int) (long) getNativeData().getCPointer(), (int) (long) (mPoints != null ? mPoints.getNativeData().getCPointer() : 0));
+        internal_native_set_mPoints(native_address, (mPoints != null ? mPoints.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -109,7 +109,7 @@ jsObj.set_mPoints(mPoints_addr);
     public static native void internal_native_set_mPoints(int this_addr, int mPoints_addr);
 
     public float get_mMaxConvexRadius() {
-        return internal_native_get_mMaxConvexRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxConvexRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -120,7 +120,7 @@ return jsObj.get_mMaxConvexRadius();
     public static native float internal_native_get_mMaxConvexRadius(int this_addr);
 
     public void set_mMaxConvexRadius(float mMaxConvexRadius) {
-        internal_native_set_mMaxConvexRadius((int) (long) getNativeData().getCPointer(), mMaxConvexRadius);
+        internal_native_set_mMaxConvexRadius(native_address, mMaxConvexRadius);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -131,7 +131,7 @@ jsObj.set_mMaxConvexRadius(mMaxConvexRadius);
     public static native void internal_native_set_mMaxConvexRadius(int this_addr, float mMaxConvexRadius);
 
     public float get_mMaxErrorConvexRadius() {
-        return internal_native_get_mMaxErrorConvexRadius((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mMaxErrorConvexRadius(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -142,7 +142,7 @@ return jsObj.get_mMaxErrorConvexRadius();
     public static native float internal_native_get_mMaxErrorConvexRadius(int this_addr);
 
     public void set_mMaxErrorConvexRadius(float mMaxErrorConvexRadius) {
-        internal_native_set_mMaxErrorConvexRadius((int) (long) getNativeData().getCPointer(), mMaxErrorConvexRadius);
+        internal_native_set_mMaxErrorConvexRadius(native_address, mMaxErrorConvexRadius);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -153,7 +153,7 @@ jsObj.set_mMaxErrorConvexRadius(mMaxErrorConvexRadius);
     public static native void internal_native_set_mMaxErrorConvexRadius(int this_addr, float mMaxErrorConvexRadius);
 
     public float get_mHullTolerance() {
-        return internal_native_get_mHullTolerance((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mHullTolerance(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -164,7 +164,7 @@ return jsObj.get_mHullTolerance();
     public static native float internal_native_get_mHullTolerance(int this_addr);
 
     public void set_mHullTolerance(float mHullTolerance) {
-        internal_native_set_mHullTolerance((int) (long) getNativeData().getCPointer(), mHullTolerance);
+        internal_native_set_mHullTolerance(native_address, mHullTolerance);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -114,16 +114,8 @@ public class Mat44 extends IDLBase {
     public Mat44(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -139,7 +131,7 @@ jolt.destroy(jsObj);
             return null;
         if (Mat44_TEMP_STATIC_GEN_0 == null)
             Mat44_TEMP_STATIC_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_0;
     }
 
@@ -157,7 +149,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (Mat44_TEMP_STATIC_GEN_1 == null)
             Mat44_TEMP_STATIC_GEN_1 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_1.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_1;
     }
 
@@ -175,7 +167,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (Mat44_TEMP_STATIC_GEN_2 == null)
             Mat44_TEMP_STATIC_GEN_2 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_2.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_2;
     }
 
@@ -193,7 +185,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (Mat44_TEMP_STATIC_GEN_3 == null)
             Mat44_TEMP_STATIC_GEN_3 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_3.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_3;
     }
 
@@ -211,7 +203,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (Mat44_TEMP_STATIC_GEN_4 == null)
             Mat44_TEMP_STATIC_GEN_4 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_4.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_4;
     }
 
@@ -224,12 +216,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sRotationZ(float inZ);
 
     public static Mat44 sRotation(Quat inQ) {
-        int pointer = internal_native_sRotation((int) (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sRotation((inQ != null ? inQ.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_5 == null)
             Mat44_TEMP_STATIC_GEN_5 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_5.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_5;
     }
 
@@ -242,12 +234,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sRotation(int inQ_addr);
 
     public static Mat44 sRotationAxisAngle(Vec3 inAxis, float inAngle) {
-        int pointer = internal_native_sRotationAxisAngle((int) (long) (inAxis != null ? inAxis.getNativeData().getCPointer() : 0), inAngle);
+        int pointer = internal_native_sRotationAxisAngle((inAxis != null ? inAxis.native_address : 0), inAngle);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_6 == null)
             Mat44_TEMP_STATIC_GEN_6 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_6.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_6;
     }
 
@@ -260,12 +252,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sRotationAxisAngle(int inAxis_addr, float inAngle);
 
     public static Mat44 sTranslation(Vec3 inTranslation) {
-        int pointer = internal_native_sTranslation((int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sTranslation((inTranslation != null ? inTranslation.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_7 == null)
             Mat44_TEMP_STATIC_GEN_7 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_7.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_7;
     }
 
@@ -278,12 +270,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sTranslation(int inTranslation_addr);
 
     public static Mat44 sRotationTranslation(Quat inRotation, Vec3 inTranslation) {
-        int pointer = internal_native_sRotationTranslation((int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sRotationTranslation((inRotation != null ? inRotation.native_address : 0), (inTranslation != null ? inTranslation.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_8 == null)
             Mat44_TEMP_STATIC_GEN_8 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_8.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_8;
     }
 
@@ -296,12 +288,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sRotationTranslation(int inRotation_addr, int inTranslation_addr);
 
     public static Mat44 sInverseRotationTranslation(Quat inRotation, Vec3 inTranslation) {
-        int pointer = internal_native_sInverseRotationTranslation((int) (long) (inRotation != null ? inRotation.getNativeData().getCPointer() : 0), (int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sInverseRotationTranslation((inRotation != null ? inRotation.native_address : 0), (inTranslation != null ? inTranslation.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_9 == null)
             Mat44_TEMP_STATIC_GEN_9 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_9.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_9;
     }
 
@@ -319,7 +311,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (Mat44_TEMP_STATIC_GEN_10 == null)
             Mat44_TEMP_STATIC_GEN_10 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_10.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_10;
     }
 
@@ -332,12 +324,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sScale(float inScale);
 
     public static Mat44 sScaleVec3(Vec3 inScale) {
-        int pointer = internal_native_sScaleVec3((int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sScaleVec3((inScale != null ? inScale.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_11 == null)
             Mat44_TEMP_STATIC_GEN_11 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_11.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_11;
     }
 
@@ -350,12 +342,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sScaleVec3(int inScale_addr);
 
     public static Mat44 sOuterProduct(Vec3 inV1, Vec3 inV2) {
-        int pointer = internal_native_sOuterProduct((int) (long) (inV1 != null ? inV1.getNativeData().getCPointer() : 0), (int) (long) (inV2 != null ? inV2.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sOuterProduct((inV1 != null ? inV1.native_address : 0), (inV2 != null ? inV2.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_12 == null)
             Mat44_TEMP_STATIC_GEN_12 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_12.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_12.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_12;
     }
 
@@ -368,12 +360,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sOuterProduct(int inV1_addr, int inV2_addr);
 
     public static Mat44 sCrossProduct(Vec3 inV) {
-        int pointer = internal_native_sCrossProduct((int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sCrossProduct((inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_13 == null)
             Mat44_TEMP_STATIC_GEN_13 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_13.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_13.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_13;
     }
 
@@ -386,12 +378,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sCrossProduct(int inV_addr);
 
     public static Mat44 sQuatLeftMultiply(Quat inQ) {
-        int pointer = internal_native_sQuatLeftMultiply((int) (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sQuatLeftMultiply((inQ != null ? inQ.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_14 == null)
             Mat44_TEMP_STATIC_GEN_14 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_14.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_14.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_14;
     }
 
@@ -404,12 +396,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sQuatLeftMultiply(int inQ_addr);
 
     public static Mat44 sQuatRightMultiply(Quat inQ) {
-        int pointer = internal_native_sQuatRightMultiply((int) (long) (inQ != null ? inQ.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sQuatRightMultiply((inQ != null ? inQ.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_15 == null)
             Mat44_TEMP_STATIC_GEN_15 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_15.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_15.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_15;
     }
 
@@ -422,12 +414,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sQuatRightMultiply(int inQ_addr);
 
     public static Mat44 sLookAt(Vec3 inPos, Vec3 inTarget, Vec3 inUp) {
-        int pointer = internal_native_sLookAt((int) (long) (inPos != null ? inPos.getNativeData().getCPointer() : 0), (int) (long) (inTarget != null ? inTarget.getNativeData().getCPointer() : 0), (int) (long) (inUp != null ? inUp.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_sLookAt((inPos != null ? inPos.native_address : 0), (inTarget != null ? inTarget.native_address : 0), (inUp != null ? inUp.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_16 == null)
             Mat44_TEMP_STATIC_GEN_16 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_16.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_16.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_16;
     }
 
@@ -445,7 +437,7 @@ return jolt.getPointer(returnedJSObj);
             return null;
         if (Mat44_TEMP_STATIC_GEN_17 == null)
             Mat44_TEMP_STATIC_GEN_17 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_STATIC_GEN_17.getNativeData().reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_17.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_17;
     }
 
@@ -458,12 +450,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_sPerspective(float inFovY, float inAspect, float inNear, float inFar);
 
     public Vec3 GetAxisX() {
-        int pointer = internal_native_GetAxisX((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetAxisX(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -477,12 +469,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetAxisX(int this_addr);
 
     public Vec3 GetAxisY() {
-        int pointer = internal_native_GetAxisY((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetAxisY(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -496,12 +488,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetAxisY(int this_addr);
 
     public Vec3 GetAxisZ() {
-        int pointer = internal_native_GetAxisZ((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetAxisZ(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -515,12 +507,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetAxisZ(int this_addr);
 
     public Vec3 GetDiagonal3() {
-        int pointer = internal_native_GetDiagonal3((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetDiagonal3(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -534,12 +526,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetDiagonal3(int this_addr);
 
     public Vec4 GetDiagonal4() {
-        int pointer = internal_native_GetDiagonal4((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetDiagonal4(native_address);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_0;
     }
 
@@ -553,12 +545,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetDiagonal4(int this_addr);
 
     public Mat44 GetRotation() {
-        int pointer = internal_native_GetRotation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetRotation(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -572,12 +564,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotation(int this_addr);
 
     public Mat44 GetRotationSafe() {
-        int pointer = internal_native_GetRotationSafe((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetRotationSafe(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -591,12 +583,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotationSafe(int this_addr);
 
     public Quat GetQuaternion() {
-        int pointer = internal_native_GetQuaternion((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetQuaternion(native_address);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = new Quat((byte) 1, (char) 1);
-        Quat_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -610,12 +602,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetQuaternion(int this_addr);
 
     public Vec3 GetTranslation() {
-        int pointer = internal_native_GetTranslation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetTranslation(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -629,7 +621,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetTranslation(int this_addr);
 
     public boolean Equals(Mat44 inV) {
-        return internal_native_Equals((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        return internal_native_Equals(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -641,7 +633,7 @@ return returnedJSObj;
     public static native boolean internal_native_Equals(int this_addr, int inV_addr);
 
     public boolean NotEquals(Mat44 inV) {
-        return internal_native_NotEquals((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        return internal_native_NotEquals(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -653,7 +645,7 @@ return returnedJSObj;
     public static native boolean internal_native_NotEquals(int this_addr, int inV_addr);
 
     public boolean IsClose(Mat44 inM, float inMaxDistSq) {
-        return internal_native_IsClose((int) (long) getNativeData().getCPointer(), (int) (long) (inM != null ? inM.getNativeData().getCPointer() : 0), inMaxDistSq);
+        return internal_native_IsClose(native_address, (inM != null ? inM.native_address : 0), inMaxDistSq);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -665,7 +657,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsClose(int this_addr, int inM_addr, float inMaxDistSq);
 
     public boolean IsClose(Mat44 inM) {
-        return internal_native_IsClose((int) (long) getNativeData().getCPointer(), (int) (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
+        return internal_native_IsClose(native_address, (inM != null ? inM.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -677,12 +669,12 @@ return returnedJSObj;
     public static native boolean internal_native_IsClose(int this_addr, int inM_addr);
 
     public Vec3 MulVec3(Vec3 inV) {
-        int pointer = internal_native_MulVec3((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_MulVec3(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -696,12 +688,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_MulVec3(int this_addr, int inV_addr);
 
     public Vec3 Multiply3x3(Vec3 inV) {
-        int pointer = internal_native_Multiply3x3((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_Multiply3x3(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_6.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_6;
     }
 
@@ -715,12 +707,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Multiply3x3(int this_addr, int inV_addr);
 
     public Vec3 Multiply3x3Transposed(Vec3 inV) {
-        int pointer = internal_native_Multiply3x3Transposed((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_Multiply3x3Transposed(native_address, (inV != null ? inV.native_address : 0));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_7.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_7.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_7;
     }
 
@@ -734,12 +726,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Multiply3x3Transposed(int this_addr, int inV_addr);
 
     public Mat44 Multiply3x3LeftTransposed(Mat44 inM) {
-        int pointer = internal_native_Multiply3x3LeftTransposed((int) (long) getNativeData().getCPointer(), (int) (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_Multiply3x3LeftTransposed(native_address, (inM != null ? inM.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_2.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_2;
     }
 
@@ -753,12 +745,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Multiply3x3LeftTransposed(int this_addr, int inM_addr);
 
     public Mat44 Multiply3x3RightTransposed(Mat44 inM) {
-        int pointer = internal_native_Multiply3x3RightTransposed((int) (long) getNativeData().getCPointer(), (int) (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_Multiply3x3RightTransposed(native_address, (inM != null ? inM.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_3 == null)
             Mat44_TEMP_GEN_3 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_3.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_3.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_3;
     }
 
@@ -772,12 +764,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Multiply3x3RightTransposed(int this_addr, int inM_addr);
 
     public Mat44 Transposed() {
-        int pointer = internal_native_Transposed((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_Transposed(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_4 == null)
             Mat44_TEMP_GEN_4 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_4.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_4.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_4;
     }
 
@@ -791,12 +783,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Transposed(int this_addr);
 
     public Mat44 Transposed3x3() {
-        int pointer = internal_native_Transposed3x3((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_Transposed3x3(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_5 == null)
             Mat44_TEMP_GEN_5 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_5.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_5.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_5;
     }
 
@@ -810,12 +802,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Transposed3x3(int this_addr);
 
     public Mat44 Inversed() {
-        int pointer = internal_native_Inversed((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_Inversed(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_6 == null)
             Mat44_TEMP_GEN_6 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_6.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_6.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_6;
     }
 
@@ -829,12 +821,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Inversed(int this_addr);
 
     public Mat44 InversedRotationTranslation() {
-        int pointer = internal_native_InversedRotationTranslation((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_InversedRotationTranslation(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_7 == null)
             Mat44_TEMP_GEN_7 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_7.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_7.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_7;
     }
 
@@ -848,12 +840,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_InversedRotationTranslation(int this_addr);
 
     public Mat44 Adjointed3x3() {
-        int pointer = internal_native_Adjointed3x3((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_Adjointed3x3(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_8 == null)
             Mat44_TEMP_GEN_8 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_8.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_8.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_8;
     }
 
@@ -867,7 +859,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Adjointed3x3(int this_addr);
 
     public boolean SetInversed3x3(Mat44 inM) {
-        return internal_native_SetInversed3x3((int) (long) getNativeData().getCPointer(), (int) (long) (inM != null ? inM.getNativeData().getCPointer() : 0));
+        return internal_native_SetInversed3x3(native_address, (inM != null ? inM.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -879,7 +871,7 @@ return returnedJSObj;
     public static native boolean internal_native_SetInversed3x3(int this_addr, int inM_addr);
 
     public float GetDeterminant3x3() {
-        return internal_native_GetDeterminant3x3((int) (long) getNativeData().getCPointer());
+        return internal_native_GetDeterminant3x3(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -891,12 +883,12 @@ return returnedJSObj;
     public static native float internal_native_GetDeterminant3x3(int this_addr);
 
     public Mat44 Inversed3x3() {
-        int pointer = internal_native_Inversed3x3((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_Inversed3x3(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_9 == null)
             Mat44_TEMP_GEN_9 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_9.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_9.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_9;
     }
 
@@ -910,12 +902,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Inversed3x3(int this_addr);
 
     public Mat44 GetDirectionPreservingMatrix() {
-        int pointer = internal_native_GetDirectionPreservingMatrix((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_GetDirectionPreservingMatrix(native_address);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_10 == null)
             Mat44_TEMP_GEN_10 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_10.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_10.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_10;
     }
 
@@ -929,12 +921,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetDirectionPreservingMatrix(int this_addr);
 
     public Mat44 PreTranslated(Vec3 inTranslation) {
-        int pointer = internal_native_PreTranslated((int) (long) getNativeData().getCPointer(), (int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_PreTranslated(native_address, (inTranslation != null ? inTranslation.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_11 == null)
             Mat44_TEMP_GEN_11 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_11.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_11.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_11;
     }
 
@@ -948,12 +940,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_PreTranslated(int this_addr, int inTranslation_addr);
 
     public Mat44 PostTranslated(Vec3 inTranslation) {
-        int pointer = internal_native_PostTranslated((int) (long) getNativeData().getCPointer(), (int) (long) (inTranslation != null ? inTranslation.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_PostTranslated(native_address, (inTranslation != null ? inTranslation.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_12 == null)
             Mat44_TEMP_GEN_12 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_12.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_12.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_12;
     }
 
@@ -967,12 +959,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_PostTranslated(int this_addr, int inTranslation_addr);
 
     public Mat44 PreScaled(Vec3 inScale) {
-        int pointer = internal_native_PreScaled((int) (long) getNativeData().getCPointer(), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_PreScaled(native_address, (inScale != null ? inScale.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_13 == null)
             Mat44_TEMP_GEN_13 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_13.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_13.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_13;
     }
 
@@ -986,12 +978,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_PreScaled(int this_addr, int inScale_addr);
 
     public Mat44 PostScaled(Vec3 inScale) {
-        int pointer = internal_native_PostScaled((int) (long) getNativeData().getCPointer(), (int) (long) (inScale != null ? inScale.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_PostScaled(native_address, (inScale != null ? inScale.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_14 == null)
             Mat44_TEMP_GEN_14 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_14.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_14.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_14;
     }
 
@@ -1005,12 +997,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_PostScaled(int this_addr, int inScale_addr);
 
     public Mat44 Decompose(Vec3 outScale) {
-        int pointer = internal_native_Decompose((int) (long) getNativeData().getCPointer(), (int) (long) (outScale != null ? outScale.getNativeData().getCPointer() : 0));
+        int pointer = internal_native_Decompose(native_address, (outScale != null ? outScale.native_address : 0));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_15 == null)
             Mat44_TEMP_GEN_15 = new Mat44((byte) 1, (char) 1);
-        Mat44_TEMP_GEN_15.getNativeData().reset(pointer, false);
+        Mat44_TEMP_GEN_15.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_15;
     }
 
@@ -1024,7 +1016,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_Decompose(int this_addr, int outScale_addr);
 
     public void SetColumn3(int inCol, Vec3 inV) {
-        internal_native_SetColumn3((int) (long) getNativeData().getCPointer(), inCol, (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_SetColumn3(native_address, inCol, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1035,7 +1027,7 @@ jsObj.SetColumn3(inCol, inV_addr);
     public static native void internal_native_SetColumn3(int this_addr, int inCol, int inV_addr);
 
     public void SetColumn4(int inCol, Vec4 inV) {
-        internal_native_SetColumn4((int) (long) getNativeData().getCPointer(), inCol, (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_SetColumn4(native_address, inCol, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1046,7 +1038,7 @@ jsObj.SetColumn4(inCol, inV_addr);
     public static native void internal_native_SetColumn4(int this_addr, int inCol, int inV_addr);
 
     public void SetAxisX(Vec3 inV) {
-        internal_native_SetAxisX((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_SetAxisX(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1057,7 +1049,7 @@ jsObj.SetAxisX(inV_addr);
     public static native void internal_native_SetAxisX(int this_addr, int inV_addr);
 
     public void SetAxisY(Vec3 inV) {
-        internal_native_SetAxisY((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_SetAxisY(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1068,7 +1060,7 @@ jsObj.SetAxisY(inV_addr);
     public static native void internal_native_SetAxisY(int this_addr, int inV_addr);
 
     public void SetAxisZ(Vec3 inV) {
-        internal_native_SetAxisZ((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_SetAxisZ(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1079,7 +1071,7 @@ jsObj.SetAxisZ(inV_addr);
     public static native void internal_native_SetAxisZ(int this_addr, int inV_addr);
 
     public void SetDiagonal3(Vec3 inV) {
-        internal_native_SetDiagonal3((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_SetDiagonal3(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1090,7 +1082,7 @@ jsObj.SetDiagonal3(inV_addr);
     public static native void internal_native_SetDiagonal3(int this_addr, int inV_addr);
 
     public void SetDiagonal4(Vec4 inV) {
-        internal_native_SetDiagonal4((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_SetDiagonal4(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1101,7 +1093,7 @@ jsObj.SetDiagonal4(inV_addr);
     public static native void internal_native_SetDiagonal4(int this_addr, int inV_addr);
 
     public void SetTranslation(Vec3 inV) {
-        internal_native_SetTranslation((int) (long) getNativeData().getCPointer(), (int) (long) (inV != null ? inV.getNativeData().getCPointer() : 0));
+        internal_native_SetTranslation(native_address, (inV != null ? inV.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -1112,12 +1104,12 @@ jsObj.SetTranslation(inV_addr);
     public static native void internal_native_SetTranslation(int this_addr, int inV_addr);
 
     public Vec3 GetColumn3(int inCol) {
-        int pointer = internal_native_GetColumn3((int) (long) getNativeData().getCPointer(), inCol);
+        int pointer = internal_native_GetColumn3(native_address, inCol);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_8.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_8.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_8;
     }
 
@@ -1131,12 +1123,12 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetColumn3(int this_addr, int inCol);
 
     public Vec4 GetColumn4(int inCol) {
-        int pointer = internal_native_GetColumn4((int) (long) getNativeData().getCPointer(), inCol);
+        int pointer = internal_native_GetColumn4(native_address, inCol);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_1 == null)
             Vec4_TEMP_GEN_1 = new Vec4((byte) 1, (char) 1);
-        Vec4_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec4_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_1;
     }
 

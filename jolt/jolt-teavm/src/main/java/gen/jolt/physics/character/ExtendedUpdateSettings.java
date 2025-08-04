@@ -24,7 +24,7 @@ public class ExtendedUpdateSettings extends IDLBase {
 
     public ExtendedUpdateSettings() {
         int addr = internal_native_create();
-        getNativeData().reset(addr, true);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -41,16 +41,8 @@ return jolt.getPointer(jsObj);
     public ExtendedUpdateSettings(byte b, char c) {
     }
 
-    public void dispose() {
-        super.dispose();
-    }
-
-    public boolean isDisposed() {
-        return super.isDisposed();
-    }
-
     protected void deleteNative() {
-        internal_native_deleteNative((int) (long) getNativeData().getCPointer());
+        internal_native_deleteNative(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -61,12 +53,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mStickToFloorStepDown() {
-        int pointer = internal_native_get_mStickToFloorStepDown((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mStickToFloorStepDown(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_0.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -80,7 +72,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mStickToFloorStepDown(int this_addr);
 
     public void set_mStickToFloorStepDown(Vec3 mStickToFloorStepDown) {
-        internal_native_set_mStickToFloorStepDown((int) (long) getNativeData().getCPointer(), (int) (long) (mStickToFloorStepDown != null ? mStickToFloorStepDown.getNativeData().getCPointer() : 0));
+        internal_native_set_mStickToFloorStepDown(native_address, (mStickToFloorStepDown != null ? mStickToFloorStepDown.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -91,12 +83,12 @@ jsObj.set_mStickToFloorStepDown(mStickToFloorStepDown_addr);
     public static native void internal_native_set_mStickToFloorStepDown(int this_addr, int mStickToFloorStepDown_addr);
 
     public Vec3 get_mWalkStairsStepUp() {
-        int pointer = internal_native_get_mWalkStairsStepUp((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mWalkStairsStepUp(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_1.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -110,7 +102,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mWalkStairsStepUp(int this_addr);
 
     public void set_mWalkStairsStepUp(Vec3 mWalkStairsStepUp) {
-        internal_native_set_mWalkStairsStepUp((int) (long) getNativeData().getCPointer(), (int) (long) (mWalkStairsStepUp != null ? mWalkStairsStepUp.getNativeData().getCPointer() : 0));
+        internal_native_set_mWalkStairsStepUp(native_address, (mWalkStairsStepUp != null ? mWalkStairsStepUp.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -121,7 +113,7 @@ jsObj.set_mWalkStairsStepUp(mWalkStairsStepUp_addr);
     public static native void internal_native_set_mWalkStairsStepUp(int this_addr, int mWalkStairsStepUp_addr);
 
     public float get_mWalkStairsMinStepForward() {
-        return internal_native_get_mWalkStairsMinStepForward((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mWalkStairsMinStepForward(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -132,7 +124,7 @@ return jsObj.get_mWalkStairsMinStepForward();
     public static native float internal_native_get_mWalkStairsMinStepForward(int this_addr);
 
     public void set_mWalkStairsMinStepForward(float mWalkStairsMinStepForward) {
-        internal_native_set_mWalkStairsMinStepForward((int) (long) getNativeData().getCPointer(), mWalkStairsMinStepForward);
+        internal_native_set_mWalkStairsMinStepForward(native_address, mWalkStairsMinStepForward);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -143,7 +135,7 @@ jsObj.set_mWalkStairsMinStepForward(mWalkStairsMinStepForward);
     public static native void internal_native_set_mWalkStairsMinStepForward(int this_addr, float mWalkStairsMinStepForward);
 
     public float get_mWalkStairsStepForwardTest() {
-        return internal_native_get_mWalkStairsStepForwardTest((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mWalkStairsStepForwardTest(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -154,7 +146,7 @@ return jsObj.get_mWalkStairsStepForwardTest();
     public static native float internal_native_get_mWalkStairsStepForwardTest(int this_addr);
 
     public void set_mWalkStairsStepForwardTest(float mWalkStairsStepForwardTest) {
-        internal_native_set_mWalkStairsStepForwardTest((int) (long) getNativeData().getCPointer(), mWalkStairsStepForwardTest);
+        internal_native_set_mWalkStairsStepForwardTest(native_address, mWalkStairsStepForwardTest);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -165,7 +157,7 @@ jsObj.set_mWalkStairsStepForwardTest(mWalkStairsStepForwardTest);
     public static native void internal_native_set_mWalkStairsStepForwardTest(int this_addr, float mWalkStairsStepForwardTest);
 
     public float get_mWalkStairsCosAngleForwardContact() {
-        return internal_native_get_mWalkStairsCosAngleForwardContact((int) (long) getNativeData().getCPointer());
+        return internal_native_get_mWalkStairsCosAngleForwardContact(native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -176,7 +168,7 @@ return jsObj.get_mWalkStairsCosAngleForwardContact();
     public static native float internal_native_get_mWalkStairsCosAngleForwardContact(int this_addr);
 
     public void set_mWalkStairsCosAngleForwardContact(float mWalkStairsCosAngleForwardContact) {
-        internal_native_set_mWalkStairsCosAngleForwardContact((int) (long) getNativeData().getCPointer(), mWalkStairsCosAngleForwardContact);
+        internal_native_set_mWalkStairsCosAngleForwardContact(native_address, mWalkStairsCosAngleForwardContact);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -187,12 +179,12 @@ jsObj.set_mWalkStairsCosAngleForwardContact(mWalkStairsCosAngleForwardContact);
     public static native void internal_native_set_mWalkStairsCosAngleForwardContact(int this_addr, float mWalkStairsCosAngleForwardContact);
 
     public Vec3 get_mWalkStairsStepDownExtra() {
-        int pointer = internal_native_get_mWalkStairsStepDownExtra((int) (long) getNativeData().getCPointer());
+        int pointer = internal_native_get_mWalkStairsStepDownExtra(native_address);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = new Vec3((byte) 1, (char) 1);
-        Vec3_TEMP_GEN_2.getNativeData().reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -206,7 +198,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_get_mWalkStairsStepDownExtra(int this_addr);
 
     public void set_mWalkStairsStepDownExtra(Vec3 mWalkStairsStepDownExtra) {
-        internal_native_set_mWalkStairsStepDownExtra((int) (long) getNativeData().getCPointer(), (int) (long) (mWalkStairsStepDownExtra != null ? mWalkStairsStepDownExtra.getNativeData().getCPointer() : 0));
+        internal_native_set_mWalkStairsStepDownExtra(native_address, (mWalkStairsStepDownExtra != null ? mWalkStairsStepDownExtra.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]

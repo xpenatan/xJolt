@@ -22,7 +22,7 @@ public class RackAndPinionConstraint extends TwoBodyConstraint {
     }
 
     public void SetConstraints(Constraint inPinion, Constraint inRack) {
-        internal_native_SetConstraints((int) (long) getNativeData().getCPointer(), (int) (long) (inPinion != null ? inPinion.getNativeData().getCPointer() : 0), (int) (long) (inRack != null ? inRack.getNativeData().getCPointer() : 0));
+        internal_native_SetConstraints(native_address, (inPinion != null ? inPinion.native_address : 0), (inRack != null ? inRack.native_address : 0));
     }
 
     /*[-TEAVM;-NATIVE]
@@ -33,7 +33,7 @@ jsObj.SetConstraints(inPinion_addr, inRack_addr);
     public static native void internal_native_SetConstraints(int this_addr, int inPinion_addr, int inRack_addr);
 
     public float GetTotalLambda() {
-        return internal_native_GetTotalLambda((int) (long) getNativeData().getCPointer());
+        return internal_native_GetTotalLambda(native_address);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -823,7 +823,7 @@ class DebugRendererEm : public DebugRenderer
            inSystem->DrawBodies(BodyManager::DrawSettings(), this);
         }
 
-        virtual void DrawMesh(int id, const RMat44 &inModelMatrix, const DebugArrayTriangle &triangleArray, const Color &inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) = 0;
+        virtual void DrawMesh(int id, const RMat44 &inModelMatrix, const IDLFloatArray* vertices, const Color &inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) = 0;
 
         virtual void DrawGeometry(RMat44Arg inModelMatrix, const AABox& inWorldSpaceBounds, float inLODScaleSq, ColorArg inModelColor, const GeometryRef& inGeometry, ECullMode inCullMode, ECastShadow inCastShadow, EDrawMode inDrawMode)
         {
@@ -832,12 +832,11 @@ class DebugRendererEm : public DebugRenderer
 
             // Draw the batch
             const BatchImpl* batch = static_cast<const BatchImpl*>(lod->mTriangleBatch.GetPtr());
-            const DebugArrayTriangle triangleArray = batch->mTriangles;
 
-            DrawMesh(batch->mID, inModelMatrix, triangleArray, inModelColor, inCullMode, inDrawMode);
+            DrawMesh(batch->mID, inModelMatrix, batch->vertices, inModelColor, inCullMode, inDrawMode);
         }
 
-        virtual Batch CreateTriangleBatch(const DebugRendererTriangle*inTriangles, int inTriangleCount)
+        virtual Batch CreateTriangleBatch(const DebugRendererTriangle* inTriangles, int inTriangleCount)
         {
             if (inTriangles == nullptr || inTriangleCount == 0)
                 return mEmptyBatch;
@@ -845,7 +844,31 @@ class DebugRendererEm : public DebugRenderer
             BatchImpl *batch = new BatchImpl(GLOBAL_ID);
             GLOBAL_ID++;
 
-            batch->mTriangles.assign(inTriangles, inTriangles + inTriangleCount);
+            int vertexSize = (3 + 3 + 2 + 4);
+            int inVertexCount = inTriangleCount * 3;
+            int totalVertexSize = vertexSize * inVertexCount;
+
+            batch->vertices = new IDLFloatArray(totalVertexSize);
+
+            int offset = 0;
+            for(int i = 0; i < inTriangleCount; i++) {
+                DebugRendererTriangle triangle = inTriangles[i];
+                for(int j = 0; j < 3; j++) {
+                    Vertex vertex = triangle.mV[j];
+                    batch->vertices->setValue(offset++, vertex.mPosition.x);
+                    batch->vertices->setValue(offset++, vertex.mPosition.y);
+                    batch->vertices->setValue(offset++, vertex.mPosition.z);
+                    batch->vertices->setValue(offset++, vertex.mNormal.x);
+                    batch->vertices->setValue(offset++, vertex.mNormal.y);
+                    batch->vertices->setValue(offset++, vertex.mNormal.z);
+                    batch->vertices->setValue(offset++, vertex.mUV.x);
+                    batch->vertices->setValue(offset++, vertex.mUV.y);
+                    batch->vertices->setValue(offset++, vertex.mColor.r / 255.0);
+                    batch->vertices->setValue(offset++, vertex.mColor.g / 255.0);
+                    batch->vertices->setValue(offset++, vertex.mColor.b / 255.0);
+                    batch->vertices->setValue(offset++, vertex.mColor.a / 255.0);
+                }
+            }
             return batch;
         }
 
@@ -856,16 +879,30 @@ class DebugRendererEm : public DebugRenderer
             BatchImpl* batch = new BatchImpl(GLOBAL_ID);
             GLOBAL_ID++;
 
-            // Convert indexed triangle list to triangle list
-            batch->mTriangles.resize(inIndexCount / 3);
-            for (size_t t = 0; t < batch->mTriangles.size(); ++t)
-            {
-                DebugRendererTriangle& triangle = batch->mTriangles[t];
-                triangle.mV[0] = inVertices[inIndices[t * 3 + 0]];
-                triangle.mV[1] = inVertices[inIndices[t * 3 + 1]];
-                triangle.mV[2] = inVertices[inIndices[t * 3 + 2]];
-            }
+            int vertexSize = (3 + 3 + 2 + 4);
+            int inTriangleCount = inIndexCount / 3;
 
+            batch->vertices = new IDLFloatArray(inTriangleCount * 3 * vertexSize);
+
+            int offset = 0;
+            for(int t = 0; t < inTriangleCount; t++) {
+                for(int j = 0; j < 3; j++) {
+                    int idx = inIndices[t * 3 + j];
+                    Vertex vertex = inVertices[idx];
+                    batch->vertices->setValue(offset++, vertex.mPosition.x);
+                    batch->vertices->setValue(offset++, vertex.mPosition.y);
+                    batch->vertices->setValue(offset++, vertex.mPosition.z);
+                    batch->vertices->setValue(offset++, vertex.mNormal.x);
+                    batch->vertices->setValue(offset++, vertex.mNormal.y);
+                    batch->vertices->setValue(offset++, vertex.mNormal.z);
+                    batch->vertices->setValue(offset++, vertex.mUV.x);
+                    batch->vertices->setValue(offset++, vertex.mUV.y);
+                    batch->vertices->setValue(offset++, vertex.mColor.r / 255.0);
+                    batch->vertices->setValue(offset++, vertex.mColor.g / 255.0);
+                    batch->vertices->setValue(offset++, vertex.mColor.b / 255.0);
+                    batch->vertices->setValue(offset++, vertex.mColor.a / 255.0);
+                }
+            }
             return batch;
         }
 
@@ -905,9 +942,16 @@ private:
         }
 
         virtual void AddRef() override { ++mRefCount; }
-        virtual void Release() override { if (--mRefCount == 0) delete this; }
+        virtual void Release() override {
+            if(--mRefCount == 0) {
+                if(vertices != NULL) {
+                    delete vertices;
+                }
+                delete this;
+            }
+        }
 
-        DebugArrayTriangle mTriangles;
+        IDLFloatArray* vertices = NULL;
         int mID;
 
     private:
