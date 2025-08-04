@@ -60,7 +60,10 @@ public class TankTest extends VehicleTest {
     @Override
     public void initialize() {
         super.initialize();
+        createTank();
+    }
 
+    private void createTank() {
         final float wheel_radius = 0.3f;
         final float wheel_width = 0.1f;
         final float half_vehicle_length = 3.2f;
@@ -205,6 +208,9 @@ public class TankTest extends VehicleTest {
     @Override
     public void prePhysicsUpdate(boolean isPlaying) {
         super.prePhysicsUpdate(isPlaying);
+        if(mTankBody == null) {
+            return;
+        }
 
         // Assure the tank stays active as we're controlling the turret with the mouse
         mBodyInterface.ActivateBody(mTankBody.GetID());
@@ -227,6 +233,10 @@ public class TankTest extends VehicleTest {
     }
 
     public void processInput() {
+        if(mTankBody == null) {
+            return;
+        }
+
         final float min_velocity_pivot_turn = 1.0f;
 
         // Determine acceleration and brake
