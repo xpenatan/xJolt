@@ -10,6 +10,9 @@ gretty {
 dependencies {
     implementation(project(":examples:samples:core"))
 
+    implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}:sources")
+    implementation("com.github.xpenatan.gdx-teavm:backend-teavm:${LibExt.gdxTeaVMVersion}:sources")
+
     if(LibExt.exampleUseRepoLibs) {
         implementation("com.github.xpenatan.gdx-jolt:jolt-teavm:-SNAPSHOT")
         implementation("com.github.xpenatan.gdx-jolt:jolt-wgpu:-SNAPSHOT")

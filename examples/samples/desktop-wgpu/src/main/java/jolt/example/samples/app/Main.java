@@ -15,7 +15,7 @@ public class Main {
         config.setTitle("WebGPU");
         config.enableGPUtiming = false;
         config.useVsync(false);
-        config.backendWebGPU = JWebGPUBackend.DAWN;
+        config.backendWebGPU = JWebGPUBackend.WGPU;
         new WgDesktopApplication(new JoltGame(), config);
     }
 }
