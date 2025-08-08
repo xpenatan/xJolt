@@ -16,7 +16,7 @@ object LibExt {
     const val gdxImGuiVersion = "-SNAPSHOT"
     const val jUnitVersion = "4.12"
 
-    const val exampleUseRepoLibs = false
+    const val exampleUseRepoLibs = true
 }
 
 private fun getVersion(): String {

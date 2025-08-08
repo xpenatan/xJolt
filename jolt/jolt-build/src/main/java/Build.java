@@ -249,6 +249,7 @@ public class Build {
             linkTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
             linkTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
             linkTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+            linkTarget.linkerFlags.add("-Wl,-z,max-page-size=16384");
             multiTarget.add(linkTarget);
         }
         return multiTarget;

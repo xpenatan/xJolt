@@ -7,7 +7,7 @@ val moduleName = "jolt-android"
 
 android {
     namespace = "jolt"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 21

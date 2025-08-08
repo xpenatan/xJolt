@@ -7,7 +7,7 @@ group = "jolt.example.samples.app.android"
 
 android {
     namespace = "jolt.example.samples.app.android"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "jolt.example.samples.app.android"

@@ -201,7 +201,7 @@ jobs:
         id: setup-ndk
         uses: nttld/setup-ndk@v1
         with:
-          ndk-version: r25c
+          ndk-version: r27d
           add-to-path: false
 
       - name: Change wrapper permissions
