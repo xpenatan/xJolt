@@ -221,56 +221,56 @@ jobs:
           name: android-natives
           path: ./jolt/jolt-build/build/c++/libs/
 
-  commit_generated_code:
-    name: Commit Generated code
-    if: ${{ inputs.shouldUpload }}
-    needs: [build_windows, build_linux, build_mac, build_android, build_teavm]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.12.1
-        with:
-          access_token: ${{ github.token }}
-
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          distribution: "corretto"
-          java-version: 17
-
-      - name: Change wrapper permissions
-        run: chmod +x ./gradlew
-
-      - name: Download sources
-        run: ./gradlew :jolt:jolt-build:jolt_download_source
-
-      - name: Delete generated files
-        run: |
-          rm -rf jolt/jolt-core/src/main/java/* 
-          rm -rf jolt/jolt-teavm/src/main/java/*
-          echo "Deleted generated files"
-
-      - name: Generate Jolt classes
-        run: ./gradlew :jolt:jolt-build:jolt_build_project
-
-      - name: Configure Git
-        run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "bot@github.com"
-
-      - name: Commit generated code
-        run: |
-          git add .
-          git commit -m "Commit generated code from :jolt:jolt-build:jolt_build_project" || echo "No changes to commit"
-          git push origin HEAD
+#  commit_generated_code:
+#    name: Commit Generated code
+#    if: ${{ inputs.shouldUpload }}
+#    needs: [build_windows, build_linux, build_mac, build_android, build_teavm]
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Cancel Previous Runs
+#        uses: styfle/cancel-workflow-action@0.12.1
+#        with:
+#          access_token: ${{ github.token }}
+#
+#      - name: Checkout code
+#        uses: actions/checkout@v4
+#
+#      - name: Set up JDK 17
+#        uses: actions/setup-java@v4
+#        with:
+#          distribution: "corretto"
+#          java-version: 17
+#
+#      - name: Change wrapper permissions
+#        run: chmod +x ./gradlew
+#
+#      - name: Download sources
+#        run: ./gradlew :jolt:jolt-build:jolt_download_source
+#
+#      - name: Delete generated files
+#        run: |
+#          rm -rf jolt/jolt-core/src/main/java/*
+#          rm -rf jolt/jolt-teavm/src/main/java/*
+#          echo "Deleted generated files"
+#
+#      - name: Generate Jolt classes
+#        run: ./gradlew :jolt:jolt-build:jolt_build_project
+#
+#      - name: Configure Git
+#        run: |
+#          git config user.name "GitHub Actions Bot"
+#          git config user.email "bot@github.com"
+#
+#      - name: Commit generated code
+#        run: |
+#          git add .
+#          git commit -m "Commit generated code from :jolt:jolt-build:jolt_build_project" || echo "No changes to commit"
+#          git push origin HEAD
 
   upload_natives:
     name: Upload Natives
-    needs: [commit_generated_code]
+    needs: [build_windows, build_linux, build_mac, build_android, build_teavm]
     runs-on: ubuntu-latest
 
     steps:
