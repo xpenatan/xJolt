@@ -32,3 +32,6 @@ libs/
 *.ini
 
 **/webapp/**
+
+**/jolt/jolt-core/src/main/java/**
+**/jolt/jolt-teavm/src/main/java/**
