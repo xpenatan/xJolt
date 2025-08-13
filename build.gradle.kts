@@ -34,10 +34,10 @@ allprojects  {
         }
     }
 
-//    configurations.configureEach {
-//        // Check for updates every sync
-//        resolutionStrategy.cacheChangingModulesFor(0, "seconds")
-//    }
+    configurations.configureEach {
+        // Check for updates every sync
+        resolutionStrategy.cacheChangingModulesFor(0, "seconds")
+    }
 }
 
 configure(allprojects - project(":jolt:jolt-android") - project(":examples:samples:android")) {
