@@ -9,7 +9,6 @@ include(":jolt-gdx")
 include(":jolt-wgpu")
 
 // Examples
-include(":examples:samples:base")
 include(":examples:samples:core")
 include(":examples:samples:desktop")
 include(":examples:samples:desktop-wgpu")

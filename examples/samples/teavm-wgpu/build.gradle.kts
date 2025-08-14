@@ -1,4 +1,5 @@
 plugins {
+    id("java")
     id("org.gretty") version("3.1.0")
 }
 
@@ -13,9 +14,9 @@ dependencies {
     implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}:sources")
     implementation("com.github.xpenatan.gdx-teavm:backend-teavm:${LibExt.gdxTeaVMVersion}:sources")
 
-    if(LibExt.exampleUseRepoLibs) {
-        implementation("com.github.xpenatan.gdx-jolt:jolt-teavm:-SNAPSHOT")
-        implementation("com.github.xpenatan.gdx-jolt:jolt-wgpu:-SNAPSHOT")
+    if(LibExt.useRepoLibs) {
+        implementation("com.github.xpenatan.xJolt:jolt-teavm:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:jolt-wgpu:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-teavm"))

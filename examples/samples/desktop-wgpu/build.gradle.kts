@@ -1,11 +1,15 @@
 import org.gradle.nativeplatform.platform.internal.DefaultNativePlatform
 
+plugins {
+    id("java")
+}
+
 dependencies {
     implementation(project(":examples:samples:core"))
 
-    if(LibExt.exampleUseRepoLibs) {
-        implementation("com.github.xpenatan.gdx-jolt:jolt-desktop:-SNAPSHOT")
-        implementation("com.github.xpenatan.gdx-jolt:jolt-wgpu:-SNAPSHOT")
+    if(LibExt.useRepoLibs) {
+        implementation("com.github.xpenatan.xJolt:jolt-desktop:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:jolt-wgpu:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-desktop"))

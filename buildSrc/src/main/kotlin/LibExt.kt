@@ -2,8 +2,13 @@ import java.io.File
 import java.util.Properties
 
 object LibExt {
-    const val groupId = "com.github.xpenatan.gdx-jolt"
-    val libVersion: String = getVersion()
+    const val groupId = "com.github.xpenatan.xJolt"
+    const val libName = "xJolt"
+    var isRelease = false
+    var libVersion: String = ""
+        get() {
+            return getVersion()
+        }
 
     //Library dependencies
     const val gdxVersion = "1.13.5"
@@ -16,27 +21,24 @@ object LibExt {
     const val gdxImGuiVersion = "-SNAPSHOT"
     const val jUnitVersion = "4.12"
 
-    const val exampleUseRepoLibs = true
+    const val useRepoLibs = true
 }
 
 private fun getVersion(): String {
-    val isReleaseStr = System.getenv("RELEASE")
-    val isRelease = isReleaseStr != null && isReleaseStr.toBoolean()
     var libVersion = "-SNAPSHOT"
     val file = File("gradle.properties")
     if(file.exists()) {
         val properties = Properties()
         properties.load(file.inputStream())
         val version = properties.getProperty("version")
-        if(isRelease) {
+        if(LibExt.isRelease) {
             libVersion = version
         }
     }
     else {
-        if(isRelease) {
+        if(LibExt.isRelease) {
             throw RuntimeException("properties should exist")
         }
     }
-    println("Lib Version: $libVersion")
     return libVersion
 }

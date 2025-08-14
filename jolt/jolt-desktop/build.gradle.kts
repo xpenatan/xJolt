@@ -1,3 +1,7 @@
+plugins {
+    id("java")
+}
+
 val moduleName = "jolt-desktop"
 
 val libDir = "${rootProject.projectDir}/jolt"

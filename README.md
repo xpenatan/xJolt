@@ -1,11 +1,11 @@
-# gdx-jolt
+# xJolt
 
-![Build](https://github.com/xpenatan/gdx-jolt/actions/workflows/release.yml/badge.svg)
-![Build](https://github.com/xpenatan/gdx-jolt/actions/workflows/snapshot.yml/badge.svg)
-[![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/releases/com.github.xpenatan.gdx-jolt/jolt-core?nexusVersion=2&server=https%3A%2F%2Foss.sonatype.org&label=release)](https://repo.maven.apache.org/maven2/com/github/xpenatan/gdx-jolt/)
-[![Static Badge](https://img.shields.io/badge/snapshot---SNAPSHOT-red)](https://oss.sonatype.org/content/repositories/snapshots/com/github/xpenatan/gdx-jolt/)
+![Build](https://github.com/xpenatan/xJolt/actions/workflows/release.yml/badge.svg)
+![Build](https://github.com/xpenatan/xJolt/actions/workflows/snapshot.yml/badge.svg)
+[![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/releases/com.github.xpenatan.xJolt/jolt-core?nexusVersion=2&server=https%3A%2F%2Foss.sonatype.org&label=release)](https://repo.maven.apache.org/maven2/com/github/xpenatan/xJolt/)
+[![Static Badge](https://img.shields.io/badge/snapshot---SNAPSHOT-red)](https://oss.sonatype.org/content/repositories/snapshots/com/github/xpenatan/xJolt/)
 
-gdx-jolt is a Java binding for the C++ library [Jolt Physics](https://github.com/jrouwe/JoltPhysics), utilizing JNI for desktop and mobile platforms, and Emscripten for web platforms. It provides a one-to-one correspondence with the C++ code, meaning it mirrors the exact same class and method names. Its primary focus is to support libGDX projects.
+xJolt is a Java binding for the C++ library [Jolt Physics](https://github.com/jrouwe/JoltPhysics), utilizing JNI for desktop and mobile platforms, and Emscripten for web platforms. It provides a one-to-one correspondence with the C++ code, meaning it mirrors the exact same class and method names. Its primary focus is to support libGDX projects.
 
 The binding leverages [jParser](https://github.com/xpenatan/jParser), a custom C/C++ build tool and WebIDL Java code generator, which automatically generates 99% of all classes. Only a small number of essential classes are coded manually, making updates to new Jolt Physics versions quick and efficient.
 
@@ -13,7 +13,7 @@ The binding leverages [jParser](https://github.com/xpenatan/jParser), a custom C
 
 
 ## Web/TeaVM Examples:
-* [Jolt-Samples](https://xpenatan.github.io/gdx-jolt/examples/samples/)
+* [Jolt-Samples](https://xpenatan.github.io/xJolt/examples/samples/)
 
 
 ### Platform status:
@@ -37,22 +37,22 @@ repositories {
 }
 
 // Core module
-implementation("com.github.xpenatan.gdx-jolt:jolt-core:-SNAPSHOT")
-implementation("com.github.xpenatan.gdx-jolt:jolt-gdx:-SNAPSHOT")
+implementation("com.github.xpenatan.xJolt:jolt-core:-SNAPSHOT")
+implementation("com.github.xpenatan.xJolt:jolt-gdx:-SNAPSHOT")
 
 // Desktop module
 dependencies {
-   implementation("com.github.xpenatan.gdx-jolt:jolt-desktop:-SNAPSHOT")
+   implementation("com.github.xpenatan.xJolt:jolt-desktop:-SNAPSHOT")
 }
 
 // TeaVM module
 dependencies {
-   implementation("com.github.xpenatan.gdx-jolt:jolt-teavm:-SNAPSHOT")
+   implementation("com.github.xpenatan.xJolt:jolt-teavm:-SNAPSHOT")
 }
 
 // Android module
 dependencies {
-   implementation("com.github.xpenatan.gdx-jolt:jolt-android:-SNAPSHOT")
+   implementation("com.github.xpenatan.xJolt:jolt-android:-SNAPSHOT")
 }
 ```
 

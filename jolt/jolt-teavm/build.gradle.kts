@@ -1,3 +1,7 @@
+plugins {
+    id("java")
+}
+
 val moduleName = "jolt-teavm"
 
 val emscriptenFile = "$projectDir/../jolt-build/build/c++/libs/emscripten/jolt.wasm.js"

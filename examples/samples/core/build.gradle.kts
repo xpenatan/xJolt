@@ -1,10 +1,13 @@
+plugins {
+    id("java-library")
+}
+
 dependencies {
-    implementation(project(":examples:samples:base"))
     implementation("com.github.xpenatan.gdx-gltf:core:dev-SNAPSHOT")
 
-    if(LibExt.exampleUseRepoLibs) {
-        implementation("com.github.xpenatan.gdx-jolt:jolt-core:-SNAPSHOT")
-        implementation("com.github.xpenatan.gdx-jolt:jolt-gdx:-SNAPSHOT")
+    if(LibExt.useRepoLibs) {
+        implementation("com.github.xpenatan.xJolt:jolt-core:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:jolt-gdx:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-core"))

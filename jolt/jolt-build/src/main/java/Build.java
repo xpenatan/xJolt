@@ -29,7 +29,7 @@ public class Build {
             return null;
         };
 
-        BuildToolOptions op = new BuildToolOptions(modulePrefix, libName, basePackage, sourcePath, args);
+        BuildToolOptions op = new BuildToolOptions(libName, basePackage, modulePrefix , sourcePath, args);
         BuilderTool.build(op, new BuildToolListener() {
             @Override
             public void onAddTarget(BuildToolOptions op, IDLReader idlReader, ArrayList<BuildMultiTarget> targets) {

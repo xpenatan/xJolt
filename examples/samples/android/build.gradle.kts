@@ -42,8 +42,8 @@ val natives: Configuration by configurations.creating
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.3")
 
-    if(LibExt.exampleUseRepoLibs) {
-        implementation("com.github.xpenatan.gdx-jolt:jolt-android:-SNAPSHOT")
+    if(LibExt.useRepoLibs) {
+        implementation("com.github.xpenatan.xJolt:jolt-android:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-android"))
