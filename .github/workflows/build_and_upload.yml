@@ -340,6 +340,12 @@ jobs:
           name: teavm-natives
           path: ./jolt/jolt-build/build/c++/libs/
 
+      - name: Download sources
+        run: ./gradlew :jolt:jolt-build:jolt_download_source
+
+      - name: Build project
+        run: ./gradlew :jolt:jolt-build:jolt_build_project
+
       - name: Upload Release to repository
         uses: nick-fields/retry@v3
         if: ${{ inputs.shouldUpload && inputs.isRelease }}
