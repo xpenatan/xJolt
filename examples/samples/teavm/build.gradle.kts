@@ -28,6 +28,11 @@ dependencies {
 //    implementation("com.github.xpenatan.gdx-imgui:imgui-ext-teavm:${LibExt.gdxImGuiVersion}")
 }
 
+java {
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java11Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java11Target)
+}
+
 val mainClassName = "jolt.example.samples.app.Build"
 
 tasks.register<JavaExec>("jolt_samples_build") {

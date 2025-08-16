@@ -149,7 +149,7 @@ public class SamplesApp extends InputAdapter {
 
     public void StepPhysics(float deltaTime) {
         // When running below 55 Hz, do 2 steps instead of 1
-        var numSteps = deltaTime > 1.0 / 55.0 ? 2 : 1;
+        int numSteps = deltaTime > 1.0 / 55.0 ? 2 : 1;
         boolean isPlaying = !isPaused;
         if(test != null) {
             test.prePhysicsUpdate(isPlaying);

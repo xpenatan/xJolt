@@ -18,6 +18,11 @@ dependencies {
     implementation("com.github.xpenatan.jParser:jParser-idl:${LibExt.jParserVersion}")
 }
 
+java {
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+}
+
 val buildDir = layout.buildDirectory.get().asFile
 val zippedPath = "${buildDir}/jolt-source.zip"
 val sourcePath = "${buildDir}/jolt-source"

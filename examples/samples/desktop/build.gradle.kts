@@ -21,6 +21,11 @@ dependencies {
 //    implementation("com.github.xpenatan.gdx-imgui:imgui-ext-desktop:${LibExt.gdxImGuiVersion}")
 }
 
+java {
+    sourceCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+    targetCompatibility = JavaVersion.toVersion(LibExt.java8Target)
+}
+
 val mainClassName = "jolt.example.samples.app.Main"
 val assetsDir = File("../assets");
 

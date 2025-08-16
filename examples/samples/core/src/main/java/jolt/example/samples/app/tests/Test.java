@@ -11,6 +11,7 @@ import jolt.Jolt;
 import jolt.gdx.DebugRenderer;
 import jolt.geometry.Triangle;
 import jolt.geometry.TriangleList;
+import jolt.math.Float3;
 import jolt.math.Quat;
 import jolt.math.Vec3;
 import jolt.physics.PhysicsSystem;
@@ -20,6 +21,7 @@ import jolt.physics.body.BodyInterface;
 import jolt.physics.collision.PhysicsMaterialList;
 import jolt.physics.collision.shape.BoxShape;
 import jolt.physics.collision.shape.MeshShapeSettings;
+import jolt.physics.collision.shape.Shape;
 import jolt.physics.collision.shape.ShapeResult;
 
 public abstract class Test {
@@ -106,37 +108,37 @@ public abstract class Test {
 
                 {
                     Triangle t = triangles.at((x * n + z) * 2);
-                    var v1 = t.get_mV(0);
+                    Float3 v1 = t.get_mV(0);
                     v1.set_x(x1);
                     v1.set_y(height(x, z));
                     v1.set_z(z1);
-                    var v2 = t.get_mV(1);
+                    Float3 v2 = t.get_mV(1);
                     v2.set_x(x1);
                     v2.set_y(height(x, z + 1));
                     v2.set_z(z2);
-                    var v3 = t.get_mV(2);
+                    Float3 v3 = t.get_mV(2);
                     v3.set_x(x2);
                     v3.set_y(height(x + 1, z + 1));
                     v3.set_z(z2);
                 }
 
                 {
-                    var t = triangles.at((x * n + z) * 2 + 1);
-                    var v1 = t.get_mV(0);
+                    Triangle t = triangles.at((x * n + z) * 2 + 1);
+                    Float3 v1 = t.get_mV(0);
                     v1.set_x(x1);
                     v1.set_y(height(x, z));
                     v1.set_z(z1);
-                    var v2 = t.get_mV(1);
+                    Float3 v2 = t.get_mV(1);
                     v2.set_x(x2);
                     v2.set_y(height(x + 1, z + 1));
                     v2.set_z(z2);
-                    var v3 = t.get_mV(2);
+                    Float3 v3 = t.get_mV(2);
                     v3.set_x(x2);
                     v3.set_y(height(x + 1, z));
                     v3.set_z(z1);
                 }
             }
-        var materials = new PhysicsMaterialList();
+        PhysicsMaterialList materials = new PhysicsMaterialList();
         ShapeResult shapeResult = new MeshShapeSettings(triangles, materials).Create();
         triangles.dispose();
         materials.dispose();
@@ -148,11 +150,11 @@ public abstract class Test {
 //        long cPointer = idlString.getCPointer();
 //        String data = idlString.data();
 //        System.out.println("ShapeResult GetError: " + data);
-        var shape = shapeResult.Get();
+        Shape shape = shapeResult.Get();
         // Create body
         Vec3 vec3 = Jolt.New_Vec3(posX, posY, posZ);
-        var creationSettings = Jolt.New_BodyCreationSettings(shape, vec3, new Quat(0, 0, 0, 1), EMotionType.Static, Layers.NON_MOVING);
-        var body = mBodyInterface.CreateBody(creationSettings);
+        BodyCreationSettings creationSettings = Jolt.New_BodyCreationSettings(shape, vec3, new Quat(0, 0, 0, 1), EMotionType.Static, Layers.NON_MOVING);
+        Body body = mBodyInterface.CreateBody(creationSettings);
         creationSettings.dispose();
         vec3.dispose();
         addToScene(body, 0xc7c7c7);

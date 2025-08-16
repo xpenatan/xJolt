@@ -49,7 +49,7 @@ public class DebugRenderer extends DebugRendererEm {
     private IntMap<Model> modelBatch = new IntMap<>();
     private Array<ModelRenderer> modelRendererList = new Array<>();
 
-    private Pool<ModelRenderer> modelInstancePool = new Pool<>() {
+    private Pool<ModelRenderer> modelInstancePool = new Pool<ModelRenderer>() {
         @Override
         protected ModelRenderer newObject() {
             return new ModelRenderer();
