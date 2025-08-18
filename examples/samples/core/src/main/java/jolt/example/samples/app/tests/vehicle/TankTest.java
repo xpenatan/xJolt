@@ -167,7 +167,7 @@ public class TankTest extends VehicleTest {
         turret_hinge.set_mNormalAxis1(Vec3.sAxisZ());
         turret_hinge.set_mNormalAxis2(Vec3.sAxisZ());
         turret_hinge.set_mMotorSettings(new MotorSettings(0.5f, 1.0f));
-        mTurretHinge = new HingeConstraint((byte)1, (char)1);
+        mTurretHinge = HingeConstraint.createInstance();
         mTurretHinge.native_copy(turret_hinge.Create(mTankBody, mTurretBody)); // TODO create return TwoBodyConstraint ?
         mTurretHinge.native_takeOwnership();
         mTurretHinge.SetMotorState(EMotorState.Position);
@@ -198,7 +198,7 @@ public class TankTest extends VehicleTest {
         barrel_hinge.set_mLimitsMax(MathUtils.degreesToRadians * 40.0f);
         barrel_hinge.set_mMotorSettings(new MotorSettings(10.0f, 1.0f));
 
-        mBarrelHinge = new HingeConstraint((byte)1, (char)1);
+        mBarrelHinge = HingeConstraint.createInstance();
         mBarrelHinge.native_copy(barrel_hinge.Create(mTurretBody, mBarrelBody)); // TODO create return TwoBodyConstraint ?
         mBarrelHinge.native_takeOwnership();
         mBarrelHinge.SetMotorState(EMotorState.Position);
