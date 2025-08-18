@@ -45,7 +45,7 @@ configure(libProjects) {
             if (this is MavenPublication) {
                 pom {
                     name.set(LibExt.libName)
-                    description.set("Java binding for Jolt Physics")
+                    description.set("Jolt Physics Java Bindings")
                     url.set("https://github.com/xpenatan/xJolt")
                     developers {
                         developer {
