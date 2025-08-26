@@ -37,7 +37,7 @@ fn vs_main(in: VertexInput, @builtin(instance_index) instance: u32) -> VertexOut
 }
 
 
-const invAtan:vec2f = vec2f(-0.1591, 0.3183);
+const invAtan:vec2f = vec2f(0.1591, 0.3183);
 
 fn sampleSphericalMap(v:vec3f) -> vec2f {
     var uv:vec2f = vec2f(atan2(v.z, v.x), asin(-v.y));
@@ -53,5 +53,5 @@ fn fs_main(in : VertexOutput) -> @location(0) vec4f {
     let uv:vec2f = sampleSphericalMap(normalize(in.localPos.xyz));
     let color = textureSample(albedoTexture, textureSampler, uv).rgb;
 
-    return vec4f(1, 0, 0, 1);
+    return vec4f(color, 1);
 }
