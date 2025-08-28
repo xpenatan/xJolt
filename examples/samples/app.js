@@ -3599,6 +3599,9 @@ jesa_JoltGame__init_0 = () => {
 },
 jesa_JoltGame_create = $this => {
     $this.$setScreen(jesa_InitScreen__init_0($this));
+},
+jesa_JoltGame_dispose = $this => {
+    cbg_Game_dispose($this);
 };
 function jur_AbstractCharClass$LazyCategory() {
     let a = this; jur_AbstractCharClass$LazyCharClass.call(a);
@@ -10326,6 +10329,9 @@ jesai_FPSRenderer__init_0 = () => {
     jesai_FPSRenderer__init_(var_0);
     return var_0;
 },
+jesai_FPSRenderer_dispose = $this => {
+    return;
+},
 jpc_Constraint = $rt_classWithoutFields(ji_IDLBase),
 jpc_Constraint_NULL = null,
 jpc_Constraint_T_01 = null,
@@ -10386,12 +10392,12 @@ jpc_HingeConstraint = $rt_classWithoutFields(jpc_TwoBodyConstraint),
 jpc_HingeConstraint_NULL = null,
 jpc_HingeConstraint_T_01 = null,
 jpc_HingeConstraint_T_02 = null,
-jpc_HingeConstraint_T_03 = null,
-jpc_HingeConstraint_$callClinit = () => {
+jpc_HingeConstraint_T_03 = null;
+let jpc_HingeConstraint_$callClinit = () => {
     jpc_HingeConstraint_$callClinit = $rt_eraseClinit(jpc_HingeConstraint);
     jpc_HingeConstraint__clinit_();
-};
-let jpc_HingeConstraint__init_ = ($this, $b, $c) => {
+},
+jpc_HingeConstraint__init_ = ($this, $b, $c) => {
     jpc_HingeConstraint_$callClinit();
     jpc_TwoBodyConstraint__init_($this, 1, 1);
 },
@@ -16646,6 +16652,9 @@ jesai_ImGuiSettingsRenderer__init_0 = () => {
     jesai_ImGuiSettingsRenderer__init_(var_0);
     return var_0;
 },
+jesai_ImGuiSettingsRenderer_dispose = $this => {
+    return;
+},
 jn_BufferUnderflowException = $rt_classWithoutFields(jl_RuntimeException),
 jn_BufferUnderflowException__init_0 = $this => {
     jl_RuntimeException__init_($this);
@@ -21816,6 +21825,16 @@ jesaj_JoltInstance_update = ($this, $deltaTime, $inCollisionSteps) => {
 },
 jesaj_JoltInstance_clearWorld = $this => {
     j_Jolt_ClearWorld($this.$physicsSystem);
+},
+jesaj_JoltInstance_dispose = $this => {
+    ji_IDLBase_dispose($this.$physicsSystem);
+    ji_IDLBase_dispose($this.$BP_LAYER_NON_MOVING);
+    ji_IDLBase_dispose($this.$BP_LAYER_MOVING);
+    ji_IDLBase_dispose($this.$mObjectLayerPairFilter);
+    jc_Factory_$callClinit();
+    jc_Factory_set_sInstance(jc_Factory_NULL);
+    ji_IDLBase_dispose($this.$factory);
+    j_Jolt_UnregisterTypes();
 };
 function ju_HashSet() {
     ju_AbstractSet.call(this);
@@ -34257,6 +34276,10 @@ jesa_GameScreen_render = ($this, $delta) => {
     $this.$fpsLogger.$log1();
     $this.$samplesApp.$renderUI();
 },
+jesa_GameScreen_hide = $this => {
+    cbg_ScreenAdapter_hide($this);
+    $this.$samplesApp.$dispose();
+},
 otcir_MethodInfo = $rt_classWithoutFields(),
 cbg_Files$FileType = $rt_classWithoutFields(jl_Enum),
 cbg_Files$FileType_Classpath = null,
@@ -38255,6 +38278,14 @@ jesa_SamplesApp_StepPhysics = ($this, $deltaTime) => {
     if ($this.$test !== null)
         $this.$test.$postPhysicsUpdate($isPlaying, $deltaTime);
 },
+jesa_SamplesApp_dispose = $this => {
+    $this.$fpsRenderer.$dispose();
+    $this.$settingsRenderer.$dispose();
+    jesa_SamplesApp_clearBodies($this);
+    ji_IDLBase_dispose($this.$debugRenderer);
+    ji_IDLBase_dispose($this.$debugSettings);
+    $this.$joltInstance.$dispose();
+},
 jesa_SamplesApp_clearBodies = $this => {
     $this.$debugRenderer.$clear();
     $this.$joltInstance.$clearWorld();
@@ -40307,6 +40338,10 @@ j_Jolt_Init = () => {
 j_Jolt_RegisterTypes = () => {
     j_Jolt_$callClinit();
     jolt.Jolt.prototype.RegisterTypes();
+},
+j_Jolt_UnregisterTypes = () => {
+    j_Jolt_$callClinit();
+    jolt.Jolt.prototype.UnregisterTypes();
 },
 j_Jolt_ClearWorld = $physicsSystem => {
     j_Jolt_$callClinit();
@@ -44549,117 +44584,6 @@ cbgm_Plane_set = ($this, $point1, $point2, $point3) => {
     ((($this.$normal.$set2($point1)).$sub($point2)).$crs0($point2.$x - $point3.$x, $point2.$y - $point3.$y, $point2.$z - $point3.$z)).$nor();
     $this.$d =  -$point1.$dot($this.$normal);
 };
-function cbgm_Frustum() {
-    let a = this; jl_Object.call(a);
-    a.$planes = null;
-    a.$planePoints = null;
-    a.$planePointsArray = null;
-}
-let cbgm_Frustum_clipSpacePlanePoints = null,
-cbgm_Frustum_clipSpacePlanePointsArray = null,
-cbgm_Frustum_tmpV = null,
-cbgm_Frustum_$callClinit = () => {
-    cbgm_Frustum_$callClinit = $rt_eraseClinit(cbgm_Frustum);
-    cbgm_Frustum__clinit_();
-},
-cbgm_Frustum__init_ = $this => {
-    let var$1, var$2, $i;
-    cbgm_Frustum_$callClinit();
-    jl_Object__init_($this);
-    $this.$planes = $rt_createArray(cbgm_Plane, 6);
-    var$1 = $rt_createArray(cbgm_Vector3, 8);
-    var$2 = var$1.data;
-    var$2[0] = cbgm_Vector3__init_();
-    var$2[1] = cbgm_Vector3__init_();
-    var$2[2] = cbgm_Vector3__init_();
-    var$2[3] = cbgm_Vector3__init_();
-    var$2[4] = cbgm_Vector3__init_();
-    var$2[5] = cbgm_Vector3__init_();
-    var$2[6] = cbgm_Vector3__init_();
-    var$2[7] = cbgm_Vector3__init_();
-    $this.$planePoints = var$1;
-    $this.$planePointsArray = $rt_createFloatArray(24);
-    $i = 0;
-    while ($i < 6) {
-        $this.$planes.data[$i] = cbgm_Plane__init_0(cbgm_Vector3__init_(), 0.0);
-        $i = $i + 1 | 0;
-    }
-},
-cbgm_Frustum__init_0 = () => {
-    let var_0 = new cbgm_Frustum();
-    cbgm_Frustum__init_(var_0);
-    return var_0;
-},
-cbgm_Frustum_update = ($this, $inverseProjectionView) => {
-    let $i, $j, $v, var$5, var$6, var$7;
-    cbgm_Frustum_$callClinit();
-    jl_System_fastArraycopy(cbgm_Frustum_clipSpacePlanePointsArray, 0, $this.$planePointsArray, 0, cbgm_Frustum_clipSpacePlanePointsArray.data.length);
-    cbgm_Matrix4_prj($inverseProjectionView.$val, $this.$planePointsArray, 0, 8, 3);
-    $i = 0;
-    $j = 0;
-    while ($i < 8) {
-        $v = $this.$planePoints.data[$i];
-        var$5 = $this.$planePointsArray.data;
-        var$6 = $j + 1 | 0;
-        $v.$x = var$5[$j];
-        var$5 = $this.$planePointsArray.data;
-        var$7 = var$6 + 1 | 0;
-        $v.$y = var$5[var$6];
-        var$5 = $this.$planePointsArray.data;
-        $j = var$7 + 1 | 0;
-        $v.$z = var$5[var$7];
-        $i = $i + 1 | 0;
-    }
-    $this.$planes.data[0].$set52($this.$planePoints.data[1], $this.$planePoints.data[0], $this.$planePoints.data[2]);
-    $this.$planes.data[1].$set52($this.$planePoints.data[4], $this.$planePoints.data[5], $this.$planePoints.data[7]);
-    $this.$planes.data[2].$set52($this.$planePoints.data[0], $this.$planePoints.data[4], $this.$planePoints.data[3]);
-    $this.$planes.data[3].$set52($this.$planePoints.data[5], $this.$planePoints.data[1], $this.$planePoints.data[6]);
-    $this.$planes.data[4].$set52($this.$planePoints.data[2], $this.$planePoints.data[3], $this.$planePoints.data[6]);
-    $this.$planes.data[5].$set52($this.$planePoints.data[4], $this.$planePoints.data[0], $this.$planePoints.data[1]);
-},
-cbgm_Frustum_sphereInFrustum = ($this, $center, $radius) => {
-    let $i;
-    $i = 0;
-    while ($i < 6) {
-        if ($this.$planes.data[$i].$normal.$x * $center.$x + $this.$planes.data[$i].$normal.$y * $center.$y + $this.$planes.data[$i].$normal.$z * $center.$z <  -$radius - $this.$planes.data[$i].$d)
-            return 0;
-        $i = $i + 1 | 0;
-    }
-    return 1;
-},
-cbgm_Frustum__clinit_ = () => {
-    let var$1, var$2, $j, var$4, var$5, $v, var$7, var$8;
-    var$1 = $rt_createArray(cbgm_Vector3, 8);
-    var$2 = var$1.data;
-    var$2[0] = cbgm_Vector3__init_0((-1.0), (-1.0), (-1.0));
-    var$2[1] = cbgm_Vector3__init_0(1.0, (-1.0), (-1.0));
-    var$2[2] = cbgm_Vector3__init_0(1.0, 1.0, (-1.0));
-    var$2[3] = cbgm_Vector3__init_0((-1.0), 1.0, (-1.0));
-    var$2[4] = cbgm_Vector3__init_0((-1.0), (-1.0), 1.0);
-    var$2[5] = cbgm_Vector3__init_0(1.0, (-1.0), 1.0);
-    var$2[6] = cbgm_Vector3__init_0(1.0, 1.0, 1.0);
-    var$2[7] = cbgm_Vector3__init_0((-1.0), 1.0, 1.0);
-    cbgm_Frustum_clipSpacePlanePoints = var$1;
-    cbgm_Frustum_clipSpacePlanePointsArray = $rt_createFloatArray(24);
-    $j = 0;
-    var$1 = cbgm_Frustum_clipSpacePlanePoints.data;
-    var$4 = var$1.length;
-    var$5 = 0;
-    while (var$5 < var$4) {
-        $v = var$1[var$5];
-        var$2 = cbgm_Frustum_clipSpacePlanePointsArray.data;
-        var$7 = $j + 1 | 0;
-        var$2[$j] = $v.$x;
-        var$2 = cbgm_Frustum_clipSpacePlanePointsArray.data;
-        var$8 = var$7 + 1 | 0;
-        var$2[var$7] = $v.$y;
-        var$2 = cbgm_Frustum_clipSpacePlanePointsArray.data;
-        $j = var$8 + 1 | 0;
-        var$2[var$8] = $v.$z;
-        var$5 = var$5 + 1 | 0;
-    }
-    cbgm_Frustum_tmpV = cbgm_Vector3__init_();
-};
 function jg_DebugRenderer() {
     let a = this; jr_DebugRendererEm.call(a);
     a.$batch0 = null;
@@ -44835,6 +44759,117 @@ jg_DebugRenderer_DrawCylinder = ($this, $inMatrix, $inHalfHeight, $inRadius, $in
         je_EDrawMode_$callClinit();
         jr_DebugRendererEm_DrawCylinder($this, $inMatrix, $inHalfHeight, $inRadius, $inColor, var$5, je_EDrawMode_EDrawMode_Wireframe);
     }
+};
+function cbgm_Frustum() {
+    let a = this; jl_Object.call(a);
+    a.$planes = null;
+    a.$planePoints = null;
+    a.$planePointsArray = null;
+}
+let cbgm_Frustum_clipSpacePlanePoints = null,
+cbgm_Frustum_clipSpacePlanePointsArray = null,
+cbgm_Frustum_tmpV = null,
+cbgm_Frustum_$callClinit = () => {
+    cbgm_Frustum_$callClinit = $rt_eraseClinit(cbgm_Frustum);
+    cbgm_Frustum__clinit_();
+},
+cbgm_Frustum__init_ = $this => {
+    let var$1, var$2, $i;
+    cbgm_Frustum_$callClinit();
+    jl_Object__init_($this);
+    $this.$planes = $rt_createArray(cbgm_Plane, 6);
+    var$1 = $rt_createArray(cbgm_Vector3, 8);
+    var$2 = var$1.data;
+    var$2[0] = cbgm_Vector3__init_();
+    var$2[1] = cbgm_Vector3__init_();
+    var$2[2] = cbgm_Vector3__init_();
+    var$2[3] = cbgm_Vector3__init_();
+    var$2[4] = cbgm_Vector3__init_();
+    var$2[5] = cbgm_Vector3__init_();
+    var$2[6] = cbgm_Vector3__init_();
+    var$2[7] = cbgm_Vector3__init_();
+    $this.$planePoints = var$1;
+    $this.$planePointsArray = $rt_createFloatArray(24);
+    $i = 0;
+    while ($i < 6) {
+        $this.$planes.data[$i] = cbgm_Plane__init_0(cbgm_Vector3__init_(), 0.0);
+        $i = $i + 1 | 0;
+    }
+},
+cbgm_Frustum__init_0 = () => {
+    let var_0 = new cbgm_Frustum();
+    cbgm_Frustum__init_(var_0);
+    return var_0;
+},
+cbgm_Frustum_update = ($this, $inverseProjectionView) => {
+    let $i, $j, $v, var$5, var$6, var$7;
+    cbgm_Frustum_$callClinit();
+    jl_System_fastArraycopy(cbgm_Frustum_clipSpacePlanePointsArray, 0, $this.$planePointsArray, 0, cbgm_Frustum_clipSpacePlanePointsArray.data.length);
+    cbgm_Matrix4_prj($inverseProjectionView.$val, $this.$planePointsArray, 0, 8, 3);
+    $i = 0;
+    $j = 0;
+    while ($i < 8) {
+        $v = $this.$planePoints.data[$i];
+        var$5 = $this.$planePointsArray.data;
+        var$6 = $j + 1 | 0;
+        $v.$x = var$5[$j];
+        var$5 = $this.$planePointsArray.data;
+        var$7 = var$6 + 1 | 0;
+        $v.$y = var$5[var$6];
+        var$5 = $this.$planePointsArray.data;
+        $j = var$7 + 1 | 0;
+        $v.$z = var$5[var$7];
+        $i = $i + 1 | 0;
+    }
+    $this.$planes.data[0].$set52($this.$planePoints.data[1], $this.$planePoints.data[0], $this.$planePoints.data[2]);
+    $this.$planes.data[1].$set52($this.$planePoints.data[4], $this.$planePoints.data[5], $this.$planePoints.data[7]);
+    $this.$planes.data[2].$set52($this.$planePoints.data[0], $this.$planePoints.data[4], $this.$planePoints.data[3]);
+    $this.$planes.data[3].$set52($this.$planePoints.data[5], $this.$planePoints.data[1], $this.$planePoints.data[6]);
+    $this.$planes.data[4].$set52($this.$planePoints.data[2], $this.$planePoints.data[3], $this.$planePoints.data[6]);
+    $this.$planes.data[5].$set52($this.$planePoints.data[4], $this.$planePoints.data[0], $this.$planePoints.data[1]);
+},
+cbgm_Frustum_sphereInFrustum = ($this, $center, $radius) => {
+    let $i;
+    $i = 0;
+    while ($i < 6) {
+        if ($this.$planes.data[$i].$normal.$x * $center.$x + $this.$planes.data[$i].$normal.$y * $center.$y + $this.$planes.data[$i].$normal.$z * $center.$z <  -$radius - $this.$planes.data[$i].$d)
+            return 0;
+        $i = $i + 1 | 0;
+    }
+    return 1;
+},
+cbgm_Frustum__clinit_ = () => {
+    let var$1, var$2, $j, var$4, var$5, $v, var$7, var$8;
+    var$1 = $rt_createArray(cbgm_Vector3, 8);
+    var$2 = var$1.data;
+    var$2[0] = cbgm_Vector3__init_0((-1.0), (-1.0), (-1.0));
+    var$2[1] = cbgm_Vector3__init_0(1.0, (-1.0), (-1.0));
+    var$2[2] = cbgm_Vector3__init_0(1.0, 1.0, (-1.0));
+    var$2[3] = cbgm_Vector3__init_0((-1.0), 1.0, (-1.0));
+    var$2[4] = cbgm_Vector3__init_0((-1.0), (-1.0), 1.0);
+    var$2[5] = cbgm_Vector3__init_0(1.0, (-1.0), 1.0);
+    var$2[6] = cbgm_Vector3__init_0(1.0, 1.0, 1.0);
+    var$2[7] = cbgm_Vector3__init_0((-1.0), 1.0, 1.0);
+    cbgm_Frustum_clipSpacePlanePoints = var$1;
+    cbgm_Frustum_clipSpacePlanePointsArray = $rt_createFloatArray(24);
+    $j = 0;
+    var$1 = cbgm_Frustum_clipSpacePlanePoints.data;
+    var$4 = var$1.length;
+    var$5 = 0;
+    while (var$5 < var$4) {
+        $v = var$1[var$5];
+        var$2 = cbgm_Frustum_clipSpacePlanePointsArray.data;
+        var$7 = $j + 1 | 0;
+        var$2[$j] = $v.$x;
+        var$2 = cbgm_Frustum_clipSpacePlanePointsArray.data;
+        var$8 = var$7 + 1 | 0;
+        var$2[var$7] = $v.$y;
+        var$2 = cbgm_Frustum_clipSpacePlanePointsArray.data;
+        $j = var$8 + 1 | 0;
+        var$2[var$8] = $v.$z;
+        var$5 = var$5 + 1 | 0;
+    }
+    cbgm_Frustum_tmpV = cbgm_Vector3__init_();
 };
 function cbgmc_Ray() {
     let a = this; jl_Object.call(a);
@@ -49750,7 +49785,7 @@ jpv_VehicleController, "VehicleController", 54, ji_IDLBase, [], 0, 3, [0,0,0], j
 nmgss_CascadeShadowMap, 0, jl_Object, [cbgu_Disposable], 0, 3, 0, 0, 0,
 cbg_ApplicationListener, 0, jl_Object, [], 3, 3, 0, 0, 0]);
 $rt_metadata([cbg_Game, 0, jl_Object, [cbg_ApplicationListener], 1, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(cbg_Game__init_), "$dispose", $rt_wrapFunction0(cbg_Game_dispose), "$pause", $rt_wrapFunction0(cbg_Game_pause), "$resume", $rt_wrapFunction0(cbg_Game_resume), "$render3", $rt_wrapFunction0(cbg_Game_render), "$resize", $rt_wrapFunction2(cbg_Game_resize), "$setScreen", $rt_wrapFunction1(cbg_Game_setScreen)],
-jesa_JoltGame, 0, cbg_Game, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesa_JoltGame__init_), "$create", $rt_wrapFunction0(jesa_JoltGame_create)],
+jesa_JoltGame, 0, cbg_Game, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesa_JoltGame__init_), "$create", $rt_wrapFunction0(jesa_JoltGame_create), "$dispose", $rt_wrapFunction0(jesa_JoltGame_dispose)],
 jur_AbstractCharClass$LazyCategory, 0, jur_AbstractCharClass$LazyCharClass, [], 0, 0, 0, 0, ["$_init_37", $rt_wrapFunction2(jur_AbstractCharClass$LazyCategory__init_0), "$_init_38", $rt_wrapFunction3(jur_AbstractCharClass$LazyCategory__init_1), "$computeValue", $rt_wrapFunction0(jur_AbstractCharClass$LazyCategory_computeValue)],
 otji_JSWrapper$Helper, 0, jl_Object, [], 0, 0, 0, otji_JSWrapper$Helper_$callClinit, 0,
 ji_IDLEnum, 0, jl_Object, [], 3, 3, 0, 0, 0,
@@ -49910,7 +49945,7 @@ otjt_Int16Array, 0, otjt_TypedArray, [], 0, 3, 0, 0, 0,
 jl_Cloneable, 0, jl_Object, [], 3, 3, 0, 0, 0,
 ju_BitSet, 0, jl_Object, [jl_Cloneable, ji_Serializable], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(ju_BitSet__init_0), "$_init_4", $rt_wrapFunction1(ju_BitSet__init_), "$set27", $rt_wrapFunction1(ju_BitSet_set0), "$set1", $rt_wrapFunction2(ju_BitSet_set), "$clear2", $rt_wrapFunction1(ju_BitSet_clear0), "$clear3", $rt_wrapFunction2(ju_BitSet_clear), "$get14", $rt_wrapFunction1(ju_BitSet_get), "$nextSetBit", $rt_wrapFunction1(ju_BitSet_nextSetBit), "$nextClearBit", $rt_wrapFunction1(ju_BitSet_nextClearBit),
 "$intersects", $rt_wrapFunction1(ju_BitSet_intersects), "$and0", $rt_wrapFunction1(ju_BitSet_and), "$andNot", $rt_wrapFunction1(ju_BitSet_andNot), "$or0", $rt_wrapFunction1(ju_BitSet_or), "$xor", $rt_wrapFunction1(ju_BitSet_xor), "$isEmpty", $rt_wrapFunction0(ju_BitSet_isEmpty)],
-jesai_FPSRenderer, 0, jl_Object, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesai_FPSRenderer__init_)],
+jesai_FPSRenderer, 0, jl_Object, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesai_FPSRenderer__init_), "$dispose", $rt_wrapFunction0(jesai_FPSRenderer_dispose)],
 jpc_Constraint, "Constraint", 53, ji_IDLBase, [], 0, 3, [0,0,0], jpc_Constraint_$callClinit, ["$_init_3", $rt_wrapFunction2(jpc_Constraint__init_)],
 jpc_TwoBodyConstraint, 0, jpc_Constraint, [], 0, 3, 0, jpc_TwoBodyConstraint_$callClinit, ["$_init_3", $rt_wrapFunction2(jpc_TwoBodyConstraint__init_)],
 jpc_HingeConstraint, 0, jpc_TwoBodyConstraint, [], 0, 3, 0, jpc_HingeConstraint_$callClinit, ["$_init_3", $rt_wrapFunction2(jpc_HingeConstraint__init_), "$SetMotorState", $rt_wrapFunction1(jpc_HingeConstraint_SetMotorState)],
@@ -50042,7 +50077,7 @@ cbggg_ModelInstance, "ModelInstance", 15, jl_Object, [cbggg_RenderableProvider],
 "$getRenderable", $rt_wrapFunction3(cbggg_ModelInstance_getRenderable), "$getRenderables", $rt_wrapFunction3(cbggg_ModelInstance_getRenderables), "$calculateTransforms", $rt_wrapFunction0(cbggg_ModelInstance_calculateTransforms), "$getNode", $rt_wrapFunction1(cbggg_ModelInstance_getNode), "$getNode0", $rt_wrapFunction2(cbggg_ModelInstance_getNode0), "$getNode1", $rt_wrapFunction3(cbggg_ModelInstance_getNode1)],
 jur_CharClass, "CharClass", 23, jur_AbstractCharClass, [], 0, 0, 0, 0, ["$_init_0", $rt_wrapFunction0(jur_CharClass__init_1), "$_init_100", $rt_wrapFunction2(jur_CharClass__init_0), "$_init_221", $rt_wrapFunction3(jur_CharClass__init_2), "$add", $rt_wrapFunction1(jur_CharClass_add), "$add11", $rt_wrapFunction1(jur_CharClass_add1), "$add0", $rt_wrapFunction2(jur_CharClass_add0), "$union", $rt_wrapFunction1(jur_CharClass_union), "$intersection", $rt_wrapFunction1(jur_CharClass_intersection), "$contains0", $rt_wrapFunction1(jur_CharClass_contains),
 "$getBits", $rt_wrapFunction0(jur_CharClass_getBits), "$getLowHighSurrogates", $rt_wrapFunction0(jur_CharClass_getLowHighSurrogates), "$getInstance", $rt_wrapFunction0(jur_CharClass_getInstance), "$toString", $rt_wrapFunction0(jur_CharClass_toString), "$hasUCI", $rt_wrapFunction0(jur_CharClass_hasUCI)],
-jesai_ImGuiSettingsRenderer, 0, jl_Object, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesai_ImGuiSettingsRenderer__init_)],
+jesai_ImGuiSettingsRenderer, 0, jl_Object, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesai_ImGuiSettingsRenderer__init_), "$dispose", $rt_wrapFunction0(jesai_ImGuiSettingsRenderer_dispose)],
 jn_BufferUnderflowException, "BufferUnderflowException", 24, jl_RuntimeException, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jn_BufferUnderflowException__init_0)],
 nmgsa_CascadeShadowMapAttribute, 0, cbggg_Attribute, [], 0, 3, 0, nmgsa_CascadeShadowMapAttribute_$callClinit, 0,
 cbgi_GestureDetector$GestureListener, 0, jl_Object, [], 3, 3, 0, 0, 0,
@@ -50175,7 +50210,7 @@ otji_JSWrapper, 0, jl_Object, [], 4, 3, 0, 0, 0,
 cbggg_GLFrameBuffer$GLFrameBufferBuilder, 0, jl_Object, [], 1, 3, 0, 0, ["$_init_13", $rt_wrapFunction2(cbggg_GLFrameBuffer$GLFrameBufferBuilder__init_), "$_init_142", $rt_wrapFunction3(cbggg_GLFrameBuffer$GLFrameBufferBuilder__init_0), "$addColorTextureAttachment", $rt_wrapFunction3(cbggg_GLFrameBuffer$GLFrameBufferBuilder_addColorTextureAttachment), "$addBasicColorTextureAttachment", $rt_wrapFunction1(cbggg_GLFrameBuffer$GLFrameBufferBuilder_addBasicColorTextureAttachment), "$addDepthRenderBuffer", $rt_wrapFunction1(cbggg_GLFrameBuffer$GLFrameBufferBuilder_addDepthRenderBuffer),
 "$addStencilRenderBuffer", $rt_wrapFunction1(cbggg_GLFrameBuffer$GLFrameBufferBuilder_addStencilRenderBuffer), "$addBasicDepthRenderBuffer", $rt_wrapFunction0(cbggg_GLFrameBuffer$GLFrameBufferBuilder_addBasicDepthRenderBuffer), "$addBasicStencilRenderBuffer", $rt_wrapFunction0(cbggg_GLFrameBuffer$GLFrameBufferBuilder_addBasicStencilRenderBuffer)],
 cbggg_GLFrameBuffer$FrameBufferBuilder, 0, cbggg_GLFrameBuffer$GLFrameBufferBuilder, [], 0, 3, 0, 0, ["$_init_13", $rt_wrapFunction2(cbggg_GLFrameBuffer$FrameBufferBuilder__init_)],
-jesaj_JoltInstance, 0, jl_Object, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesaj_JoltInstance__init_), "$getPhysicsSystem", $rt_wrapFunction0(jesaj_JoltInstance_getPhysicsSystem), "$update5", $rt_wrapFunction2(jesaj_JoltInstance_update), "$clearWorld", $rt_wrapFunction0(jesaj_JoltInstance_clearWorld)],
+jesaj_JoltInstance, 0, jl_Object, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesaj_JoltInstance__init_), "$getPhysicsSystem", $rt_wrapFunction0(jesaj_JoltInstance_getPhysicsSystem), "$update5", $rt_wrapFunction2(jesaj_JoltInstance_update), "$clearWorld", $rt_wrapFunction0(jesaj_JoltInstance_clearWorld), "$dispose", $rt_wrapFunction0(jesaj_JoltInstance_dispose)],
 ju_HashSet, "HashSet", 22, ju_AbstractSet, [jl_Cloneable, ji_Serializable], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(ju_HashSet__init_0), "$_init_145", $rt_wrapFunction1(ju_HashSet__init_), "$add1", $rt_wrapFunction1(ju_HashSet_add), "$contains", $rt_wrapFunction1(ju_HashSet_contains), "$remove3", $rt_wrapFunction1(ju_HashSet_remove)],
 cgxjl_JParserLibraryLoader$OnInitFunction, 0, jl_Object, [otj_JSObject], 3, 3, 0, 0, 0,
 cgxjl_JParserLibraryLoader$lambda$loadWasm$1$lambda$_13_0, 0, jl_Object, [cgxjl_JParserLibraryLoader$OnInitFunction], 0, 3, 0, 0, ["$_init_77", $rt_wrapFunction2(cgxjl_JParserLibraryLoader$lambda$loadWasm$1$lambda$_13_0__init_), "$onInit", $rt_wrapFunction0(cgxjl_JParserLibraryLoader$lambda$loadWasm$1$lambda$_13_0_onInit)],
@@ -50445,7 +50480,7 @@ jur_BackReferenceSet, "BackReferenceSet", 23, jur_CIBackReferenceSet, [], 0, 0, 
 nmgss_SceneSkybox$SkyboxShaderProvider, 0, cbgggu_DefaultShaderProvider, [], 0, 0, 0, 0, ["$_init_224", $rt_wrapFunction3(nmgss_SceneSkybox$SkyboxShaderProvider__init_), "$createShader", $rt_wrapFunction1(nmgss_SceneSkybox$SkyboxShaderProvider_createShader)],
 jur_DotQuantifierSet, "DotQuantifierSet", 23, jur_QuantifierSet, [], 0, 0, 0, 0, ["$_init_219", $rt_wrapFunction4(jur_DotQuantifierSet__init_), "$matches", $rt_wrapFunction3(jur_DotQuantifierSet_matches), "$find", $rt_wrapFunction3(jur_DotQuantifierSet_find), "$getName", $rt_wrapFunction0(jur_DotQuantifierSet_getName)],
 otcit_FloatAnalyzer, 0, jl_Object, [], 4, 3, 0, otcit_FloatAnalyzer_$callClinit, 0,
-jesa_GameScreen, 0, cbg_ScreenAdapter, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesa_GameScreen__init_), "$show", $rt_wrapFunction0(jesa_GameScreen_show), "$render", $rt_wrapFunction1(jesa_GameScreen_render)],
+jesa_GameScreen, 0, cbg_ScreenAdapter, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesa_GameScreen__init_), "$show", $rt_wrapFunction0(jesa_GameScreen_show), "$render", $rt_wrapFunction1(jesa_GameScreen_render), "$hide", $rt_wrapFunction0(jesa_GameScreen_hide)],
 otcir_MethodInfo, 0, jl_Object, [], 0, 3, 0, 0, 0,
 cbg_Files$FileType, 0, jl_Enum, [], 12, 3, 0, cbg_Files$FileType_$callClinit, 0,
 cbggg_ShaderProgram, "ShaderProgram", 14, jl_Object, [cbgu_Disposable], 0, 3, 0, cbggg_ShaderProgram_$callClinit, ["$_init_94", $rt_wrapFunction2(cbggg_ShaderProgram__init_1), "$_init_191", $rt_wrapFunction2(cbggg_ShaderProgram__init_), "$createProgram", $rt_wrapFunction0(cbggg_ShaderProgram_createProgram), "$getLog", $rt_wrapFunction0(cbggg_ShaderProgram_getLog), "$isCompiled", $rt_wrapFunction0(cbggg_ShaderProgram_isCompiled), "$fetchUniformLocation", $rt_wrapFunction2(cbggg_ShaderProgram_fetchUniformLocation0),
@@ -50527,7 +50562,7 @@ cgxgbt_TeaApplicationLogger, 0, jl_Object, [cbg_ApplicationLogger], 0, 3, 0, 0, 
 jur_FSet$PossessiveFSet, "FSet$PossessiveFSet", 23, jur_AbstractSet, [], 0, 0, 0, 0, ["$_init_0", $rt_wrapFunction0(jur_FSet$PossessiveFSet__init_), "$matches", $rt_wrapFunction3(jur_FSet$PossessiveFSet_matches), "$getName", $rt_wrapFunction0(jur_FSet$PossessiveFSet_getName), "$hasConsumed", $rt_wrapFunction1(jur_FSet$PossessiveFSet_hasConsumed)],
 jur_PosCompositeGroupQuantifierSet, "PosCompositeGroupQuantifierSet", 23, jur_CompositeGroupQuantifierSet, [], 0, 0, 0, 0, ["$_init_207", function(var_1, var_2, var_3, var_4, var_5) { jur_PosCompositeGroupQuantifierSet__init_(this, var_1, var_2, var_3, var_4, var_5); }, "$matches", $rt_wrapFunction3(jur_PosCompositeGroupQuantifierSet_matches)],
 cbgg_Texture$TextureFilter, 0, jl_Enum, [], 12, 3, 0, cbgg_Texture$TextureFilter_$callClinit, ["$getGLEnum", $rt_wrapFunction0(cbgg_Texture$TextureFilter_getGLEnum)],
-jesa_SamplesApp, "SamplesApp", 60, cbg_InputAdapter, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesa_SamplesApp__init_), "$setup0", $rt_wrapFunction1(jesa_SamplesApp_setup), "$render", $rt_wrapFunction1(jesa_SamplesApp_render), "$renderUI", $rt_wrapFunction0(jesa_SamplesApp_renderUI), "$startTest", $rt_wrapFunction1(jesa_SamplesApp_startTest), "$StepPhysics", $rt_wrapFunction1(jesa_SamplesApp_StepPhysics), "$keyUp", $rt_wrapFunction1(jesa_SamplesApp_keyUp)],
+jesa_SamplesApp, "SamplesApp", 60, cbg_InputAdapter, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesa_SamplesApp__init_), "$setup0", $rt_wrapFunction1(jesa_SamplesApp_setup), "$render", $rt_wrapFunction1(jesa_SamplesApp_render), "$renderUI", $rt_wrapFunction0(jesa_SamplesApp_renderUI), "$startTest", $rt_wrapFunction1(jesa_SamplesApp_startTest), "$StepPhysics", $rt_wrapFunction1(jesa_SamplesApp_StepPhysics), "$dispose", $rt_wrapFunction0(jesa_SamplesApp_dispose), "$keyUp", $rt_wrapFunction1(jesa_SamplesApp_keyUp)],
 jur_AbstractCharClass$LazyJavaDigit$1, "AbstractCharClass$LazyJavaDigit$1", 23, jur_AbstractCharClass, [], 0, 0, 0, 0, ["$_init_50", $rt_wrapFunction1(jur_AbstractCharClass$LazyJavaDigit$1__init_), "$contains0", $rt_wrapFunction1(jur_AbstractCharClass$LazyJavaDigit$1_contains)],
 jpcb_ObjectVsBroadPhaseLayerFilterTable, "ObjectVsBroadPhaseLayerFilterTable", 51, jpcb_ObjectVsBroadPhaseLayerFilter, [], 0, 3, [0,0,0], jpcb_ObjectVsBroadPhaseLayerFilterTable_$callClinit, ["$_init_144", $rt_wrapFunction4(jpcb_ObjectVsBroadPhaseLayerFilterTable__init_0), "$_init_3", $rt_wrapFunction2(jpcb_ObjectVsBroadPhaseLayerFilterTable__init_)],
 cgxgbt_TeaWindowListener, 0, jl_Object, [], 3, 3, 0, 0, 0]);
@@ -50688,10 +50723,10 @@ cbgu_ObjectSet, 0, jl_Object, [jl_Iterable], 0, 3, 0, 0, 0,
 jur_EOISet, "EOISet", 23, jur_AbstractSet, [], 0, 0, 0, 0, ["$_init_0", $rt_wrapFunction0(jur_EOISet__init_), "$matches", $rt_wrapFunction3(jur_EOISet_matches), "$hasConsumed", $rt_wrapFunction1(jur_EOISet_hasConsumed), "$getName", $rt_wrapFunction0(jur_EOISet_getName)],
 cbgu_ObjectIntMap, 0, jl_Object, [jl_Iterable], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(cbgu_ObjectIntMap__init_1), "$_init_112", $rt_wrapFunction2(cbgu_ObjectIntMap__init_0), "$place0", $rt_wrapFunction1(cbgu_ObjectIntMap_place), "$locateKey0", $rt_wrapFunction1(cbgu_ObjectIntMap_locateKey), "$put10", $rt_wrapFunction2(cbgu_ObjectIntMap_put), "$get20", $rt_wrapFunction2(cbgu_ObjectIntMap_get), "$resize1", $rt_wrapFunction1(cbgu_ObjectIntMap_resize)],
 cgxgbtf_FileData, 0, jl_Object, [], 0, 3, 0, 0, ["$_init_", $rt_wrapFunction1(cgxgbtf_FileData__init_0), "$_init_128", $rt_wrapFunction2(cgxgbtf_FileData__init_1), "$_init_242", $rt_wrapFunction3(cgxgbtf_FileData__init_), "$getBytes0", $rt_wrapFunction0(cgxgbtf_FileData_getBytes), "$isDirectory", $rt_wrapFunction0(cgxgbtf_FileData_isDirectory), "$getType1", $rt_wrapFunction0(cgxgbtf_FileData_getType), "$getBytesSize", $rt_wrapFunction0(cgxgbtf_FileData_getBytesSize)],
-cbgm_Plane, 0, jl_Object, [ji_Serializable], 0, 3, 0, 0, ["$_init_243", $rt_wrapFunction2(cbgm_Plane__init_), "$set52", $rt_wrapFunction3(cbgm_Plane_set)],
-cbgm_Frustum, 0, jl_Object, [], 0, 3, 0, cbgm_Frustum_$callClinit, ["$_init_0", $rt_wrapFunction0(cbgm_Frustum__init_), "$update2", $rt_wrapFunction1(cbgm_Frustum_update), "$sphereInFrustum", $rt_wrapFunction2(cbgm_Frustum_sphereInFrustum)],
-jg_DebugRenderer, "DebugRenderer", 55, jr_DebugRendererEm, [], 0, 3, [0,0,0], 0, ["$_init_116", $rt_wrapFunction1(jg_DebugRenderer__init_0), "$_init_244", $rt_wrapFunction2(jg_DebugRenderer__init_), "$DrawMesh", function(var_1, var_2, var_3, var_4, var_5, var_6) { jg_DebugRenderer_DrawMesh(this, var_1, var_2, var_3, var_4, var_5, var_6); }, "$clear", $rt_wrapFunction0(jg_DebugRenderer_clear), "$begin5", $rt_wrapFunction1(jg_DebugRenderer_begin), "$end2", $rt_wrapFunction0(jg_DebugRenderer_end), "$onNativeDispose",
+cbgm_Plane, 0, jl_Object, [ji_Serializable], 0, 3, 0, 0, ["$_init_244", $rt_wrapFunction2(cbgm_Plane__init_), "$set52", $rt_wrapFunction3(cbgm_Plane_set)],
+jg_DebugRenderer, "DebugRenderer", 55, jr_DebugRendererEm, [], 0, 3, [0,0,0], 0, ["$_init_116", $rt_wrapFunction1(jg_DebugRenderer__init_0), "$_init_243", $rt_wrapFunction2(jg_DebugRenderer__init_), "$DrawMesh", function(var_1, var_2, var_3, var_4, var_5, var_6) { jg_DebugRenderer_DrawMesh(this, var_1, var_2, var_3, var_4, var_5, var_6); }, "$clear", $rt_wrapFunction0(jg_DebugRenderer_clear), "$begin5", $rt_wrapFunction1(jg_DebugRenderer_begin), "$end2", $rt_wrapFunction0(jg_DebugRenderer_end), "$onNativeDispose",
 $rt_wrapFunction0(jg_DebugRenderer_onNativeDispose), "$setEnable", $rt_wrapFunction1(jg_DebugRenderer_setEnable), "$isEnable", $rt_wrapFunction0(jg_DebugRenderer_isEnable), "$DrawBodies", $rt_wrapFunction2(jg_DebugRenderer_DrawBodies), "$DrawCylinder", $rt_wrapFunction4(jg_DebugRenderer_DrawCylinder)],
+cbgm_Frustum, 0, jl_Object, [], 0, 3, 0, cbgm_Frustum_$callClinit, ["$_init_0", $rt_wrapFunction0(cbgm_Frustum__init_), "$update2", $rt_wrapFunction1(cbgm_Frustum_update), "$sphereInFrustum", $rt_wrapFunction2(cbgm_Frustum_sphereInFrustum)],
 cbgmc_Ray, 0, jl_Object, [ji_Serializable], 0, 3, 0, cbgmc_Ray_$callClinit, ["$_init_149", $rt_wrapFunction2(cbgmc_Ray__init_)],
 cgxgbt_TeaInput, 0, cbg_AbstractInput, [otjde_EventListener], 0, 3, 0, 0, ["$_init_236", $rt_wrapFunction2(cgxgbt_TeaInput__init_), "$handleEvent", $rt_wrapFunction1(cgxgbt_TeaInput_handleEvent), "$reset1", $rt_wrapFunction0(cgxgbt_TeaInput_reset), "$setDelta", $rt_wrapFunction3(cgxgbt_TeaInput_setDelta), "$getRelativeX", $rt_wrapFunction2(cgxgbt_TeaInput_getRelativeX), "$getRelativeY", $rt_wrapFunction2(cgxgbt_TeaInput_getRelativeY), "$getRelativeX0", $rt_wrapFunction2(cgxgbt_TeaInput_getRelativeX0), "$getRelativeY0",
 $rt_wrapFunction2(cgxgbt_TeaInput_getRelativeY1), "$isTouched", $rt_wrapFunction1(cgxgbt_TeaInput_isTouched), "$getCurrentEventTime", $rt_wrapFunction0(cgxgbt_TeaInput_getCurrentEventTime), "$setInputProcessor", $rt_wrapFunction1(cgxgbt_TeaInput_setInputProcessor), "$isCursorCatched", $rt_wrapFunction0(cgxgbt_TeaInput_isCursorCatched)],

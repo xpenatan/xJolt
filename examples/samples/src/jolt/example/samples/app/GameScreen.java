@@ -60,7 +60,8 @@ public class GameScreen extends ScreenAdapter {
     }
 
     @Override
-    public void dispose() {
+    public void hide() {
+        super.hide();
 //        impl.dispose();
         samplesApp.dispose();
     }

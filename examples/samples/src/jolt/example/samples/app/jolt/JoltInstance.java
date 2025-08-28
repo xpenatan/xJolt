@@ -86,7 +86,7 @@ public class JoltInstance {
         BP_LAYER_MOVING.dispose();
         mObjectLayerPairFilter.dispose();
 
-        Factory.set_sInstance(null);
+        Factory.set_sInstance(Factory.NULL);
         factory.dispose();
         Jolt.UnregisterTypes();
     }
