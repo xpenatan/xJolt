@@ -8,4 +8,9 @@ public class JoltGame extends Game {
     public void create() {
         setScreen(new InitScreen(this));
     }
+
+    @Override
+    public void dispose() {
+        super.dispose();
+    }
 }
