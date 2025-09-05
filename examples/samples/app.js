@@ -1006,7 +1006,7 @@ ji_IDLBase_internal_reset = ($this, $address, $cMemoryOwn) => {
     if ($address)
         $this.$onNativeAddressChanged();
 },
-ji_IDLBase_createInstance = () => {
+ji_IDLBase_native_new = () => {
     ji_IDLBase_$callClinit();
     return ji_IDLBase__init_1(0, 0);
 },
@@ -1094,7 +1094,7 @@ ji_IDLBase_error = ($tag, $message) => {
     var$3.$println(jl_StringBuilder_toString(var$4));
 },
 ji_IDLBase__clinit_ = () => {
-    ji_IDLBase_NULL = ji_IDLBase_createInstance();
+    ji_IDLBase_NULL = ji_IDLBase_native_new();
     ji_IDLBase_ENABLE_LOGGING = 1;
 },
 jpv_VehicleCollisionTester = $rt_classWithoutFields(ji_IDLBase),
@@ -1115,15 +1115,15 @@ jpv_VehicleCollisionTester__init_0 = (var_0, var_1) => {
     jpv_VehicleCollisionTester__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleCollisionTester_createInstance = () => {
+jpv_VehicleCollisionTester_native_new = () => {
     jpv_VehicleCollisionTester_$callClinit();
     return jpv_VehicleCollisionTester__init_0(0, 0);
 },
 jpv_VehicleCollisionTester__clinit_ = () => {
-    jpv_VehicleCollisionTester_NULL = jpv_VehicleCollisionTester_createInstance();
-    jpv_VehicleCollisionTester_T_01 = jpv_VehicleCollisionTester_createInstance();
-    jpv_VehicleCollisionTester_T_02 = jpv_VehicleCollisionTester_createInstance();
-    jpv_VehicleCollisionTester_T_03 = jpv_VehicleCollisionTester_createInstance();
+    jpv_VehicleCollisionTester_NULL = jpv_VehicleCollisionTester_native_new();
+    jpv_VehicleCollisionTester_T_01 = jpv_VehicleCollisionTester_native_new();
+    jpv_VehicleCollisionTester_T_02 = jpv_VehicleCollisionTester_native_new();
+    jpv_VehicleCollisionTester_T_03 = jpv_VehicleCollisionTester_native_new();
 },
 otj_JSObject = $rt_classWithoutFields(0),
 otjb_TimerHandler = $rt_classWithoutFields(0);
@@ -1182,7 +1182,7 @@ jg_Triangle__init_2 = (var_0, var_1) => {
     jg_Triangle__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jg_Triangle_createInstance = () => {
+jg_Triangle_native_new = () => {
     jg_Triangle_$callClinit();
     return jg_Triangle__init_2(0, 0);
 },
@@ -1190,10 +1190,10 @@ jg_Triangle_deleteNative = $this => {
     jg_Triangle_internal_native_deleteNative$js_body$_11($this.$native_address);
 },
 jg_Triangle__clinit_ = () => {
-    jg_Triangle_NULL = jg_Triangle_createInstance();
-    jg_Triangle_T_01 = jg_Triangle_createInstance();
-    jg_Triangle_T_02 = jg_Triangle_createInstance();
-    jg_Triangle_T_03 = jg_Triangle_createInstance();
+    jg_Triangle_NULL = jg_Triangle_native_new();
+    jg_Triangle_T_01 = jg_Triangle_native_new();
+    jg_Triangle_T_02 = jg_Triangle_native_new();
+    jg_Triangle_T_03 = jg_Triangle_native_new();
 },
 jg_Triangle_internal_native_create_Vec3_Vec3_Vec3$js_body$_7 = (var$1, var$2, var$3) => {
     var jsObj = new jolt.Triangle(var$1, var$2, var$3);
@@ -1499,7 +1499,7 @@ jpcs_ShapeSettings__init_0 = (var_0, var_1) => {
     jpcs_ShapeSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_ShapeSettings_createInstance = () => {
+jpcs_ShapeSettings_native_new = () => {
     jpcs_ShapeSettings_$callClinit();
     return jpcs_ShapeSettings__init_0(0, 0);
 },
@@ -1509,15 +1509,15 @@ jpcs_ShapeSettings_Create = $this => {
     if (!$pointer)
         return null;
     if ($this.$ShapeResult_TEMP_GEN_0 === null)
-        $this.$ShapeResult_TEMP_GEN_0 = jpcs_ShapeResult_createInstance();
+        $this.$ShapeResult_TEMP_GEN_0 = jpcs_ShapeResult_native_new();
     ji_IDLBase_internal_reset($this.$ShapeResult_TEMP_GEN_0, $pointer, 0);
     return $this.$ShapeResult_TEMP_GEN_0;
 },
 jpcs_ShapeSettings__clinit_ = () => {
-    jpcs_ShapeSettings_NULL = jpcs_ShapeSettings_createInstance();
-    jpcs_ShapeSettings_T_01 = jpcs_ShapeSettings_createInstance();
-    jpcs_ShapeSettings_T_02 = jpcs_ShapeSettings_createInstance();
-    jpcs_ShapeSettings_T_03 = jpcs_ShapeSettings_createInstance();
+    jpcs_ShapeSettings_NULL = jpcs_ShapeSettings_native_new();
+    jpcs_ShapeSettings_T_01 = jpcs_ShapeSettings_native_new();
+    jpcs_ShapeSettings_T_02 = jpcs_ShapeSettings_native_new();
+    jpcs_ShapeSettings_T_03 = jpcs_ShapeSettings_native_new();
 },
 jpcs_ShapeSettings_internal_native_Create$js_body$_9 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.ShapeSettings);
@@ -1543,15 +1543,15 @@ jpcs_DecoratedShapeSettings__init_0 = (var_0, var_1) => {
     jpcs_DecoratedShapeSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_DecoratedShapeSettings_createInstance = () => {
+jpcs_DecoratedShapeSettings_native_new = () => {
     jpcs_DecoratedShapeSettings_$callClinit();
     return jpcs_DecoratedShapeSettings__init_0(0, 0);
 },
 jpcs_DecoratedShapeSettings__clinit_ = () => {
-    jpcs_DecoratedShapeSettings_NULL = jpcs_DecoratedShapeSettings_createInstance();
-    jpcs_DecoratedShapeSettings_T_01 = jpcs_DecoratedShapeSettings_createInstance();
-    jpcs_DecoratedShapeSettings_T_02 = jpcs_DecoratedShapeSettings_createInstance();
-    jpcs_DecoratedShapeSettings_T_03 = jpcs_DecoratedShapeSettings_createInstance();
+    jpcs_DecoratedShapeSettings_NULL = jpcs_DecoratedShapeSettings_native_new();
+    jpcs_DecoratedShapeSettings_T_01 = jpcs_DecoratedShapeSettings_native_new();
+    jpcs_DecoratedShapeSettings_T_02 = jpcs_DecoratedShapeSettings_native_new();
+    jpcs_DecoratedShapeSettings_T_03 = jpcs_DecoratedShapeSettings_native_new();
 },
 jur_AbstractCharClass$LazyAlpha = $rt_classWithoutFields(jur_AbstractCharClass$LazyCharClass),
 jur_AbstractCharClass$LazyAlpha__init_ = $this => {
@@ -1676,7 +1676,7 @@ jpc_ObjectLayerPairFilterTable__init_1 = (var_0, var_1) => {
     jpc_ObjectLayerPairFilterTable__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpc_ObjectLayerPairFilterTable_createInstance = () => {
+jpc_ObjectLayerPairFilterTable_native_new = () => {
     jpc_ObjectLayerPairFilterTable_$callClinit();
     return jpc_ObjectLayerPairFilterTable__init_1(0, 0);
 },
@@ -1684,10 +1684,10 @@ jpc_ObjectLayerPairFilterTable_EnableCollision = ($this, $inLayer1, $inLayer2) =
     jpc_ObjectLayerPairFilterTable_internal_native_EnableCollision$js_body$_9($this.$native_address, $inLayer1, $inLayer2);
 },
 jpc_ObjectLayerPairFilterTable__clinit_ = () => {
-    jpc_ObjectLayerPairFilterTable_NULL = jpc_ObjectLayerPairFilterTable_createInstance();
-    jpc_ObjectLayerPairFilterTable_T_01 = jpc_ObjectLayerPairFilterTable_createInstance();
-    jpc_ObjectLayerPairFilterTable_T_02 = jpc_ObjectLayerPairFilterTable_createInstance();
-    jpc_ObjectLayerPairFilterTable_T_03 = jpc_ObjectLayerPairFilterTable_createInstance();
+    jpc_ObjectLayerPairFilterTable_NULL = jpc_ObjectLayerPairFilterTable_native_new();
+    jpc_ObjectLayerPairFilterTable_T_01 = jpc_ObjectLayerPairFilterTable_native_new();
+    jpc_ObjectLayerPairFilterTable_T_02 = jpc_ObjectLayerPairFilterTable_native_new();
+    jpc_ObjectLayerPairFilterTable_T_03 = jpc_ObjectLayerPairFilterTable_native_new();
 },
 jpc_ObjectLayerPairFilterTable_internal_native_create_int$js_body$_1 = var$1 => {
     var jsObj = new jolt.ObjectLayerPairFilterTable(var$1);
@@ -3326,7 +3326,7 @@ jpv_WheelSettings__init_0 = (var_0, var_1) => {
     jpv_WheelSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_WheelSettings_createInstance = () => {
+jpv_WheelSettings_native_new = () => {
     jpv_WheelSettings_$callClinit();
     return jpv_WheelSettings__init_0(0, 0);
 },
@@ -3336,7 +3336,7 @@ jpv_WheelSettings_get_mPosition = $this => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_02 === null)
-        $this.$Vec3_TEMP_GEN_02 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_02 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_02, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_02;
 },
@@ -3376,7 +3376,7 @@ jpv_WheelSettings_get_mSuspensionSpring = $this => {
     if (!$pointer)
         return null;
     if ($this.$SpringSettings_TEMP_GEN_0 === null)
-        $this.$SpringSettings_TEMP_GEN_0 = jpc_SpringSettings_createInstance();
+        $this.$SpringSettings_TEMP_GEN_0 = jpc_SpringSettings_native_new();
     ji_IDLBase_internal_reset($this.$SpringSettings_TEMP_GEN_0, $pointer, 0);
     return $this.$SpringSettings_TEMP_GEN_0;
 },
@@ -3399,10 +3399,10 @@ jpv_WheelSettings_set_mWidth = ($this, $mWidth) => {
     jpv_WheelSettings_internal_native_set_mWidth$js_body$_57($this.$native_address, $mWidth);
 },
 jpv_WheelSettings__clinit_ = () => {
-    jpv_WheelSettings_NULL = jpv_WheelSettings_createInstance();
-    jpv_WheelSettings_T_01 = jpv_WheelSettings_createInstance();
-    jpv_WheelSettings_T_02 = jpv_WheelSettings_createInstance();
-    jpv_WheelSettings_T_03 = jpv_WheelSettings_createInstance();
+    jpv_WheelSettings_NULL = jpv_WheelSettings_native_new();
+    jpv_WheelSettings_T_01 = jpv_WheelSettings_native_new();
+    jpv_WheelSettings_T_02 = jpv_WheelSettings_native_new();
+    jpv_WheelSettings_T_03 = jpv_WheelSettings_native_new();
 },
 jpv_WheelSettings_internal_native_get_mPosition$js_body$_11 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.WheelSettings);
@@ -3490,7 +3490,7 @@ jpv_WheelSettingsWV__init_2 = (var_0, var_1) => {
     jpv_WheelSettingsWV__init_1(var_2, var_0, var_1);
     return var_2;
 },
-jpv_WheelSettingsWV_createInstance = () => {
+jpv_WheelSettingsWV_native_new = () => {
     jpv_WheelSettingsWV_$callClinit();
     return jpv_WheelSettingsWV__init_2(0, 0);
 },
@@ -3501,10 +3501,10 @@ jpv_WheelSettingsWV_set_mMaxHandBrakeTorque = ($this, $mMaxHandBrakeTorque) => {
     jpv_WheelSettingsWV_internal_native_set_mMaxHandBrakeTorque$js_body$_31($this.$native_address, $mMaxHandBrakeTorque);
 },
 jpv_WheelSettingsWV__clinit_ = () => {
-    jpv_WheelSettingsWV_NULL = jpv_WheelSettingsWV_createInstance();
-    jpv_WheelSettingsWV_T_01 = jpv_WheelSettingsWV_createInstance();
-    jpv_WheelSettingsWV_T_02 = jpv_WheelSettingsWV_createInstance();
-    jpv_WheelSettingsWV_T_03 = jpv_WheelSettingsWV_createInstance();
+    jpv_WheelSettingsWV_NULL = jpv_WheelSettingsWV_native_new();
+    jpv_WheelSettingsWV_T_01 = jpv_WheelSettingsWV_native_new();
+    jpv_WheelSettingsWV_T_02 = jpv_WheelSettingsWV_native_new();
+    jpv_WheelSettingsWV_T_03 = jpv_WheelSettingsWV_native_new();
 },
 jpv_WheelSettingsWV_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.WheelSettingsWV();
@@ -3536,15 +3536,15 @@ jpv_VehicleController__init_0 = (var_0, var_1) => {
     jpv_VehicleController__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleController_createInstance = () => {
+jpv_VehicleController_native_new = () => {
     jpv_VehicleController_$callClinit();
     return jpv_VehicleController__init_0(0, 0);
 },
 jpv_VehicleController__clinit_ = () => {
-    jpv_VehicleController_NULL = jpv_VehicleController_createInstance();
-    jpv_VehicleController_T_01 = jpv_VehicleController_createInstance();
-    jpv_VehicleController_T_02 = jpv_VehicleController_createInstance();
-    jpv_VehicleController_T_03 = jpv_VehicleController_createInstance();
+    jpv_VehicleController_NULL = jpv_VehicleController_native_new();
+    jpv_VehicleController_T_01 = jpv_VehicleController_native_new();
+    jpv_VehicleController_T_02 = jpv_VehicleController_native_new();
+    jpv_VehicleController_T_03 = jpv_VehicleController_native_new();
 };
 function nmgss_CascadeShadowMap() {
     let a = this; jl_Object.call(a);
@@ -5280,7 +5280,7 @@ jpcs_Shape__init_0 = (var_0, var_1) => {
     jpcs_Shape__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_Shape_createInstance = () => {
+jpcs_Shape_native_new = () => {
     jpcs_Shape_$callClinit();
     return jpcs_Shape__init_0(0, 0);
 },
@@ -5290,15 +5290,15 @@ jpcs_Shape_GetMassProperties = $this => {
     if (!$pointer)
         return null;
     if ($this.$MassProperties_TEMP_GEN_0 === null)
-        $this.$MassProperties_TEMP_GEN_0 = jpb_MassProperties_createInstance();
+        $this.$MassProperties_TEMP_GEN_0 = jpb_MassProperties_native_new();
     ji_IDLBase_internal_reset($this.$MassProperties_TEMP_GEN_0, $pointer, 0);
     return $this.$MassProperties_TEMP_GEN_0;
 },
 jpcs_Shape__clinit_ = () => {
-    jpcs_Shape_NULL = jpcs_Shape_createInstance();
-    jpcs_Shape_T_01 = jpcs_Shape_createInstance();
-    jpcs_Shape_T_02 = jpcs_Shape_createInstance();
-    jpcs_Shape_T_03 = jpcs_Shape_createInstance();
+    jpcs_Shape_NULL = jpcs_Shape_native_new();
+    jpcs_Shape_T_01 = jpcs_Shape_native_new();
+    jpcs_Shape_T_02 = jpcs_Shape_native_new();
+    jpcs_Shape_T_03 = jpcs_Shape_native_new();
 },
 jpcs_Shape_internal_native_GetMassProperties$js_body$_29 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.Shape);
@@ -5324,15 +5324,15 @@ jpcs_ConvexShape__init_0 = (var_0, var_1) => {
     jpcs_ConvexShape__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_ConvexShape_createInstance = () => {
+jpcs_ConvexShape_native_new = () => {
     jpcs_ConvexShape_$callClinit();
     return jpcs_ConvexShape__init_0(0, 0);
 },
 jpcs_ConvexShape__clinit_ = () => {
-    jpcs_ConvexShape_NULL = jpcs_ConvexShape_createInstance();
-    jpcs_ConvexShape_T_01 = jpcs_ConvexShape_createInstance();
-    jpcs_ConvexShape_T_02 = jpcs_ConvexShape_createInstance();
-    jpcs_ConvexShape_T_03 = jpcs_ConvexShape_createInstance();
+    jpcs_ConvexShape_NULL = jpcs_ConvexShape_native_new();
+    jpcs_ConvexShape_T_01 = jpcs_ConvexShape_native_new();
+    jpcs_ConvexShape_T_02 = jpcs_ConvexShape_native_new();
+    jpcs_ConvexShape_T_03 = jpcs_ConvexShape_native_new();
 };
 function jn_Buffer() {
     let a = this; jl_Object.call(a);
@@ -6650,15 +6650,15 @@ jpcs_CylinderShape__init_2 = (var_0, var_1) => {
     jpcs_CylinderShape__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_CylinderShape_createInstance = () => {
+jpcs_CylinderShape_native_new = () => {
     jpcs_CylinderShape_$callClinit();
     return jpcs_CylinderShape__init_2(0, 0);
 },
 jpcs_CylinderShape__clinit_ = () => {
-    jpcs_CylinderShape_NULL = jpcs_CylinderShape_createInstance();
-    jpcs_CylinderShape_T_01 = jpcs_CylinderShape_createInstance();
-    jpcs_CylinderShape_T_02 = jpcs_CylinderShape_createInstance();
-    jpcs_CylinderShape_T_03 = jpcs_CylinderShape_createInstance();
+    jpcs_CylinderShape_NULL = jpcs_CylinderShape_native_new();
+    jpcs_CylinderShape_T_01 = jpcs_CylinderShape_native_new();
+    jpcs_CylinderShape_T_02 = jpcs_CylinderShape_native_new();
+    jpcs_CylinderShape_T_03 = jpcs_CylinderShape_native_new();
 },
 jpcs_CylinderShape_internal_native_create_float_float$js_body$_5 = (var$1, var$2) => {
     var jsObj = new jolt.CylinderShape(var$1, var$2);
@@ -6713,15 +6713,15 @@ jpcs_MeshShapeSettings__init_1 = (var_0, var_1) => {
     jpcs_MeshShapeSettings__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_MeshShapeSettings_createInstance = () => {
+jpcs_MeshShapeSettings_native_new = () => {
     jpcs_MeshShapeSettings_$callClinit();
     return jpcs_MeshShapeSettings__init_1(0, 0);
 },
 jpcs_MeshShapeSettings__clinit_ = () => {
-    jpcs_MeshShapeSettings_NULL = jpcs_MeshShapeSettings_createInstance();
-    jpcs_MeshShapeSettings_T_01 = jpcs_MeshShapeSettings_createInstance();
-    jpcs_MeshShapeSettings_T_02 = jpcs_MeshShapeSettings_createInstance();
-    jpcs_MeshShapeSettings_T_03 = jpcs_MeshShapeSettings_createInstance();
+    jpcs_MeshShapeSettings_NULL = jpcs_MeshShapeSettings_native_new();
+    jpcs_MeshShapeSettings_T_01 = jpcs_MeshShapeSettings_native_new();
+    jpcs_MeshShapeSettings_T_02 = jpcs_MeshShapeSettings_native_new();
+    jpcs_MeshShapeSettings_T_03 = jpcs_MeshShapeSettings_native_new();
 },
 jpcs_MeshShapeSettings_internal_native_create_TriangleList$js_body$_5 = var$1 => {
     var jsObj = new jolt.MeshShapeSettings(var$1);
@@ -8002,15 +8002,15 @@ jpv_VehicleCollisionTesterCastCylinder__init_2 = (var_0, var_1) => {
     jpv_VehicleCollisionTesterCastCylinder__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleCollisionTesterCastCylinder_createInstance = () => {
+jpv_VehicleCollisionTesterCastCylinder_native_new = () => {
     jpv_VehicleCollisionTesterCastCylinder_$callClinit();
     return jpv_VehicleCollisionTesterCastCylinder__init_2(0, 0);
 },
 jpv_VehicleCollisionTesterCastCylinder__clinit_ = () => {
-    jpv_VehicleCollisionTesterCastCylinder_NULL = jpv_VehicleCollisionTesterCastCylinder_createInstance();
-    jpv_VehicleCollisionTesterCastCylinder_T_01 = jpv_VehicleCollisionTesterCastCylinder_createInstance();
-    jpv_VehicleCollisionTesterCastCylinder_T_02 = jpv_VehicleCollisionTesterCastCylinder_createInstance();
-    jpv_VehicleCollisionTesterCastCylinder_T_03 = jpv_VehicleCollisionTesterCastCylinder_createInstance();
+    jpv_VehicleCollisionTesterCastCylinder_NULL = jpv_VehicleCollisionTesterCastCylinder_native_new();
+    jpv_VehicleCollisionTesterCastCylinder_T_01 = jpv_VehicleCollisionTesterCastCylinder_native_new();
+    jpv_VehicleCollisionTesterCastCylinder_T_02 = jpv_VehicleCollisionTesterCastCylinder_native_new();
+    jpv_VehicleCollisionTesterCastCylinder_T_03 = jpv_VehicleCollisionTesterCastCylinder_native_new();
 },
 jpv_VehicleCollisionTesterCastCylinder_internal_native_create_int$js_body$_3 = var$1 => {
     var jsObj = new jolt.VehicleCollisionTesterCastCylinder(var$1);
@@ -9173,15 +9173,15 @@ jpcs_ConvexShapeSettings__init_0 = (var_0, var_1) => {
     jpcs_ConvexShapeSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_ConvexShapeSettings_createInstance = () => {
+jpcs_ConvexShapeSettings_native_new = () => {
     jpcs_ConvexShapeSettings_$callClinit();
     return jpcs_ConvexShapeSettings__init_0(0, 0);
 },
 jpcs_ConvexShapeSettings__clinit_ = () => {
-    jpcs_ConvexShapeSettings_NULL = jpcs_ConvexShapeSettings_createInstance();
-    jpcs_ConvexShapeSettings_T_01 = jpcs_ConvexShapeSettings_createInstance();
-    jpcs_ConvexShapeSettings_T_02 = jpcs_ConvexShapeSettings_createInstance();
-    jpcs_ConvexShapeSettings_T_03 = jpcs_ConvexShapeSettings_createInstance();
+    jpcs_ConvexShapeSettings_NULL = jpcs_ConvexShapeSettings_native_new();
+    jpcs_ConvexShapeSettings_T_01 = jpcs_ConvexShapeSettings_native_new();
+    jpcs_ConvexShapeSettings_T_02 = jpcs_ConvexShapeSettings_native_new();
+    jpcs_ConvexShapeSettings_T_03 = jpcs_ConvexShapeSettings_native_new();
 },
 jpb_BodyID = $rt_classWithoutFields(ji_IDLBase),
 jpb_BodyID_NULL = null,
@@ -9201,7 +9201,7 @@ jpb_BodyID__init_0 = (var_0, var_1) => {
     jpb_BodyID__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpb_BodyID_createInstance = () => {
+jpb_BodyID_native_new = () => {
     jpb_BodyID_$callClinit();
     return jpb_BodyID__init_0(0, 0);
 },
@@ -9209,10 +9209,10 @@ jpb_BodyID_deleteNative = $this => {
     jpb_BodyID_internal_native_deleteNative$js_body$_7($this.$native_address);
 },
 jpb_BodyID__clinit_ = () => {
-    jpb_BodyID_NULL = jpb_BodyID_createInstance();
-    jpb_BodyID_T_01 = jpb_BodyID_createInstance();
-    jpb_BodyID_T_02 = jpb_BodyID_createInstance();
-    jpb_BodyID_T_03 = jpb_BodyID_createInstance();
+    jpb_BodyID_NULL = jpb_BodyID_native_new();
+    jpb_BodyID_T_01 = jpb_BodyID_native_new();
+    jpb_BodyID_T_02 = jpb_BodyID_native_new();
+    jpb_BodyID_T_03 = jpb_BodyID_native_new();
 },
 jpb_BodyID_internal_native_deleteNative$js_body$_7 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.BodyID);
@@ -9404,15 +9404,15 @@ jpv_VehicleControllerSettings__init_0 = (var_0, var_1) => {
     jpv_VehicleControllerSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleControllerSettings_createInstance = () => {
+jpv_VehicleControllerSettings_native_new = () => {
     jpv_VehicleControllerSettings_$callClinit();
     return jpv_VehicleControllerSettings__init_0(0, 0);
 },
 jpv_VehicleControllerSettings__clinit_ = () => {
-    jpv_VehicleControllerSettings_NULL = jpv_VehicleControllerSettings_createInstance();
-    jpv_VehicleControllerSettings_T_01 = jpv_VehicleControllerSettings_createInstance();
-    jpv_VehicleControllerSettings_T_02 = jpv_VehicleControllerSettings_createInstance();
-    jpv_VehicleControllerSettings_T_03 = jpv_VehicleControllerSettings_createInstance();
+    jpv_VehicleControllerSettings_NULL = jpv_VehicleControllerSettings_native_new();
+    jpv_VehicleControllerSettings_T_01 = jpv_VehicleControllerSettings_native_new();
+    jpv_VehicleControllerSettings_T_02 = jpv_VehicleControllerSettings_native_new();
+    jpv_VehicleControllerSettings_T_03 = jpv_VehicleControllerSettings_native_new();
 };
 function jpv_TrackedVehicleControllerSettings() {
     jpv_VehicleControllerSettings.call(this);
@@ -9447,7 +9447,7 @@ jpv_TrackedVehicleControllerSettings__init_1 = (var_0, var_1) => {
     jpv_TrackedVehicleControllerSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_TrackedVehicleControllerSettings_createInstance = () => {
+jpv_TrackedVehicleControllerSettings_native_new = () => {
     jpv_TrackedVehicleControllerSettings_$callClinit();
     return jpv_TrackedVehicleControllerSettings__init_1(0, 0);
 },
@@ -9457,15 +9457,15 @@ jpv_TrackedVehicleControllerSettings_get_mTracks = ($this, $index) => {
     if (!$pointer)
         return null;
     if ($this.$VehicleTrackSettings_TEMP_GEN_0 === null)
-        $this.$VehicleTrackSettings_TEMP_GEN_0 = jpv_VehicleTrackSettings_createInstance();
+        $this.$VehicleTrackSettings_TEMP_GEN_0 = jpv_VehicleTrackSettings_native_new();
     ji_IDLBase_internal_reset($this.$VehicleTrackSettings_TEMP_GEN_0, $pointer, 0);
     return $this.$VehicleTrackSettings_TEMP_GEN_0;
 },
 jpv_TrackedVehicleControllerSettings__clinit_ = () => {
-    jpv_TrackedVehicleControllerSettings_NULL = jpv_TrackedVehicleControllerSettings_createInstance();
-    jpv_TrackedVehicleControllerSettings_T_01 = jpv_TrackedVehicleControllerSettings_createInstance();
-    jpv_TrackedVehicleControllerSettings_T_02 = jpv_TrackedVehicleControllerSettings_createInstance();
-    jpv_TrackedVehicleControllerSettings_T_03 = jpv_TrackedVehicleControllerSettings_createInstance();
+    jpv_TrackedVehicleControllerSettings_NULL = jpv_TrackedVehicleControllerSettings_native_new();
+    jpv_TrackedVehicleControllerSettings_T_01 = jpv_TrackedVehicleControllerSettings_native_new();
+    jpv_TrackedVehicleControllerSettings_T_02 = jpv_TrackedVehicleControllerSettings_native_new();
+    jpv_TrackedVehicleControllerSettings_T_03 = jpv_TrackedVehicleControllerSettings_native_new();
 },
 jpv_TrackedVehicleControllerSettings_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.TrackedVehicleControllerSettings();
@@ -10350,15 +10350,15 @@ jpc_Constraint__init_0 = (var_0, var_1) => {
     jpc_Constraint__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpc_Constraint_createInstance = () => {
+jpc_Constraint_native_new = () => {
     jpc_Constraint_$callClinit();
     return jpc_Constraint__init_0(0, 0);
 },
 jpc_Constraint__clinit_ = () => {
-    jpc_Constraint_NULL = jpc_Constraint_createInstance();
-    jpc_Constraint_T_01 = jpc_Constraint_createInstance();
-    jpc_Constraint_T_02 = jpc_Constraint_createInstance();
-    jpc_Constraint_T_03 = jpc_Constraint_createInstance();
+    jpc_Constraint_NULL = jpc_Constraint_native_new();
+    jpc_Constraint_T_01 = jpc_Constraint_native_new();
+    jpc_Constraint_T_02 = jpc_Constraint_native_new();
+    jpc_Constraint_T_03 = jpc_Constraint_native_new();
 },
 jpc_TwoBodyConstraint = $rt_classWithoutFields(jpc_Constraint),
 jpc_TwoBodyConstraint_NULL = null,
@@ -10378,15 +10378,15 @@ jpc_TwoBodyConstraint__init_0 = (var_0, var_1) => {
     jpc_TwoBodyConstraint__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpc_TwoBodyConstraint_createInstance = () => {
+jpc_TwoBodyConstraint_native_new = () => {
     jpc_TwoBodyConstraint_$callClinit();
     return jpc_TwoBodyConstraint__init_0(0, 0);
 },
 jpc_TwoBodyConstraint__clinit_ = () => {
-    jpc_TwoBodyConstraint_NULL = jpc_TwoBodyConstraint_createInstance();
-    jpc_TwoBodyConstraint_T_01 = jpc_TwoBodyConstraint_createInstance();
-    jpc_TwoBodyConstraint_T_02 = jpc_TwoBodyConstraint_createInstance();
-    jpc_TwoBodyConstraint_T_03 = jpc_TwoBodyConstraint_createInstance();
+    jpc_TwoBodyConstraint_NULL = jpc_TwoBodyConstraint_native_new();
+    jpc_TwoBodyConstraint_T_01 = jpc_TwoBodyConstraint_native_new();
+    jpc_TwoBodyConstraint_T_02 = jpc_TwoBodyConstraint_native_new();
+    jpc_TwoBodyConstraint_T_03 = jpc_TwoBodyConstraint_native_new();
 },
 jpc_HingeConstraint = $rt_classWithoutFields(jpc_TwoBodyConstraint),
 jpc_HingeConstraint_NULL = null,
@@ -10406,7 +10406,7 @@ jpc_HingeConstraint__init_0 = (var_0, var_1) => {
     jpc_HingeConstraint__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpc_HingeConstraint_createInstance = () => {
+jpc_HingeConstraint_native_new = () => {
     jpc_HingeConstraint_$callClinit();
     return jpc_HingeConstraint__init_0(0, 0);
 },
@@ -10417,10 +10417,10 @@ jpc_HingeConstraint_SetMotorState = ($this, $inState) => {
     jpc_HingeConstraint_internal_native_SetMotorState$js_body$_11(var$2, var$3);
 },
 jpc_HingeConstraint__clinit_ = () => {
-    jpc_HingeConstraint_NULL = jpc_HingeConstraint_createInstance();
-    jpc_HingeConstraint_T_01 = jpc_HingeConstraint_createInstance();
-    jpc_HingeConstraint_T_02 = jpc_HingeConstraint_createInstance();
-    jpc_HingeConstraint_T_03 = jpc_HingeConstraint_createInstance();
+    jpc_HingeConstraint_NULL = jpc_HingeConstraint_native_new();
+    jpc_HingeConstraint_T_01 = jpc_HingeConstraint_native_new();
+    jpc_HingeConstraint_T_02 = jpc_HingeConstraint_native_new();
+    jpc_HingeConstraint_T_03 = jpc_HingeConstraint_native_new();
 },
 jpc_HingeConstraint_internal_native_SetMotorState$js_body$_11 = (var$1, var$2) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.HingeConstraint);
@@ -10581,7 +10581,7 @@ jpv_WheeledVehicleControllerSettings__init_2 = (var_0, var_1) => {
     jpv_WheeledVehicleControllerSettings__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpv_WheeledVehicleControllerSettings_createInstance = () => {
+jpv_WheeledVehicleControllerSettings_native_new = () => {
     jpv_WheeledVehicleControllerSettings_$callClinit();
     return jpv_WheeledVehicleControllerSettings__init_2(0, 0);
 },
@@ -10591,15 +10591,15 @@ jpv_WheeledVehicleControllerSettings_get_mDifferentials = $this => {
     if (!$pointer)
         return null;
     if ($this.$ArrayVehicleDifferentialSettings_TEMP_GEN_0 === null)
-        $this.$ArrayVehicleDifferentialSettings_TEMP_GEN_0 = jpv_ArrayVehicleDifferentialSettings_createInstance();
+        $this.$ArrayVehicleDifferentialSettings_TEMP_GEN_0 = jpv_ArrayVehicleDifferentialSettings_native_new();
     ji_IDLBase_internal_reset($this.$ArrayVehicleDifferentialSettings_TEMP_GEN_0, $pointer, 0);
     return $this.$ArrayVehicleDifferentialSettings_TEMP_GEN_0;
 },
 jpv_WheeledVehicleControllerSettings__clinit_ = () => {
-    jpv_WheeledVehicleControllerSettings_NULL = jpv_WheeledVehicleControllerSettings_createInstance();
-    jpv_WheeledVehicleControllerSettings_T_01 = jpv_WheeledVehicleControllerSettings_createInstance();
-    jpv_WheeledVehicleControllerSettings_T_02 = jpv_WheeledVehicleControllerSettings_createInstance();
-    jpv_WheeledVehicleControllerSettings_T_03 = jpv_WheeledVehicleControllerSettings_createInstance();
+    jpv_WheeledVehicleControllerSettings_NULL = jpv_WheeledVehicleControllerSettings_native_new();
+    jpv_WheeledVehicleControllerSettings_T_01 = jpv_WheeledVehicleControllerSettings_native_new();
+    jpv_WheeledVehicleControllerSettings_T_02 = jpv_WheeledVehicleControllerSettings_native_new();
+    jpv_WheeledVehicleControllerSettings_T_03 = jpv_WheeledVehicleControllerSettings_native_new();
 },
 jpv_WheeledVehicleControllerSettings_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.WheeledVehicleControllerSettings();
@@ -10881,7 +10881,7 @@ jpc_CollisionGroup__init_2 = (var_0, var_1) => {
     jpc_CollisionGroup__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpc_CollisionGroup_createInstance = () => {
+jpc_CollisionGroup_native_new = () => {
     jpc_CollisionGroup_$callClinit();
     return jpc_CollisionGroup__init_2(0, 0);
 },
@@ -10901,10 +10901,10 @@ jpc_CollisionGroup_SetSubGroupID = ($this, $inSubGroupID) => {
     jpc_CollisionGroup_internal_native_SetSubGroupID$js_body$_17($this.$native_address, $inSubGroupID);
 },
 jpc_CollisionGroup__clinit_ = () => {
-    jpc_CollisionGroup_NULL = jpc_CollisionGroup_createInstance();
-    jpc_CollisionGroup_T_01 = jpc_CollisionGroup_createInstance();
-    jpc_CollisionGroup_T_02 = jpc_CollisionGroup_createInstance();
-    jpc_CollisionGroup_T_03 = jpc_CollisionGroup_createInstance();
+    jpc_CollisionGroup_NULL = jpc_CollisionGroup_native_new();
+    jpc_CollisionGroup_T_01 = jpc_CollisionGroup_native_new();
+    jpc_CollisionGroup_T_02 = jpc_CollisionGroup_native_new();
+    jpc_CollisionGroup_T_03 = jpc_CollisionGroup_native_new();
 },
 jpc_CollisionGroup_internal_native_create_GroupFilter_int_int$js_body$_3 = (var$1, var$2, var$3) => {
     var jsObj = new jolt.CollisionGroup(var$1, var$2, var$3);
@@ -11271,15 +11271,15 @@ jpcs_BoxShape__init_3 = (var_0, var_1) => {
     jpcs_BoxShape__init_2(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_BoxShape_createInstance = () => {
+jpcs_BoxShape_native_new = () => {
     jpcs_BoxShape_$callClinit();
     return jpcs_BoxShape__init_3(0, 0);
 },
 jpcs_BoxShape__clinit_ = () => {
-    jpcs_BoxShape_NULL = jpcs_BoxShape_createInstance();
-    jpcs_BoxShape_T_01 = jpcs_BoxShape_createInstance();
-    jpcs_BoxShape_T_02 = jpcs_BoxShape_createInstance();
-    jpcs_BoxShape_T_03 = jpcs_BoxShape_createInstance();
+    jpcs_BoxShape_NULL = jpcs_BoxShape_native_new();
+    jpcs_BoxShape_T_01 = jpcs_BoxShape_native_new();
+    jpcs_BoxShape_T_02 = jpcs_BoxShape_native_new();
+    jpcs_BoxShape_T_03 = jpcs_BoxShape_native_new();
 },
 jpcs_BoxShape_internal_native_create_Vec3_float$js_body$_3 = (var$1, var$2) => {
     var jsObj = new jolt.BoxShape(var$1, var$2);
@@ -11411,15 +11411,15 @@ jc_JobSystem__init_0 = (var_0, var_1) => {
     jc_JobSystem__init_(var_2, var_0, var_1);
     return var_2;
 },
-jc_JobSystem_createInstance = () => {
+jc_JobSystem_native_new = () => {
     jc_JobSystem_$callClinit();
     return jc_JobSystem__init_0(0, 0);
 },
 jc_JobSystem__clinit_ = () => {
-    jc_JobSystem_NULL = jc_JobSystem_createInstance();
-    jc_JobSystem_T_01 = jc_JobSystem_createInstance();
-    jc_JobSystem_T_02 = jc_JobSystem_createInstance();
-    jc_JobSystem_T_03 = jc_JobSystem_createInstance();
+    jc_JobSystem_NULL = jc_JobSystem_native_new();
+    jc_JobSystem_T_01 = jc_JobSystem_native_new();
+    jc_JobSystem_T_02 = jc_JobSystem_native_new();
+    jc_JobSystem_T_03 = jc_JobSystem_native_new();
 };
 function jnc_UnsupportedCharsetException() {
     jl_IllegalArgumentException.call(this);
@@ -11776,7 +11776,7 @@ jc_Color__init_0 = (var_0, var_1) => {
     jc_Color__init_(var_2, var_0, var_1);
     return var_2;
 },
-jc_Color_createInstance = () => {
+jc_Color_native_new = () => {
     jc_Color_$callClinit();
     return jc_Color__init_0(0, 0);
 },
@@ -11789,7 +11789,7 @@ jc_Color_ToVec4 = $this => {
     if (!$pointer)
         return null;
     if ($this.$Vec4_TEMP_GEN_0 === null)
-        $this.$Vec4_TEMP_GEN_0 = jm_Vec4_createInstance();
+        $this.$Vec4_TEMP_GEN_0 = jm_Vec4_native_new();
     ji_IDLBase_internal_reset($this.$Vec4_TEMP_GEN_0, $pointer, 0);
     return $this.$Vec4_TEMP_GEN_0;
 },
@@ -11800,15 +11800,15 @@ jc_Color_get_sGreen = () => {
     if (!$pointer)
         return null;
     if (jc_Color_Color_TEMP_STATIC_GEN_4 === null)
-        jc_Color_Color_TEMP_STATIC_GEN_4 = jc_Color_createInstance();
+        jc_Color_Color_TEMP_STATIC_GEN_4 = jc_Color_native_new();
     ji_IDLBase_internal_reset(jc_Color_Color_TEMP_STATIC_GEN_4, $pointer, 0);
     return jc_Color_Color_TEMP_STATIC_GEN_4;
 },
 jc_Color__clinit_ = () => {
-    jc_Color_NULL = jc_Color_createInstance();
-    jc_Color_T_01 = jc_Color_createInstance();
-    jc_Color_T_02 = jc_Color_createInstance();
-    jc_Color_T_03 = jc_Color_createInstance();
+    jc_Color_NULL = jc_Color_native_new();
+    jc_Color_T_01 = jc_Color_native_new();
+    jc_Color_T_02 = jc_Color_native_new();
+    jc_Color_T_03 = jc_Color_native_new();
 },
 jc_Color_internal_native_deleteNative$js_body$_5 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.Color);
@@ -12269,15 +12269,15 @@ jpcs_OffsetCenterOfMassShapeSettings__init_2 = (var_0, var_1) => {
     jpcs_OffsetCenterOfMassShapeSettings__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_OffsetCenterOfMassShapeSettings_createInstance = () => {
+jpcs_OffsetCenterOfMassShapeSettings_native_new = () => {
     jpcs_OffsetCenterOfMassShapeSettings_$callClinit();
     return jpcs_OffsetCenterOfMassShapeSettings__init_2(0, 0);
 },
 jpcs_OffsetCenterOfMassShapeSettings__clinit_ = () => {
-    jpcs_OffsetCenterOfMassShapeSettings_NULL = jpcs_OffsetCenterOfMassShapeSettings_createInstance();
-    jpcs_OffsetCenterOfMassShapeSettings_T_01 = jpcs_OffsetCenterOfMassShapeSettings_createInstance();
-    jpcs_OffsetCenterOfMassShapeSettings_T_02 = jpcs_OffsetCenterOfMassShapeSettings_createInstance();
-    jpcs_OffsetCenterOfMassShapeSettings_T_03 = jpcs_OffsetCenterOfMassShapeSettings_createInstance();
+    jpcs_OffsetCenterOfMassShapeSettings_NULL = jpcs_OffsetCenterOfMassShapeSettings_native_new();
+    jpcs_OffsetCenterOfMassShapeSettings_T_01 = jpcs_OffsetCenterOfMassShapeSettings_native_new();
+    jpcs_OffsetCenterOfMassShapeSettings_T_02 = jpcs_OffsetCenterOfMassShapeSettings_native_new();
+    jpcs_OffsetCenterOfMassShapeSettings_T_03 = jpcs_OffsetCenterOfMassShapeSettings_native_new();
 },
 jpcs_OffsetCenterOfMassShapeSettings_internal_native_create_Vec3_Shape$js_body$_1 = (var$1, var$2) => {
     var jsObj = new jolt.OffsetCenterOfMassShapeSettings(var$1, var$2);
@@ -13122,7 +13122,7 @@ jpc_ConstraintSettings__init_0 = (var_0, var_1) => {
     jpc_ConstraintSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpc_ConstraintSettings_createInstance = () => {
+jpc_ConstraintSettings_native_new = () => {
     jpc_ConstraintSettings_$callClinit();
     return jpc_ConstraintSettings__init_0(0, 0);
 },
@@ -13133,10 +13133,10 @@ jpc_ConstraintSettings_set_mDrawConstraintSize = ($this, $mDrawConstraintSize) =
     jpc_ConstraintSettings_internal_native_set_mDrawConstraintSize$js_body$_29($this.$native_address, $mDrawConstraintSize);
 },
 jpc_ConstraintSettings__clinit_ = () => {
-    jpc_ConstraintSettings_NULL = jpc_ConstraintSettings_createInstance();
-    jpc_ConstraintSettings_T_01 = jpc_ConstraintSettings_createInstance();
-    jpc_ConstraintSettings_T_02 = jpc_ConstraintSettings_createInstance();
-    jpc_ConstraintSettings_T_03 = jpc_ConstraintSettings_createInstance();
+    jpc_ConstraintSettings_NULL = jpc_ConstraintSettings_native_new();
+    jpc_ConstraintSettings_T_01 = jpc_ConstraintSettings_native_new();
+    jpc_ConstraintSettings_T_02 = jpc_ConstraintSettings_native_new();
+    jpc_ConstraintSettings_T_03 = jpc_ConstraintSettings_native_new();
 },
 jpc_ConstraintSettings_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.ConstraintSettings);
@@ -13302,7 +13302,7 @@ jm_TwoBodyConstraintSettings__init_0 = (var_0, var_1) => {
     jm_TwoBodyConstraintSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jm_TwoBodyConstraintSettings_createInstance = () => {
+jm_TwoBodyConstraintSettings_native_new = () => {
     jm_TwoBodyConstraintSettings_$callClinit();
     return jm_TwoBodyConstraintSettings__init_0(0, 0);
 },
@@ -13312,15 +13312,15 @@ jm_TwoBodyConstraintSettings_Create = ($this, $inBody1, $inBody2) => {
     if (!$pointer)
         return null;
     if ($this.$Constraint_TEMP_GEN_0 === null)
-        $this.$Constraint_TEMP_GEN_0 = jpc_Constraint_createInstance();
+        $this.$Constraint_TEMP_GEN_0 = jpc_Constraint_native_new();
     ji_IDLBase_internal_reset($this.$Constraint_TEMP_GEN_0, $pointer, 0);
     return $this.$Constraint_TEMP_GEN_0;
 },
 jm_TwoBodyConstraintSettings__clinit_ = () => {
-    jm_TwoBodyConstraintSettings_NULL = jm_TwoBodyConstraintSettings_createInstance();
-    jm_TwoBodyConstraintSettings_T_01 = jm_TwoBodyConstraintSettings_createInstance();
-    jm_TwoBodyConstraintSettings_T_02 = jm_TwoBodyConstraintSettings_createInstance();
-    jm_TwoBodyConstraintSettings_T_03 = jm_TwoBodyConstraintSettings_createInstance();
+    jm_TwoBodyConstraintSettings_NULL = jm_TwoBodyConstraintSettings_native_new();
+    jm_TwoBodyConstraintSettings_T_01 = jm_TwoBodyConstraintSettings_native_new();
+    jm_TwoBodyConstraintSettings_T_02 = jm_TwoBodyConstraintSettings_native_new();
+    jm_TwoBodyConstraintSettings_T_03 = jm_TwoBodyConstraintSettings_native_new();
 },
 jm_TwoBodyConstraintSettings_internal_native_Create$js_body$_3 = (var$1, var$2, var$3) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.TwoBodyConstraintSettings);
@@ -13346,7 +13346,7 @@ jpcb_ObjectVsBroadPhaseLayerFilter__init_0 = (var_0, var_1) => {
     jpcb_ObjectVsBroadPhaseLayerFilter__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcb_ObjectVsBroadPhaseLayerFilter_createInstance = () => {
+jpcb_ObjectVsBroadPhaseLayerFilter_native_new = () => {
     jpcb_ObjectVsBroadPhaseLayerFilter_$callClinit();
     return jpcb_ObjectVsBroadPhaseLayerFilter__init_0(0, 0);
 },
@@ -13354,10 +13354,10 @@ jpcb_ObjectVsBroadPhaseLayerFilter_deleteNative = $this => {
     jpcb_ObjectVsBroadPhaseLayerFilter_internal_native_deleteNative$js_body$_5($this.$native_address);
 },
 jpcb_ObjectVsBroadPhaseLayerFilter__clinit_ = () => {
-    jpcb_ObjectVsBroadPhaseLayerFilter_NULL = jpcb_ObjectVsBroadPhaseLayerFilter_createInstance();
-    jpcb_ObjectVsBroadPhaseLayerFilter_T_01 = jpcb_ObjectVsBroadPhaseLayerFilter_createInstance();
-    jpcb_ObjectVsBroadPhaseLayerFilter_T_02 = jpcb_ObjectVsBroadPhaseLayerFilter_createInstance();
-    jpcb_ObjectVsBroadPhaseLayerFilter_T_03 = jpcb_ObjectVsBroadPhaseLayerFilter_createInstance();
+    jpcb_ObjectVsBroadPhaseLayerFilter_NULL = jpcb_ObjectVsBroadPhaseLayerFilter_native_new();
+    jpcb_ObjectVsBroadPhaseLayerFilter_T_01 = jpcb_ObjectVsBroadPhaseLayerFilter_native_new();
+    jpcb_ObjectVsBroadPhaseLayerFilter_T_02 = jpcb_ObjectVsBroadPhaseLayerFilter_native_new();
+    jpcb_ObjectVsBroadPhaseLayerFilter_T_03 = jpcb_ObjectVsBroadPhaseLayerFilter_native_new();
 },
 jpcb_ObjectVsBroadPhaseLayerFilter_internal_native_deleteNative$js_body$_5 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.ObjectVsBroadPhaseLayerFilter);
@@ -13398,7 +13398,7 @@ jpv_VehicleDifferentialSettings__init_0 = (var_0, var_1) => {
     jpv_VehicleDifferentialSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleDifferentialSettings_createInstance = () => {
+jpv_VehicleDifferentialSettings_native_new = () => {
     jpv_VehicleDifferentialSettings_$callClinit();
     return jpv_VehicleDifferentialSettings__init_0(0, 0);
 },
@@ -13415,10 +13415,10 @@ jpv_VehicleDifferentialSettings_set_mEngineTorqueRatio = ($this, $mEngineTorqueR
     jpv_VehicleDifferentialSettings_internal_native_set_mEngineTorqueRatio$js_body$_29($this.$native_address, $mEngineTorqueRatio);
 },
 jpv_VehicleDifferentialSettings__clinit_ = () => {
-    jpv_VehicleDifferentialSettings_NULL = jpv_VehicleDifferentialSettings_createInstance();
-    jpv_VehicleDifferentialSettings_T_01 = jpv_VehicleDifferentialSettings_createInstance();
-    jpv_VehicleDifferentialSettings_T_02 = jpv_VehicleDifferentialSettings_createInstance();
-    jpv_VehicleDifferentialSettings_T_03 = jpv_VehicleDifferentialSettings_createInstance();
+    jpv_VehicleDifferentialSettings_NULL = jpv_VehicleDifferentialSettings_native_new();
+    jpv_VehicleDifferentialSettings_T_01 = jpv_VehicleDifferentialSettings_native_new();
+    jpv_VehicleDifferentialSettings_T_02 = jpv_VehicleDifferentialSettings_native_new();
+    jpv_VehicleDifferentialSettings_T_03 = jpv_VehicleDifferentialSettings_native_new();
 },
 jpv_VehicleDifferentialSettings_internal_native_deleteNative$js_body$_5 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.VehicleDifferentialSettings);
@@ -13807,7 +13807,7 @@ jpv_TrackedVehicleController__init_0 = (var_0, var_1) => {
     jpv_TrackedVehicleController__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_TrackedVehicleController_createInstance = () => {
+jpv_TrackedVehicleController_native_new = () => {
     jpv_TrackedVehicleController_$callClinit();
     return jpv_TrackedVehicleController__init_0(0, 0);
 },
@@ -13815,10 +13815,10 @@ jpv_TrackedVehicleController_SetDriverInput = ($this, $inForward, $inLeftRatio, 
     jpv_TrackedVehicleController_internal_native_SetDriverInput$js_body$_5($this.$native_address, $inForward, $inLeftRatio, $inRightRatio, $inBrake);
 },
 jpv_TrackedVehicleController__clinit_ = () => {
-    jpv_TrackedVehicleController_NULL = jpv_TrackedVehicleController_createInstance();
-    jpv_TrackedVehicleController_T_01 = jpv_TrackedVehicleController_createInstance();
-    jpv_TrackedVehicleController_T_02 = jpv_TrackedVehicleController_createInstance();
-    jpv_TrackedVehicleController_T_03 = jpv_TrackedVehicleController_createInstance();
+    jpv_TrackedVehicleController_NULL = jpv_TrackedVehicleController_native_new();
+    jpv_TrackedVehicleController_T_01 = jpv_TrackedVehicleController_native_new();
+    jpv_TrackedVehicleController_T_02 = jpv_TrackedVehicleController_native_new();
+    jpv_TrackedVehicleController_T_03 = jpv_TrackedVehicleController_native_new();
 },
 jpv_TrackedVehicleController_internal_native_SetDriverInput$js_body$_5 = (var$1, var$2, var$3, var$4, var$5) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.TrackedVehicleController);
@@ -14680,7 +14680,7 @@ jpv_VehicleTransmissionSettings__init_0 = (var_0, var_1) => {
     jpv_VehicleTransmissionSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleTransmissionSettings_createInstance = () => {
+jpv_VehicleTransmissionSettings_native_new = () => {
     jpv_VehicleTransmissionSettings_$callClinit();
     return jpv_VehicleTransmissionSettings__init_0(0, 0);
 },
@@ -14688,10 +14688,10 @@ jpv_VehicleTransmissionSettings_set_mClutchStrength = ($this, $mClutchStrength) 
     jpv_VehicleTransmissionSettings_internal_native_set_mClutchStrength$js_body$_39($this.$native_address, $mClutchStrength);
 },
 jpv_VehicleTransmissionSettings__clinit_ = () => {
-    jpv_VehicleTransmissionSettings_NULL = jpv_VehicleTransmissionSettings_createInstance();
-    jpv_VehicleTransmissionSettings_T_01 = jpv_VehicleTransmissionSettings_createInstance();
-    jpv_VehicleTransmissionSettings_T_02 = jpv_VehicleTransmissionSettings_createInstance();
-    jpv_VehicleTransmissionSettings_T_03 = jpv_VehicleTransmissionSettings_createInstance();
+    jpv_VehicleTransmissionSettings_NULL = jpv_VehicleTransmissionSettings_native_new();
+    jpv_VehicleTransmissionSettings_T_01 = jpv_VehicleTransmissionSettings_native_new();
+    jpv_VehicleTransmissionSettings_T_02 = jpv_VehicleTransmissionSettings_native_new();
+    jpv_VehicleTransmissionSettings_T_03 = jpv_VehicleTransmissionSettings_native_new();
 };
 let jpv_VehicleTransmissionSettings_internal_native_set_mClutchStrength$js_body$_39 = (var$1, var$2) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.VehicleTransmissionSettings);
@@ -14715,7 +14715,7 @@ jpv_VehicleTransmission__init_0 = (var_0, var_1) => {
     jpv_VehicleTransmission__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleTransmission_createInstance = () => {
+jpv_VehicleTransmission_native_new = () => {
     jpv_VehicleTransmission_$callClinit();
     return jpv_VehicleTransmission__init_0(0, 0);
 },
@@ -14723,10 +14723,10 @@ jpv_VehicleTransmission_deleteNative = $this => {
     jpv_VehicleTransmission_internal_native_deleteNative$js_body$_3($this.$native_address);
 },
 jpv_VehicleTransmission__clinit_ = () => {
-    jpv_VehicleTransmission_NULL = jpv_VehicleTransmission_createInstance();
-    jpv_VehicleTransmission_T_01 = jpv_VehicleTransmission_createInstance();
-    jpv_VehicleTransmission_T_02 = jpv_VehicleTransmission_createInstance();
-    jpv_VehicleTransmission_T_03 = jpv_VehicleTransmission_createInstance();
+    jpv_VehicleTransmission_NULL = jpv_VehicleTransmission_native_new();
+    jpv_VehicleTransmission_T_01 = jpv_VehicleTransmission_native_new();
+    jpv_VehicleTransmission_T_02 = jpv_VehicleTransmission_native_new();
+    jpv_VehicleTransmission_T_03 = jpv_VehicleTransmission_native_new();
 },
 jpv_VehicleTransmission_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.VehicleTransmission);
@@ -15870,7 +15870,7 @@ jpc_HingeConstraintSettings__init_2 = (var_0, var_1) => {
     jpc_HingeConstraintSettings__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpc_HingeConstraintSettings_createInstance = () => {
+jpc_HingeConstraintSettings_native_new = () => {
     jpc_HingeConstraintSettings_$callClinit();
     return jpc_HingeConstraintSettings__init_2(0, 0);
 },
@@ -15926,10 +15926,10 @@ jpc_HingeConstraintSettings_set_mMotorSettings = ($this, $mMotorSettings) => {
     jpc_HingeConstraintSettings_internal_native_set_mMotorSettings$js_body$_53(var$2, var$3);
 },
 jpc_HingeConstraintSettings__clinit_ = () => {
-    jpc_HingeConstraintSettings_NULL = jpc_HingeConstraintSettings_createInstance();
-    jpc_HingeConstraintSettings_T_01 = jpc_HingeConstraintSettings_createInstance();
-    jpc_HingeConstraintSettings_T_02 = jpc_HingeConstraintSettings_createInstance();
-    jpc_HingeConstraintSettings_T_03 = jpc_HingeConstraintSettings_createInstance();
+    jpc_HingeConstraintSettings_NULL = jpc_HingeConstraintSettings_native_new();
+    jpc_HingeConstraintSettings_T_01 = jpc_HingeConstraintSettings_native_new();
+    jpc_HingeConstraintSettings_T_02 = jpc_HingeConstraintSettings_native_new();
+    jpc_HingeConstraintSettings_T_03 = jpc_HingeConstraintSettings_native_new();
 },
 jpc_HingeConstraintSettings_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.HingeConstraintSettings();
@@ -16800,7 +16800,7 @@ jc_Factory__init_0 = (var_0, var_1) => {
     jc_Factory__init_(var_2, var_0, var_1);
     return var_2;
 },
-jc_Factory_createInstance = () => {
+jc_Factory_native_new = () => {
     jc_Factory_$callClinit();
     return jc_Factory__init_0(0, 0);
 },
@@ -16812,10 +16812,10 @@ jc_Factory_set_sInstance = $sInstance => {
     jolt.Factory.prototype.set_sInstance($sInstance.$native_address);
 },
 jc_Factory__clinit_ = () => {
-    jc_Factory_NULL = jc_Factory_createInstance();
-    jc_Factory_T_01 = jc_Factory_createInstance();
-    jc_Factory_T_02 = jc_Factory_createInstance();
-    jc_Factory_T_03 = jc_Factory_createInstance();
+    jc_Factory_NULL = jc_Factory_native_new();
+    jc_Factory_T_01 = jc_Factory_native_new();
+    jc_Factory_T_02 = jc_Factory_native_new();
+    jc_Factory_T_03 = jc_Factory_native_new();
 },
 jc_Factory_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.Factory);
@@ -17102,7 +17102,7 @@ jpb_Body__init_0 = (var_0, var_1) => {
     jpb_Body__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpb_Body_createInstance = () => {
+jpb_Body_native_new = () => {
     jpb_Body_$callClinit();
     return jpb_Body__init_0(0, 0);
 },
@@ -17112,7 +17112,7 @@ jpb_Body_GetID = $this => {
     if (!$pointer)
         return null;
     if ($this.$BodyID_TEMP_GEN_00 === null)
-        $this.$BodyID_TEMP_GEN_00 = jpb_BodyID_createInstance();
+        $this.$BodyID_TEMP_GEN_00 = jpb_BodyID_native_new();
     ji_IDLBase_internal_reset($this.$BodyID_TEMP_GEN_00, $pointer, 0);
     return $this.$BodyID_TEMP_GEN_00;
 },
@@ -17125,7 +17125,7 @@ jpb_Body_GetLinearVelocity = $this => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_01 === null)
-        $this.$Vec3_TEMP_GEN_01 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_01 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_01, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_01;
 },
@@ -17135,7 +17135,7 @@ jpb_Body_GetPosition = $this => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_4 === null)
-        $this.$Vec3_TEMP_GEN_4 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_4 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_4, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_4;
 },
@@ -17145,7 +17145,7 @@ jpb_Body_GetRotation = $this => {
     if (!$pointer)
         return null;
     if ($this.$Quat_TEMP_GEN_0 === null)
-        $this.$Quat_TEMP_GEN_0 = jm_Quat_createInstance();
+        $this.$Quat_TEMP_GEN_0 = jm_Quat_native_new();
     ji_IDLBase_internal_reset($this.$Quat_TEMP_GEN_0, $pointer, 0);
     return $this.$Quat_TEMP_GEN_0;
 },
@@ -17155,7 +17155,7 @@ jpb_Body_GetWorldTransform = $this => {
     if (!$pointer)
         return null;
     if ($this.$Mat44_TEMP_GEN_1 === null)
-        $this.$Mat44_TEMP_GEN_1 = jm_Mat44_createInstance();
+        $this.$Mat44_TEMP_GEN_1 = jm_Mat44_native_new();
     ji_IDLBase_internal_reset($this.$Mat44_TEMP_GEN_1, $pointer, 0);
     return $this.$Mat44_TEMP_GEN_1;
 },
@@ -17172,10 +17172,10 @@ jpb_Body_SetCollisionGroup = ($this, $inGroup) => {
     jpb_Body_internal_native_SetCollisionGroup$js_body$_133(var$2, var$3);
 },
 jpb_Body__clinit_ = () => {
-    jpb_Body_NULL = jpb_Body_createInstance();
-    jpb_Body_T_01 = jpb_Body_createInstance();
-    jpb_Body_T_02 = jpb_Body_createInstance();
-    jpb_Body_T_03 = jpb_Body_createInstance();
+    jpb_Body_NULL = jpb_Body_native_new();
+    jpb_Body_T_01 = jpb_Body_native_new();
+    jpb_Body_T_02 = jpb_Body_native_new();
+    jpb_Body_T_03 = jpb_Body_native_new();
 },
 jpb_Body_internal_native_GetID$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.Body);
@@ -17388,7 +17388,7 @@ jpv_VehicleEngineSettings__init_0 = (var_0, var_1) => {
     jpv_VehicleEngineSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleEngineSettings_createInstance = () => {
+jpv_VehicleEngineSettings_native_new = () => {
     jpv_VehicleEngineSettings_$callClinit();
     return jpv_VehicleEngineSettings__init_0(0, 0);
 },
@@ -17396,10 +17396,10 @@ jpv_VehicleEngineSettings_set_mMaxTorque = ($this, $mMaxTorque) => {
     jpv_VehicleEngineSettings_internal_native_set_mMaxTorque$js_body$_7($this.$native_address, $mMaxTorque);
 },
 jpv_VehicleEngineSettings__clinit_ = () => {
-    jpv_VehicleEngineSettings_NULL = jpv_VehicleEngineSettings_createInstance();
-    jpv_VehicleEngineSettings_T_01 = jpv_VehicleEngineSettings_createInstance();
-    jpv_VehicleEngineSettings_T_02 = jpv_VehicleEngineSettings_createInstance();
-    jpv_VehicleEngineSettings_T_03 = jpv_VehicleEngineSettings_createInstance();
+    jpv_VehicleEngineSettings_NULL = jpv_VehicleEngineSettings_native_new();
+    jpv_VehicleEngineSettings_T_01 = jpv_VehicleEngineSettings_native_new();
+    jpv_VehicleEngineSettings_T_02 = jpv_VehicleEngineSettings_native_new();
+    jpv_VehicleEngineSettings_T_03 = jpv_VehicleEngineSettings_native_new();
 },
 jpv_VehicleEngineSettings_internal_native_set_mMaxTorque$js_body$_7 = (var$1, var$2) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.VehicleEngineSettings);
@@ -19708,7 +19708,7 @@ jpv_ArrayVehicleDifferentialSettings__init_0 = (var_0, var_1) => {
     jpv_ArrayVehicleDifferentialSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_ArrayVehicleDifferentialSettings_createInstance = () => {
+jpv_ArrayVehicleDifferentialSettings_native_new = () => {
     jpv_ArrayVehicleDifferentialSettings_$callClinit();
     return jpv_ArrayVehicleDifferentialSettings__init_0(0, 0);
 },
@@ -19721,7 +19721,7 @@ jpv_ArrayVehicleDifferentialSettings_at = ($this, $inIndex) => {
     if (!$pointer)
         return null;
     if ($this.$VehicleDifferentialSettings_TEMP_GEN_0 === null)
-        $this.$VehicleDifferentialSettings_TEMP_GEN_0 = jpv_VehicleDifferentialSettings_createInstance();
+        $this.$VehicleDifferentialSettings_TEMP_GEN_0 = jpv_VehicleDifferentialSettings_native_new();
     ji_IDLBase_internal_reset($this.$VehicleDifferentialSettings_TEMP_GEN_0, $pointer, 0);
     return $this.$VehicleDifferentialSettings_TEMP_GEN_0;
 },
@@ -19729,10 +19729,10 @@ jpv_ArrayVehicleDifferentialSettings_resize = ($this, $inSize) => {
     jpv_ArrayVehicleDifferentialSettings_internal_native_resize$js_body$_13($this.$native_address, $inSize);
 },
 jpv_ArrayVehicleDifferentialSettings__clinit_ = () => {
-    jpv_ArrayVehicleDifferentialSettings_NULL = jpv_ArrayVehicleDifferentialSettings_createInstance();
-    jpv_ArrayVehicleDifferentialSettings_T_01 = jpv_ArrayVehicleDifferentialSettings_createInstance();
-    jpv_ArrayVehicleDifferentialSettings_T_02 = jpv_ArrayVehicleDifferentialSettings_createInstance();
-    jpv_ArrayVehicleDifferentialSettings_T_03 = jpv_ArrayVehicleDifferentialSettings_createInstance();
+    jpv_ArrayVehicleDifferentialSettings_NULL = jpv_ArrayVehicleDifferentialSettings_native_new();
+    jpv_ArrayVehicleDifferentialSettings_T_01 = jpv_ArrayVehicleDifferentialSettings_native_new();
+    jpv_ArrayVehicleDifferentialSettings_T_02 = jpv_ArrayVehicleDifferentialSettings_native_new();
+    jpv_ArrayVehicleDifferentialSettings_T_03 = jpv_ArrayVehicleDifferentialSettings_native_new();
 },
 jpv_ArrayVehicleDifferentialSettings_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.ArrayVehicleDifferentialSettings);
@@ -19879,7 +19879,7 @@ jg_TriangleList__init_1 = (var_0, var_1) => {
     jg_TriangleList__init_(var_2, var_0, var_1);
     return var_2;
 },
-jg_TriangleList_createInstance = () => {
+jg_TriangleList_native_new = () => {
     jg_TriangleList_$callClinit();
     return jg_TriangleList__init_1(0, 0);
 },
@@ -19893,10 +19893,10 @@ jg_TriangleList_push_back = ($this, $inTriangle) => {
     jg_TriangleList_internal_native_push_back$js_body$_13(var$2, var$3);
 },
 jg_TriangleList__clinit_ = () => {
-    jg_TriangleList_NULL = jg_TriangleList_createInstance();
-    jg_TriangleList_T_01 = jg_TriangleList_createInstance();
-    jg_TriangleList_T_02 = jg_TriangleList_createInstance();
-    jg_TriangleList_T_03 = jg_TriangleList_createInstance();
+    jg_TriangleList_NULL = jg_TriangleList_native_new();
+    jg_TriangleList_T_01 = jg_TriangleList_native_new();
+    jg_TriangleList_T_02 = jg_TriangleList_native_new();
+    jg_TriangleList_T_03 = jg_TriangleList_native_new();
 },
 jg_TriangleList_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.TriangleList();
@@ -20616,15 +20616,15 @@ jc_TempAllocator__init_0 = (var_0, var_1) => {
     jc_TempAllocator__init_(var_2, var_0, var_1);
     return var_2;
 },
-jc_TempAllocator_createInstance = () => {
+jc_TempAllocator_native_new = () => {
     jc_TempAllocator_$callClinit();
     return jc_TempAllocator__init_0(0, 0);
 },
 jc_TempAllocator__clinit_ = () => {
-    jc_TempAllocator_NULL = jc_TempAllocator_createInstance();
-    jc_TempAllocator_T_01 = jc_TempAllocator_createInstance();
-    jc_TempAllocator_T_02 = jc_TempAllocator_createInstance();
-    jc_TempAllocator_T_03 = jc_TempAllocator_createInstance();
+    jc_TempAllocator_NULL = jc_TempAllocator_native_new();
+    jc_TempAllocator_T_01 = jc_TempAllocator_native_new();
+    jc_TempAllocator_T_02 = jc_TempAllocator_native_new();
+    jc_TempAllocator_T_03 = jc_TempAllocator_native_new();
 },
 jc_TempAllocatorImpl = $rt_classWithoutFields(jc_TempAllocator),
 jc_TempAllocatorImpl_NULL = null,
@@ -20644,7 +20644,7 @@ jc_TempAllocatorImpl__init_0 = (var_0, var_1) => {
     jc_TempAllocatorImpl__init_(var_2, var_0, var_1);
     return var_2;
 },
-jc_TempAllocatorImpl_createInstance = () => {
+jc_TempAllocatorImpl_native_new = () => {
     jc_TempAllocatorImpl_$callClinit();
     return jc_TempAllocatorImpl__init_0(0, 0);
 },
@@ -20652,10 +20652,10 @@ jc_TempAllocatorImpl_deleteNative = $this => {
     jc_TempAllocatorImpl_internal_native_deleteNative$js_body$_3($this.$native_address);
 },
 jc_TempAllocatorImpl__clinit_ = () => {
-    jc_TempAllocatorImpl_NULL = jc_TempAllocatorImpl_createInstance();
-    jc_TempAllocatorImpl_T_01 = jc_TempAllocatorImpl_createInstance();
-    jc_TempAllocatorImpl_T_02 = jc_TempAllocatorImpl_createInstance();
-    jc_TempAllocatorImpl_T_03 = jc_TempAllocatorImpl_createInstance();
+    jc_TempAllocatorImpl_NULL = jc_TempAllocatorImpl_native_new();
+    jc_TempAllocatorImpl_T_01 = jc_TempAllocatorImpl_native_new();
+    jc_TempAllocatorImpl_T_02 = jc_TempAllocatorImpl_native_new();
+    jc_TempAllocatorImpl_T_03 = jc_TempAllocatorImpl_native_new();
 },
 jc_TempAllocatorImpl_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.TempAllocatorImpl);
@@ -20726,13 +20726,13 @@ jr_DebugRendererEm_setupCallback = $this => {
 jr_DebugRendererEm_internal_DrawMesh = ($this, $id, $inModelMatrix_addr, $vertices_addr, $inModelColor_addr, $inCullMode_addr, $inDrawMode_addr) => {
     let var$7, var$8, var$9, var$10;
     if (jr_DebugRendererEm_Mat44_TEMP_STATIC_GEN_0 === null)
-        jr_DebugRendererEm_Mat44_TEMP_STATIC_GEN_0 = jm_Mat44_createInstance();
+        jr_DebugRendererEm_Mat44_TEMP_STATIC_GEN_0 = jm_Mat44_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Mat44_TEMP_STATIC_GEN_0, $inModelMatrix_addr, 0);
     if (jr_DebugRendererEm_IDLFloatArray_TEMP_STATIC_GEN_0 === null)
-        jr_DebugRendererEm_IDLFloatArray_TEMP_STATIC_GEN_0 = jih_IDLFloatArray_createInstance();
+        jr_DebugRendererEm_IDLFloatArray_TEMP_STATIC_GEN_0 = jih_IDLFloatArray_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_IDLFloatArray_TEMP_STATIC_GEN_0, $vertices_addr, 0);
     if (jr_DebugRendererEm_Color_TEMP_STATIC_GEN_0 === null)
-        jr_DebugRendererEm_Color_TEMP_STATIC_GEN_0 = jc_Color_createInstance();
+        jr_DebugRendererEm_Color_TEMP_STATIC_GEN_0 = jc_Color_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Color_TEMP_STATIC_GEN_0, $inModelColor_addr, 0);
     var$7 = jr_DebugRendererEm_Mat44_TEMP_STATIC_GEN_0;
     var$8 = jr_DebugRendererEm_IDLFloatArray_TEMP_STATIC_GEN_0;
@@ -20747,13 +20747,13 @@ jr_DebugRendererEm_DrawLine = ($this, $inFrom, $inTo, $inColor) => {
 },
 jr_DebugRendererEm_internal_DrawLine = ($this, $inFrom_addr, $inTo_addr, $inColor_addr) => {
     if (jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_0 === null)
-        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_0 = jm_Vec3_createInstance();
+        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_0 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_0, $inFrom_addr, 0);
     if (jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_1 === null)
-        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_1 = jm_Vec3_createInstance();
+        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_1 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_1, $inTo_addr, 0);
     if (jr_DebugRendererEm_Color_TEMP_STATIC_GEN_1 === null)
-        jr_DebugRendererEm_Color_TEMP_STATIC_GEN_1 = jc_Color_createInstance();
+        jr_DebugRendererEm_Color_TEMP_STATIC_GEN_1 = jc_Color_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Color_TEMP_STATIC_GEN_1, $inColor_addr, 0);
     $this.$DrawLine(jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_0, jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_1, jr_DebugRendererEm_Color_TEMP_STATIC_GEN_1);
 },
@@ -20763,16 +20763,16 @@ jr_DebugRendererEm_DrawTriangle = ($this, $inV1, $inV2, $inV3, $inColor, $inCast
 jr_DebugRendererEm_internal_DrawTriangle = ($this, $inV1_addr, $inV2_addr, $inV3_addr, $inColor_addr, $inCastShadow_addr) => {
     let var$6, var$7, var$8, var$9;
     if (jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_2 === null)
-        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_2 = jm_Vec3_createInstance();
+        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_2 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_2, $inV1_addr, 0);
     if (jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_3 === null)
-        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_3 = jm_Vec3_createInstance();
+        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_3 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_3, $inV2_addr, 0);
     if (jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_4 === null)
-        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_4 = jm_Vec3_createInstance();
+        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_4 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_4, $inV3_addr, 0);
     if (jr_DebugRendererEm_Color_TEMP_STATIC_GEN_2 === null)
-        jr_DebugRendererEm_Color_TEMP_STATIC_GEN_2 = jc_Color_createInstance();
+        jr_DebugRendererEm_Color_TEMP_STATIC_GEN_2 = jc_Color_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Color_TEMP_STATIC_GEN_2, $inColor_addr, 0);
     var$6 = jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_2;
     var$7 = jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_3;
@@ -20786,13 +20786,13 @@ jr_DebugRendererEm_DrawText3D = ($this, $inPosition, $inString, $inStringLen, $i
 },
 jr_DebugRendererEm_internal_DrawText3D = ($this, $inPosition_addr, $inString_addr, $inStringLen, $inColor_addr, $inHeight) => {
     if (jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_5 === null)
-        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_5 = jm_Vec3_createInstance();
+        jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_5 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_5, $inPosition_addr, 0);
     if (jr_DebugRendererEm_IDLBase_TEMP_STATIC_GEN_0 === null)
-        jr_DebugRendererEm_IDLBase_TEMP_STATIC_GEN_0 = ji_IDLBase_createInstance();
+        jr_DebugRendererEm_IDLBase_TEMP_STATIC_GEN_0 = ji_IDLBase_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_IDLBase_TEMP_STATIC_GEN_0, $inString_addr, 0);
     if (jr_DebugRendererEm_Color_TEMP_STATIC_GEN_3 === null)
-        jr_DebugRendererEm_Color_TEMP_STATIC_GEN_3 = jc_Color_createInstance();
+        jr_DebugRendererEm_Color_TEMP_STATIC_GEN_3 = jc_Color_native_new();
     ji_IDLBase_internal_reset(jr_DebugRendererEm_Color_TEMP_STATIC_GEN_3, $inColor_addr, 0);
     $this.$DrawText3D(jr_DebugRendererEm_Vec3_TEMP_STATIC_GEN_5, jr_DebugRendererEm_IDLBase_TEMP_STATIC_GEN_0, $inStringLen, jr_DebugRendererEm_Color_TEMP_STATIC_GEN_3, $inHeight);
 },
@@ -21434,7 +21434,7 @@ jpb_BodyInterface__init_0 = (var_0, var_1) => {
     jpb_BodyInterface__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpb_BodyInterface_createInstance = () => {
+jpb_BodyInterface_native_new = () => {
     jpb_BodyInterface_$callClinit();
     return jpb_BodyInterface__init_0(0, 0);
 },
@@ -21446,7 +21446,7 @@ jpb_BodyInterface_CreateBody = ($this, $inSettings) => {
     $pointer = jpb_BodyInterface_internal_native_CreateBody$js_body$_5($this.$native_address, $inSettings.$native_address);
     if (!$pointer)
         return null;
-    $Body_NEW = jpb_Body_createInstance();
+    $Body_NEW = jpb_Body_native_new();
     ji_IDLBase_internal_reset($Body_NEW, $pointer, 0);
     return $Body_NEW;
 },
@@ -21475,7 +21475,7 @@ jpb_BodyInterface_CreateAndAddBody = ($this, $inSettings, $inActivationMode) => 
     if (!$pointer)
         return null;
     if ($this.$BodyID_TEMP_GEN_0 === null)
-        $this.$BodyID_TEMP_GEN_0 = jpb_BodyID_createInstance();
+        $this.$BodyID_TEMP_GEN_0 = jpb_BodyID_native_new();
     ji_IDLBase_internal_reset($this.$BodyID_TEMP_GEN_0, $pointer, 0);
     return $this.$BodyID_TEMP_GEN_0;
 },
@@ -21486,10 +21486,10 @@ jpb_BodyInterface_ActivateBody = ($this, $inBodyID) => {
     jpb_BodyInterface_internal_native_ActivateBody$js_body$_103(var$2, var$3);
 },
 jpb_BodyInterface__clinit_ = () => {
-    jpb_BodyInterface_NULL = jpb_BodyInterface_createInstance();
-    jpb_BodyInterface_T_01 = jpb_BodyInterface_createInstance();
-    jpb_BodyInterface_T_02 = jpb_BodyInterface_createInstance();
-    jpb_BodyInterface_T_03 = jpb_BodyInterface_createInstance();
+    jpb_BodyInterface_NULL = jpb_BodyInterface_native_new();
+    jpb_BodyInterface_T_01 = jpb_BodyInterface_native_new();
+    jpb_BodyInterface_T_02 = jpb_BodyInterface_native_new();
+    jpb_BodyInterface_T_03 = jpb_BodyInterface_native_new();
 },
 jpb_BodyInterface_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.BodyInterface);
@@ -23842,7 +23842,7 @@ jpv_Wheels__init_0 = (var_0, var_1) => {
     jpv_Wheels__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_Wheels_createInstance = () => {
+jpv_Wheels_native_new = () => {
     jpv_Wheels_$callClinit();
     return jpv_Wheels__init_0(0, 0);
 },
@@ -23858,15 +23858,15 @@ jpv_Wheels_at = ($this, $inIndex) => {
     if (!$pointer)
         return null;
     if ($this.$Wheel_TEMP_GEN_0 === null)
-        $this.$Wheel_TEMP_GEN_0 = jpv_Wheel_createInstance();
+        $this.$Wheel_TEMP_GEN_0 = jpv_Wheel_native_new();
     ji_IDLBase_internal_reset($this.$Wheel_TEMP_GEN_0, $pointer, 0);
     return $this.$Wheel_TEMP_GEN_0;
 },
 jpv_Wheels__clinit_ = () => {
-    jpv_Wheels_NULL = jpv_Wheels_createInstance();
-    jpv_Wheels_T_01 = jpv_Wheels_createInstance();
-    jpv_Wheels_T_02 = jpv_Wheels_createInstance();
-    jpv_Wheels_T_03 = jpv_Wheels_createInstance();
+    jpv_Wheels_NULL = jpv_Wheels_native_new();
+    jpv_Wheels_T_01 = jpv_Wheels_native_new();
+    jpv_Wheels_T_02 = jpv_Wheels_native_new();
+    jpv_Wheels_T_03 = jpv_Wheels_native_new();
 },
 jpv_Wheels_internal_native_deleteNative$js_body$_5 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.Wheels);
@@ -26364,7 +26364,7 @@ jm_ArrayUint__init_0 = (var_0, var_1) => {
     jm_ArrayUint__init_(var_2, var_0, var_1);
     return var_2;
 },
-jm_ArrayUint_createInstance = () => {
+jm_ArrayUint_native_new = () => {
     jm_ArrayUint_$callClinit();
     return jm_ArrayUint__init_0(0, 0);
 },
@@ -26375,10 +26375,10 @@ jm_ArrayUint_push_back = ($this, $inValue) => {
     jm_ArrayUint_internal_native_push_back$js_body$_11($this.$native_address, $inValue);
 },
 jm_ArrayUint__clinit_ = () => {
-    jm_ArrayUint_NULL = jm_ArrayUint_createInstance();
-    jm_ArrayUint_T_01 = jm_ArrayUint_createInstance();
-    jm_ArrayUint_T_02 = jm_ArrayUint_createInstance();
-    jm_ArrayUint_T_03 = jm_ArrayUint_createInstance();
+    jm_ArrayUint_NULL = jm_ArrayUint_native_new();
+    jm_ArrayUint_T_01 = jm_ArrayUint_native_new();
+    jm_ArrayUint_T_02 = jm_ArrayUint_native_new();
+    jm_ArrayUint_T_03 = jm_ArrayUint_native_new();
 },
 jm_ArrayUint_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.ArrayUint);
@@ -26612,7 +26612,7 @@ jpb_MassProperties__init_0 = (var_0, var_1) => {
     jpb_MassProperties__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpb_MassProperties_createInstance = () => {
+jpb_MassProperties_native_new = () => {
     jpb_MassProperties_$callClinit();
     return jpb_MassProperties__init_0(0, 0);
 },
@@ -26623,10 +26623,10 @@ jpb_MassProperties_set_mMass = ($this, $mMass) => {
     jpb_MassProperties_internal_native_set_mMass$js_body$_21($this.$native_address, $mMass);
 },
 jpb_MassProperties__clinit_ = () => {
-    jpb_MassProperties_NULL = jpb_MassProperties_createInstance();
-    jpb_MassProperties_T_01 = jpb_MassProperties_createInstance();
-    jpb_MassProperties_T_02 = jpb_MassProperties_createInstance();
-    jpb_MassProperties_T_03 = jpb_MassProperties_createInstance();
+    jpb_MassProperties_NULL = jpb_MassProperties_native_new();
+    jpb_MassProperties_T_01 = jpb_MassProperties_native_new();
+    jpb_MassProperties_T_02 = jpb_MassProperties_native_new();
+    jpb_MassProperties_T_03 = jpb_MassProperties_native_new();
 },
 jpb_MassProperties_internal_native_deleteNative$js_body$_5 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.MassProperties);
@@ -27138,7 +27138,7 @@ jpb_BodyCreationSettings__init_0 = (var_0, var_1) => {
     jpb_BodyCreationSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpb_BodyCreationSettings_createInstance = () => {
+jpb_BodyCreationSettings_native_new = () => {
     jpb_BodyCreationSettings_$callClinit();
     return jpb_BodyCreationSettings__init_0(0, 0);
 },
@@ -27151,7 +27151,7 @@ jpb_BodyCreationSettings_get_mCollisionGroup = $this => {
     if (!$pointer)
         return null;
     if ($this.$CollisionGroup_TEMP_GEN_0 === null)
-        $this.$CollisionGroup_TEMP_GEN_0 = jpc_CollisionGroup_createInstance();
+        $this.$CollisionGroup_TEMP_GEN_0 = jpc_CollisionGroup_native_new();
     ji_IDLBase_internal_reset($this.$CollisionGroup_TEMP_GEN_0, $pointer, 0);
     return $this.$CollisionGroup_TEMP_GEN_0;
 },
@@ -27170,7 +27170,7 @@ jpb_BodyCreationSettings_get_mMassPropertiesOverride = $this => {
     if (!$pointer)
         return null;
     if ($this.$MassProperties_TEMP_GEN_1 === null)
-        $this.$MassProperties_TEMP_GEN_1 = jpb_MassProperties_createInstance();
+        $this.$MassProperties_TEMP_GEN_1 = jpb_MassProperties_native_new();
     ji_IDLBase_internal_reset($this.$MassProperties_TEMP_GEN_1, $pointer, 0);
     return $this.$MassProperties_TEMP_GEN_1;
 },
@@ -27181,10 +27181,10 @@ jpb_BodyCreationSettings_set_mMassPropertiesOverride = ($this, $mMassPropertiesO
     jpb_BodyCreationSettings_internal_native_set_mMassPropertiesOverride$js_body$_133(var$2, var$3);
 },
 jpb_BodyCreationSettings__clinit_ = () => {
-    jpb_BodyCreationSettings_NULL = jpb_BodyCreationSettings_createInstance();
-    jpb_BodyCreationSettings_T_01 = jpb_BodyCreationSettings_createInstance();
-    jpb_BodyCreationSettings_T_02 = jpb_BodyCreationSettings_createInstance();
-    jpb_BodyCreationSettings_T_03 = jpb_BodyCreationSettings_createInstance();
+    jpb_BodyCreationSettings_NULL = jpb_BodyCreationSettings_native_new();
+    jpb_BodyCreationSettings_T_01 = jpb_BodyCreationSettings_native_new();
+    jpb_BodyCreationSettings_T_02 = jpb_BodyCreationSettings_native_new();
+    jpb_BodyCreationSettings_T_03 = jpb_BodyCreationSettings_native_new();
 },
 jpb_BodyCreationSettings_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.BodyCreationSettings);
@@ -27435,15 +27435,15 @@ jpv_WheelSettingsTV__init_2 = (var_0, var_1) => {
     jpv_WheelSettingsTV__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_WheelSettingsTV_createInstance = () => {
+jpv_WheelSettingsTV_native_new = () => {
     jpv_WheelSettingsTV_$callClinit();
     return jpv_WheelSettingsTV__init_2(0, 0);
 },
 jpv_WheelSettingsTV__clinit_ = () => {
-    jpv_WheelSettingsTV_NULL = jpv_WheelSettingsTV_createInstance();
-    jpv_WheelSettingsTV_T_01 = jpv_WheelSettingsTV_createInstance();
-    jpv_WheelSettingsTV_T_02 = jpv_WheelSettingsTV_createInstance();
-    jpv_WheelSettingsTV_T_03 = jpv_WheelSettingsTV_createInstance();
+    jpv_WheelSettingsTV_NULL = jpv_WheelSettingsTV_native_new();
+    jpv_WheelSettingsTV_T_01 = jpv_WheelSettingsTV_native_new();
+    jpv_WheelSettingsTV_T_02 = jpv_WheelSettingsTV_native_new();
+    jpv_WheelSettingsTV_T_03 = jpv_WheelSettingsTV_native_new();
 },
 jpv_WheelSettingsTV_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.WheelSettingsTV();
@@ -27866,7 +27866,7 @@ jpcb_BroadPhaseLayer__init_2 = (var_0, var_1) => {
     jpcb_BroadPhaseLayer__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpcb_BroadPhaseLayer_createInstance = () => {
+jpcb_BroadPhaseLayer_native_new = () => {
     jpcb_BroadPhaseLayer_$callClinit();
     return jpcb_BroadPhaseLayer__init_2(0, 0);
 },
@@ -27874,10 +27874,10 @@ jpcb_BroadPhaseLayer_deleteNative = $this => {
     jpcb_BroadPhaseLayer_internal_native_deleteNative$js_body$_5($this.$native_address);
 },
 jpcb_BroadPhaseLayer__clinit_ = () => {
-    jpcb_BroadPhaseLayer_NULL = jpcb_BroadPhaseLayer_createInstance();
-    jpcb_BroadPhaseLayer_T_01 = jpcb_BroadPhaseLayer_createInstance();
-    jpcb_BroadPhaseLayer_T_02 = jpcb_BroadPhaseLayer_createInstance();
-    jpcb_BroadPhaseLayer_T_03 = jpcb_BroadPhaseLayer_createInstance();
+    jpcb_BroadPhaseLayer_NULL = jpcb_BroadPhaseLayer_native_new();
+    jpcb_BroadPhaseLayer_T_01 = jpcb_BroadPhaseLayer_native_new();
+    jpcb_BroadPhaseLayer_T_02 = jpcb_BroadPhaseLayer_native_new();
+    jpcb_BroadPhaseLayer_T_03 = jpcb_BroadPhaseLayer_native_new();
 },
 jpcb_BroadPhaseLayer_internal_native_create_short$js_body$_1 = var$1 => {
     var jsObj = new jolt.BroadPhaseLayer(var$1);
@@ -27917,7 +27917,7 @@ jpv_ArrayWheelSettings__init_1 = (var_0, var_1) => {
     jpv_ArrayWheelSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_ArrayWheelSettings_createInstance = () => {
+jpv_ArrayWheelSettings_native_new = () => {
     jpv_ArrayWheelSettings_$callClinit();
     return jpv_ArrayWheelSettings__init_1(0, 0);
 },
@@ -27934,10 +27934,10 @@ jpv_ArrayWheelSettings_push_back = ($this, $inValue) => {
     jpv_ArrayWheelSettings_internal_native_push_back$js_body$_13(var$2, var$3);
 },
 jpv_ArrayWheelSettings__clinit_ = () => {
-    jpv_ArrayWheelSettings_NULL = jpv_ArrayWheelSettings_createInstance();
-    jpv_ArrayWheelSettings_T_01 = jpv_ArrayWheelSettings_createInstance();
-    jpv_ArrayWheelSettings_T_02 = jpv_ArrayWheelSettings_createInstance();
-    jpv_ArrayWheelSettings_T_03 = jpv_ArrayWheelSettings_createInstance();
+    jpv_ArrayWheelSettings_NULL = jpv_ArrayWheelSettings_native_new();
+    jpv_ArrayWheelSettings_T_01 = jpv_ArrayWheelSettings_native_new();
+    jpv_ArrayWheelSettings_T_02 = jpv_ArrayWheelSettings_native_new();
+    jpv_ArrayWheelSettings_T_03 = jpv_ArrayWheelSettings_native_new();
 },
 jpv_ArrayWheelSettings_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.ArrayWheelSettings();
@@ -30606,7 +30606,7 @@ jpv_VehicleConstraint__init_2 = (var_0, var_1) => {
     jpv_VehicleConstraint__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleConstraint_createInstance = () => {
+jpv_VehicleConstraint_native_new = () => {
     jpv_VehicleConstraint_$callClinit();
     return jpv_VehicleConstraint__init_2(0, 0);
 },
@@ -30622,7 +30622,7 @@ jpv_VehicleConstraint_GetController = $this => {
     if (!$pointer)
         return null;
     if ($this.$VehicleController_TEMP_GEN_0 === null)
-        $this.$VehicleController_TEMP_GEN_0 = jpv_VehicleController_createInstance();
+        $this.$VehicleController_TEMP_GEN_0 = jpv_VehicleController_native_new();
     ji_IDLBase_internal_reset($this.$VehicleController_TEMP_GEN_0, $pointer, 0);
     return $this.$VehicleController_TEMP_GEN_0;
 },
@@ -30632,7 +30632,7 @@ jpv_VehicleConstraint_GetWheels = $this => {
     if (!$pointer)
         return null;
     if ($this.$Wheels_TEMP_GEN_0 === null)
-        $this.$Wheels_TEMP_GEN_0 = jpv_Wheels_createInstance();
+        $this.$Wheels_TEMP_GEN_0 = jpv_Wheels_native_new();
     ji_IDLBase_internal_reset($this.$Wheels_TEMP_GEN_0, $pointer, 0);
     return $this.$Wheels_TEMP_GEN_0;
 },
@@ -30642,7 +30642,7 @@ jpv_VehicleConstraint_GetWheel = ($this, $inIdx) => {
     if (!$pointer)
         return null;
     if ($this.$Wheel_TEMP_GEN_00 === null)
-        $this.$Wheel_TEMP_GEN_00 = jpv_Wheel_createInstance();
+        $this.$Wheel_TEMP_GEN_00 = jpv_Wheel_native_new();
     ji_IDLBase_internal_reset($this.$Wheel_TEMP_GEN_00, $pointer, 0);
     return $this.$Wheel_TEMP_GEN_00;
 },
@@ -30652,15 +30652,15 @@ jpv_VehicleConstraint_GetWheelWorldTransform = ($this, $inWheelIndex, $inWheelRi
     if (!$pointer)
         return null;
     if ($this.$Mat44_TEMP_GEN_10 === null)
-        $this.$Mat44_TEMP_GEN_10 = jm_Mat44_createInstance();
+        $this.$Mat44_TEMP_GEN_10 = jm_Mat44_native_new();
     ji_IDLBase_internal_reset($this.$Mat44_TEMP_GEN_10, $pointer, 0);
     return $this.$Mat44_TEMP_GEN_10;
 },
 jpv_VehicleConstraint__clinit_ = () => {
-    jpv_VehicleConstraint_NULL = jpv_VehicleConstraint_createInstance();
-    jpv_VehicleConstraint_T_01 = jpv_VehicleConstraint_createInstance();
-    jpv_VehicleConstraint_T_02 = jpv_VehicleConstraint_createInstance();
-    jpv_VehicleConstraint_T_03 = jpv_VehicleConstraint_createInstance();
+    jpv_VehicleConstraint_NULL = jpv_VehicleConstraint_native_new();
+    jpv_VehicleConstraint_T_01 = jpv_VehicleConstraint_native_new();
+    jpv_VehicleConstraint_T_02 = jpv_VehicleConstraint_native_new();
+    jpv_VehicleConstraint_T_03 = jpv_VehicleConstraint_native_new();
 },
 jpv_VehicleConstraint_internal_native_create_Body_VehicleConstraintSettings$js_body$_1 = (var$1, var$2) => {
     var jsObj = new jolt.VehicleConstraint(var$1, var$2);
@@ -30804,7 +30804,7 @@ jpv_VehicleConstraintSettings__init_2 = (var_0, var_1) => {
     jpv_VehicleConstraintSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleConstraintSettings_createInstance = () => {
+jpv_VehicleConstraintSettings_native_new = () => {
     jpv_VehicleConstraintSettings_$callClinit();
     return jpv_VehicleConstraintSettings__init_2(0, 0);
 },
@@ -30817,7 +30817,7 @@ jpv_VehicleConstraintSettings_get_mWheels = $this => {
     if (!$pointer)
         return null;
     if ($this.$ArrayWheelSettings_TEMP_GEN_0 === null)
-        $this.$ArrayWheelSettings_TEMP_GEN_0 = jpv_ArrayWheelSettings_createInstance();
+        $this.$ArrayWheelSettings_TEMP_GEN_0 = jpv_ArrayWheelSettings_native_new();
     ji_IDLBase_internal_reset($this.$ArrayWheelSettings_TEMP_GEN_0, $pointer, 0);
     return $this.$ArrayWheelSettings_TEMP_GEN_0;
 },
@@ -30833,7 +30833,7 @@ jpv_VehicleConstraintSettings_get_mAntiRollBars = $this => {
     if (!$pointer)
         return null;
     if ($this.$ArrayVehicleAntiRollBar_TEMP_GEN_0 === null)
-        $this.$ArrayVehicleAntiRollBar_TEMP_GEN_0 = jpv_ArrayVehicleAntiRollBar_createInstance();
+        $this.$ArrayVehicleAntiRollBar_TEMP_GEN_0 = jpv_ArrayVehicleAntiRollBar_native_new();
     ji_IDLBase_internal_reset($this.$ArrayVehicleAntiRollBar_TEMP_GEN_0, $pointer, 0);
     return $this.$ArrayVehicleAntiRollBar_TEMP_GEN_0;
 },
@@ -30844,10 +30844,10 @@ jpv_VehicleConstraintSettings_set_mController = ($this, $mController) => {
     jpv_VehicleConstraintSettings_internal_native_set_mController$js_body$_27(var$2, var$3);
 },
 jpv_VehicleConstraintSettings__clinit_ = () => {
-    jpv_VehicleConstraintSettings_NULL = jpv_VehicleConstraintSettings_createInstance();
-    jpv_VehicleConstraintSettings_T_01 = jpv_VehicleConstraintSettings_createInstance();
-    jpv_VehicleConstraintSettings_T_02 = jpv_VehicleConstraintSettings_createInstance();
-    jpv_VehicleConstraintSettings_T_03 = jpv_VehicleConstraintSettings_createInstance();
+    jpv_VehicleConstraintSettings_NULL = jpv_VehicleConstraintSettings_native_new();
+    jpv_VehicleConstraintSettings_T_01 = jpv_VehicleConstraintSettings_native_new();
+    jpv_VehicleConstraintSettings_T_02 = jpv_VehicleConstraintSettings_native_new();
+    jpv_VehicleConstraintSettings_T_03 = jpv_VehicleConstraintSettings_native_new();
 },
 jpv_VehicleConstraintSettings_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.VehicleConstraintSettings();
@@ -31183,7 +31183,7 @@ jpv_Wheel__init_0 = (var_0, var_1) => {
     jpv_Wheel__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_Wheel_createInstance = () => {
+jpv_Wheel_native_new = () => {
     jpv_Wheel_$callClinit();
     return jpv_Wheel__init_0(0, 0);
 },
@@ -31196,15 +31196,15 @@ jpv_Wheel_GetSettings = $this => {
     if (!$pointer)
         return null;
     if ($this.$WheelSettings_TEMP_GEN_0 === null)
-        $this.$WheelSettings_TEMP_GEN_0 = jpv_WheelSettings_createInstance();
+        $this.$WheelSettings_TEMP_GEN_0 = jpv_WheelSettings_native_new();
     ji_IDLBase_internal_reset($this.$WheelSettings_TEMP_GEN_0, $pointer, 0);
     return $this.$WheelSettings_TEMP_GEN_0;
 },
 jpv_Wheel__clinit_ = () => {
-    jpv_Wheel_NULL = jpv_Wheel_createInstance();
-    jpv_Wheel_T_01 = jpv_Wheel_createInstance();
-    jpv_Wheel_T_02 = jpv_Wheel_createInstance();
-    jpv_Wheel_T_03 = jpv_Wheel_createInstance();
+    jpv_Wheel_NULL = jpv_Wheel_native_new();
+    jpv_Wheel_T_01 = jpv_Wheel_native_new();
+    jpv_Wheel_T_02 = jpv_Wheel_native_new();
+    jpv_Wheel_T_03 = jpv_Wheel_native_new();
 },
 jpv_Wheel_internal_native_deleteNative$js_body$_5 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.Wheel);
@@ -31237,7 +31237,7 @@ jpv_VehicleTrackSettings__init_0 = (var_0, var_1) => {
     jpv_VehicleTrackSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleTrackSettings_createInstance = () => {
+jpv_VehicleTrackSettings_native_new = () => {
     jpv_VehicleTrackSettings_$callClinit();
     return jpv_VehicleTrackSettings__init_0(0, 0);
 },
@@ -31253,15 +31253,15 @@ jpv_VehicleTrackSettings_get_mWheels = $this => {
     if (!$pointer)
         return null;
     if ($this.$ArrayUint_TEMP_GEN_0 === null)
-        $this.$ArrayUint_TEMP_GEN_0 = jm_ArrayUint_createInstance();
+        $this.$ArrayUint_TEMP_GEN_0 = jm_ArrayUint_native_new();
     ji_IDLBase_internal_reset($this.$ArrayUint_TEMP_GEN_0, $pointer, 0);
     return $this.$ArrayUint_TEMP_GEN_0;
 },
 jpv_VehicleTrackSettings__clinit_ = () => {
-    jpv_VehicleTrackSettings_NULL = jpv_VehicleTrackSettings_createInstance();
-    jpv_VehicleTrackSettings_T_01 = jpv_VehicleTrackSettings_createInstance();
-    jpv_VehicleTrackSettings_T_02 = jpv_VehicleTrackSettings_createInstance();
-    jpv_VehicleTrackSettings_T_03 = jpv_VehicleTrackSettings_createInstance();
+    jpv_VehicleTrackSettings_NULL = jpv_VehicleTrackSettings_native_new();
+    jpv_VehicleTrackSettings_T_01 = jpv_VehicleTrackSettings_native_new();
+    jpv_VehicleTrackSettings_T_02 = jpv_VehicleTrackSettings_native_new();
+    jpv_VehicleTrackSettings_T_03 = jpv_VehicleTrackSettings_native_new();
 },
 jpv_VehicleTrackSettings_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.VehicleTrackSettings);
@@ -31295,7 +31295,7 @@ jpcb_BroadPhaseLayerInterface__init_0 = (var_0, var_1) => {
     jpcb_BroadPhaseLayerInterface__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcb_BroadPhaseLayerInterface_createInstance = () => {
+jpcb_BroadPhaseLayerInterface_native_new = () => {
     jpcb_BroadPhaseLayerInterface_$callClinit();
     return jpcb_BroadPhaseLayerInterface__init_0(0, 0);
 },
@@ -31303,10 +31303,10 @@ jpcb_BroadPhaseLayerInterface_deleteNative = $this => {
     jpcb_BroadPhaseLayerInterface_internal_native_deleteNative$js_body$_3($this.$native_address);
 },
 jpcb_BroadPhaseLayerInterface__clinit_ = () => {
-    jpcb_BroadPhaseLayerInterface_NULL = jpcb_BroadPhaseLayerInterface_createInstance();
-    jpcb_BroadPhaseLayerInterface_T_01 = jpcb_BroadPhaseLayerInterface_createInstance();
-    jpcb_BroadPhaseLayerInterface_T_02 = jpcb_BroadPhaseLayerInterface_createInstance();
-    jpcb_BroadPhaseLayerInterface_T_03 = jpcb_BroadPhaseLayerInterface_createInstance();
+    jpcb_BroadPhaseLayerInterface_NULL = jpcb_BroadPhaseLayerInterface_native_new();
+    jpcb_BroadPhaseLayerInterface_T_01 = jpcb_BroadPhaseLayerInterface_native_new();
+    jpcb_BroadPhaseLayerInterface_T_02 = jpcb_BroadPhaseLayerInterface_native_new();
+    jpcb_BroadPhaseLayerInterface_T_03 = jpcb_BroadPhaseLayerInterface_native_new();
 },
 jpcb_BroadPhaseLayerInterface_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.BroadPhaseLayerInterface);
@@ -31342,7 +31342,7 @@ jpcb_BroadPhaseLayerInterfaceTable__init_2 = (var_0, var_1) => {
     jpcb_BroadPhaseLayerInterfaceTable__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcb_BroadPhaseLayerInterfaceTable_createInstance = () => {
+jpcb_BroadPhaseLayerInterfaceTable_native_new = () => {
     jpcb_BroadPhaseLayerInterfaceTable_$callClinit();
     return jpcb_BroadPhaseLayerInterfaceTable__init_2(0, 0);
 },
@@ -31353,10 +31353,10 @@ jpcb_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer = ($this, $inObjec
     jpcb_BroadPhaseLayerInterfaceTable_internal_native_MapObjectToBroadPhaseLayer$js_body$_5(var$3, $inObjectLayer, var$4);
 },
 jpcb_BroadPhaseLayerInterfaceTable__clinit_ = () => {
-    jpcb_BroadPhaseLayerInterfaceTable_NULL = jpcb_BroadPhaseLayerInterfaceTable_createInstance();
-    jpcb_BroadPhaseLayerInterfaceTable_T_01 = jpcb_BroadPhaseLayerInterfaceTable_createInstance();
-    jpcb_BroadPhaseLayerInterfaceTable_T_02 = jpcb_BroadPhaseLayerInterfaceTable_createInstance();
-    jpcb_BroadPhaseLayerInterfaceTable_T_03 = jpcb_BroadPhaseLayerInterfaceTable_createInstance();
+    jpcb_BroadPhaseLayerInterfaceTable_NULL = jpcb_BroadPhaseLayerInterfaceTable_native_new();
+    jpcb_BroadPhaseLayerInterfaceTable_T_01 = jpcb_BroadPhaseLayerInterfaceTable_native_new();
+    jpcb_BroadPhaseLayerInterfaceTable_T_02 = jpcb_BroadPhaseLayerInterfaceTable_native_new();
+    jpcb_BroadPhaseLayerInterfaceTable_T_03 = jpcb_BroadPhaseLayerInterfaceTable_native_new();
 },
 jpcb_BroadPhaseLayerInterfaceTable_internal_native_create_int_int$js_body$_1 = (var$1, var$2) => {
     var jsObj = new jolt.BroadPhaseLayerInterfaceTable(var$1, var$2);
@@ -32069,15 +32069,15 @@ jpv_VehicleCollisionTesterRay__init_1 = (var_0, var_1) => {
     jpv_VehicleCollisionTesterRay__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleCollisionTesterRay_createInstance = () => {
+jpv_VehicleCollisionTesterRay_native_new = () => {
     jpv_VehicleCollisionTesterRay_$callClinit();
     return jpv_VehicleCollisionTesterRay__init_1(0, 0);
 },
 jpv_VehicleCollisionTesterRay__clinit_ = () => {
-    jpv_VehicleCollisionTesterRay_NULL = jpv_VehicleCollisionTesterRay_createInstance();
-    jpv_VehicleCollisionTesterRay_T_01 = jpv_VehicleCollisionTesterRay_createInstance();
-    jpv_VehicleCollisionTesterRay_T_02 = jpv_VehicleCollisionTesterRay_createInstance();
-    jpv_VehicleCollisionTesterRay_T_03 = jpv_VehicleCollisionTesterRay_createInstance();
+    jpv_VehicleCollisionTesterRay_NULL = jpv_VehicleCollisionTesterRay_native_new();
+    jpv_VehicleCollisionTesterRay_T_01 = jpv_VehicleCollisionTesterRay_native_new();
+    jpv_VehicleCollisionTesterRay_T_02 = jpv_VehicleCollisionTesterRay_native_new();
+    jpv_VehicleCollisionTesterRay_T_03 = jpv_VehicleCollisionTesterRay_native_new();
 },
 jpv_VehicleCollisionTesterRay_internal_native_create_int$js_body$_5 = var$1 => {
     var jsObj = new jolt.VehicleCollisionTesterRay(var$1);
@@ -33126,7 +33126,7 @@ jpv_VehicleEngine__init_0 = (var_0, var_1) => {
     jpv_VehicleEngine__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleEngine_createInstance = () => {
+jpv_VehicleEngine_native_new = () => {
     jpv_VehicleEngine_$callClinit();
     return jpv_VehicleEngine__init_0(0, 0);
 },
@@ -33134,10 +33134,10 @@ jpv_VehicleEngine_deleteNative = $this => {
     jpv_VehicleEngine_internal_native_deleteNative$js_body$_3($this.$native_address);
 },
 jpv_VehicleEngine__clinit_ = () => {
-    jpv_VehicleEngine_NULL = jpv_VehicleEngine_createInstance();
-    jpv_VehicleEngine_T_01 = jpv_VehicleEngine_createInstance();
-    jpv_VehicleEngine_T_02 = jpv_VehicleEngine_createInstance();
-    jpv_VehicleEngine_T_03 = jpv_VehicleEngine_createInstance();
+    jpv_VehicleEngine_NULL = jpv_VehicleEngine_native_new();
+    jpv_VehicleEngine_T_01 = jpv_VehicleEngine_native_new();
+    jpv_VehicleEngine_T_02 = jpv_VehicleEngine_native_new();
+    jpv_VehicleEngine_T_03 = jpv_VehicleEngine_native_new();
 },
 jpv_VehicleEngine_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.VehicleEngine);
@@ -33312,7 +33312,7 @@ jp_PhysicsSystem__init_0 = (var_0, var_1) => {
     jp_PhysicsSystem__init_(var_2, var_0, var_1);
     return var_2;
 },
-jp_PhysicsSystem_createInstance = () => {
+jp_PhysicsSystem_native_new = () => {
     jp_PhysicsSystem_$callClinit();
     return jp_PhysicsSystem__init_0(0, 0);
 },
@@ -33349,7 +33349,7 @@ jp_PhysicsSystem_GetBodyInterface = $this => {
     if (!$pointer)
         return null;
     if ($this.$BodyInterface_TEMP_GEN_0 === null)
-        $this.$BodyInterface_TEMP_GEN_0 = jpb_BodyInterface_createInstance();
+        $this.$BodyInterface_TEMP_GEN_0 = jpb_BodyInterface_native_new();
     ji_IDLBase_internal_reset($this.$BodyInterface_TEMP_GEN_0, $pointer, 0);
     return $this.$BodyInterface_TEMP_GEN_0;
 },
@@ -33366,10 +33366,10 @@ jp_PhysicsSystem_RemoveStepListener = ($this, $inListener) => {
     jp_PhysicsSystem_internal_native_RemoveStepListener_1$js_body$_73(var$2, var$3);
 },
 jp_PhysicsSystem__clinit_ = () => {
-    jp_PhysicsSystem_NULL = jp_PhysicsSystem_createInstance();
-    jp_PhysicsSystem_T_01 = jp_PhysicsSystem_createInstance();
-    jp_PhysicsSystem_T_02 = jp_PhysicsSystem_createInstance();
-    jp_PhysicsSystem_T_03 = jp_PhysicsSystem_createInstance();
+    jp_PhysicsSystem_NULL = jp_PhysicsSystem_native_new();
+    jp_PhysicsSystem_T_01 = jp_PhysicsSystem_native_new();
+    jp_PhysicsSystem_T_02 = jp_PhysicsSystem_native_new();
+    jp_PhysicsSystem_T_03 = jp_PhysicsSystem_native_new();
 },
 jp_PhysicsSystem_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.PhysicsSystem);
@@ -33757,7 +33757,7 @@ jm_Mat44__init_0 = (var_0, var_1) => {
     jm_Mat44__init_(var_2, var_0, var_1);
     return var_2;
 },
-jm_Mat44_createInstance = () => {
+jm_Mat44_native_new = () => {
     jm_Mat44_$callClinit();
     return jm_Mat44__init_0(0, 0);
 },
@@ -33776,15 +33776,15 @@ jm_Mat44_GetColumn4 = ($this, $inCol) => {
     if (!$pointer)
         return null;
     if ($this.$Vec4_TEMP_GEN_1 === null)
-        $this.$Vec4_TEMP_GEN_1 = jm_Vec4_createInstance();
+        $this.$Vec4_TEMP_GEN_1 = jm_Vec4_native_new();
     ji_IDLBase_internal_reset($this.$Vec4_TEMP_GEN_1, $pointer, 0);
     return $this.$Vec4_TEMP_GEN_1;
 },
 jm_Mat44__clinit_ = () => {
-    jm_Mat44_NULL = jm_Mat44_createInstance();
-    jm_Mat44_T_01 = jm_Mat44_createInstance();
-    jm_Mat44_T_02 = jm_Mat44_createInstance();
-    jm_Mat44_T_03 = jm_Mat44_createInstance();
+    jm_Mat44_NULL = jm_Mat44_native_new();
+    jm_Mat44_T_01 = jm_Mat44_native_new();
+    jm_Mat44_T_02 = jm_Mat44_native_new();
+    jm_Mat44_T_03 = jm_Mat44_native_new();
 },
 jm_Mat44_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.Mat44);
@@ -36016,7 +36016,7 @@ jm_Vec4__init_0 = (var_0, var_1) => {
     jm_Vec4__init_(var_2, var_0, var_1);
     return var_2;
 },
-jm_Vec4_createInstance = () => {
+jm_Vec4_native_new = () => {
     jm_Vec4_$callClinit();
     return jm_Vec4__init_0(0, 0);
 },
@@ -36042,10 +36042,10 @@ jm_Vec4_GetComponent = ($this, $inCoordinate) => {
     return jm_Vec4_internal_native_GetComponent$js_body$_41($this.$native_address, $inCoordinate);
 },
 jm_Vec4__clinit_ = () => {
-    jm_Vec4_NULL = jm_Vec4_createInstance();
-    jm_Vec4_T_01 = jm_Vec4_createInstance();
-    jm_Vec4_T_02 = jm_Vec4_createInstance();
-    jm_Vec4_T_03 = jm_Vec4_createInstance();
+    jm_Vec4_NULL = jm_Vec4_native_new();
+    jm_Vec4_T_01 = jm_Vec4_native_new();
+    jm_Vec4_T_02 = jm_Vec4_native_new();
+    jm_Vec4_T_03 = jm_Vec4_native_new();
 },
 jm_Vec4_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.Vec4);
@@ -36232,7 +36232,7 @@ jm_Vec3__init_0 = (var_0, var_1) => {
     jm_Vec3__init_(var_2, var_0, var_1);
     return var_2;
 },
-jm_Vec3_createInstance = () => {
+jm_Vec3_native_new = () => {
     return jm_Vec3__init_0(0, 0);
 },
 jm_Vec3_deleteNative = $this => {
@@ -36244,7 +36244,7 @@ jm_Vec3_sZero = () => {
     if (!$pointer)
         return null;
     if (jm_Vec3_Vec3_TEMP_STATIC_GEN_0 === null)
-        jm_Vec3_Vec3_TEMP_STATIC_GEN_0 = jm_Vec3_createInstance();
+        jm_Vec3_Vec3_TEMP_STATIC_GEN_0 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jm_Vec3_Vec3_TEMP_STATIC_GEN_0, $pointer, 0);
     return jm_Vec3_Vec3_TEMP_STATIC_GEN_0;
 },
@@ -36254,7 +36254,7 @@ jm_Vec3_sAxisX = () => {
     if (!$pointer)
         return null;
     if (jm_Vec3_Vec3_TEMP_STATIC_GEN_2 === null)
-        jm_Vec3_Vec3_TEMP_STATIC_GEN_2 = jm_Vec3_createInstance();
+        jm_Vec3_Vec3_TEMP_STATIC_GEN_2 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jm_Vec3_Vec3_TEMP_STATIC_GEN_2, $pointer, 0);
     return jm_Vec3_Vec3_TEMP_STATIC_GEN_2;
 },
@@ -36264,7 +36264,7 @@ jm_Vec3_sAxisY = () => {
     if (!$pointer)
         return null;
     if (jm_Vec3_Vec3_TEMP_STATIC_GEN_3 === null)
-        jm_Vec3_Vec3_TEMP_STATIC_GEN_3 = jm_Vec3_createInstance();
+        jm_Vec3_Vec3_TEMP_STATIC_GEN_3 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jm_Vec3_Vec3_TEMP_STATIC_GEN_3, $pointer, 0);
     return jm_Vec3_Vec3_TEMP_STATIC_GEN_3;
 },
@@ -36274,7 +36274,7 @@ jm_Vec3_sAxisZ = () => {
     if (!$pointer)
         return null;
     if (jm_Vec3_Vec3_TEMP_STATIC_GEN_4 === null)
-        jm_Vec3_Vec3_TEMP_STATIC_GEN_4 = jm_Vec3_createInstance();
+        jm_Vec3_Vec3_TEMP_STATIC_GEN_4 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jm_Vec3_Vec3_TEMP_STATIC_GEN_4, $pointer, 0);
     return jm_Vec3_Vec3_TEMP_STATIC_GEN_4;
 },
@@ -36284,7 +36284,7 @@ jm_Vec3_sUnitSpherical = ($inTheta, $inPhi) => {
     if (!$pointer)
         return null;
     if (jm_Vec3_Vec3_TEMP_STATIC_GEN_13 === null)
-        jm_Vec3_Vec3_TEMP_STATIC_GEN_13 = jm_Vec3_createInstance();
+        jm_Vec3_Vec3_TEMP_STATIC_GEN_13 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset(jm_Vec3_Vec3_TEMP_STATIC_GEN_13, $pointer, 0);
     return jm_Vec3_Vec3_TEMP_STATIC_GEN_13;
 },
@@ -36297,7 +36297,7 @@ jm_Vec3_Normalized = $this => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_00 === null)
-        $this.$Vec3_TEMP_GEN_00 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_00 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_00, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_00;
 },
@@ -36325,7 +36325,7 @@ jm_Vec3_Cross = ($this, $inRHS) => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_5 === null)
-        $this.$Vec3_TEMP_GEN_5 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_5 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_5, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_5;
 },
@@ -36350,7 +36350,7 @@ jm_Vec3_MulVec3 = ($this, $inV) => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_7 === null)
-        $this.$Vec3_TEMP_GEN_7 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_7 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_7, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_7;
 },
@@ -36360,7 +36360,7 @@ jm_Vec3_AddVec3 = ($this, $inV) => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_11 === null)
-        $this.$Vec3_TEMP_GEN_11 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_11 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_11, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_11;
 },
@@ -36370,7 +36370,7 @@ jm_Vec3_SubVec3 = ($this, $inV) => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_12 === null)
-        $this.$Vec3_TEMP_GEN_12 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_12 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_12, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_12;
 },
@@ -38357,15 +38357,15 @@ jpcb_ObjectVsBroadPhaseLayerFilterTable__init_2 = (var_0, var_1) => {
     jpcb_ObjectVsBroadPhaseLayerFilterTable__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcb_ObjectVsBroadPhaseLayerFilterTable_createInstance = () => {
+jpcb_ObjectVsBroadPhaseLayerFilterTable_native_new = () => {
     jpcb_ObjectVsBroadPhaseLayerFilterTable_$callClinit();
     return jpcb_ObjectVsBroadPhaseLayerFilterTable__init_2(0, 0);
 },
 jpcb_ObjectVsBroadPhaseLayerFilterTable__clinit_ = () => {
-    jpcb_ObjectVsBroadPhaseLayerFilterTable_NULL = jpcb_ObjectVsBroadPhaseLayerFilterTable_createInstance();
-    jpcb_ObjectVsBroadPhaseLayerFilterTable_T_01 = jpcb_ObjectVsBroadPhaseLayerFilterTable_createInstance();
-    jpcb_ObjectVsBroadPhaseLayerFilterTable_T_02 = jpcb_ObjectVsBroadPhaseLayerFilterTable_createInstance();
-    jpcb_ObjectVsBroadPhaseLayerFilterTable_T_03 = jpcb_ObjectVsBroadPhaseLayerFilterTable_createInstance();
+    jpcb_ObjectVsBroadPhaseLayerFilterTable_NULL = jpcb_ObjectVsBroadPhaseLayerFilterTable_native_new();
+    jpcb_ObjectVsBroadPhaseLayerFilterTable_T_01 = jpcb_ObjectVsBroadPhaseLayerFilterTable_native_new();
+    jpcb_ObjectVsBroadPhaseLayerFilterTable_T_02 = jpcb_ObjectVsBroadPhaseLayerFilterTable_native_new();
+    jpcb_ObjectVsBroadPhaseLayerFilterTable_T_03 = jpcb_ObjectVsBroadPhaseLayerFilterTable_native_new();
 },
 jpcb_ObjectVsBroadPhaseLayerFilterTable_internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int$js_body$_1 = (var$1, var$2, var$3, var$4) => {
     var jsObj = new jolt.ObjectVsBroadPhaseLayerFilterTable(var$1, var$2, var$3, var$4);
@@ -38687,7 +38687,7 @@ jpv_VehicleAntiRollBar__init_0 = (var_0, var_1) => {
     jpv_VehicleAntiRollBar__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleAntiRollBar_createInstance = () => {
+jpv_VehicleAntiRollBar_native_new = () => {
     jpv_VehicleAntiRollBar_$callClinit();
     return jpv_VehicleAntiRollBar__init_0(0, 0);
 },
@@ -38701,10 +38701,10 @@ jpv_VehicleAntiRollBar_set_mRightWheel = ($this, $mRightWheel) => {
     jpv_VehicleAntiRollBar_internal_native_set_mRightWheel$js_body$_13($this.$native_address, $mRightWheel);
 },
 jpv_VehicleAntiRollBar__clinit_ = () => {
-    jpv_VehicleAntiRollBar_NULL = jpv_VehicleAntiRollBar_createInstance();
-    jpv_VehicleAntiRollBar_T_01 = jpv_VehicleAntiRollBar_createInstance();
-    jpv_VehicleAntiRollBar_T_02 = jpv_VehicleAntiRollBar_createInstance();
-    jpv_VehicleAntiRollBar_T_03 = jpv_VehicleAntiRollBar_createInstance();
+    jpv_VehicleAntiRollBar_NULL = jpv_VehicleAntiRollBar_native_new();
+    jpv_VehicleAntiRollBar_T_01 = jpv_VehicleAntiRollBar_native_new();
+    jpv_VehicleAntiRollBar_T_02 = jpv_VehicleAntiRollBar_native_new();
+    jpv_VehicleAntiRollBar_T_03 = jpv_VehicleAntiRollBar_native_new();
 },
 jpv_VehicleAntiRollBar_internal_native_deleteNative$js_body$_5 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.VehicleAntiRollBar);
@@ -39915,7 +39915,7 @@ jpcs_ShapeResult__init_0 = (var_0, var_1) => {
     jpcs_ShapeResult__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_ShapeResult_createInstance = () => {
+jpcs_ShapeResult_native_new = () => {
     jpcs_ShapeResult_$callClinit();
     return jpcs_ShapeResult__init_0(0, 0);
 },
@@ -39928,15 +39928,15 @@ jpcs_ShapeResult_Get = $this => {
     if (!$pointer)
         return null;
     if ($this.$Shape_TEMP_GEN_0 === null)
-        $this.$Shape_TEMP_GEN_0 = jpcs_Shape_createInstance();
+        $this.$Shape_TEMP_GEN_0 = jpcs_Shape_native_new();
     ji_IDLBase_internal_reset($this.$Shape_TEMP_GEN_0, $pointer, 0);
     return $this.$Shape_TEMP_GEN_0;
 },
 jpcs_ShapeResult__clinit_ = () => {
-    jpcs_ShapeResult_NULL = jpcs_ShapeResult_createInstance();
-    jpcs_ShapeResult_T_01 = jpcs_ShapeResult_createInstance();
-    jpcs_ShapeResult_T_02 = jpcs_ShapeResult_createInstance();
-    jpcs_ShapeResult_T_03 = jpcs_ShapeResult_createInstance();
+    jpcs_ShapeResult_NULL = jpcs_ShapeResult_native_new();
+    jpcs_ShapeResult_T_01 = jpcs_ShapeResult_native_new();
+    jpcs_ShapeResult_T_02 = jpcs_ShapeResult_native_new();
+    jpcs_ShapeResult_T_03 = jpcs_ShapeResult_native_new();
 },
 jpcs_ShapeResult_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.ShapeResult);
@@ -40226,7 +40226,7 @@ j_Jolt__init_0 = (var_0, var_1) => {
     j_Jolt__init_(var_2, var_0, var_1);
     return var_2;
 },
-j_Jolt_createInstance = () => {
+j_Jolt_native_new = () => {
     j_Jolt_$callClinit();
     return j_Jolt__init_0(0, 0);
 },
@@ -40236,7 +40236,7 @@ j_Jolt_New_PhysicsSystem = () => {
     $pointer = j_Jolt_internal_native_New_PhysicsSystem$js_body$_5();
     if (!$pointer)
         return null;
-    $PhysicsSystem_NEW = jp_PhysicsSystem_createInstance();
+    $PhysicsSystem_NEW = jp_PhysicsSystem_native_new();
     ji_IDLBase_internal_reset($PhysicsSystem_NEW, $pointer, 1);
     return $PhysicsSystem_NEW;
 },
@@ -40246,7 +40246,7 @@ j_Jolt_New_Factory = () => {
     $pointer = j_Jolt_internal_native_New_Factory$js_body$_7();
     if (!$pointer)
         return null;
-    $Factory_NEW = jc_Factory_createInstance();
+    $Factory_NEW = jc_Factory_native_new();
     ji_IDLBase_internal_reset($Factory_NEW, $pointer, 1);
     return $Factory_NEW;
 },
@@ -40256,7 +40256,7 @@ j_Jolt_New_TempAllocatorImpl = $inSize => {
     $pointer = j_Jolt_internal_native_New_TempAllocatorImpl$js_body$_9($inSize);
     if (!$pointer)
         return null;
-    $TempAllocatorImpl_NEW = jc_TempAllocatorImpl_createInstance();
+    $TempAllocatorImpl_NEW = jc_TempAllocatorImpl_native_new();
     ji_IDLBase_internal_reset($TempAllocatorImpl_NEW, $pointer, 1);
     return $TempAllocatorImpl_NEW;
 },
@@ -40267,7 +40267,7 @@ j_Jolt_New_JobSystemThreadPool = $inNumThreads => {
     if (!$pointer)
         return null;
     if (j_Jolt_JobSystemThreadPool_TEMP_STATIC_GEN_1 === null)
-        j_Jolt_JobSystemThreadPool_TEMP_STATIC_GEN_1 = jc_JobSystemThreadPool_createInstance();
+        j_Jolt_JobSystemThreadPool_TEMP_STATIC_GEN_1 = jc_JobSystemThreadPool_native_new();
     ji_IDLBase_internal_reset(j_Jolt_JobSystemThreadPool_TEMP_STATIC_GEN_1, $pointer, 0);
     return j_Jolt_JobSystemThreadPool_TEMP_STATIC_GEN_1;
 },
@@ -40277,7 +40277,7 @@ j_Jolt_New_BodyCreationSettings0 = ($inShape, $inPosition, $inRotation, $inMotio
     $pointer = j_Jolt_internal_native_New_BodyCreationSettings_1$js_body$_21($inShape.$native_address, $inPosition.$native_address, $inRotation.$native_address, je_EMotionType_getValue($inMotionType), $inObjectLayer);
     if (!$pointer)
         return null;
-    $BodyCreationSettings_NEW = jpb_BodyCreationSettings_createInstance();
+    $BodyCreationSettings_NEW = jpb_BodyCreationSettings_native_new();
     ji_IDLBase_internal_reset($BodyCreationSettings_NEW, $pointer, 1);
     return $BodyCreationSettings_NEW;
 },
@@ -40287,7 +40287,7 @@ j_Jolt_New_BodyCreationSettings = ($inShape, $inPosition, $inRotation, $inMotion
     $pointer = j_Jolt_internal_native_New_BodyCreationSettings_2$js_body$_23($inShape.$native_address, $inPosition.$native_address, $inRotation.$native_address, je_EMotionType_getValue($inMotionType), $inObjectLayer);
     if (!$pointer)
         return null;
-    $BodyCreationSettings_NEW = jpb_BodyCreationSettings_createInstance();
+    $BodyCreationSettings_NEW = jpb_BodyCreationSettings_native_new();
     ji_IDLBase_internal_reset($BodyCreationSettings_NEW, $pointer, 1);
     return $BodyCreationSettings_NEW;
 },
@@ -40297,7 +40297,7 @@ j_Jolt_New_Mat44 = () => {
     $pointer = j_Jolt_internal_native_New_Mat44_0$js_body$_25();
     if (!$pointer)
         return null;
-    $Mat44_NEW = jm_Mat44_createInstance();
+    $Mat44_NEW = jm_Mat44_native_new();
     ji_IDLBase_internal_reset($Mat44_NEW, $pointer, 1);
     return $Mat44_NEW;
 },
@@ -40307,7 +40307,7 @@ j_Jolt_New_Vec30 = () => {
     $pointer = j_Jolt_internal_native_New_Vec3_0$js_body$_31();
     if (!$pointer)
         return null;
-    $Vec3_NEW = jm_Vec3_createInstance();
+    $Vec3_NEW = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($Vec3_NEW, $pointer, 1);
     return $Vec3_NEW;
 },
@@ -40317,7 +40317,7 @@ j_Jolt_New_Vec3 = ($inX, $inY, $inZ) => {
     $pointer = j_Jolt_internal_native_New_Vec3_1$js_body$_33($inX, $inY, $inZ);
     if (!$pointer)
         return null;
-    $Vec3_NEW = jm_Vec3_createInstance();
+    $Vec3_NEW = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($Vec3_NEW, $pointer, 1);
     return $Vec3_NEW;
 },
@@ -40327,7 +40327,7 @@ j_Jolt_New_Vec4 = () => {
     $pointer = j_Jolt_internal_native_New_Vec4_0$js_body$_39();
     if (!$pointer)
         return null;
-    $Vec4_NEW = jm_Vec4_createInstance();
+    $Vec4_NEW = jm_Vec4_native_new();
     ji_IDLBase_internal_reset($Vec4_NEW, $pointer, 1);
     return $Vec4_NEW;
 },
@@ -40348,10 +40348,10 @@ j_Jolt_ClearWorld = $physicsSystem => {
     jolt.Jolt.prototype.ClearWorld($physicsSystem.$native_address);
 },
 j_Jolt__clinit_ = () => {
-    j_Jolt_NULL = j_Jolt_createInstance();
-    j_Jolt_T_01 = j_Jolt_createInstance();
-    j_Jolt_T_02 = j_Jolt_createInstance();
-    j_Jolt_T_03 = j_Jolt_createInstance();
+    j_Jolt_NULL = j_Jolt_native_new();
+    j_Jolt_T_01 = j_Jolt_native_new();
+    j_Jolt_T_02 = j_Jolt_native_new();
+    j_Jolt_T_03 = j_Jolt_native_new();
 },
 j_Jolt_internal_native_New_PhysicsSystem$js_body$_5 = () => {
     var returnedJSObj = jolt.Jolt.prototype.New_PhysicsSystem();
@@ -40532,7 +40532,7 @@ jpc_SpringSettings__init_0 = (var_0, var_1) => {
     jpc_SpringSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpc_SpringSettings_createInstance = () => {
+jpc_SpringSettings_native_new = () => {
     jpc_SpringSettings_$callClinit();
     return jpc_SpringSettings__init_0(0, 0);
 },
@@ -40546,10 +40546,10 @@ jpc_SpringSettings_set_mDamping = ($this, $mDamping) => {
     jpc_SpringSettings_internal_native_set_mDamping$js_body$_23($this.$native_address, $mDamping);
 },
 jpc_SpringSettings__clinit_ = () => {
-    jpc_SpringSettings_NULL = jpc_SpringSettings_createInstance();
-    jpc_SpringSettings_T_01 = jpc_SpringSettings_createInstance();
-    jpc_SpringSettings_T_02 = jpc_SpringSettings_createInstance();
-    jpc_SpringSettings_T_03 = jpc_SpringSettings_createInstance();
+    jpc_SpringSettings_NULL = jpc_SpringSettings_native_new();
+    jpc_SpringSettings_T_01 = jpc_SpringSettings_native_new();
+    jpc_SpringSettings_T_02 = jpc_SpringSettings_native_new();
+    jpc_SpringSettings_T_03 = jpc_SpringSettings_native_new();
 },
 jpc_SpringSettings_internal_native_deleteNative$js_body$_5 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.SpringSettings);
@@ -42075,15 +42075,15 @@ jc_JobSystemWithBarrier__init_0 = (var_0, var_1) => {
     jc_JobSystemWithBarrier__init_(var_2, var_0, var_1);
     return var_2;
 },
-jc_JobSystemWithBarrier_createInstance = () => {
+jc_JobSystemWithBarrier_native_new = () => {
     jc_JobSystemWithBarrier_$callClinit();
     return jc_JobSystemWithBarrier__init_0(0, 0);
 },
 jc_JobSystemWithBarrier__clinit_ = () => {
-    jc_JobSystemWithBarrier_NULL = jc_JobSystemWithBarrier_createInstance();
-    jc_JobSystemWithBarrier_T_01 = jc_JobSystemWithBarrier_createInstance();
-    jc_JobSystemWithBarrier_T_02 = jc_JobSystemWithBarrier_createInstance();
-    jc_JobSystemWithBarrier_T_03 = jc_JobSystemWithBarrier_createInstance();
+    jc_JobSystemWithBarrier_NULL = jc_JobSystemWithBarrier_native_new();
+    jc_JobSystemWithBarrier_T_01 = jc_JobSystemWithBarrier_native_new();
+    jc_JobSystemWithBarrier_T_02 = jc_JobSystemWithBarrier_native_new();
+    jc_JobSystemWithBarrier_T_03 = jc_JobSystemWithBarrier_native_new();
 },
 jc_JobSystemThreadPool = $rt_classWithoutFields(jc_JobSystemWithBarrier),
 jc_JobSystemThreadPool_NULL = null,
@@ -42103,7 +42103,7 @@ jc_JobSystemThreadPool__init_0 = (var_0, var_1) => {
     jc_JobSystemThreadPool__init_(var_2, var_0, var_1);
     return var_2;
 },
-jc_JobSystemThreadPool_createInstance = () => {
+jc_JobSystemThreadPool_native_new = () => {
     jc_JobSystemThreadPool_$callClinit();
     return jc_JobSystemThreadPool__init_0(0, 0);
 },
@@ -42111,10 +42111,10 @@ jc_JobSystemThreadPool_deleteNative = $this => {
     jc_JobSystemThreadPool_internal_native_deleteNative$js_body$_3($this.$native_address);
 },
 jc_JobSystemThreadPool__clinit_ = () => {
-    jc_JobSystemThreadPool_NULL = jc_JobSystemThreadPool_createInstance();
-    jc_JobSystemThreadPool_T_01 = jc_JobSystemThreadPool_createInstance();
-    jc_JobSystemThreadPool_T_02 = jc_JobSystemThreadPool_createInstance();
-    jc_JobSystemThreadPool_T_03 = jc_JobSystemThreadPool_createInstance();
+    jc_JobSystemThreadPool_NULL = jc_JobSystemThreadPool_native_new();
+    jc_JobSystemThreadPool_T_01 = jc_JobSystemThreadPool_native_new();
+    jc_JobSystemThreadPool_T_02 = jc_JobSystemThreadPool_native_new();
+    jc_JobSystemThreadPool_T_03 = jc_JobSystemThreadPool_native_new();
 },
 jc_JobSystemThreadPool_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.JobSystemThreadPool);
@@ -42462,7 +42462,7 @@ jpv_WheeledVehicleController__init_0 = (var_0, var_1) => {
     jpv_WheeledVehicleController__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_WheeledVehicleController_createInstance = () => {
+jpv_WheeledVehicleController_native_new = () => {
     jpv_WheeledVehicleController_$callClinit();
     return jpv_WheeledVehicleController__init_0(0, 0);
 },
@@ -42475,7 +42475,7 @@ jpv_WheeledVehicleController_GetEngine = $this => {
     if (!$pointer)
         return null;
     if ($this.$VehicleEngine_TEMP_GEN_0 === null)
-        $this.$VehicleEngine_TEMP_GEN_0 = jpv_VehicleEngine_createInstance();
+        $this.$VehicleEngine_TEMP_GEN_0 = jpv_VehicleEngine_native_new();
     ji_IDLBase_internal_reset($this.$VehicleEngine_TEMP_GEN_0, $pointer, 0);
     return $this.$VehicleEngine_TEMP_GEN_0;
 },
@@ -42485,15 +42485,15 @@ jpv_WheeledVehicleController_GetTransmission = $this => {
     if (!$pointer)
         return null;
     if ($this.$VehicleTransmission_TEMP_GEN_0 === null)
-        $this.$VehicleTransmission_TEMP_GEN_0 = jpv_VehicleTransmission_createInstance();
+        $this.$VehicleTransmission_TEMP_GEN_0 = jpv_VehicleTransmission_native_new();
     ji_IDLBase_internal_reset($this.$VehicleTransmission_TEMP_GEN_0, $pointer, 0);
     return $this.$VehicleTransmission_TEMP_GEN_0;
 },
 jpv_WheeledVehicleController__clinit_ = () => {
-    jpv_WheeledVehicleController_NULL = jpv_WheeledVehicleController_createInstance();
-    jpv_WheeledVehicleController_T_01 = jpv_WheeledVehicleController_createInstance();
-    jpv_WheeledVehicleController_T_02 = jpv_WheeledVehicleController_createInstance();
-    jpv_WheeledVehicleController_T_03 = jpv_WheeledVehicleController_createInstance();
+    jpv_WheeledVehicleController_NULL = jpv_WheeledVehicleController_native_new();
+    jpv_WheeledVehicleController_T_01 = jpv_WheeledVehicleController_native_new();
+    jpv_WheeledVehicleController_T_02 = jpv_WheeledVehicleController_native_new();
+    jpv_WheeledVehicleController_T_03 = jpv_WheeledVehicleController_native_new();
 },
 jpv_WheeledVehicleController_internal_native_SetDriverInput$js_body$_5 = (var$1, var$2, var$3, var$4, var$5) => {
     var jsObj = jolt.wrapPointer(var$1, jolt.WheeledVehicleController);
@@ -43071,15 +43071,15 @@ jpv_VehicleCollisionTesterCastSphere__init_1 = (var_0, var_1) => {
     jpv_VehicleCollisionTesterCastSphere__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_VehicleCollisionTesterCastSphere_createInstance = () => {
+jpv_VehicleCollisionTesterCastSphere_native_new = () => {
     jpv_VehicleCollisionTesterCastSphere_$callClinit();
     return jpv_VehicleCollisionTesterCastSphere__init_1(0, 0);
 },
 jpv_VehicleCollisionTesterCastSphere__clinit_ = () => {
-    jpv_VehicleCollisionTesterCastSphere_NULL = jpv_VehicleCollisionTesterCastSphere_createInstance();
-    jpv_VehicleCollisionTesterCastSphere_T_01 = jpv_VehicleCollisionTesterCastSphere_createInstance();
-    jpv_VehicleCollisionTesterCastSphere_T_02 = jpv_VehicleCollisionTesterCastSphere_createInstance();
-    jpv_VehicleCollisionTesterCastSphere_T_03 = jpv_VehicleCollisionTesterCastSphere_createInstance();
+    jpv_VehicleCollisionTesterCastSphere_NULL = jpv_VehicleCollisionTesterCastSphere_native_new();
+    jpv_VehicleCollisionTesterCastSphere_T_01 = jpv_VehicleCollisionTesterCastSphere_native_new();
+    jpv_VehicleCollisionTesterCastSphere_T_02 = jpv_VehicleCollisionTesterCastSphere_native_new();
+    jpv_VehicleCollisionTesterCastSphere_T_03 = jpv_VehicleCollisionTesterCastSphere_native_new();
 },
 jpv_VehicleCollisionTesterCastSphere_internal_native_create_int_float$js_body$_5 = (var$1, var$2) => {
     var jsObj = new jolt.VehicleCollisionTesterCastSphere(var$1, var$2);
@@ -44028,7 +44028,7 @@ jpb_BodyManagerDrawSettings__init_2 = (var_0, var_1) => {
     jpb_BodyManagerDrawSettings__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpb_BodyManagerDrawSettings_createInstance = () => {
+jpb_BodyManagerDrawSettings_native_new = () => {
     jpb_BodyManagerDrawSettings_$callClinit();
     return jpb_BodyManagerDrawSettings__init_2(0, 0);
 },
@@ -44042,10 +44042,10 @@ jpb_BodyManagerDrawSettings_set_mDrawShapeWireframe = ($this, $mDrawShapeWirefra
     jpb_BodyManagerDrawSettings_internal_native_set_mDrawShapeWireframe$js_body$_25($this.$native_address, !!$mDrawShapeWireframe);
 },
 jpb_BodyManagerDrawSettings__clinit_ = () => {
-    jpb_BodyManagerDrawSettings_NULL = jpb_BodyManagerDrawSettings_createInstance();
-    jpb_BodyManagerDrawSettings_T_01 = jpb_BodyManagerDrawSettings_createInstance();
-    jpb_BodyManagerDrawSettings_T_02 = jpb_BodyManagerDrawSettings_createInstance();
-    jpb_BodyManagerDrawSettings_T_03 = jpb_BodyManagerDrawSettings_createInstance();
+    jpb_BodyManagerDrawSettings_NULL = jpb_BodyManagerDrawSettings_native_new();
+    jpb_BodyManagerDrawSettings_T_01 = jpb_BodyManagerDrawSettings_native_new();
+    jpb_BodyManagerDrawSettings_T_02 = jpb_BodyManagerDrawSettings_native_new();
+    jpb_BodyManagerDrawSettings_T_03 = jpb_BodyManagerDrawSettings_native_new();
 },
 jpb_BodyManagerDrawSettings_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.BodyManagerDrawSettings();
@@ -45704,7 +45704,7 @@ jih_IDLFloatArray_$callClinit = () => {
     jih_IDLFloatArray_$callClinit = $rt_eraseClinit(jih_IDLFloatArray);
     jih_IDLFloatArray__clinit_();
 },
-jih_IDLFloatArray_createInstance = () => {
+jih_IDLFloatArray_native_new = () => {
     jih_IDLFloatArray_$callClinit();
     return jih_IDLFloatArray__init_0(1, 1);
 },
@@ -45724,7 +45724,7 @@ jih_IDLFloatArray_getValue = ($this, $index) => {
     return jih_IDLFloatArray_internal_native_getValue$js_body$_8($this.$native_address, $index);
 },
 jih_IDLFloatArray__clinit_ = () => {
-    jih_IDLFloatArray_NULL = jih_IDLFloatArray_createInstance();
+    jih_IDLFloatArray_NULL = jih_IDLFloatArray_native_new();
 },
 jih_IDLFloatArray_internal_native_deleteNative$js_body$_6 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.IDLFloatArray);
@@ -46157,7 +46157,7 @@ jesatv_TankTest_createTank = $this => {
     $turret_hinge.$set_mNormalAxis1(jm_Vec3_sAxisZ());
     $turret_hinge.$set_mNormalAxis2(jm_Vec3_sAxisZ());
     $turret_hinge.$set_mMotorSettings(jpc_MotorSettings__init_0(0.5, 1.0));
-    $this.$mTurretHinge = jpc_HingeConstraint_createInstance();
+    $this.$mTurretHinge = jpc_HingeConstraint_native_new();
     ji_IDLBase_native_copy($this.$mTurretHinge, $turret_hinge.$Create($this.$mTankBody, $this.$mTurretBody));
     ji_IDLBase_native_takeOwnership($this.$mTurretHinge);
     var$6 = $this.$mTurretHinge;
@@ -46185,7 +46185,7 @@ jesatv_TankTest_createTank = $this => {
     $barrel_hinge.$set_mLimitsMin((-0.1745329201221466));
     $barrel_hinge.$set_mLimitsMax(0.6981316804885864);
     $barrel_hinge.$set_mMotorSettings(jpc_MotorSettings__init_0(10.0, 1.0));
-    $this.$mBarrelHinge = jpc_HingeConstraint_createInstance();
+    $this.$mBarrelHinge = jpc_HingeConstraint_native_new();
     ji_IDLBase_native_copy($this.$mBarrelHinge, $barrel_hinge.$Create($this.$mTurretBody, $this.$mBarrelBody));
     ji_IDLBase_native_takeOwnership($this.$mBarrelHinge);
     $this.$mBarrelHinge.$SetMotorState(je_EMotorState_Position);
@@ -47000,7 +47000,7 @@ jpc_MotorSettings__init_2 = (var_0, var_1) => {
     jpc_MotorSettings__init_1(var_2, var_0, var_1);
     return var_2;
 },
-jpc_MotorSettings_createInstance = () => {
+jpc_MotorSettings_native_new = () => {
     jpc_MotorSettings_$callClinit();
     return jpc_MotorSettings__init_2(0, 0);
 },
@@ -47008,10 +47008,10 @@ jpc_MotorSettings_deleteNative = $this => {
     jpc_MotorSettings_internal_native_deleteNative$js_body$_9($this.$native_address);
 },
 jpc_MotorSettings__clinit_ = () => {
-    jpc_MotorSettings_NULL = jpc_MotorSettings_createInstance();
-    jpc_MotorSettings_T_01 = jpc_MotorSettings_createInstance();
-    jpc_MotorSettings_T_02 = jpc_MotorSettings_createInstance();
-    jpc_MotorSettings_T_03 = jpc_MotorSettings_createInstance();
+    jpc_MotorSettings_NULL = jpc_MotorSettings_native_new();
+    jpc_MotorSettings_T_01 = jpc_MotorSettings_native_new();
+    jpc_MotorSettings_T_02 = jpc_MotorSettings_native_new();
+    jpc_MotorSettings_T_03 = jpc_MotorSettings_native_new();
 },
 jpc_MotorSettings_internal_native_create_float_float$js_body$_3 = (var$1, var$2) => {
     var jsObj = new jolt.MotorSettings(var$1, var$2);
@@ -47058,7 +47058,7 @@ jm_Quat__init_2 = (var_0, var_1) => {
     jm_Quat__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jm_Quat_createInstance = () => {
+jm_Quat_native_new = () => {
     jm_Quat_$callClinit();
     return jm_Quat__init_2(0, 0);
 },
@@ -47072,7 +47072,7 @@ jm_Quat_sIdentity = () => {
     if (!$pointer)
         return null;
     if (jm_Quat_Quat_TEMP_STATIC_GEN_1 === null)
-        jm_Quat_Quat_TEMP_STATIC_GEN_1 = jm_Quat_createInstance();
+        jm_Quat_Quat_TEMP_STATIC_GEN_1 = jm_Quat_native_new();
     ji_IDLBase_internal_reset(jm_Quat_Quat_TEMP_STATIC_GEN_1, $pointer, 0);
     return jm_Quat_Quat_TEMP_STATIC_GEN_1;
 },
@@ -47083,7 +47083,7 @@ jm_Quat_sRotation = ($inRotation, $inAngle) => {
     if (!$pointer)
         return null;
     if (jm_Quat_Quat_TEMP_STATIC_GEN_2 === null)
-        jm_Quat_Quat_TEMP_STATIC_GEN_2 = jm_Quat_createInstance();
+        jm_Quat_Quat_TEMP_STATIC_GEN_2 = jm_Quat_native_new();
     ji_IDLBase_internal_reset(jm_Quat_Quat_TEMP_STATIC_GEN_2, $pointer, 0);
     return jm_Quat_Quat_TEMP_STATIC_GEN_2;
 },
@@ -47093,7 +47093,7 @@ jm_Quat_MulVec3 = ($this, $inV) => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_0 === null)
-        $this.$Vec3_TEMP_GEN_0 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_0 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_0, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_0;
 },
@@ -47130,7 +47130,7 @@ jm_Quat_RotateAxisZ = $this => {
     if (!$pointer)
         return null;
     if ($this.$Vec3_TEMP_GEN_6 === null)
-        $this.$Vec3_TEMP_GEN_6 = jm_Vec3_createInstance();
+        $this.$Vec3_TEMP_GEN_6 = jm_Vec3_native_new();
     ji_IDLBase_internal_reset($this.$Vec3_TEMP_GEN_6, $pointer, 0);
     return $this.$Vec3_TEMP_GEN_6;
 },
@@ -47140,15 +47140,15 @@ jm_Quat_Conjugated = $this => {
     if (!$pointer)
         return null;
     if ($this.$Quat_TEMP_GEN_3 === null)
-        $this.$Quat_TEMP_GEN_3 = jm_Quat_createInstance();
+        $this.$Quat_TEMP_GEN_3 = jm_Quat_native_new();
     ji_IDLBase_internal_reset($this.$Quat_TEMP_GEN_3, $pointer, 0);
     return $this.$Quat_TEMP_GEN_3;
 },
 jm_Quat__clinit_ = () => {
-    jm_Quat_NULL = jm_Quat_createInstance();
-    jm_Quat_T_01 = jm_Quat_createInstance();
-    jm_Quat_T_02 = jm_Quat_createInstance();
-    jm_Quat_T_03 = jm_Quat_createInstance();
+    jm_Quat_NULL = jm_Quat_native_new();
+    jm_Quat_T_01 = jm_Quat_native_new();
+    jm_Quat_T_02 = jm_Quat_native_new();
+    jm_Quat_T_03 = jm_Quat_native_new();
 },
 jm_Quat_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.Quat();
@@ -47306,7 +47306,7 @@ jpv_ArrayVehicleAntiRollBar__init_0 = (var_0, var_1) => {
     jpv_ArrayVehicleAntiRollBar__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpv_ArrayVehicleAntiRollBar_createInstance = () => {
+jpv_ArrayVehicleAntiRollBar_native_new = () => {
     jpv_ArrayVehicleAntiRollBar_$callClinit();
     return jpv_ArrayVehicleAntiRollBar__init_0(0, 0);
 },
@@ -47319,7 +47319,7 @@ jpv_ArrayVehicleAntiRollBar_at = ($this, $inIndex) => {
     if (!$pointer)
         return null;
     if ($this.$VehicleAntiRollBar_TEMP_GEN_0 === null)
-        $this.$VehicleAntiRollBar_TEMP_GEN_0 = jpv_VehicleAntiRollBar_createInstance();
+        $this.$VehicleAntiRollBar_TEMP_GEN_0 = jpv_VehicleAntiRollBar_native_new();
     ji_IDLBase_internal_reset($this.$VehicleAntiRollBar_TEMP_GEN_0, $pointer, 0);
     return $this.$VehicleAntiRollBar_TEMP_GEN_0;
 },
@@ -47327,10 +47327,10 @@ jpv_ArrayVehicleAntiRollBar_resize = ($this, $inSize) => {
     jpv_ArrayVehicleAntiRollBar_internal_native_resize$js_body$_13($this.$native_address, $inSize);
 },
 jpv_ArrayVehicleAntiRollBar__clinit_ = () => {
-    jpv_ArrayVehicleAntiRollBar_NULL = jpv_ArrayVehicleAntiRollBar_createInstance();
-    jpv_ArrayVehicleAntiRollBar_T_01 = jpv_ArrayVehicleAntiRollBar_createInstance();
-    jpv_ArrayVehicleAntiRollBar_T_02 = jpv_ArrayVehicleAntiRollBar_createInstance();
-    jpv_ArrayVehicleAntiRollBar_T_03 = jpv_ArrayVehicleAntiRollBar_createInstance();
+    jpv_ArrayVehicleAntiRollBar_NULL = jpv_ArrayVehicleAntiRollBar_native_new();
+    jpv_ArrayVehicleAntiRollBar_T_01 = jpv_ArrayVehicleAntiRollBar_native_new();
+    jpv_ArrayVehicleAntiRollBar_T_02 = jpv_ArrayVehicleAntiRollBar_native_new();
+    jpv_ArrayVehicleAntiRollBar_T_03 = jpv_ArrayVehicleAntiRollBar_native_new();
 },
 jpv_ArrayVehicleAntiRollBar_internal_native_deleteNative$js_body$_3 = var$1 => {
     var jsObj = jolt.wrapPointer(var$1, jolt.ArrayVehicleAntiRollBar);
@@ -47376,7 +47376,7 @@ jm_ArrayVec3__init_2 = (var_0, var_1) => {
     jm_ArrayVec3__init_(var_2, var_0, var_1);
     return var_2;
 },
-jm_ArrayVec3_createInstance = () => {
+jm_ArrayVec3_native_new = () => {
     jm_ArrayVec3_$callClinit();
     return jm_ArrayVec3__init_2(0, 0);
 },
@@ -47390,10 +47390,10 @@ jm_ArrayVec3_push_back = ($this, $inValue) => {
     jm_ArrayVec3_internal_native_push_back$js_body$_13(var$2, var$3);
 },
 jm_ArrayVec3__clinit_ = () => {
-    jm_ArrayVec3_NULL = jm_ArrayVec3_createInstance();
-    jm_ArrayVec3_T_01 = jm_ArrayVec3_createInstance();
-    jm_ArrayVec3_T_02 = jm_ArrayVec3_createInstance();
-    jm_ArrayVec3_T_03 = jm_ArrayVec3_createInstance();
+    jm_ArrayVec3_NULL = jm_ArrayVec3_native_new();
+    jm_ArrayVec3_T_01 = jm_ArrayVec3_native_new();
+    jm_ArrayVec3_T_02 = jm_ArrayVec3_native_new();
+    jm_ArrayVec3_T_03 = jm_ArrayVec3_native_new();
 },
 jm_ArrayVec3_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.ArrayVec3();
@@ -48084,15 +48084,15 @@ jpcs_ConvexHullShapeSettings__init_1 = (var_0, var_1) => {
     jpcs_ConvexHullShapeSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpcs_ConvexHullShapeSettings_createInstance = () => {
+jpcs_ConvexHullShapeSettings_native_new = () => {
     jpcs_ConvexHullShapeSettings_$callClinit();
     return jpcs_ConvexHullShapeSettings__init_1(0, 0);
 },
 jpcs_ConvexHullShapeSettings__clinit_ = () => {
-    jpcs_ConvexHullShapeSettings_NULL = jpcs_ConvexHullShapeSettings_createInstance();
-    jpcs_ConvexHullShapeSettings_T_01 = jpcs_ConvexHullShapeSettings_createInstance();
-    jpcs_ConvexHullShapeSettings_T_02 = jpcs_ConvexHullShapeSettings_createInstance();
-    jpcs_ConvexHullShapeSettings_T_03 = jpcs_ConvexHullShapeSettings_createInstance();
+    jpcs_ConvexHullShapeSettings_NULL = jpcs_ConvexHullShapeSettings_native_new();
+    jpcs_ConvexHullShapeSettings_T_01 = jpcs_ConvexHullShapeSettings_native_new();
+    jpcs_ConvexHullShapeSettings_T_02 = jpcs_ConvexHullShapeSettings_native_new();
+    jpcs_ConvexHullShapeSettings_T_03 = jpcs_ConvexHullShapeSettings_native_new();
 },
 jpcs_ConvexHullShapeSettings_internal_native_create_ArrayVec3$js_body$_7 = var$1 => {
     var jsObj = new jolt.ConvexHullShapeSettings(var$1);
@@ -48140,7 +48140,7 @@ jpc_GroupFilterTable__init_4 = (var_0, var_1) => {
     jpc_GroupFilterTable__init_0(var_2, var_0, var_1);
     return var_2;
 },
-jpc_GroupFilterTable_createInstance = () => {
+jpc_GroupFilterTable_native_new = () => {
     jpc_GroupFilterTable_$callClinit();
     return jpc_GroupFilterTable__init_4(0, 0);
 };
@@ -48148,10 +48148,10 @@ let jpc_GroupFilterTable_DisableCollision = ($this, $inSubGroup1, $inSubGroup2) 
     jpc_GroupFilterTable_internal_native_DisableCollision$js_body$_7($this.$native_address, $inSubGroup1, $inSubGroup2);
 },
 jpc_GroupFilterTable__clinit_ = () => {
-    jpc_GroupFilterTable_NULL = jpc_GroupFilterTable_createInstance();
-    jpc_GroupFilterTable_T_01 = jpc_GroupFilterTable_createInstance();
-    jpc_GroupFilterTable_T_02 = jpc_GroupFilterTable_createInstance();
-    jpc_GroupFilterTable_T_03 = jpc_GroupFilterTable_createInstance();
+    jpc_GroupFilterTable_NULL = jpc_GroupFilterTable_native_new();
+    jpc_GroupFilterTable_T_01 = jpc_GroupFilterTable_native_new();
+    jpc_GroupFilterTable_T_02 = jpc_GroupFilterTable_native_new();
+    jpc_GroupFilterTable_T_03 = jpc_GroupFilterTable_native_new();
 },
 jpc_GroupFilterTable_internal_native_create_int$js_body$_1 = var$1 => {
     var jsObj = new jolt.GroupFilterTable(var$1);
@@ -49063,7 +49063,7 @@ jpc_DistanceConstraintSettings__init_2 = (var_0, var_1) => {
     jpc_DistanceConstraintSettings__init_(var_2, var_0, var_1);
     return var_2;
 },
-jpc_DistanceConstraintSettings_createInstance = () => {
+jpc_DistanceConstraintSettings_native_new = () => {
     jpc_DistanceConstraintSettings_$callClinit();
     return jpc_DistanceConstraintSettings__init_2(0, 0);
 },
@@ -49083,10 +49083,10 @@ jpc_DistanceConstraintSettings_set_mPoint2 = ($this, $mPoint2) => {
     jpc_DistanceConstraintSettings_internal_native_set_mPoint2$js_body$_17(var$2, var$3);
 },
 jpc_DistanceConstraintSettings__clinit_ = () => {
-    jpc_DistanceConstraintSettings_NULL = jpc_DistanceConstraintSettings_createInstance();
-    jpc_DistanceConstraintSettings_T_01 = jpc_DistanceConstraintSettings_createInstance();
-    jpc_DistanceConstraintSettings_T_02 = jpc_DistanceConstraintSettings_createInstance();
-    jpc_DistanceConstraintSettings_T_03 = jpc_DistanceConstraintSettings_createInstance();
+    jpc_DistanceConstraintSettings_NULL = jpc_DistanceConstraintSettings_native_new();
+    jpc_DistanceConstraintSettings_T_01 = jpc_DistanceConstraintSettings_native_new();
+    jpc_DistanceConstraintSettings_T_02 = jpc_DistanceConstraintSettings_native_new();
+    jpc_DistanceConstraintSettings_T_03 = jpc_DistanceConstraintSettings_native_new();
 },
 jpc_DistanceConstraintSettings_internal_native_create$js_body$_1 = () => {
     var jsObj = new jolt.DistanceConstraintSettings();

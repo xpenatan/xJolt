@@ -23,7 +23,7 @@ c:b:/net/mgsx/gltf/shaders/depth.vs.glsl:4305:1
 c:b:/com/badlogic/gdx/utils/lsans-15.fnt:17711:1
 c:b:/lsans32-sdf.hiero:628:1
 c:b:/net/mgsx/gltf/shaders/pbr/compat.fs.glsl:958:1
-c:b:/shaders/modelbatchCubeMapRadiance.wgsl:3285:1
+c:b:/shaders/modelbatchCubeMapRadiance.wgsl:3330:1
 c:b:/net/mgsx/gltf/shaders/depth.fs.glsl:867:1
 c:b:/shaders/modelbatchEquilateral.wgsl:1201:1
 c:b:/net/mgsx/gltf/shaders/ibl-sun.fs.glsl:492:1
@@ -40,7 +40,8 @@ c:b:/net/mgsx/gltf/shaders/pbr/pbr.fs.glsl:8549:1
 c:b:/net/mgsx/gltf/shaders/pbr/ibl.glsl:6953:1
 c:b:/com/badlogic/gdx/graphics/g3d/shaders/default.fragment.glsl:5874:1
 c:b:/shaders/immed.wgsl:1046:1
-c:b:/shaders/modelbatch.wgsl:13366:1
+c:b:/shaders/modelbatch.wgsl:14582:1
+c:b:/shaders/genIBL.wgsl:1573:1
 c:b:/com/badlogic/gdx/graphics/g3d/particles/particles.fragment.glsl:820:1
 c:b:/com/badlogic/gdx/graphics/g3d/particles/particles.vertex.glsl:2886:1
 c:b:/net/mgsx/gltf/shaders/pbr/functions.glsl:1520:1

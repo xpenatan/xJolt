@@ -4,7 +4,6 @@
 
 // Note this is an uber shader with conditional compilation depending on #define values from the shader prefix
 
-
 struct DirectionalLight {
     color: vec4f,
     direction: vec4f
@@ -19,8 +18,12 @@ struct PointLight {
 struct FrameUniforms {
     projectionViewTransform: mat4x4f,
     shadowProjViewTransform: mat4x4f,
-    directionalLights : array<DirectionalLight, 3>,     // todo don't use hard coded constant for array size
-    pointLights : array<PointLight, 3>,     // todo don't use hard coded constant for array size
+#ifdef MAX_DIR_LIGHTS
+    directionalLights : array<DirectionalLight, MAX_DIR_LIGHTS>,
+#endif
+#ifdef MAX_POINT_LIGHTS
+    pointLights : array<PointLight, MAX_POINT_LIGHTS>,
+#endif
     ambientLight: vec4f,
     cameraPosition: vec4f,
     fogColor: vec4f,
@@ -77,6 +80,11 @@ struct MaterialUniforms {
 // renderables
 @group(2) @binding(0) var<storage, read> instances: array<ModelUniforms>;
 
+// Skinning
+#ifdef SKIN
+    @group(3) @binding(0) var<storage, read> jointMatrices: array<mat4x4f>;
+    @group(3) @binding(1) var<storage, read> inverseBindMatrices: array<mat4x4f>;
+#endif
 
 struct VertexInput {
     @location(0) position: vec3f,
@@ -92,6 +100,10 @@ struct VertexInput {
 #endif
 #ifdef COLOR
     @location(5) color: vec4f,
+#endif
+#ifdef SKIN
+    @location(6) joints: vec4f,
+    @location(7) weights: vec4f,
 #endif
 
 };
@@ -120,7 +132,29 @@ const pi : f32 = 3.14159265359;
 fn vs_main(in: VertexInput, @builtin(instance_index) instance: u32) -> VertexOutput {
    var out: VertexOutput;
 
+
+#ifdef SKIN
+     // Get relevant 4 bone matrices
+     let joint0 = jointMatrices[u32(in.joints[0])] * inverseBindMatrices[u32(in.joints[0])];
+     let joint1 = jointMatrices[u32(in.joints[1])] * inverseBindMatrices[u32(in.joints[1])];
+     let joint2 = jointMatrices[u32(in.joints[2])] * inverseBindMatrices[u32(in.joints[2])];
+     let joint3 = jointMatrices[u32(in.joints[3])] * inverseBindMatrices[u32(in.joints[3])];
+
+     // Compute influence of joint based on weight
+     let skinMatrix =
+       joint0 * in.weights[0] +
+       joint1 * in.weights[1] +
+       joint2 * in.weights[2] +
+       joint3 * in.weights[3];
+
+     // Bone transformed mesh
+   let worldPosition =   skinMatrix * vec4f(in.position, 1.0); // todo combine with instance matrix
+   //worldPosition = skinMatrix * instances[instance].modelMatrix * vertPos;
+   //out.weights = in.joints;
+#else
    let worldPosition =  instances[instance].modelMatrix * vec4f(in.position, 1.0);
+#endif
+
    out.position =   uFrame.projectionViewTransform * worldPosition;
    out.worldPos = worldPosition.xyz;
 #ifdef TEXTURE_COORDINATE
@@ -224,9 +258,10 @@ fn fs_main(in : VertexOutput) -> @location(0) vec4f {
     let ambient : vec3f = uFrame.ambientLight.rgb * baseColor.rgb;
 #endif
 
+#ifdef MAX_DIR_LIGHTS
     // for each directional light
     // could go to vertex shader but esp. specular lighting will be lower quality
-    let numDirectionalLights = uFrame.numDirectionalLights; //min(uFrame.numDirectionalLights, 3);     // fail-safe
+    let numDirectionalLights = min(uFrame.numDirectionalLights, MAX_DIR_LIGHTS);     // fail-safe
     if(numDirectionalLights > 0) {
         for (var i: u32 = 0; i < u32(numDirectionalLights); i++) {
             let light = uFrame.directionalLights[i];
@@ -246,9 +281,12 @@ fn fs_main(in : VertexOutput) -> @location(0) vec4f {
 #endif // PBR
         }
     }
+#endif //MAX_DIR_LIGHTS
+
+#ifdef MAX_POINT_LIGHTS
     // for each point light
     // note: default libgdx seems to ignore intensity of point lights
-    let numPointLights = min(uFrame.numPointLights, 3); // fail-safe
+    let numPointLights = min(uFrame.numPointLights, MAX_POINT_LIGHTS); // fail-safe
     if(numPointLights > 0) {
         for (var i: u32 = 0; i < u32(numPointLights); i++) {
             let light = uFrame.pointLights[i];
@@ -272,6 +310,7 @@ fn fs_main(in : VertexOutput) -> @location(0) vec4f {
 #endif // PBR
         }
     }
+#endif // MAX_POINT_LIGHTS
 
 #ifdef PBR
     let litColor = vec4f(ambient + visibility*radiance, 1.0);
