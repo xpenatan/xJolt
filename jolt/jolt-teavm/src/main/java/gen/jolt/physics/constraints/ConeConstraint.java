@@ -11,13 +11,13 @@ public class ConeConstraint extends TwoBodyConstraint {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final ConeConstraint NULL = ConeConstraint.createInstance();
+    static public final ConeConstraint NULL = ConeConstraint.native_new();
 
-    static public final ConeConstraint T_01 = ConeConstraint.createInstance();
+    static public final ConeConstraint T_01 = ConeConstraint.native_new();
 
-    static public final ConeConstraint T_02 = ConeConstraint.createInstance();
+    static public final ConeConstraint T_02 = ConeConstraint.native_new();
 
-    static public final ConeConstraint T_03 = ConeConstraint.createInstance();
+    static public final ConeConstraint T_03 = ConeConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,7 +30,7 @@ public class ConeConstraint extends TwoBodyConstraint {
     /**
      * @return An empty instance without a native address
      */
-    public static ConeConstraint createInstance() {
+    public static ConeConstraint native_new() {
         return new ConeConstraint((byte) 0, (char) 0);
     }
 
@@ -62,7 +62,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

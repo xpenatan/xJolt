@@ -7,13 +7,13 @@ package gen.jolt.skeleton;
 
 public class SkeletalAnimationKeyframe extends SkeletalAnimationJointState {
 
-    static public final SkeletalAnimationKeyframe NULL = SkeletalAnimationKeyframe.createInstance();
+    static public final SkeletalAnimationKeyframe NULL = SkeletalAnimationKeyframe.native_new();
 
-    static public final SkeletalAnimationKeyframe T_01 = SkeletalAnimationKeyframe.createInstance();
+    static public final SkeletalAnimationKeyframe T_01 = SkeletalAnimationKeyframe.native_new();
 
-    static public final SkeletalAnimationKeyframe T_02 = SkeletalAnimationKeyframe.createInstance();
+    static public final SkeletalAnimationKeyframe T_02 = SkeletalAnimationKeyframe.native_new();
 
-    static public final SkeletalAnimationKeyframe T_03 = SkeletalAnimationKeyframe.createInstance();
+    static public final SkeletalAnimationKeyframe T_03 = SkeletalAnimationKeyframe.native_new();
 
     public SkeletalAnimationKeyframe() {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SkeletalAnimationKeyframe createInstance() {
+    public static SkeletalAnimationKeyframe native_new() {
         return new SkeletalAnimationKeyframe((byte) 0, (char) 0);
     }
 

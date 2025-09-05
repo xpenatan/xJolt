@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class SharedMutex extends IDLBase {
 
-    static public final SharedMutex NULL = SharedMutex.createInstance();
+    static public final SharedMutex NULL = SharedMutex.native_new();
 
-    static public final SharedMutex T_01 = SharedMutex.createInstance();
+    static public final SharedMutex T_01 = SharedMutex.native_new();
 
-    static public final SharedMutex T_02 = SharedMutex.createInstance();
+    static public final SharedMutex T_02 = SharedMutex.native_new();
 
-    static public final SharedMutex T_03 = SharedMutex.createInstance();
+    static public final SharedMutex T_03 = SharedMutex.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class SharedMutex extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SharedMutex createInstance() {
+    public static SharedMutex native_new() {
         return new SharedMutex((byte) 0, (char) 0);
     }
 

@@ -11,13 +11,13 @@ public class CollidePointClosestHitCollisionCollector extends CollidePointCollec
 
     private CollidePointResult CollidePointResult_TEMP_GEN_0;
 
-    static public final CollidePointClosestHitCollisionCollector NULL = CollidePointClosestHitCollisionCollector.createInstance();
+    static public final CollidePointClosestHitCollisionCollector NULL = CollidePointClosestHitCollisionCollector.native_new();
 
-    static public final CollidePointClosestHitCollisionCollector T_01 = CollidePointClosestHitCollisionCollector.createInstance();
+    static public final CollidePointClosestHitCollisionCollector T_01 = CollidePointClosestHitCollisionCollector.native_new();
 
-    static public final CollidePointClosestHitCollisionCollector T_02 = CollidePointClosestHitCollisionCollector.createInstance();
+    static public final CollidePointClosestHitCollisionCollector T_02 = CollidePointClosestHitCollisionCollector.native_new();
 
-    static public final CollidePointClosestHitCollisionCollector T_03 = CollidePointClosestHitCollisionCollector.createInstance();
+    static public final CollidePointClosestHitCollisionCollector T_03 = CollidePointClosestHitCollisionCollector.native_new();
 
     public CollidePointClosestHitCollisionCollector() {
         super((byte) 1, (char) 1);
@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static CollidePointClosestHitCollisionCollector createInstance() {
+    public static CollidePointClosestHitCollisionCollector native_new() {
         return new CollidePointClosestHitCollisionCollector((byte) 0, (char) 0);
     }
 
@@ -75,7 +75,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (CollidePointResult_TEMP_GEN_0 == null)
-            CollidePointResult_TEMP_GEN_0 = CollidePointResult.createInstance();
+            CollidePointResult_TEMP_GEN_0 = CollidePointResult.native_new();
         CollidePointResult_TEMP_GEN_0.internal_reset(pointer, false);
         return CollidePointResult_TEMP_GEN_0;
     }

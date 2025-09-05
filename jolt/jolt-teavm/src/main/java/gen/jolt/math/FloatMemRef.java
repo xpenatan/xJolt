@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class FloatMemRef extends IDLBase {
 
-    static public final FloatMemRef NULL = FloatMemRef.createInstance();
+    static public final FloatMemRef NULL = FloatMemRef.native_new();
 
-    static public final FloatMemRef T_01 = FloatMemRef.createInstance();
+    static public final FloatMemRef T_01 = FloatMemRef.native_new();
 
-    static public final FloatMemRef T_02 = FloatMemRef.createInstance();
+    static public final FloatMemRef T_02 = FloatMemRef.native_new();
 
-    static public final FloatMemRef T_03 = FloatMemRef.createInstance();
+    static public final FloatMemRef T_03 = FloatMemRef.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class FloatMemRef extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static FloatMemRef createInstance() {
+    public static FloatMemRef native_new() {
         return new FloatMemRef((byte) 0, (char) 0);
     }
 

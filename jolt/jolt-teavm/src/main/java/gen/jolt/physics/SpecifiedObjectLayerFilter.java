@@ -9,13 +9,13 @@ import gen.jolt.physics.collision.ObjectLayerFilter;
 
 public class SpecifiedObjectLayerFilter extends ObjectLayerFilter {
 
-    static public final SpecifiedObjectLayerFilter NULL = SpecifiedObjectLayerFilter.createInstance();
+    static public final SpecifiedObjectLayerFilter NULL = SpecifiedObjectLayerFilter.native_new();
 
-    static public final SpecifiedObjectLayerFilter T_01 = SpecifiedObjectLayerFilter.createInstance();
+    static public final SpecifiedObjectLayerFilter T_01 = SpecifiedObjectLayerFilter.native_new();
 
-    static public final SpecifiedObjectLayerFilter T_02 = SpecifiedObjectLayerFilter.createInstance();
+    static public final SpecifiedObjectLayerFilter T_02 = SpecifiedObjectLayerFilter.native_new();
 
-    static public final SpecifiedObjectLayerFilter T_03 = SpecifiedObjectLayerFilter.createInstance();
+    static public final SpecifiedObjectLayerFilter T_03 = SpecifiedObjectLayerFilter.native_new();
 
     public SpecifiedObjectLayerFilter(int inObjectLayer) {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SpecifiedObjectLayerFilter createInstance() {
+    public static SpecifiedObjectLayerFilter native_new() {
         return new SpecifiedObjectLayerFilter((byte) 0, (char) 0);
     }
 

@@ -7,13 +7,13 @@ package gen.jolt.physics.constraints;
 
 public class GearConstraint extends TwoBodyConstraint {
 
-    static public final GearConstraint NULL = GearConstraint.createInstance();
+    static public final GearConstraint NULL = GearConstraint.native_new();
 
-    static public final GearConstraint T_01 = GearConstraint.createInstance();
+    static public final GearConstraint T_01 = GearConstraint.native_new();
 
-    static public final GearConstraint T_02 = GearConstraint.createInstance();
+    static public final GearConstraint T_02 = GearConstraint.native_new();
 
-    static public final GearConstraint T_03 = GearConstraint.createInstance();
+    static public final GearConstraint T_03 = GearConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class GearConstraint extends TwoBodyConstraint {
     /**
      * @return An empty instance without a native address
      */
-    public static GearConstraint createInstance() {
+    public static GearConstraint native_new() {
         return new GearConstraint((byte) 0, (char) 0);
     }
 

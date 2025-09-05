@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class VehicleControllerSettings extends IDLBase {
 
-    static public final VehicleControllerSettings NULL = VehicleControllerSettings.createInstance();
+    static public final VehicleControllerSettings NULL = VehicleControllerSettings.native_new();
 
-    static public final VehicleControllerSettings T_01 = VehicleControllerSettings.createInstance();
+    static public final VehicleControllerSettings T_01 = VehicleControllerSettings.native_new();
 
-    static public final VehicleControllerSettings T_02 = VehicleControllerSettings.createInstance();
+    static public final VehicleControllerSettings T_02 = VehicleControllerSettings.native_new();
 
-    static public final VehicleControllerSettings T_03 = VehicleControllerSettings.createInstance();
+    static public final VehicleControllerSettings T_03 = VehicleControllerSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class VehicleControllerSettings extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleControllerSettings createInstance() {
+    public static VehicleControllerSettings native_new() {
         return new VehicleControllerSettings((byte) 0, (char) 0);
     }
 }

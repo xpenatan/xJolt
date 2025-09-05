@@ -11,13 +11,13 @@ public class ArrayRayCastResult extends IDLBase {
 
     private RayCastResult RayCastResult_TEMP_GEN_0;
 
-    static public final ArrayRayCastResult NULL = ArrayRayCastResult.createInstance();
+    static public final ArrayRayCastResult NULL = ArrayRayCastResult.native_new();
 
-    static public final ArrayRayCastResult T_01 = ArrayRayCastResult.createInstance();
+    static public final ArrayRayCastResult T_01 = ArrayRayCastResult.native_new();
 
-    static public final ArrayRayCastResult T_02 = ArrayRayCastResult.createInstance();
+    static public final ArrayRayCastResult T_02 = ArrayRayCastResult.native_new();
 
-    static public final ArrayRayCastResult T_03 = ArrayRayCastResult.createInstance();
+    static public final ArrayRayCastResult T_03 = ArrayRayCastResult.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayRayCastResult extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayRayCastResult createInstance() {
+    public static ArrayRayCastResult native_new() {
         return new ArrayRayCastResult((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (RayCastResult_TEMP_GEN_0 == null)
-            RayCastResult_TEMP_GEN_0 = RayCastResult.createInstance();
+            RayCastResult_TEMP_GEN_0 = RayCastResult.native_new();
         RayCastResult_TEMP_GEN_0.internal_reset(pointer, false);
         return RayCastResult_TEMP_GEN_0;
     }

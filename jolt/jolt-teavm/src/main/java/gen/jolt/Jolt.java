@@ -28,13 +28,13 @@ public class Jolt extends IDLBase {
 
     static private JobSystemThreadPool JobSystemThreadPool_TEMP_STATIC_GEN_2;
 
-    static public final Jolt NULL = Jolt.createInstance();
+    static public final Jolt NULL = Jolt.native_new();
 
-    static public final Jolt T_01 = Jolt.createInstance();
+    static public final Jolt T_01 = Jolt.native_new();
 
-    static public final Jolt T_02 = Jolt.createInstance();
+    static public final Jolt T_02 = Jolt.native_new();
 
-    static public final Jolt T_03 = Jolt.createInstance();
+    static public final Jolt T_03 = Jolt.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -46,7 +46,7 @@ public class Jolt extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static Jolt createInstance() {
+    public static Jolt native_new() {
         return new Jolt((byte) 0, (char) 0);
     }
 
@@ -65,7 +65,7 @@ jolt.destroy(jsObj);
         int pointer = internal_native_New_PhysicsSystem();
         if (pointer == 0)
             return null;
-        PhysicsSystem PhysicsSystem_NEW = PhysicsSystem.createInstance();
+        PhysicsSystem PhysicsSystem_NEW = PhysicsSystem.native_new();
         PhysicsSystem_NEW.internal_reset(pointer, true);
         return PhysicsSystem_NEW;
     }
@@ -82,7 +82,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Factory();
         if (pointer == 0)
             return null;
-        Factory Factory_NEW = Factory.createInstance();
+        Factory Factory_NEW = Factory.native_new();
         Factory_NEW.internal_reset(pointer, true);
         return Factory_NEW;
     }
@@ -99,7 +99,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_TempAllocatorImpl(inSize);
         if (pointer == 0)
             return null;
-        TempAllocatorImpl TempAllocatorImpl_NEW = TempAllocatorImpl.createInstance();
+        TempAllocatorImpl TempAllocatorImpl_NEW = TempAllocatorImpl.native_new();
         TempAllocatorImpl_NEW.internal_reset(pointer, true);
         return TempAllocatorImpl_NEW;
     }
@@ -116,7 +116,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_JobSystemThreadPool(inNumThreads, inMaxJobs, inMaxBarriers);
         if (pointer == 0)
             return null;
-        JobSystemThreadPool JobSystemThreadPool_NEW = JobSystemThreadPool.createInstance();
+        JobSystemThreadPool JobSystemThreadPool_NEW = JobSystemThreadPool.native_new();
         JobSystemThreadPool_NEW.internal_reset(pointer, true);
         return JobSystemThreadPool_NEW;
     }
@@ -134,7 +134,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_0 == null)
-            JobSystemThreadPool_TEMP_STATIC_GEN_0 = JobSystemThreadPool.createInstance();
+            JobSystemThreadPool_TEMP_STATIC_GEN_0 = JobSystemThreadPool.native_new();
         JobSystemThreadPool_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return JobSystemThreadPool_TEMP_STATIC_GEN_0;
     }
@@ -152,7 +152,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_1 == null)
-            JobSystemThreadPool_TEMP_STATIC_GEN_1 = JobSystemThreadPool.createInstance();
+            JobSystemThreadPool_TEMP_STATIC_GEN_1 = JobSystemThreadPool.native_new();
         JobSystemThreadPool_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return JobSystemThreadPool_TEMP_STATIC_GEN_1;
     }
@@ -170,7 +170,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_2 == null)
-            JobSystemThreadPool_TEMP_STATIC_GEN_2 = JobSystemThreadPool.createInstance();
+            JobSystemThreadPool_TEMP_STATIC_GEN_2 = JobSystemThreadPool.native_new();
         JobSystemThreadPool_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return JobSystemThreadPool_TEMP_STATIC_GEN_2;
     }
@@ -187,7 +187,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_BodyCreationSettings_0();
         if (pointer == 0)
             return null;
-        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.createInstance();
+        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
         BodyCreationSettings_NEW.internal_reset(pointer, true);
         return BodyCreationSettings_NEW;
     }
@@ -204,7 +204,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_BodyCreationSettings_1(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
         if (pointer == 0)
             return null;
-        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.createInstance();
+        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
         BodyCreationSettings_NEW.internal_reset(pointer, true);
         return BodyCreationSettings_NEW;
     }
@@ -221,7 +221,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_BodyCreationSettings_2(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
         if (pointer == 0)
             return null;
-        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.createInstance();
+        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
         BodyCreationSettings_NEW.internal_reset(pointer, true);
         return BodyCreationSettings_NEW;
     }
@@ -238,7 +238,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Mat44_0();
         if (pointer == 0)
             return null;
-        Mat44 Mat44_NEW = Mat44.createInstance();
+        Mat44 Mat44_NEW = Mat44.native_new();
         Mat44_NEW.internal_reset(pointer, true);
         return Mat44_NEW;
     }
@@ -255,7 +255,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Mat44_1(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
         if (pointer == 0)
             return null;
-        Mat44 Mat44_NEW = Mat44.createInstance();
+        Mat44 Mat44_NEW = Mat44.native_new();
         Mat44_NEW.internal_reset(pointer, true);
         return Mat44_NEW;
     }
@@ -272,7 +272,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Mat44_2(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
         if (pointer == 0)
             return null;
-        Mat44 Mat44_NEW = Mat44.createInstance();
+        Mat44 Mat44_NEW = Mat44.native_new();
         Mat44_NEW.internal_reset(pointer, true);
         return Mat44_NEW;
     }
@@ -289,7 +289,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Vec3_0();
         if (pointer == 0)
             return null;
-        Vec3 Vec3_NEW = Vec3.createInstance();
+        Vec3 Vec3_NEW = Vec3.native_new();
         Vec3_NEW.internal_reset(pointer, true);
         return Vec3_NEW;
     }
@@ -306,7 +306,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Vec3_1(inX, inY, inZ);
         if (pointer == 0)
             return null;
-        Vec3 Vec3_NEW = Vec3.createInstance();
+        Vec3 Vec3_NEW = Vec3.native_new();
         Vec3_NEW.internal_reset(pointer, true);
         return Vec3_NEW;
     }
@@ -323,7 +323,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Vec3_2(inRHS.native_address);
         if (pointer == 0)
             return null;
-        Vec3 Vec3_NEW = Vec3.createInstance();
+        Vec3 Vec3_NEW = Vec3.native_new();
         Vec3_NEW.internal_reset(pointer, true);
         return Vec3_NEW;
     }
@@ -340,7 +340,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Vec3_3(inV.native_address);
         if (pointer == 0)
             return null;
-        Vec3 Vec3_NEW = Vec3.createInstance();
+        Vec3 Vec3_NEW = Vec3.native_new();
         Vec3_NEW.internal_reset(pointer, true);
         return Vec3_NEW;
     }
@@ -357,7 +357,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Vec4_0();
         if (pointer == 0)
             return null;
-        Vec4 Vec4_NEW = Vec4.createInstance();
+        Vec4 Vec4_NEW = Vec4.native_new();
         Vec4_NEW.internal_reset(pointer, true);
         return Vec4_NEW;
     }
@@ -374,7 +374,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Vec4_1(inX, inY, inZ, inW);
         if (pointer == 0)
             return null;
-        Vec4 Vec4_NEW = Vec4.createInstance();
+        Vec4 Vec4_NEW = Vec4.native_new();
         Vec4_NEW.internal_reset(pointer, true);
         return Vec4_NEW;
     }
@@ -391,7 +391,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Vec4_2(inV.native_address);
         if (pointer == 0)
             return null;
-        Vec4 Vec4_NEW = Vec4.createInstance();
+        Vec4 Vec4_NEW = Vec4.native_new();
         Vec4_NEW.internal_reset(pointer, true);
         return Vec4_NEW;
     }
@@ -408,7 +408,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_New_Vec4_3(inV.native_address, inW);
         if (pointer == 0)
             return null;
-        Vec4 Vec4_NEW = Vec4.createInstance();
+        Vec4 Vec4_NEW = Vec4.native_new();
         Vec4_NEW.internal_reset(pointer, true);
         return Vec4_NEW;
     }

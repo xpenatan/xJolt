@@ -11,13 +11,13 @@ public class Vector2 extends IDLBase {
 
     private Vector2 Vector2_TEMP_GEN_0;
 
-    static public final Vector2 NULL = Vector2.createInstance();
+    static public final Vector2 NULL = Vector2.native_new();
 
-    static public final Vector2 T_01 = Vector2.createInstance();
+    static public final Vector2 T_01 = Vector2.native_new();
 
-    static public final Vector2 T_02 = Vector2.createInstance();
+    static public final Vector2 T_02 = Vector2.native_new();
 
-    static public final Vector2 T_03 = Vector2.createInstance();
+    static public final Vector2 T_03 = Vector2.native_new();
 
     public Vector2() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static Vector2 createInstance() {
+    public static Vector2 native_new() {
         return new Vector2((byte) 0, (char) 0);
     }
 
@@ -127,7 +127,7 @@ jsObj.IsNormalized();
         if (pointer == 0)
             return null;
         if (Vector2_TEMP_GEN_0 == null)
-            Vector2_TEMP_GEN_0 = Vector2.createInstance();
+            Vector2_TEMP_GEN_0 = Vector2.native_new();
         Vector2_TEMP_GEN_0.internal_reset(pointer, false);
         return Vector2_TEMP_GEN_0;
     }

@@ -29,13 +29,13 @@ public class SoftBodySharedSettings extends IDLBase {
 
     private PhysicsMaterialList PhysicsMaterialList_TEMP_GEN_0;
 
-    static public final SoftBodySharedSettings NULL = SoftBodySharedSettings.createInstance();
+    static public final SoftBodySharedSettings NULL = SoftBodySharedSettings.native_new();
 
-    static public final SoftBodySharedSettings T_01 = SoftBodySharedSettings.createInstance();
+    static public final SoftBodySharedSettings T_01 = SoftBodySharedSettings.native_new();
 
-    static public final SoftBodySharedSettings T_02 = SoftBodySharedSettings.createInstance();
+    static public final SoftBodySharedSettings T_02 = SoftBodySharedSettings.native_new();
 
-    static public final SoftBodySharedSettings T_03 = SoftBodySharedSettings.createInstance();
+    static public final SoftBodySharedSettings T_03 = SoftBodySharedSettings.native_new();
 
     public SoftBodySharedSettings() {
         long addr = internal_native_create();
@@ -57,7 +57,7 @@ return (jlong)new SoftBodySharedSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodySharedSettings createInstance() {
+    public static SoftBodySharedSettings native_new() {
         return new SoftBodySharedSettings((byte) 0, (char) 0);
     }
 
@@ -195,7 +195,7 @@ nativeObject->Optimize();
         long pointer = internal_native_Clone(native_address);
         if (pointer == 0)
             return null;
-        SoftBodySharedSettings SoftBodySharedSettings_NEW = SoftBodySharedSettings.createInstance();
+        SoftBodySharedSettings SoftBodySharedSettings_NEW = SoftBodySharedSettings.native_new();
         SoftBodySharedSettings_NEW.internal_reset(pointer, false);
         return SoftBodySharedSettings_NEW;
     }
@@ -212,7 +212,7 @@ return (jlong)obj;
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
-            ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 = ArraySoftBodySharedSettingsVertex.createInstance();
+            ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 = ArraySoftBodySharedSettingsVertex.native_new();
         ArraySoftBodySharedSettingsVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsVertex_TEMP_GEN_0;
     }
@@ -238,7 +238,7 @@ nativeObject->mVertices = *((ArraySoftBodySharedSettingsVertex*)mVertices_addr);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
-            ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = ArraySoftBodySharedSettingsFace.createInstance();
+            ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = ArraySoftBodySharedSettingsFace.native_new();
         ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsFace_TEMP_GEN_0;
     }
@@ -264,7 +264,7 @@ nativeObject->mFaces = *((ArraySoftBodySharedSettingsFace*)mFaces_addr);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 == null)
-            ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 = ArraySoftBodySharedSettingsEdge.createInstance();
+            ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 = ArraySoftBodySharedSettingsEdge.native_new();
         ArraySoftBodySharedSettingsEdge_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsEdge_TEMP_GEN_0;
     }
@@ -290,7 +290,7 @@ nativeObject->mEdgeConstraints = *((ArraySoftBodySharedSettingsEdge*)mEdgeConstr
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 == null)
-            ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = ArraySoftBodySharedSettingsDihedralBend.createInstance();
+            ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = ArraySoftBodySharedSettingsDihedralBend.native_new();
         ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0;
     }
@@ -316,7 +316,7 @@ nativeObject->mDihedralBendConstraints = *((ArraySoftBodySharedSettingsDihedralB
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 == null)
-            ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 = ArraySoftBodySharedSettingsVolume.createInstance();
+            ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 = ArraySoftBodySharedSettingsVolume.native_new();
         ArraySoftBodySharedSettingsVolume_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsVolume_TEMP_GEN_0;
     }
@@ -342,7 +342,7 @@ nativeObject->mVolumeConstraints = *((ArraySoftBodySharedSettingsVolume*)mVolume
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 == null)
-            ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 = ArraySoftBodySharedSettingsSkinned.createInstance();
+            ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 = ArraySoftBodySharedSettingsSkinned.native_new();
         ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0;
     }
@@ -368,7 +368,7 @@ nativeObject->mSkinnedConstraints = *((ArraySoftBodySharedSettingsSkinned*)mSkin
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 == null)
-            ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 = ArraySoftBodySharedSettingsInvBind.createInstance();
+            ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 = ArraySoftBodySharedSettingsInvBind.native_new();
         ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0;
     }
@@ -394,7 +394,7 @@ nativeObject->mInvBindMatrices = *((ArraySoftBodySharedSettingsInvBind*)mInvBind
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 == null)
-            ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 = ArraySoftBodySharedSettingsLRA.createInstance();
+            ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 = ArraySoftBodySharedSettingsLRA.native_new();
         ArraySoftBodySharedSettingsLRA_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsLRA_TEMP_GEN_0;
     }
@@ -420,7 +420,7 @@ nativeObject->mLRAConstraints = *((ArraySoftBodySharedSettingsLRA*)mLRAConstrain
         if (pointer == 0)
             return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
-            PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.createInstance();
+            PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
         PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }

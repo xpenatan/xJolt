@@ -9,13 +9,13 @@ import jolt.physics.collision.PhysicsMaterial;
 
 public class SphereShape extends ConvexShape {
 
-    static public final SphereShape NULL = SphereShape.createInstance();
+    static public final SphereShape NULL = SphereShape.native_new();
 
-    static public final SphereShape T_01 = SphereShape.createInstance();
+    static public final SphereShape T_01 = SphereShape.native_new();
 
-    static public final SphereShape T_02 = SphereShape.createInstance();
+    static public final SphereShape T_02 = SphereShape.native_new();
 
-    static public final SphereShape T_03 = SphereShape.createInstance();
+    static public final SphereShape T_03 = SphereShape.native_new();
 
     public SphereShape(float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -50,7 +50,7 @@ return (jlong)new SphereShape((float)inRadius);
     /**
      * @return An empty instance without a native address
      */
-    public static SphereShape createInstance() {
+    public static SphereShape native_new() {
         return new SphereShape((byte) 0, (char) 0);
     }
 

@@ -7,13 +7,13 @@ package jolt.physics.collision.shape;
 
 public class TaperedCapsuleShape extends ConvexShape {
 
-    static public final TaperedCapsuleShape NULL = TaperedCapsuleShape.createInstance();
+    static public final TaperedCapsuleShape NULL = TaperedCapsuleShape.native_new();
 
-    static public final TaperedCapsuleShape T_01 = TaperedCapsuleShape.createInstance();
+    static public final TaperedCapsuleShape T_01 = TaperedCapsuleShape.native_new();
 
-    static public final TaperedCapsuleShape T_02 = TaperedCapsuleShape.createInstance();
+    static public final TaperedCapsuleShape T_02 = TaperedCapsuleShape.native_new();
 
-    static public final TaperedCapsuleShape T_03 = TaperedCapsuleShape.createInstance();
+    static public final TaperedCapsuleShape T_03 = TaperedCapsuleShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class TaperedCapsuleShape extends ConvexShape {
     /**
      * @return An empty instance without a native address
      */
-    public static TaperedCapsuleShape createInstance() {
+    public static TaperedCapsuleShape native_new() {
         return new TaperedCapsuleShape((byte) 0, (char) 0);
     }
 }

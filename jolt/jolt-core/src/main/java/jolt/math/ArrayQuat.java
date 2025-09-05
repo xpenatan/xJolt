@@ -13,13 +13,13 @@ public class ArrayQuat extends IDLBase {
 
     private QuatMemRef QuatMemRef_TEMP_GEN_0;
 
-    static public final ArrayQuat NULL = ArrayQuat.createInstance();
+    static public final ArrayQuat NULL = ArrayQuat.native_new();
 
-    static public final ArrayQuat T_01 = ArrayQuat.createInstance();
+    static public final ArrayQuat T_01 = ArrayQuat.native_new();
 
-    static public final ArrayQuat T_02 = ArrayQuat.createInstance();
+    static public final ArrayQuat T_02 = ArrayQuat.native_new();
 
-    static public final ArrayQuat T_03 = ArrayQuat.createInstance();
+    static public final ArrayQuat T_03 = ArrayQuat.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -31,7 +31,7 @@ public class ArrayQuat extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayQuat createInstance() {
+    public static ArrayQuat native_new() {
         return new ArrayQuat((byte) 0, (char) 0);
     }
 
@@ -70,7 +70,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -126,7 +126,7 @@ nativeObject->clear();
         if (pointer == 0)
             return null;
         if (QuatMemRef_TEMP_GEN_0 == null)
-            QuatMemRef_TEMP_GEN_0 = QuatMemRef.createInstance();
+            QuatMemRef_TEMP_GEN_0 = QuatMemRef.native_new();
         QuatMemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return QuatMemRef_TEMP_GEN_0;
     }

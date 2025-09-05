@@ -11,13 +11,13 @@ import jolt.enums.ESoftBodyConstraintColor;
 
 public class BodyManagerDrawSettings extends IDLBase {
 
-    static public final BodyManagerDrawSettings NULL = BodyManagerDrawSettings.createInstance();
+    static public final BodyManagerDrawSettings NULL = BodyManagerDrawSettings.native_new();
 
-    static public final BodyManagerDrawSettings T_01 = BodyManagerDrawSettings.createInstance();
+    static public final BodyManagerDrawSettings T_01 = BodyManagerDrawSettings.native_new();
 
-    static public final BodyManagerDrawSettings T_02 = BodyManagerDrawSettings.createInstance();
+    static public final BodyManagerDrawSettings T_02 = BodyManagerDrawSettings.native_new();
 
-    static public final BodyManagerDrawSettings T_03 = BodyManagerDrawSettings.createInstance();
+    static public final BodyManagerDrawSettings T_03 = BodyManagerDrawSettings.native_new();
 
     public BodyManagerDrawSettings() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new BodyManagerDrawSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static BodyManagerDrawSettings createInstance() {
+    public static BodyManagerDrawSettings native_new() {
         return new BodyManagerDrawSettings((byte) 0, (char) 0);
     }
 

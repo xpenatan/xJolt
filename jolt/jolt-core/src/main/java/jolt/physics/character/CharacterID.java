@@ -11,13 +11,13 @@ public class CharacterID extends IDLBase {
 
     static private CharacterID CharacterID_TEMP_STATIC_GEN_0;
 
-    static public final CharacterID NULL = CharacterID.createInstance();
+    static public final CharacterID NULL = CharacterID.native_new();
 
-    static public final CharacterID T_01 = CharacterID.createInstance();
+    static public final CharacterID T_01 = CharacterID.native_new();
 
-    static public final CharacterID T_02 = CharacterID.createInstance();
+    static public final CharacterID T_02 = CharacterID.native_new();
 
-    static public final CharacterID T_03 = CharacterID.createInstance();
+    static public final CharacterID T_03 = CharacterID.native_new();
 
     public CharacterID() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new CharacterID();
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterID createInstance() {
+    public static CharacterID native_new() {
         return new CharacterID((byte) 0, (char) 0);
     }
 
@@ -78,7 +78,7 @@ return nativeObject->IsInvalid();
         if (pointer == 0)
             return null;
         if (CharacterID_TEMP_STATIC_GEN_0 == null)
-            CharacterID_TEMP_STATIC_GEN_0 = CharacterID.createInstance();
+            CharacterID_TEMP_STATIC_GEN_0 = CharacterID.native_new();
         CharacterID_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return CharacterID_TEMP_STATIC_GEN_0;
     }

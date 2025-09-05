@@ -18,13 +18,13 @@ public class TwoBodyConstraint extends Constraint {
 
     private Mat44 Mat44_TEMP_GEN_1;
 
-    static public final TwoBodyConstraint NULL = TwoBodyConstraint.createInstance();
+    static public final TwoBodyConstraint NULL = TwoBodyConstraint.native_new();
 
-    static public final TwoBodyConstraint T_01 = TwoBodyConstraint.createInstance();
+    static public final TwoBodyConstraint T_01 = TwoBodyConstraint.native_new();
 
-    static public final TwoBodyConstraint T_02 = TwoBodyConstraint.createInstance();
+    static public final TwoBodyConstraint T_02 = TwoBodyConstraint.native_new();
 
-    static public final TwoBodyConstraint T_03 = TwoBodyConstraint.createInstance();
+    static public final TwoBodyConstraint T_03 = TwoBodyConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -37,7 +37,7 @@ public class TwoBodyConstraint extends Constraint {
     /**
      * @return An empty instance without a native address
      */
-    public static TwoBodyConstraint createInstance() {
+    public static TwoBodyConstraint native_new() {
         return new TwoBodyConstraint((byte) 0, (char) 0);
     }
 
@@ -46,7 +46,7 @@ public class TwoBodyConstraint extends Constraint {
         if (pointer == 0)
             return null;
         if (Body_TEMP_GEN_0 == null)
-            Body_TEMP_GEN_0 = Body.createInstance();
+            Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
         return Body_TEMP_GEN_0;
     }
@@ -65,7 +65,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Body_TEMP_GEN_1 == null)
-            Body_TEMP_GEN_1 = Body.createInstance();
+            Body_TEMP_GEN_1 = Body.native_new();
         Body_TEMP_GEN_1.internal_reset(pointer, false);
         return Body_TEMP_GEN_1;
     }
@@ -84,7 +84,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -103,7 +103,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_1 == null)
-            Mat44_TEMP_GEN_1 = Mat44.createInstance();
+            Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_1;
     }

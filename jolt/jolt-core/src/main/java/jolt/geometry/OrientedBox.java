@@ -15,13 +15,13 @@ public class OrientedBox extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final OrientedBox NULL = OrientedBox.createInstance();
+    static public final OrientedBox NULL = OrientedBox.native_new();
 
-    static public final OrientedBox T_01 = OrientedBox.createInstance();
+    static public final OrientedBox T_01 = OrientedBox.native_new();
 
-    static public final OrientedBox T_02 = OrientedBox.createInstance();
+    static public final OrientedBox T_02 = OrientedBox.native_new();
 
-    static public final OrientedBox T_03 = OrientedBox.createInstance();
+    static public final OrientedBox T_03 = OrientedBox.native_new();
 
     public OrientedBox() {
         long addr = internal_native_create();
@@ -53,7 +53,7 @@ return (jlong)new OrientedBox(*((Mat44* )inOrientation_addr), *((Vec3* )inHalfEx
     /**
      * @return An empty instance without a native address
      */
-    public static OrientedBox createInstance() {
+    public static OrientedBox native_new() {
         return new OrientedBox((byte) 0, (char) 0);
     }
 
@@ -72,7 +72,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -98,7 +98,7 @@ nativeObject->mOrientation = *((Mat44*)mOrientation_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

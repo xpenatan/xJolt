@@ -11,13 +11,13 @@ public class ArrayUint8 extends IDLBase {
 
     private Uint8MemRef Uint8MemRef_TEMP_GEN_0;
 
-    static public final ArrayUint8 NULL = ArrayUint8.createInstance();
+    static public final ArrayUint8 NULL = ArrayUint8.native_new();
 
-    static public final ArrayUint8 T_01 = ArrayUint8.createInstance();
+    static public final ArrayUint8 T_01 = ArrayUint8.native_new();
 
-    static public final ArrayUint8 T_02 = ArrayUint8.createInstance();
+    static public final ArrayUint8 T_02 = ArrayUint8.native_new();
 
-    static public final ArrayUint8 T_03 = ArrayUint8.createInstance();
+    static public final ArrayUint8 T_03 = ArrayUint8.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayUint8 extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayUint8 createInstance() {
+    public static ArrayUint8 native_new() {
         return new ArrayUint8((byte) 0, (char) 0);
     }
 
@@ -106,7 +106,7 @@ jsObj.clear();
         if (pointer == 0)
             return null;
         if (Uint8MemRef_TEMP_GEN_0 == null)
-            Uint8MemRef_TEMP_GEN_0 = Uint8MemRef.createInstance();
+            Uint8MemRef_TEMP_GEN_0 = Uint8MemRef.native_new();
         Uint8MemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return Uint8MemRef_TEMP_GEN_0;
     }

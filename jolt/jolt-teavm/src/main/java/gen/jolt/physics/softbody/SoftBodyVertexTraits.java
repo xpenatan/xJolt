@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class SoftBodyVertexTraits extends IDLBase {
 
-    static public final SoftBodyVertexTraits NULL = SoftBodyVertexTraits.createInstance();
+    static public final SoftBodyVertexTraits NULL = SoftBodyVertexTraits.native_new();
 
-    static public final SoftBodyVertexTraits T_01 = SoftBodyVertexTraits.createInstance();
+    static public final SoftBodyVertexTraits T_01 = SoftBodyVertexTraits.native_new();
 
-    static public final SoftBodyVertexTraits T_02 = SoftBodyVertexTraits.createInstance();
+    static public final SoftBodyVertexTraits T_02 = SoftBodyVertexTraits.native_new();
 
-    static public final SoftBodyVertexTraits T_03 = SoftBodyVertexTraits.createInstance();
+    static public final SoftBodyVertexTraits T_03 = SoftBodyVertexTraits.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class SoftBodyVertexTraits extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodyVertexTraits createInstance() {
+    public static SoftBodyVertexTraits native_new() {
         return new SoftBodyVertexTraits((byte) 0, (char) 0);
     }
 

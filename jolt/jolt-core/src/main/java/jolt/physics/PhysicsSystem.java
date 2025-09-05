@@ -59,13 +59,13 @@ public class PhysicsSystem extends IDLBase {
 
     private SimShapeFilter SimShapeFilter_TEMP_GEN_0;
 
-    static public final PhysicsSystem NULL = PhysicsSystem.createInstance();
+    static public final PhysicsSystem NULL = PhysicsSystem.native_new();
 
-    static public final PhysicsSystem T_01 = PhysicsSystem.createInstance();
+    static public final PhysicsSystem T_01 = PhysicsSystem.native_new();
 
-    static public final PhysicsSystem T_02 = PhysicsSystem.createInstance();
+    static public final PhysicsSystem T_02 = PhysicsSystem.native_new();
 
-    static public final PhysicsSystem T_03 = PhysicsSystem.createInstance();
+    static public final PhysicsSystem T_03 = PhysicsSystem.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -77,7 +77,7 @@ public class PhysicsSystem extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static PhysicsSystem createInstance() {
+    public static PhysicsSystem native_new() {
         return new PhysicsSystem((byte) 0, (char) 0);
     }
 
@@ -126,7 +126,7 @@ nativeObject->SetGravity(*((Vec3* )inGravity_addr));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -143,7 +143,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (PhysicsSettings_TEMP_GEN_0 == null)
-            PhysicsSettings_TEMP_GEN_0 = PhysicsSettings.createInstance();
+            PhysicsSettings_TEMP_GEN_0 = PhysicsSettings.native_new();
         PhysicsSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsSettings_TEMP_GEN_0;
     }
@@ -219,7 +219,7 @@ nativeObject->GetActiveBodies((::EBodyType)inBodyType, *((BodyIDVector* )outBodi
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
-            AABox_TEMP_GEN_0 = AABox.createInstance();
+            AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }
@@ -266,7 +266,7 @@ nativeObject->SetContactListener((ContactListener* )inListener_addr);
         if (pointer == 0)
             return null;
         if (ContactListener_TEMP_GEN_0 == null)
-            ContactListener_TEMP_GEN_0 = ContactListener.createInstance();
+            ContactListener_TEMP_GEN_0 = ContactListener.native_new();
         ContactListener_TEMP_GEN_0.internal_reset(pointer, false);
         return ContactListener_TEMP_GEN_0;
     }
@@ -293,7 +293,7 @@ nativeObject->SetSoftBodyContactListener((SoftBodyContactListener* )inListener_a
         if (pointer == 0)
             return null;
         if (SoftBodyContactListener_TEMP_GEN_0 == null)
-            SoftBodyContactListener_TEMP_GEN_0 = SoftBodyContactListener.createInstance();
+            SoftBodyContactListener_TEMP_GEN_0 = SoftBodyContactListener.native_new();
         SoftBodyContactListener_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodyContactListener_TEMP_GEN_0;
     }
@@ -320,7 +320,7 @@ nativeObject->OptimizeBroadPhase();
         if (pointer == 0)
             return null;
         if (BodyInterface_TEMP_GEN_0 == null)
-            BodyInterface_TEMP_GEN_0 = BodyInterface.createInstance();
+            BodyInterface_TEMP_GEN_0 = BodyInterface.native_new();
         BodyInterface_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyInterface_TEMP_GEN_0;
     }
@@ -336,7 +336,7 @@ return (jlong)&nativeObject->GetBodyInterface();
         if (pointer == 0)
             return null;
         if (BodyInterface_TEMP_GEN_1 == null)
-            BodyInterface_TEMP_GEN_1 = BodyInterface.createInstance();
+            BodyInterface_TEMP_GEN_1 = BodyInterface.native_new();
         BodyInterface_TEMP_GEN_1.internal_reset(pointer, false);
         return BodyInterface_TEMP_GEN_1;
     }
@@ -352,7 +352,7 @@ return (jlong)&nativeObject->GetBodyInterfaceNoLock();
         if (pointer == 0)
             return null;
         if (BodyLockInterfaceNoLock_TEMP_GEN_0 == null)
-            BodyLockInterfaceNoLock_TEMP_GEN_0 = BodyLockInterfaceNoLock.createInstance();
+            BodyLockInterfaceNoLock_TEMP_GEN_0 = BodyLockInterfaceNoLock.native_new();
         BodyLockInterfaceNoLock_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyLockInterfaceNoLock_TEMP_GEN_0;
     }
@@ -368,7 +368,7 @@ return (jlong)&nativeObject->GetBodyLockInterfaceNoLock();
         if (pointer == 0)
             return null;
         if (BodyLockInterfaceLocking_TEMP_GEN_0 == null)
-            BodyLockInterfaceLocking_TEMP_GEN_0 = BodyLockInterfaceLocking.createInstance();
+            BodyLockInterfaceLocking_TEMP_GEN_0 = BodyLockInterfaceLocking.native_new();
         BodyLockInterfaceLocking_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyLockInterfaceLocking_TEMP_GEN_0;
     }
@@ -384,7 +384,7 @@ return (jlong)&nativeObject->GetBodyLockInterface();
         if (pointer == 0)
             return null;
         if (BroadPhaseQuery_TEMP_GEN_0 == null)
-            BroadPhaseQuery_TEMP_GEN_0 = BroadPhaseQuery.createInstance();
+            BroadPhaseQuery_TEMP_GEN_0 = BroadPhaseQuery.native_new();
         BroadPhaseQuery_TEMP_GEN_0.internal_reset(pointer, false);
         return BroadPhaseQuery_TEMP_GEN_0;
     }
@@ -400,7 +400,7 @@ return (jlong)&nativeObject->GetBroadPhaseQuery();
         if (pointer == 0)
             return null;
         if (NarrowPhaseQuery_TEMP_GEN_0 == null)
-            NarrowPhaseQuery_TEMP_GEN_0 = NarrowPhaseQuery.createInstance();
+            NarrowPhaseQuery_TEMP_GEN_0 = NarrowPhaseQuery.native_new();
         NarrowPhaseQuery_TEMP_GEN_0.internal_reset(pointer, false);
         return NarrowPhaseQuery_TEMP_GEN_0;
     }
@@ -416,7 +416,7 @@ return (jlong)&nativeObject->GetNarrowPhaseQuery();
         if (pointer == 0)
             return null;
         if (NarrowPhaseQuery_TEMP_GEN_1 == null)
-            NarrowPhaseQuery_TEMP_GEN_1 = NarrowPhaseQuery.createInstance();
+            NarrowPhaseQuery_TEMP_GEN_1 = NarrowPhaseQuery.native_new();
         NarrowPhaseQuery_TEMP_GEN_1.internal_reset(pointer, false);
         return NarrowPhaseQuery_TEMP_GEN_1;
     }
@@ -532,7 +532,7 @@ nativeObject->SetBodyActivationListener((BodyActivationListener* )inListener_add
         if (pointer == 0)
             return null;
         if (BodyActivationListener_TEMP_GEN_0 == null)
-            BodyActivationListener_TEMP_GEN_0 = BodyActivationListener.createInstance();
+            BodyActivationListener_TEMP_GEN_0 = BodyActivationListener.native_new();
         BodyActivationListener_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyActivationListener_TEMP_GEN_0;
     }
@@ -569,7 +569,7 @@ nativeObject->SetSimShapeFilter((SimShapeFilter* )inShapeFilter_addr);
         if (pointer == 0)
             return null;
         if (SimShapeFilter_TEMP_GEN_0 == null)
-            SimShapeFilter_TEMP_GEN_0 = SimShapeFilter.createInstance();
+            SimShapeFilter_TEMP_GEN_0 = SimShapeFilter.native_new();
         SimShapeFilter_TEMP_GEN_0.internal_reset(pointer, false);
         return SimShapeFilter_TEMP_GEN_0;
     }

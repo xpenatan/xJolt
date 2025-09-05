@@ -10,13 +10,13 @@ import jolt.enums.ESpringMode;
 
 public class SpringSettings extends IDLBase {
 
-    static public final SpringSettings NULL = SpringSettings.createInstance();
+    static public final SpringSettings NULL = SpringSettings.native_new();
 
-    static public final SpringSettings T_01 = SpringSettings.createInstance();
+    static public final SpringSettings T_01 = SpringSettings.native_new();
 
-    static public final SpringSettings T_02 = SpringSettings.createInstance();
+    static public final SpringSettings T_02 = SpringSettings.native_new();
 
-    static public final SpringSettings T_03 = SpringSettings.createInstance();
+    static public final SpringSettings T_03 = SpringSettings.native_new();
 
     public SpringSettings() {
         long addr = internal_native_create();
@@ -38,7 +38,7 @@ return (jlong)new SpringSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static SpringSettings createInstance() {
+    public static SpringSettings native_new() {
         return new SpringSettings((byte) 0, (char) 0);
     }
 

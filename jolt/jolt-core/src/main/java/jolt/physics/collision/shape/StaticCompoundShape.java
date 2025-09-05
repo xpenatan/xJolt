@@ -7,13 +7,13 @@ package jolt.physics.collision.shape;
 
 public class StaticCompoundShape extends CompoundShape {
 
-    static public final StaticCompoundShape NULL = StaticCompoundShape.createInstance();
+    static public final StaticCompoundShape NULL = StaticCompoundShape.native_new();
 
-    static public final StaticCompoundShape T_01 = StaticCompoundShape.createInstance();
+    static public final StaticCompoundShape T_01 = StaticCompoundShape.native_new();
 
-    static public final StaticCompoundShape T_02 = StaticCompoundShape.createInstance();
+    static public final StaticCompoundShape T_02 = StaticCompoundShape.native_new();
 
-    static public final StaticCompoundShape T_03 = StaticCompoundShape.createInstance();
+    static public final StaticCompoundShape T_03 = StaticCompoundShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class StaticCompoundShape extends CompoundShape {
     /**
      * @return An empty instance without a native address
      */
-    public static StaticCompoundShape createInstance() {
+    public static StaticCompoundShape native_new() {
         return new StaticCompoundShape((byte) 0, (char) 0);
     }
 }

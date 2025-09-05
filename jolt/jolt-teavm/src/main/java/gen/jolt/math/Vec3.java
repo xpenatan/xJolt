@@ -92,7 +92,7 @@ public class Vec3 extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static Vec3 createInstance() {
+    public static Vec3 native_new() {
         return new Vec3((byte) 0, (char) 0);
     }
 
@@ -113,7 +113,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
-            Vec3_TEMP_STATIC_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_0;
     }
@@ -132,7 +132,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_1 == null)
-            Vec3_TEMP_STATIC_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_1 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_1;
     }
@@ -151,7 +151,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_2 == null)
-            Vec3_TEMP_STATIC_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_2 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_2;
     }
@@ -170,7 +170,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_3 == null)
-            Vec3_TEMP_STATIC_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_3;
     }
@@ -189,7 +189,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_4 == null)
-            Vec3_TEMP_STATIC_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_4;
     }
@@ -208,7 +208,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_5 == null)
-            Vec3_TEMP_STATIC_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_5 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_5;
     }
@@ -227,7 +227,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_6 == null)
-            Vec3_TEMP_STATIC_GEN_6 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_6 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_6;
     }
@@ -246,7 +246,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_7 == null)
-            Vec3_TEMP_STATIC_GEN_7 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_7 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_7;
     }
@@ -265,7 +265,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_8 == null)
-            Vec3_TEMP_STATIC_GEN_8 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_8 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_8;
     }
@@ -284,7 +284,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_9 == null)
-            Vec3_TEMP_STATIC_GEN_9 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_9 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_9;
     }
@@ -303,7 +303,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_10 == null)
-            Vec3_TEMP_STATIC_GEN_10 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_10 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_10;
     }
@@ -322,7 +322,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_11 == null)
-            Vec3_TEMP_STATIC_GEN_11 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_11 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_11;
     }
@@ -341,7 +341,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_12 == null)
-            Vec3_TEMP_STATIC_GEN_12 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_12 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_12.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_12;
     }
@@ -360,7 +360,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_13 == null)
-            Vec3_TEMP_STATIC_GEN_13 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_13 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_13.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_13;
     }
@@ -444,7 +444,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -464,7 +464,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -484,7 +484,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -707,7 +707,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -727,7 +727,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -747,7 +747,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
@@ -780,7 +780,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_6 == null)
-            Vec3_TEMP_GEN_6 = Vec3.createInstance();
+            Vec3_TEMP_GEN_6 = Vec3.native_new();
         Vec3_TEMP_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_6;
     }
@@ -800,7 +800,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_0 == null)
-            Vec4_TEMP_GEN_0 = Vec4.createInstance();
+            Vec4_TEMP_GEN_0 = Vec4.native_new();
         Vec4_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_0;
     }
@@ -880,7 +880,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_7 == null)
-            Vec3_TEMP_GEN_7 = Vec3.createInstance();
+            Vec3_TEMP_GEN_7 = Vec3.native_new();
         Vec3_TEMP_GEN_7.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_7;
     }
@@ -900,7 +900,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_8 == null)
-            Vec3_TEMP_GEN_8 = Vec3.createInstance();
+            Vec3_TEMP_GEN_8 = Vec3.native_new();
         Vec3_TEMP_GEN_8.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_8;
     }
@@ -920,7 +920,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_9 == null)
-            Vec3_TEMP_GEN_9 = Vec3.createInstance();
+            Vec3_TEMP_GEN_9 = Vec3.native_new();
         Vec3_TEMP_GEN_9.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_9;
     }
@@ -940,7 +940,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_10 == null)
-            Vec3_TEMP_GEN_10 = Vec3.createInstance();
+            Vec3_TEMP_GEN_10 = Vec3.native_new();
         Vec3_TEMP_GEN_10.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_10;
     }
@@ -960,7 +960,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_11 == null)
-            Vec3_TEMP_GEN_11 = Vec3.createInstance();
+            Vec3_TEMP_GEN_11 = Vec3.native_new();
         Vec3_TEMP_GEN_11.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_11;
     }
@@ -980,7 +980,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_12 == null)
-            Vec3_TEMP_GEN_12 = Vec3.createInstance();
+            Vec3_TEMP_GEN_12 = Vec3.native_new();
         Vec3_TEMP_GEN_12.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_12;
     }
@@ -1000,7 +1000,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_1 == null)
-            Vec4_TEMP_GEN_1 = Vec4.createInstance();
+            Vec4_TEMP_GEN_1 = Vec4.native_new();
         Vec4_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_1;
     }
@@ -1020,7 +1020,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_2 == null)
-            Vec4_TEMP_GEN_2 = Vec4.createInstance();
+            Vec4_TEMP_GEN_2 = Vec4.native_new();
         Vec4_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_2;
     }
@@ -1040,7 +1040,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_3 == null)
-            Vec4_TEMP_GEN_3 = Vec4.createInstance();
+            Vec4_TEMP_GEN_3 = Vec4.native_new();
         Vec4_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_3;
     }
@@ -1086,7 +1086,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_13 == null)
-            Vec3_TEMP_GEN_13 = Vec3.createInstance();
+            Vec3_TEMP_GEN_13 = Vec3.native_new();
         Vec3_TEMP_GEN_13.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_13;
     }
@@ -1106,7 +1106,7 @@ public class Vec3 extends IDLBase {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_14 == null)
-            Vec3_TEMP_GEN_14 = Vec3.createInstance();
+            Vec3_TEMP_GEN_14 = Vec3.native_new();
         Vec3_TEMP_GEN_14.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_14;
     }

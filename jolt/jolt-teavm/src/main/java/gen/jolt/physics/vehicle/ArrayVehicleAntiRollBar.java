@@ -11,13 +11,13 @@ public class ArrayVehicleAntiRollBar extends IDLBase {
 
     private VehicleAntiRollBar VehicleAntiRollBar_TEMP_GEN_0;
 
-    static public final ArrayVehicleAntiRollBar NULL = ArrayVehicleAntiRollBar.createInstance();
+    static public final ArrayVehicleAntiRollBar NULL = ArrayVehicleAntiRollBar.native_new();
 
-    static public final ArrayVehicleAntiRollBar T_01 = ArrayVehicleAntiRollBar.createInstance();
+    static public final ArrayVehicleAntiRollBar T_01 = ArrayVehicleAntiRollBar.native_new();
 
-    static public final ArrayVehicleAntiRollBar T_02 = ArrayVehicleAntiRollBar.createInstance();
+    static public final ArrayVehicleAntiRollBar T_02 = ArrayVehicleAntiRollBar.native_new();
 
-    static public final ArrayVehicleAntiRollBar T_03 = ArrayVehicleAntiRollBar.createInstance();
+    static public final ArrayVehicleAntiRollBar T_03 = ArrayVehicleAntiRollBar.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayVehicleAntiRollBar extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayVehicleAntiRollBar createInstance() {
+    public static ArrayVehicleAntiRollBar native_new() {
         return new ArrayVehicleAntiRollBar((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (VehicleAntiRollBar_TEMP_GEN_0 == null)
-            VehicleAntiRollBar_TEMP_GEN_0 = VehicleAntiRollBar.createInstance();
+            VehicleAntiRollBar_TEMP_GEN_0 = VehicleAntiRollBar.native_new();
         VehicleAntiRollBar_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleAntiRollBar_TEMP_GEN_0;
     }

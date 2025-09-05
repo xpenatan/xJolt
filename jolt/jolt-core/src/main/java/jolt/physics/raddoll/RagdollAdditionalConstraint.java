@@ -12,13 +12,13 @@ public class RagdollAdditionalConstraint extends IDLBase {
 
     private TwoBodyConstraintSettings TwoBodyConstraintSettings_TEMP_GEN_0;
 
-    static public final RagdollAdditionalConstraint NULL = RagdollAdditionalConstraint.createInstance();
+    static public final RagdollAdditionalConstraint NULL = RagdollAdditionalConstraint.native_new();
 
-    static public final RagdollAdditionalConstraint T_01 = RagdollAdditionalConstraint.createInstance();
+    static public final RagdollAdditionalConstraint T_01 = RagdollAdditionalConstraint.native_new();
 
-    static public final RagdollAdditionalConstraint T_02 = RagdollAdditionalConstraint.createInstance();
+    static public final RagdollAdditionalConstraint T_02 = RagdollAdditionalConstraint.native_new();
 
-    static public final RagdollAdditionalConstraint T_03 = RagdollAdditionalConstraint.createInstance();
+    static public final RagdollAdditionalConstraint T_03 = RagdollAdditionalConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,7 +30,7 @@ public class RagdollAdditionalConstraint extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static RagdollAdditionalConstraint createInstance() {
+    public static RagdollAdditionalConstraint native_new() {
         return new RagdollAdditionalConstraint((byte) 0, (char) 0);
     }
 
@@ -69,7 +69,7 @@ nativeObject->mBodyIdx[index] = mBodyIdx;
         if (pointer == 0)
             return null;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
-            TwoBodyConstraintSettings_TEMP_GEN_0 = TwoBodyConstraintSettings.createInstance();
+            TwoBodyConstraintSettings_TEMP_GEN_0 = TwoBodyConstraintSettings.native_new();
         TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return TwoBodyConstraintSettings_TEMP_GEN_0;
     }

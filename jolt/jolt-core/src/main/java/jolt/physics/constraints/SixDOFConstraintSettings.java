@@ -29,13 +29,13 @@ public class SixDOFConstraintSettings extends TwoBodyConstraintSettings {
 
     private MotorSettings MotorSettings_TEMP_GEN_0;
 
-    static public final SixDOFConstraintSettings NULL = SixDOFConstraintSettings.createInstance();
+    static public final SixDOFConstraintSettings NULL = SixDOFConstraintSettings.native_new();
 
-    static public final SixDOFConstraintSettings T_01 = SixDOFConstraintSettings.createInstance();
+    static public final SixDOFConstraintSettings T_01 = SixDOFConstraintSettings.native_new();
 
-    static public final SixDOFConstraintSettings T_02 = SixDOFConstraintSettings.createInstance();
+    static public final SixDOFConstraintSettings T_02 = SixDOFConstraintSettings.native_new();
 
-    static public final SixDOFConstraintSettings T_03 = SixDOFConstraintSettings.createInstance();
+    static public final SixDOFConstraintSettings T_03 = SixDOFConstraintSettings.native_new();
 
     public SixDOFConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -59,7 +59,7 @@ return (jlong)new SixDOFConstraintSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static SixDOFConstraintSettings createInstance() {
+    public static SixDOFConstraintSettings native_new() {
         return new SixDOFConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -149,7 +149,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -175,7 +175,7 @@ nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -201,7 +201,7 @@ nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -227,7 +227,7 @@ nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -253,7 +253,7 @@ nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -279,7 +279,7 @@ nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
@@ -386,7 +386,7 @@ nativeObject->mLimitMax[index] = mLimitMax;
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
-            SpringSettings_TEMP_GEN_0 = SpringSettings.createInstance();
+            SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
@@ -412,7 +412,7 @@ nativeObject->mLimitsSpringSettings[index] = *((SpringSettings*)mLimitsSpringSet
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
-            MotorSettings_TEMP_GEN_0 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }

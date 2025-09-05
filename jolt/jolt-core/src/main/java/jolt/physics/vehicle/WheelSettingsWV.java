@@ -13,13 +13,13 @@ public class WheelSettingsWV extends WheelSettings {
 
     private LinearCurve LinearCurve_TEMP_GEN_1;
 
-    static public final WheelSettingsWV NULL = WheelSettingsWV.createInstance();
+    static public final WheelSettingsWV NULL = WheelSettingsWV.native_new();
 
-    static public final WheelSettingsWV T_01 = WheelSettingsWV.createInstance();
+    static public final WheelSettingsWV T_01 = WheelSettingsWV.native_new();
 
-    static public final WheelSettingsWV T_02 = WheelSettingsWV.createInstance();
+    static public final WheelSettingsWV T_02 = WheelSettingsWV.native_new();
 
-    static public final WheelSettingsWV T_03 = WheelSettingsWV.createInstance();
+    static public final WheelSettingsWV T_03 = WheelSettingsWV.native_new();
 
     public WheelSettingsWV() {
         super((byte) 1, (char) 1);
@@ -43,7 +43,7 @@ return (jlong)new WheelSettingsWV();
     /**
      * @return An empty instance without a native address
      */
-    public static WheelSettingsWV createInstance() {
+    public static WheelSettingsWV native_new() {
         return new WheelSettingsWV((byte) 0, (char) 0);
     }
 
@@ -112,7 +112,7 @@ nativeObject->mMaxSteerAngle = mMaxSteerAngle;
         if (pointer == 0)
             return null;
         if (LinearCurve_TEMP_GEN_0 == null)
-            LinearCurve_TEMP_GEN_0 = LinearCurve.createInstance();
+            LinearCurve_TEMP_GEN_0 = LinearCurve.native_new();
         LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);
         return LinearCurve_TEMP_GEN_0;
     }
@@ -138,7 +138,7 @@ nativeObject->mLongitudinalFriction = *((LinearCurve*)mLongitudinalFriction_addr
         if (pointer == 0)
             return null;
         if (LinearCurve_TEMP_GEN_1 == null)
-            LinearCurve_TEMP_GEN_1 = LinearCurve.createInstance();
+            LinearCurve_TEMP_GEN_1 = LinearCurve.native_new();
         LinearCurve_TEMP_GEN_1.internal_reset(pointer, false);
         return LinearCurve_TEMP_GEN_1;
     }

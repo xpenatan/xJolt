@@ -7,13 +7,13 @@ package jolt.physics.body;
 
 public class BodyLockInterfaceLocking extends BodyLockInterface {
 
-    static public final BodyLockInterfaceLocking NULL = BodyLockInterfaceLocking.createInstance();
+    static public final BodyLockInterfaceLocking NULL = BodyLockInterfaceLocking.native_new();
 
-    static public final BodyLockInterfaceLocking T_01 = BodyLockInterfaceLocking.createInstance();
+    static public final BodyLockInterfaceLocking T_01 = BodyLockInterfaceLocking.native_new();
 
-    static public final BodyLockInterfaceLocking T_02 = BodyLockInterfaceLocking.createInstance();
+    static public final BodyLockInterfaceLocking T_02 = BodyLockInterfaceLocking.native_new();
 
-    static public final BodyLockInterfaceLocking T_03 = BodyLockInterfaceLocking.createInstance();
+    static public final BodyLockInterfaceLocking T_03 = BodyLockInterfaceLocking.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class BodyLockInterfaceLocking extends BodyLockInterface {
     /**
      * @return An empty instance without a native address
      */
-    public static BodyLockInterfaceLocking createInstance() {
+    public static BodyLockInterfaceLocking native_new() {
         return new BodyLockInterfaceLocking((byte) 0, (char) 0);
     }
 

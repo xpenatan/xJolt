@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class CharacterContactListener extends IDLBase {
 
-    static public final CharacterContactListener NULL = CharacterContactListener.createInstance();
+    static public final CharacterContactListener NULL = CharacterContactListener.native_new();
 
-    static public final CharacterContactListener T_01 = CharacterContactListener.createInstance();
+    static public final CharacterContactListener T_01 = CharacterContactListener.native_new();
 
-    static public final CharacterContactListener T_02 = CharacterContactListener.createInstance();
+    static public final CharacterContactListener T_02 = CharacterContactListener.native_new();
 
-    static public final CharacterContactListener T_03 = CharacterContactListener.createInstance();
+    static public final CharacterContactListener T_03 = CharacterContactListener.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class CharacterContactListener extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterContactListener createInstance() {
+    public static CharacterContactListener native_new() {
         return new CharacterContactListener((byte) 0, (char) 0);
     }
 

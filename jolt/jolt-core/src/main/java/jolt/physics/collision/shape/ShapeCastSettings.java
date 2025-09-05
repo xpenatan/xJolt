@@ -10,13 +10,13 @@ import jolt.enums.EBackFaceMode;
 
 public class ShapeCastSettings extends CollideSettingsBase {
 
-    static public final ShapeCastSettings NULL = ShapeCastSettings.createInstance();
+    static public final ShapeCastSettings NULL = ShapeCastSettings.native_new();
 
-    static public final ShapeCastSettings T_01 = ShapeCastSettings.createInstance();
+    static public final ShapeCastSettings T_01 = ShapeCastSettings.native_new();
 
-    static public final ShapeCastSettings T_02 = ShapeCastSettings.createInstance();
+    static public final ShapeCastSettings T_02 = ShapeCastSettings.native_new();
 
-    static public final ShapeCastSettings T_03 = ShapeCastSettings.createInstance();
+    static public final ShapeCastSettings T_03 = ShapeCastSettings.native_new();
 
     public ShapeCastSettings() {
         super((byte) 1, (char) 1);
@@ -40,7 +40,7 @@ return (jlong)new ShapeCastSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static ShapeCastSettings createInstance() {
+    public static ShapeCastSettings native_new() {
         return new ShapeCastSettings((byte) 0, (char) 0);
     }
 

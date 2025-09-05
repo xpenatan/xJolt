@@ -39,13 +39,13 @@ public class Vec4 extends IDLBase {
 
     private Vec4 Vec4_TEMP_GEN_5;
 
-    static public final Vec4 NULL = Vec4.createInstance();
+    static public final Vec4 NULL = Vec4.native_new();
 
-    static public final Vec4 T_01 = Vec4.createInstance();
+    static public final Vec4 T_01 = Vec4.native_new();
 
-    static public final Vec4 T_02 = Vec4.createInstance();
+    static public final Vec4 T_02 = Vec4.native_new();
 
-    static public final Vec4 T_03 = Vec4.createInstance();
+    static public final Vec4 T_03 = Vec4.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -57,7 +57,7 @@ public class Vec4 extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static Vec4 createInstance() {
+    public static Vec4 native_new() {
         return new Vec4((byte) 0, (char) 0);
     }
 
@@ -76,7 +76,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_0 == null)
-            Vec4_TEMP_STATIC_GEN_0 = Vec4.createInstance();
+            Vec4_TEMP_STATIC_GEN_0 = Vec4.native_new();
         Vec4_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_0;
     }
@@ -92,7 +92,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_1 == null)
-            Vec4_TEMP_STATIC_GEN_1 = Vec4.createInstance();
+            Vec4_TEMP_STATIC_GEN_1 = Vec4.native_new();
         Vec4_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_1;
     }
@@ -108,7 +108,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_2 == null)
-            Vec4_TEMP_STATIC_GEN_2 = Vec4.createInstance();
+            Vec4_TEMP_STATIC_GEN_2 = Vec4.native_new();
         Vec4_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_2;
     }
@@ -124,7 +124,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_3 == null)
-            Vec4_TEMP_STATIC_GEN_3 = Vec4.createInstance();
+            Vec4_TEMP_STATIC_GEN_3 = Vec4.native_new();
         Vec4_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_3;
     }
@@ -140,7 +140,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_4 == null)
-            Vec4_TEMP_STATIC_GEN_4 = Vec4.createInstance();
+            Vec4_TEMP_STATIC_GEN_4 = Vec4.native_new();
         Vec4_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_4;
     }
@@ -156,7 +156,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_5 == null)
-            Vec4_TEMP_STATIC_GEN_5 = Vec4.createInstance();
+            Vec4_TEMP_STATIC_GEN_5 = Vec4.native_new();
         Vec4_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_5;
     }
@@ -172,7 +172,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_6 == null)
-            Vec4_TEMP_STATIC_GEN_6 = Vec4.createInstance();
+            Vec4_TEMP_STATIC_GEN_6 = Vec4.native_new();
         Vec4_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_6;
     }
@@ -188,7 +188,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_7 == null)
-            Vec4_TEMP_STATIC_GEN_7 = Vec4.createInstance();
+            Vec4_TEMP_STATIC_GEN_7 = Vec4.native_new();
         Vec4_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_7;
     }
@@ -204,7 +204,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_STATIC_GEN_8 == null)
-            Vec4_TEMP_STATIC_GEN_8 = Vec4.createInstance();
+            Vec4_TEMP_STATIC_GEN_8 = Vec4.native_new();
         Vec4_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
         return Vec4_TEMP_STATIC_GEN_8;
     }
@@ -403,7 +403,7 @@ return (jlong)&(*nativeObject /= (float)inV);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_0 == null)
-            Vec4_TEMP_GEN_0 = Vec4.createInstance();
+            Vec4_TEMP_GEN_0 = Vec4.native_new();
         Vec4_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_0;
     }
@@ -420,7 +420,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_1 == null)
-            Vec4_TEMP_GEN_1 = Vec4.createInstance();
+            Vec4_TEMP_GEN_1 = Vec4.native_new();
         Vec4_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_1;
     }
@@ -437,7 +437,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_2 == null)
-            Vec4_TEMP_GEN_2 = Vec4.createInstance();
+            Vec4_TEMP_GEN_2 = Vec4.native_new();
         Vec4_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_2;
     }
@@ -454,7 +454,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_3 == null)
-            Vec4_TEMP_GEN_3 = Vec4.createInstance();
+            Vec4_TEMP_GEN_3 = Vec4.native_new();
         Vec4_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_3;
     }
@@ -471,7 +471,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_4 == null)
-            Vec4_TEMP_GEN_4 = Vec4.createInstance();
+            Vec4_TEMP_GEN_4 = Vec4.native_new();
         Vec4_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_4;
     }
@@ -488,7 +488,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_5 == null)
-            Vec4_TEMP_GEN_5 = Vec4.createInstance();
+            Vec4_TEMP_GEN_5 = Vec4.native_new();
         Vec4_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_5;
     }

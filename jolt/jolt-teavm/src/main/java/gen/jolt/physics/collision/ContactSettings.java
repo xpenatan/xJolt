@@ -14,13 +14,13 @@ public class ContactSettings extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_1;
 
-    static public final ContactSettings NULL = ContactSettings.createInstance();
+    static public final ContactSettings NULL = ContactSettings.native_new();
 
-    static public final ContactSettings T_01 = ContactSettings.createInstance();
+    static public final ContactSettings T_01 = ContactSettings.native_new();
 
-    static public final ContactSettings T_02 = ContactSettings.createInstance();
+    static public final ContactSettings T_02 = ContactSettings.native_new();
 
-    static public final ContactSettings T_03 = ContactSettings.createInstance();
+    static public final ContactSettings T_03 = ContactSettings.native_new();
 
     public ContactSettings() {
         int addr = internal_native_create();
@@ -44,7 +44,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ContactSettings createInstance() {
+    public static ContactSettings native_new() {
         return new ContactSettings((byte) 0, (char) 0);
     }
 
@@ -218,7 +218,7 @@ jsObj.set_mIsSensor(mIsSensor);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -248,7 +248,7 @@ jsObj.set_mRelativeLinearSurfaceVelocity(mRelativeLinearSurfaceVelocity_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }

@@ -23,13 +23,13 @@ public class FixedConstraintSettings extends TwoBodyConstraintSettings {
 
     private Vec3 Vec3_TEMP_GEN_5;
 
-    static public final FixedConstraintSettings NULL = FixedConstraintSettings.createInstance();
+    static public final FixedConstraintSettings NULL = FixedConstraintSettings.native_new();
 
-    static public final FixedConstraintSettings T_01 = FixedConstraintSettings.createInstance();
+    static public final FixedConstraintSettings T_01 = FixedConstraintSettings.native_new();
 
-    static public final FixedConstraintSettings T_02 = FixedConstraintSettings.createInstance();
+    static public final FixedConstraintSettings T_02 = FixedConstraintSettings.native_new();
 
-    static public final FixedConstraintSettings T_03 = FixedConstraintSettings.createInstance();
+    static public final FixedConstraintSettings T_03 = FixedConstraintSettings.native_new();
 
     public FixedConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -55,7 +55,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static FixedConstraintSettings createInstance() {
+    public static FixedConstraintSettings native_new() {
         return new FixedConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -120,7 +120,7 @@ jsObj.set_mAutoDetectPoint(mAutoDetectPoint);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -150,7 +150,7 @@ jsObj.set_mPoint1(mPoint1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -180,7 +180,7 @@ jsObj.set_mAxisX1(mAxisX1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -210,7 +210,7 @@ jsObj.set_mAxisY1(mAxisY1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -240,7 +240,7 @@ jsObj.set_mPoint2(mPoint2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -270,7 +270,7 @@ jsObj.set_mAxisX2(mAxisX2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }

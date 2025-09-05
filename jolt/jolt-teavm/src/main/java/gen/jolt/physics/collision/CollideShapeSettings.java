@@ -9,13 +9,13 @@ import gen.jolt.enums.EBackFaceMode;
 
 public class CollideShapeSettings extends CollideSettingsBase {
 
-    static public final CollideShapeSettings NULL = CollideShapeSettings.createInstance();
+    static public final CollideShapeSettings NULL = CollideShapeSettings.native_new();
 
-    static public final CollideShapeSettings T_01 = CollideShapeSettings.createInstance();
+    static public final CollideShapeSettings T_01 = CollideShapeSettings.native_new();
 
-    static public final CollideShapeSettings T_02 = CollideShapeSettings.createInstance();
+    static public final CollideShapeSettings T_02 = CollideShapeSettings.native_new();
 
-    static public final CollideShapeSettings T_03 = CollideShapeSettings.createInstance();
+    static public final CollideShapeSettings T_03 = CollideShapeSettings.native_new();
 
     public CollideShapeSettings() {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static CollideShapeSettings createInstance() {
+    public static CollideShapeSettings native_new() {
         return new CollideShapeSettings((byte) 0, (char) 0);
     }
 

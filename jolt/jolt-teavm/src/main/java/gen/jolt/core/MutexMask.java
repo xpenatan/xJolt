@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class MutexMask extends IDLBase {
 
-    static public final MutexMask NULL = MutexMask.createInstance();
+    static public final MutexMask NULL = MutexMask.native_new();
 
-    static public final MutexMask T_01 = MutexMask.createInstance();
+    static public final MutexMask T_01 = MutexMask.native_new();
 
-    static public final MutexMask T_02 = MutexMask.createInstance();
+    static public final MutexMask T_02 = MutexMask.native_new();
 
-    static public final MutexMask T_03 = MutexMask.createInstance();
+    static public final MutexMask T_03 = MutexMask.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class MutexMask extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static MutexMask createInstance() {
+    public static MutexMask native_new() {
         return new MutexMask((byte) 0, (char) 0);
     }
 }

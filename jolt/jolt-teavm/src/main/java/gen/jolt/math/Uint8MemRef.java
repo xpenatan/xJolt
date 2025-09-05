@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class Uint8MemRef extends IDLBase {
 
-    static public final Uint8MemRef NULL = Uint8MemRef.createInstance();
+    static public final Uint8MemRef NULL = Uint8MemRef.native_new();
 
-    static public final Uint8MemRef T_01 = Uint8MemRef.createInstance();
+    static public final Uint8MemRef T_01 = Uint8MemRef.native_new();
 
-    static public final Uint8MemRef T_02 = Uint8MemRef.createInstance();
+    static public final Uint8MemRef T_02 = Uint8MemRef.native_new();
 
-    static public final Uint8MemRef T_03 = Uint8MemRef.createInstance();
+    static public final Uint8MemRef T_03 = Uint8MemRef.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class Uint8MemRef extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static Uint8MemRef createInstance() {
+    public static Uint8MemRef native_new() {
         return new Uint8MemRef((byte) 0, (char) 0);
     }
 

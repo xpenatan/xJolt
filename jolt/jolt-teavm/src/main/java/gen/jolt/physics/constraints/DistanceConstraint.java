@@ -9,13 +9,13 @@ public class DistanceConstraint extends TwoBodyConstraint {
 
     private SpringSettings SpringSettings_TEMP_GEN_0;
 
-    static public final DistanceConstraint NULL = DistanceConstraint.createInstance();
+    static public final DistanceConstraint NULL = DistanceConstraint.native_new();
 
-    static public final DistanceConstraint T_01 = DistanceConstraint.createInstance();
+    static public final DistanceConstraint T_01 = DistanceConstraint.native_new();
 
-    static public final DistanceConstraint T_02 = DistanceConstraint.createInstance();
+    static public final DistanceConstraint T_02 = DistanceConstraint.native_new();
 
-    static public final DistanceConstraint T_03 = DistanceConstraint.createInstance();
+    static public final DistanceConstraint T_03 = DistanceConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -28,7 +28,7 @@ public class DistanceConstraint extends TwoBodyConstraint {
     /**
      * @return An empty instance without a native address
      */
-    public static DistanceConstraint createInstance() {
+    public static DistanceConstraint native_new() {
         return new DistanceConstraint((byte) 0, (char) 0);
     }
 
@@ -72,7 +72,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
-            SpringSettings_TEMP_GEN_0 = SpringSettings.createInstance();
+            SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }

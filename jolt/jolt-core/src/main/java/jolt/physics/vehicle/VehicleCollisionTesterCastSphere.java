@@ -9,13 +9,13 @@ import jolt.math.Vec3;
 
 public class VehicleCollisionTesterCastSphere extends VehicleCollisionTester {
 
-    static public final VehicleCollisionTesterCastSphere NULL = VehicleCollisionTesterCastSphere.createInstance();
+    static public final VehicleCollisionTesterCastSphere NULL = VehicleCollisionTesterCastSphere.native_new();
 
-    static public final VehicleCollisionTesterCastSphere T_01 = VehicleCollisionTesterCastSphere.createInstance();
+    static public final VehicleCollisionTesterCastSphere T_01 = VehicleCollisionTesterCastSphere.native_new();
 
-    static public final VehicleCollisionTesterCastSphere T_02 = VehicleCollisionTesterCastSphere.createInstance();
+    static public final VehicleCollisionTesterCastSphere T_02 = VehicleCollisionTesterCastSphere.native_new();
 
-    static public final VehicleCollisionTesterCastSphere T_03 = VehicleCollisionTesterCastSphere.createInstance();
+    static public final VehicleCollisionTesterCastSphere T_03 = VehicleCollisionTesterCastSphere.native_new();
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp, float inMaxSlopeAngle) {
         super((byte) 1, (char) 1);
@@ -61,7 +61,7 @@ return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadiu
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleCollisionTesterCastSphere createInstance() {
+    public static VehicleCollisionTesterCastSphere native_new() {
         return new VehicleCollisionTesterCastSphere((byte) 0, (char) 0);
     }
 }

@@ -11,13 +11,13 @@ public class ArrayCollidePointResult extends IDLBase {
 
     private CollidePointResult CollidePointResult_TEMP_GEN_0;
 
-    static public final ArrayCollidePointResult NULL = ArrayCollidePointResult.createInstance();
+    static public final ArrayCollidePointResult NULL = ArrayCollidePointResult.native_new();
 
-    static public final ArrayCollidePointResult T_01 = ArrayCollidePointResult.createInstance();
+    static public final ArrayCollidePointResult T_01 = ArrayCollidePointResult.native_new();
 
-    static public final ArrayCollidePointResult T_02 = ArrayCollidePointResult.createInstance();
+    static public final ArrayCollidePointResult T_02 = ArrayCollidePointResult.native_new();
 
-    static public final ArrayCollidePointResult T_03 = ArrayCollidePointResult.createInstance();
+    static public final ArrayCollidePointResult T_03 = ArrayCollidePointResult.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayCollidePointResult extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayCollidePointResult createInstance() {
+    public static ArrayCollidePointResult native_new() {
         return new ArrayCollidePointResult((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (CollidePointResult_TEMP_GEN_0 == null)
-            CollidePointResult_TEMP_GEN_0 = CollidePointResult.createInstance();
+            CollidePointResult_TEMP_GEN_0 = CollidePointResult.native_new();
         CollidePointResult_TEMP_GEN_0.internal_reset(pointer, false);
         return CollidePointResult_TEMP_GEN_0;
     }

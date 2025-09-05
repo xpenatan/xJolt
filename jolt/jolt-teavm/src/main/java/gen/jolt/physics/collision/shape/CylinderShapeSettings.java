@@ -9,13 +9,13 @@ import gen.jolt.physics.collision.PhysicsMaterial;
 
 public class CylinderShapeSettings extends ConvexShapeSettings {
 
-    static public final CylinderShapeSettings NULL = CylinderShapeSettings.createInstance();
+    static public final CylinderShapeSettings NULL = CylinderShapeSettings.native_new();
 
-    static public final CylinderShapeSettings T_01 = CylinderShapeSettings.createInstance();
+    static public final CylinderShapeSettings T_01 = CylinderShapeSettings.native_new();
 
-    static public final CylinderShapeSettings T_02 = CylinderShapeSettings.createInstance();
+    static public final CylinderShapeSettings T_02 = CylinderShapeSettings.native_new();
 
-    static public final CylinderShapeSettings T_03 = CylinderShapeSettings.createInstance();
+    static public final CylinderShapeSettings T_03 = CylinderShapeSettings.native_new();
 
     public CylinderShapeSettings(float inHalfHeight, float inRadius, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -67,7 +67,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static CylinderShapeSettings createInstance() {
+    public static CylinderShapeSettings native_new() {
         return new CylinderShapeSettings((byte) 0, (char) 0);
     }
 

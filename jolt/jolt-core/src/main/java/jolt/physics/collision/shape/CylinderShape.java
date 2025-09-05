@@ -9,13 +9,13 @@ import jolt.physics.collision.PhysicsMaterial;
 
 public class CylinderShape extends ConvexShape {
 
-    static public final CylinderShape NULL = CylinderShape.createInstance();
+    static public final CylinderShape NULL = CylinderShape.native_new();
 
-    static public final CylinderShape T_01 = CylinderShape.createInstance();
+    static public final CylinderShape T_01 = CylinderShape.native_new();
 
-    static public final CylinderShape T_02 = CylinderShape.createInstance();
+    static public final CylinderShape T_02 = CylinderShape.native_new();
 
-    static public final CylinderShape T_03 = CylinderShape.createInstance();
+    static public final CylinderShape T_03 = CylinderShape.native_new();
 
     public CylinderShape(float inHalfHeight, float inRadius, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -61,7 +61,7 @@ return (jlong)new CylinderShape((float)inHalfHeight, (float)inRadius);
     /**
      * @return An empty instance without a native address
      */
-    public static CylinderShape createInstance() {
+    public static CylinderShape native_new() {
         return new CylinderShape((byte) 0, (char) 0);
     }
 

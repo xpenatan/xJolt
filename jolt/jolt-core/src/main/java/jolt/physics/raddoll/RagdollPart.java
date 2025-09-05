@@ -12,13 +12,13 @@ public class RagdollPart extends BodyCreationSettings {
 
     private TwoBodyConstraintSettings TwoBodyConstraintSettings_TEMP_GEN_0;
 
-    static public final RagdollPart NULL = RagdollPart.createInstance();
+    static public final RagdollPart NULL = RagdollPart.native_new();
 
-    static public final RagdollPart T_01 = RagdollPart.createInstance();
+    static public final RagdollPart T_01 = RagdollPart.native_new();
 
-    static public final RagdollPart T_02 = RagdollPart.createInstance();
+    static public final RagdollPart T_02 = RagdollPart.native_new();
 
-    static public final RagdollPart T_03 = RagdollPart.createInstance();
+    static public final RagdollPart T_03 = RagdollPart.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -31,7 +31,7 @@ public class RagdollPart extends BodyCreationSettings {
     /**
      * @return An empty instance without a native address
      */
-    public static RagdollPart createInstance() {
+    public static RagdollPart native_new() {
         return new RagdollPart((byte) 0, (char) 0);
     }
 
@@ -50,7 +50,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
-            TwoBodyConstraintSettings_TEMP_GEN_0 = TwoBodyConstraintSettings.createInstance();
+            TwoBodyConstraintSettings_TEMP_GEN_0 = TwoBodyConstraintSettings.native_new();
         TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return TwoBodyConstraintSettings_TEMP_GEN_0;
     }

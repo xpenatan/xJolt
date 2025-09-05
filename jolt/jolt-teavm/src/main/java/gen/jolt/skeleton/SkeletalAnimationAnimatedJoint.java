@@ -14,13 +14,13 @@ public class SkeletalAnimationAnimatedJoint extends IDLBase {
 
     private ArraySkeletonKeyframe ArraySkeletonKeyframe_TEMP_GEN_0;
 
-    static public final SkeletalAnimationAnimatedJoint NULL = SkeletalAnimationAnimatedJoint.createInstance();
+    static public final SkeletalAnimationAnimatedJoint NULL = SkeletalAnimationAnimatedJoint.native_new();
 
-    static public final SkeletalAnimationAnimatedJoint T_01 = SkeletalAnimationAnimatedJoint.createInstance();
+    static public final SkeletalAnimationAnimatedJoint T_01 = SkeletalAnimationAnimatedJoint.native_new();
 
-    static public final SkeletalAnimationAnimatedJoint T_02 = SkeletalAnimationAnimatedJoint.createInstance();
+    static public final SkeletalAnimationAnimatedJoint T_02 = SkeletalAnimationAnimatedJoint.native_new();
 
-    static public final SkeletalAnimationAnimatedJoint T_03 = SkeletalAnimationAnimatedJoint.createInstance();
+    static public final SkeletalAnimationAnimatedJoint T_03 = SkeletalAnimationAnimatedJoint.native_new();
 
     public SkeletalAnimationAnimatedJoint() {
         int addr = internal_native_create();
@@ -44,7 +44,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SkeletalAnimationAnimatedJoint createInstance() {
+    public static SkeletalAnimationAnimatedJoint native_new() {
         return new SkeletalAnimationAnimatedJoint((byte) 0, (char) 0);
     }
 
@@ -64,7 +64,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.createInstance();
+            IDLString_TEMP_GEN_0 = IDLString.native_new();
         IDLString_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_0;
     }
@@ -94,7 +94,7 @@ jsObj.set_mJointName(mJointName_addr);
         if (pointer == 0)
             return null;
         if (ArraySkeletonKeyframe_TEMP_GEN_0 == null)
-            ArraySkeletonKeyframe_TEMP_GEN_0 = ArraySkeletonKeyframe.createInstance();
+            ArraySkeletonKeyframe_TEMP_GEN_0 = ArraySkeletonKeyframe.native_new();
         ArraySkeletonKeyframe_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySkeletonKeyframe_TEMP_GEN_0;
     }

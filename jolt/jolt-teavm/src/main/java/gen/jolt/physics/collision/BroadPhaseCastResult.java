@@ -12,13 +12,13 @@ public class BroadPhaseCastResult extends IDLBase {
 
     private BodyID BodyID_TEMP_GEN_0;
 
-    static public final BroadPhaseCastResult NULL = BroadPhaseCastResult.createInstance();
+    static public final BroadPhaseCastResult NULL = BroadPhaseCastResult.native_new();
 
-    static public final BroadPhaseCastResult T_01 = BroadPhaseCastResult.createInstance();
+    static public final BroadPhaseCastResult T_01 = BroadPhaseCastResult.native_new();
 
-    static public final BroadPhaseCastResult T_02 = BroadPhaseCastResult.createInstance();
+    static public final BroadPhaseCastResult T_02 = BroadPhaseCastResult.native_new();
 
-    static public final BroadPhaseCastResult T_03 = BroadPhaseCastResult.createInstance();
+    static public final BroadPhaseCastResult T_03 = BroadPhaseCastResult.native_new();
 
     public BroadPhaseCastResult() {
         int addr = internal_native_create();
@@ -42,7 +42,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static BroadPhaseCastResult createInstance() {
+    public static BroadPhaseCastResult native_new() {
         return new BroadPhaseCastResult((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ jsObj.Reset();
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }

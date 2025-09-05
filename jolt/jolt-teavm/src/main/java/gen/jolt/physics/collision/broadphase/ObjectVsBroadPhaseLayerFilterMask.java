@@ -7,13 +7,13 @@ package gen.jolt.physics.collision.broadphase;
 
 public class ObjectVsBroadPhaseLayerFilterMask extends ObjectVsBroadPhaseLayerFilter {
 
-    static public final ObjectVsBroadPhaseLayerFilterMask NULL = ObjectVsBroadPhaseLayerFilterMask.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilterMask NULL = ObjectVsBroadPhaseLayerFilterMask.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilterMask T_01 = ObjectVsBroadPhaseLayerFilterMask.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilterMask T_01 = ObjectVsBroadPhaseLayerFilterMask.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilterMask T_02 = ObjectVsBroadPhaseLayerFilterMask.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilterMask T_02 = ObjectVsBroadPhaseLayerFilterMask.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilterMask T_03 = ObjectVsBroadPhaseLayerFilterMask.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilterMask T_03 = ObjectVsBroadPhaseLayerFilterMask.native_new();
 
     public ObjectVsBroadPhaseLayerFilterMask(BroadPhaseLayerInterfaceMask inBroadPhaseLayerInterface) {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ObjectVsBroadPhaseLayerFilterMask createInstance() {
+    public static ObjectVsBroadPhaseLayerFilterMask native_new() {
         return new ObjectVsBroadPhaseLayerFilterMask((byte) 0, (char) 0);
     }
 

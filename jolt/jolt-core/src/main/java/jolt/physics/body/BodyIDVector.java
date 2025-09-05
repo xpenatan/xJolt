@@ -11,13 +11,13 @@ public class BodyIDVector extends IDLBase {
 
     private BodyID BodyID_TEMP_GEN_0;
 
-    static public final BodyIDVector NULL = BodyIDVector.createInstance();
+    static public final BodyIDVector NULL = BodyIDVector.native_new();
 
-    static public final BodyIDVector T_01 = BodyIDVector.createInstance();
+    static public final BodyIDVector T_01 = BodyIDVector.native_new();
 
-    static public final BodyIDVector T_02 = BodyIDVector.createInstance();
+    static public final BodyIDVector T_02 = BodyIDVector.native_new();
 
-    static public final BodyIDVector T_03 = BodyIDVector.createInstance();
+    static public final BodyIDVector T_03 = BodyIDVector.native_new();
 
     public BodyIDVector() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new BodyIDVector();
     /**
      * @return An empty instance without a native address
      */
-    public static BodyIDVector createInstance() {
+    public static BodyIDVector native_new() {
         return new BodyIDVector((byte) 0, (char) 0);
     }
 
@@ -78,7 +78,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }

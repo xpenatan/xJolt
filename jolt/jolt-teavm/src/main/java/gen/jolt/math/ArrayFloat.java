@@ -11,13 +11,13 @@ public class ArrayFloat extends IDLBase {
 
     private FloatMemRef FloatMemRef_TEMP_GEN_0;
 
-    static public final ArrayFloat NULL = ArrayFloat.createInstance();
+    static public final ArrayFloat NULL = ArrayFloat.native_new();
 
-    static public final ArrayFloat T_01 = ArrayFloat.createInstance();
+    static public final ArrayFloat T_01 = ArrayFloat.native_new();
 
-    static public final ArrayFloat T_02 = ArrayFloat.createInstance();
+    static public final ArrayFloat T_02 = ArrayFloat.native_new();
 
-    static public final ArrayFloat T_03 = ArrayFloat.createInstance();
+    static public final ArrayFloat T_03 = ArrayFloat.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayFloat extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayFloat createInstance() {
+    public static ArrayFloat native_new() {
         return new ArrayFloat((byte) 0, (char) 0);
     }
 
@@ -129,7 +129,7 @@ jsObj.clear();
         if (pointer == 0)
             return null;
         if (FloatMemRef_TEMP_GEN_0 == null)
-            FloatMemRef_TEMP_GEN_0 = FloatMemRef.createInstance();
+            FloatMemRef_TEMP_GEN_0 = FloatMemRef.native_new();
         FloatMemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return FloatMemRef_TEMP_GEN_0;
     }

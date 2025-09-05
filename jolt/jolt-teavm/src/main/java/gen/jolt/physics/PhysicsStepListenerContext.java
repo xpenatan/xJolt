@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class PhysicsStepListenerContext extends IDLBase {
 
-    static public final PhysicsStepListenerContext NULL = PhysicsStepListenerContext.createInstance();
+    static public final PhysicsStepListenerContext NULL = PhysicsStepListenerContext.native_new();
 
-    static public final PhysicsStepListenerContext T_01 = PhysicsStepListenerContext.createInstance();
+    static public final PhysicsStepListenerContext T_01 = PhysicsStepListenerContext.native_new();
 
-    static public final PhysicsStepListenerContext T_02 = PhysicsStepListenerContext.createInstance();
+    static public final PhysicsStepListenerContext T_02 = PhysicsStepListenerContext.native_new();
 
-    static public final PhysicsStepListenerContext T_03 = PhysicsStepListenerContext.createInstance();
+    static public final PhysicsStepListenerContext T_03 = PhysicsStepListenerContext.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class PhysicsStepListenerContext extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static PhysicsStepListenerContext createInstance() {
+    public static PhysicsStepListenerContext native_new() {
         return new PhysicsStepListenerContext((byte) 0, (char) 0);
     }
 

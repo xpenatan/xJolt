@@ -30,13 +30,13 @@ public class SoftBodyMotionProperties extends MotionProperties {
 
     private AABox AABox_TEMP_GEN_0;
 
-    static public final SoftBodyMotionProperties NULL = SoftBodyMotionProperties.createInstance();
+    static public final SoftBodyMotionProperties NULL = SoftBodyMotionProperties.native_new();
 
-    static public final SoftBodyMotionProperties T_01 = SoftBodyMotionProperties.createInstance();
+    static public final SoftBodyMotionProperties T_01 = SoftBodyMotionProperties.native_new();
 
-    static public final SoftBodyMotionProperties T_02 = SoftBodyMotionProperties.createInstance();
+    static public final SoftBodyMotionProperties T_02 = SoftBodyMotionProperties.native_new();
 
-    static public final SoftBodyMotionProperties T_03 = SoftBodyMotionProperties.createInstance();
+    static public final SoftBodyMotionProperties T_03 = SoftBodyMotionProperties.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -49,7 +49,7 @@ public class SoftBodyMotionProperties extends MotionProperties {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodyMotionProperties createInstance() {
+    public static SoftBodyMotionProperties native_new() {
         return new SoftBodyMotionProperties((byte) 0, (char) 0);
     }
 
@@ -69,7 +69,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettings_TEMP_GEN_0 == null)
-            SoftBodySharedSettings_TEMP_GEN_0 = SoftBodySharedSettings.createInstance();
+            SoftBodySharedSettings_TEMP_GEN_0 = SoftBodySharedSettings.native_new();
         SoftBodySharedSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettings_TEMP_GEN_0;
     }
@@ -88,7 +88,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
-            ArraySoftBodyVertex_TEMP_GEN_0 = ArraySoftBodyVertex.createInstance();
+            ArraySoftBodyVertex_TEMP_GEN_0 = ArraySoftBodyVertex.native_new();
         ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodyVertex_TEMP_GEN_0;
     }
@@ -107,7 +107,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (SoftBodyVertex_TEMP_GEN_0 == null)
-            SoftBodyVertex_TEMP_GEN_0 = SoftBodyVertex.createInstance();
+            SoftBodyVertex_TEMP_GEN_0 = SoftBodyVertex.native_new();
         SoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodyVertex_TEMP_GEN_0;
     }
@@ -126,7 +126,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
-            PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.createInstance();
+            PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
         PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
@@ -145,7 +145,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
-            ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = ArraySoftBodySharedSettingsFace.createInstance();
+            ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = ArraySoftBodySharedSettingsFace.native_new();
         ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodySharedSettingsFace_TEMP_GEN_0;
     }
@@ -164,7 +164,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsFace_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsFace_TEMP_GEN_0 = SoftBodySharedSettingsFace.createInstance();
+            SoftBodySharedSettingsFace_TEMP_GEN_0 = SoftBodySharedSettingsFace.native_new();
         SoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsFace_TEMP_GEN_0;
     }
@@ -298,7 +298,7 @@ jsObj.SetSkinnedMaxDistanceMultiplier(inSkinnedMaxDistanceMultiplier);
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
-            AABox_TEMP_GEN_0 = AABox.createInstance();
+            AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }

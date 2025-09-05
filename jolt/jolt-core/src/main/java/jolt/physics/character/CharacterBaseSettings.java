@@ -18,13 +18,13 @@ public class CharacterBaseSettings extends IDLBase {
 
     private Shape Shape_TEMP_GEN_0;
 
-    static public final CharacterBaseSettings NULL = CharacterBaseSettings.createInstance();
+    static public final CharacterBaseSettings NULL = CharacterBaseSettings.native_new();
 
-    static public final CharacterBaseSettings T_01 = CharacterBaseSettings.createInstance();
+    static public final CharacterBaseSettings T_01 = CharacterBaseSettings.native_new();
 
-    static public final CharacterBaseSettings T_02 = CharacterBaseSettings.createInstance();
+    static public final CharacterBaseSettings T_02 = CharacterBaseSettings.native_new();
 
-    static public final CharacterBaseSettings T_03 = CharacterBaseSettings.createInstance();
+    static public final CharacterBaseSettings T_03 = CharacterBaseSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -36,7 +36,7 @@ public class CharacterBaseSettings extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterBaseSettings createInstance() {
+    public static CharacterBaseSettings native_new() {
         return new CharacterBaseSettings((byte) 0, (char) 0);
     }
 
@@ -75,7 +75,7 @@ nativeObject->Release();
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -101,7 +101,7 @@ nativeObject->mUp = *((Vec3*)mUp_addr);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_0 == null)
-            Plane_TEMP_GEN_0 = Plane.createInstance();
+            Plane_TEMP_GEN_0 = Plane.native_new();
         Plane_TEMP_GEN_0.internal_reset(pointer, false);
         return Plane_TEMP_GEN_0;
     }
@@ -167,7 +167,7 @@ nativeObject->mEnhancedInternalEdgeRemoval = mEnhancedInternalEdgeRemoval;
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
-            Shape_TEMP_GEN_0 = Shape.createInstance();
+            Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }

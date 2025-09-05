@@ -13,13 +13,13 @@ public class TwoBodyConstraintSettings extends ConstraintSettings {
 
     private Constraint Constraint_TEMP_GEN_0;
 
-    static public final TwoBodyConstraintSettings NULL = TwoBodyConstraintSettings.createInstance();
+    static public final TwoBodyConstraintSettings NULL = TwoBodyConstraintSettings.native_new();
 
-    static public final TwoBodyConstraintSettings T_01 = TwoBodyConstraintSettings.createInstance();
+    static public final TwoBodyConstraintSettings T_01 = TwoBodyConstraintSettings.native_new();
 
-    static public final TwoBodyConstraintSettings T_02 = TwoBodyConstraintSettings.createInstance();
+    static public final TwoBodyConstraintSettings T_02 = TwoBodyConstraintSettings.native_new();
 
-    static public final TwoBodyConstraintSettings T_03 = TwoBodyConstraintSettings.createInstance();
+    static public final TwoBodyConstraintSettings T_03 = TwoBodyConstraintSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -32,7 +32,7 @@ public class TwoBodyConstraintSettings extends ConstraintSettings {
     /**
      * @return An empty instance without a native address
      */
-    public static TwoBodyConstraintSettings createInstance() {
+    public static TwoBodyConstraintSettings native_new() {
         return new TwoBodyConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -41,7 +41,7 @@ public class TwoBodyConstraintSettings extends ConstraintSettings {
         if (pointer == 0)
             return null;
         if (Constraint_TEMP_GEN_0 == null)
-            Constraint_TEMP_GEN_0 = Constraint.createInstance();
+            Constraint_TEMP_GEN_0 = Constraint.native_new();
         Constraint_TEMP_GEN_0.internal_reset(pointer, false);
         return Constraint_TEMP_GEN_0;
     }

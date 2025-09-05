@@ -48,13 +48,13 @@ public class TransformedShape extends IDLBase {
 
     private BodyID BodyID_TEMP_GEN_0;
 
-    static public final TransformedShape NULL = TransformedShape.createInstance();
+    static public final TransformedShape NULL = TransformedShape.native_new();
 
-    static public final TransformedShape T_01 = TransformedShape.createInstance();
+    static public final TransformedShape T_01 = TransformedShape.native_new();
 
-    static public final TransformedShape T_02 = TransformedShape.createInstance();
+    static public final TransformedShape T_02 = TransformedShape.native_new();
 
-    static public final TransformedShape T_03 = TransformedShape.createInstance();
+    static public final TransformedShape T_03 = TransformedShape.native_new();
 
     public TransformedShape() {
         long addr = internal_native_create();
@@ -76,7 +76,7 @@ return (jlong)new TransformedShape();
     /**
      * @return An empty instance without a native address
      */
-    public static TransformedShape createInstance() {
+    public static TransformedShape native_new() {
         return new TransformedShape((byte) 0, (char) 0);
     }
 
@@ -145,7 +145,7 @@ nativeObject->CollectTransformedShapes(*((AABox* )inBox_addr), *((TransformedSha
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -172,7 +172,7 @@ nativeObject->SetShapeScale(*((Vec3* )inScale_addr));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -189,7 +189,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_1 == null)
-            Mat44_TEMP_GEN_1 = Mat44.createInstance();
+            Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_1;
     }
@@ -226,7 +226,7 @@ nativeObject->SetWorldTransform(*((Mat44* )inTransform_addr));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_2 == null)
-            Mat44_TEMP_GEN_2 = Mat44.createInstance();
+            Mat44_TEMP_GEN_2 = Mat44.native_new();
         Mat44_TEMP_GEN_2.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_2;
     }
@@ -243,7 +243,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
-            AABox_TEMP_GEN_0 = AABox.createInstance();
+            AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }
@@ -260,7 +260,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -277,7 +277,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
-            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
@@ -294,7 +294,7 @@ return (jlong)obj;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -320,7 +320,7 @@ nativeObject->mShapePositionCOM = *((Vec3*)mShapePositionCOM_addr);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -346,7 +346,7 @@ nativeObject->mShapeRotation = *((Quat*)mShapeRotation_addr);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
-            Shape_TEMP_GEN_0 = Shape.createInstance();
+            Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
@@ -373,7 +373,7 @@ nativeObject->mShape = (Shape*)mShape_addr;
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_0 == null)
-            Float3_TEMP_GEN_0 = Float3.createInstance();
+            Float3_TEMP_GEN_0 = Float3.native_new();
         Float3_TEMP_GEN_0.internal_reset(pointer, false);
         return Float3_TEMP_GEN_0;
     }
@@ -399,7 +399,7 @@ nativeObject->mShapeScale = *((Float3*)mShapeScale_addr);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }

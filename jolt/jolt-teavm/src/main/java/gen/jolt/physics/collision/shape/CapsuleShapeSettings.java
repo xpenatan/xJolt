@@ -9,13 +9,13 @@ import gen.jolt.physics.collision.PhysicsMaterial;
 
 public class CapsuleShapeSettings extends ConvexShapeSettings {
 
-    static public final CapsuleShapeSettings NULL = CapsuleShapeSettings.createInstance();
+    static public final CapsuleShapeSettings NULL = CapsuleShapeSettings.native_new();
 
-    static public final CapsuleShapeSettings T_01 = CapsuleShapeSettings.createInstance();
+    static public final CapsuleShapeSettings T_01 = CapsuleShapeSettings.native_new();
 
-    static public final CapsuleShapeSettings T_02 = CapsuleShapeSettings.createInstance();
+    static public final CapsuleShapeSettings T_02 = CapsuleShapeSettings.native_new();
 
-    static public final CapsuleShapeSettings T_03 = CapsuleShapeSettings.createInstance();
+    static public final CapsuleShapeSettings T_03 = CapsuleShapeSettings.native_new();
 
     public CapsuleShapeSettings(float inHalfHeight, float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -54,7 +54,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static CapsuleShapeSettings createInstance() {
+    public static CapsuleShapeSettings native_new() {
         return new CapsuleShapeSettings((byte) 0, (char) 0);
     }
 

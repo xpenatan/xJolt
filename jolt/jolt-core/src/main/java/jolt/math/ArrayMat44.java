@@ -13,13 +13,13 @@ public class ArrayMat44 extends IDLBase {
 
     private Mat44MemRef Mat44MemRef_TEMP_GEN_0;
 
-    static public final ArrayMat44 NULL = ArrayMat44.createInstance();
+    static public final ArrayMat44 NULL = ArrayMat44.native_new();
 
-    static public final ArrayMat44 T_01 = ArrayMat44.createInstance();
+    static public final ArrayMat44 T_01 = ArrayMat44.native_new();
 
-    static public final ArrayMat44 T_02 = ArrayMat44.createInstance();
+    static public final ArrayMat44 T_02 = ArrayMat44.native_new();
 
-    static public final ArrayMat44 T_03 = ArrayMat44.createInstance();
+    static public final ArrayMat44 T_03 = ArrayMat44.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -31,7 +31,7 @@ public class ArrayMat44 extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayMat44 createInstance() {
+    public static ArrayMat44 native_new() {
         return new ArrayMat44((byte) 0, (char) 0);
     }
 
@@ -70,7 +70,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -126,7 +126,7 @@ nativeObject->clear();
         if (pointer == 0)
             return null;
         if (Mat44MemRef_TEMP_GEN_0 == null)
-            Mat44MemRef_TEMP_GEN_0 = Mat44MemRef.createInstance();
+            Mat44MemRef_TEMP_GEN_0 = Mat44MemRef.native_new();
         Mat44MemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44MemRef_TEMP_GEN_0;
     }

@@ -15,13 +15,13 @@ public class PointConstraintSettings extends TwoBodyConstraintSettings {
 
     private Vec3 Vec3_TEMP_GEN_1;
 
-    static public final PointConstraintSettings NULL = PointConstraintSettings.createInstance();
+    static public final PointConstraintSettings NULL = PointConstraintSettings.native_new();
 
-    static public final PointConstraintSettings T_01 = PointConstraintSettings.createInstance();
+    static public final PointConstraintSettings T_01 = PointConstraintSettings.native_new();
 
-    static public final PointConstraintSettings T_02 = PointConstraintSettings.createInstance();
+    static public final PointConstraintSettings T_02 = PointConstraintSettings.native_new();
 
-    static public final PointConstraintSettings T_03 = PointConstraintSettings.createInstance();
+    static public final PointConstraintSettings T_03 = PointConstraintSettings.native_new();
 
     public PointConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -45,7 +45,7 @@ return (jlong)new PointConstraintSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static PointConstraintSettings createInstance() {
+    public static PointConstraintSettings native_new() {
         return new PointConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -85,7 +85,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -111,7 +111,7 @@ nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }

@@ -29,13 +29,13 @@ public class ContactManifold extends IDLBase {
 
     private ContactPoints ContactPoints_TEMP_GEN_1;
 
-    static public final ContactManifold NULL = ContactManifold.createInstance();
+    static public final ContactManifold NULL = ContactManifold.native_new();
 
-    static public final ContactManifold T_01 = ContactManifold.createInstance();
+    static public final ContactManifold T_01 = ContactManifold.native_new();
 
-    static public final ContactManifold T_02 = ContactManifold.createInstance();
+    static public final ContactManifold T_02 = ContactManifold.native_new();
 
-    static public final ContactManifold T_03 = ContactManifold.createInstance();
+    static public final ContactManifold T_03 = ContactManifold.native_new();
 
     public ContactManifold() {
         long addr = internal_native_create();
@@ -57,7 +57,7 @@ return (jlong)new ContactManifold();
     /**
      * @return An empty instance without a native address
      */
-    public static ContactManifold createInstance() {
+    public static ContactManifold native_new() {
         return new ContactManifold((byte) 0, (char) 0);
     }
 
@@ -76,7 +76,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (ContactManifold_TEMP_GEN_0 == null)
-            ContactManifold_TEMP_GEN_0 = ContactManifold.createInstance();
+            ContactManifold_TEMP_GEN_0 = ContactManifold.native_new();
         ContactManifold_TEMP_GEN_0.internal_reset(pointer, false);
         return ContactManifold_TEMP_GEN_0;
     }
@@ -93,7 +93,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -110,7 +110,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -127,7 +127,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -153,7 +153,7 @@ nativeObject->mBaseOffset = *((Vec3*)mBaseOffset_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -199,7 +199,7 @@ nativeObject->mPenetrationDepth = mPenetrationDepth;
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_0 == null)
-            SubShapeID_TEMP_GEN_0 = SubShapeID.createInstance();
+            SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_0;
     }
@@ -225,7 +225,7 @@ nativeObject->mSubShapeID1 = *((SubShapeID*)mSubShapeID1_addr);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_1 == null)
-            SubShapeID_TEMP_GEN_1 = SubShapeID.createInstance();
+            SubShapeID_TEMP_GEN_1 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_1.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_1;
     }
@@ -251,7 +251,7 @@ nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
         if (pointer == 0)
             return null;
         if (ContactPoints_TEMP_GEN_0 == null)
-            ContactPoints_TEMP_GEN_0 = ContactPoints.createInstance();
+            ContactPoints_TEMP_GEN_0 = ContactPoints.native_new();
         ContactPoints_TEMP_GEN_0.internal_reset(pointer, false);
         return ContactPoints_TEMP_GEN_0;
     }
@@ -277,7 +277,7 @@ nativeObject->mRelativeContactPointsOn1 = *((ContactPoints*)mRelativeContactPoin
         if (pointer == 0)
             return null;
         if (ContactPoints_TEMP_GEN_1 == null)
-            ContactPoints_TEMP_GEN_1 = ContactPoints.createInstance();
+            ContactPoints_TEMP_GEN_1 = ContactPoints.native_new();
         ContactPoints_TEMP_GEN_1.internal_reset(pointer, false);
         return ContactPoints_TEMP_GEN_1;
     }

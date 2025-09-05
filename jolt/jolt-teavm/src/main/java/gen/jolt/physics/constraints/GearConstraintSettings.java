@@ -15,13 +15,13 @@ public class GearConstraintSettings extends TwoBodyConstraintSettings {
 
     private Vec3 Vec3_TEMP_GEN_1;
 
-    static public final GearConstraintSettings NULL = GearConstraintSettings.createInstance();
+    static public final GearConstraintSettings NULL = GearConstraintSettings.native_new();
 
-    static public final GearConstraintSettings T_01 = GearConstraintSettings.createInstance();
+    static public final GearConstraintSettings T_01 = GearConstraintSettings.native_new();
 
-    static public final GearConstraintSettings T_02 = GearConstraintSettings.createInstance();
+    static public final GearConstraintSettings T_02 = GearConstraintSettings.native_new();
 
-    static public final GearConstraintSettings T_03 = GearConstraintSettings.createInstance();
+    static public final GearConstraintSettings T_03 = GearConstraintSettings.native_new();
 
     public GearConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -47,7 +47,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static GearConstraintSettings createInstance() {
+    public static GearConstraintSettings native_new() {
         return new GearConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -101,7 +101,7 @@ jsObj.set_mSpace(mSpace);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -131,7 +131,7 @@ jsObj.set_mHingeAxis1(mHingeAxis1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }

@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class Float2 extends IDLBase {
 
-    static public final Float2 NULL = Float2.createInstance();
+    static public final Float2 NULL = Float2.native_new();
 
-    static public final Float2 T_01 = Float2.createInstance();
+    static public final Float2 T_01 = Float2.native_new();
 
-    static public final Float2 T_02 = Float2.createInstance();
+    static public final Float2 T_02 = Float2.native_new();
 
-    static public final Float2 T_03 = Float2.createInstance();
+    static public final Float2 T_03 = Float2.native_new();
 
     public Float2(float inX, float inY) {
         long addr = internal_native_create_float_float(inX, inY);
@@ -37,7 +37,7 @@ return (jlong)new Float2((float)inX, (float)inY);
     /**
      * @return An empty instance without a native address
      */
-    public static Float2 createInstance() {
+    public static Float2 native_new() {
         return new Float2((byte) 0, (char) 0);
     }
 

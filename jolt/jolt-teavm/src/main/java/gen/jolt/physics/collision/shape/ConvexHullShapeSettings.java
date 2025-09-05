@@ -12,13 +12,13 @@ public class ConvexHullShapeSettings extends ConvexShapeSettings {
 
     private ArrayVec3 ArrayVec3_TEMP_GEN_0;
 
-    static public final ConvexHullShapeSettings NULL = ConvexHullShapeSettings.createInstance();
+    static public final ConvexHullShapeSettings NULL = ConvexHullShapeSettings.native_new();
 
-    static public final ConvexHullShapeSettings T_01 = ConvexHullShapeSettings.createInstance();
+    static public final ConvexHullShapeSettings T_01 = ConvexHullShapeSettings.native_new();
 
-    static public final ConvexHullShapeSettings T_02 = ConvexHullShapeSettings.createInstance();
+    static public final ConvexHullShapeSettings T_02 = ConvexHullShapeSettings.native_new();
 
-    static public final ConvexHullShapeSettings T_03 = ConvexHullShapeSettings.createInstance();
+    static public final ConvexHullShapeSettings T_03 = ConvexHullShapeSettings.native_new();
 
     public ConvexHullShapeSettings() {
         super((byte) 1, (char) 1);
@@ -83,7 +83,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ConvexHullShapeSettings createInstance() {
+    public static ConvexHullShapeSettings native_new() {
         return new ConvexHullShapeSettings((byte) 0, (char) 0);
     }
 
@@ -92,7 +92,7 @@ return jolt.getPointer(jsObj);
         if (pointer == 0)
             return null;
         if (ArrayVec3_TEMP_GEN_0 == null)
-            ArrayVec3_TEMP_GEN_0 = ArrayVec3.createInstance();
+            ArrayVec3_TEMP_GEN_0 = ArrayVec3.native_new();
         ArrayVec3_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayVec3_TEMP_GEN_0;
     }

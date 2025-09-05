@@ -14,13 +14,13 @@ public class PlaneShapeSettings extends ShapeSettings {
 
     private PhysicsMaterial PhysicsMaterial_TEMP_GEN_0;
 
-    static public final PlaneShapeSettings NULL = PlaneShapeSettings.createInstance();
+    static public final PlaneShapeSettings NULL = PlaneShapeSettings.native_new();
 
-    static public final PlaneShapeSettings T_01 = PlaneShapeSettings.createInstance();
+    static public final PlaneShapeSettings T_01 = PlaneShapeSettings.native_new();
 
-    static public final PlaneShapeSettings T_02 = PlaneShapeSettings.createInstance();
+    static public final PlaneShapeSettings T_02 = PlaneShapeSettings.native_new();
 
-    static public final PlaneShapeSettings T_03 = PlaneShapeSettings.createInstance();
+    static public final PlaneShapeSettings T_03 = PlaneShapeSettings.native_new();
 
     public PlaneShapeSettings(Plane inPlane, PhysicsMaterial inMaterial, float inHalfExtent) {
         super((byte) 1, (char) 1);
@@ -72,7 +72,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static PlaneShapeSettings createInstance() {
+    public static PlaneShapeSettings native_new() {
         return new PlaneShapeSettings((byte) 0, (char) 0);
     }
 
@@ -92,7 +92,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_0 == null)
-            Plane_TEMP_GEN_0 = Plane.createInstance();
+            Plane_TEMP_GEN_0 = Plane.native_new();
         Plane_TEMP_GEN_0.internal_reset(pointer, false);
         return Plane_TEMP_GEN_0;
     }
@@ -122,7 +122,7 @@ jsObj.set_mPlane(mPlane_addr);
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
-            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }

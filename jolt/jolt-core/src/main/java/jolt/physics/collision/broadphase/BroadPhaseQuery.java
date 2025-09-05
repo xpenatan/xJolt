@@ -18,13 +18,13 @@ import jolt.physics.softbody.CastShapeBodyCollector;
 
 public class BroadPhaseQuery extends IDLBase {
 
-    static public final BroadPhaseQuery NULL = BroadPhaseQuery.createInstance();
+    static public final BroadPhaseQuery NULL = BroadPhaseQuery.native_new();
 
-    static public final BroadPhaseQuery T_01 = BroadPhaseQuery.createInstance();
+    static public final BroadPhaseQuery T_01 = BroadPhaseQuery.native_new();
 
-    static public final BroadPhaseQuery T_02 = BroadPhaseQuery.createInstance();
+    static public final BroadPhaseQuery T_02 = BroadPhaseQuery.native_new();
 
-    static public final BroadPhaseQuery T_03 = BroadPhaseQuery.createInstance();
+    static public final BroadPhaseQuery T_03 = BroadPhaseQuery.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -36,7 +36,7 @@ public class BroadPhaseQuery extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static BroadPhaseQuery createInstance() {
+    public static BroadPhaseQuery native_new() {
         return new BroadPhaseQuery((byte) 0, (char) 0);
     }
 

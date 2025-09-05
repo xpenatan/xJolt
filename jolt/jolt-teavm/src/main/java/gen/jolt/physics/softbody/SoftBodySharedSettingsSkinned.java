@@ -11,13 +11,13 @@ public class SoftBodySharedSettingsSkinned extends IDLBase {
 
     private SoftBodySharedSettingsSkinWeight SoftBodySharedSettingsSkinWeight_TEMP_GEN_0;
 
-    static public final SoftBodySharedSettingsSkinned NULL = SoftBodySharedSettingsSkinned.createInstance();
+    static public final SoftBodySharedSettingsSkinned NULL = SoftBodySharedSettingsSkinned.native_new();
 
-    static public final SoftBodySharedSettingsSkinned T_01 = SoftBodySharedSettingsSkinned.createInstance();
+    static public final SoftBodySharedSettingsSkinned T_01 = SoftBodySharedSettingsSkinned.native_new();
 
-    static public final SoftBodySharedSettingsSkinned T_02 = SoftBodySharedSettingsSkinned.createInstance();
+    static public final SoftBodySharedSettingsSkinned T_02 = SoftBodySharedSettingsSkinned.native_new();
 
-    static public final SoftBodySharedSettingsSkinned T_03 = SoftBodySharedSettingsSkinned.createInstance();
+    static public final SoftBodySharedSettingsSkinned T_03 = SoftBodySharedSettingsSkinned.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class SoftBodySharedSettingsSkinned extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodySharedSettingsSkinned createInstance() {
+    public static SoftBodySharedSettingsSkinned native_new() {
         return new SoftBodySharedSettingsSkinned((byte) 0, (char) 0);
     }
 
@@ -71,7 +71,7 @@ jsObj.set_mVertex(mVertex);
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 = SoftBodySharedSettingsSkinWeight.createInstance();
+            SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 = SoftBodySharedSettingsSkinWeight.native_new();
         SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsSkinWeight_TEMP_GEN_0;
     }

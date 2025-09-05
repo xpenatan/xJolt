@@ -32,13 +32,13 @@ public class CharacterVirtualContact extends IDLBase {
 
     private PhysicsMaterial PhysicsMaterial_TEMP_GEN_0;
 
-    static public final CharacterVirtualContact NULL = CharacterVirtualContact.createInstance();
+    static public final CharacterVirtualContact NULL = CharacterVirtualContact.native_new();
 
-    static public final CharacterVirtualContact T_01 = CharacterVirtualContact.createInstance();
+    static public final CharacterVirtualContact T_01 = CharacterVirtualContact.native_new();
 
-    static public final CharacterVirtualContact T_02 = CharacterVirtualContact.createInstance();
+    static public final CharacterVirtualContact T_02 = CharacterVirtualContact.native_new();
 
-    static public final CharacterVirtualContact T_03 = CharacterVirtualContact.createInstance();
+    static public final CharacterVirtualContact T_03 = CharacterVirtualContact.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,7 +50,7 @@ public class CharacterVirtualContact extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterVirtualContact createInstance() {
+    public static CharacterVirtualContact native_new() {
         return new CharacterVirtualContact((byte) 0, (char) 0);
     }
 
@@ -79,7 +79,7 @@ return nativeObject->IsSameBody(*((CharacterVirtualContact* )inOther_addr));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -105,7 +105,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -131,7 +131,7 @@ nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -157,7 +157,7 @@ nativeObject->mContactNormal = *((Vec3*)mContactNormal_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -223,7 +223,7 @@ nativeObject->mFraction = mFraction;
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
@@ -249,7 +249,7 @@ nativeObject->mBodyB = *((BodyID*)mBodyB_addr);
         if (pointer == 0)
             return null;
         if (CharacterID_TEMP_GEN_0 == null)
-            CharacterID_TEMP_GEN_0 = CharacterID.createInstance();
+            CharacterID_TEMP_GEN_0 = CharacterID.native_new();
         CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
         return CharacterID_TEMP_GEN_0;
     }
@@ -275,7 +275,7 @@ nativeObject->mCharacterIDB = *((CharacterID*)mCharacterIDB_addr);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_0 == null)
-            SubShapeID_TEMP_GEN_0 = SubShapeID.createInstance();
+            SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_0;
     }
@@ -342,7 +342,7 @@ nativeObject->mIsSensorB = mIsSensorB;
         if (pointer == 0)
             return null;
         if (CharacterVirtual_TEMP_GEN_0 == null)
-            CharacterVirtual_TEMP_GEN_0 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_GEN_0 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_GEN_0.internal_reset(pointer, false);
         return CharacterVirtual_TEMP_GEN_0;
     }
@@ -389,7 +389,7 @@ nativeObject->mUserData = mUserData;
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
-            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }

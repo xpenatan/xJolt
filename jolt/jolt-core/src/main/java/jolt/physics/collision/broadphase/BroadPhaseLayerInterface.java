@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class BroadPhaseLayerInterface extends IDLBase {
 
-    static public final BroadPhaseLayerInterface NULL = BroadPhaseLayerInterface.createInstance();
+    static public final BroadPhaseLayerInterface NULL = BroadPhaseLayerInterface.native_new();
 
-    static public final BroadPhaseLayerInterface T_01 = BroadPhaseLayerInterface.createInstance();
+    static public final BroadPhaseLayerInterface T_01 = BroadPhaseLayerInterface.native_new();
 
-    static public final BroadPhaseLayerInterface T_02 = BroadPhaseLayerInterface.createInstance();
+    static public final BroadPhaseLayerInterface T_02 = BroadPhaseLayerInterface.native_new();
 
-    static public final BroadPhaseLayerInterface T_03 = BroadPhaseLayerInterface.createInstance();
+    static public final BroadPhaseLayerInterface T_03 = BroadPhaseLayerInterface.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class BroadPhaseLayerInterface extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static BroadPhaseLayerInterface createInstance() {
+    public static BroadPhaseLayerInterface native_new() {
         return new BroadPhaseLayerInterface((byte) 0, (char) 0);
     }
 

@@ -62,13 +62,13 @@ public class BodyInterface extends IDLBase {
 
     private PhysicsMaterial PhysicsMaterial_TEMP_GEN_0;
 
-    static public final BodyInterface NULL = BodyInterface.createInstance();
+    static public final BodyInterface NULL = BodyInterface.native_new();
 
-    static public final BodyInterface T_01 = BodyInterface.createInstance();
+    static public final BodyInterface T_01 = BodyInterface.native_new();
 
-    static public final BodyInterface T_02 = BodyInterface.createInstance();
+    static public final BodyInterface T_02 = BodyInterface.native_new();
 
-    static public final BodyInterface T_03 = BodyInterface.createInstance();
+    static public final BodyInterface T_03 = BodyInterface.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -80,7 +80,7 @@ public class BodyInterface extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static BodyInterface createInstance() {
+    public static BodyInterface native_new() {
         return new BodyInterface((byte) 0, (char) 0);
     }
 
@@ -99,7 +99,7 @@ jolt.destroy(jsObj);
         int pointer = internal_native_CreateBody(native_address, inSettings.native_address);
         if (pointer == 0)
             return null;
-        Body Body_NEW = Body.createInstance();
+        Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
     }
@@ -117,7 +117,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_CreateSoftBody(native_address, inSettings.native_address);
         if (pointer == 0)
             return null;
-        Body Body_NEW = Body.createInstance();
+        Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
     }
@@ -135,7 +135,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_CreateBodyWithID(native_address, inBodyID.native_address, inSettings.native_address);
         if (pointer == 0)
             return null;
-        Body Body_NEW = Body.createInstance();
+        Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
     }
@@ -153,7 +153,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_CreateSoftBodyWithID(native_address, inBodyID.native_address, inSettings.native_address);
         if (pointer == 0)
             return null;
-        Body Body_NEW = Body.createInstance();
+        Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
     }
@@ -171,7 +171,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_CreateBodyWithoutID(native_address, inSettings.native_address);
         if (pointer == 0)
             return null;
-        Body Body_NEW = Body.createInstance();
+        Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
     }
@@ -189,7 +189,7 @@ return jolt.getPointer(returnedJSObj);
         int pointer = internal_native_CreateSoftBodyWithoutID(native_address, inSettings.native_address);
         if (pointer == 0)
             return null;
-        Body Body_NEW = Body.createInstance();
+        Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
     }
@@ -243,7 +243,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Body_TEMP_GEN_0 == null)
-            Body_TEMP_GEN_0 = Body.createInstance();
+            Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
         return Body_TEMP_GEN_0;
     }
@@ -329,7 +329,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
@@ -348,7 +348,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_1 == null)
-            BodyID_TEMP_GEN_1 = BodyID.createInstance();
+            BodyID_TEMP_GEN_1 = BodyID.native_new();
         BodyID_TEMP_GEN_1.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_1;
     }
@@ -367,7 +367,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (BodyInterface_AddState_TEMP_GEN_0 == null)
-            BodyInterface_AddState_TEMP_GEN_0 = BodyInterface_AddState.createInstance();
+            BodyInterface_AddState_TEMP_GEN_0 = BodyInterface_AddState.native_new();
         BodyInterface_AddState_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyInterface_AddState_TEMP_GEN_0;
     }
@@ -419,7 +419,7 @@ jsObj.RemoveBodies(ioBodies_addr, inNumber);
         if (pointer == 0)
             return null;
         if (TwoBodyConstraint_TEMP_GEN_0 == null)
-            TwoBodyConstraint_TEMP_GEN_0 = TwoBodyConstraint.createInstance();
+            TwoBodyConstraint_TEMP_GEN_0 = TwoBodyConstraint.native_new();
         TwoBodyConstraint_TEMP_GEN_0.internal_reset(pointer, false);
         return TwoBodyConstraint_TEMP_GEN_0;
     }
@@ -449,7 +449,7 @@ jsObj.ActivateConstraint(inConstraint_addr);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
-            Shape_TEMP_GEN_0 = Shape.createInstance();
+            Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
@@ -557,7 +557,7 @@ jsObj.SetPosition(inBodyID_addr, inPosition_addr, inActivationMode);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -587,7 +587,7 @@ jsObj.SetRotation(inBodyID_addr, inRotation_addr, inActivationMode);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -606,7 +606,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -625,7 +625,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_1 == null)
-            Mat44_TEMP_GEN_1 = Mat44.createInstance();
+            Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_1;
     }
@@ -677,7 +677,7 @@ jsObj.SetLinearVelocity(inBodyID_addr, inLinearVelocity_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -729,7 +729,7 @@ jsObj.SetAngularVelocity(inBodyID_addr, inAngularVelocity_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -748,7 +748,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -928,7 +928,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_2 == null)
-            Mat44_TEMP_GEN_2 = Mat44.createInstance();
+            Mat44_TEMP_GEN_2 = Mat44.native_new();
         Mat44_TEMP_GEN_2.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_2;
     }
@@ -1050,7 +1050,7 @@ jsObj.SetCollisionGroup(inBodyID_addr, inCollisionGroup_addr);
         if (pointer == 0)
             return null;
         if (CollisionGroup_TEMP_GEN_0 == null)
-            CollisionGroup_TEMP_GEN_0 = CollisionGroup.createInstance();
+            CollisionGroup_TEMP_GEN_0 = CollisionGroup.native_new();
         CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);
         return CollisionGroup_TEMP_GEN_0;
     }
@@ -1158,7 +1158,7 @@ jsObj.AddAngularImpulse(inBodyID_addr, inAngularImpulse_addr);
         if (pointer == 0)
             return null;
         if (TransformedShape_TEMP_GEN_0 == null)
-            TransformedShape_TEMP_GEN_0 = TransformedShape.createInstance();
+            TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
         return TransformedShape_TEMP_GEN_0;
     }
@@ -1200,7 +1200,7 @@ jsObj.SetUserData(inBodyID_addr, inUserData);
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
-            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }

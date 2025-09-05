@@ -11,13 +11,13 @@ public class ArrayRagdollAdditionalConstraint extends IDLBase {
 
     private RagdollAdditionalConstraint RagdollAdditionalConstraint_TEMP_GEN_0;
 
-    static public final ArrayRagdollAdditionalConstraint NULL = ArrayRagdollAdditionalConstraint.createInstance();
+    static public final ArrayRagdollAdditionalConstraint NULL = ArrayRagdollAdditionalConstraint.native_new();
 
-    static public final ArrayRagdollAdditionalConstraint T_01 = ArrayRagdollAdditionalConstraint.createInstance();
+    static public final ArrayRagdollAdditionalConstraint T_01 = ArrayRagdollAdditionalConstraint.native_new();
 
-    static public final ArrayRagdollAdditionalConstraint T_02 = ArrayRagdollAdditionalConstraint.createInstance();
+    static public final ArrayRagdollAdditionalConstraint T_02 = ArrayRagdollAdditionalConstraint.native_new();
 
-    static public final ArrayRagdollAdditionalConstraint T_03 = ArrayRagdollAdditionalConstraint.createInstance();
+    static public final ArrayRagdollAdditionalConstraint T_03 = ArrayRagdollAdditionalConstraint.native_new();
 
     public ArrayRagdollAdditionalConstraint() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new ArrayRagdollAdditionalConstraint();
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayRagdollAdditionalConstraint createInstance() {
+    public static ArrayRagdollAdditionalConstraint native_new() {
         return new ArrayRagdollAdditionalConstraint((byte) 0, (char) 0);
     }
 
@@ -78,7 +78,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (RagdollAdditionalConstraint_TEMP_GEN_0 == null)
-            RagdollAdditionalConstraint_TEMP_GEN_0 = RagdollAdditionalConstraint.createInstance();
+            RagdollAdditionalConstraint_TEMP_GEN_0 = RagdollAdditionalConstraint.native_new();
         RagdollAdditionalConstraint_TEMP_GEN_0.internal_reset(pointer, false);
         return RagdollAdditionalConstraint_TEMP_GEN_0;
     }

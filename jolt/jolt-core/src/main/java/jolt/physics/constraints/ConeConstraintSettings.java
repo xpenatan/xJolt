@@ -19,13 +19,13 @@ public class ConeConstraintSettings extends TwoBodyConstraintSettings {
 
     private Vec3 Vec3_TEMP_GEN_3;
 
-    static public final ConeConstraintSettings NULL = ConeConstraintSettings.createInstance();
+    static public final ConeConstraintSettings NULL = ConeConstraintSettings.native_new();
 
-    static public final ConeConstraintSettings T_01 = ConeConstraintSettings.createInstance();
+    static public final ConeConstraintSettings T_01 = ConeConstraintSettings.native_new();
 
-    static public final ConeConstraintSettings T_02 = ConeConstraintSettings.createInstance();
+    static public final ConeConstraintSettings T_02 = ConeConstraintSettings.native_new();
 
-    static public final ConeConstraintSettings T_03 = ConeConstraintSettings.createInstance();
+    static public final ConeConstraintSettings T_03 = ConeConstraintSettings.native_new();
 
     public ConeConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -49,7 +49,7 @@ return (jlong)new ConeConstraintSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static ConeConstraintSettings createInstance() {
+    public static ConeConstraintSettings native_new() {
         return new ConeConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -89,7 +89,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -115,7 +115,7 @@ nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -141,7 +141,7 @@ nativeObject->mTwistAxis1 = *((Vec3*)mTwistAxis1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -167,7 +167,7 @@ nativeObject->mPoint2 = *((Vec3*)mPoint2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }

@@ -9,13 +9,13 @@ import gen.jolt.physics.PhysicsStepListener;
 
 public class VehicleConstraintStepListener extends PhysicsStepListener {
 
-    static public final VehicleConstraintStepListener NULL = VehicleConstraintStepListener.createInstance();
+    static public final VehicleConstraintStepListener NULL = VehicleConstraintStepListener.native_new();
 
-    static public final VehicleConstraintStepListener T_01 = VehicleConstraintStepListener.createInstance();
+    static public final VehicleConstraintStepListener T_01 = VehicleConstraintStepListener.native_new();
 
-    static public final VehicleConstraintStepListener T_02 = VehicleConstraintStepListener.createInstance();
+    static public final VehicleConstraintStepListener T_02 = VehicleConstraintStepListener.native_new();
 
-    static public final VehicleConstraintStepListener T_03 = VehicleConstraintStepListener.createInstance();
+    static public final VehicleConstraintStepListener T_03 = VehicleConstraintStepListener.native_new();
 
     public VehicleConstraintStepListener(VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleConstraintStepListener createInstance() {
+    public static VehicleConstraintStepListener native_new() {
         return new VehicleConstraintStepListener((byte) 0, (char) 0);
     }
 

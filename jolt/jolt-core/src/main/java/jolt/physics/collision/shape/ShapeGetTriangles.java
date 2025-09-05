@@ -17,13 +17,13 @@ public class ShapeGetTriangles extends IDLBase {
 
     private PhysicsMaterial PhysicsMaterial_TEMP_GEN_0;
 
-    static public final ShapeGetTriangles NULL = ShapeGetTriangles.createInstance();
+    static public final ShapeGetTriangles NULL = ShapeGetTriangles.native_new();
 
-    static public final ShapeGetTriangles T_01 = ShapeGetTriangles.createInstance();
+    static public final ShapeGetTriangles T_01 = ShapeGetTriangles.native_new();
 
-    static public final ShapeGetTriangles T_02 = ShapeGetTriangles.createInstance();
+    static public final ShapeGetTriangles T_02 = ShapeGetTriangles.native_new();
 
-    static public final ShapeGetTriangles T_03 = ShapeGetTriangles.createInstance();
+    static public final ShapeGetTriangles T_03 = ShapeGetTriangles.native_new();
 
     public ShapeGetTriangles(Shape inShape, AABox inBox, Vec3 inPositionCOM, Quat inRotation, Vec3 inScale) {
         long addr = internal_native_create_Shape_AABox_Vec3_Quat_Vec3(inShape.native_address, inBox.native_address, inPositionCOM.native_address, inRotation.native_address, inScale.native_address);
@@ -45,7 +45,7 @@ return (jlong)new ShapeGetTriangles((Shape* )inShape_addr, *((AABox* )inBox_addr
     /**
      * @return An empty instance without a native address
      */
-    public static ShapeGetTriangles createInstance() {
+    public static ShapeGetTriangles native_new() {
         return new ShapeGetTriangles((byte) 0, (char) 0);
     }
 
@@ -84,7 +84,7 @@ return nativeObject->GetVerticesSize();
         if (pointer == 0)
             return null;
         if (IDLBase_TEMP_GEN_0 == null)
-            IDLBase_TEMP_GEN_0 = IDLBase.createInstance();
+            IDLBase_TEMP_GEN_0 = IDLBase.native_new();
         IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLBase_TEMP_GEN_0;
     }
@@ -100,7 +100,7 @@ return (jlong)nativeObject->GetVerticesData();
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
-            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }

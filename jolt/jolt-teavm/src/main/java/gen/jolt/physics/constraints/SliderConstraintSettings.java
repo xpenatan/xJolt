@@ -27,13 +27,13 @@ public class SliderConstraintSettings extends TwoBodyConstraintSettings {
 
     private MotorSettings MotorSettings_TEMP_GEN_0;
 
-    static public final SliderConstraintSettings NULL = SliderConstraintSettings.createInstance();
+    static public final SliderConstraintSettings NULL = SliderConstraintSettings.native_new();
 
-    static public final SliderConstraintSettings T_01 = SliderConstraintSettings.createInstance();
+    static public final SliderConstraintSettings T_01 = SliderConstraintSettings.native_new();
 
-    static public final SliderConstraintSettings T_02 = SliderConstraintSettings.createInstance();
+    static public final SliderConstraintSettings T_02 = SliderConstraintSettings.native_new();
 
-    static public final SliderConstraintSettings T_03 = SliderConstraintSettings.createInstance();
+    static public final SliderConstraintSettings T_03 = SliderConstraintSettings.native_new();
 
     public SliderConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -59,7 +59,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SliderConstraintSettings createInstance() {
+    public static SliderConstraintSettings native_new() {
         return new SliderConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -124,7 +124,7 @@ jsObj.set_mAutoDetectPoint(mAutoDetectPoint);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -154,7 +154,7 @@ jsObj.set_mPoint1(mPoint1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -184,7 +184,7 @@ jsObj.set_mSliderAxis1(mSliderAxis1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -214,7 +214,7 @@ jsObj.set_mNormalAxis1(mNormalAxis1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -244,7 +244,7 @@ jsObj.set_mPoint2(mPoint2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -274,7 +274,7 @@ jsObj.set_mSliderAxis2(mSliderAxis2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
@@ -348,7 +348,7 @@ jsObj.set_mLimitsMax(mLimitsMax);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
-            SpringSettings_TEMP_GEN_0 = SpringSettings.createInstance();
+            SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
@@ -400,7 +400,7 @@ jsObj.set_mMaxFrictionForce(mMaxFrictionForce);
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
-            MotorSettings_TEMP_GEN_0 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }

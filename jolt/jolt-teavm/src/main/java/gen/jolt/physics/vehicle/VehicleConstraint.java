@@ -34,13 +34,13 @@ public class VehicleConstraint extends Constraint {
 
     private ArrayVehicleAntiRollBar ArrayVehicleAntiRollBar_TEMP_GEN_0;
 
-    static public final VehicleConstraint NULL = VehicleConstraint.createInstance();
+    static public final VehicleConstraint NULL = VehicleConstraint.native_new();
 
-    static public final VehicleConstraint T_01 = VehicleConstraint.createInstance();
+    static public final VehicleConstraint T_01 = VehicleConstraint.native_new();
 
-    static public final VehicleConstraint T_02 = VehicleConstraint.createInstance();
+    static public final VehicleConstraint T_02 = VehicleConstraint.native_new();
 
-    static public final VehicleConstraint T_03 = VehicleConstraint.createInstance();
+    static public final VehicleConstraint T_03 = VehicleConstraint.native_new();
 
     public VehicleConstraint(Body inVehicleBody, VehicleConstraintSettings inSettings) {
         super((byte) 1, (char) 1);
@@ -66,7 +66,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleConstraint createInstance() {
+    public static VehicleConstraint native_new() {
         return new VehicleConstraint((byte) 0, (char) 0);
     }
 
@@ -120,7 +120,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -150,7 +150,7 @@ jsObj.ResetGravityOverride();
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -169,7 +169,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -188,7 +188,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -207,7 +207,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Body_TEMP_GEN_0 == null)
-            Body_TEMP_GEN_0 = Body.createInstance();
+            Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
         return Body_TEMP_GEN_0;
     }
@@ -226,7 +226,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (VehicleController_TEMP_GEN_0 == null)
-            VehicleController_TEMP_GEN_0 = VehicleController.createInstance();
+            VehicleController_TEMP_GEN_0 = VehicleController.native_new();
         VehicleController_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleController_TEMP_GEN_0;
     }
@@ -245,7 +245,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Wheels_TEMP_GEN_0 == null)
-            Wheels_TEMP_GEN_0 = Wheels.createInstance();
+            Wheels_TEMP_GEN_0 = Wheels.native_new();
         Wheels_TEMP_GEN_0.internal_reset(pointer, false);
         return Wheels_TEMP_GEN_0;
     }
@@ -264,7 +264,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Wheel_TEMP_GEN_0 == null)
-            Wheel_TEMP_GEN_0 = Wheel.createInstance();
+            Wheel_TEMP_GEN_0 = Wheel.native_new();
         Wheel_TEMP_GEN_0.internal_reset(pointer, false);
         return Wheel_TEMP_GEN_0;
     }
@@ -283,7 +283,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -302,7 +302,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_1 == null)
-            Mat44_TEMP_GEN_1 = Mat44.createInstance();
+            Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_1;
     }
@@ -321,7 +321,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (ArrayVehicleAntiRollBar_TEMP_GEN_0 == null)
-            ArrayVehicleAntiRollBar_TEMP_GEN_0 = ArrayVehicleAntiRollBar.createInstance();
+            ArrayVehicleAntiRollBar_TEMP_GEN_0 = ArrayVehicleAntiRollBar.native_new();
         ArrayVehicleAntiRollBar_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayVehicleAntiRollBar_TEMP_GEN_0;
     }

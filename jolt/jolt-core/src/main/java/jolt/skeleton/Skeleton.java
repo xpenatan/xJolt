@@ -10,13 +10,13 @@ import jolt.idl.helper.IDLString;
 
 public class Skeleton extends IDLBase {
 
-    static public final Skeleton NULL = Skeleton.createInstance();
+    static public final Skeleton NULL = Skeleton.native_new();
 
-    static public final Skeleton T_01 = Skeleton.createInstance();
+    static public final Skeleton T_01 = Skeleton.native_new();
 
-    static public final Skeleton T_02 = Skeleton.createInstance();
+    static public final Skeleton T_02 = Skeleton.native_new();
 
-    static public final Skeleton T_03 = Skeleton.createInstance();
+    static public final Skeleton T_03 = Skeleton.native_new();
 
     public Skeleton() {
         long addr = internal_native_create();
@@ -38,7 +38,7 @@ return (jlong)new Skeleton();
     /**
      * @return An empty instance without a native address
      */
-    public static Skeleton createInstance() {
+    public static Skeleton native_new() {
         return new Skeleton((byte) 0, (char) 0);
     }
 

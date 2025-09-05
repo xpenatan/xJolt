@@ -30,7 +30,7 @@ public class SoftBodyContactListenerEm extends SoftBodyContactListener {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodyContactListenerEm createInstance() {
+    public static SoftBodyContactListenerEm native_new() {
         return new SoftBodyContactListenerEm((byte) 0, (char) 0);
     }
 
@@ -74,13 +74,13 @@ jolt.destroy(jsObj);
 
     private int internal_OnSoftBodyContactValidate(int inSoftBody_addr, int inOtherBody_addr, int ioSettings_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
-            Body_TEMP_STATIC_GEN_0 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_0 = Body.native_new();
         Body_TEMP_STATIC_GEN_0.internal_reset(inSoftBody_addr, false);
         if (Body_TEMP_STATIC_GEN_1 == null)
-            Body_TEMP_STATIC_GEN_1 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_1 = Body.native_new();
         Body_TEMP_STATIC_GEN_1.internal_reset(inOtherBody_addr, false);
         if (SoftBodyContactSettings_TEMP_STATIC_GEN_0 == null)
-            SoftBodyContactSettings_TEMP_STATIC_GEN_0 = SoftBodyContactSettings.createInstance();
+            SoftBodyContactSettings_TEMP_STATIC_GEN_0 = SoftBodyContactSettings.native_new();
         SoftBodyContactSettings_TEMP_STATIC_GEN_0.internal_reset(ioSettings_addr, false);
         return OnSoftBodyContactValidate(Body_TEMP_STATIC_GEN_0, Body_TEMP_STATIC_GEN_1, SoftBodyContactSettings_TEMP_STATIC_GEN_0);
     }
@@ -90,10 +90,10 @@ jolt.destroy(jsObj);
 
     private void internal_OnSoftBodyContactAdded(int inSoftBody_addr, int inManifold_addr) {
         if (Body_TEMP_STATIC_GEN_2 == null)
-            Body_TEMP_STATIC_GEN_2 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_2 = Body.native_new();
         Body_TEMP_STATIC_GEN_2.internal_reset(inSoftBody_addr, false);
         if (SoftBodyManifold_TEMP_STATIC_GEN_0 == null)
-            SoftBodyManifold_TEMP_STATIC_GEN_0 = SoftBodyManifold.createInstance();
+            SoftBodyManifold_TEMP_STATIC_GEN_0 = SoftBodyManifold.native_new();
         SoftBodyManifold_TEMP_STATIC_GEN_0.internal_reset(inManifold_addr, false);
         OnSoftBodyContactAdded(Body_TEMP_STATIC_GEN_2, SoftBodyManifold_TEMP_STATIC_GEN_0);
     }

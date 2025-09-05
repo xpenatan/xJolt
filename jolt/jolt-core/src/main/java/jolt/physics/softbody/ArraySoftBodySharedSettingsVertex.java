@@ -11,13 +11,13 @@ public class ArraySoftBodySharedSettingsVertex extends IDLBase {
 
     private SoftBodySharedSettingsVertex SoftBodySharedSettingsVertex_TEMP_GEN_0;
 
-    static public final ArraySoftBodySharedSettingsVertex NULL = ArraySoftBodySharedSettingsVertex.createInstance();
+    static public final ArraySoftBodySharedSettingsVertex NULL = ArraySoftBodySharedSettingsVertex.native_new();
 
-    static public final ArraySoftBodySharedSettingsVertex T_01 = ArraySoftBodySharedSettingsVertex.createInstance();
+    static public final ArraySoftBodySharedSettingsVertex T_01 = ArraySoftBodySharedSettingsVertex.native_new();
 
-    static public final ArraySoftBodySharedSettingsVertex T_02 = ArraySoftBodySharedSettingsVertex.createInstance();
+    static public final ArraySoftBodySharedSettingsVertex T_02 = ArraySoftBodySharedSettingsVertex.native_new();
 
-    static public final ArraySoftBodySharedSettingsVertex T_03 = ArraySoftBodySharedSettingsVertex.createInstance();
+    static public final ArraySoftBodySharedSettingsVertex T_03 = ArraySoftBodySharedSettingsVertex.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArraySoftBodySharedSettingsVertex extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodySharedSettingsVertex createInstance() {
+    public static ArraySoftBodySharedSettingsVertex native_new() {
         return new ArraySoftBodySharedSettingsVertex((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsVertex_TEMP_GEN_0 = SoftBodySharedSettingsVertex.createInstance();
+            SoftBodySharedSettingsVertex_TEMP_GEN_0 = SoftBodySharedSettingsVertex.native_new();
         SoftBodySharedSettingsVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsVertex_TEMP_GEN_0;
     }

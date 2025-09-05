@@ -7,13 +7,13 @@ package jolt.physics.vehicle;
 
 public class VehicleTrack extends VehicleTrackSettings {
 
-    static public final VehicleTrack NULL = VehicleTrack.createInstance();
+    static public final VehicleTrack NULL = VehicleTrack.native_new();
 
-    static public final VehicleTrack T_01 = VehicleTrack.createInstance();
+    static public final VehicleTrack T_01 = VehicleTrack.native_new();
 
-    static public final VehicleTrack T_02 = VehicleTrack.createInstance();
+    static public final VehicleTrack T_02 = VehicleTrack.native_new();
 
-    static public final VehicleTrack T_03 = VehicleTrack.createInstance();
+    static public final VehicleTrack T_03 = VehicleTrack.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class VehicleTrack extends VehicleTrackSettings {
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleTrack createInstance() {
+    public static VehicleTrack native_new() {
         return new VehicleTrack((byte) 0, (char) 0);
     }
 

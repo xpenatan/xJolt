@@ -12,13 +12,13 @@ public class VehicleEngineSettings extends IDLBase {
 
     private LinearCurve LinearCurve_TEMP_GEN_0;
 
-    static public final VehicleEngineSettings NULL = VehicleEngineSettings.createInstance();
+    static public final VehicleEngineSettings NULL = VehicleEngineSettings.native_new();
 
-    static public final VehicleEngineSettings T_01 = VehicleEngineSettings.createInstance();
+    static public final VehicleEngineSettings T_01 = VehicleEngineSettings.native_new();
 
-    static public final VehicleEngineSettings T_02 = VehicleEngineSettings.createInstance();
+    static public final VehicleEngineSettings T_02 = VehicleEngineSettings.native_new();
 
-    static public final VehicleEngineSettings T_03 = VehicleEngineSettings.createInstance();
+    static public final VehicleEngineSettings T_03 = VehicleEngineSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,7 +30,7 @@ public class VehicleEngineSettings extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleEngineSettings createInstance() {
+    public static VehicleEngineSettings native_new() {
         return new VehicleEngineSettings((byte) 0, (char) 0);
     }
 
@@ -116,7 +116,7 @@ jsObj.set_mMaxRPM(mMaxRPM);
         if (pointer == 0)
             return null;
         if (LinearCurve_TEMP_GEN_0 == null)
-            LinearCurve_TEMP_GEN_0 = LinearCurve.createInstance();
+            LinearCurve_TEMP_GEN_0 = LinearCurve.native_new();
         LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);
         return LinearCurve_TEMP_GEN_0;
     }

@@ -12,13 +12,13 @@ public class VehicleTrackSettings extends IDLBase {
 
     private ArrayUint ArrayUint_TEMP_GEN_0;
 
-    static public final VehicleTrackSettings NULL = VehicleTrackSettings.createInstance();
+    static public final VehicleTrackSettings NULL = VehicleTrackSettings.native_new();
 
-    static public final VehicleTrackSettings T_01 = VehicleTrackSettings.createInstance();
+    static public final VehicleTrackSettings T_01 = VehicleTrackSettings.native_new();
 
-    static public final VehicleTrackSettings T_02 = VehicleTrackSettings.createInstance();
+    static public final VehicleTrackSettings T_02 = VehicleTrackSettings.native_new();
 
-    static public final VehicleTrackSettings T_03 = VehicleTrackSettings.createInstance();
+    static public final VehicleTrackSettings T_03 = VehicleTrackSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,7 +30,7 @@ public class VehicleTrackSettings extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleTrackSettings createInstance() {
+    public static VehicleTrackSettings native_new() {
         return new VehicleTrackSettings((byte) 0, (char) 0);
     }
 
@@ -72,7 +72,7 @@ jsObj.set_mDrivenWheel(mDrivenWheel);
         if (pointer == 0)
             return null;
         if (ArrayUint_TEMP_GEN_0 == null)
-            ArrayUint_TEMP_GEN_0 = ArrayUint.createInstance();
+            ArrayUint_TEMP_GEN_0 = ArrayUint.native_new();
         ArrayUint_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayUint_TEMP_GEN_0;
     }

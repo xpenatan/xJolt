@@ -38,7 +38,7 @@ virtual bool ShouldCollide(unsigned int inLayer1, unsigned int inLayer2) const {
     /**
      * @return An empty instance without a native address
      */
-    public static ObjectLayerPairFilter createInstance() {
+    public static ObjectLayerPairFilter native_new() {
         return new ObjectLayerPairFilter((byte) 0, (char) 0);
     }
 

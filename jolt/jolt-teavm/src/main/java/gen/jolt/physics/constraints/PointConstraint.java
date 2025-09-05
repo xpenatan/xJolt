@@ -15,13 +15,13 @@ public class PointConstraint extends TwoBodyConstraint {
 
     private Vec3 Vec3_TEMP_GEN_2;
 
-    static public final PointConstraint NULL = PointConstraint.createInstance();
+    static public final PointConstraint NULL = PointConstraint.native_new();
 
-    static public final PointConstraint T_01 = PointConstraint.createInstance();
+    static public final PointConstraint T_01 = PointConstraint.native_new();
 
-    static public final PointConstraint T_02 = PointConstraint.createInstance();
+    static public final PointConstraint T_02 = PointConstraint.native_new();
 
-    static public final PointConstraint T_03 = PointConstraint.createInstance();
+    static public final PointConstraint T_03 = PointConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -34,7 +34,7 @@ public class PointConstraint extends TwoBodyConstraint {
     /**
      * @return An empty instance without a native address
      */
-    public static PointConstraint createInstance() {
+    public static PointConstraint native_new() {
         return new PointConstraint((byte) 0, (char) 0);
     }
 
@@ -43,7 +43,7 @@ public class PointConstraint extends TwoBodyConstraint {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -62,7 +62,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -81,7 +81,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }

@@ -14,13 +14,13 @@ public class ShapeResult extends IDLBase {
 
     private Shape Shape_TEMP_GEN_0;
 
-    static public final ShapeResult NULL = ShapeResult.createInstance();
+    static public final ShapeResult NULL = ShapeResult.native_new();
 
-    static public final ShapeResult T_01 = ShapeResult.createInstance();
+    static public final ShapeResult T_01 = ShapeResult.native_new();
 
-    static public final ShapeResult T_02 = ShapeResult.createInstance();
+    static public final ShapeResult T_02 = ShapeResult.native_new();
 
-    static public final ShapeResult T_03 = ShapeResult.createInstance();
+    static public final ShapeResult T_03 = ShapeResult.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -32,7 +32,7 @@ public class ShapeResult extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ShapeResult createInstance() {
+    public static ShapeResult native_new() {
         return new ShapeResult((byte) 0, (char) 0);
     }
 
@@ -76,7 +76,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (IDLString_TEMP_GEN_0 == null)
-            IDLString_TEMP_GEN_0 = IDLString.createInstance();
+            IDLString_TEMP_GEN_0 = IDLString.native_new();
         IDLString_TEMP_GEN_0.internal_reset(pointer, false);
         return IDLString_TEMP_GEN_0;
     }
@@ -95,7 +95,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
-            Shape_TEMP_GEN_0 = Shape.createInstance();
+            Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }

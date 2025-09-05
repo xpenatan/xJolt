@@ -15,13 +15,13 @@ public class RackAndPinionConstraintSettings extends TwoBodyConstraintSettings {
 
     private Vec3 Vec3_TEMP_GEN_1;
 
-    static public final RackAndPinionConstraintSettings NULL = RackAndPinionConstraintSettings.createInstance();
+    static public final RackAndPinionConstraintSettings NULL = RackAndPinionConstraintSettings.native_new();
 
-    static public final RackAndPinionConstraintSettings T_01 = RackAndPinionConstraintSettings.createInstance();
+    static public final RackAndPinionConstraintSettings T_01 = RackAndPinionConstraintSettings.native_new();
 
-    static public final RackAndPinionConstraintSettings T_02 = RackAndPinionConstraintSettings.createInstance();
+    static public final RackAndPinionConstraintSettings T_02 = RackAndPinionConstraintSettings.native_new();
 
-    static public final RackAndPinionConstraintSettings T_03 = RackAndPinionConstraintSettings.createInstance();
+    static public final RackAndPinionConstraintSettings T_03 = RackAndPinionConstraintSettings.native_new();
 
     public RackAndPinionConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -45,7 +45,7 @@ return (jlong)new RackAndPinionConstraintSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static RackAndPinionConstraintSettings createInstance() {
+    public static RackAndPinionConstraintSettings native_new() {
         return new RackAndPinionConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -95,7 +95,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -121,7 +121,7 @@ nativeObject->mHingeAxis = *((Vec3*)mHingeAxis_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }

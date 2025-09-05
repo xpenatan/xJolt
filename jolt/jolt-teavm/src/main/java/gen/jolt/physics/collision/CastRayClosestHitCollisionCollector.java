@@ -11,13 +11,13 @@ public class CastRayClosestHitCollisionCollector extends CastRayCollector {
 
     private RayCastResult RayCastResult_TEMP_GEN_0;
 
-    static public final CastRayClosestHitCollisionCollector NULL = CastRayClosestHitCollisionCollector.createInstance();
+    static public final CastRayClosestHitCollisionCollector NULL = CastRayClosestHitCollisionCollector.native_new();
 
-    static public final CastRayClosestHitCollisionCollector T_01 = CastRayClosestHitCollisionCollector.createInstance();
+    static public final CastRayClosestHitCollisionCollector T_01 = CastRayClosestHitCollisionCollector.native_new();
 
-    static public final CastRayClosestHitCollisionCollector T_02 = CastRayClosestHitCollisionCollector.createInstance();
+    static public final CastRayClosestHitCollisionCollector T_02 = CastRayClosestHitCollisionCollector.native_new();
 
-    static public final CastRayClosestHitCollisionCollector T_03 = CastRayClosestHitCollisionCollector.createInstance();
+    static public final CastRayClosestHitCollisionCollector T_03 = CastRayClosestHitCollisionCollector.native_new();
 
     public CastRayClosestHitCollisionCollector() {
         super((byte) 1, (char) 1);
@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static CastRayClosestHitCollisionCollector createInstance() {
+    public static CastRayClosestHitCollisionCollector native_new() {
         return new CastRayClosestHitCollisionCollector((byte) 0, (char) 0);
     }
 
@@ -75,7 +75,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (RayCastResult_TEMP_GEN_0 == null)
-            RayCastResult_TEMP_GEN_0 = RayCastResult.createInstance();
+            RayCastResult_TEMP_GEN_0 = RayCastResult.native_new();
         RayCastResult_TEMP_GEN_0.internal_reset(pointer, false);
         return RayCastResult_TEMP_GEN_0;
     }

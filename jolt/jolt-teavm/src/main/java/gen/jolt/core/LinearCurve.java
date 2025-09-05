@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class LinearCurve extends IDLBase {
 
-    static public final LinearCurve NULL = LinearCurve.createInstance();
+    static public final LinearCurve NULL = LinearCurve.native_new();
 
-    static public final LinearCurve T_01 = LinearCurve.createInstance();
+    static public final LinearCurve T_01 = LinearCurve.native_new();
 
-    static public final LinearCurve T_02 = LinearCurve.createInstance();
+    static public final LinearCurve T_02 = LinearCurve.native_new();
 
-    static public final LinearCurve T_03 = LinearCurve.createInstance();
+    static public final LinearCurve T_03 = LinearCurve.native_new();
 
     public LinearCurve() {
         int addr = internal_native_create();
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static LinearCurve createInstance() {
+    public static LinearCurve native_new() {
         return new LinearCurve((byte) 0, (char) 0);
     }
 

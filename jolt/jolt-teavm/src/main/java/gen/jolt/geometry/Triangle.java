@@ -13,13 +13,13 @@ public class Triangle extends IDLBase {
 
     private Float3 Float3_TEMP_GEN_0;
 
-    static public final Triangle NULL = Triangle.createInstance();
+    static public final Triangle NULL = Triangle.native_new();
 
-    static public final Triangle T_01 = Triangle.createInstance();
+    static public final Triangle T_01 = Triangle.native_new();
 
-    static public final Triangle T_02 = Triangle.createInstance();
+    static public final Triangle T_02 = Triangle.native_new();
 
-    static public final Triangle T_03 = Triangle.createInstance();
+    static public final Triangle T_03 = Triangle.native_new();
 
     public Triangle() {
         int addr = internal_native_create();
@@ -79,7 +79,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static Triangle createInstance() {
+    public static Triangle native_new() {
         return new Triangle((byte) 0, (char) 0);
     }
 
@@ -99,7 +99,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_0 == null)
-            Float3_TEMP_GEN_0 = Float3.createInstance();
+            Float3_TEMP_GEN_0 = Float3.native_new();
         Float3_TEMP_GEN_0.internal_reset(pointer, false);
         return Float3_TEMP_GEN_0;
     }

@@ -13,13 +13,13 @@ public class WheeledVehicleController extends VehicleController {
 
     private ArrayVehicleDifferentialSettings ArrayVehicleDifferentialSettings_TEMP_GEN_0;
 
-    static public final WheeledVehicleController NULL = WheeledVehicleController.createInstance();
+    static public final WheeledVehicleController NULL = WheeledVehicleController.native_new();
 
-    static public final WheeledVehicleController T_01 = WheeledVehicleController.createInstance();
+    static public final WheeledVehicleController T_01 = WheeledVehicleController.native_new();
 
-    static public final WheeledVehicleController T_02 = WheeledVehicleController.createInstance();
+    static public final WheeledVehicleController T_02 = WheeledVehicleController.native_new();
 
-    static public final WheeledVehicleController T_03 = WheeledVehicleController.createInstance();
+    static public final WheeledVehicleController T_03 = WheeledVehicleController.native_new();
 
     public WheeledVehicleController(WheeledVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
@@ -45,7 +45,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WheeledVehicleController createInstance() {
+    public static WheeledVehicleController native_new() {
         return new WheeledVehicleController((byte) 0, (char) 0);
     }
 
@@ -157,7 +157,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (VehicleEngine_TEMP_GEN_0 == null)
-            VehicleEngine_TEMP_GEN_0 = VehicleEngine.createInstance();
+            VehicleEngine_TEMP_GEN_0 = VehicleEngine.native_new();
         VehicleEngine_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleEngine_TEMP_GEN_0;
     }
@@ -176,7 +176,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (VehicleTransmission_TEMP_GEN_0 == null)
-            VehicleTransmission_TEMP_GEN_0 = VehicleTransmission.createInstance();
+            VehicleTransmission_TEMP_GEN_0 = VehicleTransmission.native_new();
         VehicleTransmission_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleTransmission_TEMP_GEN_0;
     }
@@ -195,7 +195,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (ArrayVehicleDifferentialSettings_TEMP_GEN_0 == null)
-            ArrayVehicleDifferentialSettings_TEMP_GEN_0 = ArrayVehicleDifferentialSettings.createInstance();
+            ArrayVehicleDifferentialSettings_TEMP_GEN_0 = ArrayVehicleDifferentialSettings.native_new();
         ArrayVehicleDifferentialSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayVehicleDifferentialSettings_TEMP_GEN_0;
     }

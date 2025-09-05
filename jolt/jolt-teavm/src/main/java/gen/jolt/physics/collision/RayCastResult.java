@@ -11,13 +11,13 @@ public class RayCastResult extends BroadPhaseCastResult {
 
     private SubShapeID SubShapeID_TEMP_GEN_0;
 
-    static public final RayCastResult NULL = RayCastResult.createInstance();
+    static public final RayCastResult NULL = RayCastResult.native_new();
 
-    static public final RayCastResult T_01 = RayCastResult.createInstance();
+    static public final RayCastResult T_01 = RayCastResult.native_new();
 
-    static public final RayCastResult T_02 = RayCastResult.createInstance();
+    static public final RayCastResult T_02 = RayCastResult.native_new();
 
-    static public final RayCastResult T_03 = RayCastResult.createInstance();
+    static public final RayCastResult T_03 = RayCastResult.native_new();
 
     public RayCastResult() {
         super((byte) 1, (char) 1);
@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static RayCastResult createInstance() {
+    public static RayCastResult native_new() {
         return new RayCastResult((byte) 0, (char) 0);
     }
 
@@ -63,7 +63,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_0 == null)
-            SubShapeID_TEMP_GEN_0 = SubShapeID.createInstance();
+            SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_0;
     }

@@ -11,13 +11,13 @@ public class ArraySoftBodySharedSettingsDihedralBend extends IDLBase {
 
     private SoftBodySharedSettingsDihedralBend SoftBodySharedSettingsDihedralBend_TEMP_GEN_0;
 
-    static public final ArraySoftBodySharedSettingsDihedralBend NULL = ArraySoftBodySharedSettingsDihedralBend.createInstance();
+    static public final ArraySoftBodySharedSettingsDihedralBend NULL = ArraySoftBodySharedSettingsDihedralBend.native_new();
 
-    static public final ArraySoftBodySharedSettingsDihedralBend T_01 = ArraySoftBodySharedSettingsDihedralBend.createInstance();
+    static public final ArraySoftBodySharedSettingsDihedralBend T_01 = ArraySoftBodySharedSettingsDihedralBend.native_new();
 
-    static public final ArraySoftBodySharedSettingsDihedralBend T_02 = ArraySoftBodySharedSettingsDihedralBend.createInstance();
+    static public final ArraySoftBodySharedSettingsDihedralBend T_02 = ArraySoftBodySharedSettingsDihedralBend.native_new();
 
-    static public final ArraySoftBodySharedSettingsDihedralBend T_03 = ArraySoftBodySharedSettingsDihedralBend.createInstance();
+    static public final ArraySoftBodySharedSettingsDihedralBend T_03 = ArraySoftBodySharedSettingsDihedralBend.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArraySoftBodySharedSettingsDihedralBend extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodySharedSettingsDihedralBend createInstance() {
+    public static ArraySoftBodySharedSettingsDihedralBend native_new() {
         return new ArraySoftBodySharedSettingsDihedralBend((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsDihedralBend_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = SoftBodySharedSettingsDihedralBend.createInstance();
+            SoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = SoftBodySharedSettingsDihedralBend.native_new();
         SoftBodySharedSettingsDihedralBend_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsDihedralBend_TEMP_GEN_0;
     }

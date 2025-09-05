@@ -20,13 +20,13 @@ public class PathConstraintSettings extends TwoBodyConstraintSettings {
 
     private MotorSettings MotorSettings_TEMP_GEN_0;
 
-    static public final PathConstraintSettings NULL = PathConstraintSettings.createInstance();
+    static public final PathConstraintSettings NULL = PathConstraintSettings.native_new();
 
-    static public final PathConstraintSettings T_01 = PathConstraintSettings.createInstance();
+    static public final PathConstraintSettings T_01 = PathConstraintSettings.native_new();
 
-    static public final PathConstraintSettings T_02 = PathConstraintSettings.createInstance();
+    static public final PathConstraintSettings T_02 = PathConstraintSettings.native_new();
 
-    static public final PathConstraintSettings T_03 = PathConstraintSettings.createInstance();
+    static public final PathConstraintSettings T_03 = PathConstraintSettings.native_new();
 
     public PathConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -50,7 +50,7 @@ return (jlong)new PathConstraintSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static PathConstraintSettings createInstance() {
+    public static PathConstraintSettings native_new() {
         return new PathConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -69,7 +69,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (PathConstraintPath_TEMP_GEN_0 == null)
-            PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.createInstance();
+            PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.native_new();
         PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
         return PathConstraintPath_TEMP_GEN_0;
     }
@@ -96,7 +96,7 @@ nativeObject->mPath = (PathConstraintPath*)mPath_addr;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -122,7 +122,7 @@ nativeObject->mPathPosition = *((Vec3*)mPathPosition_addr);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -209,7 +209,7 @@ nativeObject->mRotationConstraintType = (::EPathRotationConstraintType)mRotation
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
-            MotorSettings_TEMP_GEN_0 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }

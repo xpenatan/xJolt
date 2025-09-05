@@ -10,13 +10,13 @@ import gen.jolt.enums.EBackFaceMode;
 
 public class RayCastSettings extends IDLBase {
 
-    static public final RayCastSettings NULL = RayCastSettings.createInstance();
+    static public final RayCastSettings NULL = RayCastSettings.native_new();
 
-    static public final RayCastSettings T_01 = RayCastSettings.createInstance();
+    static public final RayCastSettings T_01 = RayCastSettings.native_new();
 
-    static public final RayCastSettings T_02 = RayCastSettings.createInstance();
+    static public final RayCastSettings T_02 = RayCastSettings.native_new();
 
-    static public final RayCastSettings T_03 = RayCastSettings.createInstance();
+    static public final RayCastSettings T_03 = RayCastSettings.native_new();
 
     public RayCastSettings() {
         int addr = internal_native_create();
@@ -40,7 +40,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static RayCastSettings createInstance() {
+    public static RayCastSettings native_new() {
         return new RayCastSettings((byte) 0, (char) 0);
     }
 

@@ -11,13 +11,13 @@ public class ArrayRagdollPart extends IDLBase {
 
     private RagdollPart RagdollPart_TEMP_GEN_0;
 
-    static public final ArrayRagdollPart NULL = ArrayRagdollPart.createInstance();
+    static public final ArrayRagdollPart NULL = ArrayRagdollPart.native_new();
 
-    static public final ArrayRagdollPart T_01 = ArrayRagdollPart.createInstance();
+    static public final ArrayRagdollPart T_01 = ArrayRagdollPart.native_new();
 
-    static public final ArrayRagdollPart T_02 = ArrayRagdollPart.createInstance();
+    static public final ArrayRagdollPart T_02 = ArrayRagdollPart.native_new();
 
-    static public final ArrayRagdollPart T_03 = ArrayRagdollPart.createInstance();
+    static public final ArrayRagdollPart T_03 = ArrayRagdollPart.native_new();
 
     public ArrayRagdollPart() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayRagdollPart createInstance() {
+    public static ArrayRagdollPart native_new() {
         return new ArrayRagdollPart((byte) 0, (char) 0);
     }
 
@@ -85,7 +85,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (RagdollPart_TEMP_GEN_0 == null)
-            RagdollPart_TEMP_GEN_0 = RagdollPart.createInstance();
+            RagdollPart_TEMP_GEN_0 = RagdollPart.native_new();
         RagdollPart_TEMP_GEN_0.internal_reset(pointer, false);
         return RagdollPart_TEMP_GEN_0;
     }

@@ -12,13 +12,13 @@ public class BoxShapeSettings extends ConvexShapeSettings {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final BoxShapeSettings NULL = BoxShapeSettings.createInstance();
+    static public final BoxShapeSettings NULL = BoxShapeSettings.native_new();
 
-    static public final BoxShapeSettings T_01 = BoxShapeSettings.createInstance();
+    static public final BoxShapeSettings T_01 = BoxShapeSettings.native_new();
 
-    static public final BoxShapeSettings T_02 = BoxShapeSettings.createInstance();
+    static public final BoxShapeSettings T_02 = BoxShapeSettings.native_new();
 
-    static public final BoxShapeSettings T_03 = BoxShapeSettings.createInstance();
+    static public final BoxShapeSettings T_03 = BoxShapeSettings.native_new();
 
     public BoxShapeSettings(Vec3 inHalfExtent, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -70,7 +70,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static BoxShapeSettings createInstance() {
+    public static BoxShapeSettings native_new() {
         return new BoxShapeSettings((byte) 0, (char) 0);
     }
 
@@ -79,7 +79,7 @@ return jolt.getPointer(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

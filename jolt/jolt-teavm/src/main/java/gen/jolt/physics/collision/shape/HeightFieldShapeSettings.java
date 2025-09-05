@@ -22,13 +22,13 @@ public class HeightFieldShapeSettings extends ShapeSettings {
 
     private PhysicsMaterialList PhysicsMaterialList_TEMP_GEN_0;
 
-    static public final HeightFieldShapeSettings NULL = HeightFieldShapeSettings.createInstance();
+    static public final HeightFieldShapeSettings NULL = HeightFieldShapeSettings.native_new();
 
-    static public final HeightFieldShapeSettings T_01 = HeightFieldShapeSettings.createInstance();
+    static public final HeightFieldShapeSettings T_01 = HeightFieldShapeSettings.native_new();
 
-    static public final HeightFieldShapeSettings T_02 = HeightFieldShapeSettings.createInstance();
+    static public final HeightFieldShapeSettings T_02 = HeightFieldShapeSettings.native_new();
 
-    static public final HeightFieldShapeSettings T_03 = HeightFieldShapeSettings.createInstance();
+    static public final HeightFieldShapeSettings T_03 = HeightFieldShapeSettings.native_new();
 
     public HeightFieldShapeSettings() {
         super((byte) 1, (char) 1);
@@ -54,7 +54,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static HeightFieldShapeSettings createInstance() {
+    public static HeightFieldShapeSettings native_new() {
         return new HeightFieldShapeSettings((byte) 0, (char) 0);
     }
 
@@ -63,7 +63,7 @@ return jolt.getPointer(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -93,7 +93,7 @@ jsObj.set_mOffset(mOffset_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -255,7 +255,7 @@ jsObj.set_mBitsPerSample(mBitsPerSample);
         if (pointer == 0)
             return null;
         if (ArrayFloat_TEMP_GEN_0 == null)
-            ArrayFloat_TEMP_GEN_0 = ArrayFloat.createInstance();
+            ArrayFloat_TEMP_GEN_0 = ArrayFloat.native_new();
         ArrayFloat_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayFloat_TEMP_GEN_0;
     }
@@ -285,7 +285,7 @@ jsObj.set_mHeightSamples(mHeightSamples_addr);
         if (pointer == 0)
             return null;
         if (ArrayUint8_TEMP_GEN_0 == null)
-            ArrayUint8_TEMP_GEN_0 = ArrayUint8.createInstance();
+            ArrayUint8_TEMP_GEN_0 = ArrayUint8.native_new();
         ArrayUint8_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayUint8_TEMP_GEN_0;
     }
@@ -315,7 +315,7 @@ jsObj.set_mMaterialIndices(mMaterialIndices_addr);
         if (pointer == 0)
             return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
-            PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.createInstance();
+            PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
         PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }

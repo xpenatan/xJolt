@@ -25,13 +25,13 @@ public class Wheel extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_4;
 
-    static public final Wheel NULL = Wheel.createInstance();
+    static public final Wheel NULL = Wheel.native_new();
 
-    static public final Wheel T_01 = Wheel.createInstance();
+    static public final Wheel T_01 = Wheel.native_new();
 
-    static public final Wheel T_02 = Wheel.createInstance();
+    static public final Wheel T_02 = Wheel.native_new();
 
-    static public final Wheel T_03 = Wheel.createInstance();
+    static public final Wheel T_03 = Wheel.native_new();
 
     public Wheel(WheelSettings inSettings) {
         int addr = internal_native_create_WheelSettings(inSettings.native_address);
@@ -55,7 +55,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static Wheel createInstance() {
+    public static Wheel native_new() {
         return new Wheel((byte) 0, (char) 0);
     }
 
@@ -75,7 +75,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WheelSettings_TEMP_GEN_0 == null)
-            WheelSettings_TEMP_GEN_0 = WheelSettings.createInstance();
+            WheelSettings_TEMP_GEN_0 = WheelSettings.native_new();
         WheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return WheelSettings_TEMP_GEN_0;
     }
@@ -175,7 +175,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
@@ -194,7 +194,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -213,7 +213,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -232,7 +232,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -251,7 +251,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -270,7 +270,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }

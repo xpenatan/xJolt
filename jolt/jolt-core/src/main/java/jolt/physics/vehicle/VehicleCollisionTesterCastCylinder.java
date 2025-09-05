@@ -7,13 +7,13 @@ package jolt.physics.vehicle;
 
 public class VehicleCollisionTesterCastCylinder extends VehicleCollisionTester {
 
-    static public final VehicleCollisionTesterCastCylinder NULL = VehicleCollisionTesterCastCylinder.createInstance();
+    static public final VehicleCollisionTesterCastCylinder NULL = VehicleCollisionTesterCastCylinder.native_new();
 
-    static public final VehicleCollisionTesterCastCylinder T_01 = VehicleCollisionTesterCastCylinder.createInstance();
+    static public final VehicleCollisionTesterCastCylinder T_01 = VehicleCollisionTesterCastCylinder.native_new();
 
-    static public final VehicleCollisionTesterCastCylinder T_02 = VehicleCollisionTesterCastCylinder.createInstance();
+    static public final VehicleCollisionTesterCastCylinder T_02 = VehicleCollisionTesterCastCylinder.native_new();
 
-    static public final VehicleCollisionTesterCastCylinder T_03 = VehicleCollisionTesterCastCylinder.createInstance();
+    static public final VehicleCollisionTesterCastCylinder T_03 = VehicleCollisionTesterCastCylinder.native_new();
 
     public VehicleCollisionTesterCastCylinder(int inObjectLayer, float inConvexRadiusFraction) {
         super((byte) 1, (char) 1);
@@ -48,7 +48,7 @@ return (jlong)new VehicleCollisionTesterCastCylinder(inObjectLayer);
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleCollisionTesterCastCylinder createInstance() {
+    public static VehicleCollisionTesterCastCylinder native_new() {
         return new VehicleCollisionTesterCastCylinder((byte) 0, (char) 0);
     }
 }

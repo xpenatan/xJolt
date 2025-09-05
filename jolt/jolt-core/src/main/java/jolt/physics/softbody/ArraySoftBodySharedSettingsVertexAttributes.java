@@ -13,13 +13,13 @@ public class ArraySoftBodySharedSettingsVertexAttributes extends IDLBase {
 
     private SoftBodySharedSettingsVertexAttributes SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1;
 
-    static public final ArraySoftBodySharedSettingsVertexAttributes NULL = ArraySoftBodySharedSettingsVertexAttributes.createInstance();
+    static public final ArraySoftBodySharedSettingsVertexAttributes NULL = ArraySoftBodySharedSettingsVertexAttributes.native_new();
 
-    static public final ArraySoftBodySharedSettingsVertexAttributes T_01 = ArraySoftBodySharedSettingsVertexAttributes.createInstance();
+    static public final ArraySoftBodySharedSettingsVertexAttributes T_01 = ArraySoftBodySharedSettingsVertexAttributes.native_new();
 
-    static public final ArraySoftBodySharedSettingsVertexAttributes T_02 = ArraySoftBodySharedSettingsVertexAttributes.createInstance();
+    static public final ArraySoftBodySharedSettingsVertexAttributes T_02 = ArraySoftBodySharedSettingsVertexAttributes.native_new();
 
-    static public final ArraySoftBodySharedSettingsVertexAttributes T_03 = ArraySoftBodySharedSettingsVertexAttributes.createInstance();
+    static public final ArraySoftBodySharedSettingsVertexAttributes T_03 = ArraySoftBodySharedSettingsVertexAttributes.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -31,7 +31,7 @@ public class ArraySoftBodySharedSettingsVertexAttributes extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodySharedSettingsVertexAttributes createInstance() {
+    public static ArraySoftBodySharedSettingsVertexAttributes native_new() {
         return new ArraySoftBodySharedSettingsVertexAttributes((byte) 0, (char) 0);
     }
 
@@ -70,7 +70,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0 = SoftBodySharedSettingsVertexAttributes.createInstance();
+            SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0 = SoftBodySharedSettingsVertexAttributes.native_new();
         SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0;
     }
@@ -126,7 +126,7 @@ nativeObject->clear();
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1 == null)
-            SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1 = SoftBodySharedSettingsVertexAttributes.createInstance();
+            SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1 = SoftBodySharedSettingsVertexAttributes.native_new();
         SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1.internal_reset(pointer, false);
         return SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1;
     }

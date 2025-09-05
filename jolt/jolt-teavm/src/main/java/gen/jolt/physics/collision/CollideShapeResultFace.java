@@ -12,13 +12,13 @@ public class CollideShapeResultFace extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final CollideShapeResultFace NULL = CollideShapeResultFace.createInstance();
+    static public final CollideShapeResultFace NULL = CollideShapeResultFace.native_new();
 
-    static public final CollideShapeResultFace T_01 = CollideShapeResultFace.createInstance();
+    static public final CollideShapeResultFace T_01 = CollideShapeResultFace.native_new();
 
-    static public final CollideShapeResultFace T_02 = CollideShapeResultFace.createInstance();
+    static public final CollideShapeResultFace T_02 = CollideShapeResultFace.native_new();
 
-    static public final CollideShapeResultFace T_03 = CollideShapeResultFace.createInstance();
+    static public final CollideShapeResultFace T_03 = CollideShapeResultFace.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,7 +30,7 @@ public class CollideShapeResultFace extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CollideShapeResultFace createInstance() {
+    public static CollideShapeResultFace native_new() {
         return new CollideShapeResultFace((byte) 0, (char) 0);
     }
 
@@ -74,7 +74,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

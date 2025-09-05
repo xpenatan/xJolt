@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class ConstraintSettings extends IDLBase {
 
-    static public final ConstraintSettings NULL = ConstraintSettings.createInstance();
+    static public final ConstraintSettings NULL = ConstraintSettings.native_new();
 
-    static public final ConstraintSettings T_01 = ConstraintSettings.createInstance();
+    static public final ConstraintSettings T_01 = ConstraintSettings.native_new();
 
-    static public final ConstraintSettings T_02 = ConstraintSettings.createInstance();
+    static public final ConstraintSettings T_02 = ConstraintSettings.native_new();
 
-    static public final ConstraintSettings T_03 = ConstraintSettings.createInstance();
+    static public final ConstraintSettings T_03 = ConstraintSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class ConstraintSettings extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ConstraintSettings createInstance() {
+    public static ConstraintSettings native_new() {
         return new ConstraintSettings((byte) 0, (char) 0);
     }
 

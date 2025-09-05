@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class PhysicsMaterial extends IDLBase {
 
-    static public final PhysicsMaterial NULL = PhysicsMaterial.createInstance();
+    static public final PhysicsMaterial NULL = PhysicsMaterial.native_new();
 
-    static public final PhysicsMaterial T_01 = PhysicsMaterial.createInstance();
+    static public final PhysicsMaterial T_01 = PhysicsMaterial.native_new();
 
-    static public final PhysicsMaterial T_02 = PhysicsMaterial.createInstance();
+    static public final PhysicsMaterial T_02 = PhysicsMaterial.native_new();
 
-    static public final PhysicsMaterial T_03 = PhysicsMaterial.createInstance();
+    static public final PhysicsMaterial T_03 = PhysicsMaterial.native_new();
 
     public PhysicsMaterial() {
         int addr = internal_native_create();
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static PhysicsMaterial createInstance() {
+    public static PhysicsMaterial native_new() {
         return new PhysicsMaterial((byte) 0, (char) 0);
     }
 

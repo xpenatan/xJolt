@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class SoftBodySharedSettingsLRA extends IDLBase {
 
-    static public final SoftBodySharedSettingsLRA NULL = SoftBodySharedSettingsLRA.createInstance();
+    static public final SoftBodySharedSettingsLRA NULL = SoftBodySharedSettingsLRA.native_new();
 
-    static public final SoftBodySharedSettingsLRA T_01 = SoftBodySharedSettingsLRA.createInstance();
+    static public final SoftBodySharedSettingsLRA T_01 = SoftBodySharedSettingsLRA.native_new();
 
-    static public final SoftBodySharedSettingsLRA T_02 = SoftBodySharedSettingsLRA.createInstance();
+    static public final SoftBodySharedSettingsLRA T_02 = SoftBodySharedSettingsLRA.native_new();
 
-    static public final SoftBodySharedSettingsLRA T_03 = SoftBodySharedSettingsLRA.createInstance();
+    static public final SoftBodySharedSettingsLRA T_03 = SoftBodySharedSettingsLRA.native_new();
 
     public SoftBodySharedSettingsLRA(int inVertex1, int inVertex2, float inMaxDistance) {
         int addr = internal_native_create_int_int_float(inVertex1, inVertex2, inMaxDistance);
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodySharedSettingsLRA createInstance() {
+    public static SoftBodySharedSettingsLRA native_new() {
         return new SoftBodySharedSettingsLRA((byte) 0, (char) 0);
     }
 

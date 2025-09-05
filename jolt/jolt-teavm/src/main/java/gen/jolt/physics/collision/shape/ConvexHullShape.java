@@ -7,13 +7,13 @@ package gen.jolt.physics.collision.shape;
 
 public class ConvexHullShape extends ConvexShape {
 
-    static public final ConvexHullShape NULL = ConvexHullShape.createInstance();
+    static public final ConvexHullShape NULL = ConvexHullShape.native_new();
 
-    static public final ConvexHullShape T_01 = ConvexHullShape.createInstance();
+    static public final ConvexHullShape T_01 = ConvexHullShape.native_new();
 
-    static public final ConvexHullShape T_02 = ConvexHullShape.createInstance();
+    static public final ConvexHullShape T_02 = ConvexHullShape.native_new();
 
-    static public final ConvexHullShape T_03 = ConvexHullShape.createInstance();
+    static public final ConvexHullShape T_03 = ConvexHullShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class ConvexHullShape extends ConvexShape {
     /**
      * @return An empty instance without a native address
      */
-    public static ConvexHullShape createInstance() {
+    public static ConvexHullShape native_new() {
         return new ConvexHullShape((byte) 0, (char) 0);
     }
 }

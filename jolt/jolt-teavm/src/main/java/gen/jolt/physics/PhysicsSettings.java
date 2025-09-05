@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class PhysicsSettings extends IDLBase {
 
-    static public final PhysicsSettings NULL = PhysicsSettings.createInstance();
+    static public final PhysicsSettings NULL = PhysicsSettings.native_new();
 
-    static public final PhysicsSettings T_01 = PhysicsSettings.createInstance();
+    static public final PhysicsSettings T_01 = PhysicsSettings.native_new();
 
-    static public final PhysicsSettings T_02 = PhysicsSettings.createInstance();
+    static public final PhysicsSettings T_02 = PhysicsSettings.native_new();
 
-    static public final PhysicsSettings T_03 = PhysicsSettings.createInstance();
+    static public final PhysicsSettings T_03 = PhysicsSettings.native_new();
 
     public PhysicsSettings() {
         int addr = internal_native_create();
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static PhysicsSettings createInstance() {
+    public static PhysicsSettings native_new() {
         return new PhysicsSettings((byte) 0, (char) 0);
     }
 

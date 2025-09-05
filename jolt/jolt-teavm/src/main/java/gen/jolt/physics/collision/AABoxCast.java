@@ -15,13 +15,13 @@ public class AABoxCast extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final AABoxCast NULL = AABoxCast.createInstance();
+    static public final AABoxCast NULL = AABoxCast.native_new();
 
-    static public final AABoxCast T_01 = AABoxCast.createInstance();
+    static public final AABoxCast T_01 = AABoxCast.native_new();
 
-    static public final AABoxCast T_02 = AABoxCast.createInstance();
+    static public final AABoxCast T_02 = AABoxCast.native_new();
 
-    static public final AABoxCast T_03 = AABoxCast.createInstance();
+    static public final AABoxCast T_03 = AABoxCast.native_new();
 
     public AABoxCast() {
         int addr = internal_native_create();
@@ -45,7 +45,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static AABoxCast createInstance() {
+    public static AABoxCast native_new() {
         return new AABoxCast((byte) 0, (char) 0);
     }
 
@@ -65,7 +65,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
-            AABox_TEMP_GEN_0 = AABox.createInstance();
+            AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }
@@ -95,7 +95,7 @@ jsObj.set_mBox(mBox_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

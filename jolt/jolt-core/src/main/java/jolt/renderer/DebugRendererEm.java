@@ -88,7 +88,7 @@ virtual void DrawText3D(const Vec3* inPosition, const void* inString, unsigned i
     /**
      * @return An empty instance without a native address
      */
-    public static DebugRendererEm createInstance() {
+    public static DebugRendererEm native_new() {
         return new DebugRendererEm((byte) 0, (char) 0);
     }
 
@@ -167,13 +167,13 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
 
     private void internal_DrawMesh(int id, long inModelMatrix_addr, long vertices_addr, long inModelColor_addr, int inCullMode_addr, int inDrawMode_addr) {
         if (Mat44_TEMP_STATIC_GEN_0 == null)
-            Mat44_TEMP_STATIC_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_0 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_0.internal_reset(inModelMatrix_addr, false);
         if (IDLFloatArray_TEMP_STATIC_GEN_0 == null)
-            IDLFloatArray_TEMP_STATIC_GEN_0 = IDLFloatArray.createInstance();
+            IDLFloatArray_TEMP_STATIC_GEN_0 = IDLFloatArray.native_new();
         IDLFloatArray_TEMP_STATIC_GEN_0.internal_reset(vertices_addr, false);
         if (Color_TEMP_STATIC_GEN_0 == null)
-            Color_TEMP_STATIC_GEN_0 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_0 = Color.native_new();
         Color_TEMP_STATIC_GEN_0.internal_reset(inModelColor_addr, false);
         DrawMesh(id, Mat44_TEMP_STATIC_GEN_0, IDLFloatArray_TEMP_STATIC_GEN_0, Color_TEMP_STATIC_GEN_0, ECullMode.MAP.get(inCullMode_addr), EDrawMode.MAP.get(inDrawMode_addr));
     }
@@ -183,13 +183,13 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
 
     private void internal_DrawLine(long inFrom_addr, long inTo_addr, long inColor_addr) {
         if (Vec3_TEMP_STATIC_GEN_0 == null)
-            Vec3_TEMP_STATIC_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_0.internal_reset(inFrom_addr, false);
         if (Vec3_TEMP_STATIC_GEN_1 == null)
-            Vec3_TEMP_STATIC_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_1 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_1.internal_reset(inTo_addr, false);
         if (Color_TEMP_STATIC_GEN_1 == null)
-            Color_TEMP_STATIC_GEN_1 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_1 = Color.native_new();
         Color_TEMP_STATIC_GEN_1.internal_reset(inColor_addr, false);
         DrawLine(Vec3_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_1, Color_TEMP_STATIC_GEN_1);
     }
@@ -199,16 +199,16 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
 
     private void internal_DrawTriangle(long inV1_addr, long inV2_addr, long inV3_addr, long inColor_addr, int inCastShadow_addr) {
         if (Vec3_TEMP_STATIC_GEN_2 == null)
-            Vec3_TEMP_STATIC_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_2 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_2.internal_reset(inV1_addr, false);
         if (Vec3_TEMP_STATIC_GEN_3 == null)
-            Vec3_TEMP_STATIC_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_3.internal_reset(inV2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_4 == null)
-            Vec3_TEMP_STATIC_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_4.internal_reset(inV3_addr, false);
         if (Color_TEMP_STATIC_GEN_2 == null)
-            Color_TEMP_STATIC_GEN_2 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_2 = Color.native_new();
         Color_TEMP_STATIC_GEN_2.internal_reset(inColor_addr, false);
         DrawTriangle(Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Color_TEMP_STATIC_GEN_2, ECastShadow.MAP.get(inCastShadow_addr));
     }
@@ -218,13 +218,13 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
 
     private void internal_DrawText3D(long inPosition_addr, long inString_addr, int inStringLen, long inColor_addr, float inHeight) {
         if (Vec3_TEMP_STATIC_GEN_5 == null)
-            Vec3_TEMP_STATIC_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_5 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_5.internal_reset(inPosition_addr, false);
         if (IDLBase_TEMP_STATIC_GEN_0 == null)
-            IDLBase_TEMP_STATIC_GEN_0 = IDLBase.createInstance();
+            IDLBase_TEMP_STATIC_GEN_0 = IDLBase.native_new();
         IDLBase_TEMP_STATIC_GEN_0.internal_reset(inString_addr, false);
         if (Color_TEMP_STATIC_GEN_3 == null)
-            Color_TEMP_STATIC_GEN_3 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_3 = Color.native_new();
         Color_TEMP_STATIC_GEN_3.internal_reset(inColor_addr, false);
         DrawText3D(Vec3_TEMP_STATIC_GEN_5, IDLBase_TEMP_STATIC_GEN_0, inStringLen, Color_TEMP_STATIC_GEN_3, inHeight);
     }

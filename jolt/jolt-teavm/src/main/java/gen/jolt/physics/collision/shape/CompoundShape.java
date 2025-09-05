@@ -9,13 +9,13 @@ public class CompoundShape extends Shape {
 
     private CompoundShapeSubShape CompoundShapeSubShape_TEMP_GEN_0;
 
-    static public final CompoundShape NULL = CompoundShape.createInstance();
+    static public final CompoundShape NULL = CompoundShape.native_new();
 
-    static public final CompoundShape T_01 = CompoundShape.createInstance();
+    static public final CompoundShape T_01 = CompoundShape.native_new();
 
-    static public final CompoundShape T_02 = CompoundShape.createInstance();
+    static public final CompoundShape T_02 = CompoundShape.native_new();
 
-    static public final CompoundShape T_03 = CompoundShape.createInstance();
+    static public final CompoundShape T_03 = CompoundShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -28,7 +28,7 @@ public class CompoundShape extends Shape {
     /**
      * @return An empty instance without a native address
      */
-    public static CompoundShape createInstance() {
+    public static CompoundShape native_new() {
         return new CompoundShape((byte) 0, (char) 0);
     }
 
@@ -49,7 +49,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (CompoundShapeSubShape_TEMP_GEN_0 == null)
-            CompoundShapeSubShape_TEMP_GEN_0 = CompoundShapeSubShape.createInstance();
+            CompoundShapeSubShape_TEMP_GEN_0 = CompoundShapeSubShape.native_new();
         CompoundShapeSubShape_TEMP_GEN_0.internal_reset(pointer, false);
         return CompoundShapeSubShape_TEMP_GEN_0;
     }

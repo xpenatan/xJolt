@@ -11,13 +11,13 @@ public class MotorSettings extends IDLBase {
 
     private SpringSettings SpringSettings_TEMP_GEN_0;
 
-    static public final MotorSettings NULL = MotorSettings.createInstance();
+    static public final MotorSettings NULL = MotorSettings.native_new();
 
-    static public final MotorSettings T_01 = MotorSettings.createInstance();
+    static public final MotorSettings T_01 = MotorSettings.native_new();
 
-    static public final MotorSettings T_02 = MotorSettings.createInstance();
+    static public final MotorSettings T_02 = MotorSettings.native_new();
 
-    static public final MotorSettings T_03 = MotorSettings.createInstance();
+    static public final MotorSettings T_03 = MotorSettings.native_new();
 
     public MotorSettings() {
         int addr = internal_native_create();
@@ -65,7 +65,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static MotorSettings createInstance() {
+    public static MotorSettings native_new() {
         return new MotorSettings((byte) 0, (char) 0);
     }
 
@@ -85,7 +85,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
-            SpringSettings_TEMP_GEN_0 = SpringSettings.createInstance();
+            SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }

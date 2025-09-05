@@ -15,13 +15,13 @@ public class VehicleTransmissionSettings extends IDLBase {
 
     private ArrayFloat ArrayFloat_TEMP_GEN_1;
 
-    static public final VehicleTransmissionSettings NULL = VehicleTransmissionSettings.createInstance();
+    static public final VehicleTransmissionSettings NULL = VehicleTransmissionSettings.native_new();
 
-    static public final VehicleTransmissionSettings T_01 = VehicleTransmissionSettings.createInstance();
+    static public final VehicleTransmissionSettings T_01 = VehicleTransmissionSettings.native_new();
 
-    static public final VehicleTransmissionSettings T_02 = VehicleTransmissionSettings.createInstance();
+    static public final VehicleTransmissionSettings T_02 = VehicleTransmissionSettings.native_new();
 
-    static public final VehicleTransmissionSettings T_03 = VehicleTransmissionSettings.createInstance();
+    static public final VehicleTransmissionSettings T_03 = VehicleTransmissionSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -33,7 +33,7 @@ public class VehicleTransmissionSettings extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleTransmissionSettings createInstance() {
+    public static VehicleTransmissionSettings native_new() {
         return new VehicleTransmissionSettings((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ nativeObject->mMode = (::ETransmissionMode)mMode;
         if (pointer == 0)
             return null;
         if (ArrayFloat_TEMP_GEN_0 == null)
-            ArrayFloat_TEMP_GEN_0 = ArrayFloat.createInstance();
+            ArrayFloat_TEMP_GEN_0 = ArrayFloat.native_new();
         ArrayFloat_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayFloat_TEMP_GEN_0;
     }
@@ -99,7 +99,7 @@ nativeObject->mGearRatios = *((ArrayFloat*)mGearRatios_addr);
         if (pointer == 0)
             return null;
         if (ArrayFloat_TEMP_GEN_1 == null)
-            ArrayFloat_TEMP_GEN_1 = ArrayFloat.createInstance();
+            ArrayFloat_TEMP_GEN_1 = ArrayFloat.native_new();
         ArrayFloat_TEMP_GEN_1.internal_reset(pointer, false);
         return ArrayFloat_TEMP_GEN_1;
     }

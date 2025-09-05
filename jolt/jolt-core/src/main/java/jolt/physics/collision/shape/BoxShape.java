@@ -12,13 +12,13 @@ public class BoxShape extends ConvexShape {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final BoxShape NULL = BoxShape.createInstance();
+    static public final BoxShape NULL = BoxShape.native_new();
 
-    static public final BoxShape T_01 = BoxShape.createInstance();
+    static public final BoxShape T_01 = BoxShape.native_new();
 
-    static public final BoxShape T_02 = BoxShape.createInstance();
+    static public final BoxShape T_02 = BoxShape.native_new();
 
-    static public final BoxShape T_03 = BoxShape.createInstance();
+    static public final BoxShape T_03 = BoxShape.native_new();
 
     public BoxShape(Vec3 inHalfExtent, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -64,7 +64,7 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr));
     /**
      * @return An empty instance without a native address
      */
-    public static BoxShape createInstance() {
+    public static BoxShape native_new() {
         return new BoxShape((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

@@ -7,13 +7,13 @@ package jolt.physics.constraints;
 
 public class RackAndPinionConstraint extends TwoBodyConstraint {
 
-    static public final RackAndPinionConstraint NULL = RackAndPinionConstraint.createInstance();
+    static public final RackAndPinionConstraint NULL = RackAndPinionConstraint.native_new();
 
-    static public final RackAndPinionConstraint T_01 = RackAndPinionConstraint.createInstance();
+    static public final RackAndPinionConstraint T_01 = RackAndPinionConstraint.native_new();
 
-    static public final RackAndPinionConstraint T_02 = RackAndPinionConstraint.createInstance();
+    static public final RackAndPinionConstraint T_02 = RackAndPinionConstraint.native_new();
 
-    static public final RackAndPinionConstraint T_03 = RackAndPinionConstraint.createInstance();
+    static public final RackAndPinionConstraint T_03 = RackAndPinionConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class RackAndPinionConstraint extends TwoBodyConstraint {
     /**
      * @return An empty instance without a native address
      */
-    public static RackAndPinionConstraint createInstance() {
+    public static RackAndPinionConstraint native_new() {
         return new RackAndPinionConstraint((byte) 0, (char) 0);
     }
 

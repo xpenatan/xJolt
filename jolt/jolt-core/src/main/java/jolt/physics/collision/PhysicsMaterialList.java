@@ -11,13 +11,13 @@ public class PhysicsMaterialList extends IDLBase {
 
     private PhysicsMaterial PhysicsMaterial_TEMP_GEN_0;
 
-    static public final PhysicsMaterialList NULL = PhysicsMaterialList.createInstance();
+    static public final PhysicsMaterialList NULL = PhysicsMaterialList.native_new();
 
-    static public final PhysicsMaterialList T_01 = PhysicsMaterialList.createInstance();
+    static public final PhysicsMaterialList T_01 = PhysicsMaterialList.native_new();
 
-    static public final PhysicsMaterialList T_02 = PhysicsMaterialList.createInstance();
+    static public final PhysicsMaterialList T_02 = PhysicsMaterialList.native_new();
 
-    static public final PhysicsMaterialList T_03 = PhysicsMaterialList.createInstance();
+    static public final PhysicsMaterialList T_03 = PhysicsMaterialList.native_new();
 
     public PhysicsMaterialList() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new PhysicsMaterialList();
     /**
      * @return An empty instance without a native address
      */
-    public static PhysicsMaterialList createInstance() {
+    public static PhysicsMaterialList native_new() {
         return new PhysicsMaterialList((byte) 0, (char) 0);
     }
 
@@ -78,7 +78,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
-            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }

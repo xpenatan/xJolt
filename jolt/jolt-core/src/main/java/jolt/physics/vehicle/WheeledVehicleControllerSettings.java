@@ -13,13 +13,13 @@ public class WheeledVehicleControllerSettings extends VehicleControllerSettings 
 
     private ArrayVehicleDifferentialSettings ArrayVehicleDifferentialSettings_TEMP_GEN_0;
 
-    static public final WheeledVehicleControllerSettings NULL = WheeledVehicleControllerSettings.createInstance();
+    static public final WheeledVehicleControllerSettings NULL = WheeledVehicleControllerSettings.native_new();
 
-    static public final WheeledVehicleControllerSettings T_01 = WheeledVehicleControllerSettings.createInstance();
+    static public final WheeledVehicleControllerSettings T_01 = WheeledVehicleControllerSettings.native_new();
 
-    static public final WheeledVehicleControllerSettings T_02 = WheeledVehicleControllerSettings.createInstance();
+    static public final WheeledVehicleControllerSettings T_02 = WheeledVehicleControllerSettings.native_new();
 
-    static public final WheeledVehicleControllerSettings T_03 = WheeledVehicleControllerSettings.createInstance();
+    static public final WheeledVehicleControllerSettings T_03 = WheeledVehicleControllerSettings.native_new();
 
     public WheeledVehicleControllerSettings() {
         super((byte) 1, (char) 1);
@@ -43,7 +43,7 @@ return (jlong)new WheeledVehicleControllerSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static WheeledVehicleControllerSettings createInstance() {
+    public static WheeledVehicleControllerSettings native_new() {
         return new WheeledVehicleControllerSettings((byte) 0, (char) 0);
     }
 
@@ -52,7 +52,7 @@ return (jlong)new WheeledVehicleControllerSettings();
         if (pointer == 0)
             return null;
         if (VehicleEngineSettings_TEMP_GEN_0 == null)
-            VehicleEngineSettings_TEMP_GEN_0 = VehicleEngineSettings.createInstance();
+            VehicleEngineSettings_TEMP_GEN_0 = VehicleEngineSettings.native_new();
         VehicleEngineSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleEngineSettings_TEMP_GEN_0;
     }
@@ -78,7 +78,7 @@ nativeObject->mEngine = *((VehicleEngineSettings*)mEngine_addr);
         if (pointer == 0)
             return null;
         if (VehicleTransmissionSettings_TEMP_GEN_0 == null)
-            VehicleTransmissionSettings_TEMP_GEN_0 = VehicleTransmissionSettings.createInstance();
+            VehicleTransmissionSettings_TEMP_GEN_0 = VehicleTransmissionSettings.native_new();
         VehicleTransmissionSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleTransmissionSettings_TEMP_GEN_0;
     }
@@ -104,7 +104,7 @@ nativeObject->mTransmission = *((VehicleTransmissionSettings*)mTransmission_addr
         if (pointer == 0)
             return null;
         if (ArrayVehicleDifferentialSettings_TEMP_GEN_0 == null)
-            ArrayVehicleDifferentialSettings_TEMP_GEN_0 = ArrayVehicleDifferentialSettings.createInstance();
+            ArrayVehicleDifferentialSettings_TEMP_GEN_0 = ArrayVehicleDifferentialSettings.native_new();
         ArrayVehicleDifferentialSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayVehicleDifferentialSettings_TEMP_GEN_0;
     }

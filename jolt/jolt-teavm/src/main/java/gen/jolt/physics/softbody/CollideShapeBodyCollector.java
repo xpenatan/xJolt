@@ -25,7 +25,7 @@ public class CollideShapeBodyCollector extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CollideShapeBodyCollector createInstance() {
+    public static CollideShapeBodyCollector native_new() {
         return new CollideShapeBodyCollector((byte) 0, (char) 0);
     }
 
@@ -56,7 +56,7 @@ jsObj.SetContext(inContext_addr);
         if (pointer == 0)
             return null;
         if (TransformedShape_TEMP_GEN_0 == null)
-            TransformedShape_TEMP_GEN_0 = TransformedShape.createInstance();
+            TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
         return TransformedShape_TEMP_GEN_0;
     }
@@ -184,7 +184,7 @@ return returnedJSObj;
 
     private void internal_AddHit(int inResult_addr) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
-            BodyID_TEMP_STATIC_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_0 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_0.internal_reset(inResult_addr, false);
         AddHit(BodyID_TEMP_STATIC_GEN_0);
     }

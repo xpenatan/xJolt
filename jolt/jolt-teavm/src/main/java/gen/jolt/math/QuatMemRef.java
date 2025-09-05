@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class QuatMemRef extends IDLBase {
 
-    static public final QuatMemRef NULL = QuatMemRef.createInstance();
+    static public final QuatMemRef NULL = QuatMemRef.native_new();
 
-    static public final QuatMemRef T_01 = QuatMemRef.createInstance();
+    static public final QuatMemRef T_01 = QuatMemRef.native_new();
 
-    static public final QuatMemRef T_02 = QuatMemRef.createInstance();
+    static public final QuatMemRef T_02 = QuatMemRef.native_new();
 
-    static public final QuatMemRef T_03 = QuatMemRef.createInstance();
+    static public final QuatMemRef T_03 = QuatMemRef.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class QuatMemRef extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static QuatMemRef createInstance() {
+    public static QuatMemRef native_new() {
         return new QuatMemRef((byte) 0, (char) 0);
     }
 

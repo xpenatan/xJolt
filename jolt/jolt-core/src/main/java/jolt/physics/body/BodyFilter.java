@@ -47,7 +47,7 @@ virtual bool ShouldCollideLocked(const Body& inBody) const {
     /**
      * @return An empty instance without a native address
      */
-    public static BodyFilter createInstance() {
+    public static BodyFilter native_new() {
         return new BodyFilter((byte) 0, (char) 0);
     }
 
@@ -77,7 +77,7 @@ delete nativeObject;
 
     private boolean internal_ShouldCollide(long inBodyID_addr) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
-            BodyID_TEMP_STATIC_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_0 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_0.internal_reset(inBodyID_addr, false);
         return ShouldCollide(BodyID_TEMP_STATIC_GEN_0);
     }
@@ -88,7 +88,7 @@ delete nativeObject;
 
     private boolean internal_ShouldCollideLocked(long inBody_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
-            Body_TEMP_STATIC_GEN_0 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_0 = Body.native_new();
         Body_TEMP_STATIC_GEN_0.internal_reset(inBody_addr, false);
         return ShouldCollideLocked(Body_TEMP_STATIC_GEN_0);
     }

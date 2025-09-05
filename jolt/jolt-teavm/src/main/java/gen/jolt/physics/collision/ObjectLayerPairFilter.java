@@ -19,7 +19,7 @@ public class ObjectLayerPairFilter extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ObjectLayerPairFilter createInstance() {
+    public static ObjectLayerPairFilter native_new() {
         return new ObjectLayerPairFilter((byte) 0, (char) 0);
     }
 

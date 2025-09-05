@@ -28,7 +28,7 @@ public class CastShapeCollector extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CastShapeCollector createInstance() {
+    public static CastShapeCollector native_new() {
         return new CastShapeCollector((byte) 0, (char) 0);
     }
 
@@ -59,7 +59,7 @@ jsObj.SetContext(inContext_addr);
         if (pointer == 0)
             return null;
         if (TransformedShape_TEMP_GEN_0 == null)
-            TransformedShape_TEMP_GEN_0 = TransformedShape.createInstance();
+            TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
         return TransformedShape_TEMP_GEN_0;
     }
@@ -193,7 +193,7 @@ return returnedJSObj;
 
     private void internal_OnBody(int inBody_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
-            Body_TEMP_STATIC_GEN_0 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_0 = Body.native_new();
         Body_TEMP_STATIC_GEN_0.internal_reset(inBody_addr, false);
         OnBody(Body_TEMP_STATIC_GEN_0);
     }
@@ -203,7 +203,7 @@ return returnedJSObj;
 
     private void internal_AddHit(int inResult_addr) {
         if (ShapeCastResult_TEMP_STATIC_GEN_0 == null)
-            ShapeCastResult_TEMP_STATIC_GEN_0 = ShapeCastResult.createInstance();
+            ShapeCastResult_TEMP_STATIC_GEN_0 = ShapeCastResult.native_new();
         ShapeCastResult_TEMP_STATIC_GEN_0.internal_reset(inResult_addr, false);
         AddHit(ShapeCastResult_TEMP_STATIC_GEN_0);
     }

@@ -7,13 +7,13 @@ package jolt.physics.vehicle;
 
 public class VehicleEngine extends VehicleEngineSettings {
 
-    static public final VehicleEngine NULL = VehicleEngine.createInstance();
+    static public final VehicleEngine NULL = VehicleEngine.native_new();
 
-    static public final VehicleEngine T_01 = VehicleEngine.createInstance();
+    static public final VehicleEngine T_01 = VehicleEngine.native_new();
 
-    static public final VehicleEngine T_02 = VehicleEngine.createInstance();
+    static public final VehicleEngine T_02 = VehicleEngine.native_new();
 
-    static public final VehicleEngine T_03 = VehicleEngine.createInstance();
+    static public final VehicleEngine T_03 = VehicleEngine.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class VehicleEngine extends VehicleEngineSettings {
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleEngine createInstance() {
+    public static VehicleEngine native_new() {
         return new VehicleEngine((byte) 0, (char) 0);
     }
 

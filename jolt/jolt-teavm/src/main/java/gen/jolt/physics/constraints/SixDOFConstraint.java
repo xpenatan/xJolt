@@ -42,13 +42,13 @@ public class SixDOFConstraint extends TwoBodyConstraint {
 
     private Vec3 Vec3_TEMP_GEN_10;
 
-    static public final SixDOFConstraint NULL = SixDOFConstraint.createInstance();
+    static public final SixDOFConstraint NULL = SixDOFConstraint.native_new();
 
-    static public final SixDOFConstraint T_01 = SixDOFConstraint.createInstance();
+    static public final SixDOFConstraint T_01 = SixDOFConstraint.native_new();
 
-    static public final SixDOFConstraint T_02 = SixDOFConstraint.createInstance();
+    static public final SixDOFConstraint T_02 = SixDOFConstraint.native_new();
 
-    static public final SixDOFConstraint T_03 = SixDOFConstraint.createInstance();
+    static public final SixDOFConstraint T_03 = SixDOFConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -61,7 +61,7 @@ public class SixDOFConstraint extends TwoBodyConstraint {
     /**
      * @return An empty instance without a native address
      */
-    public static SixDOFConstraint createInstance() {
+    public static SixDOFConstraint native_new() {
         return new SixDOFConstraint((byte) 0, (char) 0);
     }
 
@@ -116,7 +116,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -135,7 +135,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -154,7 +154,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -173,7 +173,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -216,7 +216,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
-            SpringSettings_TEMP_GEN_0 = SpringSettings.createInstance();
+            SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
@@ -269,7 +269,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -288,7 +288,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
-            MotorSettings_TEMP_GEN_0 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }
@@ -331,7 +331,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -372,7 +372,7 @@ jsObj.SetTargetAngularVelocityCS(inAngularVelocity_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
@@ -391,7 +391,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_6 == null)
-            Vec3_TEMP_GEN_6 = Vec3.createInstance();
+            Vec3_TEMP_GEN_6 = Vec3.native_new();
         Vec3_TEMP_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_6;
     }
@@ -432,7 +432,7 @@ jsObj.SetTargetOrientationCS(inOrientation_addr);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_1 == null)
-            Quat_TEMP_GEN_1 = Quat.createInstance();
+            Quat_TEMP_GEN_1 = Quat.native_new();
         Quat_TEMP_GEN_1.internal_reset(pointer, false);
         return Quat_TEMP_GEN_1;
     }
@@ -462,7 +462,7 @@ jsObj.SetTargetOrientationBS(inOrientation_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_7 == null)
-            Vec3_TEMP_GEN_7 = Vec3.createInstance();
+            Vec3_TEMP_GEN_7 = Vec3.native_new();
         Vec3_TEMP_GEN_7.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_7;
     }
@@ -481,7 +481,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_8 == null)
-            Vec3_TEMP_GEN_8 = Vec3.createInstance();
+            Vec3_TEMP_GEN_8 = Vec3.native_new();
         Vec3_TEMP_GEN_8.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_8;
     }
@@ -500,7 +500,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_9 == null)
-            Vec3_TEMP_GEN_9 = Vec3.createInstance();
+            Vec3_TEMP_GEN_9 = Vec3.native_new();
         Vec3_TEMP_GEN_9.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_9;
     }
@@ -519,7 +519,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_10 == null)
-            Vec3_TEMP_GEN_10 = Vec3.createInstance();
+            Vec3_TEMP_GEN_10 = Vec3.native_new();
         Vec3_TEMP_GEN_10.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_10;
     }

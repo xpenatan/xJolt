@@ -7,13 +7,13 @@ package gen.jolt.core;
 
 public class JobSystemWithBarrier extends JobSystem {
 
-    static public final JobSystemWithBarrier NULL = JobSystemWithBarrier.createInstance();
+    static public final JobSystemWithBarrier NULL = JobSystemWithBarrier.native_new();
 
-    static public final JobSystemWithBarrier T_01 = JobSystemWithBarrier.createInstance();
+    static public final JobSystemWithBarrier T_01 = JobSystemWithBarrier.native_new();
 
-    static public final JobSystemWithBarrier T_02 = JobSystemWithBarrier.createInstance();
+    static public final JobSystemWithBarrier T_02 = JobSystemWithBarrier.native_new();
 
-    static public final JobSystemWithBarrier T_03 = JobSystemWithBarrier.createInstance();
+    static public final JobSystemWithBarrier T_03 = JobSystemWithBarrier.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class JobSystemWithBarrier extends JobSystem {
     /**
      * @return An empty instance without a native address
      */
-    public static JobSystemWithBarrier createInstance() {
+    public static JobSystemWithBarrier native_new() {
         return new JobSystemWithBarrier((byte) 0, (char) 0);
     }
 

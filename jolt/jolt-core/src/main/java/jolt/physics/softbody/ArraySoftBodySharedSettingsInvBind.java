@@ -11,13 +11,13 @@ public class ArraySoftBodySharedSettingsInvBind extends IDLBase {
 
     private SoftBodySharedSettingsInvBind SoftBodySharedSettingsInvBind_TEMP_GEN_0;
 
-    static public final ArraySoftBodySharedSettingsInvBind NULL = ArraySoftBodySharedSettingsInvBind.createInstance();
+    static public final ArraySoftBodySharedSettingsInvBind NULL = ArraySoftBodySharedSettingsInvBind.native_new();
 
-    static public final ArraySoftBodySharedSettingsInvBind T_01 = ArraySoftBodySharedSettingsInvBind.createInstance();
+    static public final ArraySoftBodySharedSettingsInvBind T_01 = ArraySoftBodySharedSettingsInvBind.native_new();
 
-    static public final ArraySoftBodySharedSettingsInvBind T_02 = ArraySoftBodySharedSettingsInvBind.createInstance();
+    static public final ArraySoftBodySharedSettingsInvBind T_02 = ArraySoftBodySharedSettingsInvBind.native_new();
 
-    static public final ArraySoftBodySharedSettingsInvBind T_03 = ArraySoftBodySharedSettingsInvBind.createInstance();
+    static public final ArraySoftBodySharedSettingsInvBind T_03 = ArraySoftBodySharedSettingsInvBind.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArraySoftBodySharedSettingsInvBind extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodySharedSettingsInvBind createInstance() {
+    public static ArraySoftBodySharedSettingsInvBind native_new() {
         return new ArraySoftBodySharedSettingsInvBind((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsInvBind_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsInvBind_TEMP_GEN_0 = SoftBodySharedSettingsInvBind.createInstance();
+            SoftBodySharedSettingsInvBind_TEMP_GEN_0 = SoftBodySharedSettingsInvBind.native_new();
         SoftBodySharedSettingsInvBind_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsInvBind_TEMP_GEN_0;
     }

@@ -11,13 +11,13 @@ public class ArrayVehicleDifferentialSettings extends IDLBase {
 
     private VehicleDifferentialSettings VehicleDifferentialSettings_TEMP_GEN_0;
 
-    static public final ArrayVehicleDifferentialSettings NULL = ArrayVehicleDifferentialSettings.createInstance();
+    static public final ArrayVehicleDifferentialSettings NULL = ArrayVehicleDifferentialSettings.native_new();
 
-    static public final ArrayVehicleDifferentialSettings T_01 = ArrayVehicleDifferentialSettings.createInstance();
+    static public final ArrayVehicleDifferentialSettings T_01 = ArrayVehicleDifferentialSettings.native_new();
 
-    static public final ArrayVehicleDifferentialSettings T_02 = ArrayVehicleDifferentialSettings.createInstance();
+    static public final ArrayVehicleDifferentialSettings T_02 = ArrayVehicleDifferentialSettings.native_new();
 
-    static public final ArrayVehicleDifferentialSettings T_03 = ArrayVehicleDifferentialSettings.createInstance();
+    static public final ArrayVehicleDifferentialSettings T_03 = ArrayVehicleDifferentialSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayVehicleDifferentialSettings extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayVehicleDifferentialSettings createInstance() {
+    public static ArrayVehicleDifferentialSettings native_new() {
         return new ArrayVehicleDifferentialSettings((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (VehicleDifferentialSettings_TEMP_GEN_0 == null)
-            VehicleDifferentialSettings_TEMP_GEN_0 = VehicleDifferentialSettings.createInstance();
+            VehicleDifferentialSettings_TEMP_GEN_0 = VehicleDifferentialSettings.native_new();
         VehicleDifferentialSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleDifferentialSettings_TEMP_GEN_0;
     }

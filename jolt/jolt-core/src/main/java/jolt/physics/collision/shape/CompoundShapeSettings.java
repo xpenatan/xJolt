@@ -10,13 +10,13 @@ import jolt.math.Quat;
 
 public class CompoundShapeSettings extends ShapeSettings {
 
-    static public final CompoundShapeSettings NULL = CompoundShapeSettings.createInstance();
+    static public final CompoundShapeSettings NULL = CompoundShapeSettings.native_new();
 
-    static public final CompoundShapeSettings T_01 = CompoundShapeSettings.createInstance();
+    static public final CompoundShapeSettings T_01 = CompoundShapeSettings.native_new();
 
-    static public final CompoundShapeSettings T_02 = CompoundShapeSettings.createInstance();
+    static public final CompoundShapeSettings T_02 = CompoundShapeSettings.native_new();
 
-    static public final CompoundShapeSettings T_03 = CompoundShapeSettings.createInstance();
+    static public final CompoundShapeSettings T_03 = CompoundShapeSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class CompoundShapeSettings extends ShapeSettings {
     /**
      * @return An empty instance without a native address
      */
-    public static CompoundShapeSettings createInstance() {
+    public static CompoundShapeSettings native_new() {
         return new CompoundShapeSettings((byte) 0, (char) 0);
     }
 

@@ -12,13 +12,13 @@ public class CastShapeAnyHitCollisionCollector extends CastShapeCollector {
 
     private ShapeCastResult ShapeCastResult_TEMP_GEN_0;
 
-    static public final CastShapeAnyHitCollisionCollector NULL = CastShapeAnyHitCollisionCollector.createInstance();
+    static public final CastShapeAnyHitCollisionCollector NULL = CastShapeAnyHitCollisionCollector.native_new();
 
-    static public final CastShapeAnyHitCollisionCollector T_01 = CastShapeAnyHitCollisionCollector.createInstance();
+    static public final CastShapeAnyHitCollisionCollector T_01 = CastShapeAnyHitCollisionCollector.native_new();
 
-    static public final CastShapeAnyHitCollisionCollector T_02 = CastShapeAnyHitCollisionCollector.createInstance();
+    static public final CastShapeAnyHitCollisionCollector T_02 = CastShapeAnyHitCollisionCollector.native_new();
 
-    static public final CastShapeAnyHitCollisionCollector T_03 = CastShapeAnyHitCollisionCollector.createInstance();
+    static public final CastShapeAnyHitCollisionCollector T_03 = CastShapeAnyHitCollisionCollector.native_new();
 
     public CastShapeAnyHitCollisionCollector() {
         super((byte) 1, (char) 1);
@@ -44,7 +44,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static CastShapeAnyHitCollisionCollector createInstance() {
+    public static CastShapeAnyHitCollisionCollector native_new() {
         return new CastShapeAnyHitCollisionCollector((byte) 0, (char) 0);
     }
 
@@ -76,7 +76,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (ShapeCastResult_TEMP_GEN_0 == null)
-            ShapeCastResult_TEMP_GEN_0 = ShapeCastResult.createInstance();
+            ShapeCastResult_TEMP_GEN_0 = ShapeCastResult.native_new();
         ShapeCastResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ShapeCastResult_TEMP_GEN_0;
     }

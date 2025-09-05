@@ -9,13 +9,13 @@ import gen.jolt.math.Vec3;
 
 public class EmptyShape extends Shape {
 
-    static public final EmptyShape NULL = EmptyShape.createInstance();
+    static public final EmptyShape NULL = EmptyShape.native_new();
 
-    static public final EmptyShape T_01 = EmptyShape.createInstance();
+    static public final EmptyShape T_01 = EmptyShape.native_new();
 
-    static public final EmptyShape T_02 = EmptyShape.createInstance();
+    static public final EmptyShape T_02 = EmptyShape.native_new();
 
-    static public final EmptyShape T_03 = EmptyShape.createInstance();
+    static public final EmptyShape T_03 = EmptyShape.native_new();
 
     public EmptyShape(Vec3 inCenterOfMass) {
         super((byte) 1, (char) 1);
@@ -54,7 +54,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static EmptyShape createInstance() {
+    public static EmptyShape native_new() {
         return new EmptyShape((byte) 0, (char) 0);
     }
 

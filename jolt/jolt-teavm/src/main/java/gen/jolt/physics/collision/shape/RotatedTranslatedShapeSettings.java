@@ -14,13 +14,13 @@ public class RotatedTranslatedShapeSettings extends DecoratedShapeSettings {
 
     private Quat Quat_TEMP_GEN_0;
 
-    static public final RotatedTranslatedShapeSettings NULL = RotatedTranslatedShapeSettings.createInstance();
+    static public final RotatedTranslatedShapeSettings NULL = RotatedTranslatedShapeSettings.native_new();
 
-    static public final RotatedTranslatedShapeSettings T_01 = RotatedTranslatedShapeSettings.createInstance();
+    static public final RotatedTranslatedShapeSettings T_01 = RotatedTranslatedShapeSettings.native_new();
 
-    static public final RotatedTranslatedShapeSettings T_02 = RotatedTranslatedShapeSettings.createInstance();
+    static public final RotatedTranslatedShapeSettings T_02 = RotatedTranslatedShapeSettings.native_new();
 
-    static public final RotatedTranslatedShapeSettings T_03 = RotatedTranslatedShapeSettings.createInstance();
+    static public final RotatedTranslatedShapeSettings T_03 = RotatedTranslatedShapeSettings.native_new();
 
     public RotatedTranslatedShapeSettings(Vec3 inPosition, Quat inRotation, ShapeSettings inShape) {
         super((byte) 1, (char) 1);
@@ -46,7 +46,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static RotatedTranslatedShapeSettings createInstance() {
+    public static RotatedTranslatedShapeSettings native_new() {
         return new RotatedTranslatedShapeSettings((byte) 0, (char) 0);
     }
 
@@ -55,7 +55,7 @@ return jolt.getPointer(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -85,7 +85,7 @@ jsObj.set_mPosition(mPosition_addr);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }

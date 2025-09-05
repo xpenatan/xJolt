@@ -13,13 +13,13 @@ public class ArrayBodyID extends IDLBase {
 
     private BodyIDMemRef BodyIDMemRef_TEMP_GEN_0;
 
-    static public final ArrayBodyID NULL = ArrayBodyID.createInstance();
+    static public final ArrayBodyID NULL = ArrayBodyID.native_new();
 
-    static public final ArrayBodyID T_01 = ArrayBodyID.createInstance();
+    static public final ArrayBodyID T_01 = ArrayBodyID.native_new();
 
-    static public final ArrayBodyID T_02 = ArrayBodyID.createInstance();
+    static public final ArrayBodyID T_02 = ArrayBodyID.native_new();
 
-    static public final ArrayBodyID T_03 = ArrayBodyID.createInstance();
+    static public final ArrayBodyID T_03 = ArrayBodyID.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -31,7 +31,7 @@ public class ArrayBodyID extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayBodyID createInstance() {
+    public static ArrayBodyID native_new() {
         return new ArrayBodyID((byte) 0, (char) 0);
     }
 
@@ -75,7 +75,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
@@ -138,7 +138,7 @@ jsObj.clear();
         if (pointer == 0)
             return null;
         if (BodyIDMemRef_TEMP_GEN_0 == null)
-            BodyIDMemRef_TEMP_GEN_0 = BodyIDMemRef.createInstance();
+            BodyIDMemRef_TEMP_GEN_0 = BodyIDMemRef.native_new();
         BodyIDMemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyIDMemRef_TEMP_GEN_0;
     }

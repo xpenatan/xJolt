@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class SoftBodySharedSettingsDihedralBend extends IDLBase {
 
-    static public final SoftBodySharedSettingsDihedralBend NULL = SoftBodySharedSettingsDihedralBend.createInstance();
+    static public final SoftBodySharedSettingsDihedralBend NULL = SoftBodySharedSettingsDihedralBend.native_new();
 
-    static public final SoftBodySharedSettingsDihedralBend T_01 = SoftBodySharedSettingsDihedralBend.createInstance();
+    static public final SoftBodySharedSettingsDihedralBend T_01 = SoftBodySharedSettingsDihedralBend.native_new();
 
-    static public final SoftBodySharedSettingsDihedralBend T_02 = SoftBodySharedSettingsDihedralBend.createInstance();
+    static public final SoftBodySharedSettingsDihedralBend T_02 = SoftBodySharedSettingsDihedralBend.native_new();
 
-    static public final SoftBodySharedSettingsDihedralBend T_03 = SoftBodySharedSettingsDihedralBend.createInstance();
+    static public final SoftBodySharedSettingsDihedralBend T_03 = SoftBodySharedSettingsDihedralBend.native_new();
 
     public SoftBodySharedSettingsDihedralBend(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance) {
         int addr = internal_native_create_int_int_int_int_float(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodySharedSettingsDihedralBend createInstance() {
+    public static SoftBodySharedSettingsDihedralBend native_new() {
         return new SoftBodySharedSettingsDihedralBend((byte) 0, (char) 0);
     }
 

@@ -11,13 +11,13 @@ public class ScaledShape extends DecoratedShape {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final ScaledShape NULL = ScaledShape.createInstance();
+    static public final ScaledShape NULL = ScaledShape.native_new();
 
-    static public final ScaledShape T_01 = ScaledShape.createInstance();
+    static public final ScaledShape T_01 = ScaledShape.native_new();
 
-    static public final ScaledShape T_02 = ScaledShape.createInstance();
+    static public final ScaledShape T_02 = ScaledShape.native_new();
 
-    static public final ScaledShape T_03 = ScaledShape.createInstance();
+    static public final ScaledShape T_03 = ScaledShape.native_new();
 
     public ScaledShape(Shape inShape, Vec3 inScale) {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return (jlong)new ScaledShape((Shape* )inShape_addr, *((Vec3* )inScale_addr));
     /**
      * @return An empty instance without a native address
      */
-    public static ScaledShape createInstance() {
+    public static ScaledShape native_new() {
         return new ScaledShape((byte) 0, (char) 0);
     }
 
@@ -50,7 +50,7 @@ return (jlong)new ScaledShape((Shape* )inShape_addr, *((Vec3* )inScale_addr));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

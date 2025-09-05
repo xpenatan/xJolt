@@ -11,13 +11,13 @@ public class ArraySoftBodySharedSettingsEdge extends IDLBase {
 
     private SoftBodySharedSettingsEdge SoftBodySharedSettingsEdge_TEMP_GEN_0;
 
-    static public final ArraySoftBodySharedSettingsEdge NULL = ArraySoftBodySharedSettingsEdge.createInstance();
+    static public final ArraySoftBodySharedSettingsEdge NULL = ArraySoftBodySharedSettingsEdge.native_new();
 
-    static public final ArraySoftBodySharedSettingsEdge T_01 = ArraySoftBodySharedSettingsEdge.createInstance();
+    static public final ArraySoftBodySharedSettingsEdge T_01 = ArraySoftBodySharedSettingsEdge.native_new();
 
-    static public final ArraySoftBodySharedSettingsEdge T_02 = ArraySoftBodySharedSettingsEdge.createInstance();
+    static public final ArraySoftBodySharedSettingsEdge T_02 = ArraySoftBodySharedSettingsEdge.native_new();
 
-    static public final ArraySoftBodySharedSettingsEdge T_03 = ArraySoftBodySharedSettingsEdge.createInstance();
+    static public final ArraySoftBodySharedSettingsEdge T_03 = ArraySoftBodySharedSettingsEdge.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArraySoftBodySharedSettingsEdge extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodySharedSettingsEdge createInstance() {
+    public static ArraySoftBodySharedSettingsEdge native_new() {
         return new ArraySoftBodySharedSettingsEdge((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsEdge_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsEdge_TEMP_GEN_0 = SoftBodySharedSettingsEdge.createInstance();
+            SoftBodySharedSettingsEdge_TEMP_GEN_0 = SoftBodySharedSettingsEdge.native_new();
         SoftBodySharedSettingsEdge_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsEdge_TEMP_GEN_0;
     }

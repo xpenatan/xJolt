@@ -28,13 +28,13 @@ public class SwingTwistConstraintSettings extends TwoBodyConstraintSettings {
 
     private MotorSettings MotorSettings_TEMP_GEN_1;
 
-    static public final SwingTwistConstraintSettings NULL = SwingTwistConstraintSettings.createInstance();
+    static public final SwingTwistConstraintSettings NULL = SwingTwistConstraintSettings.native_new();
 
-    static public final SwingTwistConstraintSettings T_01 = SwingTwistConstraintSettings.createInstance();
+    static public final SwingTwistConstraintSettings T_01 = SwingTwistConstraintSettings.native_new();
 
-    static public final SwingTwistConstraintSettings T_02 = SwingTwistConstraintSettings.createInstance();
+    static public final SwingTwistConstraintSettings T_02 = SwingTwistConstraintSettings.native_new();
 
-    static public final SwingTwistConstraintSettings T_03 = SwingTwistConstraintSettings.createInstance();
+    static public final SwingTwistConstraintSettings T_03 = SwingTwistConstraintSettings.native_new();
 
     public SwingTwistConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -60,7 +60,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SwingTwistConstraintSettings createInstance() {
+    public static SwingTwistConstraintSettings native_new() {
         return new SwingTwistConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -103,7 +103,7 @@ jsObj.set_mSpace(mSpace);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -133,7 +133,7 @@ jsObj.set_mPosition1(mPosition1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -163,7 +163,7 @@ jsObj.set_mTwistAxis1(mTwistAxis1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -193,7 +193,7 @@ jsObj.set_mPlaneAxis1(mPlaneAxis1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -223,7 +223,7 @@ jsObj.set_mPosition2(mPosition2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -253,7 +253,7 @@ jsObj.set_mTwistAxis2(mTwistAxis2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
@@ -416,7 +416,7 @@ jsObj.set_mMaxFrictionTorque(mMaxFrictionTorque);
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
-            MotorSettings_TEMP_GEN_0 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }
@@ -446,7 +446,7 @@ jsObj.set_mSwingMotorSettings(mSwingMotorSettings_addr);
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_1 == null)
-            MotorSettings_TEMP_GEN_1 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_1 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_1.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_1;
     }

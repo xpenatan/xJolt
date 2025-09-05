@@ -25,13 +25,13 @@ public class WheelSettings extends IDLBase {
 
     private SpringSettings SpringSettings_TEMP_GEN_0;
 
-    static public final WheelSettings NULL = WheelSettings.createInstance();
+    static public final WheelSettings NULL = WheelSettings.native_new();
 
-    static public final WheelSettings T_01 = WheelSettings.createInstance();
+    static public final WheelSettings T_01 = WheelSettings.native_new();
 
-    static public final WheelSettings T_02 = WheelSettings.createInstance();
+    static public final WheelSettings T_02 = WheelSettings.native_new();
 
-    static public final WheelSettings T_03 = WheelSettings.createInstance();
+    static public final WheelSettings T_03 = WheelSettings.native_new();
 
     public WheelSettings() {
         long addr = internal_native_create();
@@ -53,7 +53,7 @@ return (jlong)new WheelSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static WheelSettings createInstance() {
+    public static WheelSettings native_new() {
         return new WheelSettings((byte) 0, (char) 0);
     }
 
@@ -92,7 +92,7 @@ nativeObject->Release();
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -118,7 +118,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -144,7 +144,7 @@ nativeObject->mSuspensionForcePoint = *((Vec3*)mSuspensionForcePoint_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -170,7 +170,7 @@ nativeObject->mSuspensionDirection = *((Vec3*)mSuspensionDirection_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -196,7 +196,7 @@ nativeObject->mSteeringAxis = *((Vec3*)mSteeringAxis_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -222,7 +222,7 @@ nativeObject->mWheelUp = *((Vec3*)mWheelUp_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
@@ -248,7 +248,7 @@ nativeObject->mWheelForward = *((Vec3*)mWheelForward_addr);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
-            SpringSettings_TEMP_GEN_0 = SpringSettings.createInstance();
+            SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }

@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class CharacterVsCharacterCollision extends IDLBase {
 
-    static public final CharacterVsCharacterCollision NULL = CharacterVsCharacterCollision.createInstance();
+    static public final CharacterVsCharacterCollision NULL = CharacterVsCharacterCollision.native_new();
 
-    static public final CharacterVsCharacterCollision T_01 = CharacterVsCharacterCollision.createInstance();
+    static public final CharacterVsCharacterCollision T_01 = CharacterVsCharacterCollision.native_new();
 
-    static public final CharacterVsCharacterCollision T_02 = CharacterVsCharacterCollision.createInstance();
+    static public final CharacterVsCharacterCollision T_02 = CharacterVsCharacterCollision.native_new();
 
-    static public final CharacterVsCharacterCollision T_03 = CharacterVsCharacterCollision.createInstance();
+    static public final CharacterVsCharacterCollision T_03 = CharacterVsCharacterCollision.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class CharacterVsCharacterCollision extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterVsCharacterCollision createInstance() {
+    public static CharacterVsCharacterCollision native_new() {
         return new CharacterVsCharacterCollision((byte) 0, (char) 0);
     }
 

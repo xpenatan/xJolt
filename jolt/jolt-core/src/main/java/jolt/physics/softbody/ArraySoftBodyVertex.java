@@ -11,13 +11,13 @@ public class ArraySoftBodyVertex extends IDLBase {
 
     private SoftBodyVertex SoftBodyVertex_TEMP_GEN_0;
 
-    static public final ArraySoftBodyVertex NULL = ArraySoftBodyVertex.createInstance();
+    static public final ArraySoftBodyVertex NULL = ArraySoftBodyVertex.native_new();
 
-    static public final ArraySoftBodyVertex T_01 = ArraySoftBodyVertex.createInstance();
+    static public final ArraySoftBodyVertex T_01 = ArraySoftBodyVertex.native_new();
 
-    static public final ArraySoftBodyVertex T_02 = ArraySoftBodyVertex.createInstance();
+    static public final ArraySoftBodyVertex T_02 = ArraySoftBodyVertex.native_new();
 
-    static public final ArraySoftBodyVertex T_03 = ArraySoftBodyVertex.createInstance();
+    static public final ArraySoftBodyVertex T_03 = ArraySoftBodyVertex.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArraySoftBodyVertex extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodyVertex createInstance() {
+    public static ArraySoftBodyVertex native_new() {
         return new ArraySoftBodyVertex((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (SoftBodyVertex_TEMP_GEN_0 == null)
-            SoftBodyVertex_TEMP_GEN_0 = SoftBodyVertex.createInstance();
+            SoftBodyVertex_TEMP_GEN_0 = SoftBodyVertex.native_new();
         SoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodyVertex_TEMP_GEN_0;
     }

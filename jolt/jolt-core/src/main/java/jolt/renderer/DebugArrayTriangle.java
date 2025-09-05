@@ -11,13 +11,13 @@ public class DebugArrayTriangle extends IDLBase {
 
     private DebugRendererTriangle DebugRendererTriangle_TEMP_GEN_0;
 
-    static public final DebugArrayTriangle NULL = DebugArrayTriangle.createInstance();
+    static public final DebugArrayTriangle NULL = DebugArrayTriangle.native_new();
 
-    static public final DebugArrayTriangle T_01 = DebugArrayTriangle.createInstance();
+    static public final DebugArrayTriangle T_01 = DebugArrayTriangle.native_new();
 
-    static public final DebugArrayTriangle T_02 = DebugArrayTriangle.createInstance();
+    static public final DebugArrayTriangle T_02 = DebugArrayTriangle.native_new();
 
-    static public final DebugArrayTriangle T_03 = DebugArrayTriangle.createInstance();
+    static public final DebugArrayTriangle T_03 = DebugArrayTriangle.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class DebugArrayTriangle extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static DebugArrayTriangle createInstance() {
+    public static DebugArrayTriangle native_new() {
         return new DebugArrayTriangle((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (DebugRendererTriangle_TEMP_GEN_0 == null)
-            DebugRendererTriangle_TEMP_GEN_0 = DebugRendererTriangle.createInstance();
+            DebugRendererTriangle_TEMP_GEN_0 = DebugRendererTriangle.native_new();
         DebugRendererTriangle_TEMP_GEN_0.internal_reset(pointer, false);
         return DebugRendererTriangle_TEMP_GEN_0;
     }

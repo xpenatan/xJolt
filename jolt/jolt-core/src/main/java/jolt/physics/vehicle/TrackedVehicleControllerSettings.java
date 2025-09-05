@@ -13,13 +13,13 @@ public class TrackedVehicleControllerSettings extends VehicleControllerSettings 
 
     private VehicleTrackSettings VehicleTrackSettings_TEMP_GEN_0;
 
-    static public final TrackedVehicleControllerSettings NULL = TrackedVehicleControllerSettings.createInstance();
+    static public final TrackedVehicleControllerSettings NULL = TrackedVehicleControllerSettings.native_new();
 
-    static public final TrackedVehicleControllerSettings T_01 = TrackedVehicleControllerSettings.createInstance();
+    static public final TrackedVehicleControllerSettings T_01 = TrackedVehicleControllerSettings.native_new();
 
-    static public final TrackedVehicleControllerSettings T_02 = TrackedVehicleControllerSettings.createInstance();
+    static public final TrackedVehicleControllerSettings T_02 = TrackedVehicleControllerSettings.native_new();
 
-    static public final TrackedVehicleControllerSettings T_03 = TrackedVehicleControllerSettings.createInstance();
+    static public final TrackedVehicleControllerSettings T_03 = TrackedVehicleControllerSettings.native_new();
 
     public TrackedVehicleControllerSettings() {
         super((byte) 1, (char) 1);
@@ -43,7 +43,7 @@ return (jlong)new TrackedVehicleControllerSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static TrackedVehicleControllerSettings createInstance() {
+    public static TrackedVehicleControllerSettings native_new() {
         return new TrackedVehicleControllerSettings((byte) 0, (char) 0);
     }
 
@@ -52,7 +52,7 @@ return (jlong)new TrackedVehicleControllerSettings();
         if (pointer == 0)
             return null;
         if (VehicleEngineSettings_TEMP_GEN_0 == null)
-            VehicleEngineSettings_TEMP_GEN_0 = VehicleEngineSettings.createInstance();
+            VehicleEngineSettings_TEMP_GEN_0 = VehicleEngineSettings.native_new();
         VehicleEngineSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleEngineSettings_TEMP_GEN_0;
     }
@@ -78,7 +78,7 @@ nativeObject->mEngine = *((VehicleEngineSettings*)mEngine_addr);
         if (pointer == 0)
             return null;
         if (VehicleTransmissionSettings_TEMP_GEN_0 == null)
-            VehicleTransmissionSettings_TEMP_GEN_0 = VehicleTransmissionSettings.createInstance();
+            VehicleTransmissionSettings_TEMP_GEN_0 = VehicleTransmissionSettings.native_new();
         VehicleTransmissionSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleTransmissionSettings_TEMP_GEN_0;
     }
@@ -104,7 +104,7 @@ nativeObject->mTransmission = *((VehicleTransmissionSettings*)mTransmission_addr
         if (pointer == 0)
             return null;
         if (VehicleTrackSettings_TEMP_GEN_0 == null)
-            VehicleTrackSettings_TEMP_GEN_0 = VehicleTrackSettings.createInstance();
+            VehicleTrackSettings_TEMP_GEN_0 = VehicleTrackSettings.native_new();
         VehicleTrackSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleTrackSettings_TEMP_GEN_0;
     }

@@ -22,13 +22,13 @@ import gen.jolt.physics.softbody.TransformedShapeCollector;
 
 public class NarrowPhaseQuery extends IDLBase {
 
-    static public final NarrowPhaseQuery NULL = NarrowPhaseQuery.createInstance();
+    static public final NarrowPhaseQuery NULL = NarrowPhaseQuery.native_new();
 
-    static public final NarrowPhaseQuery T_01 = NarrowPhaseQuery.createInstance();
+    static public final NarrowPhaseQuery T_01 = NarrowPhaseQuery.native_new();
 
-    static public final NarrowPhaseQuery T_02 = NarrowPhaseQuery.createInstance();
+    static public final NarrowPhaseQuery T_02 = NarrowPhaseQuery.native_new();
 
-    static public final NarrowPhaseQuery T_03 = NarrowPhaseQuery.createInstance();
+    static public final NarrowPhaseQuery T_03 = NarrowPhaseQuery.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -40,7 +40,7 @@ public class NarrowPhaseQuery extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static NarrowPhaseQuery createInstance() {
+    public static NarrowPhaseQuery native_new() {
         return new NarrowPhaseQuery((byte) 0, (char) 0);
     }
 

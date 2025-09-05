@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class SoftBodyContactSettings extends IDLBase {
 
-    static public final SoftBodyContactSettings NULL = SoftBodyContactSettings.createInstance();
+    static public final SoftBodyContactSettings NULL = SoftBodyContactSettings.native_new();
 
-    static public final SoftBodyContactSettings T_01 = SoftBodyContactSettings.createInstance();
+    static public final SoftBodyContactSettings T_01 = SoftBodyContactSettings.native_new();
 
-    static public final SoftBodyContactSettings T_02 = SoftBodyContactSettings.createInstance();
+    static public final SoftBodyContactSettings T_02 = SoftBodyContactSettings.native_new();
 
-    static public final SoftBodyContactSettings T_03 = SoftBodyContactSettings.createInstance();
+    static public final SoftBodyContactSettings T_03 = SoftBodyContactSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class SoftBodyContactSettings extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodyContactSettings createInstance() {
+    public static SoftBodyContactSettings native_new() {
         return new SoftBodyContactSettings((byte) 0, (char) 0);
     }
 

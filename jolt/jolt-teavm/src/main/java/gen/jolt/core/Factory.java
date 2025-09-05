@@ -11,13 +11,13 @@ public class Factory extends IDLBase {
 
     static private Factory Factory_TEMP_STATIC_GEN_0;
 
-    static public final Factory NULL = Factory.createInstance();
+    static public final Factory NULL = Factory.native_new();
 
-    static public final Factory T_01 = Factory.createInstance();
+    static public final Factory T_01 = Factory.native_new();
 
-    static public final Factory T_02 = Factory.createInstance();
+    static public final Factory T_02 = Factory.native_new();
 
-    static public final Factory T_03 = Factory.createInstance();
+    static public final Factory T_03 = Factory.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class Factory extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static Factory createInstance() {
+    public static Factory native_new() {
         return new Factory((byte) 0, (char) 0);
     }
 
@@ -49,7 +49,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Factory_TEMP_STATIC_GEN_0 == null)
-            Factory_TEMP_STATIC_GEN_0 = Factory.createInstance();
+            Factory_TEMP_STATIC_GEN_0 = Factory.native_new();
         Factory_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Factory_TEMP_STATIC_GEN_0;
     }

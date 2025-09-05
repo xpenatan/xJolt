@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class VehicleDifferentialSettings extends IDLBase {
 
-    static public final VehicleDifferentialSettings NULL = VehicleDifferentialSettings.createInstance();
+    static public final VehicleDifferentialSettings NULL = VehicleDifferentialSettings.native_new();
 
-    static public final VehicleDifferentialSettings T_01 = VehicleDifferentialSettings.createInstance();
+    static public final VehicleDifferentialSettings T_01 = VehicleDifferentialSettings.native_new();
 
-    static public final VehicleDifferentialSettings T_02 = VehicleDifferentialSettings.createInstance();
+    static public final VehicleDifferentialSettings T_02 = VehicleDifferentialSettings.native_new();
 
-    static public final VehicleDifferentialSettings T_03 = VehicleDifferentialSettings.createInstance();
+    static public final VehicleDifferentialSettings T_03 = VehicleDifferentialSettings.native_new();
 
     public VehicleDifferentialSettings() {
         long addr = internal_native_create();
@@ -37,7 +37,7 @@ return (jlong)new VehicleDifferentialSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleDifferentialSettings createInstance() {
+    public static VehicleDifferentialSettings native_new() {
         return new VehicleDifferentialSettings((byte) 0, (char) 0);
     }
 

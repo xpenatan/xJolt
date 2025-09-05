@@ -36,13 +36,13 @@ public class AABox extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_5;
 
-    static public final AABox NULL = AABox.createInstance();
+    static public final AABox NULL = AABox.native_new();
 
-    static public final AABox T_01 = AABox.createInstance();
+    static public final AABox T_01 = AABox.native_new();
 
-    static public final AABox T_02 = AABox.createInstance();
+    static public final AABox T_02 = AABox.native_new();
 
-    static public final AABox T_03 = AABox.createInstance();
+    static public final AABox T_03 = AABox.native_new();
 
     public AABox() {
         long addr = internal_native_create();
@@ -74,7 +74,7 @@ return (jlong)new AABox(*((Vec3* )inMin_addr), *((Vec3* )inMax_addr));
     /**
      * @return An empty instance without a native address
      */
-    public static AABox createInstance() {
+    public static AABox native_new() {
         return new AABox((byte) 0, (char) 0);
     }
 
@@ -93,7 +93,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (AABox_TEMP_STATIC_GEN_0 == null)
-            AABox_TEMP_STATIC_GEN_0 = AABox.createInstance();
+            AABox_TEMP_STATIC_GEN_0 = AABox.native_new();
         AABox_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_STATIC_GEN_0;
     }
@@ -109,7 +109,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (AABox_TEMP_STATIC_GEN_1 == null)
-            AABox_TEMP_STATIC_GEN_1 = AABox.createInstance();
+            AABox_TEMP_STATIC_GEN_1 = AABox.native_new();
         AABox_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return AABox_TEMP_STATIC_GEN_1;
     }
@@ -125,7 +125,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (AABox_TEMP_STATIC_GEN_2 == null)
-            AABox_TEMP_STATIC_GEN_2 = AABox.createInstance();
+            AABox_TEMP_STATIC_GEN_2 = AABox.native_new();
         AABox_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return AABox_TEMP_STATIC_GEN_2;
     }
@@ -219,7 +219,7 @@ nativeObject->Encapsulate(*((VertexList* )inVertices_addr), *((IndexedTriangle* 
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
-            AABox_TEMP_GEN_0 = AABox.createInstance();
+            AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }
@@ -256,7 +256,7 @@ nativeObject->ExpandBy(*((Vec3* )inV_addr));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -273,7 +273,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -290,7 +290,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -367,7 +367,7 @@ nativeObject->Translate(*((Vec3* )inOther_addr));
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_1 == null)
-            AABox_TEMP_GEN_1 = AABox.createInstance();
+            AABox_TEMP_GEN_1 = AABox.native_new();
         AABox_TEMP_GEN_1.internal_reset(pointer, false);
         return AABox_TEMP_GEN_1;
     }
@@ -384,7 +384,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_2 == null)
-            AABox_TEMP_GEN_2 = AABox.createInstance();
+            AABox_TEMP_GEN_2 = AABox.native_new();
         AABox_TEMP_GEN_2.internal_reset(pointer, false);
         return AABox_TEMP_GEN_2;
     }
@@ -401,7 +401,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -428,7 +428,7 @@ return nativeObject->GetSqDistanceTo(*((Vec3* )inV_addr));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -454,7 +454,7 @@ nativeObject->mMin = *((Vec3*)mMin_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }

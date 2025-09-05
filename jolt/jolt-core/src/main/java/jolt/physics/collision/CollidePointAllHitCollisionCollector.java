@@ -11,13 +11,13 @@ public class CollidePointAllHitCollisionCollector extends CollidePointCollector 
 
     private ArrayCollidePointResult ArrayCollidePointResult_TEMP_GEN_0;
 
-    static public final CollidePointAllHitCollisionCollector NULL = CollidePointAllHitCollisionCollector.createInstance();
+    static public final CollidePointAllHitCollisionCollector NULL = CollidePointAllHitCollisionCollector.native_new();
 
-    static public final CollidePointAllHitCollisionCollector T_01 = CollidePointAllHitCollisionCollector.createInstance();
+    static public final CollidePointAllHitCollisionCollector T_01 = CollidePointAllHitCollisionCollector.native_new();
 
-    static public final CollidePointAllHitCollisionCollector T_02 = CollidePointAllHitCollisionCollector.createInstance();
+    static public final CollidePointAllHitCollisionCollector T_02 = CollidePointAllHitCollisionCollector.native_new();
 
-    static public final CollidePointAllHitCollisionCollector T_03 = CollidePointAllHitCollisionCollector.createInstance();
+    static public final CollidePointAllHitCollisionCollector T_03 = CollidePointAllHitCollisionCollector.native_new();
 
     public CollidePointAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return (jlong)new CollidePointAllHitCollisionCollector();
     /**
      * @return An empty instance without a native address
      */
-    public static CollidePointAllHitCollisionCollector createInstance() {
+    public static CollidePointAllHitCollisionCollector native_new() {
         return new CollidePointAllHitCollisionCollector((byte) 0, (char) 0);
     }
 
@@ -80,7 +80,7 @@ return nativeObject->HadHit();
         if (pointer == 0)
             return null;
         if (ArrayCollidePointResult_TEMP_GEN_0 == null)
-            ArrayCollidePointResult_TEMP_GEN_0 = ArrayCollidePointResult.createInstance();
+            ArrayCollidePointResult_TEMP_GEN_0 = ArrayCollidePointResult.native_new();
         ArrayCollidePointResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayCollidePointResult_TEMP_GEN_0;
     }

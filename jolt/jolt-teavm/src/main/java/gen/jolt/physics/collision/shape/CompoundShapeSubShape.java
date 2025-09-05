@@ -17,13 +17,13 @@ public class CompoundShapeSubShape extends IDLBase {
 
     private Shape Shape_TEMP_GEN_0;
 
-    static public final CompoundShapeSubShape NULL = CompoundShapeSubShape.createInstance();
+    static public final CompoundShapeSubShape NULL = CompoundShapeSubShape.native_new();
 
-    static public final CompoundShapeSubShape T_01 = CompoundShapeSubShape.createInstance();
+    static public final CompoundShapeSubShape T_01 = CompoundShapeSubShape.native_new();
 
-    static public final CompoundShapeSubShape T_02 = CompoundShapeSubShape.createInstance();
+    static public final CompoundShapeSubShape T_02 = CompoundShapeSubShape.native_new();
 
-    static public final CompoundShapeSubShape T_03 = CompoundShapeSubShape.createInstance();
+    static public final CompoundShapeSubShape T_03 = CompoundShapeSubShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -35,7 +35,7 @@ public class CompoundShapeSubShape extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CompoundShapeSubShape createInstance() {
+    public static CompoundShapeSubShape native_new() {
         return new CompoundShapeSubShape((byte) 0, (char) 0);
     }
 
@@ -55,7 +55,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -74,7 +74,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -93,7 +93,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
-            Shape_TEMP_GEN_0 = Shape.createInstance();
+            Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }

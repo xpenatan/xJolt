@@ -73,7 +73,7 @@ virtual void OnPostStepCallback(VehicleConstraint& inVehicle, const PhysicsStepL
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleConstraintCallbacksEm createInstance() {
+    public static VehicleConstraintCallbacksEm native_new() {
         return new VehicleConstraintCallbacksEm((byte) 0, (char) 0);
     }
 
@@ -113,10 +113,10 @@ nativeObject->SetVehicleConstraint(*((VehicleConstraint* )inConstraint_addr));
 
     private float internal_GetCombinedFriction(int inWheelIndex, int inTireFrictionDirection_addr, float inTireFriction, long inBody2_addr, long inSubShapeID2_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
-            Body_TEMP_STATIC_GEN_0 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_0 = Body.native_new();
         Body_TEMP_STATIC_GEN_0.internal_reset(inBody2_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_0 == null)
-            SubShapeID_TEMP_STATIC_GEN_0 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_0.internal_reset(inSubShapeID2_addr, false);
         return GetCombinedFriction(inWheelIndex, ETireFrictionDirection.MAP.get(inTireFrictionDirection_addr), inTireFriction, Body_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_0);
     }
@@ -126,10 +126,10 @@ nativeObject->SetVehicleConstraint(*((VehicleConstraint* )inConstraint_addr));
 
     private void internal_OnPreStepCallback(long inVehicle_addr, long inContext_addr) {
         if (VehicleConstraint_TEMP_STATIC_GEN_0 == null)
-            VehicleConstraint_TEMP_STATIC_GEN_0 = VehicleConstraint.createInstance();
+            VehicleConstraint_TEMP_STATIC_GEN_0 = VehicleConstraint.native_new();
         VehicleConstraint_TEMP_STATIC_GEN_0.internal_reset(inVehicle_addr, false);
         if (PhysicsStepListenerContext_TEMP_STATIC_GEN_0 == null)
-            PhysicsStepListenerContext_TEMP_STATIC_GEN_0 = PhysicsStepListenerContext.createInstance();
+            PhysicsStepListenerContext_TEMP_STATIC_GEN_0 = PhysicsStepListenerContext.native_new();
         PhysicsStepListenerContext_TEMP_STATIC_GEN_0.internal_reset(inContext_addr, false);
         OnPreStepCallback(VehicleConstraint_TEMP_STATIC_GEN_0, PhysicsStepListenerContext_TEMP_STATIC_GEN_0);
     }
@@ -139,10 +139,10 @@ nativeObject->SetVehicleConstraint(*((VehicleConstraint* )inConstraint_addr));
 
     private void internal_OnPostCollideCallback(long inVehicle_addr, long inContext_addr) {
         if (VehicleConstraint_TEMP_STATIC_GEN_1 == null)
-            VehicleConstraint_TEMP_STATIC_GEN_1 = VehicleConstraint.createInstance();
+            VehicleConstraint_TEMP_STATIC_GEN_1 = VehicleConstraint.native_new();
         VehicleConstraint_TEMP_STATIC_GEN_1.internal_reset(inVehicle_addr, false);
         if (PhysicsStepListenerContext_TEMP_STATIC_GEN_1 == null)
-            PhysicsStepListenerContext_TEMP_STATIC_GEN_1 = PhysicsStepListenerContext.createInstance();
+            PhysicsStepListenerContext_TEMP_STATIC_GEN_1 = PhysicsStepListenerContext.native_new();
         PhysicsStepListenerContext_TEMP_STATIC_GEN_1.internal_reset(inContext_addr, false);
         OnPostCollideCallback(VehicleConstraint_TEMP_STATIC_GEN_1, PhysicsStepListenerContext_TEMP_STATIC_GEN_1);
     }
@@ -152,10 +152,10 @@ nativeObject->SetVehicleConstraint(*((VehicleConstraint* )inConstraint_addr));
 
     private void internal_OnPostStepCallback(long inVehicle_addr, long inContext_addr) {
         if (VehicleConstraint_TEMP_STATIC_GEN_2 == null)
-            VehicleConstraint_TEMP_STATIC_GEN_2 = VehicleConstraint.createInstance();
+            VehicleConstraint_TEMP_STATIC_GEN_2 = VehicleConstraint.native_new();
         VehicleConstraint_TEMP_STATIC_GEN_2.internal_reset(inVehicle_addr, false);
         if (PhysicsStepListenerContext_TEMP_STATIC_GEN_2 == null)
-            PhysicsStepListenerContext_TEMP_STATIC_GEN_2 = PhysicsStepListenerContext.createInstance();
+            PhysicsStepListenerContext_TEMP_STATIC_GEN_2 = PhysicsStepListenerContext.native_new();
         PhysicsStepListenerContext_TEMP_STATIC_GEN_2.internal_reset(inContext_addr, false);
         OnPostStepCallback(VehicleConstraint_TEMP_STATIC_GEN_2, PhysicsStepListenerContext_TEMP_STATIC_GEN_2);
     }

@@ -7,13 +7,13 @@ package gen.jolt.physics.character;
 
 public class CharacterVsCharacterCollisionSimple extends CharacterVsCharacterCollision {
 
-    static public final CharacterVsCharacterCollisionSimple NULL = CharacterVsCharacterCollisionSimple.createInstance();
+    static public final CharacterVsCharacterCollisionSimple NULL = CharacterVsCharacterCollisionSimple.native_new();
 
-    static public final CharacterVsCharacterCollisionSimple T_01 = CharacterVsCharacterCollisionSimple.createInstance();
+    static public final CharacterVsCharacterCollisionSimple T_01 = CharacterVsCharacterCollisionSimple.native_new();
 
-    static public final CharacterVsCharacterCollisionSimple T_02 = CharacterVsCharacterCollisionSimple.createInstance();
+    static public final CharacterVsCharacterCollisionSimple T_02 = CharacterVsCharacterCollisionSimple.native_new();
 
-    static public final CharacterVsCharacterCollisionSimple T_03 = CharacterVsCharacterCollisionSimple.createInstance();
+    static public final CharacterVsCharacterCollisionSimple T_03 = CharacterVsCharacterCollisionSimple.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class CharacterVsCharacterCollisionSimple extends CharacterVsCharacterCol
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterVsCharacterCollisionSimple createInstance() {
+    public static CharacterVsCharacterCollisionSimple native_new() {
         return new CharacterVsCharacterCollisionSimple((byte) 0, (char) 0);
     }
 

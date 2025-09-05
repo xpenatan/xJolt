@@ -9,13 +9,13 @@ import gen.jolt.math.Vec3;
 
 public class VehicleCollisionTesterRay extends VehicleCollisionTester {
 
-    static public final VehicleCollisionTesterRay NULL = VehicleCollisionTesterRay.createInstance();
+    static public final VehicleCollisionTesterRay NULL = VehicleCollisionTesterRay.native_new();
 
-    static public final VehicleCollisionTesterRay T_01 = VehicleCollisionTesterRay.createInstance();
+    static public final VehicleCollisionTesterRay T_01 = VehicleCollisionTesterRay.native_new();
 
-    static public final VehicleCollisionTesterRay T_02 = VehicleCollisionTesterRay.createInstance();
+    static public final VehicleCollisionTesterRay T_02 = VehicleCollisionTesterRay.native_new();
 
-    static public final VehicleCollisionTesterRay T_03 = VehicleCollisionTesterRay.createInstance();
+    static public final VehicleCollisionTesterRay T_03 = VehicleCollisionTesterRay.native_new();
 
     public VehicleCollisionTesterRay(int inObjectLayer, Vec3 inUp, float inMaxSlopeAngle) {
         super((byte) 1, (char) 1);
@@ -67,7 +67,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleCollisionTesterRay createInstance() {
+    public static VehicleCollisionTesterRay native_new() {
         return new VehicleCollisionTesterRay((byte) 0, (char) 0);
     }
 }

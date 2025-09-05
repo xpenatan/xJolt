@@ -13,13 +13,13 @@ public class PathConstraint extends TwoBodyConstraint {
 
     private MotorSettings MotorSettings_TEMP_GEN_0;
 
-    static public final PathConstraint NULL = PathConstraint.createInstance();
+    static public final PathConstraint NULL = PathConstraint.native_new();
 
-    static public final PathConstraint T_01 = PathConstraint.createInstance();
+    static public final PathConstraint T_01 = PathConstraint.native_new();
 
-    static public final PathConstraint T_02 = PathConstraint.createInstance();
+    static public final PathConstraint T_02 = PathConstraint.native_new();
 
-    static public final PathConstraint T_03 = PathConstraint.createInstance();
+    static public final PathConstraint T_03 = PathConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -32,7 +32,7 @@ public class PathConstraint extends TwoBodyConstraint {
     /**
      * @return An empty instance without a native address
      */
-    public static PathConstraint createInstance() {
+    public static PathConstraint native_new() {
         return new PathConstraint((byte) 0, (char) 0);
     }
 
@@ -51,7 +51,7 @@ nativeObject->SetPath((PathConstraintPath* )inPath_addr, (float)inPathFraction);
         if (pointer == 0)
             return null;
         if (PathConstraintPath_TEMP_GEN_0 == null)
-            PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.createInstance();
+            PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.native_new();
         PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
         return PathConstraintPath_TEMP_GEN_0;
     }
@@ -98,7 +98,7 @@ return nativeObject->GetMaxFrictionForce();
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
-            MotorSettings_TEMP_GEN_0 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }

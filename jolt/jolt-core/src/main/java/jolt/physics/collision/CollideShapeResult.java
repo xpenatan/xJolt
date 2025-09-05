@@ -28,13 +28,13 @@ public class CollideShapeResult extends IDLBase {
 
     private CollideShapeResultFace CollideShapeResultFace_TEMP_GEN_1;
 
-    static public final CollideShapeResult NULL = CollideShapeResult.createInstance();
+    static public final CollideShapeResult NULL = CollideShapeResult.native_new();
 
-    static public final CollideShapeResult T_01 = CollideShapeResult.createInstance();
+    static public final CollideShapeResult T_01 = CollideShapeResult.native_new();
 
-    static public final CollideShapeResult T_02 = CollideShapeResult.createInstance();
+    static public final CollideShapeResult T_02 = CollideShapeResult.native_new();
 
-    static public final CollideShapeResult T_03 = CollideShapeResult.createInstance();
+    static public final CollideShapeResult T_03 = CollideShapeResult.native_new();
 
     public CollideShapeResult() {
         long addr = internal_native_create();
@@ -56,7 +56,7 @@ return (jlong)new CollideShapeResult();
     /**
      * @return An empty instance without a native address
      */
-    public static CollideShapeResult createInstance() {
+    public static CollideShapeResult native_new() {
         return new CollideShapeResult((byte) 0, (char) 0);
     }
 
@@ -75,7 +75,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -101,7 +101,7 @@ nativeObject->mContactPointOn1 = *((Vec3*)mContactPointOn1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -127,7 +127,7 @@ nativeObject->mContactPointOn2 = *((Vec3*)mContactPointOn2_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -173,7 +173,7 @@ nativeObject->mPenetrationDepth = mPenetrationDepth;
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_0 == null)
-            SubShapeID_TEMP_GEN_0 = SubShapeID.createInstance();
+            SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_0;
     }
@@ -199,7 +199,7 @@ nativeObject->mSubShapeID1 = *((SubShapeID*)mSubShapeID1_addr);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_1 == null)
-            SubShapeID_TEMP_GEN_1 = SubShapeID.createInstance();
+            SubShapeID_TEMP_GEN_1 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_1.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_1;
     }
@@ -225,7 +225,7 @@ nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
@@ -251,7 +251,7 @@ nativeObject->mBodyID2 = *((BodyID*)mBodyID2_addr);
         if (pointer == 0)
             return null;
         if (CollideShapeResultFace_TEMP_GEN_0 == null)
-            CollideShapeResultFace_TEMP_GEN_0 = CollideShapeResultFace.createInstance();
+            CollideShapeResultFace_TEMP_GEN_0 = CollideShapeResultFace.native_new();
         CollideShapeResultFace_TEMP_GEN_0.internal_reset(pointer, false);
         return CollideShapeResultFace_TEMP_GEN_0;
     }
@@ -277,7 +277,7 @@ nativeObject->mShape1Face = *((CollideShapeResultFace*)mShape1Face_addr);
         if (pointer == 0)
             return null;
         if (CollideShapeResultFace_TEMP_GEN_1 == null)
-            CollideShapeResultFace_TEMP_GEN_1 = CollideShapeResultFace.createInstance();
+            CollideShapeResultFace_TEMP_GEN_1 = CollideShapeResultFace.native_new();
         CollideShapeResultFace_TEMP_GEN_1.internal_reset(pointer, false);
         return CollideShapeResultFace_TEMP_GEN_1;
     }

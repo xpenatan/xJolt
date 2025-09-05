@@ -15,7 +15,7 @@ object LibExt {
 
     //Library dependencies
     const val gdxVersion = "1.13.5"
-    const val jParserVersion = "1.0.0-b18"
+    const val jParserVersion = "1.0.0-b19"
     const val teaVMVersion = "0.12.3"
     const val gdxWebGPUVersion = "-SNAPSHOT"
 

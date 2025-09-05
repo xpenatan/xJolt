@@ -21,13 +21,13 @@ public class RayCast extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_2;
 
-    static public final RayCast NULL = RayCast.createInstance();
+    static public final RayCast NULL = RayCast.native_new();
 
-    static public final RayCast T_01 = RayCast.createInstance();
+    static public final RayCast T_01 = RayCast.native_new();
 
-    static public final RayCast T_02 = RayCast.createInstance();
+    static public final RayCast T_02 = RayCast.native_new();
 
-    static public final RayCast T_03 = RayCast.createInstance();
+    static public final RayCast T_03 = RayCast.native_new();
 
     public RayCast() {
         int addr = internal_native_create();
@@ -63,7 +63,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static RayCast createInstance() {
+    public static RayCast native_new() {
         return new RayCast((byte) 0, (char) 0);
     }
 
@@ -83,7 +83,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (RayCast_TEMP_GEN_0 == null)
-            RayCast_TEMP_GEN_0 = RayCast.createInstance();
+            RayCast_TEMP_GEN_0 = RayCast.native_new();
         RayCast_TEMP_GEN_0.internal_reset(pointer, false);
         return RayCast_TEMP_GEN_0;
     }
@@ -102,7 +102,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (RayCast_TEMP_GEN_1 == null)
-            RayCast_TEMP_GEN_1 = RayCast.createInstance();
+            RayCast_TEMP_GEN_1 = RayCast.native_new();
         RayCast_TEMP_GEN_1.internal_reset(pointer, false);
         return RayCast_TEMP_GEN_1;
     }
@@ -121,7 +121,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -140,7 +140,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -170,7 +170,7 @@ jsObj.set_mOrigin(mOrigin_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }

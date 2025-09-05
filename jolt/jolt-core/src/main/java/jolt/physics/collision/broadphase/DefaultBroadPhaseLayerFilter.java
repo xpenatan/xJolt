@@ -9,13 +9,13 @@ import jolt.physics.collision.ObjectLayerFilter;
 
 public class DefaultBroadPhaseLayerFilter extends ObjectLayerFilter {
 
-    static public final DefaultBroadPhaseLayerFilter NULL = DefaultBroadPhaseLayerFilter.createInstance();
+    static public final DefaultBroadPhaseLayerFilter NULL = DefaultBroadPhaseLayerFilter.native_new();
 
-    static public final DefaultBroadPhaseLayerFilter T_01 = DefaultBroadPhaseLayerFilter.createInstance();
+    static public final DefaultBroadPhaseLayerFilter T_01 = DefaultBroadPhaseLayerFilter.native_new();
 
-    static public final DefaultBroadPhaseLayerFilter T_02 = DefaultBroadPhaseLayerFilter.createInstance();
+    static public final DefaultBroadPhaseLayerFilter T_02 = DefaultBroadPhaseLayerFilter.native_new();
 
-    static public final DefaultBroadPhaseLayerFilter T_03 = DefaultBroadPhaseLayerFilter.createInstance();
+    static public final DefaultBroadPhaseLayerFilter T_03 = DefaultBroadPhaseLayerFilter.native_new();
 
     public DefaultBroadPhaseLayerFilter(ObjectVsBroadPhaseLayerFilter inFilter, int inObjectLayer) {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ return (jlong)new DefaultBroadPhaseLayerFilter(*((ObjectVsBroadPhaseLayerFilter*
     /**
      * @return An empty instance without a native address
      */
-    public static DefaultBroadPhaseLayerFilter createInstance() {
+    public static DefaultBroadPhaseLayerFilter native_new() {
         return new DefaultBroadPhaseLayerFilter((byte) 0, (char) 0);
     }
 

@@ -46,13 +46,13 @@ public class CharacterVirtual extends CharacterBase {
 
     private ArrayCharacterVirtualContact ArrayCharacterVirtualContact_TEMP_GEN_0;
 
-    static public final CharacterVirtual NULL = CharacterVirtual.createInstance();
+    static public final CharacterVirtual NULL = CharacterVirtual.native_new();
 
-    static public final CharacterVirtual T_01 = CharacterVirtual.createInstance();
+    static public final CharacterVirtual T_01 = CharacterVirtual.native_new();
 
-    static public final CharacterVirtual T_02 = CharacterVirtual.createInstance();
+    static public final CharacterVirtual T_02 = CharacterVirtual.native_new();
 
-    static public final CharacterVirtual T_03 = CharacterVirtual.createInstance();
+    static public final CharacterVirtual T_03 = CharacterVirtual.native_new();
 
     public CharacterVirtual(CharacterVirtualSettings inSettings, Vec3 inPosition, Quat inRotation, PhysicsSystem inSystem) {
         super((byte) 1, (char) 1);
@@ -78,7 +78,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterVirtual createInstance() {
+    public static CharacterVirtual native_new() {
         return new CharacterVirtual((byte) 0, (char) 0);
     }
 
@@ -87,7 +87,7 @@ return jolt.getPointer(jsObj);
         if (pointer == 0)
             return null;
         if (CharacterID_TEMP_GEN_0 == null)
-            CharacterID_TEMP_GEN_0 = CharacterID.createInstance();
+            CharacterID_TEMP_GEN_0 = CharacterID.native_new();
         CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
         return CharacterID_TEMP_GEN_0;
     }
@@ -128,7 +128,7 @@ jsObj.SetCharacterVsCharacterCollision(inCharacterVsCharacterCollision_addr);
         if (pointer == 0)
             return null;
         if (CharacterContactListener_TEMP_GEN_0 == null)
-            CharacterContactListener_TEMP_GEN_0 = CharacterContactListener.createInstance();
+            CharacterContactListener_TEMP_GEN_0 = CharacterContactListener.native_new();
         CharacterContactListener_TEMP_GEN_0.internal_reset(pointer, false);
         return CharacterContactListener_TEMP_GEN_0;
     }
@@ -147,7 +147,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -177,7 +177,7 @@ jsObj.SetLinearVelocity(inLinearVelocity_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -207,7 +207,7 @@ jsObj.SetPosition(inPosition_addr);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -237,7 +237,7 @@ jsObj.SetRotation(inRotation_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -256,7 +256,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -275,7 +275,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_1 == null)
-            Mat44_TEMP_GEN_1 = Mat44.createInstance();
+            Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_1;
     }
@@ -433,7 +433,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -486,7 +486,7 @@ jsObj.SetUserData(inUserData);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
@@ -527,7 +527,7 @@ jsObj.FinishTrackingContactChanges();
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -649,7 +649,7 @@ jsObj.SetInnerBodyShape(inShape_addr);
         if (pointer == 0)
             return null;
         if (TransformedShape_TEMP_GEN_0 == null)
-            TransformedShape_TEMP_GEN_0 = TransformedShape.createInstance();
+            TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
         return TransformedShape_TEMP_GEN_0;
     }
@@ -704,7 +704,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (ArrayCharacterVirtualContact_TEMP_GEN_0 == null)
-            ArrayCharacterVirtualContact_TEMP_GEN_0 = ArrayCharacterVirtualContact.createInstance();
+            ArrayCharacterVirtualContact_TEMP_GEN_0 = ArrayCharacterVirtualContact.native_new();
         ArrayCharacterVirtualContact_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayCharacterVirtualContact_TEMP_GEN_0;
     }

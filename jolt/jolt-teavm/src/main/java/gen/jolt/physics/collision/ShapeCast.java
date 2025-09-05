@@ -22,13 +22,13 @@ public class ShapeCast extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_2;
 
-    static public final ShapeCast NULL = ShapeCast.createInstance();
+    static public final ShapeCast NULL = ShapeCast.native_new();
 
-    static public final ShapeCast T_01 = ShapeCast.createInstance();
+    static public final ShapeCast T_01 = ShapeCast.native_new();
 
-    static public final ShapeCast T_02 = ShapeCast.createInstance();
+    static public final ShapeCast T_02 = ShapeCast.native_new();
 
-    static public final ShapeCast T_03 = ShapeCast.createInstance();
+    static public final ShapeCast T_03 = ShapeCast.native_new();
 
     public ShapeCast(Shape inShape, Vec3 inScale, Mat44 inCenterOfMassStart, Vec3 inDirection) {
         int addr = internal_native_create_Shape_Vec3_Mat44_Vec3(inShape.native_address, inScale.native_address, inCenterOfMassStart.native_address, inDirection.native_address);
@@ -52,7 +52,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ShapeCast createInstance() {
+    public static ShapeCast native_new() {
         return new ShapeCast((byte) 0, (char) 0);
     }
 
@@ -72,7 +72,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -91,7 +91,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
-            Shape_TEMP_GEN_0 = Shape.createInstance();
+            Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
@@ -110,7 +110,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -129,7 +129,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -148,7 +148,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }

@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class VehicleCollisionTester extends IDLBase {
 
-    static public final VehicleCollisionTester NULL = VehicleCollisionTester.createInstance();
+    static public final VehicleCollisionTester NULL = VehicleCollisionTester.native_new();
 
-    static public final VehicleCollisionTester T_01 = VehicleCollisionTester.createInstance();
+    static public final VehicleCollisionTester T_01 = VehicleCollisionTester.native_new();
 
-    static public final VehicleCollisionTester T_02 = VehicleCollisionTester.createInstance();
+    static public final VehicleCollisionTester T_02 = VehicleCollisionTester.native_new();
 
-    static public final VehicleCollisionTester T_03 = VehicleCollisionTester.createInstance();
+    static public final VehicleCollisionTester T_03 = VehicleCollisionTester.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class VehicleCollisionTester extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleCollisionTester createInstance() {
+    public static VehicleCollisionTester native_new() {
         return new VehicleCollisionTester((byte) 0, (char) 0);
     }
 

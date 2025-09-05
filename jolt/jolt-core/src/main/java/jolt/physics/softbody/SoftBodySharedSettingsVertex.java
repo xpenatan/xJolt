@@ -14,13 +14,13 @@ public class SoftBodySharedSettingsVertex extends IDLBase {
 
     private Float3 Float3_TEMP_GEN_1;
 
-    static public final SoftBodySharedSettingsVertex NULL = SoftBodySharedSettingsVertex.createInstance();
+    static public final SoftBodySharedSettingsVertex NULL = SoftBodySharedSettingsVertex.native_new();
 
-    static public final SoftBodySharedSettingsVertex T_01 = SoftBodySharedSettingsVertex.createInstance();
+    static public final SoftBodySharedSettingsVertex T_01 = SoftBodySharedSettingsVertex.native_new();
 
-    static public final SoftBodySharedSettingsVertex T_02 = SoftBodySharedSettingsVertex.createInstance();
+    static public final SoftBodySharedSettingsVertex T_02 = SoftBodySharedSettingsVertex.native_new();
 
-    static public final SoftBodySharedSettingsVertex T_03 = SoftBodySharedSettingsVertex.createInstance();
+    static public final SoftBodySharedSettingsVertex T_03 = SoftBodySharedSettingsVertex.native_new();
 
     public SoftBodySharedSettingsVertex() {
         long addr = internal_native_create();
@@ -42,7 +42,7 @@ return (jlong)new SoftBodySharedSettingsVertex();
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodySharedSettingsVertex createInstance() {
+    public static SoftBodySharedSettingsVertex native_new() {
         return new SoftBodySharedSettingsVertex((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_0 == null)
-            Float3_TEMP_GEN_0 = Float3.createInstance();
+            Float3_TEMP_GEN_0 = Float3.native_new();
         Float3_TEMP_GEN_0.internal_reset(pointer, false);
         return Float3_TEMP_GEN_0;
     }
@@ -87,7 +87,7 @@ nativeObject->mPosition = *((Float3*)mPosition_addr);
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_1 == null)
-            Float3_TEMP_GEN_1 = Float3.createInstance();
+            Float3_TEMP_GEN_1 = Float3.native_new();
         Float3_TEMP_GEN_1.internal_reset(pointer, false);
         return Float3_TEMP_GEN_1;
     }

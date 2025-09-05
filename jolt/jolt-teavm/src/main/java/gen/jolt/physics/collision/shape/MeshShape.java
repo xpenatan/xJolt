@@ -7,13 +7,13 @@ package gen.jolt.physics.collision.shape;
 
 public class MeshShape extends Shape {
 
-    static public final MeshShape NULL = MeshShape.createInstance();
+    static public final MeshShape NULL = MeshShape.native_new();
 
-    static public final MeshShape T_01 = MeshShape.createInstance();
+    static public final MeshShape T_01 = MeshShape.native_new();
 
-    static public final MeshShape T_02 = MeshShape.createInstance();
+    static public final MeshShape T_02 = MeshShape.native_new();
 
-    static public final MeshShape T_03 = MeshShape.createInstance();
+    static public final MeshShape T_03 = MeshShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class MeshShape extends Shape {
     /**
      * @return An empty instance without a native address
      */
-    public static MeshShape createInstance() {
+    public static MeshShape native_new() {
         return new MeshShape((byte) 0, (char) 0);
     }
 }

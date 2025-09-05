@@ -15,13 +15,13 @@ public class MassProperties extends IDLBase {
 
     private Mat44 Mat44_TEMP_GEN_0;
 
-    static public final MassProperties NULL = MassProperties.createInstance();
+    static public final MassProperties NULL = MassProperties.native_new();
 
-    static public final MassProperties T_01 = MassProperties.createInstance();
+    static public final MassProperties T_01 = MassProperties.native_new();
 
-    static public final MassProperties T_02 = MassProperties.createInstance();
+    static public final MassProperties T_02 = MassProperties.native_new();
 
-    static public final MassProperties T_03 = MassProperties.createInstance();
+    static public final MassProperties T_03 = MassProperties.native_new();
 
     public MassProperties() {
         long addr = internal_native_create();
@@ -43,7 +43,7 @@ return (jlong)new MassProperties();
     /**
      * @return An empty instance without a native address
      */
-    public static MassProperties createInstance() {
+    public static MassProperties native_new() {
         return new MassProperties((byte) 0, (char) 0);
     }
 
@@ -82,7 +82,7 @@ nativeObject->ScaleToMass((float)inMass);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
-            Vec3_TEMP_STATIC_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_STATIC_GEN_0;
     }
@@ -148,7 +148,7 @@ nativeObject->mMass = mMass;
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }

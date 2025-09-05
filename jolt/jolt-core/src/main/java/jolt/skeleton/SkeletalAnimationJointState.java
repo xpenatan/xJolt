@@ -18,13 +18,13 @@ public class SkeletalAnimationJointState extends IDLBase {
 
     private Quat Quat_TEMP_GEN_0;
 
-    static public final SkeletalAnimationJointState NULL = SkeletalAnimationJointState.createInstance();
+    static public final SkeletalAnimationJointState NULL = SkeletalAnimationJointState.native_new();
 
-    static public final SkeletalAnimationJointState T_01 = SkeletalAnimationJointState.createInstance();
+    static public final SkeletalAnimationJointState T_01 = SkeletalAnimationJointState.native_new();
 
-    static public final SkeletalAnimationJointState T_02 = SkeletalAnimationJointState.createInstance();
+    static public final SkeletalAnimationJointState T_02 = SkeletalAnimationJointState.native_new();
 
-    static public final SkeletalAnimationJointState T_03 = SkeletalAnimationJointState.createInstance();
+    static public final SkeletalAnimationJointState T_03 = SkeletalAnimationJointState.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -36,7 +36,7 @@ public class SkeletalAnimationJointState extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SkeletalAnimationJointState createInstance() {
+    public static SkeletalAnimationJointState native_new() {
         return new SkeletalAnimationJointState((byte) 0, (char) 0);
     }
 
@@ -65,7 +65,7 @@ nativeObject->FromMatrix(*((Mat44* )inMatrix_addr));
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -82,7 +82,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -108,7 +108,7 @@ nativeObject->mTranslation = *((Vec3*)mTranslation_addr);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }

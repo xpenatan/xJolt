@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class SoftBodyContactListener extends IDLBase {
 
-    static public final SoftBodyContactListener NULL = SoftBodyContactListener.createInstance();
+    static public final SoftBodyContactListener NULL = SoftBodyContactListener.native_new();
 
-    static public final SoftBodyContactListener T_01 = SoftBodyContactListener.createInstance();
+    static public final SoftBodyContactListener T_01 = SoftBodyContactListener.native_new();
 
-    static public final SoftBodyContactListener T_02 = SoftBodyContactListener.createInstance();
+    static public final SoftBodyContactListener T_02 = SoftBodyContactListener.native_new();
 
-    static public final SoftBodyContactListener T_03 = SoftBodyContactListener.createInstance();
+    static public final SoftBodyContactListener T_03 = SoftBodyContactListener.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class SoftBodyContactListener extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodyContactListener createInstance() {
+    public static SoftBodyContactListener native_new() {
         return new SoftBodyContactListener((byte) 0, (char) 0);
     }
 

@@ -11,13 +11,13 @@ public class IDLArrayBodyID extends IDLArrayBase {
 
     private BodyID BodyID_TEMP_GEN_0;
 
-    static public final IDLArrayBodyID NULL = IDLArrayBodyID.createInstance();
+    static public final IDLArrayBodyID NULL = IDLArrayBodyID.native_new();
 
-    static public final IDLArrayBodyID T_01 = IDLArrayBodyID.createInstance();
+    static public final IDLArrayBodyID T_01 = IDLArrayBodyID.native_new();
 
-    static public final IDLArrayBodyID T_02 = IDLArrayBodyID.createInstance();
+    static public final IDLArrayBodyID T_02 = IDLArrayBodyID.native_new();
 
-    static public final IDLArrayBodyID T_03 = IDLArrayBodyID.createInstance();
+    static public final IDLArrayBodyID T_03 = IDLArrayBodyID.native_new();
 
     public IDLArrayBodyID(int size) {
         super((byte) 1, (char) 1);
@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static IDLArrayBodyID createInstance() {
+    public static IDLArrayBodyID native_new() {
         return new IDLArrayBodyID((byte) 0, (char) 0);
     }
 
@@ -63,7 +63,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }

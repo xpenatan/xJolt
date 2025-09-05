@@ -25,7 +25,7 @@ public class CastShapeBodyCollector extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CastShapeBodyCollector createInstance() {
+    public static CastShapeBodyCollector native_new() {
         return new CastShapeBodyCollector((byte) 0, (char) 0);
     }
 
@@ -56,7 +56,7 @@ jsObj.SetContext(inContext_addr);
         if (pointer == 0)
             return null;
         if (TransformedShape_TEMP_GEN_0 == null)
-            TransformedShape_TEMP_GEN_0 = TransformedShape.createInstance();
+            TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
         return TransformedShape_TEMP_GEN_0;
     }
@@ -184,7 +184,7 @@ return returnedJSObj;
 
     private void internal_AddHit(int inResult_addr) {
         if (BroadPhaseCastResult_TEMP_STATIC_GEN_0 == null)
-            BroadPhaseCastResult_TEMP_STATIC_GEN_0 = BroadPhaseCastResult.createInstance();
+            BroadPhaseCastResult_TEMP_STATIC_GEN_0 = BroadPhaseCastResult.native_new();
         BroadPhaseCastResult_TEMP_STATIC_GEN_0.internal_reset(inResult_addr, false);
         AddHit(BroadPhaseCastResult_TEMP_STATIC_GEN_0);
     }

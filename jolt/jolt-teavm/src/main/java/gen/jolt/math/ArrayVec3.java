@@ -13,13 +13,13 @@ public class ArrayVec3 extends IDLBase {
 
     private Vec3MemRef Vec3MemRef_TEMP_GEN_0;
 
-    static public final ArrayVec3 NULL = ArrayVec3.createInstance();
+    static public final ArrayVec3 NULL = ArrayVec3.native_new();
 
-    static public final ArrayVec3 T_01 = ArrayVec3.createInstance();
+    static public final ArrayVec3 T_01 = ArrayVec3.native_new();
 
-    static public final ArrayVec3 T_02 = ArrayVec3.createInstance();
+    static public final ArrayVec3 T_02 = ArrayVec3.native_new();
 
-    static public final ArrayVec3 T_03 = ArrayVec3.createInstance();
+    static public final ArrayVec3 T_03 = ArrayVec3.native_new();
 
     public ArrayVec3() {
         int addr = internal_native_create();
@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayVec3 createInstance() {
+    public static ArrayVec3 native_new() {
         return new ArrayVec3((byte) 0, (char) 0);
     }
 
@@ -87,7 +87,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -150,7 +150,7 @@ jsObj.clear();
         if (pointer == 0)
             return null;
         if (Vec3MemRef_TEMP_GEN_0 == null)
-            Vec3MemRef_TEMP_GEN_0 = Vec3MemRef.createInstance();
+            Vec3MemRef_TEMP_GEN_0 = Vec3MemRef.native_new();
         Vec3MemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3MemRef_TEMP_GEN_0;
     }

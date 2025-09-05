@@ -9,13 +9,13 @@ import gen.jolt.physics.collision.PhysicsMaterial;
 
 public class TaperedCapsuleShapeSettings extends ConvexShapeSettings {
 
-    static public final TaperedCapsuleShapeSettings NULL = TaperedCapsuleShapeSettings.createInstance();
+    static public final TaperedCapsuleShapeSettings NULL = TaperedCapsuleShapeSettings.native_new();
 
-    static public final TaperedCapsuleShapeSettings T_01 = TaperedCapsuleShapeSettings.createInstance();
+    static public final TaperedCapsuleShapeSettings T_01 = TaperedCapsuleShapeSettings.native_new();
 
-    static public final TaperedCapsuleShapeSettings T_02 = TaperedCapsuleShapeSettings.createInstance();
+    static public final TaperedCapsuleShapeSettings T_02 = TaperedCapsuleShapeSettings.native_new();
 
-    static public final TaperedCapsuleShapeSettings T_03 = TaperedCapsuleShapeSettings.createInstance();
+    static public final TaperedCapsuleShapeSettings T_03 = TaperedCapsuleShapeSettings.native_new();
 
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
@@ -54,7 +54,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static TaperedCapsuleShapeSettings createInstance() {
+    public static TaperedCapsuleShapeSettings native_new() {
         return new TaperedCapsuleShapeSettings((byte) 0, (char) 0);
     }
 

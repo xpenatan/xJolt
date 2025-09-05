@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class Mat44MemRef extends IDLBase {
 
-    static public final Mat44MemRef NULL = Mat44MemRef.createInstance();
+    static public final Mat44MemRef NULL = Mat44MemRef.native_new();
 
-    static public final Mat44MemRef T_01 = Mat44MemRef.createInstance();
+    static public final Mat44MemRef T_01 = Mat44MemRef.native_new();
 
-    static public final Mat44MemRef T_02 = Mat44MemRef.createInstance();
+    static public final Mat44MemRef T_02 = Mat44MemRef.native_new();
 
-    static public final Mat44MemRef T_03 = Mat44MemRef.createInstance();
+    static public final Mat44MemRef T_03 = Mat44MemRef.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class Mat44MemRef extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static Mat44MemRef createInstance() {
+    public static Mat44MemRef native_new() {
         return new Mat44MemRef((byte) 0, (char) 0);
     }
 

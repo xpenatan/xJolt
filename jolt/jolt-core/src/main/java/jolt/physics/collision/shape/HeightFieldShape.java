@@ -15,13 +15,13 @@ public class HeightFieldShape extends Shape {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final HeightFieldShape NULL = HeightFieldShape.createInstance();
+    static public final HeightFieldShape NULL = HeightFieldShape.native_new();
 
-    static public final HeightFieldShape T_01 = HeightFieldShape.createInstance();
+    static public final HeightFieldShape T_01 = HeightFieldShape.native_new();
 
-    static public final HeightFieldShape T_02 = HeightFieldShape.createInstance();
+    static public final HeightFieldShape T_02 = HeightFieldShape.native_new();
 
-    static public final HeightFieldShape T_03 = HeightFieldShape.createInstance();
+    static public final HeightFieldShape T_03 = HeightFieldShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -34,7 +34,7 @@ public class HeightFieldShape extends Shape {
     /**
      * @return An empty instance without a native address
      */
-    public static HeightFieldShape createInstance() {
+    public static HeightFieldShape native_new() {
         return new HeightFieldShape((byte) 0, (char) 0);
     }
 
@@ -63,7 +63,7 @@ return nativeObject->GetBlockSize();
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

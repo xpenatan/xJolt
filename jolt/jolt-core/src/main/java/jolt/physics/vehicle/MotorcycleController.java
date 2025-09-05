@@ -7,13 +7,13 @@ package jolt.physics.vehicle;
 
 public class MotorcycleController extends WheeledVehicleController {
 
-    static public final MotorcycleController NULL = MotorcycleController.createInstance();
+    static public final MotorcycleController NULL = MotorcycleController.native_new();
 
-    static public final MotorcycleController T_01 = MotorcycleController.createInstance();
+    static public final MotorcycleController T_01 = MotorcycleController.native_new();
 
-    static public final MotorcycleController T_02 = MotorcycleController.createInstance();
+    static public final MotorcycleController T_02 = MotorcycleController.native_new();
 
-    static public final MotorcycleController T_03 = MotorcycleController.createInstance();
+    static public final MotorcycleController T_03 = MotorcycleController.native_new();
 
     public MotorcycleController(MotorcycleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
@@ -37,7 +37,7 @@ return (jlong)new MotorcycleController(*((MotorcycleControllerSettings* )inSetti
     /**
      * @return An empty instance without a native address
      */
-    public static MotorcycleController createInstance() {
+    public static MotorcycleController native_new() {
         return new MotorcycleController((byte) 0, (char) 0);
     }
 

@@ -14,13 +14,13 @@ public class RotatedTranslatedShape extends DecoratedShape {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final RotatedTranslatedShape NULL = RotatedTranslatedShape.createInstance();
+    static public final RotatedTranslatedShape NULL = RotatedTranslatedShape.native_new();
 
-    static public final RotatedTranslatedShape T_01 = RotatedTranslatedShape.createInstance();
+    static public final RotatedTranslatedShape T_01 = RotatedTranslatedShape.native_new();
 
-    static public final RotatedTranslatedShape T_02 = RotatedTranslatedShape.createInstance();
+    static public final RotatedTranslatedShape T_02 = RotatedTranslatedShape.native_new();
 
-    static public final RotatedTranslatedShape T_03 = RotatedTranslatedShape.createInstance();
+    static public final RotatedTranslatedShape T_03 = RotatedTranslatedShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -33,7 +33,7 @@ public class RotatedTranslatedShape extends DecoratedShape {
     /**
      * @return An empty instance without a native address
      */
-    public static RotatedTranslatedShape createInstance() {
+    public static RotatedTranslatedShape native_new() {
         return new RotatedTranslatedShape((byte) 0, (char) 0);
     }
 
@@ -42,7 +42,7 @@ public class RotatedTranslatedShape extends DecoratedShape {
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -61,7 +61,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

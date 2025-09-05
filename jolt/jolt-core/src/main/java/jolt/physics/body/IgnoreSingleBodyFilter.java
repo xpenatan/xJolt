@@ -7,13 +7,13 @@ package jolt.physics.body;
 
 public class IgnoreSingleBodyFilter extends BodyFilter {
 
-    static public final IgnoreSingleBodyFilter NULL = IgnoreSingleBodyFilter.createInstance();
+    static public final IgnoreSingleBodyFilter NULL = IgnoreSingleBodyFilter.native_new();
 
-    static public final IgnoreSingleBodyFilter T_01 = IgnoreSingleBodyFilter.createInstance();
+    static public final IgnoreSingleBodyFilter T_01 = IgnoreSingleBodyFilter.native_new();
 
-    static public final IgnoreSingleBodyFilter T_02 = IgnoreSingleBodyFilter.createInstance();
+    static public final IgnoreSingleBodyFilter T_02 = IgnoreSingleBodyFilter.native_new();
 
-    static public final IgnoreSingleBodyFilter T_03 = IgnoreSingleBodyFilter.createInstance();
+    static public final IgnoreSingleBodyFilter T_03 = IgnoreSingleBodyFilter.native_new();
 
     public IgnoreSingleBodyFilter(BodyID inBodyID) {
         super((byte) 1, (char) 1);
@@ -37,7 +37,7 @@ return (jlong)new IgnoreSingleBodyFilter(*((BodyID* )inBodyID_addr));
     /**
      * @return An empty instance without a native address
      */
-    public static IgnoreSingleBodyFilter createInstance() {
+    public static IgnoreSingleBodyFilter native_new() {
         return new IgnoreSingleBodyFilter((byte) 0, (char) 0);
     }
 

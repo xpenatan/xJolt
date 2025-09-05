@@ -34,7 +34,7 @@ public class StateRecorderFilter extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static StateRecorderFilter createInstance() {
+    public static StateRecorderFilter native_new() {
         return new StateRecorderFilter((byte) 0, (char) 0);
     }
 
@@ -89,7 +89,7 @@ jolt.destroy(jsObj);
 
     private boolean internal_ShouldSaveBody(int inBody_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
-            Body_TEMP_STATIC_GEN_0 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_0 = Body.native_new();
         Body_TEMP_STATIC_GEN_0.internal_reset(inBody_addr, false);
         return ShouldSaveBody(Body_TEMP_STATIC_GEN_0);
     }
@@ -100,7 +100,7 @@ jolt.destroy(jsObj);
 
     private boolean internal_ShouldSaveConstraint(int inConstraint_addr) {
         if (Constraint_TEMP_STATIC_GEN_0 == null)
-            Constraint_TEMP_STATIC_GEN_0 = Constraint.createInstance();
+            Constraint_TEMP_STATIC_GEN_0 = Constraint.native_new();
         Constraint_TEMP_STATIC_GEN_0.internal_reset(inConstraint_addr, false);
         return ShouldSaveConstraint(Constraint_TEMP_STATIC_GEN_0);
     }
@@ -111,10 +111,10 @@ jolt.destroy(jsObj);
 
     private boolean internal_ShouldSaveContact(int inBody1_addr, int inBody2_addr) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
-            BodyID_TEMP_STATIC_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_0 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_0.internal_reset(inBody1_addr, false);
         if (BodyID_TEMP_STATIC_GEN_1 == null)
-            BodyID_TEMP_STATIC_GEN_1 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_1 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_1.internal_reset(inBody2_addr, false);
         return ShouldSaveContact(BodyID_TEMP_STATIC_GEN_0, BodyID_TEMP_STATIC_GEN_1);
     }
@@ -125,10 +125,10 @@ jolt.destroy(jsObj);
 
     private boolean internal_ShouldRestoreContact(int inBody1_addr, int inBody2_addr) {
         if (BodyID_TEMP_STATIC_GEN_2 == null)
-            BodyID_TEMP_STATIC_GEN_2 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_2 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_2.internal_reset(inBody1_addr, false);
         if (BodyID_TEMP_STATIC_GEN_3 == null)
-            BodyID_TEMP_STATIC_GEN_3 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_3 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_3.internal_reset(inBody2_addr, false);
         return ShouldRestoreContact(BodyID_TEMP_STATIC_GEN_2, BodyID_TEMP_STATIC_GEN_3);
     }

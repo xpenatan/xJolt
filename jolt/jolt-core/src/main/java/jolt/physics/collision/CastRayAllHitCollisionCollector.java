@@ -11,13 +11,13 @@ public class CastRayAllHitCollisionCollector extends CastRayCollector {
 
     private ArrayRayCastResult ArrayRayCastResult_TEMP_GEN_0;
 
-    static public final CastRayAllHitCollisionCollector NULL = CastRayAllHitCollisionCollector.createInstance();
+    static public final CastRayAllHitCollisionCollector NULL = CastRayAllHitCollisionCollector.native_new();
 
-    static public final CastRayAllHitCollisionCollector T_01 = CastRayAllHitCollisionCollector.createInstance();
+    static public final CastRayAllHitCollisionCollector T_01 = CastRayAllHitCollisionCollector.native_new();
 
-    static public final CastRayAllHitCollisionCollector T_02 = CastRayAllHitCollisionCollector.createInstance();
+    static public final CastRayAllHitCollisionCollector T_02 = CastRayAllHitCollisionCollector.native_new();
 
-    static public final CastRayAllHitCollisionCollector T_03 = CastRayAllHitCollisionCollector.createInstance();
+    static public final CastRayAllHitCollisionCollector T_03 = CastRayAllHitCollisionCollector.native_new();
 
     public CastRayAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return (jlong)new CastRayAllHitCollisionCollector();
     /**
      * @return An empty instance without a native address
      */
-    public static CastRayAllHitCollisionCollector createInstance() {
+    public static CastRayAllHitCollisionCollector native_new() {
         return new CastRayAllHitCollisionCollector((byte) 0, (char) 0);
     }
 
@@ -80,7 +80,7 @@ return nativeObject->HadHit();
         if (pointer == 0)
             return null;
         if (ArrayRayCastResult_TEMP_GEN_0 == null)
-            ArrayRayCastResult_TEMP_GEN_0 = ArrayRayCastResult.createInstance();
+            ArrayRayCastResult_TEMP_GEN_0 = ArrayRayCastResult.native_new();
         ArrayRayCastResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayRayCastResult_TEMP_GEN_0;
     }

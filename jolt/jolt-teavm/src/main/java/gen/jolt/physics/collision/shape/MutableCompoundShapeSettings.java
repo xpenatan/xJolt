@@ -7,13 +7,13 @@ package gen.jolt.physics.collision.shape;
 
 public class MutableCompoundShapeSettings extends CompoundShapeSettings {
 
-    static public final MutableCompoundShapeSettings NULL = MutableCompoundShapeSettings.createInstance();
+    static public final MutableCompoundShapeSettings NULL = MutableCompoundShapeSettings.native_new();
 
-    static public final MutableCompoundShapeSettings T_01 = MutableCompoundShapeSettings.createInstance();
+    static public final MutableCompoundShapeSettings T_01 = MutableCompoundShapeSettings.native_new();
 
-    static public final MutableCompoundShapeSettings T_02 = MutableCompoundShapeSettings.createInstance();
+    static public final MutableCompoundShapeSettings T_02 = MutableCompoundShapeSettings.native_new();
 
-    static public final MutableCompoundShapeSettings T_03 = MutableCompoundShapeSettings.createInstance();
+    static public final MutableCompoundShapeSettings T_03 = MutableCompoundShapeSettings.native_new();
 
     public MutableCompoundShapeSettings() {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static MutableCompoundShapeSettings createInstance() {
+    public static MutableCompoundShapeSettings native_new() {
         return new MutableCompoundShapeSettings((byte) 0, (char) 0);
     }
 }

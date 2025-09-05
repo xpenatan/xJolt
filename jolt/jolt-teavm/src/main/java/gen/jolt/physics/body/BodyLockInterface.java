@@ -19,13 +19,13 @@ public class BodyLockInterface extends IDLBase {
 
     private MutexMask MutexMask_TEMP_GEN_0;
 
-    static public final BodyLockInterface NULL = BodyLockInterface.createInstance();
+    static public final BodyLockInterface NULL = BodyLockInterface.native_new();
 
-    static public final BodyLockInterface T_01 = BodyLockInterface.createInstance();
+    static public final BodyLockInterface T_01 = BodyLockInterface.native_new();
 
-    static public final BodyLockInterface T_02 = BodyLockInterface.createInstance();
+    static public final BodyLockInterface T_02 = BodyLockInterface.native_new();
 
-    static public final BodyLockInterface T_03 = BodyLockInterface.createInstance();
+    static public final BodyLockInterface T_03 = BodyLockInterface.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -37,7 +37,7 @@ public class BodyLockInterface extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static BodyLockInterface createInstance() {
+    public static BodyLockInterface native_new() {
         return new BodyLockInterface((byte) 0, (char) 0);
     }
 
@@ -57,7 +57,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Body_TEMP_GEN_0 == null)
-            Body_TEMP_GEN_0 = Body.createInstance();
+            Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
         return Body_TEMP_GEN_0;
     }
@@ -76,7 +76,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (SharedMutex_TEMP_GEN_0 == null)
-            SharedMutex_TEMP_GEN_0 = SharedMutex.createInstance();
+            SharedMutex_TEMP_GEN_0 = SharedMutex.native_new();
         SharedMutex_TEMP_GEN_0.internal_reset(pointer, false);
         return SharedMutex_TEMP_GEN_0;
     }
@@ -106,7 +106,7 @@ jsObj.UnlockRead(inMutex_addr);
         if (pointer == 0)
             return null;
         if (SharedMutex_TEMP_GEN_1 == null)
-            SharedMutex_TEMP_GEN_1 = SharedMutex.createInstance();
+            SharedMutex_TEMP_GEN_1 = SharedMutex.native_new();
         SharedMutex_TEMP_GEN_1.internal_reset(pointer, false);
         return SharedMutex_TEMP_GEN_1;
     }
@@ -136,7 +136,7 @@ jsObj.UnlockWrite(inMutex_addr);
         if (pointer == 0)
             return null;
         if (MutexMask_TEMP_GEN_0 == null)
-            MutexMask_TEMP_GEN_0 = MutexMask.createInstance();
+            MutexMask_TEMP_GEN_0 = MutexMask.native_new();
         MutexMask_TEMP_GEN_0.internal_reset(pointer, false);
         return MutexMask_TEMP_GEN_0;
     }

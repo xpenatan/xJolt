@@ -9,13 +9,13 @@ public class WheelWV extends Wheel {
 
     private WheelSettingsWV WheelSettingsWV_TEMP_GEN_0;
 
-    static public final WheelWV NULL = WheelWV.createInstance();
+    static public final WheelWV NULL = WheelWV.native_new();
 
-    static public final WheelWV T_01 = WheelWV.createInstance();
+    static public final WheelWV T_01 = WheelWV.native_new();
 
-    static public final WheelWV T_02 = WheelWV.createInstance();
+    static public final WheelWV T_02 = WheelWV.native_new();
 
-    static public final WheelWV T_03 = WheelWV.createInstance();
+    static public final WheelWV T_03 = WheelWV.native_new();
 
     public WheelWV(WheelSettingsWV inWheel) {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WheelWV createInstance() {
+    public static WheelWV native_new() {
         return new WheelWV((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WheelSettingsWV_TEMP_GEN_0 == null)
-            WheelSettingsWV_TEMP_GEN_0 = WheelSettingsWV.createInstance();
+            WheelSettingsWV_TEMP_GEN_0 = WheelSettingsWV.native_new();
         WheelSettingsWV_TEMP_GEN_0.internal_reset(pointer, false);
         return WheelSettingsWV_TEMP_GEN_0;
     }

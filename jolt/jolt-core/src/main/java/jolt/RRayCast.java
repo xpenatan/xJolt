@@ -21,13 +21,13 @@ public class RRayCast extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_2;
 
-    static public final RRayCast NULL = RRayCast.createInstance();
+    static public final RRayCast NULL = RRayCast.native_new();
 
-    static public final RRayCast T_01 = RRayCast.createInstance();
+    static public final RRayCast T_01 = RRayCast.native_new();
 
-    static public final RRayCast T_02 = RRayCast.createInstance();
+    static public final RRayCast T_02 = RRayCast.native_new();
 
-    static public final RRayCast T_03 = RRayCast.createInstance();
+    static public final RRayCast T_03 = RRayCast.native_new();
 
     public RRayCast() {
         long addr = internal_native_create();
@@ -59,7 +59,7 @@ return (jlong)new RRayCast(*((Vec3* )inOrigin_addr), *((Vec3* )inDirection_addr)
     /**
      * @return An empty instance without a native address
      */
-    public static RRayCast createInstance() {
+    public static RRayCast native_new() {
         return new RRayCast((byte) 0, (char) 0);
     }
 
@@ -78,7 +78,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (RRayCast_TEMP_GEN_0 == null)
-            RRayCast_TEMP_GEN_0 = RRayCast.createInstance();
+            RRayCast_TEMP_GEN_0 = RRayCast.native_new();
         RRayCast_TEMP_GEN_0.internal_reset(pointer, false);
         return RRayCast_TEMP_GEN_0;
     }
@@ -95,7 +95,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (RRayCast_TEMP_GEN_1 == null)
-            RRayCast_TEMP_GEN_1 = RRayCast.createInstance();
+            RRayCast_TEMP_GEN_1 = RRayCast.native_new();
         RRayCast_TEMP_GEN_1.internal_reset(pointer, false);
         return RRayCast_TEMP_GEN_1;
     }
@@ -112,7 +112,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -129,7 +129,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -155,7 +155,7 @@ nativeObject->mOrigin = *((Vec3*)mOrigin_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }

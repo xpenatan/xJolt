@@ -13,13 +13,13 @@ public class ArrayBodyPtr extends IDLBase {
 
     private BodyPtrMemRef BodyPtrMemRef_TEMP_GEN_0;
 
-    static public final ArrayBodyPtr NULL = ArrayBodyPtr.createInstance();
+    static public final ArrayBodyPtr NULL = ArrayBodyPtr.native_new();
 
-    static public final ArrayBodyPtr T_01 = ArrayBodyPtr.createInstance();
+    static public final ArrayBodyPtr T_01 = ArrayBodyPtr.native_new();
 
-    static public final ArrayBodyPtr T_02 = ArrayBodyPtr.createInstance();
+    static public final ArrayBodyPtr T_02 = ArrayBodyPtr.native_new();
 
-    static public final ArrayBodyPtr T_03 = ArrayBodyPtr.createInstance();
+    static public final ArrayBodyPtr T_03 = ArrayBodyPtr.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -31,7 +31,7 @@ public class ArrayBodyPtr extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayBodyPtr createInstance() {
+    public static ArrayBodyPtr native_new() {
         return new ArrayBodyPtr((byte) 0, (char) 0);
     }
 
@@ -75,7 +75,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Body_TEMP_GEN_0 == null)
-            Body_TEMP_GEN_0 = Body.createInstance();
+            Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
         return Body_TEMP_GEN_0;
     }
@@ -138,7 +138,7 @@ jsObj.clear();
         if (pointer == 0)
             return null;
         if (BodyPtrMemRef_TEMP_GEN_0 == null)
-            BodyPtrMemRef_TEMP_GEN_0 = BodyPtrMemRef.createInstance();
+            BodyPtrMemRef_TEMP_GEN_0 = BodyPtrMemRef.native_new();
         BodyPtrMemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyPtrMemRef_TEMP_GEN_0;
     }

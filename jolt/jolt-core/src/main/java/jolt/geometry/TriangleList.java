@@ -11,13 +11,13 @@ public class TriangleList extends IDLBase {
 
     private Triangle Triangle_TEMP_GEN_0;
 
-    static public final TriangleList NULL = TriangleList.createInstance();
+    static public final TriangleList NULL = TriangleList.native_new();
 
-    static public final TriangleList T_01 = TriangleList.createInstance();
+    static public final TriangleList T_01 = TriangleList.native_new();
 
-    static public final TriangleList T_02 = TriangleList.createInstance();
+    static public final TriangleList T_02 = TriangleList.native_new();
 
-    static public final TriangleList T_03 = TriangleList.createInstance();
+    static public final TriangleList T_03 = TriangleList.native_new();
 
     public TriangleList() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new TriangleList();
     /**
      * @return An empty instance without a native address
      */
-    public static TriangleList createInstance() {
+    public static TriangleList native_new() {
         return new TriangleList((byte) 0, (char) 0);
     }
 
@@ -78,7 +78,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (Triangle_TEMP_GEN_0 == null)
-            Triangle_TEMP_GEN_0 = Triangle.createInstance();
+            Triangle_TEMP_GEN_0 = Triangle.native_new();
         Triangle_TEMP_GEN_0.internal_reset(pointer, false);
         return Triangle_TEMP_GEN_0;
     }

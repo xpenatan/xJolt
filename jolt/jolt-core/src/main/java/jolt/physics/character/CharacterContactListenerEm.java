@@ -209,7 +209,7 @@ virtual void OnCharacterContactSolve(const CharacterVirtual* inCharacter, const 
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterContactListenerEm createInstance() {
+    public static CharacterContactListenerEm native_new() {
         return new CharacterContactListenerEm((byte) 0, (char) 0);
     }
 
@@ -239,16 +239,16 @@ delete nativeObject;
 
     private void internal_OnAdjustBodyVelocity(long inCharacter_addr, long inBody2_addr, long ioLinearVelocity_addr, long ioAngularVelocity_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_0 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_0 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_0 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_0.internal_reset(inCharacter_addr, false);
         if (Body_TEMP_STATIC_GEN_0 == null)
-            Body_TEMP_STATIC_GEN_0 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_0 = Body.native_new();
         Body_TEMP_STATIC_GEN_0.internal_reset(inBody2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_0 == null)
-            Vec3_TEMP_STATIC_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_0.internal_reset(ioLinearVelocity_addr, false);
         if (Vec3_TEMP_STATIC_GEN_1 == null)
-            Vec3_TEMP_STATIC_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_1 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_1.internal_reset(ioAngularVelocity_addr, false);
         OnAdjustBodyVelocity(CharacterVirtual_TEMP_STATIC_GEN_0, Body_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_1);
     }
@@ -259,13 +259,13 @@ delete nativeObject;
 
     private boolean internal_OnContactValidate(long inCharacter_addr, long inBodyID2_addr, long inSubShapeID2_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_1 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_1 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_1 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_1.internal_reset(inCharacter_addr, false);
         if (BodyID_TEMP_STATIC_GEN_0 == null)
-            BodyID_TEMP_STATIC_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_0 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_0.internal_reset(inBodyID2_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_0 == null)
-            SubShapeID_TEMP_STATIC_GEN_0 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_0.internal_reset(inSubShapeID2_addr, false);
         return OnContactValidate(CharacterVirtual_TEMP_STATIC_GEN_1, BodyID_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_0);
     }
@@ -276,13 +276,13 @@ delete nativeObject;
 
     private boolean internal_OnCharacterContactValidate(long inCharacter_addr, long inOtherCharacter_addr, long inSubShapeID2_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_2 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_2 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_2 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_2.internal_reset(inCharacter_addr, false);
         if (CharacterVirtual_TEMP_STATIC_GEN_3 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_3 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_3 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_3.internal_reset(inOtherCharacter_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_1 == null)
-            SubShapeID_TEMP_STATIC_GEN_1 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_1 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_1.internal_reset(inSubShapeID2_addr, false);
         return OnCharacterContactValidate(CharacterVirtual_TEMP_STATIC_GEN_2, CharacterVirtual_TEMP_STATIC_GEN_3, SubShapeID_TEMP_STATIC_GEN_1);
     }
@@ -292,22 +292,22 @@ delete nativeObject;
 
     private void internal_OnContactAdded(long inCharacter_addr, long inBodyID2_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long ioSettings_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_4 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_4 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_4 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_4.internal_reset(inCharacter_addr, false);
         if (BodyID_TEMP_STATIC_GEN_1 == null)
-            BodyID_TEMP_STATIC_GEN_1 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_1 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_1.internal_reset(inBodyID2_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_2 == null)
-            SubShapeID_TEMP_STATIC_GEN_2 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_2 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_2.internal_reset(inSubShapeID2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_2 == null)
-            Vec3_TEMP_STATIC_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_2 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_2.internal_reset(inContactPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_3 == null)
-            Vec3_TEMP_STATIC_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_3.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_0 == null)
-            CharacterContactSettings_TEMP_STATIC_GEN_0 = CharacterContactSettings.createInstance();
+            CharacterContactSettings_TEMP_STATIC_GEN_0 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_0.internal_reset(ioSettings_addr, false);
         OnContactAdded(CharacterVirtual_TEMP_STATIC_GEN_4, BodyID_TEMP_STATIC_GEN_1, SubShapeID_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, CharacterContactSettings_TEMP_STATIC_GEN_0);
     }
@@ -317,22 +317,22 @@ delete nativeObject;
 
     private void internal_OnContactPersisted(long inCharacter_addr, long inBodyID2_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long ioSettings_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_5 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_5 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_5 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_5.internal_reset(inCharacter_addr, false);
         if (BodyID_TEMP_STATIC_GEN_2 == null)
-            BodyID_TEMP_STATIC_GEN_2 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_2 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_2.internal_reset(inBodyID2_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_3 == null)
-            SubShapeID_TEMP_STATIC_GEN_3 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_3 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_3.internal_reset(inSubShapeID2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_4 == null)
-            Vec3_TEMP_STATIC_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_4.internal_reset(inContactPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_5 == null)
-            Vec3_TEMP_STATIC_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_5 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_5.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_1 == null)
-            CharacterContactSettings_TEMP_STATIC_GEN_1 = CharacterContactSettings.createInstance();
+            CharacterContactSettings_TEMP_STATIC_GEN_1 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_1.internal_reset(ioSettings_addr, false);
         OnContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_5, BodyID_TEMP_STATIC_GEN_2, SubShapeID_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Vec3_TEMP_STATIC_GEN_5, CharacterContactSettings_TEMP_STATIC_GEN_1);
     }
@@ -342,13 +342,13 @@ delete nativeObject;
 
     private void internal_OnContactRemoved(long inCharacter_addr, long inBodyID2_addr, long inSubShapeID2_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_6 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_6 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_6 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_6.internal_reset(inCharacter_addr, false);
         if (BodyID_TEMP_STATIC_GEN_3 == null)
-            BodyID_TEMP_STATIC_GEN_3 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_3 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_3.internal_reset(inBodyID2_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_4 == null)
-            SubShapeID_TEMP_STATIC_GEN_4 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_4 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_4.internal_reset(inSubShapeID2_addr, false);
         OnContactRemoved(CharacterVirtual_TEMP_STATIC_GEN_6, BodyID_TEMP_STATIC_GEN_3, SubShapeID_TEMP_STATIC_GEN_4);
     }
@@ -358,22 +358,22 @@ delete nativeObject;
 
     private void internal_OnCharacterContactAdded(long inCharacter_addr, long inOtherCharacter_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long ioSettings_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_7 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_7 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_7 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_7.internal_reset(inCharacter_addr, false);
         if (CharacterVirtual_TEMP_STATIC_GEN_8 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_8 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_8 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_8.internal_reset(inOtherCharacter_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_5 == null)
-            SubShapeID_TEMP_STATIC_GEN_5 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_5 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_5.internal_reset(inSubShapeID2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_6 == null)
-            Vec3_TEMP_STATIC_GEN_6 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_6 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_6.internal_reset(inContactPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_7 == null)
-            Vec3_TEMP_STATIC_GEN_7 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_7 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_7.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_2 == null)
-            CharacterContactSettings_TEMP_STATIC_GEN_2 = CharacterContactSettings.createInstance();
+            CharacterContactSettings_TEMP_STATIC_GEN_2 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_2.internal_reset(ioSettings_addr, false);
         OnCharacterContactAdded(CharacterVirtual_TEMP_STATIC_GEN_7, CharacterVirtual_TEMP_STATIC_GEN_8, SubShapeID_TEMP_STATIC_GEN_5, Vec3_TEMP_STATIC_GEN_6, Vec3_TEMP_STATIC_GEN_7, CharacterContactSettings_TEMP_STATIC_GEN_2);
     }
@@ -383,22 +383,22 @@ delete nativeObject;
 
     private void internal_OnCharacterContactPersisted(long inCharacter_addr, long inOtherCharacter_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long ioSettings_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_9 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_9 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_9 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_9.internal_reset(inCharacter_addr, false);
         if (CharacterVirtual_TEMP_STATIC_GEN_10 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_10 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_10 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_10.internal_reset(inOtherCharacter_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_6 == null)
-            SubShapeID_TEMP_STATIC_GEN_6 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_6 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_6.internal_reset(inSubShapeID2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_8 == null)
-            Vec3_TEMP_STATIC_GEN_8 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_8 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_8.internal_reset(inContactPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_9 == null)
-            Vec3_TEMP_STATIC_GEN_9 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_9 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_9.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_3 == null)
-            CharacterContactSettings_TEMP_STATIC_GEN_3 = CharacterContactSettings.createInstance();
+            CharacterContactSettings_TEMP_STATIC_GEN_3 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_3.internal_reset(ioSettings_addr, false);
         OnCharacterContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_9, CharacterVirtual_TEMP_STATIC_GEN_10, SubShapeID_TEMP_STATIC_GEN_6, Vec3_TEMP_STATIC_GEN_8, Vec3_TEMP_STATIC_GEN_9, CharacterContactSettings_TEMP_STATIC_GEN_3);
     }
@@ -408,13 +408,13 @@ delete nativeObject;
 
     private void internal_OnCharacterContactRemoved(long inCharacter_addr, long inOtherCharacter_addr, long inSubShapeID2_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_11 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_11 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_11 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_11.internal_reset(inCharacter_addr, false);
         if (CharacterID_TEMP_STATIC_GEN_0 == null)
-            CharacterID_TEMP_STATIC_GEN_0 = CharacterID.createInstance();
+            CharacterID_TEMP_STATIC_GEN_0 = CharacterID.native_new();
         CharacterID_TEMP_STATIC_GEN_0.internal_reset(inOtherCharacter_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_7 == null)
-            SubShapeID_TEMP_STATIC_GEN_7 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_7 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_7.internal_reset(inSubShapeID2_addr, false);
         OnCharacterContactRemoved(CharacterVirtual_TEMP_STATIC_GEN_11, CharacterID_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_7);
     }
@@ -424,31 +424,31 @@ delete nativeObject;
 
     private void internal_OnContactSolve(long inCharacter_addr, long inBodyID2_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long inContactVelocity_addr, long inContactMaterial_addr, long inCharacterVelocity_addr, long ioNewCharacterVelocity_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_12 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_12 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_12 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_12.internal_reset(inCharacter_addr, false);
         if (BodyID_TEMP_STATIC_GEN_4 == null)
-            BodyID_TEMP_STATIC_GEN_4 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_4 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_4.internal_reset(inBodyID2_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_8 == null)
-            SubShapeID_TEMP_STATIC_GEN_8 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_8 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_8.internal_reset(inSubShapeID2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_10 == null)
-            Vec3_TEMP_STATIC_GEN_10 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_10 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_10.internal_reset(inContactPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_11 == null)
-            Vec3_TEMP_STATIC_GEN_11 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_11 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_11.internal_reset(inContactNormal_addr, false);
         if (Vec3_TEMP_STATIC_GEN_12 == null)
-            Vec3_TEMP_STATIC_GEN_12 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_12 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_12.internal_reset(inContactVelocity_addr, false);
         if (PhysicsMaterial_TEMP_STATIC_GEN_0 == null)
-            PhysicsMaterial_TEMP_STATIC_GEN_0 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_STATIC_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_STATIC_GEN_0.internal_reset(inContactMaterial_addr, false);
         if (Vec3_TEMP_STATIC_GEN_13 == null)
-            Vec3_TEMP_STATIC_GEN_13 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_13 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_13.internal_reset(inCharacterVelocity_addr, false);
         if (Vec3_TEMP_STATIC_GEN_14 == null)
-            Vec3_TEMP_STATIC_GEN_14 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_14 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_14.internal_reset(ioNewCharacterVelocity_addr, false);
         OnContactSolve(CharacterVirtual_TEMP_STATIC_GEN_12, BodyID_TEMP_STATIC_GEN_4, SubShapeID_TEMP_STATIC_GEN_8, Vec3_TEMP_STATIC_GEN_10, Vec3_TEMP_STATIC_GEN_11, Vec3_TEMP_STATIC_GEN_12, PhysicsMaterial_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_13, Vec3_TEMP_STATIC_GEN_14);
     }
@@ -458,31 +458,31 @@ delete nativeObject;
 
     private void internal_OnCharacterContactSolve(long inCharacter_addr, long inOtherCharacter_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long inContactVelocity_addr, long inContactMaterial_addr, long inCharacterVelocity_addr, long ioNewCharacterVelocity_addr) {
         if (CharacterVirtual_TEMP_STATIC_GEN_13 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_13 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_13 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_13.internal_reset(inCharacter_addr, false);
         if (CharacterVirtual_TEMP_STATIC_GEN_14 == null)
-            CharacterVirtual_TEMP_STATIC_GEN_14 = CharacterVirtual.createInstance();
+            CharacterVirtual_TEMP_STATIC_GEN_14 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_STATIC_GEN_14.internal_reset(inOtherCharacter_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_9 == null)
-            SubShapeID_TEMP_STATIC_GEN_9 = SubShapeID.createInstance();
+            SubShapeID_TEMP_STATIC_GEN_9 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_9.internal_reset(inSubShapeID2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_15 == null)
-            Vec3_TEMP_STATIC_GEN_15 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_15 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_15.internal_reset(inContactPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_16 == null)
-            Vec3_TEMP_STATIC_GEN_16 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_16 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_16.internal_reset(inContactNormal_addr, false);
         if (Vec3_TEMP_STATIC_GEN_17 == null)
-            Vec3_TEMP_STATIC_GEN_17 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_17 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_17.internal_reset(inContactVelocity_addr, false);
         if (PhysicsMaterial_TEMP_STATIC_GEN_1 == null)
-            PhysicsMaterial_TEMP_STATIC_GEN_1 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_STATIC_GEN_1 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_STATIC_GEN_1.internal_reset(inContactMaterial_addr, false);
         if (Vec3_TEMP_STATIC_GEN_18 == null)
-            Vec3_TEMP_STATIC_GEN_18 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_18 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_18.internal_reset(inCharacterVelocity_addr, false);
         if (Vec3_TEMP_STATIC_GEN_19 == null)
-            Vec3_TEMP_STATIC_GEN_19 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_19 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_19.internal_reset(ioNewCharacterVelocity_addr, false);
         OnCharacterContactSolve(CharacterVirtual_TEMP_STATIC_GEN_13, CharacterVirtual_TEMP_STATIC_GEN_14, SubShapeID_TEMP_STATIC_GEN_9, Vec3_TEMP_STATIC_GEN_15, Vec3_TEMP_STATIC_GEN_16, Vec3_TEMP_STATIC_GEN_17, PhysicsMaterial_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_18, Vec3_TEMP_STATIC_GEN_19);
     }

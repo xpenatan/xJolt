@@ -11,13 +11,13 @@ public class ArrayShapeCastResult extends IDLBase {
 
     private ShapeCastResult ShapeCastResult_TEMP_GEN_0;
 
-    static public final ArrayShapeCastResult NULL = ArrayShapeCastResult.createInstance();
+    static public final ArrayShapeCastResult NULL = ArrayShapeCastResult.native_new();
 
-    static public final ArrayShapeCastResult T_01 = ArrayShapeCastResult.createInstance();
+    static public final ArrayShapeCastResult T_01 = ArrayShapeCastResult.native_new();
 
-    static public final ArrayShapeCastResult T_02 = ArrayShapeCastResult.createInstance();
+    static public final ArrayShapeCastResult T_02 = ArrayShapeCastResult.native_new();
 
-    static public final ArrayShapeCastResult T_03 = ArrayShapeCastResult.createInstance();
+    static public final ArrayShapeCastResult T_03 = ArrayShapeCastResult.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayShapeCastResult extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayShapeCastResult createInstance() {
+    public static ArrayShapeCastResult native_new() {
         return new ArrayShapeCastResult((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (ShapeCastResult_TEMP_GEN_0 == null)
-            ShapeCastResult_TEMP_GEN_0 = ShapeCastResult.createInstance();
+            ShapeCastResult_TEMP_GEN_0 = ShapeCastResult.native_new();
         ShapeCastResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ShapeCastResult_TEMP_GEN_0;
     }

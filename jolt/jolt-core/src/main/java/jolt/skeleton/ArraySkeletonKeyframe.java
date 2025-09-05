@@ -11,13 +11,13 @@ public class ArraySkeletonKeyframe extends IDLBase {
 
     private SkeletalAnimationKeyframe SkeletalAnimationKeyframe_TEMP_GEN_0;
 
-    static public final ArraySkeletonKeyframe NULL = ArraySkeletonKeyframe.createInstance();
+    static public final ArraySkeletonKeyframe NULL = ArraySkeletonKeyframe.native_new();
 
-    static public final ArraySkeletonKeyframe T_01 = ArraySkeletonKeyframe.createInstance();
+    static public final ArraySkeletonKeyframe T_01 = ArraySkeletonKeyframe.native_new();
 
-    static public final ArraySkeletonKeyframe T_02 = ArraySkeletonKeyframe.createInstance();
+    static public final ArraySkeletonKeyframe T_02 = ArraySkeletonKeyframe.native_new();
 
-    static public final ArraySkeletonKeyframe T_03 = ArraySkeletonKeyframe.createInstance();
+    static public final ArraySkeletonKeyframe T_03 = ArraySkeletonKeyframe.native_new();
 
     public ArraySkeletonKeyframe() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new ArraySkeletonKeyframe();
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySkeletonKeyframe createInstance() {
+    public static ArraySkeletonKeyframe native_new() {
         return new ArraySkeletonKeyframe((byte) 0, (char) 0);
     }
 
@@ -78,7 +78,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (SkeletalAnimationKeyframe_TEMP_GEN_0 == null)
-            SkeletalAnimationKeyframe_TEMP_GEN_0 = SkeletalAnimationKeyframe.createInstance();
+            SkeletalAnimationKeyframe_TEMP_GEN_0 = SkeletalAnimationKeyframe.native_new();
         SkeletalAnimationKeyframe_TEMP_GEN_0.internal_reset(pointer, false);
         return SkeletalAnimationKeyframe_TEMP_GEN_0;
     }

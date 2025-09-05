@@ -57,7 +57,7 @@ virtual void AddHit(const CollidePointResult& inResult) {
     /**
      * @return An empty instance without a native address
      */
-    public static CollidePointCollector createInstance() {
+    public static CollidePointCollector native_new() {
         return new CollidePointCollector((byte) 0, (char) 0);
     }
 
@@ -86,7 +86,7 @@ nativeObject->SetContext((TransformedShape* )inContext_addr);
         if (pointer == 0)
             return null;
         if (TransformedShape_TEMP_GEN_0 == null)
-            TransformedShape_TEMP_GEN_0 = TransformedShape.createInstance();
+            TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
         return TransformedShape_TEMP_GEN_0;
     }
@@ -190,7 +190,7 @@ return nativeObject->GetPositiveEarlyOutFraction();
 
     private void internal_OnBody(long inBody_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
-            Body_TEMP_STATIC_GEN_0 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_0 = Body.native_new();
         Body_TEMP_STATIC_GEN_0.internal_reset(inBody_addr, false);
         OnBody(Body_TEMP_STATIC_GEN_0);
     }
@@ -200,7 +200,7 @@ return nativeObject->GetPositiveEarlyOutFraction();
 
     private void internal_AddHit(long inResult_addr) {
         if (CollidePointResult_TEMP_STATIC_GEN_0 == null)
-            CollidePointResult_TEMP_STATIC_GEN_0 = CollidePointResult.createInstance();
+            CollidePointResult_TEMP_STATIC_GEN_0 = CollidePointResult.native_new();
         CollidePointResult_TEMP_STATIC_GEN_0.internal_reset(inResult_addr, false);
         AddHit(CollidePointResult_TEMP_STATIC_GEN_0);
     }

@@ -33,13 +33,13 @@ public class SwingTwistConstraint extends TwoBodyConstraint {
 
     private Vec3 Vec3_TEMP_GEN_4;
 
-    static public final SwingTwistConstraint NULL = SwingTwistConstraint.createInstance();
+    static public final SwingTwistConstraint NULL = SwingTwistConstraint.native_new();
 
-    static public final SwingTwistConstraint T_01 = SwingTwistConstraint.createInstance();
+    static public final SwingTwistConstraint T_01 = SwingTwistConstraint.native_new();
 
-    static public final SwingTwistConstraint T_02 = SwingTwistConstraint.createInstance();
+    static public final SwingTwistConstraint T_02 = SwingTwistConstraint.native_new();
 
-    static public final SwingTwistConstraint T_03 = SwingTwistConstraint.createInstance();
+    static public final SwingTwistConstraint T_03 = SwingTwistConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -52,7 +52,7 @@ public class SwingTwistConstraint extends TwoBodyConstraint {
     /**
      * @return An empty instance without a native address
      */
-    public static SwingTwistConstraint createInstance() {
+    public static SwingTwistConstraint native_new() {
         return new SwingTwistConstraint((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ public class SwingTwistConstraint extends TwoBodyConstraint {
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -78,7 +78,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -95,7 +95,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -112,7 +112,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_1 == null)
-            Quat_TEMP_GEN_1 = Quat.createInstance();
+            Quat_TEMP_GEN_1 = Quat.native_new();
         Quat_TEMP_GEN_1.internal_reset(pointer, false);
         return Quat_TEMP_GEN_1;
     }
@@ -209,7 +209,7 @@ nativeObject->SetTwistMaxAngle((float)inAngle);
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
-            MotorSettings_TEMP_GEN_0 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }
@@ -225,7 +225,7 @@ return (jlong)&nativeObject->GetSwingMotorSettings();
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_1 == null)
-            MotorSettings_TEMP_GEN_1 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_1 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_1.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_1;
     }
@@ -313,7 +313,7 @@ nativeObject->SetTargetAngularVelocityCS(*((Vec3* )inAngularVelocity_addr));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -340,7 +340,7 @@ nativeObject->SetTargetOrientationCS(*((Quat* )inOrientation_addr));
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_2 == null)
-            Quat_TEMP_GEN_2 = Quat.createInstance();
+            Quat_TEMP_GEN_2 = Quat.native_new();
         Quat_TEMP_GEN_2.internal_reset(pointer, false);
         return Quat_TEMP_GEN_2;
     }
@@ -367,7 +367,7 @@ nativeObject->SetTargetOrientationBS(*((Quat* )inOrientation_addr));
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_3 == null)
-            Quat_TEMP_GEN_3 = Quat.createInstance();
+            Quat_TEMP_GEN_3 = Quat.native_new();
         Quat_TEMP_GEN_3.internal_reset(pointer, false);
         return Quat_TEMP_GEN_3;
     }
@@ -384,7 +384,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -431,7 +431,7 @@ return nativeObject->GetTotalLambdaSwingZ();
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }

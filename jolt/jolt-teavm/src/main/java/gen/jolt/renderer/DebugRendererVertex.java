@@ -20,13 +20,13 @@ public class DebugRendererVertex extends IDLBase {
 
     private Color Color_TEMP_GEN_0;
 
-    static public final DebugRendererVertex NULL = DebugRendererVertex.createInstance();
+    static public final DebugRendererVertex NULL = DebugRendererVertex.native_new();
 
-    static public final DebugRendererVertex T_01 = DebugRendererVertex.createInstance();
+    static public final DebugRendererVertex T_01 = DebugRendererVertex.native_new();
 
-    static public final DebugRendererVertex T_02 = DebugRendererVertex.createInstance();
+    static public final DebugRendererVertex T_02 = DebugRendererVertex.native_new();
 
-    static public final DebugRendererVertex T_03 = DebugRendererVertex.createInstance();
+    static public final DebugRendererVertex T_03 = DebugRendererVertex.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,7 +38,7 @@ public class DebugRendererVertex extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static DebugRendererVertex createInstance() {
+    public static DebugRendererVertex native_new() {
         return new DebugRendererVertex((byte) 0, (char) 0);
     }
 
@@ -58,7 +58,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_0 == null)
-            Float3_TEMP_GEN_0 = Float3.createInstance();
+            Float3_TEMP_GEN_0 = Float3.native_new();
         Float3_TEMP_GEN_0.internal_reset(pointer, false);
         return Float3_TEMP_GEN_0;
     }
@@ -77,7 +77,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_1 == null)
-            Float3_TEMP_GEN_1 = Float3.createInstance();
+            Float3_TEMP_GEN_1 = Float3.native_new();
         Float3_TEMP_GEN_1.internal_reset(pointer, false);
         return Float3_TEMP_GEN_1;
     }
@@ -96,7 +96,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Float2_TEMP_GEN_0 == null)
-            Float2_TEMP_GEN_0 = Float2.createInstance();
+            Float2_TEMP_GEN_0 = Float2.native_new();
         Float2_TEMP_GEN_0.internal_reset(pointer, false);
         return Float2_TEMP_GEN_0;
     }
@@ -115,7 +115,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Color_TEMP_GEN_0 == null)
-            Color_TEMP_GEN_0 = Color.createInstance();
+            Color_TEMP_GEN_0 = Color.native_new();
         Color_TEMP_GEN_0.internal_reset(pointer, false);
         return Color_TEMP_GEN_0;
     }

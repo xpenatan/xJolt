@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class StateRecorder extends IDLBase {
 
-    static public final StateRecorder NULL = StateRecorder.createInstance();
+    static public final StateRecorder NULL = StateRecorder.native_new();
 
-    static public final StateRecorder T_01 = StateRecorder.createInstance();
+    static public final StateRecorder T_01 = StateRecorder.native_new();
 
-    static public final StateRecorder T_02 = StateRecorder.createInstance();
+    static public final StateRecorder T_02 = StateRecorder.native_new();
 
-    static public final StateRecorder T_03 = StateRecorder.createInstance();
+    static public final StateRecorder T_03 = StateRecorder.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class StateRecorder extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static StateRecorder createInstance() {
+    public static StateRecorder native_new() {
         return new StateRecorder((byte) 0, (char) 0);
     }
 

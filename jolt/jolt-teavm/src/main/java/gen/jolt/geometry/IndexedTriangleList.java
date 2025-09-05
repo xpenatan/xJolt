@@ -11,13 +11,13 @@ public class IndexedTriangleList extends IDLBase {
 
     private IndexedTriangle IndexedTriangle_TEMP_GEN_0;
 
-    static public final IndexedTriangleList NULL = IndexedTriangleList.createInstance();
+    static public final IndexedTriangleList NULL = IndexedTriangleList.native_new();
 
-    static public final IndexedTriangleList T_01 = IndexedTriangleList.createInstance();
+    static public final IndexedTriangleList T_01 = IndexedTriangleList.native_new();
 
-    static public final IndexedTriangleList T_02 = IndexedTriangleList.createInstance();
+    static public final IndexedTriangleList T_02 = IndexedTriangleList.native_new();
 
-    static public final IndexedTriangleList T_03 = IndexedTriangleList.createInstance();
+    static public final IndexedTriangleList T_03 = IndexedTriangleList.native_new();
 
     public IndexedTriangleList() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static IndexedTriangleList createInstance() {
+    public static IndexedTriangleList native_new() {
         return new IndexedTriangleList((byte) 0, (char) 0);
     }
 
@@ -85,7 +85,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (IndexedTriangle_TEMP_GEN_0 == null)
-            IndexedTriangle_TEMP_GEN_0 = IndexedTriangle.createInstance();
+            IndexedTriangle_TEMP_GEN_0 = IndexedTriangle.native_new();
         IndexedTriangle_TEMP_GEN_0.internal_reset(pointer, false);
         return IndexedTriangle_TEMP_GEN_0;
     }

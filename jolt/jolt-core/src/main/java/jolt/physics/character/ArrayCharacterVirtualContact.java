@@ -11,13 +11,13 @@ public class ArrayCharacterVirtualContact extends IDLBase {
 
     private CharacterVirtualContact CharacterVirtualContact_TEMP_GEN_0;
 
-    static public final ArrayCharacterVirtualContact NULL = ArrayCharacterVirtualContact.createInstance();
+    static public final ArrayCharacterVirtualContact NULL = ArrayCharacterVirtualContact.native_new();
 
-    static public final ArrayCharacterVirtualContact T_01 = ArrayCharacterVirtualContact.createInstance();
+    static public final ArrayCharacterVirtualContact T_01 = ArrayCharacterVirtualContact.native_new();
 
-    static public final ArrayCharacterVirtualContact T_02 = ArrayCharacterVirtualContact.createInstance();
+    static public final ArrayCharacterVirtualContact T_02 = ArrayCharacterVirtualContact.native_new();
 
-    static public final ArrayCharacterVirtualContact T_03 = ArrayCharacterVirtualContact.createInstance();
+    static public final ArrayCharacterVirtualContact T_03 = ArrayCharacterVirtualContact.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayCharacterVirtualContact extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayCharacterVirtualContact createInstance() {
+    public static ArrayCharacterVirtualContact native_new() {
         return new ArrayCharacterVirtualContact((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (CharacterVirtualContact_TEMP_GEN_0 == null)
-            CharacterVirtualContact_TEMP_GEN_0 = CharacterVirtualContact.createInstance();
+            CharacterVirtualContact_TEMP_GEN_0 = CharacterVirtualContact.native_new();
         CharacterVirtualContact_TEMP_GEN_0.internal_reset(pointer, false);
         return CharacterVirtualContact_TEMP_GEN_0;
     }

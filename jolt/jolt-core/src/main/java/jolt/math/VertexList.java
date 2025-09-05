@@ -11,13 +11,13 @@ public class VertexList extends IDLBase {
 
     private Float3 Float3_TEMP_GEN_0;
 
-    static public final VertexList NULL = VertexList.createInstance();
+    static public final VertexList NULL = VertexList.native_new();
 
-    static public final VertexList T_01 = VertexList.createInstance();
+    static public final VertexList T_01 = VertexList.native_new();
 
-    static public final VertexList T_02 = VertexList.createInstance();
+    static public final VertexList T_02 = VertexList.native_new();
 
-    static public final VertexList T_03 = VertexList.createInstance();
+    static public final VertexList T_03 = VertexList.native_new();
 
     public VertexList() {
         long addr = internal_native_create();
@@ -39,7 +39,7 @@ return (jlong)new VertexList();
     /**
      * @return An empty instance without a native address
      */
-    public static VertexList createInstance() {
+    public static VertexList native_new() {
         return new VertexList((byte) 0, (char) 0);
     }
 
@@ -78,7 +78,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (Float3_TEMP_GEN_0 == null)
-            Float3_TEMP_GEN_0 = Float3.createInstance();
+            Float3_TEMP_GEN_0 = Float3.native_new();
         Float3_TEMP_GEN_0.internal_reset(pointer, false);
         return Float3_TEMP_GEN_0;
     }

@@ -20,13 +20,13 @@ public class VehicleConstraintSettings extends ConstraintSettings {
 
     private VehicleControllerSettings VehicleControllerSettings_TEMP_GEN_0;
 
-    static public final VehicleConstraintSettings NULL = VehicleConstraintSettings.createInstance();
+    static public final VehicleConstraintSettings NULL = VehicleConstraintSettings.native_new();
 
-    static public final VehicleConstraintSettings T_01 = VehicleConstraintSettings.createInstance();
+    static public final VehicleConstraintSettings T_01 = VehicleConstraintSettings.native_new();
 
-    static public final VehicleConstraintSettings T_02 = VehicleConstraintSettings.createInstance();
+    static public final VehicleConstraintSettings T_02 = VehicleConstraintSettings.native_new();
 
-    static public final VehicleConstraintSettings T_03 = VehicleConstraintSettings.createInstance();
+    static public final VehicleConstraintSettings T_03 = VehicleConstraintSettings.native_new();
 
     public VehicleConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -52,7 +52,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleConstraintSettings createInstance() {
+    public static VehicleConstraintSettings native_new() {
         return new VehicleConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ return jolt.getPointer(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -91,7 +91,7 @@ jsObj.set_mUp(mUp_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -143,7 +143,7 @@ jsObj.set_mMaxPitchRollAngle(mMaxPitchRollAngle);
         if (pointer == 0)
             return null;
         if (ArrayWheelSettings_TEMP_GEN_0 == null)
-            ArrayWheelSettings_TEMP_GEN_0 = ArrayWheelSettings.createInstance();
+            ArrayWheelSettings_TEMP_GEN_0 = ArrayWheelSettings.native_new();
         ArrayWheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayWheelSettings_TEMP_GEN_0;
     }
@@ -173,7 +173,7 @@ jsObj.set_mWheels(mWheels_addr);
         if (pointer == 0)
             return null;
         if (ArrayVehicleAntiRollBar_TEMP_GEN_0 == null)
-            ArrayVehicleAntiRollBar_TEMP_GEN_0 = ArrayVehicleAntiRollBar.createInstance();
+            ArrayVehicleAntiRollBar_TEMP_GEN_0 = ArrayVehicleAntiRollBar.native_new();
         ArrayVehicleAntiRollBar_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayVehicleAntiRollBar_TEMP_GEN_0;
     }
@@ -203,7 +203,7 @@ jsObj.set_mAntiRollBars(mAntiRollBars_addr);
         if (pointer == 0)
             return null;
         if (VehicleControllerSettings_TEMP_GEN_0 == null)
-            VehicleControllerSettings_TEMP_GEN_0 = VehicleControllerSettings.createInstance();
+            VehicleControllerSettings_TEMP_GEN_0 = VehicleControllerSettings.native_new();
         VehicleControllerSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleControllerSettings_TEMP_GEN_0;
     }

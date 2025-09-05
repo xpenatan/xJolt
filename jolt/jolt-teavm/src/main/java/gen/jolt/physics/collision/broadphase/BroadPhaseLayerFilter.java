@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class BroadPhaseLayerFilter extends IDLBase {
 
-    static public final BroadPhaseLayerFilter NULL = BroadPhaseLayerFilter.createInstance();
+    static public final BroadPhaseLayerFilter NULL = BroadPhaseLayerFilter.native_new();
 
-    static public final BroadPhaseLayerFilter T_01 = BroadPhaseLayerFilter.createInstance();
+    static public final BroadPhaseLayerFilter T_01 = BroadPhaseLayerFilter.native_new();
 
-    static public final BroadPhaseLayerFilter T_02 = BroadPhaseLayerFilter.createInstance();
+    static public final BroadPhaseLayerFilter T_02 = BroadPhaseLayerFilter.native_new();
 
-    static public final BroadPhaseLayerFilter T_03 = BroadPhaseLayerFilter.createInstance();
+    static public final BroadPhaseLayerFilter T_03 = BroadPhaseLayerFilter.native_new();
 
     public BroadPhaseLayerFilter() {
         int addr = internal_native_create();
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static BroadPhaseLayerFilter createInstance() {
+    public static BroadPhaseLayerFilter native_new() {
         return new BroadPhaseLayerFilter((byte) 0, (char) 0);
     }
 

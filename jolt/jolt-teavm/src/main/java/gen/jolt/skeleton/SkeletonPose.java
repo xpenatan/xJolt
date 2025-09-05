@@ -22,13 +22,13 @@ public class SkeletonPose extends IDLBase {
 
     private Mat44 Mat44_TEMP_GEN_0;
 
-    static public final SkeletonPose NULL = SkeletonPose.createInstance();
+    static public final SkeletonPose NULL = SkeletonPose.native_new();
 
-    static public final SkeletonPose T_01 = SkeletonPose.createInstance();
+    static public final SkeletonPose T_01 = SkeletonPose.native_new();
 
-    static public final SkeletonPose T_02 = SkeletonPose.createInstance();
+    static public final SkeletonPose T_02 = SkeletonPose.native_new();
 
-    static public final SkeletonPose T_03 = SkeletonPose.createInstance();
+    static public final SkeletonPose T_03 = SkeletonPose.native_new();
 
     public SkeletonPose() {
         int addr = internal_native_create();
@@ -52,7 +52,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SkeletonPose createInstance() {
+    public static SkeletonPose native_new() {
         return new SkeletonPose((byte) 0, (char) 0);
     }
 
@@ -83,7 +83,7 @@ jsObj.SetSkeleton(inSkeleton_addr);
         if (pointer == 0)
             return null;
         if (Skeleton_TEMP_GEN_0 == null)
-            Skeleton_TEMP_GEN_0 = Skeleton.createInstance();
+            Skeleton_TEMP_GEN_0 = Skeleton.native_new();
         Skeleton_TEMP_GEN_0.internal_reset(pointer, false);
         return Skeleton_TEMP_GEN_0;
     }
@@ -113,7 +113,7 @@ jsObj.SetRootOffset(inOffset_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -144,7 +144,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (SkeletalAnimationJointState_TEMP_GEN_0 == null)
-            SkeletalAnimationJointState_TEMP_GEN_0 = SkeletalAnimationJointState.createInstance();
+            SkeletalAnimationJointState_TEMP_GEN_0 = SkeletalAnimationJointState.native_new();
         SkeletalAnimationJointState_TEMP_GEN_0.internal_reset(pointer, false);
         return SkeletalAnimationJointState_TEMP_GEN_0;
     }
@@ -163,7 +163,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (ArrayMat44_TEMP_GEN_0 == null)
-            ArrayMat44_TEMP_GEN_0 = ArrayMat44.createInstance();
+            ArrayMat44_TEMP_GEN_0 = ArrayMat44.native_new();
         ArrayMat44_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayMat44_TEMP_GEN_0;
     }
@@ -182,7 +182,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }

@@ -18,13 +18,13 @@ public class SoftBodyCreationSettings extends IDLBase {
 
     private CollisionGroup CollisionGroup_TEMP_GEN_0;
 
-    static public final SoftBodyCreationSettings NULL = SoftBodyCreationSettings.createInstance();
+    static public final SoftBodyCreationSettings NULL = SoftBodyCreationSettings.native_new();
 
-    static public final SoftBodyCreationSettings T_01 = SoftBodyCreationSettings.createInstance();
+    static public final SoftBodyCreationSettings T_01 = SoftBodyCreationSettings.native_new();
 
-    static public final SoftBodyCreationSettings T_02 = SoftBodyCreationSettings.createInstance();
+    static public final SoftBodyCreationSettings T_02 = SoftBodyCreationSettings.native_new();
 
-    static public final SoftBodyCreationSettings T_03 = SoftBodyCreationSettings.createInstance();
+    static public final SoftBodyCreationSettings T_03 = SoftBodyCreationSettings.native_new();
 
     public SoftBodyCreationSettings(SoftBodySharedSettings inSettings, Vec3 inPosition, Quat inRotation, int inObjectLayer) {
         int addr = internal_native_create_SoftBodySharedSettings_Vec3_Quat_int(inSettings.native_address, inPosition.native_address, inRotation.native_address, inObjectLayer);
@@ -48,7 +48,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodyCreationSettings createInstance() {
+    public static SoftBodyCreationSettings native_new() {
         return new SoftBodyCreationSettings((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -98,7 +98,7 @@ jsObj.set_mPosition(mPosition_addr);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -172,7 +172,7 @@ jsObj.set_mObjectLayer(mObjectLayer);
         if (pointer == 0)
             return null;
         if (CollisionGroup_TEMP_GEN_0 == null)
-            CollisionGroup_TEMP_GEN_0 = CollisionGroup.createInstance();
+            CollisionGroup_TEMP_GEN_0 = CollisionGroup.native_new();
         CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);
         return CollisionGroup_TEMP_GEN_0;
     }

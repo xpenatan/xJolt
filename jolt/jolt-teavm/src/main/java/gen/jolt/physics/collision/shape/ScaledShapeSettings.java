@@ -11,13 +11,13 @@ public class ScaledShapeSettings extends DecoratedShapeSettings {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final ScaledShapeSettings NULL = ScaledShapeSettings.createInstance();
+    static public final ScaledShapeSettings NULL = ScaledShapeSettings.native_new();
 
-    static public final ScaledShapeSettings T_01 = ScaledShapeSettings.createInstance();
+    static public final ScaledShapeSettings T_01 = ScaledShapeSettings.native_new();
 
-    static public final ScaledShapeSettings T_02 = ScaledShapeSettings.createInstance();
+    static public final ScaledShapeSettings T_02 = ScaledShapeSettings.native_new();
 
-    static public final ScaledShapeSettings T_03 = ScaledShapeSettings.createInstance();
+    static public final ScaledShapeSettings T_03 = ScaledShapeSettings.native_new();
 
     public ScaledShapeSettings(ShapeSettings inShape, Vec3 inScale) {
         super((byte) 1, (char) 1);
@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ScaledShapeSettings createInstance() {
+    public static ScaledShapeSettings native_new() {
         return new ScaledShapeSettings((byte) 0, (char) 0);
     }
 
@@ -52,7 +52,7 @@ return jolt.getPointer(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

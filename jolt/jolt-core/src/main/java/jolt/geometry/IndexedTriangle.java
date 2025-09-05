@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class IndexedTriangle extends IDLBase {
 
-    static public final IndexedTriangle NULL = IndexedTriangle.createInstance();
+    static public final IndexedTriangle NULL = IndexedTriangle.native_new();
 
-    static public final IndexedTriangle T_01 = IndexedTriangle.createInstance();
+    static public final IndexedTriangle T_01 = IndexedTriangle.native_new();
 
-    static public final IndexedTriangle T_02 = IndexedTriangle.createInstance();
+    static public final IndexedTriangle T_02 = IndexedTriangle.native_new();
 
-    static public final IndexedTriangle T_03 = IndexedTriangle.createInstance();
+    static public final IndexedTriangle T_03 = IndexedTriangle.native_new();
 
     public IndexedTriangle() {
         long addr = internal_native_create();
@@ -57,7 +57,7 @@ return (jlong)new IndexedTriangle(inI1, inI2, inI3, inMaterialIndex);
     /**
      * @return An empty instance without a native address
      */
-    public static IndexedTriangle createInstance() {
+    public static IndexedTriangle native_new() {
         return new IndexedTriangle((byte) 0, (char) 0);
     }
 

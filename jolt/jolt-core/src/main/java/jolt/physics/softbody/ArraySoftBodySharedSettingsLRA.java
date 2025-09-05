@@ -11,13 +11,13 @@ public class ArraySoftBodySharedSettingsLRA extends IDLBase {
 
     private SoftBodySharedSettingsLRA SoftBodySharedSettingsLRA_TEMP_GEN_0;
 
-    static public final ArraySoftBodySharedSettingsLRA NULL = ArraySoftBodySharedSettingsLRA.createInstance();
+    static public final ArraySoftBodySharedSettingsLRA NULL = ArraySoftBodySharedSettingsLRA.native_new();
 
-    static public final ArraySoftBodySharedSettingsLRA T_01 = ArraySoftBodySharedSettingsLRA.createInstance();
+    static public final ArraySoftBodySharedSettingsLRA T_01 = ArraySoftBodySharedSettingsLRA.native_new();
 
-    static public final ArraySoftBodySharedSettingsLRA T_02 = ArraySoftBodySharedSettingsLRA.createInstance();
+    static public final ArraySoftBodySharedSettingsLRA T_02 = ArraySoftBodySharedSettingsLRA.native_new();
 
-    static public final ArraySoftBodySharedSettingsLRA T_03 = ArraySoftBodySharedSettingsLRA.createInstance();
+    static public final ArraySoftBodySharedSettingsLRA T_03 = ArraySoftBodySharedSettingsLRA.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArraySoftBodySharedSettingsLRA extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodySharedSettingsLRA createInstance() {
+    public static ArraySoftBodySharedSettingsLRA native_new() {
         return new ArraySoftBodySharedSettingsLRA((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsLRA_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsLRA_TEMP_GEN_0 = SoftBodySharedSettingsLRA.createInstance();
+            SoftBodySharedSettingsLRA_TEMP_GEN_0 = SoftBodySharedSettingsLRA.native_new();
         SoftBodySharedSettingsLRA_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsLRA_TEMP_GEN_0;
     }

@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class BodyID extends IDLBase {
 
-    static public final BodyID NULL = BodyID.createInstance();
+    static public final BodyID NULL = BodyID.native_new();
 
-    static public final BodyID T_01 = BodyID.createInstance();
+    static public final BodyID T_01 = BodyID.native_new();
 
-    static public final BodyID T_02 = BodyID.createInstance();
+    static public final BodyID T_02 = BodyID.native_new();
 
-    static public final BodyID T_03 = BodyID.createInstance();
+    static public final BodyID T_03 = BodyID.native_new();
 
     public BodyID() {
         long addr = internal_native_create();
@@ -47,7 +47,7 @@ return (jlong)new BodyID(inIndexAndSequenceNumber);
     /**
      * @return An empty instance without a native address
      */
-    public static BodyID createInstance() {
+    public static BodyID native_new() {
         return new BodyID((byte) 0, (char) 0);
     }
 

@@ -16,13 +16,13 @@ public class ExtendedUpdateSettings extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_2;
 
-    static public final ExtendedUpdateSettings NULL = ExtendedUpdateSettings.createInstance();
+    static public final ExtendedUpdateSettings NULL = ExtendedUpdateSettings.native_new();
 
-    static public final ExtendedUpdateSettings T_01 = ExtendedUpdateSettings.createInstance();
+    static public final ExtendedUpdateSettings T_01 = ExtendedUpdateSettings.native_new();
 
-    static public final ExtendedUpdateSettings T_02 = ExtendedUpdateSettings.createInstance();
+    static public final ExtendedUpdateSettings T_02 = ExtendedUpdateSettings.native_new();
 
-    static public final ExtendedUpdateSettings T_03 = ExtendedUpdateSettings.createInstance();
+    static public final ExtendedUpdateSettings T_03 = ExtendedUpdateSettings.native_new();
 
     public ExtendedUpdateSettings() {
         long addr = internal_native_create();
@@ -44,7 +44,7 @@ return (jlong)new CharacterVirtual::ExtendedUpdateSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static ExtendedUpdateSettings createInstance() {
+    public static ExtendedUpdateSettings native_new() {
         return new ExtendedUpdateSettings((byte) 0, (char) 0);
     }
 
@@ -63,7 +63,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -89,7 +89,7 @@ nativeObject->mStickToFloorStepDown = *((Vec3*)mStickToFloorStepDown_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -175,7 +175,7 @@ nativeObject->mWalkStairsCosAngleForwardContact = mWalkStairsCosAngleForwardCont
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }

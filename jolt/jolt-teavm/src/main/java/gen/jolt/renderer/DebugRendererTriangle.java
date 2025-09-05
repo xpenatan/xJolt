@@ -11,13 +11,13 @@ public class DebugRendererTriangle extends IDLBase {
 
     private DebugRendererVertex DebugRendererVertex_TEMP_GEN_0;
 
-    static public final DebugRendererTriangle NULL = DebugRendererTriangle.createInstance();
+    static public final DebugRendererTriangle NULL = DebugRendererTriangle.native_new();
 
-    static public final DebugRendererTriangle T_01 = DebugRendererTriangle.createInstance();
+    static public final DebugRendererTriangle T_01 = DebugRendererTriangle.native_new();
 
-    static public final DebugRendererTriangle T_02 = DebugRendererTriangle.createInstance();
+    static public final DebugRendererTriangle T_02 = DebugRendererTriangle.native_new();
 
-    static public final DebugRendererTriangle T_03 = DebugRendererTriangle.createInstance();
+    static public final DebugRendererTriangle T_03 = DebugRendererTriangle.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class DebugRendererTriangle extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static DebugRendererTriangle createInstance() {
+    public static DebugRendererTriangle native_new() {
         return new DebugRendererTriangle((byte) 0, (char) 0);
     }
 
@@ -49,7 +49,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (DebugRendererVertex_TEMP_GEN_0 == null)
-            DebugRendererVertex_TEMP_GEN_0 = DebugRendererVertex.createInstance();
+            DebugRendererVertex_TEMP_GEN_0 = DebugRendererVertex.native_new();
         DebugRendererVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return DebugRendererVertex_TEMP_GEN_0;
     }

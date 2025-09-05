@@ -19,13 +19,13 @@ public class SoftBodyManifold extends IDLBase {
 
     private BodyID BodyID_TEMP_GEN_0;
 
-    static public final SoftBodyManifold NULL = SoftBodyManifold.createInstance();
+    static public final SoftBodyManifold NULL = SoftBodyManifold.native_new();
 
-    static public final SoftBodyManifold T_01 = SoftBodyManifold.createInstance();
+    static public final SoftBodyManifold T_01 = SoftBodyManifold.native_new();
 
-    static public final SoftBodyManifold T_02 = SoftBodyManifold.createInstance();
+    static public final SoftBodyManifold T_02 = SoftBodyManifold.native_new();
 
-    static public final SoftBodyManifold T_03 = SoftBodyManifold.createInstance();
+    static public final SoftBodyManifold T_03 = SoftBodyManifold.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -37,7 +37,7 @@ public class SoftBodyManifold extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodyManifold createInstance() {
+    public static SoftBodyManifold native_new() {
         return new SoftBodyManifold((byte) 0, (char) 0);
     }
 
@@ -56,7 +56,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
-            ArraySoftBodyVertex_TEMP_GEN_0 = ArraySoftBodyVertex.createInstance();
+            ArraySoftBodyVertex_TEMP_GEN_0 = ArraySoftBodyVertex.native_new();
         ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySoftBodyVertex_TEMP_GEN_0;
     }
@@ -82,7 +82,7 @@ return nativeObject->HasContact(*((SoftBodyVertex* )inVertex_addr));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -99,7 +99,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -116,7 +116,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }

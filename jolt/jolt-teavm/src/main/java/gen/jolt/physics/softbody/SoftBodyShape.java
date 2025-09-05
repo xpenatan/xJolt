@@ -10,13 +10,13 @@ import gen.jolt.physics.collision.shape.SubShapeID;
 
 public class SoftBodyShape extends Shape {
 
-    static public final SoftBodyShape NULL = SoftBodyShape.createInstance();
+    static public final SoftBodyShape NULL = SoftBodyShape.native_new();
 
-    static public final SoftBodyShape T_01 = SoftBodyShape.createInstance();
+    static public final SoftBodyShape T_01 = SoftBodyShape.native_new();
 
-    static public final SoftBodyShape T_02 = SoftBodyShape.createInstance();
+    static public final SoftBodyShape T_02 = SoftBodyShape.native_new();
 
-    static public final SoftBodyShape T_03 = SoftBodyShape.createInstance();
+    static public final SoftBodyShape T_03 = SoftBodyShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class SoftBodyShape extends Shape {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodyShape createInstance() {
+    public static SoftBodyShape native_new() {
         return new SoftBodyShape((byte) 0, (char) 0);
     }
 

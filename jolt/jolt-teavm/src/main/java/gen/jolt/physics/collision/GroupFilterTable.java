@@ -7,13 +7,13 @@ package gen.jolt.physics.collision;
 
 public class GroupFilterTable extends GroupFilter {
 
-    static public final GroupFilterTable NULL = GroupFilterTable.createInstance();
+    static public final GroupFilterTable NULL = GroupFilterTable.native_new();
 
-    static public final GroupFilterTable T_01 = GroupFilterTable.createInstance();
+    static public final GroupFilterTable T_01 = GroupFilterTable.native_new();
 
-    static public final GroupFilterTable T_02 = GroupFilterTable.createInstance();
+    static public final GroupFilterTable T_02 = GroupFilterTable.native_new();
 
-    static public final GroupFilterTable T_03 = GroupFilterTable.createInstance();
+    static public final GroupFilterTable T_03 = GroupFilterTable.native_new();
 
     public GroupFilterTable(int inNumGroups) {
         super((byte) 1, (char) 1);
@@ -52,7 +52,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static GroupFilterTable createInstance() {
+    public static GroupFilterTable native_new() {
         return new GroupFilterTable((byte) 0, (char) 0);
     }
 

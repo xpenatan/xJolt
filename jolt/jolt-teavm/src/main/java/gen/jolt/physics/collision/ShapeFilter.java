@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class ShapeFilter extends IDLBase {
 
-    static public final ShapeFilter NULL = ShapeFilter.createInstance();
+    static public final ShapeFilter NULL = ShapeFilter.native_new();
 
-    static public final ShapeFilter T_01 = ShapeFilter.createInstance();
+    static public final ShapeFilter T_01 = ShapeFilter.native_new();
 
-    static public final ShapeFilter T_02 = ShapeFilter.createInstance();
+    static public final ShapeFilter T_02 = ShapeFilter.native_new();
 
-    static public final ShapeFilter T_03 = ShapeFilter.createInstance();
+    static public final ShapeFilter T_03 = ShapeFilter.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class ShapeFilter extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ShapeFilter createInstance() {
+    public static ShapeFilter native_new() {
         return new ShapeFilter((byte) 0, (char) 0);
     }
 

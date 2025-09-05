@@ -23,7 +23,7 @@ public class BodyActivationListener extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static BodyActivationListener createInstance() {
+    public static BodyActivationListener native_new() {
         return new BodyActivationListener((byte) 0, (char) 0);
     }
 
@@ -65,7 +65,7 @@ jolt.destroy(jsObj);
 
     private void internal_OnBodyActivated(int inBodyID_addr, long inBodyUserData) {
         if (BodyID_TEMP_STATIC_GEN_0 == null)
-            BodyID_TEMP_STATIC_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_0 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_0.internal_reset(inBodyID_addr, false);
         OnBodyActivated(BodyID_TEMP_STATIC_GEN_0, inBodyUserData);
     }
@@ -75,7 +75,7 @@ jolt.destroy(jsObj);
 
     private void internal_OnBodyDeactivated(int inBodyID_addr, long inBodyUserData) {
         if (BodyID_TEMP_STATIC_GEN_1 == null)
-            BodyID_TEMP_STATIC_GEN_1 = BodyID.createInstance();
+            BodyID_TEMP_STATIC_GEN_1 = BodyID.native_new();
         BodyID_TEMP_STATIC_GEN_1.internal_reset(inBodyID_addr, false);
         OnBodyDeactivated(BodyID_TEMP_STATIC_GEN_1, inBodyUserData);
     }

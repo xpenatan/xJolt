@@ -28,13 +28,13 @@ public class CharacterBase extends IDLBase {
 
     private BodyID BodyID_TEMP_GEN_0;
 
-    static public final CharacterBase NULL = CharacterBase.createInstance();
+    static public final CharacterBase NULL = CharacterBase.native_new();
 
-    static public final CharacterBase T_01 = CharacterBase.createInstance();
+    static public final CharacterBase T_01 = CharacterBase.native_new();
 
-    static public final CharacterBase T_02 = CharacterBase.createInstance();
+    static public final CharacterBase T_02 = CharacterBase.native_new();
 
-    static public final CharacterBase T_03 = CharacterBase.createInstance();
+    static public final CharacterBase T_03 = CharacterBase.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -46,7 +46,7 @@ public class CharacterBase extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterBase createInstance() {
+    public static CharacterBase native_new() {
         return new CharacterBase((byte) 0, (char) 0);
     }
 
@@ -115,7 +115,7 @@ nativeObject->SetUp(*((Vec3* )inUp_addr));
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -132,7 +132,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
-            Shape_TEMP_GEN_0 = Shape.createInstance();
+            Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }
@@ -180,7 +180,7 @@ return nativeObject->IsSupported();
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -197,7 +197,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -214,7 +214,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -231,7 +231,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
-            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
@@ -248,7 +248,7 @@ return (jlong)obj;
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }

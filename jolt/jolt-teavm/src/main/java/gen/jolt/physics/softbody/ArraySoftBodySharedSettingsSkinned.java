@@ -11,13 +11,13 @@ public class ArraySoftBodySharedSettingsSkinned extends IDLBase {
 
     private SoftBodySharedSettingsSkinned SoftBodySharedSettingsSkinned_TEMP_GEN_0;
 
-    static public final ArraySoftBodySharedSettingsSkinned NULL = ArraySoftBodySharedSettingsSkinned.createInstance();
+    static public final ArraySoftBodySharedSettingsSkinned NULL = ArraySoftBodySharedSettingsSkinned.native_new();
 
-    static public final ArraySoftBodySharedSettingsSkinned T_01 = ArraySoftBodySharedSettingsSkinned.createInstance();
+    static public final ArraySoftBodySharedSettingsSkinned T_01 = ArraySoftBodySharedSettingsSkinned.native_new();
 
-    static public final ArraySoftBodySharedSettingsSkinned T_02 = ArraySoftBodySharedSettingsSkinned.createInstance();
+    static public final ArraySoftBodySharedSettingsSkinned T_02 = ArraySoftBodySharedSettingsSkinned.native_new();
 
-    static public final ArraySoftBodySharedSettingsSkinned T_03 = ArraySoftBodySharedSettingsSkinned.createInstance();
+    static public final ArraySoftBodySharedSettingsSkinned T_03 = ArraySoftBodySharedSettingsSkinned.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArraySoftBodySharedSettingsSkinned extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodySharedSettingsSkinned createInstance() {
+    public static ArraySoftBodySharedSettingsSkinned native_new() {
         return new ArraySoftBodySharedSettingsSkinned((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsSkinned_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsSkinned_TEMP_GEN_0 = SoftBodySharedSettingsSkinned.createInstance();
+            SoftBodySharedSettingsSkinned_TEMP_GEN_0 = SoftBodySharedSettingsSkinned.native_new();
         SoftBodySharedSettingsSkinned_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsSkinned_TEMP_GEN_0;
     }

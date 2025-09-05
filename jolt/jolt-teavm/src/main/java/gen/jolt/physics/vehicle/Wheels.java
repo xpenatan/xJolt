@@ -11,13 +11,13 @@ public class Wheels extends IDLBase {
 
     private Wheel Wheel_TEMP_GEN_0;
 
-    static public final Wheels NULL = Wheels.createInstance();
+    static public final Wheels NULL = Wheels.native_new();
 
-    static public final Wheels T_01 = Wheels.createInstance();
+    static public final Wheels T_01 = Wheels.native_new();
 
-    static public final Wheels T_02 = Wheels.createInstance();
+    static public final Wheels T_02 = Wheels.native_new();
 
-    static public final Wheels T_03 = Wheels.createInstance();
+    static public final Wheels T_03 = Wheels.native_new();
 
     public Wheels() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static Wheels createInstance() {
+    public static Wheels native_new() {
         return new Wheels((byte) 0, (char) 0);
     }
 
@@ -85,7 +85,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Wheel_TEMP_GEN_0 == null)
-            Wheel_TEMP_GEN_0 = Wheel.createInstance();
+            Wheel_TEMP_GEN_0 = Wheel.native_new();
         Wheel_TEMP_GEN_0.internal_reset(pointer, false);
         return Wheel_TEMP_GEN_0;
     }

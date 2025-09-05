@@ -11,13 +11,13 @@ public class ArraySoftBodySharedSettingsFace extends IDLBase {
 
     private SoftBodySharedSettingsFace SoftBodySharedSettingsFace_TEMP_GEN_0;
 
-    static public final ArraySoftBodySharedSettingsFace NULL = ArraySoftBodySharedSettingsFace.createInstance();
+    static public final ArraySoftBodySharedSettingsFace NULL = ArraySoftBodySharedSettingsFace.native_new();
 
-    static public final ArraySoftBodySharedSettingsFace T_01 = ArraySoftBodySharedSettingsFace.createInstance();
+    static public final ArraySoftBodySharedSettingsFace T_01 = ArraySoftBodySharedSettingsFace.native_new();
 
-    static public final ArraySoftBodySharedSettingsFace T_02 = ArraySoftBodySharedSettingsFace.createInstance();
+    static public final ArraySoftBodySharedSettingsFace T_02 = ArraySoftBodySharedSettingsFace.native_new();
 
-    static public final ArraySoftBodySharedSettingsFace T_03 = ArraySoftBodySharedSettingsFace.createInstance();
+    static public final ArraySoftBodySharedSettingsFace T_03 = ArraySoftBodySharedSettingsFace.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArraySoftBodySharedSettingsFace extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodySharedSettingsFace createInstance() {
+    public static ArraySoftBodySharedSettingsFace native_new() {
         return new ArraySoftBodySharedSettingsFace((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsFace_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsFace_TEMP_GEN_0 = SoftBodySharedSettingsFace.createInstance();
+            SoftBodySharedSettingsFace_TEMP_GEN_0 = SoftBodySharedSettingsFace.native_new();
         SoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsFace_TEMP_GEN_0;
     }

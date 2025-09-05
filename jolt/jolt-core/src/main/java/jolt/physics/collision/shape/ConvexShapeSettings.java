@@ -11,13 +11,13 @@ public class ConvexShapeSettings extends ShapeSettings {
 
     private PhysicsMaterial PhysicsMaterial_TEMP_GEN_0;
 
-    static public final ConvexShapeSettings NULL = ConvexShapeSettings.createInstance();
+    static public final ConvexShapeSettings NULL = ConvexShapeSettings.native_new();
 
-    static public final ConvexShapeSettings T_01 = ConvexShapeSettings.createInstance();
+    static public final ConvexShapeSettings T_01 = ConvexShapeSettings.native_new();
 
-    static public final ConvexShapeSettings T_02 = ConvexShapeSettings.createInstance();
+    static public final ConvexShapeSettings T_02 = ConvexShapeSettings.native_new();
 
-    static public final ConvexShapeSettings T_03 = ConvexShapeSettings.createInstance();
+    static public final ConvexShapeSettings T_03 = ConvexShapeSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,7 +30,7 @@ public class ConvexShapeSettings extends ShapeSettings {
     /**
      * @return An empty instance without a native address
      */
-    public static ConvexShapeSettings createInstance() {
+    public static ConvexShapeSettings native_new() {
         return new ConvexShapeSettings((byte) 0, (char) 0);
     }
 
@@ -39,7 +39,7 @@ public class ConvexShapeSettings extends ShapeSettings {
         if (pointer == 0)
             return null;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
-            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.createInstance();
+            PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }

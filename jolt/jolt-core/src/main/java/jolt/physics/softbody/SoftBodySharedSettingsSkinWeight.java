@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class SoftBodySharedSettingsSkinWeight extends IDLBase {
 
-    static public final SoftBodySharedSettingsSkinWeight NULL = SoftBodySharedSettingsSkinWeight.createInstance();
+    static public final SoftBodySharedSettingsSkinWeight NULL = SoftBodySharedSettingsSkinWeight.native_new();
 
-    static public final SoftBodySharedSettingsSkinWeight T_01 = SoftBodySharedSettingsSkinWeight.createInstance();
+    static public final SoftBodySharedSettingsSkinWeight T_01 = SoftBodySharedSettingsSkinWeight.native_new();
 
-    static public final SoftBodySharedSettingsSkinWeight T_02 = SoftBodySharedSettingsSkinWeight.createInstance();
+    static public final SoftBodySharedSettingsSkinWeight T_02 = SoftBodySharedSettingsSkinWeight.native_new();
 
-    static public final SoftBodySharedSettingsSkinWeight T_03 = SoftBodySharedSettingsSkinWeight.createInstance();
+    static public final SoftBodySharedSettingsSkinWeight T_03 = SoftBodySharedSettingsSkinWeight.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class SoftBodySharedSettingsSkinWeight extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodySharedSettingsSkinWeight createInstance() {
+    public static SoftBodySharedSettingsSkinWeight native_new() {
         return new SoftBodySharedSettingsSkinWeight((byte) 0, (char) 0);
     }
 

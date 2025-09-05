@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class TempAllocator extends IDLBase {
 
-    static public final TempAllocator NULL = TempAllocator.createInstance();
+    static public final TempAllocator NULL = TempAllocator.native_new();
 
-    static public final TempAllocator T_01 = TempAllocator.createInstance();
+    static public final TempAllocator T_01 = TempAllocator.native_new();
 
-    static public final TempAllocator T_02 = TempAllocator.createInstance();
+    static public final TempAllocator T_02 = TempAllocator.native_new();
 
-    static public final TempAllocator T_03 = TempAllocator.createInstance();
+    static public final TempAllocator T_03 = TempAllocator.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class TempAllocator extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static TempAllocator createInstance() {
+    public static TempAllocator native_new() {
         return new TempAllocator((byte) 0, (char) 0);
     }
 

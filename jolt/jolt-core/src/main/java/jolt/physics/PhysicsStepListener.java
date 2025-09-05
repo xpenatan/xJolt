@@ -40,7 +40,7 @@ virtual void OnStep(const PhysicsStepListenerContext& inContext) {
     /**
      * @return An empty instance without a native address
      */
-    public static PhysicsStepListener createInstance() {
+    public static PhysicsStepListener native_new() {
         return new PhysicsStepListener((byte) 0, (char) 0);
     }
 
@@ -69,7 +69,7 @@ delete nativeObject;
 
     private void internal_OnStep(long inContext_addr) {
         if (PhysicsStepListenerContext_TEMP_STATIC_GEN_0 == null)
-            PhysicsStepListenerContext_TEMP_STATIC_GEN_0 = PhysicsStepListenerContext.createInstance();
+            PhysicsStepListenerContext_TEMP_STATIC_GEN_0 = PhysicsStepListenerContext.native_new();
         PhysicsStepListenerContext_TEMP_STATIC_GEN_0.internal_reset(inContext_addr, false);
         OnStep(PhysicsStepListenerContext_TEMP_STATIC_GEN_0);
     }

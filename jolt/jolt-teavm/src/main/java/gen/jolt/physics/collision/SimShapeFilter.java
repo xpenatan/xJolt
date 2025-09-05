@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class SimShapeFilter extends IDLBase {
 
-    static public final SimShapeFilter NULL = SimShapeFilter.createInstance();
+    static public final SimShapeFilter NULL = SimShapeFilter.native_new();
 
-    static public final SimShapeFilter T_01 = SimShapeFilter.createInstance();
+    static public final SimShapeFilter T_01 = SimShapeFilter.native_new();
 
-    static public final SimShapeFilter T_02 = SimShapeFilter.createInstance();
+    static public final SimShapeFilter T_02 = SimShapeFilter.native_new();
 
-    static public final SimShapeFilter T_03 = SimShapeFilter.createInstance();
+    static public final SimShapeFilter T_03 = SimShapeFilter.native_new();
 
     public SimShapeFilter() {
         int addr = internal_native_create();
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SimShapeFilter createInstance() {
+    public static SimShapeFilter native_new() {
         return new SimShapeFilter((byte) 0, (char) 0);
     }
 

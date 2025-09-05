@@ -11,13 +11,13 @@ public class CollideShapeClosestHitCollisionCollector extends CollideShapeCollec
 
     private CollideShapeResult CollideShapeResult_TEMP_GEN_0;
 
-    static public final CollideShapeClosestHitCollisionCollector NULL = CollideShapeClosestHitCollisionCollector.createInstance();
+    static public final CollideShapeClosestHitCollisionCollector NULL = CollideShapeClosestHitCollisionCollector.native_new();
 
-    static public final CollideShapeClosestHitCollisionCollector T_01 = CollideShapeClosestHitCollisionCollector.createInstance();
+    static public final CollideShapeClosestHitCollisionCollector T_01 = CollideShapeClosestHitCollisionCollector.native_new();
 
-    static public final CollideShapeClosestHitCollisionCollector T_02 = CollideShapeClosestHitCollisionCollector.createInstance();
+    static public final CollideShapeClosestHitCollisionCollector T_02 = CollideShapeClosestHitCollisionCollector.native_new();
 
-    static public final CollideShapeClosestHitCollisionCollector T_03 = CollideShapeClosestHitCollisionCollector.createInstance();
+    static public final CollideShapeClosestHitCollisionCollector T_03 = CollideShapeClosestHitCollisionCollector.native_new();
 
     public CollideShapeClosestHitCollisionCollector() {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return (jlong)new CollideShapeClosestHitCollisionCollector();
     /**
      * @return An empty instance without a native address
      */
-    public static CollideShapeClosestHitCollisionCollector createInstance() {
+    public static CollideShapeClosestHitCollisionCollector native_new() {
         return new CollideShapeClosestHitCollisionCollector((byte) 0, (char) 0);
     }
 
@@ -70,7 +70,7 @@ return nativeObject->HadHit();
         if (pointer == 0)
             return null;
         if (CollideShapeResult_TEMP_GEN_0 == null)
-            CollideShapeResult_TEMP_GEN_0 = CollideShapeResult.createInstance();
+            CollideShapeResult_TEMP_GEN_0 = CollideShapeResult.native_new();
         CollideShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
         return CollideShapeResult_TEMP_GEN_0;
     }

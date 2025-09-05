@@ -19,13 +19,13 @@ public class HingeConstraint extends TwoBodyConstraint {
 
     private Vector2 Vector2_TEMP_GEN_0;
 
-    static public final HingeConstraint NULL = HingeConstraint.createInstance();
+    static public final HingeConstraint NULL = HingeConstraint.native_new();
 
-    static public final HingeConstraint T_01 = HingeConstraint.createInstance();
+    static public final HingeConstraint T_01 = HingeConstraint.native_new();
 
-    static public final HingeConstraint T_02 = HingeConstraint.createInstance();
+    static public final HingeConstraint T_02 = HingeConstraint.native_new();
 
-    static public final HingeConstraint T_03 = HingeConstraint.createInstance();
+    static public final HingeConstraint T_03 = HingeConstraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -38,7 +38,7 @@ public class HingeConstraint extends TwoBodyConstraint {
     /**
      * @return An empty instance without a native address
      */
-    public static HingeConstraint createInstance() {
+    public static HingeConstraint native_new() {
         return new HingeConstraint((byte) 0, (char) 0);
     }
 
@@ -82,7 +82,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (MotorSettings_TEMP_GEN_0 == null)
-            MotorSettings_TEMP_GEN_0 = MotorSettings.createInstance();
+            MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return MotorSettings_TEMP_GEN_0;
     }
@@ -218,7 +218,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
-            SpringSettings_TEMP_GEN_0 = SpringSettings.createInstance();
+            SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }
@@ -248,7 +248,7 @@ jsObj.SetLimitsSpringSettings(inLimitsSpringSettings_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -267,7 +267,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vector2_TEMP_GEN_0 == null)
-            Vector2_TEMP_GEN_0 = Vector2.createInstance();
+            Vector2_TEMP_GEN_0 = Vector2.native_new();
         Vector2_TEMP_GEN_0.internal_reset(pointer, false);
         return Vector2_TEMP_GEN_0;
     }

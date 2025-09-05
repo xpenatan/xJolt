@@ -7,13 +7,13 @@ package jolt.physics.collision.shape;
 
 public class DecoratedShapeSettings extends ShapeSettings {
 
-    static public final DecoratedShapeSettings NULL = DecoratedShapeSettings.createInstance();
+    static public final DecoratedShapeSettings NULL = DecoratedShapeSettings.native_new();
 
-    static public final DecoratedShapeSettings T_01 = DecoratedShapeSettings.createInstance();
+    static public final DecoratedShapeSettings T_01 = DecoratedShapeSettings.native_new();
 
-    static public final DecoratedShapeSettings T_02 = DecoratedShapeSettings.createInstance();
+    static public final DecoratedShapeSettings T_02 = DecoratedShapeSettings.native_new();
 
-    static public final DecoratedShapeSettings T_03 = DecoratedShapeSettings.createInstance();
+    static public final DecoratedShapeSettings T_03 = DecoratedShapeSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class DecoratedShapeSettings extends ShapeSettings {
     /**
      * @return An empty instance without a native address
      */
-    public static DecoratedShapeSettings createInstance() {
+    public static DecoratedShapeSettings native_new() {
         return new DecoratedShapeSettings((byte) 0, (char) 0);
     }
 }

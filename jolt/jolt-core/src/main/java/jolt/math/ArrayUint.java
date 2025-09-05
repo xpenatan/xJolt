@@ -11,13 +11,13 @@ public class ArrayUint extends IDLBase {
 
     private UintMemRef UintMemRef_TEMP_GEN_0;
 
-    static public final ArrayUint NULL = ArrayUint.createInstance();
+    static public final ArrayUint NULL = ArrayUint.native_new();
 
-    static public final ArrayUint T_01 = ArrayUint.createInstance();
+    static public final ArrayUint T_01 = ArrayUint.native_new();
 
-    static public final ArrayUint T_02 = ArrayUint.createInstance();
+    static public final ArrayUint T_02 = ArrayUint.native_new();
 
-    static public final ArrayUint T_03 = ArrayUint.createInstance();
+    static public final ArrayUint T_03 = ArrayUint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayUint extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayUint createInstance() {
+    public static ArrayUint native_new() {
         return new ArrayUint((byte) 0, (char) 0);
     }
 
@@ -118,7 +118,7 @@ nativeObject->clear();
         if (pointer == 0)
             return null;
         if (UintMemRef_TEMP_GEN_0 == null)
-            UintMemRef_TEMP_GEN_0 = UintMemRef.createInstance();
+            UintMemRef_TEMP_GEN_0 = UintMemRef.native_new();
         UintMemRef_TEMP_GEN_0.internal_reset(pointer, false);
         return UintMemRef_TEMP_GEN_0;
     }

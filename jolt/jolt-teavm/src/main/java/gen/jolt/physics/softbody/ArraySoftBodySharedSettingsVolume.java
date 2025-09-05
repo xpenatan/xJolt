@@ -11,13 +11,13 @@ public class ArraySoftBodySharedSettingsVolume extends IDLBase {
 
     private SoftBodySharedSettingsVolume SoftBodySharedSettingsVolume_TEMP_GEN_0;
 
-    static public final ArraySoftBodySharedSettingsVolume NULL = ArraySoftBodySharedSettingsVolume.createInstance();
+    static public final ArraySoftBodySharedSettingsVolume NULL = ArraySoftBodySharedSettingsVolume.native_new();
 
-    static public final ArraySoftBodySharedSettingsVolume T_01 = ArraySoftBodySharedSettingsVolume.createInstance();
+    static public final ArraySoftBodySharedSettingsVolume T_01 = ArraySoftBodySharedSettingsVolume.native_new();
 
-    static public final ArraySoftBodySharedSettingsVolume T_02 = ArraySoftBodySharedSettingsVolume.createInstance();
+    static public final ArraySoftBodySharedSettingsVolume T_02 = ArraySoftBodySharedSettingsVolume.native_new();
 
-    static public final ArraySoftBodySharedSettingsVolume T_03 = ArraySoftBodySharedSettingsVolume.createInstance();
+    static public final ArraySoftBodySharedSettingsVolume T_03 = ArraySoftBodySharedSettingsVolume.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArraySoftBodySharedSettingsVolume extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArraySoftBodySharedSettingsVolume createInstance() {
+    public static ArraySoftBodySharedSettingsVolume native_new() {
         return new ArraySoftBodySharedSettingsVolume((byte) 0, (char) 0);
     }
 
@@ -73,7 +73,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (SoftBodySharedSettingsVolume_TEMP_GEN_0 == null)
-            SoftBodySharedSettingsVolume_TEMP_GEN_0 = SoftBodySharedSettingsVolume.createInstance();
+            SoftBodySharedSettingsVolume_TEMP_GEN_0 = SoftBodySharedSettingsVolume.native_new();
         SoftBodySharedSettingsVolume_TEMP_GEN_0.internal_reset(pointer, false);
         return SoftBodySharedSettingsVolume_TEMP_GEN_0;
     }

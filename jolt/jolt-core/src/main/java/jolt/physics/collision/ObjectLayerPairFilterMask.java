@@ -7,13 +7,13 @@ package jolt.physics.collision;
 
 public class ObjectLayerPairFilterMask extends ObjectLayerPairFilter {
 
-    static public final ObjectLayerPairFilterMask NULL = ObjectLayerPairFilterMask.createInstance();
+    static public final ObjectLayerPairFilterMask NULL = ObjectLayerPairFilterMask.native_new();
 
-    static public final ObjectLayerPairFilterMask T_01 = ObjectLayerPairFilterMask.createInstance();
+    static public final ObjectLayerPairFilterMask T_01 = ObjectLayerPairFilterMask.native_new();
 
-    static public final ObjectLayerPairFilterMask T_02 = ObjectLayerPairFilterMask.createInstance();
+    static public final ObjectLayerPairFilterMask T_02 = ObjectLayerPairFilterMask.native_new();
 
-    static public final ObjectLayerPairFilterMask T_03 = ObjectLayerPairFilterMask.createInstance();
+    static public final ObjectLayerPairFilterMask T_03 = ObjectLayerPairFilterMask.native_new();
 
     public ObjectLayerPairFilterMask() {
         super((byte) 1, (char) 1);
@@ -37,7 +37,7 @@ return (jlong)new ObjectLayerPairFilterMask();
     /**
      * @return An empty instance without a native address
      */
-    public static ObjectLayerPairFilterMask createInstance() {
+    public static ObjectLayerPairFilterMask native_new() {
         return new ObjectLayerPairFilterMask((byte) 0, (char) 0);
     }
 

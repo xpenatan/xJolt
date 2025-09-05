@@ -23,7 +23,7 @@ public class GroupFilter extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static GroupFilter createInstance() {
+    public static GroupFilter native_new() {
         return new GroupFilter((byte) 0, (char) 0);
     }
 
@@ -94,10 +94,10 @@ jsObj.Release();
 
     private boolean internal_CanCollide(int inGroup1_addr, int inGroup2_addr) {
         if (CollisionGroup_TEMP_STATIC_GEN_0 == null)
-            CollisionGroup_TEMP_STATIC_GEN_0 = CollisionGroup.createInstance();
+            CollisionGroup_TEMP_STATIC_GEN_0 = CollisionGroup.native_new();
         CollisionGroup_TEMP_STATIC_GEN_0.internal_reset(inGroup1_addr, false);
         if (CollisionGroup_TEMP_STATIC_GEN_1 == null)
-            CollisionGroup_TEMP_STATIC_GEN_1 = CollisionGroup.createInstance();
+            CollisionGroup_TEMP_STATIC_GEN_1 = CollisionGroup.native_new();
         CollisionGroup_TEMP_STATIC_GEN_1.internal_reset(inGroup2_addr, false);
         return CanCollide(CollisionGroup_TEMP_STATIC_GEN_0, CollisionGroup_TEMP_STATIC_GEN_1);
     }

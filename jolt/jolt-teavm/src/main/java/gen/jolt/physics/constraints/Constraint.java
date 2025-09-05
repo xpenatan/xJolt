@@ -11,13 +11,13 @@ import gen.jolt.enums.EConstraintSubType;
 
 public class Constraint extends IDLBase {
 
-    static public final Constraint NULL = Constraint.createInstance();
+    static public final Constraint NULL = Constraint.native_new();
 
-    static public final Constraint T_01 = Constraint.createInstance();
+    static public final Constraint T_01 = Constraint.native_new();
 
-    static public final Constraint T_02 = Constraint.createInstance();
+    static public final Constraint T_02 = Constraint.native_new();
 
-    static public final Constraint T_03 = Constraint.createInstance();
+    static public final Constraint T_03 = Constraint.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class Constraint extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static Constraint createInstance() {
+    public static Constraint native_new() {
         return new Constraint((byte) 0, (char) 0);
     }
 

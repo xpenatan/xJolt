@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class Vec3MemRef extends IDLBase {
 
-    static public final Vec3MemRef NULL = Vec3MemRef.createInstance();
+    static public final Vec3MemRef NULL = Vec3MemRef.native_new();
 
-    static public final Vec3MemRef T_01 = Vec3MemRef.createInstance();
+    static public final Vec3MemRef T_01 = Vec3MemRef.native_new();
 
-    static public final Vec3MemRef T_02 = Vec3MemRef.createInstance();
+    static public final Vec3MemRef T_02 = Vec3MemRef.native_new();
 
-    static public final Vec3MemRef T_03 = Vec3MemRef.createInstance();
+    static public final Vec3MemRef T_03 = Vec3MemRef.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class Vec3MemRef extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static Vec3MemRef createInstance() {
+    public static Vec3MemRef native_new() {
         return new Vec3MemRef((byte) 0, (char) 0);
     }
 

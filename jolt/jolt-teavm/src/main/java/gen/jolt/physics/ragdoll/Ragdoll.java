@@ -31,13 +31,13 @@ public class Ragdoll extends IDLBase {
 
     private RagdollSettings RagdollSettings_TEMP_GEN_0;
 
-    static public final Ragdoll NULL = Ragdoll.createInstance();
+    static public final Ragdoll NULL = Ragdoll.native_new();
 
-    static public final Ragdoll T_01 = Ragdoll.createInstance();
+    static public final Ragdoll T_01 = Ragdoll.native_new();
 
-    static public final Ragdoll T_02 = Ragdoll.createInstance();
+    static public final Ragdoll T_02 = Ragdoll.native_new();
 
-    static public final Ragdoll T_03 = Ragdoll.createInstance();
+    static public final Ragdoll T_03 = Ragdoll.native_new();
 
     public Ragdoll(PhysicsSystem inSystem) {
         int addr = internal_native_create_PhysicsSystem(inSystem.native_address);
@@ -61,7 +61,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static Ragdoll createInstance() {
+    public static Ragdoll native_new() {
         return new Ragdoll((byte) 0, (char) 0);
     }
 
@@ -392,7 +392,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
@@ -411,7 +411,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (BodyIDVector_TEMP_GEN_0 == null)
-            BodyIDVector_TEMP_GEN_0 = BodyIDVector.createInstance();
+            BodyIDVector_TEMP_GEN_0 = BodyIDVector.native_new();
         BodyIDVector_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyIDVector_TEMP_GEN_0;
     }
@@ -442,7 +442,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_0 == null)
-            AABox_TEMP_GEN_0 = AABox.createInstance();
+            AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
         return AABox_TEMP_GEN_0;
     }
@@ -461,7 +461,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (AABox_TEMP_GEN_1 == null)
-            AABox_TEMP_GEN_1 = AABox.createInstance();
+            AABox_TEMP_GEN_1 = AABox.native_new();
         AABox_TEMP_GEN_1.internal_reset(pointer, false);
         return AABox_TEMP_GEN_1;
     }
@@ -480,7 +480,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (TwoBodyConstraint_TEMP_GEN_0 == null)
-            TwoBodyConstraint_TEMP_GEN_0 = TwoBodyConstraint.createInstance();
+            TwoBodyConstraint_TEMP_GEN_0 = TwoBodyConstraint.native_new();
         TwoBodyConstraint_TEMP_GEN_0.internal_reset(pointer, false);
         return TwoBodyConstraint_TEMP_GEN_0;
     }
@@ -499,7 +499,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (RagdollSettings_TEMP_GEN_0 == null)
-            RagdollSettings_TEMP_GEN_0 = RagdollSettings.createInstance();
+            RagdollSettings_TEMP_GEN_0 = RagdollSettings.native_new();
         RagdollSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return RagdollSettings_TEMP_GEN_0;
     }

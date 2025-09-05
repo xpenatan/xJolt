@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class CharacterContactSettings extends IDLBase {
 
-    static public final CharacterContactSettings NULL = CharacterContactSettings.createInstance();
+    static public final CharacterContactSettings NULL = CharacterContactSettings.native_new();
 
-    static public final CharacterContactSettings T_01 = CharacterContactSettings.createInstance();
+    static public final CharacterContactSettings T_01 = CharacterContactSettings.native_new();
 
-    static public final CharacterContactSettings T_02 = CharacterContactSettings.createInstance();
+    static public final CharacterContactSettings T_02 = CharacterContactSettings.native_new();
 
-    static public final CharacterContactSettings T_03 = CharacterContactSettings.createInstance();
+    static public final CharacterContactSettings T_03 = CharacterContactSettings.native_new();
 
     public CharacterContactSettings() {
         int addr = internal_native_create();
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static CharacterContactSettings createInstance() {
+    public static CharacterContactSettings native_new() {
         return new CharacterContactSettings((byte) 0, (char) 0);
     }
 

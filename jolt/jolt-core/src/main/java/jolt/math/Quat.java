@@ -53,13 +53,13 @@ public class Quat extends IDLBase {
 
     private Quat Quat_TEMP_GEN_9;
 
-    static public final Quat NULL = Quat.createInstance();
+    static public final Quat NULL = Quat.native_new();
 
-    static public final Quat T_01 = Quat.createInstance();
+    static public final Quat T_01 = Quat.native_new();
 
-    static public final Quat T_02 = Quat.createInstance();
+    static public final Quat T_02 = Quat.native_new();
 
-    static public final Quat T_03 = Quat.createInstance();
+    static public final Quat T_03 = Quat.native_new();
 
     public Quat() {
         long addr = internal_native_create();
@@ -91,7 +91,7 @@ return (jlong)new Quat((float)inX, (float)inY, (float)inZ, (float)inW);
     /**
      * @return An empty instance without a native address
      */
-    public static Quat createInstance() {
+    public static Quat native_new() {
         return new Quat((byte) 0, (char) 0);
     }
 
@@ -110,7 +110,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (Quat_TEMP_STATIC_GEN_0 == null)
-            Quat_TEMP_STATIC_GEN_0 = Quat.createInstance();
+            Quat_TEMP_STATIC_GEN_0 = Quat.native_new();
         Quat_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_0;
     }
@@ -126,7 +126,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_STATIC_GEN_1 == null)
-            Quat_TEMP_STATIC_GEN_1 = Quat.createInstance();
+            Quat_TEMP_STATIC_GEN_1 = Quat.native_new();
         Quat_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_1;
     }
@@ -142,7 +142,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_STATIC_GEN_2 == null)
-            Quat_TEMP_STATIC_GEN_2 = Quat.createInstance();
+            Quat_TEMP_STATIC_GEN_2 = Quat.native_new();
         Quat_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_2;
     }
@@ -158,7 +158,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_STATIC_GEN_3 == null)
-            Quat_TEMP_STATIC_GEN_3 = Quat.createInstance();
+            Quat_TEMP_STATIC_GEN_3 = Quat.native_new();
         Quat_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_3;
     }
@@ -192,7 +192,7 @@ return ((*nativeObject != *((Quat* )inQ_addr)));*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -209,7 +209,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -226,7 +226,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_1 == null)
-            Quat_TEMP_GEN_1 = Quat.createInstance();
+            Quat_TEMP_GEN_1 = Quat.native_new();
         Quat_TEMP_GEN_1.internal_reset(pointer, false);
         return Quat_TEMP_GEN_1;
     }
@@ -303,7 +303,7 @@ return nativeObject->LengthSq();
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_2 == null)
-            Quat_TEMP_GEN_2 = Quat.createInstance();
+            Quat_TEMP_GEN_2 = Quat.native_new();
         Quat_TEMP_GEN_2.internal_reset(pointer, false);
         return Quat_TEMP_GEN_2;
     }
@@ -320,7 +320,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_STATIC_GEN_4 == null)
-            Quat_TEMP_STATIC_GEN_4 = Quat.createInstance();
+            Quat_TEMP_STATIC_GEN_4 = Quat.native_new();
         Quat_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Quat_TEMP_STATIC_GEN_4;
     }
@@ -336,7 +336,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -393,7 +393,7 @@ return nativeObject->GetW();
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -460,7 +460,7 @@ nativeObject->Set((float)inX, (float)inY, (float)inZ, (float)inW);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -477,7 +477,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -494,7 +494,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
@@ -511,7 +511,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_6 == null)
-            Vec3_TEMP_GEN_6 = Vec3.createInstance();
+            Vec3_TEMP_GEN_6 = Vec3.native_new();
         Vec3_TEMP_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_6;
     }
@@ -538,7 +538,7 @@ return nativeObject->Dot(*((Quat* )inQ_addr));
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_3 == null)
-            Quat_TEMP_GEN_3 = Quat.createInstance();
+            Quat_TEMP_GEN_3 = Quat.native_new();
         Quat_TEMP_GEN_3.internal_reset(pointer, false);
         return Quat_TEMP_GEN_3;
     }
@@ -555,7 +555,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_4 == null)
-            Quat_TEMP_GEN_4 = Quat.createInstance();
+            Quat_TEMP_GEN_4 = Quat.native_new();
         Quat_TEMP_GEN_4.internal_reset(pointer, false);
         return Quat_TEMP_GEN_4;
     }
@@ -572,7 +572,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_5 == null)
-            Quat_TEMP_GEN_5 = Quat.createInstance();
+            Quat_TEMP_GEN_5 = Quat.native_new();
         Quat_TEMP_GEN_5.internal_reset(pointer, false);
         return Quat_TEMP_GEN_5;
     }
@@ -589,7 +589,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_6 == null)
-            Quat_TEMP_GEN_6 = Quat.createInstance();
+            Quat_TEMP_GEN_6 = Quat.native_new();
         Quat_TEMP_GEN_6.internal_reset(pointer, false);
         return Quat_TEMP_GEN_6;
     }
@@ -616,7 +616,7 @@ return nativeObject->GetRotationAngle(*((Vec3* )inAxis_addr));
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_7 == null)
-            Quat_TEMP_GEN_7 = Quat.createInstance();
+            Quat_TEMP_GEN_7 = Quat.native_new();
         Quat_TEMP_GEN_7.internal_reset(pointer, false);
         return Quat_TEMP_GEN_7;
     }
@@ -643,7 +643,7 @@ nativeObject->GetSwingTwist(*((Quat* )outSwing_addr), *((Quat* )outTwist_addr));
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_8 == null)
-            Quat_TEMP_GEN_8 = Quat.createInstance();
+            Quat_TEMP_GEN_8 = Quat.native_new();
         Quat_TEMP_GEN_8.internal_reset(pointer, false);
         return Quat_TEMP_GEN_8;
     }
@@ -660,7 +660,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_9 == null)
-            Quat_TEMP_GEN_9 = Quat.createInstance();
+            Quat_TEMP_GEN_9 = Quat.native_new();
         Quat_TEMP_GEN_9.internal_reset(pointer, false);
         return Quat_TEMP_GEN_9;
     }

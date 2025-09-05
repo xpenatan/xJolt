@@ -12,13 +12,13 @@ public class SoftBodySharedSettingsInvBind extends IDLBase {
 
     private Mat44 Mat44_TEMP_GEN_0;
 
-    static public final SoftBodySharedSettingsInvBind NULL = SoftBodySharedSettingsInvBind.createInstance();
+    static public final SoftBodySharedSettingsInvBind NULL = SoftBodySharedSettingsInvBind.native_new();
 
-    static public final SoftBodySharedSettingsInvBind T_01 = SoftBodySharedSettingsInvBind.createInstance();
+    static public final SoftBodySharedSettingsInvBind T_01 = SoftBodySharedSettingsInvBind.native_new();
 
-    static public final SoftBodySharedSettingsInvBind T_02 = SoftBodySharedSettingsInvBind.createInstance();
+    static public final SoftBodySharedSettingsInvBind T_02 = SoftBodySharedSettingsInvBind.native_new();
 
-    static public final SoftBodySharedSettingsInvBind T_03 = SoftBodySharedSettingsInvBind.createInstance();
+    static public final SoftBodySharedSettingsInvBind T_03 = SoftBodySharedSettingsInvBind.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,7 +30,7 @@ public class SoftBodySharedSettingsInvBind extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodySharedSettingsInvBind createInstance() {
+    public static SoftBodySharedSettingsInvBind native_new() {
         return new SoftBodySharedSettingsInvBind((byte) 0, (char) 0);
     }
 
@@ -72,7 +72,7 @@ jsObj.set_mJointIndex(mJointIndex);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }

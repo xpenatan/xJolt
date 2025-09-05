@@ -11,13 +11,13 @@ public class CollideShapeAllHitCollisionCollector extends CollideShapeCollector 
 
     private ArrayCollideShapeResult ArrayCollideShapeResult_TEMP_GEN_0;
 
-    static public final CollideShapeAllHitCollisionCollector NULL = CollideShapeAllHitCollisionCollector.createInstance();
+    static public final CollideShapeAllHitCollisionCollector NULL = CollideShapeAllHitCollisionCollector.native_new();
 
-    static public final CollideShapeAllHitCollisionCollector T_01 = CollideShapeAllHitCollisionCollector.createInstance();
+    static public final CollideShapeAllHitCollisionCollector T_01 = CollideShapeAllHitCollisionCollector.native_new();
 
-    static public final CollideShapeAllHitCollisionCollector T_02 = CollideShapeAllHitCollisionCollector.createInstance();
+    static public final CollideShapeAllHitCollisionCollector T_02 = CollideShapeAllHitCollisionCollector.native_new();
 
-    static public final CollideShapeAllHitCollisionCollector T_03 = CollideShapeAllHitCollisionCollector.createInstance();
+    static public final CollideShapeAllHitCollisionCollector T_03 = CollideShapeAllHitCollisionCollector.native_new();
 
     public CollideShapeAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return (jlong)new CollideShapeAllHitCollisionCollector();
     /**
      * @return An empty instance without a native address
      */
-    public static CollideShapeAllHitCollisionCollector createInstance() {
+    public static CollideShapeAllHitCollisionCollector native_new() {
         return new CollideShapeAllHitCollisionCollector((byte) 0, (char) 0);
     }
 
@@ -80,7 +80,7 @@ return nativeObject->HadHit();
         if (pointer == 0)
             return null;
         if (ArrayCollideShapeResult_TEMP_GEN_0 == null)
-            ArrayCollideShapeResult_TEMP_GEN_0 = ArrayCollideShapeResult.createInstance();
+            ArrayCollideShapeResult_TEMP_GEN_0 = ArrayCollideShapeResult.native_new();
         ArrayCollideShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayCollideShapeResult_TEMP_GEN_0;
     }

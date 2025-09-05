@@ -11,13 +11,13 @@ public class EmptyShapeSettings extends ShapeSettings {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final EmptyShapeSettings NULL = EmptyShapeSettings.createInstance();
+    static public final EmptyShapeSettings NULL = EmptyShapeSettings.native_new();
 
-    static public final EmptyShapeSettings T_01 = EmptyShapeSettings.createInstance();
+    static public final EmptyShapeSettings T_01 = EmptyShapeSettings.native_new();
 
-    static public final EmptyShapeSettings T_02 = EmptyShapeSettings.createInstance();
+    static public final EmptyShapeSettings T_02 = EmptyShapeSettings.native_new();
 
-    static public final EmptyShapeSettings T_03 = EmptyShapeSettings.createInstance();
+    static public final EmptyShapeSettings T_03 = EmptyShapeSettings.native_new();
 
     public EmptyShapeSettings() {
         super((byte) 1, (char) 1);
@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static EmptyShapeSettings createInstance() {
+    public static EmptyShapeSettings native_new() {
         return new EmptyShapeSettings((byte) 0, (char) 0);
     }
 
@@ -63,7 +63,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

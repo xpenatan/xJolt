@@ -7,13 +7,13 @@ package jolt.physics;
 
 public class StateRecorderImpl extends StateRecorder {
 
-    static public final StateRecorderImpl NULL = StateRecorderImpl.createInstance();
+    static public final StateRecorderImpl NULL = StateRecorderImpl.native_new();
 
-    static public final StateRecorderImpl T_01 = StateRecorderImpl.createInstance();
+    static public final StateRecorderImpl T_01 = StateRecorderImpl.native_new();
 
-    static public final StateRecorderImpl T_02 = StateRecorderImpl.createInstance();
+    static public final StateRecorderImpl T_02 = StateRecorderImpl.native_new();
 
-    static public final StateRecorderImpl T_03 = StateRecorderImpl.createInstance();
+    static public final StateRecorderImpl T_03 = StateRecorderImpl.native_new();
 
     public StateRecorderImpl() {
         super((byte) 1, (char) 1);
@@ -37,7 +37,7 @@ return (jlong)new StateRecorderImpl();
     /**
      * @return An empty instance without a native address
      */
-    public static StateRecorderImpl createInstance() {
+    public static StateRecorderImpl native_new() {
         return new StateRecorderImpl((byte) 0, (char) 0);
     }
 

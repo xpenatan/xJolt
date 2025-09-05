@@ -9,13 +9,13 @@ import gen.jolt.physics.collision.CollideShapeResult;
 
 public class ShapeCastResult extends CollideShapeResult {
 
-    static public final ShapeCastResult NULL = ShapeCastResult.createInstance();
+    static public final ShapeCastResult NULL = ShapeCastResult.native_new();
 
-    static public final ShapeCastResult T_01 = ShapeCastResult.createInstance();
+    static public final ShapeCastResult T_01 = ShapeCastResult.native_new();
 
-    static public final ShapeCastResult T_02 = ShapeCastResult.createInstance();
+    static public final ShapeCastResult T_02 = ShapeCastResult.native_new();
 
-    static public final ShapeCastResult T_03 = ShapeCastResult.createInstance();
+    static public final ShapeCastResult T_03 = ShapeCastResult.native_new();
 
     public ShapeCastResult() {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ShapeCastResult createInstance() {
+    public static ShapeCastResult native_new() {
         return new ShapeCastResult((byte) 0, (char) 0);
     }
 

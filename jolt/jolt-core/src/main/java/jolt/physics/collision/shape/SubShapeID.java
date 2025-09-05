@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class SubShapeID extends IDLBase {
 
-    static public final SubShapeID NULL = SubShapeID.createInstance();
+    static public final SubShapeID NULL = SubShapeID.native_new();
 
-    static public final SubShapeID T_01 = SubShapeID.createInstance();
+    static public final SubShapeID T_01 = SubShapeID.native_new();
 
-    static public final SubShapeID T_02 = SubShapeID.createInstance();
+    static public final SubShapeID T_02 = SubShapeID.native_new();
 
-    static public final SubShapeID T_03 = SubShapeID.createInstance();
+    static public final SubShapeID T_03 = SubShapeID.native_new();
 
     public SubShapeID() {
         long addr = internal_native_create();
@@ -37,7 +37,7 @@ return (jlong)new SubShapeID();
     /**
      * @return An empty instance without a native address
      */
-    public static SubShapeID createInstance() {
+    public static SubShapeID native_new() {
         return new SubShapeID((byte) 0, (char) 0);
     }
 

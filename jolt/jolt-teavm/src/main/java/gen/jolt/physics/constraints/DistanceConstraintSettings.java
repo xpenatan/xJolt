@@ -17,13 +17,13 @@ public class DistanceConstraintSettings extends TwoBodyConstraintSettings {
 
     private SpringSettings SpringSettings_TEMP_GEN_0;
 
-    static public final DistanceConstraintSettings NULL = DistanceConstraintSettings.createInstance();
+    static public final DistanceConstraintSettings NULL = DistanceConstraintSettings.native_new();
 
-    static public final DistanceConstraintSettings T_01 = DistanceConstraintSettings.createInstance();
+    static public final DistanceConstraintSettings T_01 = DistanceConstraintSettings.native_new();
 
-    static public final DistanceConstraintSettings T_02 = DistanceConstraintSettings.createInstance();
+    static public final DistanceConstraintSettings T_02 = DistanceConstraintSettings.native_new();
 
-    static public final DistanceConstraintSettings T_03 = DistanceConstraintSettings.createInstance();
+    static public final DistanceConstraintSettings T_03 = DistanceConstraintSettings.native_new();
 
     public DistanceConstraintSettings() {
         super((byte) 1, (char) 1);
@@ -49,7 +49,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static DistanceConstraintSettings createInstance() {
+    public static DistanceConstraintSettings native_new() {
         return new DistanceConstraintSettings((byte) 0, (char) 0);
     }
 
@@ -92,7 +92,7 @@ jsObj.set_mSpace(mSpace);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -122,7 +122,7 @@ jsObj.set_mPoint1(mPoint1_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -196,7 +196,7 @@ jsObj.set_mMaxDistance(mMaxDistance);
         if (pointer == 0)
             return null;
         if (SpringSettings_TEMP_GEN_0 == null)
-            SpringSettings_TEMP_GEN_0 = SpringSettings.createInstance();
+            SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return SpringSettings_TEMP_GEN_0;
     }

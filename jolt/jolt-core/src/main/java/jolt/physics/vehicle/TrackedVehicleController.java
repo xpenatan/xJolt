@@ -11,13 +11,13 @@ public class TrackedVehicleController extends VehicleController {
 
     private VehicleTransmission VehicleTransmission_TEMP_GEN_0;
 
-    static public final TrackedVehicleController NULL = TrackedVehicleController.createInstance();
+    static public final TrackedVehicleController NULL = TrackedVehicleController.native_new();
 
-    static public final TrackedVehicleController T_01 = TrackedVehicleController.createInstance();
+    static public final TrackedVehicleController T_01 = TrackedVehicleController.native_new();
 
-    static public final TrackedVehicleController T_02 = TrackedVehicleController.createInstance();
+    static public final TrackedVehicleController T_02 = TrackedVehicleController.native_new();
 
-    static public final TrackedVehicleController T_03 = TrackedVehicleController.createInstance();
+    static public final TrackedVehicleController T_03 = TrackedVehicleController.native_new();
 
     public TrackedVehicleController(TrackedVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return (jlong)new TrackedVehicleController(*((TrackedVehicleControllerSettings* 
     /**
      * @return An empty instance without a native address
      */
-    public static TrackedVehicleController createInstance() {
+    public static TrackedVehicleController native_new() {
         return new TrackedVehicleController((byte) 0, (char) 0);
     }
 
@@ -140,7 +140,7 @@ return nativeObject->GetBrakeInput();
         if (pointer == 0)
             return null;
         if (VehicleEngine_TEMP_GEN_0 == null)
-            VehicleEngine_TEMP_GEN_0 = VehicleEngine.createInstance();
+            VehicleEngine_TEMP_GEN_0 = VehicleEngine.native_new();
         VehicleEngine_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleEngine_TEMP_GEN_0;
     }
@@ -156,7 +156,7 @@ return (jlong)&nativeObject->GetEngine();
         if (pointer == 0)
             return null;
         if (VehicleTransmission_TEMP_GEN_0 == null)
-            VehicleTransmission_TEMP_GEN_0 = VehicleTransmission.createInstance();
+            VehicleTransmission_TEMP_GEN_0 = VehicleTransmission.native_new();
         VehicleTransmission_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleTransmission_TEMP_GEN_0;
     }

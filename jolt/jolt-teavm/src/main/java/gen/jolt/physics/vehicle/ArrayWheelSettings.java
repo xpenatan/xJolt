@@ -11,13 +11,13 @@ public class ArrayWheelSettings extends IDLBase {
 
     private WheelSettings WheelSettings_TEMP_GEN_0;
 
-    static public final ArrayWheelSettings NULL = ArrayWheelSettings.createInstance();
+    static public final ArrayWheelSettings NULL = ArrayWheelSettings.native_new();
 
-    static public final ArrayWheelSettings T_01 = ArrayWheelSettings.createInstance();
+    static public final ArrayWheelSettings T_01 = ArrayWheelSettings.native_new();
 
-    static public final ArrayWheelSettings T_02 = ArrayWheelSettings.createInstance();
+    static public final ArrayWheelSettings T_02 = ArrayWheelSettings.native_new();
 
-    static public final ArrayWheelSettings T_03 = ArrayWheelSettings.createInstance();
+    static public final ArrayWheelSettings T_03 = ArrayWheelSettings.native_new();
 
     public ArrayWheelSettings() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayWheelSettings createInstance() {
+    public static ArrayWheelSettings native_new() {
         return new ArrayWheelSettings((byte) 0, (char) 0);
     }
 
@@ -85,7 +85,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (WheelSettings_TEMP_GEN_0 == null)
-            WheelSettings_TEMP_GEN_0 = WheelSettings.createInstance();
+            WheelSettings_TEMP_GEN_0 = WheelSettings.native_new();
         WheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
         return WheelSettings_TEMP_GEN_0;
     }

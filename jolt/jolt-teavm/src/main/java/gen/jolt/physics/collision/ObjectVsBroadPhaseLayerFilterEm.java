@@ -23,7 +23,7 @@ public class ObjectVsBroadPhaseLayerFilterEm extends ObjectVsBroadPhaseLayerFilt
     /**
      * @return An empty instance without a native address
      */
-    public static ObjectVsBroadPhaseLayerFilterEm createInstance() {
+    public static ObjectVsBroadPhaseLayerFilterEm native_new() {
         return new ObjectVsBroadPhaseLayerFilterEm((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jolt.destroy(jsObj);
 
     private boolean internal_ShouldCollide(int inLayer1, int inLayer2_addr) {
         if (BroadPhaseLayer_TEMP_STATIC_GEN_0 == null)
-            BroadPhaseLayer_TEMP_STATIC_GEN_0 = BroadPhaseLayer.createInstance();
+            BroadPhaseLayer_TEMP_STATIC_GEN_0 = BroadPhaseLayer.native_new();
         BroadPhaseLayer_TEMP_STATIC_GEN_0.internal_reset(inLayer2_addr, false);
         return ShouldCollide(inLayer1, BroadPhaseLayer_TEMP_STATIC_GEN_0);
     }

@@ -11,13 +11,13 @@ public class CollideShapeAnyHitCollisionCollector extends CollideShapeCollector 
 
     private CollideShapeResult CollideShapeResult_TEMP_GEN_0;
 
-    static public final CollideShapeAnyHitCollisionCollector NULL = CollideShapeAnyHitCollisionCollector.createInstance();
+    static public final CollideShapeAnyHitCollisionCollector NULL = CollideShapeAnyHitCollisionCollector.native_new();
 
-    static public final CollideShapeAnyHitCollisionCollector T_01 = CollideShapeAnyHitCollisionCollector.createInstance();
+    static public final CollideShapeAnyHitCollisionCollector T_01 = CollideShapeAnyHitCollisionCollector.native_new();
 
-    static public final CollideShapeAnyHitCollisionCollector T_02 = CollideShapeAnyHitCollisionCollector.createInstance();
+    static public final CollideShapeAnyHitCollisionCollector T_02 = CollideShapeAnyHitCollisionCollector.native_new();
 
-    static public final CollideShapeAnyHitCollisionCollector T_03 = CollideShapeAnyHitCollisionCollector.createInstance();
+    static public final CollideShapeAnyHitCollisionCollector T_03 = CollideShapeAnyHitCollisionCollector.native_new();
 
     public CollideShapeAnyHitCollisionCollector() {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return (jlong)new CollideShapeAnyHitCollisionCollector();
     /**
      * @return An empty instance without a native address
      */
-    public static CollideShapeAnyHitCollisionCollector createInstance() {
+    public static CollideShapeAnyHitCollisionCollector native_new() {
         return new CollideShapeAnyHitCollisionCollector((byte) 0, (char) 0);
     }
 
@@ -70,7 +70,7 @@ return nativeObject->HadHit();
         if (pointer == 0)
             return null;
         if (CollideShapeResult_TEMP_GEN_0 == null)
-            CollideShapeResult_TEMP_GEN_0 = CollideShapeResult.createInstance();
+            CollideShapeResult_TEMP_GEN_0 = CollideShapeResult.native_new();
         CollideShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
         return CollideShapeResult_TEMP_GEN_0;
     }

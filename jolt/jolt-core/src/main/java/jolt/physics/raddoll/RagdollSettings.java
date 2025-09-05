@@ -21,13 +21,13 @@ public class RagdollSettings extends IDLBase {
 
     private ArrayRagdollAdditionalConstraint ArrayRagdollAdditionalConstraint_TEMP_GEN_0;
 
-    static public final RagdollSettings NULL = RagdollSettings.createInstance();
+    static public final RagdollSettings NULL = RagdollSettings.native_new();
 
-    static public final RagdollSettings T_01 = RagdollSettings.createInstance();
+    static public final RagdollSettings T_01 = RagdollSettings.native_new();
 
-    static public final RagdollSettings T_02 = RagdollSettings.createInstance();
+    static public final RagdollSettings T_02 = RagdollSettings.native_new();
 
-    static public final RagdollSettings T_03 = RagdollSettings.createInstance();
+    static public final RagdollSettings T_03 = RagdollSettings.native_new();
 
     public RagdollSettings() {
         long addr = internal_native_create();
@@ -49,7 +49,7 @@ return (jlong)new RagdollSettings();
     /**
      * @return An empty instance without a native address
      */
-    public static RagdollSettings createInstance() {
+    public static RagdollSettings native_new() {
         return new RagdollSettings((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->Stabilize();
         if (pointer == 0)
             return null;
         if (Ragdoll_TEMP_GEN_0 == null)
-            Ragdoll_TEMP_GEN_0 = Ragdoll.createInstance();
+            Ragdoll_TEMP_GEN_0 = Ragdoll.native_new();
         Ragdoll_TEMP_GEN_0.internal_reset(pointer, false);
         return Ragdoll_TEMP_GEN_0;
     }
@@ -85,7 +85,7 @@ return (jlong)obj;
         if (pointer == 0)
             return null;
         if (Skeleton_TEMP_GEN_0 == null)
-            Skeleton_TEMP_GEN_0 = Skeleton.createInstance();
+            Skeleton_TEMP_GEN_0 = Skeleton.native_new();
         Skeleton_TEMP_GEN_0.internal_reset(pointer, false);
         return Skeleton_TEMP_GEN_0;
     }
@@ -152,7 +152,7 @@ nativeObject->CalculateConstraintIndexToBodyIdxPair();
         if (pointer == 0)
             return null;
         if (ArrayRagdollPart_TEMP_GEN_0 == null)
-            ArrayRagdollPart_TEMP_GEN_0 = ArrayRagdollPart.createInstance();
+            ArrayRagdollPart_TEMP_GEN_0 = ArrayRagdollPart.native_new();
         ArrayRagdollPart_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayRagdollPart_TEMP_GEN_0;
     }
@@ -178,7 +178,7 @@ nativeObject->mParts = *((ArrayRagdollPart*)mParts_addr);
         if (pointer == 0)
             return null;
         if (ArrayRagdollAdditionalConstraint_TEMP_GEN_0 == null)
-            ArrayRagdollAdditionalConstraint_TEMP_GEN_0 = ArrayRagdollAdditionalConstraint.createInstance();
+            ArrayRagdollAdditionalConstraint_TEMP_GEN_0 = ArrayRagdollAdditionalConstraint.native_new();
         ArrayRagdollAdditionalConstraint_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayRagdollAdditionalConstraint_TEMP_GEN_0;
     }

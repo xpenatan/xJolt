@@ -7,13 +7,13 @@ package jolt.core;
 
 public class TempAllocatorImpl extends TempAllocator {
 
-    static public final TempAllocatorImpl NULL = TempAllocatorImpl.createInstance();
+    static public final TempAllocatorImpl NULL = TempAllocatorImpl.native_new();
 
-    static public final TempAllocatorImpl T_01 = TempAllocatorImpl.createInstance();
+    static public final TempAllocatorImpl T_01 = TempAllocatorImpl.native_new();
 
-    static public final TempAllocatorImpl T_02 = TempAllocatorImpl.createInstance();
+    static public final TempAllocatorImpl T_02 = TempAllocatorImpl.native_new();
 
-    static public final TempAllocatorImpl T_03 = TempAllocatorImpl.createInstance();
+    static public final TempAllocatorImpl T_03 = TempAllocatorImpl.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class TempAllocatorImpl extends TempAllocator {
     /**
      * @return An empty instance without a native address
      */
-    public static TempAllocatorImpl createInstance() {
+    public static TempAllocatorImpl native_new() {
         return new TempAllocatorImpl((byte) 0, (char) 0);
     }
 

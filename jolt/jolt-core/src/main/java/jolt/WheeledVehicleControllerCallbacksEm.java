@@ -41,7 +41,7 @@ virtual void OnTireMaxImpulseCallback(unsigned int inWheelIndex, TireMaxImpulseC
     /**
      * @return An empty instance without a native address
      */
-    public static WheeledVehicleControllerCallbacksEm createInstance() {
+    public static WheeledVehicleControllerCallbacksEm native_new() {
         return new WheeledVehicleControllerCallbacksEm((byte) 0, (char) 0);
     }
 
@@ -80,7 +80,7 @@ nativeObject->SetWheeledVehicleController(*((WheeledVehicleController* )inContro
 
     private void internal_OnTireMaxImpulseCallback(int inWheelIndex, long outResult_addr, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime) {
         if (TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0 == null)
-            TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0 = TireMaxImpulseCallbackResult.createInstance();
+            TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0 = TireMaxImpulseCallbackResult.native_new();
         TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0.internal_reset(outResult_addr, false);
         OnTireMaxImpulseCallback(inWheelIndex, TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0, inSuspensionImpulse, inLongitudinalFriction, inLateralFriction, inLongitudinalSlip, inLateralSlip, inDeltaTime);
     }

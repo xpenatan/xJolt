@@ -14,13 +14,13 @@ public class CollideSettingsBase extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final CollideSettingsBase NULL = CollideSettingsBase.createInstance();
+    static public final CollideSettingsBase NULL = CollideSettingsBase.native_new();
 
-    static public final CollideSettingsBase T_01 = CollideSettingsBase.createInstance();
+    static public final CollideSettingsBase T_01 = CollideSettingsBase.native_new();
 
-    static public final CollideSettingsBase T_02 = CollideSettingsBase.createInstance();
+    static public final CollideSettingsBase T_02 = CollideSettingsBase.native_new();
 
-    static public final CollideSettingsBase T_03 = CollideSettingsBase.createInstance();
+    static public final CollideSettingsBase T_03 = CollideSettingsBase.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -32,7 +32,7 @@ public class CollideSettingsBase extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static CollideSettingsBase createInstance() {
+    public static CollideSettingsBase native_new() {
         return new CollideSettingsBase((byte) 0, (char) 0);
     }
 
@@ -133,7 +133,7 @@ nativeObject->mPenetrationTolerance = mPenetrationTolerance;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

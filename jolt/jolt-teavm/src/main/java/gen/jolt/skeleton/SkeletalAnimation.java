@@ -11,13 +11,13 @@ public class SkeletalAnimation extends IDLBase {
 
     private ArraySkeletonAnimatedJoint ArraySkeletonAnimatedJoint_TEMP_GEN_0;
 
-    static public final SkeletalAnimation NULL = SkeletalAnimation.createInstance();
+    static public final SkeletalAnimation NULL = SkeletalAnimation.native_new();
 
-    static public final SkeletalAnimation T_01 = SkeletalAnimation.createInstance();
+    static public final SkeletalAnimation T_01 = SkeletalAnimation.native_new();
 
-    static public final SkeletalAnimation T_02 = SkeletalAnimation.createInstance();
+    static public final SkeletalAnimation T_02 = SkeletalAnimation.native_new();
 
-    static public final SkeletalAnimation T_03 = SkeletalAnimation.createInstance();
+    static public final SkeletalAnimation T_03 = SkeletalAnimation.native_new();
 
     public SkeletalAnimation() {
         int addr = internal_native_create();
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SkeletalAnimation createInstance() {
+    public static SkeletalAnimation native_new() {
         return new SkeletalAnimation((byte) 0, (char) 0);
     }
 
@@ -84,7 +84,7 @@ jsObj.Sample(inTime, ioPose_addr);
         if (pointer == 0)
             return null;
         if (ArraySkeletonAnimatedJoint_TEMP_GEN_0 == null)
-            ArraySkeletonAnimatedJoint_TEMP_GEN_0 = ArraySkeletonAnimatedJoint.createInstance();
+            ArraySkeletonAnimatedJoint_TEMP_GEN_0 = ArraySkeletonAnimatedJoint.native_new();
         ArraySkeletonAnimatedJoint_TEMP_GEN_0.internal_reset(pointer, false);
         return ArraySkeletonAnimatedJoint_TEMP_GEN_0;
     }

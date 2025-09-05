@@ -11,13 +11,13 @@ public class ShapeSettings extends IDLBase {
 
     private ShapeResult ShapeResult_TEMP_GEN_0;
 
-    static public final ShapeSettings NULL = ShapeSettings.createInstance();
+    static public final ShapeSettings NULL = ShapeSettings.native_new();
 
-    static public final ShapeSettings T_01 = ShapeSettings.createInstance();
+    static public final ShapeSettings T_01 = ShapeSettings.native_new();
 
-    static public final ShapeSettings T_02 = ShapeSettings.createInstance();
+    static public final ShapeSettings T_02 = ShapeSettings.native_new();
 
-    static public final ShapeSettings T_03 = ShapeSettings.createInstance();
+    static public final ShapeSettings T_03 = ShapeSettings.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ShapeSettings extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ShapeSettings createInstance() {
+    public static ShapeSettings native_new() {
         return new ShapeSettings((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ nativeObject->Release();
         if (pointer == 0)
             return null;
         if (ShapeResult_TEMP_GEN_0 == null)
-            ShapeResult_TEMP_GEN_0 = ShapeResult.createInstance();
+            ShapeResult_TEMP_GEN_0 = ShapeResult.native_new();
         ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ShapeResult_TEMP_GEN_0;
     }

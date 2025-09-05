@@ -9,13 +9,13 @@ public class DecoratedShape extends Shape {
 
     private Shape Shape_TEMP_GEN_0;
 
-    static public final DecoratedShape NULL = DecoratedShape.createInstance();
+    static public final DecoratedShape NULL = DecoratedShape.native_new();
 
-    static public final DecoratedShape T_01 = DecoratedShape.createInstance();
+    static public final DecoratedShape T_01 = DecoratedShape.native_new();
 
-    static public final DecoratedShape T_02 = DecoratedShape.createInstance();
+    static public final DecoratedShape T_02 = DecoratedShape.native_new();
 
-    static public final DecoratedShape T_03 = DecoratedShape.createInstance();
+    static public final DecoratedShape T_03 = DecoratedShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -28,7 +28,7 @@ public class DecoratedShape extends Shape {
     /**
      * @return An empty instance without a native address
      */
-    public static DecoratedShape createInstance() {
+    public static DecoratedShape native_new() {
         return new DecoratedShape((byte) 0, (char) 0);
     }
 
@@ -37,7 +37,7 @@ public class DecoratedShape extends Shape {
         if (pointer == 0)
             return null;
         if (Shape_TEMP_GEN_0 == null)
-            Shape_TEMP_GEN_0 = Shape.createInstance();
+            Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
         return Shape_TEMP_GEN_0;
     }

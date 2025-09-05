@@ -82,7 +82,7 @@ virtual void OnContactRemoved(const SubShapeIDPair& inSubShapePair) {
     /**
      * @return An empty instance without a native address
      */
-    public static ContactListenerEm createInstance() {
+    public static ContactListenerEm native_new() {
         return new ContactListenerEm((byte) 0, (char) 0);
     }
 
@@ -113,16 +113,16 @@ delete nativeObject;
 
     private int internal_OnContactValidate(long inBody1_addr, long inBody2_addr, long inBaseOffset_addr, long inCollisionResult_addr) {
         if (Body_TEMP_STATIC_GEN_0 == null)
-            Body_TEMP_STATIC_GEN_0 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_0 = Body.native_new();
         Body_TEMP_STATIC_GEN_0.internal_reset(inBody1_addr, false);
         if (Body_TEMP_STATIC_GEN_1 == null)
-            Body_TEMP_STATIC_GEN_1 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_1 = Body.native_new();
         Body_TEMP_STATIC_GEN_1.internal_reset(inBody2_addr, false);
         if (Vec3_TEMP_STATIC_GEN_0 == null)
-            Vec3_TEMP_STATIC_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_0.internal_reset(inBaseOffset_addr, false);
         if (CollideShapeResult_TEMP_STATIC_GEN_0 == null)
-            CollideShapeResult_TEMP_STATIC_GEN_0 = CollideShapeResult.createInstance();
+            CollideShapeResult_TEMP_STATIC_GEN_0 = CollideShapeResult.native_new();
         CollideShapeResult_TEMP_STATIC_GEN_0.internal_reset(inCollisionResult_addr, false);
         return OnContactValidate(Body_TEMP_STATIC_GEN_0, Body_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_0, CollideShapeResult_TEMP_STATIC_GEN_0);
     }
@@ -132,16 +132,16 @@ delete nativeObject;
 
     private void internal_OnContactAdded(long inBody1_addr, long inBody2_addr, long inManifold_addr, long ioSettings_addr) {
         if (Body_TEMP_STATIC_GEN_2 == null)
-            Body_TEMP_STATIC_GEN_2 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_2 = Body.native_new();
         Body_TEMP_STATIC_GEN_2.internal_reset(inBody1_addr, false);
         if (Body_TEMP_STATIC_GEN_3 == null)
-            Body_TEMP_STATIC_GEN_3 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_3 = Body.native_new();
         Body_TEMP_STATIC_GEN_3.internal_reset(inBody2_addr, false);
         if (ContactManifold_TEMP_STATIC_GEN_0 == null)
-            ContactManifold_TEMP_STATIC_GEN_0 = ContactManifold.createInstance();
+            ContactManifold_TEMP_STATIC_GEN_0 = ContactManifold.native_new();
         ContactManifold_TEMP_STATIC_GEN_0.internal_reset(inManifold_addr, false);
         if (ContactSettings_TEMP_STATIC_GEN_0 == null)
-            ContactSettings_TEMP_STATIC_GEN_0 = ContactSettings.createInstance();
+            ContactSettings_TEMP_STATIC_GEN_0 = ContactSettings.native_new();
         ContactSettings_TEMP_STATIC_GEN_0.internal_reset(ioSettings_addr, false);
         OnContactAdded(Body_TEMP_STATIC_GEN_2, Body_TEMP_STATIC_GEN_3, ContactManifold_TEMP_STATIC_GEN_0, ContactSettings_TEMP_STATIC_GEN_0);
     }
@@ -151,16 +151,16 @@ delete nativeObject;
 
     private void internal_OnContactPersisted(long inBody1_addr, long inBody2_addr, long inManifold_addr, long ioSettings_addr) {
         if (Body_TEMP_STATIC_GEN_4 == null)
-            Body_TEMP_STATIC_GEN_4 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_4 = Body.native_new();
         Body_TEMP_STATIC_GEN_4.internal_reset(inBody1_addr, false);
         if (Body_TEMP_STATIC_GEN_5 == null)
-            Body_TEMP_STATIC_GEN_5 = Body.createInstance();
+            Body_TEMP_STATIC_GEN_5 = Body.native_new();
         Body_TEMP_STATIC_GEN_5.internal_reset(inBody2_addr, false);
         if (ContactManifold_TEMP_STATIC_GEN_1 == null)
-            ContactManifold_TEMP_STATIC_GEN_1 = ContactManifold.createInstance();
+            ContactManifold_TEMP_STATIC_GEN_1 = ContactManifold.native_new();
         ContactManifold_TEMP_STATIC_GEN_1.internal_reset(inManifold_addr, false);
         if (ContactSettings_TEMP_STATIC_GEN_1 == null)
-            ContactSettings_TEMP_STATIC_GEN_1 = ContactSettings.createInstance();
+            ContactSettings_TEMP_STATIC_GEN_1 = ContactSettings.native_new();
         ContactSettings_TEMP_STATIC_GEN_1.internal_reset(ioSettings_addr, false);
         OnContactPersisted(Body_TEMP_STATIC_GEN_4, Body_TEMP_STATIC_GEN_5, ContactManifold_TEMP_STATIC_GEN_1, ContactSettings_TEMP_STATIC_GEN_1);
     }
@@ -170,7 +170,7 @@ delete nativeObject;
 
     private void internal_OnContactRemoved(long inSubShapePair_addr) {
         if (SubShapeIDPair_TEMP_STATIC_GEN_0 == null)
-            SubShapeIDPair_TEMP_STATIC_GEN_0 = SubShapeIDPair.createInstance();
+            SubShapeIDPair_TEMP_STATIC_GEN_0 = SubShapeIDPair.native_new();
         SubShapeIDPair_TEMP_STATIC_GEN_0.internal_reset(inSubShapePair_addr, false);
         OnContactRemoved(SubShapeIDPair_TEMP_STATIC_GEN_0);
     }

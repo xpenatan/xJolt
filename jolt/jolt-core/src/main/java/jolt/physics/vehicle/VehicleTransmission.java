@@ -7,13 +7,13 @@ package jolt.physics.vehicle;
 
 public class VehicleTransmission extends VehicleTransmissionSettings {
 
-    static public final VehicleTransmission NULL = VehicleTransmission.createInstance();
+    static public final VehicleTransmission NULL = VehicleTransmission.native_new();
 
-    static public final VehicleTransmission T_01 = VehicleTransmission.createInstance();
+    static public final VehicleTransmission T_01 = VehicleTransmission.native_new();
 
-    static public final VehicleTransmission T_02 = VehicleTransmission.createInstance();
+    static public final VehicleTransmission T_02 = VehicleTransmission.native_new();
 
-    static public final VehicleTransmission T_03 = VehicleTransmission.createInstance();
+    static public final VehicleTransmission T_03 = VehicleTransmission.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class VehicleTransmission extends VehicleTransmissionSettings {
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleTransmission createInstance() {
+    public static VehicleTransmission native_new() {
         return new VehicleTransmission((byte) 0, (char) 0);
     }
 

@@ -11,13 +11,13 @@ public class ArrayCollideShapeResult extends IDLBase {
 
     private CollideShapeResult CollideShapeResult_TEMP_GEN_0;
 
-    static public final ArrayCollideShapeResult NULL = ArrayCollideShapeResult.createInstance();
+    static public final ArrayCollideShapeResult NULL = ArrayCollideShapeResult.native_new();
 
-    static public final ArrayCollideShapeResult T_01 = ArrayCollideShapeResult.createInstance();
+    static public final ArrayCollideShapeResult T_01 = ArrayCollideShapeResult.native_new();
 
-    static public final ArrayCollideShapeResult T_02 = ArrayCollideShapeResult.createInstance();
+    static public final ArrayCollideShapeResult T_02 = ArrayCollideShapeResult.native_new();
 
-    static public final ArrayCollideShapeResult T_03 = ArrayCollideShapeResult.createInstance();
+    static public final ArrayCollideShapeResult T_03 = ArrayCollideShapeResult.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class ArrayCollideShapeResult extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ArrayCollideShapeResult createInstance() {
+    public static ArrayCollideShapeResult native_new() {
         return new ArrayCollideShapeResult((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (CollideShapeResult_TEMP_GEN_0 == null)
-            CollideShapeResult_TEMP_GEN_0 = CollideShapeResult.createInstance();
+            CollideShapeResult_TEMP_GEN_0 = CollideShapeResult.native_new();
         CollideShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
         return CollideShapeResult_TEMP_GEN_0;
     }

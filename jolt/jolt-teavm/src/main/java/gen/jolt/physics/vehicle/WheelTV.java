@@ -9,13 +9,13 @@ public class WheelTV extends Wheel {
 
     private WheelSettingsTV WheelSettingsTV_TEMP_GEN_0;
 
-    static public final WheelTV NULL = WheelTV.createInstance();
+    static public final WheelTV NULL = WheelTV.native_new();
 
-    static public final WheelTV T_01 = WheelTV.createInstance();
+    static public final WheelTV T_01 = WheelTV.native_new();
 
-    static public final WheelTV T_02 = WheelTV.createInstance();
+    static public final WheelTV T_02 = WheelTV.native_new();
 
-    static public final WheelTV T_03 = WheelTV.createInstance();
+    static public final WheelTV T_03 = WheelTV.native_new();
 
     public WheelTV(WheelSettingsTV inWheel) {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static WheelTV createInstance() {
+    public static WheelTV native_new() {
         return new WheelTV((byte) 0, (char) 0);
     }
 
@@ -61,7 +61,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (WheelSettingsTV_TEMP_GEN_0 == null)
-            WheelSettingsTV_TEMP_GEN_0 = WheelSettingsTV.createInstance();
+            WheelSettingsTV_TEMP_GEN_0 = WheelSettingsTV.native_new();
         WheelSettingsTV_TEMP_GEN_0.internal_reset(pointer, false);
         return WheelSettingsTV_TEMP_GEN_0;
     }

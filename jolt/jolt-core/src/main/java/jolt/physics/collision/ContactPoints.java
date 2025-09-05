@@ -12,13 +12,13 @@ public class ContactPoints extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final ContactPoints NULL = ContactPoints.createInstance();
+    static public final ContactPoints NULL = ContactPoints.native_new();
 
-    static public final ContactPoints T_01 = ContactPoints.createInstance();
+    static public final ContactPoints T_01 = ContactPoints.native_new();
 
-    static public final ContactPoints T_02 = ContactPoints.createInstance();
+    static public final ContactPoints T_02 = ContactPoints.native_new();
 
-    static public final ContactPoints T_03 = ContactPoints.createInstance();
+    static public final ContactPoints T_03 = ContactPoints.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -30,7 +30,7 @@ public class ContactPoints extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static ContactPoints createInstance() {
+    public static ContactPoints native_new() {
         return new ContactPoints((byte) 0, (char) 0);
     }
 
@@ -69,7 +69,7 @@ return nativeObject->size();
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class JobSystem extends IDLBase {
 
-    static public final JobSystem NULL = JobSystem.createInstance();
+    static public final JobSystem NULL = JobSystem.native_new();
 
-    static public final JobSystem T_01 = JobSystem.createInstance();
+    static public final JobSystem T_01 = JobSystem.native_new();
 
-    static public final JobSystem T_02 = JobSystem.createInstance();
+    static public final JobSystem T_02 = JobSystem.native_new();
 
-    static public final JobSystem T_03 = JobSystem.createInstance();
+    static public final JobSystem T_03 = JobSystem.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class JobSystem extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static JobSystem createInstance() {
+    public static JobSystem native_new() {
         return new JobSystem((byte) 0, (char) 0);
     }
 

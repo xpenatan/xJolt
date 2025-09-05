@@ -15,13 +15,13 @@ public class CollidePointResult extends IDLBase {
 
     private SubShapeID SubShapeID_TEMP_GEN_0;
 
-    static public final CollidePointResult NULL = CollidePointResult.createInstance();
+    static public final CollidePointResult NULL = CollidePointResult.native_new();
 
-    static public final CollidePointResult T_01 = CollidePointResult.createInstance();
+    static public final CollidePointResult T_01 = CollidePointResult.native_new();
 
-    static public final CollidePointResult T_02 = CollidePointResult.createInstance();
+    static public final CollidePointResult T_02 = CollidePointResult.native_new();
 
-    static public final CollidePointResult T_03 = CollidePointResult.createInstance();
+    static public final CollidePointResult T_03 = CollidePointResult.native_new();
 
     public CollidePointResult() {
         long addr = internal_native_create();
@@ -43,7 +43,7 @@ return (jlong)new CollidePointResult();
     /**
      * @return An empty instance without a native address
      */
-    public static CollidePointResult createInstance() {
+    public static CollidePointResult native_new() {
         return new CollidePointResult((byte) 0, (char) 0);
     }
 
@@ -62,7 +62,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
@@ -88,7 +88,7 @@ nativeObject->mBodyID = *((BodyID*)mBodyID_addr);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_0 == null)
-            SubShapeID_TEMP_GEN_0 = SubShapeID.createInstance();
+            SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_0;
     }

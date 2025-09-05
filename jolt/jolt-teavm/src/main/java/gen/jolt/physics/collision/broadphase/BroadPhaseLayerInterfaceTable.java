@@ -7,13 +7,13 @@ package gen.jolt.physics.collision.broadphase;
 
 public class BroadPhaseLayerInterfaceTable extends BroadPhaseLayerInterface {
 
-    static public final BroadPhaseLayerInterfaceTable NULL = BroadPhaseLayerInterfaceTable.createInstance();
+    static public final BroadPhaseLayerInterfaceTable NULL = BroadPhaseLayerInterfaceTable.native_new();
 
-    static public final BroadPhaseLayerInterfaceTable T_01 = BroadPhaseLayerInterfaceTable.createInstance();
+    static public final BroadPhaseLayerInterfaceTable T_01 = BroadPhaseLayerInterfaceTable.native_new();
 
-    static public final BroadPhaseLayerInterfaceTable T_02 = BroadPhaseLayerInterfaceTable.createInstance();
+    static public final BroadPhaseLayerInterfaceTable T_02 = BroadPhaseLayerInterfaceTable.native_new();
 
-    static public final BroadPhaseLayerInterfaceTable T_03 = BroadPhaseLayerInterfaceTable.createInstance();
+    static public final BroadPhaseLayerInterfaceTable T_03 = BroadPhaseLayerInterfaceTable.native_new();
 
     public BroadPhaseLayerInterfaceTable(int inNumObjectLayers, int inNumBroadPhaseLayers) {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static BroadPhaseLayerInterfaceTable createInstance() {
+    public static BroadPhaseLayerInterfaceTable native_new() {
         return new BroadPhaseLayerInterfaceTable((byte) 0, (char) 0);
     }
 

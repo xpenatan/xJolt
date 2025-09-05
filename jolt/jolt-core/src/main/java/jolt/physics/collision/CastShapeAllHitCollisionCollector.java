@@ -12,13 +12,13 @@ public class CastShapeAllHitCollisionCollector extends CastShapeCollector {
 
     private ArrayShapeCastResult ArrayShapeCastResult_TEMP_GEN_0;
 
-    static public final CastShapeAllHitCollisionCollector NULL = CastShapeAllHitCollisionCollector.createInstance();
+    static public final CastShapeAllHitCollisionCollector NULL = CastShapeAllHitCollisionCollector.native_new();
 
-    static public final CastShapeAllHitCollisionCollector T_01 = CastShapeAllHitCollisionCollector.createInstance();
+    static public final CastShapeAllHitCollisionCollector T_01 = CastShapeAllHitCollisionCollector.native_new();
 
-    static public final CastShapeAllHitCollisionCollector T_02 = CastShapeAllHitCollisionCollector.createInstance();
+    static public final CastShapeAllHitCollisionCollector T_02 = CastShapeAllHitCollisionCollector.native_new();
 
-    static public final CastShapeAllHitCollisionCollector T_03 = CastShapeAllHitCollisionCollector.createInstance();
+    static public final CastShapeAllHitCollisionCollector T_03 = CastShapeAllHitCollisionCollector.native_new();
 
     public CastShapeAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
@@ -42,7 +42,7 @@ return (jlong)new CastShapeAllHitCollisionCollector();
     /**
      * @return An empty instance without a native address
      */
-    public static CastShapeAllHitCollisionCollector createInstance() {
+    public static CastShapeAllHitCollisionCollector native_new() {
         return new CastShapeAllHitCollisionCollector((byte) 0, (char) 0);
     }
 
@@ -81,7 +81,7 @@ return nativeObject->HadHit();
         if (pointer == 0)
             return null;
         if (ArrayShapeCastResult_TEMP_GEN_0 == null)
-            ArrayShapeCastResult_TEMP_GEN_0 = ArrayShapeCastResult.createInstance();
+            ArrayShapeCastResult_TEMP_GEN_0 = ArrayShapeCastResult.native_new();
         ArrayShapeCastResult_TEMP_GEN_0.internal_reset(pointer, false);
         return ArrayShapeCastResult_TEMP_GEN_0;
     }

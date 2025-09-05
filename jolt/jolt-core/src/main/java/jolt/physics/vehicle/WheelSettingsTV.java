@@ -7,13 +7,13 @@ package jolt.physics.vehicle;
 
 public class WheelSettingsTV extends WheelSettings {
 
-    static public final WheelSettingsTV NULL = WheelSettingsTV.createInstance();
+    static public final WheelSettingsTV NULL = WheelSettingsTV.native_new();
 
-    static public final WheelSettingsTV T_01 = WheelSettingsTV.createInstance();
+    static public final WheelSettingsTV T_01 = WheelSettingsTV.native_new();
 
-    static public final WheelSettingsTV T_02 = WheelSettingsTV.createInstance();
+    static public final WheelSettingsTV T_02 = WheelSettingsTV.native_new();
 
-    static public final WheelSettingsTV T_03 = WheelSettingsTV.createInstance();
+    static public final WheelSettingsTV T_03 = WheelSettingsTV.native_new();
 
     public WheelSettingsTV() {
         super((byte) 1, (char) 1);
@@ -37,7 +37,7 @@ return (jlong)new WheelSettingsTV();
     /**
      * @return An empty instance without a native address
      */
-    public static WheelSettingsTV createInstance() {
+    public static WheelSettingsTV native_new() {
         return new WheelSettingsTV((byte) 0, (char) 0);
     }
 

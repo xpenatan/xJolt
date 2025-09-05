@@ -101,13 +101,13 @@ public class Mat44 extends IDLBase {
 
     private Vec4 Vec4_TEMP_GEN_1;
 
-    static public final Mat44 NULL = Mat44.createInstance();
+    static public final Mat44 NULL = Mat44.native_new();
 
-    static public final Mat44 T_01 = Mat44.createInstance();
+    static public final Mat44 T_01 = Mat44.native_new();
 
-    static public final Mat44 T_02 = Mat44.createInstance();
+    static public final Mat44 T_02 = Mat44.native_new();
 
-    static public final Mat44 T_03 = Mat44.createInstance();
+    static public final Mat44 T_03 = Mat44.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -119,7 +119,7 @@ public class Mat44 extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static Mat44 createInstance() {
+    public static Mat44 native_new() {
         return new Mat44((byte) 0, (char) 0);
     }
 
@@ -139,7 +139,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_0 == null)
-            Mat44_TEMP_STATIC_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_0 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_0;
     }
@@ -157,7 +157,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_1 == null)
-            Mat44_TEMP_STATIC_GEN_1 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_1 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_1;
     }
@@ -175,7 +175,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_2 == null)
-            Mat44_TEMP_STATIC_GEN_2 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_2 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_2;
     }
@@ -193,7 +193,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_3 == null)
-            Mat44_TEMP_STATIC_GEN_3 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_3 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_3;
     }
@@ -211,7 +211,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_4 == null)
-            Mat44_TEMP_STATIC_GEN_4 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_4 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_4;
     }
@@ -229,7 +229,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_5 == null)
-            Mat44_TEMP_STATIC_GEN_5 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_5 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_5;
     }
@@ -247,7 +247,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_6 == null)
-            Mat44_TEMP_STATIC_GEN_6 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_6 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_6;
     }
@@ -265,7 +265,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_7 == null)
-            Mat44_TEMP_STATIC_GEN_7 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_7 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_7;
     }
@@ -283,7 +283,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_8 == null)
-            Mat44_TEMP_STATIC_GEN_8 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_8 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_8;
     }
@@ -301,7 +301,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_9 == null)
-            Mat44_TEMP_STATIC_GEN_9 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_9 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_9;
     }
@@ -319,7 +319,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_10 == null)
-            Mat44_TEMP_STATIC_GEN_10 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_10 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_10;
     }
@@ -337,7 +337,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_11 == null)
-            Mat44_TEMP_STATIC_GEN_11 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_11 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_11;
     }
@@ -355,7 +355,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_12 == null)
-            Mat44_TEMP_STATIC_GEN_12 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_12 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_12.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_12;
     }
@@ -373,7 +373,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_13 == null)
-            Mat44_TEMP_STATIC_GEN_13 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_13 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_13.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_13;
     }
@@ -391,7 +391,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_14 == null)
-            Mat44_TEMP_STATIC_GEN_14 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_14 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_14.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_14;
     }
@@ -409,7 +409,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_15 == null)
-            Mat44_TEMP_STATIC_GEN_15 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_15 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_15.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_15;
     }
@@ -427,7 +427,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_16 == null)
-            Mat44_TEMP_STATIC_GEN_16 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_16 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_16.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_16;
     }
@@ -445,7 +445,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_STATIC_GEN_17 == null)
-            Mat44_TEMP_STATIC_GEN_17 = Mat44.createInstance();
+            Mat44_TEMP_STATIC_GEN_17 = Mat44.native_new();
         Mat44_TEMP_STATIC_GEN_17.internal_reset(pointer, false);
         return Mat44_TEMP_STATIC_GEN_17;
     }
@@ -463,7 +463,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -482,7 +482,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -501,7 +501,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }
@@ -520,7 +520,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_3 == null)
-            Vec3_TEMP_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_3;
     }
@@ -539,7 +539,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_0 == null)
-            Vec4_TEMP_GEN_0 = Vec4.createInstance();
+            Vec4_TEMP_GEN_0 = Vec4.native_new();
         Vec4_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_0;
     }
@@ -558,7 +558,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_0 == null)
-            Mat44_TEMP_GEN_0 = Mat44.createInstance();
+            Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_0;
     }
@@ -577,7 +577,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_1 == null)
-            Mat44_TEMP_GEN_1 = Mat44.createInstance();
+            Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_1;
     }
@@ -596,7 +596,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Quat_TEMP_GEN_0 == null)
-            Quat_TEMP_GEN_0 = Quat.createInstance();
+            Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
         return Quat_TEMP_GEN_0;
     }
@@ -615,7 +615,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_4 == null)
-            Vec3_TEMP_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_4;
     }
@@ -682,7 +682,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_5 == null)
-            Vec3_TEMP_GEN_5 = Vec3.createInstance();
+            Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_5;
     }
@@ -701,7 +701,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_6 == null)
-            Vec3_TEMP_GEN_6 = Vec3.createInstance();
+            Vec3_TEMP_GEN_6 = Vec3.native_new();
         Vec3_TEMP_GEN_6.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_6;
     }
@@ -720,7 +720,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_7 == null)
-            Vec3_TEMP_GEN_7 = Vec3.createInstance();
+            Vec3_TEMP_GEN_7 = Vec3.native_new();
         Vec3_TEMP_GEN_7.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_7;
     }
@@ -739,7 +739,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_2 == null)
-            Mat44_TEMP_GEN_2 = Mat44.createInstance();
+            Mat44_TEMP_GEN_2 = Mat44.native_new();
         Mat44_TEMP_GEN_2.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_2;
     }
@@ -758,7 +758,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_3 == null)
-            Mat44_TEMP_GEN_3 = Mat44.createInstance();
+            Mat44_TEMP_GEN_3 = Mat44.native_new();
         Mat44_TEMP_GEN_3.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_3;
     }
@@ -777,7 +777,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_4 == null)
-            Mat44_TEMP_GEN_4 = Mat44.createInstance();
+            Mat44_TEMP_GEN_4 = Mat44.native_new();
         Mat44_TEMP_GEN_4.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_4;
     }
@@ -796,7 +796,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_5 == null)
-            Mat44_TEMP_GEN_5 = Mat44.createInstance();
+            Mat44_TEMP_GEN_5 = Mat44.native_new();
         Mat44_TEMP_GEN_5.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_5;
     }
@@ -815,7 +815,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_6 == null)
-            Mat44_TEMP_GEN_6 = Mat44.createInstance();
+            Mat44_TEMP_GEN_6 = Mat44.native_new();
         Mat44_TEMP_GEN_6.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_6;
     }
@@ -834,7 +834,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_7 == null)
-            Mat44_TEMP_GEN_7 = Mat44.createInstance();
+            Mat44_TEMP_GEN_7 = Mat44.native_new();
         Mat44_TEMP_GEN_7.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_7;
     }
@@ -853,7 +853,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_8 == null)
-            Mat44_TEMP_GEN_8 = Mat44.createInstance();
+            Mat44_TEMP_GEN_8 = Mat44.native_new();
         Mat44_TEMP_GEN_8.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_8;
     }
@@ -896,7 +896,7 @@ return returnedJSObj;
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_9 == null)
-            Mat44_TEMP_GEN_9 = Mat44.createInstance();
+            Mat44_TEMP_GEN_9 = Mat44.native_new();
         Mat44_TEMP_GEN_9.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_9;
     }
@@ -915,7 +915,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_10 == null)
-            Mat44_TEMP_GEN_10 = Mat44.createInstance();
+            Mat44_TEMP_GEN_10 = Mat44.native_new();
         Mat44_TEMP_GEN_10.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_10;
     }
@@ -934,7 +934,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_11 == null)
-            Mat44_TEMP_GEN_11 = Mat44.createInstance();
+            Mat44_TEMP_GEN_11 = Mat44.native_new();
         Mat44_TEMP_GEN_11.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_11;
     }
@@ -953,7 +953,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_12 == null)
-            Mat44_TEMP_GEN_12 = Mat44.createInstance();
+            Mat44_TEMP_GEN_12 = Mat44.native_new();
         Mat44_TEMP_GEN_12.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_12;
     }
@@ -972,7 +972,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_13 == null)
-            Mat44_TEMP_GEN_13 = Mat44.createInstance();
+            Mat44_TEMP_GEN_13 = Mat44.native_new();
         Mat44_TEMP_GEN_13.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_13;
     }
@@ -991,7 +991,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_14 == null)
-            Mat44_TEMP_GEN_14 = Mat44.createInstance();
+            Mat44_TEMP_GEN_14 = Mat44.native_new();
         Mat44_TEMP_GEN_14.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_14;
     }
@@ -1010,7 +1010,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Mat44_TEMP_GEN_15 == null)
-            Mat44_TEMP_GEN_15 = Mat44.createInstance();
+            Mat44_TEMP_GEN_15 = Mat44.native_new();
         Mat44_TEMP_GEN_15.internal_reset(pointer, false);
         return Mat44_TEMP_GEN_15;
     }
@@ -1117,7 +1117,7 @@ jsObj.SetTranslation(inV_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_8 == null)
-            Vec3_TEMP_GEN_8 = Vec3.createInstance();
+            Vec3_TEMP_GEN_8 = Vec3.native_new();
         Vec3_TEMP_GEN_8.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_8;
     }
@@ -1136,7 +1136,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_1 == null)
-            Vec4_TEMP_GEN_1 = Vec4.createInstance();
+            Vec4_TEMP_GEN_1 = Vec4.native_new();
         Vec4_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_1;
     }

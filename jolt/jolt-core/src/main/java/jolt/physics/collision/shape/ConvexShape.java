@@ -7,13 +7,13 @@ package jolt.physics.collision.shape;
 
 public class ConvexShape extends Shape {
 
-    static public final ConvexShape NULL = ConvexShape.createInstance();
+    static public final ConvexShape NULL = ConvexShape.native_new();
 
-    static public final ConvexShape T_01 = ConvexShape.createInstance();
+    static public final ConvexShape T_01 = ConvexShape.native_new();
 
-    static public final ConvexShape T_02 = ConvexShape.createInstance();
+    static public final ConvexShape T_02 = ConvexShape.native_new();
 
-    static public final ConvexShape T_03 = ConvexShape.createInstance();
+    static public final ConvexShape T_03 = ConvexShape.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class ConvexShape extends Shape {
     /**
      * @return An empty instance without a native address
      */
-    public static ConvexShape createInstance() {
+    public static ConvexShape native_new() {
         return new ConvexShape((byte) 0, (char) 0);
     }
 

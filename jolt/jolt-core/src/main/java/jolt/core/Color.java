@@ -44,13 +44,13 @@ public class Color extends IDLBase {
 
     static private Color Color_TEMP_STATIC_GEN_14;
 
-    static public final Color NULL = Color.createInstance();
+    static public final Color NULL = Color.native_new();
 
-    static public final Color T_01 = Color.createInstance();
+    static public final Color T_01 = Color.native_new();
 
-    static public final Color T_02 = Color.createInstance();
+    static public final Color T_02 = Color.native_new();
 
-    static public final Color T_03 = Color.createInstance();
+    static public final Color T_03 = Color.native_new();
 
     public Color() {
         long addr = internal_native_create();
@@ -72,7 +72,7 @@ return (jlong)new Color();
     /**
      * @return An empty instance without a native address
      */
-    public static Color createInstance() {
+    public static Color native_new() {
         return new Color((byte) 0, (char) 0);
     }
 
@@ -91,7 +91,7 @@ delete nativeObject;
         if (pointer == 0)
             return null;
         if (Color_TEMP_GEN_0 == null)
-            Color_TEMP_GEN_0 = Color.createInstance();
+            Color_TEMP_GEN_0 = Color.native_new();
         Color_TEMP_GEN_0.internal_reset(pointer, false);
         return Color_TEMP_GEN_0;
     }
@@ -108,7 +108,7 @@ return (jlong)&copy_addr;*/
         if (pointer == 0)
             return null;
         if (Vec4_TEMP_GEN_0 == null)
-            Vec4_TEMP_GEN_0 = Vec4.createInstance();
+            Vec4_TEMP_GEN_0 = Vec4.native_new();
         Vec4_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec4_TEMP_GEN_0;
     }
@@ -145,7 +145,7 @@ nativeObject->mU32 = mU32;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_0 == null)
-            Color_TEMP_STATIC_GEN_0 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_0 = Color.native_new();
         Color_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_0;
     }
@@ -160,7 +160,7 @@ return (jlong)&Color::sBlack;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_1 == null)
-            Color_TEMP_STATIC_GEN_1 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_1 = Color.native_new();
         Color_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_1;
     }
@@ -175,7 +175,7 @@ return (jlong)&Color::sDarkRed;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_2 == null)
-            Color_TEMP_STATIC_GEN_2 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_2 = Color.native_new();
         Color_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_2;
     }
@@ -190,7 +190,7 @@ return (jlong)&Color::sRed;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_3 == null)
-            Color_TEMP_STATIC_GEN_3 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_3 = Color.native_new();
         Color_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_3;
     }
@@ -205,7 +205,7 @@ return (jlong)&Color::sDarkGreen;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_4 == null)
-            Color_TEMP_STATIC_GEN_4 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_4 = Color.native_new();
         Color_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_4;
     }
@@ -220,7 +220,7 @@ return (jlong)&Color::sGreen;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_5 == null)
-            Color_TEMP_STATIC_GEN_5 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_5 = Color.native_new();
         Color_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_5;
     }
@@ -235,7 +235,7 @@ return (jlong)&Color::sDarkBlue;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_6 == null)
-            Color_TEMP_STATIC_GEN_6 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_6 = Color.native_new();
         Color_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_6;
     }
@@ -250,7 +250,7 @@ return (jlong)&Color::sBlue;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_7 == null)
-            Color_TEMP_STATIC_GEN_7 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_7 = Color.native_new();
         Color_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_7;
     }
@@ -265,7 +265,7 @@ return (jlong)&Color::sYellow;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_8 == null)
-            Color_TEMP_STATIC_GEN_8 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_8 = Color.native_new();
         Color_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_8;
     }
@@ -280,7 +280,7 @@ return (jlong)&Color::sPurple;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_9 == null)
-            Color_TEMP_STATIC_GEN_9 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_9 = Color.native_new();
         Color_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_9;
     }
@@ -295,7 +295,7 @@ return (jlong)&Color::sCyan;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_10 == null)
-            Color_TEMP_STATIC_GEN_10 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_10 = Color.native_new();
         Color_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_10;
     }
@@ -310,7 +310,7 @@ return (jlong)&Color::sOrange;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_11 == null)
-            Color_TEMP_STATIC_GEN_11 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_11 = Color.native_new();
         Color_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_11;
     }
@@ -325,7 +325,7 @@ return (jlong)&Color::sDarkOrange;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_12 == null)
-            Color_TEMP_STATIC_GEN_12 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_12 = Color.native_new();
         Color_TEMP_STATIC_GEN_12.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_12;
     }
@@ -340,7 +340,7 @@ return (jlong)&Color::sGrey;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_13 == null)
-            Color_TEMP_STATIC_GEN_13 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_13 = Color.native_new();
         Color_TEMP_STATIC_GEN_13.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_13;
     }
@@ -355,7 +355,7 @@ return (jlong)&Color::sLightGrey;
         if (pointer == 0)
             return null;
         if (Color_TEMP_STATIC_GEN_14 == null)
-            Color_TEMP_STATIC_GEN_14 = Color.createInstance();
+            Color_TEMP_STATIC_GEN_14 = Color.native_new();
         Color_TEMP_STATIC_GEN_14.internal_reset(pointer, false);
         return Color_TEMP_STATIC_GEN_14;
     }

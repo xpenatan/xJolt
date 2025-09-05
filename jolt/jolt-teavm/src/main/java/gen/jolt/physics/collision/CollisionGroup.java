@@ -11,13 +11,13 @@ public class CollisionGroup extends IDLBase {
 
     private GroupFilter GroupFilter_TEMP_GEN_0;
 
-    static public final CollisionGroup NULL = CollisionGroup.createInstance();
+    static public final CollisionGroup NULL = CollisionGroup.native_new();
 
-    static public final CollisionGroup T_01 = CollisionGroup.createInstance();
+    static public final CollisionGroup T_01 = CollisionGroup.native_new();
 
-    static public final CollisionGroup T_02 = CollisionGroup.createInstance();
+    static public final CollisionGroup T_02 = CollisionGroup.native_new();
 
-    static public final CollisionGroup T_03 = CollisionGroup.createInstance();
+    static public final CollisionGroup T_03 = CollisionGroup.native_new();
 
     public CollisionGroup() {
         int addr = internal_native_create();
@@ -53,7 +53,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static CollisionGroup createInstance() {
+    public static CollisionGroup native_new() {
         return new CollisionGroup((byte) 0, (char) 0);
     }
 
@@ -84,7 +84,7 @@ jsObj.SetGroupFilter(inFilter_addr);
         if (pointer == 0)
             return null;
         if (GroupFilter_TEMP_GEN_0 == null)
-            GroupFilter_TEMP_GEN_0 = GroupFilter.createInstance();
+            GroupFilter_TEMP_GEN_0 = GroupFilter.native_new();
         GroupFilter_TEMP_GEN_0.internal_reset(pointer, false);
         return GroupFilter_TEMP_GEN_0;
     }

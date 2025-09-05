@@ -7,13 +7,13 @@ package jolt.core;
 
 public class JobSystemThreadPool extends JobSystemWithBarrier {
 
-    static public final JobSystemThreadPool NULL = JobSystemThreadPool.createInstance();
+    static public final JobSystemThreadPool NULL = JobSystemThreadPool.native_new();
 
-    static public final JobSystemThreadPool T_01 = JobSystemThreadPool.createInstance();
+    static public final JobSystemThreadPool T_01 = JobSystemThreadPool.native_new();
 
-    static public final JobSystemThreadPool T_02 = JobSystemThreadPool.createInstance();
+    static public final JobSystemThreadPool T_02 = JobSystemThreadPool.native_new();
 
-    static public final JobSystemThreadPool T_03 = JobSystemThreadPool.createInstance();
+    static public final JobSystemThreadPool T_03 = JobSystemThreadPool.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -26,7 +26,7 @@ public class JobSystemThreadPool extends JobSystemWithBarrier {
     /**
      * @return An empty instance without a native address
      */
-    public static JobSystemThreadPool createInstance() {
+    public static JobSystemThreadPool native_new() {
         return new JobSystemThreadPool((byte) 0, (char) 0);
     }
 

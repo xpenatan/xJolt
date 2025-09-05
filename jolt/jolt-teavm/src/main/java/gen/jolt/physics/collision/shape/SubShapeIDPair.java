@@ -18,13 +18,13 @@ public class SubShapeIDPair extends IDLBase {
 
     private SubShapeID SubShapeID_TEMP_GEN_1;
 
-    static public final SubShapeIDPair NULL = SubShapeIDPair.createInstance();
+    static public final SubShapeIDPair NULL = SubShapeIDPair.native_new();
 
-    static public final SubShapeIDPair T_01 = SubShapeIDPair.createInstance();
+    static public final SubShapeIDPair T_01 = SubShapeIDPair.native_new();
 
-    static public final SubShapeIDPair T_02 = SubShapeIDPair.createInstance();
+    static public final SubShapeIDPair T_02 = SubShapeIDPair.native_new();
 
-    static public final SubShapeIDPair T_03 = SubShapeIDPair.createInstance();
+    static public final SubShapeIDPair T_03 = SubShapeIDPair.native_new();
 
     public SubShapeIDPair() {
         int addr = internal_native_create();
@@ -48,7 +48,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static SubShapeIDPair createInstance() {
+    public static SubShapeIDPair native_new() {
         return new SubShapeIDPair((byte) 0, (char) 0);
     }
 
@@ -68,7 +68,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_0 == null)
-            BodyID_TEMP_GEN_0 = BodyID.createInstance();
+            BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_0;
     }
@@ -87,7 +87,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_0 == null)
-            SubShapeID_TEMP_GEN_0 = SubShapeID.createInstance();
+            SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_0;
     }
@@ -106,7 +106,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (BodyID_TEMP_GEN_1 == null)
-            BodyID_TEMP_GEN_1 = BodyID.createInstance();
+            BodyID_TEMP_GEN_1 = BodyID.native_new();
         BodyID_TEMP_GEN_1.internal_reset(pointer, false);
         return BodyID_TEMP_GEN_1;
     }
@@ -125,7 +125,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (SubShapeID_TEMP_GEN_1 == null)
-            SubShapeID_TEMP_GEN_1 = SubShapeID.createInstance();
+            SubShapeID_TEMP_GEN_1 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_1.internal_reset(pointer, false);
         return SubShapeID_TEMP_GEN_1;
     }

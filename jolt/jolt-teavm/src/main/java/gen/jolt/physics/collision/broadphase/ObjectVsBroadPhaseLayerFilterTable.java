@@ -9,13 +9,13 @@ import gen.jolt.physics.collision.ObjectLayerPairFilter;
 
 public class ObjectVsBroadPhaseLayerFilterTable extends ObjectVsBroadPhaseLayerFilter {
 
-    static public final ObjectVsBroadPhaseLayerFilterTable NULL = ObjectVsBroadPhaseLayerFilterTable.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilterTable NULL = ObjectVsBroadPhaseLayerFilterTable.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilterTable T_01 = ObjectVsBroadPhaseLayerFilterTable.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilterTable T_01 = ObjectVsBroadPhaseLayerFilterTable.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilterTable T_02 = ObjectVsBroadPhaseLayerFilterTable.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilterTable T_02 = ObjectVsBroadPhaseLayerFilterTable.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilterTable T_03 = ObjectVsBroadPhaseLayerFilterTable.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilterTable T_03 = ObjectVsBroadPhaseLayerFilterTable.native_new();
 
     public ObjectVsBroadPhaseLayerFilterTable(BroadPhaseLayerInterface inBroadPhaseLayerInterface, int inNumBroadPhaseLayers, ObjectLayerPairFilter inObjectLayerPairFilter, int inNumObjectLayers) {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static ObjectVsBroadPhaseLayerFilterTable createInstance() {
+    public static ObjectVsBroadPhaseLayerFilterTable native_new() {
         return new ObjectVsBroadPhaseLayerFilterTable((byte) 0, (char) 0);
     }
 }

@@ -9,13 +9,13 @@ import gen.jolt.idl.IDLBase;
 
 public class TireMaxImpulseCallbackResult extends IDLBase {
 
-    static public final TireMaxImpulseCallbackResult NULL = TireMaxImpulseCallbackResult.createInstance();
+    static public final TireMaxImpulseCallbackResult NULL = TireMaxImpulseCallbackResult.native_new();
 
-    static public final TireMaxImpulseCallbackResult T_01 = TireMaxImpulseCallbackResult.createInstance();
+    static public final TireMaxImpulseCallbackResult T_01 = TireMaxImpulseCallbackResult.native_new();
 
-    static public final TireMaxImpulseCallbackResult T_02 = TireMaxImpulseCallbackResult.createInstance();
+    static public final TireMaxImpulseCallbackResult T_02 = TireMaxImpulseCallbackResult.native_new();
 
-    static public final TireMaxImpulseCallbackResult T_03 = TireMaxImpulseCallbackResult.createInstance();
+    static public final TireMaxImpulseCallbackResult T_03 = TireMaxImpulseCallbackResult.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -27,7 +27,7 @@ public class TireMaxImpulseCallbackResult extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static TireMaxImpulseCallbackResult createInstance() {
+    public static TireMaxImpulseCallbackResult native_new() {
         return new TireMaxImpulseCallbackResult((byte) 0, (char) 0);
     }
 

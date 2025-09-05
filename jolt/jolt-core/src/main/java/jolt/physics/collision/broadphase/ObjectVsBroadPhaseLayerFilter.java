@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class ObjectVsBroadPhaseLayerFilter extends IDLBase {
 
-    static public final ObjectVsBroadPhaseLayerFilter NULL = ObjectVsBroadPhaseLayerFilter.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilter NULL = ObjectVsBroadPhaseLayerFilter.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilter T_01 = ObjectVsBroadPhaseLayerFilter.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilter T_01 = ObjectVsBroadPhaseLayerFilter.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilter T_02 = ObjectVsBroadPhaseLayerFilter.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilter T_02 = ObjectVsBroadPhaseLayerFilter.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilter T_03 = ObjectVsBroadPhaseLayerFilter.createInstance();
+    static public final ObjectVsBroadPhaseLayerFilter T_03 = ObjectVsBroadPhaseLayerFilter.native_new();
 
     public ObjectVsBroadPhaseLayerFilter() {
         long addr = internal_native_create();
@@ -37,7 +37,7 @@ return (jlong)new ObjectVsBroadPhaseLayerFilter();
     /**
      * @return An empty instance without a native address
      */
-    public static ObjectVsBroadPhaseLayerFilter createInstance() {
+    public static ObjectVsBroadPhaseLayerFilter native_new() {
         return new ObjectVsBroadPhaseLayerFilter((byte) 0, (char) 0);
     }
 

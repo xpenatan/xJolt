@@ -9,13 +9,13 @@ import jolt.idl.IDLBase;
 
 public class BroadPhaseLayer extends IDLBase {
 
-    static public final BroadPhaseLayer NULL = BroadPhaseLayer.createInstance();
+    static public final BroadPhaseLayer NULL = BroadPhaseLayer.native_new();
 
-    static public final BroadPhaseLayer T_01 = BroadPhaseLayer.createInstance();
+    static public final BroadPhaseLayer T_01 = BroadPhaseLayer.native_new();
 
-    static public final BroadPhaseLayer T_02 = BroadPhaseLayer.createInstance();
+    static public final BroadPhaseLayer T_02 = BroadPhaseLayer.native_new();
 
-    static public final BroadPhaseLayer T_03 = BroadPhaseLayer.createInstance();
+    static public final BroadPhaseLayer T_03 = BroadPhaseLayer.native_new();
 
     public BroadPhaseLayer(short inLayer) {
         long addr = internal_native_create_short(inLayer);
@@ -37,7 +37,7 @@ return (jlong)new BroadPhaseLayer(inLayer);
     /**
      * @return An empty instance without a native address
      */
-    public static BroadPhaseLayer createInstance() {
+    public static BroadPhaseLayer native_new() {
         return new BroadPhaseLayer((byte) 0, (char) 0);
     }
 

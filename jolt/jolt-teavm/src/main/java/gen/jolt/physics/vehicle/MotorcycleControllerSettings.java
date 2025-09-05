@@ -7,13 +7,13 @@ package gen.jolt.physics.vehicle;
 
 public class MotorcycleControllerSettings extends WheeledVehicleControllerSettings {
 
-    static public final MotorcycleControllerSettings NULL = MotorcycleControllerSettings.createInstance();
+    static public final MotorcycleControllerSettings NULL = MotorcycleControllerSettings.native_new();
 
-    static public final MotorcycleControllerSettings T_01 = MotorcycleControllerSettings.createInstance();
+    static public final MotorcycleControllerSettings T_01 = MotorcycleControllerSettings.native_new();
 
-    static public final MotorcycleControllerSettings T_02 = MotorcycleControllerSettings.createInstance();
+    static public final MotorcycleControllerSettings T_02 = MotorcycleControllerSettings.native_new();
 
-    static public final MotorcycleControllerSettings T_03 = MotorcycleControllerSettings.createInstance();
+    static public final MotorcycleControllerSettings T_03 = MotorcycleControllerSettings.native_new();
 
     public MotorcycleControllerSettings() {
         super((byte) 1, (char) 1);
@@ -39,7 +39,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static MotorcycleControllerSettings createInstance() {
+    public static MotorcycleControllerSettings native_new() {
         return new MotorcycleControllerSettings((byte) 0, (char) 0);
     }
 

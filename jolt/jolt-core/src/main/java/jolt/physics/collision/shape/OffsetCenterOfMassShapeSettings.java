@@ -11,13 +11,13 @@ public class OffsetCenterOfMassShapeSettings extends DecoratedShapeSettings {
 
     private Vec3 Vec3_TEMP_GEN_0;
 
-    static public final OffsetCenterOfMassShapeSettings NULL = OffsetCenterOfMassShapeSettings.createInstance();
+    static public final OffsetCenterOfMassShapeSettings NULL = OffsetCenterOfMassShapeSettings.native_new();
 
-    static public final OffsetCenterOfMassShapeSettings T_01 = OffsetCenterOfMassShapeSettings.createInstance();
+    static public final OffsetCenterOfMassShapeSettings T_01 = OffsetCenterOfMassShapeSettings.native_new();
 
-    static public final OffsetCenterOfMassShapeSettings T_02 = OffsetCenterOfMassShapeSettings.createInstance();
+    static public final OffsetCenterOfMassShapeSettings T_02 = OffsetCenterOfMassShapeSettings.native_new();
 
-    static public final OffsetCenterOfMassShapeSettings T_03 = OffsetCenterOfMassShapeSettings.createInstance();
+    static public final OffsetCenterOfMassShapeSettings T_03 = OffsetCenterOfMassShapeSettings.native_new();
 
     public OffsetCenterOfMassShapeSettings(Vec3 inOffset, Shape inShape) {
         super((byte) 1, (char) 1);
@@ -41,7 +41,7 @@ return (jlong)new OffsetCenterOfMassShapeSettings(*((Vec3* )inOffset_addr), (Sha
     /**
      * @return An empty instance without a native address
      */
-    public static OffsetCenterOfMassShapeSettings createInstance() {
+    public static OffsetCenterOfMassShapeSettings native_new() {
         return new OffsetCenterOfMassShapeSettings((byte) 0, (char) 0);
     }
 
@@ -50,7 +50,7 @@ return (jlong)new OffsetCenterOfMassShapeSettings(*((Vec3* )inOffset_addr), (Sha
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }

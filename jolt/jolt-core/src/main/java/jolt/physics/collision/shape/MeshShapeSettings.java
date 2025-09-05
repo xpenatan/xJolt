@@ -19,13 +19,13 @@ public class MeshShapeSettings extends ShapeSettings {
 
     private PhysicsMaterialList PhysicsMaterialList_TEMP_GEN_0;
 
-    static public final MeshShapeSettings NULL = MeshShapeSettings.createInstance();
+    static public final MeshShapeSettings NULL = MeshShapeSettings.native_new();
 
-    static public final MeshShapeSettings T_01 = MeshShapeSettings.createInstance();
+    static public final MeshShapeSettings T_01 = MeshShapeSettings.native_new();
 
-    static public final MeshShapeSettings T_02 = MeshShapeSettings.createInstance();
+    static public final MeshShapeSettings T_02 = MeshShapeSettings.native_new();
 
-    static public final MeshShapeSettings T_03 = MeshShapeSettings.createInstance();
+    static public final MeshShapeSettings T_03 = MeshShapeSettings.native_new();
 
     public MeshShapeSettings() {
         super((byte) 1, (char) 1);
@@ -82,7 +82,7 @@ return (jlong)new MeshShapeSettings(*((VertexList* )inVertices_addr), *((Indexed
     /**
      * @return An empty instance without a native address
      */
-    public static MeshShapeSettings createInstance() {
+    public static MeshShapeSettings native_new() {
         return new MeshShapeSettings((byte) 0, (char) 0);
     }
 
@@ -101,7 +101,7 @@ nativeObject->Sanitize();
         if (pointer == 0)
             return null;
         if (VertexList_TEMP_GEN_0 == null)
-            VertexList_TEMP_GEN_0 = VertexList.createInstance();
+            VertexList_TEMP_GEN_0 = VertexList.native_new();
         VertexList_TEMP_GEN_0.internal_reset(pointer, false);
         return VertexList_TEMP_GEN_0;
     }
@@ -127,7 +127,7 @@ nativeObject->mTriangleVertices = *((VertexList*)mTriangleVertices_addr);
         if (pointer == 0)
             return null;
         if (IndexedTriangleList_TEMP_GEN_0 == null)
-            IndexedTriangleList_TEMP_GEN_0 = IndexedTriangleList.createInstance();
+            IndexedTriangleList_TEMP_GEN_0 = IndexedTriangleList.native_new();
         IndexedTriangleList_TEMP_GEN_0.internal_reset(pointer, false);
         return IndexedTriangleList_TEMP_GEN_0;
     }
@@ -153,7 +153,7 @@ nativeObject->mIndexedTriangles = *((IndexedTriangleList*)mIndexedTriangles_addr
         if (pointer == 0)
             return null;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
-            PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.createInstance();
+            PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
         PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }

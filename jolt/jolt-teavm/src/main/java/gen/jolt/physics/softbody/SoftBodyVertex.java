@@ -16,13 +16,13 @@ public class SoftBodyVertex extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_2;
 
-    static public final SoftBodyVertex NULL = SoftBodyVertex.createInstance();
+    static public final SoftBodyVertex NULL = SoftBodyVertex.native_new();
 
-    static public final SoftBodyVertex T_01 = SoftBodyVertex.createInstance();
+    static public final SoftBodyVertex T_01 = SoftBodyVertex.native_new();
 
-    static public final SoftBodyVertex T_02 = SoftBodyVertex.createInstance();
+    static public final SoftBodyVertex T_02 = SoftBodyVertex.native_new();
 
-    static public final SoftBodyVertex T_03 = SoftBodyVertex.createInstance();
+    static public final SoftBodyVertex T_03 = SoftBodyVertex.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -34,7 +34,7 @@ public class SoftBodyVertex extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodyVertex createInstance() {
+    public static SoftBodyVertex native_new() {
         return new SoftBodyVertex((byte) 0, (char) 0);
     }
 
@@ -54,7 +54,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -84,7 +84,7 @@ jsObj.set_mPreviousPosition(mPreviousPosition_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_1 == null)
-            Vec3_TEMP_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_1;
     }
@@ -114,7 +114,7 @@ jsObj.set_mPosition(mPosition_addr);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_2 == null)
-            Vec3_TEMP_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_2;
     }

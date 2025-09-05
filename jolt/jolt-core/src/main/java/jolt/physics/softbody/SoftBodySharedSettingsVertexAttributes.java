@@ -10,13 +10,13 @@ import jolt.enums.SoftBodySharedSettings_ELRAType;
 
 public class SoftBodySharedSettingsVertexAttributes extends IDLBase {
 
-    static public final SoftBodySharedSettingsVertexAttributes NULL = SoftBodySharedSettingsVertexAttributes.createInstance();
+    static public final SoftBodySharedSettingsVertexAttributes NULL = SoftBodySharedSettingsVertexAttributes.native_new();
 
-    static public final SoftBodySharedSettingsVertexAttributes T_01 = SoftBodySharedSettingsVertexAttributes.createInstance();
+    static public final SoftBodySharedSettingsVertexAttributes T_01 = SoftBodySharedSettingsVertexAttributes.native_new();
 
-    static public final SoftBodySharedSettingsVertexAttributes T_02 = SoftBodySharedSettingsVertexAttributes.createInstance();
+    static public final SoftBodySharedSettingsVertexAttributes T_02 = SoftBodySharedSettingsVertexAttributes.native_new();
 
-    static public final SoftBodySharedSettingsVertexAttributes T_03 = SoftBodySharedSettingsVertexAttributes.createInstance();
+    static public final SoftBodySharedSettingsVertexAttributes T_03 = SoftBodySharedSettingsVertexAttributes.native_new();
 
     public SoftBodySharedSettingsVertexAttributes() {
         long addr = internal_native_create();
@@ -38,7 +38,7 @@ return (jlong)new SoftBodySharedSettingsVertexAttributes();
     /**
      * @return An empty instance without a native address
      */
-    public static SoftBodySharedSettingsVertexAttributes createInstance() {
+    public static SoftBodySharedSettingsVertexAttributes native_new() {
         return new SoftBodySharedSettingsVertexAttributes((byte) 0, (char) 0);
     }
 

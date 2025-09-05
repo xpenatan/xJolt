@@ -60,7 +60,7 @@ virtual void GetPointOnPath(float inFraction, Vec3* outPathPosition, Vec3* outPa
     /**
      * @return An empty instance without a native address
      */
-    public static PathConstraintPathEm createInstance() {
+    public static PathConstraintPathEm native_new() {
         return new PathConstraintPathEm((byte) 0, (char) 0);
     }
 
@@ -99,7 +99,7 @@ delete nativeObject;
 
     private float internal_GetClosestPoint(long inPosition_addr, float inFractionHint) {
         if (Vec3_TEMP_STATIC_GEN_0 == null)
-            Vec3_TEMP_STATIC_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_0.internal_reset(inPosition_addr, false);
         return GetClosestPoint(Vec3_TEMP_STATIC_GEN_0, inFractionHint);
     }
@@ -109,16 +109,16 @@ delete nativeObject;
 
     private void internal_GetPointOnPath(float inFraction, long outPathPosition_addr, long outPathTangent_addr, long outPathNormal_addr, long outPathBinormal_addr) {
         if (Vec3_TEMP_STATIC_GEN_1 == null)
-            Vec3_TEMP_STATIC_GEN_1 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_1 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_1.internal_reset(outPathPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_2 == null)
-            Vec3_TEMP_STATIC_GEN_2 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_2 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_2.internal_reset(outPathTangent_addr, false);
         if (Vec3_TEMP_STATIC_GEN_3 == null)
-            Vec3_TEMP_STATIC_GEN_3 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_3.internal_reset(outPathNormal_addr, false);
         if (Vec3_TEMP_STATIC_GEN_4 == null)
-            Vec3_TEMP_STATIC_GEN_4 = Vec3.createInstance();
+            Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_4.internal_reset(outPathBinormal_addr, false);
         GetPointOnPath(inFraction, Vec3_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4);
     }

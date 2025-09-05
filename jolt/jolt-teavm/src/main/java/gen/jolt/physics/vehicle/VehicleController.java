@@ -11,13 +11,13 @@ public class VehicleController extends IDLBase {
 
     private VehicleConstraint VehicleConstraint_TEMP_GEN_0;
 
-    static public final VehicleController NULL = VehicleController.createInstance();
+    static public final VehicleController NULL = VehicleController.native_new();
 
-    static public final VehicleController T_01 = VehicleController.createInstance();
+    static public final VehicleController T_01 = VehicleController.native_new();
 
-    static public final VehicleController T_02 = VehicleController.createInstance();
+    static public final VehicleController T_02 = VehicleController.native_new();
 
-    static public final VehicleController T_03 = VehicleController.createInstance();
+    static public final VehicleController T_03 = VehicleController.native_new();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -29,7 +29,7 @@ public class VehicleController extends IDLBase {
     /**
      * @return An empty instance without a native address
      */
-    public static VehicleController createInstance() {
+    public static VehicleController native_new() {
         return new VehicleController((byte) 0, (char) 0);
     }
 
@@ -38,7 +38,7 @@ public class VehicleController extends IDLBase {
         if (pointer == 0)
             return null;
         if (VehicleConstraint_TEMP_GEN_0 == null)
-            VehicleConstraint_TEMP_GEN_0 = VehicleConstraint.createInstance();
+            VehicleConstraint_TEMP_GEN_0 = VehicleConstraint.native_new();
         VehicleConstraint_TEMP_GEN_0.internal_reset(pointer, false);
         return VehicleConstraint_TEMP_GEN_0;
     }

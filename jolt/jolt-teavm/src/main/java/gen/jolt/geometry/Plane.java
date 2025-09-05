@@ -21,13 +21,13 @@ public class Plane extends IDLBase {
 
     private Plane Plane_TEMP_GEN_3;
 
-    static public final Plane NULL = Plane.createInstance();
+    static public final Plane NULL = Plane.native_new();
 
-    static public final Plane T_01 = Plane.createInstance();
+    static public final Plane T_01 = Plane.native_new();
 
-    static public final Plane T_02 = Plane.createInstance();
+    static public final Plane T_02 = Plane.native_new();
 
-    static public final Plane T_03 = Plane.createInstance();
+    static public final Plane T_03 = Plane.native_new();
 
     public Plane(Vec3 inNormal, float inConstant) {
         int addr = internal_native_create_Vec3_float(inNormal.native_address, inConstant);
@@ -51,7 +51,7 @@ return jolt.getPointer(jsObj);
     /**
      * @return An empty instance without a native address
      */
-    public static Plane createInstance() {
+    public static Plane native_new() {
         return new Plane((byte) 0, (char) 0);
     }
 
@@ -71,7 +71,7 @@ jolt.destroy(jsObj);
         if (pointer == 0)
             return null;
         if (Vec3_TEMP_GEN_0 == null)
-            Vec3_TEMP_GEN_0 = Vec3.createInstance();
+            Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
         return Vec3_TEMP_GEN_0;
     }
@@ -124,7 +124,7 @@ jsObj.SetConstant(inConstant);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_0 == null)
-            Plane_TEMP_GEN_0 = Plane.createInstance();
+            Plane_TEMP_GEN_0 = Plane.native_new();
         Plane_TEMP_GEN_0.internal_reset(pointer, false);
         return Plane_TEMP_GEN_0;
     }
@@ -143,7 +143,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_1 == null)
-            Plane_TEMP_GEN_1 = Plane.createInstance();
+            Plane_TEMP_GEN_1 = Plane.native_new();
         Plane_TEMP_GEN_1.internal_reset(pointer, false);
         return Plane_TEMP_GEN_1;
     }
@@ -162,7 +162,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_2 == null)
-            Plane_TEMP_GEN_2 = Plane.createInstance();
+            Plane_TEMP_GEN_2 = Plane.native_new();
         Plane_TEMP_GEN_2.internal_reset(pointer, false);
         return Plane_TEMP_GEN_2;
     }
@@ -181,7 +181,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return null;
         if (Plane_TEMP_GEN_3 == null)
-            Plane_TEMP_GEN_3 = Plane.createInstance();
+            Plane_TEMP_GEN_3 = Plane.native_new();
         Plane_TEMP_GEN_3.internal_reset(pointer, false);
         return Plane_TEMP_GEN_3;
     }
