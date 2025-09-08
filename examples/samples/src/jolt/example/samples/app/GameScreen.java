@@ -57,8 +57,12 @@ public class GameScreen extends ScreenAdapter {
     }
 
     @Override
+    public void resize(int width, int height) {
+        samplesApp.resize(width, height);
+    }
+
+    @Override
     public void hide() {
-        super.hide();
 //        impl.dispose();
         samplesApp.dispose();
     }
