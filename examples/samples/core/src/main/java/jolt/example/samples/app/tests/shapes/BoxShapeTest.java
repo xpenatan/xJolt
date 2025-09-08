@@ -16,6 +16,8 @@ import jolt.physics.collision.shape.BoxShape;
 
 public class BoxShapeTest extends Test {
 
+    private static int nextId;
+
     @Override
     public void initialize() {
         // Floor
@@ -51,14 +53,15 @@ public class BoxShapeTest extends Test {
 
     private Body createBody(Vector3 inHalfExtent, Vector3 inPosition, Quat inRotation) {
         float scale = getWorldScale();
-        Vec3 inHalfExtentJolt = Jolt.New_Vec3(inHalfExtent.x, inHalfExtent.y, inHalfExtent.z);
-        Vec3 inPositionJolt = Jolt.New_Vec3(inPosition.x, inPosition.y, inPosition.z);
+        Vec3 inHalfExtentJolt = new Vec3(inHalfExtent.x, inHalfExtent.y, inHalfExtent.z);
+        Vec3 inPositionJolt = new Vec3(inPosition.x, inPosition.y, inPosition.z);
         BoxShape bodyShape = new BoxShape(inHalfExtentJolt);
         BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, inPositionJolt, inRotation, EMotionType.Dynamic, Layers.MOVING);
         Body body = mBodyInterface.CreateBody(bodySettings);
         bodySettings.dispose();
         inHalfExtentJolt.dispose();
         inPositionJolt.dispose();
+        body.SetUserData(nextId++);
         return body;
     }
 }

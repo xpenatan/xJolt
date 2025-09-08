@@ -80,16 +80,16 @@ public class JoltGdx {
     }
 
     public static void init() {
-        TMP_VEC3_01 = Jolt.New_Vec3();
-        TMP_VEC3_02 = Jolt.New_Vec3();
-        TMP_VEC3_03 = Jolt.New_Vec3();
-        TMP_VEC4_01 = Jolt.New_Vec4();
-        TMP_VEC4_02 = Jolt.New_Vec4();
-        TMP_VEC4_03 = Jolt.New_Vec4();
+        TMP_VEC3_01 = new Vec3();
+        TMP_VEC3_02 = new Vec3();
+        TMP_VEC3_03 = new Vec3();
+        TMP_VEC4_01 = new Vec4();
+        TMP_VEC4_02 = new Vec4();
+        TMP_VEC4_03 = new Vec4();
         TMP_QUAT_01 = new Quat();
         TMP_QUAT_02 = new Quat();
-        TMP_MAT44_01 = Jolt.New_Mat44();
-        TMP_MAT44_02 = Jolt.New_Mat44();
+        TMP_MAT44_01 = new Mat44();
+        TMP_MAT44_02 = new Mat44();
     }
 
     public static void dispose() {

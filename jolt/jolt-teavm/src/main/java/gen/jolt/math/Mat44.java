@@ -109,6 +109,30 @@ public class Mat44 extends IDLBase {
 
     static public final Mat44 T_03 = Mat44.native_new();
 
+    public Mat44() {
+        int addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = new jolt.Mat44();
+return jolt.getPointer(jsObj);
+*/
+    @org.teavm.jso.JSBody(script = "var jsObj = new jolt.Mat44();return jolt.getPointer(jsObj);")
+    public static native int internal_native_create();
+
+    public Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec4 inC4) {
+        int addr = internal_native_create_Vec4_Vec4_Vec4_Vec4(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
+        internal_reset(addr, true);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = new jolt.Mat44(inC1_addr, inC2_addr, inC3_addr, inC4_addr);
+return jolt.getPointer(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"inC1_addr", "inC2_addr", "inC3_addr", "inC4_addr"}, script = "var jsObj = new jolt.Mat44(inC1_addr, inC2_addr, inC3_addr, inC4_addr);return jolt.getPointer(jsObj);")
+    public static native int internal_native_create_Vec4_Vec4_Vec4_Vec4(int inC1_addr, int inC2_addr, int inC3_addr, int inC4_addr);
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

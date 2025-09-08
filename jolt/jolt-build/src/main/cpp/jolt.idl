@@ -12,15 +12,18 @@ interface Jolt {
     [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
     [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
 
+    // TODO REMOVE
     [BindTo="New_Mat44"] static Mat44 New_Mat44_0(); //[-NEW_OBJECT]
     [BindTo="New_Mat44"] static Mat44 New_Mat44_1([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec4 inC4); //[-NEW_OBJECT]
     [BindTo="New_Mat44"] static Mat44 New_Mat44_2([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec3 inC4); //[-NEW_OBJECT]
 
+    // TODO REMOVE
     [BindTo="New_Vec3"] static Vec3 New_Vec3_0(); //[-NEW_OBJECT]
     [BindTo="New_Vec3"] static Vec3 New_Vec3_1(float inX, float inY, float inZ); //[-NEW_OBJECT]
     [BindTo="New_Vec3"] static Vec3 New_Vec3_2([Const, Ref] Vec3 inRHS); //[-NEW_OBJECT]
     [BindTo="New_Vec3"] static Vec3 New_Vec3_3([Const, Ref] Float3 inV); //[-NEW_OBJECT]
 
+    // TODO REMOVE
     [BindTo="New_Vec4"] static Vec4 New_Vec4_0(); //[-NEW_OBJECT, MEM_OWN]
     [BindTo="New_Vec4"] static Vec4 New_Vec4_1(float inX, float inY, float inZ, float inW); //[-NEW_OBJECT]
     [BindTo="New_Vec4"] static Vec4 New_Vec4_2([Const, Ref] Vec4 inV); //[-NEW_OBJECT]
@@ -1097,6 +1100,8 @@ interface Factory {
 ////};
 
 interface Vec3 {
+    void Vec3();
+    void Vec3(float inX, float inY, float inZ);
     [Value] static Vec3 sZero();
     [Value] static Vec3 sOne();
     [Value] static Vec3 sAxisX();
@@ -1158,6 +1163,8 @@ interface Vec3 {
 };
 
 interface Vec4 {
+    void Vec4();
+    void Vec4(float inX, float inY, float inZ, float inW);
     [Value] static Vec4 sZero();
     [Value] static Vec4 sOne();
     [Value] static Vec4 sReplicate(float inV);
@@ -1253,6 +1260,9 @@ interface Float2 {
 };
 
 interface Mat44 {
+    void Mat44();
+    void Mat44([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec4 inC4);
+//    void Mat44([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec3 inC4); // emscripten overloading error
     [Value] static Mat44 sZero();
     [Value] static Mat44 sIdentity();
     [Value] static Mat44 sRotationX(float inX);
@@ -2829,12 +2839,12 @@ interface CastShapeBodyCollectorJS {
 };
 
 interface BroadPhaseQuery {
-    void CastRay([Const, Ref] RayCast inRay, [Ref] RayCastBodyCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter);
-    void CollideAABox([Const, Ref] AABox inBox, [Ref] CollideShapeBodyCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter);
-    void CollideSphere([Const, Ref] Vec3 inCenter, float inRadius, [Ref] CollideShapeBodyCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter);
-    void CollidePoint([Const, Ref] Vec3 inPoint, [Ref] CollideShapeBodyCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter);
-    void CollideOrientedBox([Const, Ref] OrientedBox inBox, [Ref] CollideShapeBodyCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter);
-    void CastAABox([Const, Ref] AABoxCast inBox, [Ref] CastShapeBodyCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter);
+    void CastRay([Const, Ref] RayCast inRay, [Ref] RayCastBodyCollector ioCollector, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter);
+    void CollideAABox([Const, Ref] AABox inBox, [Ref] CollideShapeBodyCollector ioCollector, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter);
+    void CollideSphere([Const, Ref] Vec3 inCenter, float inRadius, [Ref] CollideShapeBodyCollector ioCollector, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter);
+    void CollidePoint([Const, Ref] Vec3 inPoint, [Ref] CollideShapeBodyCollector ioCollector, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter);
+    void CollideOrientedBox([Const, Ref] OrientedBox inBox, [Ref] CollideShapeBodyCollector ioCollector, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter);
+    void CastAABox([Const, Ref] AABoxCast inBox, [Ref] CastShapeBodyCollector ioCollector, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter);
 };
 
 interface RayCastSettings { //[-SUB_PACKAGE=physics.collision]
@@ -2988,7 +2998,8 @@ interface TransformedShapeCollectorJS {
 };
 
 interface NarrowPhaseQuery {
-    void CastRay([Const, Ref] RRayCast inRay, [Const, Ref] RayCastSettings inRayCastSettings, [Ref] CastRayCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
+    [BindTo="CastRay"] boolean CastRay_1([Const, Ref] RRayCast inRay, [Ref] RayCastResult ioHit, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter, [Const, Ref] optional BodyFilter inBodyFilter);
+    [BindTo="CastRay"] void CastRay_2([Const, Ref] RRayCast inRay, [Const, Ref] RayCastSettings inRayCastSettings, [Ref] CastRayCollector ioCollector, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter, [Const, Ref] optional BodyFilter inBodyFilter, [Const, Ref] optional ShapeFilter inShapeFilter);
     void CollidePoint([Const, Ref] Vec3 inPoint, [Ref] CollidePointCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
     void CollideShape([Const] Shape inShape, [Const, Ref] Vec3 inShapeScale, [Const, Ref] Mat44 inCenterOfMassTransform, [Const, Ref] CollideShapeSettings inCollideShapeSettings, [Const, Ref] Vec3 inBaseOffset, [Ref] CollideShapeCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
     void CastShape([Const, Ref] RShapeCast inShapeCast, [Const, Ref] ShapeCastSettings inShapeCastSettings, [Const, Ref] Vec3 inBaseOffset, [Ref] CastShapeCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);

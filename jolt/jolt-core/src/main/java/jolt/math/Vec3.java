@@ -82,6 +82,28 @@ public class Vec3 extends IDLBase {
         return "X: " + GetX() + " Y: " + GetY() + " Z: " + GetZ();
     }
 
+    public Vec3() {
+        long addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      return (jlong)new Vec3();
+    */
+    public static native long internal_native_create();
+
+    public Vec3(float inX, float inY, float inZ) {
+        long addr = internal_native_create_float_float_float(inX, inY, inZ);
+        internal_reset(addr, true);
+    }
+
+    /*
+      [-JNI;-NATIVE]
+      return (jlong)new Vec3((float)inX, (float)inY, (float)inZ);
+    */
+    public static native long internal_native_create_float_float_float(float inX, float inY, float inZ);
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

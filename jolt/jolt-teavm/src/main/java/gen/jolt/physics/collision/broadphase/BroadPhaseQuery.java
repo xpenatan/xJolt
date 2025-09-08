@@ -62,6 +62,28 @@ jsObj.CastRay(inRay_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObjectLay
     @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "ioCollector_addr", "inBroadPhaseFilter_addr", "inObjectLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CastRay(inRay_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObjectLayerFilter_addr);")
     public static native void internal_native_CastRay(int this_addr, int inRay_addr, int ioCollector_addr, int inBroadPhaseFilter_addr, int inObjectLayerFilter_addr);
 
+    public void CastRay(RayCast inRay, RayCastBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter) {
+        internal_native_CastRay(native_address, inRay.native_address, ioCollector.native_address, inBroadPhaseFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CastRay(inRay_addr, ioCollector_addr, inBroadPhaseFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "ioCollector_addr", "inBroadPhaseFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CastRay(inRay_addr, ioCollector_addr, inBroadPhaseFilter_addr);")
+    public static native void internal_native_CastRay(int this_addr, int inRay_addr, int ioCollector_addr, int inBroadPhaseFilter_addr);
+
+    public void CastRay(RayCast inRay, RayCastBodyCollector ioCollector) {
+        internal_native_CastRay(native_address, inRay.native_address, ioCollector.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CastRay(inRay_addr, ioCollector_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "ioCollector_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CastRay(inRay_addr, ioCollector_addr);")
+    public static native void internal_native_CastRay(int this_addr, int inRay_addr, int ioCollector_addr);
+
     public void CollideAABox(AABox inBox, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
         internal_native_CollideAABox(native_address, inBox.native_address, ioCollector.native_address, inBroadPhaseFilter.native_address, inObjectLayerFilter.native_address);
     }
@@ -72,6 +94,28 @@ jsObj.CollideAABox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObje
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inBox_addr", "ioCollector_addr", "inBroadPhaseFilter_addr", "inObjectLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollideAABox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObjectLayerFilter_addr);")
     public static native void internal_native_CollideAABox(int this_addr, int inBox_addr, int ioCollector_addr, int inBroadPhaseFilter_addr, int inObjectLayerFilter_addr);
+
+    public void CollideAABox(AABox inBox, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter) {
+        internal_native_CollideAABox(native_address, inBox.native_address, ioCollector.native_address, inBroadPhaseFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CollideAABox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inBox_addr", "ioCollector_addr", "inBroadPhaseFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollideAABox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr);")
+    public static native void internal_native_CollideAABox(int this_addr, int inBox_addr, int ioCollector_addr, int inBroadPhaseFilter_addr);
+
+    public void CollideAABox(AABox inBox, CollideShapeBodyCollector ioCollector) {
+        internal_native_CollideAABox(native_address, inBox.native_address, ioCollector.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CollideAABox(inBox_addr, ioCollector_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inBox_addr", "ioCollector_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollideAABox(inBox_addr, ioCollector_addr);")
+    public static native void internal_native_CollideAABox(int this_addr, int inBox_addr, int ioCollector_addr);
 
     public void CollideSphere(Vec3 inCenter, float inRadius, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter) {
         internal_native_CollideSphere(native_address, inCenter.native_address, inRadius, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address);
@@ -84,6 +128,28 @@ jsObj.CollideSphere(inCenter_addr, inRadius, ioCollector_addr, inBroadPhaseLayer
     @org.teavm.jso.JSBody(params = {"this_addr", "inCenter_addr", "inRadius", "ioCollector_addr", "inBroadPhaseLayerFilter_addr", "inObjectLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollideSphere(inCenter_addr, inRadius, ioCollector_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr);")
     public static native void internal_native_CollideSphere(int this_addr, int inCenter_addr, float inRadius, int ioCollector_addr, int inBroadPhaseLayerFilter_addr, int inObjectLayerFilter_addr);
 
+    public void CollideSphere(Vec3 inCenter, float inRadius, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter) {
+        internal_native_CollideSphere(native_address, inCenter.native_address, inRadius, ioCollector.native_address, inBroadPhaseLayerFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CollideSphere(inCenter_addr, inRadius, ioCollector_addr, inBroadPhaseLayerFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inCenter_addr", "inRadius", "ioCollector_addr", "inBroadPhaseLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollideSphere(inCenter_addr, inRadius, ioCollector_addr, inBroadPhaseLayerFilter_addr);")
+    public static native void internal_native_CollideSphere(int this_addr, int inCenter_addr, float inRadius, int ioCollector_addr, int inBroadPhaseLayerFilter_addr);
+
+    public void CollideSphere(Vec3 inCenter, float inRadius, CollideShapeBodyCollector ioCollector) {
+        internal_native_CollideSphere(native_address, inCenter.native_address, inRadius, ioCollector.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CollideSphere(inCenter_addr, inRadius, ioCollector_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inCenter_addr", "inRadius", "ioCollector_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollideSphere(inCenter_addr, inRadius, ioCollector_addr);")
+    public static native void internal_native_CollideSphere(int this_addr, int inCenter_addr, float inRadius, int ioCollector_addr);
+
     public void CollidePoint(Vec3 inPoint, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
         internal_native_CollidePoint(native_address, inPoint.native_address, ioCollector.native_address, inBroadPhaseFilter.native_address, inObjectLayerFilter.native_address);
     }
@@ -94,6 +160,28 @@ jsObj.CollidePoint(inPoint_addr, ioCollector_addr, inBroadPhaseFilter_addr, inOb
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPoint_addr", "ioCollector_addr", "inBroadPhaseFilter_addr", "inObjectLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollidePoint(inPoint_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObjectLayerFilter_addr);")
     public static native void internal_native_CollidePoint(int this_addr, int inPoint_addr, int ioCollector_addr, int inBroadPhaseFilter_addr, int inObjectLayerFilter_addr);
+
+    public void CollidePoint(Vec3 inPoint, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter) {
+        internal_native_CollidePoint(native_address, inPoint.native_address, ioCollector.native_address, inBroadPhaseFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CollidePoint(inPoint_addr, ioCollector_addr, inBroadPhaseFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inPoint_addr", "ioCollector_addr", "inBroadPhaseFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollidePoint(inPoint_addr, ioCollector_addr, inBroadPhaseFilter_addr);")
+    public static native void internal_native_CollidePoint(int this_addr, int inPoint_addr, int ioCollector_addr, int inBroadPhaseFilter_addr);
+
+    public void CollidePoint(Vec3 inPoint, CollideShapeBodyCollector ioCollector) {
+        internal_native_CollidePoint(native_address, inPoint.native_address, ioCollector.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CollidePoint(inPoint_addr, ioCollector_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inPoint_addr", "ioCollector_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollidePoint(inPoint_addr, ioCollector_addr);")
+    public static native void internal_native_CollidePoint(int this_addr, int inPoint_addr, int ioCollector_addr);
 
     public void CollideOrientedBox(OrientedBox inBox, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
         internal_native_CollideOrientedBox(native_address, inBox.native_address, ioCollector.native_address, inBroadPhaseFilter.native_address, inObjectLayerFilter.native_address);
@@ -106,6 +194,28 @@ jsObj.CollideOrientedBox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr, 
     @org.teavm.jso.JSBody(params = {"this_addr", "inBox_addr", "ioCollector_addr", "inBroadPhaseFilter_addr", "inObjectLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollideOrientedBox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObjectLayerFilter_addr);")
     public static native void internal_native_CollideOrientedBox(int this_addr, int inBox_addr, int ioCollector_addr, int inBroadPhaseFilter_addr, int inObjectLayerFilter_addr);
 
+    public void CollideOrientedBox(OrientedBox inBox, CollideShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter) {
+        internal_native_CollideOrientedBox(native_address, inBox.native_address, ioCollector.native_address, inBroadPhaseFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CollideOrientedBox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inBox_addr", "ioCollector_addr", "inBroadPhaseFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollideOrientedBox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr);")
+    public static native void internal_native_CollideOrientedBox(int this_addr, int inBox_addr, int ioCollector_addr, int inBroadPhaseFilter_addr);
+
+    public void CollideOrientedBox(OrientedBox inBox, CollideShapeBodyCollector ioCollector) {
+        internal_native_CollideOrientedBox(native_address, inBox.native_address, ioCollector.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CollideOrientedBox(inBox_addr, ioCollector_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inBox_addr", "ioCollector_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CollideOrientedBox(inBox_addr, ioCollector_addr);")
+    public static native void internal_native_CollideOrientedBox(int this_addr, int inBox_addr, int ioCollector_addr);
+
     public void CastAABox(AABoxCast inBox, CastShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter, ObjectLayerFilter inObjectLayerFilter) {
         internal_native_CastAABox(native_address, inBox.native_address, ioCollector.native_address, inBroadPhaseFilter.native_address, inObjectLayerFilter.native_address);
     }
@@ -116,4 +226,26 @@ jsObj.CastAABox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObjectL
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inBox_addr", "ioCollector_addr", "inBroadPhaseFilter_addr", "inObjectLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CastAABox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr, inObjectLayerFilter_addr);")
     public static native void internal_native_CastAABox(int this_addr, int inBox_addr, int ioCollector_addr, int inBroadPhaseFilter_addr, int inObjectLayerFilter_addr);
+
+    public void CastAABox(AABoxCast inBox, CastShapeBodyCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseFilter) {
+        internal_native_CastAABox(native_address, inBox.native_address, ioCollector.native_address, inBroadPhaseFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CastAABox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inBox_addr", "ioCollector_addr", "inBroadPhaseFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CastAABox(inBox_addr, ioCollector_addr, inBroadPhaseFilter_addr);")
+    public static native void internal_native_CastAABox(int this_addr, int inBox_addr, int ioCollector_addr, int inBroadPhaseFilter_addr);
+
+    public void CastAABox(AABoxCast inBox, CastShapeBodyCollector ioCollector) {
+        internal_native_CastAABox(native_address, inBox.native_address, ioCollector.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);
+jsObj.CastAABox(inBox_addr, ioCollector_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inBox_addr", "ioCollector_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseQuery);jsObj.CastAABox(inBox_addr, ioCollector_addr);")
+    public static native void internal_native_CastAABox(int this_addr, int inBox_addr, int ioCollector_addr);
 }

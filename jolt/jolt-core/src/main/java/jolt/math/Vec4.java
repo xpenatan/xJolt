@@ -47,6 +47,26 @@ public class Vec4 extends IDLBase {
 
     static public final Vec4 T_03 = Vec4.native_new();
 
+    public Vec4() {
+        long addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)new Vec4();
+*/
+    public static native long internal_native_create();
+
+    public Vec4(float inX, float inY, float inZ, float inW) {
+        long addr = internal_native_create_float_float_float_float(inX, inY, inZ, inW);
+        internal_reset(addr, true);
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)new Vec4((float)inX, (float)inY, (float)inZ, (float)inW);
+*/
+    public static native long internal_native_create_float_float_float_float(float inX, float inY, float inZ, float inW);
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

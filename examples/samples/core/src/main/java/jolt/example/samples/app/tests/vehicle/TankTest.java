@@ -82,23 +82,23 @@ public class TankTest extends VehicleTest {
         final float barrel_rotation_offset = 0.2f;
 
         wheel_pos = new Vec3[]{
-                Jolt.New_Vec3(0.0f, -0.0f, 2.95f),
-                Jolt.New_Vec3(0.0f, -0.3f, 2.1f),
-                Jolt.New_Vec3(0.0f, -0.3f, 1.4f),
-                Jolt.New_Vec3(0.0f, -0.3f, 0.7f),
-                Jolt.New_Vec3(0.0f, -0.3f, 0.0f),
-                Jolt.New_Vec3(0.0f, -0.3f, -0.7f),
-                Jolt.New_Vec3(0.0f, -0.3f, -1.4f),
-                Jolt.New_Vec3(0.0f, -0.3f, -2.1f),
-                Jolt.New_Vec3(0.0f, -0.0f, -2.75f)
+                new Vec3(0.0f, -0.0f, 2.95f),
+                new Vec3(0.0f, -0.3f, 2.1f),
+                new Vec3(0.0f, -0.3f, 1.4f),
+                new Vec3(0.0f, -0.3f, 0.7f),
+                new Vec3(0.0f, -0.3f, 0.0f),
+                new Vec3(0.0f, -0.3f, -0.7f),
+                new Vec3(0.0f, -0.3f, -1.4f),
+                new Vec3(0.0f, -0.3f, -2.1f),
+                new Vec3(0.0f, -0.0f, -2.75f)
         };
 
         // Create filter to prevent body, turret and barrel from colliding
         GroupFilter filter = new GroupFilterTable();
 
         // Create tank body
-        Vec3 body_position = Jolt.New_Vec3(0, 2, 0);
-        Shape tank_body_shape = new OffsetCenterOfMassShapeSettings(Jolt.New_Vec3(0, -half_vehicle_height, 0), new BoxShape(Jolt.New_Vec3(half_vehicle_width, half_vehicle_height, half_vehicle_length))).Create().Get();
+        Vec3 body_position = new Vec3(0, 2, 0);
+        Shape tank_body_shape = new OffsetCenterOfMassShapeSettings(new Vec3(0, -half_vehicle_height, 0), new BoxShape(new Vec3(half_vehicle_width, half_vehicle_height, half_vehicle_length))).Create().Get();
         BodyCreationSettings tank_body_settings = Jolt.New_BodyCreationSettings(tank_body_shape, body_position, Quat.sIdentity(), EMotionType.Dynamic, Layers.MOVING);
         tank_body_settings.get_mCollisionGroup().SetGroupFilter(filter);
         tank_body_settings.get_mCollisionGroup().SetGroupID(0);
@@ -147,8 +147,8 @@ public class TankTest extends VehicleTest {
         mPhysicsSystem.AddStepListener(mVehicleConstraint);
 
         // Create turret
-        Vec3 turret_position = Jolt.New_Vec3(0, half_vehicle_height + half_turret_height, 0).Add(body_position);
-        BodyCreationSettings turret_body_setings = Jolt.New_BodyCreationSettings(new BoxShape(Jolt.New_Vec3(half_turret_width, half_turret_height, half_turret_length)), turret_position, Quat.sIdentity(), EMotionType.Dynamic, Layers.MOVING);
+        Vec3 turret_position = new Vec3(0, half_vehicle_height + half_turret_height, 0).Add(body_position);
+        BodyCreationSettings turret_body_setings = Jolt.New_BodyCreationSettings(new BoxShape(new Vec3(half_turret_width, half_turret_height, half_turret_length)), turret_position, Quat.sIdentity(), EMotionType.Dynamic, Layers.MOVING);
         turret_body_setings.get_mCollisionGroup().SetGroupFilter(filter);
         turret_body_setings.get_mCollisionGroup().SetGroupID(0);
         turret_body_setings.get_mCollisionGroup().SetSubGroupID(0);
@@ -159,7 +159,7 @@ public class TankTest extends VehicleTest {
 
         // Attach turret to body
         HingeConstraintSettings turret_hinge = new HingeConstraintSettings();
-        Vec3 turretPoint = body_position.AddVec3(Jolt.New_Vec3(0, half_vehicle_height, 0));
+        Vec3 turretPoint = body_position.AddVec3(new Vec3(0, half_vehicle_height, 0));
         turret_hinge.set_mPoint1(turretPoint);
         turret_hinge.set_mPoint2(turretPoint);
         turret_hinge.set_mHingeAxis1(Vec3.sAxisY());
@@ -174,7 +174,7 @@ public class TankTest extends VehicleTest {
         mPhysicsSystem.AddConstraint(mTurretHinge);
 
         // Create barrel
-        Vec3 barrel_position = Jolt.New_Vec3(0, 0, half_turret_length + half_barrel_length - barrel_rotation_offset).Add(turret_position);
+        Vec3 barrel_position = new Vec3(0, 0, half_turret_length + half_barrel_length - barrel_rotation_offset).Add(turret_position);
         BodyCreationSettings barrel_body_setings = Jolt.New_BodyCreationSettings(new CylinderShape(half_barrel_length, barrel_radius), barrel_position, Quat.sRotation(Vec3.sAxisX(), 0.5f * MathUtils.PI), EMotionType.Dynamic, Layers.MOVING);
         barrel_body_setings.get_mCollisionGroup().SetGroupFilter(filter);
         barrel_body_setings.get_mCollisionGroup().SetGroupID(0);
@@ -186,7 +186,7 @@ public class TankTest extends VehicleTest {
 
         // Attach barrel to turret
         HingeConstraintSettings barrel_hinge = new HingeConstraintSettings();
-        Vec3 barrelPoint = barrel_position.SubVec3(Jolt.New_Vec3(0, 0, half_barrel_length));
+        Vec3 barrelPoint = barrel_position.SubVec3(new Vec3(0, 0, half_barrel_length));
         barrel_hinge.set_mPoint1(barrelPoint);
         barrel_hinge.set_mPoint2(barrelPoint);
         Vec3 negAxisX = Vec3.sAxisX().Mul(-1);

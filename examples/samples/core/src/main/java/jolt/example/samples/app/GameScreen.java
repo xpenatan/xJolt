@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 //import imgui.ImGuiStyle;
 //import imgui.gdx.ImGuiGdxImpl;
 //import imgui.gdx.ImGuiGdxInput;
+import jolt.example.samples.app.tests.raycast.BroadPhaseCastRayTest;
 import jolt.example.samples.app.tests.shapes.BoxShapeTest;
 import jolt.example.samples.app.tests.vehicle.TankTest;
 import jolt.gdx.GraphicManagerApi;
@@ -41,7 +42,7 @@ public class GameScreen extends ScreenAdapter {
         input.setInputProcessor(inputMultiplexer);
 //        inputMultiplexer.addProcessor(input);
         samplesApp.setup(inputMultiplexer);
-        samplesApp.startTest(TankTest.class);
+        samplesApp.startTest(BroadPhaseCastRayTest.class);
 
 //        ImGuiStyle imGuiStyle = ImGui.GetStyle();
 //        imGuiStyle.Colors(ImGuiCol.WindowBg, 0.00f, 0.00f, 0.00f, 0.6f);

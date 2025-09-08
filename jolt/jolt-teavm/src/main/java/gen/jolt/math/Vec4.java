@@ -47,6 +47,30 @@ public class Vec4 extends IDLBase {
 
     static public final Vec4 T_03 = Vec4.native_new();
 
+    public Vec4() {
+        int addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = new jolt.Vec4();
+return jolt.getPointer(jsObj);
+*/
+    @org.teavm.jso.JSBody(script = "var jsObj = new jolt.Vec4();return jolt.getPointer(jsObj);")
+    public static native int internal_native_create();
+
+    public Vec4(float inX, float inY, float inZ, float inW) {
+        int addr = internal_native_create_float_float_float_float(inX, inY, inZ, inW);
+        internal_reset(addr, true);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = new jolt.Vec4(inX, inY, inZ, inW);
+return jolt.getPointer(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"inX", "inY", "inZ", "inW"}, script = "var jsObj = new jolt.Vec4(inX, inY, inZ, inW);return jolt.getPointer(jsObj);")
+    public static native int internal_native_create_float_float_float_float(float inX, float inY, float inZ, float inW);
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

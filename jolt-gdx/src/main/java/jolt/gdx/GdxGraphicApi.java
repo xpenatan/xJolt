@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.VertexAttributes;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
+import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer;
+import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer20;
 import com.badlogic.gdx.utils.ScreenUtils;
 
 public class GdxGraphicApi implements GraphicApi{
@@ -29,6 +31,11 @@ public class GdxGraphicApi implements GraphicApi{
     @Override
     public MeshBuilderExt createMeshBuilder() {
         return new GdxMeshBuilder();
+    }
+
+    @Override
+    public ImmediateModeRenderer createImmediateModeRenderer() {
+        return new ImmediateModeRenderer20(false, true, 0);
     }
 
     @Override

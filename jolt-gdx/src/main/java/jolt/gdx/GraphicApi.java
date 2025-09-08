@@ -8,12 +8,14 @@ import com.badlogic.gdx.graphics.VertexAttributes;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
+import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer;
 
 public interface GraphicApi {
     void clearScreen(float r, float g, float b, float a, boolean clearDepth);
     DebugRenderer createDebugRenderer();
     ModelBuilder createModelBuilder();
     MeshBuilderExt createMeshBuilder();
+    ImmediateModeRenderer createImmediateModeRenderer();
     Model createModel();
     MeshPart createMeshPart();
     MeshPart createMeshPart(final String id, final Mesh mesh, final int offset, final int size, final int type);

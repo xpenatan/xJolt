@@ -7,9 +7,9 @@ package jolt.physics.collision;
 
 import jolt.idl.IDLBase;
 import jolt.RRayCast;
-import jolt.physics.softbody.CastRayCollector;
 import jolt.physics.collision.broadphase.BroadPhaseLayerFilter;
 import jolt.physics.body.BodyFilter;
+import jolt.physics.softbody.CastRayCollector;
 import jolt.math.Vec3;
 import jolt.physics.softbody.CollidePointCollector;
 import jolt.physics.collision.shape.Shape;
@@ -54,15 +54,95 @@ delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
 
+    public boolean CastRay(RRayCast inRay, RayCastResult ioHit, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter) {
+        return internal_native_CastRay_1(native_address, inRay.native_address, ioHit.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+NarrowPhaseQuery* nativeObject = (NarrowPhaseQuery*)this_addr;
+return nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastResult* )ioHit_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr), *((BodyFilter* )inBodyFilter_addr));
+*/
+    public static native boolean internal_native_CastRay_1(long this_addr, long inRay_addr, long ioHit_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr);
+
+    public boolean CastRay(RRayCast inRay, RayCastResult ioHit, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter) {
+        return internal_native_CastRay_1(native_address, inRay.native_address, ioHit.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+NarrowPhaseQuery* nativeObject = (NarrowPhaseQuery*)this_addr;
+return nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastResult* )ioHit_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr));
+*/
+    public static native boolean internal_native_CastRay_1(long this_addr, long inRay_addr, long ioHit_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr);
+
+    public boolean CastRay(RRayCast inRay, RayCastResult ioHit, BroadPhaseLayerFilter inBroadPhaseLayerFilter) {
+        return internal_native_CastRay_1(native_address, inRay.native_address, ioHit.native_address, inBroadPhaseLayerFilter.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+NarrowPhaseQuery* nativeObject = (NarrowPhaseQuery*)this_addr;
+return nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastResult* )ioHit_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr));
+*/
+    public static native boolean internal_native_CastRay_1(long this_addr, long inRay_addr, long ioHit_addr, long inBroadPhaseLayerFilter_addr);
+
+    public boolean CastRay(RRayCast inRay, RayCastResult ioHit) {
+        return internal_native_CastRay_1(native_address, inRay.native_address, ioHit.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+NarrowPhaseQuery* nativeObject = (NarrowPhaseQuery*)this_addr;
+return nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastResult* )ioHit_addr));
+*/
+    public static native boolean internal_native_CastRay_1(long this_addr, long inRay_addr, long ioHit_addr);
+
     public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
-        internal_native_CastRay(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address, inShapeFilter.native_address);
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address, inShapeFilter.native_address);
     }
 
     /*[-JNI;-NATIVE]
 NarrowPhaseQuery* nativeObject = (NarrowPhaseQuery*)this_addr;
 nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastSettings* )inRayCastSettings_addr), *((CastRayCollector* )ioCollector_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr), *((BodyFilter* )inBodyFilter_addr), *((ShapeFilter* )inShapeFilter_addr));
 */
-    public static native void internal_native_CastRay(long this_addr, long inRay_addr, long inRayCastSettings_addr, long ioCollector_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr);
+    public static native void internal_native_CastRay_2(long this_addr, long inRay_addr, long inRayCastSettings_addr, long ioCollector_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr, long inShapeFilter_addr);
+
+    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter) {
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+NarrowPhaseQuery* nativeObject = (NarrowPhaseQuery*)this_addr;
+nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastSettings* )inRayCastSettings_addr), *((CastRayCollector* )ioCollector_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr), *((BodyFilter* )inBodyFilter_addr));
+*/
+    public static native void internal_native_CastRay_2(long this_addr, long inRay_addr, long inRayCastSettings_addr, long ioCollector_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr, long inBodyFilter_addr);
+
+    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter) {
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+NarrowPhaseQuery* nativeObject = (NarrowPhaseQuery*)this_addr;
+nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastSettings* )inRayCastSettings_addr), *((CastRayCollector* )ioCollector_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr), *((ObjectLayerFilter* )inObjectLayerFilter_addr));
+*/
+    public static native void internal_native_CastRay_2(long this_addr, long inRay_addr, long inRayCastSettings_addr, long ioCollector_addr, long inBroadPhaseLayerFilter_addr, long inObjectLayerFilter_addr);
+
+    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter) {
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+NarrowPhaseQuery* nativeObject = (NarrowPhaseQuery*)this_addr;
+nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastSettings* )inRayCastSettings_addr), *((CastRayCollector* )ioCollector_addr), *((BroadPhaseLayerFilter* )inBroadPhaseLayerFilter_addr));
+*/
+    public static native void internal_native_CastRay_2(long this_addr, long inRay_addr, long inRayCastSettings_addr, long ioCollector_addr, long inBroadPhaseLayerFilter_addr);
+
+    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector) {
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+NarrowPhaseQuery* nativeObject = (NarrowPhaseQuery*)this_addr;
+nativeObject->CastRay(*((RRayCast* )inRay_addr), *((RayCastSettings* )inRayCastSettings_addr), *((CastRayCollector* )ioCollector_addr));
+*/
+    public static native void internal_native_CastRay_2(long this_addr, long inRay_addr, long inRayCastSettings_addr, long ioCollector_addr);
 
     public void CollidePoint(Vec3 inPoint, CollidePointCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
         internal_native_CollidePoint(native_address, inPoint.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address, inShapeFilter.native_address);

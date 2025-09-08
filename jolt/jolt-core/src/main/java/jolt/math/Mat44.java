@@ -109,6 +109,26 @@ public class Mat44 extends IDLBase {
 
     static public final Mat44 T_03 = Mat44.native_new();
 
+    public Mat44() {
+        long addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)new Mat44();
+*/
+    public static native long internal_native_create();
+
+    public Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec4 inC4) {
+        long addr = internal_native_create_Vec4_Vec4_Vec4_Vec4(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
+        internal_reset(addr, true);
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)new Mat44(*((Vec4* )inC1_addr), *((Vec4* )inC2_addr), *((Vec4* )inC3_addr), *((Vec4* )inC4_addr));
+*/
+    public static native long internal_native_create_Vec4_Vec4_Vec4_Vec4(long inC1_addr, long inC2_addr, long inC3_addr, long inC4_addr);
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

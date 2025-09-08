@@ -7,9 +7,9 @@ package gen.jolt.physics.collision;
 
 import gen.jolt.idl.IDLBase;
 import gen.jolt.RRayCast;
-import gen.jolt.physics.softbody.CastRayCollector;
 import gen.jolt.physics.collision.broadphase.BroadPhaseLayerFilter;
 import gen.jolt.physics.body.BodyFilter;
+import gen.jolt.physics.softbody.CastRayCollector;
 import gen.jolt.math.Vec3;
 import gen.jolt.physics.softbody.CollidePointCollector;
 import gen.jolt.physics.collision.shape.Shape;
@@ -55,16 +55,108 @@ jolt.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);jolt.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
-    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
-        internal_native_CastRay(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address, inShapeFilter.native_address);
+    public boolean CastRay(RRayCast inRay, RayCastResult ioHit, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter) {
+        return internal_native_CastRay_1(native_address, inRay.native_address, ioHit.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);
-jsObj.CastRay(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr);
+var returnedJSObj = jsObj.CastRay_1(inRay_addr, ioHit_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr);
+return returnedJSObj;
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "inRayCastSettings_addr", "ioCollector_addr", "inBroadPhaseLayerFilter_addr", "inObjectLayerFilter_addr", "inBodyFilter_addr", "inShapeFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);jsObj.CastRay(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr);")
-    public static native void internal_native_CastRay(int this_addr, int inRay_addr, int inRayCastSettings_addr, int ioCollector_addr, int inBroadPhaseLayerFilter_addr, int inObjectLayerFilter_addr, int inBodyFilter_addr, int inShapeFilter_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "ioHit_addr", "inBroadPhaseLayerFilter_addr", "inObjectLayerFilter_addr", "inBodyFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);var returnedJSObj = jsObj.CastRay_1(inRay_addr, ioHit_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr);return returnedJSObj;")
+    public static native boolean internal_native_CastRay_1(int this_addr, int inRay_addr, int ioHit_addr, int inBroadPhaseLayerFilter_addr, int inObjectLayerFilter_addr, int inBodyFilter_addr);
+
+    public boolean CastRay(RRayCast inRay, RayCastResult ioHit, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter) {
+        return internal_native_CastRay_1(native_address, inRay.native_address, ioHit.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);
+var returnedJSObj = jsObj.CastRay_1(inRay_addr, ioHit_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr);
+return returnedJSObj;
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "ioHit_addr", "inBroadPhaseLayerFilter_addr", "inObjectLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);var returnedJSObj = jsObj.CastRay_1(inRay_addr, ioHit_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr);return returnedJSObj;")
+    public static native boolean internal_native_CastRay_1(int this_addr, int inRay_addr, int ioHit_addr, int inBroadPhaseLayerFilter_addr, int inObjectLayerFilter_addr);
+
+    public boolean CastRay(RRayCast inRay, RayCastResult ioHit, BroadPhaseLayerFilter inBroadPhaseLayerFilter) {
+        return internal_native_CastRay_1(native_address, inRay.native_address, ioHit.native_address, inBroadPhaseLayerFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);
+var returnedJSObj = jsObj.CastRay_1(inRay_addr, ioHit_addr, inBroadPhaseLayerFilter_addr);
+return returnedJSObj;
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "ioHit_addr", "inBroadPhaseLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);var returnedJSObj = jsObj.CastRay_1(inRay_addr, ioHit_addr, inBroadPhaseLayerFilter_addr);return returnedJSObj;")
+    public static native boolean internal_native_CastRay_1(int this_addr, int inRay_addr, int ioHit_addr, int inBroadPhaseLayerFilter_addr);
+
+    public boolean CastRay(RRayCast inRay, RayCastResult ioHit) {
+        return internal_native_CastRay_1(native_address, inRay.native_address, ioHit.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);
+var returnedJSObj = jsObj.CastRay_1(inRay_addr, ioHit_addr);
+return returnedJSObj;
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "ioHit_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);var returnedJSObj = jsObj.CastRay_1(inRay_addr, ioHit_addr);return returnedJSObj;")
+    public static native boolean internal_native_CastRay_1(int this_addr, int inRay_addr, int ioHit_addr);
+
+    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address, inShapeFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);
+jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "inRayCastSettings_addr", "ioCollector_addr", "inBroadPhaseLayerFilter_addr", "inObjectLayerFilter_addr", "inBodyFilter_addr", "inShapeFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr, inShapeFilter_addr);")
+    public static native void internal_native_CastRay_2(int this_addr, int inRay_addr, int inRayCastSettings_addr, int ioCollector_addr, int inBroadPhaseLayerFilter_addr, int inObjectLayerFilter_addr, int inBodyFilter_addr, int inShapeFilter_addr);
+
+    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter) {
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);
+jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "inRayCastSettings_addr", "ioCollector_addr", "inBroadPhaseLayerFilter_addr", "inObjectLayerFilter_addr", "inBodyFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr, inBodyFilter_addr);")
+    public static native void internal_native_CastRay_2(int this_addr, int inRay_addr, int inRayCastSettings_addr, int ioCollector_addr, int inBroadPhaseLayerFilter_addr, int inObjectLayerFilter_addr, int inBodyFilter_addr);
+
+    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter) {
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);
+jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "inRayCastSettings_addr", "ioCollector_addr", "inBroadPhaseLayerFilter_addr", "inObjectLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr, inObjectLayerFilter_addr);")
+    public static native void internal_native_CastRay_2(int this_addr, int inRay_addr, int inRayCastSettings_addr, int ioCollector_addr, int inBroadPhaseLayerFilter_addr, int inObjectLayerFilter_addr);
+
+    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter) {
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);
+jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "inRayCastSettings_addr", "ioCollector_addr", "inBroadPhaseLayerFilter_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr, inBroadPhaseLayerFilter_addr);")
+    public static native void internal_native_CastRay_2(int this_addr, int inRay_addr, int inRayCastSettings_addr, int ioCollector_addr, int inBroadPhaseLayerFilter_addr);
+
+    public void CastRay(RRayCast inRay, RayCastSettings inRayCastSettings, CastRayCollector ioCollector) {
+        internal_native_CastRay_2(native_address, inRay.native_address, inRayCastSettings.native_address, ioCollector.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);
+jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRay_addr", "inRayCastSettings_addr", "ioCollector_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.NarrowPhaseQuery);jsObj.CastRay_2(inRay_addr, inRayCastSettings_addr, ioCollector_addr);")
+    public static native void internal_native_CastRay_2(int this_addr, int inRay_addr, int inRayCastSettings_addr, int ioCollector_addr);
 
     public void CollidePoint(Vec3 inPoint, CollidePointCollector ioCollector, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter) {
         internal_native_CollidePoint(native_address, inPoint.native_address, ioCollector.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address, inShapeFilter.native_address);

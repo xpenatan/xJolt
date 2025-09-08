@@ -82,6 +82,32 @@ public class Vec3 extends IDLBase {
         return "X: " + GetX() + " Y: " + GetY() + " Z: " + GetZ();
     }
 
+    public Vec3() {
+        int addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*
+      [-TEAVM;-NATIVE]
+      var jsObj = new jolt.Vec3();
+      return jolt.getPointer(jsObj);
+    */
+    @org.teavm.jso.JSBody(script = "var jsObj = new jolt.Vec3();return jolt.getPointer(jsObj);")
+    public static native int internal_native_create();
+
+    public Vec3(float inX, float inY, float inZ) {
+        int addr = internal_native_create_float_float_float(inX, inY, inZ);
+        internal_reset(addr, true);
+    }
+
+    /*
+      [-TEAVM;-NATIVE]
+      var jsObj = new jolt.Vec3(inX, inY, inZ);
+      return jolt.getPointer(jsObj);
+    */
+    @org.teavm.jso.JSBody(params = {"inX", "inY", "inZ"}, script = "var jsObj = new jolt.Vec3(inX, inY, inZ);return jolt.getPointer(jsObj);")
+    public static native int internal_native_create_float_float_float(float inX, float inY, float inZ);
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
