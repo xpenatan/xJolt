@@ -1,6 +1,5 @@
 package jolt.example.samples.app;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputMultiplexer;
@@ -66,6 +65,7 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void render(float delta) {
+        camera.update();
         // Don't go below 30 Hz to prevent spiral of death
         float deltaTime = (float)Math.min(delta, 1.0 / 30.0);
         if(test != null) {
@@ -74,9 +74,9 @@ public class SamplesApp extends InputAdapter {
             }
             test.updateCamera(camera);
         }
-        DrawPhysics();
+        drawPhysics();
         if(deltaTime > 0) {
-            StepPhysics(deltaTime);
+            stepPhysics(deltaTime);
         }
     }
 
@@ -139,15 +139,13 @@ public class SamplesApp extends InputAdapter {
         test.processInput();
     }
 
-    private void DrawPhysics() {
-        camera.update();
-        viewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), false);
+    private void drawPhysics() {
         debugRenderer.begin(camera);
         debugRenderer.DrawBodies(joltInstance.getPhysicsSystem(), debugSettings);
         debugRenderer.end();
     }
 
-    public void StepPhysics(float deltaTime) {
+    public void stepPhysics(float deltaTime) {
         // When running below 55 Hz, do 2 steps instead of 1
         int numSteps = deltaTime > 1.0 / 55.0 ? 2 : 1;
         boolean isPlaying = !isPaused;
@@ -160,6 +158,10 @@ public class SamplesApp extends InputAdapter {
         if(test != null) {
             test.postPhysicsUpdate(isPlaying, deltaTime);
         }
+    }
+
+    public void resize(int width, int height) {
+        viewport.update(width, height);
     }
 
     public void dispose() {
