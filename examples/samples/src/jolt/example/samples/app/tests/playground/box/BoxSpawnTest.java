@@ -91,7 +91,7 @@ public class BoxSpawnTest extends Test {
 
     public void initialize() {
         mDebugRenderer.setEnable(false);
-        tempVec3 = Jolt.New_Vec3();
+        tempVec3 = new Vec3();
         tempQuat = new Quat();
         tempQuaternion = new Quaternion();
         tempRotationMatrix = new Matrix4();

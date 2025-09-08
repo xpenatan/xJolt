@@ -88,12 +88,12 @@ public class VehicleConstraintTest extends VehicleTest {
     @Override
     public void initialize() {
         super.initialize();
-        tempVec3_1 = Jolt.New_Vec3();
-        tempVec4_1 = Jolt.New_Vec4();
-        tempVec4_2 = Jolt.New_Vec4();
-        tempVec4_3 = Jolt.New_Vec4();
-        tempVec4_4 = Jolt.New_Vec4();
-        tempMat44_1 = Jolt.New_Mat44();
+        tempVec3_1 = new Vec3();
+        tempVec4_1 = new Vec4();
+        tempVec4_2 = new Vec4();
+        tempVec4_3 = new Vec4();
+        tempVec4_4 = new Vec4();
+        tempMat44_1 = new Mat44();
 
         float wheel_radius = 0.3f;
         float wheel_width = 0.1f;
@@ -107,8 +107,8 @@ public class VehicleConstraintTest extends VehicleTest {
         mTesters[2] = new VehicleCollisionTesterCastCylinder(Layers.MOVING);
 
         // Create vehicle body
-        Vec3 position = Jolt.New_Vec3(0, 5, 0);
-        Shape car_shape = new OffsetCenterOfMassShapeSettings(Jolt.New_Vec3(0, -half_vehicle_height, 0), new BoxShape(Jolt.New_Vec3(half_vehicle_width, half_vehicle_height, half_vehicle_length))).Create().Get();
+        Vec3 position = new Vec3(0, 5, 0);
+        Shape car_shape = new OffsetCenterOfMassShapeSettings(new Vec3(0, -half_vehicle_height, 0), new BoxShape(new Vec3(half_vehicle_width, half_vehicle_height, half_vehicle_length))).Create().Get();
         BodyCreationSettings car_body_settings = Jolt.New_BodyCreationSettings(car_shape, position, Quat.sRotation(Vec3.sAxisZ(), sInitialRollAngle), EMotionType.Dynamic, Layers.MOVING);
         car_body_settings.set_mOverrideMassProperties(EOverrideMassProperties.CalculateInertia);
         car_body_settings.get_mMassPropertiesOverride().set_mMass(1500.0f);
@@ -122,15 +122,15 @@ public class VehicleConstraintTest extends VehicleTest {
         vehicle.set_mMaxPitchRollAngle(sMaxRollAngle);
 
         // Suspension direction
-        Vec3 front_suspension_dir = Jolt.New_Vec3(MathUtils.tan(sFrontSuspensionSidewaysAngle), -1, MathUtils.tan(sFrontSuspensionForwardAngle));
-        Vec3 front_steering_axis = Jolt.New_Vec3(-MathUtils.tan(sFrontKingPinAngle), 1, -MathUtils.tan(sFrontCasterAngle));
-        Vec3 front_wheel_up = Jolt.New_Vec3(MathUtils.sin(sFrontCamber), MathUtils.cos(sFrontCamber), 0);
-        Vec3 front_wheel_forward = Jolt.New_Vec3(-MathUtils.sin(sFrontToe), 0, MathUtils.cos(sFrontToe));
-        Vec3 rear_suspension_dir = Jolt.New_Vec3(MathUtils.tan(sRearSuspensionSidewaysAngle), -1, MathUtils.tan(sRearSuspensionForwardAngle));
-        Vec3 rear_steering_axis = Jolt.New_Vec3(-MathUtils.tan(sRearKingPinAngle), 1, -MathUtils.tan(sRearCasterAngle));
-        Vec3 rear_wheel_up = Jolt.New_Vec3(MathUtils.sin(sRearCamber), MathUtils.cos(sRearCamber), 0);
-        Vec3 rear_wheel_forward = Jolt.New_Vec3(-MathUtils.sin(sRearToe), 0, MathUtils.cos(sRearToe));
-        Vec3 flip_x = Jolt.New_Vec3(-1, 1, 1);
+        Vec3 front_suspension_dir = new Vec3(MathUtils.tan(sFrontSuspensionSidewaysAngle), -1, MathUtils.tan(sFrontSuspensionForwardAngle));
+        Vec3 front_steering_axis = new Vec3(-MathUtils.tan(sFrontKingPinAngle), 1, -MathUtils.tan(sFrontCasterAngle));
+        Vec3 front_wheel_up = new Vec3(MathUtils.sin(sFrontCamber), MathUtils.cos(sFrontCamber), 0);
+        Vec3 front_wheel_forward = new Vec3(-MathUtils.sin(sFrontToe), 0, MathUtils.cos(sFrontToe));
+        Vec3 rear_suspension_dir = new Vec3(MathUtils.tan(sRearSuspensionSidewaysAngle), -1, MathUtils.tan(sRearSuspensionForwardAngle));
+        Vec3 rear_steering_axis = new Vec3(-MathUtils.tan(sRearKingPinAngle), 1, -MathUtils.tan(sRearCasterAngle));
+        Vec3 rear_wheel_up = new Vec3(MathUtils.sin(sRearCamber), MathUtils.cos(sRearCamber), 0);
+        Vec3 rear_wheel_forward = new Vec3(-MathUtils.sin(sRearToe), 0, MathUtils.cos(sRearToe));
+        Vec3 flip_x = new Vec3(-1, 1, 1);
 
         // Wheels, left front
         WheelSettingsWV w1 = new WheelSettingsWV();

@@ -74,8 +74,8 @@ public abstract class Test {
 
     protected Body createFloor(float inSize) {
         float scale = getWorldScale();
-        Vec3 inHalfExtent = Jolt.New_Vec3(scale * (0.5f * inSize), scale * 1.0f, scale * (0.5f * inSize));
-        Vec3 inPosition = Jolt.New_Vec3(0.0f, scale * -1.0f, 0.0f);
+        Vec3 inHalfExtent = new Vec3(scale * (0.5f * inSize), scale * 1.0f, scale * (0.5f * inSize));
+        Vec3 inPosition = new Vec3(0.0f, scale * -1.0f, 0.0f);
         Quat inRotation = Quat.sIdentity();
         BoxShape bodyShape = new BoxShape(inHalfExtent, 0.0f);
         BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType.Static, Layers.NON_MOVING);
@@ -152,7 +152,7 @@ public abstract class Test {
 //        System.out.println("ShapeResult GetError: " + data);
         Shape shape = shapeResult.Get();
         // Create body
-        Vec3 vec3 = Jolt.New_Vec3(posX, posY, posZ);
+        Vec3 vec3 = new Vec3(posX, posY, posZ);
         BodyCreationSettings creationSettings = Jolt.New_BodyCreationSettings(shape, vec3, new Quat(0, 0, 0, 1), EMotionType.Static, Layers.NON_MOVING);
         Body body = mBodyInterface.CreateBody(creationSettings);
         creationSettings.dispose();
@@ -191,10 +191,10 @@ public abstract class Test {
                 float x2 = x1 + cell_size;
                 float z2 = z1 + cell_size;
 
-                Vec3 v1 = Jolt.New_Vec3(x1, heights[x][z], z1);
-                Vec3 v2 = Jolt.New_Vec3(x2, heights[x + 1][z], z1);
-                Vec3 v3 = Jolt.New_Vec3(x1, heights[x][z + 1], z2);
-                Vec3 v4 = Jolt.New_Vec3(x2, heights[x + 1][z + 1], z2);
+                Vec3 v1 = new Vec3(x1, heights[x][z], z1);
+                Vec3 v2 = new Vec3(x2, heights[x + 1][z], z1);
+                Vec3 v3 = new Vec3(x1, heights[x][z + 1], z2);
+                Vec3 v4 = new Vec3(x2, heights[x + 1][z + 1], z2);
 
                 Triangle triangle1 = new Triangle(v1, v3, v4);
                 Triangle triangle2 = new Triangle(v1, v4, v2);
