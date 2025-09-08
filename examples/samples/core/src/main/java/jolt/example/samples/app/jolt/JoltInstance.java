@@ -54,13 +54,17 @@ public class JoltInstance {
 
         mObjectVsBroadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(mBroadPhaseLayerInterface, NUM_BROAD_PHASE_LAYERS, mObjectLayerPairFilter, Layers.NUM_LAYERS);
 
-        mTempAllocator = Jolt.New_TempAllocatorImpl(mTempAllocatorSize);
-        mJobSystem = Jolt.New_JobSystemThreadPool(4);
+        mTempAllocator = new TempAllocatorImpl(mTempAllocatorSize);
 
-        factory = Jolt.New_Factory();
+        int cMaxPhysicsJobs = 2048;
+        int cMaxPhysicsBarriers = 8;
+        int inNumThreads = -1; // Auto-detect number of threads
+        mJobSystem = new JobSystemThreadPool(cMaxPhysicsJobs, cMaxPhysicsBarriers, inNumThreads);
+
+        factory = new Factory();
         Factory.set_sInstance(factory);
         Jolt.RegisterTypes();
-        physicsSystem = Jolt.New_PhysicsSystem();
+        physicsSystem = new PhysicsSystem();
         physicsSystem.Init(mMaxBodies, cNumBodyMutexes, mMaxBodyPairs, mMaxContactConstraints, mBroadPhaseLayerInterface, mObjectVsBroadPhaseLayerFilter, mObjectLayerPairFilter);
     }
 

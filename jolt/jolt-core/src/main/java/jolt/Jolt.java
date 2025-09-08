@@ -6,27 +6,15 @@
 package jolt;
 
 import jolt.idl.IDLBase;
-import jolt.physics.PhysicsSystem;
-import jolt.core.Factory;
-import jolt.core.TempAllocatorImpl;
-import jolt.core.JobSystemThreadPool;
 import jolt.physics.body.BodyCreationSettings;
 import jolt.physics.collision.shape.ShapeSettings;
 import jolt.math.Vec3;
 import jolt.math.Quat;
 import jolt.enums.EMotionType;
 import jolt.physics.collision.shape.Shape;
-import jolt.math.Mat44;
-import jolt.math.Vec4;
-import jolt.math.Float3;
+import jolt.physics.PhysicsSystem;
 
 public class Jolt extends IDLBase {
-
-    static private JobSystemThreadPool JobSystemThreadPool_TEMP_STATIC_GEN_0;
-
-    static private JobSystemThreadPool JobSystemThreadPool_TEMP_STATIC_GEN_1;
-
-    static private JobSystemThreadPool JobSystemThreadPool_TEMP_STATIC_GEN_2;
 
     static public final Jolt NULL = Jolt.native_new();
 
@@ -59,107 +47,6 @@ Jolt* nativeObject = (Jolt*)this_addr;
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static PhysicsSystem New_PhysicsSystem() {
-        long pointer = internal_native_New_PhysicsSystem();
-        if (pointer == 0)
-            return null;
-        PhysicsSystem PhysicsSystem_NEW = PhysicsSystem.native_new();
-        PhysicsSystem_NEW.internal_reset(pointer, true);
-        return PhysicsSystem_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_PhysicsSystem();
-*/
-    public static native long internal_native_New_PhysicsSystem();
-
-    public static Factory New_Factory() {
-        long pointer = internal_native_New_Factory();
-        if (pointer == 0)
-            return null;
-        Factory Factory_NEW = Factory.native_new();
-        Factory_NEW.internal_reset(pointer, true);
-        return Factory_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Factory();
-*/
-    public static native long internal_native_New_Factory();
-
-    public static TempAllocatorImpl New_TempAllocatorImpl(int inSize) {
-        long pointer = internal_native_New_TempAllocatorImpl(inSize);
-        if (pointer == 0)
-            return null;
-        TempAllocatorImpl TempAllocatorImpl_NEW = TempAllocatorImpl.native_new();
-        TempAllocatorImpl_NEW.internal_reset(pointer, true);
-        return TempAllocatorImpl_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_TempAllocatorImpl(inSize);
-*/
-    public static native long internal_native_New_TempAllocatorImpl(int inSize);
-
-    public static JobSystemThreadPool New_JobSystemThreadPool(int inNumThreads, int inMaxJobs, int inMaxBarriers) {
-        long pointer = internal_native_New_JobSystemThreadPool(inNumThreads, inMaxJobs, inMaxBarriers);
-        if (pointer == 0)
-            return null;
-        JobSystemThreadPool JobSystemThreadPool_NEW = JobSystemThreadPool.native_new();
-        JobSystemThreadPool_NEW.internal_reset(pointer, true);
-        return JobSystemThreadPool_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads, inMaxJobs, inMaxBarriers);
-*/
-    public static native long internal_native_New_JobSystemThreadPool(int inNumThreads, int inMaxJobs, int inMaxBarriers);
-
-    public static JobSystemThreadPool New_JobSystemThreadPool(int inNumThreads, int inMaxJobs) {
-        long pointer = internal_native_New_JobSystemThreadPool(inNumThreads, inMaxJobs);
-        if (pointer == 0)
-            return null;
-        if (JobSystemThreadPool_TEMP_STATIC_GEN_0 == null)
-            JobSystemThreadPool_TEMP_STATIC_GEN_0 = JobSystemThreadPool.native_new();
-        JobSystemThreadPool_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
-        return JobSystemThreadPool_TEMP_STATIC_GEN_0;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads, inMaxJobs);
-*/
-    public static native long internal_native_New_JobSystemThreadPool(int inNumThreads, int inMaxJobs);
-
-    public static JobSystemThreadPool New_JobSystemThreadPool(int inNumThreads) {
-        long pointer = internal_native_New_JobSystemThreadPool(inNumThreads);
-        if (pointer == 0)
-            return null;
-        if (JobSystemThreadPool_TEMP_STATIC_GEN_1 == null)
-            JobSystemThreadPool_TEMP_STATIC_GEN_1 = JobSystemThreadPool.native_new();
-        JobSystemThreadPool_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
-        return JobSystemThreadPool_TEMP_STATIC_GEN_1;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_JobSystemThreadPool((int)inNumThreads);
-*/
-    public static native long internal_native_New_JobSystemThreadPool(int inNumThreads);
-
-    public static JobSystemThreadPool New_JobSystemThreadPool() {
-        long pointer = internal_native_New_JobSystemThreadPool();
-        if (pointer == 0)
-            return null;
-        if (JobSystemThreadPool_TEMP_STATIC_GEN_2 == null)
-            JobSystemThreadPool_TEMP_STATIC_GEN_2 = JobSystemThreadPool.native_new();
-        JobSystemThreadPool_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
-        return JobSystemThreadPool_TEMP_STATIC_GEN_2;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_JobSystemThreadPool();
-*/
-    public static native long internal_native_New_JobSystemThreadPool();
 
     public static BodyCreationSettings New_BodyCreationSettings() {
         long pointer = internal_native_New_BodyCreationSettings_0();
@@ -202,160 +89,6 @@ return (jlong)Jolt::New_BodyCreationSettings((ShapeSettings* )inShape_addr, *((V
 return (jlong)Jolt::New_BodyCreationSettings((Shape* )inShape_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EMotionType)inMotionType, inObjectLayer);
 */
     public static native long internal_native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer);
-
-    public static Mat44 New_Mat44() {
-        long pointer = internal_native_New_Mat44_0();
-        if (pointer == 0)
-            return null;
-        Mat44 Mat44_NEW = Mat44.native_new();
-        Mat44_NEW.internal_reset(pointer, true);
-        return Mat44_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Mat44();
-*/
-    public static native long internal_native_New_Mat44_0();
-
-    public static Mat44 New_Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec4 inC4) {
-        long pointer = internal_native_New_Mat44_1(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
-        if (pointer == 0)
-            return null;
-        Mat44 Mat44_NEW = Mat44.native_new();
-        Mat44_NEW.internal_reset(pointer, true);
-        return Mat44_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Mat44(*((Vec4* )inC1_addr), *((Vec4* )inC2_addr), *((Vec4* )inC3_addr), *((Vec4* )inC4_addr));
-*/
-    public static native long internal_native_New_Mat44_1(long inC1_addr, long inC2_addr, long inC3_addr, long inC4_addr);
-
-    public static Mat44 New_Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec3 inC4) {
-        long pointer = internal_native_New_Mat44_2(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
-        if (pointer == 0)
-            return null;
-        Mat44 Mat44_NEW = Mat44.native_new();
-        Mat44_NEW.internal_reset(pointer, true);
-        return Mat44_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Mat44(*((Vec4* )inC1_addr), *((Vec4* )inC2_addr), *((Vec4* )inC3_addr), *((Vec3* )inC4_addr));
-*/
-    public static native long internal_native_New_Mat44_2(long inC1_addr, long inC2_addr, long inC3_addr, long inC4_addr);
-
-    public static Vec3 New_Vec3() {
-        long pointer = internal_native_New_Vec3_0();
-        if (pointer == 0)
-            return null;
-        Vec3 Vec3_NEW = Vec3.native_new();
-        Vec3_NEW.internal_reset(pointer, true);
-        return Vec3_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Vec3();
-*/
-    public static native long internal_native_New_Vec3_0();
-
-    public static Vec3 New_Vec3(float inX, float inY, float inZ) {
-        long pointer = internal_native_New_Vec3_1(inX, inY, inZ);
-        if (pointer == 0)
-            return null;
-        Vec3 Vec3_NEW = Vec3.native_new();
-        Vec3_NEW.internal_reset(pointer, true);
-        return Vec3_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Vec3((float)inX, (float)inY, (float)inZ);
-*/
-    public static native long internal_native_New_Vec3_1(float inX, float inY, float inZ);
-
-    public static Vec3 New_Vec3(Vec3 inRHS) {
-        long pointer = internal_native_New_Vec3_2(inRHS.native_address);
-        if (pointer == 0)
-            return null;
-        Vec3 Vec3_NEW = Vec3.native_new();
-        Vec3_NEW.internal_reset(pointer, true);
-        return Vec3_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Vec3(*((Vec3* )inRHS_addr));
-*/
-    public static native long internal_native_New_Vec3_2(long inRHS_addr);
-
-    public static Vec3 New_Vec3(Float3 inV) {
-        long pointer = internal_native_New_Vec3_3(inV.native_address);
-        if (pointer == 0)
-            return null;
-        Vec3 Vec3_NEW = Vec3.native_new();
-        Vec3_NEW.internal_reset(pointer, true);
-        return Vec3_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Vec3(*((Float3* )inV_addr));
-*/
-    public static native long internal_native_New_Vec3_3(long inV_addr);
-
-    public static Vec4 New_Vec4() {
-        long pointer = internal_native_New_Vec4_0();
-        if (pointer == 0)
-            return null;
-        Vec4 Vec4_NEW = Vec4.native_new();
-        Vec4_NEW.internal_reset(pointer, true);
-        return Vec4_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Vec4();
-*/
-    public static native long internal_native_New_Vec4_0();
-
-    public static Vec4 New_Vec4(float inX, float inY, float inZ, float inW) {
-        long pointer = internal_native_New_Vec4_1(inX, inY, inZ, inW);
-        if (pointer == 0)
-            return null;
-        Vec4 Vec4_NEW = Vec4.native_new();
-        Vec4_NEW.internal_reset(pointer, true);
-        return Vec4_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Vec4((float)inX, (float)inY, (float)inZ, (float)inW);
-*/
-    public static native long internal_native_New_Vec4_1(float inX, float inY, float inZ, float inW);
-
-    public static Vec4 New_Vec4(Vec4 inV) {
-        long pointer = internal_native_New_Vec4_2(inV.native_address);
-        if (pointer == 0)
-            return null;
-        Vec4 Vec4_NEW = Vec4.native_new();
-        Vec4_NEW.internal_reset(pointer, true);
-        return Vec4_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Vec4(*((Vec4* )inV_addr));
-*/
-    public static native long internal_native_New_Vec4_2(long inV_addr);
-
-    public static Vec4 New_Vec4(Vec3 inV, float inW) {
-        long pointer = internal_native_New_Vec4_3(inV.native_address, inW);
-        if (pointer == 0)
-            return null;
-        Vec4 Vec4_NEW = Vec4.native_new();
-        Vec4_NEW.internal_reset(pointer, true);
-        return Vec4_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_Vec4(*((Vec3* )inV_addr), (float)inW);
-*/
-    public static native long internal_native_New_Vec4_3(long inV_addr, float inW);
 
     public static void Init() {
         internal_native_Init();

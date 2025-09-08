@@ -15,6 +15,32 @@ public class JobSystemThreadPool extends JobSystemWithBarrier {
 
     static public final JobSystemThreadPool T_03 = JobSystemThreadPool.native_new();
 
+    public JobSystemThreadPool(int inMaxJobs, int inMaxBarriers, int inNumThreads) {
+        super((byte) 1, (char) 1);
+        int addr = internal_native_create_int_int_int(inMaxJobs, inMaxBarriers, inNumThreads);
+        internal_reset(addr, true);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = new jolt.JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);
+return jolt.getPointer(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"inMaxJobs", "inMaxBarriers", "inNumThreads"}, script = "var jsObj = new jolt.JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);return jolt.getPointer(jsObj);")
+    public static native int internal_native_create_int_int_int(int inMaxJobs, int inMaxBarriers, int inNumThreads);
+
+    public JobSystemThreadPool(int inMaxJobs, int inMaxBarriers) {
+        super((byte) 1, (char) 1);
+        int addr = internal_native_create_int_int(inMaxJobs, inMaxBarriers);
+        internal_reset(addr, true);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = new jolt.JobSystemThreadPool(inMaxJobs, inMaxBarriers);
+return jolt.getPointer(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"inMaxJobs", "inMaxBarriers"}, script = "var jsObj = new jolt.JobSystemThreadPool(inMaxJobs, inMaxBarriers);return jolt.getPointer(jsObj);")
+    public static native int internal_native_create_int_int(int inMaxJobs, int inMaxBarriers);
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

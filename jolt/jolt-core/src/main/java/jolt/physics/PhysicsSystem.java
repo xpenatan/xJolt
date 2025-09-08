@@ -67,6 +67,16 @@ public class PhysicsSystem extends IDLBase {
 
     static public final PhysicsSystem T_03 = PhysicsSystem.native_new();
 
+    public PhysicsSystem() {
+        long addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)new PhysicsSystem();
+*/
+    public static native long internal_native_create();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -15,6 +15,19 @@ public class TempAllocatorImpl extends TempAllocator {
 
     static public final TempAllocatorImpl T_03 = TempAllocatorImpl.native_new();
 
+    public TempAllocatorImpl(int size) {
+        super((byte) 1, (char) 1);
+        int addr = internal_native_create_int(size);
+        internal_reset(addr, true);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = new jolt.TempAllocatorImpl(size);
+return jolt.getPointer(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"size"}, script = "var jsObj = new jolt.TempAllocatorImpl(size);return jolt.getPointer(jsObj);")
+    public static native int internal_native_create_int(int size);
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

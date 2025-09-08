@@ -3,31 +3,9 @@
 // ##################################################
 
 interface Jolt {
-    static PhysicsSystem New_PhysicsSystem(); //[-NEW_OBJECT]
-    static Factory New_Factory(); //[-NEW_OBJECT]
-    static TempAllocatorImpl New_TempAllocatorImpl(unsigned long inSize); //[-NEW_OBJECT]
-    static JobSystemThreadPool New_JobSystemThreadPool(optional long inNumThreads, optional unsigned long inMaxJobs, optional unsigned long inMaxBarriers); //[-NEW_OBJECT]
-
     [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_0(); //[-NEW_OBJECT]
     [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
     [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
-
-    // TODO REMOVE
-    [BindTo="New_Mat44"] static Mat44 New_Mat44_0(); //[-NEW_OBJECT]
-    [BindTo="New_Mat44"] static Mat44 New_Mat44_1([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec4 inC4); //[-NEW_OBJECT]
-    [BindTo="New_Mat44"] static Mat44 New_Mat44_2([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec3 inC4); //[-NEW_OBJECT]
-
-    // TODO REMOVE
-    [BindTo="New_Vec3"] static Vec3 New_Vec3_0(); //[-NEW_OBJECT]
-    [BindTo="New_Vec3"] static Vec3 New_Vec3_1(float inX, float inY, float inZ); //[-NEW_OBJECT]
-    [BindTo="New_Vec3"] static Vec3 New_Vec3_2([Const, Ref] Vec3 inRHS); //[-NEW_OBJECT]
-    [BindTo="New_Vec3"] static Vec3 New_Vec3_3([Const, Ref] Float3 inV); //[-NEW_OBJECT]
-
-    // TODO REMOVE
-    [BindTo="New_Vec4"] static Vec4 New_Vec4_0(); //[-NEW_OBJECT, MEM_OWN]
-    [BindTo="New_Vec4"] static Vec4 New_Vec4_1(float inX, float inY, float inZ, float inW); //[-NEW_OBJECT]
-    [BindTo="New_Vec4"] static Vec4 New_Vec4_2([Const, Ref] Vec4 inV); //[-NEW_OBJECT]
-    [BindTo="New_Vec4"] static Vec4 New_Vec4_3([Ref] Vec3 inV, float inW); //[-NEW_OBJECT]
 
     static void Init();
     static void RegisterTypes();
@@ -1050,6 +1028,7 @@ interface SimShapeFilter {
 };
 
 interface PhysicsSystem {
+    void PhysicsSystem();
     void Init(long inMaxBodies, long inNumBodyMutexes, long inMaxBodyPairs, long inMaxContactConstraints, [Const, Ref] BroadPhaseLayerInterface inBroadPhaseLayerInterface, [Const, Ref] ObjectVsBroadPhaseLayerFilter inObjectVsBroadPhaseLayerFilter, [Const, Ref] ObjectLayerPairFilter inObjectLayerPairFilter);
     void Update(float inDeltaTime, long inCollisionSteps, TempAllocator inTempAllocator, JobSystem inJobSystem);
     void SetGravity([Const, Ref] Vec3 inGravity);
@@ -1090,6 +1069,7 @@ interface PhysicsSystem {
 };
 
 interface Factory {
+    void Factory();
     static attribute Factory sInstance;
 };
 
@@ -3356,6 +3336,7 @@ interface TempAllocator {
 };
 
 interface TempAllocatorImpl {  //[-SUB_PACKAGE=core]
+    void TempAllocatorImpl(long size);
 };
 TempAllocatorImpl implements TempAllocator;
 
@@ -3367,6 +3348,7 @@ interface JobSystemWithBarrier {
 JobSystemWithBarrier implements JobSystem;
 
 interface JobSystemThreadPool {
+    void JobSystemThreadPool(unsigned long inMaxJobs, unsigned long inMaxBarriers, optional unsigned long inNumThreads);
     long GetMaxConcurrency();
     void SetNumThreads(long inNumThreads);
 };

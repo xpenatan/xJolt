@@ -373,22 +373,6 @@ static bool AssertFailedImpl(const char* inExpression, const char* inMessage, co
 class Jolt
 {
 public:
-    static PhysicsSystem* New_PhysicsSystem() {
-        return new PhysicsSystem();
-    }
-
-    static Factory* New_Factory() {
-        return new Factory();
-    }
-
-    static TempAllocatorImpl* New_TempAllocatorImpl(uint inSize) {
-        return new TempAllocatorImpl(inSize);
-    }
-
-    static JobSystemThreadPool* New_JobSystemThreadPool(int inNumThreads = -1, uint inMaxJobs = cMaxPhysicsJobs, uint inMaxBarriers = cMaxPhysicsBarriers) {
-        return new JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);
-    }
-
     static BodyCreationSettings* New_BodyCreationSettings() {
         return new BodyCreationSettings();
     }
@@ -397,42 +381,6 @@ public:
     }
     static BodyCreationSettings* New_BodyCreationSettings(const Shape* inShape, RVec3Arg inPosition, QuatArg inRotation, EMotionType inMotionType, ObjectLayer inObjectLayer) {
         return new BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
-    }
-
-    static Mat44* New_Mat44() {
-        return new Mat44();
-    }
-    static Mat44* New_Mat44(Vec4& inC1, Vec4& inC2, Vec4& inC3, Vec4& inC4) {
-        return new Mat44(inC1, inC2, inC3, inC4);
-    }
-    static Mat44* New_Mat44(Vec4& inC1, Vec4& inC2, Vec4& inC3, Vec3& inC4) {
-        return new Mat44(inC1, inC2, inC3, inC4);
-    }
-
-    static Vec3* New_Vec3() {
-        return new Vec3();
-    }
-    static Vec3* New_Vec3(float inX, float inY, float inZ) {
-        return new Vec3(inX, inY, inZ);
-    }
-    static Vec3* New_Vec3(const Vec3 &inRHS) {
-        return new Vec3(inRHS);
-    }
-    static Vec3* New_Vec3(const Float3 &inV) {
-        return new Vec3(inV);
-    }
-
-    static Vec4* New_Vec4() {
-        return new Vec4();
-    }
-    static Vec4* New_Vec4(float inX, float inY, float inZ, float inW) {
-        return new Vec4(inX, inY, inZ, inW);
-    }
-    static Vec4* New_Vec4(const Vec4 &inRHS) {
-        return new Vec4(inRHS);
-    }
-    static Vec4* New_Vec4(const Vec3 &inV, float inW) {
-        return new Vec4(inV, inW);
     }
 
     static void Init() {

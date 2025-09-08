@@ -15,6 +15,28 @@ public class JobSystemThreadPool extends JobSystemWithBarrier {
 
     static public final JobSystemThreadPool T_03 = JobSystemThreadPool.native_new();
 
+    public JobSystemThreadPool(int inMaxJobs, int inMaxBarriers, int inNumThreads) {
+        super((byte) 1, (char) 1);
+        long addr = internal_native_create_int_int_int(inMaxJobs, inMaxBarriers, inNumThreads);
+        internal_reset(addr, true);
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)new JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);
+*/
+    public static native long internal_native_create_int_int_int(int inMaxJobs, int inMaxBarriers, int inNumThreads);
+
+    public JobSystemThreadPool(int inMaxJobs, int inMaxBarriers) {
+        super((byte) 1, (char) 1);
+        long addr = internal_native_create_int_int(inMaxJobs, inMaxBarriers);
+        internal_reset(addr, true);
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)new JobSystemThreadPool(inMaxJobs, inMaxBarriers);
+*/
+    public static native long internal_native_create_int_int(int inMaxJobs, int inMaxBarriers);
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
