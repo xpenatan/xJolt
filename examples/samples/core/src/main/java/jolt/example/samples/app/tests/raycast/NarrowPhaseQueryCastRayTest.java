@@ -3,7 +3,6 @@ package jolt.example.samples.app.tests.raycast;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer;
-import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer20;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.collision.Ray;
@@ -18,7 +17,7 @@ import jolt.physics.collision.NarrowPhaseQuery;
 import jolt.physics.collision.RayCastResult;
 import jolt.physics.collision.RayCastSettings;
 
-public class BroadPhaseCastRayTest extends BoxShapeTest {
+public class NarrowPhaseQueryCastRayTest extends BoxShapeTest {
 
     private ImmediateModeRenderer renderer;
     private Vector3 start = new Vector3();
@@ -41,11 +40,15 @@ public class BroadPhaseCastRayTest extends BoxShapeTest {
             final Vec3 rayDirection = new Vec3(end.x, end.y, end.z);
 
             final RRayCast ray = new RRayCast(rayOrigin, rayDirection);
+            rayOrigin.dispose();
+            rayDirection.dispose();
             final RayCastSettings settings = new RayCastSettings();
             final CastRayAllHitCollisionCollector collector = new CastRayAllHitCollisionCollector();
             NarrowPhaseQuery narrowPhaseQuery = mPhysicsSystem.GetNarrowPhaseQuery();
 
             narrowPhaseQuery.CastRay(ray, settings, collector);
+            ray.dispose();
+            settings.dispose();
             collector.Sort();
 
             ArrayRayCastResult mHits = collector.get_mHits();
@@ -57,6 +60,7 @@ public class BroadPhaseCastRayTest extends BoxShapeTest {
                 long userData = mBodyInterface.GetUserData(mBodyID);
                 System.out.println("UserData[" + i + "]: " + userData);
             }
+            collector.dispose();
         }
 
         renderer.begin(camera.combined, ShapeRenderer.ShapeType.Line.getGlType());

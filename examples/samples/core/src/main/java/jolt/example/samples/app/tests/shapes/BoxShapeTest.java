@@ -16,7 +16,7 @@ import jolt.physics.collision.shape.BoxShape;
 
 public class BoxShapeTest extends Test {
 
-    private static int nextId;
+    private static int nextId = 1;
 
     @Override
     public void initialize() {

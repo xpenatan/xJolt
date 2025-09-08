@@ -1,10 +1,8 @@
 package jolt.example.samples.app;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.FPSLogger;
-import com.badlogic.gdx.utils.ScreenUtils;
 //import imgui.ImDrawData;
 //import imgui.ImGui;
 //import imgui.ImGuiCol;
@@ -13,9 +11,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
 //import imgui.ImGuiStyle;
 //import imgui.gdx.ImGuiGdxImpl;
 //import imgui.gdx.ImGuiGdxInput;
-import jolt.example.samples.app.tests.raycast.BroadPhaseCastRayTest;
-import jolt.example.samples.app.tests.shapes.BoxShapeTest;
-import jolt.example.samples.app.tests.vehicle.TankTest;
+import jolt.example.samples.app.tests.raycast.NarrowPhaseQueryCastRayTest;
 import jolt.gdx.GraphicManagerApi;
 import static com.badlogic.gdx.Gdx.input;
 
@@ -42,7 +38,7 @@ public class GameScreen extends ScreenAdapter {
         input.setInputProcessor(inputMultiplexer);
 //        inputMultiplexer.addProcessor(input);
         samplesApp.setup(inputMultiplexer);
-        samplesApp.startTest(BroadPhaseCastRayTest.class);
+        samplesApp.startTest(NarrowPhaseQueryCastRayTest.class);
 
 //        ImGuiStyle imGuiStyle = ImGui.GetStyle();
 //        imGuiStyle.Colors(ImGuiCol.WindowBg, 0.00f, 0.00f, 0.00f, 0.6f);
