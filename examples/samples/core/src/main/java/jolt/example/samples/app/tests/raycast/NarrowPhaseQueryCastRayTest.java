@@ -32,7 +32,6 @@ public class NarrowPhaseQueryCastRayTest extends RayCastTest {
             NarrowPhaseQuery narrowPhaseQuery = mPhysicsSystem.GetNarrowPhaseQuery();
 
             narrowPhaseQuery.CastRay(ray, settings, collector);
-            ray.dispose();
             settings.dispose();
             collector.Sort();
 
@@ -42,11 +41,17 @@ public class NarrowPhaseQueryCastRayTest extends RayCastTest {
             rayCastUserData.clear();
             for(int i = 0; i < size; i++) {
                 RayCastResult result = mHits.at(i);
+                float mFraction = result.get_mFraction();
+                Vec3 vec3 = ray.GetPointOnRay(mFraction);
                 BodyID mBodyID = result.get_mBodyID();
                 long userData = mBodyInterface.GetUserData(mBodyID);
-                rayCastUserData.add(userData);
+                RayCastData rayCastData = new RayCastData();
+                rayCastData.hitPosition.set(vec3.GetX(), vec3.GetY(), vec3.GetZ());
+                rayCastData.userData = userData;
+                rayCastUserData.add(rayCastData);
                 System.out.println("UserData[" + i + "]: " + userData);
             }
+            ray.dispose();
             collector.dispose();
         }
     }
