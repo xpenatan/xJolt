@@ -2,13 +2,8 @@ package jolt.example.samples.app.tests.raycast;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.collision.Ray;
 import jolt.RRayCast;
-import jolt.example.samples.app.tests.shapes.BoxShapeTest;
-import jolt.gdx.GraphicManagerApi;
 import jolt.math.Vec3;
 import jolt.physics.body.BodyID;
 import jolt.physics.collision.ArrayRayCastResult;
@@ -17,17 +12,7 @@ import jolt.physics.collision.NarrowPhaseQuery;
 import jolt.physics.collision.RayCastResult;
 import jolt.physics.collision.RayCastSettings;
 
-public class NarrowPhaseQueryCastRayTest extends BoxShapeTest {
-
-    private ImmediateModeRenderer renderer;
-    private Vector3 start = new Vector3();
-    private Vector3 end = new Vector3();
-
-    @Override
-    public void initialize() {
-        super.initialize();
-        renderer = GraphicManagerApi.graphicApi.createImmediateModeRenderer();
-    }
+public class NarrowPhaseQueryCastRayTest extends RayCastTest {
 
     @Override
     public void prePhysicsUpdate(boolean isPlaying) {
@@ -54,19 +39,15 @@ public class NarrowPhaseQueryCastRayTest extends BoxShapeTest {
             ArrayRayCastResult mHits = collector.get_mHits();
             int size = mHits.size();
             System.out.println("RayCast Hit: " + collector.HadHit() + " Size: " + size);
+            rayCastUserData.clear();
             for(int i = 0; i < size; i++) {
                 RayCastResult result = mHits.at(i);
                 BodyID mBodyID = result.get_mBodyID();
                 long userData = mBodyInterface.GetUserData(mBodyID);
+                rayCastUserData.add(userData);
                 System.out.println("UserData[" + i + "]: " + userData);
             }
             collector.dispose();
         }
-
-        renderer.begin(camera.combined, ShapeRenderer.ShapeType.Line.getGlType());
-        renderer.color(1, 0, 0, 1);
-        renderer.vertex(start.x, start.y, start.z);
-        renderer.vertex(end.x, end.y, end.z);
-        renderer.end();
     }
 }
