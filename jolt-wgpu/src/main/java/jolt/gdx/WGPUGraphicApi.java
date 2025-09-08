@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.VertexAttribute;
 import com.badlogic.gdx.graphics.VertexAttributes;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
@@ -12,6 +14,8 @@ import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer;
 import com.badlogic.gdx.graphics.glutils.PixmapTextureData;
 import com.monstrous.gdx.webgpu.graphics.WgMesh;
 import com.monstrous.gdx.webgpu.graphics.WgTexture;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgBitmapFont;
+import com.monstrous.gdx.webgpu.graphics.g2d.WgSpriteBatch;
 import com.monstrous.gdx.webgpu.graphics.g3d.WgModel;
 import com.monstrous.gdx.webgpu.graphics.g3d.model.WgMeshPart;
 import com.monstrous.gdx.webgpu.graphics.g3d.utils.WgModelBuilder;
@@ -40,8 +44,19 @@ public class WGPUGraphicApi implements GraphicApi {
         return new WGPUMeshBuilder();
     }
 
+    @Override
     public ImmediateModeRenderer createImmediateModeRenderer() {
         return new WgImmediateModeRenderer(false, true, 0);
+    }
+
+    @Override
+    public Batch createSpriteBatch() {
+        return new WgSpriteBatch();
+    }
+
+    @Override
+    public BitmapFont createBitmapFont() {
+        return new WgBitmapFont();
     }
 
     @Override

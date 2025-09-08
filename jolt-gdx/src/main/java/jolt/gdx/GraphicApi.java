@@ -5,6 +5,8 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.VertexAttribute;
 import com.badlogic.gdx.graphics.VertexAttributes;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
@@ -16,6 +18,8 @@ public interface GraphicApi {
     ModelBuilder createModelBuilder();
     MeshBuilderExt createMeshBuilder();
     ImmediateModeRenderer createImmediateModeRenderer();
+    Batch createSpriteBatch();
+    BitmapFont createBitmapFont();
     Model createModel();
     MeshPart createMeshPart();
     MeshPart createMeshPart(final String id, final Mesh mesh, final int offset, final int size, final int type);

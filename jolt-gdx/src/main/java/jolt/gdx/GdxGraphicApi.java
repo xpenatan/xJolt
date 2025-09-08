@@ -5,6 +5,9 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.VertexAttribute;
 import com.badlogic.gdx.graphics.VertexAttributes;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.model.MeshPart;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
@@ -36,6 +39,16 @@ public class GdxGraphicApi implements GraphicApi{
     @Override
     public ImmediateModeRenderer createImmediateModeRenderer() {
         return new ImmediateModeRenderer20(false, true, 0);
+    }
+
+    @Override
+    public Batch createSpriteBatch() {
+        return new SpriteBatch();
+    }
+
+    @Override
+    public BitmapFont createBitmapFont() {
+        return new BitmapFont();
     }
 
     @Override
