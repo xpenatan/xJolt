@@ -75,7 +75,7 @@ To try the samples with your build, change `LibExt.exampleUseRepoLibs` to false 
 
 ## How to run the samples
 - Clone the repository
-- Run ./gradlew :examples:SamplesApp:desktop:SamplesApp-run-desktop
+- Run ./gradlew :examples:samples:desktop:jolt_samples_run_desktop
 
 
 ## How to build from source
