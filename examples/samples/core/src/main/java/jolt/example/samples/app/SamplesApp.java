@@ -47,7 +47,6 @@ public class SamplesApp extends InputAdapter {
 
         settingsRenderer = new ImGuiSettingsRenderer();
 
-        joltInstance = new JoltInstance();
         debugRenderer = GraphicManagerApi.graphicApi.createDebugRenderer();
         debugSettings = new BodyManagerDrawSettings();
 
@@ -126,7 +125,12 @@ public class SamplesApp extends InputAdapter {
             test.dispose();
             test = null;
         }
-        clearBodies();
+        if(joltInstance != null) {
+            joltInstance.dispose();
+            joltInstance = null;
+        }
+        joltInstance = new JoltInstance();
+
         isPaused = true;
         camera.up.set(0, 1, 0);
         camera.position.set(30, 10, 30);

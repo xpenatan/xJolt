@@ -22,9 +22,11 @@ public class JoltInstance {
     private TempAllocatorImpl mTempAllocator;
     private JobSystemThreadPool mJobSystem;
 
-    public JoltInstance() {
+    static {
         Jolt.Init();
+    }
 
+    public JoltInstance() {
         int mMaxBodies = 10240;
         int mMaxBodyPairs = 65536;
         int mMaxContactConstraints = 10240;
@@ -85,6 +87,8 @@ public class JoltInstance {
     }
 
     public void dispose() {
+        clearWorld();
+
         physicsSystem.dispose();
         BP_LAYER_NON_MOVING.dispose();
         BP_LAYER_MOVING.dispose();
