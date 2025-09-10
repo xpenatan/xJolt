@@ -27545,10 +27545,14 @@ function jesaj_JoltInstance() {
     a.$mTempAllocator = null;
     a.$mJobSystem = null;
 }
-let jesaj_JoltInstance__init_ = $this => {
+let jesaj_JoltInstance_$callClinit = () => {
+    jesaj_JoltInstance_$callClinit = $rt_eraseClinit(jesaj_JoltInstance);
+    jesaj_JoltInstance__clinit_();
+},
+jesaj_JoltInstance__init_ = $this => {
     let $mMaxBodies, $mMaxBodyPairs, $mMaxContactConstraints, $mTempAllocatorSize, $cNumBodyMutexes, var$6, $NUM_BROAD_PHASE_LAYERS, $cMaxPhysicsJobs, $cMaxPhysicsBarriers, $inNumThreads;
+    jesaj_JoltInstance_$callClinit();
     jl_Object__init_($this);
-    j_Jolt_Init();
     $mMaxBodies = 10240;
     $mMaxBodyPairs = 65536;
     $mMaxContactConstraints = 10240;
@@ -27576,7 +27580,7 @@ let jesaj_JoltInstance__init_ = $this => {
     jc_Factory_set_sInstance($this.$factory);
     j_Jolt_RegisterTypes();
     $this.$physicsSystem = jp_PhysicsSystem__init_1();
-    $this.$physicsSystem.$Init0($mMaxBodies, $cNumBodyMutexes, $mMaxBodyPairs, $mMaxContactConstraints, $this.$mBroadPhaseLayerInterface, $this.$mObjectVsBroadPhaseLayerFilter, $this.$mObjectLayerPairFilter);
+    $this.$physicsSystem.$Init($mMaxBodies, $cNumBodyMutexes, $mMaxBodyPairs, $mMaxContactConstraints, $this.$mBroadPhaseLayerInterface, $this.$mObjectVsBroadPhaseLayerFilter, $this.$mObjectLayerPairFilter);
 },
 jesaj_JoltInstance__init_0 = () => {
     let var_0 = new jesaj_JoltInstance();
@@ -27593,6 +27597,7 @@ jesaj_JoltInstance_clearWorld = $this => {
     j_Jolt_ClearWorld($this.$physicsSystem);
 },
 jesaj_JoltInstance_dispose = $this => {
+    $this.$clearWorld();
     ji_IDLBase_dispose($this.$physicsSystem);
     ji_IDLBase_dispose($this.$BP_LAYER_NON_MOVING);
     ji_IDLBase_dispose($this.$BP_LAYER_MOVING);
@@ -27601,6 +27606,9 @@ jesaj_JoltInstance_dispose = $this => {
     jc_Factory_set_sInstance(jc_Factory_NULL);
     ji_IDLBase_dispose($this.$factory);
     j_Jolt_UnregisterTypes();
+},
+jesaj_JoltInstance__clinit_ = () => {
+    j_Jolt_Init();
 };
 function ju_HashSet() {
     ju_AbstractSet.call(this);
@@ -41491,7 +41499,7 @@ jesa_GameScreen_show = $this => {
     $this.$fpsLogger = cbgg_FPSLogger__init_1();
     cbg_Gdx_input.$setInputProcessor($this.$inputMultiplexer);
     $this.$samplesApp.$setup0($this.$inputMultiplexer);
-    $this.$samplesApp.$startTest($rt_cls(jesatr_NarrowPhaseQueryCastRayTest));
+    $this.$samplesApp.$startTest($rt_cls(jesatv_TankTest));
 },
 jesa_GameScreen_render = ($this, $delta) => {
     jg_GraphicManagerApi_$callClinit();
@@ -45815,7 +45823,6 @@ jesa_SamplesApp_setup = ($this, $input) => {
     $this.$tests0 = jesat_Tests__init_0();
     $this.$allTests = $this.$tests0.$getAllTests();
     $this.$settingsRenderer = jesai_ImGuiSettingsRenderer__init_0();
-    $this.$joltInstance = jesaj_JoltInstance__init_0();
     jg_GraphicManagerApi_$callClinit();
     $this.$debugRenderer = jg_GraphicManagerApi_graphicApi.$createDebugRenderer();
     $this.$debugSettings = jpb_BodyManagerDrawSettings__init_1();
@@ -45850,7 +45857,11 @@ jesa_SamplesApp_startTest = ($this, $testClass) => {
         $this.$test.$dispose();
         $this.$test = null;
     }
-    jesa_SamplesApp_clearBodies($this);
+    if ($this.$joltInstance !== null) {
+        $this.$joltInstance.$dispose();
+        $this.$joltInstance = null;
+    }
+    $this.$joltInstance = jesaj_JoltInstance__init_0();
     $this.$isPaused = 1;
     $this.$camera1.$up.$set8(0.0, 1.0, 0.0);
     $this.$camera1.$position8.$set8(30.0, 10.0, 30.0);
@@ -60086,7 +60097,7 @@ cbggg_GLFrameBuffer$GLFrameBufferBuilder, 0, jl_Object, [], 1, 3, 0, 0, ["$_init
 "$addStencilRenderBuffer", $rt_wrapFunction1(cbggg_GLFrameBuffer$GLFrameBufferBuilder_addStencilRenderBuffer), "$addBasicDepthRenderBuffer", $rt_wrapFunction0(cbggg_GLFrameBuffer$GLFrameBufferBuilder_addBasicDepthRenderBuffer), "$addBasicStencilRenderBuffer", $rt_wrapFunction0(cbggg_GLFrameBuffer$GLFrameBufferBuilder_addBasicStencilRenderBuffer)],
 cbggg_GLFrameBuffer$FrameBufferBuilder, 0, cbggg_GLFrameBuffer$GLFrameBufferBuilder, [], 0, 3, 0, 0, ["$_init_25", $rt_wrapFunction2(cbggg_GLFrameBuffer$FrameBufferBuilder__init_)],
 cbgss_Touchable, 0, jl_Enum, [], 12, 3, 0, cbgss_Touchable_$callClinit, 0,
-jesaj_JoltInstance, 0, jl_Object, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(jesaj_JoltInstance__init_), "$getPhysicsSystem", $rt_wrapFunction0(jesaj_JoltInstance_getPhysicsSystem), "$update5", $rt_wrapFunction2(jesaj_JoltInstance_update), "$clearWorld", $rt_wrapFunction0(jesaj_JoltInstance_clearWorld), "$dispose", $rt_wrapFunction0(jesaj_JoltInstance_dispose)],
+jesaj_JoltInstance, 0, jl_Object, [], 0, 3, 0, jesaj_JoltInstance_$callClinit, ["$_init_0", $rt_wrapFunction0(jesaj_JoltInstance__init_), "$getPhysicsSystem", $rt_wrapFunction0(jesaj_JoltInstance_getPhysicsSystem), "$update5", $rt_wrapFunction2(jesaj_JoltInstance_update), "$clearWorld", $rt_wrapFunction0(jesaj_JoltInstance_clearWorld), "$dispose", $rt_wrapFunction0(jesaj_JoltInstance_dispose)],
 ju_HashSet, "HashSet", 28, ju_AbstractSet, [jl_Cloneable, ji_Serializable], 0, 3, 0, 0, ["$_init_0", $rt_wrapFunction0(ju_HashSet__init_0), "$_init_163", $rt_wrapFunction1(ju_HashSet__init_), "$add3", $rt_wrapFunction1(ju_HashSet_add), "$contains1", $rt_wrapFunction1(ju_HashSet_contains), "$remove5", $rt_wrapFunction1(ju_HashSet_remove), "$size", $rt_wrapFunction0(ju_HashSet_size)],
 cgxjl_JParserLibraryLoader$OnInitFunction, 0, jl_Object, [otj_JSObject], 3, 3, 0, 0, 0,
 cgxjl_JParserLibraryLoader$lambda$loadWasm$1$lambda$_13_0, 0, jl_Object, [cgxjl_JParserLibraryLoader$OnInitFunction], 0, 3, 0, 0, ["$_init_88", $rt_wrapFunction2(cgxjl_JParserLibraryLoader$lambda$loadWasm$1$lambda$_13_0__init_), "$onInit", $rt_wrapFunction0(cgxjl_JParserLibraryLoader$lambda$loadWasm$1$lambda$_13_0_onInit)],
@@ -60360,7 +60371,7 @@ cbggge_AmbientCubemap, 0, jl_Object, [], 0, 3, 0, 0, ["$_init_0", $rt_wrapFuncti
 jpv_VehicleEngine, "VehicleEngine", 59, jpv_VehicleEngineSettings, [], 0, 3, [0,0,0], jpv_VehicleEngine_$callClinit, ["$_init_3", $rt_wrapFunction2(jpv_VehicleEngine__init_), "$deleteNative", $rt_wrapFunction0(jpv_VehicleEngine_deleteNative)]]);
 $rt_metadata([jur_SequenceSet, "SequenceSet", 29, jur_LeafSet, [], 0, 0, 0, 0, ["$_init_231", $rt_wrapFunction1(jur_SequenceSet__init_), "$accepts", $rt_wrapFunction2(jur_SequenceSet_accepts), "$find", $rt_wrapFunction3(jur_SequenceSet_find), "$findBack", $rt_wrapFunction4(jur_SequenceSet_findBack), "$getName", $rt_wrapFunction0(jur_SequenceSet_getName), "$first0", $rt_wrapFunction1(jur_SequenceSet_first), "$indexOf5", $rt_wrapFunction3(jur_SequenceSet_indexOf), "$lastIndexOf3", $rt_wrapFunction3(jur_SequenceSet_lastIndexOf),
 "$startsWith1", $rt_wrapFunction2(jur_SequenceSet_startsWith)],
-jp_PhysicsSystem, "PhysicsSystem", 53, ji_IDLBase, [], 0, 3, [0,0,0], jp_PhysicsSystem_$callClinit, ["$_init_0", $rt_wrapFunction0(jp_PhysicsSystem__init_0), "$_init_3", $rt_wrapFunction2(jp_PhysicsSystem__init_), "$deleteNative", $rt_wrapFunction0(jp_PhysicsSystem_deleteNative), "$Init0", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7) { jp_PhysicsSystem_Init(this, var_1, var_2, var_3, var_4, var_5, var_6, var_7); }, "$Update", $rt_wrapFunction4(jp_PhysicsSystem_Update), "$AddConstraint", $rt_wrapFunction1(jp_PhysicsSystem_AddConstraint),
+jp_PhysicsSystem, "PhysicsSystem", 53, ji_IDLBase, [], 0, 3, [0,0,0], jp_PhysicsSystem_$callClinit, ["$_init_0", $rt_wrapFunction0(jp_PhysicsSystem__init_0), "$_init_3", $rt_wrapFunction2(jp_PhysicsSystem__init_), "$deleteNative", $rt_wrapFunction0(jp_PhysicsSystem_deleteNative), "$Init", function(var_1, var_2, var_3, var_4, var_5, var_6, var_7) { jp_PhysicsSystem_Init(this, var_1, var_2, var_3, var_4, var_5, var_6, var_7); }, "$Update", $rt_wrapFunction4(jp_PhysicsSystem_Update), "$AddConstraint", $rt_wrapFunction1(jp_PhysicsSystem_AddConstraint),
 "$OptimizeBroadPhase", $rt_wrapFunction0(jp_PhysicsSystem_OptimizeBroadPhase), "$GetBodyInterface", $rt_wrapFunction0(jp_PhysicsSystem_GetBodyInterface), "$GetNarrowPhaseQuery", $rt_wrapFunction0(jp_PhysicsSystem_GetNarrowPhaseQuery), "$AddStepListener", $rt_wrapFunction1(jp_PhysicsSystem_AddStepListener), "$RemoveStepListener", $rt_wrapFunction1(jp_PhysicsSystem_RemoveStepListener)],
 jur_AltGroupQuantifierSet, "AltGroupQuantifierSet", 29, jur_GroupQuantifierSet, [], 0, 0, 0, 0, ["$_init_41", $rt_wrapFunction3(jur_AltGroupQuantifierSet__init_), "$matches", $rt_wrapFunction3(jur_AltGroupQuantifierSet_matches), "$setNext", $rt_wrapFunction1(jur_AltGroupQuantifierSet_setNext)],
 jur_UCIRangeSet, "UCIRangeSet", 29, jur_LeafSet, [], 0, 0, 0, 0, ["$_init_169", $rt_wrapFunction1(jur_UCIRangeSet__init_0), "$accepts", $rt_wrapFunction2(jur_UCIRangeSet_accepts), "$getName", $rt_wrapFunction0(jur_UCIRangeSet_getName)],
