@@ -11,7 +11,7 @@ env:
 
 jobs:
   upload_demos_linux:
-    name: Build Linux
+    name: Upload Demos
     runs-on: ubuntu-latest
     permissions:
       contents: write
