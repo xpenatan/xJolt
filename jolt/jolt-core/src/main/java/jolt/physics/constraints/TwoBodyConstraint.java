@@ -44,7 +44,7 @@ public class TwoBodyConstraint extends Constraint {
     public Body GetBody1() {
         long pointer = internal_native_GetBody1(native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
@@ -61,7 +61,7 @@ return (jlong)obj;
     public Body GetBody2() {
         long pointer = internal_native_GetBody2(native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         if (Body_TEMP_GEN_1 == null)
             Body_TEMP_GEN_1 = Body.native_new();
         Body_TEMP_GEN_1.internal_reset(pointer, false);
@@ -78,7 +78,7 @@ return (jlong)obj;
     public Mat44 GetConstraintToBody1Matrix() {
         long pointer = internal_native_GetConstraintToBody1Matrix(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -95,7 +95,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetConstraintToBody2Matrix() {
         long pointer = internal_native_GetConstraintToBody2Matrix(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);

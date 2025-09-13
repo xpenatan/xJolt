@@ -52,7 +52,7 @@ jolt.destroy(jsObj);
     public Vec3 get_mPreviousPosition() {
         int pointer = internal_native_get_mPreviousPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -82,7 +82,7 @@ jsObj.set_mPreviousPosition(mPreviousPosition_addr);
     public Vec3 get_mPosition() {
         int pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -112,7 +112,7 @@ jsObj.set_mPosition(mPosition_addr);
     public Vec3 get_mVelocity() {
         int pointer = internal_native_get_mVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);

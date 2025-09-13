@@ -3,6 +3,7 @@ package jolt.example.samples.app.tests;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
+import jolt.JoltNew;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.example.samples.app.jolt.Layers;
@@ -74,11 +75,11 @@ public abstract class Test {
 
     protected Body createFloor(float inSize) {
         float scale = getWorldScale();
-        Vec3 inHalfExtent = new Vec3(scale * (0.5f * inSize), scale * 1.0f, scale * (0.5f * inSize));
-        Vec3 inPosition = new Vec3(0.0f, scale * -1.0f, 0.0f);
+        Vec3 inHalfExtent = JoltNew.Vec3(scale * (0.5f * inSize), scale * 1.0f, scale * (0.5f * inSize));
+        Vec3 inPosition = JoltNew.Vec3(0.0f, scale * -1.0f, 0.0f);
         Quat inRotation = Quat.sIdentity();
         BoxShape bodyShape = new BoxShape(inHalfExtent, 0.0f);
-        BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType.Static, Layers.NON_MOVING);
+        BodyCreationSettings bodySettings = JoltNew.BodyCreationSettings(bodyShape, inPosition, inRotation, EMotionType.Static, Layers.NON_MOVING);
         Body body = mBodyInterface.CreateBody(bodySettings);
         mBodyInterface.AddBody(body.GetID(), EActivation.DontActivate);
         bodySettings.dispose();
@@ -139,7 +140,7 @@ public abstract class Test {
                 }
             }
         PhysicsMaterialList materials = new PhysicsMaterialList();
-        ShapeResult shapeResult = new MeshShapeSettings(triangles, materials).Create();
+        ShapeResult shapeResult = JoltNew.MeshShapeSettings(triangles, materials).Create();
         triangles.dispose();
         materials.dispose();
         boolean hasError = shapeResult.HasError();
@@ -152,8 +153,8 @@ public abstract class Test {
 //        System.out.println("ShapeResult GetError: " + data);
         Shape shape = shapeResult.Get();
         // Create body
-        Vec3 vec3 = new Vec3(posX, posY, posZ);
-        BodyCreationSettings creationSettings = Jolt.New_BodyCreationSettings(shape, vec3, new Quat(0, 0, 0, 1), EMotionType.Static, Layers.NON_MOVING);
+        Vec3 vec3 = JoltNew.Vec3(posX, posY, posZ);
+        BodyCreationSettings creationSettings = JoltNew.BodyCreationSettings(shape, vec3, JoltNew.Quat(0, 0, 0, 1), EMotionType.Static, Layers.NON_MOVING);
         Body body = mBodyInterface.CreateBody(creationSettings);
         creationSettings.dispose();
         vec3.dispose();
@@ -191,10 +192,10 @@ public abstract class Test {
                 float x2 = x1 + cell_size;
                 float z2 = z1 + cell_size;
 
-                Vec3 v1 = new Vec3(x1, heights[x][z], z1);
-                Vec3 v2 = new Vec3(x2, heights[x + 1][z], z1);
-                Vec3 v3 = new Vec3(x1, heights[x][z + 1], z2);
-                Vec3 v4 = new Vec3(x2, heights[x + 1][z + 1], z2);
+                Vec3 v1 = JoltNew.Vec3(x1, heights[x][z], z1);
+                Vec3 v2 = JoltNew.Vec3(x2, heights[x + 1][z], z1);
+                Vec3 v3 = JoltNew.Vec3(x1, heights[x][z + 1], z2);
+                Vec3 v4 = JoltNew.Vec3(x2, heights[x + 1][z + 1], z2);
 
                 Triangle triangle1 = new Triangle(v1, v3, v4);
                 Triangle triangle2 = new Triangle(v1, v4, v2);
@@ -211,7 +212,7 @@ public abstract class Test {
         }
 
         int NON_MOVING = 4;
-        BodyCreationSettings bodyCreationSettings = Jolt.New_BodyCreationSettings(new MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType.Static, NON_MOVING);
+        BodyCreationSettings bodyCreationSettings = JoltNew.BodyCreationSettings(JoltNew.MeshShapeSettings(triangles), Vec3.sZero(), Quat.sIdentity(), EMotionType.Static, NON_MOVING);
         Body floor = mBodyInterface.CreateBody(bodyCreationSettings);
         mBodyInterface.AddBody(floor.GetID(), EActivation.DontActivate);
         triangles.dispose();

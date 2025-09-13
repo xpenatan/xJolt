@@ -66,7 +66,7 @@ return nativeObject->size();
     public ShapeCastResult at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return ShapeCastResult.NULL;
         if (ShapeCastResult_TEMP_GEN_0 == null)
             ShapeCastResult_TEMP_GEN_0 = ShapeCastResult.native_new();
         ShapeCastResult_TEMP_GEN_0.internal_reset(pointer, false);

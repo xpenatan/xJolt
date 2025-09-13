@@ -15,6 +15,14 @@ public class CastShapeBodyCollector extends IDLBase {
 
     static private BroadPhaseCastResult BroadPhaseCastResult_TEMP_STATIC_GEN_0;
 
+    static public final CastShapeBodyCollector NULL = CastShapeBodyCollector.native_new();
+
+    static public final CastShapeBodyCollector T_01 = CastShapeBodyCollector.native_new();
+
+    static public final CastShapeBodyCollector T_02 = CastShapeBodyCollector.native_new();
+
+    static public final CastShapeBodyCollector T_03 = CastShapeBodyCollector.native_new();
+
     /*[-JNI;-NATIVE]
 class CastShapeBodyCollectorJS : public CastShapeBodyCollector {
 private:
@@ -76,7 +84,7 @@ nativeObject->SetContext((TransformedShape* )inContext_addr);
     public TransformedShape GetContext() {
         long pointer = internal_native_GetContext(native_address);
         if (pointer == 0)
-            return null;
+            return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);

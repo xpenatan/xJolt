@@ -55,7 +55,7 @@ jolt.destroy(jsObj);
     public ArraySoftBodyVertex GetVertices() {
         int pointer = internal_native_GetVertices(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodyVertex.NULL;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
             ArraySoftBodyVertex_TEMP_GEN_0 = ArraySoftBodyVertex.native_new();
         ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
@@ -86,7 +86,7 @@ return returnedJSObj;
     public Vec3 GetLocalContactPoint(SoftBodyVertex inVertex) {
         int pointer = internal_native_GetLocalContactPoint(native_address, inVertex.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -105,7 +105,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetContactNormal(SoftBodyVertex inVertex) {
         int pointer = internal_native_GetContactNormal(native_address, inVertex.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -124,7 +124,7 @@ return jolt.getPointer(returnedJSObj);
     public BodyID GetContactBodyID(SoftBodyVertex inVertex) {
         int pointer = internal_native_GetContactBodyID(native_address, inVertex.native_address);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);

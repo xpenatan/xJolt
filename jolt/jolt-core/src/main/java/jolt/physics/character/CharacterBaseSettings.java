@@ -73,7 +73,7 @@ nativeObject->Release();
     public Vec3 get_mUp() {
         long pointer = internal_native_get_mUp(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -99,7 +99,7 @@ nativeObject->mUp = *((Vec3*)mUp_addr);
     public Plane get_mSupportingVolume() {
         long pointer = internal_native_get_mSupportingVolume(native_address);
         if (pointer == 0)
-            return null;
+            return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
         Plane_TEMP_GEN_0.internal_reset(pointer, false);
@@ -165,7 +165,7 @@ nativeObject->mEnhancedInternalEdgeRemoval = mEnhancedInternalEdgeRemoval;
     public Shape get_mShape() {
         long pointer = internal_native_get_mShape(native_address);
         if (pointer == 0)
-            return null;
+            return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);

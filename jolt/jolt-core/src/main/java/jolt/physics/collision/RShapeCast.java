@@ -67,7 +67,7 @@ delete nativeObject;
     public Vec3 GetPointOnRay(float inFraction) {
         long pointer = internal_native_GetPointOnRay(native_address, inFraction);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -84,7 +84,7 @@ return (jlong)&copy_addr;*/
     public Shape get_mShape() {
         long pointer = internal_native_get_mShape(native_address);
         if (pointer == 0)
-            return null;
+            return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
@@ -101,7 +101,7 @@ return (jlong)attr;
     public Vec3 get_mScale() {
         long pointer = internal_native_get_mScale(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -117,7 +117,7 @@ return (jlong)&nativeObject->mScale;
     public Mat44 get_mCenterOfMassStart() {
         long pointer = internal_native_get_mCenterOfMassStart(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -133,7 +133,7 @@ return (jlong)&nativeObject->mCenterOfMassStart;
     public Vec3 get_mDirection() {
         long pointer = internal_native_get_mDirection(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);

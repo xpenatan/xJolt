@@ -71,7 +71,7 @@ nativeObject->mMode = (::ETransmissionMode)mMode;
     public ArrayFloat get_mGearRatios() {
         long pointer = internal_native_get_mGearRatios(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayFloat.NULL;
         if (ArrayFloat_TEMP_GEN_0 == null)
             ArrayFloat_TEMP_GEN_0 = ArrayFloat.native_new();
         ArrayFloat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -97,7 +97,7 @@ nativeObject->mGearRatios = *((ArrayFloat*)mGearRatios_addr);
     public ArrayFloat get_mReverseGearRatios() {
         long pointer = internal_native_get_mReverseGearRatios(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayFloat.NULL;
         if (ArrayFloat_TEMP_GEN_1 == null)
             ArrayFloat_TEMP_GEN_1 = ArrayFloat.native_new();
         ArrayFloat_TEMP_GEN_1.internal_reset(pointer, false);

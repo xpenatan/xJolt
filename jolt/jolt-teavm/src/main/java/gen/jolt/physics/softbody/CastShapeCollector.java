@@ -18,6 +18,14 @@ public class CastShapeCollector extends IDLBase {
 
     static private ShapeCastResult ShapeCastResult_TEMP_STATIC_GEN_0;
 
+    static public final CastShapeCollector NULL = CastShapeCollector.native_new();
+
+    static public final CastShapeCollector T_01 = CastShapeCollector.native_new();
+
+    static public final CastShapeCollector T_02 = CastShapeCollector.native_new();
+
+    static public final CastShapeCollector T_03 = CastShapeCollector.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
@@ -57,7 +65,7 @@ jsObj.SetContext(inContext_addr);
     public TransformedShape GetContext() {
         int pointer = internal_native_GetContext(native_address);
         if (pointer == 0)
-            return null;
+            return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);

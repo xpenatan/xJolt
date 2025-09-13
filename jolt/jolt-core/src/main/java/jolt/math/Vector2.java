@@ -116,7 +116,7 @@ nativeObject->IsNormalized();
     public Vector2 Normalized() {
         long pointer = internal_native_Normalized(native_address);
         if (pointer == 0)
-            return null;
+            return Vector2.NULL;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = Vector2.native_new();
         Vector2_TEMP_GEN_0.internal_reset(pointer, false);

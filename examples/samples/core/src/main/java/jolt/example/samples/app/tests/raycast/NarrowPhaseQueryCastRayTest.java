@@ -3,6 +3,7 @@ package jolt.example.samples.app.tests.raycast;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.collision.Ray;
+import jolt.JoltNew;
 import jolt.RRayCast;
 import jolt.math.Vec3;
 import jolt.physics.body.BodyID;
@@ -21,8 +22,8 @@ public class NarrowPhaseQueryCastRayTest extends RayCastTest {
             start.set(pickRay.origin);
             pickRay.getEndPoint(end, 1000);
 
-            final Vec3 rayOrigin = new Vec3(start.x, start.y, start.z);
-            final Vec3 rayDirection = new Vec3(end.x, end.y, end.z);
+            final Vec3 rayOrigin = JoltNew.Vec3(start.x, start.y, start.z);
+            final Vec3 rayDirection = JoltNew.Vec3(end.x, end.y, end.z);
 
             final RRayCast ray = new RRayCast(rayOrigin, rayDirection);
             rayOrigin.dispose();

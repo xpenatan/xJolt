@@ -66,7 +66,7 @@ return nativeObject->size();
     public SoftBodySharedSettingsLRA at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsLRA.NULL;
         if (SoftBodySharedSettingsLRA_TEMP_GEN_0 == null)
             SoftBodySharedSettingsLRA_TEMP_GEN_0 = SoftBodySharedSettingsLRA.native_new();
         SoftBodySharedSettingsLRA_TEMP_GEN_0.internal_reset(pointer, false);

@@ -118,7 +118,7 @@ jsObj.set_mAutoDetectPoint(mAutoDetectPoint);
     public Vec3 get_mPoint1() {
         int pointer = internal_native_get_mPoint1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -148,7 +148,7 @@ jsObj.set_mPoint1(mPoint1_addr);
     public Vec3 get_mAxisX1() {
         int pointer = internal_native_get_mAxisX1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -178,7 +178,7 @@ jsObj.set_mAxisX1(mAxisX1_addr);
     public Vec3 get_mAxisY1() {
         int pointer = internal_native_get_mAxisY1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -208,7 +208,7 @@ jsObj.set_mAxisY1(mAxisY1_addr);
     public Vec3 get_mPoint2() {
         int pointer = internal_native_get_mPoint2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -238,7 +238,7 @@ jsObj.set_mPoint2(mPoint2_addr);
     public Vec3 get_mAxisX2() {
         int pointer = internal_native_get_mAxisX2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -268,7 +268,7 @@ jsObj.set_mAxisX2(mAxisX2_addr);
     public Vec3 get_mAxisY2() {
         int pointer = internal_native_get_mAxisY2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);

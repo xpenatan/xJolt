@@ -68,7 +68,7 @@ return nativeObject->size();
     public Mat44 at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -124,7 +124,7 @@ nativeObject->clear();
     public Mat44MemRef data() {
         long pointer = internal_native_data(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44MemRef.NULL;
         if (Mat44MemRef_TEMP_GEN_0 == null)
             Mat44MemRef_TEMP_GEN_0 = Mat44MemRef.native_new();
         Mat44MemRef_TEMP_GEN_0.internal_reset(pointer, false);

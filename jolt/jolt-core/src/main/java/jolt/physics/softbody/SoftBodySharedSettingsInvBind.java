@@ -67,7 +67,7 @@ nativeObject->mJointIndex = mJointIndex;
     public Mat44 get_mInvBind() {
         long pointer = internal_native_get_mInvBind(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);

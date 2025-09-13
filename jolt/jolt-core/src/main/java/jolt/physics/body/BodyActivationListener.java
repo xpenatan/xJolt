@@ -13,6 +13,14 @@ public class BodyActivationListener extends IDLBase {
 
     static private BodyID BodyID_TEMP_STATIC_GEN_1;
 
+    static public final BodyActivationListener NULL = BodyActivationListener.native_new();
+
+    static public final BodyActivationListener T_01 = BodyActivationListener.native_new();
+
+    static public final BodyActivationListener T_02 = BodyActivationListener.native_new();
+
+    static public final BodyActivationListener T_03 = BodyActivationListener.native_new();
+
     /*[-JNI;-NATIVE]
 class BodyActivationListenerJS : public BodyActivationListener {
 private:

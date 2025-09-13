@@ -60,7 +60,7 @@ delete nativeObject;
     public AABox get_mBox() {
         long pointer = internal_native_get_mBox(native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
@@ -86,7 +86,7 @@ nativeObject->mBox = *((AABox*)mBox_addr);
     public Vec3 get_mDirection() {
         long pointer = internal_native_get_mDirection(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);

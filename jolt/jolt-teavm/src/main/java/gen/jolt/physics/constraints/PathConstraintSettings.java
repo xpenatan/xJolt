@@ -70,7 +70,7 @@ jolt.destroy(jsObj);
     public PathConstraintPath get_mPath() {
         int pointer = internal_native_get_mPath(native_address);
         if (pointer == 0)
-            return null;
+            return PathConstraintPath.NULL;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.native_new();
         PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
@@ -100,7 +100,7 @@ jsObj.set_mPath(mPath_addr);
     public Vec3 get_mPathPosition() {
         int pointer = internal_native_get_mPathPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -130,7 +130,7 @@ jsObj.set_mPathPosition(mPathPosition_addr);
     public Quat get_mPathRotation() {
         int pointer = internal_native_get_mPathRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -227,7 +227,7 @@ jsObj.set_mRotationConstraintType(mRotationConstraintType);
     public MotorSettings get_mPositionMotorSettings() {
         int pointer = internal_native_get_mPositionMotorSettings(native_address);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);

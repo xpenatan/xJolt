@@ -30,5 +30,6 @@ libs/
 *.log
 *.o
 *.ini
+.kotlin/
 
 **/webapp/**

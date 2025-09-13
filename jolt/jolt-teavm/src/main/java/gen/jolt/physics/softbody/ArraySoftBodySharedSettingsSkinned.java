@@ -71,7 +71,7 @@ return returnedJSObj;
     public SoftBodySharedSettingsSkinned at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsSkinned.NULL;
         if (SoftBodySharedSettingsSkinned_TEMP_GEN_0 == null)
             SoftBodySharedSettingsSkinned_TEMP_GEN_0 = SoftBodySharedSettingsSkinned.native_new();
         SoftBodySharedSettingsSkinned_TEMP_GEN_0.internal_reset(pointer, false);

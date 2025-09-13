@@ -71,7 +71,7 @@ return returnedJSObj;
     public SoftBodyVertex at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodyVertex.NULL;
         if (SoftBodyVertex_TEMP_GEN_0 == null)
             SoftBodyVertex_TEMP_GEN_0 = SoftBodyVertex.native_new();
         SoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);

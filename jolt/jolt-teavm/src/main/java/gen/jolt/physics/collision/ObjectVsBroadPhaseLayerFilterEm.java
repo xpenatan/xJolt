@@ -12,6 +12,14 @@ public class ObjectVsBroadPhaseLayerFilterEm extends ObjectVsBroadPhaseLayerFilt
 
     static private BroadPhaseLayer BroadPhaseLayer_TEMP_STATIC_GEN_0;
 
+    static public final ObjectVsBroadPhaseLayerFilterEm NULL = ObjectVsBroadPhaseLayerFilterEm.native_new();
+
+    static public final ObjectVsBroadPhaseLayerFilterEm T_01 = ObjectVsBroadPhaseLayerFilterEm.native_new();
+
+    static public final ObjectVsBroadPhaseLayerFilterEm T_02 = ObjectVsBroadPhaseLayerFilterEm.native_new();
+
+    static public final ObjectVsBroadPhaseLayerFilterEm T_03 = ObjectVsBroadPhaseLayerFilterEm.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

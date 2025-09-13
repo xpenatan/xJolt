@@ -91,7 +91,7 @@ delete nativeObject;
     public static AABox sBiggest() {
         long pointer = internal_native_sBiggest();
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_STATIC_GEN_0 == null)
             AABox_TEMP_STATIC_GEN_0 = AABox.native_new();
         AABox_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -107,7 +107,7 @@ return (jlong)&copy_addr;*/
     public static AABox sFromTwoPoints(Vec3 inP1, Vec3 inP2) {
         long pointer = internal_native_sFromTwoPoints(inP1.native_address, inP2.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_STATIC_GEN_1 == null)
             AABox_TEMP_STATIC_GEN_1 = AABox.native_new();
         AABox_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
@@ -123,7 +123,7 @@ return (jlong)&copy_addr;*/
     public static AABox sFromTriangle(VertexList inVertices, IndexedTriangle inTriangle) {
         long pointer = internal_native_sFromTriangle(inVertices.native_address, inTriangle.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_STATIC_GEN_2 == null)
             AABox_TEMP_STATIC_GEN_2 = AABox.native_new();
         AABox_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
@@ -217,7 +217,7 @@ nativeObject->Encapsulate(*((VertexList* )inVertices_addr), *((IndexedTriangle* 
     public AABox Intersect(AABox inOther) {
         long pointer = internal_native_Intersect(native_address, inOther.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
@@ -254,7 +254,7 @@ nativeObject->ExpandBy(*((Vec3* )inV_addr));
     public Vec3 GetCenter() {
         long pointer = internal_native_GetCenter(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -271,7 +271,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetExtent() {
         long pointer = internal_native_GetExtent(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -288,7 +288,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetSize() {
         long pointer = internal_native_GetSize(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -365,7 +365,7 @@ nativeObject->Translate(*((Vec3* )inOther_addr));
     public AABox TransformedMat44(Mat44 inOther) {
         long pointer = internal_native_TransformedMat44(native_address, inOther.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = AABox.native_new();
         AABox_TEMP_GEN_1.internal_reset(pointer, false);
@@ -382,7 +382,7 @@ return (jlong)&copy_addr;*/
     public AABox Scaled(Vec3 inScale) {
         long pointer = internal_native_Scaled(native_address, inScale.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_2 == null)
             AABox_TEMP_GEN_2 = AABox.native_new();
         AABox_TEMP_GEN_2.internal_reset(pointer, false);
@@ -399,7 +399,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetClosestPoint(Vec3 inV) {
         long pointer = internal_native_GetClosestPoint(native_address, inV.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -426,7 +426,7 @@ return nativeObject->GetSqDistanceTo(*((Vec3* )inV_addr));
     public Vec3 get_mMin() {
         long pointer = internal_native_get_mMin(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -452,7 +452,7 @@ nativeObject->mMin = *((Vec3*)mMin_addr);
     public Vec3 get_mMax() {
         long pointer = internal_native_get_mMax(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);

@@ -6,12 +6,6 @@
 package gen.jolt;
 
 import gen.jolt.idl.IDLBase;
-import gen.jolt.physics.body.BodyCreationSettings;
-import gen.jolt.physics.collision.shape.ShapeSettings;
-import gen.jolt.math.Vec3;
-import gen.jolt.math.Quat;
-import gen.jolt.enums.EMotionType;
-import gen.jolt.physics.collision.shape.Shape;
 import gen.jolt.physics.PhysicsSystem;
 
 public class Jolt extends IDLBase {
@@ -48,57 +42,6 @@ jolt.destroy(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Jolt);jolt.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
-
-    public static BodyCreationSettings New_BodyCreationSettings() {
-        int pointer = internal_native_New_BodyCreationSettings_0();
-        if (pointer == 0)
-            return null;
-        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
-        BodyCreationSettings_NEW.internal_reset(pointer, true);
-        return BodyCreationSettings_NEW;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.Jolt.prototype.New_BodyCreationSettings_0();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jolt.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Jolt.prototype.New_BodyCreationSettings_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_New_BodyCreationSettings_0();
-
-    public static BodyCreationSettings New_BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        int pointer = internal_native_New_BodyCreationSettings_1(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
-        if (pointer == 0)
-            return null;
-        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
-        BodyCreationSettings_NEW.internal_reset(pointer, true);
-        return BodyCreationSettings_NEW;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.Jolt.prototype.New_BodyCreationSettings_1(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jolt.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(params = {"inShape_addr", "inPosition_addr", "inRotation_addr", "inMotionType", "inObjectLayer"}, script = "var returnedJSObj = jolt.Jolt.prototype.New_BodyCreationSettings_1(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_New_BodyCreationSettings_1(int inShape_addr, int inPosition_addr, int inRotation_addr, int inMotionType, int inObjectLayer);
-
-    public static BodyCreationSettings New_BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        int pointer = internal_native_New_BodyCreationSettings_2(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
-        if (pointer == 0)
-            return null;
-        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
-        BodyCreationSettings_NEW.internal_reset(pointer, true);
-        return BodyCreationSettings_NEW;
-    }
-
-    /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.Jolt.prototype.New_BodyCreationSettings_2(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jolt.getPointer(returnedJSObj);
-*/
-    @org.teavm.jso.JSBody(params = {"inShape_addr", "inPosition_addr", "inRotation_addr", "inMotionType", "inObjectLayer"}, script = "var returnedJSObj = jolt.Jolt.prototype.New_BodyCreationSettings_2(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_New_BodyCreationSettings_2(int inShape_addr, int inPosition_addr, int inRotation_addr, int inMotionType, int inObjectLayer);
 
     public static void Init() {
         internal_native_Init();

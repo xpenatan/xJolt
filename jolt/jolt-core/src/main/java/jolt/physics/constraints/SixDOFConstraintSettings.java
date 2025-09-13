@@ -147,7 +147,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
     public Vec3 get_mPosition1() {
         long pointer = internal_native_get_mPosition1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -173,7 +173,7 @@ nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
     public Vec3 get_mAxisX1() {
         long pointer = internal_native_get_mAxisX1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -199,7 +199,7 @@ nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
     public Vec3 get_mAxisY1() {
         long pointer = internal_native_get_mAxisY1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -225,7 +225,7 @@ nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
     public Vec3 get_mPosition2() {
         long pointer = internal_native_get_mPosition2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -251,7 +251,7 @@ nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
     public Vec3 get_mAxisX2() {
         long pointer = internal_native_get_mAxisX2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -277,7 +277,7 @@ nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
     public Vec3 get_mAxisY2() {
         long pointer = internal_native_get_mAxisY2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
@@ -384,7 +384,7 @@ nativeObject->mLimitMax[index] = mLimitMax;
     public SpringSettings get_mLimitsSpringSettings(int index) {
         long pointer = internal_native_get_mLimitsSpringSettings(native_address, index);
         if (pointer == 0)
-            return null;
+            return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -410,7 +410,7 @@ nativeObject->mLimitsSpringSettings[index] = *((SpringSettings*)mLimitsSpringSet
     public MotorSettings get_mMotorSettings(int index) {
         long pointer = internal_native_get_mMotorSettings(native_address, index);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);

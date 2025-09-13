@@ -80,7 +80,7 @@ return returnedJSObj;
     public Vec3 get_mPosition() {
         int pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -110,7 +110,7 @@ jsObj.set_mPosition(mPosition_addr);
     public Vec3 get_mLinearVelocity() {
         int pointer = internal_native_get_mLinearVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -140,7 +140,7 @@ jsObj.set_mLinearVelocity(mLinearVelocity_addr);
     public Vec3 get_mContactNormal() {
         int pointer = internal_native_get_mContactNormal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -170,7 +170,7 @@ jsObj.set_mContactNormal(mContactNormal_addr);
     public Vec3 get_mSurfaceNormal() {
         int pointer = internal_native_get_mSurfaceNormal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -244,7 +244,7 @@ jsObj.set_mFraction(mFraction);
     public BodyID get_mBodyB() {
         int pointer = internal_native_get_mBodyB(native_address);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -274,7 +274,7 @@ jsObj.set_mBodyB(mBodyB_addr);
     public CharacterID get_mCharacterIDB() {
         int pointer = internal_native_get_mCharacterIDB(native_address);
         if (pointer == 0)
-            return null;
+            return CharacterID.NULL;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = CharacterID.native_new();
         CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -304,7 +304,7 @@ jsObj.set_mCharacterIDB(mCharacterIDB_addr);
     public SubShapeID get_mSubShapeIDB() {
         int pointer = internal_native_get_mSubShapeIDB(native_address);
         if (pointer == 0)
-            return null;
+            return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -379,7 +379,7 @@ jsObj.set_mIsSensorB(mIsSensorB);
     public CharacterVirtual get_mCharacterB() {
         int pointer = internal_native_get_mCharacterB(native_address);
         if (pointer == 0)
-            return null;
+            return CharacterVirtual.NULL;
         if (CharacterVirtual_TEMP_GEN_0 == null)
             CharacterVirtual_TEMP_GEN_0 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_GEN_0.internal_reset(pointer, false);
@@ -431,7 +431,7 @@ jsObj.set_mUserData(mUserData);
     public PhysicsMaterial get_mMaterial() {
         int pointer = internal_native_get_mMaterial(native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);

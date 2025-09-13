@@ -73,7 +73,7 @@ delete nativeObject;
     public Vec3 get_mContactPointOn1() {
         long pointer = internal_native_get_mContactPointOn1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -99,7 +99,7 @@ nativeObject->mContactPointOn1 = *((Vec3*)mContactPointOn1_addr);
     public Vec3 get_mContactPointOn2() {
         long pointer = internal_native_get_mContactPointOn2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -125,7 +125,7 @@ nativeObject->mContactPointOn2 = *((Vec3*)mContactPointOn2_addr);
     public Vec3 get_mPenetrationAxis() {
         long pointer = internal_native_get_mPenetrationAxis(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -171,7 +171,7 @@ nativeObject->mPenetrationDepth = mPenetrationDepth;
     public SubShapeID get_mSubShapeID1() {
         long pointer = internal_native_get_mSubShapeID1(native_address);
         if (pointer == 0)
-            return null;
+            return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -197,7 +197,7 @@ nativeObject->mSubShapeID1 = *((SubShapeID*)mSubShapeID1_addr);
     public SubShapeID get_mSubShapeID2() {
         long pointer = internal_native_get_mSubShapeID2(native_address);
         if (pointer == 0)
-            return null;
+            return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_1.internal_reset(pointer, false);
@@ -223,7 +223,7 @@ nativeObject->mSubShapeID2 = *((SubShapeID*)mSubShapeID2_addr);
     public BodyID get_mBodyID2() {
         long pointer = internal_native_get_mBodyID2(native_address);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -249,7 +249,7 @@ nativeObject->mBodyID2 = *((BodyID*)mBodyID2_addr);
     public CollideShapeResultFace get_mShape1Face() {
         long pointer = internal_native_get_mShape1Face(native_address);
         if (pointer == 0)
-            return null;
+            return CollideShapeResultFace.NULL;
         if (CollideShapeResultFace_TEMP_GEN_0 == null)
             CollideShapeResultFace_TEMP_GEN_0 = CollideShapeResultFace.native_new();
         CollideShapeResultFace_TEMP_GEN_0.internal_reset(pointer, false);
@@ -275,7 +275,7 @@ nativeObject->mShape1Face = *((CollideShapeResultFace*)mShape1Face_addr);
     public CollideShapeResultFace get_mShape2Face() {
         long pointer = internal_native_get_mShape2Face(native_address);
         if (pointer == 0)
-            return null;
+            return CollideShapeResultFace.NULL;
         if (CollideShapeResultFace_TEMP_GEN_1 == null)
             CollideShapeResultFace_TEMP_GEN_1 = CollideShapeResultFace.native_new();
         CollideShapeResultFace_TEMP_GEN_1.internal_reset(pointer, false);

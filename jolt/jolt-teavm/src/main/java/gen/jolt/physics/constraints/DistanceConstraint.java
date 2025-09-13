@@ -70,7 +70,7 @@ return returnedJSObj;
     public SpringSettings GetLimitsSpringSettings() {
         int pointer = internal_native_GetLimitsSpringSettings(native_address);
         if (pointer == 0)
-            return null;
+            return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);

@@ -59,7 +59,7 @@ public class SwingTwistConstraint extends TwoBodyConstraint {
     public Vec3 GetLocalSpacePosition1() {
         long pointer = internal_native_GetLocalSpacePosition1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -76,7 +76,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetLocalSpacePosition2() {
         long pointer = internal_native_GetLocalSpacePosition2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -93,7 +93,7 @@ return (jlong)&copy_addr;*/
     public Quat GetConstraintToBody1() {
         long pointer = internal_native_GetConstraintToBody1(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -110,7 +110,7 @@ return (jlong)&copy_addr;*/
     public Quat GetConstraintToBody2() {
         long pointer = internal_native_GetConstraintToBody2(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_1 == null)
             Quat_TEMP_GEN_1 = Quat.native_new();
         Quat_TEMP_GEN_1.internal_reset(pointer, false);
@@ -207,7 +207,7 @@ nativeObject->SetTwistMaxAngle((float)inAngle);
     public MotorSettings GetSwingMotorSettings() {
         long pointer = internal_native_GetSwingMotorSettings(native_address);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -223,7 +223,7 @@ return (jlong)&nativeObject->GetSwingMotorSettings();
     public MotorSettings GetTwistMotorSettings() {
         long pointer = internal_native_GetTwistMotorSettings(native_address);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_1 == null)
             MotorSettings_TEMP_GEN_1 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_1.internal_reset(pointer, false);
@@ -311,7 +311,7 @@ nativeObject->SetTargetAngularVelocityCS(*((Vec3* )inAngularVelocity_addr));
     public Vec3 GetTargetAngularVelocityCS() {
         long pointer = internal_native_GetTargetAngularVelocityCS(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -338,7 +338,7 @@ nativeObject->SetTargetOrientationCS(*((Quat* )inOrientation_addr));
     public Quat GetTargetOrientationCS() {
         long pointer = internal_native_GetTargetOrientationCS(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_2 == null)
             Quat_TEMP_GEN_2 = Quat.native_new();
         Quat_TEMP_GEN_2.internal_reset(pointer, false);
@@ -365,7 +365,7 @@ nativeObject->SetTargetOrientationBS(*((Quat* )inOrientation_addr));
     public Quat GetRotationInConstraintSpace() {
         long pointer = internal_native_GetRotationInConstraintSpace(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_3 == null)
             Quat_TEMP_GEN_3 = Quat.native_new();
         Quat_TEMP_GEN_3.internal_reset(pointer, false);
@@ -382,7 +382,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetTotalLambdaPosition() {
         long pointer = internal_native_GetTotalLambdaPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -429,7 +429,7 @@ return nativeObject->GetTotalLambdaSwingZ();
     public Vec3 GetTotalLambdaMotor() {
         long pointer = internal_native_GetTotalLambdaMotor(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);

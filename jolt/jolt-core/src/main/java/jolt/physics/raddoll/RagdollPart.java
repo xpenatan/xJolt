@@ -48,7 +48,7 @@ delete nativeObject;
     public TwoBodyConstraintSettings get_mToParent() {
         long pointer = internal_native_get_mToParent(native_address);
         if (pointer == 0)
-            return null;
+            return TwoBodyConstraintSettings.NULL;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
             TwoBodyConstraintSettings_TEMP_GEN_0 = TwoBodyConstraintSettings.native_new();
         TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(pointer, false);

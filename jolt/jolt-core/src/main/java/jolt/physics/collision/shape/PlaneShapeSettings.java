@@ -83,7 +83,7 @@ delete nativeObject;
     public Plane get_mPlane() {
         long pointer = internal_native_get_mPlane(native_address);
         if (pointer == 0)
-            return null;
+            return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
         Plane_TEMP_GEN_0.internal_reset(pointer, false);
@@ -109,7 +109,7 @@ nativeObject->mPlane = *((Plane*)mPlane_addr);
     public PhysicsMaterial get_mMaterial() {
         long pointer = internal_native_get_mMaterial(native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);

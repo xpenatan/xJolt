@@ -76,7 +76,7 @@ nativeObject->SetGroupFilter((GroupFilter* )inFilter_addr);
     public GroupFilter GetGroupFilter() {
         long pointer = internal_native_GetGroupFilter(native_address);
         if (pointer == 0)
-            return null;
+            return GroupFilter.NULL;
         if (GroupFilter_TEMP_GEN_0 == null)
             GroupFilter_TEMP_GEN_0 = GroupFilter.native_new();
         GroupFilter_TEMP_GEN_0.internal_reset(pointer, false);

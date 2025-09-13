@@ -58,7 +58,7 @@ delete nativeObject;
     public BodyID getValue(int index) {
         long pointer = internal_native_getValue(native_address, index);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);

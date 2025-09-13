@@ -82,7 +82,7 @@ return nativeObject->GetVerticesSize();
     public IDLBase GetVerticesData() {
         long pointer = internal_native_GetVerticesData(native_address);
         if (pointer == 0)
-            return null;
+            return IDLBase.NULL;
         if (IDLBase_TEMP_GEN_0 == null)
             IDLBase_TEMP_GEN_0 = IDLBase.native_new();
         IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
@@ -98,7 +98,7 @@ return (jlong)nativeObject->GetVerticesData();
     public PhysicsMaterial GetMaterial(int inTriangle) {
         long pointer = internal_native_GetMaterial(native_address, inTriangle);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);

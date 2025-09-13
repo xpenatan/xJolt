@@ -96,7 +96,7 @@ jolt.destroy(jsObj);
     public static AABox sBiggest() {
         int pointer = internal_native_sBiggest();
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_STATIC_GEN_0 == null)
             AABox_TEMP_STATIC_GEN_0 = AABox.native_new();
         AABox_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -114,7 +114,7 @@ return jolt.getPointer(returnedJSObj);
     public static AABox sFromTwoPoints(Vec3 inP1, Vec3 inP2) {
         int pointer = internal_native_sFromTwoPoints(inP1.native_address, inP2.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_STATIC_GEN_1 == null)
             AABox_TEMP_STATIC_GEN_1 = AABox.native_new();
         AABox_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
@@ -132,7 +132,7 @@ return jolt.getPointer(returnedJSObj);
     public static AABox sFromTriangle(VertexList inVertices, IndexedTriangle inTriangle) {
         int pointer = internal_native_sFromTriangle(inVertices.native_address, inTriangle.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_STATIC_GEN_2 == null)
             AABox_TEMP_STATIC_GEN_2 = AABox.native_new();
         AABox_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
@@ -241,7 +241,7 @@ jsObj.EncapsulateIndexedTriangle(inVertices_addr, inTriangle_addr);
     public AABox Intersect(AABox inOther) {
         int pointer = internal_native_Intersect(native_address, inOther.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
@@ -282,7 +282,7 @@ jsObj.ExpandBy(inV_addr);
     public Vec3 GetCenter() {
         int pointer = internal_native_GetCenter(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -301,7 +301,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetExtent() {
         int pointer = internal_native_GetExtent(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -320,7 +320,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetSize() {
         int pointer = internal_native_GetSize(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -410,7 +410,7 @@ jsObj.TranslateVec3(inOther_addr);
     public AABox TransformedMat44(Mat44 inOther) {
         int pointer = internal_native_TransformedMat44(native_address, inOther.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = AABox.native_new();
         AABox_TEMP_GEN_1.internal_reset(pointer, false);
@@ -429,7 +429,7 @@ return jolt.getPointer(returnedJSObj);
     public AABox Scaled(Vec3 inScale) {
         int pointer = internal_native_Scaled(native_address, inScale.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_2 == null)
             AABox_TEMP_GEN_2 = AABox.native_new();
         AABox_TEMP_GEN_2.internal_reset(pointer, false);
@@ -448,7 +448,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetClosestPoint(Vec3 inV) {
         int pointer = internal_native_GetClosestPoint(native_address, inV.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -479,7 +479,7 @@ return returnedJSObj;
     public Vec3 get_mMin() {
         int pointer = internal_native_get_mMin(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -509,7 +509,7 @@ jsObj.set_mMin(mMin_addr);
     public Vec3 get_mMax() {
         int pointer = internal_native_get_mMax(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);

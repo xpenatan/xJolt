@@ -66,7 +66,7 @@ return nativeObject->size();
     public SoftBodySharedSettingsDihedralBend at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsDihedralBend.NULL;
         if (SoftBodySharedSettingsDihedralBend_TEMP_GEN_0 == null)
             SoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = SoftBodySharedSettingsDihedralBend.native_new();
         SoftBodySharedSettingsDihedralBend_TEMP_GEN_0.internal_reset(pointer, false);

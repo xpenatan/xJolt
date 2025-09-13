@@ -64,7 +64,7 @@ jolt.destroy(jsObj);
     public Vec3 get_mStickToFloorStepDown() {
         int pointer = internal_native_get_mStickToFloorStepDown(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -94,7 +94,7 @@ jsObj.set_mStickToFloorStepDown(mStickToFloorStepDown_addr);
     public Vec3 get_mWalkStairsStepUp() {
         int pointer = internal_native_get_mWalkStairsStepUp(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -190,7 +190,7 @@ jsObj.set_mWalkStairsCosAngleForwardContact(mWalkStairsCosAngleForwardContact);
     public Vec3 get_mWalkStairsStepDownExtra() {
         int pointer = internal_native_get_mWalkStairsStepDownExtra(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);

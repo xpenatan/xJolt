@@ -59,7 +59,7 @@ return returnedJSObj;
     public DebugRendererTriangle at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return DebugRendererTriangle.NULL;
         if (DebugRendererTriangle_TEMP_GEN_0 == null)
             DebugRendererTriangle_TEMP_GEN_0 = DebugRendererTriangle.native_new();
         DebugRendererTriangle_TEMP_GEN_0.internal_reset(pointer, false);

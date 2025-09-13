@@ -75,7 +75,7 @@ return nativeObject->GetMaxFrictionTorque();
     public MotorSettings GetMotorSettings() {
         long pointer = internal_native_GetMotorSettings(native_address);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -192,7 +192,7 @@ return nativeObject->HasLimits();
     public SpringSettings GetLimitsSpringSettings() {
         long pointer = internal_native_GetLimitsSpringSettings(native_address);
         if (pointer == 0)
-            return null;
+            return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -218,7 +218,7 @@ nativeObject->SetLimitsSpringSettings(*((SpringSettings* )inLimitsSpringSettings
     public Vec3 GetTotalLambdaPosition() {
         long pointer = internal_native_GetTotalLambdaPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -235,7 +235,7 @@ return (jlong)&copy_addr;*/
     public Vector2 GetTotalLambdaRotation() {
         long pointer = internal_native_GetTotalLambdaRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Vector2.NULL;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = Vector2.native_new();
         Vector2_TEMP_GEN_0.internal_reset(pointer, false);

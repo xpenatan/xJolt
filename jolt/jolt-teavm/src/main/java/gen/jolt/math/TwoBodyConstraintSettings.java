@@ -39,7 +39,7 @@ public class TwoBodyConstraintSettings extends ConstraintSettings {
     public Constraint Create(Body inBody1, Body inBody2) {
         int pointer = internal_native_Create(native_address, inBody1.native_address, inBody2.native_address);
         if (pointer == 0)
-            return null;
+            return Constraint.NULL;
         if (Constraint_TEMP_GEN_0 == null)
             Constraint_TEMP_GEN_0 = Constraint.native_new();
         Constraint_TEMP_GEN_0.internal_reset(pointer, false);

@@ -88,7 +88,7 @@ delete nativeObject;
     public Float3 get_mV(int index) {
         long pointer = internal_native_get_mV(native_address, index);
         if (pointer == 0)
-            return null;
+            return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
         Float3_TEMP_GEN_0.internal_reset(pointer, false);

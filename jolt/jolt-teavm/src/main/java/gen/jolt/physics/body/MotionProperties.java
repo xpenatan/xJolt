@@ -112,7 +112,7 @@ return returnedJSObj;
     public Vec3 GetLinearVelocity() {
         int pointer = internal_native_GetLinearVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -153,7 +153,7 @@ jsObj.SetLinearVelocityClamped(inVelocity_addr);
     public Vec3 GetAngularVelocity() {
         int pointer = internal_native_GetAngularVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -388,7 +388,7 @@ jsObj.SetInverseMass(inInvM);
     public Vec3 GetInverseInertiaDiagonal() {
         int pointer = internal_native_GetInverseInertiaDiagonal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -407,7 +407,7 @@ return jolt.getPointer(returnedJSObj);
     public Quat GetInertiaRotation() {
         int pointer = internal_native_GetInertiaRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -437,7 +437,7 @@ jsObj.SetInverseInertia(inInvI_addr, inRotation_addr);
     public Mat44 GetLocalSpaceInverseInertia() {
         int pointer = internal_native_GetLocalSpaceInverseInertia(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -456,7 +456,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetInverseInertiaForRotation(Mat44 inRotation) {
         int pointer = internal_native_GetInverseInertiaForRotation(native_address, inRotation.native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
@@ -475,7 +475,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 MultiplyWorldSpaceInverseInertiaByVector(Quat inRotation, Vec3 inV) {
         int pointer = internal_native_MultiplyWorldSpaceInverseInertiaByVector(native_address, inRotation.native_address, inV.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -494,7 +494,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetPointVelocityCOM(Vec3 inPointRelativeToCOM) {
         int pointer = internal_native_GetPointVelocityCOM(native_address, inPointRelativeToCOM.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -513,7 +513,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetAccumulatedForce() {
         int pointer = internal_native_GetAccumulatedForce(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
@@ -532,7 +532,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetAccumulatedTorque() {
         int pointer = internal_native_GetAccumulatedTorque(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = Vec3.native_new();
         Vec3_TEMP_GEN_6.internal_reset(pointer, false);
@@ -584,7 +584,7 @@ jsObj.ResetMotion();
     public Vec3 LockTranslation(Vec3 inV) {
         int pointer = internal_native_LockTranslation(native_address, inV.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = Vec3.native_new();
         Vec3_TEMP_GEN_7.internal_reset(pointer, false);
@@ -603,7 +603,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 LockAngular(Vec3 inV) {
         int pointer = internal_native_LockAngular(native_address, inV.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = Vec3.native_new();
         Vec3_TEMP_GEN_8.internal_reset(pointer, false);

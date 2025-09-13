@@ -61,7 +61,7 @@ delete nativeObject;
     public Vec3 get_mStickToFloorStepDown() {
         long pointer = internal_native_get_mStickToFloorStepDown(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -87,7 +87,7 @@ nativeObject->mStickToFloorStepDown = *((Vec3*)mStickToFloorStepDown_addr);
     public Vec3 get_mWalkStairsStepUp() {
         long pointer = internal_native_get_mWalkStairsStepUp(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -173,7 +173,7 @@ nativeObject->mWalkStairsCosAngleForwardContact = mWalkStairsCosAngleForwardCont
     public Vec3 get_mWalkStairsStepDownExtra() {
         long pointer = internal_native_get_mWalkStairsStepDownExtra(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);

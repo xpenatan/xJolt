@@ -81,7 +81,7 @@ jsObj.SetSkeleton(inSkeleton_addr);
     public Skeleton GetSkeleton() {
         int pointer = internal_native_GetSkeleton(native_address);
         if (pointer == 0)
-            return null;
+            return Skeleton.NULL;
         if (Skeleton_TEMP_GEN_0 == null)
             Skeleton_TEMP_GEN_0 = Skeleton.native_new();
         Skeleton_TEMP_GEN_0.internal_reset(pointer, false);
@@ -111,7 +111,7 @@ jsObj.SetRootOffset(inOffset_addr);
     public Vec3 GetRootOffset() {
         int pointer = internal_native_GetRootOffset(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -142,7 +142,7 @@ return returnedJSObj;
     public SkeletalAnimationJointState GetJoint(int inJoint) {
         int pointer = internal_native_GetJoint(native_address, inJoint);
         if (pointer == 0)
-            return null;
+            return SkeletalAnimationJointState.NULL;
         if (SkeletalAnimationJointState_TEMP_GEN_0 == null)
             SkeletalAnimationJointState_TEMP_GEN_0 = SkeletalAnimationJointState.native_new();
         SkeletalAnimationJointState_TEMP_GEN_0.internal_reset(pointer, false);
@@ -161,7 +161,7 @@ return jolt.getPointer(returnedJSObj);
     public ArrayMat44 GetJointMatrices() {
         int pointer = internal_native_GetJointMatrices(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayMat44.NULL;
         if (ArrayMat44_TEMP_GEN_0 == null)
             ArrayMat44_TEMP_GEN_0 = ArrayMat44.native_new();
         ArrayMat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -180,7 +180,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetJointMatrix(int inJoint) {
         int pointer = internal_native_GetJointMatrix(native_address, inJoint);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);

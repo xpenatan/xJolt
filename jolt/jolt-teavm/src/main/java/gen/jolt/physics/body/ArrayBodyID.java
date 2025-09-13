@@ -73,7 +73,7 @@ return returnedJSObj;
     public BodyID at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -136,7 +136,7 @@ jsObj.clear();
     public BodyIDMemRef data() {
         int pointer = internal_native_data(native_address);
         if (pointer == 0)
-            return null;
+            return BodyIDMemRef.NULL;
         if (BodyIDMemRef_TEMP_GEN_0 == null)
             BodyIDMemRef_TEMP_GEN_0 = BodyIDMemRef.native_new();
         BodyIDMemRef_TEMP_GEN_0.internal_reset(pointer, false);

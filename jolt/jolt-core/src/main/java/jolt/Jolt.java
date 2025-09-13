@@ -6,12 +6,6 @@
 package jolt;
 
 import jolt.idl.IDLBase;
-import jolt.physics.body.BodyCreationSettings;
-import jolt.physics.collision.shape.ShapeSettings;
-import jolt.math.Vec3;
-import jolt.math.Quat;
-import jolt.enums.EMotionType;
-import jolt.physics.collision.shape.Shape;
 import jolt.physics.PhysicsSystem;
 
 public class Jolt extends IDLBase {
@@ -47,48 +41,6 @@ Jolt* nativeObject = (Jolt*)this_addr;
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
-
-    public static BodyCreationSettings New_BodyCreationSettings() {
-        long pointer = internal_native_New_BodyCreationSettings_0();
-        if (pointer == 0)
-            return null;
-        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
-        BodyCreationSettings_NEW.internal_reset(pointer, true);
-        return BodyCreationSettings_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_BodyCreationSettings();
-*/
-    public static native long internal_native_New_BodyCreationSettings_0();
-
-    public static BodyCreationSettings New_BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        long pointer = internal_native_New_BodyCreationSettings_1(inShape.native_address, inPosition.native_address, inRotation.native_address, inMotionType.getValue(), inObjectLayer);
-        if (pointer == 0)
-            return null;
-        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
-        BodyCreationSettings_NEW.internal_reset(pointer, true);
-        return BodyCreationSettings_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_BodyCreationSettings((ShapeSettings* )inShape_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EMotionType)inMotionType, inObjectLayer);
-*/
-    public static native long internal_native_New_BodyCreationSettings_1(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer);
-
-    public static BodyCreationSettings New_BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        long pointer = internal_native_New_BodyCreationSettings_2(inShape.native_address, inPosition.native_address, inRotation.native_address, inMotionType.getValue(), inObjectLayer);
-        if (pointer == 0)
-            return null;
-        BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
-        BodyCreationSettings_NEW.internal_reset(pointer, true);
-        return BodyCreationSettings_NEW;
-    }
-
-    /*[-JNI;-NATIVE]
-return (jlong)Jolt::New_BodyCreationSettings((Shape* )inShape_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EMotionType)inMotionType, inObjectLayer);
-*/
-    public static native long internal_native_New_BodyCreationSettings_2(long inShape_addr, long inPosition_addr, long inRotation_addr, long inMotionType, int inObjectLayer);
 
     public static void Init() {
         internal_native_Init();

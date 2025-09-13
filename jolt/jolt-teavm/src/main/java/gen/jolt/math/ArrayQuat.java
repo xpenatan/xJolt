@@ -73,7 +73,7 @@ return returnedJSObj;
     public Quat at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -136,7 +136,7 @@ jsObj.clear();
     public QuatMemRef data() {
         int pointer = internal_native_data(native_address);
         if (pointer == 0)
-            return null;
+            return QuatMemRef.NULL;
         if (QuatMemRef_TEMP_GEN_0 == null)
             QuatMemRef_TEMP_GEN_0 = QuatMemRef.native_new();
         QuatMemRef_TEMP_GEN_0.internal_reset(pointer, false);

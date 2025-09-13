@@ -82,7 +82,7 @@ jsObj.Sample(inTime, ioPose_addr);
     public ArraySkeletonAnimatedJoint GetAnimatedJoints() {
         int pointer = internal_native_GetAnimatedJoints(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySkeletonAnimatedJoint.NULL;
         if (ArraySkeletonAnimatedJoint_TEMP_GEN_0 == null)
             ArraySkeletonAnimatedJoint_TEMP_GEN_0 = ArraySkeletonAnimatedJoint.native_new();
         ArraySkeletonAnimatedJoint_TEMP_GEN_0.internal_reset(pointer, false);

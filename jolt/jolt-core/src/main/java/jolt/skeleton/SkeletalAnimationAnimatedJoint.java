@@ -59,7 +59,7 @@ delete nativeObject;
     public IDLString get_mJointName() {
         long pointer = internal_native_get_mJointName(native_address);
         if (pointer == 0)
-            return null;
+            return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
         IDLString_TEMP_GEN_0.internal_reset(pointer, false);
@@ -85,7 +85,7 @@ nativeObject->mJointName = *((IDLString*)mJointName_addr);
     public ArraySkeletonKeyframe get_mKeyframes() {
         long pointer = internal_native_get_mKeyframes(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySkeletonKeyframe.NULL;
         if (ArraySkeletonKeyframe_TEMP_GEN_0 == null)
             ArraySkeletonKeyframe_TEMP_GEN_0 = ArraySkeletonKeyframe.native_new();
         ArraySkeletonKeyframe_TEMP_GEN_0.internal_reset(pointer, false);

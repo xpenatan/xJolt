@@ -83,7 +83,7 @@ return returnedJSObj;
     public SkeletalAnimationKeyframe at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SkeletalAnimationKeyframe.NULL;
         if (SkeletalAnimationKeyframe_TEMP_GEN_0 == null)
             SkeletalAnimationKeyframe_TEMP_GEN_0 = SkeletalAnimationKeyframe.native_new();
         SkeletalAnimationKeyframe_TEMP_GEN_0.internal_reset(pointer, false);

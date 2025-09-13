@@ -89,7 +89,7 @@ return returnedJSObj;
     public IDLBase GetVerticesData() {
         int pointer = internal_native_GetVerticesData(native_address);
         if (pointer == 0)
-            return null;
+            return IDLBase.NULL;
         if (IDLBase_TEMP_GEN_0 == null)
             IDLBase_TEMP_GEN_0 = IDLBase.native_new();
         IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
@@ -107,7 +107,7 @@ return returnedJSObj;
     public PhysicsMaterial GetMaterial(int inTriangle) {
         int pointer = internal_native_GetMaterial(native_address, inTriangle);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);

@@ -71,7 +71,7 @@ return returnedJSObj;
     public SoftBodySharedSettingsVertex at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsVertex.NULL;
         if (SoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
             SoftBodySharedSettingsVertex_TEMP_GEN_0 = SoftBodySharedSettingsVertex.native_new();
         SoftBodySharedSettingsVertex_TEMP_GEN_0.internal_reset(pointer, false);

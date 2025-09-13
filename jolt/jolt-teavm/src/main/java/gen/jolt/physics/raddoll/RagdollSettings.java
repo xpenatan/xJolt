@@ -70,7 +70,7 @@ return returnedJSObj;
     public Ragdoll CreateRagdoll(int inCollisionGroup, int inUserData, PhysicsSystem inSystem) {
         int pointer = internal_native_CreateRagdoll(native_address, inCollisionGroup, inUserData, inSystem.native_address);
         if (pointer == 0)
-            return null;
+            return Ragdoll.NULL;
         if (Ragdoll_TEMP_GEN_0 == null)
             Ragdoll_TEMP_GEN_0 = Ragdoll.native_new();
         Ragdoll_TEMP_GEN_0.internal_reset(pointer, false);
@@ -89,7 +89,7 @@ return jolt.getPointer(returnedJSObj);
     public Skeleton GetSkeleton() {
         int pointer = internal_native_GetSkeleton(native_address);
         if (pointer == 0)
-            return null;
+            return Skeleton.NULL;
         if (Skeleton_TEMP_GEN_0 == null)
             Skeleton_TEMP_GEN_0 = Skeleton.native_new();
         Skeleton_TEMP_GEN_0.internal_reset(pointer, false);
@@ -163,7 +163,7 @@ jsObj.CalculateConstraintIndexToBodyIdxPair();
     public ArrayRagdollPart get_mParts() {
         int pointer = internal_native_get_mParts(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayRagdollPart.NULL;
         if (ArrayRagdollPart_TEMP_GEN_0 == null)
             ArrayRagdollPart_TEMP_GEN_0 = ArrayRagdollPart.native_new();
         ArrayRagdollPart_TEMP_GEN_0.internal_reset(pointer, false);
@@ -193,7 +193,7 @@ jsObj.set_mParts(mParts_addr);
     public ArrayRagdollAdditionalConstraint get_mAdditionalConstraints() {
         int pointer = internal_native_get_mAdditionalConstraints(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayRagdollAdditionalConstraint.NULL;
         if (ArrayRagdollAdditionalConstraint_TEMP_GEN_0 == null)
             ArrayRagdollAdditionalConstraint_TEMP_GEN_0 = ArrayRagdollAdditionalConstraint.native_new();
         ArrayRagdollAdditionalConstraint_TEMP_GEN_0.internal_reset(pointer, false);

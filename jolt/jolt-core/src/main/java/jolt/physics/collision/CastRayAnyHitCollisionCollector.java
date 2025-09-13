@@ -68,7 +68,7 @@ return nativeObject->HadHit();
     public RayCastResult get_mHit() {
         long pointer = internal_native_get_mHit(native_address);
         if (pointer == 0)
-            return null;
+            return RayCastResult.NULL;
         if (RayCastResult_TEMP_GEN_0 == null)
             RayCastResult_TEMP_GEN_0 = RayCastResult.native_new();
         RayCastResult_TEMP_GEN_0.internal_reset(pointer, false);

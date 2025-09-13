@@ -127,7 +127,7 @@ jsObj.clear();
     public FloatMemRef data() {
         int pointer = internal_native_data(native_address);
         if (pointer == 0)
-            return null;
+            return FloatMemRef.NULL;
         if (FloatMemRef_TEMP_GEN_0 == null)
             FloatMemRef_TEMP_GEN_0 = FloatMemRef.native_new();
         FloatMemRef_TEMP_GEN_0.internal_reset(pointer, false);

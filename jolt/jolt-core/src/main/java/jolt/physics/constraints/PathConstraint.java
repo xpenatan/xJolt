@@ -49,7 +49,7 @@ nativeObject->SetPath((PathConstraintPath* )inPath_addr, (float)inPathFraction);
     public PathConstraintPath GetPath() {
         long pointer = internal_native_GetPath(native_address);
         if (pointer == 0)
-            return null;
+            return PathConstraintPath.NULL;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.native_new();
         PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
@@ -96,7 +96,7 @@ return nativeObject->GetMaxFrictionForce();
     public MotorSettings GetPositionMotorSettings() {
         long pointer = internal_native_GetPositionMotorSettings(native_address);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);

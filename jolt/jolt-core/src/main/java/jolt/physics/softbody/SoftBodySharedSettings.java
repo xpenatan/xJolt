@@ -194,7 +194,7 @@ nativeObject->Optimize();
     public SoftBodySharedSettings Clone() {
         long pointer = internal_native_Clone(native_address);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettings.NULL;
         SoftBodySharedSettings SoftBodySharedSettings_NEW = SoftBodySharedSettings.native_new();
         SoftBodySharedSettings_NEW.internal_reset(pointer, false);
         return SoftBodySharedSettings_NEW;
@@ -210,7 +210,7 @@ return (jlong)obj;
     public ArraySoftBodySharedSettingsVertex get_mVertices() {
         long pointer = internal_native_get_mVertices(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodySharedSettingsVertex.NULL;
         if (ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 = ArraySoftBodySharedSettingsVertex.native_new();
         ArraySoftBodySharedSettingsVertex_TEMP_GEN_0.internal_reset(pointer, false);
@@ -236,7 +236,7 @@ nativeObject->mVertices = *((ArraySoftBodySharedSettingsVertex*)mVertices_addr);
     public ArraySoftBodySharedSettingsFace get_mFaces() {
         long pointer = internal_native_get_mFaces(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodySharedSettingsFace.NULL;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = ArraySoftBodySharedSettingsFace.native_new();
         ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
@@ -262,7 +262,7 @@ nativeObject->mFaces = *((ArraySoftBodySharedSettingsFace*)mFaces_addr);
     public ArraySoftBodySharedSettingsEdge get_mEdgeConstraints() {
         long pointer = internal_native_get_mEdgeConstraints(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodySharedSettingsEdge.NULL;
         if (ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 = ArraySoftBodySharedSettingsEdge.native_new();
         ArraySoftBodySharedSettingsEdge_TEMP_GEN_0.internal_reset(pointer, false);
@@ -288,7 +288,7 @@ nativeObject->mEdgeConstraints = *((ArraySoftBodySharedSettingsEdge*)mEdgeConstr
     public ArraySoftBodySharedSettingsDihedralBend get_mDihedralBendConstraints() {
         long pointer = internal_native_get_mDihedralBendConstraints(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodySharedSettingsDihedralBend.NULL;
         if (ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = ArraySoftBodySharedSettingsDihedralBend.native_new();
         ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0.internal_reset(pointer, false);
@@ -314,7 +314,7 @@ nativeObject->mDihedralBendConstraints = *((ArraySoftBodySharedSettingsDihedralB
     public ArraySoftBodySharedSettingsVolume get_mVolumeConstraints() {
         long pointer = internal_native_get_mVolumeConstraints(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodySharedSettingsVolume.NULL;
         if (ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 = ArraySoftBodySharedSettingsVolume.native_new();
         ArraySoftBodySharedSettingsVolume_TEMP_GEN_0.internal_reset(pointer, false);
@@ -340,7 +340,7 @@ nativeObject->mVolumeConstraints = *((ArraySoftBodySharedSettingsVolume*)mVolume
     public ArraySoftBodySharedSettingsSkinned get_mSkinnedConstraints() {
         long pointer = internal_native_get_mSkinnedConstraints(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodySharedSettingsSkinned.NULL;
         if (ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 = ArraySoftBodySharedSettingsSkinned.native_new();
         ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0.internal_reset(pointer, false);
@@ -366,7 +366,7 @@ nativeObject->mSkinnedConstraints = *((ArraySoftBodySharedSettingsSkinned*)mSkin
     public ArraySoftBodySharedSettingsInvBind get_mInvBindMatrices() {
         long pointer = internal_native_get_mInvBindMatrices(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodySharedSettingsInvBind.NULL;
         if (ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 = ArraySoftBodySharedSettingsInvBind.native_new();
         ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0.internal_reset(pointer, false);
@@ -392,7 +392,7 @@ nativeObject->mInvBindMatrices = *((ArraySoftBodySharedSettingsInvBind*)mInvBind
     public ArraySoftBodySharedSettingsLRA get_mLRAConstraints() {
         long pointer = internal_native_get_mLRAConstraints(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodySharedSettingsLRA.NULL;
         if (ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 = ArraySoftBodySharedSettingsLRA.native_new();
         ArraySoftBodySharedSettingsLRA_TEMP_GEN_0.internal_reset(pointer, false);
@@ -418,7 +418,7 @@ nativeObject->mLRAConstraints = *((ArraySoftBodySharedSettingsLRA*)mLRAConstrain
     public PhysicsMaterialList get_mMaterials() {
         long pointer = internal_native_get_mMaterials(native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterialList.NULL;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
         PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);

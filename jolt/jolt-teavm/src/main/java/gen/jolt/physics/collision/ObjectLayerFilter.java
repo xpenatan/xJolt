@@ -9,6 +9,14 @@ import gen.jolt.idl.IDLBase;
 
 public class ObjectLayerFilter extends IDLBase {
 
+    static public final ObjectLayerFilter NULL = ObjectLayerFilter.native_new();
+
+    static public final ObjectLayerFilter T_01 = ObjectLayerFilter.native_new();
+
+    static public final ObjectLayerFilter T_02 = ObjectLayerFilter.native_new();
+
+    static public final ObjectLayerFilter T_03 = ObjectLayerFilter.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

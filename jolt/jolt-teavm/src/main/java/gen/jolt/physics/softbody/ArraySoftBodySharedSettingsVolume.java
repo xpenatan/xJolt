@@ -71,7 +71,7 @@ return returnedJSObj;
     public SoftBodySharedSettingsVolume at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsVolume.NULL;
         if (SoftBodySharedSettingsVolume_TEMP_GEN_0 == null)
             SoftBodySharedSettingsVolume_TEMP_GEN_0 = SoftBodySharedSettingsVolume.native_new();
         SoftBodySharedSettingsVolume_TEMP_GEN_0.internal_reset(pointer, false);

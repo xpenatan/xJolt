@@ -80,7 +80,7 @@ return returnedJSObj;
     public MotorSettings GetMotorSettings() {
         int pointer = internal_native_GetMotorSettings(native_address);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -216,7 +216,7 @@ return returnedJSObj;
     public SpringSettings GetLimitsSpringSettings() {
         int pointer = internal_native_GetLimitsSpringSettings(native_address);
         if (pointer == 0)
-            return null;
+            return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -246,7 +246,7 @@ jsObj.SetLimitsSpringSettings(inLimitsSpringSettings_addr);
     public Vec3 GetTotalLambdaPosition() {
         int pointer = internal_native_GetTotalLambdaPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -265,7 +265,7 @@ return jolt.getPointer(returnedJSObj);
     public Vector2 GetTotalLambdaRotation() {
         int pointer = internal_native_GetTotalLambdaRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Vector2.NULL;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = Vector2.native_new();
         Vector2_TEMP_GEN_0.internal_reset(pointer, false);

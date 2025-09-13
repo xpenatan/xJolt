@@ -90,7 +90,7 @@ jolt.destroy(jsObj);
     public Plane get_mPlane() {
         int pointer = internal_native_get_mPlane(native_address);
         if (pointer == 0)
-            return null;
+            return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
         Plane_TEMP_GEN_0.internal_reset(pointer, false);
@@ -120,7 +120,7 @@ jsObj.set_mPlane(mPlane_addr);
     public PhysicsMaterial get_mMaterial() {
         int pointer = internal_native_get_mMaterial(native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);

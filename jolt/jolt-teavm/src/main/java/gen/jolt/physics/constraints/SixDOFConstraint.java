@@ -114,7 +114,7 @@ return returnedJSObj;
     public Vec3 GetTranslationLimitsMin() {
         int pointer = internal_native_GetTranslationLimitsMin(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -133,7 +133,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetTranslationLimitsMax() {
         int pointer = internal_native_GetTranslationLimitsMax(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -152,7 +152,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetRotationLimitsMin() {
         int pointer = internal_native_GetRotationLimitsMin(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -171,7 +171,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetRotationLimitsMax() {
         int pointer = internal_native_GetRotationLimitsMax(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -214,7 +214,7 @@ return returnedJSObj;
     public SpringSettings GetLimitsSpringSettings(SixDOFConstraintSettings_EAxis inAxis) {
         int pointer = internal_native_GetLimitsSpringSettings(native_address, (int) inAxis.getValue());
         if (pointer == 0)
-            return null;
+            return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -267,7 +267,7 @@ return returnedJSObj;
     public Quat GetRotationInConstraintSpace() {
         int pointer = internal_native_GetRotationInConstraintSpace(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -286,7 +286,7 @@ return jolt.getPointer(returnedJSObj);
     public MotorSettings GetMotorSettings(SixDOFConstraintSettings_EAxis inAxis) {
         int pointer = internal_native_GetMotorSettings(native_address, (int) inAxis.getValue());
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -329,7 +329,7 @@ return returnedJSObj;
     public Vec3 GetTargetVelocityCS() {
         int pointer = internal_native_GetTargetVelocityCS(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -370,7 +370,7 @@ jsObj.SetTargetAngularVelocityCS(inAngularVelocity_addr);
     public Vec3 GetTargetAngularVelocityCS() {
         int pointer = internal_native_GetTargetAngularVelocityCS(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
@@ -389,7 +389,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetTargetPositionCS() {
         int pointer = internal_native_GetTargetPositionCS(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = Vec3.native_new();
         Vec3_TEMP_GEN_6.internal_reset(pointer, false);
@@ -430,7 +430,7 @@ jsObj.SetTargetOrientationCS(inOrientation_addr);
     public Quat GetTargetOrientationCS() {
         int pointer = internal_native_GetTargetOrientationCS(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_1 == null)
             Quat_TEMP_GEN_1 = Quat.native_new();
         Quat_TEMP_GEN_1.internal_reset(pointer, false);
@@ -460,7 +460,7 @@ jsObj.SetTargetOrientationBS(inOrientation_addr);
     public Vec3 GetTotalLambdaPosition() {
         int pointer = internal_native_GetTotalLambdaPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = Vec3.native_new();
         Vec3_TEMP_GEN_7.internal_reset(pointer, false);
@@ -479,7 +479,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetTotalLambdaRotation() {
         int pointer = internal_native_GetTotalLambdaRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = Vec3.native_new();
         Vec3_TEMP_GEN_8.internal_reset(pointer, false);
@@ -498,7 +498,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetTotalLambdaMotorTranslation() {
         int pointer = internal_native_GetTotalLambdaMotorTranslation(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_9 == null)
             Vec3_TEMP_GEN_9 = Vec3.native_new();
         Vec3_TEMP_GEN_9.internal_reset(pointer, false);
@@ -517,7 +517,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetTotalLambdaMotorRotation() {
         int pointer = internal_native_GetTotalLambdaMotorRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_10 == null)
             Vec3_TEMP_GEN_10 = Vec3.native_new();
         Vec3_TEMP_GEN_10.internal_reset(pointer, false);

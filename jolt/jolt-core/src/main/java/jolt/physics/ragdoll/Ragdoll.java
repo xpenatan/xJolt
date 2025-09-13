@@ -356,7 +356,7 @@ return nativeObject->GetBodyCount();
     public BodyID GetBodyID(int inBodyIndex) {
         long pointer = internal_native_GetBodyID(native_address, inBodyIndex);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -373,7 +373,7 @@ return (jlong)&copy_addr;*/
     public BodyIDVector GetBodyIDs() {
         long pointer = internal_native_GetBodyIDs(native_address);
         if (pointer == 0)
-            return null;
+            return BodyIDVector.NULL;
         if (BodyIDVector_TEMP_GEN_0 == null)
             BodyIDVector_TEMP_GEN_0 = BodyIDVector.native_new();
         BodyIDVector_TEMP_GEN_0.internal_reset(pointer, false);
@@ -399,7 +399,7 @@ return nativeObject->GetConstraintCount();
     public AABox GetWorldSpaceBounds(boolean inLockBodies) {
         long pointer = internal_native_GetWorldSpaceBounds(native_address, inLockBodies);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
@@ -416,7 +416,7 @@ return (jlong)&copy_addr;*/
     public AABox GetWorldSpaceBounds() {
         long pointer = internal_native_GetWorldSpaceBounds(native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = AABox.native_new();
         AABox_TEMP_GEN_1.internal_reset(pointer, false);
@@ -433,7 +433,7 @@ return (jlong)&copy_addr;*/
     public TwoBodyConstraint GetConstraint(int inConstraintIndex) {
         long pointer = internal_native_GetConstraint(native_address, inConstraintIndex);
         if (pointer == 0)
-            return null;
+            return TwoBodyConstraint.NULL;
         if (TwoBodyConstraint_TEMP_GEN_0 == null)
             TwoBodyConstraint_TEMP_GEN_0 = TwoBodyConstraint.native_new();
         TwoBodyConstraint_TEMP_GEN_0.internal_reset(pointer, false);
@@ -450,7 +450,7 @@ return (jlong)obj;
     public RagdollSettings GetRagdollSettings() {
         long pointer = internal_native_GetRagdollSettings(native_address);
         if (pointer == 0)
-            return null;
+            return RagdollSettings.NULL;
         if (RagdollSettings_TEMP_GEN_0 == null)
             RagdollSettings_TEMP_GEN_0 = RagdollSettings.native_new();
         RagdollSettings_TEMP_GEN_0.internal_reset(pointer, false);

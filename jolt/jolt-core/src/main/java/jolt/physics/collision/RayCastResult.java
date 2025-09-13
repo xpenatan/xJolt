@@ -58,7 +58,7 @@ delete nativeObject;
     public SubShapeID get_mSubShapeID2() {
         long pointer = internal_native_get_mSubShapeID2(native_address);
         if (pointer == 0)
-            return null;
+            return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);

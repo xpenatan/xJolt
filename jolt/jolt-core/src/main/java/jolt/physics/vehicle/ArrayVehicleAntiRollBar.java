@@ -66,7 +66,7 @@ return nativeObject->size();
     public VehicleAntiRollBar at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return VehicleAntiRollBar.NULL;
         if (VehicleAntiRollBar_TEMP_GEN_0 == null)
             VehicleAntiRollBar_TEMP_GEN_0 = VehicleAntiRollBar.native_new();
         VehicleAntiRollBar_TEMP_GEN_0.internal_reset(pointer, false);

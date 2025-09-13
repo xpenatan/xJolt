@@ -76,7 +76,7 @@ return nativeObject->size();
     public RagdollPart at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return RagdollPart.NULL;
         if (RagdollPart_TEMP_GEN_0 == null)
             RagdollPart_TEMP_GEN_0 = RagdollPart.native_new();
         RagdollPart_TEMP_GEN_0.internal_reset(pointer, false);

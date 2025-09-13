@@ -54,7 +54,7 @@ delete nativeObject;
     public Body TryGetBody(BodyID inBodyID) {
         long pointer = internal_native_TryGetBody(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
@@ -71,7 +71,7 @@ return (jlong)obj;
     public SharedMutex LockRead(BodyID inBodyID) {
         long pointer = internal_native_LockRead(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return SharedMutex.NULL;
         if (SharedMutex_TEMP_GEN_0 == null)
             SharedMutex_TEMP_GEN_0 = SharedMutex.native_new();
         SharedMutex_TEMP_GEN_0.internal_reset(pointer, false);
@@ -98,7 +98,7 @@ nativeObject->UnlockRead((SharedMutex* )inMutex_addr);
     public SharedMutex LockWrite(BodyID inBodyID) {
         long pointer = internal_native_LockWrite(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return SharedMutex.NULL;
         if (SharedMutex_TEMP_GEN_1 == null)
             SharedMutex_TEMP_GEN_1 = SharedMutex.native_new();
         SharedMutex_TEMP_GEN_1.internal_reset(pointer, false);
@@ -125,7 +125,7 @@ nativeObject->UnlockWrite((SharedMutex* )inMutex_addr);
     public MutexMask GetMutexMask(IDLArrayBodyID inBodies, int inNumber) {
         long pointer = internal_native_GetMutexMask(native_address, inBodies.native_void_address, inNumber);
         if (pointer == 0)
-            return null;
+            return MutexMask.NULL;
         if (MutexMask_TEMP_GEN_0 == null)
             MutexMask_TEMP_GEN_0 = MutexMask.native_new();
         MutexMask_TEMP_GEN_0.internal_reset(pointer, false);

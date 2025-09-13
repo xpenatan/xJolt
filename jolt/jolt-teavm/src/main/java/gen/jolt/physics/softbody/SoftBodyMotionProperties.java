@@ -67,7 +67,7 @@ jolt.destroy(jsObj);
     public SoftBodySharedSettings GetSettings() {
         int pointer = internal_native_GetSettings(native_address);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettings.NULL;
         if (SoftBodySharedSettings_TEMP_GEN_0 == null)
             SoftBodySharedSettings_TEMP_GEN_0 = SoftBodySharedSettings.native_new();
         SoftBodySharedSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -86,7 +86,7 @@ return jolt.getPointer(returnedJSObj);
     public ArraySoftBodyVertex GetVertices() {
         int pointer = internal_native_GetVertices(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodyVertex.NULL;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
             ArraySoftBodyVertex_TEMP_GEN_0 = ArraySoftBodyVertex.native_new();
         ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
@@ -105,7 +105,7 @@ return jolt.getPointer(returnedJSObj);
     public SoftBodyVertex GetVertex(int inIndex) {
         int pointer = internal_native_GetVertex(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodyVertex.NULL;
         if (SoftBodyVertex_TEMP_GEN_0 == null)
             SoftBodyVertex_TEMP_GEN_0 = SoftBodyVertex.native_new();
         SoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
@@ -124,7 +124,7 @@ return jolt.getPointer(returnedJSObj);
     public PhysicsMaterialList GetMaterials() {
         int pointer = internal_native_GetMaterials(native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterialList.NULL;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
         PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
@@ -143,7 +143,7 @@ return jolt.getPointer(returnedJSObj);
     public ArraySoftBodySharedSettingsFace GetFaces() {
         int pointer = internal_native_GetFaces(native_address);
         if (pointer == 0)
-            return null;
+            return ArraySoftBodySharedSettingsFace.NULL;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = ArraySoftBodySharedSettingsFace.native_new();
         ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
@@ -162,7 +162,7 @@ return jolt.getPointer(returnedJSObj);
     public SoftBodySharedSettingsFace GetFace(int inIndex) {
         int pointer = internal_native_GetFace(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsFace.NULL;
         if (SoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             SoftBodySharedSettingsFace_TEMP_GEN_0 = SoftBodySharedSettingsFace.native_new();
         SoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
@@ -296,7 +296,7 @@ jsObj.SetSkinnedMaxDistanceMultiplier(inSkinnedMaxDistanceMultiplier);
     public AABox GetLocalBounds() {
         int pointer = internal_native_GetLocalBounds(native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);

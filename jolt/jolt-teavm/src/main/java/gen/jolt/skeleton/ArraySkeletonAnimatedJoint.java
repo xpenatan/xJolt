@@ -83,7 +83,7 @@ return returnedJSObj;
     public SkeletalAnimationAnimatedJoint at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SkeletalAnimationAnimatedJoint.NULL;
         if (SkeletalAnimationAnimatedJoint_TEMP_GEN_0 == null)
             SkeletalAnimationAnimatedJoint_TEMP_GEN_0 = SkeletalAnimationAnimatedJoint.native_new();
         SkeletalAnimationAnimatedJoint_TEMP_GEN_0.internal_reset(pointer, false);

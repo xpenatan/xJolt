@@ -155,7 +155,7 @@ return returnedJSObj;
     public VehicleEngine GetEngine() {
         int pointer = internal_native_GetEngine(native_address);
         if (pointer == 0)
-            return null;
+            return VehicleEngine.NULL;
         if (VehicleEngine_TEMP_GEN_0 == null)
             VehicleEngine_TEMP_GEN_0 = VehicleEngine.native_new();
         VehicleEngine_TEMP_GEN_0.internal_reset(pointer, false);
@@ -174,7 +174,7 @@ return jolt.getPointer(returnedJSObj);
     public VehicleTransmission GetTransmission() {
         int pointer = internal_native_GetTransmission(native_address);
         if (pointer == 0)
-            return null;
+            return VehicleTransmission.NULL;
         if (VehicleTransmission_TEMP_GEN_0 == null)
             VehicleTransmission_TEMP_GEN_0 = VehicleTransmission.native_new();
         VehicleTransmission_TEMP_GEN_0.internal_reset(pointer, false);
@@ -193,7 +193,7 @@ return jolt.getPointer(returnedJSObj);
     public ArrayVehicleDifferentialSettings GetDifferentials() {
         int pointer = internal_native_GetDifferentials(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayVehicleDifferentialSettings.NULL;
         if (ArrayVehicleDifferentialSettings_TEMP_GEN_0 == null)
             ArrayVehicleDifferentialSettings_TEMP_GEN_0 = ArrayVehicleDifferentialSettings.native_new();
         ArrayVehicleDifferentialSettings_TEMP_GEN_0.internal_reset(pointer, false);

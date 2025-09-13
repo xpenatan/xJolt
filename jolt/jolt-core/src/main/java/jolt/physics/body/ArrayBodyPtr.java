@@ -68,7 +68,7 @@ return nativeObject->size();
     public Body at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
@@ -125,7 +125,7 @@ nativeObject->clear();
     public BodyPtrMemRef data() {
         long pointer = internal_native_data(native_address);
         if (pointer == 0)
-            return null;
+            return BodyPtrMemRef.NULL;
         if (BodyPtrMemRef_TEMP_GEN_0 == null)
             BodyPtrMemRef_TEMP_GEN_0 = BodyPtrMemRef.native_new();
         BodyPtrMemRef_TEMP_GEN_0.internal_reset(pointer, false);

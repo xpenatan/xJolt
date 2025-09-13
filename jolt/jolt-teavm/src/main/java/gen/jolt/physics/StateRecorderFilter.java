@@ -24,6 +24,14 @@ public class StateRecorderFilter extends IDLBase {
 
     static private BodyID BodyID_TEMP_STATIC_GEN_3;
 
+    static public final StateRecorderFilter NULL = StateRecorderFilter.native_new();
+
+    static public final StateRecorderFilter T_01 = StateRecorderFilter.native_new();
+
+    static public final StateRecorderFilter T_02 = StateRecorderFilter.native_new();
+
+    static public final StateRecorderFilter T_03 = StateRecorderFilter.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -66,7 +66,7 @@ jolt.destroy(jsObj);
     public Vec3 get_mPosition() {
         int pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -96,7 +96,7 @@ jsObj.set_mPosition(mPosition_addr);
     public Quat get_mRotation() {
         int pointer = internal_native_get_mRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -170,7 +170,7 @@ jsObj.set_mObjectLayer(mObjectLayer);
     public CollisionGroup get_mCollisionGroup() {
         int pointer = internal_native_get_mCollisionGroup(native_address);
         if (pointer == 0)
-            return null;
+            return CollisionGroup.NULL;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = CollisionGroup.native_new();
         CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);

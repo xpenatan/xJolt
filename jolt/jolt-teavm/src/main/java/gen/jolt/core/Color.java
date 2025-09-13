@@ -92,7 +92,7 @@ jolt.destroy(jsObj);
     public Color MulColor(Color other) {
         int pointer = internal_native_MulColor(native_address, other.native_address);
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_GEN_0 == null)
             Color_TEMP_GEN_0 = Color.native_new();
         Color_TEMP_GEN_0.internal_reset(pointer, false);
@@ -111,7 +111,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 ToVec4() {
         int pointer = internal_native_ToVec4(native_address);
         if (pointer == 0)
-            return null;
+            return Vec4.NULL;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = Vec4.native_new();
         Vec4_TEMP_GEN_0.internal_reset(pointer, false);
@@ -152,7 +152,7 @@ jsObj.set_mU32(mU32);
     public static Color get_sBlack() {
         int pointer = internal_native_get_sBlack();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_0 == null)
             Color_TEMP_STATIC_GEN_0 = Color.native_new();
         Color_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -170,7 +170,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sDarkRed() {
         int pointer = internal_native_get_sDarkRed();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_1 == null)
             Color_TEMP_STATIC_GEN_1 = Color.native_new();
         Color_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
@@ -188,7 +188,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sRed() {
         int pointer = internal_native_get_sRed();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_2 == null)
             Color_TEMP_STATIC_GEN_2 = Color.native_new();
         Color_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
@@ -206,7 +206,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sDarkGreen() {
         int pointer = internal_native_get_sDarkGreen();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_3 == null)
             Color_TEMP_STATIC_GEN_3 = Color.native_new();
         Color_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
@@ -224,7 +224,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sGreen() {
         int pointer = internal_native_get_sGreen();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_4 == null)
             Color_TEMP_STATIC_GEN_4 = Color.native_new();
         Color_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
@@ -242,7 +242,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sDarkBlue() {
         int pointer = internal_native_get_sDarkBlue();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_5 == null)
             Color_TEMP_STATIC_GEN_5 = Color.native_new();
         Color_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
@@ -260,7 +260,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sBlue() {
         int pointer = internal_native_get_sBlue();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_6 == null)
             Color_TEMP_STATIC_GEN_6 = Color.native_new();
         Color_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
@@ -278,7 +278,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sYellow() {
         int pointer = internal_native_get_sYellow();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_7 == null)
             Color_TEMP_STATIC_GEN_7 = Color.native_new();
         Color_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
@@ -296,7 +296,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sPurple() {
         int pointer = internal_native_get_sPurple();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_8 == null)
             Color_TEMP_STATIC_GEN_8 = Color.native_new();
         Color_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
@@ -314,7 +314,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sCyan() {
         int pointer = internal_native_get_sCyan();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_9 == null)
             Color_TEMP_STATIC_GEN_9 = Color.native_new();
         Color_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
@@ -332,7 +332,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sOrange() {
         int pointer = internal_native_get_sOrange();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_10 == null)
             Color_TEMP_STATIC_GEN_10 = Color.native_new();
         Color_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
@@ -350,7 +350,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sDarkOrange() {
         int pointer = internal_native_get_sDarkOrange();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_11 == null)
             Color_TEMP_STATIC_GEN_11 = Color.native_new();
         Color_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
@@ -368,7 +368,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sGrey() {
         int pointer = internal_native_get_sGrey();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_12 == null)
             Color_TEMP_STATIC_GEN_12 = Color.native_new();
         Color_TEMP_STATIC_GEN_12.internal_reset(pointer, false);
@@ -386,7 +386,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sLightGrey() {
         int pointer = internal_native_get_sLightGrey();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_13 == null)
             Color_TEMP_STATIC_GEN_13 = Color.native_new();
         Color_TEMP_STATIC_GEN_13.internal_reset(pointer, false);
@@ -404,7 +404,7 @@ return jolt.getPointer(returnedJSObj);
     public static Color get_sWhite() {
         int pointer = internal_native_get_sWhite();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_14 == null)
             Color_TEMP_STATIC_GEN_14 = Color.native_new();
         Color_TEMP_STATIC_GEN_14.internal_reset(pointer, false);

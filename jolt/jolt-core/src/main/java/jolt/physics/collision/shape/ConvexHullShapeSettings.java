@@ -82,7 +82,7 @@ return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr));
     public ArrayVec3 get_mPoints() {
         long pointer = internal_native_get_mPoints(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayVec3.NULL;
         if (ArrayVec3_TEMP_GEN_0 == null)
             ArrayVec3_TEMP_GEN_0 = ArrayVec3.native_new();
         ArrayVec3_TEMP_GEN_0.internal_reset(pointer, false);

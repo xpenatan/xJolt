@@ -97,7 +97,7 @@ delete nativeObject;
     public Body CreateBody(BodyCreationSettings inSettings) {
         long pointer = internal_native_CreateBody(native_address, inSettings.native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
@@ -113,7 +113,7 @@ return (jlong)obj;
     public Body CreateSoftBody(SoftBodyCreationSettings inSettings) {
         long pointer = internal_native_CreateSoftBody(native_address, inSettings.native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
@@ -129,7 +129,7 @@ return (jlong)obj;
     public Body CreateBodyWithID(BodyID inBodyID, BodyCreationSettings inSettings) {
         long pointer = internal_native_CreateBodyWithID(native_address, inBodyID.native_address, inSettings.native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
@@ -145,7 +145,7 @@ return (jlong)obj;
     public Body CreateSoftBodyWithID(BodyID inBodyID, SoftBodyCreationSettings inSettings) {
         long pointer = internal_native_CreateSoftBodyWithID(native_address, inBodyID.native_address, inSettings.native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
@@ -161,7 +161,7 @@ return (jlong)obj;
     public Body CreateBodyWithoutID(BodyCreationSettings inSettings) {
         long pointer = internal_native_CreateBodyWithoutID(native_address, inSettings.native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
@@ -177,7 +177,7 @@ return (jlong)obj;
     public Body CreateSoftBodyWithoutID(SoftBodyCreationSettings inSettings) {
         long pointer = internal_native_CreateSoftBodyWithoutID(native_address, inSettings.native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         Body Body_NEW = Body.native_new();
         Body_NEW.internal_reset(pointer, false);
         return Body_NEW;
@@ -223,7 +223,7 @@ return nativeObject->AssignBodyID((Body* )ioBody_addr, *((BodyID* )inBodyID_addr
     public Body UnassignBodyID(BodyID inBodyID) {
         long pointer = internal_native_UnassignBodyID(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
@@ -300,7 +300,7 @@ return nativeObject->IsAdded(*((BodyID* )inBodyID_addr));
     public BodyID CreateAndAddBody(BodyCreationSettings inSettings, EActivation inActivationMode) {
         long pointer = internal_native_CreateAndAddBody(native_address, inSettings.native_address, inActivationMode.getValue());
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -317,7 +317,7 @@ return (jlong)&copy_addr;*/
     public BodyID CreateAndAddSoftBody(SoftBodyCreationSettings inSettings, EActivation inActivationMode) {
         long pointer = internal_native_CreateAndAddSoftBody(native_address, inSettings.native_address, inActivationMode.getValue());
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_1 == null)
             BodyID_TEMP_GEN_1 = BodyID.native_new();
         BodyID_TEMP_GEN_1.internal_reset(pointer, false);
@@ -334,7 +334,7 @@ return (jlong)&copy_addr;*/
     public BodyInterface_AddState AddBodiesPrepare(BodyIDMemRef ioBodies, int inNumber) {
         long pointer = internal_native_AddBodiesPrepare(native_address, ioBodies.native_address, inNumber);
         if (pointer == 0)
-            return null;
+            return BodyInterface_AddState.NULL;
         if (BodyInterface_AddState_TEMP_GEN_0 == null)
             BodyInterface_AddState_TEMP_GEN_0 = BodyInterface_AddState.native_new();
         BodyInterface_AddState_TEMP_GEN_0.internal_reset(pointer, false);
@@ -381,7 +381,7 @@ nativeObject->RemoveBodies((BodyIDMemRef* )ioBodies_addr, (int)inNumber);
     public TwoBodyConstraint CreateConstraint(TwoBodyConstraintSettings inSettings, BodyID inBodyID1, BodyID inBodyID2) {
         long pointer = internal_native_CreateConstraint(native_address, inSettings.native_address, inBodyID1.native_address, inBodyID2.native_address);
         if (pointer == 0)
-            return null;
+            return TwoBodyConstraint.NULL;
         if (TwoBodyConstraint_TEMP_GEN_0 == null)
             TwoBodyConstraint_TEMP_GEN_0 = TwoBodyConstraint.native_new();
         TwoBodyConstraint_TEMP_GEN_0.internal_reset(pointer, false);
@@ -408,7 +408,7 @@ nativeObject->ActivateConstraint((TwoBodyConstraint* )inConstraint_addr);
     public Shape GetShape(BodyID inBodyID) {
         long pointer = internal_native_GetShape(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
@@ -505,7 +505,7 @@ nativeObject->SetPosition(*((BodyID* )inBodyID_addr), *((Vec3* )inPosition_addr)
     public Vec3 GetPosition(BodyID inBodyID) {
         long pointer = internal_native_GetPosition(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -532,7 +532,7 @@ nativeObject->SetRotation(*((BodyID* )inBodyID_addr), *((Quat* )inRotation_addr)
     public Quat GetRotation(BodyID inBodyID) {
         long pointer = internal_native_GetRotation(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -549,7 +549,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetWorldTransform(BodyID inBodyID) {
         long pointer = internal_native_GetWorldTransform(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -566,7 +566,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetCenterOfMassTransform(BodyID inBodyID) {
         long pointer = internal_native_GetCenterOfMassTransform(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
@@ -613,7 +613,7 @@ nativeObject->SetLinearVelocity(*((BodyID* )inBodyID_addr), *((Vec3* )inLinearVe
     public Vec3 GetLinearVelocity(BodyID inBodyID) {
         long pointer = internal_native_GetLinearVelocity(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -660,7 +660,7 @@ nativeObject->SetAngularVelocity(*((BodyID* )inBodyID_addr), *((Vec3* )inAngular
     public Vec3 GetAngularVelocity(BodyID inBodyID) {
         long pointer = internal_native_GetAngularVelocity(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -677,7 +677,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetPointVelocity(BodyID inBodyID, Vec3 inPoint) {
         long pointer = internal_native_GetPointVelocity(native_address, inBodyID.native_address, inPoint.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -837,7 +837,7 @@ return (int)nativeObject->GetMotionQuality(*((BodyID* )inBodyID_addr));
     public Mat44 GetInverseInertia(BodyID inBodyID) {
         long pointer = internal_native_GetInverseInertia(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = Mat44.native_new();
         Mat44_TEMP_GEN_2.internal_reset(pointer, false);
@@ -944,7 +944,7 @@ nativeObject->SetCollisionGroup(*((BodyID* )inBodyID_addr), *((CollisionGroup* )
     public CollisionGroup GetCollisionGroup(BodyID inBodyID) {
         long pointer = internal_native_GetCollisionGroup(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return CollisionGroup.NULL;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = CollisionGroup.native_new();
         CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);
@@ -1040,7 +1040,7 @@ nativeObject->AddAngularImpulse(*((BodyID* )inBodyID_addr), *((Vec3* )inAngularI
     public TransformedShape GetTransformedShape(BodyID inBodyID) {
         long pointer = internal_native_GetTransformedShape(native_address, inBodyID.native_address);
         if (pointer == 0)
-            return null;
+            return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
@@ -1077,7 +1077,7 @@ nativeObject->SetUserData(*((BodyID* )inBodyID_addr), inUserData);
     public PhysicsMaterial GetMaterial(BodyID inBodyID, SubShapeID inSubShapeID) {
         long pointer = internal_native_GetMaterial(native_address, inBodyID.native_address, inSubShapeID.native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);

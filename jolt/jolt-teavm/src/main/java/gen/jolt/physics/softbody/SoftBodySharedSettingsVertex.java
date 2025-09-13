@@ -62,7 +62,7 @@ jolt.destroy(jsObj);
     public Float3 get_mPosition() {
         int pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
         Float3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -92,7 +92,7 @@ jsObj.set_mPosition(mPosition_addr);
     public Float3 get_mVelocity() {
         int pointer = internal_native_get_mVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Float3.NULL;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = Float3.native_new();
         Float3_TEMP_GEN_1.internal_reset(pointer, false);

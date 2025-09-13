@@ -67,7 +67,7 @@ nativeObject->mBodyIdx[index] = mBodyIdx;
     public TwoBodyConstraintSettings get_mConstraint() {
         long pointer = internal_native_get_mConstraint(native_address);
         if (pointer == 0)
-            return null;
+            return TwoBodyConstraintSettings.NULL;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
             TwoBodyConstraintSettings_TEMP_GEN_0 = TwoBodyConstraintSettings.native_new();
         TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(pointer, false);

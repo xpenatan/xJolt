@@ -76,7 +76,7 @@ delete nativeObject;
     public RRayCast Transformed(Mat44 inTransform) {
         long pointer = internal_native_Transformed(native_address, inTransform.native_address);
         if (pointer == 0)
-            return null;
+            return RRayCast.NULL;
         if (RRayCast_TEMP_GEN_0 == null)
             RRayCast_TEMP_GEN_0 = RRayCast.native_new();
         RRayCast_TEMP_GEN_0.internal_reset(pointer, false);
@@ -93,7 +93,7 @@ return (jlong)&copy_addr;*/
     public RRayCast Translated(Vec3 inTranslation) {
         long pointer = internal_native_Translated(native_address, inTranslation.native_address);
         if (pointer == 0)
-            return null;
+            return RRayCast.NULL;
         if (RRayCast_TEMP_GEN_1 == null)
             RRayCast_TEMP_GEN_1 = RRayCast.native_new();
         RRayCast_TEMP_GEN_1.internal_reset(pointer, false);
@@ -110,7 +110,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetPointOnRay(float inFraction) {
         long pointer = internal_native_GetPointOnRay(native_address, inFraction);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -127,7 +127,7 @@ return (jlong)&copy_addr;*/
     public Vec3 get_mOrigin() {
         long pointer = internal_native_get_mOrigin(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -153,7 +153,7 @@ nativeObject->mOrigin = *((Vec3*)mOrigin_addr);
     public Vec3 get_mDirection() {
         long pointer = internal_native_get_mDirection(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);

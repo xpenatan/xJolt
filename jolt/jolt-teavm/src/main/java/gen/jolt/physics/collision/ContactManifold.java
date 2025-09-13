@@ -77,7 +77,7 @@ jolt.destroy(jsObj);
     public ContactManifold SwapShapes() {
         int pointer = internal_native_SwapShapes(native_address);
         if (pointer == 0)
-            return null;
+            return ContactManifold.NULL;
         if (ContactManifold_TEMP_GEN_0 == null)
             ContactManifold_TEMP_GEN_0 = ContactManifold.native_new();
         ContactManifold_TEMP_GEN_0.internal_reset(pointer, false);
@@ -96,7 +96,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetWorldSpaceContactPointOn1(int inIndex) {
         int pointer = internal_native_GetWorldSpaceContactPointOn1(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -115,7 +115,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetWorldSpaceContactPointOn2(int inIndex) {
         int pointer = internal_native_GetWorldSpaceContactPointOn2(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -134,7 +134,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 get_mBaseOffset() {
         int pointer = internal_native_get_mBaseOffset(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -164,7 +164,7 @@ jsObj.set_mBaseOffset(mBaseOffset_addr);
     public Vec3 get_mWorldSpaceNormal() {
         int pointer = internal_native_get_mWorldSpaceNormal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -216,7 +216,7 @@ jsObj.set_mPenetrationDepth(mPenetrationDepth);
     public SubShapeID get_mSubShapeID1() {
         int pointer = internal_native_get_mSubShapeID1(native_address);
         if (pointer == 0)
-            return null;
+            return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -246,7 +246,7 @@ jsObj.set_mSubShapeID1(mSubShapeID1_addr);
     public SubShapeID get_mSubShapeID2() {
         int pointer = internal_native_get_mSubShapeID2(native_address);
         if (pointer == 0)
-            return null;
+            return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_1.internal_reset(pointer, false);
@@ -276,7 +276,7 @@ jsObj.set_mSubShapeID2(mSubShapeID2_addr);
     public ContactPoints get_mRelativeContactPointsOn1() {
         int pointer = internal_native_get_mRelativeContactPointsOn1(native_address);
         if (pointer == 0)
-            return null;
+            return ContactPoints.NULL;
         if (ContactPoints_TEMP_GEN_0 == null)
             ContactPoints_TEMP_GEN_0 = ContactPoints.native_new();
         ContactPoints_TEMP_GEN_0.internal_reset(pointer, false);
@@ -306,7 +306,7 @@ jsObj.set_mRelativeContactPointsOn1(mRelativeContactPointsOn1_addr);
     public ContactPoints get_mRelativeContactPointsOn2() {
         int pointer = internal_native_get_mRelativeContactPointsOn2(native_address);
         if (pointer == 0)
-            return null;
+            return ContactPoints.NULL;
         if (ContactPoints_TEMP_GEN_1 == null)
             ContactPoints_TEMP_GEN_1 = ContactPoints.native_new();
         ContactPoints_TEMP_GEN_1.internal_reset(pointer, false);

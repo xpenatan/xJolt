@@ -85,7 +85,7 @@ public class Body extends IDLBase {
     public BodyID GetID() {
         long pointer = internal_native_GetID(native_address);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -303,7 +303,7 @@ return nativeObject->GetObjectLayer();
     public CollisionGroup GetCollisionGroup() {
         long pointer = internal_native_GetCollisionGroup(native_address);
         if (pointer == 0)
-            return null;
+            return CollisionGroup.NULL;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = CollisionGroup.native_new();
         CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);
@@ -389,7 +389,7 @@ nativeObject->SetRestitution((float)inRestitution);
     public Vec3 GetLinearVelocity() {
         long pointer = internal_native_GetLinearVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -426,7 +426,7 @@ nativeObject->SetLinearVelocityClamped(*((Vec3* )inVelocity_addr));
     public Vec3 GetAngularVelocity() {
         long pointer = internal_native_GetAngularVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -493,7 +493,7 @@ nativeObject->AddTorque(*((Vec3* )inTorque_addr));
     public Vec3 GetAccumulatedForce() {
         long pointer = internal_native_GetAccumulatedForce(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -510,7 +510,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetAccumulatedTorque() {
         long pointer = internal_native_GetAccumulatedTorque(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -617,7 +617,7 @@ return nativeObject->IsInBroadPhase();
     public Mat44 GetInverseInertia() {
         long pointer = internal_native_GetInverseInertia(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -634,7 +634,7 @@ return (jlong)&copy_addr;*/
     public Shape GetShape() {
         long pointer = internal_native_GetShape(native_address);
         if (pointer == 0)
-            return null;
+            return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
@@ -651,7 +651,7 @@ return (jlong)obj;
     public Vec3 GetPosition() {
         long pointer = internal_native_GetPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -668,7 +668,7 @@ return (jlong)&copy_addr;*/
     public Quat GetRotation() {
         long pointer = internal_native_GetRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -685,7 +685,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetWorldTransform() {
         long pointer = internal_native_GetWorldTransform(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
@@ -702,7 +702,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetCenterOfMassPosition() {
         long pointer = internal_native_GetCenterOfMassPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
@@ -719,7 +719,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetCenterOfMassTransform() {
         long pointer = internal_native_GetCenterOfMassTransform(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = Mat44.native_new();
         Mat44_TEMP_GEN_2.internal_reset(pointer, false);
@@ -736,7 +736,7 @@ return (jlong)&copy_addr;*/
     public Mat44 GetInverseCenterOfMassTransform() {
         long pointer = internal_native_GetInverseCenterOfMassTransform(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_3 == null)
             Mat44_TEMP_GEN_3 = Mat44.native_new();
         Mat44_TEMP_GEN_3.internal_reset(pointer, false);
@@ -753,7 +753,7 @@ return (jlong)&copy_addr;*/
     public AABox GetWorldSpaceBounds() {
         long pointer = internal_native_GetWorldSpaceBounds(native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
@@ -770,7 +770,7 @@ return (jlong)&copy_addr;*/
     public TransformedShape GetTransformedShape() {
         long pointer = internal_native_GetTransformedShape(native_address);
         if (pointer == 0)
-            return null;
+            return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
@@ -787,7 +787,7 @@ return (jlong)&copy_addr;*/
     public BodyCreationSettings GetBodyCreationSettings() {
         long pointer = internal_native_GetBodyCreationSettings(native_address);
         if (pointer == 0)
-            return null;
+            return BodyCreationSettings.NULL;
         if (BodyCreationSettings_TEMP_GEN_0 == null)
             BodyCreationSettings_TEMP_GEN_0 = BodyCreationSettings.native_new();
         BodyCreationSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -804,7 +804,7 @@ return (jlong)&copy_addr;*/
     public SoftBodyCreationSettings GetSoftBodyCreationSettings() {
         long pointer = internal_native_GetSoftBodyCreationSettings(native_address);
         if (pointer == 0)
-            return null;
+            return SoftBodyCreationSettings.NULL;
         if (SoftBodyCreationSettings_TEMP_GEN_0 == null)
             SoftBodyCreationSettings_TEMP_GEN_0 = SoftBodyCreationSettings.native_new();
         SoftBodyCreationSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -821,7 +821,7 @@ return (jlong)&copy_addr;*/
     public MotionProperties GetMotionProperties() {
         long pointer = internal_native_GetMotionProperties(native_address);
         if (pointer == 0)
-            return null;
+            return MotionProperties.NULL;
         if (MotionProperties_TEMP_GEN_0 == null)
             MotionProperties_TEMP_GEN_0 = MotionProperties.native_new();
         MotionProperties_TEMP_GEN_0.internal_reset(pointer, false);
@@ -838,7 +838,7 @@ return (jlong)obj;
     public Vec3 GetWorldSpaceSurfaceNormal(SubShapeID inSubShapeID, Vec3 inPosition) {
         long pointer = internal_native_GetWorldSpaceSurfaceNormal(native_address, inSubShapeID.native_address, inPosition.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = Vec3.native_new();
         Vec3_TEMP_GEN_6.internal_reset(pointer, false);

@@ -140,7 +140,7 @@ jsObj.set_mPenetrationTolerance(mPenetrationTolerance);
     public Vec3 get_mActiveEdgeMovementDirection() {
         int pointer = internal_native_get_mActiveEdgeMovementDirection(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);

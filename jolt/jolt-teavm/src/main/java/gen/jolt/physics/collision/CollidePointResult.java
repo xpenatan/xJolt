@@ -63,7 +63,7 @@ jolt.destroy(jsObj);
     public BodyID get_mBodyID() {
         int pointer = internal_native_get_mBodyID(native_address);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -93,7 +93,7 @@ jsObj.set_mBodyID(mBodyID_addr);
     public SubShapeID get_mSubShapeID2() {
         int pointer = internal_native_get_mSubShapeID2(native_address);
         if (pointer == 0)
-            return null;
+            return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);

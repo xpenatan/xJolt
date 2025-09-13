@@ -4,7 +4,7 @@ import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.Vector4;
-import jolt.Jolt;
+import jolt.JoltNew;
 import jolt.math.Mat44;
 import jolt.math.Quat;
 import jolt.math.Vec3;
@@ -80,16 +80,16 @@ public class JoltGdx {
     }
 
     public static void init() {
-        TMP_VEC3_01 = new Vec3();
-        TMP_VEC3_02 = new Vec3();
-        TMP_VEC3_03 = new Vec3();
-        TMP_VEC4_01 = new Vec4();
-        TMP_VEC4_02 = new Vec4();
-        TMP_VEC4_03 = new Vec4();
-        TMP_QUAT_01 = new Quat();
-        TMP_QUAT_02 = new Quat();
-        TMP_MAT44_01 = new Mat44();
-        TMP_MAT44_02 = new Mat44();
+        TMP_VEC3_01 = JoltNew.Vec3();
+        TMP_VEC3_02 = JoltNew.Vec3();
+        TMP_VEC3_03 = JoltNew.Vec3();
+        TMP_VEC4_01 = JoltNew.Vec4();
+        TMP_VEC4_02 = JoltNew.Vec4();
+        TMP_VEC4_03 = JoltNew.Vec4();
+        TMP_QUAT_01 = JoltNew.Quat();
+        TMP_QUAT_02 = JoltNew.Quat();
+        TMP_MAT44_01 = JoltNew.Mat44();
+        TMP_MAT44_02 = JoltNew.Mat44();
     }
 
     public static void dispose() {

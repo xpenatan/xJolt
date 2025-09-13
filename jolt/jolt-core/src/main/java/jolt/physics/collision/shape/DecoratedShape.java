@@ -35,7 +35,7 @@ public class DecoratedShape extends Shape {
     public Shape GetInnerShape() {
         long pointer = internal_native_GetInnerShape(native_address);
         if (pointer == 0)
-            return null;
+            return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);

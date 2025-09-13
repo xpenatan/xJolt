@@ -77,7 +77,7 @@ return jolt.getPointer(jsObj);
     public Vec3 get_mHalfExtent() {
         int pointer = internal_native_get_mHalfExtent(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);

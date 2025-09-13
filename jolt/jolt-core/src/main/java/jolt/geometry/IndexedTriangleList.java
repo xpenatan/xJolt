@@ -76,7 +76,7 @@ return nativeObject->size();
     public IndexedTriangle at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return IndexedTriangle.NULL;
         if (IndexedTriangle_TEMP_GEN_0 == null)
             IndexedTriangle_TEMP_GEN_0 = IndexedTriangle.native_new();
         IndexedTriangle_TEMP_GEN_0.internal_reset(pointer, false);

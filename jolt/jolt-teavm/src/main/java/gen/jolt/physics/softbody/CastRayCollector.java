@@ -18,6 +18,14 @@ public class CastRayCollector extends IDLBase {
 
     static private RayCastResult RayCastResult_TEMP_STATIC_GEN_0;
 
+    static public final CastRayCollector NULL = CastRayCollector.native_new();
+
+    static public final CastRayCollector T_01 = CastRayCollector.native_new();
+
+    static public final CastRayCollector T_02 = CastRayCollector.native_new();
+
+    static public final CastRayCollector T_03 = CastRayCollector.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
@@ -57,7 +65,7 @@ jsObj.SetContext(inContext_addr);
     public TransformedShape GetContext() {
         int pointer = internal_native_GetContext(native_address);
         if (pointer == 0)
-            return null;
+            return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);

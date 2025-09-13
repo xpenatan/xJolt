@@ -27,6 +27,7 @@ import com.badlogic.gdx.utils.BufferUtils;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
 import jolt.Jolt;
+import jolt.JoltNew;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.example.samples.app.jolt.Layers;
@@ -91,8 +92,8 @@ public class BoxSpawnTest extends Test {
 
     public void initialize() {
         mDebugRenderer.setEnable(false);
-        tempVec3 = new Vec3();
-        tempQuat = new Quat();
+        tempVec3 = JoltNew.Vec3();
+        tempQuat = JoltNew.Quat();
         tempQuaternion = new Quaternion();
         tempRotationMatrix = new Matrix4();
 
@@ -343,7 +344,7 @@ public class BoxSpawnTest extends Test {
             layer = Layers.NON_MOVING;
         }
 
-        BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, tempVec3, tempQuat, motionType, layer);
+        BodyCreationSettings bodySettings = JoltNew.BodyCreationSettings(bodyShape, tempVec3, tempQuat, motionType, layer);
         bodySettings.set_mMassPropertiesOverride(massProperties);
         bodySettings.set_mRestitution(boxRestitution);
         Body body = mBodyInterface.CreateBody(bodySettings);

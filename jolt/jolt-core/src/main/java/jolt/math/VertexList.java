@@ -76,7 +76,7 @@ return nativeObject->size();
     public Float3 at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
         Float3_TEMP_GEN_0.internal_reset(pointer, false);

@@ -55,7 +55,7 @@ delete nativeObject;
     public Float3 get_mPosition() {
         long pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
         Float3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -71,7 +71,7 @@ return (jlong)&nativeObject->mPosition;
     public Float3 get_mNormal() {
         long pointer = internal_native_get_mNormal(native_address);
         if (pointer == 0)
-            return null;
+            return Float3.NULL;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = Float3.native_new();
         Float3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -87,7 +87,7 @@ return (jlong)&nativeObject->mNormal;
     public Float2 get_mUV() {
         long pointer = internal_native_get_mUV(native_address);
         if (pointer == 0)
-            return null;
+            return Float2.NULL;
         if (Float2_TEMP_GEN_0 == null)
             Float2_TEMP_GEN_0 = Float2.native_new();
         Float2_TEMP_GEN_0.internal_reset(pointer, false);
@@ -103,7 +103,7 @@ return (jlong)&nativeObject->mUV;
     public Color get_mColor() {
         long pointer = internal_native_get_mColor(native_address);
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_GEN_0 == null)
             Color_TEMP_GEN_0 = Color.native_new();
         Color_TEMP_GEN_0.internal_reset(pointer, false);

@@ -50,7 +50,7 @@ jsObj.SetPath(inPath_addr, inPathFraction);
     public PathConstraintPath GetPath() {
         int pointer = internal_native_GetPath(native_address);
         if (pointer == 0)
-            return null;
+            return PathConstraintPath.NULL;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.native_new();
         PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
@@ -104,7 +104,7 @@ return returnedJSObj;
     public MotorSettings GetPositionMotorSettings() {
         int pointer = internal_native_GetPositionMotorSettings(native_address);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);

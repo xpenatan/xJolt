@@ -216,7 +216,7 @@ jsObj.set_mIsSensor(mIsSensor);
     public Vec3 get_mRelativeLinearSurfaceVelocity() {
         int pointer = internal_native_get_mRelativeLinearSurfaceVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -246,7 +246,7 @@ jsObj.set_mRelativeLinearSurfaceVelocity(mRelativeLinearSurfaceVelocity_addr);
     public Vec3 get_mRelativeAngularSurfaceVelocity() {
         int pointer = internal_native_get_mRelativeAngularSurfaceVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);

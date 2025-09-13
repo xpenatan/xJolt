@@ -50,7 +50,7 @@ return (jlong)new WheeledVehicleControllerSettings();
     public VehicleEngineSettings get_mEngine() {
         long pointer = internal_native_get_mEngine(native_address);
         if (pointer == 0)
-            return null;
+            return VehicleEngineSettings.NULL;
         if (VehicleEngineSettings_TEMP_GEN_0 == null)
             VehicleEngineSettings_TEMP_GEN_0 = VehicleEngineSettings.native_new();
         VehicleEngineSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -76,7 +76,7 @@ nativeObject->mEngine = *((VehicleEngineSettings*)mEngine_addr);
     public VehicleTransmissionSettings get_mTransmission() {
         long pointer = internal_native_get_mTransmission(native_address);
         if (pointer == 0)
-            return null;
+            return VehicleTransmissionSettings.NULL;
         if (VehicleTransmissionSettings_TEMP_GEN_0 == null)
             VehicleTransmissionSettings_TEMP_GEN_0 = VehicleTransmissionSettings.native_new();
         VehicleTransmissionSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -102,7 +102,7 @@ nativeObject->mTransmission = *((VehicleTransmissionSettings*)mTransmission_addr
     public ArrayVehicleDifferentialSettings get_mDifferentials() {
         long pointer = internal_native_get_mDifferentials(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayVehicleDifferentialSettings.NULL;
         if (ArrayVehicleDifferentialSettings_TEMP_GEN_0 == null)
             ArrayVehicleDifferentialSettings_TEMP_GEN_0 = ArrayVehicleDifferentialSettings.native_new();
         ArrayVehicleDifferentialSettings_TEMP_GEN_0.internal_reset(pointer, false);

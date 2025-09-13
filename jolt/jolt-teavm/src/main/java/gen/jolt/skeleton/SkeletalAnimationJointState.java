@@ -65,7 +65,7 @@ jsObj.FromMatrix(inMatrix_addr);
     public Mat44 ToMatrix() {
         int pointer = internal_native_ToMatrix(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -84,7 +84,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 get_mTranslation() {
         int pointer = internal_native_get_mTranslation(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -114,7 +114,7 @@ jsObj.set_mTranslation(mTranslation_addr);
     public Quat get_mRotation() {
         int pointer = internal_native_get_mRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);

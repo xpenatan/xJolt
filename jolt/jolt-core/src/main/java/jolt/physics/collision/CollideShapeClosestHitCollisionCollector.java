@@ -68,7 +68,7 @@ return nativeObject->HadHit();
     public CollideShapeResult get_mHit() {
         long pointer = internal_native_get_mHit(native_address);
         if (pointer == 0)
-            return null;
+            return CollideShapeResult.NULL;
         if (CollideShapeResult_TEMP_GEN_0 == null)
             CollideShapeResult_TEMP_GEN_0 = CollideShapeResult.native_new();
         CollideShapeResult_TEMP_GEN_0.internal_reset(pointer, false);

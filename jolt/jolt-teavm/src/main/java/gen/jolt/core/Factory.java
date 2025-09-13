@@ -59,7 +59,7 @@ jolt.destroy(jsObj);
     public static Factory get_sInstance() {
         int pointer = internal_native_get_sInstance();
         if (pointer == 0)
-            return null;
+            return Factory.NULL;
         if (Factory_TEMP_STATIC_GEN_0 == null)
             Factory_TEMP_STATIC_GEN_0 = Factory.native_new();
         Factory_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

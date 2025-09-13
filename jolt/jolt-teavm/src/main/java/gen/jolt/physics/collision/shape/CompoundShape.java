@@ -47,7 +47,7 @@ return returnedJSObj;
     public CompoundShapeSubShape GetSubShape(int inIdx) {
         int pointer = internal_native_GetSubShape(native_address, inIdx);
         if (pointer == 0)
-            return null;
+            return CompoundShapeSubShape.NULL;
         if (CompoundShapeSubShape_TEMP_GEN_0 == null)
             CompoundShapeSubShape_TEMP_GEN_0 = CompoundShapeSubShape.native_new();
         CompoundShapeSubShape_TEMP_GEN_0.internal_reset(pointer, false);

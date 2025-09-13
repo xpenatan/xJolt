@@ -89,7 +89,7 @@ delete nativeObject;
     public Color MulColor(Color other) {
         long pointer = internal_native_MulColor(native_address, other.native_address);
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_GEN_0 == null)
             Color_TEMP_GEN_0 = Color.native_new();
         Color_TEMP_GEN_0.internal_reset(pointer, false);
@@ -106,7 +106,7 @@ return (jlong)&copy_addr;*/
     public Vec4 ToVec4() {
         long pointer = internal_native_ToVec4(native_address);
         if (pointer == 0)
-            return null;
+            return Vec4.NULL;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = Vec4.native_new();
         Vec4_TEMP_GEN_0.internal_reset(pointer, false);
@@ -143,7 +143,7 @@ nativeObject->mU32 = mU32;
     public static Color get_sBlack() {
         long pointer = internal_native_get_sBlack();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_0 == null)
             Color_TEMP_STATIC_GEN_0 = Color.native_new();
         Color_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -158,7 +158,7 @@ return (jlong)&Color::sBlack;
     public static Color get_sDarkRed() {
         long pointer = internal_native_get_sDarkRed();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_1 == null)
             Color_TEMP_STATIC_GEN_1 = Color.native_new();
         Color_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
@@ -173,7 +173,7 @@ return (jlong)&Color::sDarkRed;
     public static Color get_sRed() {
         long pointer = internal_native_get_sRed();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_2 == null)
             Color_TEMP_STATIC_GEN_2 = Color.native_new();
         Color_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
@@ -188,7 +188,7 @@ return (jlong)&Color::sRed;
     public static Color get_sDarkGreen() {
         long pointer = internal_native_get_sDarkGreen();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_3 == null)
             Color_TEMP_STATIC_GEN_3 = Color.native_new();
         Color_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
@@ -203,7 +203,7 @@ return (jlong)&Color::sDarkGreen;
     public static Color get_sGreen() {
         long pointer = internal_native_get_sGreen();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_4 == null)
             Color_TEMP_STATIC_GEN_4 = Color.native_new();
         Color_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
@@ -218,7 +218,7 @@ return (jlong)&Color::sGreen;
     public static Color get_sDarkBlue() {
         long pointer = internal_native_get_sDarkBlue();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_5 == null)
             Color_TEMP_STATIC_GEN_5 = Color.native_new();
         Color_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
@@ -233,7 +233,7 @@ return (jlong)&Color::sDarkBlue;
     public static Color get_sBlue() {
         long pointer = internal_native_get_sBlue();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_6 == null)
             Color_TEMP_STATIC_GEN_6 = Color.native_new();
         Color_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
@@ -248,7 +248,7 @@ return (jlong)&Color::sBlue;
     public static Color get_sYellow() {
         long pointer = internal_native_get_sYellow();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_7 == null)
             Color_TEMP_STATIC_GEN_7 = Color.native_new();
         Color_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
@@ -263,7 +263,7 @@ return (jlong)&Color::sYellow;
     public static Color get_sPurple() {
         long pointer = internal_native_get_sPurple();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_8 == null)
             Color_TEMP_STATIC_GEN_8 = Color.native_new();
         Color_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
@@ -278,7 +278,7 @@ return (jlong)&Color::sPurple;
     public static Color get_sCyan() {
         long pointer = internal_native_get_sCyan();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_9 == null)
             Color_TEMP_STATIC_GEN_9 = Color.native_new();
         Color_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
@@ -293,7 +293,7 @@ return (jlong)&Color::sCyan;
     public static Color get_sOrange() {
         long pointer = internal_native_get_sOrange();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_10 == null)
             Color_TEMP_STATIC_GEN_10 = Color.native_new();
         Color_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
@@ -308,7 +308,7 @@ return (jlong)&Color::sOrange;
     public static Color get_sDarkOrange() {
         long pointer = internal_native_get_sDarkOrange();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_11 == null)
             Color_TEMP_STATIC_GEN_11 = Color.native_new();
         Color_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
@@ -323,7 +323,7 @@ return (jlong)&Color::sDarkOrange;
     public static Color get_sGrey() {
         long pointer = internal_native_get_sGrey();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_12 == null)
             Color_TEMP_STATIC_GEN_12 = Color.native_new();
         Color_TEMP_STATIC_GEN_12.internal_reset(pointer, false);
@@ -338,7 +338,7 @@ return (jlong)&Color::sGrey;
     public static Color get_sLightGrey() {
         long pointer = internal_native_get_sLightGrey();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_13 == null)
             Color_TEMP_STATIC_GEN_13 = Color.native_new();
         Color_TEMP_STATIC_GEN_13.internal_reset(pointer, false);
@@ -353,7 +353,7 @@ return (jlong)&Color::sLightGrey;
     public static Color get_sWhite() {
         long pointer = internal_native_get_sWhite();
         if (pointer == 0)
-            return null;
+            return Color.NULL;
         if (Color_TEMP_STATIC_GEN_14 == null)
             Color_TEMP_STATIC_GEN_14 = Color.native_new();
         Color_TEMP_STATIC_GEN_14.internal_reset(pointer, false);

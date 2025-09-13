@@ -71,7 +71,7 @@ return returnedJSObj;
     public RayCastResult at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return RayCastResult.NULL;
         if (RayCastResult_TEMP_GEN_0 == null)
             RayCastResult_TEMP_GEN_0 = RayCastResult.native_new();
         RayCastResult_TEMP_GEN_0.internal_reset(pointer, false);

@@ -92,7 +92,7 @@ jsObj.set_mSpace(mSpace);
     public Vec3 get_mBodyPoint1() {
         int pointer = internal_native_get_mBodyPoint1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -122,7 +122,7 @@ jsObj.set_mBodyPoint1(mBodyPoint1_addr);
     public Vec3 get_mFixedPoint1() {
         int pointer = internal_native_get_mFixedPoint1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -152,7 +152,7 @@ jsObj.set_mFixedPoint1(mFixedPoint1_addr);
     public Vec3 get_mBodyPoint2() {
         int pointer = internal_native_get_mBodyPoint2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -182,7 +182,7 @@ jsObj.set_mBodyPoint2(mBodyPoint2_addr);
     public Vec3 get_mFixedPoint2() {
         int pointer = internal_native_get_mFixedPoint2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);

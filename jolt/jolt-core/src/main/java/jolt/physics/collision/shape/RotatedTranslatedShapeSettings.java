@@ -51,7 +51,7 @@ return (jlong)new RotatedTranslatedShapeSettings(*((Vec3* )inPosition_addr), *((
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -77,7 +77,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public Quat get_mRotation() {
         long pointer = internal_native_get_mRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);

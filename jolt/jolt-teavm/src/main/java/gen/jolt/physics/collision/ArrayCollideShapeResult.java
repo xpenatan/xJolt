@@ -71,7 +71,7 @@ return returnedJSObj;
     public CollideShapeResult at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return CollideShapeResult.NULL;
         if (CollideShapeResult_TEMP_GEN_0 == null)
             CollideShapeResult_TEMP_GEN_0 = CollideShapeResult.native_new();
         CollideShapeResult_TEMP_GEN_0.internal_reset(pointer, false);

@@ -3,15 +3,18 @@ package jolt.example.samples.app.tests.shapes;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
+import jolt.JoltNew;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.example.samples.app.jolt.Layers;
 import jolt.example.samples.app.tests.Test;
 import jolt.Jolt;
+import jolt.idl.IDLBase;
 import jolt.math.Quat;
 import jolt.math.Vec3;
 import jolt.physics.body.Body;
 import jolt.physics.body.BodyCreationSettings;
+import jolt.physics.body.BodyFilter;
 import jolt.physics.collision.shape.BoxShape;
 
 public class BoxShapeTest extends Test {
@@ -53,10 +56,11 @@ public class BoxShapeTest extends Test {
 
     private Body createBody(Vector3 inHalfExtent, Vector3 inPosition, Quat inRotation) {
         float scale = getWorldScale();
-        Vec3 inHalfExtentJolt = new Vec3(inHalfExtent.x, inHalfExtent.y, inHalfExtent.z);
-        Vec3 inPositionJolt = new Vec3(inPosition.x, inPosition.y, inPosition.z);
+
+        Vec3 inHalfExtentJolt = JoltNew.Vec3(inHalfExtent.x, inHalfExtent.y, inHalfExtent.z);
+        Vec3 inPositionJolt = JoltNew.Vec3(inPosition.x, inPosition.y, inPosition.z);
         BoxShape bodyShape = new BoxShape(inHalfExtentJolt);
-        BodyCreationSettings bodySettings = Jolt.New_BodyCreationSettings(bodyShape, inPositionJolt, inRotation, EMotionType.Dynamic, Layers.MOVING);
+        BodyCreationSettings bodySettings = JoltNew.BodyCreationSettings(bodyShape, inPositionJolt, inRotation, EMotionType.Dynamic, Layers.MOVING);
         Body body = mBodyInterface.CreateBody(bodySettings);
         bodySettings.dispose();
         inHalfExtentJolt.dispose();

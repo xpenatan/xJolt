@@ -13,6 +13,14 @@ public class BodyFilter extends IDLBase {
 
     static private Body Body_TEMP_STATIC_GEN_0;
 
+    static public final BodyFilter NULL = BodyFilter.native_new();
+
+    static public final BodyFilter T_01 = BodyFilter.native_new();
+
+    static public final BodyFilter T_02 = BodyFilter.native_new();
+
+    static public final BodyFilter T_03 = BodyFilter.native_new();
+
     /*[-JNI;-NATIVE]
 class BodyFilterJS : public BodyFilter {
 private:

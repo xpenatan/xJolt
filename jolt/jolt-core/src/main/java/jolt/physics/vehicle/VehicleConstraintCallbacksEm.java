@@ -29,6 +29,14 @@ public class VehicleConstraintCallbacksEm extends IDLBase {
 
     static private PhysicsStepListenerContext PhysicsStepListenerContext_TEMP_STATIC_GEN_2;
 
+    static public final VehicleConstraintCallbacksEm NULL = VehicleConstraintCallbacksEm.native_new();
+
+    static public final VehicleConstraintCallbacksEm T_01 = VehicleConstraintCallbacksEm.native_new();
+
+    static public final VehicleConstraintCallbacksEm T_02 = VehicleConstraintCallbacksEm.native_new();
+
+    static public final VehicleConstraintCallbacksEm T_03 = VehicleConstraintCallbacksEm.native_new();
+
     /*[-JNI;-NATIVE]
 class VehicleConstraintCallbacksJS : public VehicleConstraintCallbacksEm {
 private:

@@ -114,7 +114,7 @@ jsObj.set_mMaxRPM(mMaxRPM);
     public LinearCurve get_mNormalizedTorque() {
         int pointer = internal_native_get_mNormalizedTorque(native_address);
         if (pointer == 0)
-            return null;
+            return LinearCurve.NULL;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = LinearCurve.native_new();
         LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);

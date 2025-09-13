@@ -13,6 +13,14 @@ public class GroupFilter extends IDLBase {
 
     static private CollisionGroup CollisionGroup_TEMP_STATIC_GEN_1;
 
+    static public final GroupFilter NULL = GroupFilter.native_new();
+
+    static public final GroupFilter T_01 = GroupFilter.native_new();
+
+    static public final GroupFilter T_02 = GroupFilter.native_new();
+
+    static public final GroupFilter T_03 = GroupFilter.native_new();
+
     /*[-JNI;-NATIVE]
 class GroupFilterJS : public GroupFilter {
 private:

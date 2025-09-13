@@ -70,7 +70,7 @@ jsObj.set_mDrivenWheel(mDrivenWheel);
     public ArrayUint get_mWheels() {
         int pointer = internal_native_get_mWheels(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayUint.NULL;
         if (ArrayUint_TEMP_GEN_0 == null)
             ArrayUint_TEMP_GEN_0 = ArrayUint.native_new();
         ArrayUint_TEMP_GEN_0.internal_reset(pointer, false);

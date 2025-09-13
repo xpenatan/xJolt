@@ -66,7 +66,7 @@ return nativeObject->size();
     public VehicleDifferentialSettings at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return VehicleDifferentialSettings.NULL;
         if (VehicleDifferentialSettings_TEMP_GEN_0 == null)
             VehicleDifferentialSettings_TEMP_GEN_0 = VehicleDifferentialSettings.native_new();
         VehicleDifferentialSettings_TEMP_GEN_0.internal_reset(pointer, false);

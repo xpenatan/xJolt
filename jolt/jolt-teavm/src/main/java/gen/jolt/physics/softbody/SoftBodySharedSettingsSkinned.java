@@ -69,7 +69,7 @@ jsObj.set_mVertex(mVertex);
     public SoftBodySharedSettingsSkinWeight get_mWeights(int index) {
         int pointer = internal_native_get_mWeights(native_address, index);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsSkinWeight.NULL;
         if (SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 == null)
             SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 = SoftBodySharedSettingsSkinWeight.native_new();
         SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.internal_reset(pointer, false);

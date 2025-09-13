@@ -90,7 +90,7 @@ jsObj.set_mSpace(mSpace);
     public Vec3 get_mPoint1() {
         int pointer = internal_native_get_mPoint1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -120,7 +120,7 @@ jsObj.set_mPoint1(mPoint1_addr);
     public Vec3 get_mPoint2() {
         int pointer = internal_native_get_mPoint2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -194,7 +194,7 @@ jsObj.set_mMaxDistance(mMaxDistance);
     public SpringSettings get_mLimitsSpringSettings() {
         int pointer = internal_native_get_mLimitsSpringSettings(native_address);
         if (pointer == 0)
-            return null;
+            return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);

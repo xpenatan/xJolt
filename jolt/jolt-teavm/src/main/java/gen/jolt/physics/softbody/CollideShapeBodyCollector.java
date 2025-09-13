@@ -15,6 +15,14 @@ public class CollideShapeBodyCollector extends IDLBase {
 
     static private BodyID BodyID_TEMP_STATIC_GEN_0;
 
+    static public final CollideShapeBodyCollector NULL = CollideShapeBodyCollector.native_new();
+
+    static public final CollideShapeBodyCollector T_01 = CollideShapeBodyCollector.native_new();
+
+    static public final CollideShapeBodyCollector T_02 = CollideShapeBodyCollector.native_new();
+
+    static public final CollideShapeBodyCollector T_03 = CollideShapeBodyCollector.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
@@ -54,7 +62,7 @@ jsObj.SetContext(inContext_addr);
     public TransformedShape GetContext() {
         int pointer = internal_native_GetContext(native_address);
         if (pointer == 0)
-            return null;
+            return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);

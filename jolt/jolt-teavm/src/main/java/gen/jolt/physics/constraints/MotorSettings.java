@@ -83,7 +83,7 @@ jolt.destroy(jsObj);
     public SpringSettings get_mSpringSettings() {
         int pointer = internal_native_get_mSpringSettings(native_address);
         if (pointer == 0)
-            return null;
+            return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
         SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);

@@ -129,6 +129,14 @@ public class CharacterContactListenerEm extends CharacterContactListener {
 
     static private Vec3 Vec3_TEMP_STATIC_GEN_19;
 
+    static public final CharacterContactListenerEm NULL = CharacterContactListenerEm.native_new();
+
+    static public final CharacterContactListenerEm T_01 = CharacterContactListenerEm.native_new();
+
+    static public final CharacterContactListenerEm T_02 = CharacterContactListenerEm.native_new();
+
+    static public final CharacterContactListenerEm T_03 = CharacterContactListenerEm.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

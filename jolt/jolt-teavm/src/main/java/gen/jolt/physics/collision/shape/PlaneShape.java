@@ -99,7 +99,7 @@ jsObj.SetMaterial(inMaterial_addr);
     public Plane GetPlane() {
         int pointer = internal_native_GetPlane(native_address);
         if (pointer == 0)
-            return null;
+            return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
         Plane_TEMP_GEN_0.internal_reset(pointer, false);

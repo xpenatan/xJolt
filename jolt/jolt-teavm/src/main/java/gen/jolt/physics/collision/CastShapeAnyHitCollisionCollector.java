@@ -74,7 +74,7 @@ return returnedJSObj;
     public ShapeCastResult get_mHit() {
         int pointer = internal_native_get_mHit(native_address);
         if (pointer == 0)
-            return null;
+            return ShapeCastResult.NULL;
         if (ShapeCastResult_TEMP_GEN_0 == null)
             ShapeCastResult_TEMP_GEN_0 = ShapeCastResult.native_new();
         ShapeCastResult_TEMP_GEN_0.internal_reset(pointer, false);

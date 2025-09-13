@@ -85,7 +85,7 @@ return returnedJSObj;
     public ArrayShapeCastResult get_mHits() {
         int pointer = internal_native_get_mHits(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayShapeCastResult.NULL;
         if (ArrayShapeCastResult_TEMP_GEN_0 == null)
             ArrayShapeCastResult_TEMP_GEN_0 = ArrayShapeCastResult.native_new();
         ArrayShapeCastResult_TEMP_GEN_0.internal_reset(pointer, false);

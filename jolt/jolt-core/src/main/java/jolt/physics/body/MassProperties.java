@@ -80,7 +80,7 @@ nativeObject->ScaleToMass((float)inMass);
     public static Vec3 sGetEquivalentSolidBoxSize(float inMass, Vec3 inInertiaDiagonal) {
         long pointer = internal_native_sGetEquivalentSolidBoxSize(inMass, inInertiaDiagonal.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -146,7 +146,7 @@ nativeObject->mMass = mMass;
     public Mat44 get_mInertia() {
         long pointer = internal_native_get_mInertia(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);

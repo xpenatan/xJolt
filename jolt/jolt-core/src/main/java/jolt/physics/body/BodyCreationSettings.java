@@ -74,7 +74,7 @@ delete nativeObject;
     public ShapeSettings GetShapeSettings() {
         long pointer = internal_native_GetShapeSettings(native_address);
         if (pointer == 0)
-            return null;
+            return ShapeSettings.NULL;
         if (ShapeSettings_TEMP_GEN_0 == null)
             ShapeSettings_TEMP_GEN_0 = ShapeSettings.native_new();
         ShapeSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -101,7 +101,7 @@ nativeObject->SetShapeSettings((ShapeSettings* )inShape_addr);
     public ShapeResult ConvertShapeSettings() {
         long pointer = internal_native_ConvertShapeSettings(native_address);
         if (pointer == 0)
-            return null;
+            return ShapeResult.NULL;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = ShapeResult.native_new();
         ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
@@ -118,7 +118,7 @@ return (jlong)&copy_addr;*/
     public Shape GetShape() {
         long pointer = internal_native_GetShape(native_address);
         if (pointer == 0)
-            return null;
+            return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
@@ -155,7 +155,7 @@ return nativeObject->HasMassProperties();
     public MassProperties GetMassProperties() {
         long pointer = internal_native_GetMassProperties(native_address);
         if (pointer == 0)
-            return null;
+            return MassProperties.NULL;
         if (MassProperties_TEMP_GEN_0 == null)
             MassProperties_TEMP_GEN_0 = MassProperties.native_new();
         MassProperties_TEMP_GEN_0.internal_reset(pointer, false);
@@ -172,7 +172,7 @@ return (jlong)&copy_addr;*/
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -198,7 +198,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public Quat get_mRotation() {
         long pointer = internal_native_get_mRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -224,7 +224,7 @@ nativeObject->mRotation = *((Quat*)mRotation_addr);
     public Vec3 get_mLinearVelocity() {
         long pointer = internal_native_get_mLinearVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -250,7 +250,7 @@ nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
     public Vec3 get_mAngularVelocity() {
         long pointer = internal_native_get_mAngularVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -316,7 +316,7 @@ nativeObject->mObjectLayer = mObjectLayer;
     public CollisionGroup get_mCollisionGroup() {
         long pointer = internal_native_get_mCollisionGroup(native_address);
         if (pointer == 0)
-            return null;
+            return CollisionGroup.NULL;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = CollisionGroup.native_new();
         CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);
@@ -766,7 +766,7 @@ nativeObject->mInertiaMultiplier = mInertiaMultiplier;
     public MassProperties get_mMassPropertiesOverride() {
         long pointer = internal_native_get_mMassPropertiesOverride(native_address);
         if (pointer == 0)
-            return null;
+            return MassProperties.NULL;
         if (MassProperties_TEMP_GEN_1 == null)
             MassProperties_TEMP_GEN_1 = MassProperties.native_new();
         MassProperties_TEMP_GEN_1.internal_reset(pointer, false);

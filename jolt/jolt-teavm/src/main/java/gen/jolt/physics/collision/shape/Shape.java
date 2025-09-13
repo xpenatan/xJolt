@@ -135,7 +135,7 @@ return returnedJSObj;
     public AABox GetLocalBounds() {
         int pointer = internal_native_GetLocalBounds(native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
         AABox_TEMP_GEN_0.internal_reset(pointer, false);
@@ -154,7 +154,7 @@ return jolt.getPointer(returnedJSObj);
     public AABox GetWorldSpaceBounds(Mat44 inCenterOfMassTransform, Vec3 inScale) {
         int pointer = internal_native_GetWorldSpaceBounds(native_address, inCenterOfMassTransform.native_address, inScale.native_address);
         if (pointer == 0)
-            return null;
+            return AABox.NULL;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = AABox.native_new();
         AABox_TEMP_GEN_1.internal_reset(pointer, false);
@@ -173,7 +173,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetCenterOfMass() {
         int pointer = internal_native_GetCenterOfMass(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -239,7 +239,7 @@ return returnedJSObj;
     public MassProperties GetMassProperties() {
         int pointer = internal_native_GetMassProperties(native_address);
         if (pointer == 0)
-            return null;
+            return MassProperties.NULL;
         if (MassProperties_TEMP_GEN_0 == null)
             MassProperties_TEMP_GEN_0 = MassProperties.native_new();
         MassProperties_TEMP_GEN_0.internal_reset(pointer, false);
@@ -258,7 +258,7 @@ return jolt.getPointer(returnedJSObj);
     public Shape GetLeafShape(SubShapeID inSubShapeID, SubShapeID outRemainder) {
         int pointer = internal_native_GetLeafShape(native_address, inSubShapeID.native_address, outRemainder.native_address);
         if (pointer == 0)
-            return null;
+            return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);
@@ -277,7 +277,7 @@ return jolt.getPointer(returnedJSObj);
     public PhysicsMaterial GetMaterial(SubShapeID inSubShapeID) {
         int pointer = internal_native_GetMaterial(native_address, inSubShapeID.native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
@@ -296,7 +296,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetSurfaceNormal(SubShapeID inSubShapeID, Vec3 inLocalSurfacePosition) {
         int pointer = internal_native_GetSurfaceNormal(native_address, inSubShapeID.native_address, inLocalSurfacePosition.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -327,7 +327,7 @@ return returnedJSObj;
     public TransformedShape GetSubShapeTransformedShape(SubShapeID inSubShapeID, Vec3 inPositionCOM, Quat inRotation, Vec3 inScale, SubShapeID outRemainder) {
         int pointer = internal_native_GetSubShapeTransformedShape(native_address, inSubShapeID.native_address, inPositionCOM.native_address, inRotation.native_address, inScale.native_address, outRemainder.native_address);
         if (pointer == 0)
-            return null;
+            return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
@@ -370,7 +370,7 @@ return returnedJSObj;
     public Vec3 MakeScaleValid(Vec3 inScale) {
         int pointer = internal_native_MakeScaleValid(native_address, inScale.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -389,7 +389,7 @@ return jolt.getPointer(returnedJSObj);
     public ShapeResult ScaleShape(Vec3 inScale) {
         int pointer = internal_native_ScaleShape(native_address, inScale.native_address);
         if (pointer == 0)
-            return null;
+            return ShapeResult.NULL;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = ShapeResult.native_new();
         ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);

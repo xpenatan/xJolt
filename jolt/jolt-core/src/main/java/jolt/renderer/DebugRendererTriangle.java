@@ -46,7 +46,7 @@ delete nativeObject;
     public DebugRendererVertex get_mV(int index) {
         long pointer = internal_native_get_mV(native_address, index);
         if (pointer == 0)
-            return null;
+            return DebugRendererVertex.NULL;
         if (DebugRendererVertex_TEMP_GEN_0 == null)
             DebugRendererVertex_TEMP_GEN_0 = DebugRendererVertex.native_new();
         DebugRendererVertex_TEMP_GEN_0.internal_reset(pointer, false);

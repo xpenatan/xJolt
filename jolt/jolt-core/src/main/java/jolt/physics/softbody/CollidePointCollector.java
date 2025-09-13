@@ -18,6 +18,14 @@ public class CollidePointCollector extends IDLBase {
 
     static private CollidePointResult CollidePointResult_TEMP_STATIC_GEN_0;
 
+    static public final CollidePointCollector NULL = CollidePointCollector.native_new();
+
+    static public final CollidePointCollector T_01 = CollidePointCollector.native_new();
+
+    static public final CollidePointCollector T_02 = CollidePointCollector.native_new();
+
+    static public final CollidePointCollector T_03 = CollidePointCollector.native_new();
+
     /*[-JNI;-NATIVE]
 class CollidePointCollectorJS : public CollidePointCollector {
 private:
@@ -84,7 +92,7 @@ nativeObject->SetContext((TransformedShape* )inContext_addr);
     public TransformedShape GetContext() {
         long pointer = internal_native_GetContext(native_address);
         if (pointer == 0)
-            return null;
+            return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);

@@ -81,7 +81,7 @@ jolt.destroy(jsObj);
     public RRayCast Transformed(Mat44 inTransform) {
         int pointer = internal_native_Transformed(native_address, inTransform.native_address);
         if (pointer == 0)
-            return null;
+            return RRayCast.NULL;
         if (RRayCast_TEMP_GEN_0 == null)
             RRayCast_TEMP_GEN_0 = RRayCast.native_new();
         RRayCast_TEMP_GEN_0.internal_reset(pointer, false);
@@ -100,7 +100,7 @@ return jolt.getPointer(returnedJSObj);
     public RRayCast Translated(Vec3 inTranslation) {
         int pointer = internal_native_Translated(native_address, inTranslation.native_address);
         if (pointer == 0)
-            return null;
+            return RRayCast.NULL;
         if (RRayCast_TEMP_GEN_1 == null)
             RRayCast_TEMP_GEN_1 = RRayCast.native_new();
         RRayCast_TEMP_GEN_1.internal_reset(pointer, false);
@@ -119,7 +119,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetPointOnRay(float inFraction) {
         int pointer = internal_native_GetPointOnRay(native_address, inFraction);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -138,7 +138,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 get_mOrigin() {
         int pointer = internal_native_get_mOrigin(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -168,7 +168,7 @@ jsObj.set_mOrigin(mOrigin_addr);
     public Vec3 get_mDirection() {
         int pointer = internal_native_get_mDirection(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);

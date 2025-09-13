@@ -12,6 +12,14 @@ public class WheeledVehicleControllerCallbacksEm extends IDLBase {
 
     static private TireMaxImpulseCallbackResult TireMaxImpulseCallbackResult_TEMP_STATIC_GEN_0;
 
+    static public final WheeledVehicleControllerCallbacksEm NULL = WheeledVehicleControllerCallbacksEm.native_new();
+
+    static public final WheeledVehicleControllerCallbacksEm T_01 = WheeledVehicleControllerCallbacksEm.native_new();
+
+    static public final WheeledVehicleControllerCallbacksEm T_02 = WheeledVehicleControllerCallbacksEm.native_new();
+
+    static public final WheeledVehicleControllerCallbacksEm T_03 = WheeledVehicleControllerCallbacksEm.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

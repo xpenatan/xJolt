@@ -71,7 +71,7 @@ return returnedJSObj;
     public SoftBodySharedSettingsInvBind at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsInvBind.NULL;
         if (SoftBodySharedSettingsInvBind_TEMP_GEN_0 == null)
             SoftBodySharedSettingsInvBind_TEMP_GEN_0 = SoftBodySharedSettingsInvBind.native_new();
         SoftBodySharedSettingsInvBind_TEMP_GEN_0.internal_reset(pointer, false);

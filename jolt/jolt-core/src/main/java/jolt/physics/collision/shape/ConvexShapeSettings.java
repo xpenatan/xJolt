@@ -37,7 +37,7 @@ public class ConvexShapeSettings extends ShapeSettings {
     public PhysicsMaterial get_mMaterial() {
         long pointer = internal_native_get_mMaterial(native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);

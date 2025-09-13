@@ -68,7 +68,7 @@ return nativeObject->size();
     public SoftBodySharedSettingsVertexAttributes at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsVertexAttributes.NULL;
         if (SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0 == null)
             SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0 = SoftBodySharedSettingsVertexAttributes.native_new();
         SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0.internal_reset(pointer, false);
@@ -124,7 +124,7 @@ nativeObject->clear();
     public SoftBodySharedSettingsVertexAttributes data() {
         long pointer = internal_native_data(native_address);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsVertexAttributes.NULL;
         if (SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1 == null)
             SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1 = SoftBodySharedSettingsVertexAttributes.native_new();
         SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1.internal_reset(pointer, false);

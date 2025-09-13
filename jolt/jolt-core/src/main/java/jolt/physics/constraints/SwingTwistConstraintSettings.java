@@ -96,7 +96,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
     public Vec3 get_mPosition1() {
         long pointer = internal_native_get_mPosition1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -122,7 +122,7 @@ nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
     public Vec3 get_mTwistAxis1() {
         long pointer = internal_native_get_mTwistAxis1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -148,7 +148,7 @@ nativeObject->mTwistAxis1 = *((Vec3*)mTwistAxis1_addr);
     public Vec3 get_mPlaneAxis1() {
         long pointer = internal_native_get_mPlaneAxis1(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -174,7 +174,7 @@ nativeObject->mPlaneAxis1 = *((Vec3*)mPlaneAxis1_addr);
     public Vec3 get_mPosition2() {
         long pointer = internal_native_get_mPosition2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -200,7 +200,7 @@ nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
     public Vec3 get_mTwistAxis2() {
         long pointer = internal_native_get_mTwistAxis2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -226,7 +226,7 @@ nativeObject->mTwistAxis2 = *((Vec3*)mTwistAxis2_addr);
     public Vec3 get_mPlaneAxis2() {
         long pointer = internal_native_get_mPlaneAxis2(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
@@ -373,7 +373,7 @@ nativeObject->mMaxFrictionTorque = mMaxFrictionTorque;
     public MotorSettings get_mSwingMotorSettings() {
         long pointer = internal_native_get_mSwingMotorSettings(native_address);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -399,7 +399,7 @@ nativeObject->mSwingMotorSettings = *((MotorSettings*)mSwingMotorSettings_addr);
     public MotorSettings get_mTwistMotorSettings() {
         long pointer = internal_native_get_mTwistMotorSettings(native_address);
         if (pointer == 0)
-            return null;
+            return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_1 == null)
             MotorSettings_TEMP_GEN_1 = MotorSettings.native_new();
         MotorSettings_TEMP_GEN_1.internal_reset(pointer, false);

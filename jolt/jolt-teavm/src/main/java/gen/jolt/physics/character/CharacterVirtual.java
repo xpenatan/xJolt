@@ -85,7 +85,7 @@ return jolt.getPointer(jsObj);
     public CharacterID GetID() {
         int pointer = internal_native_GetID(native_address);
         if (pointer == 0)
-            return null;
+            return CharacterID.NULL;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = CharacterID.native_new();
         CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -126,7 +126,7 @@ jsObj.SetCharacterVsCharacterCollision(inCharacterVsCharacterCollision_addr);
     public CharacterContactListener GetListener() {
         int pointer = internal_native_GetListener(native_address);
         if (pointer == 0)
-            return null;
+            return CharacterContactListener.NULL;
         if (CharacterContactListener_TEMP_GEN_0 == null)
             CharacterContactListener_TEMP_GEN_0 = CharacterContactListener.native_new();
         CharacterContactListener_TEMP_GEN_0.internal_reset(pointer, false);
@@ -145,7 +145,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetLinearVelocity() {
         int pointer = internal_native_GetLinearVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -175,7 +175,7 @@ jsObj.SetLinearVelocity(inLinearVelocity_addr);
     public Vec3 GetPosition() {
         int pointer = internal_native_GetPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -205,7 +205,7 @@ jsObj.SetPosition(inPosition_addr);
     public Quat GetRotation() {
         int pointer = internal_native_GetRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -235,7 +235,7 @@ jsObj.SetRotation(inRotation_addr);
     public Vec3 GetCenterOfMassPosition() {
         int pointer = internal_native_GetCenterOfMassPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -254,7 +254,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetWorldTransform() {
         int pointer = internal_native_GetWorldTransform(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -273,7 +273,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetCenterOfMassTransform() {
         int pointer = internal_native_GetCenterOfMassTransform(native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
@@ -431,7 +431,7 @@ return returnedJSObj;
     public Vec3 GetShapeOffset() {
         int pointer = internal_native_GetShapeOffset(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -484,7 +484,7 @@ jsObj.SetUserData(inUserData);
     public BodyID GetInnerBodyID() {
         int pointer = internal_native_GetInnerBodyID(native_address);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -525,7 +525,7 @@ jsObj.FinishTrackingContactChanges();
     public Vec3 CancelVelocityTowardsSteepSlopes(Vec3 inDesiredVelocity) {
         int pointer = internal_native_CancelVelocityTowardsSteepSlopes(native_address, inDesiredVelocity.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -647,7 +647,7 @@ jsObj.SetInnerBodyShape(inShape_addr);
     public TransformedShape GetTransformedShape() {
         int pointer = internal_native_GetTransformedShape(native_address);
         if (pointer == 0)
-            return null;
+            return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
         TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
@@ -702,7 +702,7 @@ return returnedJSObj;
     public ArrayCharacterVirtualContact GetActiveContacts() {
         int pointer = internal_native_GetActiveContacts(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayCharacterVirtualContact.NULL;
         if (ArrayCharacterVirtualContact_TEMP_GEN_0 == null)
             ArrayCharacterVirtualContact_TEMP_GEN_0 = ArrayCharacterVirtualContact.native_new();
         ArrayCharacterVirtualContact_TEMP_GEN_0.internal_reset(pointer, false);

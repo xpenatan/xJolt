@@ -127,7 +127,7 @@ jsObj.clear();
     public UintMemRef data() {
         int pointer = internal_native_data(native_address);
         if (pointer == 0)
-            return null;
+            return UintMemRef.NULL;
         if (UintMemRef_TEMP_GEN_0 == null)
             UintMemRef_TEMP_GEN_0 = UintMemRef.native_new();
         UintMemRef_TEMP_GEN_0.internal_reset(pointer, false);

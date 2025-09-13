@@ -85,7 +85,7 @@ return returnedJSObj;
     public Vec3 at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -148,7 +148,7 @@ jsObj.clear();
     public Vec3MemRef data() {
         int pointer = internal_native_data(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3MemRef.NULL;
         if (Vec3MemRef_TEMP_GEN_0 == null)
             Vec3MemRef_TEMP_GEN_0 = Vec3MemRef.native_new();
         Vec3MemRef_TEMP_GEN_0.internal_reset(pointer, false);

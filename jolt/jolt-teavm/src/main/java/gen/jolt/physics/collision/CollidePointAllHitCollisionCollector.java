@@ -84,7 +84,7 @@ return returnedJSObj;
     public ArrayCollidePointResult get_mHits() {
         int pointer = internal_native_get_mHits(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayCollidePointResult.NULL;
         if (ArrayCollidePointResult_TEMP_GEN_0 == null)
             ArrayCollidePointResult_TEMP_GEN_0 = ArrayCollidePointResult.native_new();
         ArrayCollidePointResult_TEMP_GEN_0.internal_reset(pointer, false);

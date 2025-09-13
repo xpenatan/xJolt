@@ -59,7 +59,7 @@ return jolt.getPointer(jsObj);
     public Vec3 get_mUp() {
         int pointer = internal_native_get_mUp(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -89,7 +89,7 @@ jsObj.set_mUp(mUp_addr);
     public Vec3 get_mForward() {
         int pointer = internal_native_get_mForward(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -141,7 +141,7 @@ jsObj.set_mMaxPitchRollAngle(mMaxPitchRollAngle);
     public ArrayWheelSettings get_mWheels() {
         int pointer = internal_native_get_mWheels(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayWheelSettings.NULL;
         if (ArrayWheelSettings_TEMP_GEN_0 == null)
             ArrayWheelSettings_TEMP_GEN_0 = ArrayWheelSettings.native_new();
         ArrayWheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -171,7 +171,7 @@ jsObj.set_mWheels(mWheels_addr);
     public ArrayVehicleAntiRollBar get_mAntiRollBars() {
         int pointer = internal_native_get_mAntiRollBars(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayVehicleAntiRollBar.NULL;
         if (ArrayVehicleAntiRollBar_TEMP_GEN_0 == null)
             ArrayVehicleAntiRollBar_TEMP_GEN_0 = ArrayVehicleAntiRollBar.native_new();
         ArrayVehicleAntiRollBar_TEMP_GEN_0.internal_reset(pointer, false);
@@ -201,7 +201,7 @@ jsObj.set_mAntiRollBars(mAntiRollBars_addr);
     public VehicleControllerSettings get_mController() {
         int pointer = internal_native_get_mController(native_address);
         if (pointer == 0)
-            return null;
+            return VehicleControllerSettings.NULL;
         if (VehicleControllerSettings_TEMP_GEN_0 == null)
             VehicleControllerSettings_TEMP_GEN_0 = VehicleControllerSettings.native_new();
         VehicleControllerSettings_TEMP_GEN_0.internal_reset(pointer, false);

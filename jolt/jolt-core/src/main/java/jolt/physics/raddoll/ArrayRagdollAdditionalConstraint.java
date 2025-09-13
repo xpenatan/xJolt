@@ -76,7 +76,7 @@ return nativeObject->size();
     public RagdollAdditionalConstraint at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return RagdollAdditionalConstraint.NULL;
         if (RagdollAdditionalConstraint_TEMP_GEN_0 == null)
             RagdollAdditionalConstraint_TEMP_GEN_0 = RagdollAdditionalConstraint.native_new();
         RagdollAdditionalConstraint_TEMP_GEN_0.internal_reset(pointer, false);

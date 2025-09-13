@@ -104,7 +104,7 @@ jsObj.clear();
     public Uint8MemRef data() {
         int pointer = internal_native_data(native_address);
         if (pointer == 0)
-            return null;
+            return Uint8MemRef.NULL;
         if (Uint8MemRef_TEMP_GEN_0 == null)
             Uint8MemRef_TEMP_GEN_0 = Uint8MemRef.native_new();
         Uint8MemRef_TEMP_GEN_0.internal_reset(pointer, false);

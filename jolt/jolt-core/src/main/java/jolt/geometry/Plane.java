@@ -66,7 +66,7 @@ delete nativeObject;
     public Vec3 GetNormal() {
         long pointer = internal_native_GetNormal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -113,7 +113,7 @@ nativeObject->SetConstant((float)inConstant);
     public Plane sFromPointAndNormal(Vec3 inPoint, Vec3 inNormal) {
         long pointer = internal_native_sFromPointAndNormal(native_address, inPoint.native_address, inNormal.native_address);
         if (pointer == 0)
-            return null;
+            return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
         Plane_TEMP_GEN_0.internal_reset(pointer, false);
@@ -130,7 +130,7 @@ return (jlong)&copy_addr;*/
     public Plane sFromPointsCCW(Vec3 inPoint1, Vec3 inPoint2, Vec3 inPoint3) {
         long pointer = internal_native_sFromPointsCCW(native_address, inPoint1.native_address, inPoint2.native_address, inPoint3.native_address);
         if (pointer == 0)
-            return null;
+            return Plane.NULL;
         if (Plane_TEMP_GEN_1 == null)
             Plane_TEMP_GEN_1 = Plane.native_new();
         Plane_TEMP_GEN_1.internal_reset(pointer, false);
@@ -147,7 +147,7 @@ return (jlong)&copy_addr;*/
     public Plane Offset(float inDistance) {
         long pointer = internal_native_Offset(native_address, inDistance);
         if (pointer == 0)
-            return null;
+            return Plane.NULL;
         if (Plane_TEMP_GEN_2 == null)
             Plane_TEMP_GEN_2 = Plane.native_new();
         Plane_TEMP_GEN_2.internal_reset(pointer, false);
@@ -164,7 +164,7 @@ return (jlong)&copy_addr;*/
     public Plane GetTransformed(Mat44 inTransform) {
         long pointer = internal_native_GetTransformed(native_address, inTransform.native_address);
         if (pointer == 0)
-            return null;
+            return Plane.NULL;
         if (Plane_TEMP_GEN_3 == null)
             Plane_TEMP_GEN_3 = Plane.native_new();
         Plane_TEMP_GEN_3.internal_reset(pointer, false);

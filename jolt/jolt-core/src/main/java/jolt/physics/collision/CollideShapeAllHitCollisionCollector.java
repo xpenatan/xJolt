@@ -78,7 +78,7 @@ return nativeObject->HadHit();
     public ArrayCollideShapeResult get_mHits() {
         long pointer = internal_native_get_mHits(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayCollideShapeResult.NULL;
         if (ArrayCollideShapeResult_TEMP_GEN_0 == null)
             ArrayCollideShapeResult_TEMP_GEN_0 = ArrayCollideShapeResult.native_new();
         ArrayCollideShapeResult_TEMP_GEN_0.internal_reset(pointer, false);

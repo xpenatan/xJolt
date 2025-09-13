@@ -3,14 +3,49 @@
 // ##################################################
 
 interface Jolt {
-    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_0(); //[-NEW_OBJECT]
-    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
-    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings New_BodyCreationSettings_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
-
     static void Init();
     static void RegisterTypes();
     static void UnregisterTypes();
     static void ClearWorld([Ref] PhysicsSystem physicsSystem);
+};
+
+interface JoltNew {
+    [BindTo="New_PhysicsSystem"] static PhysicsSystem PhysicsSystem_0(); //[-NEW_OBJECT]
+
+    [BindTo="New_Factory"] static Factory Factory_0(); //[-NEW_OBJECT]
+
+    [BindTo="New_TempAllocatorImpl"] static TempAllocatorImpl TempAllocatorImpl_0(unsigned long inSize); //[-NEW_OBJECT]
+
+    [BindTo="New_JobSystemThreadPool"] static JobSystemThreadPool JobSystemThreadPool_0(unsigned long inMaxJobs, unsigned long inMaxBarriers, optional unsigned long inNumThreads); //[-NEW_OBJECT]
+
+    [BindTo="New_Mat44"] static Mat44 Mat44_0(); //[-NEW_OBJECT]
+    [BindTo="New_Mat44"] static Mat44 Mat44_1([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec4 inC4); //[-NEW_OBJECT]
+    [BindTo="New_Mat44"] static Mat44 Mat44_2([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec3 inC4); //[-NEW_OBJECT]
+
+    [BindTo="New_Vec3"] static Vec3 Vec3_0(); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 Vec3_1(float inX, float inY, float inZ); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 Vec3_2([Const, Ref] Vec3 inRHS); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 Vec3_3([Const, Ref] Float3 inV); //[-NEW_OBJECT]
+
+    [BindTo="New_Vec4"] static Vec4 Vec4_0(); //[-NEW_OBJECT]
+    [BindTo="New_Vec4"] static Vec4 Vec4_1(float inX, float inY, float inZ, float inW); //[-NEW_OBJECT]
+    [BindTo="New_Vec4"] static Vec4 Vec4_2([Const, Ref] Vec4 inV); //[-NEW_OBJECT]
+    [BindTo="New_Vec4"] static Vec4 Vec4_3([Ref] Vec3 inV, float inW); //[-NEW_OBJECT]
+
+    [BindTo="New_Quat"] static Quat Quat_0(); //[-NEW_OBJECT]
+    [BindTo="New_Quat"] static Quat Quat_1(float inX, float inY, float inZ, float inW); //[-NEW_OBJECT]
+
+    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings BodyCreationSettings_0(); //[-NEW_OBJECT]
+    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
+    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings BodyCreationSettings_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
+
+    [BindTo="New_RotatedTranslatedShapeSettings"] static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_0(); //[-NEW_OBJECT]
+    [BindTo="New_RotatedTranslatedShapeSettings"] static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_1([Ref, Const] Vec3 inPosition, [Ref, Const] Quat inRotation, ShapeSettings inShape); //[-NEW_OBJECT]
+    [BindTo="New_RotatedTranslatedShapeSettings"] static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_2([Ref, Const] Vec3 inPosition, [Ref, Const] Quat inRotation, Shape inShape); //[-NEW_OBJECT]
+
+    [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings_0(); //[-NEW_OBJECT]
+    [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings_1([Ref, Const] TriangleList inTriangleList, [Ref, Const] optional PhysicsMaterialList inMaterialList); //[-NEW_OBJECT]
+    [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings_2([Ref, Const] VertexList inVertices, [Ref, Const] IndexedTriangleList inTriangles, [Ref, Const] PhysicsMaterialList inMaterialList); //[-NEW_OBJECT]
 };
 
 // BEGIN DEBUG RENDERER

@@ -11,6 +11,14 @@ public class PhysicsStepListener extends IDLBase {
 
     static private PhysicsStepListenerContext PhysicsStepListenerContext_TEMP_STATIC_GEN_0;
 
+    static public final PhysicsStepListener NULL = PhysicsStepListener.native_new();
+
+    static public final PhysicsStepListener T_01 = PhysicsStepListener.native_new();
+
+    static public final PhysicsStepListener T_02 = PhysicsStepListener.native_new();
+
+    static public final PhysicsStepListener T_03 = PhysicsStepListener.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

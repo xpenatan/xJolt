@@ -71,7 +71,7 @@ return returnedJSObj;
     public CharacterVirtualContact at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return CharacterVirtualContact.NULL;
         if (CharacterVirtualContact_TEMP_GEN_0 == null)
             CharacterVirtualContact_TEMP_GEN_0 = CharacterVirtualContact.native_new();
         CharacterVirtualContact_TEMP_GEN_0.internal_reset(pointer, false);

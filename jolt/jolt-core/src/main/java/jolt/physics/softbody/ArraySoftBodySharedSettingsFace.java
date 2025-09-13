@@ -66,7 +66,7 @@ return nativeObject->size();
     public SoftBodySharedSettingsFace at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsFace.NULL;
         if (SoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             SoftBodySharedSettingsFace_TEMP_GEN_0 = SoftBodySharedSettingsFace.native_new();
         SoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);

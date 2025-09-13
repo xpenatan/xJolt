@@ -51,7 +51,7 @@ delete nativeObject;
     public Vec3 get_mPreviousPosition() {
         long pointer = internal_native_get_mPreviousPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -77,7 +77,7 @@ nativeObject->mPreviousPosition = *((Vec3*)mPreviousPosition_addr);
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -103,7 +103,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public Vec3 get_mVelocity() {
         long pointer = internal_native_get_mVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);

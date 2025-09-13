@@ -70,7 +70,7 @@ jsObj.Release();
     public ShapeResult Create() {
         int pointer = internal_native_Create(native_address);
         if (pointer == 0)
-            return null;
+            return ShapeResult.NULL;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = ShapeResult.native_new();
         ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);

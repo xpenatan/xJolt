@@ -77,7 +77,7 @@ return nativeObject->IsSameBody(*((CharacterVirtualContact* )inOther_addr));
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -103,7 +103,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public Vec3 get_mLinearVelocity() {
         long pointer = internal_native_get_mLinearVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -129,7 +129,7 @@ nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
     public Vec3 get_mContactNormal() {
         long pointer = internal_native_get_mContactNormal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -155,7 +155,7 @@ nativeObject->mContactNormal = *((Vec3*)mContactNormal_addr);
     public Vec3 get_mSurfaceNormal() {
         long pointer = internal_native_get_mSurfaceNormal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -221,7 +221,7 @@ nativeObject->mFraction = mFraction;
     public BodyID get_mBodyB() {
         long pointer = internal_native_get_mBodyB(native_address);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -247,7 +247,7 @@ nativeObject->mBodyB = *((BodyID*)mBodyB_addr);
     public CharacterID get_mCharacterIDB() {
         long pointer = internal_native_get_mCharacterIDB(native_address);
         if (pointer == 0)
-            return null;
+            return CharacterID.NULL;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = CharacterID.native_new();
         CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -273,7 +273,7 @@ nativeObject->mCharacterIDB = *((CharacterID*)mCharacterIDB_addr);
     public SubShapeID get_mSubShapeIDB() {
         long pointer = internal_native_get_mSubShapeIDB(native_address);
         if (pointer == 0)
-            return null;
+            return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -340,7 +340,7 @@ nativeObject->mIsSensorB = mIsSensorB;
     public CharacterVirtual get_mCharacterB() {
         long pointer = internal_native_get_mCharacterB(native_address);
         if (pointer == 0)
-            return null;
+            return CharacterVirtual.NULL;
         if (CharacterVirtual_TEMP_GEN_0 == null)
             CharacterVirtual_TEMP_GEN_0 = CharacterVirtual.native_new();
         CharacterVirtual_TEMP_GEN_0.internal_reset(pointer, false);
@@ -387,7 +387,7 @@ nativeObject->mUserData = mUserData;
     public PhysicsMaterial get_mMaterial() {
         long pointer = internal_native_get_mMaterial(native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);

@@ -36,7 +36,7 @@ public class VehicleController extends IDLBase {
     public VehicleConstraint GetConstraint() {
         long pointer = internal_native_GetConstraint(native_address);
         if (pointer == 0)
-            return null;
+            return VehicleConstraint.NULL;
         if (VehicleConstraint_TEMP_GEN_0 == null)
             VehicleConstraint_TEMP_GEN_0 = VehicleConstraint.native_new();
         VehicleConstraint_TEMP_GEN_0.internal_reset(pointer, false);

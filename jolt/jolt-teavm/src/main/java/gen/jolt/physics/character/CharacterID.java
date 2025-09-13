@@ -83,7 +83,7 @@ return returnedJSObj;
     public static CharacterID sNextCharacterID() {
         int pointer = internal_native_sNextCharacterID();
         if (pointer == 0)
-            return null;
+            return CharacterID.NULL;
         if (CharacterID_TEMP_STATIC_GEN_0 == null)
             CharacterID_TEMP_STATIC_GEN_0 = CharacterID.native_new();
         CharacterID_TEMP_STATIC_GEN_0.internal_reset(pointer, false);

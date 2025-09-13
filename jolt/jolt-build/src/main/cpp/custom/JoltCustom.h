@@ -369,20 +369,10 @@ static bool AssertFailedImpl(const char* inExpression, const char* inMessage, co
 
 #endif // JPH_ENABLE_ASSERTS
 
-// Custom class to be able to create new instance.
+// Custom class for setting up Jolt
 class Jolt
 {
 public:
-    static BodyCreationSettings* New_BodyCreationSettings() {
-        return new BodyCreationSettings();
-    }
-    static BodyCreationSettings* New_BodyCreationSettings(const ShapeSettings* inShape, RVec3Arg inPosition, QuatArg inRotation, EMotionType inMotionType, ObjectLayer inObjectLayer) {
-        return new BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
-    }
-    static BodyCreationSettings* New_BodyCreationSettings(const Shape* inShape, RVec3Arg inPosition, QuatArg inRotation, EMotionType inMotionType, ObjectLayer inObjectLayer) {
-        return new BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
-    }
-
     static void Init() {
         Trace = TraceImpl;
         JPH_IF_ENABLE_ASSERTS(AssertFailed = AssertFailedImpl;)
@@ -417,6 +407,107 @@ public:
             // Destroy bodies to free their memory
             bodyInterface.DestroyBodies(bodyIDs.data(), bodyIDs.size());
         }
+    }
+};
+
+// Custom class to create new instance. Emscripten does not support multiple constructors types so this is the only way
+class JoltNew
+{
+public:
+    static PhysicsSystem* New_PhysicsSystem() {
+        return new PhysicsSystem();
+    }
+
+    static Factory* New_Factory() {
+        return new Factory();
+    }
+
+    static TempAllocatorImpl* New_TempAllocatorImpl(uint inSize) {
+        return new TempAllocatorImpl(inSize);
+    }
+
+    static JobSystemThreadPool* New_JobSystemThreadPool(uint inMaxJobs = cMaxPhysicsJobs, uint inMaxBarriers = cMaxPhysicsBarriers, int inNumThreads = -1) {
+        return new JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);
+    }
+
+    // Mat44
+    static Mat44* New_Mat44() {
+        return new Mat44();
+    }
+    static Mat44* New_Mat44(Vec4& inC1, Vec4& inC2, Vec4& inC3, Vec4& inC4) {
+        return new Mat44(inC1, inC2, inC3, inC4);
+    }
+    static Mat44* New_Mat44(Vec4& inC1, Vec4& inC2, Vec4& inC3, Vec3& inC4) {
+        return new Mat44(inC1, inC2, inC3, inC4);
+    }
+
+    // Vec3
+    static Vec3* New_Vec3() {
+        return new Vec3();
+    }
+    static Vec3* New_Vec3(float inX, float inY, float inZ) {
+        return new Vec3(inX, inY, inZ);
+    }
+    static Vec3* New_Vec3(const Vec3 &inRHS) {
+        return new Vec3(inRHS);
+    }
+    static Vec3* New_Vec3(const Float3 &inV) {
+        return new Vec3(inV);
+    }
+
+    // Vec4
+    static Vec4* New_Vec4() {
+        return new Vec4();
+    }
+    static Vec4* New_Vec4(float inX, float inY, float inZ, float inW) {
+        return new Vec4(inX, inY, inZ, inW);
+    }
+    static Vec4* New_Vec4(const Vec4 &inRHS) {
+        return new Vec4(inRHS);
+    }
+    static Vec4* New_Vec4(const Vec3 &inV, float inW) {
+        return new Vec4(inV, inW);
+    }
+
+    // Quat
+    static Quat* New_Quat() {
+        return new Quat();
+    }
+    static Quat* New_Quat(float inX, float inY, float inZ, float inW) {
+        return new Quat(inX, inY, inZ, inW);
+    }
+
+    // BodyCreationSettings
+    static BodyCreationSettings* New_BodyCreationSettings() {
+        return new BodyCreationSettings();
+    }
+    static BodyCreationSettings* New_BodyCreationSettings(const ShapeSettings* inShape, RVec3Arg inPosition, QuatArg inRotation, EMotionType inMotionType, ObjectLayer inObjectLayer) {
+        return new BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
+    }
+    static BodyCreationSettings* New_BodyCreationSettings(const Shape* inShape, RVec3Arg inPosition, QuatArg inRotation, EMotionType inMotionType, ObjectLayer inObjectLayer) {
+        return new BodyCreationSettings(inShape, inPosition, inRotation, inMotionType, inObjectLayer);
+    }
+
+    // RotatedTranslatedShapeSettings
+    static RotatedTranslatedShapeSettings* New_RotatedTranslatedShapeSettings() {
+        return new RotatedTranslatedShapeSettings();
+    }
+    static RotatedTranslatedShapeSettings* New_RotatedTranslatedShapeSettings(Vec3Arg inPosition, QuatArg inRotation, const ShapeSettings *inShape) {
+        return new RotatedTranslatedShapeSettings(inPosition, inRotation, inShape);
+    }
+    static RotatedTranslatedShapeSettings* New_RotatedTranslatedShapeSettings(Vec3Arg inPosition, QuatArg inRotation, const Shape *inShape) {
+        return new RotatedTranslatedShapeSettings(inPosition, inRotation, inShape);
+    }
+
+    // MeshShapeSettings
+    static MeshShapeSettings* New_MeshShapeSettings() {
+        return new MeshShapeSettings();
+    }
+    static MeshShapeSettings* New_MeshShapeSettings(const TriangleList &inTriangles, PhysicsMaterialList inMaterials = PhysicsMaterialList()) {
+        return new MeshShapeSettings(inTriangles, inMaterials);
+    }
+    static MeshShapeSettings* New_MeshShapeSettings(VertexList inVertices, IndexedTriangleList inTriangles, PhysicsMaterialList inMaterials = PhysicsMaterialList()) {
+        return new MeshShapeSettings(inVertices, inTriangles, inMaterials);
     }
 };
 

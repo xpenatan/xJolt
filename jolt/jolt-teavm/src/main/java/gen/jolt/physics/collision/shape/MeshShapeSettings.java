@@ -108,7 +108,7 @@ jsObj.Sanitize();
     public VertexList get_mTriangleVertices() {
         int pointer = internal_native_get_mTriangleVertices(native_address);
         if (pointer == 0)
-            return null;
+            return VertexList.NULL;
         if (VertexList_TEMP_GEN_0 == null)
             VertexList_TEMP_GEN_0 = VertexList.native_new();
         VertexList_TEMP_GEN_0.internal_reset(pointer, false);
@@ -138,7 +138,7 @@ jsObj.set_mTriangleVertices(mTriangleVertices_addr);
     public IndexedTriangleList get_mIndexedTriangles() {
         int pointer = internal_native_get_mIndexedTriangles(native_address);
         if (pointer == 0)
-            return null;
+            return IndexedTriangleList.NULL;
         if (IndexedTriangleList_TEMP_GEN_0 == null)
             IndexedTriangleList_TEMP_GEN_0 = IndexedTriangleList.native_new();
         IndexedTriangleList_TEMP_GEN_0.internal_reset(pointer, false);
@@ -168,7 +168,7 @@ jsObj.set_mIndexedTriangles(mIndexedTriangles_addr);
     public PhysicsMaterialList get_mMaterials() {
         int pointer = internal_native_get_mMaterials(native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterialList.NULL;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
         PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);

@@ -83,7 +83,7 @@ return returnedJSObj;
     public Wheel at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return Wheel.NULL;
         if (Wheel_TEMP_GEN_0 == null)
             Wheel_TEMP_GEN_0 = Wheel.native_new();
         Wheel_TEMP_GEN_0.internal_reset(pointer, false);

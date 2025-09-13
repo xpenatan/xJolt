@@ -71,7 +71,7 @@ return returnedJSObj;
     public CollidePointResult at(int inIndex) {
         int pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return CollidePointResult.NULL;
         if (CollidePointResult_TEMP_GEN_0 == null)
             CollidePointResult_TEMP_GEN_0 = CollidePointResult.native_new();
         CollidePointResult_TEMP_GEN_0.internal_reset(pointer, false);

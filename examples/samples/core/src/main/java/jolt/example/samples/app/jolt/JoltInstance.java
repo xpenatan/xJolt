@@ -1,5 +1,6 @@
 package jolt.example.samples.app.jolt;
 
+import jolt.JoltNew;
 import jolt.core.TempAllocatorImpl;
 import jolt.Jolt;
 import jolt.core.Factory;
@@ -56,17 +57,17 @@ public class JoltInstance {
 
         mObjectVsBroadPhaseLayerFilter = new ObjectVsBroadPhaseLayerFilterTable(mBroadPhaseLayerInterface, NUM_BROAD_PHASE_LAYERS, mObjectLayerPairFilter, Layers.NUM_LAYERS);
 
-        mTempAllocator = new TempAllocatorImpl(mTempAllocatorSize);
+        mTempAllocator = JoltNew.TempAllocatorImpl(mTempAllocatorSize);
 
         int cMaxPhysicsJobs = 2048;
         int cMaxPhysicsBarriers = 8;
         int inNumThreads = -1; // Auto-detect number of threads
-        mJobSystem = new JobSystemThreadPool(cMaxPhysicsJobs, cMaxPhysicsBarriers, inNumThreads);
+        mJobSystem = JoltNew.JobSystemThreadPool(cMaxPhysicsJobs, cMaxPhysicsBarriers, inNumThreads);
 
-        factory = new Factory();
+        factory = JoltNew.Factory();
         Factory.set_sInstance(factory);
         Jolt.RegisterTypes();
-        physicsSystem = new PhysicsSystem();
+        physicsSystem = JoltNew.PhysicsSystem();
         physicsSystem.Init(mMaxBodies, cNumBodyMutexes, mMaxBodyPairs, mMaxContactConstraints, mBroadPhaseLayerInterface, mObjectVsBroadPhaseLayerFilter, mObjectLayerPairFilter);
     }
 

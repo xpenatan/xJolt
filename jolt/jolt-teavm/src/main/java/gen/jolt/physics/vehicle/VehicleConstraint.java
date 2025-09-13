@@ -118,7 +118,7 @@ return returnedJSObj;
     public Vec3 GetGravityOverride() {
         int pointer = internal_native_GetGravityOverride(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -148,7 +148,7 @@ jsObj.ResetGravityOverride();
     public Vec3 GetLocalUp() {
         int pointer = internal_native_GetLocalUp(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -167,7 +167,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetLocalForward() {
         int pointer = internal_native_GetLocalForward(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -186,7 +186,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetWorldUp() {
         int pointer = internal_native_GetWorldUp(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -205,7 +205,7 @@ return jolt.getPointer(returnedJSObj);
     public Body GetVehicleBody() {
         int pointer = internal_native_GetVehicleBody(native_address);
         if (pointer == 0)
-            return null;
+            return Body.NULL;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = Body.native_new();
         Body_TEMP_GEN_0.internal_reset(pointer, false);
@@ -224,7 +224,7 @@ return jolt.getPointer(returnedJSObj);
     public VehicleController GetController() {
         int pointer = internal_native_GetController(native_address);
         if (pointer == 0)
-            return null;
+            return VehicleController.NULL;
         if (VehicleController_TEMP_GEN_0 == null)
             VehicleController_TEMP_GEN_0 = VehicleController.native_new();
         VehicleController_TEMP_GEN_0.internal_reset(pointer, false);
@@ -243,7 +243,7 @@ return jolt.getPointer(returnedJSObj);
     public Wheels GetWheels() {
         int pointer = internal_native_GetWheels(native_address);
         if (pointer == 0)
-            return null;
+            return Wheels.NULL;
         if (Wheels_TEMP_GEN_0 == null)
             Wheels_TEMP_GEN_0 = Wheels.native_new();
         Wheels_TEMP_GEN_0.internal_reset(pointer, false);
@@ -262,7 +262,7 @@ return jolt.getPointer(returnedJSObj);
     public Wheel GetWheel(int inIdx) {
         int pointer = internal_native_GetWheel(native_address, inIdx);
         if (pointer == 0)
-            return null;
+            return Wheel.NULL;
         if (Wheel_TEMP_GEN_0 == null)
             Wheel_TEMP_GEN_0 = Wheel.native_new();
         Wheel_TEMP_GEN_0.internal_reset(pointer, false);
@@ -281,7 +281,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetWheelLocalTransform(int inWheelIndex, Vec3 inWheelRight, Vec3 inWheelUp) {
         int pointer = internal_native_GetWheelLocalTransform(native_address, inWheelIndex, inWheelRight.native_address, inWheelUp.native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
         Mat44_TEMP_GEN_0.internal_reset(pointer, false);
@@ -300,7 +300,7 @@ return jolt.getPointer(returnedJSObj);
     public Mat44 GetWheelWorldTransform(int inWheelIndex, Vec3 inWheelRight, Vec3 inWheelUp) {
         int pointer = internal_native_GetWheelWorldTransform(native_address, inWheelIndex, inWheelRight.native_address, inWheelUp.native_address);
         if (pointer == 0)
-            return null;
+            return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
         Mat44_TEMP_GEN_1.internal_reset(pointer, false);
@@ -319,7 +319,7 @@ return jolt.getPointer(returnedJSObj);
     public ArrayVehicleAntiRollBar GetAntiRollBars() {
         int pointer = internal_native_GetAntiRollBars(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayVehicleAntiRollBar.NULL;
         if (ArrayVehicleAntiRollBar_TEMP_GEN_0 == null)
             ArrayVehicleAntiRollBar_TEMP_GEN_0 = ArrayVehicleAntiRollBar.native_new();
         ArrayVehicleAntiRollBar_TEMP_GEN_0.internal_reset(pointer, false);

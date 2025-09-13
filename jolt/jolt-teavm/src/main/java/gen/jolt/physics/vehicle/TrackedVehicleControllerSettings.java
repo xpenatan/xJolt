@@ -52,7 +52,7 @@ return jolt.getPointer(jsObj);
     public VehicleEngineSettings get_mEngine() {
         int pointer = internal_native_get_mEngine(native_address);
         if (pointer == 0)
-            return null;
+            return VehicleEngineSettings.NULL;
         if (VehicleEngineSettings_TEMP_GEN_0 == null)
             VehicleEngineSettings_TEMP_GEN_0 = VehicleEngineSettings.native_new();
         VehicleEngineSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -82,7 +82,7 @@ jsObj.set_mEngine(mEngine_addr);
     public VehicleTransmissionSettings get_mTransmission() {
         int pointer = internal_native_get_mTransmission(native_address);
         if (pointer == 0)
-            return null;
+            return VehicleTransmissionSettings.NULL;
         if (VehicleTransmissionSettings_TEMP_GEN_0 == null)
             VehicleTransmissionSettings_TEMP_GEN_0 = VehicleTransmissionSettings.native_new();
         VehicleTransmissionSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -112,7 +112,7 @@ jsObj.set_mTransmission(mTransmission_addr);
     public VehicleTrackSettings get_mTracks(int index) {
         int pointer = internal_native_get_mTracks(native_address, index);
         if (pointer == 0)
-            return null;
+            return VehicleTrackSettings.NULL;
         if (VehicleTrackSettings_TEMP_GEN_0 == null)
             VehicleTrackSettings_TEMP_GEN_0 = VehicleTrackSettings.native_new();
         VehicleTrackSettings_TEMP_GEN_0.internal_reset(pointer, false);

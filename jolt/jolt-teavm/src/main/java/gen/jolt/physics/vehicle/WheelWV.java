@@ -59,7 +59,7 @@ jolt.destroy(jsObj);
     public WheelSettingsWV GetSettings() {
         int pointer = internal_native_GetSettings(native_address);
         if (pointer == 0)
-            return null;
+            return WheelSettingsWV.NULL;
         if (WheelSettingsWV_TEMP_GEN_0 == null)
             WheelSettingsWV_TEMP_GEN_0 = WheelSettingsWV.native_new();
         WheelSettingsWV_TEMP_GEN_0.internal_reset(pointer, false);

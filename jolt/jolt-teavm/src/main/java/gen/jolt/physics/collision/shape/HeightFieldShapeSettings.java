@@ -61,7 +61,7 @@ return jolt.getPointer(jsObj);
     public Vec3 get_mOffset() {
         int pointer = internal_native_get_mOffset(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -91,7 +91,7 @@ jsObj.set_mOffset(mOffset_addr);
     public Vec3 get_mScale() {
         int pointer = internal_native_get_mScale(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -253,7 +253,7 @@ jsObj.set_mBitsPerSample(mBitsPerSample);
     public ArrayFloat get_mHeightSamples() {
         int pointer = internal_native_get_mHeightSamples(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayFloat.NULL;
         if (ArrayFloat_TEMP_GEN_0 == null)
             ArrayFloat_TEMP_GEN_0 = ArrayFloat.native_new();
         ArrayFloat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -283,7 +283,7 @@ jsObj.set_mHeightSamples(mHeightSamples_addr);
     public ArrayUint8 get_mMaterialIndices() {
         int pointer = internal_native_get_mMaterialIndices(native_address);
         if (pointer == 0)
-            return null;
+            return ArrayUint8.NULL;
         if (ArrayUint8_TEMP_GEN_0 == null)
             ArrayUint8_TEMP_GEN_0 = ArrayUint8.native_new();
         ArrayUint8_TEMP_GEN_0.internal_reset(pointer, false);
@@ -313,7 +313,7 @@ jsObj.set_mMaterialIndices(mMaterialIndices_addr);
     public PhysicsMaterialList get_mMaterials() {
         int pointer = internal_native_get_mMaterials(native_address);
         if (pointer == 0)
-            return null;
+            return PhysicsMaterialList.NULL;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
         PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);

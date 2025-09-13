@@ -37,6 +37,14 @@ public class ContactListenerEm extends ContactListener {
 
     static private SubShapeIDPair SubShapeIDPair_TEMP_STATIC_GEN_0;
 
+    static public final ContactListenerEm NULL = ContactListenerEm.native_new();
+
+    static public final ContactListenerEm T_01 = ContactListenerEm.native_new();
+
+    static public final ContactListenerEm T_02 = ContactListenerEm.native_new();
+
+    static public final ContactListenerEm T_03 = ContactListenerEm.native_new();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

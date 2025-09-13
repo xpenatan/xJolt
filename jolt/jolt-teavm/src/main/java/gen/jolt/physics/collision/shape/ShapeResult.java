@@ -74,7 +74,7 @@ return returnedJSObj;
     public IDLString GetError() {
         int pointer = internal_native_GetError(native_address);
         if (pointer == 0)
-            return null;
+            return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
         IDLString_TEMP_GEN_0.internal_reset(pointer, false);
@@ -93,7 +93,7 @@ return jolt.getPointer(returnedJSObj);
     public Shape Get() {
         int pointer = internal_native_Get(native_address);
         if (pointer == 0)
-            return null;
+            return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);

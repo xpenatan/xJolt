@@ -70,7 +70,7 @@ delete nativeObject;
     public WheelSettings GetSettings() {
         long pointer = internal_native_GetSettings(native_address);
         if (pointer == 0)
-            return null;
+            return WheelSettings.NULL;
         if (WheelSettings_TEMP_GEN_0 == null)
             WheelSettings_TEMP_GEN_0 = WheelSettings.native_new();
         WheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
@@ -157,7 +157,7 @@ return nativeObject->HasContact();
     public BodyID GetContactBodyID() {
         long pointer = internal_native_GetContactBodyID(native_address);
         if (pointer == 0)
-            return null;
+            return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
         BodyID_TEMP_GEN_0.internal_reset(pointer, false);
@@ -174,7 +174,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactPosition() {
         long pointer = internal_native_GetContactPosition(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -191,7 +191,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactPointVelocity() {
         long pointer = internal_native_GetContactPointVelocity(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -208,7 +208,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactNormal() {
         long pointer = internal_native_GetContactNormal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -225,7 +225,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactLongitudinal() {
         long pointer = internal_native_GetContactLongitudinal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -242,7 +242,7 @@ return (jlong)&copy_addr;*/
     public Vec3 GetContactLateral() {
         long pointer = internal_native_GetContactLateral(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);

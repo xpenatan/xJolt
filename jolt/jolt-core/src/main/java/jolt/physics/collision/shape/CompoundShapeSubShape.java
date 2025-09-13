@@ -52,7 +52,7 @@ delete nativeObject;
     public Vec3 GetPositionCOM() {
         long pointer = internal_native_GetPositionCOM(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -69,7 +69,7 @@ return (jlong)&copy_addr;*/
     public Quat GetRotation() {
         long pointer = internal_native_GetRotation(native_address);
         if (pointer == 0)
-            return null;
+            return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
         Quat_TEMP_GEN_0.internal_reset(pointer, false);
@@ -86,7 +86,7 @@ return (jlong)&copy_addr;*/
     public Shape get_mShape() {
         long pointer = internal_native_get_mShape(native_address);
         if (pointer == 0)
-            return null;
+            return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
         Shape_TEMP_GEN_0.internal_reset(pointer, false);

@@ -135,7 +135,7 @@ jolt.destroy(jsObj);
     public static Vec3 sZero() {
         int pointer = internal_native_sZero();
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
@@ -153,7 +153,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sOne() {
         int pointer = internal_native_sOne();
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_1 == null)
             Vec3_TEMP_STATIC_GEN_1 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
@@ -171,7 +171,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sAxisX() {
         int pointer = internal_native_sAxisX();
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
@@ -189,7 +189,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sAxisY() {
         int pointer = internal_native_sAxisY();
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_3 == null)
             Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
@@ -207,7 +207,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sAxisZ() {
         int pointer = internal_native_sAxisZ();
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_4 == null)
             Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
@@ -225,7 +225,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sReplicate(float inValue) {
         int pointer = internal_native_sReplicate(inValue);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_5 == null)
             Vec3_TEMP_STATIC_GEN_5 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
@@ -243,7 +243,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sMin(Vec3 inLHS, Vec3 inRHS) {
         int pointer = internal_native_sMin(inLHS.native_address, inRHS.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_6 == null)
             Vec3_TEMP_STATIC_GEN_6 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
@@ -261,7 +261,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sMax(Vec3 inLHS, Vec3 inRHS) {
         int pointer = internal_native_sMax(inLHS.native_address, inRHS.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_7 == null)
             Vec3_TEMP_STATIC_GEN_7 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
@@ -279,7 +279,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sClamp(Vec3 inValue, Vec3 inMin, Vec3 inMax) {
         int pointer = internal_native_sClamp(inValue.native_address, inMin.native_address, inMax.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_8 == null)
             Vec3_TEMP_STATIC_GEN_8 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
@@ -297,7 +297,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sFusedMultiplyAdd(Vec3 inMul1, Vec3 inMul2, Vec3 inAdd) {
         int pointer = internal_native_sFusedMultiplyAdd(inMul1.native_address, inMul2.native_address, inAdd.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_9 == null)
             Vec3_TEMP_STATIC_GEN_9 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
@@ -315,7 +315,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sOr(Vec3 inV1, Vec3 inV2) {
         int pointer = internal_native_sOr(inV1.native_address, inV2.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_10 == null)
             Vec3_TEMP_STATIC_GEN_10 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
@@ -333,7 +333,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sXor(Vec3 inV1, Vec3 inV2) {
         int pointer = internal_native_sXor(inV1.native_address, inV2.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_11 == null)
             Vec3_TEMP_STATIC_GEN_11 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
@@ -351,7 +351,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sAnd(Vec3 inV1, Vec3 inV2) {
         int pointer = internal_native_sAnd(inV1.native_address, inV2.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_12 == null)
             Vec3_TEMP_STATIC_GEN_12 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_12.internal_reset(pointer, false);
@@ -369,7 +369,7 @@ return jolt.getPointer(returnedJSObj);
     public static Vec3 sUnitSpherical(float inTheta, float inPhi) {
         int pointer = internal_native_sUnitSpherical(inTheta, inPhi);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_13 == null)
             Vec3_TEMP_STATIC_GEN_13 = Vec3.native_new();
         Vec3_TEMP_STATIC_GEN_13.internal_reset(pointer, false);
@@ -447,7 +447,7 @@ return returnedJSObj;
     public Vec3 Normalized() {
         int pointer = internal_native_Normalized(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -466,7 +466,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 NormalizedOr(Vec3 inZeroValue) {
         int pointer = internal_native_NormalizedOr(native_address, inZeroValue.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
@@ -485,7 +485,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetNormalizedPerpendicular() {
         int pointer = internal_native_GetNormalizedPerpendicular(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
         Vec3_TEMP_GEN_2.internal_reset(pointer, false);
@@ -691,7 +691,7 @@ return returnedJSObj;
     public Vec3 Abs() {
         int pointer = internal_native_Abs(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
         Vec3_TEMP_GEN_3.internal_reset(pointer, false);
@@ -710,7 +710,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 Reciprocal() {
         int pointer = internal_native_Reciprocal(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
         Vec3_TEMP_GEN_4.internal_reset(pointer, false);
@@ -729,7 +729,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 Cross(Vec3 inRHS) {
         int pointer = internal_native_Cross(native_address, inRHS.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
         Vec3_TEMP_GEN_5.internal_reset(pointer, false);
@@ -760,7 +760,7 @@ return returnedJSObj;
     public Vec3 DotV(Vec3 inRHS) {
         int pointer = internal_native_DotV(native_address, inRHS.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = Vec3.native_new();
         Vec3_TEMP_GEN_6.internal_reset(pointer, false);
@@ -779,7 +779,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 DotV4(Vec3 inRHS) {
         int pointer = internal_native_DotV4(native_address, inRHS.native_address);
         if (pointer == 0)
-            return null;
+            return Vec4.NULL;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = Vec4.native_new();
         Vec4_TEMP_GEN_0.internal_reset(pointer, false);
@@ -854,7 +854,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 MulVec3(Vec3 inV) {
         int pointer = internal_native_MulVec3(native_address, inV.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = Vec3.native_new();
         Vec3_TEMP_GEN_7.internal_reset(pointer, false);
@@ -873,7 +873,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 MulFloat(float inV) {
         int pointer = internal_native_MulFloat(native_address, inV);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = Vec3.native_new();
         Vec3_TEMP_GEN_8.internal_reset(pointer, false);
@@ -892,7 +892,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 DivVec3(Vec3 inV) {
         int pointer = internal_native_DivVec3(native_address, inV.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_9 == null)
             Vec3_TEMP_GEN_9 = Vec3.native_new();
         Vec3_TEMP_GEN_9.internal_reset(pointer, false);
@@ -911,7 +911,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 DivFloat(float inV) {
         int pointer = internal_native_DivFloat(native_address, inV);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_10 == null)
             Vec3_TEMP_GEN_10 = Vec3.native_new();
         Vec3_TEMP_GEN_10.internal_reset(pointer, false);
@@ -930,7 +930,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 AddVec3(Vec3 inV) {
         int pointer = internal_native_AddVec3(native_address, inV.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_11 == null)
             Vec3_TEMP_GEN_11 = Vec3.native_new();
         Vec3_TEMP_GEN_11.internal_reset(pointer, false);
@@ -949,7 +949,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 SubVec3(Vec3 inV) {
         int pointer = internal_native_SubVec3(native_address, inV.native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_12 == null)
             Vec3_TEMP_GEN_12 = Vec3.native_new();
         Vec3_TEMP_GEN_12.internal_reset(pointer, false);
@@ -968,7 +968,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 SplatX() {
         int pointer = internal_native_SplatX(native_address);
         if (pointer == 0)
-            return null;
+            return Vec4.NULL;
         if (Vec4_TEMP_GEN_1 == null)
             Vec4_TEMP_GEN_1 = Vec4.native_new();
         Vec4_TEMP_GEN_1.internal_reset(pointer, false);
@@ -987,7 +987,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 SplatY() {
         int pointer = internal_native_SplatY(native_address);
         if (pointer == 0)
-            return null;
+            return Vec4.NULL;
         if (Vec4_TEMP_GEN_2 == null)
             Vec4_TEMP_GEN_2 = Vec4.native_new();
         Vec4_TEMP_GEN_2.internal_reset(pointer, false);
@@ -1006,7 +1006,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec4 SplatZ() {
         int pointer = internal_native_SplatZ(native_address);
         if (pointer == 0)
-            return null;
+            return Vec4.NULL;
         if (Vec4_TEMP_GEN_3 == null)
             Vec4_TEMP_GEN_3 = Vec4.native_new();
         Vec4_TEMP_GEN_3.internal_reset(pointer, false);
@@ -1049,7 +1049,7 @@ return returnedJSObj;
     public Vec3 Sqrt() {
         int pointer = internal_native_Sqrt(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_13 == null)
             Vec3_TEMP_GEN_13 = Vec3.native_new();
         Vec3_TEMP_GEN_13.internal_reset(pointer, false);
@@ -1068,7 +1068,7 @@ return jolt.getPointer(returnedJSObj);
     public Vec3 GetSign() {
         int pointer = internal_native_GetSign(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_14 == null)
             Vec3_TEMP_GEN_14 = Vec3.native_new();
         Vec3_TEMP_GEN_14.internal_reset(pointer, false);

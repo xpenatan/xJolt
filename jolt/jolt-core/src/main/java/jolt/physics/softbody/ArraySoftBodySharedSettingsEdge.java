@@ -66,7 +66,7 @@ return nativeObject->size();
     public SoftBodySharedSettingsEdge at(int inIndex) {
         long pointer = internal_native_at(native_address, inIndex);
         if (pointer == 0)
-            return null;
+            return SoftBodySharedSettingsEdge.NULL;
         if (SoftBodySharedSettingsEdge_TEMP_GEN_0 == null)
             SoftBodySharedSettingsEdge_TEMP_GEN_0 = SoftBodySharedSettingsEdge.native_new();
         SoftBodySharedSettingsEdge_TEMP_GEN_0.internal_reset(pointer, false);

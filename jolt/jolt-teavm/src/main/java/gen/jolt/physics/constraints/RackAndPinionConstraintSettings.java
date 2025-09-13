@@ -99,7 +99,7 @@ jsObj.set_mSpace(mSpace);
     public Vec3 get_mHingeAxis() {
         int pointer = internal_native_get_mHingeAxis(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
         Vec3_TEMP_GEN_0.internal_reset(pointer, false);
@@ -129,7 +129,7 @@ jsObj.set_mHingeAxis(mHingeAxis_addr);
     public Vec3 get_mSliderAxis() {
         int pointer = internal_native_get_mSliderAxis(native_address);
         if (pointer == 0)
-            return null;
+            return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
         Vec3_TEMP_GEN_1.internal_reset(pointer, false);
