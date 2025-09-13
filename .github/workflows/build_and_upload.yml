@@ -273,7 +273,7 @@ jobs:
 
   upload_natives:
     name: Upload Natives
-    needs: [build_windows, build_linux, build_mac, build_android, build_teavm]
+    needs: [commit_generated_code, build_windows, build_linux, build_mac, build_android, build_teavm]
     runs-on: ubuntu-latest
 
     steps:
