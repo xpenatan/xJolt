@@ -193,7 +193,7 @@ public class SamplesApp extends InputAdapter {
         else if(keycode == Input.Keys.R) {
             if(test != null) {
                 Class<? extends Test> aClass = test.getClass();
-                if(Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT)) {
+                if(Gdx.input.isKeyPressed(Input.Keys.SHIFT_LEFT)) {
                     aClass = tests.getNextTest(aClass);
                 }
                 startTest(aClass);
