@@ -140,42 +140,42 @@ return (jlong)&copy_addr;*/
     public static native long internal_native_GetMutexMask(long this_addr, long inBodies_addr, int inNumber);
 
     public void LockRead(MutexMask inMutexMask) {
-        internal_native_LockRead_0(native_address, inMutexMask.native_address);
+        internal_native_LockRead__0(native_address, inMutexMask.native_address);
     }
 
     /*[-JNI;-NATIVE]
 BodyLockInterface* nativeObject = (BodyLockInterface*)this_addr;
 nativeObject->LockRead(*((MutexMask* )inMutexMask_addr));
 */
-    public static native void internal_native_LockRead_0(long this_addr, long inMutexMask_addr);
+    public static native void internal_native_LockRead__0(long this_addr, long inMutexMask_addr);
 
     public void UnlockRead(MutexMask inMutexMask) {
-        internal_native_UnlockRead_0(native_address, inMutexMask.native_address);
+        internal_native_UnlockRead__0(native_address, inMutexMask.native_address);
     }
 
     /*[-JNI;-NATIVE]
 BodyLockInterface* nativeObject = (BodyLockInterface*)this_addr;
 nativeObject->UnlockRead(*((MutexMask* )inMutexMask_addr));
 */
-    public static native void internal_native_UnlockRead_0(long this_addr, long inMutexMask_addr);
+    public static native void internal_native_UnlockRead__0(long this_addr, long inMutexMask_addr);
 
     public void LockWrite(MutexMask inMutexMask) {
-        internal_native_LockWrite_0(native_address, inMutexMask.native_address);
+        internal_native_LockWrite__0(native_address, inMutexMask.native_address);
     }
 
     /*[-JNI;-NATIVE]
 BodyLockInterface* nativeObject = (BodyLockInterface*)this_addr;
 nativeObject->LockWrite(*((MutexMask* )inMutexMask_addr));
 */
-    public static native void internal_native_LockWrite_0(long this_addr, long inMutexMask_addr);
+    public static native void internal_native_LockWrite__0(long this_addr, long inMutexMask_addr);
 
     public void UnlockWrite(MutexMask inMutexMask) {
-        internal_native_UnlockWrite_0(native_address, inMutexMask.native_address);
+        internal_native_UnlockWrite__0(native_address, inMutexMask.native_address);
     }
 
     /*[-JNI;-NATIVE]
 BodyLockInterface* nativeObject = (BodyLockInterface*)this_addr;
 nativeObject->UnlockWrite(*((MutexMask* )inMutexMask_addr));
 */
-    public static native void internal_native_UnlockWrite_0(long this_addr, long inMutexMask_addr);
+    public static native void internal_native_UnlockWrite__0(long this_addr, long inMutexMask_addr);
 }

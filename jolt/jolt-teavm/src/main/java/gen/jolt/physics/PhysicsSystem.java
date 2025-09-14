@@ -547,48 +547,48 @@ return returnedJSObj;
     public static native boolean internal_native_RestoreState(int this_addr, int inStream_addr);
 
     public void AddStepListener(PhysicsStepListener inListener) {
-        internal_native_AddStepListener_0(native_address, inListener.native_address);
+        internal_native_AddStepListener__0(native_address, inListener.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);
-jsObj.AddStepListener_0(inListener_addr);
+jsObj.AddStepListener__0(inListener_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "inListener_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.AddStepListener_0(inListener_addr);")
-    public static native void internal_native_AddStepListener_0(int this_addr, int inListener_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "inListener_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.AddStepListener__0(inListener_addr);")
+    public static native void internal_native_AddStepListener__0(int this_addr, int inListener_addr);
 
     public void AddStepListener(VehicleConstraint inListener) {
-        internal_native_AddStepListener_1(native_address, inListener.native_address);
+        internal_native_AddStepListener__1(native_address, inListener.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);
-jsObj.AddStepListener_1(inListener_addr);
+jsObj.AddStepListener__1(inListener_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "inListener_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.AddStepListener_1(inListener_addr);")
-    public static native void internal_native_AddStepListener_1(int this_addr, int inListener_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "inListener_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.AddStepListener__1(inListener_addr);")
+    public static native void internal_native_AddStepListener__1(int this_addr, int inListener_addr);
 
     public void RemoveStepListener(PhysicsStepListener inListener) {
-        internal_native_RemoveStepListener_0(native_address, inListener.native_address);
+        internal_native_RemoveStepListener__0(native_address, inListener.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);
-jsObj.RemoveStepListener_0(inListener_addr);
+jsObj.RemoveStepListener__0(inListener_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "inListener_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.RemoveStepListener_0(inListener_addr);")
-    public static native void internal_native_RemoveStepListener_0(int this_addr, int inListener_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "inListener_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.RemoveStepListener__0(inListener_addr);")
+    public static native void internal_native_RemoveStepListener__0(int this_addr, int inListener_addr);
 
     public void RemoveStepListener(VehicleConstraint inListener) {
-        internal_native_RemoveStepListener_1(native_address, inListener.native_address);
+        internal_native_RemoveStepListener__1(native_address, inListener.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);
-jsObj.RemoveStepListener_1(inListener_addr);
+jsObj.RemoveStepListener__1(inListener_addr);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "inListener_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.RemoveStepListener_1(inListener_addr);")
-    public static native void internal_native_RemoveStepListener_1(int this_addr, int inListener_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "inListener_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.RemoveStepListener__1(inListener_addr);")
+    public static native void internal_native_RemoveStepListener__1(int this_addr, int inListener_addr);
 
     public void SetBodyActivationListener(BodyActivationListener inListener) {
         internal_native_SetBodyActivationListener(native_address, inListener.native_address);

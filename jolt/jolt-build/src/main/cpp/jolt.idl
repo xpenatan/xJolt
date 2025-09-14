@@ -2,6 +2,7 @@
 // ################# CUSTOM CLASSES #################
 // ##################################################
 
+[NoDelete]
 interface Jolt {
     static void Init();
     static void RegisterTypes();
@@ -9,43 +10,85 @@ interface Jolt {
     static void ClearWorld([Ref] PhysicsSystem physicsSystem);
 };
 
+[NoDelete]
+interface JoltTemp {
+    [BindTo="Temp_Vec3_1"] static Vec3 Vec3_1__0();
+    [BindTo="Temp_Vec3_1"] static Vec3 Vec3_1__1(float inX, float inY, float inZ);
+    [BindTo="Temp_Vec3_1"] static Vec3 Vec3_1__2(Vec3 other);
+    [BindTo="Temp_Vec3_2"] static Vec3 Vec3_2__0();
+    [BindTo="Temp_Vec3_2"] static Vec3 Vec3_2__1(float inX, float inY, float inZ);
+    [BindTo="Temp_Vec3_2"] static Vec3 Vec3_2__2(Vec3 other);
+    [BindTo="Temp_Vec3_3"] static Vec3 Vec3_3__0();
+    [BindTo="Temp_Vec3_3"] static Vec3 Vec3_3__1(float inX, float inY, float inZ);
+    [BindTo="Temp_Vec3_3"] static Vec3 Vec3_3__2(Vec3 other);
+    [BindTo="Temp_Vec3_4"] static Vec3 Vec3_4__0();
+    [BindTo="Temp_Vec3_4"] static Vec3 Vec3_4__1(float inX, float inY, float inZ);
+    [BindTo="Temp_Vec3_4"] static Vec3 Vec3_4__2(Vec3 other);
+
+    [BindTo="Temp_Vec4_1"] static Vec4 Vec4_1__0();
+    [BindTo="Temp_Vec4_1"] static Vec4 Vec4_1__1(float inX, float inY, float inZ, float inW);
+    [BindTo="Temp_Vec4_1"] static Vec4 Vec4_1__2(Vec4 other);
+    [BindTo="Temp_Vec4_2"] static Vec4 Vec4_2__0();
+    [BindTo="Temp_Vec4_2"] static Vec4 Vec4_2__1(float inX, float inY, float inZ, float inW);
+    [BindTo="Temp_Vec4_2"] static Vec4 Vec4_2__2(Vec4 other);
+    [BindTo="Temp_Vec4_3"] static Vec4 Vec4_3__0();
+    [BindTo="Temp_Vec4_3"] static Vec4 Vec4_3__1(float inX, float inY, float inZ, float inW);
+    [BindTo="Temp_Vec4_3"] static Vec4 Vec4_3__2(Vec4 other);
+    [BindTo="Temp_Vec4_4"] static Vec4 Vec4_4__0();
+    [BindTo="Temp_Vec4_4"] static Vec4 Vec4_4__1(float inX, float inY, float inZ, float inW);
+    [BindTo="Temp_Vec4_4"] static Vec4 Vec4_4__2(Vec4 other);
+
+    [BindTo="Temp_Quat_1"] static Quat Quat_1__0();
+    [BindTo="Temp_Quat_1"] static Quat Quat_1__1(float inX, float inY, float inZ, float inW);
+    [BindTo="Temp_Quat_1"] static Quat Quat_1__2(Quat other);
+    [BindTo="Temp_Quat_2"] static Quat Quat_2__0();
+    [BindTo="Temp_Quat_2"] static Quat Quat_2__1(float inX, float inY, float inZ, float inW);
+    [BindTo="Temp_Quat_2"] static Quat Quat_2__2(Quat other);
+
+    [BindTo="Temp_Mat44_1"] static Mat44 Mat44_1__0();
+    [BindTo="Temp_Mat44_1"] static Mat44 Mat44_1__1(Mat44 other);
+    [BindTo="Temp_Mat44_2"] static Mat44 Mat44_2__0();
+    [BindTo="Temp_Mat44_2"] static Mat44 Mat44_2__1(Mat44 other);
+};
+
+[NoDelete]
 interface JoltNew {
-    [BindTo="New_PhysicsSystem"] static PhysicsSystem PhysicsSystem_0(); //[-NEW_OBJECT]
+    [BindTo="New_PhysicsSystem"] static PhysicsSystem PhysicsSystem__0(); //[-NEW_OBJECT]
 
-    [BindTo="New_Factory"] static Factory Factory_0(); //[-NEW_OBJECT]
+    [BindTo="New_Factory"] static Factory Factory__0(); //[-NEW_OBJECT]
 
-    [BindTo="New_TempAllocatorImpl"] static TempAllocatorImpl TempAllocatorImpl_0(unsigned long inSize); //[-NEW_OBJECT]
+    [BindTo="New_TempAllocatorImpl"] static TempAllocatorImpl TempAllocatorImpl__0(unsigned long inSize); //[-NEW_OBJECT]
 
-    [BindTo="New_JobSystemThreadPool"] static JobSystemThreadPool JobSystemThreadPool_0(unsigned long inMaxJobs, unsigned long inMaxBarriers, optional unsigned long inNumThreads); //[-NEW_OBJECT]
+    [BindTo="New_JobSystemThreadPool"] static JobSystemThreadPool JobSystemThreadPool__0(unsigned long inMaxJobs, unsigned long inMaxBarriers, optional unsigned long inNumThreads); //[-NEW_OBJECT]
 
-    [BindTo="New_Mat44"] static Mat44 Mat44_0(); //[-NEW_OBJECT]
-    [BindTo="New_Mat44"] static Mat44 Mat44_1([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec4 inC4); //[-NEW_OBJECT]
-    [BindTo="New_Mat44"] static Mat44 Mat44_2([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec3 inC4); //[-NEW_OBJECT]
+    [BindTo="New_Mat44"] static Mat44 Mat44__0(); //[-NEW_OBJECT]
+    [BindTo="New_Mat44"] static Mat44 Mat44__1([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec4 inC4); //[-NEW_OBJECT]
+    [BindTo="New_Mat44"] static Mat44 Mat44__2([Ref] Vec4 inC1, [Ref] Vec4 inC2, [Ref] Vec4 inC3, [Ref] Vec3 inC4); //[-NEW_OBJECT]
 
-    [BindTo="New_Vec3"] static Vec3 Vec3_0(); //[-NEW_OBJECT]
-    [BindTo="New_Vec3"] static Vec3 Vec3_1(float inX, float inY, float inZ); //[-NEW_OBJECT]
-    [BindTo="New_Vec3"] static Vec3 Vec3_2([Const, Ref] Vec3 inRHS); //[-NEW_OBJECT]
-    [BindTo="New_Vec3"] static Vec3 Vec3_3([Const, Ref] Float3 inV); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 Vec3__0(); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 Vec3__1(float inX, float inY, float inZ); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 Vec3__2([Const, Ref] Vec3 inRHS); //[-NEW_OBJECT]
+    [BindTo="New_Vec3"] static Vec3 Vec3__3([Const, Ref] Float3 inV); //[-NEW_OBJECT]
 
-    [BindTo="New_Vec4"] static Vec4 Vec4_0(); //[-NEW_OBJECT]
-    [BindTo="New_Vec4"] static Vec4 Vec4_1(float inX, float inY, float inZ, float inW); //[-NEW_OBJECT]
-    [BindTo="New_Vec4"] static Vec4 Vec4_2([Const, Ref] Vec4 inV); //[-NEW_OBJECT]
-    [BindTo="New_Vec4"] static Vec4 Vec4_3([Ref] Vec3 inV, float inW); //[-NEW_OBJECT]
+    [BindTo="New_Vec4"] static Vec4 Vec4__0(); //[-NEW_OBJECT]
+    [BindTo="New_Vec4"] static Vec4 Vec4__1(float inX, float inY, float inZ, float inW); //[-NEW_OBJECT]
+    [BindTo="New_Vec4"] static Vec4 Vec4__2([Const, Ref] Vec4 inV); //[-NEW_OBJECT]
+    [BindTo="New_Vec4"] static Vec4 Vec4__3([Ref] Vec3 inV, float inW); //[-NEW_OBJECT]
 
-    [BindTo="New_Quat"] static Quat Quat_0(); //[-NEW_OBJECT]
-    [BindTo="New_Quat"] static Quat Quat_1(float inX, float inY, float inZ, float inW); //[-NEW_OBJECT]
+    [BindTo="New_Quat"] static Quat Quat__0(); //[-NEW_OBJECT]
+    [BindTo="New_Quat"] static Quat Quat__1(float inX, float inY, float inZ, float inW); //[-NEW_OBJECT]
 
-    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings BodyCreationSettings_0(); //[-NEW_OBJECT]
-    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings BodyCreationSettings_1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
-    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings BodyCreationSettings_2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
+    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings BodyCreationSettings__0(); //[-NEW_OBJECT]
+    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings BodyCreationSettings__1([Const] ShapeSettings inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
+    [BindTo="New_BodyCreationSettings"] static BodyCreationSettings BodyCreationSettings__2([Const] Shape inShape, [Ref] Vec3 inPosition, [Ref] Quat inRotation, EMotionType inMotionType, unsigned long inObjectLayer); //[-NEW_OBJECT]
 
-    [BindTo="New_RotatedTranslatedShapeSettings"] static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_0(); //[-NEW_OBJECT]
-    [BindTo="New_RotatedTranslatedShapeSettings"] static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_1([Ref, Const] Vec3 inPosition, [Ref, Const] Quat inRotation, ShapeSettings inShape); //[-NEW_OBJECT]
-    [BindTo="New_RotatedTranslatedShapeSettings"] static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_2([Ref, Const] Vec3 inPosition, [Ref, Const] Quat inRotation, Shape inShape); //[-NEW_OBJECT]
+    [BindTo="New_RotatedTranslatedShapeSettings"] static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings__0(); //[-NEW_OBJECT]
+    [BindTo="New_RotatedTranslatedShapeSettings"] static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings__1([Ref, Const] Vec3 inPosition, [Ref, Const] Quat inRotation, ShapeSettings inShape); //[-NEW_OBJECT]
+    [BindTo="New_RotatedTranslatedShapeSettings"] static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings__2([Ref, Const] Vec3 inPosition, [Ref, Const] Quat inRotation, Shape inShape); //[-NEW_OBJECT]
 
-    [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings_0(); //[-NEW_OBJECT]
-    [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings_1([Ref, Const] TriangleList inTriangleList, [Ref, Const] optional PhysicsMaterialList inMaterialList); //[-NEW_OBJECT]
-    [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings_2([Ref, Const] VertexList inVertices, [Ref, Const] IndexedTriangleList inTriangles, [Ref, Const] PhysicsMaterialList inMaterialList); //[-NEW_OBJECT]
+    [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings__0(); //[-NEW_OBJECT]
+    [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings__1([Ref, Const] TriangleList inTriangleList, [Ref, Const] optional PhysicsMaterialList inMaterialList); //[-NEW_OBJECT]
+    [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings__2([Ref, Const] VertexList inVertices, [Ref, Const] IndexedTriangleList inTriangles, [Ref, Const] PhysicsMaterialList inMaterialList); //[-NEW_OBJECT]
 };
 
 // BEGIN DEBUG RENDERER
@@ -369,26 +412,6 @@ ObjectVsBroadPhaseLayerFilterEm implements ObjectVsBroadPhaseLayerFilter;
 interface ObjectVsBroadPhaseLayerFilterJS {
     void ObjectVsBroadPhaseLayerFilterJS();
     [Const] boolean ShouldCollide(unsigned long inLayer1, BroadPhaseLayer inLayer2);
-};
-
-interface CharacterContactListenerEm { //[-SUB_PACKAGE=physics.character]
-};
-CharacterContactListenerEm implements CharacterContactListener;
-
-[JSImplementation="CharacterContactListenerEm"]
-interface CharacterContactListenerJS {
-    void CharacterContactListenerJS();
-    void OnAdjustBodyVelocity([Const] CharacterVirtual inCharacter, [Const, Ref] Body inBody2, [Ref] Vec3 ioLinearVelocity, [Ref] Vec3 ioAngularVelocity);
-    boolean OnContactValidate([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2);
-    boolean OnCharacterContactValidate([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2);
-    void OnContactAdded([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
-    void OnContactPersisted([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
-    void OnContactRemoved([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2);
-    void OnCharacterContactAdded([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
-    void OnCharacterContactPersisted([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
-    void OnCharacterContactRemoved([Const] CharacterVirtual inCharacter, [Const, Ref] CharacterID inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2);
-    void OnContactSolve([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
-    void OnCharacterContactSolve([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
 };
 
 interface CollideShapeAllHitCollisionCollector { //[-SUB_PACKAGE=physics.collision]
@@ -1092,10 +1115,10 @@ interface PhysicsSystem {
     [Const, Ref] NarrowPhaseQuery GetNarrowPhaseQueryNoLock();
     void SaveState([Ref] StateRecorder inStream, optional EStateRecorderState inState, optional StateRecorderFilter inFilter);
     boolean RestoreState([Ref] StateRecorder inStream, optional StateRecorderFilter inFilter);
-    [BindTo="AddStepListener"] void AddStepListener_0(PhysicsStepListener inListener);
-    [BindTo="AddStepListener"] void AddStepListener_1(VehicleConstraint inListener);
-    [BindTo="RemoveStepListener"] void RemoveStepListener_0(PhysicsStepListener inListener);
-    [BindTo="RemoveStepListener"] void RemoveStepListener_1(VehicleConstraint inListener);
+    [BindTo="AddStepListener"] void AddStepListener__0(PhysicsStepListener inListener);
+    [BindTo="AddStepListener"] void AddStepListener__1(VehicleConstraint inListener);
+    [BindTo="RemoveStepListener"] void RemoveStepListener__0(PhysicsStepListener inListener);
+    [BindTo="RemoveStepListener"] void RemoveStepListener__1(VehicleConstraint inListener);
     void SetBodyActivationListener(BodyActivationListener inListener);
     [Const] BodyActivationListener GetBodyActivationListener();
     boolean WereBodiesInContact([Const, Ref] BodyID inBodyID1, [Const, Ref] BodyID inBodyID2);
@@ -2663,10 +2686,10 @@ interface BodyLockInterface {
 
     // TODO MutexMask may not work
     [Value] MutexMask GetMutexMask([Ref, Const] BodyID[] inBodies, long inNumber);
-    [BindTo="LockRead"] void LockRead_0([Ref] MutexMask inMutexMask);
-    [BindTo="UnlockRead"] void UnlockRead_0([Ref] MutexMask inMutexMask);
-    [BindTo="LockWrite"] void LockWrite_0([Ref] MutexMask inMutexMask);
-    [BindTo="UnlockWrite"] void UnlockWrite_0([Ref] MutexMask inMutexMask);
+    [BindTo="LockRead"] void LockRead__0([Ref] MutexMask inMutexMask);
+    [BindTo="UnlockRead"] void UnlockRead__0([Ref] MutexMask inMutexMask);
+    [BindTo="LockWrite"] void LockWrite__0([Ref] MutexMask inMutexMask);
+    [BindTo="UnlockWrite"] void UnlockWrite__0([Ref] MutexMask inMutexMask);
 };
 
 interface BodyLockInterfaceNoLock { //[-SUB_PACKAGE=physics.body]
@@ -3013,8 +3036,8 @@ interface TransformedShapeCollectorJS {
 };
 
 interface NarrowPhaseQuery {
-    [BindTo="CastRay"] boolean CastRay_1([Const, Ref] RRayCast inRay, [Ref] RayCastResult ioHit, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter, [Const, Ref] optional BodyFilter inBodyFilter);
-    [BindTo="CastRay"] void CastRay_2([Const, Ref] RRayCast inRay, [Const, Ref] RayCastSettings inRayCastSettings, [Ref] CastRayCollector ioCollector, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter, [Const, Ref] optional BodyFilter inBodyFilter, [Const, Ref] optional ShapeFilter inShapeFilter);
+    [BindTo="CastRay"] boolean CastRay__1([Const, Ref] RRayCast inRay, [Ref] RayCastResult ioHit, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter, [Const, Ref] optional BodyFilter inBodyFilter);
+    [BindTo="CastRay"] void CastRay__2([Const, Ref] RRayCast inRay, [Const, Ref] RayCastSettings inRayCastSettings, [Ref] CastRayCollector ioCollector, [Const, Ref] optional BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] optional ObjectLayerFilter inObjectLayerFilter, [Const, Ref] optional BodyFilter inBodyFilter, [Const, Ref] optional ShapeFilter inShapeFilter);
     void CollidePoint([Const, Ref] Vec3 inPoint, [Ref] CollidePointCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
     void CollideShape([Const] Shape inShape, [Const, Ref] Vec3 inShapeScale, [Const, Ref] Mat44 inCenterOfMassTransform, [Const, Ref] CollideShapeSettings inCollideShapeSettings, [Const, Ref] Vec3 inBaseOffset, [Ref] CollideShapeCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
     void CastShape([Const, Ref] RShapeCast inShapeCast, [Const, Ref] ShapeCastSettings inShapeCastSettings, [Const, Ref] Vec3 inBaseOffset, [Ref] CastShapeCollector ioCollector, [Const, Ref] BroadPhaseLayerFilter inBroadPhaseLayerFilter, [Const, Ref] ObjectLayerFilter inObjectLayerFilter, [Const, Ref] BodyFilter inBodyFilter, [Const, Ref] ShapeFilter inShapeFilter);
@@ -3249,6 +3272,22 @@ interface CharacterContactSettings { //[-SUB_PACKAGE=physics.character]
 };
 
 interface CharacterContactListener { //[-SUB_PACKAGE=physics.character]
+};
+
+[JSImplementation="CharacterContactListener"]
+interface CharacterContactListenerImpl {
+    void CharacterContactListenerImpl();
+    void OnAdjustBodyVelocity([Const] CharacterVirtual inCharacter, [Const, Ref] Body inBody2, [Ref] Vec3 ioLinearVelocity, [Ref] Vec3 ioAngularVelocity);
+    boolean OnContactValidate([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2);
+    boolean OnCharacterContactValidate([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2);
+    void OnContactAdded([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnContactPersisted([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnContactRemoved([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2);
+    void OnCharacterContactAdded([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnCharacterContactPersisted([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings);
+    void OnCharacterContactRemoved([Const] CharacterVirtual inCharacter, [Const, Ref] CharacterID inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2);
+    void OnContactSolve([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
+    void OnCharacterContactSolve([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity);
 };
 
 interface CharacterVsCharacterCollision { //[-SUB_PACKAGE=physics.character]

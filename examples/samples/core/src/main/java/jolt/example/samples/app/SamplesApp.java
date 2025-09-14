@@ -1,5 +1,6 @@
 package jolt.example.samples.app;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputMultiplexer;
@@ -136,6 +137,7 @@ public class SamplesApp extends InputAdapter {
         camera.position.set(30, 10, 30);
         camera.lookAt(0, 0, 0);
         test = tests.getTest(testClass);
+        debugRenderer.setEnable(true);
         test.setPhysicsSystem(joltInstance.getPhysicsSystem());
         test.setDebugRenderer(debugRenderer);
         test.initializeCamera(camera);
@@ -191,6 +193,9 @@ public class SamplesApp extends InputAdapter {
         else if(keycode == Input.Keys.R) {
             if(test != null) {
                 Class<? extends Test> aClass = test.getClass();
+                if(Gdx.input.isKeyPressed(Input.Keys.CONTROL_LEFT)) {
+                    aClass = tests.getNextTest(aClass);
+                }
                 startTest(aClass);
             }
             return true;

@@ -32,17 +32,6 @@ public class Jolt extends IDLBase {
         return new Jolt((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-TEAVM;-NATIVE]
-var jsObj = jolt.wrapPointer(this_addr, jolt.Jolt);
-jolt.destroy(jsObj);
-*/
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Jolt);jolt.destroy(jsObj);")
-    public static native void internal_native_deleteNative(int this_addr);
-
     public static void Init() {
         internal_native_Init();
     }

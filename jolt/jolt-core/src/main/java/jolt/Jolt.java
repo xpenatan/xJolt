@@ -32,16 +32,6 @@ public class Jolt extends IDLBase {
         return new Jolt((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-JNI;-NATIVE]
-Jolt* nativeObject = (Jolt*)this_addr;
-delete nativeObject;
-*/
-    public static native void internal_native_deleteNative(long this_addr);
-
     public static void Init() {
         internal_native_Init();
     }

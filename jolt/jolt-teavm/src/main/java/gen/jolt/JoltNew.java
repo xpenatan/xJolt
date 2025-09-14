@@ -54,19 +54,8 @@ public class JoltNew extends IDLBase {
         return new JoltNew((byte) 0, (char) 0);
     }
 
-    protected void deleteNative() {
-        internal_native_deleteNative(native_address);
-    }
-
-    /*[-TEAVM;-NATIVE]
-var jsObj = jolt.wrapPointer(this_addr, jolt.JoltNew);
-jolt.destroy(jsObj);
-*/
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.JoltNew);jolt.destroy(jsObj);")
-    public static native void internal_native_deleteNative(int this_addr);
-
     public static PhysicsSystem PhysicsSystem() {
-        int pointer = internal_native_PhysicsSystem_0();
+        int pointer = internal_native_PhysicsSystem__0();
         if (pointer == 0)
             return PhysicsSystem.NULL;
         PhysicsSystem PhysicsSystem_NEW = PhysicsSystem.native_new();
@@ -75,15 +64,15 @@ jolt.destroy(jsObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.PhysicsSystem_0();
+var returnedJSObj = jolt.JoltNew.prototype.PhysicsSystem__0();
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.PhysicsSystem_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_PhysicsSystem_0();
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.PhysicsSystem__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_PhysicsSystem__0();
 
     public static Factory Factory() {
-        int pointer = internal_native_Factory_0();
+        int pointer = internal_native_Factory__0();
         if (pointer == 0)
             return Factory.NULL;
         Factory Factory_NEW = Factory.native_new();
@@ -92,15 +81,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Factory_0();
+var returnedJSObj = jolt.JoltNew.prototype.Factory__0();
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Factory_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Factory_0();
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Factory__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Factory__0();
 
     public static TempAllocatorImpl TempAllocatorImpl(int inSize) {
-        int pointer = internal_native_TempAllocatorImpl_0(inSize);
+        int pointer = internal_native_TempAllocatorImpl__0(inSize);
         if (pointer == 0)
             return TempAllocatorImpl.NULL;
         TempAllocatorImpl TempAllocatorImpl_NEW = TempAllocatorImpl.native_new();
@@ -109,15 +98,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.TempAllocatorImpl_0(inSize);
+var returnedJSObj = jolt.JoltNew.prototype.TempAllocatorImpl__0(inSize);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inSize"}, script = "var returnedJSObj = jolt.JoltNew.prototype.TempAllocatorImpl_0(inSize);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_TempAllocatorImpl_0(int inSize);
+    @org.teavm.jso.JSBody(params = {"inSize"}, script = "var returnedJSObj = jolt.JoltNew.prototype.TempAllocatorImpl__0(inSize);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_TempAllocatorImpl__0(int inSize);
 
     public static JobSystemThreadPool JobSystemThreadPool(int inMaxJobs, int inMaxBarriers, int inNumThreads) {
-        int pointer = internal_native_JobSystemThreadPool_0(inMaxJobs, inMaxBarriers, inNumThreads);
+        int pointer = internal_native_JobSystemThreadPool__0(inMaxJobs, inMaxBarriers, inNumThreads);
         if (pointer == 0)
             return JobSystemThreadPool.NULL;
         JobSystemThreadPool JobSystemThreadPool_NEW = JobSystemThreadPool.native_new();
@@ -126,15 +115,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.JobSystemThreadPool_0(inMaxJobs, inMaxBarriers, inNumThreads);
+var returnedJSObj = jolt.JoltNew.prototype.JobSystemThreadPool__0(inMaxJobs, inMaxBarriers, inNumThreads);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inMaxJobs", "inMaxBarriers", "inNumThreads"}, script = "var returnedJSObj = jolt.JoltNew.prototype.JobSystemThreadPool_0(inMaxJobs, inMaxBarriers, inNumThreads);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_JobSystemThreadPool_0(int inMaxJobs, int inMaxBarriers, int inNumThreads);
+    @org.teavm.jso.JSBody(params = {"inMaxJobs", "inMaxBarriers", "inNumThreads"}, script = "var returnedJSObj = jolt.JoltNew.prototype.JobSystemThreadPool__0(inMaxJobs, inMaxBarriers, inNumThreads);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_JobSystemThreadPool__0(int inMaxJobs, int inMaxBarriers, int inNumThreads);
 
     public static JobSystemThreadPool JobSystemThreadPool(int inMaxJobs, int inMaxBarriers) {
-        int pointer = internal_native_JobSystemThreadPool_0(inMaxJobs, inMaxBarriers);
+        int pointer = internal_native_JobSystemThreadPool__0(inMaxJobs, inMaxBarriers);
         if (pointer == 0)
             return JobSystemThreadPool.NULL;
         if (JobSystemThreadPool_TEMP_STATIC_GEN_0 == null)
@@ -144,15 +133,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.JobSystemThreadPool_0(inMaxJobs, inMaxBarriers);
+var returnedJSObj = jolt.JoltNew.prototype.JobSystemThreadPool__0(inMaxJobs, inMaxBarriers);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inMaxJobs", "inMaxBarriers"}, script = "var returnedJSObj = jolt.JoltNew.prototype.JobSystemThreadPool_0(inMaxJobs, inMaxBarriers);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_JobSystemThreadPool_0(int inMaxJobs, int inMaxBarriers);
+    @org.teavm.jso.JSBody(params = {"inMaxJobs", "inMaxBarriers"}, script = "var returnedJSObj = jolt.JoltNew.prototype.JobSystemThreadPool__0(inMaxJobs, inMaxBarriers);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_JobSystemThreadPool__0(int inMaxJobs, int inMaxBarriers);
 
     public static Mat44 Mat44() {
-        int pointer = internal_native_Mat44_0();
+        int pointer = internal_native_Mat44__0();
         if (pointer == 0)
             return Mat44.NULL;
         Mat44 Mat44_NEW = Mat44.native_new();
@@ -161,15 +150,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Mat44_0();
+var returnedJSObj = jolt.JoltNew.prototype.Mat44__0();
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Mat44_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Mat44_0();
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Mat44__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Mat44__0();
 
     public static Mat44 Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec4 inC4) {
-        int pointer = internal_native_Mat44_1(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
+        int pointer = internal_native_Mat44__1(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
         if (pointer == 0)
             return Mat44.NULL;
         Mat44 Mat44_NEW = Mat44.native_new();
@@ -178,15 +167,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Mat44_1(inC1_addr, inC2_addr, inC3_addr, inC4_addr);
+var returnedJSObj = jolt.JoltNew.prototype.Mat44__1(inC1_addr, inC2_addr, inC3_addr, inC4_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inC1_addr", "inC2_addr", "inC3_addr", "inC4_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Mat44_1(inC1_addr, inC2_addr, inC3_addr, inC4_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Mat44_1(int inC1_addr, int inC2_addr, int inC3_addr, int inC4_addr);
+    @org.teavm.jso.JSBody(params = {"inC1_addr", "inC2_addr", "inC3_addr", "inC4_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Mat44__1(inC1_addr, inC2_addr, inC3_addr, inC4_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Mat44__1(int inC1_addr, int inC2_addr, int inC3_addr, int inC4_addr);
 
     public static Mat44 Mat44(Vec4 inC1, Vec4 inC2, Vec4 inC3, Vec3 inC4) {
-        int pointer = internal_native_Mat44_2(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
+        int pointer = internal_native_Mat44__2(inC1.native_address, inC2.native_address, inC3.native_address, inC4.native_address);
         if (pointer == 0)
             return Mat44.NULL;
         Mat44 Mat44_NEW = Mat44.native_new();
@@ -195,15 +184,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Mat44_2(inC1_addr, inC2_addr, inC3_addr, inC4_addr);
+var returnedJSObj = jolt.JoltNew.prototype.Mat44__2(inC1_addr, inC2_addr, inC3_addr, inC4_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inC1_addr", "inC2_addr", "inC3_addr", "inC4_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Mat44_2(inC1_addr, inC2_addr, inC3_addr, inC4_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Mat44_2(int inC1_addr, int inC2_addr, int inC3_addr, int inC4_addr);
+    @org.teavm.jso.JSBody(params = {"inC1_addr", "inC2_addr", "inC3_addr", "inC4_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Mat44__2(inC1_addr, inC2_addr, inC3_addr, inC4_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Mat44__2(int inC1_addr, int inC2_addr, int inC3_addr, int inC4_addr);
 
     public static Vec3 Vec3() {
-        int pointer = internal_native_Vec3_0();
+        int pointer = internal_native_Vec3__0();
         if (pointer == 0)
             return Vec3.NULL;
         Vec3 Vec3_NEW = Vec3.native_new();
@@ -212,15 +201,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Vec3_0();
+var returnedJSObj = jolt.JoltNew.prototype.Vec3__0();
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Vec3_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Vec3_0();
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Vec3__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Vec3__0();
 
     public static Vec3 Vec3(float inX, float inY, float inZ) {
-        int pointer = internal_native_Vec3_1(inX, inY, inZ);
+        int pointer = internal_native_Vec3__1(inX, inY, inZ);
         if (pointer == 0)
             return Vec3.NULL;
         Vec3 Vec3_NEW = Vec3.native_new();
@@ -229,15 +218,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Vec3_1(inX, inY, inZ);
+var returnedJSObj = jolt.JoltNew.prototype.Vec3__1(inX, inY, inZ);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inX", "inY", "inZ"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec3_1(inX, inY, inZ);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Vec3_1(float inX, float inY, float inZ);
+    @org.teavm.jso.JSBody(params = {"inX", "inY", "inZ"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec3__1(inX, inY, inZ);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Vec3__1(float inX, float inY, float inZ);
 
     public static Vec3 Vec3(Vec3 inRHS) {
-        int pointer = internal_native_Vec3_2(inRHS.native_address);
+        int pointer = internal_native_Vec3__2(inRHS.native_address);
         if (pointer == 0)
             return Vec3.NULL;
         Vec3 Vec3_NEW = Vec3.native_new();
@@ -246,15 +235,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Vec3_2(inRHS_addr);
+var returnedJSObj = jolt.JoltNew.prototype.Vec3__2(inRHS_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inRHS_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec3_2(inRHS_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Vec3_2(int inRHS_addr);
+    @org.teavm.jso.JSBody(params = {"inRHS_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec3__2(inRHS_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Vec3__2(int inRHS_addr);
 
     public static Vec3 Vec3(Float3 inV) {
-        int pointer = internal_native_Vec3_3(inV.native_address);
+        int pointer = internal_native_Vec3__3(inV.native_address);
         if (pointer == 0)
             return Vec3.NULL;
         Vec3 Vec3_NEW = Vec3.native_new();
@@ -263,15 +252,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Vec3_3(inV_addr);
+var returnedJSObj = jolt.JoltNew.prototype.Vec3__3(inV_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inV_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec3_3(inV_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Vec3_3(int inV_addr);
+    @org.teavm.jso.JSBody(params = {"inV_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec3__3(inV_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Vec3__3(int inV_addr);
 
     public static Vec4 Vec4() {
-        int pointer = internal_native_Vec4_0();
+        int pointer = internal_native_Vec4__0();
         if (pointer == 0)
             return Vec4.NULL;
         Vec4 Vec4_NEW = Vec4.native_new();
@@ -280,15 +269,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Vec4_0();
+var returnedJSObj = jolt.JoltNew.prototype.Vec4__0();
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Vec4_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Vec4_0();
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Vec4__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Vec4__0();
 
     public static Vec4 Vec4(float inX, float inY, float inZ, float inW) {
-        int pointer = internal_native_Vec4_1(inX, inY, inZ, inW);
+        int pointer = internal_native_Vec4__1(inX, inY, inZ, inW);
         if (pointer == 0)
             return Vec4.NULL;
         Vec4 Vec4_NEW = Vec4.native_new();
@@ -297,15 +286,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Vec4_1(inX, inY, inZ, inW);
+var returnedJSObj = jolt.JoltNew.prototype.Vec4__1(inX, inY, inZ, inW);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inX", "inY", "inZ", "inW"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec4_1(inX, inY, inZ, inW);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Vec4_1(float inX, float inY, float inZ, float inW);
+    @org.teavm.jso.JSBody(params = {"inX", "inY", "inZ", "inW"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec4__1(inX, inY, inZ, inW);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Vec4__1(float inX, float inY, float inZ, float inW);
 
     public static Vec4 Vec4(Vec4 inV) {
-        int pointer = internal_native_Vec4_2(inV.native_address);
+        int pointer = internal_native_Vec4__2(inV.native_address);
         if (pointer == 0)
             return Vec4.NULL;
         Vec4 Vec4_NEW = Vec4.native_new();
@@ -314,15 +303,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Vec4_2(inV_addr);
+var returnedJSObj = jolt.JoltNew.prototype.Vec4__2(inV_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inV_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec4_2(inV_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Vec4_2(int inV_addr);
+    @org.teavm.jso.JSBody(params = {"inV_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec4__2(inV_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Vec4__2(int inV_addr);
 
     public static Vec4 Vec4(Vec3 inV, float inW) {
-        int pointer = internal_native_Vec4_3(inV.native_address, inW);
+        int pointer = internal_native_Vec4__3(inV.native_address, inW);
         if (pointer == 0)
             return Vec4.NULL;
         Vec4 Vec4_NEW = Vec4.native_new();
@@ -331,15 +320,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Vec4_3(inV_addr, inW);
+var returnedJSObj = jolt.JoltNew.prototype.Vec4__3(inV_addr, inW);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inV_addr", "inW"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec4_3(inV_addr, inW);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Vec4_3(int inV_addr, float inW);
+    @org.teavm.jso.JSBody(params = {"inV_addr", "inW"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Vec4__3(inV_addr, inW);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Vec4__3(int inV_addr, float inW);
 
     public static Quat Quat() {
-        int pointer = internal_native_Quat_0();
+        int pointer = internal_native_Quat__0();
         if (pointer == 0)
             return Quat.NULL;
         Quat Quat_NEW = Quat.native_new();
@@ -348,15 +337,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Quat_0();
+var returnedJSObj = jolt.JoltNew.prototype.Quat__0();
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Quat_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Quat_0();
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.Quat__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Quat__0();
 
     public static Quat Quat(float inX, float inY, float inZ, float inW) {
-        int pointer = internal_native_Quat_1(inX, inY, inZ, inW);
+        int pointer = internal_native_Quat__1(inX, inY, inZ, inW);
         if (pointer == 0)
             return Quat.NULL;
         Quat Quat_NEW = Quat.native_new();
@@ -365,15 +354,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.Quat_1(inX, inY, inZ, inW);
+var returnedJSObj = jolt.JoltNew.prototype.Quat__1(inX, inY, inZ, inW);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inX", "inY", "inZ", "inW"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Quat_1(inX, inY, inZ, inW);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Quat_1(float inX, float inY, float inZ, float inW);
+    @org.teavm.jso.JSBody(params = {"inX", "inY", "inZ", "inW"}, script = "var returnedJSObj = jolt.JoltNew.prototype.Quat__1(inX, inY, inZ, inW);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Quat__1(float inX, float inY, float inZ, float inW);
 
     public static BodyCreationSettings BodyCreationSettings() {
-        int pointer = internal_native_BodyCreationSettings_0();
+        int pointer = internal_native_BodyCreationSettings__0();
         if (pointer == 0)
             return BodyCreationSettings.NULL;
         BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
@@ -382,15 +371,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings_0();
+var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings__0();
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_BodyCreationSettings_0();
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_BodyCreationSettings__0();
 
     public static BodyCreationSettings BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        int pointer = internal_native_BodyCreationSettings_1(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
+        int pointer = internal_native_BodyCreationSettings__1(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
         if (pointer == 0)
             return BodyCreationSettings.NULL;
         BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
@@ -399,15 +388,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings_1(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
+var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings__1(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inShape_addr", "inPosition_addr", "inRotation_addr", "inMotionType", "inObjectLayer"}, script = "var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings_1(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_BodyCreationSettings_1(int inShape_addr, int inPosition_addr, int inRotation_addr, int inMotionType, int inObjectLayer);
+    @org.teavm.jso.JSBody(params = {"inShape_addr", "inPosition_addr", "inRotation_addr", "inMotionType", "inObjectLayer"}, script = "var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings__1(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_BodyCreationSettings__1(int inShape_addr, int inPosition_addr, int inRotation_addr, int inMotionType, int inObjectLayer);
 
     public static BodyCreationSettings BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        int pointer = internal_native_BodyCreationSettings_2(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
+        int pointer = internal_native_BodyCreationSettings__2(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
         if (pointer == 0)
             return BodyCreationSettings.NULL;
         BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
@@ -416,15 +405,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings_2(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
+var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings__2(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inShape_addr", "inPosition_addr", "inRotation_addr", "inMotionType", "inObjectLayer"}, script = "var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings_2(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_BodyCreationSettings_2(int inShape_addr, int inPosition_addr, int inRotation_addr, int inMotionType, int inObjectLayer);
+    @org.teavm.jso.JSBody(params = {"inShape_addr", "inPosition_addr", "inRotation_addr", "inMotionType", "inObjectLayer"}, script = "var returnedJSObj = jolt.JoltNew.prototype.BodyCreationSettings__2(inShape_addr, inPosition_addr, inRotation_addr, inMotionType, inObjectLayer);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_BodyCreationSettings__2(int inShape_addr, int inPosition_addr, int inRotation_addr, int inMotionType, int inObjectLayer);
 
     public static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings() {
-        int pointer = internal_native_RotatedTranslatedShapeSettings_0();
+        int pointer = internal_native_RotatedTranslatedShapeSettings__0();
         if (pointer == 0)
             return RotatedTranslatedShapeSettings.NULL;
         RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_NEW = RotatedTranslatedShapeSettings.native_new();
@@ -433,15 +422,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings_0();
+var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings__0();
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_RotatedTranslatedShapeSettings_0();
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_RotatedTranslatedShapeSettings__0();
 
     public static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings(Vec3 inPosition, Quat inRotation, ShapeSettings inShape) {
-        int pointer = internal_native_RotatedTranslatedShapeSettings_1(inPosition.native_address, inRotation.native_address, inShape.native_address);
+        int pointer = internal_native_RotatedTranslatedShapeSettings__1(inPosition.native_address, inRotation.native_address, inShape.native_address);
         if (pointer == 0)
             return RotatedTranslatedShapeSettings.NULL;
         RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_NEW = RotatedTranslatedShapeSettings.native_new();
@@ -450,15 +439,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings_1(inPosition_addr, inRotation_addr, inShape_addr);
+var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings__1(inPosition_addr, inRotation_addr, inShape_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inPosition_addr", "inRotation_addr", "inShape_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings_1(inPosition_addr, inRotation_addr, inShape_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_RotatedTranslatedShapeSettings_1(int inPosition_addr, int inRotation_addr, int inShape_addr);
+    @org.teavm.jso.JSBody(params = {"inPosition_addr", "inRotation_addr", "inShape_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings__1(inPosition_addr, inRotation_addr, inShape_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_RotatedTranslatedShapeSettings__1(int inPosition_addr, int inRotation_addr, int inShape_addr);
 
     public static RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings(Vec3 inPosition, Quat inRotation, Shape inShape) {
-        int pointer = internal_native_RotatedTranslatedShapeSettings_2(inPosition.native_address, inRotation.native_address, inShape.native_address);
+        int pointer = internal_native_RotatedTranslatedShapeSettings__2(inPosition.native_address, inRotation.native_address, inShape.native_address);
         if (pointer == 0)
             return RotatedTranslatedShapeSettings.NULL;
         RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_NEW = RotatedTranslatedShapeSettings.native_new();
@@ -467,15 +456,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings_2(inPosition_addr, inRotation_addr, inShape_addr);
+var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings__2(inPosition_addr, inRotation_addr, inShape_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inPosition_addr", "inRotation_addr", "inShape_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings_2(inPosition_addr, inRotation_addr, inShape_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_RotatedTranslatedShapeSettings_2(int inPosition_addr, int inRotation_addr, int inShape_addr);
+    @org.teavm.jso.JSBody(params = {"inPosition_addr", "inRotation_addr", "inShape_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.RotatedTranslatedShapeSettings__2(inPosition_addr, inRotation_addr, inShape_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_RotatedTranslatedShapeSettings__2(int inPosition_addr, int inRotation_addr, int inShape_addr);
 
     public static MeshShapeSettings MeshShapeSettings() {
-        int pointer = internal_native_MeshShapeSettings_0();
+        int pointer = internal_native_MeshShapeSettings__0();
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         MeshShapeSettings MeshShapeSettings_NEW = MeshShapeSettings.native_new();
@@ -484,15 +473,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings_0();
+var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings__0();
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings_0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_MeshShapeSettings_0();
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_MeshShapeSettings__0();
 
     public static MeshShapeSettings MeshShapeSettings(TriangleList inTriangleList, PhysicsMaterialList inMaterialList) {
-        int pointer = internal_native_MeshShapeSettings_1(inTriangleList.native_address, inMaterialList.native_address);
+        int pointer = internal_native_MeshShapeSettings__1(inTriangleList.native_address, inMaterialList.native_address);
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         MeshShapeSettings MeshShapeSettings_NEW = MeshShapeSettings.native_new();
@@ -501,15 +490,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings_1(inTriangleList_addr, inMaterialList_addr);
+var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings__1(inTriangleList_addr, inMaterialList_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inTriangleList_addr", "inMaterialList_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings_1(inTriangleList_addr, inMaterialList_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_MeshShapeSettings_1(int inTriangleList_addr, int inMaterialList_addr);
+    @org.teavm.jso.JSBody(params = {"inTriangleList_addr", "inMaterialList_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings__1(inTriangleList_addr, inMaterialList_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_MeshShapeSettings__1(int inTriangleList_addr, int inMaterialList_addr);
 
     public static MeshShapeSettings MeshShapeSettings(TriangleList inTriangleList) {
-        int pointer = internal_native_MeshShapeSettings_1(inTriangleList.native_address);
+        int pointer = internal_native_MeshShapeSettings__1(inTriangleList.native_address);
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         if (MeshShapeSettings_TEMP_STATIC_GEN_0 == null)
@@ -519,15 +508,15 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings_1(inTriangleList_addr);
+var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings__1(inTriangleList_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inTriangleList_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings_1(inTriangleList_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_MeshShapeSettings_1(int inTriangleList_addr);
+    @org.teavm.jso.JSBody(params = {"inTriangleList_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings__1(inTriangleList_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_MeshShapeSettings__1(int inTriangleList_addr);
 
     public static MeshShapeSettings MeshShapeSettings(VertexList inVertices, IndexedTriangleList inTriangles, PhysicsMaterialList inMaterialList) {
-        int pointer = internal_native_MeshShapeSettings_2(inVertices.native_address, inTriangles.native_address, inMaterialList.native_address);
+        int pointer = internal_native_MeshShapeSettings__2(inVertices.native_address, inTriangles.native_address, inMaterialList.native_address);
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         MeshShapeSettings MeshShapeSettings_NEW = MeshShapeSettings.native_new();
@@ -536,10 +525,10 @@ return jolt.getPointer(returnedJSObj);
     }
 
     /*[-TEAVM;-NATIVE]
-var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings_2(inVertices_addr, inTriangles_addr, inMaterialList_addr);
+var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings__2(inVertices_addr, inTriangles_addr, inMaterialList_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"inVertices_addr", "inTriangles_addr", "inMaterialList_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings_2(inVertices_addr, inTriangles_addr, inMaterialList_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_MeshShapeSettings_2(int inVertices_addr, int inTriangles_addr, int inMaterialList_addr);
+    @org.teavm.jso.JSBody(params = {"inVertices_addr", "inTriangles_addr", "inMaterialList_addr"}, script = "var returnedJSObj = jolt.JoltNew.prototype.MeshShapeSettings__2(inVertices_addr, inTriangles_addr, inMaterialList_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_MeshShapeSettings__2(int inVertices_addr, int inTriangles_addr, int inMaterialList_addr);
 }

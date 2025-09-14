@@ -1,6 +1,7 @@
 package jolt.example.samples.app.tests;
 
 import com.badlogic.gdx.utils.Array;
+import jolt.example.samples.app.tests.character.CharacterSpaceShipTest;
 import jolt.example.samples.app.tests.playground.box.BoxSpawnTest;
 import jolt.example.samples.app.tests.raycast.NarrowPhaseQueryCastRayTest;
 import jolt.example.samples.app.tests.shapes.BoxShapeTest;
@@ -18,10 +19,11 @@ public class Tests {
         Array<JoltTestInstancer> tests = new Array<>();
 
         //Jolt tests
-        tests.add(new JoltTestInstancer(NarrowPhaseQueryCastRayTest.class, NarrowPhaseQueryCastRayTest::new, "Shapes", "Box Shape"));
+        tests.add(new JoltTestInstancer(NarrowPhaseQueryCastRayTest.class, NarrowPhaseQueryCastRayTest::new, "CastRay", "NarrowPhase CastRay"));
         tests.add(new JoltTestInstancer(BoxShapeTest.class, BoxShapeTest::new, "Shapes", "Box Shape"));
         tests.add(new JoltTestInstancer(VehicleConstraintTest.class, VehicleConstraintTest::new, "Vehicle", "Car (VehicleConstraint)"));
         tests.add(new JoltTestInstancer(TankTest.class, TankTest::new, "Vehicle", "Tank (VehicleConstraint)"));
+        tests.add(new JoltTestInstancer(CharacterSpaceShipTest.class, CharacterSpaceShipTest::new, "Character", "Character Virtual vs Space Ship"));
 
         //Custom tests
         tests.add(new JoltTestInstancer(BoxSpawnTest.class, BoxSpawnTest::new, "Playground", "BoxTest"));
@@ -35,6 +37,28 @@ public class Tests {
             }
         }
         return null;
+    }
+
+    public Class getNextTest(Class curTest) {
+        Class firstTest = null;
+        Class nextTest = null;
+        boolean getNext = false;
+        for(JoltTestInstancer test : tests) {
+            if(firstTest == null) {
+                firstTest = test.type;
+            }
+            if(!getNext && test.type == curTest) {
+                getNext = true;
+            }
+            else if(getNext) {
+                nextTest = test.type;
+                break;
+            }
+        }
+        if(nextTest == null) {
+            nextTest = firstTest;
+        }
+        return nextTest;
     }
 
     public TestGroup getAllTests() {

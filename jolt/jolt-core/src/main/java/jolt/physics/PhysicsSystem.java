@@ -488,44 +488,44 @@ return nativeObject->RestoreState(*((StateRecorder* )inStream_addr));
     public static native boolean internal_native_RestoreState(long this_addr, long inStream_addr);
 
     public void AddStepListener(PhysicsStepListener inListener) {
-        internal_native_AddStepListener_0(native_address, inListener.native_address);
+        internal_native_AddStepListener__0(native_address, inListener.native_address);
     }
 
     /*[-JNI;-NATIVE]
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->AddStepListener((PhysicsStepListener* )inListener_addr);
 */
-    public static native void internal_native_AddStepListener_0(long this_addr, long inListener_addr);
+    public static native void internal_native_AddStepListener__0(long this_addr, long inListener_addr);
 
     public void AddStepListener(VehicleConstraint inListener) {
-        internal_native_AddStepListener_1(native_address, inListener.native_address);
+        internal_native_AddStepListener__1(native_address, inListener.native_address);
     }
 
     /*[-JNI;-NATIVE]
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->AddStepListener((VehicleConstraint* )inListener_addr);
 */
-    public static native void internal_native_AddStepListener_1(long this_addr, long inListener_addr);
+    public static native void internal_native_AddStepListener__1(long this_addr, long inListener_addr);
 
     public void RemoveStepListener(PhysicsStepListener inListener) {
-        internal_native_RemoveStepListener_0(native_address, inListener.native_address);
+        internal_native_RemoveStepListener__0(native_address, inListener.native_address);
     }
 
     /*[-JNI;-NATIVE]
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->RemoveStepListener((PhysicsStepListener* )inListener_addr);
 */
-    public static native void internal_native_RemoveStepListener_0(long this_addr, long inListener_addr);
+    public static native void internal_native_RemoveStepListener__0(long this_addr, long inListener_addr);
 
     public void RemoveStepListener(VehicleConstraint inListener) {
-        internal_native_RemoveStepListener_1(native_address, inListener.native_address);
+        internal_native_RemoveStepListener__1(native_address, inListener.native_address);
     }
 
     /*[-JNI;-NATIVE]
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->RemoveStepListener((VehicleConstraint* )inListener_addr);
 */
-    public static native void internal_native_RemoveStepListener_1(long this_addr, long inListener_addr);
+    public static native void internal_native_RemoveStepListener__1(long this_addr, long inListener_addr);
 
     public void SetBodyActivationListener(BodyActivationListener inListener) {
         internal_native_SetBodyActivationListener(native_address, inListener.native_address);

@@ -410,6 +410,170 @@ public:
     }
 };
 
+static Vec3 vec3_temp1;
+static Vec3 vec3_temp2;
+static Vec3 vec3_temp3;
+static Vec3 vec3_temp4;
+
+static Vec4 vec4_temp1;
+static Vec4 vec4_temp2;
+static Vec4 vec4_temp3;
+static Vec4 vec4_temp4;
+
+static Quat quat_temp1;
+static Quat quat_temp2;
+
+static Mat44 mat44_temp1;
+static Mat44 mat44_temp2;
+
+class JoltTemp
+{
+public:
+
+    static Vec3* Temp_Vec3_1() {
+        vec3_temp1.Set(0, 0, 0);
+        return &vec3_temp1;
+    }
+    static Vec3* Temp_Vec3_1(float inX, float inY, float inZ) {
+        vec3_temp1.Set(inX, inY, inZ);
+        return &vec3_temp1;
+    }
+    static Vec3* Temp_Vec3_1(Vec3* other) {
+        vec3_temp1 = *other;
+        return &vec3_temp1;
+    }
+    static Vec3* Temp_Vec3_2() {
+        vec3_temp2.Set(0, 0, 0);
+        return &vec3_temp2;
+    }
+    static Vec3* Temp_Vec3_2(float inX, float inY, float inZ) {
+        vec3_temp2.Set(inX, inY, inZ);
+        return &vec3_temp2;
+    }
+    static Vec3* Temp_Vec3_2(Vec3* other) {
+        vec3_temp2 = *other;
+        return &vec3_temp2;
+    }
+    static Vec3* Temp_Vec3_3() {
+        vec3_temp3.Set(0, 0, 0);
+        return &vec3_temp3;
+    }
+    static Vec3* Temp_Vec3_3(float inX, float inY, float inZ) {
+        vec3_temp3.Set(inX, inY, inZ);
+        return &vec3_temp3;
+    }
+    static Vec3* Temp_Vec3_3(Vec3* other) {
+        vec3_temp3 = *other;
+        return &vec3_temp3;
+    }
+    static Vec3* Temp_Vec3_4() {
+        vec3_temp4.Set(0, 0, 0);
+        return &vec3_temp4;
+    }
+    static Vec3* Temp_Vec3_4(float inX, float inY, float inZ) {
+        vec3_temp4.Set(inX, inY, inZ);
+        return &vec3_temp4;
+    }
+    static Vec3* Temp_Vec3_4(Vec3* other) {
+        vec3_temp4 = *other;
+        return &vec3_temp4;
+    }
+
+    static Vec4* Temp_Vec4_1() {
+        vec4_temp1.Set(0, 0, 0, 0);
+        return &vec4_temp1;
+    }
+    static Vec4* Temp_Vec4_1(float inX, float inY, float inZ, float inW) {
+        vec4_temp1.Set(inX, inY, inZ, inW);
+        return &vec4_temp1;
+    }
+    static Vec4* Temp_Vec4_1(Vec4* other) {
+        vec4_temp1 = *other;
+        return &vec4_temp1;
+    }
+    static Vec4* Temp_Vec4_2() {
+        vec4_temp2.Set(0, 0, 0, 0);
+        return &vec4_temp2;
+    }
+    static Vec4* Temp_Vec4_2(float inX, float inY, float inZ, float inW) {
+        vec4_temp2.Set(inX, inY, inZ, inW);
+        return &vec4_temp2;
+    }
+    static Vec4* Temp_Vec4_2(Vec4* other) {
+        vec4_temp2 = *other;
+        return &vec4_temp2;
+    }
+    static Vec4* Temp_Vec4_3() {
+        vec4_temp3.Set(0, 0, 0, 0);
+        return &vec4_temp3;
+    }
+    static Vec4* Temp_Vec4_3(float inX, float inY, float inZ, float inW) {
+        vec4_temp3.Set(inX, inY, inZ, inW);
+        return &vec4_temp3;
+    }
+    static Vec4* Temp_Vec4_3(Vec4* other) {
+        vec4_temp3 = *other;
+        return &vec4_temp3;
+    }
+    static Vec4* Temp_Vec4_4() {
+        vec4_temp4.Set(0, 0, 0, 0);
+        return &vec4_temp4;
+    }
+    static Vec4* Temp_Vec4_4(float inX, float inY, float inZ, float inW) {
+        vec4_temp4.Set(inX, inY, inZ, inW);
+        return &vec4_temp4;
+    }
+    static Vec4* Temp_Vec4_4(Vec4* other) {
+        vec4_temp4 = *other;
+        return &vec4_temp4;
+    }
+
+    static Quat* Temp_Quat_1() {
+        quat_temp1.Set(0, 0, 0, 0);
+        return &quat_temp1;
+    }
+    static Quat* Temp_Quat_1(float inX, float inY, float inZ, float inW) {
+        quat_temp1.Set(inX, inY, inZ, inW);
+        return &quat_temp1;
+    }
+    static Quat* Temp_Quat_1(Quat* other) {
+        quat_temp1 = *other;
+        return &quat_temp1;
+    }
+    static Quat* Temp_Quat_2() {
+        quat_temp2.Set(0, 0, 0, 0);
+        return &quat_temp2;
+    }
+    static Quat* Temp_Quat_2(float inX, float inY, float inZ, float inW) {
+        quat_temp2.Set(inX, inY, inZ, inW);
+        return &quat_temp2;
+    }
+    static Quat* Temp_Quat_2(Quat* other) {
+        quat_temp2 = *other;
+        return &quat_temp2;
+    }
+
+    static Mat44* Temp_Mat44_1() {
+        mat44_temp1.sIdentity();
+        return &mat44_temp1;
+    }
+
+    static Mat44* Temp_Mat44_1(Mat44* other) {
+        mat44_temp1 = *other;
+        return &mat44_temp1;
+    }
+
+    static Mat44* Temp_Mat44_2() {
+        mat44_temp2.sIdentity();
+        return &mat44_temp2;
+    }
+
+    static Mat44* Temp_Mat44_2(Mat44* other) {
+        mat44_temp2 = *other;
+        return &mat44_temp2;
+    }
+};
+
 // Custom class to create new instance. Emscripten does not support multiple constructors types so this is the only way
 class JoltNew
 {
@@ -621,50 +785,6 @@ public:
     virtual SoftBodyValidateResult	OnSoftBodyContactValidate(const Body &inSoftBody, const Body &inOtherBody, SoftBodyContactSettings &ioSettings)
     {
         return (SoftBodyValidateResult)OnSoftBodyContactValidate(inSoftBody, inOtherBody, &ioSettings);
-    }
-};
-
-/// A wrapper around CharacterContactListener that is compatible with JavaScript
-class CharacterContactListenerEm: public CharacterContactListener
-{
-public:
-    // JavaScript compatible virtual functions
-    virtual void OnContactAdded(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, CharacterContactSettings &ioSettings) = 0;
-    virtual void OnContactPersisted(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, CharacterContactSettings &ioSettings) = 0;
-    virtual void OnCharacterContactAdded(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, CharacterContactSettings &ioSettings) = 0;
-    virtual void OnCharacterContactPersisted(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, CharacterContactSettings &ioSettings) = 0;
-    virtual void OnContactSolve(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, const Vec3 *inContactVelocity, const PhysicsMaterial *inContactMaterial, const Vec3 *inCharacterVelocity, Vec3 &ioNewCharacterVelocity) = 0;
-    virtual void OnCharacterContactSolve(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, const RVec3 *inContactPosition, const Vec3 *inContactNormal, const Vec3 *inContactVelocity, const PhysicsMaterial *inContactMaterial, const Vec3 *inCharacterVelocity, Vec3 &ioNewCharacterVelocity) = 0;
-
-    // Functions that call the JavaScript compatible virtual functions
-    virtual void OnContactAdded(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) override
-    {
-        OnContactAdded(inCharacter, inBodyID2, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
-    }
-
-    virtual void OnContactPersisted(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) override
-    {
-        OnContactPersisted(inCharacter, inBodyID2, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
-    }
-
-    virtual void OnCharacterContactAdded(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) override
-    {
-        OnCharacterContactAdded(inCharacter, inOtherCharacter, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
-    }
-
-    virtual void OnCharacterContactPersisted(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) override
-    {
-        OnCharacterContactPersisted(inCharacter, inOtherCharacter, inSubShapeID2, &inContactPosition, &inContactNormal, ioSettings);
-    }
-
-    virtual void OnContactSolve(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, Vec3Arg inContactVelocity, const PhysicsMaterial *inContactMaterial, Vec3Arg inCharacterVelocity, Vec3 &ioNewCharacterVelocity) override
-    {
-        OnContactSolve(inCharacter, inBodyID2, inSubShapeID2, &inContactPosition, &inContactNormal, &inContactVelocity, inContactMaterial, &inCharacterVelocity, ioNewCharacterVelocity);
-    }
-
-    virtual void OnCharacterContactSolve(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, Vec3Arg inContactVelocity, const PhysicsMaterial *inContactMaterial, Vec3Arg inCharacterVelocity, Vec3 &ioNewCharacterVelocity) override
-    {
-        OnCharacterContactSolve(inCharacter, inOtherCharacter, inSubShapeID2, &inContactPosition, &inContactNormal, &inContactVelocity, inContactMaterial, &inCharacterVelocity, ioNewCharacterVelocity);
     }
 };
 
