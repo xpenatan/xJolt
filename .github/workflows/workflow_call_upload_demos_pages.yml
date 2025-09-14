@@ -22,8 +22,11 @@ jobs:
 #        with:
 #          access_token: ${{ github.token }}
 
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -34,17 +37,28 @@ jobs:
       - name: Change wrapper permissions
         run: chmod +x ./gradlew
 
-#      - name: Build everything
-#        run: |
-#          ./gradlew build
-
-      - name: Build web Samples
+      - name: Build OpenGL Web Samples
         run: |
           ./gradlew :examples:samples:teavm:jolt_samples_build
 
-      - name: Upload Samples app demo to gh-pages
+      - name: Build WGPU Web Samples
+        run: |
+          ./gradlew :examples:samples:teavm-wgpu:jolt_samples_build_wgpu
+
+      - name: Upload OpenGL Samples to gh-pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./examples/samples/teavm/build/dist/webapp
-          destination_dir: ./examples/samples
+          destination_dir: ./gl/samples
+          publish_branch: gh-pages
+          force_orphan: true
+          keep_files: false
+
+      - name: Upload WGPU Samples to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./examples/samples/teavm-wgpu/build/dist/webapp
+          destination_dir: ./wgpu/samples
+          publish_branch: gh-pages
