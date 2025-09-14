@@ -1594,6 +1594,11 @@ interface ShapeResult { //[-SUB_PACKAGE=physics.collision.shape]
     void Clear();
 };
 
+[NoDelete]
+interface RefTargetShapeSettings { //[-SUB_PACKAGE=core]
+    void SetEmbedded();
+};
+
 // Shape
 [NoDelete]
 interface ShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
@@ -1605,6 +1610,7 @@ interface ShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
 
     attribute unsigned long long mUserData;
 };
+ShapeSettings implements RefTargetShapeSettings;
 
 [NoDelete]
 interface Shape {

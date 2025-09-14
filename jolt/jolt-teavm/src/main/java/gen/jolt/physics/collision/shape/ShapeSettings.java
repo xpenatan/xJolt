@@ -5,9 +5,9 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.collision.shape;
 
-import gen.jolt.idl.IDLBase;
+import gen.jolt.core.RefTargetShapeSettings;
 
-public class ShapeSettings extends IDLBase {
+public class ShapeSettings extends RefTargetShapeSettings {
 
     private ShapeResult ShapeResult_TEMP_GEN_0;
 
@@ -24,6 +24,7 @@ public class ShapeSettings extends IDLBase {
      */
     @Deprecated()
     protected ShapeSettings(byte b, char c) {
+        super((byte) 1, (char) 1);
     }
 
     /**
