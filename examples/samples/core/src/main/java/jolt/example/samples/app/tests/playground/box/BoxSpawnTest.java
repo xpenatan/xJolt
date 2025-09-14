@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.Mesh;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.VertexAttribute;
 import com.badlogic.gdx.graphics.VertexAttributes;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g3d.Material;
 import com.badlogic.gdx.graphics.g3d.Model;
 import com.badlogic.gdx.graphics.g3d.ModelInstance;
@@ -377,7 +379,7 @@ public class BoxSpawnTest extends Test {
     }
 
     @Override
-    public void renderUI() {
+    public void renderUI(Batch batch, BitmapFont font) {
 //        IDLBool.TMP_1.set(hardwareModelInstance);
 //        if(ImGui.Checkbox("Hardware Model Instance", IDLBool.TMP_1)) {
 //            hardwareModelInstance = IDLBool.TMP_1.getValue();

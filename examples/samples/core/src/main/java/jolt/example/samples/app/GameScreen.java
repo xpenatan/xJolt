@@ -43,8 +43,8 @@ public class GameScreen extends ScreenAdapter {
         samplesApp.setup(inputMultiplexer);
 //        samplesApp.startTest(NarrowPhaseQueryCastRayTest.class);
 //        samplesApp.startTest(BoxShapeTest.class);
-//        samplesApp.startTest(TankTest.class);
-        samplesApp.startTest(CharacterSpaceShipTest.class);
+        samplesApp.startTest(TankTest.class);
+//        samplesApp.startTest(CharacterSpaceShipTest.class);
 
 //        ImGuiStyle imGuiStyle = ImGui.GetStyle();
 //        imGuiStyle.Colors(ImGuiCol.WindowBg, 0.00f, 0.00f, 0.00f, 0.6f);

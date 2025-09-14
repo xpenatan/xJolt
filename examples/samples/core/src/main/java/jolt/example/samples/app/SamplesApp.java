@@ -4,7 +4,10 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.InputMultiplexer;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 //import imgui.ImGui;
@@ -27,6 +30,10 @@ public class SamplesApp extends InputAdapter {
     private Test test;
 
     private DebugRenderer debugRenderer;
+    private BitmapFont font;
+    private Batch batch;
+    private OrthographicCamera batchCamera;
+
     private BodyManagerDrawSettings debugSettings;
 
     private PerspectiveCamera camera;
@@ -40,6 +47,8 @@ public class SamplesApp extends InputAdapter {
     private TestGroup allTests;
 
     private FPSRenderer fpsRenderer;
+
+    String fontText;
 
     public void setup(InputMultiplexer input) {
         fpsRenderer = new FPSRenderer();
@@ -62,6 +71,10 @@ public class SamplesApp extends InputAdapter {
 
         input.addProcessor(this);
         input.addProcessor(cameraController);
+
+        batch = GraphicManagerApi.graphicApi.createSpriteBatch();
+        font = GraphicManagerApi.graphicApi.createBitmapFont();
+        batchCamera = new OrthographicCamera();
     }
 
     public void render(float delta) {
@@ -109,7 +122,7 @@ public class SamplesApp extends InputAdapter {
 //                ImGui.EndTabItem();
 //            }
 //            if(ImGui.BeginTabItem("Test")) {
-//                test.renderUI();
+                renderTestUI();
 //                ImGui.EndTabItem();
 //            }
 //            ImGui.EndTabBar();
@@ -119,6 +132,15 @@ public class SamplesApp extends InputAdapter {
 //        if(newTest != null) {
 //            startTest(newTest);
 //        }
+    }
+
+    private void renderTestUI() {
+        batchCamera.setToOrtho(false);
+        batch.setProjectionMatrix(batchCamera.combined);
+        batch.begin();
+        font.draw(batch, fontText, 50, Gdx.graphics.getHeight()-50);
+        test.renderUI(batch, font);
+        batch.end();
     }
 
     public void startTest(Class<? extends Test> testClass) {
@@ -139,10 +161,18 @@ public class SamplesApp extends InputAdapter {
         test = tests.getTest(testClass);
         debugRenderer.setEnable(true);
         test.setPhysicsSystem(joltInstance.getPhysicsSystem());
-        test.setDebugRenderer(debugRenderer);
+        test.setRenderer(debugRenderer);
         test.initializeCamera(camera);
         test.initialize();
         test.processInput();
+
+        fontText = "Test: " + test.getClass().getSimpleName() + "\n" +
+                "Hotkeys:\n" +
+                "P: Pause/Unpause\n" +
+                "R: Reset\n" +
+                "Shift + R: Next Test\n" +
+                "D: Debug Renderer On/Off\n" +
+                "W: Wireframe On/Off";
     }
 
     private void drawPhysics() {

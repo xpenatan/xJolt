@@ -1,6 +1,8 @@
 package jolt.example.samples.app.tests;
 
 import com.badlogic.gdx.graphics.PerspectiveCamera;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
 import jolt.JoltNew;
@@ -8,7 +10,6 @@ import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.example.samples.app.jolt.Layers;
 import jolt.example.samples.app.math.Perlin;
-import jolt.Jolt;
 import jolt.gdx.DebugRenderer;
 import jolt.geometry.Triangle;
 import jolt.geometry.TriangleList;
@@ -21,7 +22,6 @@ import jolt.physics.body.BodyCreationSettings;
 import jolt.physics.body.BodyInterface;
 import jolt.physics.collision.PhysicsMaterialList;
 import jolt.physics.collision.shape.BoxShape;
-import jolt.physics.collision.shape.MeshShapeSettings;
 import jolt.physics.collision.shape.Shape;
 import jolt.physics.collision.shape.ShapeResult;
 
@@ -39,7 +39,7 @@ public abstract class Test {
         mBodyInterface = mPhysicsSystem.GetBodyInterface();
     }
 
-    public void setDebugRenderer(DebugRenderer mDebugRenderer) {
+    public void setRenderer(DebugRenderer mDebugRenderer) {
         this.mDebugRenderer = mDebugRenderer;
     }
 
@@ -56,7 +56,7 @@ public abstract class Test {
     public void processInput() {
     }
 
-    public void renderUI() {}
+    public void renderUI(Batch batch, BitmapFont font) {}
 
     public final void initializeCamera(PerspectiveCamera camera) {
         this.camera = camera;
