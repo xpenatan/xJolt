@@ -1,15 +1,13 @@
 package jolt.example.samples.app.tests.raycast;
 
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Array;
-import com.badlogic.gdx.utils.LongArray;
+import jolt.example.graphics.GraphicManagerApi;
 import jolt.example.samples.app.tests.shapes.BoxShapeTest;
-import jolt.gdx.GraphicManagerApi;
 
 public abstract class RayCastTest extends BoxShapeTest {
 

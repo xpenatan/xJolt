@@ -9,6 +9,7 @@ gretty {
 }
 
 dependencies {
+    implementation(project(":examples:graphics:gdx-gl"))
     implementation(project(":examples:samples:core"))
 
     implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}:sources")
@@ -16,11 +17,11 @@ dependencies {
 
     if(LibExt.useRepoLibs) {
         implementation("com.github.xpenatan.xJolt:jolt-teavm:-SNAPSHOT")
-        implementation("com.github.xpenatan.xJolt:jolt-wgpu:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:gdx-gl:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-teavm"))
-        implementation(project(":extensions:gdx:jolt-gdx"))
+        implementation(project(":extensions:gdx:gdx-gl"))
     }
 
     implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}")

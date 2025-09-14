@@ -14,22 +14,23 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 //import imgui.ImGuiCond;
 //import imgui.ImGuiTabBarFlags;
 //import imgui.ImVec2;
+import jolt.example.graphics.GraphicManagerApi;
 import jolt.example.samples.app.imgui.FPSRenderer;
 import jolt.example.samples.app.imgui.ImGuiSettingsRenderer;
 import jolt.example.samples.app.jolt.JoltInstance;
 import jolt.example.samples.app.tests.Test;
 import jolt.example.samples.app.tests.TestGroup;
 import jolt.example.samples.app.tests.Tests;
-import jolt.gdx.DebugRenderer;
-import jolt.gdx.GraphicManagerApi;
+import jolt.gdx.JoltDebugRenderer;
 import jolt.physics.body.BodyManagerDrawSettings;
+import jolt.renderer.DebugRenderer;
 
 public class SamplesApp extends InputAdapter {
     private boolean isPaused;
 
     private Test test;
 
-    private DebugRenderer debugRenderer;
+    private JoltDebugRenderer debugRenderer;
     private BitmapFont font;
     private Batch batch;
     private OrthographicCamera batchCamera;

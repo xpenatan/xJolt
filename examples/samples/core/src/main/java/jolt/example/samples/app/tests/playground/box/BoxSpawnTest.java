@@ -36,7 +36,6 @@ import jolt.example.samples.app.jolt.Layers;
 import jolt.example.samples.app.tests.Test;
 import jolt.example.samples.app.tests.playground.box.shader.MyPBRDepthShaderProvider;
 import jolt.example.samples.app.tests.playground.box.shader.MyPBRShaderProvider;
-import jolt.gdx.DebugRenderer;
 import jolt.gdx.JoltGdx;
 import jolt.math.Mat44;
 import jolt.math.Quat;
@@ -162,7 +161,7 @@ public class BoxSpawnTest extends Test {
         float groundWidth = 60f;
         float groundHeight = 0.3f;
         float groundDepth = 60f;
-        checkerBoardTexture = DebugRenderer.createCheckerBoardTexture();
+        checkerBoardTexture = mDebugRenderer.createCheckerBoardTexture();
         final Material groundMaterial = new Material(
                 PBRTextureAttribute.createBaseColorTexture(checkerBoardTexture),
                 ColorAttribute.createDiffuse(1, 1, 1, 1)

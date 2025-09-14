@@ -1,6 +1,8 @@
 package jolt.example.samples.app.tests;
 
 import com.badlogic.gdx.utils.Array;
+import jolt.example.graphics.GraphicManagerApi;
+import jolt.example.graphics.GraphicType;
 import jolt.example.samples.app.tests.character.CharacterSpaceShipTest;
 import jolt.example.samples.app.tests.playground.box.BoxSpawnTest;
 import jolt.example.samples.app.tests.raycast.NarrowPhaseQueryCastRayTest;
@@ -25,8 +27,12 @@ public class Tests {
         tests.add(new JoltTestInstancer(TankTest.class, TankTest::new, "Vehicle", "Tank (VehicleConstraint)"));
         tests.add(new JoltTestInstancer(CharacterSpaceShipTest.class, CharacterSpaceShipTest::new, "Character", "Character Virtual vs Space Ship"));
 
-        //Custom tests
-        tests.add(new JoltTestInstancer(BoxSpawnTest.class, BoxSpawnTest::new, "Playground", "BoxTest"));
+        if(GraphicManagerApi.graphicApi.getGraphicType() == GraphicType.OpenGL) {
+            // BoxSpawnTest not supported in WGPU
+
+            //Custom tests
+            tests.add(new JoltTestInstancer(BoxSpawnTest.class, BoxSpawnTest::new, "Playground", "BoxTest"));
+        }
         return tests;
     }
 

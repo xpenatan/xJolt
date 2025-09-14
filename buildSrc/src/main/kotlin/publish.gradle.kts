@@ -3,8 +3,9 @@ import java.nio.file.Paths
 import java.net.URLEncoder
 
 var libProjects = mutableSetOf(
-    project(":extensions:gdx:jolt-gdx"),
-    project(":extensions:gdx:jolt-gdx-wgpu"),
+    project(":extensions:gdx:gdx-utils"),
+    project(":extensions:gdx:gdx-gl"),
+    project(":extensions:gdx:gdx-wgpu"),
     project(":jolt:jolt-core"),
     project(":jolt:jolt-desktop"),
     project(":jolt:jolt-teavm"),

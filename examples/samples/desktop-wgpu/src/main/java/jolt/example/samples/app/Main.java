@@ -3,8 +3,8 @@ package jolt.example.samples.app;
 import com.github.xpenatan.webgpu.JWebGPUBackend;
 import com.monstrous.gdx.webgpu.backends.desktop.WgDesktopApplication;
 import com.monstrous.gdx.webgpu.backends.desktop.WgDesktopApplicationConfiguration;
-import jolt.gdx.GraphicManagerApi;
-import jolt.gdx.WGPUGraphicApi;
+import jolt.example.graphics.GraphicManagerApi;
+import jolt.example.graphics.WGPUGraphicApi;
 
 public class Main {
     public static void main(String[] args) {

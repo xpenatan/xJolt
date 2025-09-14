@@ -10,7 +10,7 @@ import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.example.samples.app.jolt.Layers;
 import jolt.example.samples.app.math.Perlin;
-import jolt.gdx.DebugRenderer;
+import jolt.gdx.JoltDebugRenderer;
 import jolt.geometry.Triangle;
 import jolt.geometry.TriangleList;
 import jolt.math.Float3;
@@ -24,12 +24,13 @@ import jolt.physics.collision.PhysicsMaterialList;
 import jolt.physics.collision.shape.BoxShape;
 import jolt.physics.collision.shape.Shape;
 import jolt.physics.collision.shape.ShapeResult;
+import jolt.renderer.DebugRenderer;
 
 public abstract class Test {
 
     protected PhysicsSystem mPhysicsSystem = null;
     protected BodyInterface mBodyInterface = null;
-    protected DebugRenderer mDebugRenderer = null;
+    protected JoltDebugRenderer mDebugRenderer = null;
 
     protected PerspectiveCamera camera;
     protected Matrix4 cameraPivot = new Matrix4();
@@ -39,7 +40,7 @@ public abstract class Test {
         mBodyInterface = mPhysicsSystem.GetBodyInterface();
     }
 
-    public void setRenderer(DebugRenderer mDebugRenderer) {
+    public void setRenderer(JoltDebugRenderer mDebugRenderer) {
         this.mDebugRenderer = mDebugRenderer;
     }
 

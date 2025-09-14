@@ -5,15 +5,16 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":examples:graphics:gdx-gl"))
     implementation(project(":examples:samples:core"))
 
     if(LibExt.useRepoLibs) {
         implementation("com.github.xpenatan.xJolt:jolt-desktop:-SNAPSHOT")
-        implementation("com.github.xpenatan.xJolt:jolt-gdx:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:gdx-gl:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-desktop"))
-        implementation(project(":extensions:gdx:jolt-gdx"))
+        implementation(project(":extensions:gdx:gdx-gl"))
     }
 
     implementation("com.badlogicgames.gdx:gdx-backend-lwjgl3:${LibExt.gdxVersion}")

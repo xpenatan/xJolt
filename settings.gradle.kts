@@ -7,10 +7,14 @@ include(":jolt:jolt-teavm")
 include(":jolt:jolt-android")
 
 // Extension
-include(":extensions:gdx:jolt-gdx")
-include(":extensions:gdx:jolt-gdx-wgpu")
+include(":extensions:gdx:gdx-utils")
+include(":extensions:gdx:gdx-gl")
+include(":extensions:gdx:gdx-wgpu")
 
 // Examples
+include(":examples:graphics:gdx-shared")
+include(":examples:graphics:gdx-gl")
+include(":examples:graphics:gdx-wgpu")
 include(":examples:samples:core")
 include(":examples:samples:desktop")
 include(":examples:samples:desktop-wgpu")

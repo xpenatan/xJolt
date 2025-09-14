@@ -5,15 +5,16 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":examples:graphics:gdx-wgpu"))
     implementation(project(":examples:samples:core"))
 
     if(LibExt.useRepoLibs) {
         implementation("com.github.xpenatan.xJolt:jolt-desktop:-SNAPSHOT")
-        implementation("com.github.xpenatan.xJolt:jolt-gdx-wgpu:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:gdx-wgpu:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-desktop"))
-        implementation(project(":extensions:gdx:jolt-gdx-wgpu"))
+        implementation(project(":extensions:gdx:gdx-wgpu"))
     }
 
     implementation("io.github.monstroussoftware.gdx-webgpu:gdx-desktop-webgpu:${LibExt.gdxWebGPUVersion}")
