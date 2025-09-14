@@ -166,11 +166,15 @@ interface DebugRendererVertex { //[-SUB_PACKAGE=renderer]
     [Value] readonly attribute Color mColor;
 };
 
+interface DebugRenderer { //[-SUB_PACKAGE=renderer]
+};
+
 interface DebugRendererEm { //[-SUB_PACKAGE=renderer]
     void DrawBodies(PhysicsSystem system, BodyManagerDrawSettings inDrawSettings);
     void DrawBodies(PhysicsSystem system);
     void DrawCylinder([Ref] Mat44 inMatrix, float inHalfHeight, float inRadius, [Ref] Color inColor, optional ECastShadow inCastShadow, optional EDrawMode inDrawMode);
 };
+DebugRendererEm implements DebugRenderer;
 
 [JSImplementation = "DebugRendererEm"]
 interface DebugRendererImplCustom : DebugRendererEm {
@@ -1638,6 +1642,7 @@ interface Shape {
     boolean IsValidScale([Const, Ref] Vec3 inScale);
     [Value] Vec3 MakeScaleValid([Const, Ref] Vec3 inScale);
     [Value] ShapeResult ScaleShape([Const, Ref] Vec3 inScale);
+    void Draw(DebugRenderer inRenderer, [Const, Ref] Mat44 inCenterOfMassTransform, [Const, Ref] Vec3 inScale, [Ref] Color inColor, boolean inUseMaterialColors, boolean inDrawWireframe);
 };
 
 // Convex shape

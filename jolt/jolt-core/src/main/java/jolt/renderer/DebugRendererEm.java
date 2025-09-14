@@ -5,7 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.renderer;
 
-import jolt.idl.IDLBase;
 import jolt.physics.PhysicsSystem;
 import jolt.physics.body.BodyManagerDrawSettings;
 import jolt.math.Mat44;
@@ -15,8 +14,9 @@ import jolt.enums.EDrawMode;
 import jolt.idl.helper.IDLFloatArray;
 import jolt.enums.ECullMode;
 import jolt.math.Vec3;
+import jolt.idl.IDLBase;
 
-public class DebugRendererEm extends IDLBase {
+public class DebugRendererEm extends DebugRenderer {
 
     static private Mat44 Mat44_TEMP_STATIC_GEN_0;
 
@@ -91,6 +91,7 @@ virtual void DrawText3D(const Vec3* inPosition, const void* inString, unsigned i
 */
     @Deprecated()
     protected DebugRendererEm(byte b, char c) {
+        super((byte) 1, (char) 1);
     }
 
     /**
@@ -161,6 +162,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
     public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr);
 
     public DebugRendererEm() {
+        super((byte) 1, (char) 1);
         long addr = internal_native_create();
         internal_reset(addr, true);
         setupCallback();

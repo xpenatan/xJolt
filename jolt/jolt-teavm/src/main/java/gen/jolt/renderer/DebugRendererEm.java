@@ -5,7 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.renderer;
 
-import gen.jolt.idl.IDLBase;
 import gen.jolt.physics.PhysicsSystem;
 import gen.jolt.physics.body.BodyManagerDrawSettings;
 import gen.jolt.math.Mat44;
@@ -15,8 +14,9 @@ import gen.jolt.enums.EDrawMode;
 import gen.jolt.idl.helper.IDLFloatArray;
 import gen.jolt.enums.ECullMode;
 import gen.jolt.math.Vec3;
+import gen.jolt.idl.IDLBase;
 
-public class DebugRendererEm extends IDLBase {
+public class DebugRendererEm extends DebugRenderer {
 
     static private Mat44 Mat44_TEMP_STATIC_GEN_0;
 
@@ -57,6 +57,7 @@ public class DebugRendererEm extends IDLBase {
      */
     @Deprecated()
     protected DebugRendererEm(byte b, char c) {
+        super((byte) 1, (char) 1);
     }
 
     /**
@@ -133,6 +134,7 @@ jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr);
     public static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr);
 
     public DebugRendererEm() {
+        super((byte) 1, (char) 1);
         int addr = internal_native_create();
         internal_reset(addr, true);
         setupCallback();

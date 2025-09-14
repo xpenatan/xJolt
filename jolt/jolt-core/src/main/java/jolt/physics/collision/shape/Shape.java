@@ -15,6 +15,8 @@ import jolt.physics.body.MassProperties;
 import jolt.physics.collision.PhysicsMaterial;
 import jolt.math.Quat;
 import jolt.physics.collision.TransformedShape;
+import jolt.renderer.DebugRenderer;
+import jolt.core.Color;
 
 public class Shape extends IDLBase {
 
@@ -361,4 +363,14 @@ static Shape::ShapeResult copy_addr;
 copy_addr = nativeObject->ScaleShape(*((Vec3* )inScale_addr));
 return (jlong)&copy_addr;*/
     public static native long internal_native_ScaleShape(long this_addr, long inScale_addr);
+
+    public void Draw(DebugRenderer inRenderer, Mat44 inCenterOfMassTransform, Vec3 inScale, Color inColor, boolean inUseMaterialColors, boolean inDrawWireframe) {
+        internal_native_Draw(native_address, inRenderer.native_address, inCenterOfMassTransform.native_address, inScale.native_address, inColor.native_address, inUseMaterialColors, inDrawWireframe);
+    }
+
+    /*[-JNI;-NATIVE]
+Shape* nativeObject = (Shape*)this_addr;
+nativeObject->Draw((DebugRenderer* )inRenderer_addr, *((Mat44* )inCenterOfMassTransform_addr), *((Vec3* )inScale_addr), *((Color* )inColor_addr), inUseMaterialColors, inDrawWireframe);
+*/
+    public static native void internal_native_Draw(long this_addr, long inRenderer_addr, long inCenterOfMassTransform_addr, long inScale_addr, long inColor_addr, boolean inUseMaterialColors, boolean inDrawWireframe);
 }

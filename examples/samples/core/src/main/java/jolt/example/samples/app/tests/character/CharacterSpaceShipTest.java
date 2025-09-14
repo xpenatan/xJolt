@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import jolt.JoltNew;
 import jolt.JoltTemp;
+import jolt.core.Color;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
 import jolt.example.samples.app.jolt.Layers;
@@ -13,6 +14,7 @@ import jolt.math.Mat44;
 import jolt.math.Quat;
 import jolt.math.Vec3;
 import jolt.physics.PhysicsSystem;
+import jolt.physics.body.Body;
 import jolt.physics.body.BodyCreationSettings;
 import jolt.physics.body.BodyID;
 import jolt.physics.character.CharacterContactListener;
@@ -71,6 +73,11 @@ public class CharacterSpaceShipTest extends Test {
         mCharacter.SetListener(new CharacterContactListener() {
 
 
+            @Override
+            protected void OnAdjustBodyVelocity(CharacterVirtual inCharacter, Body inBody2, Vec3 ioLinearVelocity, Vec3 ioAngularVelocity) {
+                ioLinearVelocity.Sub(mSpaceShipLinearVelocity);
+                ioAngularVelocity.Sub(mSpaceShipAngularVelocity);
+            }
         });
 
         // Create the space ship
@@ -88,6 +95,8 @@ public class CharacterSpaceShipTest extends Test {
 
     @Override
     public void prePhysicsUpdate(boolean isPlaying) {
+
+        mCharacter.GetShape().Draw(mDebugRenderer, mCharacter.GetCenterOfMassTransform(), Vec3.sOne(), Color.get_sGreen(), false, true);
 
         if(!isPlaying) {
             return;

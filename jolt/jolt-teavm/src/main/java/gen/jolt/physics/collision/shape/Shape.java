@@ -15,6 +15,8 @@ import gen.jolt.physics.body.MassProperties;
 import gen.jolt.physics.collision.PhysicsMaterial;
 import gen.jolt.math.Quat;
 import gen.jolt.physics.collision.TransformedShape;
+import gen.jolt.renderer.DebugRenderer;
+import gen.jolt.core.Color;
 
 public class Shape extends IDLBase {
 
@@ -404,4 +406,15 @@ return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inScale_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Shape);var returnedJSObj = jsObj.ScaleShape(inScale_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     public static native int internal_native_ScaleShape(int this_addr, int inScale_addr);
+
+    public void Draw(DebugRenderer inRenderer, Mat44 inCenterOfMassTransform, Vec3 inScale, Color inColor, boolean inUseMaterialColors, boolean inDrawWireframe) {
+        internal_native_Draw(native_address, inRenderer.native_address, inCenterOfMassTransform.native_address, inScale.native_address, inColor.native_address, inUseMaterialColors, inDrawWireframe);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.Shape);
+jsObj.Draw(inRenderer_addr, inCenterOfMassTransform_addr, inScale_addr, inColor_addr, inUseMaterialColors, inDrawWireframe);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inRenderer_addr", "inCenterOfMassTransform_addr", "inScale_addr", "inColor_addr", "inUseMaterialColors", "inDrawWireframe"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Shape);jsObj.Draw(inRenderer_addr, inCenterOfMassTransform_addr, inScale_addr, inColor_addr, inUseMaterialColors, inDrawWireframe);")
+    public static native void internal_native_Draw(int this_addr, int inRenderer_addr, int inCenterOfMassTransform_addr, int inScale_addr, int inColor_addr, boolean inUseMaterialColors, boolean inDrawWireframe);
 }
