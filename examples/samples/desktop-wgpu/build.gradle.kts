@@ -9,11 +9,11 @@ dependencies {
 
     if(LibExt.useRepoLibs) {
         implementation("com.github.xpenatan.xJolt:jolt-desktop:-SNAPSHOT")
-        implementation("com.github.xpenatan.xJolt:jolt-wgpu:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:jolt-gdx-wgpu:-SNAPSHOT")
     }
     else {
         implementation(project(":jolt:jolt-desktop"))
-        implementation(project(":jolt-wgpu"))
+        implementation(project(":extensions:gdx:jolt-gdx-wgpu"))
     }
 
     implementation("io.github.monstroussoftware.gdx-webgpu:gdx-desktop-webgpu:${LibExt.gdxWebGPUVersion}")

@@ -2,13 +2,13 @@ plugins {
     id("java-library")
 }
 
-val moduleName = "jolt-wgpu"
+val moduleName = "jolt-gdx-wgpu"
 
 dependencies {
     implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}")
     api("io.github.monstroussoftware.gdx-webgpu:gdx-webgpu:${LibExt.gdxWebGPUVersion}")
     implementation(project(":jolt:jolt-core"))
-    api(project(":jolt-gdx"))
+    api(project(":extensions:gdx:jolt-gdx"))
 }
 
 java {

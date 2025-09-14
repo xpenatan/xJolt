@@ -20,7 +20,7 @@ dependencies {
     }
     else {
         implementation(project(":jolt:jolt-teavm"))
-        implementation(project(":jolt-gdx"))
+        implementation(project(":extensions:gdx:jolt-gdx"))
     }
 
     implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}")

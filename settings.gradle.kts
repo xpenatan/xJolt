@@ -5,8 +5,10 @@ include(":jolt:jolt-core")
 include(":jolt:jolt-desktop")
 include(":jolt:jolt-teavm")
 include(":jolt:jolt-android")
-include(":jolt-gdx")
-include(":jolt-wgpu")
+
+// Extension
+include(":extensions:gdx:jolt-gdx")
+include(":extensions:gdx:jolt-gdx-wgpu")
 
 // Examples
 include(":examples:samples:core")

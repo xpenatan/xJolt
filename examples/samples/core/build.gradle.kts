@@ -11,7 +11,7 @@ dependencies {
     }
     else {
         implementation(project(":jolt:jolt-core"))
-        implementation(project(":jolt-gdx"))
+        implementation(project(":extensions:gdx:jolt-gdx"))
     }
 
     api("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}")
