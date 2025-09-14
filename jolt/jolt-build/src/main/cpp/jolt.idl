@@ -1128,6 +1128,10 @@ interface PhysicsSystem {
     boolean WereBodiesInContact([Const, Ref] BodyID inBodyID1, [Const, Ref] BodyID inBodyID2);
     void SetSimShapeFilter([Const] SimShapeFilter inShapeFilter);
     [Const] SimShapeFilter GetSimShapeFilter();
+
+    // Not possible to compile (No copy constructor)
+//    [Value] DefaultBroadPhaseLayerFilter GetDefaultBroadPhaseLayerFilter(unsigned long inLayer);
+//    [Value] DefaultObjectLayerFilter GetDefaultLayerFilter(unsigned long inLayer);
 };
 
 interface Factory {
