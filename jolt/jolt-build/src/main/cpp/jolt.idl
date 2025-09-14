@@ -1181,6 +1181,7 @@ interface Vec3 {
     float Dot([Const, Ref] Vec3 inRHS);
     [Value] Vec3 DotV([Const, Ref] Vec3 inRHS);
     [Value] Vec4 DotV4([Const, Ref] Vec3 inRHS);
+    [Operator="=", Ref] Vec3 SetVec3([Const, Ref] Vec3 other);
     [Operator="+=", Ref] Vec3 Add([Const, Ref] Vec3 inV);
     [Operator="-=", Ref] Vec3 Sub([Const, Ref] Vec3 inV);
     [Operator="*=", Ref] Vec3 Mul(float inV);
@@ -1761,7 +1762,8 @@ ConvexHullShape implements ConvexShape;
 // Compound shape
 [NoDelete]
 interface CompoundShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
-    void AddShape([Const, Ref] Vec3 inPosition, [Const, Ref] Quat inRotation, [Const] ShapeSettings inShape, unsigned long inUserData);
+    [BindTo="AddShape"] void AddShape__0([Const, Ref] Vec3 inPosition, [Const, Ref] Quat inRotation, [Const] ShapeSettings inShape, optional unsigned long inUserData);
+    [BindTo="AddShape"] void AddShape__1([Const, Ref] Vec3 inPosition, [Const, Ref] Quat inRotation, [Const] Shape inShape, optional unsigned long inUserData);
 };
 CompoundShapeSettings implements ShapeSettings;
 

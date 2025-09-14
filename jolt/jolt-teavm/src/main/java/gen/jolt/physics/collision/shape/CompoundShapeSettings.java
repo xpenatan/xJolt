@@ -34,13 +34,46 @@ public class CompoundShapeSettings extends ShapeSettings {
     }
 
     public void AddShape(Vec3 inPosition, Quat inRotation, ShapeSettings inShape, int inUserData) {
-        internal_native_AddShape(native_address, inPosition.native_address, inRotation.native_address, inShape.native_address, inUserData);
+        internal_native_AddShape__0(native_address, inPosition.native_address, inRotation.native_address, inShape.native_address, inUserData);
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);
-jsObj.AddShape(inPosition_addr, inRotation_addr, inShape_addr, inUserData);
+jsObj.AddShape__0(inPosition_addr, inRotation_addr, inShape_addr, inUserData);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "inPosition_addr", "inRotation_addr", "inShape_addr", "inUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);jsObj.AddShape(inPosition_addr, inRotation_addr, inShape_addr, inUserData);")
-    public static native void internal_native_AddShape(int this_addr, int inPosition_addr, int inRotation_addr, int inShape_addr, int inUserData);
+    @org.teavm.jso.JSBody(params = {"this_addr", "inPosition_addr", "inRotation_addr", "inShape_addr", "inUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);jsObj.AddShape__0(inPosition_addr, inRotation_addr, inShape_addr, inUserData);")
+    public static native void internal_native_AddShape__0(int this_addr, int inPosition_addr, int inRotation_addr, int inShape_addr, int inUserData);
+
+    public void AddShape(Vec3 inPosition, Quat inRotation, ShapeSettings inShape) {
+        internal_native_AddShape__0(native_address, inPosition.native_address, inRotation.native_address, inShape.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);
+jsObj.AddShape__0(inPosition_addr, inRotation_addr, inShape_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inPosition_addr", "inRotation_addr", "inShape_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);jsObj.AddShape__0(inPosition_addr, inRotation_addr, inShape_addr);")
+    public static native void internal_native_AddShape__0(int this_addr, int inPosition_addr, int inRotation_addr, int inShape_addr);
+
+    public void AddShape(Vec3 inPosition, Quat inRotation, Shape inShape, int inUserData) {
+        internal_native_AddShape__1(native_address, inPosition.native_address, inRotation.native_address, inShape.native_address, inUserData);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);
+jsObj.AddShape__1(inPosition_addr, inRotation_addr, inShape_addr, inUserData);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inPosition_addr", "inRotation_addr", "inShape_addr", "inUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);jsObj.AddShape__1(inPosition_addr, inRotation_addr, inShape_addr, inUserData);")
+    public static native void internal_native_AddShape__1(int this_addr, int inPosition_addr, int inRotation_addr, int inShape_addr, int inUserData);
+
+    public void AddShape(Vec3 inPosition, Quat inRotation, Shape inShape) {
+        internal_native_AddShape__1(native_address, inPosition.native_address, inRotation.native_address, inShape.native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);
+jsObj.AddShape__1(inPosition_addr, inRotation_addr, inShape_addr);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "inPosition_addr", "inRotation_addr", "inShape_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShapeSettings);jsObj.AddShape__1(inPosition_addr, inRotation_addr, inShape_addr);")
+    public static native void internal_native_AddShape__1(int this_addr, int inPosition_addr, int inRotation_addr, int inShape_addr);
 }
