@@ -24,8 +24,10 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: .
+          destination_dir: .
           publish_branch: gh-pages
           force_orphan: true
+          allow_empty_commit: true
           keep_files: false
 
   upload_demos_linux:
@@ -66,7 +68,7 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./examples/samples/teavm/build/dist/webapp
-          destination_dir: ./gl/samples
+          destination_dir: ./snapshot/gl/samples
           publish_branch: gh-pages
 
       - name: Upload WGPU Samples to gh-pages
@@ -74,5 +76,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./examples/samples/teavm-wgpu/build/dist/webapp
-          destination_dir: ./wgpu/samples
+          destination_dir: ./snapshot/wgpu/samples
           publish_branch: gh-pages
