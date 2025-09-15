@@ -12,7 +12,17 @@ jobs:
       isRelease: false
       shouldUpload: true
     secrets: inherit
+  reset-gh-pages:
+    needs: build-and-upload
+    uses: ./.github/workflows/reset_gh_pages.yml
+    secrets: inherit
+
   upload-examples:
     needs: build-and-upload
     uses: ./.github/workflows/workflow_call_upload_demos_pages.yml
+    secrets: inherit
+
+  reset-gh-pages-after:
+    needs: build-and-upload
+    uses: ./.github/workflows/reset_gh_pages.yml
     secrets: inherit
