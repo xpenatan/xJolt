@@ -12,7 +12,7 @@ import com.badlogic.gdx.graphics.FPSLogger;
 //import imgui.gdx.ImGuiGdxImpl;
 //import imgui.gdx.ImGuiGdxInput;
 import jolt.example.graphics.GraphicManagerApi;
-import jolt.example.samples.app.tests.character.CharacterSpaceShipTest;
+import jolt.example.samples.app.tests.vehicle.TankTest;
 import static com.badlogic.gdx.Gdx.input;
 
 public class GameScreen extends ScreenAdapter {
