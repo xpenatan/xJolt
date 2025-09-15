@@ -1,4 +1,4 @@
-name: Dispatch Build
+name: Upload demos
 
 on:
   workflow_call:
