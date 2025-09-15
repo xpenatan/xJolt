@@ -1,0 +1,34 @@
+name: Dispatch Build
+
+on:
+  workflow_call:
+
+  workflow_dispatch:
+
+
+env:
+  CENTRAL_PORTAL_USERNAME: ${{ secrets.CENTRAL_PORTAL_USERNAME }}
+  CENTRAL_PORTAL_PASSWORD: ${{ secrets.CENTRAL_PORTAL_PASSWORD }}
+  SIGNING_KEY: ${{ secrets.PGP_SECRET }}
+  SIGNING_PASSWORD: ${{ secrets.PGP_PASSPHRASE }}
+
+jobs:
+  reset_gh_pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          destination_dir: .
+          publish_branch: gh-pages
+          force_orphan: true
+          allow_empty_commit: true
+          keep_files: false
