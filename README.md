@@ -38,9 +38,9 @@ repositories {
 
 // Core module
 implementation("com.github.xpenatan.xJolt:jolt-core:-SNAPSHOT")
-implementation("com.github.xpenatan.xJolt:gdx-utils:-SNAPSHOT")  // GDX utils
-implementation("com.github.xpenatan.xJolt:gdx-gl:-SNAPSHOT")      //OpenGL
-implementation("com.github.xpenatan.xJolt:gdx-wgpu:-SNAPSHOT")    //WebGPU
+implementation("com.github.xpenatan.xJolt:gdx-utils:-SNAPSHOT")  // Gdx Shared utils
+implementation("com.github.xpenatan.xJolt:gdx-gl:-SNAPSHOT")     // OpenGL
+implementation("com.github.xpenatan.xJolt:gdx-wgpu:-SNAPSHOT")   // WebGPU
 
 // Desktop module
 dependencies {
