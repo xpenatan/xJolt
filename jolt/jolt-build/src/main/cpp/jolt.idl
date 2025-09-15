@@ -49,6 +49,11 @@ interface JoltTemp {
     [BindTo="Temp_Mat44_1"] static Mat44 Mat44_1__1(Mat44 other);
     [BindTo="Temp_Mat44_2"] static Mat44 Mat44_2__0();
     [BindTo="Temp_Mat44_2"] static Mat44 Mat44_2__1(Mat44 other);
+
+    [BindTo="Temp_ExtendedUpdateSettings"] static ExtendedUpdateSettings ExtendedUpdateSettings__0();
+    [BindTo="Temp_DefaultBroadPhaseLayerFilter"] static DefaultBroadPhaseLayerFilter DefaultBroadPhaseLayerFilter__0(ObjectVsBroadPhaseLayerFilter filter, unsigned long inObjectLayer);
+    [BindTo="Temp_DefaultObjectLayerFilter"] static DefaultObjectLayerFilter DefaultObjectLayerFilter__0(ObjectLayerPairFilter filter, unsigned long inObjectLayer);
+    [BindTo="Temp_StaticCompoundShapeSettings"] static StaticCompoundShapeSettings StaticCompoundShapeSettings__0();
 };
 
 [NoDelete]
@@ -1189,7 +1194,7 @@ interface Vec3 {
     float Dot([Const, Ref] Vec3 inRHS);
     [Value] Vec3 DotV([Const, Ref] Vec3 inRHS);
     [Value] Vec4 DotV4([Const, Ref] Vec3 inRHS);
-    [Operator="=", Ref] Vec3 SetVec3([Const, Ref] Vec3 other);
+    [Operator="=", Ref] Vec3 Set__0([Const, Ref] Vec3 other);
     [Operator="+=", Ref] Vec3 Add([Const, Ref] Vec3 inV);
     [Operator="-=", Ref] Vec3 Sub([Const, Ref] Vec3 inV);
     [Operator="*=", Ref] Vec3 Mul(float inV);
@@ -1233,6 +1238,7 @@ interface Vec4 {
     [Operator="[]"] float GetComponent(unsigned long inCoordinate);
     boolean IsClose([Const, Ref] Vec4 inV, optional float inMaxDistSq);
     boolean IsNormalized(optional float inTolerance);
+    [Operator="=", Ref] Vec4 Set__0([Const, Ref] Vec4 other);
     [Operator="+=", Ref] Vec4 Add([Const, Ref] Vec4 inV);
     [Operator="-=", Ref] Vec4 Sub([Const, Ref] Vec4 inV);
     [Operator="*=", Ref] Vec4 Mul(float inV);
@@ -1254,6 +1260,7 @@ interface Quat {
     [Value] static Quat sFromTo([Const, Ref] Vec3 inFrom, [Const, Ref] Vec3 inTo);
     [Operator="=="] boolean Equals([Const, Ref] Quat inQ);
     [Operator="!="] boolean NotEquals([Const, Ref] Quat inQ);
+    [Operator="=", Ref] Quat Set__0([Const, Ref] Quat other);
     [Operator="*", Value] Quat MulQuat([Const, Ref] Quat inQ);
     [Operator="*", Value] Vec3 MulVec3([Const, Ref] Vec3 inV);
     [Operator="*", Value] Quat MulFloat(float inV);
@@ -1340,13 +1347,14 @@ interface Mat44 {
     [Operator="=="] boolean Equals([Const, Ref] Mat44 inV);
     [Operator="!="] boolean NotEquals([Const, Ref] Mat44 inV);
     boolean IsClose([Const, Ref] Mat44 inM, optional float inMaxDistSq);
-//    [Operator="+=", Const, Ref] Mat44 Add([Const, Ref] Mat44 inM);
-//    [Operator="*", Value] Mat44 MulFloat(float inV);
-//    [Operator="*", Value] Mat44 MulMat44([Const, Ref] Mat44 inM);
+    [Operator="=", Ref] Mat44 Set__0([Const, Ref] Mat44 other);
+    [Operator="+=", Const, Ref] Mat44 Add([Const, Ref] Mat44 inM);
+    [Operator="*", Value] Mat44 MulFloat(float inV);
+    [Operator="*", Value] Mat44 MulMat44([Const, Ref] Mat44 inM);
     [Operator="*", Value] Vec3 MulVec3([Const, Ref] Vec3 inV);
-//    [Operator="*", Value] Vec4 MulVec4([Const, Ref] Vec4 inV);
-//    [Operator="+", Value] Mat44 AddMat44([Const, Ref] Mat44 inM);
-//    [Operator="-", Value] Mat44 SubMat44([Const, Ref] Mat44 inM);
+    [Operator="*", Value] Vec4 MulVec4([Const, Ref] Vec4 inV);
+    [Operator="+", Value] Mat44 AddMat44([Const, Ref] Mat44 inM);
+    [Operator="-", Value] Mat44 SubMat44([Const, Ref] Mat44 inM);
     [Value] Vec3 Multiply3x3([Const, Ref] Vec3 inV);
     [Value] Vec3 Multiply3x3Transposed([Const, Ref] Vec3 inV);
     [Value] Mat44 Multiply3x3LeftTransposed([Const, Ref] Mat44 inM);
@@ -1497,7 +1505,6 @@ interface Plane {
     float SignedDistance([Const, Ref] Vec3 inPoint);
 };
 
-[NoDelete]
 interface TransformedShape {
     void TransformedShape();
     void CastRay([Const, Ref] RRayCast inRay, [Ref] RayCastResult ioHit);
@@ -1524,7 +1531,6 @@ interface TransformedShape {
     [Value] attribute BodyID mBodyID;
 };
 
-[NoDelete]
 interface PhysicsMaterial {
     void PhysicsMaterial();
     unsigned long GetRefCount();
@@ -1665,7 +1671,6 @@ interface ConvexShape {
 ConvexShape implements Shape;
 
 // Sphere
-[NoDelete]
 interface SphereShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void SphereShapeSettings(float inRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -1673,7 +1678,6 @@ interface SphereShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
 };
 SphereShapeSettings implements ConvexShapeSettings;
 
-[NoDelete]
 interface SphereShape {
     void SphereShape(float inRadius, [Const] optional PhysicsMaterial inMaterial);
     float GetRadius();
@@ -1681,7 +1685,6 @@ interface SphereShape {
 SphereShape implements ConvexShape;
 
 // Box
-[NoDelete]
 interface BoxShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void BoxShapeSettings([Ref] Vec3 inHalfExtent, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -1690,7 +1693,6 @@ interface BoxShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
 };
 BoxShapeSettings implements ConvexShapeSettings;
 
-[NoDelete]
 interface BoxShape {
     void BoxShape([Ref] Vec3 inHalfExtent, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
     [Value] Vec3 GetHalfExtent();
@@ -1698,7 +1700,6 @@ interface BoxShape {
 BoxShape implements ConvexShape;
 
 // Cylinder
-[NoDelete]
 interface CylinderShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void CylinderShapeSettings(float inHalfHeight, float inRadius, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -1708,7 +1709,6 @@ interface CylinderShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
 };
 CylinderShapeSettings implements ConvexShapeSettings;
 
-[NoDelete]
 interface CylinderShape {
     void CylinderShape(float inHalfHeight, float inRadius, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
     float GetRadius();
@@ -1717,7 +1717,6 @@ interface CylinderShape {
 CylinderShape implements ConvexShape;
 
 // Capsule
-[NoDelete]
 interface CapsuleShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void CapsuleShapeSettings(float inHalfHeight, float inRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -1726,7 +1725,6 @@ interface CapsuleShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
 };
 CapsuleShapeSettings implements ConvexShapeSettings;
 
-[NoDelete]
 interface CapsuleShape {
     void CapsuleShape(float inHalfHeight, float inRadius, [Const] optional PhysicsMaterial inMaterial);
     float GetRadius();
@@ -1735,7 +1733,6 @@ interface CapsuleShape {
 CapsuleShape implements ConvexShape;
 
 // Tapered capsule
-[NoDelete]
 interface TaperedCapsuleShapeSettings {  //[-SUB_PACKAGE=physics.collision.shape]
     void TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, [Const] optional PhysicsMaterial inMaterial);
 
@@ -1751,7 +1748,6 @@ interface TaperedCapsuleShape {
 TaperedCapsuleShape implements ConvexShape;
 
 // Convex hull
-[NoDelete]
 interface ConvexHullShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void ConvexHullShapeSettings();
     void ConvexHullShapeSettings([Const, Ref] ArrayVec3 inPoints, optional float inConvexRadius, [Const] optional PhysicsMaterial inMaterial);
@@ -1783,8 +1779,6 @@ interface CompoundShape {
 };
 CompoundShape implements Shape;
 
-// Static compound
-[NoDelete]
 interface StaticCompoundShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void StaticCompoundShapeSettings();
 };
@@ -1796,7 +1790,6 @@ interface StaticCompoundShape {
 StaticCompoundShape implements CompoundShape;
 
 // Mutable compound
-[NoDelete]
 interface MutableCompoundShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void MutableCompoundShapeSettings();
 };
@@ -1826,7 +1819,6 @@ interface DecoratedShape {
 DecoratedShape implements Shape;
 
 // Scaled shape
-[NoDelete]
 interface ScaledShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void ScaledShapeSettings(ShapeSettings inShape, [Ref, Const] Vec3 inScale);
 
@@ -1834,7 +1826,6 @@ interface ScaledShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
 };
 ScaledShapeSettings implements DecoratedShapeSettings;
 
-[NoDelete]
 interface ScaledShape {
     void ScaledShape(Shape inShape, [Ref, Const] Vec3 inScale);
     [Value] Vec3 GetScale();
@@ -1842,7 +1833,6 @@ interface ScaledShape {
 ScaledShape implements DecoratedShape;
 
 // Offset COM
-[NoDelete]
 interface OffsetCenterOfMassShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
 //    void OffsetCenterOfMassShapeSettings([Ref, Const] Vec3 inOffset, ShapeSettings inShape);
     void OffsetCenterOfMassShapeSettings([Ref, Const] Vec3 inOffset, [Const] Shape inShape);
@@ -1851,14 +1841,12 @@ interface OffsetCenterOfMassShapeSettings { //[-SUB_PACKAGE=physics.collision.sh
 };
 OffsetCenterOfMassShapeSettings implements DecoratedShapeSettings;
 
-[NoDelete]
 interface OffsetCenterOfMassShape {
     void OffsetCenterOfMassShape([Const] Shape inShape, [Const, Ref] Vec3 inOffset);
 };
 OffsetCenterOfMassShape implements DecoratedShape;
 
 // Rotated translated
-[NoDelete]
 interface RotatedTranslatedShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void RotatedTranslatedShapeSettings([Ref, Const] Vec3 inPosition, [Ref, Const] Quat inRotation, ShapeSettings inShape);
 
@@ -1875,7 +1863,6 @@ interface RotatedTranslatedShape {
 RotatedTranslatedShape implements DecoratedShape;
 
 // Mesh shape
-[NoDelete]
 interface MeshShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void MeshShapeSettings();
     void MeshShapeSettings([Ref, Const] TriangleList inTriangleList, [Ref, Const] optional PhysicsMaterialList inMaterialList);
@@ -1897,7 +1884,6 @@ interface MeshShape {
 };
 MeshShape implements Shape;
 
-[NoDelete]
 interface HeightFieldShapeSettings { //[-SUB_PACKAGE=physics.collision.shape]
     void HeightFieldShapeSettings();
 
@@ -2491,7 +2477,6 @@ interface GroupFilterJS {
     [Const] boolean CanCollide([Const, Ref] CollisionGroup inGroup1, [Const, Ref] CollisionGroup inGroup2);
 };
 
-[NoDelete]
 interface GroupFilterTable {
     void GroupFilterTable(optional unsigned long inNumGroups);
     void DisableCollision(unsigned long inSubGroup1, unsigned long inSubGroup2);
@@ -2957,7 +2942,6 @@ interface CollidePointCollectorJS {
     void AddHit([Const, Ref] CollidePointResult inResult);
 };
 
-
 interface CollideSettingsBase { //[-SUB_PACKAGE=physics.collision]
     attribute EActiveEdgeMode mActiveEdgeMode;
     attribute ECollectFacesMode mCollectFacesMode;
@@ -2966,7 +2950,6 @@ interface CollideSettingsBase { //[-SUB_PACKAGE=physics.collision]
     [Value] attribute Vec3 mActiveEdgeMovementDirection;
 };
 
-[NoDelete]
 interface CollideShapeSettings { //[-SUB_PACKAGE=physics.collision]
     void CollideShapeSettings();
 
@@ -3151,7 +3134,6 @@ interface BodyCreationSettings {
     [Value] attribute MassProperties mMassPropertiesOverride;
 };
 
-[NoDelete]
 interface SoftBodySharedSettings { //[-SUB_PACKAGE=physics.softbody]
     void SoftBodySharedSettings();
     unsigned long GetRefCount();
@@ -3257,7 +3239,6 @@ interface CharacterID {
     static void sSetNextCharacterID(unsigned long inNextValue);
 };
 
-[NoDelete]
 interface CharacterVirtualSettings { //[-SUB_PACKAGE=physics.character]
     void CharacterVirtualSettings();
 
@@ -3370,7 +3351,6 @@ interface CharacterBase {
     [Value] BodyID GetGroundBodyID();
 };
 
-[NoDelete]
 interface CharacterVirtual {
     void CharacterVirtual([Const] CharacterVirtualSettings inSettings, [Ref] Vec3 inPosition, [Ref] Quat inRotation, PhysicsSystem inSystem);
     [Const, Ref] CharacterID GetID();
@@ -3456,7 +3436,7 @@ interface ObjectVsBroadPhaseLayerFilter { //[-SUB_PACKAGE=physics.collision.broa
 interface DefaultBroadPhaseLayerFilter { //[-SUB_PACKAGE=physics.collision.broadphase]
     void DefaultBroadPhaseLayerFilter([Const, Ref] ObjectVsBroadPhaseLayerFilter inFilter, unsigned long inObjectLayer);
 };
-DefaultBroadPhaseLayerFilter implements ObjectLayerFilter;
+DefaultBroadPhaseLayerFilter implements BroadPhaseLayerFilter;
 
 interface ObjectLayerFilter { //[-SUB_PACKAGE=physics.collision]
     void ObjectLayerFilter();
@@ -3494,8 +3474,8 @@ interface BodyFilter {
 };
 
 [JSImplementation="BodyFilter"]
-interface BodyFilterJS {
-    void BodyFilterJS();
+interface BodyFilterImpl {
+    void BodyFilterImpl();
     [Const] boolean ShouldCollide([Const, Ref] BodyID inBodyID);
     [Const] boolean ShouldCollideLocked([Const, Ref] Body inBody);
 };
@@ -3514,6 +3494,18 @@ interface IgnoreMultipleBodiesFilter { //[-SUB_PACKAGE=physics.body]
 IgnoreMultipleBodiesFilter implements BodyFilter;
 
 interface ShapeFilter {
+    void ShapeFilter();
+};
+
+interface ShapeFilterCallback {
+};
+ShapeFilterCallback implements ShapeFilter;
+
+[JSImplementation="ShapeFilterCallback"]
+interface ShapeFilterCallbackImpl {
+    void ShapeFilterCallbackImpl();
+    [Const] boolean ShouldCollide_Any([Const] Shape inShape2, [Const, Ref] SubShapeID inSubShapeIDOfShape2);
+    [Const] boolean ShouldCollide_Shape([Const] Shape inShape1, [Const, Ref] SubShapeID inSubShapeIDOfShape1, [Const] Shape inShape2, [Const, Ref] SubShapeID inSubShapeIDOfShape2);
 };
 
 interface LinearCurve {
@@ -3534,25 +3526,21 @@ interface VehicleCollisionTester {
     void Release();
 };
 
-[NoDelete]
 interface VehicleCollisionTesterRay { //[-SUB_PACKAGE=physics.vehicle]
     void VehicleCollisionTesterRay(unsigned long inObjectLayer, [Ref] optional Vec3 inUp, optional float inMaxSlopeAngle);
 };
 VehicleCollisionTesterRay implements VehicleCollisionTester;
 
-[NoDelete]
 interface VehicleCollisionTesterCastSphere { //[-SUB_PACKAGE=physics.vehicle]
     void VehicleCollisionTesterCastSphere(unsigned long inObjectLayer, float inRadius, [Ref] optional Vec3 inUp, optional float inMaxSlopeAngle);
 };
 VehicleCollisionTesterCastSphere implements VehicleCollisionTester;
 
-[NoDelete]
 interface VehicleCollisionTesterCastCylinder { //[-SUB_PACKAGE=physics.vehicle]
     void VehicleCollisionTesterCastCylinder(unsigned long inObjectLayer, optional float inConvexRadiusFraction);
 };
 VehicleCollisionTesterCastCylinder implements VehicleCollisionTester;
 
-[NoDelete]
 interface VehicleConstraintSettings { //[-SUB_PACKAGE=physics.vehicle]
     void VehicleConstraintSettings();
 
@@ -3565,7 +3553,6 @@ interface VehicleConstraintSettings { //[-SUB_PACKAGE=physics.vehicle]
 };
 VehicleConstraintSettings implements ConstraintSettings;
 
-[NoDelete]
 interface VehicleConstraint {
     void VehicleConstraint([Ref] Body inVehicleBody, [Const, Ref] VehicleConstraintSettings inSettings);
     void SetMaxPitchRollAngle(float inMaxPitchRollAngle);
@@ -3591,7 +3578,6 @@ interface VehicleConstraint {
 };
 VehicleConstraint implements Constraint;
 
-[NoDelete]
 interface WheelSettings { //[-SUB_PACKAGE=physics.vehicle]
     void WheelSettings();
     unsigned long GetRefCount();
@@ -3655,7 +3641,6 @@ interface Wheels { //[-SUB_PACKAGE=physics.vehicle]
     void clear();
 };
 
-[NoDelete]
 interface WheelSettingsWV { //[-SUB_PACKAGE=physics.vehicle]
     void WheelSettingsWV();
 
@@ -3681,7 +3666,6 @@ interface WheelWV { //[-SUB_PACKAGE=physics.vehicle]
 };
 WheelWV implements Wheel;
 
-[NoDelete]
 interface WheelSettingsTV { //[-SUB_PACKAGE=physics.vehicle]
     void WheelSettingsTV();
 
@@ -3715,7 +3699,6 @@ interface VehicleTrack {
 };
 VehicleTrack implements VehicleTrackSettings;
 
-[NoDelete]
 interface WheeledVehicleControllerSettings { //[-SUB_PACKAGE=physics.vehicle]
     void WheeledVehicleControllerSettings();
 
@@ -3726,7 +3709,6 @@ interface WheeledVehicleControllerSettings { //[-SUB_PACKAGE=physics.vehicle]
 };
 WheeledVehicleControllerSettings implements VehicleControllerSettings;
 
-[NoDelete]
 interface TrackedVehicleControllerSettings { //[-SUB_PACKAGE=physics.vehicle]
     void TrackedVehicleControllerSettings();
 
@@ -3736,7 +3718,6 @@ interface TrackedVehicleControllerSettings { //[-SUB_PACKAGE=physics.vehicle]
 };
 TrackedVehicleControllerSettings implements VehicleControllerSettings;
 
-[NoDelete]
 interface TrackedVehicleController {
     void TrackedVehicleController([Const, Ref] TrackedVehicleControllerSettings inSettings, [Ref] VehicleConstraint inConstraint);
     void SetDriverInput(float inForward, float inLeftRatio, float inRightRatio, float inBrake);
@@ -3813,7 +3794,6 @@ interface VehicleController { //[-SUB_PACKAGE=physics.vehicle]
     [Ref] VehicleConstraint GetConstraint();
 };
 
-[NoDelete]
 interface WheeledVehicleController {
     void WheeledVehicleController([Const, Ref] WheeledVehicleControllerSettings inSettings, [Ref] VehicleConstraint inConstraint);
     void SetDriverInput(float inForward, float inRight, float inBrake, float inHandBrake);
@@ -3854,7 +3834,6 @@ interface MotorcycleController {
 };
 MotorcycleController implements WheeledVehicleController;
 
-[NoDelete]
 interface Skeleton {
     void Skeleton();
     long AddJoint([Const, Ref] IDLString inName, long inParentIndex);
@@ -3863,7 +3842,6 @@ interface Skeleton {
     void CalculateParentJointIndices();
 };
 
-[NoDelete]
 interface SkeletalAnimation {
     void SkeletalAnimation();
     float GetDuration();
@@ -3886,7 +3864,6 @@ interface SkeletonPose {
     void CalculateJointStates();
 };
 
-[NoDelete]
 interface RagdollSettings { //[-SUB_PACKAGE=physics.raddoll]
     void RagdollSettings();
     boolean Stabilize();
@@ -3901,7 +3878,6 @@ interface RagdollSettings { //[-SUB_PACKAGE=physics.raddoll]
     [Value] attribute ArrayRagdollAdditionalConstraint mAdditionalConstraints;
 };
 
-[NoDelete]
 interface Ragdoll {
     void Ragdoll(PhysicsSystem inSystem);
     void AddToPhysicsSystem(EActivation inActivationMode, optional boolean inLockBodies);
@@ -3949,20 +3925,17 @@ interface BroadPhaseLayer {
 //    [Const] unsigned short GetBPLayer(unsigned long inLayer); // Unfortunately the C++ version of GetBroadPhaseLayer is not compatible with JS so we have to use a different name and use an unsigned short instead of a BroadPhaseLayer
 //};
 
-[NoDelete]
 interface BroadPhaseLayerInterfaceTable {
     void BroadPhaseLayerInterfaceTable(unsigned long inNumObjectLayers, unsigned long inNumBroadPhaseLayers);
     void MapObjectToBroadPhaseLayer(unsigned long inObjectLayer, [Const, Ref] BroadPhaseLayer inBroadPhaseLayer);
 };
 BroadPhaseLayerInterfaceTable implements BroadPhaseLayerInterface;
 
-[NoDelete]
 interface ObjectVsBroadPhaseLayerFilterTable {
     void ObjectVsBroadPhaseLayerFilterTable([Const, Ref] BroadPhaseLayerInterface inBroadPhaseLayerInterface, unsigned long inNumBroadPhaseLayers, [Const, Ref] ObjectLayerPairFilter inObjectLayerPairFilter, unsigned long inNumObjectLayers);
 };
 ObjectVsBroadPhaseLayerFilterTable implements ObjectVsBroadPhaseLayerFilter;
 
-[NoDelete]
 interface ObjectLayerPairFilterTable {
     void ObjectLayerPairFilterTable(unsigned long inNumObjectLayers);
     unsigned long GetNumObjectLayers();

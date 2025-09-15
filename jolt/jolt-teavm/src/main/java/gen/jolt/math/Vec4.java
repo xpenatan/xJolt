@@ -421,6 +421,20 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Vec4);var returnedJSObj = jsObj.IsNormalized();return returnedJSObj;")
     public static native boolean internal_native_IsNormalized(int this_addr);
 
+    public Vec4 Set(Vec4 other) {
+        internal_native_Set__0(native_address, other.native_address);
+        return this;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.Vec4);
+var returnedJSObj = jsObj.Set__0(other_addr);
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jolt.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "other_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Vec4);var returnedJSObj = jsObj.Set__0(other_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Set__0(int this_addr, int other_addr);
+
     public Vec4 Add(Vec4 inV) {
         internal_native_Add(native_address, inV.native_address);
         return this;

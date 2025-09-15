@@ -57,7 +57,7 @@ public class CharacterVirtual extends CharacterBase {
     public CharacterVirtual(CharacterVirtualSettings inSettings, Vec3 inPosition, Quat inRotation, PhysicsSystem inSystem) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(inSettings.native_address, inPosition.native_address, inRotation.native_address, inSystem.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -79,6 +79,16 @@ return (jlong)new CharacterVirtual((CharacterVirtualSettings* )inSettings_addr, 
     public static CharacterVirtual native_new() {
         return new CharacterVirtual((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public CharacterID GetID() {
         long pointer = internal_native_GetID(native_address);

@@ -20,7 +20,7 @@ public class SphereShapeSettings extends ConvexShapeSettings {
     public SphereShapeSettings(float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_PhysicsMaterial(inRadius, inMaterial.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -31,7 +31,7 @@ return (jlong)new SphereShapeSettings((float)inRadius, (PhysicsMaterial* )inMate
     public SphereShapeSettings(float inRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float(inRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,6 +53,16 @@ return (jlong)new SphereShapeSettings((float)inRadius);
     public static SphereShapeSettings native_new() {
         return new SphereShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+SphereShapeSettings* nativeObject = (SphereShapeSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mRadius() {
         return internal_native_get_mRadius(native_address);

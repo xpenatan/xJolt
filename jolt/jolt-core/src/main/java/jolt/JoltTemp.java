@@ -10,6 +10,12 @@ import jolt.math.Vec3;
 import jolt.math.Vec4;
 import jolt.math.Quat;
 import jolt.math.Mat44;
+import jolt.physics.character.ExtendedUpdateSettings;
+import jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilter;
+import jolt.physics.collision.broadphase.DefaultBroadPhaseLayerFilter;
+import jolt.physics.collision.ObjectLayerPairFilter;
+import jolt.physics.collision.DefaultObjectLayerFilter;
+import jolt.physics.collision.shape.StaticCompoundShapeSettings;
 
 public class JoltTemp extends IDLBase {
 
@@ -80,6 +86,14 @@ public class JoltTemp extends IDLBase {
     static private Mat44 Mat44_TEMP_STATIC_GEN_2;
 
     static private Mat44 Mat44_TEMP_STATIC_GEN_3;
+
+    static private ExtendedUpdateSettings ExtendedUpdateSettings_TEMP_STATIC_GEN_0;
+
+    static private DefaultBroadPhaseLayerFilter DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0;
+
+    static private DefaultObjectLayerFilter DefaultObjectLayerFilter_TEMP_STATIC_GEN_0;
+
+    static private StaticCompoundShapeSettings StaticCompoundShapeSettings_TEMP_STATIC_GEN_0;
 
     static public final JoltTemp NULL = JoltTemp.native_new();
 
@@ -612,4 +626,64 @@ return (jlong)JoltTemp::Temp_Mat44_2();
 return (jlong)JoltTemp::Temp_Mat44_2((Mat44* )other_addr);
 */
     public static native long internal_native_Mat44_2__1(long other_addr);
+
+    public static ExtendedUpdateSettings ExtendedUpdateSettings() {
+        long pointer = internal_native_ExtendedUpdateSettings__0();
+        if (pointer == 0)
+            return ExtendedUpdateSettings.NULL;
+        if (ExtendedUpdateSettings_TEMP_STATIC_GEN_0 == null)
+            ExtendedUpdateSettings_TEMP_STATIC_GEN_0 = ExtendedUpdateSettings.native_new();
+        ExtendedUpdateSettings_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return ExtendedUpdateSettings_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JoltTemp::Temp_ExtendedUpdateSettings();
+*/
+    public static native long internal_native_ExtendedUpdateSettings__0();
+
+    public static DefaultBroadPhaseLayerFilter DefaultBroadPhaseLayerFilter(ObjectVsBroadPhaseLayerFilter filter, int inObjectLayer) {
+        long pointer = internal_native_DefaultBroadPhaseLayerFilter__0(filter.native_address, inObjectLayer);
+        if (pointer == 0)
+            return DefaultBroadPhaseLayerFilter.NULL;
+        if (DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0 == null)
+            DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0 = DefaultBroadPhaseLayerFilter.native_new();
+        DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JoltTemp::Temp_DefaultBroadPhaseLayerFilter((ObjectVsBroadPhaseLayerFilter* )filter_addr, inObjectLayer);
+*/
+    public static native long internal_native_DefaultBroadPhaseLayerFilter__0(long filter_addr, int inObjectLayer);
+
+    public static DefaultObjectLayerFilter DefaultObjectLayerFilter(ObjectLayerPairFilter filter, int inObjectLayer) {
+        long pointer = internal_native_DefaultObjectLayerFilter__0(filter.native_address, inObjectLayer);
+        if (pointer == 0)
+            return DefaultObjectLayerFilter.NULL;
+        if (DefaultObjectLayerFilter_TEMP_STATIC_GEN_0 == null)
+            DefaultObjectLayerFilter_TEMP_STATIC_GEN_0 = DefaultObjectLayerFilter.native_new();
+        DefaultObjectLayerFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return DefaultObjectLayerFilter_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JoltTemp::Temp_DefaultObjectLayerFilter((ObjectLayerPairFilter* )filter_addr, inObjectLayer);
+*/
+    public static native long internal_native_DefaultObjectLayerFilter__0(long filter_addr, int inObjectLayer);
+
+    public static StaticCompoundShapeSettings StaticCompoundShapeSettings() {
+        long pointer = internal_native_StaticCompoundShapeSettings__0();
+        if (pointer == 0)
+            return StaticCompoundShapeSettings.NULL;
+        if (StaticCompoundShapeSettings_TEMP_STATIC_GEN_0 == null)
+            StaticCompoundShapeSettings_TEMP_STATIC_GEN_0 = StaticCompoundShapeSettings.native_new();
+        StaticCompoundShapeSettings_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return StaticCompoundShapeSettings_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)JoltTemp::Temp_StaticCompoundShapeSettings();
+*/
+    public static native long internal_native_StaticCompoundShapeSettings__0();
 }

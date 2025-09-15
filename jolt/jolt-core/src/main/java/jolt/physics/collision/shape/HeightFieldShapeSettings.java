@@ -33,7 +33,7 @@ public class HeightFieldShapeSettings extends ShapeSettings {
     public HeightFieldShapeSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -55,6 +55,16 @@ return (jlong)new HeightFieldShapeSettings();
     public static HeightFieldShapeSettings native_new() {
         return new HeightFieldShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mOffset() {
         long pointer = internal_native_get_mOffset(native_address);

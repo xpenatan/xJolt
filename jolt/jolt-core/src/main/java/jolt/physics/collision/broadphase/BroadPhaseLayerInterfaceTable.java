@@ -18,7 +18,7 @@ public class BroadPhaseLayerInterfaceTable extends BroadPhaseLayerInterface {
     public BroadPhaseLayerInterfaceTable(int inNumObjectLayers, int inNumBroadPhaseLayers) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int_int(inNumObjectLayers, inNumBroadPhaseLayers);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,6 +40,16 @@ return (jlong)new BroadPhaseLayerInterfaceTable(inNumObjectLayers, inNumBroadPha
     public static BroadPhaseLayerInterfaceTable native_new() {
         return new BroadPhaseLayerInterfaceTable((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+BroadPhaseLayerInterfaceTable* nativeObject = (BroadPhaseLayerInterfaceTable*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void MapObjectToBroadPhaseLayer(int inObjectLayer, BroadPhaseLayer inBroadPhaseLayer) {
         internal_native_MapObjectToBroadPhaseLayer(native_address, inObjectLayer, inBroadPhaseLayer.native_address);

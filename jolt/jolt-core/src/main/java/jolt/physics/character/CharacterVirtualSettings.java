@@ -31,7 +31,7 @@ public class CharacterVirtualSettings extends CharacterBaseSettings {
     public CharacterVirtualSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,6 +53,16 @@ return (jlong)new CharacterVirtualSettings();
     public static CharacterVirtualSettings native_new() {
         return new CharacterVirtualSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public CharacterID get_mID() {
         long pointer = internal_native_get_mID(native_address);

@@ -63,19 +63,21 @@ public class Mat44 extends IDLBase {
 
     private Vec3 Vec3_TEMP_GEN_4;
 
-    private Vec3 Vec3_TEMP_GEN_5;
-
-    private Vec3 Vec3_TEMP_GEN_6;
-
-    private Vec3 Vec3_TEMP_GEN_7;
-
     private Mat44 Mat44_TEMP_GEN_2;
 
     private Mat44 Mat44_TEMP_GEN_3;
 
+    private Vec3 Vec3_TEMP_GEN_5;
+
+    private Vec4 Vec4_TEMP_GEN_1;
+
     private Mat44 Mat44_TEMP_GEN_4;
 
     private Mat44 Mat44_TEMP_GEN_5;
+
+    private Vec3 Vec3_TEMP_GEN_6;
+
+    private Vec3 Vec3_TEMP_GEN_7;
 
     private Mat44 Mat44_TEMP_GEN_6;
 
@@ -97,9 +99,17 @@ public class Mat44 extends IDLBase {
 
     private Mat44 Mat44_TEMP_GEN_15;
 
+    private Mat44 Mat44_TEMP_GEN_16;
+
+    private Mat44 Mat44_TEMP_GEN_17;
+
+    private Mat44 Mat44_TEMP_GEN_18;
+
+    private Mat44 Mat44_TEMP_GEN_19;
+
     private Vec3 Vec3_TEMP_GEN_8;
 
-    private Vec4 Vec4_TEMP_GEN_1;
+    private Vec4 Vec4_TEMP_GEN_2;
 
     static public final Mat44 NULL = Mat44.native_new();
 
@@ -632,6 +642,62 @@ return nativeObject->IsClose(*((Mat44* )inM_addr));
 */
     public static native boolean internal_native_IsClose(long this_addr, long inM_addr);
 
+    public Mat44 Set(Mat44 other) {
+        internal_native_Set__0(native_address, other.native_address);
+        return this;
+    }
+
+    /*[-JNI;-NATIVE]
+Mat44* nativeObject = (Mat44*)this_addr;
+return (jlong)&(*nativeObject = *((Mat44* )other_addr));
+*/
+    public static native long internal_native_Set__0(long this_addr, long other_addr);
+
+    public Mat44 Add(Mat44 inM) {
+        internal_native_Add(native_address, inM.native_address);
+        return this;
+    }
+
+    /*[-JNI;-NATIVE]
+Mat44* nativeObject = (Mat44*)this_addr;
+return (jlong)&(*nativeObject += *((Mat44* )inM_addr));
+*/
+    public static native long internal_native_Add(long this_addr, long inM_addr);
+
+    public Mat44 MulFloat(float inV) {
+        long pointer = internal_native_MulFloat(native_address, inV);
+        if (pointer == 0)
+            return Mat44.NULL;
+        if (Mat44_TEMP_GEN_2 == null)
+            Mat44_TEMP_GEN_2 = Mat44.native_new();
+        Mat44_TEMP_GEN_2.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_2;
+    }
+
+    /*[-JNI;-NATIVE]
+Mat44* nativeObject = (Mat44*)this_addr;
+static Mat44 copy_addr;
+copy_addr = (*nativeObject * (float)inV);
+return (jlong)&copy_addr;*/
+    public static native long internal_native_MulFloat(long this_addr, float inV);
+
+    public Mat44 MulMat44(Mat44 inM) {
+        long pointer = internal_native_MulMat44(native_address, inM.native_address);
+        if (pointer == 0)
+            return Mat44.NULL;
+        if (Mat44_TEMP_GEN_3 == null)
+            Mat44_TEMP_GEN_3 = Mat44.native_new();
+        Mat44_TEMP_GEN_3.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_3;
+    }
+
+    /*[-JNI;-NATIVE]
+Mat44* nativeObject = (Mat44*)this_addr;
+static Mat44 copy_addr;
+copy_addr = (*nativeObject * *((Mat44* )inM_addr));
+return (jlong)&copy_addr;*/
+    public static native long internal_native_MulMat44(long this_addr, long inM_addr);
+
     public Vec3 MulVec3(Vec3 inV) {
         long pointer = internal_native_MulVec3(native_address, inV.native_address);
         if (pointer == 0)
@@ -648,6 +714,57 @@ static Vec3 copy_addr;
 copy_addr = (*nativeObject * *((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
     public static native long internal_native_MulVec3(long this_addr, long inV_addr);
+
+    public Vec4 MulVec4(Vec4 inV) {
+        long pointer = internal_native_MulVec4(native_address, inV.native_address);
+        if (pointer == 0)
+            return Vec4.NULL;
+        if (Vec4_TEMP_GEN_1 == null)
+            Vec4_TEMP_GEN_1 = Vec4.native_new();
+        Vec4_TEMP_GEN_1.internal_reset(pointer, false);
+        return Vec4_TEMP_GEN_1;
+    }
+
+    /*[-JNI;-NATIVE]
+Mat44* nativeObject = (Mat44*)this_addr;
+static Vec4 copy_addr;
+copy_addr = (*nativeObject * *((Vec4* )inV_addr));
+return (jlong)&copy_addr;*/
+    public static native long internal_native_MulVec4(long this_addr, long inV_addr);
+
+    public Mat44 AddMat44(Mat44 inM) {
+        long pointer = internal_native_AddMat44(native_address, inM.native_address);
+        if (pointer == 0)
+            return Mat44.NULL;
+        if (Mat44_TEMP_GEN_4 == null)
+            Mat44_TEMP_GEN_4 = Mat44.native_new();
+        Mat44_TEMP_GEN_4.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_4;
+    }
+
+    /*[-JNI;-NATIVE]
+Mat44* nativeObject = (Mat44*)this_addr;
+static Mat44 copy_addr;
+copy_addr = (*nativeObject + *((Mat44* )inM_addr));
+return (jlong)&copy_addr;*/
+    public static native long internal_native_AddMat44(long this_addr, long inM_addr);
+
+    public Mat44 SubMat44(Mat44 inM) {
+        long pointer = internal_native_SubMat44(native_address, inM.native_address);
+        if (pointer == 0)
+            return Mat44.NULL;
+        if (Mat44_TEMP_GEN_5 == null)
+            Mat44_TEMP_GEN_5 = Mat44.native_new();
+        Mat44_TEMP_GEN_5.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_5;
+    }
+
+    /*[-JNI;-NATIVE]
+Mat44* nativeObject = (Mat44*)this_addr;
+static Mat44 copy_addr;
+copy_addr = (*nativeObject - *((Mat44* )inM_addr));
+return (jlong)&copy_addr;*/
+    public static native long internal_native_SubMat44(long this_addr, long inM_addr);
 
     public Vec3 Multiply3x3(Vec3 inV) {
         long pointer = internal_native_Multiply3x3(native_address, inV.native_address);
@@ -687,10 +804,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_Multiply3x3LeftTransposed(native_address, inM.native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_2 == null)
-            Mat44_TEMP_GEN_2 = Mat44.native_new();
-        Mat44_TEMP_GEN_2.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_2;
+        if (Mat44_TEMP_GEN_6 == null)
+            Mat44_TEMP_GEN_6 = Mat44.native_new();
+        Mat44_TEMP_GEN_6.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_6;
     }
 
     /*[-JNI;-NATIVE]
@@ -704,10 +821,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_Multiply3x3RightTransposed(native_address, inM.native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_3 == null)
-            Mat44_TEMP_GEN_3 = Mat44.native_new();
-        Mat44_TEMP_GEN_3.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_3;
+        if (Mat44_TEMP_GEN_7 == null)
+            Mat44_TEMP_GEN_7 = Mat44.native_new();
+        Mat44_TEMP_GEN_7.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_7;
     }
 
     /*[-JNI;-NATIVE]
@@ -721,10 +838,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_Transposed(native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_4 == null)
-            Mat44_TEMP_GEN_4 = Mat44.native_new();
-        Mat44_TEMP_GEN_4.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_4;
+        if (Mat44_TEMP_GEN_8 == null)
+            Mat44_TEMP_GEN_8 = Mat44.native_new();
+        Mat44_TEMP_GEN_8.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_8;
     }
 
     /*[-JNI;-NATIVE]
@@ -738,10 +855,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_Transposed3x3(native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_5 == null)
-            Mat44_TEMP_GEN_5 = Mat44.native_new();
-        Mat44_TEMP_GEN_5.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_5;
+        if (Mat44_TEMP_GEN_9 == null)
+            Mat44_TEMP_GEN_9 = Mat44.native_new();
+        Mat44_TEMP_GEN_9.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_9;
     }
 
     /*[-JNI;-NATIVE]
@@ -755,10 +872,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_Inversed(native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_6 == null)
-            Mat44_TEMP_GEN_6 = Mat44.native_new();
-        Mat44_TEMP_GEN_6.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_6;
+        if (Mat44_TEMP_GEN_10 == null)
+            Mat44_TEMP_GEN_10 = Mat44.native_new();
+        Mat44_TEMP_GEN_10.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_10;
     }
 
     /*[-JNI;-NATIVE]
@@ -772,10 +889,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_InversedRotationTranslation(native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_7 == null)
-            Mat44_TEMP_GEN_7 = Mat44.native_new();
-        Mat44_TEMP_GEN_7.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_7;
+        if (Mat44_TEMP_GEN_11 == null)
+            Mat44_TEMP_GEN_11 = Mat44.native_new();
+        Mat44_TEMP_GEN_11.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_11;
     }
 
     /*[-JNI;-NATIVE]
@@ -789,10 +906,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_Adjointed3x3(native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_8 == null)
-            Mat44_TEMP_GEN_8 = Mat44.native_new();
-        Mat44_TEMP_GEN_8.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_8;
+        if (Mat44_TEMP_GEN_12 == null)
+            Mat44_TEMP_GEN_12 = Mat44.native_new();
+        Mat44_TEMP_GEN_12.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_12;
     }
 
     /*[-JNI;-NATIVE]
@@ -826,10 +943,10 @@ return nativeObject->GetDeterminant3x3();
         long pointer = internal_native_Inversed3x3(native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_9 == null)
-            Mat44_TEMP_GEN_9 = Mat44.native_new();
-        Mat44_TEMP_GEN_9.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_9;
+        if (Mat44_TEMP_GEN_13 == null)
+            Mat44_TEMP_GEN_13 = Mat44.native_new();
+        Mat44_TEMP_GEN_13.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_13;
     }
 
     /*[-JNI;-NATIVE]
@@ -843,10 +960,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_GetDirectionPreservingMatrix(native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_10 == null)
-            Mat44_TEMP_GEN_10 = Mat44.native_new();
-        Mat44_TEMP_GEN_10.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_10;
+        if (Mat44_TEMP_GEN_14 == null)
+            Mat44_TEMP_GEN_14 = Mat44.native_new();
+        Mat44_TEMP_GEN_14.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_14;
     }
 
     /*[-JNI;-NATIVE]
@@ -860,10 +977,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_PreTranslated(native_address, inTranslation.native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_11 == null)
-            Mat44_TEMP_GEN_11 = Mat44.native_new();
-        Mat44_TEMP_GEN_11.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_11;
+        if (Mat44_TEMP_GEN_15 == null)
+            Mat44_TEMP_GEN_15 = Mat44.native_new();
+        Mat44_TEMP_GEN_15.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_15;
     }
 
     /*[-JNI;-NATIVE]
@@ -877,10 +994,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_PostTranslated(native_address, inTranslation.native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_12 == null)
-            Mat44_TEMP_GEN_12 = Mat44.native_new();
-        Mat44_TEMP_GEN_12.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_12;
+        if (Mat44_TEMP_GEN_16 == null)
+            Mat44_TEMP_GEN_16 = Mat44.native_new();
+        Mat44_TEMP_GEN_16.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_16;
     }
 
     /*[-JNI;-NATIVE]
@@ -894,10 +1011,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_PreScaled(native_address, inScale.native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_13 == null)
-            Mat44_TEMP_GEN_13 = Mat44.native_new();
-        Mat44_TEMP_GEN_13.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_13;
+        if (Mat44_TEMP_GEN_17 == null)
+            Mat44_TEMP_GEN_17 = Mat44.native_new();
+        Mat44_TEMP_GEN_17.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_17;
     }
 
     /*[-JNI;-NATIVE]
@@ -911,10 +1028,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_PostScaled(native_address, inScale.native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_14 == null)
-            Mat44_TEMP_GEN_14 = Mat44.native_new();
-        Mat44_TEMP_GEN_14.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_14;
+        if (Mat44_TEMP_GEN_18 == null)
+            Mat44_TEMP_GEN_18 = Mat44.native_new();
+        Mat44_TEMP_GEN_18.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_18;
     }
 
     /*[-JNI;-NATIVE]
@@ -928,10 +1045,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_Decompose(native_address, outScale.native_address);
         if (pointer == 0)
             return Mat44.NULL;
-        if (Mat44_TEMP_GEN_15 == null)
-            Mat44_TEMP_GEN_15 = Mat44.native_new();
-        Mat44_TEMP_GEN_15.internal_reset(pointer, false);
-        return Mat44_TEMP_GEN_15;
+        if (Mat44_TEMP_GEN_19 == null)
+            Mat44_TEMP_GEN_19 = Mat44.native_new();
+        Mat44_TEMP_GEN_19.internal_reset(pointer, false);
+        return Mat44_TEMP_GEN_19;
     }
 
     /*[-JNI;-NATIVE]
@@ -1042,10 +1159,10 @@ return (jlong)&copy_addr;*/
         long pointer = internal_native_GetColumn4(native_address, inCol);
         if (pointer == 0)
             return Vec4.NULL;
-        if (Vec4_TEMP_GEN_1 == null)
-            Vec4_TEMP_GEN_1 = Vec4.native_new();
-        Vec4_TEMP_GEN_1.internal_reset(pointer, false);
-        return Vec4_TEMP_GEN_1;
+        if (Vec4_TEMP_GEN_2 == null)
+            Vec4_TEMP_GEN_2 = Vec4.native_new();
+        Vec4_TEMP_GEN_2.internal_reset(pointer, false);
+        return Vec4_TEMP_GEN_2;
     }
 
     /*[-JNI;-NATIVE]

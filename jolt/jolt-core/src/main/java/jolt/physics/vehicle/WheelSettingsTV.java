@@ -18,7 +18,7 @@ public class WheelSettingsTV extends WheelSettings {
     public WheelSettingsTV() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,6 +40,16 @@ return (jlong)new WheelSettingsTV();
     public static WheelSettingsTV native_new() {
         return new WheelSettingsTV((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+WheelSettingsTV* nativeObject = (WheelSettingsTV*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mLongitudinalFriction() {
         return internal_native_get_mLongitudinalFriction(native_address);

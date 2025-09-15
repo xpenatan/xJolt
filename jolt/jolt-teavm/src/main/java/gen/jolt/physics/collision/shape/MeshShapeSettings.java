@@ -30,7 +30,7 @@ public class MeshShapeSettings extends ShapeSettings {
     public MeshShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -43,7 +43,7 @@ return jolt.getPointer(jsObj);
     public MeshShapeSettings(TriangleList inTriangleList, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_TriangleList_PhysicsMaterialList(inTriangleList.native_address, inMaterialList.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -56,7 +56,7 @@ return jolt.getPointer(jsObj);
     public MeshShapeSettings(TriangleList inTriangleList) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_TriangleList(inTriangleList.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -69,7 +69,7 @@ return jolt.getPointer(jsObj);
     public MeshShapeSettings(VertexList inVertices, IndexedTriangleList inTriangles, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList(inVertices.native_address, inTriangles.native_address, inMaterialList.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -93,6 +93,17 @@ return jolt.getPointer(jsObj);
     public static MeshShapeSettings native_new() {
         return new MeshShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MeshShapeSettings);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void Sanitize() {
         internal_native_Sanitize(native_address);

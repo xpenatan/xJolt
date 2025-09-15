@@ -374,6 +374,17 @@ return nativeObject->IsNormalized();
 */
     public static native boolean internal_native_IsNormalized(long this_addr);
 
+    public Vec4 Set(Vec4 other) {
+        internal_native_Set__0(native_address, other.native_address);
+        return this;
+    }
+
+    /*[-JNI;-NATIVE]
+Vec4* nativeObject = (Vec4*)this_addr;
+return (jlong)&(*nativeObject = *((Vec4* )other_addr));
+*/
+    public static native long internal_native_Set__0(long this_addr, long other_addr);
+
     public Vec4 Add(Vec4 inV) {
         internal_native_Add(native_address, inV.native_address);
         return this;

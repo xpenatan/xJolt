@@ -31,7 +31,7 @@ public class RagdollSettings extends IDLBase {
 
     public RagdollSettings() {
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -52,6 +52,16 @@ return (jlong)new RagdollSettings();
     public static RagdollSettings native_new() {
         return new RagdollSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+RagdollSettings* nativeObject = (RagdollSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean Stabilize() {
         return internal_native_Stabilize(native_address);

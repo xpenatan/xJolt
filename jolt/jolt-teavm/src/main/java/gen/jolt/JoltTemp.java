@@ -10,6 +10,12 @@ import gen.jolt.math.Vec3;
 import gen.jolt.math.Vec4;
 import gen.jolt.math.Quat;
 import gen.jolt.math.Mat44;
+import gen.jolt.physics.character.ExtendedUpdateSettings;
+import gen.jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilter;
+import gen.jolt.physics.collision.broadphase.DefaultBroadPhaseLayerFilter;
+import gen.jolt.physics.collision.ObjectLayerPairFilter;
+import gen.jolt.physics.collision.DefaultObjectLayerFilter;
+import gen.jolt.physics.collision.shape.StaticCompoundShapeSettings;
 
 public class JoltTemp extends IDLBase {
 
@@ -80,6 +86,14 @@ public class JoltTemp extends IDLBase {
     static private Mat44 Mat44_TEMP_STATIC_GEN_2;
 
     static private Mat44 Mat44_TEMP_STATIC_GEN_3;
+
+    static private ExtendedUpdateSettings ExtendedUpdateSettings_TEMP_STATIC_GEN_0;
+
+    static private DefaultBroadPhaseLayerFilter DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0;
+
+    static private DefaultObjectLayerFilter DefaultObjectLayerFilter_TEMP_STATIC_GEN_0;
+
+    static private StaticCompoundShapeSettings StaticCompoundShapeSettings_TEMP_STATIC_GEN_0;
 
     static public final JoltTemp NULL = JoltTemp.native_new();
 
@@ -714,4 +728,76 @@ return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"other_addr"}, script = "var returnedJSObj = jolt.JoltTemp.prototype.Mat44_2__1(other_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     public static native int internal_native_Mat44_2__1(int other_addr);
+
+    public static ExtendedUpdateSettings ExtendedUpdateSettings() {
+        int pointer = internal_native_ExtendedUpdateSettings__0();
+        if (pointer == 0)
+            return ExtendedUpdateSettings.NULL;
+        if (ExtendedUpdateSettings_TEMP_STATIC_GEN_0 == null)
+            ExtendedUpdateSettings_TEMP_STATIC_GEN_0 = ExtendedUpdateSettings.native_new();
+        ExtendedUpdateSettings_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return ExtendedUpdateSettings_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jolt.JoltTemp.prototype.ExtendedUpdateSettings__0();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jolt.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltTemp.prototype.ExtendedUpdateSettings__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_ExtendedUpdateSettings__0();
+
+    public static DefaultBroadPhaseLayerFilter DefaultBroadPhaseLayerFilter(ObjectVsBroadPhaseLayerFilter filter, int inObjectLayer) {
+        int pointer = internal_native_DefaultBroadPhaseLayerFilter__0(filter.native_address, inObjectLayer);
+        if (pointer == 0)
+            return DefaultBroadPhaseLayerFilter.NULL;
+        if (DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0 == null)
+            DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0 = DefaultBroadPhaseLayerFilter.native_new();
+        DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jolt.JoltTemp.prototype.DefaultBroadPhaseLayerFilter__0(filter_addr, inObjectLayer);
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jolt.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(params = {"filter_addr", "inObjectLayer"}, script = "var returnedJSObj = jolt.JoltTemp.prototype.DefaultBroadPhaseLayerFilter__0(filter_addr, inObjectLayer);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_DefaultBroadPhaseLayerFilter__0(int filter_addr, int inObjectLayer);
+
+    public static DefaultObjectLayerFilter DefaultObjectLayerFilter(ObjectLayerPairFilter filter, int inObjectLayer) {
+        int pointer = internal_native_DefaultObjectLayerFilter__0(filter.native_address, inObjectLayer);
+        if (pointer == 0)
+            return DefaultObjectLayerFilter.NULL;
+        if (DefaultObjectLayerFilter_TEMP_STATIC_GEN_0 == null)
+            DefaultObjectLayerFilter_TEMP_STATIC_GEN_0 = DefaultObjectLayerFilter.native_new();
+        DefaultObjectLayerFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return DefaultObjectLayerFilter_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jolt.JoltTemp.prototype.DefaultObjectLayerFilter__0(filter_addr, inObjectLayer);
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jolt.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(params = {"filter_addr", "inObjectLayer"}, script = "var returnedJSObj = jolt.JoltTemp.prototype.DefaultObjectLayerFilter__0(filter_addr, inObjectLayer);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_DefaultObjectLayerFilter__0(int filter_addr, int inObjectLayer);
+
+    public static StaticCompoundShapeSettings StaticCompoundShapeSettings() {
+        int pointer = internal_native_StaticCompoundShapeSettings__0();
+        if (pointer == 0)
+            return StaticCompoundShapeSettings.NULL;
+        if (StaticCompoundShapeSettings_TEMP_STATIC_GEN_0 == null)
+            StaticCompoundShapeSettings_TEMP_STATIC_GEN_0 = StaticCompoundShapeSettings.native_new();
+        StaticCompoundShapeSettings_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return StaticCompoundShapeSettings_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jolt.JoltTemp.prototype.StaticCompoundShapeSettings__0();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jolt.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltTemp.prototype.StaticCompoundShapeSettings__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_StaticCompoundShapeSettings__0();
 }

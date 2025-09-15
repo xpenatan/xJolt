@@ -20,7 +20,7 @@ public class VehicleCollisionTesterCastSphere extends VehicleCollisionTester {
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp, float inMaxSlopeAngle) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int_float_Vec3_float(inObjectLayer, inRadius, inUp.native_address, inMaxSlopeAngle);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -33,7 +33,7 @@ return jolt.getPointer(jsObj);
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int_float_Vec3(inObjectLayer, inRadius, inUp.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -46,7 +46,7 @@ return jolt.getPointer(jsObj);
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int_float(inObjectLayer, inRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -70,4 +70,15 @@ return jolt.getPointer(jsObj);
     public static VehicleCollisionTesterCastSphere native_new() {
         return new VehicleCollisionTesterCastSphere((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleCollisionTesterCastSphere);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleCollisionTesterCastSphere);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 }

@@ -20,7 +20,7 @@ public class OffsetCenterOfMassShape extends DecoratedShape {
     public OffsetCenterOfMassShape(Shape inShape, Vec3 inOffset) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_Shape_Vec3(inShape.native_address, inOffset.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -44,4 +44,15 @@ return jolt.getPointer(jsObj);
     public static OffsetCenterOfMassShape native_new() {
         return new OffsetCenterOfMassShape((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.OffsetCenterOfMassShape);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.OffsetCenterOfMassShape);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 }

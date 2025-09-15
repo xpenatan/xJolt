@@ -22,7 +22,7 @@ public class ScaledShapeSettings extends DecoratedShapeSettings {
     public ScaledShapeSettings(ShapeSettings inShape, Vec3 inScale) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_ShapeSettings_Vec3(inShape.native_address, inScale.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -44,6 +44,16 @@ return (jlong)new ScaledShapeSettings((ShapeSettings* )inShape_addr, *((Vec3* )i
     public static ScaledShapeSettings native_new() {
         return new ScaledShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+ScaledShapeSettings* nativeObject = (ScaledShapeSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mScale() {
         long pointer = internal_native_get_mScale(native_address);

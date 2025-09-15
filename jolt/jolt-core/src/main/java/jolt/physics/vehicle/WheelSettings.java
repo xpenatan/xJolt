@@ -35,7 +35,7 @@ public class WheelSettings extends IDLBase {
 
     public WheelSettings() {
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -56,6 +56,16 @@ return (jlong)new WheelSettings();
     public static WheelSettings native_new() {
         return new WheelSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+WheelSettings* nativeObject = (WheelSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetRefCount() {
         return internal_native_GetRefCount(native_address);

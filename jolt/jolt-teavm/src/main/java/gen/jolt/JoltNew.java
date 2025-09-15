@@ -417,7 +417,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return RotatedTranslatedShapeSettings.NULL;
         RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_NEW = RotatedTranslatedShapeSettings.native_new();
-        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, false);
+        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, true);
         return RotatedTranslatedShapeSettings_NEW;
     }
 
@@ -434,7 +434,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return RotatedTranslatedShapeSettings.NULL;
         RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_NEW = RotatedTranslatedShapeSettings.native_new();
-        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, false);
+        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, true);
         return RotatedTranslatedShapeSettings_NEW;
     }
 
@@ -451,7 +451,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return RotatedTranslatedShapeSettings.NULL;
         RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_NEW = RotatedTranslatedShapeSettings.native_new();
-        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, false);
+        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, true);
         return RotatedTranslatedShapeSettings_NEW;
     }
 
@@ -468,7 +468,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         MeshShapeSettings MeshShapeSettings_NEW = MeshShapeSettings.native_new();
-        MeshShapeSettings_NEW.internal_reset(pointer, false);
+        MeshShapeSettings_NEW.internal_reset(pointer, true);
         return MeshShapeSettings_NEW;
     }
 
@@ -485,7 +485,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         MeshShapeSettings MeshShapeSettings_NEW = MeshShapeSettings.native_new();
-        MeshShapeSettings_NEW.internal_reset(pointer, false);
+        MeshShapeSettings_NEW.internal_reset(pointer, true);
         return MeshShapeSettings_NEW;
     }
 
@@ -520,7 +520,7 @@ return jolt.getPointer(returnedJSObj);
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         MeshShapeSettings MeshShapeSettings_NEW = MeshShapeSettings.native_new();
-        MeshShapeSettings_NEW.internal_reset(pointer, false);
+        MeshShapeSettings_NEW.internal_reset(pointer, true);
         return MeshShapeSettings_NEW;
     }
 

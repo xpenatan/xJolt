@@ -58,7 +58,7 @@ public class TransformedShape extends IDLBase {
 
     public TransformedShape() {
         int addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -81,6 +81,17 @@ return jolt.getPointer(jsObj);
     public static TransformedShape native_new() {
         return new TransformedShape((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.TransformedShape);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TransformedShape);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void CastRay(RRayCast inRay, RayCastResult ioHit) {
         internal_native_CastRay(native_address, inRay.native_address, ioHit.native_address);

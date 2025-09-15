@@ -20,7 +20,7 @@ public class CylinderShapeSettings extends ConvexShapeSettings {
     public CylinderShapeSettings(float inHalfHeight, float inRadius, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeight, inRadius, inConvexRadius, inMaterial.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -33,7 +33,7 @@ return jolt.getPointer(jsObj);
     public CylinderShapeSettings(float inHalfHeight, float inRadius, float inConvexRadius) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float_float_float(inHalfHeight, inRadius, inConvexRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -46,7 +46,7 @@ return jolt.getPointer(jsObj);
     public CylinderShapeSettings(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float_float(inHalfHeight, inRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -70,6 +70,17 @@ return jolt.getPointer(jsObj);
     public static CylinderShapeSettings native_new() {
         return new CylinderShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CylinderShapeSettings);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CylinderShapeSettings);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mHalfHeight() {
         return internal_native_get_mHalfHeight(native_address);

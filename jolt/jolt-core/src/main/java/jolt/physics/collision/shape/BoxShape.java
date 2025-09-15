@@ -23,7 +23,7 @@ public class BoxShape extends ConvexShape {
     public BoxShape(Vec3 inHalfExtent, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Vec3_float_PhysicsMaterial(inHalfExtent.native_address, inConvexRadius, inMaterial.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,7 +34,7 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius, 
     public BoxShape(Vec3 inHalfExtent, float inConvexRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Vec3_float(inHalfExtent.native_address, inConvexRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,7 +45,7 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius);
     public BoxShape(Vec3 inHalfExtent) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Vec3(inHalfExtent.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -67,6 +67,16 @@ return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr));
     public static BoxShape native_new() {
         return new BoxShape((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+BoxShape* nativeObject = (BoxShape*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 GetHalfExtent() {
         long pointer = internal_native_GetHalfExtent(native_address);

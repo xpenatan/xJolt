@@ -20,7 +20,7 @@ public class CylinderShape extends ConvexShape {
     public CylinderShape(float inHalfHeight, float inRadius, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeight, inRadius, inConvexRadius, inMaterial.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -31,7 +31,7 @@ return (jlong)new CylinderShape((float)inHalfHeight, (float)inRadius, (float)inC
     public CylinderShape(float inHalfHeight, float inRadius, float inConvexRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float_float(inHalfHeight, inRadius, inConvexRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -42,7 +42,7 @@ return (jlong)new CylinderShape((float)inHalfHeight, (float)inRadius, (float)inC
     public CylinderShape(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float(inHalfHeight, inRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,6 +64,16 @@ return (jlong)new CylinderShape((float)inHalfHeight, (float)inRadius);
     public static CylinderShape native_new() {
         return new CylinderShape((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+CylinderShape* nativeObject = (CylinderShape*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float GetRadius() {
         return internal_native_GetRadius(native_address);

@@ -23,7 +23,7 @@ public class ConvexHullShapeSettings extends ConvexShapeSettings {
     public ConvexHullShapeSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -34,7 +34,7 @@ return (jlong)new ConvexHullShapeSettings();
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_ArrayVec3_float_PhysicsMaterial(inPoints.native_address, inConvexRadius, inMaterial.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -45,7 +45,7 @@ return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr), (float)
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_ArrayVec3_float(inPoints.native_address, inConvexRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -56,7 +56,7 @@ return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr), (float)
     public ConvexHullShapeSettings(ArrayVec3 inPoints) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_ArrayVec3(inPoints.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -78,6 +78,16 @@ return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr));
     public static ConvexHullShapeSettings native_new() {
         return new ConvexHullShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public ArrayVec3 get_mPoints() {
         long pointer = internal_native_get_mPoints(native_address);

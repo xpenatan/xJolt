@@ -45,7 +45,7 @@ public class VehicleConstraint extends Constraint {
     public VehicleConstraint(Body inVehicleBody, VehicleConstraintSettings inSettings) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Body_VehicleConstraintSettings(inVehicleBody.native_address, inSettings.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -67,6 +67,16 @@ return (jlong)new VehicleConstraint(*((Body* )inVehicleBody_addr), *((VehicleCon
     public static VehicleConstraint native_new() {
         return new VehicleConstraint((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+VehicleConstraint* nativeObject = (VehicleConstraint*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void SetMaxPitchRollAngle(float inMaxPitchRollAngle) {
         internal_native_SetMaxPitchRollAngle(native_address, inMaxPitchRollAngle);

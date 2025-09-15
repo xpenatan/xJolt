@@ -3,11 +3,13 @@ package jolt.example.samples.app.tests;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
 import jolt.JoltNew;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
+import jolt.example.samples.app.jolt.JoltInstance;
 import jolt.example.samples.app.jolt.Layers;
 import jolt.example.samples.app.math.Perlin;
 import jolt.gdx.JoltDebugRenderer;
@@ -24,10 +26,10 @@ import jolt.physics.collision.PhysicsMaterialList;
 import jolt.physics.collision.shape.BoxShape;
 import jolt.physics.collision.shape.Shape;
 import jolt.physics.collision.shape.ShapeResult;
-import jolt.renderer.DebugRenderer;
 
 public abstract class Test {
 
+    protected JoltInstance joltInstance = null;
     protected PhysicsSystem mPhysicsSystem = null;
     protected BodyInterface mBodyInterface = null;
     protected JoltDebugRenderer mDebugRenderer = null;
@@ -35,8 +37,9 @@ public abstract class Test {
     protected PerspectiveCamera camera;
     protected Matrix4 cameraPivot = new Matrix4();
 
-    public void setPhysicsSystem(PhysicsSystem mPhysicsSystem) {
-        this.mPhysicsSystem = mPhysicsSystem;
+    public void setJoltInstance(JoltInstance joltInstance) {
+        this.joltInstance = joltInstance;
+        this.mPhysicsSystem = joltInstance.getPhysicsSystem();
         mBodyInterface = mPhysicsSystem.GetBodyInterface();
     }
 
@@ -63,7 +66,7 @@ public abstract class Test {
         this.camera = camera;
     }
 
-    public void updateCamera(PerspectiveCamera camera) {
+    public void updateCamera(CameraInputController cameraController) {
     }
 
     public void initialize() {}
@@ -86,7 +89,6 @@ public abstract class Test {
         bodySettings.dispose();
         inHalfExtent.dispose();
         inPosition.dispose();
-        inRotation.dispose();
         return body;
     }
 

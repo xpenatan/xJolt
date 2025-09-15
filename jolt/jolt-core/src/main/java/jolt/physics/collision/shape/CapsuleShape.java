@@ -20,7 +20,7 @@ public class CapsuleShape extends ConvexShape {
     public CapsuleShape(float inHalfHeight, float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, inMaterial.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -31,7 +31,7 @@ return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius, (PhysicsMat
     public CapsuleShape(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float(inHalfHeight, inRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,6 +53,16 @@ return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius);
     public static CapsuleShape native_new() {
         return new CapsuleShape((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+CapsuleShape* nativeObject = (CapsuleShape*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float GetRadius() {
         return internal_native_GetRadius(native_address);

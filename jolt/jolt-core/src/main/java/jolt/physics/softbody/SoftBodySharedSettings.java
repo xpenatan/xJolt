@@ -39,7 +39,7 @@ public class SoftBodySharedSettings extends IDLBase {
 
     public SoftBodySharedSettings() {
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -60,6 +60,16 @@ return (jlong)new SoftBodySharedSettings();
     public static SoftBodySharedSettings native_new() {
         return new SoftBodySharedSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+SoftBodySharedSettings* nativeObject = (SoftBodySharedSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetRefCount() {
         return internal_native_GetRefCount(native_address);
@@ -196,7 +206,7 @@ nativeObject->Optimize();
         if (pointer == 0)
             return SoftBodySharedSettings.NULL;
         SoftBodySharedSettings SoftBodySharedSettings_NEW = SoftBodySharedSettings.native_new();
-        SoftBodySharedSettings_NEW.internal_reset(pointer, false);
+        SoftBodySharedSettings_NEW.internal_reset(pointer, true);
         return SoftBodySharedSettings_NEW;
     }
 

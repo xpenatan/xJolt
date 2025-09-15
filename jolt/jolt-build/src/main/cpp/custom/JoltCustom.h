@@ -72,6 +72,7 @@
 #include "Jolt/Skeleton/Skeleton.h"
 
 #include "IDLHelper.h"
+#include <optional>
 
 #include <iostream>
 //#include <malloc.h>
@@ -573,6 +574,30 @@ public:
         mat44_temp2 = *other;
         return &mat44_temp2;
     }
+
+    static CharacterVirtual::ExtendedUpdateSettings* Temp_ExtendedUpdateSettings() {
+        static CharacterVirtual::ExtendedUpdateSettings temp;
+        temp = CharacterVirtual::ExtendedUpdateSettings();
+        return &temp;
+    }
+
+    static DefaultBroadPhaseLayerFilter* Temp_DefaultBroadPhaseLayerFilter(ObjectVsBroadPhaseLayerFilter* filter, ObjectLayer inLayer) {
+        static std::optional<DefaultBroadPhaseLayerFilter> temp;
+        temp.emplace(*filter, inLayer);
+        return &*temp;
+    }
+
+    static DefaultObjectLayerFilter* Temp_DefaultObjectLayerFilter(ObjectLayerPairFilter* filter, ObjectLayer inLayer) {
+        static std::optional<DefaultObjectLayerFilter> temp;
+        temp.emplace(*filter, inLayer);
+        return &*temp;
+    }
+
+    static StaticCompoundShapeSettings* Temp_StaticCompoundShapeSettings() {
+        static std::optional<StaticCompoundShapeSettings> temp;
+        temp.emplace();
+        return &*temp;
+    }
 };
 
 // Custom class to create new instance. Emscripten does not support multiple constructors types so this is the only way
@@ -917,6 +942,21 @@ public:
 
     virtual float GetClosestPoint(const Vec3 *inPosition, float inFractionHint) const = 0;
     virtual void GetPointOnPath(float inFraction, Vec3 *outPathPosition, Vec3 *outPathTangent, Vec3 *outPathNormal, Vec3 *outPathBinormal) const = 0;
+};
+
+class ShapeFilterCallback: public ShapeFilter
+{
+public:
+    virtual bool ShouldCollide_Any(const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const = 0;
+    virtual bool ShouldCollide_Shape(const Shape *inShape1, const SubShapeID &inSubShapeIDOfShape1, const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const = 0;
+
+    virtual bool ShouldCollide(const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const {
+        return ShouldCollide_Any(inShape2, inSubShapeIDOfShape2);
+    }
+
+    virtual bool ShouldCollide(const Shape *inShape1, const SubShapeID &inSubShapeIDOfShape1, const Shape *inShape2, const SubShapeID &inSubShapeIDOfShape2) const {
+       return ShouldCollide_Shape(inShape1, inSubShapeIDOfShape1, inShape2, inSubShapeIDOfShape2);
+    }
 };
 
 class HeightFieldShapeConstantValues

@@ -25,7 +25,7 @@ public class RotatedTranslatedShapeSettings extends DecoratedShapeSettings {
     public RotatedTranslatedShapeSettings(Vec3 inPosition, Quat inRotation, ShapeSettings inShape) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Vec3_Quat_ShapeSettings(inPosition.native_address, inRotation.native_address, inShape.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -47,6 +47,16 @@ return (jlong)new RotatedTranslatedShapeSettings(*((Vec3* )inPosition_addr), *((
     public static RotatedTranslatedShapeSettings native_new() {
         return new RotatedTranslatedShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+RotatedTranslatedShapeSettings* nativeObject = (RotatedTranslatedShapeSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mPosition() {
         long pointer = internal_native_get_mPosition(native_address);

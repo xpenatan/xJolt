@@ -795,19 +795,19 @@ return jolt.getPointer(returnedJSObj);
     @org.teavm.jso.JSBody(params = {"this_addr", "inRHS_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Vec3);var returnedJSObj = jsObj.DotV4(inRHS_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     public static native int internal_native_DotV4(int this_addr, int inRHS_addr);
 
-    public Vec3 SetVec3(Vec3 other) {
-        internal_native_SetVec3(native_address, other.native_address);
+    public Vec3 Set(Vec3 other) {
+        internal_native_Set__0(native_address, other.native_address);
         return this;
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jolt.wrapPointer(this_addr, jolt.Vec3);
-var returnedJSObj = jsObj.SetVec3(other_addr);
+var returnedJSObj = jsObj.Set__0(other_addr);
 if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
 return jolt.getPointer(returnedJSObj);
 */
-    @org.teavm.jso.JSBody(params = {"this_addr", "other_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Vec3);var returnedJSObj = jsObj.SetVec3(other_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_SetVec3(int this_addr, int other_addr);
+    @org.teavm.jso.JSBody(params = {"this_addr", "other_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Vec3);var returnedJSObj = jsObj.Set__0(other_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Set__0(int this_addr, int other_addr);
 
     public Vec3 Add(Vec3 inV) {
         internal_native_Add(native_address, inV.native_address);

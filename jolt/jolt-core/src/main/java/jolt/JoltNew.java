@@ -354,7 +354,7 @@ return (jlong)JoltNew::New_BodyCreationSettings((Shape* )inShape_addr, *((Vec3* 
         if (pointer == 0)
             return RotatedTranslatedShapeSettings.NULL;
         RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_NEW = RotatedTranslatedShapeSettings.native_new();
-        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, false);
+        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, true);
         return RotatedTranslatedShapeSettings_NEW;
     }
 
@@ -368,7 +368,7 @@ return (jlong)JoltNew::New_RotatedTranslatedShapeSettings();
         if (pointer == 0)
             return RotatedTranslatedShapeSettings.NULL;
         RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_NEW = RotatedTranslatedShapeSettings.native_new();
-        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, false);
+        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, true);
         return RotatedTranslatedShapeSettings_NEW;
     }
 
@@ -382,7 +382,7 @@ return (jlong)JoltNew::New_RotatedTranslatedShapeSettings(*((Vec3* )inPosition_a
         if (pointer == 0)
             return RotatedTranslatedShapeSettings.NULL;
         RotatedTranslatedShapeSettings RotatedTranslatedShapeSettings_NEW = RotatedTranslatedShapeSettings.native_new();
-        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, false);
+        RotatedTranslatedShapeSettings_NEW.internal_reset(pointer, true);
         return RotatedTranslatedShapeSettings_NEW;
     }
 
@@ -396,7 +396,7 @@ return (jlong)JoltNew::New_RotatedTranslatedShapeSettings(*((Vec3* )inPosition_a
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         MeshShapeSettings MeshShapeSettings_NEW = MeshShapeSettings.native_new();
-        MeshShapeSettings_NEW.internal_reset(pointer, false);
+        MeshShapeSettings_NEW.internal_reset(pointer, true);
         return MeshShapeSettings_NEW;
     }
 
@@ -410,7 +410,7 @@ return (jlong)JoltNew::New_MeshShapeSettings();
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         MeshShapeSettings MeshShapeSettings_NEW = MeshShapeSettings.native_new();
-        MeshShapeSettings_NEW.internal_reset(pointer, false);
+        MeshShapeSettings_NEW.internal_reset(pointer, true);
         return MeshShapeSettings_NEW;
     }
 
@@ -439,7 +439,7 @@ return (jlong)JoltNew::New_MeshShapeSettings(*((TriangleList* )inTriangleList_ad
         if (pointer == 0)
             return MeshShapeSettings.NULL;
         MeshShapeSettings MeshShapeSettings_NEW = MeshShapeSettings.native_new();
-        MeshShapeSettings_NEW.internal_reset(pointer, false);
+        MeshShapeSettings_NEW.internal_reset(pointer, true);
         return MeshShapeSettings_NEW;
     }
 

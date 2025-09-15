@@ -187,6 +187,17 @@ Quat* nativeObject = (Quat*)this_addr;
 return ((*nativeObject != *((Quat* )inQ_addr)));*/
     public static native boolean internal_native_NotEquals(long this_addr, long inQ_addr);
 
+    public Quat Set(Quat other) {
+        internal_native_Set__0(native_address, other.native_address);
+        return this;
+    }
+
+    /*[-JNI;-NATIVE]
+Quat* nativeObject = (Quat*)this_addr;
+return (jlong)&(*nativeObject = *((Quat* )other_addr));
+*/
+    public static native long internal_native_Set__0(long this_addr, long other_addr);
+
     public Quat MulQuat(Quat inQ) {
         long pointer = internal_native_MulQuat(native_address, inQ.native_address);
         if (pointer == 0)

@@ -17,6 +17,18 @@ public class ShapeFilter extends IDLBase {
 
     static public final ShapeFilter T_03 = ShapeFilter.native_new();
 
+    public ShapeFilter() {
+        int addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = new jolt.ShapeFilter();
+return jolt.getPointer(jsObj);
+*/
+    @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ShapeFilter();return jolt.getPointer(jsObj);")
+    public static native int internal_native_create();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

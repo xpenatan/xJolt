@@ -30,7 +30,7 @@ public class MeshShapeSettings extends ShapeSettings {
     public MeshShapeSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -41,7 +41,7 @@ return (jlong)new MeshShapeSettings();
     public MeshShapeSettings(TriangleList inTriangleList, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_TriangleList_PhysicsMaterialList(inTriangleList.native_address, inMaterialList.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -52,7 +52,7 @@ return (jlong)new MeshShapeSettings(*((TriangleList* )inTriangleList_addr), *((P
     public MeshShapeSettings(TriangleList inTriangleList) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_TriangleList(inTriangleList.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -63,7 +63,7 @@ return (jlong)new MeshShapeSettings(*((TriangleList* )inTriangleList_addr));
     public MeshShapeSettings(VertexList inVertices, IndexedTriangleList inTriangles, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList(inVertices.native_address, inTriangles.native_address, inMaterialList.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -85,6 +85,16 @@ return (jlong)new MeshShapeSettings(*((VertexList* )inVertices_addr), *((Indexed
     public static MeshShapeSettings native_new() {
         return new MeshShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+MeshShapeSettings* nativeObject = (MeshShapeSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void Sanitize() {
         internal_native_Sanitize(native_address);

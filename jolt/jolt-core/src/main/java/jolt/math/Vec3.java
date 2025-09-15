@@ -704,8 +704,8 @@ copy_addr = nativeObject->DotV4(*((Vec3* )inRHS_addr));
 return (jlong)&copy_addr;*/
     public static native long internal_native_DotV4(long this_addr, long inRHS_addr);
 
-    public Vec3 SetVec3(Vec3 other) {
-        internal_native_SetVec3(native_address, other.native_address);
+    public Vec3 Set(Vec3 other) {
+        internal_native_Set__0(native_address, other.native_address);
         return this;
     }
 
@@ -713,7 +713,7 @@ return (jlong)&copy_addr;*/
 Vec3* nativeObject = (Vec3*)this_addr;
 return (jlong)&(*nativeObject = *((Vec3* )other_addr));
 */
-    public static native long internal_native_SetVec3(long this_addr, long other_addr);
+    public static native long internal_native_Set__0(long this_addr, long other_addr);
 
     public Vec3 Add(Vec3 inV) {
         internal_native_Add(native_address, inV.native_address);

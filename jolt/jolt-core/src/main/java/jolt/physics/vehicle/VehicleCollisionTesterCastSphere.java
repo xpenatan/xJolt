@@ -20,7 +20,7 @@ public class VehicleCollisionTesterCastSphere extends VehicleCollisionTester {
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp, float inMaxSlopeAngle) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int_float_Vec3_float(inObjectLayer, inRadius, inUp.native_address, inMaxSlopeAngle);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -31,7 +31,7 @@ return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadiu
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int_float_Vec3(inObjectLayer, inRadius, inUp.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -42,7 +42,7 @@ return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadiu
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int_float(inObjectLayer, inRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -64,4 +64,14 @@ return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadiu
     public static VehicleCollisionTesterCastSphere native_new() {
         return new VehicleCollisionTesterCastSphere((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+VehicleCollisionTesterCastSphere* nativeObject = (VehicleCollisionTesterCastSphere*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 }

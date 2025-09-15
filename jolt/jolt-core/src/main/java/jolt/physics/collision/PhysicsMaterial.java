@@ -19,7 +19,7 @@ public class PhysicsMaterial extends IDLBase {
 
     public PhysicsMaterial() {
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,6 +40,16 @@ return (jlong)new PhysicsMaterial();
     public static PhysicsMaterial native_new() {
         return new PhysicsMaterial((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+PhysicsMaterial* nativeObject = (PhysicsMaterial*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetRefCount() {
         return internal_native_GetRefCount(native_address);

@@ -24,7 +24,7 @@ public class WheeledVehicleController extends VehicleController {
     public WheeledVehicleController(WheeledVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -48,6 +48,17 @@ return jolt.getPointer(jsObj);
     public static WheeledVehicleController native_new() {
         return new WheeledVehicleController((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleController);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void SetDriverInput(float inForward, float inRight, float inBrake, float inHandBrake) {
         internal_native_SetDriverInput(native_address, inForward, inRight, inBrake, inHandBrake);

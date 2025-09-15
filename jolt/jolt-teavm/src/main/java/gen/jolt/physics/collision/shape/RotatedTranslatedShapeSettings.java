@@ -25,7 +25,7 @@ public class RotatedTranslatedShapeSettings extends DecoratedShapeSettings {
     public RotatedTranslatedShapeSettings(Vec3 inPosition, Quat inRotation, ShapeSettings inShape) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_Vec3_Quat_ShapeSettings(inPosition.native_address, inRotation.native_address, inShape.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -49,6 +49,17 @@ return jolt.getPointer(jsObj);
     public static RotatedTranslatedShapeSettings native_new() {
         return new RotatedTranslatedShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mPosition() {
         int pointer = internal_native_get_mPosition(native_address);

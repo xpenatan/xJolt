@@ -22,7 +22,7 @@ public class TrackedVehicleController extends VehicleController {
     public TrackedVehicleController(TrackedVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -44,6 +44,16 @@ return (jlong)new TrackedVehicleController(*((TrackedVehicleControllerSettings* 
     public static TrackedVehicleController native_new() {
         return new TrackedVehicleController((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void SetDriverInput(float inForward, float inLeftRatio, float inRightRatio, float inBrake) {
         internal_native_SetDriverInput(native_address, inForward, inLeftRatio, inRightRatio, inBrake);

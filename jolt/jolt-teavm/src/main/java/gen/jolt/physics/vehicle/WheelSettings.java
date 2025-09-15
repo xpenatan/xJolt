@@ -35,7 +35,7 @@ public class WheelSettings extends IDLBase {
 
     public WheelSettings() {
         int addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -58,6 +58,17 @@ return jolt.getPointer(jsObj);
     public static WheelSettings native_new() {
         return new WheelSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int GetRefCount() {
         return internal_native_GetRefCount(native_address);

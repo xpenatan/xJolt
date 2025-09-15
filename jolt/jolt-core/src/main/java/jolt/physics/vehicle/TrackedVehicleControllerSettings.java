@@ -24,7 +24,7 @@ public class TrackedVehicleControllerSettings extends VehicleControllerSettings 
     public TrackedVehicleControllerSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -46,6 +46,16 @@ return (jlong)new TrackedVehicleControllerSettings();
     public static TrackedVehicleControllerSettings native_new() {
         return new TrackedVehicleControllerSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+TrackedVehicleControllerSettings* nativeObject = (TrackedVehicleControllerSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public VehicleEngineSettings get_mEngine() {
         long pointer = internal_native_get_mEngine(native_address);

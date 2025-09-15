@@ -20,7 +20,7 @@ public class ObjectVsBroadPhaseLayerFilterTable extends ObjectVsBroadPhaseLayerF
     public ObjectVsBroadPhaseLayerFilterTable(BroadPhaseLayerInterface inBroadPhaseLayerInterface, int inNumBroadPhaseLayers, ObjectLayerPairFilter inObjectLayerPairFilter, int inNumObjectLayers) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int(inBroadPhaseLayerInterface.native_address, inNumBroadPhaseLayers, inObjectLayerPairFilter.native_address, inNumObjectLayers);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -42,4 +42,14 @@ return (jlong)new ObjectVsBroadPhaseLayerFilterTable(*((BroadPhaseLayerInterface
     public static ObjectVsBroadPhaseLayerFilterTable native_new() {
         return new ObjectVsBroadPhaseLayerFilterTable((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+ObjectVsBroadPhaseLayerFilterTable* nativeObject = (ObjectVsBroadPhaseLayerFilterTable*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 }

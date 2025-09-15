@@ -3,6 +3,7 @@ package jolt.example.samples.app.tests.vehicle;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.PerspectiveCamera;
+import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector3;
@@ -329,7 +330,7 @@ public class VehicleConstraintTest extends VehicleTest {
     private Vector3 vec = new Vector3();
 
     @Override
-    public void updateCamera(PerspectiveCamera camera) {
+    public void updateCamera(CameraInputController cameraController) {
         updateCameraPivot();
         camera.up.set(0, 1, 0);
         cameraPivot.getTranslation(vec);

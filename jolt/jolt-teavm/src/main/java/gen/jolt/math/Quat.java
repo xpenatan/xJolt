@@ -206,6 +206,20 @@ return returnedJSObj;
     @org.teavm.jso.JSBody(params = {"this_addr", "inQ_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Quat);var returnedJSObj = jsObj.NotEquals(inQ_addr);return returnedJSObj;")
     public static native boolean internal_native_NotEquals(int this_addr, int inQ_addr);
 
+    public Quat Set(Quat other) {
+        internal_native_Set__0(native_address, other.native_address);
+        return this;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.Quat);
+var returnedJSObj = jsObj.Set__0(other_addr);
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jolt.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "other_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Quat);var returnedJSObj = jsObj.Set__0(other_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_Set__0(int this_addr, int other_addr);
+
     public Quat MulQuat(Quat inQ) {
         int pointer = internal_native_MulQuat(native_address, inQ.native_address);
         if (pointer == 0)

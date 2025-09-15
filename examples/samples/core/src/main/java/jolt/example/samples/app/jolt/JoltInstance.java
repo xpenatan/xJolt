@@ -1,25 +1,28 @@
 package jolt.example.samples.app.jolt;
 
 import jolt.JoltNew;
+import jolt.core.TempAllocator;
 import jolt.core.TempAllocatorImpl;
 import jolt.Jolt;
 import jolt.core.Factory;
 import jolt.core.JobSystemThreadPool;
 import jolt.physics.PhysicsSystem;
+import jolt.physics.collision.ObjectLayerPairFilter;
 import jolt.physics.collision.ObjectLayerPairFilterTable;
 import jolt.physics.collision.broadphase.BroadPhaseLayer;
 import jolt.physics.collision.broadphase.BroadPhaseLayerInterfaceTable;
+import jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilter;
 import jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilterTable;
 
 public class JoltInstance {
 
     private PhysicsSystem physicsSystem;
     private Factory factory;
-    private ObjectVsBroadPhaseLayerFilterTable mObjectVsBroadPhaseLayerFilter;
     private BroadPhaseLayer BP_LAYER_NON_MOVING;
     private BroadPhaseLayer BP_LAYER_MOVING;
-    private BroadPhaseLayerInterfaceTable mBroadPhaseLayerInterface;
+    private ObjectVsBroadPhaseLayerFilterTable mObjectVsBroadPhaseLayerFilter;
     private ObjectLayerPairFilterTable mObjectLayerPairFilter;
+    private BroadPhaseLayerInterfaceTable mBroadPhaseLayerInterface;
     private TempAllocatorImpl mTempAllocator;
     private JobSystemThreadPool mJobSystem;
 
@@ -85,6 +88,18 @@ public class JoltInstance {
 
     public void clearWorld() {
         Jolt.ClearWorld(physicsSystem);
+    }
+
+    public TempAllocator getTempAllocator() {
+        return mTempAllocator;
+    }
+
+    public ObjectVsBroadPhaseLayerFilter getObjectVsBroadPhaseLayerFilter() {
+        return mObjectVsBroadPhaseLayerFilter;
+    }
+
+    public ObjectLayerPairFilter getObjectLayerPairFilter() {
+        return mObjectLayerPairFilter;
     }
 
     public void dispose() {

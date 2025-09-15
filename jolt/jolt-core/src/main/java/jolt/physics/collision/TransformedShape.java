@@ -58,7 +58,7 @@ public class TransformedShape extends IDLBase {
 
     public TransformedShape() {
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -79,6 +79,16 @@ return (jlong)new TransformedShape();
     public static TransformedShape native_new() {
         return new TransformedShape((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+TransformedShape* nativeObject = (TransformedShape*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void CastRay(RRayCast inRay, RayCastResult ioHit) {
         internal_native_CastRay(native_address, inRay.native_address, ioHit.native_address);

@@ -18,7 +18,7 @@ public class ObjectLayerPairFilterTable extends ObjectLayerPairFilter {
     public ObjectLayerPairFilterTable(int inNumObjectLayers) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int(inNumObjectLayers);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -40,6 +40,16 @@ return (jlong)new ObjectLayerPairFilterTable(inNumObjectLayers);
     public static ObjectLayerPairFilterTable native_new() {
         return new ObjectLayerPairFilterTable((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+ObjectLayerPairFilterTable* nativeObject = (ObjectLayerPairFilterTable*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int GetNumObjectLayers() {
         return internal_native_GetNumObjectLayers(native_address);

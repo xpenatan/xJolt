@@ -20,7 +20,7 @@ public class SphereShape extends ConvexShape {
     public SphereShape(float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float_PhysicsMaterial(inRadius, inMaterial.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -33,7 +33,7 @@ return jolt.getPointer(jsObj);
     public SphereShape(float inRadius) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float(inRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -57,6 +57,17 @@ return jolt.getPointer(jsObj);
     public static SphereShape native_new() {
         return new SphereShape((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.SphereShape);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SphereShape);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float GetRadius() {
         return internal_native_GetRadius(native_address);

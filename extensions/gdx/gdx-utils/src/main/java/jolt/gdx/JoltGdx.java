@@ -12,23 +12,9 @@ import jolt.math.Vec4;
 
 public class JoltGdx {
 
-    public static Vec3 TMP_VEC3_01;
-    public static Vec3 TMP_VEC3_02;
-    public static Vec3 TMP_VEC3_03;
-
-    public static Vec4 TMP_VEC4_01;
-    public static Vec4 TMP_VEC4_02;
-    public static Vec4 TMP_VEC4_03;
-
-    public static Quat TMP_QUAT_01;
-    public static Quat TMP_QUAT_02;
-
-    public static Mat44 TMP_MAT44_01;
-    public static Mat44 TMP_MAT44_02;
-
     private JoltGdx() {};
 
-    public static void mat44_to_matrix4(Mat44 in, Matrix4 out) {
+    public static Matrix4 mat44_to_matrix4(Mat44 in, Matrix4 out) {
         float[] outArray = out.val;
         // Column-major order: copy each column directly
         for (int col = 0; col < 4; col++) {
@@ -38,9 +24,10 @@ public class JoltGdx {
                 outArray[col * 4 + row] = val; // m[col][row]
             }
         }
+        return out;
     }
 
-    public static void matrix4_to_mat44(Matrix4 in, Mat44 out) {
+    public static Mat44 matrix4_to_mat44(Matrix4 in, Mat44 out) {
         float[] outArray = in.val; // Source Matrix4 data
         for (int col = 0; col < 4; col++) {
             // Extract column elements and create Vec4
@@ -53,55 +40,36 @@ public class JoltGdx {
             );
             out.SetColumn4(col, vec4); // Set column in destination Mat44
         }
+        return out;
     }
 
-    public static void vec3_to_vector3(Vec3 in, Vector3 out) {
+    public static Vector3 vec3_to_vector3(Vec3 in, Vector3 out) {
         out.set(in.GetX(), in.GetY(), in.GetZ());
+        return out;
     }
 
-    public static void vector3_to_vec3(Vector3 in, Vec3 out) {
+    public static Vec3 vector3_to_vec3(Vector3 in, Vec3 out) {
         out.Set(in.x, in.y, in.z);
+        return out;
     }
 
-    public static void vec4_to_vector3(Vec4 in, Vector4 out) {
+    public static Vector4 vec4_to_vector3(Vec4 in, Vector4 out) {
         out.set(in.GetX(), in.GetY(), in.GetZ(), in.GetW());
+        return out;
     }
 
-    public static void vector4_to_vec4(Vector4 in, Vec4 out) {
+    public static Vec4 vector4_to_vec4(Vector4 in, Vec4 out) {
         out.Set(in.x, in.y, in.z, in.w);
+        return out;
     }
 
-    public static void quat_to_Quaternion(Quat in, Quaternion out) {
+    public static Quaternion quat_to_Quaternion(Quat in, Quaternion out) {
         out.set(in.GetX(), in.GetY(), in.GetZ(), in.GetW());
+        return out;
     }
 
-    public static void quaternion_to_quat(Quaternion in, Quat out) {
+    public static Quat quaternion_to_quat(Quaternion in, Quat out) {
         out.Set(in.x, in.y, in.z, in.w);
-    }
-
-    public static void init() {
-        TMP_VEC3_01 = JoltNew.Vec3();
-        TMP_VEC3_02 = JoltNew.Vec3();
-        TMP_VEC3_03 = JoltNew.Vec3();
-        TMP_VEC4_01 = JoltNew.Vec4();
-        TMP_VEC4_02 = JoltNew.Vec4();
-        TMP_VEC4_03 = JoltNew.Vec4();
-        TMP_QUAT_01 = JoltNew.Quat();
-        TMP_QUAT_02 = JoltNew.Quat();
-        TMP_MAT44_01 = JoltNew.Mat44();
-        TMP_MAT44_02 = JoltNew.Mat44();
-    }
-
-    public static void dispose() {
-        TMP_VEC3_01.dispose();
-        TMP_VEC3_02.dispose();
-        TMP_VEC3_03.dispose();
-        TMP_VEC4_01.dispose();
-        TMP_VEC4_02.dispose();
-        TMP_VEC4_03.dispose();
-        TMP_QUAT_01.dispose();
-        TMP_QUAT_02.dispose();
-        TMP_MAT44_01.dispose();
-        TMP_MAT44_02.dispose();
+        return out;
     }
 }

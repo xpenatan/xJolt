@@ -20,7 +20,7 @@ public class Skeleton extends IDLBase {
 
     public Skeleton() {
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -41,6 +41,16 @@ return (jlong)new Skeleton();
     public static Skeleton native_new() {
         return new Skeleton((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+Skeleton* nativeObject = (Skeleton*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public int AddJoint(IDLString inName, int inParentIndex) {
         return internal_native_AddJoint(native_address, inName.native_address, inParentIndex);

@@ -24,7 +24,7 @@ public class WheeledVehicleController extends VehicleController {
     public WheeledVehicleController(WheeledVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -46,6 +46,16 @@ return (jlong)new WheeledVehicleController(*((WheeledVehicleControllerSettings* 
     public static WheeledVehicleController native_new() {
         return new WheeledVehicleController((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+WheeledVehicleController* nativeObject = (WheeledVehicleController*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public void SetDriverInput(float inForward, float inRight, float inBrake, float inHandBrake) {
         internal_native_SetDriverInput(native_address, inForward, inRight, inBrake, inHandBrake);

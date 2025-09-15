@@ -20,7 +20,7 @@ public class Skeleton extends IDLBase {
 
     public Skeleton() {
         int addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -43,6 +43,17 @@ return jolt.getPointer(jsObj);
     public static Skeleton native_new() {
         return new Skeleton((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.Skeleton);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Skeleton);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public int AddJoint(IDLString inName, int inParentIndex) {
         return internal_native_AddJoint(native_address, inName.native_address, inParentIndex);

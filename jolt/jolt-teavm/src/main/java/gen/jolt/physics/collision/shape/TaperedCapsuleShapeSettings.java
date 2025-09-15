@@ -20,7 +20,7 @@ public class TaperedCapsuleShapeSettings extends ConvexShapeSettings {
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, inMaterial.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -33,7 +33,7 @@ return jolt.getPointer(jsObj);
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float_float_float(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -57,6 +57,17 @@ return jolt.getPointer(jsObj);
     public static TaperedCapsuleShapeSettings native_new() {
         return new TaperedCapsuleShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.TaperedCapsuleShapeSettings);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TaperedCapsuleShapeSettings);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public float get_mHalfHeightOfTaperedCylinder() {
         return internal_native_get_mHalfHeightOfTaperedCylinder(native_address);

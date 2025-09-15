@@ -18,7 +18,7 @@ public class BroadPhaseLayerInterfaceTable extends BroadPhaseLayerInterface {
     public BroadPhaseLayerInterfaceTable(int inNumObjectLayers, int inNumBroadPhaseLayers) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int_int(inNumObjectLayers, inNumBroadPhaseLayers);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -42,6 +42,17 @@ return jolt.getPointer(jsObj);
     public static BroadPhaseLayerInterfaceTable native_new() {
         return new BroadPhaseLayerInterfaceTable((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterfaceTable);
+jolt.destroy(jsObj);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseLayerInterfaceTable);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public void MapObjectToBroadPhaseLayer(int inObjectLayer, BroadPhaseLayer inBroadPhaseLayer) {
         internal_native_MapObjectToBroadPhaseLayer(native_address, inObjectLayer, inBroadPhaseLayer.native_address);

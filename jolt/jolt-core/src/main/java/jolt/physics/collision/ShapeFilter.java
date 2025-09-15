@@ -17,6 +17,16 @@ public class ShapeFilter extends IDLBase {
 
     static public final ShapeFilter T_03 = ShapeFilter.native_new();
 
+    public ShapeFilter() {
+        long addr = internal_native_create();
+        internal_reset(addr, true);
+    }
+
+    /*[-JNI;-NATIVE]
+return (jlong)new ShapeFilter();
+*/
+    public static native long internal_native_create();
+
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

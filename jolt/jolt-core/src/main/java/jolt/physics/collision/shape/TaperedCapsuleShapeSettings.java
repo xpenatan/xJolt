@@ -20,7 +20,7 @@ public class TaperedCapsuleShapeSettings extends ConvexShapeSettings {
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, inMaterial.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -31,7 +31,7 @@ return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylind
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float_float(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -53,6 +53,16 @@ return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylind
     public static TaperedCapsuleShapeSettings native_new() {
         return new TaperedCapsuleShapeSettings((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+TaperedCapsuleShapeSettings* nativeObject = (TaperedCapsuleShapeSettings*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float get_mHalfHeightOfTaperedCylinder() {
         return internal_native_get_mHalfHeightOfTaperedCylinder(native_address);

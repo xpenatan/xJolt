@@ -21,7 +21,7 @@ public class SkeletalAnimation extends IDLBase {
 
     public SkeletalAnimation() {
         long addr = internal_native_create();
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -42,6 +42,16 @@ return (jlong)new SkeletalAnimation();
     public static SkeletalAnimation native_new() {
         return new SkeletalAnimation((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+SkeletalAnimation* nativeObject = (SkeletalAnimation*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 
     public float GetDuration() {
         return internal_native_GetDuration(native_address);

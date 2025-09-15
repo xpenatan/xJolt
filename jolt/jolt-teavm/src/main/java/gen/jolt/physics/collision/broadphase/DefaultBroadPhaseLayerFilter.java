@@ -5,9 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.collision.broadphase;
 
-import gen.jolt.physics.collision.ObjectLayerFilter;
-
-public class DefaultBroadPhaseLayerFilter extends ObjectLayerFilter {
+public class DefaultBroadPhaseLayerFilter extends BroadPhaseLayerFilter {
 
     static public final DefaultBroadPhaseLayerFilter NULL = DefaultBroadPhaseLayerFilter.native_new();
 

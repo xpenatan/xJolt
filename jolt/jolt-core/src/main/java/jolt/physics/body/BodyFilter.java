@@ -22,7 +22,7 @@ public class BodyFilter extends IDLBase {
     static public final BodyFilter T_03 = BodyFilter.native_new();
 
     /*[-JNI;-NATIVE]
-class BodyFilterJS : public BodyFilter {
+class BodyFilterImpl : public BodyFilter {
 private:
 	JNIEnv* env;
 	jobject obj;
@@ -34,17 +34,17 @@ public:
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(BodyFilterJS::jClassID == 0) {
-		BodyFilterJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		BodyFilterJS::ShouldCollideJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(J)Z");
-		BodyFilterJS::ShouldCollideLockedJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollideLocked", "(J)Z");
+	if(BodyFilterImpl::jClassID == 0) {
+		BodyFilterImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		BodyFilterImpl::ShouldCollideJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(J)Z");
+		BodyFilterImpl::ShouldCollideLockedJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollideLocked", "(J)Z");
 	}
 }
 virtual bool ShouldCollide(const BodyID& inBodyID) const {
-   return env->CallBooleanMethod(obj, BodyFilterJS::ShouldCollideJ_ID, (jlong)&inBodyID);
+   return env->CallBooleanMethod(obj, BodyFilterImpl::ShouldCollideJ_ID, (jlong)&inBodyID);
 }
 virtual bool ShouldCollideLocked(const Body& inBody) const {
-   return env->CallBooleanMethod(obj, BodyFilterJS::ShouldCollideLockedJ_ID, (jlong)&inBody);
+   return env->CallBooleanMethod(obj, BodyFilterImpl::ShouldCollideLockedJ_ID, (jlong)&inBody);
 }
 };
 */
@@ -64,7 +64,7 @@ virtual bool ShouldCollideLocked(const Body& inBody) const {
     }
 
     /*[-JNI;-NATIVE]
-BodyFilterJS* nativeObject = (BodyFilterJS*)this_addr;
+BodyFilterImpl* nativeObject = (BodyFilterImpl*)this_addr;
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
@@ -102,12 +102,12 @@ delete nativeObject;
     }
 
     /*[-JNI;-NATIVE]
-return (jlong)new BodyFilterJS();
+return (jlong)new BodyFilterImpl();
 */
     public static native long internal_native_create();
 
     /*[-JNI;-NATIVE]
-BodyFilterJS* nativeObject = (BodyFilterJS*)this_addr;
+BodyFilterImpl* nativeObject = (BodyFilterImpl*)this_addr;
 nativeObject->setupCallback(env, object);
 */
     public native void internal_native_setupCallback(long this_addr);

@@ -20,7 +20,7 @@ public class OffsetCenterOfMassShape extends DecoratedShape {
     public OffsetCenterOfMassShape(Shape inShape, Vec3 inOffset) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Shape_Vec3(inShape.native_address, inOffset.native_address);
-        internal_reset(addr, false);
+        internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
@@ -42,4 +42,14 @@ return (jlong)new OffsetCenterOfMassShape((Shape* )inShape_addr, *((Vec3* )inOff
     public static OffsetCenterOfMassShape native_new() {
         return new OffsetCenterOfMassShape((byte) 0, (char) 0);
     }
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+OffsetCenterOfMassShape* nativeObject = (OffsetCenterOfMassShape*)this_addr;
+delete nativeObject;
+*/
+    public static native void internal_native_deleteNative(long this_addr);
 }

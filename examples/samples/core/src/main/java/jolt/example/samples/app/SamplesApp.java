@@ -86,7 +86,9 @@ public class SamplesApp extends InputAdapter {
             if(!isPaused) {
                 test.processInput();
             }
-            test.updateCamera(camera);
+            test.updateCamera(cameraController);
+
+            cameraController.update();
         }
         drawPhysics();
         if(deltaTime > 0) {
@@ -156,12 +158,13 @@ public class SamplesApp extends InputAdapter {
         joltInstance = new JoltInstance();
 
         isPaused = true;
+        cameraController.target.set(0, 0,0);
         camera.up.set(0, 1, 0);
         camera.position.set(30, 10, 30);
         camera.lookAt(0, 0, 0);
         test = tests.getTest(testClass);
         debugRenderer.setEnable(true);
-        test.setPhysicsSystem(joltInstance.getPhysicsSystem());
+        test.setJoltInstance(joltInstance);
         test.setRenderer(debugRenderer);
         test.initializeCamera(camera);
         test.initialize();
