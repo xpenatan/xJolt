@@ -54,6 +54,8 @@ interface JoltTemp {
     [BindTo="Temp_DefaultBroadPhaseLayerFilter"] static DefaultBroadPhaseLayerFilter DefaultBroadPhaseLayerFilter__0(ObjectVsBroadPhaseLayerFilter filter, unsigned long inObjectLayer);
     [BindTo="Temp_DefaultObjectLayerFilter"] static DefaultObjectLayerFilter DefaultObjectLayerFilter__0(ObjectLayerPairFilter filter, unsigned long inObjectLayer);
     [BindTo="Temp_StaticCompoundShapeSettings"] static StaticCompoundShapeSettings StaticCompoundShapeSettings__0();
+    [BindTo="Temp_BodyFilter"] static BodyFilter BodyFilter__0();
+    [BindTo="Temp_ShapeFilter"] static ShapeFilter ShapeFilter__0();
 };
 
 [NoDelete]

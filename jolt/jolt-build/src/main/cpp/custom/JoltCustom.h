@@ -598,6 +598,18 @@ public:
         temp.emplace();
         return &*temp;
     }
+
+    static BodyFilter* Temp_BodyFilter() {
+        static std::optional<BodyFilter> temp;
+        temp.emplace();
+        return &*temp;
+    }
+
+    static ShapeFilter* Temp_ShapeFilter() {
+        static std::optional<ShapeFilter> temp;
+        temp.emplace();
+        return &*temp;
+    }
 };
 
 // Custom class to create new instance. Emscripten does not support multiple constructors types so this is the only way

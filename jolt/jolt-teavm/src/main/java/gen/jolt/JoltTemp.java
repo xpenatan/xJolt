@@ -16,6 +16,8 @@ import gen.jolt.physics.collision.broadphase.DefaultBroadPhaseLayerFilter;
 import gen.jolt.physics.collision.ObjectLayerPairFilter;
 import gen.jolt.physics.collision.DefaultObjectLayerFilter;
 import gen.jolt.physics.collision.shape.StaticCompoundShapeSettings;
+import gen.jolt.physics.body.BodyFilter;
+import gen.jolt.physics.collision.ShapeFilter;
 
 public class JoltTemp extends IDLBase {
 
@@ -94,6 +96,10 @@ public class JoltTemp extends IDLBase {
     static private DefaultObjectLayerFilter DefaultObjectLayerFilter_TEMP_STATIC_GEN_0;
 
     static private StaticCompoundShapeSettings StaticCompoundShapeSettings_TEMP_STATIC_GEN_0;
+
+    static private BodyFilter BodyFilter_TEMP_STATIC_GEN_0;
+
+    static private ShapeFilter ShapeFilter_TEMP_STATIC_GEN_0;
 
     static public final JoltTemp NULL = JoltTemp.native_new();
 
@@ -800,4 +806,40 @@ return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltTemp.prototype.StaticCompoundShapeSettings__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
     public static native int internal_native_StaticCompoundShapeSettings__0();
+
+    public static BodyFilter BodyFilter() {
+        int pointer = internal_native_BodyFilter__0();
+        if (pointer == 0)
+            return BodyFilter.NULL;
+        if (BodyFilter_TEMP_STATIC_GEN_0 == null)
+            BodyFilter_TEMP_STATIC_GEN_0 = BodyFilter.native_new();
+        BodyFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return BodyFilter_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jolt.JoltTemp.prototype.BodyFilter__0();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jolt.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltTemp.prototype.BodyFilter__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_BodyFilter__0();
+
+    public static ShapeFilter ShapeFilter() {
+        int pointer = internal_native_ShapeFilter__0();
+        if (pointer == 0)
+            return ShapeFilter.NULL;
+        if (ShapeFilter_TEMP_STATIC_GEN_0 == null)
+            ShapeFilter_TEMP_STATIC_GEN_0 = ShapeFilter.native_new();
+        ShapeFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        return ShapeFilter_TEMP_STATIC_GEN_0;
+    }
+
+    /*[-TEAVM;-NATIVE]
+var returnedJSObj = jolt.JoltTemp.prototype.ShapeFilter__0();
+if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
+return jolt.getPointer(returnedJSObj);
+*/
+    @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.JoltTemp.prototype.ShapeFilter__0();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    public static native int internal_native_ShapeFilter__0();
 }

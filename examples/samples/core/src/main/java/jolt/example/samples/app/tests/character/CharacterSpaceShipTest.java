@@ -2,7 +2,6 @@ package jolt.example.samples.app.tests.character;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import com.badlogic.gdx.graphics.PerspectiveCamera;
 import com.badlogic.gdx.graphics.g3d.utils.CameraInputController;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector3;
@@ -19,17 +18,14 @@ import jolt.geometry.Plane;
 import jolt.math.Mat44;
 import jolt.math.Quat;
 import jolt.math.Vec3;
-import jolt.physics.PhysicsSystem;
 import jolt.physics.body.Body;
 import jolt.physics.body.BodyCreationSettings;
-import jolt.physics.body.BodyFilter;
 import jolt.physics.body.BodyID;
 import jolt.physics.character.CharacterContactListener;
 import jolt.physics.character.CharacterVirtual;
 import jolt.physics.character.CharacterVirtualSettings;
 import jolt.physics.character.ExtendedUpdateSettings;
 import jolt.physics.collision.DefaultObjectLayerFilter;
-import jolt.physics.collision.ShapeFilter;
 import jolt.physics.collision.broadphase.DefaultBroadPhaseLayerFilter;
 import jolt.physics.collision.shape.CapsuleShape;
 import jolt.physics.collision.shape.CylinderShape;
@@ -62,9 +58,6 @@ public class CharacterSpaceShipTest extends Test {
     private Vec3 mDesiredVelocity;
     private boolean mJump = false;
     private boolean mWasJump = false;
-
-    private BodyFilter bodyFilter;
-    private ShapeFilter shapeFilter;
 
     @Override
     public void initialize() {
@@ -111,9 +104,6 @@ public class CharacterSpaceShipTest extends Test {
         mSpaceShip = mBodyInterface.CreateAndAddBody(bodyCreationSettings, EActivation.Activate);
 
         mSpaceShipPrevTransform.Set(mBodyInterface.GetCenterOfMassTransform(mSpaceShip));
-
-        bodyFilter = new BodyFilter();
-        shapeFilter = new ShapeFilter();
     }
 
     @Override
@@ -180,8 +170,8 @@ public class CharacterSpaceShipTest extends Test {
                 update_settings,
                 defaultBroadPhaseLayerFilter,
                 defaultObjectLayerFilter,
-                bodyFilter,
-                shapeFilter,
+                JoltTemp.BodyFilter(),
+                JoltTemp.ShapeFilter(),
                 joltInstance.getTempAllocator());
 
         mSpaceShipPrevTransform.Set(new_space_ship_transform);
