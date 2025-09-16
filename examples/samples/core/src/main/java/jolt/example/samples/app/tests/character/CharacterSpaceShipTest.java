@@ -209,7 +209,7 @@ public class CharacterSpaceShipTest extends Test {
         control_input = rotation.MulVec3(control_input);
 
         // Smooth the player input in local space to the ship
-        Vec3 playerPos = control_input.MulFloat(0.25f).MulFloat(cCharacterSpeed).Add(mDesiredVelocity.MulFloat(0.75f));
+        Vec3 playerPos = control_input.MulFloat(0.25f).MulFloat(cCharacterSpeed).AddVec3(mDesiredVelocity.Mul(0.75f));
         mDesiredVelocity.Set(playerPos);
 
         // Check actions
