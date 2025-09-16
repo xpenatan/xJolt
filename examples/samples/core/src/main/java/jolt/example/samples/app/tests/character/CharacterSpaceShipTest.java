@@ -81,7 +81,7 @@ public class CharacterSpaceShipTest extends Test {
         RotatedTranslatedShapeSettings shapeSettings = JoltNew.RotatedTranslatedShapeSettings(inPosition, Quat.sIdentity(), capsuleShape);
         settings.set_mShape(shapeSettings.Create().Get());
         settings.set_mSupportingVolume(new Plane(Vec3.sAxisY(), -cCharacterRadiusStanding)); // Accept contacts that touch the lower sphere of the capsule
-        Vec3 position = cShipInitialPosition.Add(JoltTemp.Vec3_3(0, cSpaceShipHeight, 0));
+        Vec3 position = cShipInitialPosition.AddVec3(JoltTemp.Vec3_3(0, cSpaceShipHeight, 0));
         mCharacter = new CharacterVirtual(settings, position, Quat.sIdentity(), mPhysicsSystem);
         mCharacter.SetListener(new CharacterContactListener() {
             @Override
