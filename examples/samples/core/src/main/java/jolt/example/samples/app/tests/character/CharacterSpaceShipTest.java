@@ -240,9 +240,9 @@ public class CharacterSpaceShipTest extends Test {
         JoltGdx.vec3_to_vector3(charPosition, cameraController.target);
 
         // Compute offset based on camera direction and zoom level
-        float distance = initialOffset.len() * 10 / initialOffset.len();
+        float distance = initialOffset.len() * 7 / initialOffset.len();
         Vector3 offset = camera.direction.cpy().scl(-distance); // Move opposite to direction
-        offset.y += initialOffset.y; // Preserve vertical offset (e.g., above vehicle)
+        offset.y += 1;
 
         // Set camera position to vehicle position plus offset
         camera.position.set(cameraController.target).add(offset);
