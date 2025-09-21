@@ -31,6 +31,7 @@ import jolt.physics.collision.shape.CapsuleShape;
 import jolt.physics.collision.shape.CylinderShape;
 import jolt.physics.collision.shape.RotatedTranslatedShapeSettings;
 import jolt.physics.collision.shape.StaticCompoundShapeSettings;
+import jolt.physics.collision.shape.SubShapeID;
 
 public class CharacterSpaceShipTest extends Test {
 
@@ -90,6 +91,16 @@ public class CharacterSpaceShipTest extends Test {
                 ioLinearVelocity.Sub(mSpaceShipLinearVelocity);
                 ioAngularVelocity.Sub(mSpaceShipAngularVelocity);
             }
+
+            @Override
+            protected boolean OnContactValidate(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2) {
+                return true;
+            }
+
+            @Override
+            protected boolean OnCharacterContactValidate(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2) {
+                return true;
+            }
         });
 
         // Create the space ship
@@ -109,16 +120,19 @@ public class CharacterSpaceShipTest extends Test {
     @Override
     public void prePhysicsUpdate(boolean isPlaying) {
         float deltaTime = Gdx.graphics.getDeltaTime();
-        Mat44 new_space_ship_transform = null;
+        Vec3 gravity = JoltTemp.Vec3_1();
+        Vec3 current_vertical_velocity = JoltTemp.Vec3_2();
+        Mat44 new_space_ship_transform = JoltTemp.Mat44_1();
 
         if(isPlaying) {
             // Update scene time
             mTime += deltaTime;
-
             // Update the character so it stays relative to the space ship
-            new_space_ship_transform = mBodyInterface.GetCenterOfMassTransform(mSpaceShip);
-            mCharacter.SetPosition(new_space_ship_transform.MulMat44(mSpaceShipPrevTransform.Inversed()).MulVec3(mCharacter.GetPosition()));
-
+            new_space_ship_transform.Set(mBodyInterface.GetCenterOfMassTransform(mSpaceShip));
+            {
+                Vec3 vec3 = mSpaceShipPrevTransform.Inversed().MulVec3(mCharacter.GetPosition());
+                mCharacter.SetPosition(new_space_ship_transform.MulVec3(vec3));
+            }
             // Update the character rotation and its up vector to match the new up vector of the ship
             mCharacter.SetUp(new_space_ship_transform.GetAxisY());
             mCharacter.SetRotation(new_space_ship_transform.GetQuaternion());
@@ -133,7 +147,10 @@ public class CharacterSpaceShipTest extends Test {
         }
 
         // Determine new character velocity
-        Vec3 current_vertical_velocity = mCharacter.GetUp().MulFloat(mCharacter.GetLinearVelocity().Dot(mSpaceShipPrevTransform.GetAxisY()));
+        {
+            float floatVal = mCharacter.GetLinearVelocity().Dot(mSpaceShipPrevTransform.GetAxisY());
+            current_vertical_velocity.Set(mCharacter.GetUp().MulFloat(floatVal));
+        }
         Vec3 ground_velocity = mCharacter.GetGroundVelocity();
         Vec3 new_velocity;
         if(mCharacter.GetGroundState() == EGroundState.OnGround // If on ground
@@ -150,7 +167,7 @@ public class CharacterSpaceShipTest extends Test {
             new_velocity = current_vertical_velocity;
 
         // Gravity always acts relative to the ship
-        Vec3 gravity = new_space_ship_transform.Multiply3x3(mPhysicsSystem.GetGravity());
+        gravity.Set(new_space_ship_transform.Multiply3x3(mPhysicsSystem.GetGravity()));
         new_velocity.Add(gravity.MulFloat(deltaTime));
 
         // Transform player input to world space
@@ -161,10 +178,8 @@ public class CharacterSpaceShipTest extends Test {
 
         // Update the character position
         ExtendedUpdateSettings update_settings = JoltTemp.ExtendedUpdateSettings();
-
         DefaultBroadPhaseLayerFilter defaultBroadPhaseLayerFilter = JoltTemp.DefaultBroadPhaseLayerFilter(joltInstance.getObjectVsBroadPhaseLayerFilter(), Layers.MOVING);
         DefaultObjectLayerFilter defaultObjectLayerFilter = JoltTemp.DefaultObjectLayerFilter(joltInstance.getObjectLayerPairFilter(), Layers.MOVING);
-
         mCharacter.ExtendedUpdate(deltaTime,
                 gravity,
                 update_settings,
