@@ -37,7 +37,7 @@ public class PhysicsSystem extends IDLBase {
 
     private AABox AABox_TEMP_GEN_0;
 
-    private ContactListener ContactListener_TEMP_GEN_0;
+    private IDLBase IDLBase_TEMP_GEN_0;
 
     private SoftBodyContactListener SoftBodyContactListener_TEMP_GEN_0;
 
@@ -296,23 +296,22 @@ jsObj.SetContactListener(inListener_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "inListener_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);jsObj.SetContactListener(inListener_addr);")
     public static native void internal_native_SetContactListener(int this_addr, int inListener_addr);
 
-    public ContactListener GetContactListener() {
+    public IDLBase GetContactListener() {
         int pointer = internal_native_GetContactListener(native_address);
         if (pointer == 0)
-            return ContactListener.NULL;
-        if (ContactListener_TEMP_GEN_0 == null)
-            ContactListener_TEMP_GEN_0 = ContactListener.native_new();
-        ContactListener_TEMP_GEN_0.internal_reset(pointer, false);
-        return ContactListener_TEMP_GEN_0;
+            return IDLBase.NULL;
+        if (IDLBase_TEMP_GEN_0 == null)
+            IDLBase_TEMP_GEN_0 = IDLBase.native_new();
+        IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
+        return IDLBase_TEMP_GEN_0;
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);
 var returnedJSObj = jsObj.GetContactListener();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jolt.getPointer(returnedJSObj);
+return returnedJSObj;
 */
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);var returnedJSObj = jsObj.GetContactListener();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PhysicsSystem);var returnedJSObj = jsObj.GetContactListener();return returnedJSObj;")
     public static native int internal_native_GetContactListener(int this_addr);
 
     public void SetSoftBodyContactListener(SoftBodyContactListener inListener) {

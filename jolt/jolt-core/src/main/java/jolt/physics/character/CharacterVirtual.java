@@ -8,6 +8,7 @@ package jolt.physics.character;
 import jolt.math.Vec3;
 import jolt.math.Quat;
 import jolt.physics.PhysicsSystem;
+import jolt.idl.IDLBase;
 import jolt.math.Mat44;
 import jolt.physics.body.BodyID;
 import jolt.physics.collision.broadphase.BroadPhaseLayerFilter;
@@ -22,7 +23,7 @@ public class CharacterVirtual extends CharacterBase {
 
     private CharacterID CharacterID_TEMP_GEN_0;
 
-    private CharacterContactListener CharacterContactListener_TEMP_GEN_0;
+    private IDLBase IDLBase_TEMP_GEN_0;
 
     private Vec3 Vec3_TEMP_GEN_0;
 
@@ -112,7 +113,7 @@ return (jlong)&nativeObject->GetID();
 
     /*[-JNI;-NATIVE]
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
-nativeObject->SetListener((CharacterContactListener* )inListener_addr);
+nativeObject->SetListener((XJPH::CharacterContactListener* )inListener_addr);
 */
     public static native void internal_native_SetListener(long this_addr, long inListener_addr);
 
@@ -126,20 +127,19 @@ nativeObject->SetCharacterVsCharacterCollision((CharacterVsCharacterCollision* )
 */
     public static native void internal_native_SetCharacterVsCharacterCollision(long this_addr, long inCharacterVsCharacterCollision_addr);
 
-    public CharacterContactListener GetListener() {
+    public IDLBase GetListener() {
         long pointer = internal_native_GetListener(native_address);
         if (pointer == 0)
-            return CharacterContactListener.NULL;
-        if (CharacterContactListener_TEMP_GEN_0 == null)
-            CharacterContactListener_TEMP_GEN_0 = CharacterContactListener.native_new();
-        CharacterContactListener_TEMP_GEN_0.internal_reset(pointer, false);
-        return CharacterContactListener_TEMP_GEN_0;
+            return IDLBase.NULL;
+        if (IDLBase_TEMP_GEN_0 == null)
+            IDLBase_TEMP_GEN_0 = IDLBase.native_new();
+        IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
+        return IDLBase_TEMP_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
-CharacterContactListener* obj = nativeObject->GetListener();
-return (jlong)obj;
+return (jlong)nativeObject->GetListener();
 */
     public static native long internal_native_GetListener(long this_addr);
 

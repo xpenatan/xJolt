@@ -10,6 +10,7 @@ import jolt.physics.body.Body;
 import jolt.math.Vec3;
 import jolt.physics.body.BodyID;
 import jolt.physics.collision.shape.SubShapeID;
+import jolt.RVec3;
 import jolt.physics.collision.PhysicsMaterial;
 
 public class CharacterContactListener extends IDLBase {
@@ -40,9 +41,9 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_2;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_2;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_0;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_3;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_2;
 
     static private CharacterContactSettings CharacterContactSettings_TEMP_STATIC_GEN_0;
 
@@ -52,9 +53,9 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_3;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_4;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_1;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_5;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_3;
 
     static private CharacterContactSettings CharacterContactSettings_TEMP_STATIC_GEN_1;
 
@@ -70,9 +71,9 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_5;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_6;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_2;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_7;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_4;
 
     static private CharacterContactSettings CharacterContactSettings_TEMP_STATIC_GEN_2;
 
@@ -82,9 +83,9 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_6;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_8;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_5;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_9;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_6;
 
     static private CharacterContactSettings CharacterContactSettings_TEMP_STATIC_GEN_3;
 
@@ -100,17 +101,17 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_8;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_10;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_3;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_11;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_7;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_12;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_8;
 
     static private PhysicsMaterial PhysicsMaterial_TEMP_STATIC_GEN_0;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_13;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_9;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_14;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_10;
 
     static private CharacterVirtual CharacterVirtual_TEMP_STATIC_GEN_13;
 
@@ -118,17 +119,17 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_9;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_15;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_4;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_16;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_11;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_17;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_12;
 
     static private PhysicsMaterial PhysicsMaterial_TEMP_STATIC_GEN_1;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_18;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_13;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_19;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_14;
 
     static public final CharacterContactListener NULL = CharacterContactListener.native_new();
 
@@ -139,74 +140,74 @@ public class CharacterContactListener extends IDLBase {
     static public final CharacterContactListener T_03 = CharacterContactListener.native_new();
 
     /*[-JNI;-NATIVE]
-class CharacterContactListenerImpl : public CharacterContactListener {
+class CharacterContactListenerImpl : public XJPH::CharacterContactListener {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
 	inline static jclass jClassID = 0;
-	inline static jmethodID OnAdjustBodyVelocityJJJJ_ID = 0;
-	inline static jmethodID OnContactValidateJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactValidateJJJ_ID = 0;
-	inline static jmethodID OnContactAddedJJJJJJ_ID = 0;
-	inline static jmethodID OnContactPersistedJJJJJJ_ID = 0;
-	inline static jmethodID OnContactRemovedJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactAddedJJJJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactPersistedJJJJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactRemovedJJJ_ID = 0;
-	inline static jmethodID OnContactSolveJJJJJJJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactSolveJJJJJJJJJ_ID = 0;
+	inline static jmethodID OnAdjustBodyVelocity_customJJJJ_ID = 0;
+	inline static jmethodID OnContactValidate_customJJJ_ID = 0;
+	inline static jmethodID OnCharacterContactValidate_customJJJ_ID = 0;
+	inline static jmethodID OnContactAdded_customJJJJJJ_ID = 0;
+	inline static jmethodID OnContactPersisted_customJJJJJJ_ID = 0;
+	inline static jmethodID OnContactRemoved_customJJJ_ID = 0;
+	inline static jmethodID OnCharacterContactAdded_customJJJJJJ_ID = 0;
+	inline static jmethodID OnCharacterContactPersisted_customJJJJJJ_ID = 0;
+	inline static jmethodID OnCharacterContactRemoved_customJJJ_ID = 0;
+	inline static jmethodID OnContactSolve_customJJJJJJJJJ_ID = 0;
+	inline static jmethodID OnCharacterContactSolve_customJJJJJJJJJ_ID = 0;
 
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
 	if(CharacterContactListenerImpl::jClassID == 0) {
 		CharacterContactListenerImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		CharacterContactListenerImpl::OnAdjustBodyVelocityJJJJ_ID = env->GetMethodID(jClassID, "internal_OnAdjustBodyVelocity", "(JJJJ)V");
-		CharacterContactListenerImpl::OnContactValidateJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactValidate", "(JJJ)Z");
-		CharacterContactListenerImpl::OnCharacterContactValidateJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactValidate", "(JJJ)Z");
-		CharacterContactListenerImpl::OnContactAddedJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactAdded", "(JJJJJJ)V");
-		CharacterContactListenerImpl::OnContactPersistedJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactPersisted", "(JJJJJJ)V");
-		CharacterContactListenerImpl::OnContactRemovedJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactRemoved", "(JJJ)V");
-		CharacterContactListenerImpl::OnCharacterContactAddedJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactAdded", "(JJJJJJ)V");
-		CharacterContactListenerImpl::OnCharacterContactPersistedJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactPersisted", "(JJJJJJ)V");
-		CharacterContactListenerImpl::OnCharacterContactRemovedJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactRemoved", "(JJJ)V");
-		CharacterContactListenerImpl::OnContactSolveJJJJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactSolve", "(JJJJJJJJJ)V");
-		CharacterContactListenerImpl::OnCharacterContactSolveJJJJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactSolve", "(JJJJJJJJJ)V");
+		CharacterContactListenerImpl::OnAdjustBodyVelocity_customJJJJ_ID = env->GetMethodID(jClassID, "internal_OnAdjustBodyVelocity", "(JJJJ)V");
+		CharacterContactListenerImpl::OnContactValidate_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactValidate", "(JJJ)Z");
+		CharacterContactListenerImpl::OnCharacterContactValidate_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactValidate", "(JJJ)Z");
+		CharacterContactListenerImpl::OnContactAdded_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactAdded", "(JJJJJJ)V");
+		CharacterContactListenerImpl::OnContactPersisted_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactPersisted", "(JJJJJJ)V");
+		CharacterContactListenerImpl::OnContactRemoved_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactRemoved", "(JJJ)V");
+		CharacterContactListenerImpl::OnCharacterContactAdded_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactAdded", "(JJJJJJ)V");
+		CharacterContactListenerImpl::OnCharacterContactPersisted_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactPersisted", "(JJJJJJ)V");
+		CharacterContactListenerImpl::OnCharacterContactRemoved_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactRemoved", "(JJJ)V");
+		CharacterContactListenerImpl::OnContactSolve_customJJJJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactSolve", "(JJJJJJJJJ)V");
+		CharacterContactListenerImpl::OnCharacterContactSolve_customJJJJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactSolve", "(JJJJJJJJJ)V");
 	}
 }
-virtual void OnAdjustBodyVelocity(const CharacterVirtual* inCharacter, const Body& inBody2, Vec3& ioLinearVelocity, Vec3& ioAngularVelocity) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnAdjustBodyVelocityJJJJ_ID, (jlong)inCharacter, (jlong)&inBody2, (jlong)&ioLinearVelocity, (jlong)&ioAngularVelocity);
+virtual void OnAdjustBodyVelocity_custom(const CharacterVirtual* inCharacter, const Body& inBody2, Vec3& ioLinearVelocity, Vec3& ioAngularVelocity) {
+   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnAdjustBodyVelocity_customJJJJ_ID, (jlong)inCharacter, (jlong)&inBody2, (jlong)&ioLinearVelocity, (jlong)&ioAngularVelocity);
 }
-virtual bool OnContactValidate(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2) {
-   return env->CallBooleanMethod(obj, CharacterContactListenerImpl::OnContactValidateJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2);
+virtual bool OnContactValidate_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2) {
+   return env->CallBooleanMethod(obj, CharacterContactListenerImpl::OnContactValidate_customJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2);
 }
-virtual bool OnCharacterContactValidate(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2) {
-   return env->CallBooleanMethod(obj, CharacterContactListenerImpl::OnCharacterContactValidateJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2);
+virtual bool OnCharacterContactValidate_custom(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2) {
+   return env->CallBooleanMethod(obj, CharacterContactListenerImpl::OnCharacterContactValidate_customJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2);
 }
-virtual void OnContactAdded(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2, const Vec3* inContactPosition, const Vec3* inContactNormal, CharacterContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactAddedJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)inContactPosition, (jlong)inContactNormal, (jlong)&ioSettings);
+virtual void OnContactAdded_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, CharacterContactSettings& ioSettings) {
+   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactAdded_customJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
 }
-virtual void OnContactPersisted(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2, const Vec3* inContactPosition, const Vec3* inContactNormal, CharacterContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactPersistedJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)inContactPosition, (jlong)inContactNormal, (jlong)&ioSettings);
+virtual void OnContactPersisted_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, CharacterContactSettings& ioSettings) {
+   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactPersisted_customJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
 }
-virtual void OnContactRemoved(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactRemovedJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2);
+virtual void OnContactRemoved_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2) {
+   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactRemoved_customJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2);
 }
-virtual void OnCharacterContactAdded(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2, const Vec3* inContactPosition, const Vec3* inContactNormal, CharacterContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactAddedJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)inContactPosition, (jlong)inContactNormal, (jlong)&ioSettings);
+virtual void OnCharacterContactAdded_custom(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, CharacterContactSettings& ioSettings) {
+   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactAdded_customJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
 }
-virtual void OnCharacterContactPersisted(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2, const Vec3* inContactPosition, const Vec3* inContactNormal, CharacterContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactPersistedJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)inContactPosition, (jlong)inContactNormal, (jlong)&ioSettings);
+virtual void OnCharacterContactPersisted_custom(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2, const Vec3& inContactPosition, const Vec3& inContactNormal, CharacterContactSettings& ioSettings) {
+   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactPersisted_customJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
 }
-virtual void OnCharacterContactRemoved(const CharacterVirtual* inCharacter, const CharacterID& inOtherCharacter, const SubShapeID& inSubShapeID2) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactRemovedJJJ_ID, (jlong)inCharacter, (jlong)&inOtherCharacter, (jlong)&inSubShapeID2);
+virtual void OnCharacterContactRemoved_custom(const CharacterVirtual* inCharacter, const CharacterID& inOtherCharacter, const SubShapeID& inSubShapeID2) {
+   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactRemoved_customJJJ_ID, (jlong)inCharacter, (jlong)&inOtherCharacter, (jlong)&inSubShapeID2);
 }
-virtual void OnContactSolve(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2, const Vec3* inContactPosition, const Vec3* inContactNormal, const Vec3* inContactVelocity, const PhysicsMaterial* inContactMaterial, const Vec3* inCharacterVelocity, Vec3& ioNewCharacterVelocity) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactSolveJJJJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)inContactPosition, (jlong)inContactNormal, (jlong)inContactVelocity, (jlong)inContactMaterial, (jlong)inCharacterVelocity, (jlong)&ioNewCharacterVelocity);
+virtual void OnContactSolve_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, const Vec3& inContactVelocity, const PhysicsMaterial* inContactMaterial, const Vec3& inCharacterVelocity, const Vec3& ioNewCharacterVelocity) {
+   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactSolve_customJJJJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&inContactVelocity, (jlong)inContactMaterial, (jlong)&inCharacterVelocity, (jlong)&ioNewCharacterVelocity);
 }
-virtual void OnCharacterContactSolve(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2, const Vec3* inContactPosition, const Vec3* inContactNormal, const Vec3* inContactVelocity, const PhysicsMaterial* inContactMaterial, const Vec3* inCharacterVelocity, Vec3& ioNewCharacterVelocity) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactSolveJJJJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)inContactPosition, (jlong)inContactNormal, (jlong)inContactVelocity, (jlong)inContactMaterial, (jlong)inCharacterVelocity, (jlong)&ioNewCharacterVelocity);
+virtual void OnCharacterContactSolve_custom(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, const Vec3& inContactVelocity, const PhysicsMaterial* inContactMaterial, const Vec3& inCharacterVelocity, const Vec3& ioNewCharacterVelocity) {
+   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactSolve_customJJJJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&inContactVelocity, (jlong)inContactMaterial, (jlong)&inCharacterVelocity, (jlong)&ioNewCharacterVelocity);
 }
 };
 */
@@ -230,6 +231,226 @@ CharacterContactListenerImpl* nativeObject = (CharacterContactListenerImpl*)this
 delete nativeObject;
 */
     public static native void internal_native_deleteNative(long this_addr);
+
+    public boolean get_OnAdjustBodyVelocity() {
+        return internal_native_get_OnAdjustBodyVelocity(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onAdjustBodyVelocity;
+*/
+    public static native boolean internal_native_get_OnAdjustBodyVelocity(long this_addr);
+
+    public void set_OnAdjustBodyVelocity(boolean onAdjustBodyVelocity) {
+        internal_native_set_OnAdjustBodyVelocity(native_address, onAdjustBodyVelocity);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onAdjustBodyVelocity = onAdjustBodyVelocity;
+*/
+    public static native void internal_native_set_OnAdjustBodyVelocity(long this_addr, boolean onAdjustBodyVelocity);
+
+    public boolean get_OnContactValidate() {
+        return internal_native_get_OnContactValidate(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onContactValidate;
+*/
+    public static native boolean internal_native_get_OnContactValidate(long this_addr);
+
+    public void set_OnContactValidate(boolean onContactValidate) {
+        internal_native_set_OnContactValidate(native_address, onContactValidate);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onContactValidate = onContactValidate;
+*/
+    public static native void internal_native_set_OnContactValidate(long this_addr, boolean onContactValidate);
+
+    public boolean get_OnCharacterContactValidate() {
+        return internal_native_get_OnCharacterContactValidate(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onCharacterContactValidate;
+*/
+    public static native boolean internal_native_get_OnCharacterContactValidate(long this_addr);
+
+    public void set_OnCharacterContactValidate(boolean onCharacterContactValidate) {
+        internal_native_set_OnCharacterContactValidate(native_address, onCharacterContactValidate);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onCharacterContactValidate = onCharacterContactValidate;
+*/
+    public static native void internal_native_set_OnCharacterContactValidate(long this_addr, boolean onCharacterContactValidate);
+
+    public boolean get_OnContactAdded() {
+        return internal_native_get_OnContactAdded(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onContactAdded;
+*/
+    public static native boolean internal_native_get_OnContactAdded(long this_addr);
+
+    public void set_OnContactAdded(boolean onContactAdded) {
+        internal_native_set_OnContactAdded(native_address, onContactAdded);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onContactAdded = onContactAdded;
+*/
+    public static native void internal_native_set_OnContactAdded(long this_addr, boolean onContactAdded);
+
+    public boolean get_OnContactPersisted() {
+        return internal_native_get_OnContactPersisted(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onContactPersisted;
+*/
+    public static native boolean internal_native_get_OnContactPersisted(long this_addr);
+
+    public void set_OnContactPersisted(boolean onContactPersisted) {
+        internal_native_set_OnContactPersisted(native_address, onContactPersisted);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onContactPersisted = onContactPersisted;
+*/
+    public static native void internal_native_set_OnContactPersisted(long this_addr, boolean onContactPersisted);
+
+    public boolean get_OnContactRemoved() {
+        return internal_native_get_OnContactRemoved(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onContactRemoved;
+*/
+    public static native boolean internal_native_get_OnContactRemoved(long this_addr);
+
+    public void set_OnContactRemoved(boolean onContactRemoved) {
+        internal_native_set_OnContactRemoved(native_address, onContactRemoved);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onContactRemoved = onContactRemoved;
+*/
+    public static native void internal_native_set_OnContactRemoved(long this_addr, boolean onContactRemoved);
+
+    public boolean get_OnCharacterContactAdded() {
+        return internal_native_get_OnCharacterContactAdded(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onCharacterContactAdded;
+*/
+    public static native boolean internal_native_get_OnCharacterContactAdded(long this_addr);
+
+    public void set_OnCharacterContactAdded(boolean onCharacterContactAdded) {
+        internal_native_set_OnCharacterContactAdded(native_address, onCharacterContactAdded);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onCharacterContactAdded = onCharacterContactAdded;
+*/
+    public static native void internal_native_set_OnCharacterContactAdded(long this_addr, boolean onCharacterContactAdded);
+
+    public boolean get_OnCharacterContactPersisted() {
+        return internal_native_get_OnCharacterContactPersisted(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onCharacterContactPersisted;
+*/
+    public static native boolean internal_native_get_OnCharacterContactPersisted(long this_addr);
+
+    public void set_OnCharacterContactPersisted(boolean onCharacterContactPersisted) {
+        internal_native_set_OnCharacterContactPersisted(native_address, onCharacterContactPersisted);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onCharacterContactPersisted = onCharacterContactPersisted;
+*/
+    public static native void internal_native_set_OnCharacterContactPersisted(long this_addr, boolean onCharacterContactPersisted);
+
+    public boolean get_OnCharacterContactRemoved() {
+        return internal_native_get_OnCharacterContactRemoved(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onCharacterContactRemoved;
+*/
+    public static native boolean internal_native_get_OnCharacterContactRemoved(long this_addr);
+
+    public void set_OnCharacterContactRemoved(boolean onCharacterContactRemoved) {
+        internal_native_set_OnCharacterContactRemoved(native_address, onCharacterContactRemoved);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onCharacterContactRemoved = onCharacterContactRemoved;
+*/
+    public static native void internal_native_set_OnCharacterContactRemoved(long this_addr, boolean onCharacterContactRemoved);
+
+    public boolean get_OnContactSolve() {
+        return internal_native_get_OnContactSolve(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onContactSolve;
+*/
+    public static native boolean internal_native_get_OnContactSolve(long this_addr);
+
+    public void set_OnContactSolve(boolean onContactSolve) {
+        internal_native_set_OnContactSolve(native_address, onContactSolve);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onContactSolve = onContactSolve;
+*/
+    public static native void internal_native_set_OnContactSolve(long this_addr, boolean onContactSolve);
+
+    public boolean get_OnCharacterContactSolve() {
+        return internal_native_get_OnCharacterContactSolve(native_address);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+return nativeObject->onCharacterContactSolve;
+*/
+    public static native boolean internal_native_get_OnCharacterContactSolve(long this_addr);
+
+    public void set_OnCharacterContactSolve(boolean onCharacterContactSolve) {
+        internal_native_set_OnCharacterContactSolve(native_address, onCharacterContactSolve);
+    }
+
+    /*[-JNI;-NATIVE]
+XJPH::CharacterContactListener* nativeObject = (XJPH::CharacterContactListener*)this_addr;
+nativeObject->onCharacterContactSolve = onCharacterContactSolve;
+*/
+    public static native void internal_native_set_OnCharacterContactSolve(long this_addr, boolean onCharacterContactSolve);
 
     public CharacterContactListener() {
         long addr = internal_native_create();
@@ -294,7 +515,7 @@ delete nativeObject;
         return OnCharacterContactValidate(CharacterVirtual_TEMP_STATIC_GEN_2, CharacterVirtual_TEMP_STATIC_GEN_3, SubShapeID_TEMP_STATIC_GEN_1);
     }
 
-    protected void OnContactAdded(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
+    protected void OnContactAdded(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
     }
 
     private void internal_OnContactAdded(long inCharacter_addr, long inBodyID2_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long ioSettings_addr) {
@@ -307,19 +528,19 @@ delete nativeObject;
         if (SubShapeID_TEMP_STATIC_GEN_2 == null)
             SubShapeID_TEMP_STATIC_GEN_2 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_2.internal_reset(inSubShapeID2_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_0 == null)
+            RVec3_TEMP_STATIC_GEN_0 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_0.internal_reset(inContactPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_2.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_3 == null)
-            Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_3.internal_reset(inContactNormal_addr, false);
+        Vec3_TEMP_STATIC_GEN_2.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_0 == null)
             CharacterContactSettings_TEMP_STATIC_GEN_0 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_0.internal_reset(ioSettings_addr, false);
-        OnContactAdded(CharacterVirtual_TEMP_STATIC_GEN_4, BodyID_TEMP_STATIC_GEN_1, SubShapeID_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, CharacterContactSettings_TEMP_STATIC_GEN_0);
+        OnContactAdded(CharacterVirtual_TEMP_STATIC_GEN_4, BodyID_TEMP_STATIC_GEN_1, SubShapeID_TEMP_STATIC_GEN_2, RVec3_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_2, CharacterContactSettings_TEMP_STATIC_GEN_0);
     }
 
-    protected void OnContactPersisted(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
+    protected void OnContactPersisted(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
     }
 
     private void internal_OnContactPersisted(long inCharacter_addr, long inBodyID2_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long ioSettings_addr) {
@@ -332,16 +553,16 @@ delete nativeObject;
         if (SubShapeID_TEMP_STATIC_GEN_3 == null)
             SubShapeID_TEMP_STATIC_GEN_3 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_3.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_4 == null)
-            Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_4.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_5 == null)
-            Vec3_TEMP_STATIC_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_5.internal_reset(inContactNormal_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_1 == null)
+            RVec3_TEMP_STATIC_GEN_1 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_1.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_3 == null)
+            Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_3.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_1 == null)
             CharacterContactSettings_TEMP_STATIC_GEN_1 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_1.internal_reset(ioSettings_addr, false);
-        OnContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_5, BodyID_TEMP_STATIC_GEN_2, SubShapeID_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Vec3_TEMP_STATIC_GEN_5, CharacterContactSettings_TEMP_STATIC_GEN_1);
+        OnContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_5, BodyID_TEMP_STATIC_GEN_2, SubShapeID_TEMP_STATIC_GEN_3, RVec3_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_3, CharacterContactSettings_TEMP_STATIC_GEN_1);
     }
 
     protected void OnContactRemoved(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2) {
@@ -360,7 +581,7 @@ delete nativeObject;
         OnContactRemoved(CharacterVirtual_TEMP_STATIC_GEN_6, BodyID_TEMP_STATIC_GEN_3, SubShapeID_TEMP_STATIC_GEN_4);
     }
 
-    protected void OnCharacterContactAdded(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
+    protected void OnCharacterContactAdded(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
     }
 
     private void internal_OnCharacterContactAdded(long inCharacter_addr, long inOtherCharacter_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long ioSettings_addr) {
@@ -373,16 +594,16 @@ delete nativeObject;
         if (SubShapeID_TEMP_STATIC_GEN_5 == null)
             SubShapeID_TEMP_STATIC_GEN_5 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_5.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_6 == null)
-            Vec3_TEMP_STATIC_GEN_6 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_6.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_7 == null)
-            Vec3_TEMP_STATIC_GEN_7 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_7.internal_reset(inContactNormal_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_2 == null)
+            RVec3_TEMP_STATIC_GEN_2 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_2.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_4 == null)
+            Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_4.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_2 == null)
             CharacterContactSettings_TEMP_STATIC_GEN_2 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_2.internal_reset(ioSettings_addr, false);
-        OnCharacterContactAdded(CharacterVirtual_TEMP_STATIC_GEN_7, CharacterVirtual_TEMP_STATIC_GEN_8, SubShapeID_TEMP_STATIC_GEN_5, Vec3_TEMP_STATIC_GEN_6, Vec3_TEMP_STATIC_GEN_7, CharacterContactSettings_TEMP_STATIC_GEN_2);
+        OnCharacterContactAdded(CharacterVirtual_TEMP_STATIC_GEN_7, CharacterVirtual_TEMP_STATIC_GEN_8, SubShapeID_TEMP_STATIC_GEN_5, RVec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_4, CharacterContactSettings_TEMP_STATIC_GEN_2);
     }
 
     protected void OnCharacterContactPersisted(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
@@ -398,16 +619,16 @@ delete nativeObject;
         if (SubShapeID_TEMP_STATIC_GEN_6 == null)
             SubShapeID_TEMP_STATIC_GEN_6 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_6.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_8 == null)
-            Vec3_TEMP_STATIC_GEN_8 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_8.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_9 == null)
-            Vec3_TEMP_STATIC_GEN_9 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_9.internal_reset(inContactNormal_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_5 == null)
+            Vec3_TEMP_STATIC_GEN_5 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_5.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_6 == null)
+            Vec3_TEMP_STATIC_GEN_6 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_6.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_3 == null)
             CharacterContactSettings_TEMP_STATIC_GEN_3 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_3.internal_reset(ioSettings_addr, false);
-        OnCharacterContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_9, CharacterVirtual_TEMP_STATIC_GEN_10, SubShapeID_TEMP_STATIC_GEN_6, Vec3_TEMP_STATIC_GEN_8, Vec3_TEMP_STATIC_GEN_9, CharacterContactSettings_TEMP_STATIC_GEN_3);
+        OnCharacterContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_9, CharacterVirtual_TEMP_STATIC_GEN_10, SubShapeID_TEMP_STATIC_GEN_6, Vec3_TEMP_STATIC_GEN_5, Vec3_TEMP_STATIC_GEN_6, CharacterContactSettings_TEMP_STATIC_GEN_3);
     }
 
     protected void OnCharacterContactRemoved(CharacterVirtual inCharacter, CharacterID inOtherCharacter, SubShapeID inSubShapeID2) {
@@ -426,7 +647,7 @@ delete nativeObject;
         OnCharacterContactRemoved(CharacterVirtual_TEMP_STATIC_GEN_11, CharacterID_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_7);
     }
 
-    protected void OnContactSolve(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, Vec3 inContactVelocity, PhysicsMaterial inContactMaterial, Vec3 inCharacterVelocity, Vec3 ioNewCharacterVelocity) {
+    protected void OnContactSolve(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, Vec3 inContactVelocity, PhysicsMaterial inContactMaterial, Vec3 inCharacterVelocity, Vec3 ioNewCharacterVelocity) {
     }
 
     private void internal_OnContactSolve(long inCharacter_addr, long inBodyID2_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long inContactVelocity_addr, long inContactMaterial_addr, long inCharacterVelocity_addr, long ioNewCharacterVelocity_addr) {
@@ -439,28 +660,28 @@ delete nativeObject;
         if (SubShapeID_TEMP_STATIC_GEN_8 == null)
             SubShapeID_TEMP_STATIC_GEN_8 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_8.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_10 == null)
-            Vec3_TEMP_STATIC_GEN_10 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_10.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_11 == null)
-            Vec3_TEMP_STATIC_GEN_11 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_11.internal_reset(inContactNormal_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_12 == null)
-            Vec3_TEMP_STATIC_GEN_12 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_12.internal_reset(inContactVelocity_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_3 == null)
+            RVec3_TEMP_STATIC_GEN_3 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_3.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_7 == null)
+            Vec3_TEMP_STATIC_GEN_7 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_7.internal_reset(inContactNormal_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_8 == null)
+            Vec3_TEMP_STATIC_GEN_8 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_8.internal_reset(inContactVelocity_addr, false);
         if (PhysicsMaterial_TEMP_STATIC_GEN_0 == null)
             PhysicsMaterial_TEMP_STATIC_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_STATIC_GEN_0.internal_reset(inContactMaterial_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_13 == null)
-            Vec3_TEMP_STATIC_GEN_13 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_13.internal_reset(inCharacterVelocity_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_14 == null)
-            Vec3_TEMP_STATIC_GEN_14 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_14.internal_reset(ioNewCharacterVelocity_addr, false);
-        OnContactSolve(CharacterVirtual_TEMP_STATIC_GEN_12, BodyID_TEMP_STATIC_GEN_4, SubShapeID_TEMP_STATIC_GEN_8, Vec3_TEMP_STATIC_GEN_10, Vec3_TEMP_STATIC_GEN_11, Vec3_TEMP_STATIC_GEN_12, PhysicsMaterial_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_13, Vec3_TEMP_STATIC_GEN_14);
+        if (Vec3_TEMP_STATIC_GEN_9 == null)
+            Vec3_TEMP_STATIC_GEN_9 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_9.internal_reset(inCharacterVelocity_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_10 == null)
+            Vec3_TEMP_STATIC_GEN_10 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_10.internal_reset(ioNewCharacterVelocity_addr, false);
+        OnContactSolve(CharacterVirtual_TEMP_STATIC_GEN_12, BodyID_TEMP_STATIC_GEN_4, SubShapeID_TEMP_STATIC_GEN_8, RVec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_7, Vec3_TEMP_STATIC_GEN_8, PhysicsMaterial_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_9, Vec3_TEMP_STATIC_GEN_10);
     }
 
-    protected void OnCharacterContactSolve(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, Vec3 inContactVelocity, PhysicsMaterial inContactMaterial, Vec3 inCharacterVelocity, Vec3 ioNewCharacterVelocity) {
+    protected void OnCharacterContactSolve(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, Vec3 inContactVelocity, PhysicsMaterial inContactMaterial, Vec3 inCharacterVelocity, Vec3 ioNewCharacterVelocity) {
     }
 
     private void internal_OnCharacterContactSolve(long inCharacter_addr, long inOtherCharacter_addr, long inSubShapeID2_addr, long inContactPosition_addr, long inContactNormal_addr, long inContactVelocity_addr, long inContactMaterial_addr, long inCharacterVelocity_addr, long ioNewCharacterVelocity_addr) {
@@ -473,25 +694,25 @@ delete nativeObject;
         if (SubShapeID_TEMP_STATIC_GEN_9 == null)
             SubShapeID_TEMP_STATIC_GEN_9 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_9.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_15 == null)
-            Vec3_TEMP_STATIC_GEN_15 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_15.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_16 == null)
-            Vec3_TEMP_STATIC_GEN_16 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_16.internal_reset(inContactNormal_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_17 == null)
-            Vec3_TEMP_STATIC_GEN_17 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_17.internal_reset(inContactVelocity_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_4 == null)
+            RVec3_TEMP_STATIC_GEN_4 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_4.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_11 == null)
+            Vec3_TEMP_STATIC_GEN_11 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_11.internal_reset(inContactNormal_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_12 == null)
+            Vec3_TEMP_STATIC_GEN_12 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_12.internal_reset(inContactVelocity_addr, false);
         if (PhysicsMaterial_TEMP_STATIC_GEN_1 == null)
             PhysicsMaterial_TEMP_STATIC_GEN_1 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_STATIC_GEN_1.internal_reset(inContactMaterial_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_18 == null)
-            Vec3_TEMP_STATIC_GEN_18 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_18.internal_reset(inCharacterVelocity_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_19 == null)
-            Vec3_TEMP_STATIC_GEN_19 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_19.internal_reset(ioNewCharacterVelocity_addr, false);
-        OnCharacterContactSolve(CharacterVirtual_TEMP_STATIC_GEN_13, CharacterVirtual_TEMP_STATIC_GEN_14, SubShapeID_TEMP_STATIC_GEN_9, Vec3_TEMP_STATIC_GEN_15, Vec3_TEMP_STATIC_GEN_16, Vec3_TEMP_STATIC_GEN_17, PhysicsMaterial_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_18, Vec3_TEMP_STATIC_GEN_19);
+        if (Vec3_TEMP_STATIC_GEN_13 == null)
+            Vec3_TEMP_STATIC_GEN_13 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_13.internal_reset(inCharacterVelocity_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_14 == null)
+            Vec3_TEMP_STATIC_GEN_14 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_14.internal_reset(ioNewCharacterVelocity_addr, false);
+        OnCharacterContactSolve(CharacterVirtual_TEMP_STATIC_GEN_13, CharacterVirtual_TEMP_STATIC_GEN_14, SubShapeID_TEMP_STATIC_GEN_9, RVec3_TEMP_STATIC_GEN_4, Vec3_TEMP_STATIC_GEN_11, Vec3_TEMP_STATIC_GEN_12, PhysicsMaterial_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_13, Vec3_TEMP_STATIC_GEN_14);
     }
 
     /*[-JNI;-NATIVE]

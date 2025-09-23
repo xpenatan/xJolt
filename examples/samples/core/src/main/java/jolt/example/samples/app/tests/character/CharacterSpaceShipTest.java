@@ -84,24 +84,16 @@ public class CharacterSpaceShipTest extends Test {
         settings.set_mSupportingVolume(new Plane(Vec3.sAxisY(), -cCharacterRadiusStanding)); // Accept contacts that touch the lower sphere of the capsule
         Vec3 position = cShipInitialPosition.AddVec3(JoltTemp.Vec3_3(0, cSpaceShipHeight, 0));
         mCharacter = new CharacterVirtual(settings, position, Quat.sIdentity(), mPhysicsSystem);
-        mCharacter.SetListener(new CharacterContactListener() {
+        CharacterContactListener listener;
+        mCharacter.SetListener(listener = new CharacterContactListener() {
             @Override
             protected void OnAdjustBodyVelocity(CharacterVirtual inCharacter, Body inBody2, Vec3 ioLinearVelocity, Vec3 ioAngularVelocity) {
                 // Cancel out velocity of space ship, we move relative to this which means we don't feel any of the acceleration of the ship (= engage inertial dampeners!)
                 ioLinearVelocity.Sub(mSpaceShipLinearVelocity);
                 ioAngularVelocity.Sub(mSpaceShipAngularVelocity);
             }
-
-            @Override
-            protected boolean OnContactValidate(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2) {
-                return true;
-            }
-
-            @Override
-            protected boolean OnCharacterContactValidate(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2) {
-                return true;
-            }
         });
+        listener.set_OnAdjustBodyVelocity(true);
 
         // Create the space ship
         StaticCompoundShapeSettings compound = new StaticCompoundShapeSettings();

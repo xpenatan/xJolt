@@ -8,6 +8,7 @@ package gen.jolt.physics.character;
 import gen.jolt.math.Vec3;
 import gen.jolt.math.Quat;
 import gen.jolt.physics.PhysicsSystem;
+import gen.jolt.idl.IDLBase;
 import gen.jolt.math.Mat44;
 import gen.jolt.physics.body.BodyID;
 import gen.jolt.physics.collision.broadphase.BroadPhaseLayerFilter;
@@ -22,7 +23,7 @@ public class CharacterVirtual extends CharacterBase {
 
     private CharacterID CharacterID_TEMP_GEN_0;
 
-    private CharacterContactListener CharacterContactListener_TEMP_GEN_0;
+    private IDLBase IDLBase_TEMP_GEN_0;
 
     private Vec3 Vec3_TEMP_GEN_0;
 
@@ -134,23 +135,22 @@ jsObj.SetCharacterVsCharacterCollision(inCharacterVsCharacterCollision_addr);
     @org.teavm.jso.JSBody(params = {"this_addr", "inCharacterVsCharacterCollision_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);jsObj.SetCharacterVsCharacterCollision(inCharacterVsCharacterCollision_addr);")
     public static native void internal_native_SetCharacterVsCharacterCollision(int this_addr, int inCharacterVsCharacterCollision_addr);
 
-    public CharacterContactListener GetListener() {
+    public IDLBase GetListener() {
         int pointer = internal_native_GetListener(native_address);
         if (pointer == 0)
-            return CharacterContactListener.NULL;
-        if (CharacterContactListener_TEMP_GEN_0 == null)
-            CharacterContactListener_TEMP_GEN_0 = CharacterContactListener.native_new();
-        CharacterContactListener_TEMP_GEN_0.internal_reset(pointer, false);
-        return CharacterContactListener_TEMP_GEN_0;
+            return IDLBase.NULL;
+        if (IDLBase_TEMP_GEN_0 == null)
+            IDLBase_TEMP_GEN_0 = IDLBase.native_new();
+        IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
+        return IDLBase_TEMP_GEN_0;
     }
 
     /*[-TEAVM;-NATIVE]
 var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);
 var returnedJSObj = jsObj.GetListener();
-if(!returnedJSObj.hasOwnProperty('ptr')) return 0; 
-return jolt.getPointer(returnedJSObj);
+return returnedJSObj;
 */
-    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetListener();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetListener();return returnedJSObj;")
     public static native int internal_native_GetListener(int this_addr);
 
     public Vec3 GetLinearVelocity() {

@@ -10,6 +10,7 @@ import gen.jolt.physics.body.Body;
 import gen.jolt.math.Vec3;
 import gen.jolt.physics.body.BodyID;
 import gen.jolt.physics.collision.shape.SubShapeID;
+import gen.jolt.RVec3;
 import gen.jolt.physics.collision.PhysicsMaterial;
 
 public class CharacterContactListener extends IDLBase {
@@ -40,9 +41,9 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_2;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_2;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_0;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_3;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_2;
 
     static private CharacterContactSettings CharacterContactSettings_TEMP_STATIC_GEN_0;
 
@@ -52,9 +53,9 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_3;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_4;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_1;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_5;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_3;
 
     static private CharacterContactSettings CharacterContactSettings_TEMP_STATIC_GEN_1;
 
@@ -70,9 +71,9 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_5;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_6;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_2;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_7;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_4;
 
     static private CharacterContactSettings CharacterContactSettings_TEMP_STATIC_GEN_2;
 
@@ -82,9 +83,9 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_6;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_8;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_5;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_9;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_6;
 
     static private CharacterContactSettings CharacterContactSettings_TEMP_STATIC_GEN_3;
 
@@ -100,17 +101,17 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_8;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_10;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_3;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_11;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_7;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_12;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_8;
 
     static private PhysicsMaterial PhysicsMaterial_TEMP_STATIC_GEN_0;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_13;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_9;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_14;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_10;
 
     static private CharacterVirtual CharacterVirtual_TEMP_STATIC_GEN_13;
 
@@ -118,17 +119,17 @@ public class CharacterContactListener extends IDLBase {
 
     static private SubShapeID SubShapeID_TEMP_STATIC_GEN_9;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_15;
+    static private RVec3 RVec3_TEMP_STATIC_GEN_4;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_16;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_11;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_17;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_12;
 
     static private PhysicsMaterial PhysicsMaterial_TEMP_STATIC_GEN_1;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_18;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_13;
 
-    static private Vec3 Vec3_TEMP_STATIC_GEN_19;
+    static private Vec3 Vec3_TEMP_STATIC_GEN_14;
 
     static public final CharacterContactListener NULL = CharacterContactListener.native_new();
 
@@ -163,6 +164,248 @@ jolt.destroy(jsObj);
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListenerImpl);jolt.destroy(jsObj);")
     public static native void internal_native_deleteNative(int this_addr);
 
+    public boolean get_OnAdjustBodyVelocity() {
+        return internal_native_get_OnAdjustBodyVelocity(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onAdjustBodyVelocity();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onAdjustBodyVelocity();")
+    public static native boolean internal_native_get_OnAdjustBodyVelocity(int this_addr);
+
+    public void set_OnAdjustBodyVelocity(boolean onAdjustBodyVelocity) {
+        internal_native_set_OnAdjustBodyVelocity(native_address, onAdjustBodyVelocity);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onAdjustBodyVelocity(onAdjustBodyVelocity);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onAdjustBodyVelocity"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onAdjustBodyVelocity(onAdjustBodyVelocity);")
+    public static native void internal_native_set_OnAdjustBodyVelocity(int this_addr, boolean onAdjustBodyVelocity);
+
+    public boolean get_OnContactValidate() {
+        return internal_native_get_OnContactValidate(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onContactValidate();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onContactValidate();")
+    public static native boolean internal_native_get_OnContactValidate(int this_addr);
+
+    public void set_OnContactValidate(boolean onContactValidate) {
+        internal_native_set_OnContactValidate(native_address, onContactValidate);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onContactValidate(onContactValidate);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onContactValidate"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onContactValidate(onContactValidate);")
+    public static native void internal_native_set_OnContactValidate(int this_addr, boolean onContactValidate);
+
+    public boolean get_OnCharacterContactValidate() {
+        return internal_native_get_OnCharacterContactValidate(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onCharacterContactValidate();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onCharacterContactValidate();")
+    public static native boolean internal_native_get_OnCharacterContactValidate(int this_addr);
+
+    public void set_OnCharacterContactValidate(boolean onCharacterContactValidate) {
+        internal_native_set_OnCharacterContactValidate(native_address, onCharacterContactValidate);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onCharacterContactValidate(onCharacterContactValidate);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onCharacterContactValidate"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onCharacterContactValidate(onCharacterContactValidate);")
+    public static native void internal_native_set_OnCharacterContactValidate(int this_addr, boolean onCharacterContactValidate);
+
+    public boolean get_OnContactAdded() {
+        return internal_native_get_OnContactAdded(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onContactAdded();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onContactAdded();")
+    public static native boolean internal_native_get_OnContactAdded(int this_addr);
+
+    public void set_OnContactAdded(boolean onContactAdded) {
+        internal_native_set_OnContactAdded(native_address, onContactAdded);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onContactAdded(onContactAdded);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onContactAdded"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onContactAdded(onContactAdded);")
+    public static native void internal_native_set_OnContactAdded(int this_addr, boolean onContactAdded);
+
+    public boolean get_OnContactPersisted() {
+        return internal_native_get_OnContactPersisted(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onContactPersisted();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onContactPersisted();")
+    public static native boolean internal_native_get_OnContactPersisted(int this_addr);
+
+    public void set_OnContactPersisted(boolean onContactPersisted) {
+        internal_native_set_OnContactPersisted(native_address, onContactPersisted);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onContactPersisted(onContactPersisted);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onContactPersisted"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onContactPersisted(onContactPersisted);")
+    public static native void internal_native_set_OnContactPersisted(int this_addr, boolean onContactPersisted);
+
+    public boolean get_OnContactRemoved() {
+        return internal_native_get_OnContactRemoved(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onContactRemoved();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onContactRemoved();")
+    public static native boolean internal_native_get_OnContactRemoved(int this_addr);
+
+    public void set_OnContactRemoved(boolean onContactRemoved) {
+        internal_native_set_OnContactRemoved(native_address, onContactRemoved);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onContactRemoved(onContactRemoved);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onContactRemoved"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onContactRemoved(onContactRemoved);")
+    public static native void internal_native_set_OnContactRemoved(int this_addr, boolean onContactRemoved);
+
+    public boolean get_OnCharacterContactAdded() {
+        return internal_native_get_OnCharacterContactAdded(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onCharacterContactAdded();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onCharacterContactAdded();")
+    public static native boolean internal_native_get_OnCharacterContactAdded(int this_addr);
+
+    public void set_OnCharacterContactAdded(boolean onCharacterContactAdded) {
+        internal_native_set_OnCharacterContactAdded(native_address, onCharacterContactAdded);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onCharacterContactAdded(onCharacterContactAdded);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onCharacterContactAdded"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onCharacterContactAdded(onCharacterContactAdded);")
+    public static native void internal_native_set_OnCharacterContactAdded(int this_addr, boolean onCharacterContactAdded);
+
+    public boolean get_OnCharacterContactPersisted() {
+        return internal_native_get_OnCharacterContactPersisted(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onCharacterContactPersisted();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onCharacterContactPersisted();")
+    public static native boolean internal_native_get_OnCharacterContactPersisted(int this_addr);
+
+    public void set_OnCharacterContactPersisted(boolean onCharacterContactPersisted) {
+        internal_native_set_OnCharacterContactPersisted(native_address, onCharacterContactPersisted);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onCharacterContactPersisted(onCharacterContactPersisted);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onCharacterContactPersisted"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onCharacterContactPersisted(onCharacterContactPersisted);")
+    public static native void internal_native_set_OnCharacterContactPersisted(int this_addr, boolean onCharacterContactPersisted);
+
+    public boolean get_OnCharacterContactRemoved() {
+        return internal_native_get_OnCharacterContactRemoved(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onCharacterContactRemoved();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onCharacterContactRemoved();")
+    public static native boolean internal_native_get_OnCharacterContactRemoved(int this_addr);
+
+    public void set_OnCharacterContactRemoved(boolean onCharacterContactRemoved) {
+        internal_native_set_OnCharacterContactRemoved(native_address, onCharacterContactRemoved);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onCharacterContactRemoved(onCharacterContactRemoved);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onCharacterContactRemoved"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onCharacterContactRemoved(onCharacterContactRemoved);")
+    public static native void internal_native_set_OnCharacterContactRemoved(int this_addr, boolean onCharacterContactRemoved);
+
+    public boolean get_OnContactSolve() {
+        return internal_native_get_OnContactSolve(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onContactSolve();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onContactSolve();")
+    public static native boolean internal_native_get_OnContactSolve(int this_addr);
+
+    public void set_OnContactSolve(boolean onContactSolve) {
+        internal_native_set_OnContactSolve(native_address, onContactSolve);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onContactSolve(onContactSolve);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onContactSolve"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onContactSolve(onContactSolve);")
+    public static native void internal_native_set_OnContactSolve(int this_addr, boolean onContactSolve);
+
+    public boolean get_OnCharacterContactSolve() {
+        return internal_native_get_OnCharacterContactSolve(native_address);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+return jsObj.get_onCharacterContactSolve();
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);return jsObj.get_onCharacterContactSolve();")
+    public static native boolean internal_native_get_OnCharacterContactSolve(int this_addr);
+
+    public void set_OnCharacterContactSolve(boolean onCharacterContactSolve) {
+        internal_native_set_OnCharacterContactSolve(native_address, onCharacterContactSolve);
+    }
+
+    /*[-TEAVM;-NATIVE]
+var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);
+jsObj.set_onCharacterContactSolve(onCharacterContactSolve);
+*/
+    @org.teavm.jso.JSBody(params = {"this_addr", "onCharacterContactSolve"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterContactListener);jsObj.set_onCharacterContactSolve(onCharacterContactSolve);")
+    public static native void internal_native_set_OnCharacterContactSolve(int this_addr, boolean onCharacterContactSolve);
+
     public CharacterContactListener() {
         int addr = internal_native_create();
         internal_reset(addr, true);
@@ -170,73 +413,73 @@ jolt.destroy(jsObj);
     }
 
     private void setupCallback() {
-        OnAdjustBodyVelocity OnAdjustBodyVelocity = new OnAdjustBodyVelocity() {
+        OnAdjustBodyVelocity_custom OnAdjustBodyVelocity_custom = new OnAdjustBodyVelocity_custom() {
 
-            public void OnAdjustBodyVelocity(int inCharacter_addr, int inBody2_addr, int ioLinearVelocity_addr, int ioAngularVelocity_addr) {
+            public void OnAdjustBodyVelocity_custom(int inCharacter_addr, int inBody2_addr, int ioLinearVelocity_addr, int ioAngularVelocity_addr) {
                 internal_OnAdjustBodyVelocity(inCharacter_addr, inBody2_addr, ioLinearVelocity_addr, ioAngularVelocity_addr);
             }
         };
-        OnContactValidate OnContactValidate = new OnContactValidate() {
+        OnContactValidate_custom OnContactValidate_custom = new OnContactValidate_custom() {
 
-            public boolean OnContactValidate(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr) {
+            public boolean OnContactValidate_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr) {
                 return internal_OnContactValidate(inCharacter_addr, inBodyID2_addr, inSubShapeID2_addr);
             }
         };
-        OnCharacterContactValidate OnCharacterContactValidate = new OnCharacterContactValidate() {
+        OnCharacterContactValidate_custom OnCharacterContactValidate_custom = new OnCharacterContactValidate_custom() {
 
-            public boolean OnCharacterContactValidate(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr) {
+            public boolean OnCharacterContactValidate_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr) {
                 return internal_OnCharacterContactValidate(inCharacter_addr, inOtherCharacter_addr, inSubShapeID2_addr);
             }
         };
-        OnContactAdded OnContactAdded = new OnContactAdded() {
+        OnContactAdded_custom OnContactAdded_custom = new OnContactAdded_custom() {
 
-            public void OnContactAdded(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
+            public void OnContactAdded_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
                 internal_OnContactAdded(inCharacter_addr, inBodyID2_addr, inSubShapeID2_addr, inContactPosition_addr, inContactNormal_addr, ioSettings_addr);
             }
         };
-        OnContactPersisted OnContactPersisted = new OnContactPersisted() {
+        OnContactPersisted_custom OnContactPersisted_custom = new OnContactPersisted_custom() {
 
-            public void OnContactPersisted(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
+            public void OnContactPersisted_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
                 internal_OnContactPersisted(inCharacter_addr, inBodyID2_addr, inSubShapeID2_addr, inContactPosition_addr, inContactNormal_addr, ioSettings_addr);
             }
         };
-        OnContactRemoved OnContactRemoved = new OnContactRemoved() {
+        OnContactRemoved_custom OnContactRemoved_custom = new OnContactRemoved_custom() {
 
-            public void OnContactRemoved(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr) {
+            public void OnContactRemoved_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr) {
                 internal_OnContactRemoved(inCharacter_addr, inBodyID2_addr, inSubShapeID2_addr);
             }
         };
-        OnCharacterContactAdded OnCharacterContactAdded = new OnCharacterContactAdded() {
+        OnCharacterContactAdded_custom OnCharacterContactAdded_custom = new OnCharacterContactAdded_custom() {
 
-            public void OnCharacterContactAdded(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
+            public void OnCharacterContactAdded_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
                 internal_OnCharacterContactAdded(inCharacter_addr, inOtherCharacter_addr, inSubShapeID2_addr, inContactPosition_addr, inContactNormal_addr, ioSettings_addr);
             }
         };
-        OnCharacterContactPersisted OnCharacterContactPersisted = new OnCharacterContactPersisted() {
+        OnCharacterContactPersisted_custom OnCharacterContactPersisted_custom = new OnCharacterContactPersisted_custom() {
 
-            public void OnCharacterContactPersisted(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
+            public void OnCharacterContactPersisted_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
                 internal_OnCharacterContactPersisted(inCharacter_addr, inOtherCharacter_addr, inSubShapeID2_addr, inContactPosition_addr, inContactNormal_addr, ioSettings_addr);
             }
         };
-        OnCharacterContactRemoved OnCharacterContactRemoved = new OnCharacterContactRemoved() {
+        OnCharacterContactRemoved_custom OnCharacterContactRemoved_custom = new OnCharacterContactRemoved_custom() {
 
-            public void OnCharacterContactRemoved(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr) {
+            public void OnCharacterContactRemoved_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr) {
                 internal_OnCharacterContactRemoved(inCharacter_addr, inOtherCharacter_addr, inSubShapeID2_addr);
             }
         };
-        OnContactSolve OnContactSolve = new OnContactSolve() {
+        OnContactSolve_custom OnContactSolve_custom = new OnContactSolve_custom() {
 
-            public void OnContactSolve(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr) {
+            public void OnContactSolve_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr) {
                 internal_OnContactSolve(inCharacter_addr, inBodyID2_addr, inSubShapeID2_addr, inContactPosition_addr, inContactNormal_addr, inContactVelocity_addr, inContactMaterial_addr, inCharacterVelocity_addr, ioNewCharacterVelocity_addr);
             }
         };
-        OnCharacterContactSolve OnCharacterContactSolve = new OnCharacterContactSolve() {
+        OnCharacterContactSolve_custom OnCharacterContactSolve_custom = new OnCharacterContactSolve_custom() {
 
-            public void OnCharacterContactSolve(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr) {
+            public void OnCharacterContactSolve_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr) {
                 internal_OnCharacterContactSolve(inCharacter_addr, inOtherCharacter_addr, inSubShapeID2_addr, inContactPosition_addr, inContactNormal_addr, inContactVelocity_addr, inContactMaterial_addr, inCharacterVelocity_addr, ioNewCharacterVelocity_addr);
             }
         };
-        internal_native_setupCallback(native_address, OnAdjustBodyVelocity, OnContactValidate, OnCharacterContactValidate, OnContactAdded, OnContactPersisted, OnContactRemoved, OnCharacterContactAdded, OnCharacterContactPersisted, OnCharacterContactRemoved, OnContactSolve, OnCharacterContactSolve);
+        internal_native_setupCallback(native_address, OnAdjustBodyVelocity_custom, OnContactValidate_custom, OnCharacterContactValidate_custom, OnContactAdded_custom, OnContactPersisted_custom, OnContactRemoved_custom, OnCharacterContactAdded_custom, OnCharacterContactPersisted_custom, OnCharacterContactRemoved_custom, OnContactSolve_custom, OnCharacterContactSolve_custom);
     }
 
     protected void OnAdjustBodyVelocity(CharacterVirtual inCharacter, Body inBody2, Vec3 ioLinearVelocity, Vec3 ioAngularVelocity) {
@@ -292,7 +535,7 @@ jolt.destroy(jsObj);
         return OnCharacterContactValidate(CharacterVirtual_TEMP_STATIC_GEN_2, CharacterVirtual_TEMP_STATIC_GEN_3, SubShapeID_TEMP_STATIC_GEN_1);
     }
 
-    protected void OnContactAdded(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
+    protected void OnContactAdded(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
     }
 
     private void internal_OnContactAdded(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
@@ -305,19 +548,19 @@ jolt.destroy(jsObj);
         if (SubShapeID_TEMP_STATIC_GEN_2 == null)
             SubShapeID_TEMP_STATIC_GEN_2 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_2.internal_reset(inSubShapeID2_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_0 == null)
+            RVec3_TEMP_STATIC_GEN_0 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_0.internal_reset(inContactPosition_addr, false);
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_2.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_3 == null)
-            Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_3.internal_reset(inContactNormal_addr, false);
+        Vec3_TEMP_STATIC_GEN_2.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_0 == null)
             CharacterContactSettings_TEMP_STATIC_GEN_0 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_0.internal_reset(ioSettings_addr, false);
-        OnContactAdded(CharacterVirtual_TEMP_STATIC_GEN_4, BodyID_TEMP_STATIC_GEN_1, SubShapeID_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, CharacterContactSettings_TEMP_STATIC_GEN_0);
+        OnContactAdded(CharacterVirtual_TEMP_STATIC_GEN_4, BodyID_TEMP_STATIC_GEN_1, SubShapeID_TEMP_STATIC_GEN_2, RVec3_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_2, CharacterContactSettings_TEMP_STATIC_GEN_0);
     }
 
-    protected void OnContactPersisted(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
+    protected void OnContactPersisted(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
     }
 
     private void internal_OnContactPersisted(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
@@ -330,16 +573,16 @@ jolt.destroy(jsObj);
         if (SubShapeID_TEMP_STATIC_GEN_3 == null)
             SubShapeID_TEMP_STATIC_GEN_3 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_3.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_4 == null)
-            Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_4.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_5 == null)
-            Vec3_TEMP_STATIC_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_5.internal_reset(inContactNormal_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_1 == null)
+            RVec3_TEMP_STATIC_GEN_1 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_1.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_3 == null)
+            Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_3.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_1 == null)
             CharacterContactSettings_TEMP_STATIC_GEN_1 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_1.internal_reset(ioSettings_addr, false);
-        OnContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_5, BodyID_TEMP_STATIC_GEN_2, SubShapeID_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Vec3_TEMP_STATIC_GEN_5, CharacterContactSettings_TEMP_STATIC_GEN_1);
+        OnContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_5, BodyID_TEMP_STATIC_GEN_2, SubShapeID_TEMP_STATIC_GEN_3, RVec3_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_3, CharacterContactSettings_TEMP_STATIC_GEN_1);
     }
 
     protected void OnContactRemoved(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2) {
@@ -358,7 +601,7 @@ jolt.destroy(jsObj);
         OnContactRemoved(CharacterVirtual_TEMP_STATIC_GEN_6, BodyID_TEMP_STATIC_GEN_3, SubShapeID_TEMP_STATIC_GEN_4);
     }
 
-    protected void OnCharacterContactAdded(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
+    protected void OnCharacterContactAdded(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
     }
 
     private void internal_OnCharacterContactAdded(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr) {
@@ -371,16 +614,16 @@ jolt.destroy(jsObj);
         if (SubShapeID_TEMP_STATIC_GEN_5 == null)
             SubShapeID_TEMP_STATIC_GEN_5 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_5.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_6 == null)
-            Vec3_TEMP_STATIC_GEN_6 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_6.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_7 == null)
-            Vec3_TEMP_STATIC_GEN_7 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_7.internal_reset(inContactNormal_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_2 == null)
+            RVec3_TEMP_STATIC_GEN_2 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_2.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_4 == null)
+            Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_4.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_2 == null)
             CharacterContactSettings_TEMP_STATIC_GEN_2 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_2.internal_reset(ioSettings_addr, false);
-        OnCharacterContactAdded(CharacterVirtual_TEMP_STATIC_GEN_7, CharacterVirtual_TEMP_STATIC_GEN_8, SubShapeID_TEMP_STATIC_GEN_5, Vec3_TEMP_STATIC_GEN_6, Vec3_TEMP_STATIC_GEN_7, CharacterContactSettings_TEMP_STATIC_GEN_2);
+        OnCharacterContactAdded(CharacterVirtual_TEMP_STATIC_GEN_7, CharacterVirtual_TEMP_STATIC_GEN_8, SubShapeID_TEMP_STATIC_GEN_5, RVec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_4, CharacterContactSettings_TEMP_STATIC_GEN_2);
     }
 
     protected void OnCharacterContactPersisted(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, CharacterContactSettings ioSettings) {
@@ -396,16 +639,16 @@ jolt.destroy(jsObj);
         if (SubShapeID_TEMP_STATIC_GEN_6 == null)
             SubShapeID_TEMP_STATIC_GEN_6 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_6.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_8 == null)
-            Vec3_TEMP_STATIC_GEN_8 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_8.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_9 == null)
-            Vec3_TEMP_STATIC_GEN_9 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_9.internal_reset(inContactNormal_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_5 == null)
+            Vec3_TEMP_STATIC_GEN_5 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_5.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_6 == null)
+            Vec3_TEMP_STATIC_GEN_6 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_6.internal_reset(inContactNormal_addr, false);
         if (CharacterContactSettings_TEMP_STATIC_GEN_3 == null)
             CharacterContactSettings_TEMP_STATIC_GEN_3 = CharacterContactSettings.native_new();
         CharacterContactSettings_TEMP_STATIC_GEN_3.internal_reset(ioSettings_addr, false);
-        OnCharacterContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_9, CharacterVirtual_TEMP_STATIC_GEN_10, SubShapeID_TEMP_STATIC_GEN_6, Vec3_TEMP_STATIC_GEN_8, Vec3_TEMP_STATIC_GEN_9, CharacterContactSettings_TEMP_STATIC_GEN_3);
+        OnCharacterContactPersisted(CharacterVirtual_TEMP_STATIC_GEN_9, CharacterVirtual_TEMP_STATIC_GEN_10, SubShapeID_TEMP_STATIC_GEN_6, Vec3_TEMP_STATIC_GEN_5, Vec3_TEMP_STATIC_GEN_6, CharacterContactSettings_TEMP_STATIC_GEN_3);
     }
 
     protected void OnCharacterContactRemoved(CharacterVirtual inCharacter, CharacterID inOtherCharacter, SubShapeID inSubShapeID2) {
@@ -424,7 +667,7 @@ jolt.destroy(jsObj);
         OnCharacterContactRemoved(CharacterVirtual_TEMP_STATIC_GEN_11, CharacterID_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_7);
     }
 
-    protected void OnContactSolve(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, Vec3 inContactVelocity, PhysicsMaterial inContactMaterial, Vec3 inCharacterVelocity, Vec3 ioNewCharacterVelocity) {
+    protected void OnContactSolve(CharacterVirtual inCharacter, BodyID inBodyID2, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, Vec3 inContactVelocity, PhysicsMaterial inContactMaterial, Vec3 inCharacterVelocity, Vec3 ioNewCharacterVelocity) {
     }
 
     private void internal_OnContactSolve(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr) {
@@ -437,28 +680,28 @@ jolt.destroy(jsObj);
         if (SubShapeID_TEMP_STATIC_GEN_8 == null)
             SubShapeID_TEMP_STATIC_GEN_8 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_8.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_10 == null)
-            Vec3_TEMP_STATIC_GEN_10 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_10.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_11 == null)
-            Vec3_TEMP_STATIC_GEN_11 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_11.internal_reset(inContactNormal_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_12 == null)
-            Vec3_TEMP_STATIC_GEN_12 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_12.internal_reset(inContactVelocity_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_3 == null)
+            RVec3_TEMP_STATIC_GEN_3 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_3.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_7 == null)
+            Vec3_TEMP_STATIC_GEN_7 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_7.internal_reset(inContactNormal_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_8 == null)
+            Vec3_TEMP_STATIC_GEN_8 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_8.internal_reset(inContactVelocity_addr, false);
         if (PhysicsMaterial_TEMP_STATIC_GEN_0 == null)
             PhysicsMaterial_TEMP_STATIC_GEN_0 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_STATIC_GEN_0.internal_reset(inContactMaterial_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_13 == null)
-            Vec3_TEMP_STATIC_GEN_13 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_13.internal_reset(inCharacterVelocity_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_14 == null)
-            Vec3_TEMP_STATIC_GEN_14 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_14.internal_reset(ioNewCharacterVelocity_addr, false);
-        OnContactSolve(CharacterVirtual_TEMP_STATIC_GEN_12, BodyID_TEMP_STATIC_GEN_4, SubShapeID_TEMP_STATIC_GEN_8, Vec3_TEMP_STATIC_GEN_10, Vec3_TEMP_STATIC_GEN_11, Vec3_TEMP_STATIC_GEN_12, PhysicsMaterial_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_13, Vec3_TEMP_STATIC_GEN_14);
+        if (Vec3_TEMP_STATIC_GEN_9 == null)
+            Vec3_TEMP_STATIC_GEN_9 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_9.internal_reset(inCharacterVelocity_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_10 == null)
+            Vec3_TEMP_STATIC_GEN_10 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_10.internal_reset(ioNewCharacterVelocity_addr, false);
+        OnContactSolve(CharacterVirtual_TEMP_STATIC_GEN_12, BodyID_TEMP_STATIC_GEN_4, SubShapeID_TEMP_STATIC_GEN_8, RVec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_7, Vec3_TEMP_STATIC_GEN_8, PhysicsMaterial_TEMP_STATIC_GEN_0, Vec3_TEMP_STATIC_GEN_9, Vec3_TEMP_STATIC_GEN_10);
     }
 
-    protected void OnCharacterContactSolve(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, Vec3 inContactPosition, Vec3 inContactNormal, Vec3 inContactVelocity, PhysicsMaterial inContactMaterial, Vec3 inCharacterVelocity, Vec3 ioNewCharacterVelocity) {
+    protected void OnCharacterContactSolve(CharacterVirtual inCharacter, CharacterVirtual inOtherCharacter, SubShapeID inSubShapeID2, RVec3 inContactPosition, Vec3 inContactNormal, Vec3 inContactVelocity, PhysicsMaterial inContactMaterial, Vec3 inCharacterVelocity, Vec3 ioNewCharacterVelocity) {
     }
 
     private void internal_OnCharacterContactSolve(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr) {
@@ -471,25 +714,25 @@ jolt.destroy(jsObj);
         if (SubShapeID_TEMP_STATIC_GEN_9 == null)
             SubShapeID_TEMP_STATIC_GEN_9 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_9.internal_reset(inSubShapeID2_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_15 == null)
-            Vec3_TEMP_STATIC_GEN_15 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_15.internal_reset(inContactPosition_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_16 == null)
-            Vec3_TEMP_STATIC_GEN_16 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_16.internal_reset(inContactNormal_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_17 == null)
-            Vec3_TEMP_STATIC_GEN_17 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_17.internal_reset(inContactVelocity_addr, false);
+        if (RVec3_TEMP_STATIC_GEN_4 == null)
+            RVec3_TEMP_STATIC_GEN_4 = RVec3.native_new();
+        RVec3_TEMP_STATIC_GEN_4.internal_reset(inContactPosition_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_11 == null)
+            Vec3_TEMP_STATIC_GEN_11 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_11.internal_reset(inContactNormal_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_12 == null)
+            Vec3_TEMP_STATIC_GEN_12 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_12.internal_reset(inContactVelocity_addr, false);
         if (PhysicsMaterial_TEMP_STATIC_GEN_1 == null)
             PhysicsMaterial_TEMP_STATIC_GEN_1 = PhysicsMaterial.native_new();
         PhysicsMaterial_TEMP_STATIC_GEN_1.internal_reset(inContactMaterial_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_18 == null)
-            Vec3_TEMP_STATIC_GEN_18 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_18.internal_reset(inCharacterVelocity_addr, false);
-        if (Vec3_TEMP_STATIC_GEN_19 == null)
-            Vec3_TEMP_STATIC_GEN_19 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_19.internal_reset(ioNewCharacterVelocity_addr, false);
-        OnCharacterContactSolve(CharacterVirtual_TEMP_STATIC_GEN_13, CharacterVirtual_TEMP_STATIC_GEN_14, SubShapeID_TEMP_STATIC_GEN_9, Vec3_TEMP_STATIC_GEN_15, Vec3_TEMP_STATIC_GEN_16, Vec3_TEMP_STATIC_GEN_17, PhysicsMaterial_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_18, Vec3_TEMP_STATIC_GEN_19);
+        if (Vec3_TEMP_STATIC_GEN_13 == null)
+            Vec3_TEMP_STATIC_GEN_13 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_13.internal_reset(inCharacterVelocity_addr, false);
+        if (Vec3_TEMP_STATIC_GEN_14 == null)
+            Vec3_TEMP_STATIC_GEN_14 = Vec3.native_new();
+        Vec3_TEMP_STATIC_GEN_14.internal_reset(ioNewCharacterVelocity_addr, false);
+        OnCharacterContactSolve(CharacterVirtual_TEMP_STATIC_GEN_13, CharacterVirtual_TEMP_STATIC_GEN_14, SubShapeID_TEMP_STATIC_GEN_9, RVec3_TEMP_STATIC_GEN_4, Vec3_TEMP_STATIC_GEN_11, Vec3_TEMP_STATIC_GEN_12, PhysicsMaterial_TEMP_STATIC_GEN_1, Vec3_TEMP_STATIC_GEN_13, Vec3_TEMP_STATIC_GEN_14);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -499,72 +742,72 @@ return jolt.getPointer(jsObj);
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CharacterContactListenerImpl();return jolt.getPointer(jsObj);")
     public static native int internal_native_create();
 
-    @org.teavm.jso.JSBody(params = { "this_addr", "OnAdjustBodyVelocity", "OnContactValidate", "OnCharacterContactValidate", "OnContactAdded", "OnContactPersisted", "OnContactRemoved", "OnCharacterContactAdded", "OnCharacterContactPersisted", "OnCharacterContactRemoved", "OnContactSolve", "OnCharacterContactSolve" }, script = "var CharacterContactListenerImpl = jolt.wrapPointer(this_addr, jolt.CharacterContactListenerImpl); CharacterContactListenerImpl.OnAdjustBodyVelocity = OnAdjustBodyVelocity; CharacterContactListenerImpl.OnContactValidate = OnContactValidate; CharacterContactListenerImpl.OnCharacterContactValidate = OnCharacterContactValidate; CharacterContactListenerImpl.OnContactAdded = OnContactAdded; CharacterContactListenerImpl.OnContactPersisted = OnContactPersisted; CharacterContactListenerImpl.OnContactRemoved = OnContactRemoved; CharacterContactListenerImpl.OnCharacterContactAdded = OnCharacterContactAdded; CharacterContactListenerImpl.OnCharacterContactPersisted = OnCharacterContactPersisted; CharacterContactListenerImpl.OnCharacterContactRemoved = OnCharacterContactRemoved; CharacterContactListenerImpl.OnContactSolve = OnContactSolve; CharacterContactListenerImpl.OnCharacterContactSolve = OnCharacterContactSolve;")
-    public static native void internal_native_setupCallback(int this_addr, OnAdjustBodyVelocity OnAdjustBodyVelocity, OnContactValidate OnContactValidate, OnCharacterContactValidate OnCharacterContactValidate, OnContactAdded OnContactAdded, OnContactPersisted OnContactPersisted, OnContactRemoved OnContactRemoved, OnCharacterContactAdded OnCharacterContactAdded, OnCharacterContactPersisted OnCharacterContactPersisted, OnCharacterContactRemoved OnCharacterContactRemoved, OnContactSolve OnContactSolve, OnCharacterContactSolve OnCharacterContactSolve);
+    @org.teavm.jso.JSBody(params = { "this_addr", "OnAdjustBodyVelocity_custom", "OnContactValidate_custom", "OnCharacterContactValidate_custom", "OnContactAdded_custom", "OnContactPersisted_custom", "OnContactRemoved_custom", "OnCharacterContactAdded_custom", "OnCharacterContactPersisted_custom", "OnCharacterContactRemoved_custom", "OnContactSolve_custom", "OnCharacterContactSolve_custom" }, script = "var CharacterContactListenerImpl = jolt.wrapPointer(this_addr, jolt.CharacterContactListenerImpl); CharacterContactListenerImpl.OnAdjustBodyVelocity_custom = OnAdjustBodyVelocity_custom; CharacterContactListenerImpl.OnContactValidate_custom = OnContactValidate_custom; CharacterContactListenerImpl.OnCharacterContactValidate_custom = OnCharacterContactValidate_custom; CharacterContactListenerImpl.OnContactAdded_custom = OnContactAdded_custom; CharacterContactListenerImpl.OnContactPersisted_custom = OnContactPersisted_custom; CharacterContactListenerImpl.OnContactRemoved_custom = OnContactRemoved_custom; CharacterContactListenerImpl.OnCharacterContactAdded_custom = OnCharacterContactAdded_custom; CharacterContactListenerImpl.OnCharacterContactPersisted_custom = OnCharacterContactPersisted_custom; CharacterContactListenerImpl.OnCharacterContactRemoved_custom = OnCharacterContactRemoved_custom; CharacterContactListenerImpl.OnContactSolve_custom = OnContactSolve_custom; CharacterContactListenerImpl.OnCharacterContactSolve_custom = OnCharacterContactSolve_custom;")
+    public static native void internal_native_setupCallback(int this_addr, OnAdjustBodyVelocity_custom OnAdjustBodyVelocity_custom, OnContactValidate_custom OnContactValidate_custom, OnCharacterContactValidate_custom OnCharacterContactValidate_custom, OnContactAdded_custom OnContactAdded_custom, OnContactPersisted_custom OnContactPersisted_custom, OnContactRemoved_custom OnContactRemoved_custom, OnCharacterContactAdded_custom OnCharacterContactAdded_custom, OnCharacterContactPersisted_custom OnCharacterContactPersisted_custom, OnCharacterContactRemoved_custom OnCharacterContactRemoved_custom, OnContactSolve_custom OnContactSolve_custom, OnCharacterContactSolve_custom OnCharacterContactSolve_custom);
 
     @org.teavm.jso.JSFunctor()
-    public interface OnAdjustBodyVelocity extends org.teavm.jso.JSObject {
+    public interface OnAdjustBodyVelocity_custom extends org.teavm.jso.JSObject {
 
-        void OnAdjustBodyVelocity(int inCharacter_addr, int inBody2_addr, int ioLinearVelocity_addr, int ioAngularVelocity_addr);
+        void OnAdjustBodyVelocity_custom(int inCharacter_addr, int inBody2_addr, int ioLinearVelocity_addr, int ioAngularVelocity_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnContactValidate extends org.teavm.jso.JSObject {
+    public interface OnContactValidate_custom extends org.teavm.jso.JSObject {
 
-        boolean OnContactValidate(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr);
+        boolean OnContactValidate_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnCharacterContactValidate extends org.teavm.jso.JSObject {
+    public interface OnCharacterContactValidate_custom extends org.teavm.jso.JSObject {
 
-        boolean OnCharacterContactValidate(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr);
+        boolean OnCharacterContactValidate_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnContactAdded extends org.teavm.jso.JSObject {
+    public interface OnContactAdded_custom extends org.teavm.jso.JSObject {
 
-        void OnContactAdded(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr);
+        void OnContactAdded_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnContactPersisted extends org.teavm.jso.JSObject {
+    public interface OnContactPersisted_custom extends org.teavm.jso.JSObject {
 
-        void OnContactPersisted(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr);
+        void OnContactPersisted_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnContactRemoved extends org.teavm.jso.JSObject {
+    public interface OnContactRemoved_custom extends org.teavm.jso.JSObject {
 
-        void OnContactRemoved(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr);
+        void OnContactRemoved_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnCharacterContactAdded extends org.teavm.jso.JSObject {
+    public interface OnCharacterContactAdded_custom extends org.teavm.jso.JSObject {
 
-        void OnCharacterContactAdded(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr);
+        void OnCharacterContactAdded_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnCharacterContactPersisted extends org.teavm.jso.JSObject {
+    public interface OnCharacterContactPersisted_custom extends org.teavm.jso.JSObject {
 
-        void OnCharacterContactPersisted(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr);
+        void OnCharacterContactPersisted_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int ioSettings_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnCharacterContactRemoved extends org.teavm.jso.JSObject {
+    public interface OnCharacterContactRemoved_custom extends org.teavm.jso.JSObject {
 
-        void OnCharacterContactRemoved(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr);
+        void OnCharacterContactRemoved_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnContactSolve extends org.teavm.jso.JSObject {
+    public interface OnContactSolve_custom extends org.teavm.jso.JSObject {
 
-        void OnContactSolve(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr);
+        void OnContactSolve_custom(int inCharacter_addr, int inBodyID2_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr);
     }
 
     @org.teavm.jso.JSFunctor()
-    public interface OnCharacterContactSolve extends org.teavm.jso.JSObject {
+    public interface OnCharacterContactSolve_custom extends org.teavm.jso.JSObject {
 
-        void OnCharacterContactSolve(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr);
+        void OnCharacterContactSolve_custom(int inCharacter_addr, int inOtherCharacter_addr, int inSubShapeID2_addr, int inContactPosition_addr, int inContactNormal_addr, int inContactVelocity_addr, int inContactMaterial_addr, int inCharacterVelocity_addr, int ioNewCharacterVelocity_addr);
     }
 }

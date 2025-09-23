@@ -37,7 +37,7 @@ public class PhysicsSystem extends IDLBase {
 
     private AABox AABox_TEMP_GEN_0;
 
-    private ContactListener ContactListener_TEMP_GEN_0;
+    private IDLBase IDLBase_TEMP_GEN_0;
 
     private SoftBodyContactListener SoftBodyContactListener_TEMP_GEN_0;
 
@@ -271,20 +271,19 @@ nativeObject->SetContactListener((ContactListener* )inListener_addr);
 */
     public static native void internal_native_SetContactListener(long this_addr, long inListener_addr);
 
-    public ContactListener GetContactListener() {
+    public IDLBase GetContactListener() {
         long pointer = internal_native_GetContactListener(native_address);
         if (pointer == 0)
-            return ContactListener.NULL;
-        if (ContactListener_TEMP_GEN_0 == null)
-            ContactListener_TEMP_GEN_0 = ContactListener.native_new();
-        ContactListener_TEMP_GEN_0.internal_reset(pointer, false);
-        return ContactListener_TEMP_GEN_0;
+            return IDLBase.NULL;
+        if (IDLBase_TEMP_GEN_0 == null)
+            IDLBase_TEMP_GEN_0 = IDLBase.native_new();
+        IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
+        return IDLBase_TEMP_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
-ContactListener* obj = nativeObject->GetContactListener();
-return (jlong)obj;
+return (jlong)nativeObject->GetContactListener();
 */
     public static native long internal_native_GetContactListener(long this_addr);
 
