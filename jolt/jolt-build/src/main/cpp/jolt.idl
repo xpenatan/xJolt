@@ -98,6 +98,26 @@ interface JoltNew {
     [BindTo="New_MeshShapeSettings"] static MeshShapeSettings MeshShapeSettings__2([Ref, Const] VertexList inVertices, [Ref, Const] IndexedTriangleList inTriangles, [Ref, Const] PhysicsMaterialList inMaterialList); //[-NEW_OBJECT]
 };
 
+interface DefaultCharacterContactListener { //[-SUB_PACKAGE=physics.character]
+};
+DefaultCharacterContactListener implements CharacterContactListener;
+
+[JSImplementation="DefaultCharacterContactListener"]
+interface DefaultCharacterContactListenerImpl {
+    void DefaultCharacterContactListenerImpl();
+    void OnAdjustBodyVelocity_custom([Const] CharacterVirtual inCharacter, [Const, Ref] Body inBody2, [Ref] Vec3 ioLinearVelocity, [Ref] Vec3 ioAngularVelocity); //[-RENAME=OnAdjustBodyVelocity]
+    boolean OnContactValidate_custom([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2); //[-RENAME=OnContactValidate]
+    boolean OnCharacterContactValidate_custom([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2); //[-RENAME=OnCharacterContactValidate]
+//    void OnContactAdded_custom([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Ref] Vec3 inContactPosition, [Ref] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings); //[-RENAME=OnContactAdded]
+//    void OnContactPersisted_custom([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings); //[-RENAME=OnContactPersisted]
+//    void OnContactRemoved_custom([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2); //[-RENAME=OnContactRemoved]
+//    void OnCharacterContactAdded_custom([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings); //[-RENAME=OnCharacterContactAdded]
+//    void OnCharacterContactPersisted_custom([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Ref] CharacterContactSettings ioSettings); //[-RENAME=OnCharacterContactPersisted]
+//    void OnCharacterContactRemoved_custom([Const] CharacterVirtual inCharacter, [Const, Ref] CharacterID inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2); //[-RENAME=OnCharacterContactRemoved]
+//    void OnContactSolve_custom([Const] CharacterVirtual inCharacter, [Const, Ref] BodyID inBodyID2, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity); //[-RENAME=OnContactSolve]
+//    void OnCharacterContactSolve_custom([Const] CharacterVirtual inCharacter, [Const] CharacterVirtual inOtherCharacter, [Const, Ref] SubShapeID inSubShapeID2, [Const] Vec3 inContactPosition, [Const] Vec3 inContactNormal, [Const] Vec3 inContactVelocity, [Const] PhysicsMaterial inContactMaterial, [Const] Vec3 inCharacterVelocity, [Ref] Vec3 ioNewCharacterVelocity); //[-RENAME=OnCharacterContactSolve]
+};
+
 // BEGIN DEBUG RENDERER
 
 interface BodyManagerDrawSettings { //[-SUB_PACKAGE=physics.body]
@@ -3404,6 +3424,11 @@ interface CharacterVirtual {
     [Value] ArrayCharacterVirtualContact GetActiveContacts();
 };
 CharacterVirtual implements CharacterBase;
+
+//interface Character {
+//
+//};
+//Character implements CharacterBase;
 
 interface TempAllocator {
 };

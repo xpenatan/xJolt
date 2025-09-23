@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 public class Build {
 
+    private static boolean double_precision = false;
+
     public static void main(String[] args) {
         String libName = "jolt";
         String modulePrefix = "jolt";
@@ -29,6 +31,13 @@ public class Build {
         };
 
         BuildToolOptions op = new BuildToolOptions(libName, basePackage, modulePrefix , sourcePath, args);
+        if(double_precision) {
+            op.addAdditionalIDLPath(op.getCPPPath() + "jolt_double.idl");
+        }
+        else {
+            op.addAdditionalIDLPath(op.getCPPPath() + "jolt_float.idl");
+        }
+
         BuilderTool.build(op, new BuildToolListener() {
             @Override
             public void onAddTarget(BuildToolOptions op, IDLReader idlReader, ArrayList<BuildMultiTarget> targets) {

@@ -877,6 +877,96 @@ public:
 #endif // JPH_EXTERNAL_PROFILE || JPH_PROFILE_ENABLED
 };
 
+/// A wrapper around CharacterContactListener to enable or disable method calling Java JNI
+class DefaultCharacterContactListener: public CharacterContactListener
+{
+public:
+
+    bool onAdjustBodyVelocity = false;
+    bool onContactValidate = false;
+    bool onCharacterContactValidate = false;
+    bool onContactAdded = false;
+    bool onContactPersisted = false;
+    bool onContactRemoved = false;
+    bool onCharacterContactAdded = false;
+    bool onCharacterContactPersisted = false;
+    bool onCharacterContactRemoved = false;
+    bool onContactSolve = false;
+    bool onCharacterContactSolve = false;
+
+    DefaultCharacterContactListener() {}
+
+    virtual void OnAdjustBodyVelocity_custom(const CharacterVirtual *inCharacter, const Body &inBody2, Vec3 &ioLinearVelocity, Vec3 &ioAngularVelocity) = 0;
+    virtual bool OnContactValidate_custom(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2) = 0;
+    virtual bool OnCharacterContactValidate_custom(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2) = 0;
+//    virtual void OnContactAdded_custom(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID& inSubShapeID2, Vec3& inContactPosition, Vec3& inContactNormal, CharacterContactSettings& ioSettings) = 0;
+//    virtual void OnContactPersisted_custom(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) = 0;
+//    virtual void OnContactRemoved_custom(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2) = 0;
+//    virtual void OnCharacterContactAdded_custom(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) = 0;
+//    virtual void OnCharacterContactPersisted_custom(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) = 0;
+//    virtual void OnCharacterContactRemoved_custom(const CharacterVirtual *inCharacter, const CharacterID &inOtherCharacterID, const SubShapeID &inSubShapeID2) = 0;
+//    virtual void OnContactSolve_custom(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, Vec3Arg inContactVelocity, const PhysicsMaterial *inContactMaterial, Vec3Arg inCharacterVelocity, Vec3 &ioNewCharacterVelocity) = 0;
+//    virtual void OnCharacterContactSolve_custom(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, Vec3Arg inContactVelocity, const PhysicsMaterial *inContactMaterial, Vec3Arg inCharacterVelocity, Vec3 &ioNewCharacterVelocity) = 0;
+
+    virtual void OnAdjustBodyVelocity(const CharacterVirtual *inCharacter, const Body &inBody2, Vec3 &ioLinearVelocity, Vec3 &ioAngularVelocity) {
+        if(onAdjustBodyVelocity) {
+            OnAdjustBodyVelocity_custom(inCharacter, inBody2, ioLinearVelocity, ioAngularVelocity);
+        }
+    }
+    virtual bool OnContactValidate(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2) {
+        if(onContactValidate) {
+            return OnContactValidate_custom(inCharacter, inBodyID2, inSubShapeID2);
+        }
+        return true;
+    }
+    virtual bool OnCharacterContactValidate(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2) {
+        if(onCharacterContactValidate) {
+            return OnCharacterContactValidate_custom(inCharacter, inOtherCharacter, inSubShapeID2);
+        }
+        return true;
+    }
+    virtual void OnContactAdded(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) {
+//        if(onContactAdded) {
+//            OnContactAdded_custom(inCharacter, inBodyID2, inSubShapeID2, inContactPosition, inContactNormal, ioSettings);
+//        }
+    }
+    virtual void OnContactPersisted(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) {
+//        if(onContactPersisted) {
+//            OnContactPersisted_custom(inCharacter, inBodyID2, inSubShapeID2, inContactPosition, inContactNormal, ioSettings);
+//        }
+    }
+    virtual void OnContactRemoved(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2) {
+//        if(onContactRemoved) {
+//            OnContactRemoved_custom(inCharacter, inBodyID2, inSubShapeID2);
+//        }
+    }
+    virtual void OnCharacterContactAdded(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) {
+//        if(onCharacterContactAdded) {
+//            OnCharacterContactAdded_custom(inCharacter, inOtherCharacter, inSubShapeID2, inContactPosition, inContactNormal, ioSettings);
+//        }
+    }
+    virtual void OnCharacterContactPersisted(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, CharacterContactSettings &ioSettings) {
+//        if(onCharacterContactPersisted) {
+//            OnCharacterContactPersisted_custom(inCharacter, inOtherCharacter, inSubShapeID2, inContactPosition, inContactNormal, ioSettings);
+//        }
+    }
+    virtual void OnCharacterContactRemoved(const CharacterVirtual *inCharacter, const CharacterID &inOtherCharacterID, const SubShapeID &inSubShapeID2) {
+//        if(onCharacterContactRemoved) {
+//            OnCharacterContactRemoved_custom(inCharacter, inOtherCharacterID, inSubShapeID2);
+//        }
+    }
+    virtual void OnContactSolve(const CharacterVirtual *inCharacter, const BodyID &inBodyID2, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, Vec3Arg inContactVelocity, const PhysicsMaterial *inContactMaterial, Vec3Arg inCharacterVelocity, Vec3 &ioNewCharacterVelocity) {
+//        if(onContactSolve) {
+//            OnContactSolve_custom(inCharacter, inBodyID2, inSubShapeID2, inContactPosition, inContactNormal, inContactVelocity, inContactMaterial, inCharacterVelocity, ioNewCharacterVelocity);
+//        }
+    }
+    virtual void OnCharacterContactSolve(const CharacterVirtual *inCharacter, const CharacterVirtual *inOtherCharacter, const SubShapeID &inSubShapeID2, RVec3Arg inContactPosition, Vec3Arg inContactNormal, Vec3Arg inContactVelocity, const PhysicsMaterial *inContactMaterial, Vec3Arg inCharacterVelocity, Vec3 &ioNewCharacterVelocity) {
+//        if(onCharacterContactSolve) {
+//            OnCharacterContactSolve_custom(inCharacter, inOtherCharacter, inSubShapeID2, inContactPosition, inContactNormal, inContactVelocity, inContactMaterial, inCharacterVelocity, ioNewCharacterVelocity);
+//        }
+    }
+};
+
 /// A wrapper around the vehicle constraint callbacks that is compatible with JavaScript
 class VehicleConstraintCallbacksEm
 {
