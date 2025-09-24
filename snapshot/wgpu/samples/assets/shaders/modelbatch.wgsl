@@ -83,7 +83,7 @@ struct MaterialUniforms {
 // Skinning
 #ifdef SKIN
     @group(3) @binding(0) var<storage, read> jointMatrices: array<mat4x4f>;
-    @group(3) @binding(1) var<storage, read> inverseBindMatrices: array<mat4x4f>;
+    @group(3) @binding(1) var<storage, read> inverseBindMatrices: array<mat4x4f>;   // not used
 #endif
 
 struct VertexInput {
@@ -135,10 +135,11 @@ fn vs_main(in: VertexInput, @builtin(instance_index) instance: u32) -> VertexOut
 
 #ifdef SKIN
      // Get relevant 4 bone matrices
-     let joint0 = jointMatrices[u32(in.joints[0])] * inverseBindMatrices[u32(in.joints[0])];
-     let joint1 = jointMatrices[u32(in.joints[1])] * inverseBindMatrices[u32(in.joints[1])];
-     let joint2 = jointMatrices[u32(in.joints[2])] * inverseBindMatrices[u32(in.joints[2])];
-     let joint3 = jointMatrices[u32(in.joints[3])] * inverseBindMatrices[u32(in.joints[3])];
+     // joint matrix is already multiplied by inv bind matrix in Node.calculateBoneTransform
+     let joint0 = jointMatrices[u32(in.joints[0])];// * inverseBindMatrices[u32(in.joints[0])];
+     let joint1 = jointMatrices[u32(in.joints[1])];// * inverseBindMatrices[u32(in.joints[1])];
+     let joint2 = jointMatrices[u32(in.joints[2])];// * inverseBindMatrices[u32(in.joints[2])];
+     let joint3 = jointMatrices[u32(in.joints[3])];// * inverseBindMatrices[u32(in.joints[3])];
 
      // Compute influence of joint based on weight
      let skinMatrix =
@@ -148,7 +149,7 @@ fn vs_main(in: VertexInput, @builtin(instance_index) instance: u32) -> VertexOut
        joint3 * in.weights[3];
 
      // Bone transformed mesh
-   let worldPosition =   skinMatrix * vec4f(in.position, 1.0); // todo combine with instance matrix
+   let worldPosition =   instances[instance].modelMatrix * skinMatrix * vec4f(in.position, 1.0); // todo combine with instance matrix
    //worldPosition = skinMatrix * instances[instance].modelMatrix * vertPos;
    //out.weights = in.joints;
 #else
@@ -246,9 +247,7 @@ fn fs_main(in : VertexOutput) -> @location(0) vec4f {
 
     let shininess : f32 = material.shininess;   // used instead of roughness for non-PBR
 
-
-
-    var radiance : vec3f = vec3f(0);
+    var radiance : vec3f = vec3f(0);    // outgoing radiance (Lo)
     var specular : vec3f = vec3f(0);
     let viewVec : vec3f = normalize(uFrame.cameraPosition.xyz - in.worldPos.xyz);
 
@@ -266,17 +265,17 @@ fn fs_main(in : VertexOutput) -> @location(0) vec4f {
         for (var i: u32 = 0; i < u32(numDirectionalLights); i++) {
             let light = uFrame.directionalLights[i];
 
-            let lightVec = -normalize(light.direction.xyz);       // L is vector towards light
-            let irradiance = max(dot(lightVec, normal), 0.0);
+            let lightVec = -normalize(light.direction.xyz);       // L is unit vector towards light source
+            let NdotL = max(dot(lightVec, normal), 0.0);
 #ifdef PBR
-            if(irradiance > 0.0) {
-                radiance += BRDF(lightVec, viewVec, normal, roughness, metallic, baseColor.rgb) * irradiance *  light.color.rgb;
+            if(NdotL > 0.0) {
+                radiance += BRDF(lightVec, viewVec, normal, roughness, metallic, baseColor.rgb) * NdotL *  light.color.rgb;
             }
 #else
-            radiance += irradiance *  light.color.rgb;
+            radiance += NdotL *  light.color.rgb;
     #ifdef SPECULAR
             let halfDotView = max(0.0, dot(normal, normalize(lightVec + viewVec)));
-            specular += irradiance *  light.color.rgb * pow(halfDotView, shininess);
+            specular += NdotL *  light.color.rgb * pow(halfDotView, shininess);
     #endif
 #endif // PBR
         }
@@ -296,16 +295,15 @@ fn fs_main(in : VertexOutput) -> @location(0) vec4f {
             lightVec  = normalize(lightVec);
             let attenuation : f32 = light.intensity/(1.0 + dist2);// attenuation (note this makes an assumption on the world scale)
             let NdotL : f32 = max(dot(lightVec, normal), 0.0);
-            let irradiance : f32 =  attenuation * NdotL;
 #ifdef PBR
-            if(irradiance > 0.0) {
-                radiance += BRDF(lightVec, viewVec, normal, roughness, metallic, baseColor.rgb) * irradiance *  light.color.rgb;
+            if(NdotL > 0.0) {
+                radiance += BRDF(lightVec, viewVec, normal, roughness, metallic, baseColor.rgb) * NdotL *  attenuation * light.color.rgb;
             }
 #else
-            radiance += irradiance *  light.color.rgb;
+            radiance += NdotL *  attenuation * light.color.rgb;
 #ifdef SPECULAR
             let halfDotView = max(0.0, dot(normal, normalize(lightVec + viewVec)));
-            specular += irradiance *  light.color.rgb * pow(halfDotView, shininess);
+            specular += NdotL *  attenuation * light.color.rgb * pow(halfDotView, shininess);
 #endif
 #endif // PBR
         }
@@ -355,6 +353,7 @@ fn fs_main(in : VertexOutput) -> @location(0) vec4f {
     //return material.diffuseColor;
     //return vec4f(in.fogDepth, 0, 0, 1);
     //return vec4f(ambient, 1.0);
+
     return color;
 };
 
@@ -392,11 +391,11 @@ fn D_GGX(NdotH: f32, roughness: f32) -> f32 {
 }
 
 fn G_SchlickSmith_GGX(NdotL : f32, NdotV : f32, roughness : f32) -> f32 {
-//    let r : f32 = (roughness + 1.0);
-//    let k : f32 = (r*r)/8.0;
+    let r : f32 = (roughness + 1.0);
+    let k : f32 = (r*r)/8.0;
 
-    let alpha: f32 = roughness * roughness;
-    let k: f32 = alpha / 2.0;
+//    let alpha: f32 = roughness * roughness;
+//    let k: f32 = alpha / 2.0;
 
     let GL : f32 = NdotL / (NdotL * (1.0 - k) + k);
     let GV : f32 = NdotV / (NdotV * (1.0 - k) + k);
@@ -416,11 +415,12 @@ fn BRDF( L : vec3f, V:vec3f, N: vec3f, roughness:f32, metallic:f32, baseColor: v
     let NdotL : f32 = clamp(dot(N, L), 0.001, 1.0);
     let LdotH : f32 = clamp(dot(L, H), 0.0, 1.0);
     let NdotH : f32 = clamp(dot(N, H), 0.0, 1.0);
+    let HdotV : f32 = clamp(dot(H, V), 0.0, 1.0);
 
     // calculate terms for microfacet shading model
     let D :f32      = D_GGX(NdotH, roughness);
     let G :f32      = G_SchlickSmith_GGX(NdotL, NdotV, roughness);
-    let F :vec3f    = F_Schlick(NdotV, metallic, baseColor);
+    let F :vec3f    = F_Schlick(HdotV, metallic, baseColor);
 
     let kS = F;
     let kD = (vec3f(1.0) - kS) * (1.0 - metallic);
