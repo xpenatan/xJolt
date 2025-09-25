@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Quaternion;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.math.Vector4;
 import jolt.JoltNew;
+import jolt.RVec3;
 import jolt.math.Mat44;
 import jolt.math.Quat;
 import jolt.math.Vec3;
@@ -70,6 +71,11 @@ public class JoltGdx {
 
     public static Quat quaternion_to_quat(Quaternion in, Quat out) {
         out.Set(in.x, in.y, in.z, in.w);
+        return out;
+    }
+
+    public static Vector3 convert(RVec3 in, Vector3 out) {
+        out.set(in.GetX(), in.GetY(), in.GetZ());
         return out;
     }
 }

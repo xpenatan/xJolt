@@ -13,7 +13,7 @@ import jolt.physics.body.BodyInterface;
 import jolt.physics.collision.shape.BoxShape;
 
 public class ShapeHelper {
-    public static Body createBox(BodyInterface mBodyInterface, int userData, Vector3 inHalfExtent, Vector3 inPosition, Quat inRotation) {
+    public static Body createBox(int layer, BodyInterface mBodyInterface, int userData, Vector3 inHalfExtent, Vector3 inPosition, Quat inRotation) {
         Vec3 inHalfExtentJolt = JoltTemp.Vec3_1(inHalfExtent.x, inHalfExtent.y, inHalfExtent.z);
         Vec3 inPositionJolt = JoltTemp.Vec3_2(inPosition.x, inPosition.y, inPosition.z);
         BoxShape bodyShape = new BoxShape(inHalfExtentJolt);

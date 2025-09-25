@@ -4,6 +4,7 @@ import com.badlogic.gdx.utils.Array;
 import jolt.example.graphics.GraphicManagerApi;
 import jolt.example.graphics.GraphicType;
 import jolt.example.samples.app.tests.character.CharacterSpaceShipTest;
+import jolt.example.samples.app.tests.character.CharacterTest;
 import jolt.example.samples.app.tests.playground.box.BoxSpawnTest;
 import jolt.example.samples.app.tests.raycast.NarrowPhaseQueryCastRayTest;
 import jolt.example.samples.app.tests.shapes.BoxShapeTest;
@@ -26,6 +27,7 @@ public class Tests {
         tests.add(new JoltTestInstancer(VehicleConstraintTest.class, VehicleConstraintTest::new, "Vehicle", "Car (VehicleConstraint)"));
         tests.add(new JoltTestInstancer(TankTest.class, TankTest::new, "Vehicle", "Tank (VehicleConstraint)"));
         tests.add(new JoltTestInstancer(CharacterSpaceShipTest.class, CharacterSpaceShipTest::new, "Character", "Character Virtual vs Space Ship"));
+        tests.add(new JoltTestInstancer(CharacterTest.class, CharacterTest::new, "Character", "Character Test"));
 
         if(GraphicManagerApi.graphicApi.getGraphicType() == GraphicType.OpenGL) {
             // BoxSpawnTest not supported in WGPU
