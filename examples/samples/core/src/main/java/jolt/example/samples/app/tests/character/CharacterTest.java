@@ -32,6 +32,7 @@ public class CharacterTest extends Test {
     private static float cCharacterRadiusStanding = 0.3f;
     private static float sCharacterSpeed = 6.0f;
     private static float sJumpSpeed = 4.0f;
+    private float cCollisionTolerance = 0.05f;
 
     private Vec3 control_input;
     private boolean mJump;
@@ -65,6 +66,9 @@ public class CharacterTest extends Test {
 
     @Override
     public void prePhysicsUpdate(boolean isPlaying) {
+        if(!isPlaying) {
+            return;
+        }
 
         // Cancel movement in opposite direction of normal when touching something we can't walk up
         Vec3 movement_direction = control_input;
@@ -98,6 +102,14 @@ public class CharacterTest extends Test {
 
             // Update the velocity
             mCharacter.SetLinearVelocity(new_velocity);
+        }
+    }
+
+    @Override
+    public void postPhysicsUpdate(boolean isPlaying, float deltaTime) {
+        if(isPlaying) {
+            // Fetch the new ground properties
+            mCharacter.PostSimulation(cCollisionTolerance);
         }
     }
 
