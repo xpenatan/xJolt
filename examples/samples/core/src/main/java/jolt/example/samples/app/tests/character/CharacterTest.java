@@ -140,7 +140,6 @@ public class CharacterTest extends Test {
 
     @Override
     public void updateCamera(CameraInputController cameraController) {
-
         RVec3 rVec3 = mCharacter.GetPosition();
 
         JoltGdx.convert(rVec3, cameraController.target);
@@ -156,6 +155,8 @@ public class CharacterTest extends Test {
 
     @Override
     public void dispose() {
+        mCharacter.RemoveFromPhysicsSystem();
+        mCharacter.dispose();
         control_input.dispose();
     }
 }
