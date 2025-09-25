@@ -16,16 +16,13 @@ import jolt.example.samples.app.tests.Test;
 import jolt.example.samples.app.tests.shapes.ShapeHelper;
 import jolt.gdx.JoltGdx;
 import jolt.geometry.Plane;
-import jolt.math.Mat44;
 import jolt.math.Quat;
 import jolt.math.Vec3;
 import jolt.physics.body.Body;
 import jolt.physics.character.Character;
 import jolt.physics.collision.shape.CapsuleShape;
-import jolt.physics.collision.shape.RotatedTranslatedShapeSettings;
 import jolt.physics.collision.shape.Shape;
 import static jolt.JoltNew.RotatedTranslatedShapeSettings;
-import static jolt.enums.EGroundState.OnGround;
 
 public class CharacterTest extends Test {
 
@@ -117,7 +114,7 @@ public class CharacterTest extends Test {
         }
 
         // Rotate controls to align with the camera
-        Vec3 cam_fwd = JoltGdx.vector3_to_vec3(camera.direction, JoltTemp.Vec3_2());
+        Vec3 cam_fwd = JoltGdx.convert(camera.direction, JoltTemp.Vec3_2());
         cam_fwd.SetY(0.0f);
         cam_fwd = cam_fwd.NormalizedOr(Vec3.sAxisX());
         Quat rotation = Quat.sFromTo(Vec3.sAxisX(), cam_fwd);

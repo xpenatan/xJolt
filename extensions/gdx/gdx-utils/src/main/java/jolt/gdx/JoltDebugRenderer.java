@@ -112,7 +112,7 @@ public abstract class JoltDebugRenderer extends DebugRendererEm {
         int primitiveType = inDrawMode == EDrawMode.EDrawMode_Wireframe ? GL20.GL_LINES : GL20.GL_TRIANGLES;
         ModelRenderer modelRenderer = modelInstancePool.obtain();
         modelRenderer.setModel(model, primitiveType);
-        JoltGdx.mat44_to_matrix4(inModelMatrix, modelRenderer.transform);
+        JoltGdx.convert(inModelMatrix, modelRenderer.transform);
         modelRenderer.diffuseColor.color.set(r1, g1, b1, a1);
         modelRendererList.add(modelRenderer);
     }

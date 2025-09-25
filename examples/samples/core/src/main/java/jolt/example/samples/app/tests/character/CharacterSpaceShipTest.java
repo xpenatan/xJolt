@@ -31,7 +31,6 @@ import jolt.physics.collision.shape.CapsuleShape;
 import jolt.physics.collision.shape.CylinderShape;
 import jolt.physics.collision.shape.RotatedTranslatedShapeSettings;
 import jolt.physics.collision.shape.StaticCompoundShapeSettings;
-import jolt.physics.collision.shape.SubShapeID;
 
 public class CharacterSpaceShipTest extends Test {
 
@@ -209,7 +208,7 @@ public class CharacterSpaceShipTest extends Test {
         // Calculate the desired velocity in local space to the ship based on the camera forward
         Mat44 new_space_ship_transform = mBodyInterface.GetCenterOfMassTransform(mSpaceShip);
 
-        Vec3 cam_fwd = new_space_ship_transform.GetRotation().Multiply3x3Transposed(JoltGdx.vector3_to_vec3(camera.direction, JoltTemp.Vec3_2()));
+        Vec3 cam_fwd = new_space_ship_transform.GetRotation().Multiply3x3Transposed(JoltGdx.convert(camera.direction, JoltTemp.Vec3_2()));
         cam_fwd.SetY(0.0f);
         cam_fwd = cam_fwd.NormalizedOr(Vec3.sAxisX());
         Quat rotation = Quat.sFromTo(Vec3.sAxisX(), cam_fwd);
@@ -229,7 +228,7 @@ public class CharacterSpaceShipTest extends Test {
     public void updateCamera(CameraInputController cameraController) {
         Vec3 charPosition = mCharacter.GetPosition();
 
-        JoltGdx.vec3_to_vector3(charPosition, cameraController.target);
+        JoltGdx.convert(charPosition, cameraController.target);
 
         // Compute offset based on camera direction and zoom level
         float distance = initialOffset.len() * 7 / initialOffset.len();

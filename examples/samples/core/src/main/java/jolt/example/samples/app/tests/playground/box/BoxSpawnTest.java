@@ -28,7 +28,6 @@ import com.badlogic.gdx.utils.BufferUtils;
 //import imgui.idl.helper.IDLInt;
 import java.nio.Buffer;
 import java.nio.FloatBuffer;
-import jolt.Jolt;
 import jolt.JoltNew;
 import jolt.enums.EActivation;
 import jolt.enums.EMotionType;
@@ -215,7 +214,7 @@ public class BoxSpawnTest extends Test {
             Body body = cubeData.body;
             Mat44 mat44 = body.GetWorldTransform();
             instanceTransform.idt();
-            JoltGdx.mat44_to_matrix4(mat44, instanceTransform);
+            JoltGdx.convert(mat44, instanceTransform);
 
             if(cubeData.modelInstance != null) {
                 cubeData.modelInstance.transform.set(instanceTransform);
@@ -230,7 +229,7 @@ public class BoxSpawnTest extends Test {
     }
 
     private void renderModels() {
-        JoltGdx.mat44_to_matrix4(groundData.body.GetWorldTransform(), groundData.modelInstance.transform);
+        JoltGdx.convert(groundData.body.GetWorldTransform(), groundData.modelInstance.transform);
 
         Array<RenderableProvider> renderableProviders = sceneManager.getRenderableProviders();
         for(int i = 0; i < cubes.size; i++) {
