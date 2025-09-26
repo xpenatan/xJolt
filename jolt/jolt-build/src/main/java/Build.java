@@ -30,7 +30,15 @@ public class Build {
             return null;
         };
 
-        BuildToolOptions op = new BuildToolOptions(libName, basePackage, modulePrefix , sourcePath, args);
+        BuildToolOptions.BuildToolParams data = new BuildToolOptions.BuildToolParams();
+        data.libName = libName;
+        data.idlName = libName;
+        data.webModuleName = libName;
+        data.packageName = basePackage;
+        data.cppSourcePath = sourcePath;
+        data.modulePrefix = modulePrefix;
+
+        BuildToolOptions op = new BuildToolOptions(data, args);
         if(double_precision) {
             op.addAdditionalIDLPath(op.getCPPPath() + "jolt_double.idl");
         }
