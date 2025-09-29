@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.collision.broadphase;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 
 public class BodyInterface_AddState extends IDLBase {
 

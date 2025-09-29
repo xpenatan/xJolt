@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.physics.PhysicsSystem;
 
 public class Jolt extends IDLBase {

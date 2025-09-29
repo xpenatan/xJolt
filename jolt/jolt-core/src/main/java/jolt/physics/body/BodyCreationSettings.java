@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.body;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.physics.collision.shape.ShapeSettings;
 import jolt.physics.collision.shape.ShapeResult;
 import jolt.physics.collision.shape.Shape;

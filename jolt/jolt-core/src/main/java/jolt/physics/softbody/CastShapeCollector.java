@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.softbody;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.physics.collision.TransformedShape;
 import jolt.physics.body.Body;
 import jolt.physics.collision.shape.ShapeCastResult;

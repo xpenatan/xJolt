@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.collision.shape;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.idl.helper.IDLString;
 
 public class ShapeResult extends IDLBase {

@@ -7,7 +7,7 @@ package jolt.enums;
 
 import java.util.Map;
 import java.util.HashMap;
-import jolt.idl.IDLEnum;
+import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum ECollectFacesMode implements IDLEnum<ECollectFacesMode> {
 

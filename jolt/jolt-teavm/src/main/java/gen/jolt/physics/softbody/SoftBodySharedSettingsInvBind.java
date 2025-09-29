@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.softbody;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.math.Mat44;
 
 public class SoftBodySharedSettingsInvBind extends IDLBase {

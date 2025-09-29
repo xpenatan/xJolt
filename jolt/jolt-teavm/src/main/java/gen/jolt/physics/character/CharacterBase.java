@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.character;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.math.Vec3;
 import gen.jolt.physics.collision.shape.Shape;
 import gen.jolt.enums.EGroundState;

@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.vehicle;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.enums.ETireFrictionDirection;
 import jolt.physics.body.Body;
 import jolt.physics.collision.shape.SubShapeID;

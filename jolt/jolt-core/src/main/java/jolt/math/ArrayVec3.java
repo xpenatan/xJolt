@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.math;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class ArrayVec3 extends IDLBase {
 

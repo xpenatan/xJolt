@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.vehicle;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.enums.ETransmissionMode;
 import gen.jolt.math.ArrayFloat;
 

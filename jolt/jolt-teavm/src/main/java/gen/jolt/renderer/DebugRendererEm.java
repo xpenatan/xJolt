@@ -5,6 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.renderer;
 
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.physics.PhysicsSystem;
 import gen.jolt.physics.body.BodyManagerDrawSettings;
 import gen.jolt.math.Mat44;
@@ -14,7 +15,6 @@ import gen.jolt.enums.EDrawMode;
 import gen.jolt.idl.helper.IDLFloatArray;
 import gen.jolt.enums.ECullMode;
 import gen.jolt.math.Vec3;
-import gen.jolt.idl.IDLBase;
 
 public class DebugRendererEm extends DebugRenderer {
 

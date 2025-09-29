@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.body;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.enums.EMotionQuality;
 import gen.jolt.enums.EAllowedDOFs;
 import gen.jolt.math.Vec3;

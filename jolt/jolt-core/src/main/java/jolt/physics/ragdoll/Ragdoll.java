@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.ragdoll;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.physics.PhysicsSystem;
 import jolt.enums.EActivation;
 import jolt.skeleton.SkeletonPose;

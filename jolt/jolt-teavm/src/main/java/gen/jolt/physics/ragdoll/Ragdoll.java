@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.ragdoll;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.physics.PhysicsSystem;
 import gen.jolt.enums.EActivation;
 import gen.jolt.skeleton.SkeletonPose;

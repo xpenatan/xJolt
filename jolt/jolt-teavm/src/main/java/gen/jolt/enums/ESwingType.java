@@ -7,7 +7,7 @@ package gen.jolt.enums;
 
 import java.util.Map;
 import java.util.HashMap;
-import gen.jolt.idl.IDLEnum;
+import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum ESwingType implements IDLEnum<ESwingType> {
 

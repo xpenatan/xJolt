@@ -7,7 +7,7 @@
 */
 package gen.jolt.idl.helper;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 
 public class IDLStringView extends IDLBase {
 

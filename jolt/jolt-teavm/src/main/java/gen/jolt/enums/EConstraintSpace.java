@@ -7,7 +7,7 @@ package gen.jolt.enums;
 
 import java.util.Map;
 import java.util.HashMap;
-import gen.jolt.idl.IDLEnum;
+import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EConstraintSpace implements IDLEnum<EConstraintSpace> {
 

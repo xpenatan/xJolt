@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.body;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.enums.EShapeColor;
 import jolt.enums.ESoftBodyConstraintColor;
 

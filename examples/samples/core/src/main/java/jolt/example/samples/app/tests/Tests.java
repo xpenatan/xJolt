@@ -1,5 +1,7 @@
 package jolt.example.samples.app.tests;
 
+import com.badlogic.gdx.Application;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.Array;
 import jolt.example.graphics.GraphicManagerApi;
 import jolt.example.graphics.GraphicType;
@@ -27,7 +29,11 @@ public class Tests {
         tests.add(new JoltTestInstancer(VehicleConstraintTest.class, VehicleConstraintTest::new, "Vehicle", "Car (VehicleConstraint)"));
         tests.add(new JoltTestInstancer(TankTest.class, TankTest::new, "Vehicle", "Tank (VehicleConstraint)"));
         tests.add(new JoltTestInstancer(CharacterSpaceShipTest.class, CharacterSpaceShipTest::new, "Character", "Character Virtual vs Space Ship"));
-        tests.add(new JoltTestInstancer(CharacterTest.class, CharacterTest::new, "Character", "Character Test"));
+
+        if(Gdx.app.getType() != Application.ApplicationType.WebGL) {
+            // FIXME not working on the web
+            tests.add(new JoltTestInstancer(CharacterTest.class, CharacterTest::new, "Character", "Character Test"));
+        }
 
         if(GraphicManagerApi.graphicApi.getGraphicType() == GraphicType.OpenGL) {
             // BoxSpawnTest not supported in WGPU

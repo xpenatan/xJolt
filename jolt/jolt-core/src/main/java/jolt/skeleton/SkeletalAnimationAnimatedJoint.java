@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.skeleton;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.idl.helper.IDLString;
 
 public class SkeletalAnimationAnimatedJoint extends IDLBase {

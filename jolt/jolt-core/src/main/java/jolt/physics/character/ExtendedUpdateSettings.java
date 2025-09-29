@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.character;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.math.Vec3;
 
 public class ExtendedUpdateSettings extends IDLBase {

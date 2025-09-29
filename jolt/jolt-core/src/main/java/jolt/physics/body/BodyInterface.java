@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.body;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.physics.softbody.SoftBodyCreationSettings;
 import jolt.enums.EActivation;
 import jolt.physics.collision.broadphase.BodyInterface_AddState;

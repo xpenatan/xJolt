@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.raddoll;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.math.TwoBodyConstraintSettings;
 
 public class RagdollAdditionalConstraint extends IDLBase {

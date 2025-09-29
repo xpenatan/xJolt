@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.geometry;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class IndexedTriangleList extends IDLBase {
 

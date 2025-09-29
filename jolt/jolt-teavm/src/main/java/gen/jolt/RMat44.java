@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.math.Quat;
 import gen.jolt.math.Mat44;
 import gen.jolt.math.Vec3;

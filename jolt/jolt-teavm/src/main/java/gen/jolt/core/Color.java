@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.core;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.math.Vec4;
 
 public class Color extends IDLBase {

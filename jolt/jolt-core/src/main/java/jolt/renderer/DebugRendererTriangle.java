@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.renderer;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class DebugRendererTriangle extends IDLBase {
 

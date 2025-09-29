@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.renderer;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.math.Float3;
 import gen.jolt.math.Float2;
 import gen.jolt.core.Color;

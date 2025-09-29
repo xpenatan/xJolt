@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.skeleton;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.math.Vec3;
 import jolt.math.ArrayMat44;
 import jolt.math.Mat44;

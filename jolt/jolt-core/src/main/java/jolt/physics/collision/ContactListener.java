@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.collision;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class ContactListener extends IDLBase {
 

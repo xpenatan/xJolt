@@ -5,10 +5,10 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.character;
 
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.math.Vec3;
 import gen.jolt.math.Quat;
 import gen.jolt.physics.PhysicsSystem;
-import gen.jolt.idl.IDLBase;
 import gen.jolt.math.Mat44;
 import gen.jolt.physics.body.BodyID;
 import gen.jolt.physics.collision.broadphase.BroadPhaseLayerFilter;

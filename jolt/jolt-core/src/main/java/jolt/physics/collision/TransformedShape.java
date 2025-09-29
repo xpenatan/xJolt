@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.collision;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.RRayCast;
 import jolt.physics.softbody.CastRayCollector;
 import jolt.math.Vec3;

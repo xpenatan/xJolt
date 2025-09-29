@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.constraints;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class PathConstraintPath extends IDLBase {
 

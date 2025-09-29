@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.body;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.enums.EBodyType;
 import gen.jolt.enums.EMotionType;
 import gen.jolt.physics.collision.CollisionGroup;

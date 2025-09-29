@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 
 public class PhysicsStepListenerContext extends IDLBase {
 

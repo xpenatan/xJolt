@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.physics.body.Body;
 import jolt.physics.constraints.Constraint;
 import jolt.physics.body.BodyID;

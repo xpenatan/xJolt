@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.physics.PhysicsSystem;
 import jolt.core.Factory;
 import jolt.core.TempAllocatorImpl;

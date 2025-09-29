@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.softbody;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 
 public class SoftBodyVertexTraits extends IDLBase {
 

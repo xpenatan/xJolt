@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.constraints;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.enums.EConstraintType;
 import gen.jolt.enums.EConstraintSubType;
 

@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.physics.collision;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 import gen.jolt.RRayCast;
 import gen.jolt.physics.collision.broadphase.BroadPhaseLayerFilter;
 import gen.jolt.physics.body.BodyFilter;

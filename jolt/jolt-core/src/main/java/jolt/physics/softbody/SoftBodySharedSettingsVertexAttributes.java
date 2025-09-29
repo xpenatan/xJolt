@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package jolt.physics.softbody;
 
-import jolt.idl.IDLBase;
+import com.github.xpenatan.jParser.idl.IDLBase;
 import jolt.enums.SoftBodySharedSettings_ELRAType;
 
 public class SoftBodySharedSettingsVertexAttributes extends IDLBase {

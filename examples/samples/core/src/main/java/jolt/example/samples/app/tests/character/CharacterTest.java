@@ -22,7 +22,6 @@ import jolt.physics.body.Body;
 import jolt.physics.character.Character;
 import jolt.physics.collision.shape.CapsuleShape;
 import jolt.physics.collision.shape.Shape;
-import static jolt.JoltNew.RotatedTranslatedShapeSettings;
 
 public class CharacterTest extends Test {
 
@@ -60,7 +59,8 @@ public class CharacterTest extends Test {
         settings.set_mShape(mStandingShape);
         settings.set_mFriction(0.5f);
         settings.set_mSupportingVolume(new Plane(Vec3.sAxisY(), -cCharacterRadiusStanding)); // Accept contacts that touch the lower sphere of the capsule
-        mCharacter = new Character(settings, RVec3.sZero(), Quat.sIdentity(), 0, mPhysicsSystem);
+        RVec3 rVec3 = RVec3.sZero();
+        mCharacter = new Character(settings, rVec3, Quat.sIdentity(), 0, mPhysicsSystem);
         mCharacter.AddToPhysicsSystem(EActivation.Activate);
     }
 

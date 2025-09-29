@@ -5,7 +5,7 @@
  *-------------------------------------------------------*/
 package gen.jolt.geometry;
 
-import gen.jolt.idl.IDLBase;
+import gen.com.github.xpenatan.jParser.idl.IDLBase;
 
 public class TriangleList extends IDLBase {
 
