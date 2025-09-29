@@ -13,12 +13,6 @@ public class OffsetCenterOfMassShapeSettings extends DecoratedShapeSettings {
 
     static public final OffsetCenterOfMassShapeSettings NULL = OffsetCenterOfMassShapeSettings.native_new();
 
-    static public final OffsetCenterOfMassShapeSettings T_01 = OffsetCenterOfMassShapeSettings.native_new();
-
-    static public final OffsetCenterOfMassShapeSettings T_02 = OffsetCenterOfMassShapeSettings.native_new();
-
-    static public final OffsetCenterOfMassShapeSettings T_03 = OffsetCenterOfMassShapeSettings.native_new();
-
     public OffsetCenterOfMassShapeSettings(Vec3 inOffset, Shape inShape) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_Vec3_Shape(inOffset.native_address, inShape.native_address);

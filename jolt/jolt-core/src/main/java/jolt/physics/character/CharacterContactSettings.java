@@ -11,12 +11,6 @@ public class CharacterContactSettings extends IDLBase {
 
     static public final CharacterContactSettings NULL = CharacterContactSettings.native_new();
 
-    static public final CharacterContactSettings T_01 = CharacterContactSettings.native_new();
-
-    static public final CharacterContactSettings T_02 = CharacterContactSettings.native_new();
-
-    static public final CharacterContactSettings T_03 = CharacterContactSettings.native_new();
-
     public CharacterContactSettings() {
         long addr = internal_native_create();
         internal_reset(addr, true);

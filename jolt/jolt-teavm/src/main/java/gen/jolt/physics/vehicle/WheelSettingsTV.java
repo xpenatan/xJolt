@@ -9,12 +9,6 @@ public class WheelSettingsTV extends WheelSettings {
 
     static public final WheelSettingsTV NULL = WheelSettingsTV.native_new();
 
-    static public final WheelSettingsTV T_01 = WheelSettingsTV.native_new();
-
-    static public final WheelSettingsTV T_02 = WheelSettingsTV.native_new();
-
-    static public final WheelSettingsTV T_03 = WheelSettingsTV.native_new();
-
     public WheelSettingsTV() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

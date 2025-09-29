@@ -13,12 +13,6 @@ public class ArraySoftBodySharedSettingsInvBind extends IDLBase {
 
     static public final ArraySoftBodySharedSettingsInvBind NULL = ArraySoftBodySharedSettingsInvBind.native_new();
 
-    static public final ArraySoftBodySharedSettingsInvBind T_01 = ArraySoftBodySharedSettingsInvBind.native_new();
-
-    static public final ArraySoftBodySharedSettingsInvBind T_02 = ArraySoftBodySharedSettingsInvBind.native_new();
-
-    static public final ArraySoftBodySharedSettingsInvBind T_03 = ArraySoftBodySharedSettingsInvBind.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

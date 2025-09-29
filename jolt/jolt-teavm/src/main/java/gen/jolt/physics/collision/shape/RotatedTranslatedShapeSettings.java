@@ -16,12 +16,6 @@ public class RotatedTranslatedShapeSettings extends DecoratedShapeSettings {
 
     static public final RotatedTranslatedShapeSettings NULL = RotatedTranslatedShapeSettings.native_new();
 
-    static public final RotatedTranslatedShapeSettings T_01 = RotatedTranslatedShapeSettings.native_new();
-
-    static public final RotatedTranslatedShapeSettings T_02 = RotatedTranslatedShapeSettings.native_new();
-
-    static public final RotatedTranslatedShapeSettings T_03 = RotatedTranslatedShapeSettings.native_new();
-
     public RotatedTranslatedShapeSettings(Vec3 inPosition, Quat inRotation, ShapeSettings inShape) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_Vec3_Quat_ShapeSettings(inPosition.native_address, inRotation.native_address, inShape.native_address);

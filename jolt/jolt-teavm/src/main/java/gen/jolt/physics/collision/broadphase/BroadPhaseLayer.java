@@ -11,12 +11,6 @@ public class BroadPhaseLayer extends IDLBase {
 
     static public final BroadPhaseLayer NULL = BroadPhaseLayer.native_new();
 
-    static public final BroadPhaseLayer T_01 = BroadPhaseLayer.native_new();
-
-    static public final BroadPhaseLayer T_02 = BroadPhaseLayer.native_new();
-
-    static public final BroadPhaseLayer T_03 = BroadPhaseLayer.native_new();
-
     public BroadPhaseLayer(short inLayer) {
         int addr = internal_native_create_short(inLayer);
         internal_reset(addr, true);

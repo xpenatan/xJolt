@@ -11,12 +11,6 @@ public class Uint8MemRef extends IDLBase {
 
     static public final Uint8MemRef NULL = Uint8MemRef.native_new();
 
-    static public final Uint8MemRef T_01 = Uint8MemRef.native_new();
-
-    static public final Uint8MemRef T_02 = Uint8MemRef.native_new();
-
-    static public final Uint8MemRef T_03 = Uint8MemRef.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

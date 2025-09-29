@@ -11,12 +11,6 @@ public class WheelWV extends Wheel {
 
     static public final WheelWV NULL = WheelWV.native_new();
 
-    static public final WheelWV T_01 = WheelWV.native_new();
-
-    static public final WheelWV T_02 = WheelWV.native_new();
-
-    static public final WheelWV T_03 = WheelWV.native_new();
-
     public WheelWV(WheelSettingsWV inWheel) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_WheelSettingsWV(inWheel.native_address);

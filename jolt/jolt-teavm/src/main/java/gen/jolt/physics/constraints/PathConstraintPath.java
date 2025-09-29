@@ -11,12 +11,6 @@ public class PathConstraintPath extends IDLBase {
 
     static public final PathConstraintPath NULL = PathConstraintPath.native_new();
 
-    static public final PathConstraintPath T_01 = PathConstraintPath.native_new();
-
-    static public final PathConstraintPath T_02 = PathConstraintPath.native_new();
-
-    static public final PathConstraintPath T_03 = PathConstraintPath.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

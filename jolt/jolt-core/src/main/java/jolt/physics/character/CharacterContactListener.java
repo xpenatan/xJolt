@@ -133,12 +133,6 @@ public class CharacterContactListener extends IDLBase {
 
     static public final CharacterContactListener NULL = CharacterContactListener.native_new();
 
-    static public final CharacterContactListener T_01 = CharacterContactListener.native_new();
-
-    static public final CharacterContactListener T_02 = CharacterContactListener.native_new();
-
-    static public final CharacterContactListener T_03 = CharacterContactListener.native_new();
-
     /*[-JNI;-NATIVE]
 class CharacterContactListenerImpl : public XJPH::CharacterContactListener {
 private:

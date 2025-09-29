@@ -11,12 +11,6 @@ public class BroadPhaseLayerFilter extends IDLBase {
 
     static public final BroadPhaseLayerFilter NULL = BroadPhaseLayerFilter.native_new();
 
-    static public final BroadPhaseLayerFilter T_01 = BroadPhaseLayerFilter.native_new();
-
-    static public final BroadPhaseLayerFilter T_02 = BroadPhaseLayerFilter.native_new();
-
-    static public final BroadPhaseLayerFilter T_03 = BroadPhaseLayerFilter.native_new();
-
     public BroadPhaseLayerFilter() {
         long addr = internal_native_create();
         internal_reset(addr, true);

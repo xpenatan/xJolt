@@ -20,12 +20,6 @@ public class TwoBodyConstraint extends Constraint {
 
     static public final TwoBodyConstraint NULL = TwoBodyConstraint.native_new();
 
-    static public final TwoBodyConstraint T_01 = TwoBodyConstraint.native_new();
-
-    static public final TwoBodyConstraint T_02 = TwoBodyConstraint.native_new();
-
-    static public final TwoBodyConstraint T_03 = TwoBodyConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

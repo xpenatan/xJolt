@@ -9,12 +9,6 @@ public class ObjectLayerPairFilterTable extends ObjectLayerPairFilter {
 
     static public final ObjectLayerPairFilterTable NULL = ObjectLayerPairFilterTable.native_new();
 
-    static public final ObjectLayerPairFilterTable T_01 = ObjectLayerPairFilterTable.native_new();
-
-    static public final ObjectLayerPairFilterTable T_02 = ObjectLayerPairFilterTable.native_new();
-
-    static public final ObjectLayerPairFilterTable T_03 = ObjectLayerPairFilterTable.native_new();
-
     public ObjectLayerPairFilterTable(int inNumObjectLayers) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int(inNumObjectLayers);

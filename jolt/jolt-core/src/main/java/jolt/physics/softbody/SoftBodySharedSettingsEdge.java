@@ -11,12 +11,6 @@ public class SoftBodySharedSettingsEdge extends IDLBase {
 
     static public final SoftBodySharedSettingsEdge NULL = SoftBodySharedSettingsEdge.native_new();
 
-    static public final SoftBodySharedSettingsEdge T_01 = SoftBodySharedSettingsEdge.native_new();
-
-    static public final SoftBodySharedSettingsEdge T_02 = SoftBodySharedSettingsEdge.native_new();
-
-    static public final SoftBodySharedSettingsEdge T_03 = SoftBodySharedSettingsEdge.native_new();
-
     public SoftBodySharedSettingsEdge(int inVertex1, int inVertex2, float inCompliance) {
         long addr = internal_native_create_int_int_float(inVertex1, inVertex2, inCompliance);
         internal_reset(addr, true);

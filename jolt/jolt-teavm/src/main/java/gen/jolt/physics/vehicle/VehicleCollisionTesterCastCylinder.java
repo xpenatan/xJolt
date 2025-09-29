@@ -9,12 +9,6 @@ public class VehicleCollisionTesterCastCylinder extends VehicleCollisionTester {
 
     static public final VehicleCollisionTesterCastCylinder NULL = VehicleCollisionTesterCastCylinder.native_new();
 
-    static public final VehicleCollisionTesterCastCylinder T_01 = VehicleCollisionTesterCastCylinder.native_new();
-
-    static public final VehicleCollisionTesterCastCylinder T_02 = VehicleCollisionTesterCastCylinder.native_new();
-
-    static public final VehicleCollisionTesterCastCylinder T_03 = VehicleCollisionTesterCastCylinder.native_new();
-
     public VehicleCollisionTesterCastCylinder(int inObjectLayer, float inConvexRadiusFraction) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int_float(inObjectLayer, inConvexRadiusFraction);

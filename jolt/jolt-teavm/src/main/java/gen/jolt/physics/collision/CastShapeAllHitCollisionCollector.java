@@ -14,12 +14,6 @@ public class CastShapeAllHitCollisionCollector extends CastShapeCollector {
 
     static public final CastShapeAllHitCollisionCollector NULL = CastShapeAllHitCollisionCollector.native_new();
 
-    static public final CastShapeAllHitCollisionCollector T_01 = CastShapeAllHitCollisionCollector.native_new();
-
-    static public final CastShapeAllHitCollisionCollector T_02 = CastShapeAllHitCollisionCollector.native_new();
-
-    static public final CastShapeAllHitCollisionCollector T_03 = CastShapeAllHitCollisionCollector.native_new();
-
     public CastShapeAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

@@ -14,12 +14,6 @@ public class ContactPoints extends IDLBase {
 
     static public final ContactPoints NULL = ContactPoints.native_new();
 
-    static public final ContactPoints T_01 = ContactPoints.native_new();
-
-    static public final ContactPoints T_02 = ContactPoints.native_new();
-
-    static public final ContactPoints T_03 = ContactPoints.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

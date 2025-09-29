@@ -11,12 +11,6 @@ public class BodyPtrMemRef extends IDLBase {
 
     static public final BodyPtrMemRef NULL = BodyPtrMemRef.native_new();
 
-    static public final BodyPtrMemRef T_01 = BodyPtrMemRef.native_new();
-
-    static public final BodyPtrMemRef T_02 = BodyPtrMemRef.native_new();
-
-    static public final BodyPtrMemRef T_03 = BodyPtrMemRef.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

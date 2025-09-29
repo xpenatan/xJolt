@@ -9,12 +9,6 @@ public class VehicleEngine extends VehicleEngineSettings {
 
     static public final VehicleEngine NULL = VehicleEngine.native_new();
 
-    static public final VehicleEngine T_01 = VehicleEngine.native_new();
-
-    static public final VehicleEngine T_02 = VehicleEngine.native_new();
-
-    static public final VehicleEngine T_03 = VehicleEngine.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

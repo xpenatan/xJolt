@@ -13,12 +13,6 @@ public class ArrayCollidePointResult extends IDLBase {
 
     static public final ArrayCollidePointResult NULL = ArrayCollidePointResult.native_new();
 
-    static public final ArrayCollidePointResult T_01 = ArrayCollidePointResult.native_new();
-
-    static public final ArrayCollidePointResult T_02 = ArrayCollidePointResult.native_new();
-
-    static public final ArrayCollidePointResult T_03 = ArrayCollidePointResult.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -24,12 +24,6 @@ public class RShapeCast extends IDLBase {
 
     static public final RShapeCast NULL = RShapeCast.native_new();
 
-    static public final RShapeCast T_01 = RShapeCast.native_new();
-
-    static public final RShapeCast T_02 = RShapeCast.native_new();
-
-    static public final RShapeCast T_03 = RShapeCast.native_new();
-
     public RShapeCast(Shape inShape, Vec3 inScale, Mat44 inCenterOfMassStart, Vec3 inDirection) {
         long addr = internal_native_create_Shape_Vec3_Mat44_Vec3(inShape.native_address, inScale.native_address, inCenterOfMassStart.native_address, inDirection.native_address);
         internal_reset(addr, true);

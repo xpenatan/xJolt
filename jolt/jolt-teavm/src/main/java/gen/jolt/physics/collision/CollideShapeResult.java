@@ -30,12 +30,6 @@ public class CollideShapeResult extends IDLBase {
 
     static public final CollideShapeResult NULL = CollideShapeResult.native_new();
 
-    static public final CollideShapeResult T_01 = CollideShapeResult.native_new();
-
-    static public final CollideShapeResult T_02 = CollideShapeResult.native_new();
-
-    static public final CollideShapeResult T_03 = CollideShapeResult.native_new();
-
     public CollideShapeResult() {
         int addr = internal_native_create();
         internal_reset(addr, true);

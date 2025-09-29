@@ -12,12 +12,6 @@ public class Skeleton extends IDLBase {
 
     static public final Skeleton NULL = Skeleton.native_new();
 
-    static public final Skeleton T_01 = Skeleton.native_new();
-
-    static public final Skeleton T_02 = Skeleton.native_new();
-
-    static public final Skeleton T_03 = Skeleton.native_new();
-
     public Skeleton() {
         int addr = internal_native_create();
         internal_reset(addr, true);

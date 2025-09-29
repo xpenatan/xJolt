@@ -12,12 +12,6 @@ public class SpringSettings extends IDLBase {
 
     static public final SpringSettings NULL = SpringSettings.native_new();
 
-    static public final SpringSettings T_01 = SpringSettings.native_new();
-
-    static public final SpringSettings T_02 = SpringSettings.native_new();
-
-    static public final SpringSettings T_03 = SpringSettings.native_new();
-
     public SpringSettings() {
         int addr = internal_native_create();
         internal_reset(addr, true);

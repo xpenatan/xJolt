@@ -11,12 +11,6 @@ public class SubShapeID extends IDLBase {
 
     static public final SubShapeID NULL = SubShapeID.native_new();
 
-    static public final SubShapeID T_01 = SubShapeID.native_new();
-
-    static public final SubShapeID T_02 = SubShapeID.native_new();
-
-    static public final SubShapeID T_03 = SubShapeID.native_new();
-
     public SubShapeID() {
         int addr = internal_native_create();
         internal_reset(addr, true);

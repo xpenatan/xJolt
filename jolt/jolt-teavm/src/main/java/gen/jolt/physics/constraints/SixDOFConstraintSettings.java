@@ -31,12 +31,6 @@ public class SixDOFConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final SixDOFConstraintSettings NULL = SixDOFConstraintSettings.native_new();
 
-    static public final SixDOFConstraintSettings T_01 = SixDOFConstraintSettings.native_new();
-
-    static public final SixDOFConstraintSettings T_02 = SixDOFConstraintSettings.native_new();
-
-    static public final SixDOFConstraintSettings T_03 = SixDOFConstraintSettings.native_new();
-
     public SixDOFConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

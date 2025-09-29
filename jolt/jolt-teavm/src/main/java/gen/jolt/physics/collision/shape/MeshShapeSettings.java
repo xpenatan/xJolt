@@ -21,12 +21,6 @@ public class MeshShapeSettings extends ShapeSettings {
 
     static public final MeshShapeSettings NULL = MeshShapeSettings.native_new();
 
-    static public final MeshShapeSettings T_01 = MeshShapeSettings.native_new();
-
-    static public final MeshShapeSettings T_02 = MeshShapeSettings.native_new();
-
-    static public final MeshShapeSettings T_03 = MeshShapeSettings.native_new();
-
     public MeshShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

@@ -15,12 +15,6 @@ public class ArrayBodyID extends IDLBase {
 
     static public final ArrayBodyID NULL = ArrayBodyID.native_new();
 
-    static public final ArrayBodyID T_01 = ArrayBodyID.native_new();
-
-    static public final ArrayBodyID T_02 = ArrayBodyID.native_new();
-
-    static public final ArrayBodyID T_03 = ArrayBodyID.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

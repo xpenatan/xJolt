@@ -41,12 +41,6 @@ public class Vec4 extends IDLBase {
 
     static public final Vec4 NULL = Vec4.native_new();
 
-    static public final Vec4 T_01 = Vec4.native_new();
-
-    static public final Vec4 T_02 = Vec4.native_new();
-
-    static public final Vec4 T_03 = Vec4.native_new();
-
     public Vec4() {
         int addr = internal_native_create();
         internal_reset(addr, true);

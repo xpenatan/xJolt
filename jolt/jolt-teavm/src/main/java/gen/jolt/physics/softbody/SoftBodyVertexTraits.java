@@ -11,12 +11,6 @@ public class SoftBodyVertexTraits extends IDLBase {
 
     static public final SoftBodyVertexTraits NULL = SoftBodyVertexTraits.native_new();
 
-    static public final SoftBodyVertexTraits T_01 = SoftBodyVertexTraits.native_new();
-
-    static public final SoftBodyVertexTraits T_02 = SoftBodyVertexTraits.native_new();
-
-    static public final SoftBodyVertexTraits T_03 = SoftBodyVertexTraits.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

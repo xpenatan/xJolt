@@ -17,12 +17,6 @@ public class MassProperties extends IDLBase {
 
     static public final MassProperties NULL = MassProperties.native_new();
 
-    static public final MassProperties T_01 = MassProperties.native_new();
-
-    static public final MassProperties T_02 = MassProperties.native_new();
-
-    static public final MassProperties T_03 = MassProperties.native_new();
-
     public MassProperties() {
         int addr = internal_native_create();
         internal_reset(addr, true);

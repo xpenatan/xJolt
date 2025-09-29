@@ -11,12 +11,6 @@ public class Vec3MemRef extends IDLBase {
 
     static public final Vec3MemRef NULL = Vec3MemRef.native_new();
 
-    static public final Vec3MemRef T_01 = Vec3MemRef.native_new();
-
-    static public final Vec3MemRef T_02 = Vec3MemRef.native_new();
-
-    static public final Vec3MemRef T_03 = Vec3MemRef.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

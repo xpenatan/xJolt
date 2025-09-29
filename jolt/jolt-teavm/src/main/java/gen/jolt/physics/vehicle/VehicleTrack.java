@@ -9,12 +9,6 @@ public class VehicleTrack extends VehicleTrackSettings {
 
     static public final VehicleTrack NULL = VehicleTrack.native_new();
 
-    static public final VehicleTrack T_01 = VehicleTrack.native_new();
-
-    static public final VehicleTrack T_02 = VehicleTrack.native_new();
-
-    static public final VehicleTrack T_03 = VehicleTrack.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

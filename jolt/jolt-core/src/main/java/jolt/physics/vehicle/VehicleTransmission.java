@@ -9,12 +9,6 @@ public class VehicleTransmission extends VehicleTransmissionSettings {
 
     static public final VehicleTransmission NULL = VehicleTransmission.native_new();
 
-    static public final VehicleTransmission T_01 = VehicleTransmission.native_new();
-
-    static public final VehicleTransmission T_02 = VehicleTransmission.native_new();
-
-    static public final VehicleTransmission T_03 = VehicleTransmission.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

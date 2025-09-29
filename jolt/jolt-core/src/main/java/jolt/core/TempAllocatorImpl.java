@@ -9,12 +9,6 @@ public class TempAllocatorImpl extends TempAllocator {
 
     static public final TempAllocatorImpl NULL = TempAllocatorImpl.native_new();
 
-    static public final TempAllocatorImpl T_01 = TempAllocatorImpl.native_new();
-
-    static public final TempAllocatorImpl T_02 = TempAllocatorImpl.native_new();
-
-    static public final TempAllocatorImpl T_03 = TempAllocatorImpl.native_new();
-
     public TempAllocatorImpl(int size) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int(size);

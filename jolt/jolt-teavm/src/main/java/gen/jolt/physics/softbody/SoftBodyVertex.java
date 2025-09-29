@@ -18,12 +18,6 @@ public class SoftBodyVertex extends IDLBase {
 
     static public final SoftBodyVertex NULL = SoftBodyVertex.native_new();
 
-    static public final SoftBodyVertex T_01 = SoftBodyVertex.native_new();
-
-    static public final SoftBodyVertex T_02 = SoftBodyVertex.native_new();
-
-    static public final SoftBodyVertex T_03 = SoftBodyVertex.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

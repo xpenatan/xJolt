@@ -87,6 +87,8 @@ public class VehicleConstraintTest extends VehicleTest {
     private Vec4 tempVec4_4;
     private Mat44 tempMat44_1;
 
+    private WheeledVehicleController temp = WheeledVehicleController.native_new();
+
     @Override
     public void initialize() {
         super.initialize();
@@ -256,7 +258,7 @@ public class VehicleConstraintTest extends VehicleTest {
             mBodyInterface.ActivateBody(mCarBody.GetID());
 
         VehicleController vehicleController = mVehicleConstraint.GetController();
-        WheeledVehicleController controller = WheeledVehicleController.T_01;
+        WheeledVehicleController controller = temp;
         controller.native_copy(vehicleController);
 
         // Update vehicle statistics

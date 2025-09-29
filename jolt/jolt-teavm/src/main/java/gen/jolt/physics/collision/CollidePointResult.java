@@ -17,12 +17,6 @@ public class CollidePointResult extends IDLBase {
 
     static public final CollidePointResult NULL = CollidePointResult.native_new();
 
-    static public final CollidePointResult T_01 = CollidePointResult.native_new();
-
-    static public final CollidePointResult T_02 = CollidePointResult.native_new();
-
-    static public final CollidePointResult T_03 = CollidePointResult.native_new();
-
     public CollidePointResult() {
         int addr = internal_native_create();
         internal_reset(addr, true);

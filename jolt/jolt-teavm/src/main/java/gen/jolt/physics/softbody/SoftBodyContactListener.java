@@ -11,12 +11,6 @@ public class SoftBodyContactListener extends IDLBase {
 
     static public final SoftBodyContactListener NULL = SoftBodyContactListener.native_new();
 
-    static public final SoftBodyContactListener T_01 = SoftBodyContactListener.native_new();
-
-    static public final SoftBodyContactListener T_02 = SoftBodyContactListener.native_new();
-
-    static public final SoftBodyContactListener T_03 = SoftBodyContactListener.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -23,12 +23,6 @@ public class RagdollSettings extends IDLBase {
 
     static public final RagdollSettings NULL = RagdollSettings.native_new();
 
-    static public final RagdollSettings T_01 = RagdollSettings.native_new();
-
-    static public final RagdollSettings T_02 = RagdollSettings.native_new();
-
-    static public final RagdollSettings T_03 = RagdollSettings.native_new();
-
     public RagdollSettings() {
         int addr = internal_native_create();
         internal_reset(addr, true);

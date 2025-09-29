@@ -13,12 +13,6 @@ public class VertexList extends IDLBase {
 
     static public final VertexList NULL = VertexList.native_new();
 
-    static public final VertexList T_01 = VertexList.native_new();
-
-    static public final VertexList T_02 = VertexList.native_new();
-
-    static public final VertexList T_03 = VertexList.native_new();
-
     public VertexList() {
         int addr = internal_native_create();
         internal_reset(addr, true);

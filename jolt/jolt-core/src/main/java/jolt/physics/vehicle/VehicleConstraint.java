@@ -36,12 +36,6 @@ public class VehicleConstraint extends Constraint {
 
     static public final VehicleConstraint NULL = VehicleConstraint.native_new();
 
-    static public final VehicleConstraint T_01 = VehicleConstraint.native_new();
-
-    static public final VehicleConstraint T_02 = VehicleConstraint.native_new();
-
-    static public final VehicleConstraint T_03 = VehicleConstraint.native_new();
-
     public VehicleConstraint(Body inVehicleBody, VehicleConstraintSettings inSettings) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Body_VehicleConstraintSettings(inVehicleBody.native_address, inSettings.native_address);

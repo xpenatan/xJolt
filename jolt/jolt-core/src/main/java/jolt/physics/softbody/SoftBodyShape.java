@@ -12,12 +12,6 @@ public class SoftBodyShape extends Shape {
 
     static public final SoftBodyShape NULL = SoftBodyShape.native_new();
 
-    static public final SoftBodyShape T_01 = SoftBodyShape.native_new();
-
-    static public final SoftBodyShape T_02 = SoftBodyShape.native_new();
-
-    static public final SoftBodyShape T_03 = SoftBodyShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

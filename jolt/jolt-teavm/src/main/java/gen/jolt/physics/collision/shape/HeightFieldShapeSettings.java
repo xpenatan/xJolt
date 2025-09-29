@@ -24,12 +24,6 @@ public class HeightFieldShapeSettings extends ShapeSettings {
 
     static public final HeightFieldShapeSettings NULL = HeightFieldShapeSettings.native_new();
 
-    static public final HeightFieldShapeSettings T_01 = HeightFieldShapeSettings.native_new();
-
-    static public final HeightFieldShapeSettings T_02 = HeightFieldShapeSettings.native_new();
-
-    static public final HeightFieldShapeSettings T_03 = HeightFieldShapeSettings.native_new();
-
     public HeightFieldShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

@@ -11,12 +11,6 @@ public class SoftBodySharedSettingsSkinWeight extends IDLBase {
 
     static public final SoftBodySharedSettingsSkinWeight NULL = SoftBodySharedSettingsSkinWeight.native_new();
 
-    static public final SoftBodySharedSettingsSkinWeight T_01 = SoftBodySharedSettingsSkinWeight.native_new();
-
-    static public final SoftBodySharedSettingsSkinWeight T_02 = SoftBodySharedSettingsSkinWeight.native_new();
-
-    static public final SoftBodySharedSettingsSkinWeight T_03 = SoftBodySharedSettingsSkinWeight.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

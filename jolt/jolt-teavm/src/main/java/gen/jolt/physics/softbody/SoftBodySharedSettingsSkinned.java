@@ -13,12 +13,6 @@ public class SoftBodySharedSettingsSkinned extends IDLBase {
 
     static public final SoftBodySharedSettingsSkinned NULL = SoftBodySharedSettingsSkinned.native_new();
 
-    static public final SoftBodySharedSettingsSkinned T_01 = SoftBodySharedSettingsSkinned.native_new();
-
-    static public final SoftBodySharedSettingsSkinned T_02 = SoftBodySharedSettingsSkinned.native_new();
-
-    static public final SoftBodySharedSettingsSkinned T_03 = SoftBodySharedSettingsSkinned.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

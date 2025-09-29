@@ -11,12 +11,6 @@ public class TireMaxImpulseCallbackResult extends IDLBase {
 
     static public final TireMaxImpulseCallbackResult NULL = TireMaxImpulseCallbackResult.native_new();
 
-    static public final TireMaxImpulseCallbackResult T_01 = TireMaxImpulseCallbackResult.native_new();
-
-    static public final TireMaxImpulseCallbackResult T_02 = TireMaxImpulseCallbackResult.native_new();
-
-    static public final TireMaxImpulseCallbackResult T_03 = TireMaxImpulseCallbackResult.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

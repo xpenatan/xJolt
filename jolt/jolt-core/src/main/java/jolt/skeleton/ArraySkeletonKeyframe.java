@@ -13,12 +13,6 @@ public class ArraySkeletonKeyframe extends IDLBase {
 
     static public final ArraySkeletonKeyframe NULL = ArraySkeletonKeyframe.native_new();
 
-    static public final ArraySkeletonKeyframe T_01 = ArraySkeletonKeyframe.native_new();
-
-    static public final ArraySkeletonKeyframe T_02 = ArraySkeletonKeyframe.native_new();
-
-    static public final ArraySkeletonKeyframe T_03 = ArraySkeletonKeyframe.native_new();
-
     public ArraySkeletonKeyframe() {
         long addr = internal_native_create();
         internal_reset(addr, true);

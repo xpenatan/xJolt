@@ -11,12 +11,6 @@ public class HeightFieldShapeConstantValues extends IDLBase {
 
     static public final HeightFieldShapeConstantValues NULL = HeightFieldShapeConstantValues.native_new();
 
-    static public final HeightFieldShapeConstantValues T_01 = HeightFieldShapeConstantValues.native_new();
-
-    static public final HeightFieldShapeConstantValues T_02 = HeightFieldShapeConstantValues.native_new();
-
-    static public final HeightFieldShapeConstantValues T_03 = HeightFieldShapeConstantValues.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

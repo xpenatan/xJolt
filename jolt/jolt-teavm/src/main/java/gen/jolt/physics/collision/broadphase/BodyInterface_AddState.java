@@ -11,12 +11,6 @@ public class BodyInterface_AddState extends IDLBase {
 
     static public final BodyInterface_AddState NULL = BodyInterface_AddState.native_new();
 
-    static public final BodyInterface_AddState T_01 = BodyInterface_AddState.native_new();
-
-    static public final BodyInterface_AddState T_02 = BodyInterface_AddState.native_new();
-
-    static public final BodyInterface_AddState T_03 = BodyInterface_AddState.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -13,12 +13,6 @@ public class ArraySoftBodySharedSettingsSkinned extends IDLBase {
 
     static public final ArraySoftBodySharedSettingsSkinned NULL = ArraySoftBodySharedSettingsSkinned.native_new();
 
-    static public final ArraySoftBodySharedSettingsSkinned T_01 = ArraySoftBodySharedSettingsSkinned.native_new();
-
-    static public final ArraySoftBodySharedSettingsSkinned T_02 = ArraySoftBodySharedSettingsSkinned.native_new();
-
-    static public final ArraySoftBodySharedSettingsSkinned T_03 = ArraySoftBodySharedSettingsSkinned.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

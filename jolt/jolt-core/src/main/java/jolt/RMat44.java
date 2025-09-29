@@ -75,12 +75,6 @@ public class RMat44 extends IDLBase {
 
     static public final RMat44 NULL = RMat44.native_new();
 
-    static public final RMat44 T_01 = RMat44.native_new();
-
-    static public final RMat44 T_02 = RMat44.native_new();
-
-    static public final RMat44 T_03 = RMat44.native_new();
-
     public RMat44() {
         long addr = internal_native_create();
         internal_reset(addr, true);

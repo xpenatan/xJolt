@@ -14,12 +14,6 @@ public class MutableCompoundShape extends CompoundShape {
 
     static public final MutableCompoundShape NULL = MutableCompoundShape.native_new();
 
-    static public final MutableCompoundShape T_01 = MutableCompoundShape.native_new();
-
-    static public final MutableCompoundShape T_02 = MutableCompoundShape.native_new();
-
-    static public final MutableCompoundShape T_03 = MutableCompoundShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

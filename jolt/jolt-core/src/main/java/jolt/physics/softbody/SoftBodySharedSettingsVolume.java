@@ -11,12 +11,6 @@ public class SoftBodySharedSettingsVolume extends IDLBase {
 
     static public final SoftBodySharedSettingsVolume NULL = SoftBodySharedSettingsVolume.native_new();
 
-    static public final SoftBodySharedSettingsVolume T_01 = SoftBodySharedSettingsVolume.native_new();
-
-    static public final SoftBodySharedSettingsVolume T_02 = SoftBodySharedSettingsVolume.native_new();
-
-    static public final SoftBodySharedSettingsVolume T_03 = SoftBodySharedSettingsVolume.native_new();
-
     public SoftBodySharedSettingsVolume(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance) {
         long addr = internal_native_create_int_int_int_int_float(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
         internal_reset(addr, true);

@@ -14,12 +14,6 @@ public class BoxShape extends ConvexShape {
 
     static public final BoxShape NULL = BoxShape.native_new();
 
-    static public final BoxShape T_01 = BoxShape.native_new();
-
-    static public final BoxShape T_02 = BoxShape.native_new();
-
-    static public final BoxShape T_03 = BoxShape.native_new();
-
     public BoxShape(Vec3 inHalfExtent, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Vec3_float_PhysicsMaterial(inHalfExtent.native_address, inConvexRadius, inMaterial.native_address);

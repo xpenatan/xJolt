@@ -64,12 +64,6 @@ public class BodyInterface extends IDLBase {
 
     static public final BodyInterface NULL = BodyInterface.native_new();
 
-    static public final BodyInterface T_01 = BodyInterface.native_new();
-
-    static public final BodyInterface T_02 = BodyInterface.native_new();
-
-    static public final BodyInterface T_03 = BodyInterface.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

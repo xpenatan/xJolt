@@ -31,12 +31,6 @@ public class SoftBodySharedSettings extends IDLBase {
 
     static public final SoftBodySharedSettings NULL = SoftBodySharedSettings.native_new();
 
-    static public final SoftBodySharedSettings T_01 = SoftBodySharedSettings.native_new();
-
-    static public final SoftBodySharedSettings T_02 = SoftBodySharedSettings.native_new();
-
-    static public final SoftBodySharedSettings T_03 = SoftBodySharedSettings.native_new();
-
     public SoftBodySharedSettings() {
         long addr = internal_native_create();
         internal_reset(addr, true);

@@ -9,12 +9,6 @@ public class ConvexHullShape extends ConvexShape {
 
     static public final ConvexHullShape NULL = ConvexHullShape.native_new();
 
-    static public final ConvexHullShape T_01 = ConvexHullShape.native_new();
-
-    static public final ConvexHullShape T_02 = ConvexHullShape.native_new();
-
-    static public final ConvexHullShape T_03 = ConvexHullShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

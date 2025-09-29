@@ -13,12 +13,6 @@ public class BodyManagerDrawSettings extends IDLBase {
 
     static public final BodyManagerDrawSettings NULL = BodyManagerDrawSettings.native_new();
 
-    static public final BodyManagerDrawSettings T_01 = BodyManagerDrawSettings.native_new();
-
-    static public final BodyManagerDrawSettings T_02 = BodyManagerDrawSettings.native_new();
-
-    static public final BodyManagerDrawSettings T_03 = BodyManagerDrawSettings.native_new();
-
     public BodyManagerDrawSettings() {
         long addr = internal_native_create();
         internal_reset(addr, true);

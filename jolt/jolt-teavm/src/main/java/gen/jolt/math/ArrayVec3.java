@@ -15,12 +15,6 @@ public class ArrayVec3 extends IDLBase {
 
     static public final ArrayVec3 NULL = ArrayVec3.native_new();
 
-    static public final ArrayVec3 T_01 = ArrayVec3.native_new();
-
-    static public final ArrayVec3 T_02 = ArrayVec3.native_new();
-
-    static public final ArrayVec3 T_03 = ArrayVec3.native_new();
-
     public ArrayVec3() {
         int addr = internal_native_create();
         internal_reset(addr, true);

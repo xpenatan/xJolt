@@ -9,12 +9,6 @@ public class JobSystemThreadPool extends JobSystemWithBarrier {
 
     static public final JobSystemThreadPool NULL = JobSystemThreadPool.native_new();
 
-    static public final JobSystemThreadPool T_01 = JobSystemThreadPool.native_new();
-
-    static public final JobSystemThreadPool T_02 = JobSystemThreadPool.native_new();
-
-    static public final JobSystemThreadPool T_03 = JobSystemThreadPool.native_new();
-
     public JobSystemThreadPool(int inMaxJobs, int inMaxBarriers, int inNumThreads) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int_int_int(inMaxJobs, inMaxBarriers, inNumThreads);

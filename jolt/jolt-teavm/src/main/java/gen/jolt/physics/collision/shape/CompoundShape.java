@@ -11,12 +11,6 @@ public class CompoundShape extends Shape {
 
     static public final CompoundShape NULL = CompoundShape.native_new();
 
-    static public final CompoundShape T_01 = CompoundShape.native_new();
-
-    static public final CompoundShape T_02 = CompoundShape.native_new();
-
-    static public final CompoundShape T_03 = CompoundShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

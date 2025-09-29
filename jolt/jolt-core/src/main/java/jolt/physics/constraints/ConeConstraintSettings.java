@@ -21,12 +21,6 @@ public class ConeConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final ConeConstraintSettings NULL = ConeConstraintSettings.native_new();
 
-    static public final ConeConstraintSettings T_01 = ConeConstraintSettings.native_new();
-
-    static public final ConeConstraintSettings T_02 = ConeConstraintSettings.native_new();
-
-    static public final ConeConstraintSettings T_03 = ConeConstraintSettings.native_new();
-
     public ConeConstraintSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

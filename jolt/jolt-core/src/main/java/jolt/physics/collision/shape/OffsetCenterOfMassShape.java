@@ -11,12 +11,6 @@ public class OffsetCenterOfMassShape extends DecoratedShape {
 
     static public final OffsetCenterOfMassShape NULL = OffsetCenterOfMassShape.native_new();
 
-    static public final OffsetCenterOfMassShape T_01 = OffsetCenterOfMassShape.native_new();
-
-    static public final OffsetCenterOfMassShape T_02 = OffsetCenterOfMassShape.native_new();
-
-    static public final OffsetCenterOfMassShape T_03 = OffsetCenterOfMassShape.native_new();
-
     public OffsetCenterOfMassShape(Shape inShape, Vec3 inOffset) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Shape_Vec3(inShape.native_address, inOffset.native_address);

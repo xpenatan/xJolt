@@ -15,12 +15,6 @@ public class PathConstraint extends TwoBodyConstraint {
 
     static public final PathConstraint NULL = PathConstraint.native_new();
 
-    static public final PathConstraint T_01 = PathConstraint.native_new();
-
-    static public final PathConstraint T_02 = PathConstraint.native_new();
-
-    static public final PathConstraint T_03 = PathConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -13,12 +13,6 @@ public class ArrayVehicleDifferentialSettings extends IDLBase {
 
     static public final ArrayVehicleDifferentialSettings NULL = ArrayVehicleDifferentialSettings.native_new();
 
-    static public final ArrayVehicleDifferentialSettings T_01 = ArrayVehicleDifferentialSettings.native_new();
-
-    static public final ArrayVehicleDifferentialSettings T_02 = ArrayVehicleDifferentialSettings.native_new();
-
-    static public final ArrayVehicleDifferentialSettings T_03 = ArrayVehicleDifferentialSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

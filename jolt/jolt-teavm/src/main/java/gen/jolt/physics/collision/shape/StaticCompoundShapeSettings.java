@@ -9,12 +9,6 @@ public class StaticCompoundShapeSettings extends CompoundShapeSettings {
 
     static public final StaticCompoundShapeSettings NULL = StaticCompoundShapeSettings.native_new();
 
-    static public final StaticCompoundShapeSettings T_01 = StaticCompoundShapeSettings.native_new();
-
-    static public final StaticCompoundShapeSettings T_02 = StaticCompoundShapeSettings.native_new();
-
-    static public final StaticCompoundShapeSettings T_03 = StaticCompoundShapeSettings.native_new();
-
     public StaticCompoundShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

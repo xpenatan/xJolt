@@ -22,12 +22,6 @@ public class PathConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final PathConstraintSettings NULL = PathConstraintSettings.native_new();
 
-    static public final PathConstraintSettings T_01 = PathConstraintSettings.native_new();
-
-    static public final PathConstraintSettings T_02 = PathConstraintSettings.native_new();
-
-    static public final PathConstraintSettings T_03 = PathConstraintSettings.native_new();
-
     public PathConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

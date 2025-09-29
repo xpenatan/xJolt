@@ -9,12 +9,6 @@ public class MeshShape extends Shape {
 
     static public final MeshShape NULL = MeshShape.native_new();
 
-    static public final MeshShape T_01 = MeshShape.native_new();
-
-    static public final MeshShape T_02 = MeshShape.native_new();
-
-    static public final MeshShape T_03 = MeshShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

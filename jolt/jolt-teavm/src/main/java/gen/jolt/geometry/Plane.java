@@ -23,12 +23,6 @@ public class Plane extends IDLBase {
 
     static public final Plane NULL = Plane.native_new();
 
-    static public final Plane T_01 = Plane.native_new();
-
-    static public final Plane T_02 = Plane.native_new();
-
-    static public final Plane T_03 = Plane.native_new();
-
     public Plane(Vec3 inNormal, float inConstant) {
         int addr = internal_native_create_Vec3_float(inNormal.native_address, inConstant);
         internal_reset(addr, true);

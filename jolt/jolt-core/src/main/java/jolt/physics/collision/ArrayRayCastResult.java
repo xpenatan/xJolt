@@ -13,12 +13,6 @@ public class ArrayRayCastResult extends IDLBase {
 
     static public final ArrayRayCastResult NULL = ArrayRayCastResult.native_new();
 
-    static public final ArrayRayCastResult T_01 = ArrayRayCastResult.native_new();
-
-    static public final ArrayRayCastResult T_02 = ArrayRayCastResult.native_new();
-
-    static public final ArrayRayCastResult T_03 = ArrayRayCastResult.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

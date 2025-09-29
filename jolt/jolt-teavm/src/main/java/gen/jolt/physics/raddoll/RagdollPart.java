@@ -14,12 +14,6 @@ public class RagdollPart extends BodyCreationSettings {
 
     static public final RagdollPart NULL = RagdollPart.native_new();
 
-    static public final RagdollPart T_01 = RagdollPart.native_new();
-
-    static public final RagdollPart T_02 = RagdollPart.native_new();
-
-    static public final RagdollPart T_03 = RagdollPart.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

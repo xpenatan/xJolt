@@ -9,12 +9,6 @@ public class BroadPhaseLayerInterfaceMask extends BroadPhaseLayerInterface {
 
     static public final BroadPhaseLayerInterfaceMask NULL = BroadPhaseLayerInterfaceMask.native_new();
 
-    static public final BroadPhaseLayerInterfaceMask T_01 = BroadPhaseLayerInterfaceMask.native_new();
-
-    static public final BroadPhaseLayerInterfaceMask T_02 = BroadPhaseLayerInterfaceMask.native_new();
-
-    static public final BroadPhaseLayerInterfaceMask T_03 = BroadPhaseLayerInterfaceMask.native_new();
-
     public BroadPhaseLayerInterfaceMask(int inNumBroadPhaseLayers) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_int(inNumBroadPhaseLayers);

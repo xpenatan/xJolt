@@ -15,12 +15,6 @@ public class GroupFilter extends IDLBase {
 
     static public final GroupFilter NULL = GroupFilter.native_new();
 
-    static public final GroupFilter T_01 = GroupFilter.native_new();
-
-    static public final GroupFilter T_02 = GroupFilter.native_new();
-
-    static public final GroupFilter T_03 = GroupFilter.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

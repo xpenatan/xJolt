@@ -9,12 +9,6 @@ public class MotorcycleController extends WheeledVehicleController {
 
     static public final MotorcycleController NULL = MotorcycleController.native_new();
 
-    static public final MotorcycleController T_01 = MotorcycleController.native_new();
-
-    static public final MotorcycleController T_02 = MotorcycleController.native_new();
-
-    static public final MotorcycleController T_03 = MotorcycleController.native_new();
-
     public MotorcycleController(MotorcycleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_MotorcycleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);

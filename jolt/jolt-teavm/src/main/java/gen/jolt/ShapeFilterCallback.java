@@ -25,12 +25,6 @@ public class ShapeFilterCallback extends ShapeFilter {
 
     static public final ShapeFilterCallback NULL = ShapeFilterCallback.native_new();
 
-    static public final ShapeFilterCallback T_01 = ShapeFilterCallback.native_new();
-
-    static public final ShapeFilterCallback T_02 = ShapeFilterCallback.native_new();
-
-    static public final ShapeFilterCallback T_03 = ShapeFilterCallback.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

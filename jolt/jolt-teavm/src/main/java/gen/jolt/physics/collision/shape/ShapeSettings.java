@@ -13,12 +13,6 @@ public class ShapeSettings extends RefTargetShapeSettings {
 
     static public final ShapeSettings NULL = ShapeSettings.native_new();
 
-    static public final ShapeSettings T_01 = ShapeSettings.native_new();
-
-    static public final ShapeSettings T_02 = ShapeSettings.native_new();
-
-    static public final ShapeSettings T_03 = ShapeSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

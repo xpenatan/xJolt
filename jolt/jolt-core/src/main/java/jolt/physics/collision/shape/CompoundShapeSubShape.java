@@ -19,12 +19,6 @@ public class CompoundShapeSubShape extends IDLBase {
 
     static public final CompoundShapeSubShape NULL = CompoundShapeSubShape.native_new();
 
-    static public final CompoundShapeSubShape T_01 = CompoundShapeSubShape.native_new();
-
-    static public final CompoundShapeSubShape T_02 = CompoundShapeSubShape.native_new();
-
-    static public final CompoundShapeSubShape T_03 = CompoundShapeSubShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

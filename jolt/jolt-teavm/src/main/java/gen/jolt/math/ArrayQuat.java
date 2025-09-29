@@ -15,12 +15,6 @@ public class ArrayQuat extends IDLBase {
 
     static public final ArrayQuat NULL = ArrayQuat.native_new();
 
-    static public final ArrayQuat T_01 = ArrayQuat.native_new();
-
-    static public final ArrayQuat T_02 = ArrayQuat.native_new();
-
-    static public final ArrayQuat T_03 = ArrayQuat.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

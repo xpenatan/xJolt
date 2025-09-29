@@ -29,12 +29,6 @@ public class HingeConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final HingeConstraintSettings NULL = HingeConstraintSettings.native_new();
 
-    static public final HingeConstraintSettings T_01 = HingeConstraintSettings.native_new();
-
-    static public final HingeConstraintSettings T_02 = HingeConstraintSettings.native_new();
-
-    static public final HingeConstraintSettings T_03 = HingeConstraintSettings.native_new();
-
     public HingeConstraintSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

@@ -13,12 +13,6 @@ public class ArraySoftBodySharedSettingsEdge extends IDLBase {
 
     static public final ArraySoftBodySharedSettingsEdge NULL = ArraySoftBodySharedSettingsEdge.native_new();
 
-    static public final ArraySoftBodySharedSettingsEdge T_01 = ArraySoftBodySharedSettingsEdge.native_new();
-
-    static public final ArraySoftBodySharedSettingsEdge T_02 = ArraySoftBodySharedSettingsEdge.native_new();
-
-    static public final ArraySoftBodySharedSettingsEdge T_03 = ArraySoftBodySharedSettingsEdge.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

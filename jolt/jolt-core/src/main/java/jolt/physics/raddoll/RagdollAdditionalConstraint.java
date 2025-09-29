@@ -14,12 +14,6 @@ public class RagdollAdditionalConstraint extends IDLBase {
 
     static public final RagdollAdditionalConstraint NULL = RagdollAdditionalConstraint.native_new();
 
-    static public final RagdollAdditionalConstraint T_01 = RagdollAdditionalConstraint.native_new();
-
-    static public final RagdollAdditionalConstraint T_02 = RagdollAdditionalConstraint.native_new();
-
-    static public final RagdollAdditionalConstraint T_03 = RagdollAdditionalConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -40,12 +40,6 @@ public class MotionProperties extends IDLBase {
 
     static public final MotionProperties NULL = MotionProperties.native_new();
 
-    static public final MotionProperties T_01 = MotionProperties.native_new();
-
-    static public final MotionProperties T_02 = MotionProperties.native_new();
-
-    static public final MotionProperties T_03 = MotionProperties.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

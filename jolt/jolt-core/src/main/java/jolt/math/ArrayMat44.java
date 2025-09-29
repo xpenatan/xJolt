@@ -15,12 +15,6 @@ public class ArrayMat44 extends IDLBase {
 
     static public final ArrayMat44 NULL = ArrayMat44.native_new();
 
-    static public final ArrayMat44 T_01 = ArrayMat44.native_new();
-
-    static public final ArrayMat44 T_02 = ArrayMat44.native_new();
-
-    static public final ArrayMat44 T_03 = ArrayMat44.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

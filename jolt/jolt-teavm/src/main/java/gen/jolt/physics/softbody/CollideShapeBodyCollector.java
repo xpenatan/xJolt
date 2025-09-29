@@ -17,12 +17,6 @@ public class CollideShapeBodyCollector extends IDLBase {
 
     static public final CollideShapeBodyCollector NULL = CollideShapeBodyCollector.native_new();
 
-    static public final CollideShapeBodyCollector T_01 = CollideShapeBodyCollector.native_new();
-
-    static public final CollideShapeBodyCollector T_02 = CollideShapeBodyCollector.native_new();
-
-    static public final CollideShapeBodyCollector T_03 = CollideShapeBodyCollector.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

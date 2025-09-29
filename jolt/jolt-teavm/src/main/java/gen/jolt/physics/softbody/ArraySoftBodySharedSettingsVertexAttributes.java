@@ -15,12 +15,6 @@ public class ArraySoftBodySharedSettingsVertexAttributes extends IDLBase {
 
     static public final ArraySoftBodySharedSettingsVertexAttributes NULL = ArraySoftBodySharedSettingsVertexAttributes.native_new();
 
-    static public final ArraySoftBodySharedSettingsVertexAttributes T_01 = ArraySoftBodySharedSettingsVertexAttributes.native_new();
-
-    static public final ArraySoftBodySharedSettingsVertexAttributes T_02 = ArraySoftBodySharedSettingsVertexAttributes.native_new();
-
-    static public final ArraySoftBodySharedSettingsVertexAttributes T_03 = ArraySoftBodySharedSettingsVertexAttributes.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -19,12 +19,6 @@ public class TransformedShapeCollector extends IDLBase {
 
     static public final TransformedShapeCollector NULL = TransformedShapeCollector.native_new();
 
-    static public final TransformedShapeCollector T_01 = TransformedShapeCollector.native_new();
-
-    static public final TransformedShapeCollector T_02 = TransformedShapeCollector.native_new();
-
-    static public final TransformedShapeCollector T_03 = TransformedShapeCollector.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -11,12 +11,6 @@ public class ContactListener extends IDLBase {
 
     static public final ContactListener NULL = ContactListener.native_new();
 
-    static public final ContactListener T_01 = ContactListener.native_new();
-
-    static public final ContactListener T_02 = ContactListener.native_new();
-
-    static public final ContactListener T_03 = ContactListener.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

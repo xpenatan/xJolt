@@ -15,12 +15,6 @@ public class WheelSettingsWV extends WheelSettings {
 
     static public final WheelSettingsWV NULL = WheelSettingsWV.native_new();
 
-    static public final WheelSettingsWV T_01 = WheelSettingsWV.native_new();
-
-    static public final WheelSettingsWV T_02 = WheelSettingsWV.native_new();
-
-    static public final WheelSettingsWV T_03 = WheelSettingsWV.native_new();
-
     public WheelSettingsWV() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

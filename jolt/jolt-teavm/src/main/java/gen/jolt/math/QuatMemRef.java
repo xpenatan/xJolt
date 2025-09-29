@@ -11,12 +11,6 @@ public class QuatMemRef extends IDLBase {
 
     static public final QuatMemRef NULL = QuatMemRef.native_new();
 
-    static public final QuatMemRef T_01 = QuatMemRef.native_new();
-
-    static public final QuatMemRef T_02 = QuatMemRef.native_new();
-
-    static public final QuatMemRef T_03 = QuatMemRef.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

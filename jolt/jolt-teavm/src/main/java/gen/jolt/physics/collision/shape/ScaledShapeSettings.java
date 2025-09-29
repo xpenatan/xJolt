@@ -13,12 +13,6 @@ public class ScaledShapeSettings extends DecoratedShapeSettings {
 
     static public final ScaledShapeSettings NULL = ScaledShapeSettings.native_new();
 
-    static public final ScaledShapeSettings T_01 = ScaledShapeSettings.native_new();
-
-    static public final ScaledShapeSettings T_02 = ScaledShapeSettings.native_new();
-
-    static public final ScaledShapeSettings T_03 = ScaledShapeSettings.native_new();
-
     public ScaledShapeSettings(ShapeSettings inShape, Vec3 inScale) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_ShapeSettings_Vec3(inShape.native_address, inScale.native_address);

@@ -13,12 +13,6 @@ public class ConeConstraint extends TwoBodyConstraint {
 
     static public final ConeConstraint NULL = ConeConstraint.native_new();
 
-    static public final ConeConstraint T_01 = ConeConstraint.native_new();
-
-    static public final ConeConstraint T_02 = ConeConstraint.native_new();
-
-    static public final ConeConstraint T_03 = ConeConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

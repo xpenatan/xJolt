@@ -16,12 +16,6 @@ public class RotatedTranslatedShape extends DecoratedShape {
 
     static public final RotatedTranslatedShape NULL = RotatedTranslatedShape.native_new();
 
-    static public final RotatedTranslatedShape T_01 = RotatedTranslatedShape.native_new();
-
-    static public final RotatedTranslatedShape T_02 = RotatedTranslatedShape.native_new();
-
-    static public final RotatedTranslatedShape T_03 = RotatedTranslatedShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

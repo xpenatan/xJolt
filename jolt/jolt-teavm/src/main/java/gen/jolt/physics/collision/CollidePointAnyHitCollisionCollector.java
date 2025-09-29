@@ -13,12 +13,6 @@ public class CollidePointAnyHitCollisionCollector extends CollidePointCollector 
 
     static public final CollidePointAnyHitCollisionCollector NULL = CollidePointAnyHitCollisionCollector.native_new();
 
-    static public final CollidePointAnyHitCollisionCollector T_01 = CollidePointAnyHitCollisionCollector.native_new();
-
-    static public final CollidePointAnyHitCollisionCollector T_02 = CollidePointAnyHitCollisionCollector.native_new();
-
-    static public final CollidePointAnyHitCollisionCollector T_03 = CollidePointAnyHitCollisionCollector.native_new();
-
     public CollidePointAnyHitCollisionCollector() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

@@ -20,12 +20,6 @@ public class SkeletalAnimationJointState extends IDLBase {
 
     static public final SkeletalAnimationJointState NULL = SkeletalAnimationJointState.native_new();
 
-    static public final SkeletalAnimationJointState T_01 = SkeletalAnimationJointState.native_new();
-
-    static public final SkeletalAnimationJointState T_02 = SkeletalAnimationJointState.native_new();
-
-    static public final SkeletalAnimationJointState T_03 = SkeletalAnimationJointState.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

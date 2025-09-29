@@ -17,12 +17,6 @@ public class OrientedBox extends IDLBase {
 
     static public final OrientedBox NULL = OrientedBox.native_new();
 
-    static public final OrientedBox T_01 = OrientedBox.native_new();
-
-    static public final OrientedBox T_02 = OrientedBox.native_new();
-
-    static public final OrientedBox T_03 = OrientedBox.native_new();
-
     public OrientedBox() {
         int addr = internal_native_create();
         internal_reset(addr, true);

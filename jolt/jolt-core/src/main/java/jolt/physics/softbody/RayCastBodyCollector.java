@@ -17,12 +17,6 @@ public class RayCastBodyCollector extends IDLBase {
 
     static public final RayCastBodyCollector NULL = RayCastBodyCollector.native_new();
 
-    static public final RayCastBodyCollector T_01 = RayCastBodyCollector.native_new();
-
-    static public final RayCastBodyCollector T_02 = RayCastBodyCollector.native_new();
-
-    static public final RayCastBodyCollector T_03 = RayCastBodyCollector.native_new();
-
     /*[-JNI;-NATIVE]
 class RayCastBodyCollectorJS : public RayCastBodyCollector {
 private:

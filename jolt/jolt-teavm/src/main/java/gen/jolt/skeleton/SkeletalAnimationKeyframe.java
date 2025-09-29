@@ -9,12 +9,6 @@ public class SkeletalAnimationKeyframe extends SkeletalAnimationJointState {
 
     static public final SkeletalAnimationKeyframe NULL = SkeletalAnimationKeyframe.native_new();
 
-    static public final SkeletalAnimationKeyframe T_01 = SkeletalAnimationKeyframe.native_new();
-
-    static public final SkeletalAnimationKeyframe T_02 = SkeletalAnimationKeyframe.native_new();
-
-    static public final SkeletalAnimationKeyframe T_03 = SkeletalAnimationKeyframe.native_new();
-
     public SkeletalAnimationKeyframe() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

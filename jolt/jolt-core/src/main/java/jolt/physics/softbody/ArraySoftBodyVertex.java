@@ -13,12 +13,6 @@ public class ArraySoftBodyVertex extends IDLBase {
 
     static public final ArraySoftBodyVertex NULL = ArraySoftBodyVertex.native_new();
 
-    static public final ArraySoftBodyVertex T_01 = ArraySoftBodyVertex.native_new();
-
-    static public final ArraySoftBodyVertex T_02 = ArraySoftBodyVertex.native_new();
-
-    static public final ArraySoftBodyVertex T_03 = ArraySoftBodyVertex.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

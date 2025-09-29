@@ -13,12 +13,6 @@ public class ArrayShapeCastResult extends IDLBase {
 
     static public final ArrayShapeCastResult NULL = ArrayShapeCastResult.native_new();
 
-    static public final ArrayShapeCastResult T_01 = ArrayShapeCastResult.native_new();
-
-    static public final ArrayShapeCastResult T_02 = ArrayShapeCastResult.native_new();
-
-    static public final ArrayShapeCastResult T_03 = ArrayShapeCastResult.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

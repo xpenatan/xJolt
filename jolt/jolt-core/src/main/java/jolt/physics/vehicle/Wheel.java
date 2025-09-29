@@ -27,12 +27,6 @@ public class Wheel extends IDLBase {
 
     static public final Wheel NULL = Wheel.native_new();
 
-    static public final Wheel T_01 = Wheel.native_new();
-
-    static public final Wheel T_02 = Wheel.native_new();
-
-    static public final Wheel T_03 = Wheel.native_new();
-
     public Wheel(WheelSettings inSettings) {
         long addr = internal_native_create_WheelSettings(inSettings.native_address);
         internal_reset(addr, true);

@@ -13,12 +13,6 @@ public class ArrayWheelSettings extends IDLBase {
 
     static public final ArrayWheelSettings NULL = ArrayWheelSettings.native_new();
 
-    static public final ArrayWheelSettings T_01 = ArrayWheelSettings.native_new();
-
-    static public final ArrayWheelSettings T_02 = ArrayWheelSettings.native_new();
-
-    static public final ArrayWheelSettings T_03 = ArrayWheelSettings.native_new();
-
     public ArrayWheelSettings() {
         int addr = internal_native_create();
         internal_reset(addr, true);

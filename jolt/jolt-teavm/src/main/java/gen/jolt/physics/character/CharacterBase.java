@@ -30,12 +30,6 @@ public class CharacterBase extends IDLBase {
 
     static public final CharacterBase NULL = CharacterBase.native_new();
 
-    static public final CharacterBase T_01 = CharacterBase.native_new();
-
-    static public final CharacterBase T_02 = CharacterBase.native_new();
-
-    static public final CharacterBase T_03 = CharacterBase.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

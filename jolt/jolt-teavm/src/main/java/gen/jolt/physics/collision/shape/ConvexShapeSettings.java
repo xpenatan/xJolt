@@ -13,12 +13,6 @@ public class ConvexShapeSettings extends ShapeSettings {
 
     static public final ConvexShapeSettings NULL = ConvexShapeSettings.native_new();
 
-    static public final ConvexShapeSettings T_01 = ConvexShapeSettings.native_new();
-
-    static public final ConvexShapeSettings T_02 = ConvexShapeSettings.native_new();
-
-    static public final ConvexShapeSettings T_03 = ConvexShapeSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -58,6 +58,8 @@ public class TankTest extends VehicleTest {
 
     private Vec3[] wheel_pos;
 
+    private TrackedVehicleController temp = TrackedVehicleController.native_new();
+
     @Override
     public void initialize() {
         super.initialize();
@@ -218,7 +220,7 @@ public class TankTest extends VehicleTest {
 
         // Pass the input on to the constraint
         VehicleController vehicleController = mVehicleConstraint.GetController();
-        TrackedVehicleController controller = TrackedVehicleController.T_01;
+        TrackedVehicleController controller = temp;
         controller.native_copy(vehicleController);
 
         controller.SetDriverInput(mForward, mLeftRatio, mRightRatio, mBrake);

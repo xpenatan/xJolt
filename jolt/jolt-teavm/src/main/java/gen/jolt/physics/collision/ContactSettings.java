@@ -16,12 +16,6 @@ public class ContactSettings extends IDLBase {
 
     static public final ContactSettings NULL = ContactSettings.native_new();
 
-    static public final ContactSettings T_01 = ContactSettings.native_new();
-
-    static public final ContactSettings T_02 = ContactSettings.native_new();
-
-    static public final ContactSettings T_03 = ContactSettings.native_new();
-
     public ContactSettings() {
         int addr = internal_native_create();
         internal_reset(addr, true);

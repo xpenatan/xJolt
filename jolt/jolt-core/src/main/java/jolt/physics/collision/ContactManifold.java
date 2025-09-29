@@ -31,12 +31,6 @@ public class ContactManifold extends IDLBase {
 
     static public final ContactManifold NULL = ContactManifold.native_new();
 
-    static public final ContactManifold T_01 = ContactManifold.native_new();
-
-    static public final ContactManifold T_02 = ContactManifold.native_new();
-
-    static public final ContactManifold T_03 = ContactManifold.native_new();
-
     public ContactManifold() {
         long addr = internal_native_create();
         internal_reset(addr, true);

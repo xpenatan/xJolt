@@ -113,12 +113,6 @@ public class Mat44 extends IDLBase {
 
     static public final Mat44 NULL = Mat44.native_new();
 
-    static public final Mat44 T_01 = Mat44.native_new();
-
-    static public final Mat44 T_02 = Mat44.native_new();
-
-    static public final Mat44 T_03 = Mat44.native_new();
-
     public Mat44() {
         long addr = internal_native_create();
         internal_reset(addr, true);

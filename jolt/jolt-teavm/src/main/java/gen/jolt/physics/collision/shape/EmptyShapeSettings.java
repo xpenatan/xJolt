@@ -13,12 +13,6 @@ public class EmptyShapeSettings extends ShapeSettings {
 
     static public final EmptyShapeSettings NULL = EmptyShapeSettings.native_new();
 
-    static public final EmptyShapeSettings T_01 = EmptyShapeSettings.native_new();
-
-    static public final EmptyShapeSettings T_02 = EmptyShapeSettings.native_new();
-
-    static public final EmptyShapeSettings T_03 = EmptyShapeSettings.native_new();
-
     public EmptyShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

@@ -20,12 +20,6 @@ public class BroadPhaseQuery extends IDLBase {
 
     static public final BroadPhaseQuery NULL = BroadPhaseQuery.native_new();
 
-    static public final BroadPhaseQuery T_01 = BroadPhaseQuery.native_new();
-
-    static public final BroadPhaseQuery T_02 = BroadPhaseQuery.native_new();
-
-    static public final BroadPhaseQuery T_03 = BroadPhaseQuery.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

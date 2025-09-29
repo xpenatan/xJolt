@@ -21,12 +21,6 @@ public class HingeConstraint extends TwoBodyConstraint {
 
     static public final HingeConstraint NULL = HingeConstraint.native_new();
 
-    static public final HingeConstraint T_01 = HingeConstraint.native_new();
-
-    static public final HingeConstraint T_02 = HingeConstraint.native_new();
-
-    static public final HingeConstraint T_03 = HingeConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

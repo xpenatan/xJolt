@@ -13,12 +13,6 @@ public class ArraySoftBodySharedSettingsDihedralBend extends IDLBase {
 
     static public final ArraySoftBodySharedSettingsDihedralBend NULL = ArraySoftBodySharedSettingsDihedralBend.native_new();
 
-    static public final ArraySoftBodySharedSettingsDihedralBend T_01 = ArraySoftBodySharedSettingsDihedralBend.native_new();
-
-    static public final ArraySoftBodySharedSettingsDihedralBend T_02 = ArraySoftBodySharedSettingsDihedralBend.native_new();
-
-    static public final ArraySoftBodySharedSettingsDihedralBend T_03 = ArraySoftBodySharedSettingsDihedralBend.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

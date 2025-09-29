@@ -11,12 +11,6 @@ public class BroadPhaseLayerInterface extends IDLBase {
 
     static public final BroadPhaseLayerInterface NULL = BroadPhaseLayerInterface.native_new();
 
-    static public final BroadPhaseLayerInterface T_01 = BroadPhaseLayerInterface.native_new();
-
-    static public final BroadPhaseLayerInterface T_02 = BroadPhaseLayerInterface.native_new();
-
-    static public final BroadPhaseLayerInterface T_03 = BroadPhaseLayerInterface.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

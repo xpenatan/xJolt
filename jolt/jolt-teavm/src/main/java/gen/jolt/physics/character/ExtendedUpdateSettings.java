@@ -18,12 +18,6 @@ public class ExtendedUpdateSettings extends IDLBase {
 
     static public final ExtendedUpdateSettings NULL = ExtendedUpdateSettings.native_new();
 
-    static public final ExtendedUpdateSettings T_01 = ExtendedUpdateSettings.native_new();
-
-    static public final ExtendedUpdateSettings T_02 = ExtendedUpdateSettings.native_new();
-
-    static public final ExtendedUpdateSettings T_03 = ExtendedUpdateSettings.native_new();
-
     public ExtendedUpdateSettings() {
         int addr = internal_native_create();
         internal_reset(addr, true);

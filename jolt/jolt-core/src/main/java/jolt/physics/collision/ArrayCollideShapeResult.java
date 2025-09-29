@@ -13,12 +13,6 @@ public class ArrayCollideShapeResult extends IDLBase {
 
     static public final ArrayCollideShapeResult NULL = ArrayCollideShapeResult.native_new();
 
-    static public final ArrayCollideShapeResult T_01 = ArrayCollideShapeResult.native_new();
-
-    static public final ArrayCollideShapeResult T_02 = ArrayCollideShapeResult.native_new();
-
-    static public final ArrayCollideShapeResult T_03 = ArrayCollideShapeResult.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

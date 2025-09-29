@@ -38,12 +38,6 @@ public class AABox extends IDLBase {
 
     static public final AABox NULL = AABox.native_new();
 
-    static public final AABox T_01 = AABox.native_new();
-
-    static public final AABox T_02 = AABox.native_new();
-
-    static public final AABox T_03 = AABox.native_new();
-
     public AABox() {
         long addr = internal_native_create();
         internal_reset(addr, true);

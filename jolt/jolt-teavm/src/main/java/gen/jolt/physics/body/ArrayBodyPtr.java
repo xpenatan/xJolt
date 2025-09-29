@@ -15,12 +15,6 @@ public class ArrayBodyPtr extends IDLBase {
 
     static public final ArrayBodyPtr NULL = ArrayBodyPtr.native_new();
 
-    static public final ArrayBodyPtr T_01 = ArrayBodyPtr.native_new();
-
-    static public final ArrayBodyPtr T_02 = ArrayBodyPtr.native_new();
-
-    static public final ArrayBodyPtr T_03 = ArrayBodyPtr.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

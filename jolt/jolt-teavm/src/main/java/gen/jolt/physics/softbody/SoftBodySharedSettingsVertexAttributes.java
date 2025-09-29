@@ -12,12 +12,6 @@ public class SoftBodySharedSettingsVertexAttributes extends IDLBase {
 
     static public final SoftBodySharedSettingsVertexAttributes NULL = SoftBodySharedSettingsVertexAttributes.native_new();
 
-    static public final SoftBodySharedSettingsVertexAttributes T_01 = SoftBodySharedSettingsVertexAttributes.native_new();
-
-    static public final SoftBodySharedSettingsVertexAttributes T_02 = SoftBodySharedSettingsVertexAttributes.native_new();
-
-    static public final SoftBodySharedSettingsVertexAttributes T_03 = SoftBodySharedSettingsVertexAttributes.native_new();
-
     public SoftBodySharedSettingsVertexAttributes() {
         int addr = internal_native_create();
         internal_reset(addr, true);

@@ -46,12 +46,6 @@ public class DebugRendererEm extends DebugRenderer {
 
     static public final DebugRendererEm NULL = DebugRendererEm.native_new();
 
-    static public final DebugRendererEm T_01 = DebugRendererEm.native_new();
-
-    static public final DebugRendererEm T_02 = DebugRendererEm.native_new();
-
-    static public final DebugRendererEm T_03 = DebugRendererEm.native_new();
-
     /*[-JNI;-NATIVE]
 class DebugRendererImplCustom : public DebugRendererEm {
 private:

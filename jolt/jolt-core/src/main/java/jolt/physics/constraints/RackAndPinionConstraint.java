@@ -9,12 +9,6 @@ public class RackAndPinionConstraint extends TwoBodyConstraint {
 
     static public final RackAndPinionConstraint NULL = RackAndPinionConstraint.native_new();
 
-    static public final RackAndPinionConstraint T_01 = RackAndPinionConstraint.native_new();
-
-    static public final RackAndPinionConstraint T_02 = RackAndPinionConstraint.native_new();
-
-    static public final RackAndPinionConstraint T_03 = RackAndPinionConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

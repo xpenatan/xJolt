@@ -11,12 +11,6 @@ public class SharedMutex extends IDLBase {
 
     static public final SharedMutex NULL = SharedMutex.native_new();
 
-    static public final SharedMutex T_01 = SharedMutex.native_new();
-
-    static public final SharedMutex T_02 = SharedMutex.native_new();
-
-    static public final SharedMutex T_03 = SharedMutex.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

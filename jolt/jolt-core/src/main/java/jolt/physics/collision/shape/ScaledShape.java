@@ -13,12 +13,6 @@ public class ScaledShape extends DecoratedShape {
 
     static public final ScaledShape NULL = ScaledShape.native_new();
 
-    static public final ScaledShape T_01 = ScaledShape.native_new();
-
-    static public final ScaledShape T_02 = ScaledShape.native_new();
-
-    static public final ScaledShape T_03 = ScaledShape.native_new();
-
     public ScaledShape(Shape inShape, Vec3 inScale) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Shape_Vec3(inShape.native_address, inScale.native_address);

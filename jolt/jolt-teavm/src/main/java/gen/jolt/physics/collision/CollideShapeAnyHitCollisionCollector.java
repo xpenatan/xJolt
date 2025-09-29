@@ -13,12 +13,6 @@ public class CollideShapeAnyHitCollisionCollector extends CollideShapeCollector 
 
     static public final CollideShapeAnyHitCollisionCollector NULL = CollideShapeAnyHitCollisionCollector.native_new();
 
-    static public final CollideShapeAnyHitCollisionCollector T_01 = CollideShapeAnyHitCollisionCollector.native_new();
-
-    static public final CollideShapeAnyHitCollisionCollector T_02 = CollideShapeAnyHitCollisionCollector.native_new();
-
-    static public final CollideShapeAnyHitCollisionCollector T_03 = CollideShapeAnyHitCollisionCollector.native_new();
-
     public CollideShapeAnyHitCollisionCollector() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

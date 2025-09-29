@@ -11,12 +11,6 @@ public class VehicleControllerSettings extends IDLBase {
 
     static public final VehicleControllerSettings NULL = VehicleControllerSettings.native_new();
 
-    static public final VehicleControllerSettings T_01 = VehicleControllerSettings.native_new();
-
-    static public final VehicleControllerSettings T_02 = VehicleControllerSettings.native_new();
-
-    static public final VehicleControllerSettings T_03 = VehicleControllerSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

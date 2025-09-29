@@ -17,12 +17,6 @@ public class CastShapeBodyCollector extends IDLBase {
 
     static public final CastShapeBodyCollector NULL = CastShapeBodyCollector.native_new();
 
-    static public final CastShapeBodyCollector T_01 = CastShapeBodyCollector.native_new();
-
-    static public final CastShapeBodyCollector T_02 = CastShapeBodyCollector.native_new();
-
-    static public final CastShapeBodyCollector T_03 = CastShapeBodyCollector.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

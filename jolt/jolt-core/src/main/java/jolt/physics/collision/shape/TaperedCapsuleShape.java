@@ -9,12 +9,6 @@ public class TaperedCapsuleShape extends ConvexShape {
 
     static public final TaperedCapsuleShape NULL = TaperedCapsuleShape.native_new();
 
-    static public final TaperedCapsuleShape T_01 = TaperedCapsuleShape.native_new();
-
-    static public final TaperedCapsuleShape T_02 = TaperedCapsuleShape.native_new();
-
-    static public final TaperedCapsuleShape T_03 = TaperedCapsuleShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -11,12 +11,6 @@ public class BodyID extends IDLBase {
 
     static public final BodyID NULL = BodyID.native_new();
 
-    static public final BodyID T_01 = BodyID.native_new();
-
-    static public final BodyID T_02 = BodyID.native_new();
-
-    static public final BodyID T_03 = BodyID.native_new();
-
     public BodyID() {
         long addr = internal_native_create();
         internal_reset(addr, true);

@@ -13,12 +13,6 @@ public class ArrayVehicleAntiRollBar extends IDLBase {
 
     static public final ArrayVehicleAntiRollBar NULL = ArrayVehicleAntiRollBar.native_new();
 
-    static public final ArrayVehicleAntiRollBar T_01 = ArrayVehicleAntiRollBar.native_new();
-
-    static public final ArrayVehicleAntiRollBar T_02 = ArrayVehicleAntiRollBar.native_new();
-
-    static public final ArrayVehicleAntiRollBar T_03 = ArrayVehicleAntiRollBar.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -21,12 +21,6 @@ public class SoftBodyManifold extends IDLBase {
 
     static public final SoftBodyManifold NULL = SoftBodyManifold.native_new();
 
-    static public final SoftBodyManifold T_01 = SoftBodyManifold.native_new();
-
-    static public final SoftBodyManifold T_02 = SoftBodyManifold.native_new();
-
-    static public final SoftBodyManifold T_03 = SoftBodyManifold.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

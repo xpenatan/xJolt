@@ -13,12 +13,6 @@ public class CollisionGroup extends IDLBase {
 
     static public final CollisionGroup NULL = CollisionGroup.native_new();
 
-    static public final CollisionGroup T_01 = CollisionGroup.native_new();
-
-    static public final CollisionGroup T_02 = CollisionGroup.native_new();
-
-    static public final CollisionGroup T_03 = CollisionGroup.native_new();
-
     public CollisionGroup() {
         long addr = internal_native_create();
         internal_reset(addr, true);

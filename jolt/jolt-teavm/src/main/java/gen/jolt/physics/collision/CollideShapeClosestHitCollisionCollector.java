@@ -13,12 +13,6 @@ public class CollideShapeClosestHitCollisionCollector extends CollideShapeCollec
 
     static public final CollideShapeClosestHitCollisionCollector NULL = CollideShapeClosestHitCollisionCollector.native_new();
 
-    static public final CollideShapeClosestHitCollisionCollector T_01 = CollideShapeClosestHitCollisionCollector.native_new();
-
-    static public final CollideShapeClosestHitCollisionCollector T_02 = CollideShapeClosestHitCollisionCollector.native_new();
-
-    static public final CollideShapeClosestHitCollisionCollector T_03 = CollideShapeClosestHitCollisionCollector.native_new();
-
     public CollideShapeClosestHitCollisionCollector() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

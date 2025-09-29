@@ -41,12 +41,6 @@ public class BodyCreationSettings extends IDLBase {
 
     static public final BodyCreationSettings NULL = BodyCreationSettings.native_new();
 
-    static public final BodyCreationSettings T_01 = BodyCreationSettings.native_new();
-
-    static public final BodyCreationSettings T_02 = BodyCreationSettings.native_new();
-
-    static public final BodyCreationSettings T_03 = BodyCreationSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

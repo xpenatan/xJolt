@@ -15,12 +15,6 @@ public class Triangle extends IDLBase {
 
     static public final Triangle NULL = Triangle.native_new();
 
-    static public final Triangle T_01 = Triangle.native_new();
-
-    static public final Triangle T_02 = Triangle.native_new();
-
-    static public final Triangle T_03 = Triangle.native_new();
-
     public Triangle() {
         int addr = internal_native_create();
         internal_reset(addr, true);

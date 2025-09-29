@@ -11,12 +11,6 @@ public class ObjectVsBroadPhaseLayerFilterTable extends ObjectVsBroadPhaseLayerF
 
     static public final ObjectVsBroadPhaseLayerFilterTable NULL = ObjectVsBroadPhaseLayerFilterTable.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilterTable T_01 = ObjectVsBroadPhaseLayerFilterTable.native_new();
-
-    static public final ObjectVsBroadPhaseLayerFilterTable T_02 = ObjectVsBroadPhaseLayerFilterTable.native_new();
-
-    static public final ObjectVsBroadPhaseLayerFilterTable T_03 = ObjectVsBroadPhaseLayerFilterTable.native_new();
-
     public ObjectVsBroadPhaseLayerFilterTable(BroadPhaseLayerInterface inBroadPhaseLayerInterface, int inNumBroadPhaseLayers, ObjectLayerPairFilter inObjectLayerPairFilter, int inNumObjectLayers) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int(inBroadPhaseLayerInterface.native_address, inNumBroadPhaseLayers, inObjectLayerPairFilter.native_address, inNumObjectLayers);

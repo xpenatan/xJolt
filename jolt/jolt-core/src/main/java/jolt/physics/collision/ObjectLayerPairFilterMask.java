@@ -9,12 +9,6 @@ public class ObjectLayerPairFilterMask extends ObjectLayerPairFilter {
 
     static public final ObjectLayerPairFilterMask NULL = ObjectLayerPairFilterMask.native_new();
 
-    static public final ObjectLayerPairFilterMask T_01 = ObjectLayerPairFilterMask.native_new();
-
-    static public final ObjectLayerPairFilterMask T_02 = ObjectLayerPairFilterMask.native_new();
-
-    static public final ObjectLayerPairFilterMask T_03 = ObjectLayerPairFilterMask.native_new();
-
     public ObjectLayerPairFilterMask() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

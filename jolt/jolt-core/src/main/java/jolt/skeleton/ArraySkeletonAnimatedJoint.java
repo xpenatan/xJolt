@@ -13,12 +13,6 @@ public class ArraySkeletonAnimatedJoint extends IDLBase {
 
     static public final ArraySkeletonAnimatedJoint NULL = ArraySkeletonAnimatedJoint.native_new();
 
-    static public final ArraySkeletonAnimatedJoint T_01 = ArraySkeletonAnimatedJoint.native_new();
-
-    static public final ArraySkeletonAnimatedJoint T_02 = ArraySkeletonAnimatedJoint.native_new();
-
-    static public final ArraySkeletonAnimatedJoint T_03 = ArraySkeletonAnimatedJoint.native_new();
-
     public ArraySkeletonAnimatedJoint() {
         long addr = internal_native_create();
         internal_reset(addr, true);

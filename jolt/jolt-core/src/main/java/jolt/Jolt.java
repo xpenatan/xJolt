@@ -12,12 +12,6 @@ public class Jolt extends IDLBase {
 
     static public final Jolt NULL = Jolt.native_new();
 
-    static public final Jolt T_01 = Jolt.native_new();
-
-    static public final Jolt T_02 = Jolt.native_new();
-
-    static public final Jolt T_03 = Jolt.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

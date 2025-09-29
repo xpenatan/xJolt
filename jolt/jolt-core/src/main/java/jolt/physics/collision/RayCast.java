@@ -23,12 +23,6 @@ public class RayCast extends IDLBase {
 
     static public final RayCast NULL = RayCast.native_new();
 
-    static public final RayCast T_01 = RayCast.native_new();
-
-    static public final RayCast T_02 = RayCast.native_new();
-
-    static public final RayCast T_03 = RayCast.native_new();
-
     public RayCast() {
         long addr = internal_native_create();
         internal_reset(addr, true);

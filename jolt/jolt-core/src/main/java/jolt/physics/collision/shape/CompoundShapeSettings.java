@@ -12,12 +12,6 @@ public class CompoundShapeSettings extends ShapeSettings {
 
     static public final CompoundShapeSettings NULL = CompoundShapeSettings.native_new();
 
-    static public final CompoundShapeSettings T_01 = CompoundShapeSettings.native_new();
-
-    static public final CompoundShapeSettings T_02 = CompoundShapeSettings.native_new();
-
-    static public final CompoundShapeSettings T_03 = CompoundShapeSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

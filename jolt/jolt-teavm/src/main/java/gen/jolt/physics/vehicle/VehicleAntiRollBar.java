@@ -11,12 +11,6 @@ public class VehicleAntiRollBar extends IDLBase {
 
     static public final VehicleAntiRollBar NULL = VehicleAntiRollBar.native_new();
 
-    static public final VehicleAntiRollBar T_01 = VehicleAntiRollBar.native_new();
-
-    static public final VehicleAntiRollBar T_02 = VehicleAntiRollBar.native_new();
-
-    static public final VehicleAntiRollBar T_03 = VehicleAntiRollBar.native_new();
-
     public VehicleAntiRollBar() {
         int addr = internal_native_create();
         internal_reset(addr, true);

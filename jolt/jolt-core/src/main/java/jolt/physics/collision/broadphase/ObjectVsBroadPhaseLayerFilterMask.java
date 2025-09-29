@@ -9,12 +9,6 @@ public class ObjectVsBroadPhaseLayerFilterMask extends ObjectVsBroadPhaseLayerFi
 
     static public final ObjectVsBroadPhaseLayerFilterMask NULL = ObjectVsBroadPhaseLayerFilterMask.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilterMask T_01 = ObjectVsBroadPhaseLayerFilterMask.native_new();
-
-    static public final ObjectVsBroadPhaseLayerFilterMask T_02 = ObjectVsBroadPhaseLayerFilterMask.native_new();
-
-    static public final ObjectVsBroadPhaseLayerFilterMask T_03 = ObjectVsBroadPhaseLayerFilterMask.native_new();
-
     public ObjectVsBroadPhaseLayerFilterMask(BroadPhaseLayerInterfaceMask inBroadPhaseLayerInterface) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_BroadPhaseLayerInterfaceMask(inBroadPhaseLayerInterface.native_address);

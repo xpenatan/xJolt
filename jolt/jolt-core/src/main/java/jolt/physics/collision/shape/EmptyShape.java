@@ -11,12 +11,6 @@ public class EmptyShape extends Shape {
 
     static public final EmptyShape NULL = EmptyShape.native_new();
 
-    static public final EmptyShape T_01 = EmptyShape.native_new();
-
-    static public final EmptyShape T_02 = EmptyShape.native_new();
-
-    static public final EmptyShape T_03 = EmptyShape.native_new();
-
     public EmptyShape(Vec3 inCenterOfMass) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Vec3(inCenterOfMass.native_address);

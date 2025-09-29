@@ -13,12 +13,6 @@ public class CastRayAnyHitCollisionCollector extends CastRayCollector {
 
     static public final CastRayAnyHitCollisionCollector NULL = CastRayAnyHitCollisionCollector.native_new();
 
-    static public final CastRayAnyHitCollisionCollector T_01 = CastRayAnyHitCollisionCollector.native_new();
-
-    static public final CastRayAnyHitCollisionCollector T_02 = CastRayAnyHitCollisionCollector.native_new();
-
-    static public final CastRayAnyHitCollisionCollector T_03 = CastRayAnyHitCollisionCollector.native_new();
-
     public CastRayAnyHitCollisionCollector() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

@@ -11,12 +11,6 @@ public class StateRecorder extends IDLBase {
 
     static public final StateRecorder NULL = StateRecorder.native_new();
 
-    static public final StateRecorder T_01 = StateRecorder.native_new();
-
-    static public final StateRecorder T_02 = StateRecorder.native_new();
-
-    static public final StateRecorder T_03 = StateRecorder.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

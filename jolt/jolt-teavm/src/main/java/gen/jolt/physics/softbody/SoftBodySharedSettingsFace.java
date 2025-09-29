@@ -11,12 +11,6 @@ public class SoftBodySharedSettingsFace extends IDLBase {
 
     static public final SoftBodySharedSettingsFace NULL = SoftBodySharedSettingsFace.native_new();
 
-    static public final SoftBodySharedSettingsFace T_01 = SoftBodySharedSettingsFace.native_new();
-
-    static public final SoftBodySharedSettingsFace T_02 = SoftBodySharedSettingsFace.native_new();
-
-    static public final SoftBodySharedSettingsFace T_03 = SoftBodySharedSettingsFace.native_new();
-
     public SoftBodySharedSettingsFace(int inVertex1, int inVertex2, int inVertex3, int inMaterialIndex) {
         int addr = internal_native_create_int_int_int_int(inVertex1, inVertex2, inVertex3, inMaterialIndex);
         internal_reset(addr, true);

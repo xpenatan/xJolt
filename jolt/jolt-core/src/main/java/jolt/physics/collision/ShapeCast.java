@@ -24,12 +24,6 @@ public class ShapeCast extends IDLBase {
 
     static public final ShapeCast NULL = ShapeCast.native_new();
 
-    static public final ShapeCast T_01 = ShapeCast.native_new();
-
-    static public final ShapeCast T_02 = ShapeCast.native_new();
-
-    static public final ShapeCast T_03 = ShapeCast.native_new();
-
     public ShapeCast(Shape inShape, Vec3 inScale, Mat44 inCenterOfMassStart, Vec3 inDirection) {
         long addr = internal_native_create_Shape_Vec3_Mat44_Vec3(inShape.native_address, inScale.native_address, inCenterOfMassStart.native_address, inDirection.native_address);
         internal_reset(addr, true);

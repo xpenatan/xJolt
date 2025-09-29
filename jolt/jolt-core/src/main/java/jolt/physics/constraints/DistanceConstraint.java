@@ -11,12 +11,6 @@ public class DistanceConstraint extends TwoBodyConstraint {
 
     static public final DistanceConstraint NULL = DistanceConstraint.native_new();
 
-    static public final DistanceConstraint T_01 = DistanceConstraint.native_new();
-
-    static public final DistanceConstraint T_02 = DistanceConstraint.native_new();
-
-    static public final DistanceConstraint T_03 = DistanceConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

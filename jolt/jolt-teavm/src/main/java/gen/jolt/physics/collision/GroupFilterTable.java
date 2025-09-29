@@ -9,12 +9,6 @@ public class GroupFilterTable extends GroupFilter {
 
     static public final GroupFilterTable NULL = GroupFilterTable.native_new();
 
-    static public final GroupFilterTable T_01 = GroupFilterTable.native_new();
-
-    static public final GroupFilterTable T_02 = GroupFilterTable.native_new();
-
-    static public final GroupFilterTable T_03 = GroupFilterTable.native_new();
-
     public GroupFilterTable(int inNumGroups) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int(inNumGroups);

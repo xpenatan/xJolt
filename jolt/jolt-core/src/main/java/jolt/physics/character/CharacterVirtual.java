@@ -49,12 +49,6 @@ public class CharacterVirtual extends CharacterBase {
 
     static public final CharacterVirtual NULL = CharacterVirtual.native_new();
 
-    static public final CharacterVirtual T_01 = CharacterVirtual.native_new();
-
-    static public final CharacterVirtual T_02 = CharacterVirtual.native_new();
-
-    static public final CharacterVirtual T_03 = CharacterVirtual.native_new();
-
     public CharacterVirtual(CharacterVirtualSettings inSettings, Vec3 inPosition, Quat inRotation, PhysicsSystem inSystem) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(inSettings.native_address, inPosition.native_address, inRotation.native_address, inSystem.native_address);

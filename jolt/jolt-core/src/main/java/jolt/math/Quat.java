@@ -55,12 +55,6 @@ public class Quat extends IDLBase {
 
     static public final Quat NULL = Quat.native_new();
 
-    static public final Quat T_01 = Quat.native_new();
-
-    static public final Quat T_02 = Quat.native_new();
-
-    static public final Quat T_03 = Quat.native_new();
-
     public Quat() {
         long addr = internal_native_create();
         internal_reset(addr, true);

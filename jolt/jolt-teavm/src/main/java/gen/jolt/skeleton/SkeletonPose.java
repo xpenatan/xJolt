@@ -24,12 +24,6 @@ public class SkeletonPose extends IDLBase {
 
     static public final SkeletonPose NULL = SkeletonPose.native_new();
 
-    static public final SkeletonPose T_01 = SkeletonPose.native_new();
-
-    static public final SkeletonPose T_02 = SkeletonPose.native_new();
-
-    static public final SkeletonPose T_03 = SkeletonPose.native_new();
-
     public SkeletonPose() {
         int addr = internal_native_create();
         internal_reset(addr, true);

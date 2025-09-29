@@ -13,12 +13,6 @@ public class DebugArrayTriangle extends IDLBase {
 
     static public final DebugArrayTriangle NULL = DebugArrayTriangle.native_new();
 
-    static public final DebugArrayTriangle T_01 = DebugArrayTriangle.native_new();
-
-    static public final DebugArrayTriangle T_02 = DebugArrayTriangle.native_new();
-
-    static public final DebugArrayTriangle T_03 = DebugArrayTriangle.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

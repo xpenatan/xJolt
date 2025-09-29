@@ -11,12 +11,6 @@ public class MutexMask extends IDLBase {
 
     static public final MutexMask NULL = MutexMask.native_new();
 
-    static public final MutexMask T_01 = MutexMask.native_new();
-
-    static public final MutexMask T_02 = MutexMask.native_new();
-
-    static public final MutexMask T_03 = MutexMask.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

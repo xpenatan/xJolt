@@ -62,12 +62,6 @@ public class Body extends IDLBase {
 
     static public final Body NULL = Body.native_new();
 
-    static public final Body T_01 = Body.native_new();
-
-    static public final Body T_02 = Body.native_new();
-
-    static public final Body T_03 = Body.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

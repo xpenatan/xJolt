@@ -11,12 +11,6 @@ public class ConstraintSettings extends IDLBase {
 
     static public final ConstraintSettings NULL = ConstraintSettings.native_new();
 
-    static public final ConstraintSettings T_01 = ConstraintSettings.native_new();
-
-    static public final ConstraintSettings T_02 = ConstraintSettings.native_new();
-
-    static public final ConstraintSettings T_03 = ConstraintSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

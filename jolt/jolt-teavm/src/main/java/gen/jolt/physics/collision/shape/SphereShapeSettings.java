@@ -11,12 +11,6 @@ public class SphereShapeSettings extends ConvexShapeSettings {
 
     static public final SphereShapeSettings NULL = SphereShapeSettings.native_new();
 
-    static public final SphereShapeSettings T_01 = SphereShapeSettings.native_new();
-
-    static public final SphereShapeSettings T_02 = SphereShapeSettings.native_new();
-
-    static public final SphereShapeSettings T_03 = SphereShapeSettings.native_new();
-
     public SphereShapeSettings(float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float_PhysicsMaterial(inRadius, inMaterial.native_address);

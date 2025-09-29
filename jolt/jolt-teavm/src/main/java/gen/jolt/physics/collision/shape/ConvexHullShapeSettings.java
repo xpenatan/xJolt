@@ -14,12 +14,6 @@ public class ConvexHullShapeSettings extends ConvexShapeSettings {
 
     static public final ConvexHullShapeSettings NULL = ConvexHullShapeSettings.native_new();
 
-    static public final ConvexHullShapeSettings T_01 = ConvexHullShapeSettings.native_new();
-
-    static public final ConvexHullShapeSettings T_02 = ConvexHullShapeSettings.native_new();
-
-    static public final ConvexHullShapeSettings T_03 = ConvexHullShapeSettings.native_new();
-
     public ConvexHullShapeSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

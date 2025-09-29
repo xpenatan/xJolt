@@ -12,12 +12,6 @@ public class ShapeCastSettings extends CollideSettingsBase {
 
     static public final ShapeCastSettings NULL = ShapeCastSettings.native_new();
 
-    static public final ShapeCastSettings T_01 = ShapeCastSettings.native_new();
-
-    static public final ShapeCastSettings T_02 = ShapeCastSettings.native_new();
-
-    static public final ShapeCastSettings T_03 = ShapeCastSettings.native_new();
-
     public ShapeCastSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

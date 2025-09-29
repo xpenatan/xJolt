@@ -13,12 +13,6 @@ public class CharacterID extends IDLBase {
 
     static public final CharacterID NULL = CharacterID.native_new();
 
-    static public final CharacterID T_01 = CharacterID.native_new();
-
-    static public final CharacterID T_02 = CharacterID.native_new();
-
-    static public final CharacterID T_03 = CharacterID.native_new();
-
     public CharacterID() {
         long addr = internal_native_create();
         internal_reset(addr, true);

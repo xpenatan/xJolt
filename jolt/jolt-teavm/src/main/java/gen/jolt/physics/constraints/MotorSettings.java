@@ -13,12 +13,6 @@ public class MotorSettings extends IDLBase {
 
     static public final MotorSettings NULL = MotorSettings.native_new();
 
-    static public final MotorSettings T_01 = MotorSettings.native_new();
-
-    static public final MotorSettings T_02 = MotorSettings.native_new();
-
-    static public final MotorSettings T_03 = MotorSettings.native_new();
-
     public MotorSettings() {
         int addr = internal_native_create();
         internal_reset(addr, true);

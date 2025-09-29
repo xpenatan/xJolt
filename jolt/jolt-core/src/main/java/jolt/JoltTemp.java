@@ -103,12 +103,6 @@ public class JoltTemp extends IDLBase {
 
     static public final JoltTemp NULL = JoltTemp.native_new();
 
-    static public final JoltTemp T_01 = JoltTemp.native_new();
-
-    static public final JoltTemp T_02 = JoltTemp.native_new();
-
-    static public final JoltTemp T_03 = JoltTemp.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

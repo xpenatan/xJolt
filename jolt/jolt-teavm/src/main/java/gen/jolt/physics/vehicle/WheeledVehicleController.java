@@ -15,12 +15,6 @@ public class WheeledVehicleController extends VehicleController {
 
     static public final WheeledVehicleController NULL = WheeledVehicleController.native_new();
 
-    static public final WheeledVehicleController T_01 = WheeledVehicleController.native_new();
-
-    static public final WheeledVehicleController T_02 = WheeledVehicleController.native_new();
-
-    static public final WheeledVehicleController T_03 = WheeledVehicleController.native_new();
-
     public WheeledVehicleController(WheeledVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_WheeledVehicleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);

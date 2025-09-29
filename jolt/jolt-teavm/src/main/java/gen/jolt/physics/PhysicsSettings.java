@@ -11,12 +11,6 @@ public class PhysicsSettings extends IDLBase {
 
     static public final PhysicsSettings NULL = PhysicsSettings.native_new();
 
-    static public final PhysicsSettings T_01 = PhysicsSettings.native_new();
-
-    static public final PhysicsSettings T_02 = PhysicsSettings.native_new();
-
-    static public final PhysicsSettings T_03 = PhysicsSettings.native_new();
-
     public PhysicsSettings() {
         int addr = internal_native_create();
         internal_reset(addr, true);

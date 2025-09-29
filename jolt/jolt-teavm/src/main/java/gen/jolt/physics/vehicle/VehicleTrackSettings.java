@@ -14,12 +14,6 @@ public class VehicleTrackSettings extends IDLBase {
 
     static public final VehicleTrackSettings NULL = VehicleTrackSettings.native_new();
 
-    static public final VehicleTrackSettings T_01 = VehicleTrackSettings.native_new();
-
-    static public final VehicleTrackSettings T_02 = VehicleTrackSettings.native_new();
-
-    static public final VehicleTrackSettings T_03 = VehicleTrackSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

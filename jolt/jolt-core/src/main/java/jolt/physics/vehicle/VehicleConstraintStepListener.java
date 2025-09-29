@@ -11,12 +11,6 @@ public class VehicleConstraintStepListener extends PhysicsStepListener {
 
     static public final VehicleConstraintStepListener NULL = VehicleConstraintStepListener.native_new();
 
-    static public final VehicleConstraintStepListener T_01 = VehicleConstraintStepListener.native_new();
-
-    static public final VehicleConstraintStepListener T_02 = VehicleConstraintStepListener.native_new();
-
-    static public final VehicleConstraintStepListener T_03 = VehicleConstraintStepListener.native_new();
-
     public VehicleConstraintStepListener(VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_VehicleConstraint(inConstraint.native_address);

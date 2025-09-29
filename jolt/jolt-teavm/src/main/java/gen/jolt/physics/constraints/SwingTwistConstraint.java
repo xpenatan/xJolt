@@ -35,12 +35,6 @@ public class SwingTwistConstraint extends TwoBodyConstraint {
 
     static public final SwingTwistConstraint NULL = SwingTwistConstraint.native_new();
 
-    static public final SwingTwistConstraint T_01 = SwingTwistConstraint.native_new();
-
-    static public final SwingTwistConstraint T_02 = SwingTwistConstraint.native_new();
-
-    static public final SwingTwistConstraint T_03 = SwingTwistConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

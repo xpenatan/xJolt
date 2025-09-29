@@ -13,12 +13,6 @@ public class ArrayUint extends IDLBase {
 
     static public final ArrayUint NULL = ArrayUint.native_new();
 
-    static public final ArrayUint T_01 = ArrayUint.native_new();
-
-    static public final ArrayUint T_02 = ArrayUint.native_new();
-
-    static public final ArrayUint T_03 = ArrayUint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

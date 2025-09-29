@@ -29,12 +29,6 @@ public class SliderConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final SliderConstraintSettings NULL = SliderConstraintSettings.native_new();
 
-    static public final SliderConstraintSettings T_01 = SliderConstraintSettings.native_new();
-
-    static public final SliderConstraintSettings T_02 = SliderConstraintSettings.native_new();
-
-    static public final SliderConstraintSettings T_03 = SliderConstraintSettings.native_new();
-
     public SliderConstraintSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

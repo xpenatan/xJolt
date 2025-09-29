@@ -20,12 +20,6 @@ public class CastRayCollector extends IDLBase {
 
     static public final CastRayCollector NULL = CastRayCollector.native_new();
 
-    static public final CastRayCollector T_01 = CastRayCollector.native_new();
-
-    static public final CastRayCollector T_02 = CastRayCollector.native_new();
-
-    static public final CastRayCollector T_03 = CastRayCollector.native_new();
-
     /*[-JNI;-NATIVE]
 class CastRayCollectorJS : public CastRayCollector {
 private:

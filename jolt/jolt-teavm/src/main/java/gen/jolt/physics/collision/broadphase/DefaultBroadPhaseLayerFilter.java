@@ -9,12 +9,6 @@ public class DefaultBroadPhaseLayerFilter extends BroadPhaseLayerFilter {
 
     static public final DefaultBroadPhaseLayerFilter NULL = DefaultBroadPhaseLayerFilter.native_new();
 
-    static public final DefaultBroadPhaseLayerFilter T_01 = DefaultBroadPhaseLayerFilter.native_new();
-
-    static public final DefaultBroadPhaseLayerFilter T_02 = DefaultBroadPhaseLayerFilter.native_new();
-
-    static public final DefaultBroadPhaseLayerFilter T_03 = DefaultBroadPhaseLayerFilter.native_new();
-
     public DefaultBroadPhaseLayerFilter(ObjectVsBroadPhaseLayerFilter inFilter, int inObjectLayer) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_ObjectVsBroadPhaseLayerFilter_int(inFilter.native_address, inObjectLayer);

@@ -13,12 +13,6 @@ public class ArraySoftBodySharedSettingsFace extends IDLBase {
 
     static public final ArraySoftBodySharedSettingsFace NULL = ArraySoftBodySharedSettingsFace.native_new();
 
-    static public final ArraySoftBodySharedSettingsFace T_01 = ArraySoftBodySharedSettingsFace.native_new();
-
-    static public final ArraySoftBodySharedSettingsFace T_02 = ArraySoftBodySharedSettingsFace.native_new();
-
-    static public final ArraySoftBodySharedSettingsFace T_03 = ArraySoftBodySharedSettingsFace.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

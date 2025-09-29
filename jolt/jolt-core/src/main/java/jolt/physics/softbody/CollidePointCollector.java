@@ -20,12 +20,6 @@ public class CollidePointCollector extends IDLBase {
 
     static public final CollidePointCollector NULL = CollidePointCollector.native_new();
 
-    static public final CollidePointCollector T_01 = CollidePointCollector.native_new();
-
-    static public final CollidePointCollector T_02 = CollidePointCollector.native_new();
-
-    static public final CollidePointCollector T_03 = CollidePointCollector.native_new();
-
     /*[-JNI;-NATIVE]
 class CollidePointCollectorJS : public CollidePointCollector {
 private:

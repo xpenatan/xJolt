@@ -77,12 +77,6 @@ public class Vec3 extends IDLBase {
 
     static public final Vec3 NULL = Vec3.native_new();
 
-    static public final Vec3 T_01 = Vec3.native_new();
-
-    static public final Vec3 T_02 = Vec3.native_new();
-
-    static public final Vec3 T_03 = Vec3.native_new();
-
     public Vec3() {
         long addr = internal_native_create();
         internal_reset(addr, true);

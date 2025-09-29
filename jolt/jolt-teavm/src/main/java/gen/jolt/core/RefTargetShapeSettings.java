@@ -11,12 +11,6 @@ public class RefTargetShapeSettings extends IDLBase {
 
     static public final RefTargetShapeSettings NULL = RefTargetShapeSettings.native_new();
 
-    static public final RefTargetShapeSettings T_01 = RefTargetShapeSettings.native_new();
-
-    static public final RefTargetShapeSettings T_02 = RefTargetShapeSettings.native_new();
-
-    static public final RefTargetShapeSettings T_03 = RefTargetShapeSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

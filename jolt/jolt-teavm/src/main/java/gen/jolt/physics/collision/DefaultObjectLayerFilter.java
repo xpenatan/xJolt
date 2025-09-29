@@ -9,12 +9,6 @@ public class DefaultObjectLayerFilter extends ObjectLayerFilter {
 
     static public final DefaultObjectLayerFilter NULL = DefaultObjectLayerFilter.native_new();
 
-    static public final DefaultObjectLayerFilter T_01 = DefaultObjectLayerFilter.native_new();
-
-    static public final DefaultObjectLayerFilter T_02 = DefaultObjectLayerFilter.native_new();
-
-    static public final DefaultObjectLayerFilter T_03 = DefaultObjectLayerFilter.native_new();
-
     public DefaultObjectLayerFilter(ObjectLayerPairFilter inFilter, int inObjectLayer) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_ObjectLayerPairFilter_int(inFilter.native_address, inObjectLayer);

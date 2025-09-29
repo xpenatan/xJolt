@@ -11,12 +11,6 @@ public class SoftBodyContactSettings extends IDLBase {
 
     static public final SoftBodyContactSettings NULL = SoftBodyContactSettings.native_new();
 
-    static public final SoftBodyContactSettings T_01 = SoftBodyContactSettings.native_new();
-
-    static public final SoftBodyContactSettings T_02 = SoftBodyContactSettings.native_new();
-
-    static public final SoftBodyContactSettings T_03 = SoftBodyContactSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

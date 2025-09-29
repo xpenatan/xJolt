@@ -9,12 +9,6 @@ public class IgnoreMultipleBodiesFilter extends BodyFilter {
 
     static public final IgnoreMultipleBodiesFilter NULL = IgnoreMultipleBodiesFilter.native_new();
 
-    static public final IgnoreMultipleBodiesFilter T_01 = IgnoreMultipleBodiesFilter.native_new();
-
-    static public final IgnoreMultipleBodiesFilter T_02 = IgnoreMultipleBodiesFilter.native_new();
-
-    static public final IgnoreMultipleBodiesFilter T_03 = IgnoreMultipleBodiesFilter.native_new();
-
     public IgnoreMultipleBodiesFilter() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

@@ -20,12 +20,6 @@ public class CollideShapeCollector extends IDLBase {
 
     static public final CollideShapeCollector NULL = CollideShapeCollector.native_new();
 
-    static public final CollideShapeCollector T_01 = CollideShapeCollector.native_new();
-
-    static public final CollideShapeCollector T_02 = CollideShapeCollector.native_new();
-
-    static public final CollideShapeCollector T_03 = CollideShapeCollector.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

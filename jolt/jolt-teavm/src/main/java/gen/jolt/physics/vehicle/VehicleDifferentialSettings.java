@@ -11,12 +11,6 @@ public class VehicleDifferentialSettings extends IDLBase {
 
     static public final VehicleDifferentialSettings NULL = VehicleDifferentialSettings.native_new();
 
-    static public final VehicleDifferentialSettings T_01 = VehicleDifferentialSettings.native_new();
-
-    static public final VehicleDifferentialSettings T_02 = VehicleDifferentialSettings.native_new();
-
-    static public final VehicleDifferentialSettings T_03 = VehicleDifferentialSettings.native_new();
-
     public VehicleDifferentialSettings() {
         int addr = internal_native_create();
         internal_reset(addr, true);

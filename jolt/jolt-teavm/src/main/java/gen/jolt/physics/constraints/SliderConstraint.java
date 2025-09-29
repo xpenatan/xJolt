@@ -21,12 +21,6 @@ public class SliderConstraint extends TwoBodyConstraint {
 
     static public final SliderConstraint NULL = SliderConstraint.native_new();
 
-    static public final SliderConstraint T_01 = SliderConstraint.native_new();
-
-    static public final SliderConstraint T_02 = SliderConstraint.native_new();
-
-    static public final SliderConstraint T_03 = SliderConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

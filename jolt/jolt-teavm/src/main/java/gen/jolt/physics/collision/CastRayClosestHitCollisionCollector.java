@@ -13,12 +13,6 @@ public class CastRayClosestHitCollisionCollector extends CastRayCollector {
 
     static public final CastRayClosestHitCollisionCollector NULL = CastRayClosestHitCollisionCollector.native_new();
 
-    static public final CastRayClosestHitCollisionCollector T_01 = CastRayClosestHitCollisionCollector.native_new();
-
-    static public final CastRayClosestHitCollisionCollector T_02 = CastRayClosestHitCollisionCollector.native_new();
-
-    static public final CastRayClosestHitCollisionCollector T_03 = CastRayClosestHitCollisionCollector.native_new();
-
     public CastRayClosestHitCollisionCollector() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

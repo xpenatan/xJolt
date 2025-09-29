@@ -21,12 +21,6 @@ public class BodyLockInterface extends IDLBase {
 
     static public final BodyLockInterface NULL = BodyLockInterface.native_new();
 
-    static public final BodyLockInterface T_01 = BodyLockInterface.native_new();
-
-    static public final BodyLockInterface T_02 = BodyLockInterface.native_new();
-
-    static public final BodyLockInterface T_03 = BodyLockInterface.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -14,12 +14,6 @@ public class PlaneShape extends Shape {
 
     static public final PlaneShape NULL = PlaneShape.native_new();
 
-    static public final PlaneShape T_01 = PlaneShape.native_new();
-
-    static public final PlaneShape T_02 = PlaneShape.native_new();
-
-    static public final PlaneShape T_03 = PlaneShape.native_new();
-
     public PlaneShape(Plane inPlane, PhysicsMaterial inMaterial, float inHalfExtent) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Plane_PhysicsMaterial_float(inPlane.native_address, inMaterial.native_address, inHalfExtent);

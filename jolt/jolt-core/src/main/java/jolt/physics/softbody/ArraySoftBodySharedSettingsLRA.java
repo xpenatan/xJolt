@@ -13,12 +13,6 @@ public class ArraySoftBodySharedSettingsLRA extends IDLBase {
 
     static public final ArraySoftBodySharedSettingsLRA NULL = ArraySoftBodySharedSettingsLRA.native_new();
 
-    static public final ArraySoftBodySharedSettingsLRA T_01 = ArraySoftBodySharedSettingsLRA.native_new();
-
-    static public final ArraySoftBodySharedSettingsLRA T_02 = ArraySoftBodySharedSettingsLRA.native_new();
-
-    static public final ArraySoftBodySharedSettingsLRA T_03 = ArraySoftBodySharedSettingsLRA.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

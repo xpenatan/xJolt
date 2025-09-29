@@ -13,12 +13,6 @@ public class ArrayFloat extends IDLBase {
 
     static public final ArrayFloat NULL = ArrayFloat.native_new();
 
-    static public final ArrayFloat T_01 = ArrayFloat.native_new();
-
-    static public final ArrayFloat T_02 = ArrayFloat.native_new();
-
-    static public final ArrayFloat T_03 = ArrayFloat.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

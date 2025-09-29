@@ -46,12 +46,6 @@ public class Color extends IDLBase {
 
     static public final Color NULL = Color.native_new();
 
-    static public final Color T_01 = Color.native_new();
-
-    static public final Color T_02 = Color.native_new();
-
-    static public final Color T_03 = Color.native_new();
-
     public Color() {
         int addr = internal_native_create();
         internal_reset(addr, true);

@@ -9,12 +9,6 @@ public class GearConstraint extends TwoBodyConstraint {
 
     static public final GearConstraint NULL = GearConstraint.native_new();
 
-    static public final GearConstraint T_01 = GearConstraint.native_new();
-
-    static public final GearConstraint T_02 = GearConstraint.native_new();
-
-    static public final GearConstraint T_03 = GearConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

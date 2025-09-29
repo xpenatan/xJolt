@@ -11,12 +11,6 @@ public class CharacterVsCharacterCollision extends IDLBase {
 
     static public final CharacterVsCharacterCollision NULL = CharacterVsCharacterCollision.native_new();
 
-    static public final CharacterVsCharacterCollision T_01 = CharacterVsCharacterCollision.native_new();
-
-    static public final CharacterVsCharacterCollision T_02 = CharacterVsCharacterCollision.native_new();
-
-    static public final CharacterVsCharacterCollision T_03 = CharacterVsCharacterCollision.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

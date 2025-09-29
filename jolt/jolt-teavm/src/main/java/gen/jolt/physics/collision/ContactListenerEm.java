@@ -39,12 +39,6 @@ public class ContactListenerEm extends ContactListener {
 
     static public final ContactListenerEm NULL = ContactListenerEm.native_new();
 
-    static public final ContactListenerEm T_01 = ContactListenerEm.native_new();
-
-    static public final ContactListenerEm T_02 = ContactListenerEm.native_new();
-
-    static public final ContactListenerEm T_03 = ContactListenerEm.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

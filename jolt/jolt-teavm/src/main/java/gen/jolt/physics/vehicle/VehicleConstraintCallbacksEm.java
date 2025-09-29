@@ -31,12 +31,6 @@ public class VehicleConstraintCallbacksEm extends IDLBase {
 
     static public final VehicleConstraintCallbacksEm NULL = VehicleConstraintCallbacksEm.native_new();
 
-    static public final VehicleConstraintCallbacksEm T_01 = VehicleConstraintCallbacksEm.native_new();
-
-    static public final VehicleConstraintCallbacksEm T_02 = VehicleConstraintCallbacksEm.native_new();
-
-    static public final VehicleConstraintCallbacksEm T_03 = VehicleConstraintCallbacksEm.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

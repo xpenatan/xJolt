@@ -17,12 +17,6 @@ public class RackAndPinionConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final RackAndPinionConstraintSettings NULL = RackAndPinionConstraintSettings.native_new();
 
-    static public final RackAndPinionConstraintSettings T_01 = RackAndPinionConstraintSettings.native_new();
-
-    static public final RackAndPinionConstraintSettings T_02 = RackAndPinionConstraintSettings.native_new();
-
-    static public final RackAndPinionConstraintSettings T_03 = RackAndPinionConstraintSettings.native_new();
-
     public RackAndPinionConstraintSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

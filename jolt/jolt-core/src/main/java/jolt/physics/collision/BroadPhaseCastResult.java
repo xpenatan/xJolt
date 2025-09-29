@@ -14,12 +14,6 @@ public class BroadPhaseCastResult extends IDLBase {
 
     static public final BroadPhaseCastResult NULL = BroadPhaseCastResult.native_new();
 
-    static public final BroadPhaseCastResult T_01 = BroadPhaseCastResult.native_new();
-
-    static public final BroadPhaseCastResult T_02 = BroadPhaseCastResult.native_new();
-
-    static public final BroadPhaseCastResult T_03 = BroadPhaseCastResult.native_new();
-
     public BroadPhaseCastResult() {
         long addr = internal_native_create();
         internal_reset(addr, true);

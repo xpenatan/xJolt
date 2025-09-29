@@ -11,12 +11,6 @@ public class WheelTV extends Wheel {
 
     static public final WheelTV NULL = WheelTV.native_new();
 
-    static public final WheelTV T_01 = WheelTV.native_new();
-
-    static public final WheelTV T_02 = WheelTV.native_new();
-
-    static public final WheelTV T_03 = WheelTV.native_new();
-
     public WheelTV(WheelSettingsTV inWheel) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_WheelSettingsTV(inWheel.native_address);

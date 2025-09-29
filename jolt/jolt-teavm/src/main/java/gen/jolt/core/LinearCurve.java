@@ -11,12 +11,6 @@ public class LinearCurve extends IDLBase {
 
     static public final LinearCurve NULL = LinearCurve.native_new();
 
-    static public final LinearCurve T_01 = LinearCurve.native_new();
-
-    static public final LinearCurve T_02 = LinearCurve.native_new();
-
-    static public final LinearCurve T_03 = LinearCurve.native_new();
-
     public LinearCurve() {
         int addr = internal_native_create();
         internal_reset(addr, true);

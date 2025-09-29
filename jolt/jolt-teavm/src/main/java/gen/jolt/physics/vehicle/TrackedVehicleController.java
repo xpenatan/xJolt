@@ -13,12 +13,6 @@ public class TrackedVehicleController extends VehicleController {
 
     static public final TrackedVehicleController NULL = TrackedVehicleController.native_new();
 
-    static public final TrackedVehicleController T_01 = TrackedVehicleController.native_new();
-
-    static public final TrackedVehicleController T_02 = TrackedVehicleController.native_new();
-
-    static public final TrackedVehicleController T_03 = TrackedVehicleController.native_new();
-
     public TrackedVehicleController(TrackedVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);

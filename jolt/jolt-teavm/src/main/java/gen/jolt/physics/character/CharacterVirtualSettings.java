@@ -22,12 +22,6 @@ public class CharacterVirtualSettings extends CharacterBaseSettings {
 
     static public final CharacterVirtualSettings NULL = CharacterVirtualSettings.native_new();
 
-    static public final CharacterVirtualSettings T_01 = CharacterVirtualSettings.native_new();
-
-    static public final CharacterVirtualSettings T_02 = CharacterVirtualSettings.native_new();
-
-    static public final CharacterVirtualSettings T_03 = CharacterVirtualSettings.native_new();
-
     public CharacterVirtualSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

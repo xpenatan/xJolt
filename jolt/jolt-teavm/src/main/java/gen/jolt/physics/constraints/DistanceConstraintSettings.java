@@ -19,12 +19,6 @@ public class DistanceConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final DistanceConstraintSettings NULL = DistanceConstraintSettings.native_new();
 
-    static public final DistanceConstraintSettings T_01 = DistanceConstraintSettings.native_new();
-
-    static public final DistanceConstraintSettings T_02 = DistanceConstraintSettings.native_new();
-
-    static public final DistanceConstraintSettings T_03 = DistanceConstraintSettings.native_new();
-
     public DistanceConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

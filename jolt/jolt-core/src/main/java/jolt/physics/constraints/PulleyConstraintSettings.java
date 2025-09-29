@@ -21,12 +21,6 @@ public class PulleyConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final PulleyConstraintSettings NULL = PulleyConstraintSettings.native_new();
 
-    static public final PulleyConstraintSettings T_01 = PulleyConstraintSettings.native_new();
-
-    static public final PulleyConstraintSettings T_02 = PulleyConstraintSettings.native_new();
-
-    static public final PulleyConstraintSettings T_03 = PulleyConstraintSettings.native_new();
-
     public PulleyConstraintSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

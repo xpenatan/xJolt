@@ -14,12 +14,6 @@ public class BoxShapeSettings extends ConvexShapeSettings {
 
     static public final BoxShapeSettings NULL = BoxShapeSettings.native_new();
 
-    static public final BoxShapeSettings T_01 = BoxShapeSettings.native_new();
-
-    static public final BoxShapeSettings T_02 = BoxShapeSettings.native_new();
-
-    static public final BoxShapeSettings T_03 = BoxShapeSettings.native_new();
-
     public BoxShapeSettings(Vec3 inHalfExtent, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_Vec3_float_PhysicsMaterial(inHalfExtent.native_address, inConvexRadius, inMaterial.native_address);

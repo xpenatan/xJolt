@@ -11,12 +11,6 @@ public class IndexedTriangle extends IDLBase {
 
     static public final IndexedTriangle NULL = IndexedTriangle.native_new();
 
-    static public final IndexedTriangle T_01 = IndexedTriangle.native_new();
-
-    static public final IndexedTriangle T_02 = IndexedTriangle.native_new();
-
-    static public final IndexedTriangle T_03 = IndexedTriangle.native_new();
-
     public IndexedTriangle() {
         int addr = internal_native_create();
         internal_reset(addr, true);

@@ -22,12 +22,6 @@ public class PathConstraintPathEm extends PathConstraintPath {
 
     static public final PathConstraintPathEm NULL = PathConstraintPathEm.native_new();
 
-    static public final PathConstraintPathEm T_01 = PathConstraintPathEm.native_new();
-
-    static public final PathConstraintPathEm T_02 = PathConstraintPathEm.native_new();
-
-    static public final PathConstraintPathEm T_03 = PathConstraintPathEm.native_new();
-
     /*[-JNI;-NATIVE]
 class PathConstraintPathJS : public PathConstraintPathEm {
 private:

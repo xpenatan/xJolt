@@ -13,12 +13,6 @@ public class ArraySoftBodySharedSettingsVolume extends IDLBase {
 
     static public final ArraySoftBodySharedSettingsVolume NULL = ArraySoftBodySharedSettingsVolume.native_new();
 
-    static public final ArraySoftBodySharedSettingsVolume T_01 = ArraySoftBodySharedSettingsVolume.native_new();
-
-    static public final ArraySoftBodySharedSettingsVolume T_02 = ArraySoftBodySharedSettingsVolume.native_new();
-
-    static public final ArraySoftBodySharedSettingsVolume T_03 = ArraySoftBodySharedSettingsVolume.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

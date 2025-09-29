@@ -11,12 +11,6 @@ public class VehicleCollisionTester extends IDLBase {
 
     static public final VehicleCollisionTester NULL = VehicleCollisionTester.native_new();
 
-    static public final VehicleCollisionTester T_01 = VehicleCollisionTester.native_new();
-
-    static public final VehicleCollisionTester T_02 = VehicleCollisionTester.native_new();
-
-    static public final VehicleCollisionTester T_03 = VehicleCollisionTester.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

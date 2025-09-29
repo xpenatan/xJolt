@@ -25,12 +25,6 @@ public class FixedConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final FixedConstraintSettings NULL = FixedConstraintSettings.native_new();
 
-    static public final FixedConstraintSettings T_01 = FixedConstraintSettings.native_new();
-
-    static public final FixedConstraintSettings T_02 = FixedConstraintSettings.native_new();
-
-    static public final FixedConstraintSettings T_03 = FixedConstraintSettings.native_new();
-
     public FixedConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

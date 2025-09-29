@@ -11,12 +11,6 @@ public class DecoratedShape extends Shape {
 
     static public final DecoratedShape NULL = DecoratedShape.native_new();
 
-    static public final DecoratedShape T_01 = DecoratedShape.native_new();
-
-    static public final DecoratedShape T_02 = DecoratedShape.native_new();
-
-    static public final DecoratedShape T_03 = DecoratedShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

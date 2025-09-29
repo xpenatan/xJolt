@@ -54,12 +54,6 @@ public class RVec3 extends IDLBase {
 
     static public final RVec3 NULL = RVec3.native_new();
 
-    static public final RVec3 T_01 = RVec3.native_new();
-
-    static public final RVec3 T_02 = RVec3.native_new();
-
-    static public final RVec3 T_03 = RVec3.native_new();
-
     public RVec3() {
         long addr = internal_native_create();
         internal_reset(addr, true);

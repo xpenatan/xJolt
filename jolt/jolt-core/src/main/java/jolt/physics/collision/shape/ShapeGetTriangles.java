@@ -19,12 +19,6 @@ public class ShapeGetTriangles extends IDLBase {
 
     static public final ShapeGetTriangles NULL = ShapeGetTriangles.native_new();
 
-    static public final ShapeGetTriangles T_01 = ShapeGetTriangles.native_new();
-
-    static public final ShapeGetTriangles T_02 = ShapeGetTriangles.native_new();
-
-    static public final ShapeGetTriangles T_03 = ShapeGetTriangles.native_new();
-
     public ShapeGetTriangles(Shape inShape, AABox inBox, Vec3 inPositionCOM, Quat inRotation, Vec3 inScale) {
         long addr = internal_native_create_Shape_AABox_Vec3_Quat_Vec3(inShape.native_address, inBox.native_address, inPositionCOM.native_address, inRotation.native_address, inScale.native_address);
         internal_reset(addr, true);

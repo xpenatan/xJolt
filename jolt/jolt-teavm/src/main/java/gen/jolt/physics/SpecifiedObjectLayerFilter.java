@@ -11,12 +11,6 @@ public class SpecifiedObjectLayerFilter extends ObjectLayerFilter {
 
     static public final SpecifiedObjectLayerFilter NULL = SpecifiedObjectLayerFilter.native_new();
 
-    static public final SpecifiedObjectLayerFilter T_01 = SpecifiedObjectLayerFilter.native_new();
-
-    static public final SpecifiedObjectLayerFilter T_02 = SpecifiedObjectLayerFilter.native_new();
-
-    static public final SpecifiedObjectLayerFilter T_03 = SpecifiedObjectLayerFilter.native_new();
-
     public SpecifiedObjectLayerFilter(int inObjectLayer) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int(inObjectLayer);

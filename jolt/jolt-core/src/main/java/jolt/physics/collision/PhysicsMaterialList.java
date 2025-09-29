@@ -13,12 +13,6 @@ public class PhysicsMaterialList extends IDLBase {
 
     static public final PhysicsMaterialList NULL = PhysicsMaterialList.native_new();
 
-    static public final PhysicsMaterialList T_01 = PhysicsMaterialList.native_new();
-
-    static public final PhysicsMaterialList T_02 = PhysicsMaterialList.native_new();
-
-    static public final PhysicsMaterialList T_03 = PhysicsMaterialList.native_new();
-
     public PhysicsMaterialList() {
         long addr = internal_native_create();
         internal_reset(addr, true);

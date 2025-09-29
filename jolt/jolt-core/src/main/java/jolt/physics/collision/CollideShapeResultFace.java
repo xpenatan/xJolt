@@ -14,12 +14,6 @@ public class CollideShapeResultFace extends IDLBase {
 
     static public final CollideShapeResultFace NULL = CollideShapeResultFace.native_new();
 
-    static public final CollideShapeResultFace T_01 = CollideShapeResultFace.native_new();
-
-    static public final CollideShapeResultFace T_02 = CollideShapeResultFace.native_new();
-
-    static public final CollideShapeResultFace T_03 = CollideShapeResultFace.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

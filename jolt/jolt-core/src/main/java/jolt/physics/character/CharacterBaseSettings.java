@@ -20,12 +20,6 @@ public class CharacterBaseSettings extends IDLBase {
 
     static public final CharacterBaseSettings NULL = CharacterBaseSettings.native_new();
 
-    static public final CharacterBaseSettings T_01 = CharacterBaseSettings.native_new();
-
-    static public final CharacterBaseSettings T_02 = CharacterBaseSettings.native_new();
-
-    static public final CharacterBaseSettings T_03 = CharacterBaseSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

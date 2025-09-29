@@ -13,12 +13,6 @@ public class ArrayRagdollPart extends IDLBase {
 
     static public final ArrayRagdollPart NULL = ArrayRagdollPart.native_new();
 
-    static public final ArrayRagdollPart T_01 = ArrayRagdollPart.native_new();
-
-    static public final ArrayRagdollPart T_02 = ArrayRagdollPart.native_new();
-
-    static public final ArrayRagdollPart T_03 = ArrayRagdollPart.native_new();
-
     public ArrayRagdollPart() {
         int addr = internal_native_create();
         internal_reset(addr, true);

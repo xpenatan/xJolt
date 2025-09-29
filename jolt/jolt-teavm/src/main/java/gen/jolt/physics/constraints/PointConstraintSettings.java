@@ -17,12 +17,6 @@ public class PointConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final PointConstraintSettings NULL = PointConstraintSettings.native_new();
 
-    static public final PointConstraintSettings T_01 = PointConstraintSettings.native_new();
-
-    static public final PointConstraintSettings T_02 = PointConstraintSettings.native_new();
-
-    static public final PointConstraintSettings T_03 = PointConstraintSettings.native_new();
-
     public PointConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

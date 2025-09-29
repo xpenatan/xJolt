@@ -14,12 +14,6 @@ public class CastShapeClosestHitCollisionCollector extends CastShapeCollector {
 
     static public final CastShapeClosestHitCollisionCollector NULL = CastShapeClosestHitCollisionCollector.native_new();
 
-    static public final CastShapeClosestHitCollisionCollector T_01 = CastShapeClosestHitCollisionCollector.native_new();
-
-    static public final CastShapeClosestHitCollisionCollector T_02 = CastShapeClosestHitCollisionCollector.native_new();
-
-    static public final CastShapeClosestHitCollisionCollector T_03 = CastShapeClosestHitCollisionCollector.native_new();
-
     public CastShapeClosestHitCollisionCollector() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

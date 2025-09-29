@@ -17,12 +17,6 @@ public class HeightFieldShape extends Shape {
 
     static public final HeightFieldShape NULL = HeightFieldShape.native_new();
 
-    static public final HeightFieldShape T_01 = HeightFieldShape.native_new();
-
-    static public final HeightFieldShape T_02 = HeightFieldShape.native_new();
-
-    static public final HeightFieldShape T_03 = HeightFieldShape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

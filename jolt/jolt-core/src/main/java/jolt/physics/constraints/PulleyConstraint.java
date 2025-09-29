@@ -9,12 +9,6 @@ public class PulleyConstraint extends TwoBodyConstraint {
 
     static public final PulleyConstraint NULL = PulleyConstraint.native_new();
 
-    static public final PulleyConstraint T_01 = PulleyConstraint.native_new();
-
-    static public final PulleyConstraint T_02 = PulleyConstraint.native_new();
-
-    static public final PulleyConstraint T_03 = PulleyConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

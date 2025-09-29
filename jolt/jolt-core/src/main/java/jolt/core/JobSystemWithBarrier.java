@@ -9,12 +9,6 @@ public class JobSystemWithBarrier extends JobSystem {
 
     static public final JobSystemWithBarrier NULL = JobSystemWithBarrier.native_new();
 
-    static public final JobSystemWithBarrier T_01 = JobSystemWithBarrier.native_new();
-
-    static public final JobSystemWithBarrier T_02 = JobSystemWithBarrier.native_new();
-
-    static public final JobSystemWithBarrier T_03 = JobSystemWithBarrier.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

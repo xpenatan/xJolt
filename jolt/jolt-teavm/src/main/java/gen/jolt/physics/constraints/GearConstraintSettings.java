@@ -17,12 +17,6 @@ public class GearConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final GearConstraintSettings NULL = GearConstraintSettings.native_new();
 
-    static public final GearConstraintSettings T_01 = GearConstraintSettings.native_new();
-
-    static public final GearConstraintSettings T_02 = GearConstraintSettings.native_new();
-
-    static public final GearConstraintSettings T_03 = GearConstraintSettings.native_new();
-
     public GearConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

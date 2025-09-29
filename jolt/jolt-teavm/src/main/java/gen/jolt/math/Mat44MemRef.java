@@ -11,12 +11,6 @@ public class Mat44MemRef extends IDLBase {
 
     static public final Mat44MemRef NULL = Mat44MemRef.native_new();
 
-    static public final Mat44MemRef T_01 = Mat44MemRef.native_new();
-
-    static public final Mat44MemRef T_02 = Mat44MemRef.native_new();
-
-    static public final Mat44MemRef T_03 = Mat44MemRef.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

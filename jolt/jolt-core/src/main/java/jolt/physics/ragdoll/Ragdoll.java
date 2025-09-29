@@ -33,12 +33,6 @@ public class Ragdoll extends IDLBase {
 
     static public final Ragdoll NULL = Ragdoll.native_new();
 
-    static public final Ragdoll T_01 = Ragdoll.native_new();
-
-    static public final Ragdoll T_02 = Ragdoll.native_new();
-
-    static public final Ragdoll T_03 = Ragdoll.native_new();
-
     public Ragdoll(PhysicsSystem inSystem) {
         long addr = internal_native_create_PhysicsSystem(inSystem.native_address);
         internal_reset(addr, true);

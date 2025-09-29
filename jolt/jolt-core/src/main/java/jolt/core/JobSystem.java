@@ -11,12 +11,6 @@ public class JobSystem extends IDLBase {
 
     static public final JobSystem NULL = JobSystem.native_new();
 
-    static public final JobSystem T_01 = JobSystem.native_new();
-
-    static public final JobSystem T_02 = JobSystem.native_new();
-
-    static public final JobSystem T_03 = JobSystem.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

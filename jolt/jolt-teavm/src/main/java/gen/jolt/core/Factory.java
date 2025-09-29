@@ -13,12 +13,6 @@ public class Factory extends IDLBase {
 
     static public final Factory NULL = Factory.native_new();
 
-    static public final Factory T_01 = Factory.native_new();
-
-    static public final Factory T_02 = Factory.native_new();
-
-    static public final Factory T_03 = Factory.native_new();
-
     public Factory() {
         int addr = internal_native_create();
         internal_reset(addr, true);

@@ -17,12 +17,6 @@ public class AABoxCast extends IDLBase {
 
     static public final AABoxCast NULL = AABoxCast.native_new();
 
-    static public final AABoxCast T_01 = AABoxCast.native_new();
-
-    static public final AABoxCast T_02 = AABoxCast.native_new();
-
-    static public final AABoxCast T_03 = AABoxCast.native_new();
-
     public AABoxCast() {
         long addr = internal_native_create();
         internal_reset(addr, true);

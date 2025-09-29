@@ -11,12 +11,6 @@ public class SoftBodySharedSettingsDihedralBend extends IDLBase {
 
     static public final SoftBodySharedSettingsDihedralBend NULL = SoftBodySharedSettingsDihedralBend.native_new();
 
-    static public final SoftBodySharedSettingsDihedralBend T_01 = SoftBodySharedSettingsDihedralBend.native_new();
-
-    static public final SoftBodySharedSettingsDihedralBend T_02 = SoftBodySharedSettingsDihedralBend.native_new();
-
-    static public final SoftBodySharedSettingsDihedralBend T_03 = SoftBodySharedSettingsDihedralBend.native_new();
-
     public SoftBodySharedSettingsDihedralBend(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance) {
         int addr = internal_native_create_int_int_int_int_float(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
         internal_reset(addr, true);

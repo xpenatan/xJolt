@@ -13,12 +13,6 @@ public class ArrayRagdollAdditionalConstraint extends IDLBase {
 
     static public final ArrayRagdollAdditionalConstraint NULL = ArrayRagdollAdditionalConstraint.native_new();
 
-    static public final ArrayRagdollAdditionalConstraint T_01 = ArrayRagdollAdditionalConstraint.native_new();
-
-    static public final ArrayRagdollAdditionalConstraint T_02 = ArrayRagdollAdditionalConstraint.native_new();
-
-    static public final ArrayRagdollAdditionalConstraint T_03 = ArrayRagdollAdditionalConstraint.native_new();
-
     public ArrayRagdollAdditionalConstraint() {
         long addr = internal_native_create();
         internal_reset(addr, true);

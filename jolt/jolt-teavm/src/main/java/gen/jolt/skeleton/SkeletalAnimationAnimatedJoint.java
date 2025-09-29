@@ -16,12 +16,6 @@ public class SkeletalAnimationAnimatedJoint extends IDLBase {
 
     static public final SkeletalAnimationAnimatedJoint NULL = SkeletalAnimationAnimatedJoint.native_new();
 
-    static public final SkeletalAnimationAnimatedJoint T_01 = SkeletalAnimationAnimatedJoint.native_new();
-
-    static public final SkeletalAnimationAnimatedJoint T_02 = SkeletalAnimationAnimatedJoint.native_new();
-
-    static public final SkeletalAnimationAnimatedJoint T_03 = SkeletalAnimationAnimatedJoint.native_new();
-
     public SkeletalAnimationAnimatedJoint() {
         int addr = internal_native_create();
         internal_reset(addr, true);

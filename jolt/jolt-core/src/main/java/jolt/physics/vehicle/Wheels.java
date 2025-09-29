@@ -13,12 +13,6 @@ public class Wheels extends IDLBase {
 
     static public final Wheels NULL = Wheels.native_new();
 
-    static public final Wheels T_01 = Wheels.native_new();
-
-    static public final Wheels T_02 = Wheels.native_new();
-
-    static public final Wheels T_03 = Wheels.native_new();
-
     public Wheels() {
         long addr = internal_native_create();
         internal_reset(addr, true);

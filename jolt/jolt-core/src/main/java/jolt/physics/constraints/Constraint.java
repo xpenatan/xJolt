@@ -13,12 +13,6 @@ public class Constraint extends IDLBase {
 
     static public final Constraint NULL = Constraint.native_new();
 
-    static public final Constraint T_01 = Constraint.native_new();
-
-    static public final Constraint T_02 = Constraint.native_new();
-
-    static public final Constraint T_03 = Constraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -50,12 +50,6 @@ public class TransformedShape extends IDLBase {
 
     static public final TransformedShape NULL = TransformedShape.native_new();
 
-    static public final TransformedShape T_01 = TransformedShape.native_new();
-
-    static public final TransformedShape T_02 = TransformedShape.native_new();
-
-    static public final TransformedShape T_03 = TransformedShape.native_new();
-
     public TransformedShape() {
         int addr = internal_native_create();
         internal_reset(addr, true);

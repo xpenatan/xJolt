@@ -20,12 +20,6 @@ public class SoftBodyCreationSettings extends IDLBase {
 
     static public final SoftBodyCreationSettings NULL = SoftBodyCreationSettings.native_new();
 
-    static public final SoftBodyCreationSettings T_01 = SoftBodyCreationSettings.native_new();
-
-    static public final SoftBodyCreationSettings T_02 = SoftBodyCreationSettings.native_new();
-
-    static public final SoftBodyCreationSettings T_03 = SoftBodyCreationSettings.native_new();
-
     public SoftBodyCreationSettings(SoftBodySharedSettings inSettings, Vec3 inPosition, Quat inRotation, int inObjectLayer) {
         int addr = internal_native_create_SoftBodySharedSettings_Vec3_Quat_int(inSettings.native_address, inPosition.native_address, inRotation.native_address, inObjectLayer);
         internal_reset(addr, true);

@@ -42,12 +42,6 @@ public class Shape extends IDLBase {
 
     static public final Shape NULL = Shape.native_new();
 
-    static public final Shape T_01 = Shape.native_new();
-
-    static public final Shape T_02 = Shape.native_new();
-
-    static public final Shape T_03 = Shape.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

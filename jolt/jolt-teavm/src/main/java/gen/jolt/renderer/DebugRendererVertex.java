@@ -22,12 +22,6 @@ public class DebugRendererVertex extends IDLBase {
 
     static public final DebugRendererVertex NULL = DebugRendererVertex.native_new();
 
-    static public final DebugRendererVertex T_01 = DebugRendererVertex.native_new();
-
-    static public final DebugRendererVertex T_02 = DebugRendererVertex.native_new();
-
-    static public final DebugRendererVertex T_03 = DebugRendererVertex.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -23,12 +23,6 @@ public class RRayCast extends IDLBase {
 
     static public final RRayCast NULL = RRayCast.native_new();
 
-    static public final RRayCast T_01 = RRayCast.native_new();
-
-    static public final RRayCast T_02 = RRayCast.native_new();
-
-    static public final RRayCast T_03 = RRayCast.native_new();
-
     public RRayCast() {
         int addr = internal_native_create();
         internal_reset(addr, true);

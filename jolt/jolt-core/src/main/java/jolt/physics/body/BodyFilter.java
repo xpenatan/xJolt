@@ -15,12 +15,6 @@ public class BodyFilter extends IDLBase {
 
     static public final BodyFilter NULL = BodyFilter.native_new();
 
-    static public final BodyFilter T_01 = BodyFilter.native_new();
-
-    static public final BodyFilter T_02 = BodyFilter.native_new();
-
-    static public final BodyFilter T_03 = BodyFilter.native_new();
-
     /*[-JNI;-NATIVE]
 class BodyFilterImpl : public BodyFilter {
 private:

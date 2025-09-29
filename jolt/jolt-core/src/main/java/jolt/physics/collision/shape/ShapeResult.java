@@ -16,12 +16,6 @@ public class ShapeResult extends IDLBase {
 
     static public final ShapeResult NULL = ShapeResult.native_new();
 
-    static public final ShapeResult T_01 = ShapeResult.native_new();
-
-    static public final ShapeResult T_02 = ShapeResult.native_new();
-
-    static public final ShapeResult T_03 = ShapeResult.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

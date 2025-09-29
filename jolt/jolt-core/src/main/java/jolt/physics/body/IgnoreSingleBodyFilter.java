@@ -9,12 +9,6 @@ public class IgnoreSingleBodyFilter extends BodyFilter {
 
     static public final IgnoreSingleBodyFilter NULL = IgnoreSingleBodyFilter.native_new();
 
-    static public final IgnoreSingleBodyFilter T_01 = IgnoreSingleBodyFilter.native_new();
-
-    static public final IgnoreSingleBodyFilter T_02 = IgnoreSingleBodyFilter.native_new();
-
-    static public final IgnoreSingleBodyFilter T_03 = IgnoreSingleBodyFilter.native_new();
-
     public IgnoreSingleBodyFilter(BodyID inBodyID) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_BodyID(inBodyID.native_address);

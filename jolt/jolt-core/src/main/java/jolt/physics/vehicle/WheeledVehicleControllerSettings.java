@@ -15,12 +15,6 @@ public class WheeledVehicleControllerSettings extends VehicleControllerSettings 
 
     static public final WheeledVehicleControllerSettings NULL = WheeledVehicleControllerSettings.native_new();
 
-    static public final WheeledVehicleControllerSettings T_01 = WheeledVehicleControllerSettings.native_new();
-
-    static public final WheeledVehicleControllerSettings T_02 = WheeledVehicleControllerSettings.native_new();
-
-    static public final WheeledVehicleControllerSettings T_03 = WheeledVehicleControllerSettings.native_new();
-
     public WheeledVehicleControllerSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

@@ -13,12 +13,6 @@ public class RayCastResult extends BroadPhaseCastResult {
 
     static public final RayCastResult NULL = RayCastResult.native_new();
 
-    static public final RayCastResult T_01 = RayCastResult.native_new();
-
-    static public final RayCastResult T_02 = RayCastResult.native_new();
-
-    static public final RayCastResult T_03 = RayCastResult.native_new();
-
     public RayCastResult() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

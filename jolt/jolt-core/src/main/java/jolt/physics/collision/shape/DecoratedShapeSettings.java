@@ -9,12 +9,6 @@ public class DecoratedShapeSettings extends ShapeSettings {
 
     static public final DecoratedShapeSettings NULL = DecoratedShapeSettings.native_new();
 
-    static public final DecoratedShapeSettings T_01 = DecoratedShapeSettings.native_new();
-
-    static public final DecoratedShapeSettings T_02 = DecoratedShapeSettings.native_new();
-
-    static public final DecoratedShapeSettings T_03 = DecoratedShapeSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

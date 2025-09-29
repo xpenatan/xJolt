@@ -13,12 +13,6 @@ public class IDLArrayBodyID extends IDLArrayBase {
 
     static public final IDLArrayBodyID NULL = IDLArrayBodyID.native_new();
 
-    static public final IDLArrayBodyID T_01 = IDLArrayBodyID.native_new();
-
-    static public final IDLArrayBodyID T_02 = IDLArrayBodyID.native_new();
-
-    static public final IDLArrayBodyID T_03 = IDLArrayBodyID.native_new();
-
     public IDLArrayBodyID(int size) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_int(size);

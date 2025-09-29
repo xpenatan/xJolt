@@ -15,12 +15,6 @@ public class TwoBodyConstraintSettings extends ConstraintSettings {
 
     static public final TwoBodyConstraintSettings NULL = TwoBodyConstraintSettings.native_new();
 
-    static public final TwoBodyConstraintSettings T_01 = TwoBodyConstraintSettings.native_new();
-
-    static public final TwoBodyConstraintSettings T_02 = TwoBodyConstraintSettings.native_new();
-
-    static public final TwoBodyConstraintSettings T_03 = TwoBodyConstraintSettings.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

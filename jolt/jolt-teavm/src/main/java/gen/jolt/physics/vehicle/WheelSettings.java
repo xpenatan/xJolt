@@ -27,12 +27,6 @@ public class WheelSettings extends IDLBase {
 
     static public final WheelSettings NULL = WheelSettings.native_new();
 
-    static public final WheelSettings T_01 = WheelSettings.native_new();
-
-    static public final WheelSettings T_02 = WheelSettings.native_new();
-
-    static public final WheelSettings T_03 = WheelSettings.native_new();
-
     public WheelSettings() {
         int addr = internal_native_create();
         internal_reset(addr, true);

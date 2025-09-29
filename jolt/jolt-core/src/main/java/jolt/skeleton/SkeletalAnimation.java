@@ -13,12 +13,6 @@ public class SkeletalAnimation extends IDLBase {
 
     static public final SkeletalAnimation NULL = SkeletalAnimation.native_new();
 
-    static public final SkeletalAnimation T_01 = SkeletalAnimation.native_new();
-
-    static public final SkeletalAnimation T_02 = SkeletalAnimation.native_new();
-
-    static public final SkeletalAnimation T_03 = SkeletalAnimation.native_new();
-
     public SkeletalAnimation() {
         long addr = internal_native_create();
         internal_reset(addr, true);

@@ -16,12 +16,6 @@ public class CollideSettingsBase extends IDLBase {
 
     static public final CollideSettingsBase NULL = CollideSettingsBase.native_new();
 
-    static public final CollideSettingsBase T_01 = CollideSettingsBase.native_new();
-
-    static public final CollideSettingsBase T_02 = CollideSettingsBase.native_new();
-
-    static public final CollideSettingsBase T_03 = CollideSettingsBase.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

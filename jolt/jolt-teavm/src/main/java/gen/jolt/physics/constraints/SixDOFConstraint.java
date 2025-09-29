@@ -44,12 +44,6 @@ public class SixDOFConstraint extends TwoBodyConstraint {
 
     static public final SixDOFConstraint NULL = SixDOFConstraint.native_new();
 
-    static public final SixDOFConstraint T_01 = SixDOFConstraint.native_new();
-
-    static public final SixDOFConstraint T_02 = SixDOFConstraint.native_new();
-
-    static public final SixDOFConstraint T_03 = SixDOFConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

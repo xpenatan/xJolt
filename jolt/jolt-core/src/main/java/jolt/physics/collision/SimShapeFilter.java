@@ -11,12 +11,6 @@ public class SimShapeFilter extends IDLBase {
 
     static public final SimShapeFilter NULL = SimShapeFilter.native_new();
 
-    static public final SimShapeFilter T_01 = SimShapeFilter.native_new();
-
-    static public final SimShapeFilter T_02 = SimShapeFilter.native_new();
-
-    static public final SimShapeFilter T_03 = SimShapeFilter.native_new();
-
     public SimShapeFilter() {
         long addr = internal_native_create();
         internal_reset(addr, true);

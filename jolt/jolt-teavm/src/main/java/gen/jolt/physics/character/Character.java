@@ -47,12 +47,6 @@ public class Character extends CharacterBase {
 
     static public final Character NULL = Character.native_new();
 
-    static public final Character T_01 = Character.native_new();
-
-    static public final Character T_02 = Character.native_new();
-
-    static public final Character T_03 = Character.native_new();
-
     public Character(CharacterSettings inSettings, RVec3 inPosition, Quat inRotation, long inUserData, PhysicsSystem inSystem) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_CharacterSettings_RVec3_Quat_long_PhysicsSystem(inSettings.native_address, inPosition.native_address, inRotation.native_address, (int) inUserData, inSystem.native_address);

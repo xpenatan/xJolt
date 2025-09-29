@@ -11,12 +11,6 @@ public class CylinderShapeSettings extends ConvexShapeSettings {
 
     static public final CylinderShapeSettings NULL = CylinderShapeSettings.native_new();
 
-    static public final CylinderShapeSettings T_01 = CylinderShapeSettings.native_new();
-
-    static public final CylinderShapeSettings T_02 = CylinderShapeSettings.native_new();
-
-    static public final CylinderShapeSettings T_03 = CylinderShapeSettings.native_new();
-
     public CylinderShapeSettings(float inHalfHeight, float inRadius, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeight, inRadius, inConvexRadius, inMaterial.native_address);

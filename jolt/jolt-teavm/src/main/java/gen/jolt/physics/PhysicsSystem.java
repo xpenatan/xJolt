@@ -61,12 +61,6 @@ public class PhysicsSystem extends IDLBase {
 
     static public final PhysicsSystem NULL = PhysicsSystem.native_new();
 
-    static public final PhysicsSystem T_01 = PhysicsSystem.native_new();
-
-    static public final PhysicsSystem T_02 = PhysicsSystem.native_new();
-
-    static public final PhysicsSystem T_03 = PhysicsSystem.native_new();
-
     public PhysicsSystem() {
         int addr = internal_native_create();
         internal_reset(addr, true);

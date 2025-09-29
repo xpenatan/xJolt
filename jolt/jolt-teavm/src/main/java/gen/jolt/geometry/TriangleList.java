@@ -13,12 +13,6 @@ public class TriangleList extends IDLBase {
 
     static public final TriangleList NULL = TriangleList.native_new();
 
-    static public final TriangleList T_01 = TriangleList.native_new();
-
-    static public final TriangleList T_02 = TriangleList.native_new();
-
-    static public final TriangleList T_03 = TriangleList.native_new();
-
     public TriangleList() {
         int addr = internal_native_create();
         internal_reset(addr, true);

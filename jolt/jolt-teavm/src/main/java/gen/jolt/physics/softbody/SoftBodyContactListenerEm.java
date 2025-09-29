@@ -21,12 +21,6 @@ public class SoftBodyContactListenerEm extends SoftBodyContactListener {
 
     static public final SoftBodyContactListenerEm NULL = SoftBodyContactListenerEm.native_new();
 
-    static public final SoftBodyContactListenerEm T_01 = SoftBodyContactListenerEm.native_new();
-
-    static public final SoftBodyContactListenerEm T_02 = SoftBodyContactListenerEm.native_new();
-
-    static public final SoftBodyContactListenerEm T_03 = SoftBodyContactListenerEm.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

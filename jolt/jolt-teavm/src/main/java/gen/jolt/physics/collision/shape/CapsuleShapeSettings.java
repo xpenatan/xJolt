@@ -11,12 +11,6 @@ public class CapsuleShapeSettings extends ConvexShapeSettings {
 
     static public final CapsuleShapeSettings NULL = CapsuleShapeSettings.native_new();
 
-    static public final CapsuleShapeSettings T_01 = CapsuleShapeSettings.native_new();
-
-    static public final CapsuleShapeSettings T_02 = CapsuleShapeSettings.native_new();
-
-    static public final CapsuleShapeSettings T_03 = CapsuleShapeSettings.native_new();
-
     public CapsuleShapeSettings(float inHalfHeight, float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
         int addr = internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, inMaterial.native_address);

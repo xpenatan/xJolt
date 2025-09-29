@@ -24,12 +24,6 @@ public class NarrowPhaseQuery extends IDLBase {
 
     static public final NarrowPhaseQuery NULL = NarrowPhaseQuery.native_new();
 
-    static public final NarrowPhaseQuery T_01 = NarrowPhaseQuery.native_new();
-
-    static public final NarrowPhaseQuery T_02 = NarrowPhaseQuery.native_new();
-
-    static public final NarrowPhaseQuery T_03 = NarrowPhaseQuery.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

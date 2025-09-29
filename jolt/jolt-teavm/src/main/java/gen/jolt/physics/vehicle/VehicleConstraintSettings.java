@@ -22,12 +22,6 @@ public class VehicleConstraintSettings extends ConstraintSettings {
 
     static public final VehicleConstraintSettings NULL = VehicleConstraintSettings.native_new();
 
-    static public final VehicleConstraintSettings T_01 = VehicleConstraintSettings.native_new();
-
-    static public final VehicleConstraintSettings T_02 = VehicleConstraintSettings.native_new();
-
-    static public final VehicleConstraintSettings T_03 = VehicleConstraintSettings.native_new();
-
     public VehicleConstraintSettings() {
         super((byte) 1, (char) 1);
         int addr = internal_native_create();

@@ -13,12 +13,6 @@ public class BodyIDVector extends IDLBase {
 
     static public final BodyIDVector NULL = BodyIDVector.native_new();
 
-    static public final BodyIDVector T_01 = BodyIDVector.native_new();
-
-    static public final BodyIDVector T_02 = BodyIDVector.native_new();
-
-    static public final BodyIDVector T_03 = BodyIDVector.native_new();
-
     public BodyIDVector() {
         int addr = internal_native_create();
         internal_reset(addr, true);

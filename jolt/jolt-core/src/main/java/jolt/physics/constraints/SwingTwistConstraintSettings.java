@@ -30,12 +30,6 @@ public class SwingTwistConstraintSettings extends TwoBodyConstraintSettings {
 
     static public final SwingTwistConstraintSettings NULL = SwingTwistConstraintSettings.native_new();
 
-    static public final SwingTwistConstraintSettings T_01 = SwingTwistConstraintSettings.native_new();
-
-    static public final SwingTwistConstraintSettings T_02 = SwingTwistConstraintSettings.native_new();
-
-    static public final SwingTwistConstraintSettings T_03 = SwingTwistConstraintSettings.native_new();
-
     public SwingTwistConstraintSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

@@ -14,12 +14,6 @@ public class ObjectVsBroadPhaseLayerFilterEm extends ObjectVsBroadPhaseLayerFilt
 
     static public final ObjectVsBroadPhaseLayerFilterEm NULL = ObjectVsBroadPhaseLayerFilterEm.native_new();
 
-    static public final ObjectVsBroadPhaseLayerFilterEm T_01 = ObjectVsBroadPhaseLayerFilterEm.native_new();
-
-    static public final ObjectVsBroadPhaseLayerFilterEm T_02 = ObjectVsBroadPhaseLayerFilterEm.native_new();
-
-    static public final ObjectVsBroadPhaseLayerFilterEm T_03 = ObjectVsBroadPhaseLayerFilterEm.native_new();
-
     /*[-JNI;-NATIVE]
 class ObjectVsBroadPhaseLayerFilterJS : public ObjectVsBroadPhaseLayerFilterEm {
 private:

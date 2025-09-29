@@ -11,12 +11,6 @@ public class FloatMemRef extends IDLBase {
 
     static public final FloatMemRef NULL = FloatMemRef.native_new();
 
-    static public final FloatMemRef T_01 = FloatMemRef.native_new();
-
-    static public final FloatMemRef T_02 = FloatMemRef.native_new();
-
-    static public final FloatMemRef T_03 = FloatMemRef.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

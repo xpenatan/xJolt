@@ -32,12 +32,6 @@ public class SoftBodyMotionProperties extends MotionProperties {
 
     static public final SoftBodyMotionProperties NULL = SoftBodyMotionProperties.native_new();
 
-    static public final SoftBodyMotionProperties T_01 = SoftBodyMotionProperties.native_new();
-
-    static public final SoftBodyMotionProperties T_02 = SoftBodyMotionProperties.native_new();
-
-    static public final SoftBodyMotionProperties T_03 = SoftBodyMotionProperties.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -9,12 +9,6 @@ public class BodyLockInterfaceLocking extends BodyLockInterface {
 
     static public final BodyLockInterfaceLocking NULL = BodyLockInterfaceLocking.native_new();
 
-    static public final BodyLockInterfaceLocking T_01 = BodyLockInterfaceLocking.native_new();
-
-    static public final BodyLockInterfaceLocking T_02 = BodyLockInterfaceLocking.native_new();
-
-    static public final BodyLockInterfaceLocking T_03 = BodyLockInterfaceLocking.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

@@ -11,12 +11,6 @@ public class ShapeCastResult extends CollideShapeResult {
 
     static public final ShapeCastResult NULL = ShapeCastResult.native_new();
 
-    static public final ShapeCastResult T_01 = ShapeCastResult.native_new();
-
-    static public final ShapeCastResult T_02 = ShapeCastResult.native_new();
-
-    static public final ShapeCastResult T_03 = ShapeCastResult.native_new();
-
     public ShapeCastResult() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

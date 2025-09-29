@@ -14,12 +14,6 @@ public class SoftBodySharedSettingsInvBind extends IDLBase {
 
     static public final SoftBodySharedSettingsInvBind NULL = SoftBodySharedSettingsInvBind.native_new();
 
-    static public final SoftBodySharedSettingsInvBind T_01 = SoftBodySharedSettingsInvBind.native_new();
-
-    static public final SoftBodySharedSettingsInvBind T_02 = SoftBodySharedSettingsInvBind.native_new();
-
-    static public final SoftBodySharedSettingsInvBind T_03 = SoftBodySharedSettingsInvBind.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

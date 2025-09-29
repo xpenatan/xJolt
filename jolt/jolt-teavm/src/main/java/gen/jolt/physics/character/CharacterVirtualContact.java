@@ -34,12 +34,6 @@ public class CharacterVirtualContact extends IDLBase {
 
     static public final CharacterVirtualContact NULL = CharacterVirtualContact.native_new();
 
-    static public final CharacterVirtualContact T_01 = CharacterVirtualContact.native_new();
-
-    static public final CharacterVirtualContact T_02 = CharacterVirtualContact.native_new();
-
-    static public final CharacterVirtualContact T_03 = CharacterVirtualContact.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

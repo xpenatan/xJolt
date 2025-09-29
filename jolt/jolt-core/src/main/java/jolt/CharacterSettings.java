@@ -12,12 +12,6 @@ public class CharacterSettings extends CharacterBaseSettings {
 
     static public final CharacterSettings NULL = CharacterSettings.native_new();
 
-    static public final CharacterSettings T_01 = CharacterSettings.native_new();
-
-    static public final CharacterSettings T_02 = CharacterSettings.native_new();
-
-    static public final CharacterSettings T_03 = CharacterSettings.native_new();
-
     public CharacterSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

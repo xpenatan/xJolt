@@ -11,12 +11,6 @@ public class UintMemRef extends IDLBase {
 
     static public final UintMemRef NULL = UintMemRef.native_new();
 
-    static public final UintMemRef T_01 = UintMemRef.native_new();
-
-    static public final UintMemRef T_02 = UintMemRef.native_new();
-
-    static public final UintMemRef T_03 = UintMemRef.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

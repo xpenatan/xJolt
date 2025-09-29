@@ -13,12 +13,6 @@ public class Vector2 extends IDLBase {
 
     static public final Vector2 NULL = Vector2.native_new();
 
-    static public final Vector2 T_01 = Vector2.native_new();
-
-    static public final Vector2 T_02 = Vector2.native_new();
-
-    static public final Vector2 T_03 = Vector2.native_new();
-
     public Vector2() {
         long addr = internal_native_create();
         internal_reset(addr, true);

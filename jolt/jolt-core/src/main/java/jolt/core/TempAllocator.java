@@ -11,12 +11,6 @@ public class TempAllocator extends IDLBase {
 
     static public final TempAllocator NULL = TempAllocator.native_new();
 
-    static public final TempAllocator T_01 = TempAllocator.native_new();
-
-    static public final TempAllocator T_02 = TempAllocator.native_new();
-
-    static public final TempAllocator T_03 = TempAllocator.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

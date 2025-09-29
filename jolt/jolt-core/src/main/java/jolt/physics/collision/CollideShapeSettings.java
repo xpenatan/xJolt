@@ -11,12 +11,6 @@ public class CollideShapeSettings extends CollideSettingsBase {
 
     static public final CollideShapeSettings NULL = CollideShapeSettings.native_new();
 
-    static public final CollideShapeSettings T_01 = CollideShapeSettings.native_new();
-
-    static public final CollideShapeSettings T_02 = CollideShapeSettings.native_new();
-
-    static public final CollideShapeSettings T_03 = CollideShapeSettings.native_new();
-
     public CollideShapeSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

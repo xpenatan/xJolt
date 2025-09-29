@@ -13,12 +13,6 @@ public class ArrayUint8 extends IDLBase {
 
     static public final ArrayUint8 NULL = ArrayUint8.native_new();
 
-    static public final ArrayUint8 T_01 = ArrayUint8.native_new();
-
-    static public final ArrayUint8 T_02 = ArrayUint8.native_new();
-
-    static public final ArrayUint8 T_03 = ArrayUint8.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

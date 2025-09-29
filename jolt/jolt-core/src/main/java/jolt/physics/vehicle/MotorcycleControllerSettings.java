@@ -9,12 +9,6 @@ public class MotorcycleControllerSettings extends WheeledVehicleControllerSettin
 
     static public final MotorcycleControllerSettings NULL = MotorcycleControllerSettings.native_new();
 
-    static public final MotorcycleControllerSettings T_01 = MotorcycleControllerSettings.native_new();
-
-    static public final MotorcycleControllerSettings T_02 = MotorcycleControllerSettings.native_new();
-
-    static public final MotorcycleControllerSettings T_03 = MotorcycleControllerSettings.native_new();
-
     public MotorcycleControllerSettings() {
         super((byte) 1, (char) 1);
         long addr = internal_native_create();

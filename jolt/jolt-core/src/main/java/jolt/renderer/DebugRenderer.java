@@ -11,12 +11,6 @@ public class DebugRenderer extends IDLBase {
 
     static public final DebugRenderer NULL = DebugRenderer.native_new();
 
-    static public final DebugRenderer T_01 = DebugRenderer.native_new();
-
-    static public final DebugRenderer T_02 = DebugRenderer.native_new();
-
-    static public final DebugRenderer T_03 = DebugRenderer.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */

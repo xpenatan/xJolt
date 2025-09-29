@@ -17,12 +17,6 @@ public class PointConstraint extends TwoBodyConstraint {
 
     static public final PointConstraint NULL = PointConstraint.native_new();
 
-    static public final PointConstraint T_01 = PointConstraint.native_new();
-
-    static public final PointConstraint T_02 = PointConstraint.native_new();
-
-    static public final PointConstraint T_03 = PointConstraint.native_new();
-
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
      */
