@@ -18,30 +18,52 @@ public class IDLBool extends IDLBoolArray {
         return new IDLBool((byte) 1, (char) 1);
     }
 
-    private IDLBool(byte b, char c) {
-        super(b, c);
+    protected IDLBool(byte b, char c) {
+        super((byte) 1, (char) 1);
     }
 
     public IDLBool() {
-        super(1);
+        super((byte) 1, (char) 1);
+        long addr = internal_native_create();
+        internal_reset(addr, true);
     }
 
-    public IDLBool(boolean value) {
-        this();
-        set(value);
+    /*
+      [-JNI;-NATIVE]
+      return (jlong)new IDLBool();
+    */
+    public static native long internal_native_create();
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
     }
 
-    public IDLBool set(boolean value) {
-        setValue(0, value);
-        return this;
-    }
+    /*
+      [-JNI;-NATIVE]
+      IDLBool* nativeObject = (IDLBool*)this_addr;
+      delete nativeObject;
+    */
+    public static native void internal_native_deleteNative(long this_addr);
 
     public boolean getValue() {
-        return getValue(0);
+        return internal_native_getValue(native_address);
     }
 
-    @Override
-    public String toString() {
-        return String.valueOf(getValue());
+    /*
+      [-JNI;-NATIVE]
+      IDLBool* nativeObject = (IDLBool*)this_addr;
+      return nativeObject->getValue();
+    */
+    public static native boolean internal_native_getValue(long this_addr);
+
+    public void set(boolean value) {
+        internal_native_set(native_address, value);
     }
+
+    /*
+      [-JNI;-NATIVE]
+      IDLBool* nativeObject = (IDLBool*)this_addr;
+      nativeObject->set(value);
+    */
+    public static native void internal_native_set(long this_addr, boolean value);
 }

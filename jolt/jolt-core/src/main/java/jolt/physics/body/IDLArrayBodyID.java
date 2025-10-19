@@ -5,9 +5,9 @@
  *-------------------------------------------------------*/
 package jolt.physics.body;
 
-import jolt.idl.helper.IDLArrayBase;
+import jolt.idl.helper.IDLArray;
 
-public class IDLArrayBodyID extends IDLArrayBase {
+public class IDLArrayBodyID extends IDLArray {
 
     private BodyID BodyID_TEMP_GEN_0;
 

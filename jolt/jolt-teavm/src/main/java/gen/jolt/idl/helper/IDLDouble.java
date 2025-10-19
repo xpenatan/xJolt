@@ -18,30 +18,58 @@ public class IDLDouble extends IDLDoubleArray {
         return new IDLDouble((byte) 1, (char) 1);
     }
 
-    private IDLDouble(byte b, char c) {
-        super(b, c);
+    protected IDLDouble(byte b, char c) {
+        super((byte) 1, (char) 1);
     }
 
     public IDLDouble() {
-        super(1);
+        super((byte) 1, (char) 1);
+        int addr = internal_native_create();
+        internal_reset(addr, true);
     }
 
-    public IDLDouble(double value) {
-        this();
-        set(value);
+    /*
+      [-TEAVM;-NATIVE]
+      var jsObj = new jolt.IDLDouble();
+      return jolt.getPointer(jsObj);
+    */
+    @org.teavm.jso.JSBody(script = "var jsObj = new jolt.IDLDouble();return jolt.getPointer(jsObj);")
+    public static native int internal_native_create();
+
+    protected void deleteNative() {
+        internal_native_deleteNative(native_address);
     }
 
-    public IDLDouble set(double value) {
-        setValue(0, value);
-        return this;
-    }
+    /*
+      [-TEAVM;-NATIVE]
+      var jsObj = jolt.wrapPointer(this_addr, jolt.IDLDouble);
+      jolt.destroy(jsObj);
+    */
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLDouble);jolt.destroy(jsObj);")
+    public static native void internal_native_deleteNative(int this_addr);
 
     public double getValue() {
-        return getValue(0);
+        return internal_native_getValue(native_address);
     }
 
-    @Override
-    public String toString() {
-        return String.valueOf(getValue());
+    /*
+      [-TEAVM;-NATIVE]
+      var jsObj = jolt.wrapPointer(this_addr, jolt.IDLDouble);
+      var returnedJSObj = jsObj.getValue();
+      return returnedJSObj;
+    */
+    @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLDouble);var returnedJSObj = jsObj.getValue();return returnedJSObj;")
+    public static native double internal_native_getValue(int this_addr);
+
+    public void set(double value) {
+        internal_native_set(native_address, value);
     }
+
+    /*
+      [-TEAVM;-NATIVE]
+      var jsObj = jolt.wrapPointer(this_addr, jolt.IDLDouble);
+      jsObj.set(value);
+    */
+    @org.teavm.jso.JSBody(params = {"this_addr", "value"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLDouble);jsObj.set(value);")
+    public static native void internal_native_set(int this_addr, double value);
 }

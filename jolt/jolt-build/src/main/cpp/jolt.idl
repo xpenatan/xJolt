@@ -587,7 +587,7 @@ interface IDLArrayBodyID { //[-SUB_PACKAGE=physics.body]
     BodyID getValue(long index);
     void setValue(long index, BodyID value);
 };
-IDLArrayBodyID implements IDLArrayBase;
+IDLArrayBodyID implements IDLArray;
 
 interface ArrayVec3 { //[-SUB_PACKAGE=math]
     void ArrayVec3();
