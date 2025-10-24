@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EGroundState implements IDLEnum<EGroundState> {
@@ -33,16 +31,6 @@ public enum EGroundState implements IDLEnum<EGroundState> {
 
     public EGroundState getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, EGroundState> MAP = new HashMap<>();
-
-    static {
-        for (EGroundState value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

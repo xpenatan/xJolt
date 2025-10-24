@@ -63,7 +63,13 @@ return returnedJSObj;
 
     public ESpringMode get_mMode() {
         int value = internal_native_get_mMode(native_address);
-        return ESpringMode.MAP.get(value);
+        ESpringMode[] values = ESpringMode.values();
+        for (int i = 0; i < values.length; i++) {
+            ESpringMode enumVal = values[i];
+            if (enumVal != ESpringMode.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return ESpringMode.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

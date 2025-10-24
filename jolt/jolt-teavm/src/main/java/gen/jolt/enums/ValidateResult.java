@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum ValidateResult implements IDLEnum<ValidateResult> {
@@ -33,16 +31,6 @@ public enum ValidateResult implements IDLEnum<ValidateResult> {
 
     public ValidateResult getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, ValidateResult> MAP = new HashMap<>();
-
-    static {
-        for (ValidateResult value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

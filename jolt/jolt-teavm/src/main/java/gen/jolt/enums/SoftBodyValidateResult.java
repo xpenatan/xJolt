@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum SoftBodyValidateResult implements IDLEnum<SoftBodyValidateResult> {
@@ -33,16 +31,6 @@ public enum SoftBodyValidateResult implements IDLEnum<SoftBodyValidateResult> {
 
     public SoftBodyValidateResult getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, SoftBodyValidateResult> MAP = new HashMap<>();
-
-    static {
-        for (SoftBodyValidateResult value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

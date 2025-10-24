@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum MeshShapeSettings_EBuildQuality implements IDLEnum<MeshShapeSettings_EBuildQuality> {
@@ -33,16 +31,6 @@ public enum MeshShapeSettings_EBuildQuality implements IDLEnum<MeshShapeSettings
 
     public MeshShapeSettings_EBuildQuality getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, MeshShapeSettings_EBuildQuality> MAP = new HashMap<>();
-
-    static {
-        for (MeshShapeSettings_EBuildQuality value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

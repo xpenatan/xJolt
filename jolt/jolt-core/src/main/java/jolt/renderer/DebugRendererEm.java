@@ -179,7 +179,25 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
         if (Color_TEMP_STATIC_GEN_0 == null)
             Color_TEMP_STATIC_GEN_0 = Color.native_new();
         Color_TEMP_STATIC_GEN_0.internal_reset(inModelColor_addr, false);
-        DrawMesh(id, Mat44_TEMP_STATIC_GEN_0, IDLFloatArray_TEMP_STATIC_GEN_0, Color_TEMP_STATIC_GEN_0, ECullMode.MAP.get(inCullMode_addr), EDrawMode.MAP.get(inDrawMode_addr));
+        ECullMode inCullMode_addr_enum = ECullMode.CUSTOM.setValue(inCullMode_addr);
+        ECullMode[] inCullMode_addr_enum_values = ECullMode.values();
+        for (int i = 0; i < inCullMode_addr_enum_values.length; i++) {
+            ECullMode enumVal = inCullMode_addr_enum_values[i];
+            if (enumVal != ECullMode.CUSTOM && enumVal.getValue() == inCullMode_addr) {
+                inCullMode_addr_enum = inCullMode_addr_enum_values[i];
+                break;
+            }
+        }
+        EDrawMode inDrawMode_addr_enum = EDrawMode.CUSTOM.setValue(inDrawMode_addr);
+        EDrawMode[] inDrawMode_addr_enum_values = EDrawMode.values();
+        for (int i = 0; i < inDrawMode_addr_enum_values.length; i++) {
+            EDrawMode enumVal = inDrawMode_addr_enum_values[i];
+            if (enumVal != EDrawMode.CUSTOM && enumVal.getValue() == inDrawMode_addr) {
+                inDrawMode_addr_enum = inDrawMode_addr_enum_values[i];
+                break;
+            }
+        }
+        DrawMesh(id, Mat44_TEMP_STATIC_GEN_0, IDLFloatArray_TEMP_STATIC_GEN_0, Color_TEMP_STATIC_GEN_0, inCullMode_addr_enum, inDrawMode_addr_enum);
     }
 
     protected void DrawLine(Vec3 inFrom, Vec3 inTo, Color inColor) {
@@ -214,7 +232,16 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
         if (Color_TEMP_STATIC_GEN_2 == null)
             Color_TEMP_STATIC_GEN_2 = Color.native_new();
         Color_TEMP_STATIC_GEN_2.internal_reset(inColor_addr, false);
-        DrawTriangle(Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Color_TEMP_STATIC_GEN_2, ECastShadow.MAP.get(inCastShadow_addr));
+        ECastShadow inCastShadow_addr_enum = ECastShadow.CUSTOM.setValue(inCastShadow_addr);
+        ECastShadow[] inCastShadow_addr_enum_values = ECastShadow.values();
+        for (int i = 0; i < inCastShadow_addr_enum_values.length; i++) {
+            ECastShadow enumVal = inCastShadow_addr_enum_values[i];
+            if (enumVal != ECastShadow.CUSTOM && enumVal.getValue() == inCastShadow_addr) {
+                inCastShadow_addr_enum = inCastShadow_addr_enum_values[i];
+                break;
+            }
+        }
+        DrawTriangle(Vec3_TEMP_STATIC_GEN_2, Vec3_TEMP_STATIC_GEN_3, Vec3_TEMP_STATIC_GEN_4, Color_TEMP_STATIC_GEN_2, inCastShadow_addr_enum);
     }
 
     protected void DrawText3D(Vec3 inPosition, IDLBase inString, int inStringLen, Color inColor, float inHeight) {

@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum ESoftBodyConstraintColor implements IDLEnum<ESoftBodyConstraintColor> {
@@ -33,16 +31,6 @@ public enum ESoftBodyConstraintColor implements IDLEnum<ESoftBodyConstraintColor
 
     public ESoftBodyConstraintColor getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, ESoftBodyConstraintColor> MAP = new HashMap<>();
-
-    static {
-        for (ESoftBodyConstraintColor value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

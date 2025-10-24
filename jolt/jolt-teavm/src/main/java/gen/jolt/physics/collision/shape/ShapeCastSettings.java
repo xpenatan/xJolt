@@ -53,7 +53,13 @@ jolt.destroy(jsObj);
 
     public EBackFaceMode get_mBackFaceModeTriangles() {
         int value = internal_native_get_mBackFaceModeTriangles(native_address);
-        return EBackFaceMode.MAP.get(value);
+        EBackFaceMode[] values = EBackFaceMode.values();
+        for (int i = 0; i < values.length; i++) {
+            EBackFaceMode enumVal = values[i];
+            if (enumVal != EBackFaceMode.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EBackFaceMode.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -76,7 +82,13 @@ jsObj.set_mBackFaceModeTriangles(mBackFaceModeTriangles);
 
     public EBackFaceMode get_mBackFaceModeConvex() {
         int value = internal_native_get_mBackFaceModeConvex(native_address);
-        return EBackFaceMode.MAP.get(value);
+        EBackFaceMode[] values = EBackFaceMode.values();
+        for (int i = 0; i < values.length; i++) {
+            EBackFaceMode enumVal = values[i];
+            if (enumVal != EBackFaceMode.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EBackFaceMode.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -240,7 +240,13 @@ nativeObject->mPerTriangleUserData = mPerTriangleUserData;
 
     public MeshShapeSettings_EBuildQuality get_mBuildQuality() {
         int value = internal_native_get_mBuildQuality(native_address);
-        return MeshShapeSettings_EBuildQuality.MAP.get(value);
+        MeshShapeSettings_EBuildQuality[] values = MeshShapeSettings_EBuildQuality.values();
+        for (int i = 0; i < values.length; i++) {
+            MeshShapeSettings_EBuildQuality enumVal = values[i];
+            if (enumVal != MeshShapeSettings_EBuildQuality.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return MeshShapeSettings_EBuildQuality.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

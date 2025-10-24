@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EActivation implements IDLEnum<EActivation> {
@@ -33,16 +31,6 @@ public enum EActivation implements IDLEnum<EActivation> {
 
     public EActivation getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, EActivation> MAP = new HashMap<>();
-
-    static {
-        for (EActivation value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

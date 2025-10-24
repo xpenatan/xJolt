@@ -152,7 +152,13 @@ return jolt.getPointer(returnedJSObj);
 
     public EGroundState GetGroundState() {
         int value = internal_native_GetGroundState(native_address);
-        return EGroundState.MAP.get(value);
+        EGroundState[] values = EGroundState.values();
+        for (int i = 0; i < values.length; i++) {
+            EGroundState enumVal = values[i];
+            if (enumVal != EGroundState.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EGroundState.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -777,7 +777,13 @@ nativeObject->ResetSleepTimer(*((BodyID* )inBodyID_addr));
 
     public EBodyType GetBodyType(BodyID inBodyID) {
         int value = internal_native_GetBodyType(native_address, inBodyID.native_address);
-        return EBodyType.MAP.get(value);
+        EBodyType[] values = EBodyType.values();
+        for (int i = 0; i < values.length; i++) {
+            EBodyType enumVal = values[i];
+            if (enumVal != EBodyType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EBodyType.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -798,7 +804,13 @@ nativeObject->SetMotionType(*((BodyID* )inBodyID_addr), (::EMotionType)inMotionT
 
     public EMotionType GetMotionType(BodyID inBodyID) {
         int value = internal_native_GetMotionType(native_address, inBodyID.native_address);
-        return EMotionType.MAP.get(value);
+        EMotionType[] values = EMotionType.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotionType enumVal = values[i];
+            if (enumVal != EMotionType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotionType.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -819,7 +831,13 @@ nativeObject->SetMotionQuality(*((BodyID* )inBodyID_addr), (::EMotionQuality)inM
 
     public EMotionQuality GetMotionQuality(BodyID inBodyID) {
         int value = internal_native_GetMotionQuality(native_address, inBodyID.native_address);
-        return EMotionQuality.MAP.get(value);
+        EMotionQuality[] values = EMotionQuality.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotionQuality enumVal = values[i];
+            if (enumVal != EMotionQuality.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotionQuality.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

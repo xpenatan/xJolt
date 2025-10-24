@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EShapeColor implements IDLEnum<EShapeColor> {
@@ -39,16 +37,6 @@ public enum EShapeColor implements IDLEnum<EShapeColor> {
 
     public EShapeColor getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, EShapeColor> MAP = new HashMap<>();
-
-    static {
-        for (EShapeColor value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

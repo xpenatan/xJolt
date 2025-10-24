@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EPathRotationConstraintType implements IDLEnum<EPathRotationConstraintType> {
@@ -39,16 +37,6 @@ public enum EPathRotationConstraintType implements IDLEnum<EPathRotationConstrai
 
     public EPathRotationConstraintType getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, EPathRotationConstraintType> MAP = new HashMap<>();
-
-    static {
-        for (EPathRotationConstraintType value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

@@ -327,7 +327,13 @@ jsObj.set_mSubShapeIDB(mSubShapeIDB_addr);
 
     public EMotionType get_mMotionTypeB() {
         int value = internal_native_get_mMotionTypeB(native_address);
-        return EMotionType.MAP.get(value);
+        EMotionType[] values = EMotionType.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotionType enumVal = values[i];
+            if (enumVal != EMotionType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotionType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum ETransmissionMode implements IDLEnum<ETransmissionMode> {
@@ -33,16 +31,6 @@ public enum ETransmissionMode implements IDLEnum<ETransmissionMode> {
 
     public ETransmissionMode getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, ETransmissionMode> MAP = new HashMap<>();
-
-    static {
-        for (ETransmissionMode value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

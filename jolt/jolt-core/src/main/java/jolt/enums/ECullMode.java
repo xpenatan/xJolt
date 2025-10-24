@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum ECullMode implements IDLEnum<ECullMode> {
@@ -33,16 +31,6 @@ public enum ECullMode implements IDLEnum<ECullMode> {
 
     public ECullMode getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, ECullMode> MAP = new HashMap<>();
-
-    static {
-        for (ECullMode value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

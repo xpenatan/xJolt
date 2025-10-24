@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum SoftBodySharedSettings_EBendType implements IDLEnum<SoftBodySharedSettings_EBendType> {
@@ -33,16 +31,6 @@ public enum SoftBodySharedSettings_EBendType implements IDLEnum<SoftBodySharedSe
 
     public SoftBodySharedSettings_EBendType getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, SoftBodySharedSettings_EBendType> MAP = new HashMap<>();
-
-    static {
-        for (SoftBodySharedSettings_EBendType value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

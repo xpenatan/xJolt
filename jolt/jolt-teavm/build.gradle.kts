@@ -16,7 +16,6 @@ dependencies {
     implementation("com.github.xpenatan.jParser:loader-teavm:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:idl-teavm:${LibExt.jParserVersion}")
-    implementation("org.teavm:teavm-jso:${LibExt.teaVMVersion}")
 }
 
 tasks.named("clean") {

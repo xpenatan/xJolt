@@ -44,7 +44,13 @@ jolt.destroy(jsObj);
 
     public ETransmissionMode get_mMode() {
         int value = internal_native_get_mMode(native_address);
-        return ETransmissionMode.MAP.get(value);
+        ETransmissionMode[] values = ETransmissionMode.values();
+        for (int i = 0; i < values.length; i++) {
+            ETransmissionMode enumVal = values[i];
+            if (enumVal != ETransmissionMode.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return ETransmissionMode.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

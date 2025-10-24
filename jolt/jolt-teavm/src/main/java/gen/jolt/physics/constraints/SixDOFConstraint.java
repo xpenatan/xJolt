@@ -309,7 +309,13 @@ jsObj.SetMotorState(inAxis, inState);
 
     public EMotorState GetMotorState(SixDOFConstraintSettings_EAxis inAxis) {
         int value = internal_native_GetMotorState(native_address, (int) inAxis.getValue());
-        return EMotorState.MAP.get(value);
+        EMotorState[] values = EMotorState.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotorState enumVal = values[i];
+            if (enumVal != EMotorState.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotorState.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

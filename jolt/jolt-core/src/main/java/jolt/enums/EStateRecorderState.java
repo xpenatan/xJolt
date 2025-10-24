@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EStateRecorderState implements IDLEnum<EStateRecorderState> {
@@ -39,16 +37,6 @@ public enum EStateRecorderState implements IDLEnum<EStateRecorderState> {
 
     public EStateRecorderState getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, EStateRecorderState> MAP = new HashMap<>();
-
-    static {
-        for (EStateRecorderState value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

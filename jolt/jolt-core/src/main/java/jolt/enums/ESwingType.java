@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum ESwingType implements IDLEnum<ESwingType> {
@@ -33,16 +31,6 @@ public enum ESwingType implements IDLEnum<ESwingType> {
 
     public ESwingType getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, ESwingType> MAP = new HashMap<>();
-
-    static {
-        for (ESwingType value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

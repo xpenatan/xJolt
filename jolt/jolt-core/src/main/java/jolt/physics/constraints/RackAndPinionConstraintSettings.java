@@ -65,7 +65,13 @@ nativeObject->SetRatio((int)inNumTeethRack, (float)inRackLength, (int)inNumTeeth
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace(native_address);
-        return EConstraintSpace.MAP.get(value);
+        EConstraintSpace[] values = EConstraintSpace.values();
+        for (int i = 0; i < values.length; i++) {
+            EConstraintSpace enumVal = values[i];
+            if (enumVal != EConstraintSpace.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EConstraintSpace.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

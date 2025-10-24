@@ -130,7 +130,13 @@ nativeObject->mGravityFactor = mGravityFactor;
 
     public EAllowedDOFs get_mAllowedDOFs() {
         int value = internal_native_get_mAllowedDOFs(native_address);
-        return EAllowedDOFs.MAP.get(value);
+        EAllowedDOFs[] values = EAllowedDOFs.values();
+        for (int i = 0; i < values.length; i++) {
+            EAllowedDOFs enumVal = values[i];
+            if (enumVal != EAllowedDOFs.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EAllowedDOFs.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

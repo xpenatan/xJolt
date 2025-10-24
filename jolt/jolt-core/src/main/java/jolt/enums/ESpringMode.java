@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum ESpringMode implements IDLEnum<ESpringMode> {
@@ -33,16 +31,6 @@ public enum ESpringMode implements IDLEnum<ESpringMode> {
 
     public ESpringMode getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, ESpringMode> MAP = new HashMap<>();
-
-    static {
-        for (ESpringMode value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

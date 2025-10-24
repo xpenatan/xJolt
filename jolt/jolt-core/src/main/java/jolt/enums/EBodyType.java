@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EBodyType implements IDLEnum<EBodyType> {
@@ -33,16 +31,6 @@ public enum EBodyType implements IDLEnum<EBodyType> {
 
     public EBodyType getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, EBodyType> MAP = new HashMap<>();
-
-    static {
-        for (EBodyType value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

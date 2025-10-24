@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum ECollectFacesMode implements IDLEnum<ECollectFacesMode> {
@@ -33,16 +31,6 @@ public enum ECollectFacesMode implements IDLEnum<ECollectFacesMode> {
 
     public ECollectFacesMode getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, ECollectFacesMode> MAP = new HashMap<>();
-
-    static {
-        for (ECollectFacesMode value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

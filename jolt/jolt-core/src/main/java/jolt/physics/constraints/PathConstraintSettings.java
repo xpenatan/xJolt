@@ -179,7 +179,13 @@ nativeObject->mMaxFrictionForce = mMaxFrictionForce;
 
     public EPathRotationConstraintType get_mRotationConstraintType() {
         int value = internal_native_get_mRotationConstraintType(native_address);
-        return EPathRotationConstraintType.MAP.get(value);
+        EPathRotationConstraintType[] values = EPathRotationConstraintType.values();
+        for (int i = 0; i < values.length; i++) {
+            EPathRotationConstraintType enumVal = values[i];
+            if (enumVal != EPathRotationConstraintType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EPathRotationConstraintType.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

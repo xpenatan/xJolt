@@ -114,13 +114,22 @@ nativeObject->SetVehicleConstraint(*((VehicleConstraint* )inConstraint_addr));
     }
 
     private float internal_GetCombinedFriction(int inWheelIndex, int inTireFrictionDirection_addr, float inTireFriction, long inBody2_addr, long inSubShapeID2_addr) {
+        ETireFrictionDirection inTireFrictionDirection_addr_enum = ETireFrictionDirection.CUSTOM.setValue(inTireFrictionDirection_addr);
+        ETireFrictionDirection[] inTireFrictionDirection_addr_enum_values = ETireFrictionDirection.values();
+        for (int i = 0; i < inTireFrictionDirection_addr_enum_values.length; i++) {
+            ETireFrictionDirection enumVal = inTireFrictionDirection_addr_enum_values[i];
+            if (enumVal != ETireFrictionDirection.CUSTOM && enumVal.getValue() == inTireFrictionDirection_addr) {
+                inTireFrictionDirection_addr_enum = inTireFrictionDirection_addr_enum_values[i];
+                break;
+            }
+        }
         if (Body_TEMP_STATIC_GEN_0 == null)
             Body_TEMP_STATIC_GEN_0 = Body.native_new();
         Body_TEMP_STATIC_GEN_0.internal_reset(inBody2_addr, false);
         if (SubShapeID_TEMP_STATIC_GEN_0 == null)
             SubShapeID_TEMP_STATIC_GEN_0 = SubShapeID.native_new();
         SubShapeID_TEMP_STATIC_GEN_0.internal_reset(inSubShapeID2_addr, false);
-        return GetCombinedFriction(inWheelIndex, ETireFrictionDirection.MAP.get(inTireFrictionDirection_addr), inTireFriction, Body_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_0);
+        return GetCombinedFriction(inWheelIndex, inTireFrictionDirection_addr_enum, inTireFriction, Body_TEMP_STATIC_GEN_0, SubShapeID_TEMP_STATIC_GEN_0);
     }
 
     protected void OnPreStepCallback(VehicleConstraint inVehicle, PhysicsStepListenerContext inContext) {

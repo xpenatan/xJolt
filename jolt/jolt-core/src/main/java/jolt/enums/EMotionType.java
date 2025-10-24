@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EMotionType implements IDLEnum<EMotionType> {
@@ -33,16 +31,6 @@ public enum EMotionType implements IDLEnum<EMotionType> {
 
     public EMotionType getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, EMotionType> MAP = new HashMap<>();
-
-    static {
-        for (EMotionType value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

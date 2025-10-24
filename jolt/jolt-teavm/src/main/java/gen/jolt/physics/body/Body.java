@@ -181,7 +181,13 @@ return returnedJSObj;
 
     public EBodyType GetBodyType() {
         int value = internal_native_GetBodyType(native_address);
-        return EBodyType.MAP.get(value);
+        EBodyType[] values = EBodyType.values();
+        for (int i = 0; i < values.length; i++) {
+            EBodyType enumVal = values[i];
+            if (enumVal != EBodyType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EBodyType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -194,7 +200,13 @@ return returnedJSObj;
 
     public EMotionType GetMotionType() {
         int value = internal_native_GetMotionType(native_address);
-        return EMotionType.MAP.get(value);
+        EMotionType[] values = EMotionType.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotionType enumVal = values[i];
+            if (enumVal != EMotionType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotionType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

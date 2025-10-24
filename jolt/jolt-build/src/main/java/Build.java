@@ -7,6 +7,7 @@ import com.github.xpenatan.jparser.builder.targets.WindowsMSVCTarget;
 import com.github.xpenatan.jparser.builder.tool.BuildToolListener;
 import com.github.xpenatan.jparser.builder.tool.BuildToolOptions;
 import com.github.xpenatan.jparser.builder.tool.BuilderTool;
+import com.github.xpenatan.jparser.idl.IDLClassOrEnum;
 import com.github.xpenatan.jparser.idl.IDLHelper;
 import com.github.xpenatan.jparser.idl.IDLReader;
 import com.github.xpenatan.jparser.idl.IDLRenaming;
@@ -73,7 +74,7 @@ public class Build {
             }
         }, new IDLRenaming() {
             @Override
-            public String obtainNewPackage(String className, String classPackage) {
+            public String obtainNewPackage(IDLClassOrEnum idlClassOrEnum, String classPackage) {
                 // This remove duplicate jolt name in package.
                 // The reason for this is that the lib name start with jolt and there is an already c++ jolt subfolder
                 return classPackage.replace("jolt", "");
@@ -208,6 +209,8 @@ public class Build {
         libTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
         libTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
         libTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+        libTarget.cppFlags.add("-msimd128");
+        libTarget.cppFlags.add("-msse4.2");
         multiTarget.add(libTarget);
 
         // Compile glue code and link
@@ -220,6 +223,8 @@ public class Build {
         linkTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
         linkTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
         linkTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+        linkTarget.cppFlags.add("-msimd128");
+        linkTarget.cppFlags.add("-msse4.2");
         multiTarget.add(linkTarget);
 
         return multiTarget;

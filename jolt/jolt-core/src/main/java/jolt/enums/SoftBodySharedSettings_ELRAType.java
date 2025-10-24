@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum SoftBodySharedSettings_ELRAType implements IDLEnum<SoftBodySharedSettings_ELRAType> {
@@ -33,16 +31,6 @@ public enum SoftBodySharedSettings_ELRAType implements IDLEnum<SoftBodySharedSet
 
     public SoftBodySharedSettings_ELRAType getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, SoftBodySharedSettings_ELRAType> MAP = new HashMap<>();
-
-    static {
-        for (SoftBodySharedSettings_ELRAType value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

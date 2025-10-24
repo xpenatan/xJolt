@@ -14,13 +14,13 @@ object LibExt {
     const val java11Target = "11"
 
     //Library dependencies
-    const val gdxVersion = "1.13.5"
+    const val gdxVersion = "1.14.0"
     const val jParserVersion = "-SNAPSHOT"
     const val teaVMVersion = "0.12.3"
     const val gdxWebGPUVersion = "-SNAPSHOT"
 
     //Example dependencies
-    const val gdxTeaVMVersion = "1.3.1"
+    const val gdxTeaVMVersion = "1.3.2"
     const val gdxImGuiVersion = "-SNAPSHOT"
     const val jUnitVersion = "4.12"
 

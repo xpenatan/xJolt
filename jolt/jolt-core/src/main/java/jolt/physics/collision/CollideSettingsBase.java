@@ -42,7 +42,13 @@ delete nativeObject;
 
     public EActiveEdgeMode get_mActiveEdgeMode() {
         int value = internal_native_get_mActiveEdgeMode(native_address);
-        return EActiveEdgeMode.MAP.get(value);
+        EActiveEdgeMode[] values = EActiveEdgeMode.values();
+        for (int i = 0; i < values.length; i++) {
+            EActiveEdgeMode enumVal = values[i];
+            if (enumVal != EActiveEdgeMode.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EActiveEdgeMode.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -63,7 +69,13 @@ nativeObject->mActiveEdgeMode = (::EActiveEdgeMode)mActiveEdgeMode;
 
     public ECollectFacesMode get_mCollectFacesMode() {
         int value = internal_native_get_mCollectFacesMode(native_address);
-        return ECollectFacesMode.MAP.get(value);
+        ECollectFacesMode[] values = ECollectFacesMode.values();
+        for (int i = 0; i < values.length; i++) {
+            ECollectFacesMode enumVal = values[i];
+            if (enumVal != ECollectFacesMode.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return ECollectFacesMode.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

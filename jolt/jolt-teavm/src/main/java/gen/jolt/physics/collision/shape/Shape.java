@@ -92,7 +92,13 @@ jsObj.Release();
 
     public EShapeType GetType() {
         int value = internal_native_GetType(native_address);
-        return EShapeType.MAP.get(value);
+        EShapeType[] values = EShapeType.values();
+        for (int i = 0; i < values.length; i++) {
+            EShapeType enumVal = values[i];
+            if (enumVal != EShapeType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EShapeType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -105,7 +111,13 @@ return returnedJSObj;
 
     public EShapeSubType GetSubType() {
         int value = internal_native_GetSubType(native_address);
-        return EShapeSubType.MAP.get(value);
+        EShapeSubType[] values = EShapeSubType.values();
+        for (int i = 0; i < values.length; i++) {
+            EShapeSubType enumVal = values[i];
+            if (enumVal != EShapeSubType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EShapeSubType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -162,7 +162,13 @@ jsObj.set_mDrawShapeWireframe(mDrawShapeWireframe);
 
     public EShapeColor get_mDrawShapeColor() {
         int value = internal_native_get_mDrawShapeColor(native_address);
-        return EShapeColor.MAP.get(value);
+        EShapeColor[] values = EShapeColor.values();
+        for (int i = 0; i < values.length; i++) {
+            EShapeColor enumVal = values[i];
+            if (enumVal != EShapeColor.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EShapeColor.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -493,7 +499,13 @@ jsObj.set_mDrawSoftBodyPredictedBounds(mDrawSoftBodyPredictedBounds);
 
     public ESoftBodyConstraintColor get_mDrawSoftBodyConstraintColor() {
         int value = internal_native_get_mDrawSoftBodyConstraintColor(native_address);
-        return ESoftBodyConstraintColor.MAP.get(value);
+        ESoftBodyConstraintColor[] values = ESoftBodyConstraintColor.values();
+        for (int i = 0; i < values.length; i++) {
+            ESoftBodyConstraintColor enumVal = values[i];
+            if (enumVal != ESoftBodyConstraintColor.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return ESoftBodyConstraintColor.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

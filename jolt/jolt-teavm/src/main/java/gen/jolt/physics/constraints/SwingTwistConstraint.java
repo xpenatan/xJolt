@@ -292,7 +292,13 @@ jsObj.SetSwingMotorState(inState);
 
     public EMotorState GetSwingMotorState() {
         int value = internal_native_GetSwingMotorState(native_address);
-        return EMotorState.MAP.get(value);
+        EMotorState[] values = EMotorState.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotorState enumVal = values[i];
+            if (enumVal != EMotorState.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotorState.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -316,7 +322,13 @@ jsObj.SetTwistMotorState(inState);
 
     public EMotorState GetTwistMotorState() {
         int value = internal_native_GetTwistMotorState(native_address);
-        return EMotorState.MAP.get(value);
+        EMotorState[] values = EMotorState.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotorState enumVal = values[i];
+            if (enumVal != EMotorState.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotorState.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

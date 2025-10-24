@@ -59,7 +59,13 @@ nativeObject->Release();
 
     public EConstraintType GetType() {
         int value = internal_native_GetType(native_address);
-        return EConstraintType.MAP.get(value);
+        EConstraintType[] values = EConstraintType.values();
+        for (int i = 0; i < values.length; i++) {
+            EConstraintType enumVal = values[i];
+            if (enumVal != EConstraintType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EConstraintType.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]
@@ -70,7 +76,13 @@ return (int)nativeObject->GetType();
 
     public EConstraintSubType GetSubType() {
         int value = internal_native_GetSubType(native_address);
-        return EConstraintSubType.MAP.get(value);
+        EConstraintSubType[] values = EConstraintSubType.values();
+        for (int i = 0; i < values.length; i++) {
+            EConstraintSubType enumVal = values[i];
+            if (enumVal != EConstraintSubType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EConstraintSubType.CUSTOM.setValue(value);
     }
 
     /*[-JNI;-NATIVE]

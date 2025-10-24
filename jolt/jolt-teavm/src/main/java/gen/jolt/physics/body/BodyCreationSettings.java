@@ -372,7 +372,13 @@ jsObj.set_mCollisionGroup(mCollisionGroup_addr);
 
     public EMotionType get_mMotionType() {
         int value = internal_native_get_mMotionType(native_address);
-        return EMotionType.MAP.get(value);
+        EMotionType[] values = EMotionType.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotionType enumVal = values[i];
+            if (enumVal != EMotionType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotionType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -395,7 +401,13 @@ jsObj.set_mMotionType(mMotionType);
 
     public EAllowedDOFs get_mAllowedDOFs() {
         int value = internal_native_get_mAllowedDOFs(native_address);
-        return EAllowedDOFs.MAP.get(value);
+        EAllowedDOFs[] values = EAllowedDOFs.values();
+        for (int i = 0; i < values.length; i++) {
+            EAllowedDOFs enumVal = values[i];
+            if (enumVal != EAllowedDOFs.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EAllowedDOFs.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -528,7 +540,13 @@ jsObj.set_mApplyGyroscopicForce(mApplyGyroscopicForce);
 
     public EMotionQuality get_mMotionQuality() {
         int value = internal_native_get_mMotionQuality(native_address);
-        return EMotionQuality.MAP.get(value);
+        EMotionQuality[] values = EMotionQuality.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotionQuality enumVal = values[i];
+            if (enumVal != EMotionQuality.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotionQuality.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -793,7 +811,13 @@ jsObj.set_mNumPositionStepsOverride(mNumPositionStepsOverride);
 
     public EOverrideMassProperties get_mOverrideMassProperties() {
         int value = internal_native_get_mOverrideMassProperties(native_address);
-        return EOverrideMassProperties.MAP.get(value);
+        EOverrideMassProperties[] values = EOverrideMassProperties.values();
+        for (int i = 0; i < values.length; i++) {
+            EOverrideMassProperties enumVal = values[i];
+            if (enumVal != EOverrideMassProperties.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EOverrideMassProperties.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

@@ -117,7 +117,13 @@ jsObj.set_mBendCompliance(mBendCompliance);
 
     public SoftBodySharedSettings_ELRAType get_mLRAType() {
         int value = internal_native_get_mLRAType(native_address);
-        return SoftBodySharedSettings_ELRAType.MAP.get(value);
+        SoftBodySharedSettings_ELRAType[] values = SoftBodySharedSettings_ELRAType.values();
+        for (int i = 0; i < values.length; i++) {
+            SoftBodySharedSettings_ELRAType enumVal = values[i];
+            if (enumVal != SoftBodySharedSettings_ELRAType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return SoftBodySharedSettings_ELRAType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

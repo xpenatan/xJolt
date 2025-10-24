@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EConstraintSubType implements IDLEnum<EConstraintSubType> {
@@ -46,16 +44,6 @@ public enum EConstraintSubType implements IDLEnum<EConstraintSubType> {
 
     public EConstraintSubType getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, EConstraintSubType> MAP = new HashMap<>();
-
-    static {
-        for (EConstraintSubType value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-JNI;-NATIVE]

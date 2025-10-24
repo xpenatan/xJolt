@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum EDrawMode implements IDLEnum<EDrawMode> {
@@ -33,16 +31,6 @@ public enum EDrawMode implements IDLEnum<EDrawMode> {
 
     public EDrawMode getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, EDrawMode> MAP = new HashMap<>();
-
-    static {
-        for (EDrawMode value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

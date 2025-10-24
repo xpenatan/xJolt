@@ -71,7 +71,13 @@ jolt.destroy(jsObj);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace(native_address);
-        return EConstraintSpace.MAP.get(value);
+        EConstraintSpace[] values = EConstraintSpace.values();
+        for (int i = 0; i < values.length; i++) {
+            EConstraintSpace enumVal = values[i];
+            if (enumVal != EConstraintSpace.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EConstraintSpace.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -274,7 +280,13 @@ jsObj.set_mPlaneAxis2(mPlaneAxis2_addr);
 
     public ESwingType get_mSwingType() {
         int value = internal_native_get_mSwingType(native_address);
-        return ESwingType.MAP.get(value);
+        ESwingType[] values = ESwingType.values();
+        for (int i = 0; i < values.length; i++) {
+            ESwingType enumVal = values[i];
+            if (enumVal != ESwingType.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return ESwingType.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

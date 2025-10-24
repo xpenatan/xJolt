@@ -67,7 +67,13 @@ jolt.destroy(jsObj);
 
     public EMotionQuality GetMotionQuality() {
         int value = internal_native_GetMotionQuality(native_address);
-        return EMotionQuality.MAP.get(value);
+        EMotionQuality[] values = EMotionQuality.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotionQuality enumVal = values[i];
+            if (enumVal != EMotionQuality.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotionQuality.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -80,7 +86,13 @@ return returnedJSObj;
 
     public EAllowedDOFs GetAllowedDOFs() {
         int value = internal_native_GetAllowedDOFs(native_address);
-        return EAllowedDOFs.MAP.get(value);
+        EAllowedDOFs[] values = EAllowedDOFs.values();
+        for (int i = 0; i < values.length; i++) {
+            EAllowedDOFs enumVal = values[i];
+            if (enumVal != EAllowedDOFs.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EAllowedDOFs.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]

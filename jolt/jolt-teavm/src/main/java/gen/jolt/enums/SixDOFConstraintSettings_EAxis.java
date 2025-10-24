@@ -5,8 +5,6 @@
  *-------------------------------------------------------*/
 package gen.jolt.enums;
 
-import java.util.Map;
-import java.util.HashMap;
 import com.github.xpenatan.jParser.idl.IDLEnum;
 
 public enum SixDOFConstraintSettings_EAxis implements IDLEnum<SixDOFConstraintSettings_EAxis> {
@@ -39,16 +37,6 @@ public enum SixDOFConstraintSettings_EAxis implements IDLEnum<SixDOFConstraintSe
 
     public SixDOFConstraintSettings_EAxis getCustom() {
         return CUSTOM;
-    }
-
-    public static final Map<Integer, SixDOFConstraintSettings_EAxis> MAP = new HashMap<>();
-
-    static {
-        for (SixDOFConstraintSettings_EAxis value : values()) {
-            if (value != CUSTOM) {
-                MAP.put(value.value, value);
-            }
-        }
     }
 
     /*[-TEAVM;-NATIVE]

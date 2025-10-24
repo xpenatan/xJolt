@@ -127,7 +127,13 @@ jsObj.SetPositionMotorState(inState);
 
     public EMotorState GetPositionMotorState() {
         int value = internal_native_GetPositionMotorState(native_address);
-        return EMotorState.MAP.get(value);
+        EMotorState[] values = EMotorState.values();
+        for (int i = 0; i < values.length; i++) {
+            EMotorState enumVal = values[i];
+            if (enumVal != EMotorState.CUSTOM && enumVal.getValue() == value)
+                return enumVal;
+        }
+        return EMotorState.CUSTOM.setValue(value);
     }
 
     /*[-TEAVM;-NATIVE]
