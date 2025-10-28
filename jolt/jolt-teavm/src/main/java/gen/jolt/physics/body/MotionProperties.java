@@ -346,7 +346,7 @@ jsObj.SetGravityFactor(inFactor);
     public static native void internal_native_SetGravityFactor(int this_addr, float inFactor);
 
     public void SetMassProperties(EAllowedDOFs inAllowedDOFs, MassProperties inMassProperties) {
-        internal_native_SetMassProperties(native_address, (int) inAllowedDOFs.getValue(), inMassProperties.native_address);
+        internal_native_SetMassProperties(native_address, inAllowedDOFs.getValue(), inMassProperties.native_address);
     }
 
     /*[-TEAVM;-NATIVE]

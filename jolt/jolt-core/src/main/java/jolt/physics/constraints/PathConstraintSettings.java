@@ -202,7 +202,7 @@ return (jint)nativeObject->mRotationConstraintType;
 PathConstraintSettings* nativeObject = (PathConstraintSettings*)this_addr;
 nativeObject->mRotationConstraintType = (::EPathRotationConstraintType)mRotationConstraintType;
 */
-    public static native void internal_native_set_mRotationConstraintType(long this_addr, long mRotationConstraintType);
+    public static native void internal_native_set_mRotationConstraintType(long this_addr, int mRotationConstraintType);
 
     public MotorSettings get_mPositionMotorSettings() {
         long pointer = internal_native_get_mPositionMotorSettings(native_address);

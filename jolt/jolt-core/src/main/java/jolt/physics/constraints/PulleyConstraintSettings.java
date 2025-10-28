@@ -82,7 +82,7 @@ return (jint)nativeObject->mSpace;
 PulleyConstraintSettings* nativeObject = (PulleyConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public Vec3 get_mBodyPoint1() {
         long pointer = internal_native_get_mBodyPoint1(native_address);

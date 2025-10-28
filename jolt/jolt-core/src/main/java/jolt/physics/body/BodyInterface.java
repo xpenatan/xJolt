@@ -269,7 +269,7 @@ nativeObject->DestroyBodies((BodyIDMemRef* )inBodyIDs_addr, (int)inNumber);
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->AddBody(*((BodyID* )inBodyID_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_AddBody(long this_addr, long inBodyID_addr, long inActivationMode);
+    public static native void internal_native_AddBody(long this_addr, long inBodyID_addr, int inActivationMode);
 
     public void RemoveBody(BodyID inBodyID) {
         internal_native_RemoveBody(native_address, inBodyID.native_address);
@@ -306,7 +306,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->CreateAndAddBody(*((BodyCreationSettings* )inSettings_addr), (::EActivation)inActivationMode);
 return (jlong)&copy_addr;*/
-    public static native long internal_native_CreateAndAddBody(long this_addr, long inSettings_addr, long inActivationMode);
+    public static native long internal_native_CreateAndAddBody(long this_addr, long inSettings_addr, int inActivationMode);
 
     public BodyID CreateAndAddSoftBody(SoftBodyCreationSettings inSettings, EActivation inActivationMode) {
         long pointer = internal_native_CreateAndAddSoftBody(native_address, inSettings.native_address, inActivationMode.getValue());
@@ -323,7 +323,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->CreateAndAddSoftBody(*((SoftBodyCreationSettings* )inSettings_addr), (::EActivation)inActivationMode);
 return (jlong)&copy_addr;*/
-    public static native long internal_native_CreateAndAddSoftBody(long this_addr, long inSettings_addr, long inActivationMode);
+    public static native long internal_native_CreateAndAddSoftBody(long this_addr, long inSettings_addr, int inActivationMode);
 
     public BodyInterface_AddState AddBodiesPrepare(BodyIDMemRef ioBodies, int inNumber) {
         long pointer = internal_native_AddBodiesPrepare(native_address, ioBodies.native_address, inNumber);
@@ -350,7 +350,7 @@ return (jlong)obj;
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->AddBodiesFinalize((BodyIDMemRef* )ioBodies_addr, (int)inNumber, (BodyInterface_AddState* )inAddState_addr, (::EActivation)inActivationMode);
 */
-    public static native void internal_native_AddBodiesFinalize(long this_addr, long ioBodies_addr, int inNumber, long inAddState_addr, long inActivationMode);
+    public static native void internal_native_AddBodiesFinalize(long this_addr, long ioBodies_addr, int inNumber, long inAddState_addr, int inActivationMode);
 
     public void AddBodiesAbort(BodyIDMemRef ioBodies, int inNumber, BodyInterface_AddState inAddState) {
         internal_native_AddBodiesAbort(native_address, ioBodies.native_address, inNumber, inAddState.native_address);
@@ -424,7 +424,7 @@ return (jlong)obj;
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->SetShape(*((BodyID* )inBodyID_addr), (Shape* )inShape_addr, inUpdateMassProperties, (::EActivation)inActivationMode);
 */
-    public static native void internal_native_SetShape(long this_addr, long inBodyID_addr, long inShape_addr, boolean inUpdateMassProperties, long inActivationMode);
+    public static native void internal_native_SetShape(long this_addr, long inBodyID_addr, long inShape_addr, boolean inUpdateMassProperties, int inActivationMode);
 
     public void NotifyShapeChanged(BodyID inBodyID, Vec3 inPreviousCenterOfMass, boolean inUpdateMassProperties, EActivation inActivationMode) {
         internal_native_NotifyShapeChanged(native_address, inBodyID.native_address, inPreviousCenterOfMass.native_address, inUpdateMassProperties, inActivationMode.getValue());
@@ -434,7 +434,7 @@ nativeObject->SetShape(*((BodyID* )inBodyID_addr), (Shape* )inShape_addr, inUpda
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->NotifyShapeChanged(*((BodyID* )inBodyID_addr), *((Vec3* )inPreviousCenterOfMass_addr), inUpdateMassProperties, (::EActivation)inActivationMode);
 */
-    public static native void internal_native_NotifyShapeChanged(long this_addr, long inBodyID_addr, long inPreviousCenterOfMass_addr, boolean inUpdateMassProperties, long inActivationMode);
+    public static native void internal_native_NotifyShapeChanged(long this_addr, long inBodyID_addr, long inPreviousCenterOfMass_addr, boolean inUpdateMassProperties, int inActivationMode);
 
     public void SetObjectLayer(BodyID inBodyID, int inLayer) {
         internal_native_SetObjectLayer(native_address, inBodyID.native_address, inLayer);
@@ -464,7 +464,7 @@ return nativeObject->GetObjectLayer(*((BodyID* )inBodyID_addr));
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->SetPositionAndRotation(*((BodyID* )inBodyID_addr), *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_SetPositionAndRotation(long this_addr, long inBodyID_addr, long inPosition_addr, long inRotation_addr, long inActivationMode);
+    public static native void internal_native_SetPositionAndRotation(long this_addr, long inBodyID_addr, long inPosition_addr, long inRotation_addr, int inActivationMode);
 
     public void SetPositionAndRotationWhenChanged(BodyID inBodyID, Vec3 inPosition, Quat inRotation, EActivation inActivationMode) {
         internal_native_SetPositionAndRotationWhenChanged(native_address, inBodyID.native_address, inPosition.native_address, inRotation.native_address, inActivationMode.getValue());
@@ -474,7 +474,7 @@ nativeObject->SetPositionAndRotation(*((BodyID* )inBodyID_addr), *((Vec3* )inPos
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->SetPositionAndRotationWhenChanged(*((BodyID* )inBodyID_addr), *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_SetPositionAndRotationWhenChanged(long this_addr, long inBodyID_addr, long inPosition_addr, long inRotation_addr, long inActivationMode);
+    public static native void internal_native_SetPositionAndRotationWhenChanged(long this_addr, long inBodyID_addr, long inPosition_addr, long inRotation_addr, int inActivationMode);
 
     public void GetPositionAndRotation(BodyID inBodyID, Vec3 outPosition, Quat outRotation) {
         internal_native_GetPositionAndRotation(native_address, inBodyID.native_address, outPosition.native_address, outRotation.native_address);
@@ -494,7 +494,7 @@ nativeObject->GetPositionAndRotation(*((BodyID* )inBodyID_addr), *((Vec3* )outPo
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->SetPosition(*((BodyID* )inBodyID_addr), *((Vec3* )inPosition_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_SetPosition(long this_addr, long inBodyID_addr, long inPosition_addr, long inActivationMode);
+    public static native void internal_native_SetPosition(long this_addr, long inBodyID_addr, long inPosition_addr, int inActivationMode);
 
     public Vec3 GetPosition(BodyID inBodyID) {
         long pointer = internal_native_GetPosition(native_address, inBodyID.native_address);
@@ -521,7 +521,7 @@ return (jlong)&copy_addr;*/
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->SetRotation(*((BodyID* )inBodyID_addr), *((Quat* )inRotation_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_SetRotation(long this_addr, long inBodyID_addr, long inRotation_addr, long inActivationMode);
+    public static native void internal_native_SetRotation(long this_addr, long inBodyID_addr, long inRotation_addr, int inActivationMode);
 
     public Quat GetRotation(BodyID inBodyID) {
         long pointer = internal_native_GetRotation(native_address, inBodyID.native_address);
@@ -800,7 +800,7 @@ return (int)nativeObject->GetBodyType(*((BodyID* )inBodyID_addr));
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->SetMotionType(*((BodyID* )inBodyID_addr), (::EMotionType)inMotionType, (::EActivation)inActivationMode);
 */
-    public static native void internal_native_SetMotionType(long this_addr, long inBodyID_addr, long inMotionType, long inActivationMode);
+    public static native void internal_native_SetMotionType(long this_addr, long inBodyID_addr, int inMotionType, int inActivationMode);
 
     public EMotionType GetMotionType(BodyID inBodyID) {
         int value = internal_native_GetMotionType(native_address, inBodyID.native_address);
@@ -827,7 +827,7 @@ return (int)nativeObject->GetMotionType(*((BodyID* )inBodyID_addr));
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->SetMotionQuality(*((BodyID* )inBodyID_addr), (::EMotionQuality)inMotionQuality);
 */
-    public static native void internal_native_SetMotionQuality(long this_addr, long inBodyID_addr, long inMotionQuality);
+    public static native void internal_native_SetMotionQuality(long this_addr, long inBodyID_addr, int inMotionQuality);
 
     public EMotionQuality GetMotionQuality(BodyID inBodyID) {
         int value = internal_native_GetMotionQuality(native_address, inBodyID.native_address);
@@ -977,7 +977,7 @@ return (jlong)&nativeObject->GetCollisionGroup(*((BodyID* )inBodyID_addr));
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->AddForce(*((BodyID* )inBodyID_addr), *((Vec3* )inForce_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_AddForce(long this_addr, long inBodyID_addr, long inForce_addr, long inActivationMode);
+    public static native void internal_native_AddForce(long this_addr, long inBodyID_addr, long inForce_addr, int inActivationMode);
 
     public void AddForce(BodyID inBodyID, Vec3 inForce, Vec3 inPoint, EActivation inActivationMode) {
         internal_native_AddForce(native_address, inBodyID.native_address, inForce.native_address, inPoint.native_address, inActivationMode.getValue());
@@ -987,7 +987,7 @@ nativeObject->AddForce(*((BodyID* )inBodyID_addr), *((Vec3* )inForce_addr), (::E
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->AddForce(*((BodyID* )inBodyID_addr), *((Vec3* )inForce_addr), *((Vec3* )inPoint_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_AddForce(long this_addr, long inBodyID_addr, long inForce_addr, long inPoint_addr, long inActivationMode);
+    public static native void internal_native_AddForce(long this_addr, long inBodyID_addr, long inForce_addr, long inPoint_addr, int inActivationMode);
 
     public void AddTorque(BodyID inBodyID, Vec3 inTorque, EActivation inActivationMode) {
         internal_native_AddTorque(native_address, inBodyID.native_address, inTorque.native_address, inActivationMode.getValue());
@@ -997,7 +997,7 @@ nativeObject->AddForce(*((BodyID* )inBodyID_addr), *((Vec3* )inForce_addr), *((V
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->AddTorque(*((BodyID* )inBodyID_addr), *((Vec3* )inTorque_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_AddTorque(long this_addr, long inBodyID_addr, long inTorque_addr, long inActivationMode);
+    public static native void internal_native_AddTorque(long this_addr, long inBodyID_addr, long inTorque_addr, int inActivationMode);
 
     public void AddForceAndTorque(BodyID inBodyID, Vec3 inForce, Vec3 inTorque, EActivation inActivationMode) {
         internal_native_AddForceAndTorque(native_address, inBodyID.native_address, inForce.native_address, inTorque.native_address, inActivationMode.getValue());
@@ -1007,7 +1007,7 @@ nativeObject->AddTorque(*((BodyID* )inBodyID_addr), *((Vec3* )inTorque_addr), (:
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 nativeObject->AddForceAndTorque(*((BodyID* )inBodyID_addr), *((Vec3* )inForce_addr), *((Vec3* )inTorque_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_AddForceAndTorque(long this_addr, long inBodyID_addr, long inForce_addr, long inTorque_addr, long inActivationMode);
+    public static native void internal_native_AddForceAndTorque(long this_addr, long inBodyID_addr, long inForce_addr, long inTorque_addr, int inActivationMode);
 
     public boolean ApplyBuoyancyImpulse(BodyID inBodyID, Vec3 inSurfacePosition, Vec3 inSurfaceNormal, float inBuoyancy, float inLinearDrag, float inAngularDrag, Vec3 inFluidVelocity, Vec3 inGravity, float inDeltaTime) {
         return internal_native_ApplyBuoyancyImpulse(native_address, inBodyID.native_address, inSurfacePosition.native_address, inSurfaceNormal.native_address, inBuoyancy, inLinearDrag, inAngularDrag, inFluidVelocity.native_address, inGravity.native_address, inDeltaTime);

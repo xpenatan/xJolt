@@ -95,7 +95,7 @@ jsObj.DrawBodies(system_addr);
     public static native void internal_native_DrawBodies(int this_addr, int system_addr);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow, EDrawMode inDrawMode) {
-        internal_native_DrawCylinder(native_address, inMatrix.native_address, inHalfHeight, inRadius, inColor.native_address, (int) inCastShadow.getValue(), (int) inDrawMode.getValue());
+        internal_native_DrawCylinder(native_address, inMatrix.native_address, inHalfHeight, inRadius, inColor.native_address, inCastShadow.getValue(), inDrawMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -106,7 +106,7 @@ jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr, inCastSh
     public static native void internal_native_DrawCylinder(int this_addr, int inMatrix_addr, float inHalfHeight, float inRadius, int inColor_addr, int inCastShadow, int inDrawMode);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow) {
-        internal_native_DrawCylinder(native_address, inMatrix.native_address, inHalfHeight, inRadius, inColor.native_address, (int) inCastShadow.getValue());
+        internal_native_DrawCylinder(native_address, inMatrix.native_address, inHalfHeight, inRadius, inColor.native_address, inCastShadow.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

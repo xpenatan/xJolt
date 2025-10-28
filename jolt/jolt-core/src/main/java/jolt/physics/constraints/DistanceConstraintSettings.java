@@ -80,7 +80,7 @@ return (jint)nativeObject->mSpace;
 DistanceConstraintSettings* nativeObject = (DistanceConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public Vec3 get_mPoint1() {
         long pointer = internal_native_get_mPoint1(native_address);

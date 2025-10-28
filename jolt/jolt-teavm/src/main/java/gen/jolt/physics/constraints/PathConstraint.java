@@ -115,7 +115,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetPositionMotorSettings(int this_addr);
 
     public void SetPositionMotorState(EMotorState inState) {
-        internal_native_SetPositionMotorState(native_address, (int) inState.getValue());
+        internal_native_SetPositionMotorState(native_address, inState.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

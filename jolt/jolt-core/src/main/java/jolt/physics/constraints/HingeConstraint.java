@@ -90,7 +90,7 @@ return (jlong)&nativeObject->GetMotorSettings();
 HingeConstraint* nativeObject = (HingeConstraint*)this_addr;
 nativeObject->SetMotorState((::EMotorState)inState);
 */
-    public static native void internal_native_SetMotorState(long this_addr, long inState);
+    public static native void internal_native_SetMotorState(long this_addr, int inState);
 
     public EMotorState GetMotorState() {
         int value = internal_native_GetMotorState(native_address);

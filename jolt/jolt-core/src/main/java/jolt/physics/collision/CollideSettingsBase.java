@@ -65,7 +65,7 @@ return (jint)nativeObject->mActiveEdgeMode;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 nativeObject->mActiveEdgeMode = (::EActiveEdgeMode)mActiveEdgeMode;
 */
-    public static native void internal_native_set_mActiveEdgeMode(long this_addr, long mActiveEdgeMode);
+    public static native void internal_native_set_mActiveEdgeMode(long this_addr, int mActiveEdgeMode);
 
     public ECollectFacesMode get_mCollectFacesMode() {
         int value = internal_native_get_mCollectFacesMode(native_address);
@@ -92,7 +92,7 @@ return (jint)nativeObject->mCollectFacesMode;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 nativeObject->mCollectFacesMode = (::ECollectFacesMode)mCollectFacesMode;
 */
-    public static native void internal_native_set_mCollectFacesMode(long this_addr, long mCollectFacesMode);
+    public static native void internal_native_set_mCollectFacesMode(long this_addr, int mCollectFacesMode);
 
     public float get_mCollisionTolerance() {
         return internal_native_get_mCollisionTolerance(native_address);

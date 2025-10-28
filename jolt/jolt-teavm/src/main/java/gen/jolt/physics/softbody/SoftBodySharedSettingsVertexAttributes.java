@@ -134,7 +134,7 @@ return jsObj.get_mLRAType();
     public static native int internal_native_get_mLRAType(int this_addr);
 
     public void set_mLRAType(SoftBodySharedSettings_ELRAType mLRAType) {
-        internal_native_set_mLRAType(native_address, (int) mLRAType.getValue());
+        internal_native_set_mLRAType(native_address, mLRAType.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

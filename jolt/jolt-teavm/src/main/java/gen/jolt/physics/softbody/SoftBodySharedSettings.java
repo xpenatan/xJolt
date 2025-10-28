@@ -103,7 +103,7 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType, float inAngleTolerance) {
-        internal_native_CreateConstraints(native_address, inVertexAttributes.native_address, inVertexAttributesLength, (int) inBendType.getValue(), inAngleTolerance);
+        internal_native_CreateConstraints(native_address, inVertexAttributes.native_address, inVertexAttributesLength, inBendType.getValue(), inAngleTolerance);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -114,7 +114,7 @@ jsObj.CreateConstraints(inVertexAttributes_addr, inVertexAttributesLength, inBen
     public static native void internal_native_CreateConstraints(int this_addr, int inVertexAttributes_addr, int inVertexAttributesLength, int inBendType, float inAngleTolerance);
 
     public void CreateConstraints(SoftBodySharedSettingsVertexAttributes inVertexAttributes, int inVertexAttributesLength, SoftBodySharedSettings_EBendType inBendType) {
-        internal_native_CreateConstraints(native_address, inVertexAttributes.native_address, inVertexAttributesLength, (int) inBendType.getValue());
+        internal_native_CreateConstraints(native_address, inVertexAttributes.native_address, inVertexAttributesLength, inBendType.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

@@ -68,7 +68,7 @@ return jsObj.get_mBackFaceModeTriangles();
     public static native int internal_native_get_mBackFaceModeTriangles(int this_addr);
 
     public void set_mBackFaceModeTriangles(EBackFaceMode mBackFaceModeTriangles) {
-        internal_native_set_mBackFaceModeTriangles(native_address, (int) mBackFaceModeTriangles.getValue());
+        internal_native_set_mBackFaceModeTriangles(native_address, mBackFaceModeTriangles.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -97,7 +97,7 @@ return jsObj.get_mBackFaceModeConvex();
     public static native int internal_native_get_mBackFaceModeConvex(int this_addr);
 
     public void set_mBackFaceModeConvex(EBackFaceMode mBackFaceModeConvex) {
-        internal_native_set_mBackFaceModeConvex(native_address, (int) mBackFaceModeConvex.getValue());
+        internal_native_set_mBackFaceModeConvex(native_address, mBackFaceModeConvex.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

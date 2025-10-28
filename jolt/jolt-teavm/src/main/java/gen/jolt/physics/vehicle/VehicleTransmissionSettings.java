@@ -61,7 +61,7 @@ return jsObj.get_mMode();
     public static native int internal_native_get_mMode(int this_addr);
 
     public void set_mMode(ETransmissionMode mMode) {
-        internal_native_set_mMode(native_address, (int) mMode.getValue());
+        internal_native_set_mMode(native_address, mMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

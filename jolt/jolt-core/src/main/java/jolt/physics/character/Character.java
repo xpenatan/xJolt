@@ -91,7 +91,7 @@ delete nativeObject;
 Character* nativeObject = (Character*)this_addr;
 nativeObject->AddToPhysicsSystem((::EActivation)inActivationMode, inLockBodies);
 */
-    public static native void internal_native_AddToPhysicsSystem(long this_addr, long inActivationMode, boolean inLockBodies);
+    public static native void internal_native_AddToPhysicsSystem(long this_addr, int inActivationMode, boolean inLockBodies);
 
     public void AddToPhysicsSystem(EActivation inActivationMode) {
         internal_native_AddToPhysicsSystem(native_address, inActivationMode.getValue());
@@ -101,7 +101,7 @@ nativeObject->AddToPhysicsSystem((::EActivation)inActivationMode, inLockBodies);
 Character* nativeObject = (Character*)this_addr;
 nativeObject->AddToPhysicsSystem((::EActivation)inActivationMode);
 */
-    public static native void internal_native_AddToPhysicsSystem(long this_addr, long inActivationMode);
+    public static native void internal_native_AddToPhysicsSystem(long this_addr, int inActivationMode);
 
     public void AddToPhysicsSystem() {
         internal_native_AddToPhysicsSystem(native_address);
@@ -322,7 +322,7 @@ nativeObject->GetPositionAndRotation(*((RVec3* )outPosition_addr), *((Quat* )out
 Character* nativeObject = (Character*)this_addr;
 nativeObject->SetPositionAndRotation(*((RVec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EActivation)inActivationMode, inLockBodies);
 */
-    public static native void internal_native_SetPositionAndRotation(long this_addr, long inPosition_addr, long inRotation_addr, long inActivationMode, boolean inLockBodies);
+    public static native void internal_native_SetPositionAndRotation(long this_addr, long inPosition_addr, long inRotation_addr, int inActivationMode, boolean inLockBodies);
 
     public void SetPositionAndRotation(RVec3 inPosition, Quat inRotation, EActivation inActivationMode) {
         internal_native_SetPositionAndRotation(native_address, inPosition.native_address, inRotation.native_address, inActivationMode.getValue());
@@ -332,7 +332,7 @@ nativeObject->SetPositionAndRotation(*((RVec3* )inPosition_addr), *((Quat* )inRo
 Character* nativeObject = (Character*)this_addr;
 nativeObject->SetPositionAndRotation(*((RVec3* )inPosition_addr), *((Quat* )inRotation_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_SetPositionAndRotation(long this_addr, long inPosition_addr, long inRotation_addr, long inActivationMode);
+    public static native void internal_native_SetPositionAndRotation(long this_addr, long inPosition_addr, long inRotation_addr, int inActivationMode);
 
     public void SetPositionAndRotation(RVec3 inPosition, Quat inRotation) {
         internal_native_SetPositionAndRotation(native_address, inPosition.native_address, inRotation.native_address);
@@ -386,7 +386,7 @@ return (jlong)&copy_addr;*/
 Character* nativeObject = (Character*)this_addr;
 nativeObject->SetPosition(*((RVec3* )inPosition_addr), (::EActivation)inActivationMode, inLockBodies);
 */
-    public static native void internal_native_SetPosition(long this_addr, long inPosition_addr, long inActivationMode, boolean inLockBodies);
+    public static native void internal_native_SetPosition(long this_addr, long inPosition_addr, int inActivationMode, boolean inLockBodies);
 
     public void SetPosition(RVec3 inPosition, EActivation inActivationMode) {
         internal_native_SetPosition(native_address, inPosition.native_address, inActivationMode.getValue());
@@ -396,7 +396,7 @@ nativeObject->SetPosition(*((RVec3* )inPosition_addr), (::EActivation)inActivati
 Character* nativeObject = (Character*)this_addr;
 nativeObject->SetPosition(*((RVec3* )inPosition_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_SetPosition(long this_addr, long inPosition_addr, long inActivationMode);
+    public static native void internal_native_SetPosition(long this_addr, long inPosition_addr, int inActivationMode);
 
     public void SetPosition(RVec3 inPosition) {
         internal_native_SetPosition(native_address, inPosition.native_address);
@@ -450,7 +450,7 @@ return (jlong)&copy_addr;*/
 Character* nativeObject = (Character*)this_addr;
 nativeObject->SetRotation(*((Quat* )inRotation_addr), (::EActivation)inActivationMode, inLockBodies);
 */
-    public static native void internal_native_SetRotation(long this_addr, long inRotation_addr, long inActivationMode, boolean inLockBodies);
+    public static native void internal_native_SetRotation(long this_addr, long inRotation_addr, int inActivationMode, boolean inLockBodies);
 
     public void SetRotation(Quat inRotation, EActivation inActivationMode) {
         internal_native_SetRotation(native_address, inRotation.native_address, inActivationMode.getValue());
@@ -460,7 +460,7 @@ nativeObject->SetRotation(*((Quat* )inRotation_addr), (::EActivation)inActivatio
 Character* nativeObject = (Character*)this_addr;
 nativeObject->SetRotation(*((Quat* )inRotation_addr), (::EActivation)inActivationMode);
 */
-    public static native void internal_native_SetRotation(long this_addr, long inRotation_addr, long inActivationMode);
+    public static native void internal_native_SetRotation(long this_addr, long inRotation_addr, int inActivationMode);
 
     public void SetRotation(Quat inRotation) {
         internal_native_SetRotation(native_address, inRotation.native_address);

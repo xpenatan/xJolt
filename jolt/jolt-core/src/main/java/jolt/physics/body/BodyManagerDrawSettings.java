@@ -172,7 +172,7 @@ return (jint)nativeObject->mDrawShapeColor;
 BodyManagerDrawSettings* nativeObject = (BodyManagerDrawSettings*)this_addr;
 nativeObject->mDrawShapeColor = (::EShapeColor)mDrawShapeColor;
 */
-    public static native void internal_native_set_mDrawShapeColor(long this_addr, long mDrawShapeColor);
+    public static native void internal_native_set_mDrawShapeColor(long this_addr, int mDrawShapeColor);
 
     public boolean get_mDrawBoundingBox() {
         return internal_native_get_mDrawBoundingBox(native_address);
@@ -479,5 +479,5 @@ return (jint)nativeObject->mDrawSoftBodyConstraintColor;
 BodyManagerDrawSettings* nativeObject = (BodyManagerDrawSettings*)this_addr;
 nativeObject->mDrawSoftBodyConstraintColor = (::ESoftBodyConstraintColor)mDrawSoftBodyConstraintColor;
 */
-    public static native void internal_native_set_mDrawSoftBodyConstraintColor(long this_addr, long mDrawSoftBodyConstraintColor);
+    public static native void internal_native_set_mDrawSoftBodyConstraintColor(long this_addr, int mDrawSoftBodyConstraintColor);
 }

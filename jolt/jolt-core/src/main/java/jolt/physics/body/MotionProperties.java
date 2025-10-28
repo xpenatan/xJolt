@@ -320,7 +320,7 @@ nativeObject->SetGravityFactor((float)inFactor);
 MotionProperties* nativeObject = (MotionProperties*)this_addr;
 nativeObject->SetMassProperties((::EAllowedDOFs)inAllowedDOFs, *((MassProperties* )inMassProperties_addr));
 */
-    public static native void internal_native_SetMassProperties(long this_addr, long inAllowedDOFs, long inMassProperties_addr);
+    public static native void internal_native_SetMassProperties(long this_addr, int inAllowedDOFs, long inMassProperties_addr);
 
     public float GetInverseMass() {
         return internal_native_GetInverseMass(native_address);

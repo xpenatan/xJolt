@@ -184,7 +184,7 @@ return jsObj.get_mBackFaceMode();
     public static native int internal_native_get_mBackFaceMode(int this_addr);
 
     public void set_mBackFaceMode(EBackFaceMode mBackFaceMode) {
-        internal_native_set_mBackFaceMode(native_address, (int) mBackFaceMode.getValue());
+        internal_native_set_mBackFaceMode(native_address, mBackFaceMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

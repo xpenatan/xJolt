@@ -131,7 +131,7 @@ return (jint)nativeObject->mLRAType;
 SoftBodySharedSettingsVertexAttributes* nativeObject = (SoftBodySharedSettingsVertexAttributes*)this_addr;
 nativeObject->mLRAType = (::SoftBodySharedSettings_ELRAType)mLRAType;
 */
-    public static native void internal_native_set_mLRAType(long this_addr, long mLRAType);
+    public static native void internal_native_set_mLRAType(long this_addr, int mLRAType);
 
     public float get_mLRAMaxDistanceMultiplier() {
         return internal_native_get_mLRAMaxDistanceMultiplier(native_address);

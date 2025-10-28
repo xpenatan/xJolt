@@ -258,7 +258,7 @@ return nativeObject->GetMaxFrictionTorque();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetSwingMotorState((::EMotorState)inState);
 */
-    public static native void internal_native_SetSwingMotorState(long this_addr, long inState);
+    public static native void internal_native_SetSwingMotorState(long this_addr, int inState);
 
     public EMotorState GetSwingMotorState() {
         int value = internal_native_GetSwingMotorState(native_address);
@@ -285,7 +285,7 @@ return (int)nativeObject->GetSwingMotorState();
 SwingTwistConstraint* nativeObject = (SwingTwistConstraint*)this_addr;
 nativeObject->SetTwistMotorState((::EMotorState)inState);
 */
-    public static native void internal_native_SetTwistMotorState(long this_addr, long inState);
+    public static native void internal_native_SetTwistMotorState(long this_addr, int inState);
 
     public EMotorState GetTwistMotorState() {
         int value = internal_native_GetTwistMotorState(native_address);

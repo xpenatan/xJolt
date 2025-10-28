@@ -389,7 +389,7 @@ return jsObj.get_mMotionType();
     public static native int internal_native_get_mMotionType(int this_addr);
 
     public void set_mMotionType(EMotionType mMotionType) {
-        internal_native_set_mMotionType(native_address, (int) mMotionType.getValue());
+        internal_native_set_mMotionType(native_address, mMotionType.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -418,7 +418,7 @@ return jsObj.get_mAllowedDOFs();
     public static native int internal_native_get_mAllowedDOFs(int this_addr);
 
     public void set_mAllowedDOFs(EAllowedDOFs mAllowedDOFs) {
-        internal_native_set_mAllowedDOFs(native_address, (int) mAllowedDOFs.getValue());
+        internal_native_set_mAllowedDOFs(native_address, mAllowedDOFs.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -557,7 +557,7 @@ return jsObj.get_mMotionQuality();
     public static native int internal_native_get_mMotionQuality(int this_addr);
 
     public void set_mMotionQuality(EMotionQuality mMotionQuality) {
-        internal_native_set_mMotionQuality(native_address, (int) mMotionQuality.getValue());
+        internal_native_set_mMotionQuality(native_address, mMotionQuality.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -828,7 +828,7 @@ return jsObj.get_mOverrideMassProperties();
     public static native int internal_native_get_mOverrideMassProperties(int this_addr);
 
     public void set_mOverrideMassProperties(EOverrideMassProperties mOverrideMassProperties) {
-        internal_native_set_mOverrideMassProperties(native_address, (int) mOverrideMassProperties.getValue());
+        internal_native_set_mOverrideMassProperties(native_address, mOverrideMassProperties.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

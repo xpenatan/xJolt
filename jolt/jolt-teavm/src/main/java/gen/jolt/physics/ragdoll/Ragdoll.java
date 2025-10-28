@@ -71,7 +71,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void AddToPhysicsSystem(EActivation inActivationMode, boolean inLockBodies) {
-        internal_native_AddToPhysicsSystem(native_address, (int) inActivationMode.getValue(), inLockBodies);
+        internal_native_AddToPhysicsSystem(native_address, inActivationMode.getValue(), inLockBodies);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -82,7 +82,7 @@ jsObj.AddToPhysicsSystem(inActivationMode, inLockBodies);
     public static native void internal_native_AddToPhysicsSystem(int this_addr, int inActivationMode, boolean inLockBodies);
 
     public void AddToPhysicsSystem(EActivation inActivationMode) {
-        internal_native_AddToPhysicsSystem(native_address, (int) inActivationMode.getValue());
+        internal_native_AddToPhysicsSystem(native_address, inActivationMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

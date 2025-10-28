@@ -71,7 +71,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void MakeFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        internal_native_MakeFreeAxis(native_address, (int) inAxis.getValue());
+        internal_native_MakeFreeAxis(native_address, inAxis.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -82,7 +82,7 @@ jsObj.MakeFreeAxis(inAxis);
     public static native void internal_native_MakeFreeAxis(int this_addr, int inAxis);
 
     public boolean IsFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_IsFreeAxis(native_address, (int) inAxis.getValue());
+        return internal_native_IsFreeAxis(native_address, inAxis.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -94,7 +94,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsFreeAxis(int this_addr, int inAxis);
 
     public void MakeFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        internal_native_MakeFixedAxis(native_address, (int) inAxis.getValue());
+        internal_native_MakeFixedAxis(native_address, inAxis.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -105,7 +105,7 @@ jsObj.MakeFixedAxis(inAxis);
     public static native void internal_native_MakeFixedAxis(int this_addr, int inAxis);
 
     public boolean IsFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_IsFixedAxis(native_address, (int) inAxis.getValue());
+        return internal_native_IsFixedAxis(native_address, inAxis.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -117,7 +117,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsFixedAxis(int this_addr, int inAxis);
 
     public void SetLimitedAxis(SixDOFConstraintSettings_EAxis inAxis, float inMin, float inMax) {
-        internal_native_SetLimitedAxis(native_address, (int) inAxis.getValue(), inMin, inMax);
+        internal_native_SetLimitedAxis(native_address, inAxis.getValue(), inMin, inMax);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -146,7 +146,7 @@ return jsObj.get_mSpace();
     public static native int internal_native_get_mSpace(int this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
-        internal_native_set_mSpace(native_address, (int) mSpace.getValue());
+        internal_native_set_mSpace(native_address, mSpace.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -377,7 +377,7 @@ return jsObj.get_mSwingType();
     public static native int internal_native_get_mSwingType(int this_addr);
 
     public void set_mSwingType(ESwingType mSwingType) {
-        internal_native_set_mSwingType(native_address, (int) mSwingType.getValue());
+        internal_native_set_mSwingType(native_address, mSwingType.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

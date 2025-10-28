@@ -315,7 +315,7 @@ return (jint)nativeObject->mMotionTypeB;
 CharacterVirtualContact* nativeObject = (CharacterVirtualContact*)this_addr;
 nativeObject->mMotionTypeB = (::EMotionType)mMotionTypeB;
 */
-    public static native void internal_native_set_mMotionTypeB(long this_addr, long mMotionTypeB);
+    public static native void internal_native_set_mMotionTypeB(long this_addr, int mMotionTypeB);
 
     public boolean get_mIsSensorB() {
         return internal_native_get_mIsSensorB(native_address);

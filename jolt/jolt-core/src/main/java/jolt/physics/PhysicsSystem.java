@@ -186,7 +186,7 @@ return nativeObject->GetNumBodies();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return nativeObject->GetNumActiveBodies((::EBodyType)inBodyType);
 */
-    public static native int internal_native_GetNumActiveBodies(long this_addr, long inBodyType);
+    public static native int internal_native_GetNumActiveBodies(long this_addr, int inBodyType);
 
     public int GetMaxBodies() {
         return internal_native_GetMaxBodies(native_address);
@@ -216,7 +216,7 @@ nativeObject->GetBodies(*((BodyIDVector* )outBodies_addr));
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->GetActiveBodies((::EBodyType)inBodyType, *((BodyIDVector* )outBodies_addr));
 */
-    public static native void internal_native_GetActiveBodies(long this_addr, long inBodyType, long outBodies_addr);
+    public static native void internal_native_GetActiveBodies(long this_addr, int inBodyType, long outBodies_addr);
 
     public AABox GetBounds() {
         long pointer = internal_native_GetBounds(native_address);
@@ -438,7 +438,7 @@ return (jlong)&nativeObject->GetNarrowPhaseQueryNoLock();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SaveState(*((StateRecorder* )inStream_addr), (::EStateRecorderState)inState, (StateRecorderFilter* )inFilter_addr);
 */
-    public static native void internal_native_SaveState(long this_addr, long inStream_addr, long inState, long inFilter_addr);
+    public static native void internal_native_SaveState(long this_addr, long inStream_addr, int inState, long inFilter_addr);
 
     public void SaveState(StateRecorder inStream, EStateRecorderState inState) {
         internal_native_SaveState(native_address, inStream.native_address, inState.getValue());
@@ -448,7 +448,7 @@ nativeObject->SaveState(*((StateRecorder* )inStream_addr), (::EStateRecorderStat
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 nativeObject->SaveState(*((StateRecorder* )inStream_addr), (::EStateRecorderState)inState);
 */
-    public static native void internal_native_SaveState(long this_addr, long inStream_addr, long inState);
+    public static native void internal_native_SaveState(long this_addr, long inStream_addr, int inState);
 
     public void SaveState(StateRecorder inStream) {
         internal_native_SaveState(native_address, inStream.native_address);

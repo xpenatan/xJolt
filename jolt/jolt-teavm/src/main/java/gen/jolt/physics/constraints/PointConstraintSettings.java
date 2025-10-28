@@ -75,7 +75,7 @@ return jsObj.get_mSpace();
     public static native int internal_native_get_mSpace(int this_addr);
 
     public void set_mSpace(EConstraintSpace mSpace) {
-        internal_native_set_mSpace(native_address, (int) mSpace.getValue());
+        internal_native_set_mSpace(native_address, mSpace.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

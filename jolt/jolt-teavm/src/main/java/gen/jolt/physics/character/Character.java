@@ -87,7 +87,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public void AddToPhysicsSystem(EActivation inActivationMode, boolean inLockBodies) {
-        internal_native_AddToPhysicsSystem(native_address, (int) inActivationMode.getValue(), inLockBodies);
+        internal_native_AddToPhysicsSystem(native_address, inActivationMode.getValue(), inLockBodies);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -98,7 +98,7 @@ jsObj.AddToPhysicsSystem(inActivationMode, inLockBodies);
     public static native void internal_native_AddToPhysicsSystem(int this_addr, int inActivationMode, boolean inLockBodies);
 
     public void AddToPhysicsSystem(EActivation inActivationMode) {
-        internal_native_AddToPhysicsSystem(native_address, (int) inActivationMode.getValue());
+        internal_native_AddToPhysicsSystem(native_address, inActivationMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -342,7 +342,7 @@ jsObj.GetPositionAndRotation(outPosition_addr, outRotation_addr);
     public static native void internal_native_GetPositionAndRotation(int this_addr, int outPosition_addr, int outRotation_addr);
 
     public void SetPositionAndRotation(RVec3 inPosition, Quat inRotation, EActivation inActivationMode, boolean inLockBodies) {
-        internal_native_SetPositionAndRotation(native_address, inPosition.native_address, inRotation.native_address, (int) inActivationMode.getValue(), inLockBodies);
+        internal_native_SetPositionAndRotation(native_address, inPosition.native_address, inRotation.native_address, inActivationMode.getValue(), inLockBodies);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -353,7 +353,7 @@ jsObj.SetPositionAndRotation(inPosition_addr, inRotation_addr, inActivationMode,
     public static native void internal_native_SetPositionAndRotation(int this_addr, int inPosition_addr, int inRotation_addr, int inActivationMode, boolean inLockBodies);
 
     public void SetPositionAndRotation(RVec3 inPosition, Quat inRotation, EActivation inActivationMode) {
-        internal_native_SetPositionAndRotation(native_address, inPosition.native_address, inRotation.native_address, (int) inActivationMode.getValue());
+        internal_native_SetPositionAndRotation(native_address, inPosition.native_address, inRotation.native_address, inActivationMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -413,7 +413,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetPosition(int this_addr);
 
     public void SetPosition(RVec3 inPosition, EActivation inActivationMode, boolean inLockBodies) {
-        internal_native_SetPosition(native_address, inPosition.native_address, (int) inActivationMode.getValue(), inLockBodies);
+        internal_native_SetPosition(native_address, inPosition.native_address, inActivationMode.getValue(), inLockBodies);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -424,7 +424,7 @@ jsObj.SetPosition(inPosition_addr, inActivationMode, inLockBodies);
     public static native void internal_native_SetPosition(int this_addr, int inPosition_addr, int inActivationMode, boolean inLockBodies);
 
     public void SetPosition(RVec3 inPosition, EActivation inActivationMode) {
-        internal_native_SetPosition(native_address, inPosition.native_address, (int) inActivationMode.getValue());
+        internal_native_SetPosition(native_address, inPosition.native_address, inActivationMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -484,7 +484,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotation(int this_addr);
 
     public void SetRotation(Quat inRotation, EActivation inActivationMode, boolean inLockBodies) {
-        internal_native_SetRotation(native_address, inRotation.native_address, (int) inActivationMode.getValue(), inLockBodies);
+        internal_native_SetRotation(native_address, inRotation.native_address, inActivationMode.getValue(), inLockBodies);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -495,7 +495,7 @@ jsObj.SetRotation(inRotation_addr, inActivationMode, inLockBodies);
     public static native void internal_native_SetRotation(int this_addr, int inRotation_addr, int inActivationMode, boolean inLockBodies);
 
     public void SetRotation(Quat inRotation, EActivation inActivationMode) {
-        internal_native_SetRotation(native_address, inRotation.native_address, (int) inActivationMode.getValue());
+        internal_native_SetRotation(native_address, inRotation.native_address, inActivationMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

@@ -175,7 +175,7 @@ return (jint)nativeObject->mBackFaceMode;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 nativeObject->mBackFaceMode = (::EBackFaceMode)mBackFaceMode;
 */
-    public static native void internal_native_set_mBackFaceMode(long this_addr, long mBackFaceMode);
+    public static native void internal_native_set_mBackFaceMode(long this_addr, int mBackFaceMode);
 
     public float get_mPredictiveContactDistance() {
         return internal_native_get_mPredictiveContactDistance(native_address);

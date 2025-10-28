@@ -373,7 +373,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_BodyCreationSettings__0();
 
     public static BodyCreationSettings BodyCreationSettings(ShapeSettings inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        int pointer = internal_native_BodyCreationSettings__1(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
+        int pointer = internal_native_BodyCreationSettings__1(inShape.native_address, inPosition.native_address, inRotation.native_address, inMotionType.getValue(), inObjectLayer);
         if (pointer == 0)
             return BodyCreationSettings.NULL;
         BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();
@@ -390,7 +390,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_BodyCreationSettings__1(int inShape_addr, int inPosition_addr, int inRotation_addr, int inMotionType, int inObjectLayer);
 
     public static BodyCreationSettings BodyCreationSettings(Shape inShape, Vec3 inPosition, Quat inRotation, EMotionType inMotionType, int inObjectLayer) {
-        int pointer = internal_native_BodyCreationSettings__2(inShape.native_address, inPosition.native_address, inRotation.native_address, (int) inMotionType.getValue(), inObjectLayer);
+        int pointer = internal_native_BodyCreationSettings__2(inShape.native_address, inPosition.native_address, inRotation.native_address, inMotionType.getValue(), inObjectLayer);
         if (pointer == 0)
             return BodyCreationSettings.NULL;
         BodyCreationSettings BodyCreationSettings_NEW = BodyCreationSettings.native_new();

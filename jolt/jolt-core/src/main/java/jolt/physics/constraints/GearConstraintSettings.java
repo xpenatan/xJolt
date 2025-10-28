@@ -88,7 +88,7 @@ return (jint)nativeObject->mSpace;
 GearConstraintSettings* nativeObject = (GearConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public Vec3 get_mHingeAxis1() {
         long pointer = internal_native_get_mHingeAxis1(native_address);

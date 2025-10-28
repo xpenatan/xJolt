@@ -158,7 +158,7 @@ return jsObj.get_mAllowedDOFs();
     public static native int internal_native_get_mAllowedDOFs(int this_addr);
 
     public void set_mAllowedDOFs(EAllowedDOFs mAllowedDOFs) {
-        internal_native_set_mAllowedDOFs(native_address, (int) mAllowedDOFs.getValue());
+        internal_native_set_mAllowedDOFs(native_address, mAllowedDOFs.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

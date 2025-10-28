@@ -280,7 +280,7 @@ return returnedJSObj;
     public static native float internal_native_GetMaxFrictionTorque(int this_addr);
 
     public void SetSwingMotorState(EMotorState inState) {
-        internal_native_SetSwingMotorState(native_address, (int) inState.getValue());
+        internal_native_SetSwingMotorState(native_address, inState.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -310,7 +310,7 @@ return returnedJSObj;
     public static native int internal_native_GetSwingMotorState(int this_addr);
 
     public void SetTwistMotorState(EMotorState inState) {
-        internal_native_SetTwistMotorState(native_address, (int) inState.getValue());
+        internal_native_SetTwistMotorState(native_address, inState.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

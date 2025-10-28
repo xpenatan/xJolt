@@ -91,7 +91,7 @@ return (jint)nativeObject->mSpace;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public Vec3 get_mPosition1() {
         long pointer = internal_native_get_mPosition1(native_address);
@@ -274,7 +274,7 @@ return (jint)nativeObject->mSwingType;
 SwingTwistConstraintSettings* nativeObject = (SwingTwistConstraintSettings*)this_addr;
 nativeObject->mSwingType = (::ESwingType)mSwingType;
 */
-    public static native void internal_native_set_mSwingType(long this_addr, long mSwingType);
+    public static native void internal_native_set_mSwingType(long this_addr, int mSwingType);
 
     public float get_mNormalHalfConeAngle() {
         return internal_native_get_mNormalHalfConeAngle(native_address);

@@ -81,7 +81,7 @@ return (jint)nativeObject->mMode;
 SpringSettings* nativeObject = (SpringSettings*)this_addr;
 nativeObject->mMode = (::ESpringMode)mMode;
 */
-    public static native void internal_native_set_mMode(long this_addr, long mMode);
+    public static native void internal_native_set_mMode(long this_addr, int mMode);
 
     public float get_mFrequency() {
         return internal_native_get_mFrequency(native_address);

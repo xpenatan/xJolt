@@ -358,7 +358,7 @@ return (jint)nativeObject->mMotionType;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mMotionType = (::EMotionType)mMotionType;
 */
-    public static native void internal_native_set_mMotionType(long this_addr, long mMotionType);
+    public static native void internal_native_set_mMotionType(long this_addr, int mMotionType);
 
     public EAllowedDOFs get_mAllowedDOFs() {
         int value = internal_native_get_mAllowedDOFs(native_address);
@@ -385,7 +385,7 @@ return (jint)nativeObject->mAllowedDOFs;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mAllowedDOFs = (::EAllowedDOFs)mAllowedDOFs;
 */
-    public static native void internal_native_set_mAllowedDOFs(long this_addr, long mAllowedDOFs);
+    public static native void internal_native_set_mAllowedDOFs(long this_addr, int mAllowedDOFs);
 
     public boolean get_mAllowDynamicOrKinematic() {
         return internal_native_get_mAllowDynamicOrKinematic(native_address);
@@ -512,7 +512,7 @@ return (jint)nativeObject->mMotionQuality;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mMotionQuality = (::EMotionQuality)mMotionQuality;
 */
-    public static native void internal_native_set_mMotionQuality(long this_addr, long mMotionQuality);
+    public static native void internal_native_set_mMotionQuality(long this_addr, int mMotionQuality);
 
     public boolean get_mEnhancedInternalEdgeRemoval() {
         return internal_native_get_mEnhancedInternalEdgeRemoval(native_address);
@@ -759,7 +759,7 @@ return (jint)nativeObject->mOverrideMassProperties;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 nativeObject->mOverrideMassProperties = (::EOverrideMassProperties)mOverrideMassProperties;
 */
-    public static native void internal_native_set_mOverrideMassProperties(long this_addr, long mOverrideMassProperties);
+    public static native void internal_native_set_mOverrideMassProperties(long this_addr, int mOverrideMassProperties);
 
     public float get_mInertiaMultiplier() {
         return internal_native_get_mInertiaMultiplier(native_address);

@@ -87,7 +87,7 @@ nativeObject->SetRotationLimits(*((Vec3* )inLimitMin_addr), *((Vec3* )inLimitMax
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 return nativeObject->GetLimitsMin((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native float internal_native_GetLimitsMin(long this_addr, long inAxis);
+    public static native float internal_native_GetLimitsMin(long this_addr, int inAxis);
 
     public float GetLimitsMax(SixDOFConstraintSettings_EAxis inAxis) {
         return internal_native_GetLimitsMax(native_address, inAxis.getValue());
@@ -97,7 +97,7 @@ return nativeObject->GetLimitsMin((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 return nativeObject->GetLimitsMax((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native float internal_native_GetLimitsMax(long this_addr, long inAxis);
+    public static native float internal_native_GetLimitsMax(long this_addr, int inAxis);
 
     public Vec3 GetTranslationLimitsMin() {
         long pointer = internal_native_GetTranslationLimitsMin(native_address);
@@ -175,7 +175,7 @@ return (jlong)&copy_addr;*/
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 return nativeObject->IsFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native boolean internal_native_IsFixedAxis(long this_addr, long inAxis);
+    public static native boolean internal_native_IsFixedAxis(long this_addr, int inAxis);
 
     public boolean IsFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
         return internal_native_IsFreeAxis(native_address, inAxis.getValue());
@@ -185,7 +185,7 @@ return nativeObject->IsFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 return nativeObject->IsFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native boolean internal_native_IsFreeAxis(long this_addr, long inAxis);
+    public static native boolean internal_native_IsFreeAxis(long this_addr, int inAxis);
 
     public SpringSettings GetLimitsSpringSettings(SixDOFConstraintSettings_EAxis inAxis) {
         long pointer = internal_native_GetLimitsSpringSettings(native_address, inAxis.getValue());
@@ -201,7 +201,7 @@ return nativeObject->IsFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 return (jlong)&nativeObject->GetLimitsSpringSettings((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native long internal_native_GetLimitsSpringSettings(long this_addr, long inAxis);
+    public static native long internal_native_GetLimitsSpringSettings(long this_addr, int inAxis);
 
     public void SetLimitsSpringSettings(SixDOFConstraintSettings_EAxis inAxis, SpringSettings inLimitsSpringSettings) {
         internal_native_SetLimitsSpringSettings(native_address, inAxis.getValue(), inLimitsSpringSettings.native_address);
@@ -211,7 +211,7 @@ return (jlong)&nativeObject->GetLimitsSpringSettings((::SixDOFConstraintSettings
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 nativeObject->SetLimitsSpringSettings((::SixDOFConstraintSettings_EAxis)inAxis, *((SpringSettings* )inLimitsSpringSettings_addr));
 */
-    public static native void internal_native_SetLimitsSpringSettings(long this_addr, long inAxis, long inLimitsSpringSettings_addr);
+    public static native void internal_native_SetLimitsSpringSettings(long this_addr, int inAxis, long inLimitsSpringSettings_addr);
 
     public void SetMaxFriction(SixDOFConstraintSettings_EAxis inAxis, float inFriction) {
         internal_native_SetMaxFriction(native_address, inAxis.getValue(), inFriction);
@@ -221,7 +221,7 @@ nativeObject->SetLimitsSpringSettings((::SixDOFConstraintSettings_EAxis)inAxis, 
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 nativeObject->SetMaxFriction((::SixDOFConstraintSettings_EAxis)inAxis, (float)inFriction);
 */
-    public static native void internal_native_SetMaxFriction(long this_addr, long inAxis, float inFriction);
+    public static native void internal_native_SetMaxFriction(long this_addr, int inAxis, float inFriction);
 
     public float GetMaxFriction(SixDOFConstraintSettings_EAxis inAxis) {
         return internal_native_GetMaxFriction(native_address, inAxis.getValue());
@@ -231,7 +231,7 @@ nativeObject->SetMaxFriction((::SixDOFConstraintSettings_EAxis)inAxis, (float)in
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 return nativeObject->GetMaxFriction((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native float internal_native_GetMaxFriction(long this_addr, long inAxis);
+    public static native float internal_native_GetMaxFriction(long this_addr, int inAxis);
 
     public Quat GetRotationInConstraintSpace() {
         long pointer = internal_native_GetRotationInConstraintSpace(native_address);
@@ -264,7 +264,7 @@ return (jlong)&copy_addr;*/
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 return (jlong)&nativeObject->GetMotorSettings((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native long internal_native_GetMotorSettings(long this_addr, long inAxis);
+    public static native long internal_native_GetMotorSettings(long this_addr, int inAxis);
 
     public void SetMotorState(SixDOFConstraintSettings_EAxis inAxis, EMotorState inState) {
         internal_native_SetMotorState(native_address, inAxis.getValue(), inState.getValue());
@@ -274,7 +274,7 @@ return (jlong)&nativeObject->GetMotorSettings((::SixDOFConstraintSettings_EAxis)
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 nativeObject->SetMotorState((::SixDOFConstraintSettings_EAxis)inAxis, (::EMotorState)inState);
 */
-    public static native void internal_native_SetMotorState(long this_addr, long inAxis, long inState);
+    public static native void internal_native_SetMotorState(long this_addr, int inAxis, int inState);
 
     public EMotorState GetMotorState(SixDOFConstraintSettings_EAxis inAxis) {
         int value = internal_native_GetMotorState(native_address, inAxis.getValue());
@@ -291,7 +291,7 @@ nativeObject->SetMotorState((::SixDOFConstraintSettings_EAxis)inAxis, (::EMotorS
 SixDOFConstraint* nativeObject = (SixDOFConstraint*)this_addr;
 return (int)nativeObject->GetMotorState((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native int internal_native_GetMotorState(long this_addr, long inAxis);
+    public static native int internal_native_GetMotorState(long this_addr, int inAxis);
 
     public Vec3 GetTargetVelocityCS() {
         long pointer = internal_native_GetTargetVelocityCS(native_address);

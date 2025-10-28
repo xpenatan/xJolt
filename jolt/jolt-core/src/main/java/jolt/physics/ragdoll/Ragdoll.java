@@ -75,7 +75,7 @@ delete nativeObject;
 Ragdoll* nativeObject = (Ragdoll*)this_addr;
 nativeObject->AddToPhysicsSystem((::EActivation)inActivationMode, inLockBodies);
 */
-    public static native void internal_native_AddToPhysicsSystem(long this_addr, long inActivationMode, boolean inLockBodies);
+    public static native void internal_native_AddToPhysicsSystem(long this_addr, int inActivationMode, boolean inLockBodies);
 
     public void AddToPhysicsSystem(EActivation inActivationMode) {
         internal_native_AddToPhysicsSystem(native_address, inActivationMode.getValue());
@@ -85,7 +85,7 @@ nativeObject->AddToPhysicsSystem((::EActivation)inActivationMode, inLockBodies);
 Ragdoll* nativeObject = (Ragdoll*)this_addr;
 nativeObject->AddToPhysicsSystem((::EActivation)inActivationMode);
 */
-    public static native void internal_native_AddToPhysicsSystem(long this_addr, long inActivationMode);
+    public static native void internal_native_AddToPhysicsSystem(long this_addr, int inActivationMode);
 
     public void RemoveFromPhysicsSystem(boolean inLockBodies) {
         internal_native_RemoveFromPhysicsSystem(native_address, inLockBodies);

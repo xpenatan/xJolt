@@ -214,7 +214,7 @@ return jsObj.get_mRotationConstraintType();
     public static native int internal_native_get_mRotationConstraintType(int this_addr);
 
     public void set_mRotationConstraintType(EPathRotationConstraintType mRotationConstraintType) {
-        internal_native_set_mRotationConstraintType(native_address, (int) mRotationConstraintType.getValue());
+        internal_native_set_mRotationConstraintType(native_address, mRotationConstraintType.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

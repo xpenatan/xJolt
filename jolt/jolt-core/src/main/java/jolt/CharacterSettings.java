@@ -153,5 +153,5 @@ return (jint)nativeObject->mAllowedDOFs;
 CharacterSettings* nativeObject = (CharacterSettings*)this_addr;
 nativeObject->mAllowedDOFs = (::EAllowedDOFs)mAllowedDOFs;
 */
-    public static native void internal_native_set_mAllowedDOFs(long this_addr, long mAllowedDOFs);
+    public static native void internal_native_set_mAllowedDOFs(long this_addr, int mAllowedDOFs);
 }

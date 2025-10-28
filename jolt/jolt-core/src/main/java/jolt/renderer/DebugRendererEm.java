@@ -133,7 +133,7 @@ nativeObject->DrawBodies((PhysicsSystem* )system_addr);
 DebugRendererEm* nativeObject = (DebugRendererEm*)this_addr;
 nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (float)inRadius, *((Color* )inColor_addr), (::ECastShadow)inCastShadow, (::EDrawMode)inDrawMode);
 */
-    public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow, long inDrawMode);
+    public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, int inCastShadow, int inDrawMode);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor, ECastShadow inCastShadow) {
         internal_native_DrawCylinder(native_address, inMatrix.native_address, inHalfHeight, inRadius, inColor.native_address, inCastShadow.getValue());
@@ -143,7 +143,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
 DebugRendererEm* nativeObject = (DebugRendererEm*)this_addr;
 nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (float)inRadius, *((Color* )inColor_addr), (::ECastShadow)inCastShadow);
 */
-    public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, long inCastShadow);
+    public static native void internal_native_DrawCylinder(long this_addr, long inMatrix_addr, float inHalfHeight, float inRadius, long inColor_addr, int inCastShadow);
 
     public void DrawCylinder(Mat44 inMatrix, float inHalfHeight, float inRadius, Color inColor) {
         internal_native_DrawCylinder(native_address, inMatrix.native_address, inHalfHeight, inRadius, inColor.native_address);

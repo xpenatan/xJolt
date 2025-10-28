@@ -285,7 +285,7 @@ return jsObj.get_mBuildQuality();
     public static native int internal_native_get_mBuildQuality(int this_addr);
 
     public void set_mBuildQuality(MeshShapeSettings_EBuildQuality mBuildQuality) {
-        internal_native_set_mBuildQuality(native_address, (int) mBuildQuality.getValue());
+        internal_native_set_mBuildQuality(native_address, mBuildQuality.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

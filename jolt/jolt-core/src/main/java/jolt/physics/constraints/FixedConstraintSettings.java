@@ -86,7 +86,7 @@ return (jint)nativeObject->mSpace;
 FixedConstraintSettings* nativeObject = (FixedConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public boolean get_mAutoDetectPoint() {
         return internal_native_get_mAutoDetectPoint(native_address);

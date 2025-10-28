@@ -92,5 +92,5 @@ return (jint)nativeObject->mBackFaceMode;
 CollideShapeSettings* nativeObject = (CollideShapeSettings*)this_addr;
 nativeObject->mBackFaceMode = (::EBackFaceMode)mBackFaceMode;
 */
-    public static native void internal_native_set_mBackFaceMode(long this_addr, long mBackFaceMode);
+    public static native void internal_native_set_mBackFaceMode(long this_addr, int mBackFaceMode);
 }

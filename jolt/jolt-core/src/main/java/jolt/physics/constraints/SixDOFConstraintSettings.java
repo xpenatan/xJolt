@@ -75,7 +75,7 @@ delete nativeObject;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->MakeFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native void internal_native_MakeFreeAxis(long this_addr, long inAxis);
+    public static native void internal_native_MakeFreeAxis(long this_addr, int inAxis);
 
     public boolean IsFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
         return internal_native_IsFreeAxis(native_address, inAxis.getValue());
@@ -85,7 +85,7 @@ nativeObject->MakeFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return nativeObject->IsFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native boolean internal_native_IsFreeAxis(long this_addr, long inAxis);
+    public static native boolean internal_native_IsFreeAxis(long this_addr, int inAxis);
 
     public void MakeFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
         internal_native_MakeFixedAxis(native_address, inAxis.getValue());
@@ -95,7 +95,7 @@ return nativeObject->IsFreeAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->MakeFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native void internal_native_MakeFixedAxis(long this_addr, long inAxis);
+    public static native void internal_native_MakeFixedAxis(long this_addr, int inAxis);
 
     public boolean IsFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
         return internal_native_IsFixedAxis(native_address, inAxis.getValue());
@@ -105,7 +105,7 @@ nativeObject->MakeFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return nativeObject->IsFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 */
-    public static native boolean internal_native_IsFixedAxis(long this_addr, long inAxis);
+    public static native boolean internal_native_IsFixedAxis(long this_addr, int inAxis);
 
     public void SetLimitedAxis(SixDOFConstraintSettings_EAxis inAxis, float inMin, float inMax) {
         internal_native_SetLimitedAxis(native_address, inAxis.getValue(), inMin, inMax);
@@ -115,7 +115,7 @@ return nativeObject->IsFixedAxis((::SixDOFConstraintSettings_EAxis)inAxis);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->SetLimitedAxis((::SixDOFConstraintSettings_EAxis)inAxis, (float)inMin, (float)inMax);
 */
-    public static native void internal_native_SetLimitedAxis(long this_addr, long inAxis, float inMin, float inMax);
+    public static native void internal_native_SetLimitedAxis(long this_addr, int inAxis, float inMin, float inMax);
 
     public EConstraintSpace get_mSpace() {
         int value = internal_native_get_mSpace(native_address);
@@ -142,7 +142,7 @@ return (jint)nativeObject->mSpace;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mSpace = (::EConstraintSpace)mSpace;
 */
-    public static native void internal_native_set_mSpace(long this_addr, long mSpace);
+    public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public Vec3 get_mPosition1() {
         long pointer = internal_native_get_mPosition1(native_address);
@@ -345,7 +345,7 @@ return (jint)nativeObject->mSwingType;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 nativeObject->mSwingType = (::ESwingType)mSwingType;
 */
-    public static native void internal_native_set_mSwingType(long this_addr, long mSwingType);
+    public static native void internal_native_set_mSwingType(long this_addr, int mSwingType);
 
     public float get_mLimitMin(int index) {
         return internal_native_get_mLimitMin(native_address, index);

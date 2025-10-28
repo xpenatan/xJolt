@@ -66,7 +66,7 @@ return (jint)nativeObject->mMode;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 nativeObject->mMode = (::ETransmissionMode)mMode;
 */
-    public static native void internal_native_set_mMode(long this_addr, long mMode);
+    public static native void internal_native_set_mMode(long this_addr, int mMode);
 
     public ArrayFloat get_mGearRatios() {
         long pointer = internal_native_get_mGearRatios(native_address);

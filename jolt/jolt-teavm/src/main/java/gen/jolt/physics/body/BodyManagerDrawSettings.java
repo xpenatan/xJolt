@@ -179,7 +179,7 @@ return jsObj.get_mDrawShapeColor();
     public static native int internal_native_get_mDrawShapeColor(int this_addr);
 
     public void set_mDrawShapeColor(EShapeColor mDrawShapeColor) {
-        internal_native_set_mDrawShapeColor(native_address, (int) mDrawShapeColor.getValue());
+        internal_native_set_mDrawShapeColor(native_address, mDrawShapeColor.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -516,7 +516,7 @@ return jsObj.get_mDrawSoftBodyConstraintColor();
     public static native int internal_native_get_mDrawSoftBodyConstraintColor(int this_addr);
 
     public void set_mDrawSoftBodyConstraintColor(ESoftBodyConstraintColor mDrawSoftBodyConstraintColor) {
-        internal_native_set_mDrawSoftBodyConstraintColor(native_address, (int) mDrawSoftBodyConstraintColor.getValue());
+        internal_native_set_mDrawSoftBodyConstraintColor(native_address, mDrawSoftBodyConstraintColor.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

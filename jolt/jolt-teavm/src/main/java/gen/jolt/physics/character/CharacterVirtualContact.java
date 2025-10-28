@@ -344,7 +344,7 @@ return jsObj.get_mMotionTypeB();
     public static native int internal_native_get_mMotionTypeB(int this_addr);
 
     public void set_mMotionTypeB(EMotionType mMotionTypeB) {
-        internal_native_set_mMotionTypeB(native_address, (int) mMotionTypeB.getValue());
+        internal_native_set_mMotionTypeB(native_address, mMotionTypeB.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

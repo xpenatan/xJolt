@@ -60,7 +60,7 @@ return jsObj.get_mActiveEdgeMode();
     public static native int internal_native_get_mActiveEdgeMode(int this_addr);
 
     public void set_mActiveEdgeMode(EActiveEdgeMode mActiveEdgeMode) {
-        internal_native_set_mActiveEdgeMode(native_address, (int) mActiveEdgeMode.getValue());
+        internal_native_set_mActiveEdgeMode(native_address, mActiveEdgeMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -89,7 +89,7 @@ return jsObj.get_mCollectFacesMode();
     public static native int internal_native_get_mCollectFacesMode(int this_addr);
 
     public void set_mCollectFacesMode(ECollectFacesMode mCollectFacesMode) {
-        internal_native_set_mCollectFacesMode(native_address, (int) mCollectFacesMode.getValue());
+        internal_native_set_mCollectFacesMode(native_address, mCollectFacesMode.getValue());
     }
 
     /*[-TEAVM;-NATIVE]

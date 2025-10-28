@@ -71,7 +71,7 @@ return (jint)nativeObject->mBackFaceModeTriangles;
 RayCastSettings* nativeObject = (RayCastSettings*)this_addr;
 nativeObject->mBackFaceModeTriangles = (::EBackFaceMode)mBackFaceModeTriangles;
 */
-    public static native void internal_native_set_mBackFaceModeTriangles(long this_addr, long mBackFaceModeTriangles);
+    public static native void internal_native_set_mBackFaceModeTriangles(long this_addr, int mBackFaceModeTriangles);
 
     public EBackFaceMode get_mBackFaceModeConvex() {
         int value = internal_native_get_mBackFaceModeConvex(native_address);
@@ -98,7 +98,7 @@ return (jint)nativeObject->mBackFaceModeConvex;
 RayCastSettings* nativeObject = (RayCastSettings*)this_addr;
 nativeObject->mBackFaceModeConvex = (::EBackFaceMode)mBackFaceModeConvex;
 */
-    public static native void internal_native_set_mBackFaceModeConvex(long this_addr, long mBackFaceModeConvex);
+    public static native void internal_native_set_mBackFaceModeConvex(long this_addr, int mBackFaceModeConvex);
 
     public boolean get_mTreatConvexAsSolid() {
         return internal_native_get_mTreatConvexAsSolid(native_address);

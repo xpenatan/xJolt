@@ -263,5 +263,5 @@ return (jint)nativeObject->mBuildQuality;
 MeshShapeSettings* nativeObject = (MeshShapeSettings*)this_addr;
 nativeObject->mBuildQuality = (::MeshShapeSettings_EBuildQuality)mBuildQuality;
 */
-    public static native void internal_native_set_mBuildQuality(long this_addr, long mBuildQuality);
+    public static native void internal_native_set_mBuildQuality(long this_addr, int mBuildQuality);
 }

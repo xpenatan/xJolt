@@ -111,7 +111,7 @@ return (jlong)&nativeObject->GetPositionMotorSettings();
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 nativeObject->SetPositionMotorState((::EMotorState)inState);
 */
-    public static native void internal_native_SetPositionMotorState(long this_addr, long inState);
+    public static native void internal_native_SetPositionMotorState(long this_addr, int inState);
 
     public EMotorState GetPositionMotorState() {
         int value = internal_native_GetPositionMotorState(native_address);

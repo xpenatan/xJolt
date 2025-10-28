@@ -82,7 +82,7 @@ jsObj.SetRotationLimits(inLimitMin_addr, inLimitMax_addr);
     public static native void internal_native_SetRotationLimits(int this_addr, int inLimitMin_addr, int inLimitMax_addr);
 
     public float GetLimitsMin(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_GetLimitsMin(native_address, (int) inAxis.getValue());
+        return internal_native_GetLimitsMin(native_address, inAxis.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -94,7 +94,7 @@ return returnedJSObj;
     public static native float internal_native_GetLimitsMin(int this_addr, int inAxis);
 
     public float GetLimitsMax(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_GetLimitsMax(native_address, (int) inAxis.getValue());
+        return internal_native_GetLimitsMax(native_address, inAxis.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -182,7 +182,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotationLimitsMax(int this_addr);
 
     public boolean IsFixedAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_IsFixedAxis(native_address, (int) inAxis.getValue());
+        return internal_native_IsFixedAxis(native_address, inAxis.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -194,7 +194,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsFixedAxis(int this_addr, int inAxis);
 
     public boolean IsFreeAxis(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_IsFreeAxis(native_address, (int) inAxis.getValue());
+        return internal_native_IsFreeAxis(native_address, inAxis.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -206,7 +206,7 @@ return returnedJSObj;
     public static native boolean internal_native_IsFreeAxis(int this_addr, int inAxis);
 
     public SpringSettings GetLimitsSpringSettings(SixDOFConstraintSettings_EAxis inAxis) {
-        int pointer = internal_native_GetLimitsSpringSettings(native_address, (int) inAxis.getValue());
+        int pointer = internal_native_GetLimitsSpringSettings(native_address, inAxis.getValue());
         if (pointer == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
@@ -225,7 +225,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetLimitsSpringSettings(int this_addr, int inAxis);
 
     public void SetLimitsSpringSettings(SixDOFConstraintSettings_EAxis inAxis, SpringSettings inLimitsSpringSettings) {
-        internal_native_SetLimitsSpringSettings(native_address, (int) inAxis.getValue(), inLimitsSpringSettings.native_address);
+        internal_native_SetLimitsSpringSettings(native_address, inAxis.getValue(), inLimitsSpringSettings.native_address);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -236,7 +236,7 @@ jsObj.SetLimitsSpringSettings(inAxis, inLimitsSpringSettings_addr);
     public static native void internal_native_SetLimitsSpringSettings(int this_addr, int inAxis, int inLimitsSpringSettings_addr);
 
     public void SetMaxFriction(SixDOFConstraintSettings_EAxis inAxis, float inFriction) {
-        internal_native_SetMaxFriction(native_address, (int) inAxis.getValue(), inFriction);
+        internal_native_SetMaxFriction(native_address, inAxis.getValue(), inFriction);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -247,7 +247,7 @@ jsObj.SetMaxFriction(inAxis, inFriction);
     public static native void internal_native_SetMaxFriction(int this_addr, int inAxis, float inFriction);
 
     public float GetMaxFriction(SixDOFConstraintSettings_EAxis inAxis) {
-        return internal_native_GetMaxFriction(native_address, (int) inAxis.getValue());
+        return internal_native_GetMaxFriction(native_address, inAxis.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -278,7 +278,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetRotationInConstraintSpace(int this_addr);
 
     public MotorSettings GetMotorSettings(SixDOFConstraintSettings_EAxis inAxis) {
-        int pointer = internal_native_GetMotorSettings(native_address, (int) inAxis.getValue());
+        int pointer = internal_native_GetMotorSettings(native_address, inAxis.getValue());
         if (pointer == 0)
             return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
@@ -297,7 +297,7 @@ return jolt.getPointer(returnedJSObj);
     public static native int internal_native_GetMotorSettings(int this_addr, int inAxis);
 
     public void SetMotorState(SixDOFConstraintSettings_EAxis inAxis, EMotorState inState) {
-        internal_native_SetMotorState(native_address, (int) inAxis.getValue(), (int) inState.getValue());
+        internal_native_SetMotorState(native_address, inAxis.getValue(), inState.getValue());
     }
 
     /*[-TEAVM;-NATIVE]
@@ -308,7 +308,7 @@ jsObj.SetMotorState(inAxis, inState);
     public static native void internal_native_SetMotorState(int this_addr, int inAxis, int inState);
 
     public EMotorState GetMotorState(SixDOFConstraintSettings_EAxis inAxis) {
-        int value = internal_native_GetMotorState(native_address, (int) inAxis.getValue());
+        int value = internal_native_GetMotorState(native_address, inAxis.getValue());
         EMotorState[] values = EMotorState.values();
         for (int i = 0; i < values.length; i++) {
             EMotorState enumVal = values[i];
