@@ -9,17 +9,17 @@ include(":jolt:jolt-android")
 // Extension
 include(":extensions:gdx:gdx-utils")
 include(":extensions:gdx:gdx-gl")
-//include(":extensions:gdx:gdx-wgpu")
+include(":extensions:gdx:gdx-wgpu")
 
 // Examples
 include(":examples:graphics:gdx-shared")
 include(":examples:graphics:gdx-gl")
-//include(":examples:graphics:gdx-wgpu")
+include(":examples:graphics:gdx-wgpu")
 include(":examples:samples:core")
 include(":examples:samples:desktop")
-//include(":examples:samples:desktop-wgpu")
+include(":examples:samples:desktop-wgpu")
 include(":examples:samples:teavm")
-//include(":examples:samples:teavm-wgpu")
+include(":examples:samples:teavm-wgpu")
 include(":examples:samples:android")
 
 //includeBuild("E:\\Dev\\Projects\\java\\gdx-webgpu") {
