@@ -6,8 +6,8 @@ dependencies {
     implementation("com.github.xpenatan.gdx-gltf:core:dev-SNAPSHOT")
 
     if(LibExt.useRepoLibs) {
-        implementation("com.github.xpenatan.xJolt:jolt-core:-SNAPSHOT")
-        implementation("com.github.xpenatan.xJolt:gdx-utils:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:jolt-core:${LibExt.exampleVersion}")
+        implementation("com.github.xpenatan.xJolt:gdx-utils:${LibExt.exampleVersion}")
     }
     else {
         implementation(project(":jolt:jolt-core"))

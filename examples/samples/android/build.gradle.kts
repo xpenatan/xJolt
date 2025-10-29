@@ -43,7 +43,7 @@ dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.0.3")
 
     if(LibExt.useRepoLibs) {
-        implementation("com.github.xpenatan.xJolt:jolt-android:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:jolt-android:${LibExt.exampleVersion}")
     }
     else {
         implementation(project(":jolt:jolt-android"))

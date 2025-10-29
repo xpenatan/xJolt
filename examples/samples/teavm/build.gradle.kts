@@ -16,8 +16,8 @@ dependencies {
     implementation("com.github.xpenatan.gdx-teavm:backend-teavm:${LibExt.gdxTeaVMVersion}:sources")
 
     if(LibExt.useRepoLibs) {
-        implementation("com.github.xpenatan.xJolt:jolt-teavm:-SNAPSHOT")
-        implementation("com.github.xpenatan.xJolt:gdx-gl:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:jolt-teavm:${LibExt.exampleVersion}")
+        implementation("com.github.xpenatan.xJolt:gdx-gl:${LibExt.exampleVersion}")
     }
     else {
         implementation(project(":jolt:jolt-teavm"))

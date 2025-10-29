@@ -1,9 +1,9 @@
 # xJolt
 
-![Build](https://github.com/xpenatan/xJolt/actions/workflows/release.yml/badge.svg)
 ![Build](https://github.com/xpenatan/xJolt/actions/workflows/snapshot.yml/badge.svg)
-[![Sonatype Nexus (Snapshots)](https://img.shields.io/nexus/releases/com.github.xpenatan.xJolt/jolt-core?nexusVersion=2&server=https%3A%2F%2Foss.sonatype.org&label=release)](https://repo.maven.apache.org/maven2/com/github/xpenatan/xJolt/)
-[![Static Badge](https://img.shields.io/badge/snapshot---SNAPSHOT-red)](https://oss.sonatype.org/content/repositories/snapshots/com/github/xpenatan/xJolt/)
+
+[![Maven Central Version](https://img.shields.io/maven-central/v/com.github.xpenatan.xJolt/jolt-core)](https://central.sonatype.com/namespace/com.github.xpenatan.xJolt)
+[![Static Badge](https://img.shields.io/badge/snapshot---SNAPSHOT-red)](https://central.sonatype.com/service/rest/repository/browse/maven-snapshots/com/github/xpenatan/xJolt/)
 
 xJolt is a Java binding for the C++ library [Jolt Physics](https://github.com/jrouwe/JoltPhysics), utilizing JNI for desktop and mobile platforms, and Emscripten for web platforms. It provides a one-to-one correspondence with the C++ code, meaning it mirrors the exact same class and method names. Its primary focus is to support libGDX projects.
 

@@ -9,8 +9,8 @@ dependencies {
     implementation(project(":examples:samples:core"))
 
     if(LibExt.useRepoLibs) {
-        implementation("com.github.xpenatan.xJolt:jolt-desktop:-SNAPSHOT")
-        implementation("com.github.xpenatan.xJolt:gdx-gl:-SNAPSHOT")
+        implementation("com.github.xpenatan.xJolt:jolt-desktop:${LibExt.exampleVersion}")
+        implementation("com.github.xpenatan.xJolt:gdx-gl:${LibExt.exampleVersion}")
     }
     else {
         implementation(project(":jolt:jolt-desktop"))

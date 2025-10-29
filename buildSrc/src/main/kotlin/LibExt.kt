@@ -24,6 +24,7 @@ object LibExt {
     const val jUnitVersion = "4.12"
 
     const val useRepoLibs = true
+    const val exampleVersion = "5.3.0.0"
 }
 
 private fun getVersion(): String {
