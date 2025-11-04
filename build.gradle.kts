@@ -9,7 +9,6 @@ buildscript {
     repositories {
         mavenCentral()
         google()
-        maven { url = uri("https://jitpack.io") }
     }
 
     val kotlinVersion = "2.1.10"
