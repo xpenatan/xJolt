@@ -3,7 +3,6 @@ package jolt.example.samples.app;
 import com.github.xpenatan.gdx.backends.teavm.config.AssetFileHandle;
 import com.github.xpenatan.gdx.backends.teavm.config.TeaBuildConfiguration;
 import com.github.xpenatan.gdx.backends.teavm.config.TeaBuilder;
-import com.github.xpenatan.gdx.backends.teavm.config.TeaTargetType;
 import java.io.File;
 import java.io.IOException;
 import org.teavm.tooling.TeaVMSourceFilePolicy;
@@ -19,7 +18,7 @@ public class Build {
         TeaBuildConfiguration teaBuildConfiguration = new TeaBuildConfiguration();
         teaBuildConfiguration.assetsPath.add(new AssetFileHandle("../assets"));
         teaBuildConfiguration.webappPath = new File("build/dist").getCanonicalPath();
-        teaBuildConfiguration.targetType = TeaTargetType.JAVASCRIPT;
+        teaBuildConfiguration.targetType = TeaVMTargetType.WEBASSEMBLY_GC;
         TeaBuilder.config(teaBuildConfiguration);
 
         TeaVMTool tool = new TeaVMTool();
