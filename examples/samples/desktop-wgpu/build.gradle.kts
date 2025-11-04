@@ -17,7 +17,7 @@ dependencies {
         implementation(project(":extensions:gdx:gdx-wgpu"))
     }
 
-    implementation("io.github.monstroussoftware.gdx-webgpu:gdx-desktop-webgpu:${LibExt.gdxWebGPUVersion}")
+    implementation("io.github.monstroussoftware.gdx-webgpu:backend-desktop:${LibExt.gdxWebGPUVersion}")
     implementation("com.badlogicgames.gdx:gdx-platform:${LibExt.gdxVersion}:natives-desktop")
 //    implementation("com.github.xpenatan.gdx-imgui:imgui-ext-desktop:${LibExt.gdxImGuiVersion}")
 }
