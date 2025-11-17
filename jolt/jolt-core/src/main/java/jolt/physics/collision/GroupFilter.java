@@ -16,24 +16,24 @@ public class GroupFilter extends IDLBase {
     static public final GroupFilter NULL = GroupFilter.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID GroupFilterJS_CanCollideJJ_ID;
+
 class GroupFilterJS : public GroupFilter {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID CanCollideJJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(GroupFilterJS::jClassID == 0) {
-		GroupFilterJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		GroupFilterJS::CanCollideJJ_ID = env->GetMethodID(jClassID, "internal_CanCollide", "(JJ)Z");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		GroupFilterJS_CanCollideJJ_ID = env->GetMethodID(jClassID, "internal_CanCollide", "(JJ)Z");
 	}
 }
 virtual bool CanCollide(const CollisionGroup& inGroup1, const CollisionGroup& inGroup2) const {
-   return env->CallBooleanMethod(obj, GroupFilterJS::CanCollideJJ_ID, (jlong)&inGroup1, (jlong)&inGroup2);
+   return env->CallBooleanMethod(obj, GroupFilterJS_CanCollideJJ_ID, (jlong)&inGroup1, (jlong)&inGroup2);
 }
 };
 */

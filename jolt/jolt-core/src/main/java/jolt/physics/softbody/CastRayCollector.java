@@ -21,34 +21,34 @@ public class CastRayCollector extends IDLBase {
     static public final CastRayCollector NULL = CastRayCollector.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID CastRayCollectorJS_Reset_ID;
+	static jmethodID CastRayCollectorJS_OnBodyJ_ID;
+	static jmethodID CastRayCollectorJS_AddHitJ_ID;
+
 class CastRayCollectorJS : public CastRayCollector {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID Reset_ID = 0;
-	inline static jmethodID OnBodyJ_ID = 0;
-	inline static jmethodID AddHitJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(CastRayCollectorJS::jClassID == 0) {
-		CastRayCollectorJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		CastRayCollectorJS::Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
-		CastRayCollectorJS::OnBodyJ_ID = env->GetMethodID(jClassID, "internal_OnBody", "(J)V");
-		CastRayCollectorJS::AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		CastRayCollectorJS_Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
+		CastRayCollectorJS_OnBodyJ_ID = env->GetMethodID(jClassID, "internal_OnBody", "(J)V");
+		CastRayCollectorJS_AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
 	}
 }
 virtual void Reset() {
-   env->CallVoidMethod(obj, CastRayCollectorJS::Reset_ID);
+   env->CallVoidMethod(obj, CastRayCollectorJS_Reset_ID);
 }
 virtual void OnBody(const Body& inBody) {
-   env->CallVoidMethod(obj, CastRayCollectorJS::OnBodyJ_ID, (jlong)&inBody);
+   env->CallVoidMethod(obj, CastRayCollectorJS_OnBodyJ_ID, (jlong)&inBody);
 }
 virtual void AddHit(const RayCastResult& inResult) {
-   env->CallVoidMethod(obj, CastRayCollectorJS::AddHitJ_ID, (jlong)&inResult);
+   env->CallVoidMethod(obj, CastRayCollectorJS_AddHitJ_ID, (jlong)&inResult);
 }
 };
 */

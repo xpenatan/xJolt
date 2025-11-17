@@ -18,29 +18,29 @@ public class CollideShapeBodyCollector extends IDLBase {
     static public final CollideShapeBodyCollector NULL = CollideShapeBodyCollector.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID CollideShapeBodyCollectorJS_Reset_ID;
+	static jmethodID CollideShapeBodyCollectorJS_AddHitJ_ID;
+
 class CollideShapeBodyCollectorJS : public CollideShapeBodyCollector {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID Reset_ID = 0;
-	inline static jmethodID AddHitJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(CollideShapeBodyCollectorJS::jClassID == 0) {
-		CollideShapeBodyCollectorJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		CollideShapeBodyCollectorJS::Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
-		CollideShapeBodyCollectorJS::AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		CollideShapeBodyCollectorJS_Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
+		CollideShapeBodyCollectorJS_AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
 	}
 }
 virtual void Reset() {
-   env->CallVoidMethod(obj, CollideShapeBodyCollectorJS::Reset_ID);
+   env->CallVoidMethod(obj, CollideShapeBodyCollectorJS_Reset_ID);
 }
 virtual void AddHit(const BodyID& inResult) {
-   env->CallVoidMethod(obj, CollideShapeBodyCollectorJS::AddHitJ_ID, (jlong)&inResult);
+   env->CallVoidMethod(obj, CollideShapeBodyCollectorJS_AddHitJ_ID, (jlong)&inResult);
 }
 };
 */

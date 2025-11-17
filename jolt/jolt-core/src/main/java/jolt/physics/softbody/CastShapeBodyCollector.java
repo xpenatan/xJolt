@@ -18,29 +18,29 @@ public class CastShapeBodyCollector extends IDLBase {
     static public final CastShapeBodyCollector NULL = CastShapeBodyCollector.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID CastShapeBodyCollectorJS_Reset_ID;
+	static jmethodID CastShapeBodyCollectorJS_AddHitJ_ID;
+
 class CastShapeBodyCollectorJS : public CastShapeBodyCollector {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID Reset_ID = 0;
-	inline static jmethodID AddHitJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(CastShapeBodyCollectorJS::jClassID == 0) {
-		CastShapeBodyCollectorJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		CastShapeBodyCollectorJS::Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
-		CastShapeBodyCollectorJS::AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		CastShapeBodyCollectorJS_Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
+		CastShapeBodyCollectorJS_AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
 	}
 }
 virtual void Reset() {
-   env->CallVoidMethod(obj, CastShapeBodyCollectorJS::Reset_ID);
+   env->CallVoidMethod(obj, CastShapeBodyCollectorJS_Reset_ID);
 }
 virtual void AddHit(const BroadPhaseCastResult& inResult) {
-   env->CallVoidMethod(obj, CastShapeBodyCollectorJS::AddHitJ_ID, (jlong)&inResult);
+   env->CallVoidMethod(obj, CastShapeBodyCollectorJS_AddHitJ_ID, (jlong)&inResult);
 }
 };
 */

@@ -32,39 +32,39 @@ public class VehicleConstraintCallbacksEm extends IDLBase {
     static public final VehicleConstraintCallbacksEm NULL = VehicleConstraintCallbacksEm.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID VehicleConstraintCallbacksJS_GetCombinedFrictionIIFJJ_ID;
+	static jmethodID VehicleConstraintCallbacksJS_OnPreStepCallbackJJ_ID;
+	static jmethodID VehicleConstraintCallbacksJS_OnPostCollideCallbackJJ_ID;
+	static jmethodID VehicleConstraintCallbacksJS_OnPostStepCallbackJJ_ID;
+
 class VehicleConstraintCallbacksJS : public VehicleConstraintCallbacksEm {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID GetCombinedFrictionIIFJJ_ID = 0;
-	inline static jmethodID OnPreStepCallbackJJ_ID = 0;
-	inline static jmethodID OnPostCollideCallbackJJ_ID = 0;
-	inline static jmethodID OnPostStepCallbackJJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(VehicleConstraintCallbacksJS::jClassID == 0) {
-		VehicleConstraintCallbacksJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		VehicleConstraintCallbacksJS::GetCombinedFrictionIIFJJ_ID = env->GetMethodID(jClassID, "internal_GetCombinedFriction", "(IIFJJ)F");
-		VehicleConstraintCallbacksJS::OnPreStepCallbackJJ_ID = env->GetMethodID(jClassID, "internal_OnPreStepCallback", "(JJ)V");
-		VehicleConstraintCallbacksJS::OnPostCollideCallbackJJ_ID = env->GetMethodID(jClassID, "internal_OnPostCollideCallback", "(JJ)V");
-		VehicleConstraintCallbacksJS::OnPostStepCallbackJJ_ID = env->GetMethodID(jClassID, "internal_OnPostStepCallback", "(JJ)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		VehicleConstraintCallbacksJS_GetCombinedFrictionIIFJJ_ID = env->GetMethodID(jClassID, "internal_GetCombinedFriction", "(IIFJJ)F");
+		VehicleConstraintCallbacksJS_OnPreStepCallbackJJ_ID = env->GetMethodID(jClassID, "internal_OnPreStepCallback", "(JJ)V");
+		VehicleConstraintCallbacksJS_OnPostCollideCallbackJJ_ID = env->GetMethodID(jClassID, "internal_OnPostCollideCallback", "(JJ)V");
+		VehicleConstraintCallbacksJS_OnPostStepCallbackJJ_ID = env->GetMethodID(jClassID, "internal_OnPostStepCallback", "(JJ)V");
 	}
 }
 virtual float GetCombinedFriction(unsigned int inWheelIndex, ETireFrictionDirection inTireFrictionDirection, float inTireFriction, const Body& inBody2, const SubShapeID& inSubShapeID2) {
-   return env->CallFloatMethod(obj, VehicleConstraintCallbacksJS::GetCombinedFrictionIIFJJ_ID, inWheelIndex, inTireFrictionDirection, inTireFriction, (jlong)&inBody2, (jlong)&inSubShapeID2);
+   return env->CallFloatMethod(obj, VehicleConstraintCallbacksJS_GetCombinedFrictionIIFJJ_ID, inWheelIndex, inTireFrictionDirection, inTireFriction, (jlong)&inBody2, (jlong)&inSubShapeID2);
 }
 virtual void OnPreStepCallback(VehicleConstraint& inVehicle, const PhysicsStepListenerContext& inContext) {
-   env->CallVoidMethod(obj, VehicleConstraintCallbacksJS::OnPreStepCallbackJJ_ID, (jlong)&inVehicle, (jlong)&inContext);
+   env->CallVoidMethod(obj, VehicleConstraintCallbacksJS_OnPreStepCallbackJJ_ID, (jlong)&inVehicle, (jlong)&inContext);
 }
 virtual void OnPostCollideCallback(VehicleConstraint& inVehicle, const PhysicsStepListenerContext& inContext) {
-   env->CallVoidMethod(obj, VehicleConstraintCallbacksJS::OnPostCollideCallbackJJ_ID, (jlong)&inVehicle, (jlong)&inContext);
+   env->CallVoidMethod(obj, VehicleConstraintCallbacksJS_OnPostCollideCallbackJJ_ID, (jlong)&inVehicle, (jlong)&inContext);
 }
 virtual void OnPostStepCallback(VehicleConstraint& inVehicle, const PhysicsStepListenerContext& inContext) {
-   env->CallVoidMethod(obj, VehicleConstraintCallbacksJS::OnPostStepCallbackJJ_ID, (jlong)&inVehicle, (jlong)&inContext);
+   env->CallVoidMethod(obj, VehicleConstraintCallbacksJS_OnPostStepCallbackJJ_ID, (jlong)&inVehicle, (jlong)&inContext);
 }
 };
 */

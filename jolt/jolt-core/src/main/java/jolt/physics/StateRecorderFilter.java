@@ -27,39 +27,39 @@ public class StateRecorderFilter extends IDLBase {
     static public final StateRecorderFilter NULL = StateRecorderFilter.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID StateRecorderFilterJS_ShouldSaveBodyJ_ID;
+	static jmethodID StateRecorderFilterJS_ShouldSaveConstraintJ_ID;
+	static jmethodID StateRecorderFilterJS_ShouldSaveContactJJ_ID;
+	static jmethodID StateRecorderFilterJS_ShouldRestoreContactJJ_ID;
+
 class StateRecorderFilterJS : public StateRecorderFilter {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID ShouldSaveBodyJ_ID = 0;
-	inline static jmethodID ShouldSaveConstraintJ_ID = 0;
-	inline static jmethodID ShouldSaveContactJJ_ID = 0;
-	inline static jmethodID ShouldRestoreContactJJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(StateRecorderFilterJS::jClassID == 0) {
-		StateRecorderFilterJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		StateRecorderFilterJS::ShouldSaveBodyJ_ID = env->GetMethodID(jClassID, "internal_ShouldSaveBody", "(J)Z");
-		StateRecorderFilterJS::ShouldSaveConstraintJ_ID = env->GetMethodID(jClassID, "internal_ShouldSaveConstraint", "(J)Z");
-		StateRecorderFilterJS::ShouldSaveContactJJ_ID = env->GetMethodID(jClassID, "internal_ShouldSaveContact", "(JJ)Z");
-		StateRecorderFilterJS::ShouldRestoreContactJJ_ID = env->GetMethodID(jClassID, "internal_ShouldRestoreContact", "(JJ)Z");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		StateRecorderFilterJS_ShouldSaveBodyJ_ID = env->GetMethodID(jClassID, "internal_ShouldSaveBody", "(J)Z");
+		StateRecorderFilterJS_ShouldSaveConstraintJ_ID = env->GetMethodID(jClassID, "internal_ShouldSaveConstraint", "(J)Z");
+		StateRecorderFilterJS_ShouldSaveContactJJ_ID = env->GetMethodID(jClassID, "internal_ShouldSaveContact", "(JJ)Z");
+		StateRecorderFilterJS_ShouldRestoreContactJJ_ID = env->GetMethodID(jClassID, "internal_ShouldRestoreContact", "(JJ)Z");
 	}
 }
 virtual bool ShouldSaveBody(const Body& inBody) const {
-   return env->CallBooleanMethod(obj, StateRecorderFilterJS::ShouldSaveBodyJ_ID, (jlong)&inBody);
+   return env->CallBooleanMethod(obj, StateRecorderFilterJS_ShouldSaveBodyJ_ID, (jlong)&inBody);
 }
 virtual bool ShouldSaveConstraint(const Constraint& inConstraint) const {
-   return env->CallBooleanMethod(obj, StateRecorderFilterJS::ShouldSaveConstraintJ_ID, (jlong)&inConstraint);
+   return env->CallBooleanMethod(obj, StateRecorderFilterJS_ShouldSaveConstraintJ_ID, (jlong)&inConstraint);
 }
 virtual bool ShouldSaveContact(const BodyID& inBody1, const BodyID& inBody2) const {
-   return env->CallBooleanMethod(obj, StateRecorderFilterJS::ShouldSaveContactJJ_ID, (jlong)&inBody1, (jlong)&inBody2);
+   return env->CallBooleanMethod(obj, StateRecorderFilterJS_ShouldSaveContactJJ_ID, (jlong)&inBody1, (jlong)&inBody2);
 }
 virtual bool ShouldRestoreContact(const BodyID& inBody1, const BodyID& inBody2) const {
-   return env->CallBooleanMethod(obj, StateRecorderFilterJS::ShouldRestoreContactJJ_ID, (jlong)&inBody1, (jlong)&inBody2);
+   return env->CallBooleanMethod(obj, StateRecorderFilterJS_ShouldRestoreContactJJ_ID, (jlong)&inBody1, (jlong)&inBody2);
 }
 };
 */

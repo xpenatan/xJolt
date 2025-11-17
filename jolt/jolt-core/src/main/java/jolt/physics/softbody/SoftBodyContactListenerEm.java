@@ -22,29 +22,29 @@ public class SoftBodyContactListenerEm extends SoftBodyContactListener {
     static public final SoftBodyContactListenerEm NULL = SoftBodyContactListenerEm.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID SoftBodyContactListenerJS_OnSoftBodyContactValidateJJJ_ID;
+	static jmethodID SoftBodyContactListenerJS_OnSoftBodyContactAddedJJ_ID;
+
 class SoftBodyContactListenerJS : public SoftBodyContactListenerEm {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnSoftBodyContactValidateJJJ_ID = 0;
-	inline static jmethodID OnSoftBodyContactAddedJJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(SoftBodyContactListenerJS::jClassID == 0) {
-		SoftBodyContactListenerJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		SoftBodyContactListenerJS::OnSoftBodyContactValidateJJJ_ID = env->GetMethodID(jClassID, "internal_OnSoftBodyContactValidate", "(JJJ)I");
-		SoftBodyContactListenerJS::OnSoftBodyContactAddedJJ_ID = env->GetMethodID(jClassID, "internal_OnSoftBodyContactAdded", "(JJ)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		SoftBodyContactListenerJS_OnSoftBodyContactValidateJJJ_ID = env->GetMethodID(jClassID, "internal_OnSoftBodyContactValidate", "(JJJ)I");
+		SoftBodyContactListenerJS_OnSoftBodyContactAddedJJ_ID = env->GetMethodID(jClassID, "internal_OnSoftBodyContactAdded", "(JJ)V");
 	}
 }
 virtual int OnSoftBodyContactValidate(const Body& inSoftBody, const Body& inOtherBody, SoftBodyContactSettings* ioSettings) {
-   return env->CallIntMethod(obj, SoftBodyContactListenerJS::OnSoftBodyContactValidateJJJ_ID, (jlong)&inSoftBody, (jlong)&inOtherBody, (jlong)ioSettings);
+   return env->CallIntMethod(obj, SoftBodyContactListenerJS_OnSoftBodyContactValidateJJJ_ID, (jlong)&inSoftBody, (jlong)&inOtherBody, (jlong)ioSettings);
 }
 virtual void OnSoftBodyContactAdded(const Body& inSoftBody, const SoftBodyManifold& inManifold) {
-   env->CallVoidMethod(obj, SoftBodyContactListenerJS::OnSoftBodyContactAddedJJ_ID, (jlong)&inSoftBody, (jlong)&inManifold);
+   env->CallVoidMethod(obj, SoftBodyContactListenerJS_OnSoftBodyContactAddedJJ_ID, (jlong)&inSoftBody, (jlong)&inManifold);
 }
 };
 */

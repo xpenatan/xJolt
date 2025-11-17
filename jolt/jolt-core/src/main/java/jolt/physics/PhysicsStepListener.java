@@ -14,24 +14,24 @@ public class PhysicsStepListener extends IDLBase {
     static public final PhysicsStepListener NULL = PhysicsStepListener.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID PhysicsStepListenerJS_OnStepJ_ID;
+
 class PhysicsStepListenerJS : public PhysicsStepListener {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnStepJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(PhysicsStepListenerJS::jClassID == 0) {
-		PhysicsStepListenerJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		PhysicsStepListenerJS::OnStepJ_ID = env->GetMethodID(jClassID, "internal_OnStep", "(J)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		PhysicsStepListenerJS_OnStepJ_ID = env->GetMethodID(jClassID, "internal_OnStep", "(J)V");
 	}
 }
 virtual void OnStep(const PhysicsStepListenerContext& inContext) {
-   env->CallVoidMethod(obj, PhysicsStepListenerJS::OnStepJ_ID, (jlong)&inContext);
+   env->CallVoidMethod(obj, PhysicsStepListenerJS_OnStepJ_ID, (jlong)&inContext);
 }
 };
 */

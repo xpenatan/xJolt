@@ -15,24 +15,24 @@ public class WheeledVehicleControllerCallbacksEm extends IDLBase {
     static public final WheeledVehicleControllerCallbacksEm NULL = WheeledVehicleControllerCallbacksEm.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID WheeledVehicleControllerCallbacksJS_OnTireMaxImpulseCallbackIJFFFFFF_ID;
+
 class WheeledVehicleControllerCallbacksJS : public WheeledVehicleControllerCallbacksEm {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnTireMaxImpulseCallbackIJFFFFFF_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(WheeledVehicleControllerCallbacksJS::jClassID == 0) {
-		WheeledVehicleControllerCallbacksJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		WheeledVehicleControllerCallbacksJS::OnTireMaxImpulseCallbackIJFFFFFF_ID = env->GetMethodID(jClassID, "internal_OnTireMaxImpulseCallback", "(IJFFFFFF)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		WheeledVehicleControllerCallbacksJS_OnTireMaxImpulseCallbackIJFFFFFF_ID = env->GetMethodID(jClassID, "internal_OnTireMaxImpulseCallback", "(IJFFFFFF)V");
 	}
 }
 virtual void OnTireMaxImpulseCallback(unsigned int inWheelIndex, TireMaxImpulseCallbackResult* outResult, float inSuspensionImpulse, float inLongitudinalFriction, float inLateralFriction, float inLongitudinalSlip, float inLateralSlip, float inDeltaTime) {
-   env->CallVoidMethod(obj, WheeledVehicleControllerCallbacksJS::OnTireMaxImpulseCallbackIJFFFFFF_ID, inWheelIndex, (jlong)outResult, inSuspensionImpulse, inLongitudinalFriction, inLateralFriction, inLongitudinalSlip, inLateralSlip, inDeltaTime);
+   env->CallVoidMethod(obj, WheeledVehicleControllerCallbacksJS_OnTireMaxImpulseCallbackIJFFFFFF_ID, inWheelIndex, (jlong)outResult, inSuspensionImpulse, inLongitudinalFriction, inLateralFriction, inLongitudinalSlip, inLateralSlip, inDeltaTime);
 }
 };
 */

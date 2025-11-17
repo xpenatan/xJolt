@@ -21,34 +21,34 @@ public class CollidePointCollector extends IDLBase {
     static public final CollidePointCollector NULL = CollidePointCollector.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID CollidePointCollectorJS_Reset_ID;
+	static jmethodID CollidePointCollectorJS_OnBodyJ_ID;
+	static jmethodID CollidePointCollectorJS_AddHitJ_ID;
+
 class CollidePointCollectorJS : public CollidePointCollector {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID Reset_ID = 0;
-	inline static jmethodID OnBodyJ_ID = 0;
-	inline static jmethodID AddHitJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(CollidePointCollectorJS::jClassID == 0) {
-		CollidePointCollectorJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		CollidePointCollectorJS::Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
-		CollidePointCollectorJS::OnBodyJ_ID = env->GetMethodID(jClassID, "internal_OnBody", "(J)V");
-		CollidePointCollectorJS::AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		CollidePointCollectorJS_Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
+		CollidePointCollectorJS_OnBodyJ_ID = env->GetMethodID(jClassID, "internal_OnBody", "(J)V");
+		CollidePointCollectorJS_AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
 	}
 }
 virtual void Reset() {
-   env->CallVoidMethod(obj, CollidePointCollectorJS::Reset_ID);
+   env->CallVoidMethod(obj, CollidePointCollectorJS_Reset_ID);
 }
 virtual void OnBody(const Body& inBody) {
-   env->CallVoidMethod(obj, CollidePointCollectorJS::OnBodyJ_ID, (jlong)&inBody);
+   env->CallVoidMethod(obj, CollidePointCollectorJS_OnBodyJ_ID, (jlong)&inBody);
 }
 virtual void AddHit(const CollidePointResult& inResult) {
-   env->CallVoidMethod(obj, CollidePointCollectorJS::AddHitJ_ID, (jlong)&inResult);
+   env->CallVoidMethod(obj, CollidePointCollectorJS_AddHitJ_ID, (jlong)&inResult);
 }
 };
 */

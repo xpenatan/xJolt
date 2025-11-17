@@ -134,74 +134,74 @@ public class CharacterContactListener extends IDLBase {
     static public final CharacterContactListener NULL = CharacterContactListener.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID CharacterContactListenerImpl_OnAdjustBodyVelocity_customJJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnContactValidate_customJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnCharacterContactValidate_customJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnContactAdded_customJJJJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnContactPersisted_customJJJJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnContactRemoved_customJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnCharacterContactAdded_customJJJJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnCharacterContactPersisted_customJJJJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnCharacterContactRemoved_customJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnContactSolve_customJJJJJJJJJ_ID;
+	static jmethodID CharacterContactListenerImpl_OnCharacterContactSolve_customJJJJJJJJJ_ID;
+
 class CharacterContactListenerImpl : public XJPH::CharacterContactListener {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnAdjustBodyVelocity_customJJJJ_ID = 0;
-	inline static jmethodID OnContactValidate_customJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactValidate_customJJJ_ID = 0;
-	inline static jmethodID OnContactAdded_customJJJJJJ_ID = 0;
-	inline static jmethodID OnContactPersisted_customJJJJJJ_ID = 0;
-	inline static jmethodID OnContactRemoved_customJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactAdded_customJJJJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactPersisted_customJJJJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactRemoved_customJJJ_ID = 0;
-	inline static jmethodID OnContactSolve_customJJJJJJJJJ_ID = 0;
-	inline static jmethodID OnCharacterContactSolve_customJJJJJJJJJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(CharacterContactListenerImpl::jClassID == 0) {
-		CharacterContactListenerImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		CharacterContactListenerImpl::OnAdjustBodyVelocity_customJJJJ_ID = env->GetMethodID(jClassID, "internal_OnAdjustBodyVelocity", "(JJJJ)V");
-		CharacterContactListenerImpl::OnContactValidate_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactValidate", "(JJJ)Z");
-		CharacterContactListenerImpl::OnCharacterContactValidate_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactValidate", "(JJJ)Z");
-		CharacterContactListenerImpl::OnContactAdded_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactAdded", "(JJJJJJ)V");
-		CharacterContactListenerImpl::OnContactPersisted_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactPersisted", "(JJJJJJ)V");
-		CharacterContactListenerImpl::OnContactRemoved_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactRemoved", "(JJJ)V");
-		CharacterContactListenerImpl::OnCharacterContactAdded_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactAdded", "(JJJJJJ)V");
-		CharacterContactListenerImpl::OnCharacterContactPersisted_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactPersisted", "(JJJJJJ)V");
-		CharacterContactListenerImpl::OnCharacterContactRemoved_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactRemoved", "(JJJ)V");
-		CharacterContactListenerImpl::OnContactSolve_customJJJJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactSolve", "(JJJJJJJJJ)V");
-		CharacterContactListenerImpl::OnCharacterContactSolve_customJJJJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactSolve", "(JJJJJJJJJ)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		CharacterContactListenerImpl_OnAdjustBodyVelocity_customJJJJ_ID = env->GetMethodID(jClassID, "internal_OnAdjustBodyVelocity", "(JJJJ)V");
+		CharacterContactListenerImpl_OnContactValidate_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactValidate", "(JJJ)Z");
+		CharacterContactListenerImpl_OnCharacterContactValidate_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactValidate", "(JJJ)Z");
+		CharacterContactListenerImpl_OnContactAdded_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactAdded", "(JJJJJJ)V");
+		CharacterContactListenerImpl_OnContactPersisted_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactPersisted", "(JJJJJJ)V");
+		CharacterContactListenerImpl_OnContactRemoved_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactRemoved", "(JJJ)V");
+		CharacterContactListenerImpl_OnCharacterContactAdded_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactAdded", "(JJJJJJ)V");
+		CharacterContactListenerImpl_OnCharacterContactPersisted_customJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactPersisted", "(JJJJJJ)V");
+		CharacterContactListenerImpl_OnCharacterContactRemoved_customJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactRemoved", "(JJJ)V");
+		CharacterContactListenerImpl_OnContactSolve_customJJJJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactSolve", "(JJJJJJJJJ)V");
+		CharacterContactListenerImpl_OnCharacterContactSolve_customJJJJJJJJJ_ID = env->GetMethodID(jClassID, "internal_OnCharacterContactSolve", "(JJJJJJJJJ)V");
 	}
 }
 virtual void OnAdjustBodyVelocity_custom(const CharacterVirtual* inCharacter, const Body& inBody2, Vec3& ioLinearVelocity, Vec3& ioAngularVelocity) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnAdjustBodyVelocity_customJJJJ_ID, (jlong)inCharacter, (jlong)&inBody2, (jlong)&ioLinearVelocity, (jlong)&ioAngularVelocity);
+   env->CallVoidMethod(obj, CharacterContactListenerImpl_OnAdjustBodyVelocity_customJJJJ_ID, (jlong)inCharacter, (jlong)&inBody2, (jlong)&ioLinearVelocity, (jlong)&ioAngularVelocity);
 }
 virtual bool OnContactValidate_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2) {
-   return env->CallBooleanMethod(obj, CharacterContactListenerImpl::OnContactValidate_customJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2);
+   return env->CallBooleanMethod(obj, CharacterContactListenerImpl_OnContactValidate_customJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2);
 }
 virtual bool OnCharacterContactValidate_custom(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2) {
-   return env->CallBooleanMethod(obj, CharacterContactListenerImpl::OnCharacterContactValidate_customJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2);
+   return env->CallBooleanMethod(obj, CharacterContactListenerImpl_OnCharacterContactValidate_customJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2);
 }
 virtual void OnContactAdded_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, CharacterContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactAdded_customJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
+   env->CallVoidMethod(obj, CharacterContactListenerImpl_OnContactAdded_customJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
 }
 virtual void OnContactPersisted_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, CharacterContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactPersisted_customJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
+   env->CallVoidMethod(obj, CharacterContactListenerImpl_OnContactPersisted_customJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
 }
 virtual void OnContactRemoved_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactRemoved_customJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2);
+   env->CallVoidMethod(obj, CharacterContactListenerImpl_OnContactRemoved_customJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2);
 }
 virtual void OnCharacterContactAdded_custom(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, CharacterContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactAdded_customJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
+   env->CallVoidMethod(obj, CharacterContactListenerImpl_OnCharacterContactAdded_customJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
 }
 virtual void OnCharacterContactPersisted_custom(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2, const Vec3& inContactPosition, const Vec3& inContactNormal, CharacterContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactPersisted_customJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
+   env->CallVoidMethod(obj, CharacterContactListenerImpl_OnCharacterContactPersisted_customJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&ioSettings);
 }
 virtual void OnCharacterContactRemoved_custom(const CharacterVirtual* inCharacter, const CharacterID& inOtherCharacter, const SubShapeID& inSubShapeID2) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactRemoved_customJJJ_ID, (jlong)inCharacter, (jlong)&inOtherCharacter, (jlong)&inSubShapeID2);
+   env->CallVoidMethod(obj, CharacterContactListenerImpl_OnCharacterContactRemoved_customJJJ_ID, (jlong)inCharacter, (jlong)&inOtherCharacter, (jlong)&inSubShapeID2);
 }
 virtual void OnContactSolve_custom(const CharacterVirtual* inCharacter, const BodyID& inBodyID2, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, const Vec3& inContactVelocity, const PhysicsMaterial* inContactMaterial, const Vec3& inCharacterVelocity, const Vec3& ioNewCharacterVelocity) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnContactSolve_customJJJJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&inContactVelocity, (jlong)inContactMaterial, (jlong)&inCharacterVelocity, (jlong)&ioNewCharacterVelocity);
+   env->CallVoidMethod(obj, CharacterContactListenerImpl_OnContactSolve_customJJJJJJJJJ_ID, (jlong)inCharacter, (jlong)&inBodyID2, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&inContactVelocity, (jlong)inContactMaterial, (jlong)&inCharacterVelocity, (jlong)&ioNewCharacterVelocity);
 }
 virtual void OnCharacterContactSolve_custom(const CharacterVirtual* inCharacter, const CharacterVirtual* inOtherCharacter, const SubShapeID& inSubShapeID2, const RVec3& inContactPosition, const Vec3& inContactNormal, const Vec3& inContactVelocity, const PhysicsMaterial* inContactMaterial, const Vec3& inCharacterVelocity, const Vec3& ioNewCharacterVelocity) {
-   env->CallVoidMethod(obj, CharacterContactListenerImpl::OnCharacterContactSolve_customJJJJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&inContactVelocity, (jlong)inContactMaterial, (jlong)&inCharacterVelocity, (jlong)&ioNewCharacterVelocity);
+   env->CallVoidMethod(obj, CharacterContactListenerImpl_OnCharacterContactSolve_customJJJJJJJJJ_ID, (jlong)inCharacter, (jlong)inOtherCharacter, (jlong)&inSubShapeID2, (jlong)&inContactPosition, (jlong)&inContactNormal, (jlong)&inContactVelocity, (jlong)inContactMaterial, (jlong)&inCharacterVelocity, (jlong)&ioNewCharacterVelocity);
 }
 };
 */

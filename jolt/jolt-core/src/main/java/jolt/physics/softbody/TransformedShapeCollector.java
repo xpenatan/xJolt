@@ -20,34 +20,34 @@ public class TransformedShapeCollector extends IDLBase {
     static public final TransformedShapeCollector NULL = TransformedShapeCollector.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID TransformedShapeCollectorJS_Reset_ID;
+	static jmethodID TransformedShapeCollectorJS_OnBodyJ_ID;
+	static jmethodID TransformedShapeCollectorJS_AddHitJ_ID;
+
 class TransformedShapeCollectorJS : public TransformedShapeCollector {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID Reset_ID = 0;
-	inline static jmethodID OnBodyJ_ID = 0;
-	inline static jmethodID AddHitJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(TransformedShapeCollectorJS::jClassID == 0) {
-		TransformedShapeCollectorJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		TransformedShapeCollectorJS::Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
-		TransformedShapeCollectorJS::OnBodyJ_ID = env->GetMethodID(jClassID, "internal_OnBody", "(J)V");
-		TransformedShapeCollectorJS::AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		TransformedShapeCollectorJS_Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
+		TransformedShapeCollectorJS_OnBodyJ_ID = env->GetMethodID(jClassID, "internal_OnBody", "(J)V");
+		TransformedShapeCollectorJS_AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
 	}
 }
 virtual void Reset() {
-   env->CallVoidMethod(obj, TransformedShapeCollectorJS::Reset_ID);
+   env->CallVoidMethod(obj, TransformedShapeCollectorJS_Reset_ID);
 }
 virtual void OnBody(const Body& inBody) {
-   env->CallVoidMethod(obj, TransformedShapeCollectorJS::OnBodyJ_ID, (jlong)&inBody);
+   env->CallVoidMethod(obj, TransformedShapeCollectorJS_OnBodyJ_ID, (jlong)&inBody);
 }
 virtual void AddHit(const TransformedShape& inResult) {
-   env->CallVoidMethod(obj, TransformedShapeCollectorJS::AddHitJ_ID, (jlong)&inResult);
+   env->CallVoidMethod(obj, TransformedShapeCollectorJS_AddHitJ_ID, (jlong)&inResult);
 }
 };
 */

@@ -23,34 +23,34 @@ public class PathConstraintPathEm extends PathConstraintPath {
     static public final PathConstraintPathEm NULL = PathConstraintPathEm.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID PathConstraintPathJS_GetPathMaxFraction_ID;
+	static jmethodID PathConstraintPathJS_GetClosestPointJF_ID;
+	static jmethodID PathConstraintPathJS_GetPointOnPathFJJJJ_ID;
+
 class PathConstraintPathJS : public PathConstraintPathEm {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID GetPathMaxFraction_ID = 0;
-	inline static jmethodID GetClosestPointJF_ID = 0;
-	inline static jmethodID GetPointOnPathFJJJJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(PathConstraintPathJS::jClassID == 0) {
-		PathConstraintPathJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		PathConstraintPathJS::GetPathMaxFraction_ID = env->GetMethodID(jClassID, "internal_GetPathMaxFraction", "()F");
-		PathConstraintPathJS::GetClosestPointJF_ID = env->GetMethodID(jClassID, "internal_GetClosestPoint", "(JF)F");
-		PathConstraintPathJS::GetPointOnPathFJJJJ_ID = env->GetMethodID(jClassID, "internal_GetPointOnPath", "(FJJJJ)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		PathConstraintPathJS_GetPathMaxFraction_ID = env->GetMethodID(jClassID, "internal_GetPathMaxFraction", "()F");
+		PathConstraintPathJS_GetClosestPointJF_ID = env->GetMethodID(jClassID, "internal_GetClosestPoint", "(JF)F");
+		PathConstraintPathJS_GetPointOnPathFJJJJ_ID = env->GetMethodID(jClassID, "internal_GetPointOnPath", "(FJJJJ)V");
 	}
 }
 virtual float GetPathMaxFraction() const {
-   return env->CallFloatMethod(obj, PathConstraintPathJS::GetPathMaxFraction_ID);
+   return env->CallFloatMethod(obj, PathConstraintPathJS_GetPathMaxFraction_ID);
 }
 virtual float GetClosestPoint(const Vec3* inPosition, float inFractionHint) const {
-   return env->CallFloatMethod(obj, PathConstraintPathJS::GetClosestPointJF_ID, (jlong)inPosition, inFractionHint);
+   return env->CallFloatMethod(obj, PathConstraintPathJS_GetClosestPointJF_ID, (jlong)inPosition, inFractionHint);
 }
 virtual void GetPointOnPath(float inFraction, Vec3* outPathPosition, Vec3* outPathTangent, Vec3* outPathNormal, Vec3* outPathBinormal) const {
-   env->CallVoidMethod(obj, PathConstraintPathJS::GetPointOnPathFJJJJ_ID, inFraction, (jlong)outPathPosition, (jlong)outPathTangent, (jlong)outPathNormal, (jlong)outPathBinormal);
+   env->CallVoidMethod(obj, PathConstraintPathJS_GetPointOnPathFJJJJ_ID, inFraction, (jlong)outPathPosition, (jlong)outPathTangent, (jlong)outPathNormal, (jlong)outPathBinormal);
 }
 };
 */

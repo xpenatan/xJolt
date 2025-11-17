@@ -15,24 +15,24 @@ public class ObjectVsBroadPhaseLayerFilterEm extends ObjectVsBroadPhaseLayerFilt
     static public final ObjectVsBroadPhaseLayerFilterEm NULL = ObjectVsBroadPhaseLayerFilterEm.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID ObjectVsBroadPhaseLayerFilterJS_ShouldCollideIJ_ID;
+
 class ObjectVsBroadPhaseLayerFilterJS : public ObjectVsBroadPhaseLayerFilterEm {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID ShouldCollideIJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(ObjectVsBroadPhaseLayerFilterJS::jClassID == 0) {
-		ObjectVsBroadPhaseLayerFilterJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		ObjectVsBroadPhaseLayerFilterJS::ShouldCollideIJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(IJ)Z");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		ObjectVsBroadPhaseLayerFilterJS_ShouldCollideIJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(IJ)Z");
 	}
 }
 virtual bool ShouldCollide(unsigned int inLayer1, BroadPhaseLayer* inLayer2) const {
-   return env->CallBooleanMethod(obj, ObjectVsBroadPhaseLayerFilterJS::ShouldCollideIJ_ID, inLayer1, (jlong)inLayer2);
+   return env->CallBooleanMethod(obj, ObjectVsBroadPhaseLayerFilterJS_ShouldCollideIJ_ID, inLayer1, (jlong)inLayer2);
 }
 };
 */

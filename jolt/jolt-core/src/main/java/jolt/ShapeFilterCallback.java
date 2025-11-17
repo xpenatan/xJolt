@@ -26,29 +26,29 @@ public class ShapeFilterCallback extends ShapeFilter {
     static public final ShapeFilterCallback NULL = ShapeFilterCallback.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID ShapeFilterCallbackImpl_ShouldCollide_AnyJJ_ID;
+	static jmethodID ShapeFilterCallbackImpl_ShouldCollide_ShapeJJJJ_ID;
+
 class ShapeFilterCallbackImpl : public ShapeFilterCallback {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID ShouldCollide_AnyJJ_ID = 0;
-	inline static jmethodID ShouldCollide_ShapeJJJJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(ShapeFilterCallbackImpl::jClassID == 0) {
-		ShapeFilterCallbackImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		ShapeFilterCallbackImpl::ShouldCollide_AnyJJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide_Any", "(JJ)Z");
-		ShapeFilterCallbackImpl::ShouldCollide_ShapeJJJJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide_Shape", "(JJJJ)Z");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		ShapeFilterCallbackImpl_ShouldCollide_AnyJJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide_Any", "(JJ)Z");
+		ShapeFilterCallbackImpl_ShouldCollide_ShapeJJJJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide_Shape", "(JJJJ)Z");
 	}
 }
 virtual bool ShouldCollide_Any(const Shape* inShape2, const SubShapeID& inSubShapeIDOfShape2) const {
-   return env->CallBooleanMethod(obj, ShapeFilterCallbackImpl::ShouldCollide_AnyJJ_ID, (jlong)inShape2, (jlong)&inSubShapeIDOfShape2);
+   return env->CallBooleanMethod(obj, ShapeFilterCallbackImpl_ShouldCollide_AnyJJ_ID, (jlong)inShape2, (jlong)&inSubShapeIDOfShape2);
 }
 virtual bool ShouldCollide_Shape(const Shape* inShape1, const SubShapeID& inSubShapeIDOfShape1, const Shape* inShape2, const SubShapeID& inSubShapeIDOfShape2) const {
-   return env->CallBooleanMethod(obj, ShapeFilterCallbackImpl::ShouldCollide_ShapeJJJJ_ID, (jlong)inShape1, (jlong)&inSubShapeIDOfShape1, (jlong)inShape2, (jlong)&inSubShapeIDOfShape2);
+   return env->CallBooleanMethod(obj, ShapeFilterCallbackImpl_ShouldCollide_ShapeJJJJ_ID, (jlong)inShape1, (jlong)&inSubShapeIDOfShape1, (jlong)inShape2, (jlong)&inSubShapeIDOfShape2);
 }
 };
 */

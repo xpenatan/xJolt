@@ -40,39 +40,39 @@ public class ContactListenerEm extends ContactListener {
     static public final ContactListenerEm NULL = ContactListenerEm.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID ContactListenerJS_OnContactValidateJJJJ_ID;
+	static jmethodID ContactListenerJS_OnContactAddedJJJJ_ID;
+	static jmethodID ContactListenerJS_OnContactPersistedJJJJ_ID;
+	static jmethodID ContactListenerJS_OnContactRemovedJ_ID;
+
 class ContactListenerJS : public ContactListenerEm {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnContactValidateJJJJ_ID = 0;
-	inline static jmethodID OnContactAddedJJJJ_ID = 0;
-	inline static jmethodID OnContactPersistedJJJJ_ID = 0;
-	inline static jmethodID OnContactRemovedJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(ContactListenerJS::jClassID == 0) {
-		ContactListenerJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		ContactListenerJS::OnContactValidateJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactValidate", "(JJJJ)I");
-		ContactListenerJS::OnContactAddedJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactAdded", "(JJJJ)V");
-		ContactListenerJS::OnContactPersistedJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactPersisted", "(JJJJ)V");
-		ContactListenerJS::OnContactRemovedJ_ID = env->GetMethodID(jClassID, "internal_OnContactRemoved", "(J)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		ContactListenerJS_OnContactValidateJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactValidate", "(JJJJ)I");
+		ContactListenerJS_OnContactAddedJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactAdded", "(JJJJ)V");
+		ContactListenerJS_OnContactPersistedJJJJ_ID = env->GetMethodID(jClassID, "internal_OnContactPersisted", "(JJJJ)V");
+		ContactListenerJS_OnContactRemovedJ_ID = env->GetMethodID(jClassID, "internal_OnContactRemoved", "(J)V");
 	}
 }
 virtual int OnContactValidate(const Body& inBody1, const Body& inBody2, const Vec3* inBaseOffset, const CollideShapeResult& inCollisionResult) {
-   return env->CallIntMethod(obj, ContactListenerJS::OnContactValidateJJJJ_ID, (jlong)&inBody1, (jlong)&inBody2, (jlong)inBaseOffset, (jlong)&inCollisionResult);
+   return env->CallIntMethod(obj, ContactListenerJS_OnContactValidateJJJJ_ID, (jlong)&inBody1, (jlong)&inBody2, (jlong)inBaseOffset, (jlong)&inCollisionResult);
 }
 virtual void OnContactAdded(const Body& inBody1, const Body& inBody2, const ContactManifold& inManifold, ContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, ContactListenerJS::OnContactAddedJJJJ_ID, (jlong)&inBody1, (jlong)&inBody2, (jlong)&inManifold, (jlong)&ioSettings);
+   env->CallVoidMethod(obj, ContactListenerJS_OnContactAddedJJJJ_ID, (jlong)&inBody1, (jlong)&inBody2, (jlong)&inManifold, (jlong)&ioSettings);
 }
 virtual void OnContactPersisted(const Body& inBody1, const Body& inBody2, const ContactManifold& inManifold, ContactSettings& ioSettings) {
-   env->CallVoidMethod(obj, ContactListenerJS::OnContactPersistedJJJJ_ID, (jlong)&inBody1, (jlong)&inBody2, (jlong)&inManifold, (jlong)&ioSettings);
+   env->CallVoidMethod(obj, ContactListenerJS_OnContactPersistedJJJJ_ID, (jlong)&inBody1, (jlong)&inBody2, (jlong)&inManifold, (jlong)&ioSettings);
 }
 virtual void OnContactRemoved(const SubShapeIDPair& inSubShapePair) {
-   env->CallVoidMethod(obj, ContactListenerJS::OnContactRemovedJ_ID, (jlong)&inSubShapePair);
+   env->CallVoidMethod(obj, ContactListenerJS_OnContactRemovedJ_ID, (jlong)&inSubShapePair);
 }
 };
 */

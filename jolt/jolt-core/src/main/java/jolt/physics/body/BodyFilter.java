@@ -16,29 +16,29 @@ public class BodyFilter extends IDLBase {
     static public final BodyFilter NULL = BodyFilter.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID BodyFilterImpl_ShouldCollideJ_ID;
+	static jmethodID BodyFilterImpl_ShouldCollideLockedJ_ID;
+
 class BodyFilterImpl : public BodyFilter {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID ShouldCollideJ_ID = 0;
-	inline static jmethodID ShouldCollideLockedJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(BodyFilterImpl::jClassID == 0) {
-		BodyFilterImpl::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		BodyFilterImpl::ShouldCollideJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(J)Z");
-		BodyFilterImpl::ShouldCollideLockedJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollideLocked", "(J)Z");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		BodyFilterImpl_ShouldCollideJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(J)Z");
+		BodyFilterImpl_ShouldCollideLockedJ_ID = env->GetMethodID(jClassID, "internal_ShouldCollideLocked", "(J)Z");
 	}
 }
 virtual bool ShouldCollide(const BodyID& inBodyID) const {
-   return env->CallBooleanMethod(obj, BodyFilterImpl::ShouldCollideJ_ID, (jlong)&inBodyID);
+   return env->CallBooleanMethod(obj, BodyFilterImpl_ShouldCollideJ_ID, (jlong)&inBodyID);
 }
 virtual bool ShouldCollideLocked(const Body& inBody) const {
-   return env->CallBooleanMethod(obj, BodyFilterImpl::ShouldCollideLockedJ_ID, (jlong)&inBody);
+   return env->CallBooleanMethod(obj, BodyFilterImpl_ShouldCollideLockedJ_ID, (jlong)&inBody);
 }
 };
 */

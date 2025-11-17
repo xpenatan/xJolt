@@ -21,34 +21,34 @@ public class CastShapeCollector extends IDLBase {
     static public final CastShapeCollector NULL = CastShapeCollector.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID CastShapeCollectorJS_Reset_ID;
+	static jmethodID CastShapeCollectorJS_OnBodyJ_ID;
+	static jmethodID CastShapeCollectorJS_AddHitJ_ID;
+
 class CastShapeCollectorJS : public CastShapeCollector {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID Reset_ID = 0;
-	inline static jmethodID OnBodyJ_ID = 0;
-	inline static jmethodID AddHitJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(CastShapeCollectorJS::jClassID == 0) {
-		CastShapeCollectorJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		CastShapeCollectorJS::Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
-		CastShapeCollectorJS::OnBodyJ_ID = env->GetMethodID(jClassID, "internal_OnBody", "(J)V");
-		CastShapeCollectorJS::AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		CastShapeCollectorJS_Reset_ID = env->GetMethodID(jClassID, "internal_Reset", "()V");
+		CastShapeCollectorJS_OnBodyJ_ID = env->GetMethodID(jClassID, "internal_OnBody", "(J)V");
+		CastShapeCollectorJS_AddHitJ_ID = env->GetMethodID(jClassID, "internal_AddHit", "(J)V");
 	}
 }
 virtual void Reset() {
-   env->CallVoidMethod(obj, CastShapeCollectorJS::Reset_ID);
+   env->CallVoidMethod(obj, CastShapeCollectorJS_Reset_ID);
 }
 virtual void OnBody(const Body& inBody) {
-   env->CallVoidMethod(obj, CastShapeCollectorJS::OnBodyJ_ID, (jlong)&inBody);
+   env->CallVoidMethod(obj, CastShapeCollectorJS_OnBodyJ_ID, (jlong)&inBody);
 }
 virtual void AddHit(const ShapeCastResult& inResult) {
-   env->CallVoidMethod(obj, CastShapeCollectorJS::AddHitJ_ID, (jlong)&inResult);
+   env->CallVoidMethod(obj, CastShapeCollectorJS_AddHitJ_ID, (jlong)&inResult);
 }
 };
 */

@@ -47,39 +47,39 @@ public class DebugRendererEm extends DebugRenderer {
     static public final DebugRendererEm NULL = DebugRendererEm.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID DebugRendererImplCustom_DrawMeshIJJJII_ID;
+	static jmethodID DebugRendererImplCustom_DrawLineJJJ_ID;
+	static jmethodID DebugRendererImplCustom_DrawTriangleJJJJI_ID;
+	static jmethodID DebugRendererImplCustom_DrawText3DJJIJF_ID;
+
 class DebugRendererImplCustom : public DebugRendererEm {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID DrawMeshIJJJII_ID = 0;
-	inline static jmethodID DrawLineJJJ_ID = 0;
-	inline static jmethodID DrawTriangleJJJJI_ID = 0;
-	inline static jmethodID DrawText3DJJIJF_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(DebugRendererImplCustom::jClassID == 0) {
-		DebugRendererImplCustom::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		DebugRendererImplCustom::DrawMeshIJJJII_ID = env->GetMethodID(jClassID, "internal_DrawMesh", "(IJJJII)V");
-		DebugRendererImplCustom::DrawLineJJJ_ID = env->GetMethodID(jClassID, "internal_DrawLine", "(JJJ)V");
-		DebugRendererImplCustom::DrawTriangleJJJJI_ID = env->GetMethodID(jClassID, "internal_DrawTriangle", "(JJJJI)V");
-		DebugRendererImplCustom::DrawText3DJJIJF_ID = env->GetMethodID(jClassID, "internal_DrawText3D", "(JJIJF)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		DebugRendererImplCustom_DrawMeshIJJJII_ID = env->GetMethodID(jClassID, "internal_DrawMesh", "(IJJJII)V");
+		DebugRendererImplCustom_DrawLineJJJ_ID = env->GetMethodID(jClassID, "internal_DrawLine", "(JJJ)V");
+		DebugRendererImplCustom_DrawTriangleJJJJI_ID = env->GetMethodID(jClassID, "internal_DrawTriangle", "(JJJJI)V");
+		DebugRendererImplCustom_DrawText3DJJIJF_ID = env->GetMethodID(jClassID, "internal_DrawText3D", "(JJIJF)V");
 	}
 }
 virtual void DrawMesh(int id, const Mat44& inModelMatrix, const IDLFloatArray* vertices, const Color& inModelColor, ECullMode inCullMode, EDrawMode inDrawMode) {
-   env->CallVoidMethod(obj, DebugRendererImplCustom::DrawMeshIJJJII_ID, id, (jlong)&inModelMatrix, (jlong)vertices, (jlong)&inModelColor, inCullMode, inDrawMode);
+   env->CallVoidMethod(obj, DebugRendererImplCustom_DrawMeshIJJJII_ID, id, (jlong)&inModelMatrix, (jlong)vertices, (jlong)&inModelColor, inCullMode, inDrawMode);
 }
 virtual void DrawLine(const Vec3* inFrom, const Vec3* inTo, const Color* inColor) {
-   env->CallVoidMethod(obj, DebugRendererImplCustom::DrawLineJJJ_ID, (jlong)inFrom, (jlong)inTo, (jlong)inColor);
+   env->CallVoidMethod(obj, DebugRendererImplCustom_DrawLineJJJ_ID, (jlong)inFrom, (jlong)inTo, (jlong)inColor);
 }
 virtual void DrawTriangle(const Vec3* inV1, const Vec3* inV2, const Vec3* inV3, const Color* inColor, ECastShadow inCastShadow) {
-   env->CallVoidMethod(obj, DebugRendererImplCustom::DrawTriangleJJJJI_ID, (jlong)inV1, (jlong)inV2, (jlong)inV3, (jlong)inColor, inCastShadow);
+   env->CallVoidMethod(obj, DebugRendererImplCustom_DrawTriangleJJJJI_ID, (jlong)inV1, (jlong)inV2, (jlong)inV3, (jlong)inColor, inCastShadow);
 }
 virtual void DrawText3D(const Vec3* inPosition, const void* inString, unsigned int inStringLen, const Color* inColor, float inHeight) {
-   env->CallVoidMethod(obj, DebugRendererImplCustom::DrawText3DJJIJF_ID, (jlong)inPosition, inString, inStringLen, (jlong)inColor, inHeight);
+   env->CallVoidMethod(obj, DebugRendererImplCustom_DrawText3DJJIJF_ID, (jlong)inPosition, inString, inStringLen, (jlong)inColor, inHeight);
 }
 };
 */

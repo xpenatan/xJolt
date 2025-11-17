@@ -12,24 +12,24 @@ public class ObjectLayerFilter extends IDLBase {
     static public final ObjectLayerFilter NULL = ObjectLayerFilter.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID ObjectLayerFilterJS_ShouldCollideI_ID;
+
 class ObjectLayerFilterJS : public ObjectLayerFilter {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID ShouldCollideI_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(ObjectLayerFilterJS::jClassID == 0) {
-		ObjectLayerFilterJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		ObjectLayerFilterJS::ShouldCollideI_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(I)Z");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		ObjectLayerFilterJS_ShouldCollideI_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(I)Z");
 	}
 }
 virtual bool ShouldCollide(unsigned int inLayer) const {
-   return env->CallBooleanMethod(obj, ObjectLayerFilterJS::ShouldCollideI_ID, inLayer);
+   return env->CallBooleanMethod(obj, ObjectLayerFilterJS_ShouldCollideI_ID, inLayer);
 }
 };
 */

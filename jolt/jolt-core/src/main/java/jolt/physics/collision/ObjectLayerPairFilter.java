@@ -12,24 +12,24 @@ public class ObjectLayerPairFilter extends IDLBase {
     static public final ObjectLayerPairFilter NULL = ObjectLayerPairFilter.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID ObjectLayerPairFilterJS_ShouldCollideII_ID;
+
 class ObjectLayerPairFilterJS : public ObjectLayerPairFilter {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID ShouldCollideII_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(ObjectLayerPairFilterJS::jClassID == 0) {
-		ObjectLayerPairFilterJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		ObjectLayerPairFilterJS::ShouldCollideII_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(II)Z");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		ObjectLayerPairFilterJS_ShouldCollideII_ID = env->GetMethodID(jClassID, "internal_ShouldCollide", "(II)Z");
 	}
 }
 virtual bool ShouldCollide(unsigned int inLayer1, unsigned int inLayer2) const {
-   return env->CallBooleanMethod(obj, ObjectLayerPairFilterJS::ShouldCollideII_ID, inLayer1, inLayer2);
+   return env->CallBooleanMethod(obj, ObjectLayerPairFilterJS_ShouldCollideII_ID, inLayer1, inLayer2);
 }
 };
 */

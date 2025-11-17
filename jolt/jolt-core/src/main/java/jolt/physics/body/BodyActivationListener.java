@@ -16,29 +16,29 @@ public class BodyActivationListener extends IDLBase {
     static public final BodyActivationListener NULL = BodyActivationListener.native_new();
 
     /*[-JNI;-NATIVE]
+	static jmethodID BodyActivationListenerJS_OnBodyActivatedJJ_ID;
+	static jmethodID BodyActivationListenerJS_OnBodyDeactivatedJJ_ID;
+
 class BodyActivationListenerJS : public BodyActivationListener {
 private:
 	JNIEnv* env;
 	jobject obj;
 public:
-	inline static jclass jClassID = 0;
-	inline static jmethodID OnBodyActivatedJJ_ID = 0;
-	inline static jmethodID OnBodyDeactivatedJJ_ID = 0;
-
 void setupCallback(JNIEnv* env, jobject obj) {
 	this->env = env;
 	this->obj = env->NewGlobalRef(obj);
-	if(BodyActivationListenerJS::jClassID == 0) {
-		BodyActivationListenerJS::jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
-		BodyActivationListenerJS::OnBodyActivatedJJ_ID = env->GetMethodID(jClassID, "internal_OnBodyActivated", "(JJ)V");
-		BodyActivationListenerJS::OnBodyDeactivatedJJ_ID = env->GetMethodID(jClassID, "internal_OnBodyDeactivated", "(JJ)V");
+	static jclass jClassID = 0;
+	if(jClassID == 0) {
+		jClassID = (jclass)env->NewGlobalRef(env->GetObjectClass(obj));
+		BodyActivationListenerJS_OnBodyActivatedJJ_ID = env->GetMethodID(jClassID, "internal_OnBodyActivated", "(JJ)V");
+		BodyActivationListenerJS_OnBodyDeactivatedJJ_ID = env->GetMethodID(jClassID, "internal_OnBodyDeactivated", "(JJ)V");
 	}
 }
 virtual void OnBodyActivated(const BodyID& inBodyID, uint64 inBodyUserData) {
-   env->CallVoidMethod(obj, BodyActivationListenerJS::OnBodyActivatedJJ_ID, (jlong)&inBodyID, inBodyUserData);
+   env->CallVoidMethod(obj, BodyActivationListenerJS_OnBodyActivatedJJ_ID, (jlong)&inBodyID, inBodyUserData);
 }
 virtual void OnBodyDeactivated(const BodyID& inBodyID, uint64 inBodyUserData) {
-   env->CallVoidMethod(obj, BodyActivationListenerJS::OnBodyDeactivatedJJ_ID, (jlong)&inBodyID, inBodyUserData);
+   env->CallVoidMethod(obj, BodyActivationListenerJS_OnBodyDeactivatedJJ_ID, (jlong)&inBodyID, inBodyUserData);
 }
 };
 */
