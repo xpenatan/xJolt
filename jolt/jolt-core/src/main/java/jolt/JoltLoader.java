@@ -22,11 +22,4 @@ public class JoltLoader {
     public static void init(JParserLibraryLoaderListener listener) {
         JParserLibraryLoader.load("jolt", listener);
     }
-
-    /**
-     * Not compatible with the web
-     */
-    public static void initSync(JParserLibraryLoaderListener listener) {
-        JParserLibraryLoader.loadSync("jolt", listener);
-    }
 }
