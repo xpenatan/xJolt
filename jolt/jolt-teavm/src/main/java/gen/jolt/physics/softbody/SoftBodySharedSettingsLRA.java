@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ public class SoftBodySharedSettingsLRA extends IDLBase {
     static public final SoftBodySharedSettingsLRA NULL = SoftBodySharedSettingsLRA.native_new();
 
     public SoftBodySharedSettingsLRA(int inVertex1, int inVertex2, float inMaxDistance) {
-        int addr = internal_native_create_int_int_float(inVertex1, inVertex2, inMaxDistance);
+        int addr = internal_native_create_int_int_float_addr(inVertex1, inVertex2, inMaxDistance);
         internal_reset(addr, true);
     }
 
@@ -21,7 +22,7 @@ var jsObj = new jolt.SoftBodySharedSettingsLRA(inVertex1, inVertex2, inMaxDistan
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inVertex1", "inVertex2", "inMaxDistance"}, script = "var jsObj = new jolt.SoftBodySharedSettingsLRA(inVertex1, inVertex2, inMaxDistance);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_int_float(int inVertex1, int inVertex2, float inMaxDistance);
+    public static native int internal_native_create_int_int_float_addr(int inVertex1, int inVertex2, float inMaxDistance);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

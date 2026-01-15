@@ -3,17 +3,18 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.skeleton;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
-import gen.jolt.idl.helper.IDLString;
+import gen.com.github.xpenatan.jparser.idl.helper.IDLString;
 
 public class Skeleton extends IDLBase {
 
     static public final Skeleton NULL = Skeleton.native_new();
 
     public Skeleton() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -22,7 +23,7 @@ var jsObj = new jolt.Skeleton();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.Skeleton();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

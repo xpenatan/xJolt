@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.math.Vec3;

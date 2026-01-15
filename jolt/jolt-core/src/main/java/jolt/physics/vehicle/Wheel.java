@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -28,14 +29,14 @@ public class Wheel extends IDLBase {
     static public final Wheel NULL = Wheel.native_new();
 
     public Wheel(WheelSettings inSettings) {
-        long addr = internal_native_create_WheelSettings(inSettings.native_address);
+        long addr = internal_native_create_WheelSettings_addr(inSettings.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new Wheel(*((WheelSettings* )inSettings_addr));
 */
-    public static native long internal_native_create_WheelSettings(long inSettings_addr);
+    public static native long internal_native_create_WheelSettings_addr(long inSettings_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -62,12 +63,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public WheelSettings GetSettings() {
-        long pointer = internal_native_GetSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSettings_addr(native_address);
+        if (addr == 0)
             return WheelSettings.NULL;
         if (WheelSettings_TEMP_GEN_0 == null)
             WheelSettings_TEMP_GEN_0 = WheelSettings.native_new();
-        WheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        WheelSettings_TEMP_GEN_0.internal_reset(addr, false);
         return WheelSettings_TEMP_GEN_0;
     }
 
@@ -76,7 +77,7 @@ Wheel* nativeObject = (Wheel*)this_addr;
 const WheelSettings* obj = nativeObject->GetSettings();
 return (jlong)obj;
 */
-    public static native long internal_native_GetSettings(long this_addr);
+    public static native long internal_native_GetSettings_addr(long this_addr);
 
     public float GetAngularVelocity() {
         return internal_native_GetAngularVelocity(native_address);
@@ -149,12 +150,12 @@ return nativeObject->HasContact();
     public static native boolean internal_native_HasContact(long this_addr);
 
     public BodyID GetContactBodyID() {
-        long pointer = internal_native_GetContactBodyID(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetContactBodyID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -163,15 +164,15 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->GetContactBodyID();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetContactBodyID(long this_addr);
+    public static native long internal_native_GetContactBodyID_addr(long this_addr);
 
     public Vec3 GetContactPosition() {
-        long pointer = internal_native_GetContactPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetContactPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -180,15 +181,15 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactPosition();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetContactPosition(long this_addr);
+    public static native long internal_native_GetContactPosition_addr(long this_addr);
 
     public Vec3 GetContactPointVelocity() {
-        long pointer = internal_native_GetContactPointVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetContactPointVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -197,15 +198,15 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactPointVelocity();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetContactPointVelocity(long this_addr);
+    public static native long internal_native_GetContactPointVelocity_addr(long this_addr);
 
     public Vec3 GetContactNormal() {
-        long pointer = internal_native_GetContactNormal(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetContactNormal_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -214,15 +215,15 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactNormal();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetContactNormal(long this_addr);
+    public static native long internal_native_GetContactNormal_addr(long this_addr);
 
     public Vec3 GetContactLongitudinal() {
-        long pointer = internal_native_GetContactLongitudinal(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetContactLongitudinal_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -231,15 +232,15 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactLongitudinal();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetContactLongitudinal(long this_addr);
+    public static native long internal_native_GetContactLongitudinal_addr(long this_addr);
 
     public Vec3 GetContactLateral() {
-        long pointer = internal_native_GetContactLateral(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetContactLateral_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -248,7 +249,7 @@ Wheel* nativeObject = (Wheel*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetContactLateral();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetContactLateral(long this_addr);
+    public static native long internal_native_GetContactLateral_addr(long this_addr);
 
     public float GetSuspensionLength() {
         return internal_native_GetSuspensionLength(native_address);

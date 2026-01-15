@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.math;
 
 import gen.jolt.physics.constraints.ConstraintSettings;
@@ -31,12 +32,12 @@ public class TwoBodyConstraintSettings extends ConstraintSettings {
     }
 
     public Constraint Create(Body inBody1, Body inBody2) {
-        int pointer = internal_native_Create(native_address, inBody1.native_address, inBody2.native_address);
-        if (pointer == 0)
+        int addr = internal_native_Create_addr(native_address, inBody1.native_address, inBody2.native_address);
+        if (addr == 0)
             return Constraint.NULL;
         if (Constraint_TEMP_GEN_0 == null)
             Constraint_TEMP_GEN_0 = Constraint.native_new();
-        Constraint_TEMP_GEN_0.internal_reset(pointer, false);
+        Constraint_TEMP_GEN_0.internal_reset(addr, false);
         return Constraint_TEMP_GEN_0;
     }
 
@@ -47,5 +48,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inBody1_addr", "inBody2_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TwoBodyConstraintSettings);var returnedJSObj = jsObj.Create(inBody1_addr, inBody2_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Create(int this_addr, int inBody1_addr, int inBody2_addr);
+    public static native int internal_native_Create_addr(int this_addr, int inBody1_addr, int inBody2_addr);
 }

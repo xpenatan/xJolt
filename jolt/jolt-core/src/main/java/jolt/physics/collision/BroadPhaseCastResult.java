@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -15,14 +16,14 @@ public class BroadPhaseCastResult extends IDLBase {
     static public final BroadPhaseCastResult NULL = BroadPhaseCastResult.native_new();
 
     public BroadPhaseCastResult() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new BroadPhaseCastResult();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -59,12 +60,12 @@ nativeObject->Reset();
     public static native void internal_native_Reset(long this_addr);
 
     public BodyID get_mBodyID() {
-        long pointer = internal_native_get_mBodyID(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mBodyID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -72,7 +73,7 @@ nativeObject->Reset();
 BroadPhaseCastResult* nativeObject = (BroadPhaseCastResult*)this_addr;
 return (jlong)&nativeObject->mBodyID;
 */
-    public static native long internal_native_get_mBodyID(long this_addr);
+    public static native long internal_native_get_mBodyID_addr(long this_addr);
 
     public void set_mBodyID(BodyID mBodyID) {
         internal_native_set_mBodyID(native_address, mBodyID.native_address);

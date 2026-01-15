@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilter;
@@ -60,7 +61,7 @@ delete nativeObject;
 
     public ObjectVsBroadPhaseLayerFilterEm() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -83,7 +84,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)new ObjectVsBroadPhaseLayerFilterJS();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 ObjectVsBroadPhaseLayerFilterJS* nativeObject = (ObjectVsBroadPhaseLayerFilterJS*)this_addr;

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import jolt.core.LinearCurve;
@@ -17,14 +18,14 @@ public class WheelSettingsWV extends WheelSettings {
 
     public WheelSettingsWV() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new WheelSettingsWV();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -112,12 +113,12 @@ nativeObject->mMaxSteerAngle = mMaxSteerAngle;
     public static native void internal_native_set_mMaxSteerAngle(long this_addr, float mMaxSteerAngle);
 
     public LinearCurve get_mLongitudinalFriction() {
-        long pointer = internal_native_get_mLongitudinalFriction(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mLongitudinalFriction_addr(native_address);
+        if (addr == 0)
             return LinearCurve.NULL;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = LinearCurve.native_new();
-        LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);
+        LinearCurve_TEMP_GEN_0.internal_reset(addr, false);
         return LinearCurve_TEMP_GEN_0;
     }
 
@@ -125,7 +126,7 @@ nativeObject->mMaxSteerAngle = mMaxSteerAngle;
 WheelSettingsWV* nativeObject = (WheelSettingsWV*)this_addr;
 return (jlong)&nativeObject->mLongitudinalFriction;
 */
-    public static native long internal_native_get_mLongitudinalFriction(long this_addr);
+    public static native long internal_native_get_mLongitudinalFriction_addr(long this_addr);
 
     public void set_mLongitudinalFriction(LinearCurve mLongitudinalFriction) {
         internal_native_set_mLongitudinalFriction(native_address, mLongitudinalFriction.native_address);
@@ -138,12 +139,12 @@ nativeObject->mLongitudinalFriction = *((LinearCurve*)mLongitudinalFriction_addr
     public static native void internal_native_set_mLongitudinalFriction(long this_addr, long mLongitudinalFriction_addr);
 
     public LinearCurve get_mLateralFriction() {
-        long pointer = internal_native_get_mLateralFriction(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mLateralFriction_addr(native_address);
+        if (addr == 0)
             return LinearCurve.NULL;
         if (LinearCurve_TEMP_GEN_1 == null)
             LinearCurve_TEMP_GEN_1 = LinearCurve.native_new();
-        LinearCurve_TEMP_GEN_1.internal_reset(pointer, false);
+        LinearCurve_TEMP_GEN_1.internal_reset(addr, false);
         return LinearCurve_TEMP_GEN_1;
     }
 
@@ -151,7 +152,7 @@ nativeObject->mLongitudinalFriction = *((LinearCurve*)mLongitudinalFriction_addr
 WheelSettingsWV* nativeObject = (WheelSettingsWV*)this_addr;
 return (jlong)&nativeObject->mLateralFriction;
 */
-    public static native long internal_native_get_mLateralFriction(long this_addr);
+    public static native long internal_native_get_mLateralFriction_addr(long this_addr);
 
     public void set_mLateralFriction(LinearCurve mLateralFriction) {
         internal_native_set_mLateralFriction(native_address, mLateralFriction.native_address);

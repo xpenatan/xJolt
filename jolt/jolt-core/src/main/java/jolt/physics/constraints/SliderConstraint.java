@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import jolt.enums.EMotorState;
@@ -67,12 +68,12 @@ return nativeObject->GetMaxFrictionForce();
     public static native float internal_native_GetMaxFrictionForce(long this_addr);
 
     public MotorSettings GetMotorSettings() {
-        long pointer = internal_native_GetMotorSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetMotorSettings_addr(native_address);
+        if (addr == 0)
             return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
-        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(addr, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -80,7 +81,7 @@ return nativeObject->GetMaxFrictionForce();
 SliderConstraint* nativeObject = (SliderConstraint*)this_addr;
 return (jlong)&nativeObject->GetMotorSettings();
 */
-    public static native long internal_native_GetMotorSettings(long this_addr);
+    public static native long internal_native_GetMotorSettings_addr(long this_addr);
 
     public void SetMotorState(EMotorState inState) {
         internal_native_SetMotorState(native_address, inState.getValue());
@@ -190,12 +191,12 @@ return nativeObject->HasLimits();
     public static native boolean internal_native_HasLimits(long this_addr);
 
     public SpringSettings GetLimitsSpringSettings() {
-        long pointer = internal_native_GetLimitsSpringSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetLimitsSpringSettings_addr(native_address);
+        if (addr == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
-        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -203,7 +204,7 @@ return nativeObject->HasLimits();
 SliderConstraint* nativeObject = (SliderConstraint*)this_addr;
 return (jlong)&nativeObject->GetLimitsSpringSettings();
 */
-    public static native long internal_native_GetLimitsSpringSettings(long this_addr);
+    public static native long internal_native_GetLimitsSpringSettings_addr(long this_addr);
 
     public void SetLimitsSpringSettings(SpringSettings inLimitsSpringSettings) {
         internal_native_SetLimitsSpringSettings(native_address, inLimitsSpringSettings.native_address);
@@ -216,12 +217,12 @@ nativeObject->SetLimitsSpringSettings(*((SpringSettings* )inLimitsSpringSettings
     public static native void internal_native_SetLimitsSpringSettings(long this_addr, long inLimitsSpringSettings_addr);
 
     public Vector2 GetTotalLambdaPosition() {
-        long pointer = internal_native_GetTotalLambdaPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetTotalLambdaPosition_addr(native_address);
+        if (addr == 0)
             return Vector2.NULL;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = Vector2.native_new();
-        Vector2_TEMP_GEN_0.internal_reset(pointer, false);
+        Vector2_TEMP_GEN_0.internal_reset(addr, false);
         return Vector2_TEMP_GEN_0;
     }
 
@@ -230,7 +231,7 @@ SliderConstraint* nativeObject = (SliderConstraint*)this_addr;
 static Vector2 copy_addr;
 copy_addr = nativeObject->GetTotalLambdaPosition();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetTotalLambdaPosition(long this_addr);
+    public static native long internal_native_GetTotalLambdaPosition_addr(long this_addr);
 
     public float GetTotalLambdaPositionLimits() {
         return internal_native_GetTotalLambdaPositionLimits(native_address);
@@ -243,12 +244,12 @@ return nativeObject->GetTotalLambdaPositionLimits();
     public static native float internal_native_GetTotalLambdaPositionLimits(long this_addr);
 
     public Vec3 GetTotalLambdaRotation() {
-        long pointer = internal_native_GetTotalLambdaRotation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetTotalLambdaRotation_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -257,7 +258,7 @@ SliderConstraint* nativeObject = (SliderConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetTotalLambdaRotation();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetTotalLambdaRotation(long this_addr);
+    public static native long internal_native_GetTotalLambdaRotation_addr(long this_addr);
 
     public float GetTotalLambdaMotor() {
         return internal_native_GetTotalLambdaMotor(native_address);

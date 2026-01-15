@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.raddoll;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class ArrayRagdollAdditionalConstraint extends IDLBase {
     static public final ArrayRagdollAdditionalConstraint NULL = ArrayRagdollAdditionalConstraint.native_new();
 
     public ArrayRagdollAdditionalConstraint() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jolt.ArrayRagdollAdditionalConstraint();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ArrayRagdollAdditionalConstraint();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -75,12 +76,12 @@ return returnedJSObj;
     public static native int internal_native_size(int this_addr);
 
     public RagdollAdditionalConstraint at(int inIndex) {
-        int pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        int addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return RagdollAdditionalConstraint.NULL;
         if (RagdollAdditionalConstraint_TEMP_GEN_0 == null)
             RagdollAdditionalConstraint_TEMP_GEN_0 = RagdollAdditionalConstraint.native_new();
-        RagdollAdditionalConstraint_TEMP_GEN_0.internal_reset(pointer, false);
+        RagdollAdditionalConstraint_TEMP_GEN_0.internal_reset(addr, false);
         return RagdollAdditionalConstraint_TEMP_GEN_0;
     }
 
@@ -91,7 +92,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ArrayRagdollAdditionalConstraint);var returnedJSObj = jsObj.at(inIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_at(int this_addr, int inIndex);
+    public static native int internal_native_at_addr(int this_addr, int inIndex);
 
     public void push_back(RagdollAdditionalConstraint inValue) {
         internal_native_push_back(native_address, inValue.native_address);

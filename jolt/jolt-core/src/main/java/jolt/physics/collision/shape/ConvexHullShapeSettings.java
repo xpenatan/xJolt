@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.math.ArrayVec3;
@@ -16,47 +17,47 @@ public class ConvexHullShapeSettings extends ConvexShapeSettings {
 
     public ConvexHullShapeSettings() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ConvexHullShapeSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_ArrayVec3_float_PhysicsMaterial(inPoints.native_address, inConvexRadius, inMaterial.native_address);
+        long addr = internal_native_create_ArrayVec3_float_PhysicsMaterial_addr(inPoints.native_address, inConvexRadius, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr), (float)inConvexRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    public static native long internal_native_create_ArrayVec3_float_PhysicsMaterial(long inPoints_addr, float inConvexRadius, long inMaterial_addr);
+    public static native long internal_native_create_ArrayVec3_float_PhysicsMaterial_addr(long inPoints_addr, float inConvexRadius, long inMaterial_addr);
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints, float inConvexRadius) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_ArrayVec3_float(inPoints.native_address, inConvexRadius);
+        long addr = internal_native_create_ArrayVec3_float_addr(inPoints.native_address, inConvexRadius);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr), (float)inConvexRadius);
 */
-    public static native long internal_native_create_ArrayVec3_float(long inPoints_addr, float inConvexRadius);
+    public static native long internal_native_create_ArrayVec3_float_addr(long inPoints_addr, float inConvexRadius);
 
     public ConvexHullShapeSettings(ArrayVec3 inPoints) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_ArrayVec3(inPoints.native_address);
+        long addr = internal_native_create_ArrayVec3_addr(inPoints.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ConvexHullShapeSettings(*((ArrayVec3* )inPoints_addr));
 */
-    public static native long internal_native_create_ArrayVec3(long inPoints_addr);
+    public static native long internal_native_create_ArrayVec3_addr(long inPoints_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -84,12 +85,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public ArrayVec3 get_mPoints() {
-        long pointer = internal_native_get_mPoints(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPoints_addr(native_address);
+        if (addr == 0)
             return ArrayVec3.NULL;
         if (ArrayVec3_TEMP_GEN_0 == null)
             ArrayVec3_TEMP_GEN_0 = ArrayVec3.native_new();
-        ArrayVec3_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayVec3_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayVec3_TEMP_GEN_0;
     }
 
@@ -97,7 +98,7 @@ delete nativeObject;
 ConvexHullShapeSettings* nativeObject = (ConvexHullShapeSettings*)this_addr;
 return (jlong)&nativeObject->mPoints;
 */
-    public static native long internal_native_get_mPoints(long this_addr);
+    public static native long internal_native_get_mPoints_addr(long this_addr);
 
     public void set_mPoints(ArrayVec3 mPoints) {
         internal_native_set_mPoints(native_address, mPoints.native_address);

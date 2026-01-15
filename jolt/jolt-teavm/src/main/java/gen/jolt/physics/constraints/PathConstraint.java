@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 import gen.jolt.enums.EMotorState;
@@ -42,12 +43,12 @@ jsObj.SetPath(inPath_addr, inPathFraction);
     public static native void internal_native_SetPath(int this_addr, int inPath_addr, float inPathFraction);
 
     public PathConstraintPath GetPath() {
-        int pointer = internal_native_GetPath(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetPath_addr(native_address);
+        if (addr == 0)
             return PathConstraintPath.NULL;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.native_new();
-        PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
+        PathConstraintPath_TEMP_GEN_0.internal_reset(addr, false);
         return PathConstraintPath_TEMP_GEN_0;
     }
 
@@ -58,7 +59,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraint);var returnedJSObj = jsObj.GetPath();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetPath(int this_addr);
+    public static native int internal_native_GetPath_addr(int this_addr);
 
     public float GetPathFraction() {
         return internal_native_GetPathFraction(native_address);
@@ -96,12 +97,12 @@ return returnedJSObj;
     public static native float internal_native_GetMaxFrictionForce(int this_addr);
 
     public MotorSettings GetPositionMotorSettings() {
-        int pointer = internal_native_GetPositionMotorSettings(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetPositionMotorSettings_addr(native_address);
+        if (addr == 0)
             return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
-        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(addr, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -112,7 +113,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraint);var returnedJSObj = jsObj.GetPositionMotorSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetPositionMotorSettings(int this_addr);
+    public static native int internal_native_GetPositionMotorSettings_addr(int this_addr);
 
     public void SetPositionMotorState(EMotorState inState) {
         internal_native_SetPositionMotorState(native_address, inState.getValue());

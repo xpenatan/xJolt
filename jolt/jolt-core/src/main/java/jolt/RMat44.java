@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -76,14 +77,14 @@ public class RMat44 extends IDLBase {
     static public final RMat44 NULL = RMat44.native_new();
 
     public RMat44() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new RMat44();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -110,12 +111,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public static RMat44 sZero() {
-        long pointer = internal_native_sZero();
-        if (pointer == 0)
+        long addr = internal_native_sZero_addr();
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_STATIC_GEN_0 == null)
             RMat44_TEMP_STATIC_GEN_0 = RMat44.native_new();
-        RMat44_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        RMat44_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return RMat44_TEMP_STATIC_GEN_0;
     }
 
@@ -123,15 +124,15 @@ delete nativeObject;
 static RMat44 copy_addr;
 copy_addr = RMat44::sZero();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_sZero();
+    public static native long internal_native_sZero_addr();
 
     public static RMat44 sIdentity() {
-        long pointer = internal_native_sIdentity();
-        if (pointer == 0)
+        long addr = internal_native_sIdentity_addr();
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_STATIC_GEN_1 == null)
             RMat44_TEMP_STATIC_GEN_1 = RMat44.native_new();
-        RMat44_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
+        RMat44_TEMP_STATIC_GEN_1.internal_reset(addr, false);
         return RMat44_TEMP_STATIC_GEN_1;
     }
 
@@ -139,15 +140,15 @@ return (jlong)&copy_addr;*/
 static RMat44 copy_addr;
 copy_addr = RMat44::sIdentity();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_sIdentity();
+    public static native long internal_native_sIdentity_addr();
 
     public static RMat44 sRotation(Quat inQ) {
-        long pointer = internal_native_sRotation(inQ.native_address);
-        if (pointer == 0)
+        long addr = internal_native_sRotation_addr(inQ.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_STATIC_GEN_2 == null)
             RMat44_TEMP_STATIC_GEN_2 = RMat44.native_new();
-        RMat44_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
+        RMat44_TEMP_STATIC_GEN_2.internal_reset(addr, false);
         return RMat44_TEMP_STATIC_GEN_2;
     }
 
@@ -155,15 +156,15 @@ return (jlong)&copy_addr;*/
 static RMat44 copy_addr;
 copy_addr = RMat44::sRotation(*((Quat* )inQ_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_sRotation(long inQ_addr);
+    public static native long internal_native_sRotation_addr(long inQ_addr);
 
     public static RMat44 sTranslation(RVec3 inTranslation) {
-        long pointer = internal_native_sTranslation(inTranslation.native_address);
-        if (pointer == 0)
+        long addr = internal_native_sTranslation_addr(inTranslation.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_STATIC_GEN_3 == null)
             RMat44_TEMP_STATIC_GEN_3 = RMat44.native_new();
-        RMat44_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
+        RMat44_TEMP_STATIC_GEN_3.internal_reset(addr, false);
         return RMat44_TEMP_STATIC_GEN_3;
     }
 
@@ -171,15 +172,15 @@ return (jlong)&copy_addr;*/
 static RMat44 copy_addr;
 copy_addr = RMat44::sTranslation(*((RVec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_sTranslation(long inTranslation_addr);
+    public static native long internal_native_sTranslation_addr(long inTranslation_addr);
 
     public static RMat44 sRotationTranslation(Quat inRotation, RVec3 inTranslation) {
-        long pointer = internal_native_sRotationTranslation(inRotation.native_address, inTranslation.native_address);
-        if (pointer == 0)
+        long addr = internal_native_sRotationTranslation_addr(inRotation.native_address, inTranslation.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_STATIC_GEN_4 == null)
             RMat44_TEMP_STATIC_GEN_4 = RMat44.native_new();
-        RMat44_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
+        RMat44_TEMP_STATIC_GEN_4.internal_reset(addr, false);
         return RMat44_TEMP_STATIC_GEN_4;
     }
 
@@ -187,15 +188,15 @@ return (jlong)&copy_addr;*/
 static RMat44 copy_addr;
 copy_addr = RMat44::sRotationTranslation(*((Quat* )inRotation_addr), *((RVec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_sRotationTranslation(long inRotation_addr, long inTranslation_addr);
+    public static native long internal_native_sRotationTranslation_addr(long inRotation_addr, long inTranslation_addr);
 
     public static RMat44 sInverseRotationTranslation(Quat inRotation, RVec3 inTranslation) {
-        long pointer = internal_native_sInverseRotationTranslation(inRotation.native_address, inTranslation.native_address);
-        if (pointer == 0)
+        long addr = internal_native_sInverseRotationTranslation_addr(inRotation.native_address, inTranslation.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_STATIC_GEN_5 == null)
             RMat44_TEMP_STATIC_GEN_5 = RMat44.native_new();
-        RMat44_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
+        RMat44_TEMP_STATIC_GEN_5.internal_reset(addr, false);
         return RMat44_TEMP_STATIC_GEN_5;
     }
 
@@ -203,15 +204,15 @@ return (jlong)&copy_addr;*/
 static RMat44 copy_addr;
 copy_addr = RMat44::sInverseRotationTranslation(*((Quat* )inRotation_addr), *((RVec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_sInverseRotationTranslation(long inRotation_addr, long inTranslation_addr);
+    public static native long internal_native_sInverseRotationTranslation_addr(long inRotation_addr, long inTranslation_addr);
 
     public Mat44 ToMat44() {
-        long pointer = internal_native_ToMat44(native_address);
-        if (pointer == 0)
+        long addr = internal_native_ToMat44_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -220,7 +221,7 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->ToMat44();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_ToMat44(long this_addr);
+    public static native long internal_native_ToMat44_addr(long this_addr);
 
     public boolean Equals(RMat44 inV) {
         return internal_native_Equals(native_address, inV.native_address);
@@ -241,12 +242,12 @@ return ((*nativeObject != *((RMat44* )inV_addr)));*/
     public static native boolean internal_native_NotEquals(long this_addr, long inV_addr);
 
     public RVec3 MulVec3(Vec3 inV) {
-        long pointer = internal_native_MulVec3(native_address, inV.native_address);
-        if (pointer == 0)
+        long addr = internal_native_MulVec3_addr(native_address, inV.native_address);
+        if (addr == 0)
             return RVec3.NULL;
         if (RVec3_TEMP_GEN_0 == null)
             RVec3_TEMP_GEN_0 = RVec3.native_new();
-        RVec3_TEMP_GEN_0.internal_reset(pointer, false);
+        RVec3_TEMP_GEN_0.internal_reset(addr, false);
         return RVec3_TEMP_GEN_0;
     }
 
@@ -255,15 +256,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RVec3 copy_addr;
 copy_addr = (*nativeObject * *((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_MulVec3(long this_addr, long inV_addr);
+    public static native long internal_native_MulVec3_addr(long this_addr, long inV_addr);
 
     public RVec3 MulRVec3(RVec3 inV) {
-        long pointer = internal_native_MulRVec3(native_address, inV.native_address);
-        if (pointer == 0)
+        long addr = internal_native_MulRVec3_addr(native_address, inV.native_address);
+        if (addr == 0)
             return RVec3.NULL;
         if (RVec3_TEMP_GEN_1 == null)
             RVec3_TEMP_GEN_1 = RVec3.native_new();
-        RVec3_TEMP_GEN_1.internal_reset(pointer, false);
+        RVec3_TEMP_GEN_1.internal_reset(addr, false);
         return RVec3_TEMP_GEN_1;
     }
 
@@ -272,15 +273,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RVec3 copy_addr;
 copy_addr = (*nativeObject * *((RVec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_MulRVec3(long this_addr, long inV_addr);
+    public static native long internal_native_MulRVec3_addr(long this_addr, long inV_addr);
 
     public RMat44 MulMat44(Mat44 inM) {
-        long pointer = internal_native_MulMat44(native_address, inM.native_address);
-        if (pointer == 0)
+        long addr = internal_native_MulMat44_addr(native_address, inM.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_GEN_0 == null)
             RMat44_TEMP_GEN_0 = RMat44.native_new();
-        RMat44_TEMP_GEN_0.internal_reset(pointer, false);
+        RMat44_TEMP_GEN_0.internal_reset(addr, false);
         return RMat44_TEMP_GEN_0;
     }
 
@@ -289,15 +290,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RMat44 copy_addr;
 copy_addr = (*nativeObject * *((Mat44* )inM_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_MulMat44(long this_addr, long inM_addr);
+    public static native long internal_native_MulMat44_addr(long this_addr, long inM_addr);
 
     public RMat44 MulRMat44(RMat44 inM) {
-        long pointer = internal_native_MulRMat44(native_address, inM.native_address);
-        if (pointer == 0)
+        long addr = internal_native_MulRMat44_addr(native_address, inM.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_GEN_1 == null)
             RMat44_TEMP_GEN_1 = RMat44.native_new();
-        RMat44_TEMP_GEN_1.internal_reset(pointer, false);
+        RMat44_TEMP_GEN_1.internal_reset(addr, false);
         return RMat44_TEMP_GEN_1;
     }
 
@@ -306,15 +307,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RMat44 copy_addr;
 copy_addr = (*nativeObject * *((RMat44* )inM_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_MulRMat44(long this_addr, long inM_addr);
+    public static native long internal_native_MulRMat44_addr(long this_addr, long inM_addr);
 
     public Vec3 GetAxisX() {
-        long pointer = internal_native_GetAxisX(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetAxisX_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -323,15 +324,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAxisX();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetAxisX(long this_addr);
+    public static native long internal_native_GetAxisX_addr(long this_addr);
 
     public Vec3 GetAxisY() {
-        long pointer = internal_native_GetAxisY(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetAxisY_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -340,15 +341,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAxisY();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetAxisY(long this_addr);
+    public static native long internal_native_GetAxisY_addr(long this_addr);
 
     public Vec3 GetAxisZ() {
-        long pointer = internal_native_GetAxisZ(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetAxisZ_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -357,15 +358,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAxisZ();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetAxisZ(long this_addr);
+    public static native long internal_native_GetAxisZ_addr(long this_addr);
 
     public Mat44 GetRotation() {
-        long pointer = internal_native_GetRotation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetRotation_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
-        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(addr, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -374,7 +375,7 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetRotation();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetRotation(long this_addr);
+    public static native long internal_native_GetRotation_addr(long this_addr);
 
     public void SetRotation(Mat44 inRotation) {
         internal_native_SetRotation(native_address, inRotation.native_address);
@@ -387,12 +388,12 @@ nativeObject->SetRotation(*((Mat44* )inRotation_addr));
     public static native void internal_native_SetRotation(long this_addr, long inRotation_addr);
 
     public Quat GetQuaternion() {
-        long pointer = internal_native_GetQuaternion(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetQuaternion_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -401,15 +402,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetQuaternion();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetQuaternion(long this_addr);
+    public static native long internal_native_GetQuaternion_addr(long this_addr);
 
     public RVec3 GetTranslation() {
-        long pointer = internal_native_GetTranslation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetTranslation_addr(native_address);
+        if (addr == 0)
             return RVec3.NULL;
         if (RVec3_TEMP_GEN_2 == null)
             RVec3_TEMP_GEN_2 = RVec3.native_new();
-        RVec3_TEMP_GEN_2.internal_reset(pointer, false);
+        RVec3_TEMP_GEN_2.internal_reset(addr, false);
         return RVec3_TEMP_GEN_2;
     }
 
@@ -418,7 +419,7 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RVec3 copy_addr;
 copy_addr = nativeObject->GetTranslation();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetTranslation(long this_addr);
+    public static native long internal_native_GetTranslation_addr(long this_addr);
 
     public boolean IsClose(RMat44 inM, float inMaxDistSq) {
         return internal_native_IsClose(native_address, inM.native_address, inMaxDistSq);
@@ -441,12 +442,12 @@ return nativeObject->IsClose(*((RMat44* )inM_addr));
     public static native boolean internal_native_IsClose(long this_addr, long inM_addr);
 
     public Vec3 Multiply3x3(Vec3 inV) {
-        long pointer = internal_native_Multiply3x3(native_address, inV.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Multiply3x3_addr(native_address, inV.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -455,15 +456,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->Multiply3x3(*((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_Multiply3x3(long this_addr, long inV_addr);
+    public static native long internal_native_Multiply3x3_addr(long this_addr, long inV_addr);
 
     public Vec3 Multiply3x3Transposed(Vec3 inV) {
-        long pointer = internal_native_Multiply3x3Transposed(native_address, inV.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Multiply3x3Transposed_addr(native_address, inV.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -472,15 +473,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->Multiply3x3Transposed(*((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_Multiply3x3Transposed(long this_addr, long inV_addr);
+    public static native long internal_native_Multiply3x3Transposed_addr(long this_addr, long inV_addr);
 
     public Mat44 Transposed3x3() {
-        long pointer = internal_native_Transposed3x3(native_address);
-        if (pointer == 0)
+        long addr = internal_native_Transposed3x3_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = Mat44.native_new();
-        Mat44_TEMP_GEN_2.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_2.internal_reset(addr, false);
         return Mat44_TEMP_GEN_2;
     }
 
@@ -489,15 +490,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->Transposed3x3();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_Transposed3x3(long this_addr);
+    public static native long internal_native_Transposed3x3_addr(long this_addr);
 
     public RMat44 Inversed() {
-        long pointer = internal_native_Inversed(native_address);
-        if (pointer == 0)
+        long addr = internal_native_Inversed_addr(native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_GEN_2 == null)
             RMat44_TEMP_GEN_2 = RMat44.native_new();
-        RMat44_TEMP_GEN_2.internal_reset(pointer, false);
+        RMat44_TEMP_GEN_2.internal_reset(addr, false);
         return RMat44_TEMP_GEN_2;
     }
 
@@ -506,15 +507,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RMat44 copy_addr;
 copy_addr = nativeObject->Inversed();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_Inversed(long this_addr);
+    public static native long internal_native_Inversed_addr(long this_addr);
 
     public RMat44 InversedRotationTranslation() {
-        long pointer = internal_native_InversedRotationTranslation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_InversedRotationTranslation_addr(native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_GEN_3 == null)
             RMat44_TEMP_GEN_3 = RMat44.native_new();
-        RMat44_TEMP_GEN_3.internal_reset(pointer, false);
+        RMat44_TEMP_GEN_3.internal_reset(addr, false);
         return RMat44_TEMP_GEN_3;
     }
 
@@ -523,15 +524,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RMat44 copy_addr;
 copy_addr = nativeObject->InversedRotationTranslation();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_InversedRotationTranslation(long this_addr);
+    public static native long internal_native_InversedRotationTranslation_addr(long this_addr);
 
     public RMat44 PreTranslated(Vec3 inTranslation) {
-        long pointer = internal_native_PreTranslated(native_address, inTranslation.native_address);
-        if (pointer == 0)
+        long addr = internal_native_PreTranslated_addr(native_address, inTranslation.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_GEN_4 == null)
             RMat44_TEMP_GEN_4 = RMat44.native_new();
-        RMat44_TEMP_GEN_4.internal_reset(pointer, false);
+        RMat44_TEMP_GEN_4.internal_reset(addr, false);
         return RMat44_TEMP_GEN_4;
     }
 
@@ -540,15 +541,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RMat44 copy_addr;
 copy_addr = nativeObject->PreTranslated(*((Vec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_PreTranslated(long this_addr, long inTranslation_addr);
+    public static native long internal_native_PreTranslated_addr(long this_addr, long inTranslation_addr);
 
     public RMat44 PostTranslated(Vec3 inTranslation) {
-        long pointer = internal_native_PostTranslated(native_address, inTranslation.native_address);
-        if (pointer == 0)
+        long addr = internal_native_PostTranslated_addr(native_address, inTranslation.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_GEN_5 == null)
             RMat44_TEMP_GEN_5 = RMat44.native_new();
-        RMat44_TEMP_GEN_5.internal_reset(pointer, false);
+        RMat44_TEMP_GEN_5.internal_reset(addr, false);
         return RMat44_TEMP_GEN_5;
     }
 
@@ -557,15 +558,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RMat44 copy_addr;
 copy_addr = nativeObject->PostTranslated(*((Vec3* )inTranslation_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_PostTranslated(long this_addr, long inTranslation_addr);
+    public static native long internal_native_PostTranslated_addr(long this_addr, long inTranslation_addr);
 
     public RMat44 PreScaled(Vec3 inScale) {
-        long pointer = internal_native_PreScaled(native_address, inScale.native_address);
-        if (pointer == 0)
+        long addr = internal_native_PreScaled_addr(native_address, inScale.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_GEN_6 == null)
             RMat44_TEMP_GEN_6 = RMat44.native_new();
-        RMat44_TEMP_GEN_6.internal_reset(pointer, false);
+        RMat44_TEMP_GEN_6.internal_reset(addr, false);
         return RMat44_TEMP_GEN_6;
     }
 
@@ -574,15 +575,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RMat44 copy_addr;
 copy_addr = nativeObject->PreScaled(*((Vec3* )inScale_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_PreScaled(long this_addr, long inScale_addr);
+    public static native long internal_native_PreScaled_addr(long this_addr, long inScale_addr);
 
     public RMat44 PostScaled(Vec3 inScale) {
-        long pointer = internal_native_PostScaled(native_address, inScale.native_address);
-        if (pointer == 0)
+        long addr = internal_native_PostScaled_addr(native_address, inScale.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_GEN_7 == null)
             RMat44_TEMP_GEN_7 = RMat44.native_new();
-        RMat44_TEMP_GEN_7.internal_reset(pointer, false);
+        RMat44_TEMP_GEN_7.internal_reset(addr, false);
         return RMat44_TEMP_GEN_7;
     }
 
@@ -591,15 +592,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RMat44 copy_addr;
 copy_addr = nativeObject->PostScaled(*((Vec3* )inScale_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_PostScaled(long this_addr, long inScale_addr);
+    public static native long internal_native_PostScaled_addr(long this_addr, long inScale_addr);
 
     public Mat44 GetDirectionPreservingMatrix() {
-        long pointer = internal_native_GetDirectionPreservingMatrix(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetDirectionPreservingMatrix_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_3 == null)
             Mat44_TEMP_GEN_3 = Mat44.native_new();
-        Mat44_TEMP_GEN_3.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_3.internal_reset(addr, false);
         return Mat44_TEMP_GEN_3;
     }
 
@@ -608,7 +609,7 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetDirectionPreservingMatrix();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetDirectionPreservingMatrix(long this_addr);
+    public static native long internal_native_GetDirectionPreservingMatrix_addr(long this_addr);
 
     public void SetColumn3(int inCol, Vec3 inV) {
         internal_native_SetColumn3(native_address, inCol, inV.native_address);
@@ -621,12 +622,12 @@ nativeObject->SetColumn3((int)inCol, *((Vec3* )inV_addr));
     public static native void internal_native_SetColumn3(long this_addr, int inCol, long inV_addr);
 
     public Vec3 GetColumn3(int inCol) {
-        long pointer = internal_native_GetColumn3(native_address, inCol);
-        if (pointer == 0)
+        long addr = internal_native_GetColumn3_addr(native_address, inCol);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(addr, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -635,7 +636,7 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetColumn3((int)inCol);
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetColumn3(long this_addr, int inCol);
+    public static native long internal_native_GetColumn3_addr(long this_addr, int inCol);
 
     public void SetAxisX(Vec3 inV) {
         internal_native_SetAxisX(native_address, inV.native_address);
@@ -688,12 +689,12 @@ nativeObject->SetColumn4((int)inCol, *((Vec4* )inV_addr));
     public static native void internal_native_SetColumn4(long this_addr, int inCol, long inV_addr);
 
     public Vec4 GetColumn4(int inCol) {
-        long pointer = internal_native_GetColumn4(native_address, inCol);
-        if (pointer == 0)
+        long addr = internal_native_GetColumn4_addr(native_address, inCol);
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_GEN_0 == null)
             Vec4_TEMP_GEN_0 = Vec4.native_new();
-        Vec4_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec4_TEMP_GEN_0.internal_reset(addr, false);
         return Vec4_TEMP_GEN_0;
     }
 
@@ -702,15 +703,15 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static Vec4 copy_addr;
 copy_addr = nativeObject->GetColumn4((int)inCol);
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetColumn4(long this_addr, int inCol);
+    public static native long internal_native_GetColumn4_addr(long this_addr, int inCol);
 
     public RMat44 Decompose(Vec3 outScale) {
-        long pointer = internal_native_Decompose(native_address, outScale.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Decompose_addr(native_address, outScale.native_address);
+        if (addr == 0)
             return RMat44.NULL;
         if (RMat44_TEMP_GEN_8 == null)
             RMat44_TEMP_GEN_8 = RMat44.native_new();
-        RMat44_TEMP_GEN_8.internal_reset(pointer, false);
+        RMat44_TEMP_GEN_8.internal_reset(addr, false);
         return RMat44_TEMP_GEN_8;
     }
 
@@ -719,5 +720,5 @@ RMat44* nativeObject = (RMat44*)this_addr;
 static RMat44 copy_addr;
 copy_addr = nativeObject->Decompose(*((Vec3* )outScale_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_Decompose(long this_addr, long outScale_addr);
+    public static native long internal_native_Decompose_addr(long this_addr, long outScale_addr);
 }

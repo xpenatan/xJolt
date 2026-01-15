@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 public class WheelWV extends Wheel {
@@ -13,14 +14,14 @@ public class WheelWV extends Wheel {
 
     public WheelWV(WheelSettingsWV inWheel) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_WheelSettingsWV(inWheel.native_address);
+        long addr = internal_native_create_WheelSettingsWV_addr(inWheel.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new WheelWV(*((WheelSettingsWV* )inWheel_addr));
 */
-    public static native long internal_native_create_WheelSettingsWV(long inWheel_addr);
+    public static native long internal_native_create_WheelSettingsWV_addr(long inWheel_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,12 +49,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public WheelSettingsWV GetSettings() {
-        long pointer = internal_native_GetSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSettings_addr(native_address);
+        if (addr == 0)
             return WheelSettingsWV.NULL;
         if (WheelSettingsWV_TEMP_GEN_0 == null)
             WheelSettingsWV_TEMP_GEN_0 = WheelSettingsWV.native_new();
-        WheelSettingsWV_TEMP_GEN_0.internal_reset(pointer, false);
+        WheelSettingsWV_TEMP_GEN_0.internal_reset(addr, false);
         return WheelSettingsWV_TEMP_GEN_0;
     }
 
@@ -62,7 +63,7 @@ WheelWV* nativeObject = (WheelWV*)this_addr;
 const WheelSettingsWV* obj = nativeObject->GetSettings();
 return (jlong)obj;
 */
-    public static native long internal_native_GetSettings(long this_addr);
+    public static native long internal_native_GetSettings_addr(long this_addr);
 
     public float get_mLongitudinalSlip() {
         return internal_native_get_mLongitudinalSlip(native_address);

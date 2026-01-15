@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.math;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class Vector2 extends IDLBase {
     static public final Vector2 NULL = Vector2.native_new();
 
     public Vector2() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new Vector2();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -108,12 +109,12 @@ nativeObject->IsNormalized();
     public static native void internal_native_IsNormalized(long this_addr);
 
     public Vector2 Normalized() {
-        long pointer = internal_native_Normalized(native_address);
-        if (pointer == 0)
+        long addr = internal_native_Normalized_addr(native_address);
+        if (addr == 0)
             return Vector2.NULL;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = Vector2.native_new();
-        Vector2_TEMP_GEN_0.internal_reset(pointer, false);
+        Vector2_TEMP_GEN_0.internal_reset(addr, false);
         return Vector2_TEMP_GEN_0;
     }
 
@@ -122,7 +123,7 @@ Vector2* nativeObject = (Vector2*)this_addr;
 static Vector2 copy_addr;
 copy_addr = nativeObject->Normalized();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_Normalized(long this_addr);
+    public static native long internal_native_Normalized_addr(long this_addr);
 
     public float Dot(Vector2 inRHS) {
         return internal_native_Dot(native_address, inRHS.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 public class GroupFilterTable extends GroupFilter {
@@ -11,7 +12,7 @@ public class GroupFilterTable extends GroupFilter {
 
     public GroupFilterTable(int inNumGroups) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int(inNumGroups);
+        int addr = internal_native_create_int_addr(inNumGroups);
         internal_reset(addr, true);
     }
 
@@ -20,11 +21,11 @@ var jsObj = new jolt.GroupFilterTable(inNumGroups);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inNumGroups"}, script = "var jsObj = new jolt.GroupFilterTable(inNumGroups);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int(int inNumGroups);
+    public static native int internal_native_create_int_addr(int inNumGroups);
 
     public GroupFilterTable() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -33,7 +34,7 @@ var jsObj = new jolt.GroupFilterTable();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.GroupFilterTable();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

@@ -3,10 +3,11 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
-import gen.jolt.idl.helper.IDLString;
+import gen.com.github.xpenatan.jparser.idl.helper.IDLString;
 
 public class ShapeResult extends IDLBase {
 
@@ -66,12 +67,12 @@ return returnedJSObj;
     public static native boolean internal_native_HasError(int this_addr);
 
     public IDLString GetError() {
-        int pointer = internal_native_GetError(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetError_addr(native_address);
+        if (addr == 0)
             return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(addr, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -82,15 +83,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);var returnedJSObj = jsObj.GetError();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetError(int this_addr);
+    public static native int internal_native_GetError_addr(int this_addr);
 
     public Shape Get() {
-        int pointer = internal_native_Get(native_address);
-        if (pointer == 0)
+        int addr = internal_native_Get_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -101,7 +102,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeResult);var returnedJSObj = jsObj.Get();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Get(int this_addr);
+    public static native int internal_native_Get_addr(int this_addr);
 
     public void Clear() {
         internal_native_Clear(native_address);

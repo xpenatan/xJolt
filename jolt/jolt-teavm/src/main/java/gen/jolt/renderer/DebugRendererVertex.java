@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.renderer;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -48,12 +49,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Float3 get_mPosition() {
-        int pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
-        Float3_TEMP_GEN_0.internal_reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(addr, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -64,15 +65,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);var returnedJSObj = jsObj.get_mPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPosition(int this_addr);
+    public static native int internal_native_get_mPosition_addr(int this_addr);
 
     public Float3 get_mNormal() {
-        int pointer = internal_native_get_mNormal(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mNormal_addr(native_address);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = Float3.native_new();
-        Float3_TEMP_GEN_1.internal_reset(pointer, false);
+        Float3_TEMP_GEN_1.internal_reset(addr, false);
         return Float3_TEMP_GEN_1;
     }
 
@@ -83,15 +84,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);var returnedJSObj = jsObj.get_mNormal();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mNormal(int this_addr);
+    public static native int internal_native_get_mNormal_addr(int this_addr);
 
     public Float2 get_mUV() {
-        int pointer = internal_native_get_mUV(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mUV_addr(native_address);
+        if (addr == 0)
             return Float2.NULL;
         if (Float2_TEMP_GEN_0 == null)
             Float2_TEMP_GEN_0 = Float2.native_new();
-        Float2_TEMP_GEN_0.internal_reset(pointer, false);
+        Float2_TEMP_GEN_0.internal_reset(addr, false);
         return Float2_TEMP_GEN_0;
     }
 
@@ -102,15 +103,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);var returnedJSObj = jsObj.get_mUV();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mUV(int this_addr);
+    public static native int internal_native_get_mUV_addr(int this_addr);
 
     public Color get_mColor() {
-        int pointer = internal_native_get_mColor(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mColor_addr(native_address);
+        if (addr == 0)
             return Color.NULL;
         if (Color_TEMP_GEN_0 == null)
             Color_TEMP_GEN_0 = Color.native_new();
-        Color_TEMP_GEN_0.internal_reset(pointer, false);
+        Color_TEMP_GEN_0.internal_reset(addr, false);
         return Color_TEMP_GEN_0;
     }
 
@@ -121,5 +122,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererVertex);var returnedJSObj = jsObj.get_mColor();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mColor(int this_addr);
+    public static native int internal_native_get_mColor_addr(int this_addr);
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 import gen.jolt.physics.collision.broadphase.ObjectVsBroadPhaseLayerFilter;
@@ -42,7 +43,7 @@ jolt.destroy(jsObj);
 
     public ObjectVsBroadPhaseLayerFilterEm() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -73,7 +74,7 @@ var jsObj = new jolt.ObjectVsBroadPhaseLayerFilterJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ObjectVsBroadPhaseLayerFilterJS();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "ShouldCollide" }, script = "var ObjectVsBroadPhaseLayerFilterJS = jolt.wrapPointer(this_addr, jolt.ObjectVsBroadPhaseLayerFilterJS); ObjectVsBroadPhaseLayerFilterJS.ShouldCollide = ShouldCollide;")
     public static native void internal_native_setupCallback(int this_addr, ShouldCollide ShouldCollide);

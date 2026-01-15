@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.physics.collision.PhysicsMaterial;
@@ -13,7 +14,7 @@ public class SphereShapeSettings extends ConvexShapeSettings {
 
     public SphereShapeSettings(float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_float_PhysicsMaterial(inRadius, inMaterial.native_address);
+        int addr = internal_native_create_float_PhysicsMaterial_addr(inRadius, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
@@ -22,11 +23,11 @@ var jsObj = new jolt.SphereShapeSettings(inRadius, inMaterial_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inRadius", "inMaterial_addr"}, script = "var jsObj = new jolt.SphereShapeSettings(inRadius, inMaterial_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_float_PhysicsMaterial(float inRadius, int inMaterial_addr);
+    public static native int internal_native_create_float_PhysicsMaterial_addr(float inRadius, int inMaterial_addr);
 
     public SphereShapeSettings(float inRadius) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_float(inRadius);
+        int addr = internal_native_create_float_addr(inRadius);
         internal_reset(addr, true);
     }
 
@@ -35,7 +36,7 @@ var jsObj = new jolt.SphereShapeSettings(inRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inRadius"}, script = "var jsObj = new jolt.SphereShapeSettings(inRadius);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_float(float inRadius);
+    public static native int internal_native_create_float_addr(float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

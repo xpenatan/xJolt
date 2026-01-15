@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.geometry;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class TriangleList extends IDLBase {
     static public final TriangleList NULL = TriangleList.native_new();
 
     public TriangleList() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new TriangleList();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -68,12 +69,12 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public Triangle at(int inIndex) {
-        long pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        long addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return Triangle.NULL;
         if (Triangle_TEMP_GEN_0 == null)
             Triangle_TEMP_GEN_0 = Triangle.native_new();
-        Triangle_TEMP_GEN_0.internal_reset(pointer, false);
+        Triangle_TEMP_GEN_0.internal_reset(addr, false);
         return Triangle_TEMP_GEN_0;
     }
 
@@ -81,7 +82,7 @@ return nativeObject->size();
 TriangleList* nativeObject = (TriangleList*)this_addr;
 return (jlong)&nativeObject->at((int)inIndex);
 */
-    public static native long internal_native_at(long this_addr, int inIndex);
+    public static native long internal_native_at_addr(long this_addr, int inIndex);
 
     public void push_back(Triangle inTriangle) {
         internal_native_push_back(native_address, inTriangle.native_address);

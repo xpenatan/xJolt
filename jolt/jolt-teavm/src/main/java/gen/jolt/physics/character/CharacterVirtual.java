@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.character;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -51,7 +52,7 @@ public class CharacterVirtual extends CharacterBase {
 
     public CharacterVirtual(CharacterVirtualSettings inSettings, Vec3 inPosition, Quat inRotation, PhysicsSystem inSystem) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(inSettings.native_address, inPosition.native_address, inRotation.native_address, inSystem.native_address);
+        int addr = internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem_addr(inSettings.native_address, inPosition.native_address, inRotation.native_address, inSystem.native_address);
         internal_reset(addr, true);
     }
 
@@ -60,7 +61,7 @@ var jsObj = new jolt.CharacterVirtual(inSettings_addr, inPosition_addr, inRotati
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inSettings_addr", "inPosition_addr", "inRotation_addr", "inSystem_addr"}, script = "var jsObj = new jolt.CharacterVirtual(inSettings_addr, inPosition_addr, inRotation_addr, inSystem_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(int inSettings_addr, int inPosition_addr, int inRotation_addr, int inSystem_addr);
+    public static native int internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem_addr(int inSettings_addr, int inPosition_addr, int inRotation_addr, int inSystem_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -89,12 +90,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public CharacterID GetID() {
-        int pointer = internal_native_GetID(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetID_addr(native_address);
+        if (addr == 0)
             return CharacterID.NULL;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = CharacterID.native_new();
-        CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
+        CharacterID_TEMP_GEN_0.internal_reset(addr, false);
         return CharacterID_TEMP_GEN_0;
     }
 
@@ -105,7 +106,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetID();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetID(int this_addr);
+    public static native int internal_native_GetID_addr(int this_addr);
 
     public void SetListener(CharacterContactListener inListener) {
         internal_native_SetListener(native_address, inListener.native_address);
@@ -130,12 +131,12 @@ jsObj.SetCharacterVsCharacterCollision(inCharacterVsCharacterCollision_addr);
     public static native void internal_native_SetCharacterVsCharacterCollision(int this_addr, int inCharacterVsCharacterCollision_addr);
 
     public IDLBase GetListener() {
-        int pointer = internal_native_GetListener(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetListener_addr(native_address);
+        if (addr == 0)
             return IDLBase.NULL;
         if (IDLBase_TEMP_GEN_0 == null)
             IDLBase_TEMP_GEN_0 = IDLBase.native_new();
-        IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLBase_TEMP_GEN_0.internal_reset(addr, false);
         return IDLBase_TEMP_GEN_0;
     }
 
@@ -145,15 +146,15 @@ var returnedJSObj = jsObj.GetListener();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetListener();return returnedJSObj;")
-    public static native int internal_native_GetListener(int this_addr);
+    public static native int internal_native_GetListener_addr(int this_addr);
 
     public Vec3 GetLinearVelocity() {
-        int pointer = internal_native_GetLinearVelocity(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetLinearVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -164,7 +165,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetLinearVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetLinearVelocity(int this_addr);
+    public static native int internal_native_GetLinearVelocity_addr(int this_addr);
 
     public void SetLinearVelocity(Vec3 inLinearVelocity) {
         internal_native_SetLinearVelocity(native_address, inLinearVelocity.native_address);
@@ -178,12 +179,12 @@ jsObj.SetLinearVelocity(inLinearVelocity_addr);
     public static native void internal_native_SetLinearVelocity(int this_addr, int inLinearVelocity_addr);
 
     public Vec3 GetPosition() {
-        int pointer = internal_native_GetPosition(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -194,7 +195,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetPosition(int this_addr);
+    public static native int internal_native_GetPosition_addr(int this_addr);
 
     public void SetPosition(Vec3 inPosition) {
         internal_native_SetPosition(native_address, inPosition.native_address);
@@ -208,12 +209,12 @@ jsObj.SetPosition(inPosition_addr);
     public static native void internal_native_SetPosition(int this_addr, int inPosition_addr);
 
     public Quat GetRotation() {
-        int pointer = internal_native_GetRotation(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -224,7 +225,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetRotation(int this_addr);
+    public static native int internal_native_GetRotation_addr(int this_addr);
 
     public void SetRotation(Quat inRotation) {
         internal_native_SetRotation(native_address, inRotation.native_address);
@@ -238,12 +239,12 @@ jsObj.SetRotation(inRotation_addr);
     public static native void internal_native_SetRotation(int this_addr, int inRotation_addr);
 
     public Vec3 GetCenterOfMassPosition() {
-        int pointer = internal_native_GetCenterOfMassPosition(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetCenterOfMassPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -254,15 +255,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetCenterOfMassPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetCenterOfMassPosition(int this_addr);
+    public static native int internal_native_GetCenterOfMassPosition_addr(int this_addr);
 
     public Mat44 GetWorldTransform() {
-        int pointer = internal_native_GetWorldTransform(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetWorldTransform_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -273,15 +274,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetWorldTransform();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetWorldTransform(int this_addr);
+    public static native int internal_native_GetWorldTransform_addr(int this_addr);
 
     public Mat44 GetCenterOfMassTransform() {
-        int pointer = internal_native_GetCenterOfMassTransform(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetCenterOfMassTransform_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
-        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(addr, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -292,7 +293,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetCenterOfMassTransform();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetCenterOfMassTransform(int this_addr);
+    public static native int internal_native_GetCenterOfMassTransform_addr(int this_addr);
 
     public float GetMass() {
         return internal_native_GetMass(native_address);
@@ -434,12 +435,12 @@ return returnedJSObj;
     public static native boolean internal_native_GetMaxHitsExceeded(int this_addr);
 
     public Vec3 GetShapeOffset() {
-        int pointer = internal_native_GetShapeOffset(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetShapeOffset_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -450,7 +451,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetShapeOffset();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetShapeOffset(int this_addr);
+    public static native int internal_native_GetShapeOffset_addr(int this_addr);
 
     public void SetShapeOffset(Vec3 inShapeOffset) {
         internal_native_SetShapeOffset(native_address, inShapeOffset.native_address);
@@ -473,10 +474,10 @@ var returnedJSObj = jsObj.GetUserData();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetUserData();return returnedJSObj;")
-    public static native int internal_native_GetUserData(int this_addr);
+    public static native long internal_native_GetUserData(int this_addr);
 
     public void SetUserData(long inUserData) {
-        internal_native_SetUserData(native_address, (int) inUserData);
+        internal_native_SetUserData(native_address, inUserData);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -484,15 +485,15 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);
 jsObj.SetUserData(inUserData);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);jsObj.SetUserData(inUserData);")
-    public static native void internal_native_SetUserData(int this_addr, int inUserData);
+    public static native void internal_native_SetUserData(int this_addr, long inUserData);
 
     public BodyID GetInnerBodyID() {
-        int pointer = internal_native_GetInnerBodyID(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetInnerBodyID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -503,7 +504,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetInnerBodyID();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetInnerBodyID(int this_addr);
+    public static native int internal_native_GetInnerBodyID_addr(int this_addr);
 
     public void StartTrackingContactChanges() {
         internal_native_StartTrackingContactChanges(native_address);
@@ -528,12 +529,12 @@ jsObj.FinishTrackingContactChanges();
     public static native void internal_native_FinishTrackingContactChanges(int this_addr);
 
     public Vec3 CancelVelocityTowardsSteepSlopes(Vec3 inDesiredVelocity) {
-        int pointer = internal_native_CancelVelocityTowardsSteepSlopes(native_address, inDesiredVelocity.native_address);
-        if (pointer == 0)
+        int addr = internal_native_CancelVelocityTowardsSteepSlopes_addr(native_address, inDesiredVelocity.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -544,7 +545,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inDesiredVelocity_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.CancelVelocityTowardsSteepSlopes(inDesiredVelocity_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_CancelVelocityTowardsSteepSlopes(int this_addr, int inDesiredVelocity_addr);
+    public static native int internal_native_CancelVelocityTowardsSteepSlopes_addr(int this_addr, int inDesiredVelocity_addr);
 
     public void Update(float inDeltaTime, Vec3 inGravity, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
         internal_native_Update(native_address, inDeltaTime, inGravity.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address, inShapeFilter.native_address, inAllocator.native_address);
@@ -650,12 +651,12 @@ jsObj.SetInnerBodyShape(inShape_addr);
     public static native void internal_native_SetInnerBodyShape(int this_addr, int inShape_addr);
 
     public TransformedShape GetTransformedShape() {
-        int pointer = internal_native_GetTransformedShape(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetTransformedShape_addr(native_address);
+        if (addr == 0)
             return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
-        TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
+        TransformedShape_TEMP_GEN_0.internal_reset(addr, false);
         return TransformedShape_TEMP_GEN_0;
     }
 
@@ -666,7 +667,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetTransformedShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetTransformedShape(int this_addr);
+    public static native int internal_native_GetTransformedShape_addr(int this_addr);
 
     public boolean HasCollidedWith(BodyID inBodyID) {
         return internal_native_HasCollidedWith(native_address, inBodyID.native_address);
@@ -705,12 +706,12 @@ return returnedJSObj;
     public static native boolean internal_native_HasCollidedWithCharacter(int this_addr, int inCharacter_addr);
 
     public ArrayCharacterVirtualContact GetActiveContacts() {
-        int pointer = internal_native_GetActiveContacts(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetActiveContacts_addr(native_address);
+        if (addr == 0)
             return ArrayCharacterVirtualContact.NULL;
         if (ArrayCharacterVirtualContact_TEMP_GEN_0 == null)
             ArrayCharacterVirtualContact_TEMP_GEN_0 = ArrayCharacterVirtualContact.native_new();
-        ArrayCharacterVirtualContact_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayCharacterVirtualContact_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayCharacterVirtualContact_TEMP_GEN_0;
     }
 
@@ -721,5 +722,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterVirtual);var returnedJSObj = jsObj.GetActiveContacts();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetActiveContacts(int this_addr);
+    public static native int internal_native_GetActiveContacts_addr(int this_addr);
 }

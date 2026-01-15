@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -17,7 +18,7 @@ public class ContactSettings extends IDLBase {
     static public final ContactSettings NULL = ContactSettings.native_new();
 
     public ContactSettings() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -26,7 +27,7 @@ var jsObj = new jolt.ContactSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ContactSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -208,12 +209,12 @@ jsObj.set_mIsSensor(mIsSensor);
     public static native void internal_native_set_mIsSensor(int this_addr, boolean mIsSensor);
 
     public Vec3 get_mRelativeLinearSurfaceVelocity() {
-        int pointer = internal_native_get_mRelativeLinearSurfaceVelocity(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mRelativeLinearSurfaceVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -224,7 +225,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);var returnedJSObj = jsObj.get_mRelativeLinearSurfaceVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mRelativeLinearSurfaceVelocity(int this_addr);
+    public static native int internal_native_get_mRelativeLinearSurfaceVelocity_addr(int this_addr);
 
     public void set_mRelativeLinearSurfaceVelocity(Vec3 mRelativeLinearSurfaceVelocity) {
         internal_native_set_mRelativeLinearSurfaceVelocity(native_address, mRelativeLinearSurfaceVelocity.native_address);
@@ -238,12 +239,12 @@ jsObj.set_mRelativeLinearSurfaceVelocity(mRelativeLinearSurfaceVelocity_addr);
     public static native void internal_native_set_mRelativeLinearSurfaceVelocity(int this_addr, int mRelativeLinearSurfaceVelocity_addr);
 
     public Vec3 get_mRelativeAngularSurfaceVelocity() {
-        int pointer = internal_native_get_mRelativeAngularSurfaceVelocity(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mRelativeAngularSurfaceVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -254,7 +255,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ContactSettings);var returnedJSObj = jsObj.get_mRelativeAngularSurfaceVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mRelativeAngularSurfaceVelocity(int this_addr);
+    public static native int internal_native_get_mRelativeAngularSurfaceVelocity_addr(int this_addr);
 
     public void set_mRelativeAngularSurfaceVelocity(Vec3 mRelativeAngularSurfaceVelocity) {
         internal_native_set_mRelativeAngularSurfaceVelocity(native_address, mRelativeAngularSurfaceVelocity.native_address);

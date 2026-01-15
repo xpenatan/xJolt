@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ public class SoftBodySharedSettingsDihedralBend extends IDLBase {
     static public final SoftBodySharedSettingsDihedralBend NULL = SoftBodySharedSettingsDihedralBend.native_new();
 
     public SoftBodySharedSettingsDihedralBend(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance) {
-        int addr = internal_native_create_int_int_int_int_float(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
+        int addr = internal_native_create_int_int_int_int_float_addr(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
         internal_reset(addr, true);
     }
 
@@ -21,7 +22,7 @@ var jsObj = new jolt.SoftBodySharedSettingsDihedralBend(inVertex1, inVertex2, in
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inVertex1", "inVertex2", "inVertex3", "inVertex4", "inCompliance"}, script = "var jsObj = new jolt.SoftBodySharedSettingsDihedralBend(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_int_int_int_float(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance);
+    public static native int internal_native_create_int_int_int_int_float_addr(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

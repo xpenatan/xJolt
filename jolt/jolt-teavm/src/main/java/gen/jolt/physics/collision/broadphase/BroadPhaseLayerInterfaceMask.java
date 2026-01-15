@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.broadphase;
 
 public class BroadPhaseLayerInterfaceMask extends BroadPhaseLayerInterface {
@@ -11,7 +12,7 @@ public class BroadPhaseLayerInterfaceMask extends BroadPhaseLayerInterface {
 
     public BroadPhaseLayerInterfaceMask(int inNumBroadPhaseLayers) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int(inNumBroadPhaseLayers);
+        int addr = internal_native_create_int_addr(inNumBroadPhaseLayers);
         internal_reset(addr, true);
     }
 
@@ -20,7 +21,7 @@ var jsObj = new jolt.BroadPhaseLayerInterfaceMask(inNumBroadPhaseLayers);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inNumBroadPhaseLayers"}, script = "var jsObj = new jolt.BroadPhaseLayerInterfaceMask(inNumBroadPhaseLayers);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int(int inNumBroadPhaseLayers);
+    public static native int internal_native_create_int_addr(int inNumBroadPhaseLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.math.Vec3;
@@ -15,14 +16,14 @@ public class OffsetCenterOfMassShapeSettings extends DecoratedShapeSettings {
 
     public OffsetCenterOfMassShapeSettings(Vec3 inOffset, Shape inShape) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3_Shape(inOffset.native_address, inShape.native_address);
+        long addr = internal_native_create_Vec3_Shape_addr(inOffset.native_address, inShape.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new OffsetCenterOfMassShapeSettings(*((Vec3* )inOffset_addr), (Shape* )inShape_addr);
 */
-    public static native long internal_native_create_Vec3_Shape(long inOffset_addr, long inShape_addr);
+    public static native long internal_native_create_Vec3_Shape_addr(long inOffset_addr, long inShape_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,12 +51,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mOffset() {
-        long pointer = internal_native_get_mOffset(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mOffset_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -63,7 +64,7 @@ delete nativeObject;
 OffsetCenterOfMassShapeSettings* nativeObject = (OffsetCenterOfMassShapeSettings*)this_addr;
 return (jlong)&nativeObject->mOffset;
 */
-    public static native long internal_native_get_mOffset(long this_addr);
+    public static native long internal_native_get_mOffset_addr(long this_addr);
 
     public void set_mOffset(Vec3 mOffset) {
         internal_native_set_mOffset(native_address, mOffset.native_address);

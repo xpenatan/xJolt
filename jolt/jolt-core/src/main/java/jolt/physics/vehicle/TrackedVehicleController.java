@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 public class TrackedVehicleController extends VehicleController {
@@ -15,14 +16,14 @@ public class TrackedVehicleController extends VehicleController {
 
     public TrackedVehicleController(TrackedVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);
+        long addr = internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint_addr(inSettings.native_address, inConstraint.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new TrackedVehicleController(*((TrackedVehicleControllerSettings* )inSettings_addr), *((VehicleConstraint* )inConstraint_addr));
 */
-    public static native long internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr);
+    public static native long internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint_addr(long inSettings_addr, long inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -140,12 +141,12 @@ return nativeObject->GetBrakeInput();
     public static native float internal_native_GetBrakeInput(long this_addr);
 
     public VehicleEngine GetEngine() {
-        long pointer = internal_native_GetEngine(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetEngine_addr(native_address);
+        if (addr == 0)
             return VehicleEngine.NULL;
         if (VehicleEngine_TEMP_GEN_0 == null)
             VehicleEngine_TEMP_GEN_0 = VehicleEngine.native_new();
-        VehicleEngine_TEMP_GEN_0.internal_reset(pointer, false);
+        VehicleEngine_TEMP_GEN_0.internal_reset(addr, false);
         return VehicleEngine_TEMP_GEN_0;
     }
 
@@ -153,15 +154,15 @@ return nativeObject->GetBrakeInput();
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 return (jlong)&nativeObject->GetEngine();
 */
-    public static native long internal_native_GetEngine(long this_addr);
+    public static native long internal_native_GetEngine_addr(long this_addr);
 
     public VehicleTransmission GetTransmission() {
-        long pointer = internal_native_GetTransmission(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetTransmission_addr(native_address);
+        if (addr == 0)
             return VehicleTransmission.NULL;
         if (VehicleTransmission_TEMP_GEN_0 == null)
             VehicleTransmission_TEMP_GEN_0 = VehicleTransmission.native_new();
-        VehicleTransmission_TEMP_GEN_0.internal_reset(pointer, false);
+        VehicleTransmission_TEMP_GEN_0.internal_reset(addr, false);
         return VehicleTransmission_TEMP_GEN_0;
     }
 
@@ -169,5 +170,5 @@ return (jlong)&nativeObject->GetEngine();
 TrackedVehicleController* nativeObject = (TrackedVehicleController*)this_addr;
 return (jlong)&nativeObject->GetTransmission();
 */
-    public static native long internal_native_GetTransmission(long this_addr);
+    public static native long internal_native_GetTransmission_addr(long this_addr);
 }

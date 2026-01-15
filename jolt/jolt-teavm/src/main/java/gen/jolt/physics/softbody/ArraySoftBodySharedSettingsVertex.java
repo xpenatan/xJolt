@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -63,12 +64,12 @@ return returnedJSObj;
     public static native int internal_native_size(int this_addr);
 
     public SoftBodySharedSettingsVertex at(int inIndex) {
-        int pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        int addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return SoftBodySharedSettingsVertex.NULL;
         if (SoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
             SoftBodySharedSettingsVertex_TEMP_GEN_0 = SoftBodySharedSettingsVertex.native_new();
-        SoftBodySharedSettingsVertex_TEMP_GEN_0.internal_reset(pointer, false);
+        SoftBodySharedSettingsVertex_TEMP_GEN_0.internal_reset(addr, false);
         return SoftBodySharedSettingsVertex_TEMP_GEN_0;
     }
 
@@ -79,7 +80,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ArraySoftBodySharedSettingsVertex);var returnedJSObj = jsObj.at(inIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_at(int this_addr, int inIndex);
+    public static native int internal_native_at_addr(int this_addr, int inIndex);
 
     public void push_back(SoftBodySharedSettingsVertex inValue) {
         internal_native_push_back(native_address, inValue.native_address);

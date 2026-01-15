@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.broadphase;
 
 import gen.jolt.physics.collision.ObjectLayerPairFilter;
@@ -13,7 +14,7 @@ public class ObjectVsBroadPhaseLayerFilterTable extends ObjectVsBroadPhaseLayerF
 
     public ObjectVsBroadPhaseLayerFilterTable(BroadPhaseLayerInterface inBroadPhaseLayerInterface, int inNumBroadPhaseLayers, ObjectLayerPairFilter inObjectLayerPairFilter, int inNumObjectLayers) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int(inBroadPhaseLayerInterface.native_address, inNumBroadPhaseLayers, inObjectLayerPairFilter.native_address, inNumObjectLayers);
+        int addr = internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int_addr(inBroadPhaseLayerInterface.native_address, inNumBroadPhaseLayers, inObjectLayerPairFilter.native_address, inNumObjectLayers);
         internal_reset(addr, true);
     }
 
@@ -22,7 +23,7 @@ var jsObj = new jolt.ObjectVsBroadPhaseLayerFilterTable(inBroadPhaseLayerInterfa
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inBroadPhaseLayerInterface_addr", "inNumBroadPhaseLayers", "inObjectLayerPairFilter_addr", "inNumObjectLayers"}, script = "var jsObj = new jolt.ObjectVsBroadPhaseLayerFilterTable(inBroadPhaseLayerInterface_addr, inNumBroadPhaseLayers, inObjectLayerPairFilter_addr, inNumObjectLayers);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int(int inBroadPhaseLayerInterface_addr, int inNumBroadPhaseLayers, int inObjectLayerPairFilter_addr, int inNumObjectLayers);
+    public static native int internal_native_create_BroadPhaseLayerInterface_int_ObjectLayerPairFilter_int_addr(int inBroadPhaseLayerInterface_addr, int inNumBroadPhaseLayers, int inObjectLayerPairFilter_addr, int inNumObjectLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

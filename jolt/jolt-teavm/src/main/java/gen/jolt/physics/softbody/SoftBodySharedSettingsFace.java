@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ public class SoftBodySharedSettingsFace extends IDLBase {
     static public final SoftBodySharedSettingsFace NULL = SoftBodySharedSettingsFace.native_new();
 
     public SoftBodySharedSettingsFace(int inVertex1, int inVertex2, int inVertex3, int inMaterialIndex) {
-        int addr = internal_native_create_int_int_int_int(inVertex1, inVertex2, inVertex3, inMaterialIndex);
+        int addr = internal_native_create_int_int_int_int_addr(inVertex1, inVertex2, inVertex3, inMaterialIndex);
         internal_reset(addr, true);
     }
 
@@ -21,7 +22,7 @@ var jsObj = new jolt.SoftBodySharedSettingsFace(inVertex1, inVertex2, inVertex3,
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inVertex1", "inVertex2", "inVertex3", "inMaterialIndex"}, script = "var jsObj = new jolt.SoftBodySharedSettingsFace(inVertex1, inVertex2, inVertex3, inMaterialIndex);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_int_int_int(int inVertex1, int inVertex2, int inVertex3, int inMaterialIndex);
+    public static native int internal_native_create_int_int_int_int_addr(int inVertex1, int inVertex2, int inVertex3, int inMaterialIndex);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

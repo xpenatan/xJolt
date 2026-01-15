@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import jolt.physics.collision.shape.SubShapeID;
@@ -15,14 +16,14 @@ public class RayCastResult extends BroadPhaseCastResult {
 
     public RayCastResult() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new RayCastResult();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,12 +51,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public SubShapeID get_mSubShapeID2() {
-        long pointer = internal_native_get_mSubShapeID2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mSubShapeID2_addr(native_address);
+        if (addr == 0)
             return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
-        SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
+        SubShapeID_TEMP_GEN_0.internal_reset(addr, false);
         return SubShapeID_TEMP_GEN_0;
     }
 
@@ -63,7 +64,7 @@ delete nativeObject;
 RayCastResult* nativeObject = (RayCastResult*)this_addr;
 return (jlong)&nativeObject->mSubShapeID2;
 */
-    public static native long internal_native_get_mSubShapeID2(long this_addr);
+    public static native long internal_native_get_mSubShapeID2_addr(long this_addr);
 
     public void set_mSubShapeID2(SubShapeID mSubShapeID2) {
         internal_native_set_mSubShapeID2(native_address, mSubShapeID2.native_address);

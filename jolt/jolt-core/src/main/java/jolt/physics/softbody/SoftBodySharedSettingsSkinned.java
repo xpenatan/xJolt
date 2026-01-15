@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -58,12 +59,12 @@ nativeObject->mVertex = mVertex;
     public static native void internal_native_set_mVertex(long this_addr, int mVertex);
 
     public SoftBodySharedSettingsSkinWeight get_mWeights(int index) {
-        long pointer = internal_native_get_mWeights(native_address, index);
-        if (pointer == 0)
+        long addr = internal_native_get_mWeights_addr(native_address, index);
+        if (addr == 0)
             return SoftBodySharedSettingsSkinWeight.NULL;
         if (SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 == null)
             SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 = SoftBodySharedSettingsSkinWeight.native_new();
-        SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.internal_reset(pointer, false);
+        SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.internal_reset(addr, false);
         return SoftBodySharedSettingsSkinWeight_TEMP_GEN_0;
     }
 
@@ -71,7 +72,7 @@ nativeObject->mVertex = mVertex;
 SoftBodySharedSettingsSkinned* nativeObject = (SoftBodySharedSettingsSkinned*)this_addr;
 return (jlong)&nativeObject->mWeights[index];
 */
-    public static native long internal_native_get_mWeights(long this_addr, int index);
+    public static native long internal_native_get_mWeights_addr(long this_addr, int index);
 
     public void set_mWeights(int index, SoftBodySharedSettingsSkinWeight mWeights) {
         internal_native_set_mWeights(native_address, index, mWeights.native_address);

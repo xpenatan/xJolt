@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.character;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -65,12 +66,12 @@ nativeObject->Release();
     public static native void internal_native_Release(long this_addr);
 
     public Vec3 get_mUp() {
-        long pointer = internal_native_get_mUp(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mUp_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -78,7 +79,7 @@ nativeObject->Release();
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 return (jlong)&nativeObject->mUp;
 */
-    public static native long internal_native_get_mUp(long this_addr);
+    public static native long internal_native_get_mUp_addr(long this_addr);
 
     public void set_mUp(Vec3 mUp) {
         internal_native_set_mUp(native_address, mUp.native_address);
@@ -91,12 +92,12 @@ nativeObject->mUp = *((Vec3*)mUp_addr);
     public static native void internal_native_set_mUp(long this_addr, long mUp_addr);
 
     public Plane get_mSupportingVolume() {
-        long pointer = internal_native_get_mSupportingVolume(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mSupportingVolume_addr(native_address);
+        if (addr == 0)
             return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
-        Plane_TEMP_GEN_0.internal_reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(addr, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -104,7 +105,7 @@ nativeObject->mUp = *((Vec3*)mUp_addr);
 CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 return (jlong)&nativeObject->mSupportingVolume;
 */
-    public static native long internal_native_get_mSupportingVolume(long this_addr);
+    public static native long internal_native_get_mSupportingVolume_addr(long this_addr);
 
     public void set_mSupportingVolume(Plane mSupportingVolume) {
         internal_native_set_mSupportingVolume(native_address, mSupportingVolume.native_address);
@@ -157,12 +158,12 @@ nativeObject->mEnhancedInternalEdgeRemoval = mEnhancedInternalEdgeRemoval;
     public static native void internal_native_set_mEnhancedInternalEdgeRemoval(long this_addr, boolean mEnhancedInternalEdgeRemoval);
 
     public Shape get_mShape() {
-        long pointer = internal_native_get_mShape(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -171,7 +172,7 @@ CharacterBaseSettings* nativeObject = (CharacterBaseSettings*)this_addr;
 const Shape* attr = nativeObject->mShape;
 return (jlong)attr;
 */
-    public static native long internal_native_get_mShape(long this_addr);
+    public static native long internal_native_get_mShape_addr(long this_addr);
 
     public void set_mShape(Shape mShape) {
         internal_native_set_mShape(native_address, mShape.native_address);

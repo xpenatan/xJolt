@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.character;
 
 import jolt.math.Vec3;
@@ -24,14 +25,14 @@ public class CharacterVirtualSettings extends CharacterBaseSettings {
 
     public CharacterVirtualSettings() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new CharacterVirtualSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -59,12 +60,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public CharacterID get_mID() {
-        long pointer = internal_native_get_mID(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mID_addr(native_address);
+        if (addr == 0)
             return CharacterID.NULL;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = CharacterID.native_new();
-        CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
+        CharacterID_TEMP_GEN_0.internal_reset(addr, false);
         return CharacterID_TEMP_GEN_0;
     }
 
@@ -72,7 +73,7 @@ delete nativeObject;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return (jlong)&nativeObject->mID;
 */
-    public static native long internal_native_get_mID(long this_addr);
+    public static native long internal_native_get_mID_addr(long this_addr);
 
     public void set_mID(CharacterID mID) {
         internal_native_set_mID(native_address, mID.native_address);
@@ -125,12 +126,12 @@ nativeObject->mMaxStrength = mMaxStrength;
     public static native void internal_native_set_mMaxStrength(long this_addr, float mMaxStrength);
 
     public Vec3 get_mShapeOffset() {
-        long pointer = internal_native_get_mShapeOffset(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mShapeOffset_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -138,7 +139,7 @@ nativeObject->mMaxStrength = mMaxStrength;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return (jlong)&nativeObject->mShapeOffset;
 */
-    public static native long internal_native_get_mShapeOffset(long this_addr);
+    public static native long internal_native_get_mShapeOffset_addr(long this_addr);
 
     public void set_mShapeOffset(Vec3 mShapeOffset) {
         internal_native_set_mShapeOffset(native_address, mShapeOffset.native_address);
@@ -358,12 +359,12 @@ nativeObject->mPenetrationRecoverySpeed = mPenetrationRecoverySpeed;
     public static native void internal_native_set_mPenetrationRecoverySpeed(long this_addr, float mPenetrationRecoverySpeed);
 
     public Shape get_mInnerBodyShape() {
-        long pointer = internal_native_get_mInnerBodyShape(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mInnerBodyShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -372,7 +373,7 @@ CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 const Shape* attr = nativeObject->mInnerBodyShape;
 return (jlong)attr;
 */
-    public static native long internal_native_get_mInnerBodyShape(long this_addr);
+    public static native long internal_native_get_mInnerBodyShape_addr(long this_addr);
 
     public void set_mInnerBodyShape(Shape mInnerBodyShape) {
         internal_native_set_mInnerBodyShape(native_address, mInnerBodyShape.native_address);
@@ -385,12 +386,12 @@ nativeObject->mInnerBodyShape = (Shape*)mInnerBodyShape_addr;
     public static native void internal_native_set_mInnerBodyShape(long this_addr, long mInnerBodyShape_addr);
 
     public BodyID get_mInnerBodyIDOverride() {
-        long pointer = internal_native_get_mInnerBodyIDOverride(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mInnerBodyIDOverride_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -398,7 +399,7 @@ nativeObject->mInnerBodyShape = (Shape*)mInnerBodyShape_addr;
 CharacterVirtualSettings* nativeObject = (CharacterVirtualSettings*)this_addr;
 return (jlong)&nativeObject->mInnerBodyIDOverride;
 */
-    public static native long internal_native_get_mInnerBodyIDOverride(long this_addr);
+    public static native long internal_native_get_mInnerBodyIDOverride_addr(long this_addr);
 
     public void set_mInnerBodyIDOverride(BodyID mInnerBodyIDOverride) {
         internal_native_set_mInnerBodyIDOverride(native_address, mInnerBodyIDOverride.native_address);

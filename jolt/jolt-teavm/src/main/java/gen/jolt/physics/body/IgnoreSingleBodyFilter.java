@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.body;
 
 public class IgnoreSingleBodyFilter extends BodyFilter {
@@ -11,7 +12,7 @@ public class IgnoreSingleBodyFilter extends BodyFilter {
 
     public IgnoreSingleBodyFilter(BodyID inBodyID) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_BodyID(inBodyID.native_address);
+        int addr = internal_native_create_BodyID_addr(inBodyID.native_address);
         internal_reset(addr, true);
     }
 
@@ -20,7 +21,7 @@ var jsObj = new jolt.IgnoreSingleBodyFilter(inBodyID_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inBodyID_addr"}, script = "var jsObj = new jolt.IgnoreSingleBodyFilter(inBodyID_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_BodyID(int inBodyID_addr);
+    public static native int internal_native_create_BodyID_addr(int inBodyID_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

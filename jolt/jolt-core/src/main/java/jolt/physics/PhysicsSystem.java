@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -62,14 +63,14 @@ public class PhysicsSystem extends IDLBase {
     static public final PhysicsSystem NULL = PhysicsSystem.native_new();
 
     public PhysicsSystem() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new PhysicsSystem();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -126,12 +127,12 @@ nativeObject->SetGravity(*((Vec3* )inGravity_addr));
     public static native void internal_native_SetGravity(long this_addr, long inGravity_addr);
 
     public Vec3 GetGravity() {
-        long pointer = internal_native_GetGravity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetGravity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -140,15 +141,15 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetGravity();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetGravity(long this_addr);
+    public static native long internal_native_GetGravity_addr(long this_addr);
 
     public PhysicsSettings GetPhysicsSettings() {
-        long pointer = internal_native_GetPhysicsSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetPhysicsSettings_addr(native_address);
+        if (addr == 0)
             return PhysicsSettings.NULL;
         if (PhysicsSettings_TEMP_GEN_0 == null)
             PhysicsSettings_TEMP_GEN_0 = PhysicsSettings.native_new();
-        PhysicsSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsSettings_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsSettings_TEMP_GEN_0;
     }
 
@@ -156,7 +157,7 @@ return (jlong)&copy_addr;*/
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetPhysicsSettings();
 */
-    public static native long internal_native_GetPhysicsSettings(long this_addr);
+    public static native long internal_native_GetPhysicsSettings_addr(long this_addr);
 
     public void SetPhysicsSettings(PhysicsSettings inPhysicsSettings) {
         internal_native_SetPhysicsSettings(native_address, inPhysicsSettings.native_address);
@@ -219,12 +220,12 @@ nativeObject->GetActiveBodies((::EBodyType)inBodyType, *((BodyIDVector* )outBodi
     public static native void internal_native_GetActiveBodies(long this_addr, int inBodyType, long outBodies_addr);
 
     public AABox GetBounds() {
-        long pointer = internal_native_GetBounds(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBounds_addr(native_address);
+        if (addr == 0)
             return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
-        AABox_TEMP_GEN_0.internal_reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(addr, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -233,7 +234,7 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 static AABox copy_addr;
 copy_addr = nativeObject->GetBounds();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetBounds(long this_addr);
+    public static native long internal_native_GetBounds_addr(long this_addr);
 
     public void AddConstraint(Constraint inConstraint) {
         internal_native_AddConstraint(native_address, inConstraint.native_address);
@@ -266,12 +267,12 @@ nativeObject->SetContactListener((ContactListener* )inListener_addr);
     public static native void internal_native_SetContactListener(long this_addr, long inListener_addr);
 
     public IDLBase GetContactListener() {
-        long pointer = internal_native_GetContactListener(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetContactListener_addr(native_address);
+        if (addr == 0)
             return IDLBase.NULL;
         if (IDLBase_TEMP_GEN_0 == null)
             IDLBase_TEMP_GEN_0 = IDLBase.native_new();
-        IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLBase_TEMP_GEN_0.internal_reset(addr, false);
         return IDLBase_TEMP_GEN_0;
     }
 
@@ -279,7 +280,7 @@ nativeObject->SetContactListener((ContactListener* )inListener_addr);
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)nativeObject->GetContactListener();
 */
-    public static native long internal_native_GetContactListener(long this_addr);
+    public static native long internal_native_GetContactListener_addr(long this_addr);
 
     public void SetSoftBodyContactListener(SoftBodyContactListener inListener) {
         internal_native_SetSoftBodyContactListener(native_address, inListener.native_address);
@@ -292,12 +293,12 @@ nativeObject->SetSoftBodyContactListener((SoftBodyContactListener* )inListener_a
     public static native void internal_native_SetSoftBodyContactListener(long this_addr, long inListener_addr);
 
     public SoftBodyContactListener GetSoftBodyContactListener() {
-        long pointer = internal_native_GetSoftBodyContactListener(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSoftBodyContactListener_addr(native_address);
+        if (addr == 0)
             return SoftBodyContactListener.NULL;
         if (SoftBodyContactListener_TEMP_GEN_0 == null)
             SoftBodyContactListener_TEMP_GEN_0 = SoftBodyContactListener.native_new();
-        SoftBodyContactListener_TEMP_GEN_0.internal_reset(pointer, false);
+        SoftBodyContactListener_TEMP_GEN_0.internal_reset(addr, false);
         return SoftBodyContactListener_TEMP_GEN_0;
     }
 
@@ -306,7 +307,7 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 SoftBodyContactListener* obj = nativeObject->GetSoftBodyContactListener();
 return (jlong)obj;
 */
-    public static native long internal_native_GetSoftBodyContactListener(long this_addr);
+    public static native long internal_native_GetSoftBodyContactListener_addr(long this_addr);
 
     public void OptimizeBroadPhase() {
         internal_native_OptimizeBroadPhase(native_address);
@@ -319,12 +320,12 @@ nativeObject->OptimizeBroadPhase();
     public static native void internal_native_OptimizeBroadPhase(long this_addr);
 
     public BodyInterface GetBodyInterface() {
-        long pointer = internal_native_GetBodyInterface(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBodyInterface_addr(native_address);
+        if (addr == 0)
             return BodyInterface.NULL;
         if (BodyInterface_TEMP_GEN_0 == null)
             BodyInterface_TEMP_GEN_0 = BodyInterface.native_new();
-        BodyInterface_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyInterface_TEMP_GEN_0.internal_reset(addr, false);
         return BodyInterface_TEMP_GEN_0;
     }
 
@@ -332,15 +333,15 @@ nativeObject->OptimizeBroadPhase();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBodyInterface();
 */
-    public static native long internal_native_GetBodyInterface(long this_addr);
+    public static native long internal_native_GetBodyInterface_addr(long this_addr);
 
     public BodyInterface GetBodyInterfaceNoLock() {
-        long pointer = internal_native_GetBodyInterfaceNoLock(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBodyInterfaceNoLock_addr(native_address);
+        if (addr == 0)
             return BodyInterface.NULL;
         if (BodyInterface_TEMP_GEN_1 == null)
             BodyInterface_TEMP_GEN_1 = BodyInterface.native_new();
-        BodyInterface_TEMP_GEN_1.internal_reset(pointer, false);
+        BodyInterface_TEMP_GEN_1.internal_reset(addr, false);
         return BodyInterface_TEMP_GEN_1;
     }
 
@@ -348,15 +349,15 @@ return (jlong)&nativeObject->GetBodyInterface();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBodyInterfaceNoLock();
 */
-    public static native long internal_native_GetBodyInterfaceNoLock(long this_addr);
+    public static native long internal_native_GetBodyInterfaceNoLock_addr(long this_addr);
 
     public BodyLockInterfaceNoLock GetBodyLockInterfaceNoLock() {
-        long pointer = internal_native_GetBodyLockInterfaceNoLock(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBodyLockInterfaceNoLock_addr(native_address);
+        if (addr == 0)
             return BodyLockInterfaceNoLock.NULL;
         if (BodyLockInterfaceNoLock_TEMP_GEN_0 == null)
             BodyLockInterfaceNoLock_TEMP_GEN_0 = BodyLockInterfaceNoLock.native_new();
-        BodyLockInterfaceNoLock_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyLockInterfaceNoLock_TEMP_GEN_0.internal_reset(addr, false);
         return BodyLockInterfaceNoLock_TEMP_GEN_0;
     }
 
@@ -364,15 +365,15 @@ return (jlong)&nativeObject->GetBodyInterfaceNoLock();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBodyLockInterfaceNoLock();
 */
-    public static native long internal_native_GetBodyLockInterfaceNoLock(long this_addr);
+    public static native long internal_native_GetBodyLockInterfaceNoLock_addr(long this_addr);
 
     public BodyLockInterfaceLocking GetBodyLockInterface() {
-        long pointer = internal_native_GetBodyLockInterface(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBodyLockInterface_addr(native_address);
+        if (addr == 0)
             return BodyLockInterfaceLocking.NULL;
         if (BodyLockInterfaceLocking_TEMP_GEN_0 == null)
             BodyLockInterfaceLocking_TEMP_GEN_0 = BodyLockInterfaceLocking.native_new();
-        BodyLockInterfaceLocking_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyLockInterfaceLocking_TEMP_GEN_0.internal_reset(addr, false);
         return BodyLockInterfaceLocking_TEMP_GEN_0;
     }
 
@@ -380,15 +381,15 @@ return (jlong)&nativeObject->GetBodyLockInterfaceNoLock();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBodyLockInterface();
 */
-    public static native long internal_native_GetBodyLockInterface(long this_addr);
+    public static native long internal_native_GetBodyLockInterface_addr(long this_addr);
 
     public BroadPhaseQuery GetBroadPhaseQuery() {
-        long pointer = internal_native_GetBroadPhaseQuery(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBroadPhaseQuery_addr(native_address);
+        if (addr == 0)
             return BroadPhaseQuery.NULL;
         if (BroadPhaseQuery_TEMP_GEN_0 == null)
             BroadPhaseQuery_TEMP_GEN_0 = BroadPhaseQuery.native_new();
-        BroadPhaseQuery_TEMP_GEN_0.internal_reset(pointer, false);
+        BroadPhaseQuery_TEMP_GEN_0.internal_reset(addr, false);
         return BroadPhaseQuery_TEMP_GEN_0;
     }
 
@@ -396,15 +397,15 @@ return (jlong)&nativeObject->GetBodyLockInterface();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetBroadPhaseQuery();
 */
-    public static native long internal_native_GetBroadPhaseQuery(long this_addr);
+    public static native long internal_native_GetBroadPhaseQuery_addr(long this_addr);
 
     public NarrowPhaseQuery GetNarrowPhaseQuery() {
-        long pointer = internal_native_GetNarrowPhaseQuery(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetNarrowPhaseQuery_addr(native_address);
+        if (addr == 0)
             return NarrowPhaseQuery.NULL;
         if (NarrowPhaseQuery_TEMP_GEN_0 == null)
             NarrowPhaseQuery_TEMP_GEN_0 = NarrowPhaseQuery.native_new();
-        NarrowPhaseQuery_TEMP_GEN_0.internal_reset(pointer, false);
+        NarrowPhaseQuery_TEMP_GEN_0.internal_reset(addr, false);
         return NarrowPhaseQuery_TEMP_GEN_0;
     }
 
@@ -412,15 +413,15 @@ return (jlong)&nativeObject->GetBroadPhaseQuery();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetNarrowPhaseQuery();
 */
-    public static native long internal_native_GetNarrowPhaseQuery(long this_addr);
+    public static native long internal_native_GetNarrowPhaseQuery_addr(long this_addr);
 
     public NarrowPhaseQuery GetNarrowPhaseQueryNoLock() {
-        long pointer = internal_native_GetNarrowPhaseQueryNoLock(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetNarrowPhaseQueryNoLock_addr(native_address);
+        if (addr == 0)
             return NarrowPhaseQuery.NULL;
         if (NarrowPhaseQuery_TEMP_GEN_1 == null)
             NarrowPhaseQuery_TEMP_GEN_1 = NarrowPhaseQuery.native_new();
-        NarrowPhaseQuery_TEMP_GEN_1.internal_reset(pointer, false);
+        NarrowPhaseQuery_TEMP_GEN_1.internal_reset(addr, false);
         return NarrowPhaseQuery_TEMP_GEN_1;
     }
 
@@ -428,7 +429,7 @@ return (jlong)&nativeObject->GetNarrowPhaseQuery();
 PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 return (jlong)&nativeObject->GetNarrowPhaseQueryNoLock();
 */
-    public static native long internal_native_GetNarrowPhaseQueryNoLock(long this_addr);
+    public static native long internal_native_GetNarrowPhaseQueryNoLock_addr(long this_addr);
 
     public void SaveState(StateRecorder inStream, EStateRecorderState inState, StateRecorderFilter inFilter) {
         internal_native_SaveState(native_address, inStream.native_address, inState.getValue(), inFilter.native_address);
@@ -531,12 +532,12 @@ nativeObject->SetBodyActivationListener((BodyActivationListener* )inListener_add
     public static native void internal_native_SetBodyActivationListener(long this_addr, long inListener_addr);
 
     public BodyActivationListener GetBodyActivationListener() {
-        long pointer = internal_native_GetBodyActivationListener(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBodyActivationListener_addr(native_address);
+        if (addr == 0)
             return BodyActivationListener.NULL;
         if (BodyActivationListener_TEMP_GEN_0 == null)
             BodyActivationListener_TEMP_GEN_0 = BodyActivationListener.native_new();
-        BodyActivationListener_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyActivationListener_TEMP_GEN_0.internal_reset(addr, false);
         return BodyActivationListener_TEMP_GEN_0;
     }
 
@@ -545,7 +546,7 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 const BodyActivationListener* obj = nativeObject->GetBodyActivationListener();
 return (jlong)obj;
 */
-    public static native long internal_native_GetBodyActivationListener(long this_addr);
+    public static native long internal_native_GetBodyActivationListener_addr(long this_addr);
 
     public boolean WereBodiesInContact(BodyID inBodyID1, BodyID inBodyID2) {
         return internal_native_WereBodiesInContact(native_address, inBodyID1.native_address, inBodyID2.native_address);
@@ -568,12 +569,12 @@ nativeObject->SetSimShapeFilter((SimShapeFilter* )inShapeFilter_addr);
     public static native void internal_native_SetSimShapeFilter(long this_addr, long inShapeFilter_addr);
 
     public SimShapeFilter GetSimShapeFilter() {
-        long pointer = internal_native_GetSimShapeFilter(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSimShapeFilter_addr(native_address);
+        if (addr == 0)
             return SimShapeFilter.NULL;
         if (SimShapeFilter_TEMP_GEN_0 == null)
             SimShapeFilter_TEMP_GEN_0 = SimShapeFilter.native_new();
-        SimShapeFilter_TEMP_GEN_0.internal_reset(pointer, false);
+        SimShapeFilter_TEMP_GEN_0.internal_reset(addr, false);
         return SimShapeFilter_TEMP_GEN_0;
     }
 
@@ -582,5 +583,5 @@ PhysicsSystem* nativeObject = (PhysicsSystem*)this_addr;
 const SimShapeFilter* obj = nativeObject->GetSimShapeFilter();
 return (jlong)obj;
 */
-    public static native long internal_native_GetSimShapeFilter(long this_addr);
+    public static native long internal_native_GetSimShapeFilter_addr(long this_addr);
 }

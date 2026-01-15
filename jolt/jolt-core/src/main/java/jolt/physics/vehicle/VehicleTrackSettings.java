@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -59,12 +60,12 @@ nativeObject->mDrivenWheel = mDrivenWheel;
     public static native void internal_native_set_mDrivenWheel(long this_addr, int mDrivenWheel);
 
     public ArrayUint get_mWheels() {
-        long pointer = internal_native_get_mWheels(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mWheels_addr(native_address);
+        if (addr == 0)
             return ArrayUint.NULL;
         if (ArrayUint_TEMP_GEN_0 == null)
             ArrayUint_TEMP_GEN_0 = ArrayUint.native_new();
-        ArrayUint_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayUint_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayUint_TEMP_GEN_0;
     }
 
@@ -72,7 +73,7 @@ nativeObject->mDrivenWheel = mDrivenWheel;
 VehicleTrackSettings* nativeObject = (VehicleTrackSettings*)this_addr;
 return (jlong)&nativeObject->mWheels;
 */
-    public static native long internal_native_get_mWheels(long this_addr);
+    public static native long internal_native_get_mWheels_addr(long this_addr);
 
     public void set_mWheels(ArrayUint mWheels) {
         internal_native_set_mWheels(native_address, mWheels.native_address);

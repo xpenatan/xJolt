@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.math.Vec3;
@@ -15,7 +16,7 @@ public class ScaledShapeSettings extends DecoratedShapeSettings {
 
     public ScaledShapeSettings(ShapeSettings inShape, Vec3 inScale) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_ShapeSettings_Vec3(inShape.native_address, inScale.native_address);
+        int addr = internal_native_create_ShapeSettings_Vec3_addr(inShape.native_address, inScale.native_address);
         internal_reset(addr, true);
     }
 
@@ -24,7 +25,7 @@ var jsObj = new jolt.ScaledShapeSettings(inShape_addr, inScale_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inScale_addr"}, script = "var jsObj = new jolt.ScaledShapeSettings(inShape_addr, inScale_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_ShapeSettings_Vec3(int inShape_addr, int inScale_addr);
+    public static native int internal_native_create_ShapeSettings_Vec3_addr(int inShape_addr, int inScale_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,12 +54,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mScale() {
-        int pointer = internal_native_get_mScale(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mScale_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -69,7 +70,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ScaledShapeSettings);var returnedJSObj = jsObj.get_mScale();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mScale(int this_addr);
+    public static native int internal_native_get_mScale_addr(int this_addr);
 
     public void set_mScale(Vec3 mScale) {
         internal_native_set_mScale(native_address, mScale.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.raddoll;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -59,12 +60,12 @@ nativeObject->mBodyIdx[index] = mBodyIdx;
     public static native void internal_native_set_mBodyIdx(long this_addr, int index, int mBodyIdx);
 
     public TwoBodyConstraintSettings get_mConstraint() {
-        long pointer = internal_native_get_mConstraint(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mConstraint_addr(native_address);
+        if (addr == 0)
             return TwoBodyConstraintSettings.NULL;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
             TwoBodyConstraintSettings_TEMP_GEN_0 = TwoBodyConstraintSettings.native_new();
-        TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(addr, false);
         return TwoBodyConstraintSettings_TEMP_GEN_0;
     }
 
@@ -73,7 +74,7 @@ RagdollAdditionalConstraint* nativeObject = (RagdollAdditionalConstraint*)this_a
 TwoBodyConstraintSettings* attr = nativeObject->mConstraint;
 return (jlong)attr;
 */
-    public static native long internal_native_get_mConstraint(long this_addr);
+    public static native long internal_native_get_mConstraint_addr(long this_addr);
 
     public void set_mConstraint(TwoBodyConstraintSettings mConstraint) {
         internal_native_set_mConstraint(native_address, mConstraint.native_address);

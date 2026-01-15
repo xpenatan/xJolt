@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 public class ObjectLayerPairFilterTable extends ObjectLayerPairFilter {
@@ -11,14 +12,14 @@ public class ObjectLayerPairFilterTable extends ObjectLayerPairFilter {
 
     public ObjectLayerPairFilterTable(int inNumObjectLayers) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int(inNumObjectLayers);
+        long addr = internal_native_create_int_addr(inNumObjectLayers);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ObjectLayerPairFilterTable(inNumObjectLayers);
 */
-    public static native long internal_native_create_int(int inNumObjectLayers);
+    public static native long internal_native_create_int_addr(int inNumObjectLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

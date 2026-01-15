@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -32,7 +33,7 @@ public class SoftBodySharedSettings extends IDLBase {
     static public final SoftBodySharedSettings NULL = SoftBodySharedSettings.native_new();
 
     public SoftBodySharedSettings() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -41,7 +42,7 @@ var jsObj = new jolt.SoftBodySharedSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SoftBodySharedSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -213,11 +214,11 @@ jsObj.Optimize();
     public static native void internal_native_Optimize(int this_addr);
 
     public SoftBodySharedSettings Clone() {
-        int pointer = internal_native_Clone(native_address);
-        if (pointer == 0)
+        int addr = internal_native_Clone_addr(native_address);
+        if (addr == 0)
             return SoftBodySharedSettings.NULL;
         SoftBodySharedSettings SoftBodySharedSettings_NEW = SoftBodySharedSettings.native_new();
-        SoftBodySharedSettings_NEW.internal_reset(pointer, true);
+        SoftBodySharedSettings_NEW.internal_reset(addr, true);
         return SoftBodySharedSettings_NEW;
     }
 
@@ -228,15 +229,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.Clone();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Clone(int this_addr);
+    public static native int internal_native_Clone_addr(int this_addr);
 
     public ArraySoftBodySharedSettingsVertex get_mVertices() {
-        int pointer = internal_native_get_mVertices(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mVertices_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodySharedSettingsVertex.NULL;
         if (ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVertex_TEMP_GEN_0 = ArraySoftBodySharedSettingsVertex.native_new();
-        ArraySoftBodySharedSettingsVertex_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodySharedSettingsVertex_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodySharedSettingsVertex_TEMP_GEN_0;
     }
 
@@ -247,7 +248,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.get_mVertices();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mVertices(int this_addr);
+    public static native int internal_native_get_mVertices_addr(int this_addr);
 
     public void set_mVertices(ArraySoftBodySharedSettingsVertex mVertices) {
         internal_native_set_mVertices(native_address, mVertices.native_address);
@@ -261,12 +262,12 @@ jsObj.set_mVertices(mVertices_addr);
     public static native void internal_native_set_mVertices(int this_addr, int mVertices_addr);
 
     public ArraySoftBodySharedSettingsFace get_mFaces() {
-        int pointer = internal_native_get_mFaces(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mFaces_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodySharedSettingsFace.NULL;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = ArraySoftBodySharedSettingsFace.native_new();
-        ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodySharedSettingsFace_TEMP_GEN_0;
     }
 
@@ -277,7 +278,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.get_mFaces();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mFaces(int this_addr);
+    public static native int internal_native_get_mFaces_addr(int this_addr);
 
     public void set_mFaces(ArraySoftBodySharedSettingsFace mFaces) {
         internal_native_set_mFaces(native_address, mFaces.native_address);
@@ -291,12 +292,12 @@ jsObj.set_mFaces(mFaces_addr);
     public static native void internal_native_set_mFaces(int this_addr, int mFaces_addr);
 
     public ArraySoftBodySharedSettingsEdge get_mEdgeConstraints() {
-        int pointer = internal_native_get_mEdgeConstraints(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mEdgeConstraints_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodySharedSettingsEdge.NULL;
         if (ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsEdge_TEMP_GEN_0 = ArraySoftBodySharedSettingsEdge.native_new();
-        ArraySoftBodySharedSettingsEdge_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodySharedSettingsEdge_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodySharedSettingsEdge_TEMP_GEN_0;
     }
 
@@ -307,7 +308,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.get_mEdgeConstraints();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mEdgeConstraints(int this_addr);
+    public static native int internal_native_get_mEdgeConstraints_addr(int this_addr);
 
     public void set_mEdgeConstraints(ArraySoftBodySharedSettingsEdge mEdgeConstraints) {
         internal_native_set_mEdgeConstraints(native_address, mEdgeConstraints.native_address);
@@ -321,12 +322,12 @@ jsObj.set_mEdgeConstraints(mEdgeConstraints_addr);
     public static native void internal_native_set_mEdgeConstraints(int this_addr, int mEdgeConstraints_addr);
 
     public ArraySoftBodySharedSettingsDihedralBend get_mDihedralBendConstraints() {
-        int pointer = internal_native_get_mDihedralBendConstraints(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mDihedralBendConstraints_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodySharedSettingsDihedralBend.NULL;
         if (ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0 = ArraySoftBodySharedSettingsDihedralBend.native_new();
-        ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodySharedSettingsDihedralBend_TEMP_GEN_0;
     }
 
@@ -337,7 +338,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.get_mDihedralBendConstraints();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mDihedralBendConstraints(int this_addr);
+    public static native int internal_native_get_mDihedralBendConstraints_addr(int this_addr);
 
     public void set_mDihedralBendConstraints(ArraySoftBodySharedSettingsDihedralBend mDihedralBendConstraints) {
         internal_native_set_mDihedralBendConstraints(native_address, mDihedralBendConstraints.native_address);
@@ -351,12 +352,12 @@ jsObj.set_mDihedralBendConstraints(mDihedralBendConstraints_addr);
     public static native void internal_native_set_mDihedralBendConstraints(int this_addr, int mDihedralBendConstraints_addr);
 
     public ArraySoftBodySharedSettingsVolume get_mVolumeConstraints() {
-        int pointer = internal_native_get_mVolumeConstraints(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mVolumeConstraints_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodySharedSettingsVolume.NULL;
         if (ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsVolume_TEMP_GEN_0 = ArraySoftBodySharedSettingsVolume.native_new();
-        ArraySoftBodySharedSettingsVolume_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodySharedSettingsVolume_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodySharedSettingsVolume_TEMP_GEN_0;
     }
 
@@ -367,7 +368,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.get_mVolumeConstraints();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mVolumeConstraints(int this_addr);
+    public static native int internal_native_get_mVolumeConstraints_addr(int this_addr);
 
     public void set_mVolumeConstraints(ArraySoftBodySharedSettingsVolume mVolumeConstraints) {
         internal_native_set_mVolumeConstraints(native_address, mVolumeConstraints.native_address);
@@ -381,12 +382,12 @@ jsObj.set_mVolumeConstraints(mVolumeConstraints_addr);
     public static native void internal_native_set_mVolumeConstraints(int this_addr, int mVolumeConstraints_addr);
 
     public ArraySoftBodySharedSettingsSkinned get_mSkinnedConstraints() {
-        int pointer = internal_native_get_mSkinnedConstraints(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mSkinnedConstraints_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodySharedSettingsSkinned.NULL;
         if (ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0 = ArraySoftBodySharedSettingsSkinned.native_new();
-        ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodySharedSettingsSkinned_TEMP_GEN_0;
     }
 
@@ -397,7 +398,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.get_mSkinnedConstraints();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mSkinnedConstraints(int this_addr);
+    public static native int internal_native_get_mSkinnedConstraints_addr(int this_addr);
 
     public void set_mSkinnedConstraints(ArraySoftBodySharedSettingsSkinned mSkinnedConstraints) {
         internal_native_set_mSkinnedConstraints(native_address, mSkinnedConstraints.native_address);
@@ -411,12 +412,12 @@ jsObj.set_mSkinnedConstraints(mSkinnedConstraints_addr);
     public static native void internal_native_set_mSkinnedConstraints(int this_addr, int mSkinnedConstraints_addr);
 
     public ArraySoftBodySharedSettingsInvBind get_mInvBindMatrices() {
-        int pointer = internal_native_get_mInvBindMatrices(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mInvBindMatrices_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodySharedSettingsInvBind.NULL;
         if (ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0 = ArraySoftBodySharedSettingsInvBind.native_new();
-        ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodySharedSettingsInvBind_TEMP_GEN_0;
     }
 
@@ -427,7 +428,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.get_mInvBindMatrices();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mInvBindMatrices(int this_addr);
+    public static native int internal_native_get_mInvBindMatrices_addr(int this_addr);
 
     public void set_mInvBindMatrices(ArraySoftBodySharedSettingsInvBind mInvBindMatrices) {
         internal_native_set_mInvBindMatrices(native_address, mInvBindMatrices.native_address);
@@ -441,12 +442,12 @@ jsObj.set_mInvBindMatrices(mInvBindMatrices_addr);
     public static native void internal_native_set_mInvBindMatrices(int this_addr, int mInvBindMatrices_addr);
 
     public ArraySoftBodySharedSettingsLRA get_mLRAConstraints() {
-        int pointer = internal_native_get_mLRAConstraints(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mLRAConstraints_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodySharedSettingsLRA.NULL;
         if (ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsLRA_TEMP_GEN_0 = ArraySoftBodySharedSettingsLRA.native_new();
-        ArraySoftBodySharedSettingsLRA_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodySharedSettingsLRA_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodySharedSettingsLRA_TEMP_GEN_0;
     }
 
@@ -457,7 +458,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.get_mLRAConstraints();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mLRAConstraints(int this_addr);
+    public static native int internal_native_get_mLRAConstraints_addr(int this_addr);
 
     public void set_mLRAConstraints(ArraySoftBodySharedSettingsLRA mLRAConstraints) {
         internal_native_set_mLRAConstraints(native_address, mLRAConstraints.native_address);
@@ -471,12 +472,12 @@ jsObj.set_mLRAConstraints(mLRAConstraints_addr);
     public static native void internal_native_set_mLRAConstraints(int this_addr, int mLRAConstraints_addr);
 
     public PhysicsMaterialList get_mMaterials() {
-        int pointer = internal_native_get_mMaterials(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mMaterials_addr(native_address);
+        if (addr == 0)
             return PhysicsMaterialList.NULL;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
-        PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterialList_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
 
@@ -487,7 +488,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettings);var returnedJSObj = jsObj.get_mMaterials();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mMaterials(int this_addr);
+    public static native int internal_native_get_mMaterials_addr(int this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
         internal_native_set_mMaterials(native_address, mMaterials.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import jolt.physics.body.MotionProperties;
@@ -58,12 +59,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public SoftBodySharedSettings GetSettings() {
-        long pointer = internal_native_GetSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSettings_addr(native_address);
+        if (addr == 0)
             return SoftBodySharedSettings.NULL;
         if (SoftBodySharedSettings_TEMP_GEN_0 == null)
             SoftBodySharedSettings_TEMP_GEN_0 = SoftBodySharedSettings.native_new();
-        SoftBodySharedSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SoftBodySharedSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SoftBodySharedSettings_TEMP_GEN_0;
     }
 
@@ -72,15 +73,15 @@ SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 const SoftBodySharedSettings* obj = nativeObject->GetSettings();
 return (jlong)obj;
 */
-    public static native long internal_native_GetSettings(long this_addr);
+    public static native long internal_native_GetSettings_addr(long this_addr);
 
     public ArraySoftBodyVertex GetVertices() {
-        long pointer = internal_native_GetVertices(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetVertices_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodyVertex.NULL;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
             ArraySoftBodyVertex_TEMP_GEN_0 = ArraySoftBodyVertex.native_new();
-        ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodyVertex_TEMP_GEN_0;
     }
 
@@ -88,15 +89,15 @@ return (jlong)obj;
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetVertices();
 */
-    public static native long internal_native_GetVertices(long this_addr);
+    public static native long internal_native_GetVertices_addr(long this_addr);
 
     public SoftBodyVertex GetVertex(int inIndex) {
-        long pointer = internal_native_GetVertex(native_address, inIndex);
-        if (pointer == 0)
+        long addr = internal_native_GetVertex_addr(native_address, inIndex);
+        if (addr == 0)
             return SoftBodyVertex.NULL;
         if (SoftBodyVertex_TEMP_GEN_0 == null)
             SoftBodyVertex_TEMP_GEN_0 = SoftBodyVertex.native_new();
-        SoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
+        SoftBodyVertex_TEMP_GEN_0.internal_reset(addr, false);
         return SoftBodyVertex_TEMP_GEN_0;
     }
 
@@ -104,15 +105,15 @@ return (jlong)&nativeObject->GetVertices();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetVertex(inIndex);
 */
-    public static native long internal_native_GetVertex(long this_addr, int inIndex);
+    public static native long internal_native_GetVertex_addr(long this_addr, int inIndex);
 
     public PhysicsMaterialList GetMaterials() {
-        long pointer = internal_native_GetMaterials(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetMaterials_addr(native_address);
+        if (addr == 0)
             return PhysicsMaterialList.NULL;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
-        PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterialList_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
 
@@ -120,15 +121,15 @@ return (jlong)&nativeObject->GetVertex(inIndex);
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetMaterials();
 */
-    public static native long internal_native_GetMaterials(long this_addr);
+    public static native long internal_native_GetMaterials_addr(long this_addr);
 
     public ArraySoftBodySharedSettingsFace GetFaces() {
-        long pointer = internal_native_GetFaces(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetFaces_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodySharedSettingsFace.NULL;
         if (ArraySoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             ArraySoftBodySharedSettingsFace_TEMP_GEN_0 = ArraySoftBodySharedSettingsFace.native_new();
-        ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodySharedSettingsFace_TEMP_GEN_0;
     }
 
@@ -136,15 +137,15 @@ return (jlong)&nativeObject->GetMaterials();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetFaces();
 */
-    public static native long internal_native_GetFaces(long this_addr);
+    public static native long internal_native_GetFaces_addr(long this_addr);
 
     public SoftBodySharedSettingsFace GetFace(int inIndex) {
-        long pointer = internal_native_GetFace(native_address, inIndex);
-        if (pointer == 0)
+        long addr = internal_native_GetFace_addr(native_address, inIndex);
+        if (addr == 0)
             return SoftBodySharedSettingsFace.NULL;
         if (SoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             SoftBodySharedSettingsFace_TEMP_GEN_0 = SoftBodySharedSettingsFace.native_new();
-        SoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
+        SoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(addr, false);
         return SoftBodySharedSettingsFace_TEMP_GEN_0;
     }
 
@@ -152,7 +153,7 @@ return (jlong)&nativeObject->GetFaces();
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetFace(inIndex);
 */
-    public static native long internal_native_GetFace(long this_addr, int inIndex);
+    public static native long internal_native_GetFace_addr(long this_addr, int inIndex);
 
     public int GetNumIterations() {
         return internal_native_GetNumIterations(native_address);
@@ -255,12 +256,12 @@ nativeObject->SetSkinnedMaxDistanceMultiplier((float)inSkinnedMaxDistanceMultipl
     public static native void internal_native_SetSkinnedMaxDistanceMultiplier(long this_addr, float inSkinnedMaxDistanceMultiplier);
 
     public AABox GetLocalBounds() {
-        long pointer = internal_native_GetLocalBounds(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetLocalBounds_addr(native_address);
+        if (addr == 0)
             return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
-        AABox_TEMP_GEN_0.internal_reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(addr, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -268,7 +269,7 @@ nativeObject->SetSkinnedMaxDistanceMultiplier((float)inSkinnedMaxDistanceMultipl
 SoftBodyMotionProperties* nativeObject = (SoftBodyMotionProperties*)this_addr;
 return (jlong)&nativeObject->GetLocalBounds();
 */
-    public static native long internal_native_GetLocalBounds(long this_addr);
+    public static native long internal_native_GetLocalBounds_addr(long this_addr);
 
     public void CustomUpdate(float inDeltaTime, Body ioSoftBody, PhysicsSystem inSystem) {
         internal_native_CustomUpdate(native_address, inDeltaTime, ioSoftBody.native_address, inSystem.native_address);

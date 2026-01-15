@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -25,7 +26,7 @@ public class RShapeCast extends IDLBase {
     static public final RShapeCast NULL = RShapeCast.native_new();
 
     public RShapeCast(Shape inShape, Vec3 inScale, Mat44 inCenterOfMassStart, Vec3 inDirection) {
-        int addr = internal_native_create_Shape_Vec3_Mat44_Vec3(inShape.native_address, inScale.native_address, inCenterOfMassStart.native_address, inDirection.native_address);
+        int addr = internal_native_create_Shape_Vec3_Mat44_Vec3_addr(inShape.native_address, inScale.native_address, inCenterOfMassStart.native_address, inDirection.native_address);
         internal_reset(addr, true);
     }
 
@@ -34,7 +35,7 @@ var jsObj = new jolt.RShapeCast(inShape_addr, inScale_addr, inCenterOfMassStart_
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inScale_addr", "inCenterOfMassStart_addr", "inDirection_addr"}, script = "var jsObj = new jolt.RShapeCast(inShape_addr, inScale_addr, inCenterOfMassStart_addr, inDirection_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Shape_Vec3_Mat44_Vec3(int inShape_addr, int inScale_addr, int inCenterOfMassStart_addr, int inDirection_addr);
+    public static native int internal_native_create_Shape_Vec3_Mat44_Vec3_addr(int inShape_addr, int inScale_addr, int inCenterOfMassStart_addr, int inDirection_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -62,12 +63,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 GetPointOnRay(float inFraction) {
-        int pointer = internal_native_GetPointOnRay(native_address, inFraction);
-        if (pointer == 0)
+        int addr = internal_native_GetPointOnRay_addr(native_address, inFraction);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -78,15 +79,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inFraction"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.GetPointOnRay(inFraction);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetPointOnRay(int this_addr, float inFraction);
+    public static native int internal_native_GetPointOnRay_addr(int this_addr, float inFraction);
 
     public Shape get_mShape() {
-        int pointer = internal_native_get_mShape(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -97,15 +98,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.get_mShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mShape(int this_addr);
+    public static native int internal_native_get_mShape_addr(int this_addr);
 
     public Vec3 get_mScale() {
-        int pointer = internal_native_get_mScale(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mScale_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -116,15 +117,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.get_mScale();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mScale(int this_addr);
+    public static native int internal_native_get_mScale_addr(int this_addr);
 
     public Mat44 get_mCenterOfMassStart() {
-        int pointer = internal_native_get_mCenterOfMassStart(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mCenterOfMassStart_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -135,15 +136,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.get_mCenterOfMassStart();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mCenterOfMassStart(int this_addr);
+    public static native int internal_native_get_mCenterOfMassStart_addr(int this_addr);
 
     public Vec3 get_mDirection() {
-        int pointer = internal_native_get_mDirection(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mDirection_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -154,5 +155,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RShapeCast);var returnedJSObj = jsObj.get_mDirection();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mDirection(int this_addr);
+    public static native int internal_native_get_mDirection_addr(int this_addr);
 }

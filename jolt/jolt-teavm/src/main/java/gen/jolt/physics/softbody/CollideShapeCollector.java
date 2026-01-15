@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -57,12 +58,12 @@ jsObj.SetContext(inContext_addr);
     public static native void internal_native_SetContext(int this_addr, int inContext_addr);
 
     public TransformedShape GetContext() {
-        int pointer = internal_native_GetContext(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetContext_addr(native_address);
+        if (addr == 0)
             return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
-        TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
+        TransformedShape_TEMP_GEN_0.internal_reset(addr, false);
         return TransformedShape_TEMP_GEN_0;
     }
 
@@ -73,7 +74,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeCollector);var returnedJSObj = jsObj.GetContext();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetContext(int this_addr);
+    public static native int internal_native_GetContext_addr(int this_addr);
 
     public void UpdateEarlyOutFraction(float inFraction) {
         internal_native_UpdateEarlyOutFraction(native_address, inFraction);
@@ -156,7 +157,7 @@ return returnedJSObj;
     public static native float internal_native_GetPositiveEarlyOutFraction(int this_addr);
 
     public CollideShapeCollector() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -215,7 +216,7 @@ var jsObj = new jolt.CollideShapeCollectorJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CollideShapeCollectorJS();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "Reset", "OnBody", "AddHit" }, script = "var CollideShapeCollectorJS = jolt.wrapPointer(this_addr, jolt.CollideShapeCollectorJS); CollideShapeCollectorJS.Reset = Reset; CollideShapeCollectorJS.OnBody = OnBody; CollideShapeCollectorJS.AddHit = AddHit;")
     public static native void internal_native_setupCallback(int this_addr, Reset Reset, OnBody OnBody, AddHit AddHit);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.math.Vec3;
@@ -13,7 +14,7 @@ public class OffsetCenterOfMassShape extends DecoratedShape {
 
     public OffsetCenterOfMassShape(Shape inShape, Vec3 inOffset) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Shape_Vec3(inShape.native_address, inOffset.native_address);
+        int addr = internal_native_create_Shape_Vec3_addr(inShape.native_address, inOffset.native_address);
         internal_reset(addr, true);
     }
 
@@ -22,7 +23,7 @@ var jsObj = new jolt.OffsetCenterOfMassShape(inShape_addr, inOffset_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inOffset_addr"}, script = "var jsObj = new jolt.OffsetCenterOfMassShape(inShape_addr, inOffset_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Shape_Vec3(int inShape_addr, int inOffset_addr);
+    public static native int internal_native_create_Shape_Vec3_addr(int inShape_addr, int inOffset_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

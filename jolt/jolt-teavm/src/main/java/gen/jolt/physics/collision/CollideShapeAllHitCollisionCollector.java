@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 import gen.jolt.physics.softbody.CollideShapeCollector;
@@ -15,7 +16,7 @@ public class CollideShapeAllHitCollisionCollector extends CollideShapeCollector 
 
     public CollideShapeAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -24,7 +25,7 @@ var jsObj = new jolt.CollideShapeAllHitCollisionCollector();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CollideShapeAllHitCollisionCollector();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -76,12 +77,12 @@ return returnedJSObj;
     public static native boolean internal_native_HadHit(int this_addr);
 
     public ArrayCollideShapeResult get_mHits() {
-        int pointer = internal_native_get_mHits(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mHits_addr(native_address);
+        if (addr == 0)
             return ArrayCollideShapeResult.NULL;
         if (ArrayCollideShapeResult_TEMP_GEN_0 == null)
             ArrayCollideShapeResult_TEMP_GEN_0 = ArrayCollideShapeResult.native_new();
-        ArrayCollideShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayCollideShapeResult_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayCollideShapeResult_TEMP_GEN_0;
     }
 
@@ -92,7 +93,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollideShapeAllHitCollisionCollector);var returnedJSObj = jsObj.get_mHits();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mHits(int this_addr);
+    public static native int internal_native_get_mHits_addr(int this_addr);
 
     public void set_mHits(ArrayCollideShapeResult mHits) {
         internal_native_set_mHits(native_address, mHits.native_address);

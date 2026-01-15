@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 public class WheelTV extends Wheel {
@@ -13,7 +14,7 @@ public class WheelTV extends Wheel {
 
     public WheelTV(WheelSettingsTV inWheel) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_WheelSettingsTV(inWheel.native_address);
+        int addr = internal_native_create_WheelSettingsTV_addr(inWheel.native_address);
         internal_reset(addr, true);
     }
 
@@ -22,7 +23,7 @@ var jsObj = new jolt.WheelTV(inWheel_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inWheel_addr"}, script = "var jsObj = new jolt.WheelTV(inWheel_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_WheelSettingsTV(int inWheel_addr);
+    public static native int internal_native_create_WheelSettingsTV_addr(int inWheel_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,12 +52,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public WheelSettingsTV GetSettings() {
-        int pointer = internal_native_GetSettings(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetSettings_addr(native_address);
+        if (addr == 0)
             return WheelSettingsTV.NULL;
         if (WheelSettingsTV_TEMP_GEN_0 == null)
             WheelSettingsTV_TEMP_GEN_0 = WheelSettingsTV.native_new();
-        WheelSettingsTV_TEMP_GEN_0.internal_reset(pointer, false);
+        WheelSettingsTV_TEMP_GEN_0.internal_reset(addr, false);
         return WheelSettingsTV_TEMP_GEN_0;
     }
 
@@ -67,7 +68,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelTV);var returnedJSObj = jsObj.GetSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetSettings(int this_addr);
+    public static native int internal_native_GetSettings_addr(int this_addr);
 
     public int get_mTrackIndex() {
         return internal_native_get_mTrackIndex(native_address);

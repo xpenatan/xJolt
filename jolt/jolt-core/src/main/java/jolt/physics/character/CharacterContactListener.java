@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.character;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -447,7 +448,7 @@ nativeObject->onCharacterContactSolve = onCharacterContactSolve;
     public static native void internal_native_set_OnCharacterContactSolve(long this_addr, boolean onCharacterContactSolve);
 
     public CharacterContactListener() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -712,7 +713,7 @@ nativeObject->onCharacterContactSolve = onCharacterContactSolve;
     /*[-JNI;-NATIVE]
 return (jlong)new CharacterContactListenerImpl();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 CharacterContactListenerImpl* nativeObject = (CharacterContactListenerImpl*)this_addr;

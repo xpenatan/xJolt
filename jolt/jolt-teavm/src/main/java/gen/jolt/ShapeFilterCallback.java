@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt;
 
 import gen.jolt.physics.collision.ShapeFilter;
@@ -53,7 +54,7 @@ jolt.destroy(jsObj);
 
     public ShapeFilterCallback() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -113,7 +114,7 @@ var jsObj = new jolt.ShapeFilterCallbackImpl();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ShapeFilterCallbackImpl();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "ShouldCollide_Any", "ShouldCollide_Shape" }, script = "var ShapeFilterCallbackImpl = jolt.wrapPointer(this_addr, jolt.ShapeFilterCallbackImpl); ShapeFilterCallbackImpl.ShouldCollide_Any = ShouldCollide_Any; ShapeFilterCallbackImpl.ShouldCollide_Shape = ShouldCollide_Shape;")
     public static native void internal_native_setupCallback(int this_addr, ShouldCollide_Any ShouldCollide_Any, ShouldCollide_Shape ShouldCollide_Shape);

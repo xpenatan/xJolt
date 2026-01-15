@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.core;
 
 public class JobSystemThreadPool extends JobSystemWithBarrier {
@@ -11,25 +12,25 @@ public class JobSystemThreadPool extends JobSystemWithBarrier {
 
     public JobSystemThreadPool(int inMaxJobs, int inMaxBarriers, int inNumThreads) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int_int_int(inMaxJobs, inMaxBarriers, inNumThreads);
+        long addr = internal_native_create_int_int_int_addr(inMaxJobs, inMaxBarriers, inNumThreads);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);
 */
-    public static native long internal_native_create_int_int_int(int inMaxJobs, int inMaxBarriers, int inNumThreads);
+    public static native long internal_native_create_int_int_int_addr(int inMaxJobs, int inMaxBarriers, int inNumThreads);
 
     public JobSystemThreadPool(int inMaxJobs, int inMaxBarriers) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int_int(inMaxJobs, inMaxBarriers);
+        long addr = internal_native_create_int_int_addr(inMaxJobs, inMaxBarriers);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new JobSystemThreadPool(inMaxJobs, inMaxBarriers);
 */
-    public static native long internal_native_create_int_int(int inMaxJobs, int inMaxBarriers);
+    public static native long internal_native_create_int_int_addr(int inMaxJobs, int inMaxBarriers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

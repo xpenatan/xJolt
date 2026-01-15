@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -43,12 +44,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mPreviousPosition() {
-        long pointer = internal_native_get_mPreviousPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPreviousPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -56,7 +57,7 @@ delete nativeObject;
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 return (jlong)&nativeObject->mPreviousPosition;
 */
-    public static native long internal_native_get_mPreviousPosition(long this_addr);
+    public static native long internal_native_get_mPreviousPosition_addr(long this_addr);
 
     public void set_mPreviousPosition(Vec3 mPreviousPosition) {
         internal_native_set_mPreviousPosition(native_address, mPreviousPosition.native_address);
@@ -69,12 +70,12 @@ nativeObject->mPreviousPosition = *((Vec3*)mPreviousPosition_addr);
     public static native void internal_native_set_mPreviousPosition(long this_addr, long mPreviousPosition_addr);
 
     public Vec3 get_mPosition() {
-        long pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -82,7 +83,7 @@ nativeObject->mPreviousPosition = *((Vec3*)mPreviousPosition_addr);
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    public static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition_addr(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition(native_address, mPosition.native_address);
@@ -95,12 +96,12 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Vec3 get_mVelocity() {
-        long pointer = internal_native_get_mVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -108,7 +109,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
 SoftBodyVertex* nativeObject = (SoftBodyVertex*)this_addr;
 return (jlong)&nativeObject->mVelocity;
 */
-    public static native long internal_native_get_mVelocity(long this_addr);
+    public static native long internal_native_get_mVelocity_addr(long this_addr);
 
     public void set_mVelocity(Vec3 mVelocity) {
         internal_native_set_mVelocity(native_address, mVelocity.native_address);

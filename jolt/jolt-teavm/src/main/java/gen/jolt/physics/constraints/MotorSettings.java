@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class MotorSettings extends IDLBase {
     static public final MotorSettings NULL = MotorSettings.native_new();
 
     public MotorSettings() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,10 +24,10 @@ var jsObj = new jolt.MotorSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.MotorSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     public MotorSettings(float inFrequency, float inDamping) {
-        int addr = internal_native_create_float_float(inFrequency, inDamping);
+        int addr = internal_native_create_float_float_addr(inFrequency, inDamping);
         internal_reset(addr, true);
     }
 
@@ -35,10 +36,10 @@ var jsObj = new jolt.MotorSettings(inFrequency, inDamping);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inFrequency", "inDamping"}, script = "var jsObj = new jolt.MotorSettings(inFrequency, inDamping);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_float_float(float inFrequency, float inDamping);
+    public static native int internal_native_create_float_float_addr(float inFrequency, float inDamping);
 
     public MotorSettings(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit) {
-        int addr = internal_native_create_float_float_float_float(inFrequency, inDamping, inForceLimit, inTorqueLimit);
+        int addr = internal_native_create_float_float_float_float_addr(inFrequency, inDamping, inForceLimit, inTorqueLimit);
         internal_reset(addr, true);
     }
 
@@ -47,7 +48,7 @@ var jsObj = new jolt.MotorSettings(inFrequency, inDamping, inForceLimit, inTorqu
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inFrequency", "inDamping", "inForceLimit", "inTorqueLimit"}, script = "var jsObj = new jolt.MotorSettings(inFrequency, inDamping, inForceLimit, inTorqueLimit);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_float_float_float_float(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
+    public static native int internal_native_create_float_float_float_float_addr(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -75,12 +76,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public SpringSettings get_mSpringSettings() {
-        int pointer = internal_native_get_mSpringSettings(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mSpringSettings_addr(native_address);
+        if (addr == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
-        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -91,7 +92,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotorSettings);var returnedJSObj = jsObj.get_mSpringSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mSpringSettings(int this_addr);
+    public static native int internal_native_get_mSpringSettings_addr(int this_addr);
 
     public void set_mSpringSettings(SpringSettings mSpringSettings) {
         internal_native_set_mSpringSettings(native_address, mSpringSettings.native_address);

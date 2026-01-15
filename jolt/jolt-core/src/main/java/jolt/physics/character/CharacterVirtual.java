@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.character;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -51,14 +52,14 @@ public class CharacterVirtual extends CharacterBase {
 
     public CharacterVirtual(CharacterVirtualSettings inSettings, Vec3 inPosition, Quat inRotation, PhysicsSystem inSystem) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(inSettings.native_address, inPosition.native_address, inRotation.native_address, inSystem.native_address);
+        long addr = internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem_addr(inSettings.native_address, inPosition.native_address, inRotation.native_address, inSystem.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new CharacterVirtual((CharacterVirtualSettings* )inSettings_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), (PhysicsSystem* )inSystem_addr);
 */
-    public static native long internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem(long inSettings_addr, long inPosition_addr, long inRotation_addr, long inSystem_addr);
+    public static native long internal_native_create_CharacterVirtualSettings_Vec3_Quat_PhysicsSystem_addr(long inSettings_addr, long inPosition_addr, long inRotation_addr, long inSystem_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -86,12 +87,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public CharacterID GetID() {
-        long pointer = internal_native_GetID(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetID_addr(native_address);
+        if (addr == 0)
             return CharacterID.NULL;
         if (CharacterID_TEMP_GEN_0 == null)
             CharacterID_TEMP_GEN_0 = CharacterID.native_new();
-        CharacterID_TEMP_GEN_0.internal_reset(pointer, false);
+        CharacterID_TEMP_GEN_0.internal_reset(addr, false);
         return CharacterID_TEMP_GEN_0;
     }
 
@@ -99,7 +100,7 @@ delete nativeObject;
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return (jlong)&nativeObject->GetID();
 */
-    public static native long internal_native_GetID(long this_addr);
+    public static native long internal_native_GetID_addr(long this_addr);
 
     public void SetListener(CharacterContactListener inListener) {
         internal_native_SetListener(native_address, inListener.native_address);
@@ -122,12 +123,12 @@ nativeObject->SetCharacterVsCharacterCollision((CharacterVsCharacterCollision* )
     public static native void internal_native_SetCharacterVsCharacterCollision(long this_addr, long inCharacterVsCharacterCollision_addr);
 
     public IDLBase GetListener() {
-        long pointer = internal_native_GetListener(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetListener_addr(native_address);
+        if (addr == 0)
             return IDLBase.NULL;
         if (IDLBase_TEMP_GEN_0 == null)
             IDLBase_TEMP_GEN_0 = IDLBase.native_new();
-        IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLBase_TEMP_GEN_0.internal_reset(addr, false);
         return IDLBase_TEMP_GEN_0;
     }
 
@@ -135,15 +136,15 @@ nativeObject->SetCharacterVsCharacterCollision((CharacterVsCharacterCollision* )
 CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 return (jlong)nativeObject->GetListener();
 */
-    public static native long internal_native_GetListener(long this_addr);
+    public static native long internal_native_GetListener_addr(long this_addr);
 
     public Vec3 GetLinearVelocity() {
-        long pointer = internal_native_GetLinearVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetLinearVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -152,7 +153,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLinearVelocity();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetLinearVelocity(long this_addr);
+    public static native long internal_native_GetLinearVelocity_addr(long this_addr);
 
     public void SetLinearVelocity(Vec3 inLinearVelocity) {
         internal_native_SetLinearVelocity(native_address, inLinearVelocity.native_address);
@@ -165,12 +166,12 @@ nativeObject->SetLinearVelocity(*((Vec3* )inLinearVelocity_addr));
     public static native void internal_native_SetLinearVelocity(long this_addr, long inLinearVelocity_addr);
 
     public Vec3 GetPosition() {
-        long pointer = internal_native_GetPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -179,7 +180,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPosition();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetPosition(long this_addr);
+    public static native long internal_native_GetPosition_addr(long this_addr);
 
     public void SetPosition(Vec3 inPosition) {
         internal_native_SetPosition(native_address, inPosition.native_address);
@@ -192,12 +193,12 @@ nativeObject->SetPosition(*((Vec3* )inPosition_addr));
     public static native void internal_native_SetPosition(long this_addr, long inPosition_addr);
 
     public Quat GetRotation() {
-        long pointer = internal_native_GetRotation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -206,7 +207,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetRotation();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetRotation(long this_addr);
+    public static native long internal_native_GetRotation_addr(long this_addr);
 
     public void SetRotation(Quat inRotation) {
         internal_native_SetRotation(native_address, inRotation.native_address);
@@ -219,12 +220,12 @@ nativeObject->SetRotation(*((Quat* )inRotation_addr));
     public static native void internal_native_SetRotation(long this_addr, long inRotation_addr);
 
     public Vec3 GetCenterOfMassPosition() {
-        long pointer = internal_native_GetCenterOfMassPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetCenterOfMassPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -233,15 +234,15 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetCenterOfMassPosition();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetCenterOfMassPosition(long this_addr);
+    public static native long internal_native_GetCenterOfMassPosition_addr(long this_addr);
 
     public Mat44 GetWorldTransform() {
-        long pointer = internal_native_GetWorldTransform(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetWorldTransform_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -250,15 +251,15 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetWorldTransform();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetWorldTransform(long this_addr);
+    public static native long internal_native_GetWorldTransform_addr(long this_addr);
 
     public Mat44 GetCenterOfMassTransform() {
-        long pointer = internal_native_GetCenterOfMassTransform(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetCenterOfMassTransform_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
-        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(addr, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -267,7 +268,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetCenterOfMassTransform();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetCenterOfMassTransform(long this_addr);
+    public static native long internal_native_GetCenterOfMassTransform_addr(long this_addr);
 
     public float GetMass() {
         return internal_native_GetMass(native_address);
@@ -390,12 +391,12 @@ return nativeObject->GetMaxHitsExceeded();
     public static native boolean internal_native_GetMaxHitsExceeded(long this_addr);
 
     public Vec3 GetShapeOffset() {
-        long pointer = internal_native_GetShapeOffset(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetShapeOffset_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -404,7 +405,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetShapeOffset();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetShapeOffset(long this_addr);
+    public static native long internal_native_GetShapeOffset_addr(long this_addr);
 
     public void SetShapeOffset(Vec3 inShapeOffset) {
         internal_native_SetShapeOffset(native_address, inShapeOffset.native_address);
@@ -437,12 +438,12 @@ nativeObject->SetUserData(inUserData);
     public static native void internal_native_SetUserData(long this_addr, long inUserData);
 
     public BodyID GetInnerBodyID() {
-        long pointer = internal_native_GetInnerBodyID(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetInnerBodyID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -451,7 +452,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->GetInnerBodyID();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetInnerBodyID(long this_addr);
+    public static native long internal_native_GetInnerBodyID_addr(long this_addr);
 
     public void StartTrackingContactChanges() {
         internal_native_StartTrackingContactChanges(native_address);
@@ -474,12 +475,12 @@ nativeObject->FinishTrackingContactChanges();
     public static native void internal_native_FinishTrackingContactChanges(long this_addr);
 
     public Vec3 CancelVelocityTowardsSteepSlopes(Vec3 inDesiredVelocity) {
-        long pointer = internal_native_CancelVelocityTowardsSteepSlopes(native_address, inDesiredVelocity.native_address);
-        if (pointer == 0)
+        long addr = internal_native_CancelVelocityTowardsSteepSlopes_addr(native_address, inDesiredVelocity.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -488,7 +489,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->CancelVelocityTowardsSteepSlopes(*((Vec3* )inDesiredVelocity_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_CancelVelocityTowardsSteepSlopes(long this_addr, long inDesiredVelocity_addr);
+    public static native long internal_native_CancelVelocityTowardsSteepSlopes_addr(long this_addr, long inDesiredVelocity_addr);
 
     public void Update(float inDeltaTime, Vec3 inGravity, BroadPhaseLayerFilter inBroadPhaseLayerFilter, ObjectLayerFilter inObjectLayerFilter, BodyFilter inBodyFilter, ShapeFilter inShapeFilter, TempAllocator inAllocator) {
         internal_native_Update(native_address, inDeltaTime, inGravity.native_address, inBroadPhaseLayerFilter.native_address, inObjectLayerFilter.native_address, inBodyFilter.native_address, inShapeFilter.native_address, inAllocator.native_address);
@@ -581,12 +582,12 @@ nativeObject->SetInnerBodyShape((Shape* )inShape_addr);
     public static native void internal_native_SetInnerBodyShape(long this_addr, long inShape_addr);
 
     public TransformedShape GetTransformedShape() {
-        long pointer = internal_native_GetTransformedShape(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetTransformedShape_addr(native_address);
+        if (addr == 0)
             return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
-        TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
+        TransformedShape_TEMP_GEN_0.internal_reset(addr, false);
         return TransformedShape_TEMP_GEN_0;
     }
 
@@ -595,7 +596,7 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static TransformedShape copy_addr;
 copy_addr = nativeObject->GetTransformedShape();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetTransformedShape(long this_addr);
+    public static native long internal_native_GetTransformedShape_addr(long this_addr);
 
     public boolean HasCollidedWith(BodyID inBodyID) {
         return internal_native_HasCollidedWith(native_address, inBodyID.native_address);
@@ -628,12 +629,12 @@ return nativeObject->HasCollidedWith((CharacterVirtual* )inCharacter_addr);
     public static native boolean internal_native_HasCollidedWithCharacter(long this_addr, long inCharacter_addr);
 
     public ArrayCharacterVirtualContact GetActiveContacts() {
-        long pointer = internal_native_GetActiveContacts(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetActiveContacts_addr(native_address);
+        if (addr == 0)
             return ArrayCharacterVirtualContact.NULL;
         if (ArrayCharacterVirtualContact_TEMP_GEN_0 == null)
             ArrayCharacterVirtualContact_TEMP_GEN_0 = ArrayCharacterVirtualContact.native_new();
-        ArrayCharacterVirtualContact_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayCharacterVirtualContact_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayCharacterVirtualContact_TEMP_GEN_0;
     }
 
@@ -642,5 +643,5 @@ CharacterVirtual* nativeObject = (CharacterVirtual*)this_addr;
 static ArrayCharacterVirtualContact copy_addr;
 copy_addr = nativeObject->GetActiveContacts();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetActiveContacts(long this_addr);
+    public static native long internal_native_GetActiveContacts_addr(long this_addr);
 }

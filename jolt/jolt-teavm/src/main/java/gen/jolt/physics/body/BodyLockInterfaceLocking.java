@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.body;
 
 public class BodyLockInterfaceLocking extends BodyLockInterface {

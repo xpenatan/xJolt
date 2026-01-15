@@ -3,9 +3,10 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.body;
 
-import jolt.idl.helper.IDLArray;
+import com.github.xpenatan.jparser.idl.helper.IDLArray;
 
 public class IDLArrayBodyID extends IDLArray {
 
@@ -15,14 +16,14 @@ public class IDLArrayBodyID extends IDLArray {
 
     public IDLArrayBodyID(int size) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int(size);
+        long addr = internal_native_create_int_addr(size);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new IDLArrayBodyID((int)size);
 */
-    public static native long internal_native_create_int(int size);
+    public static native long internal_native_create_int_addr(int size);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,12 +51,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public BodyID getValue(int index) {
-        long pointer = internal_native_getValue(native_address, index);
-        if (pointer == 0)
+        long addr = internal_native_getValue_addr(native_address, index);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -64,7 +65,7 @@ IDLArrayBodyID* nativeObject = (IDLArrayBodyID*)this_addr;
 BodyID* obj = nativeObject->getValue((int)index);
 return (jlong)obj;
 */
-    public static native long internal_native_getValue(long this_addr, int index);
+    public static native long internal_native_getValue_addr(long this_addr, int index);
 
     public void setValue(int index, BodyID value) {
         internal_native_setValue(native_address, index, value.native_address);

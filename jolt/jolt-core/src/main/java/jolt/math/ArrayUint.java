@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.math;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -108,12 +109,12 @@ nativeObject->clear();
     public static native void internal_native_clear(long this_addr);
 
     public UintMemRef data() {
-        long pointer = internal_native_data(native_address);
-        if (pointer == 0)
+        long addr = internal_native_data_addr(native_address);
+        if (addr == 0)
             return UintMemRef.NULL;
         if (UintMemRef_TEMP_GEN_0 == null)
             UintMemRef_TEMP_GEN_0 = UintMemRef.native_new();
-        UintMemRef_TEMP_GEN_0.internal_reset(pointer, false);
+        UintMemRef_TEMP_GEN_0.internal_reset(addr, false);
         return UintMemRef_TEMP_GEN_0;
     }
 
@@ -122,5 +123,5 @@ ArrayUint* nativeObject = (ArrayUint*)this_addr;
 UintMemRef* obj = nativeObject->data();
 return (jlong)obj;
 */
-    public static native long internal_native_data(long this_addr);
+    public static native long internal_native_data_addr(long this_addr);
 }

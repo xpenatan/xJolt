@@ -1,5 +1,5 @@
 plugins {
-    id("java")
+    id("java-library")
 }
 
 val moduleName = "jolt-desktop"
@@ -16,6 +16,10 @@ tasks.jar {
     from(linuxFile)
     from(macArmFile)
     from(macFile)
+}
+
+dependencies {
+    api("com.github.xpenatan.jParser:idl-helper-desktop:${LibExt.jParserVersion}")
 }
 
 java {

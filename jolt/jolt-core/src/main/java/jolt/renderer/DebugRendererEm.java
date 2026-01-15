@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.renderer;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ import jolt.math.Mat44;
 import jolt.core.Color;
 import jolt.enums.ECastShadow;
 import jolt.enums.EDrawMode;
-import jolt.idl.helper.IDLFloatArray;
+import com.github.xpenatan.jparser.idl.helper.IDLFloatArray;
 import jolt.enums.ECullMode;
 import jolt.math.Vec3;
 
@@ -157,7 +158,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
 
     public DebugRendererEm() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -263,7 +264,7 @@ nativeObject->DrawCylinder(*((Mat44* )inMatrix_addr), (float)inHalfHeight, (floa
     /*[-JNI;-NATIVE]
 return (jlong)new DebugRendererImplCustom();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 DebugRendererImplCustom* nativeObject = (DebugRendererImplCustom*)this_addr;

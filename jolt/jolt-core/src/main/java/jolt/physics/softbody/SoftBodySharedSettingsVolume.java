@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,14 +13,14 @@ public class SoftBodySharedSettingsVolume extends IDLBase {
     static public final SoftBodySharedSettingsVolume NULL = SoftBodySharedSettingsVolume.native_new();
 
     public SoftBodySharedSettingsVolume(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance) {
-        long addr = internal_native_create_int_int_int_int_float(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
+        long addr = internal_native_create_int_int_int_int_float_addr(inVertex1, inVertex2, inVertex3, inVertex4, inCompliance);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SoftBodySharedSettingsVolume(inVertex1, inVertex2, inVertex3, inVertex4, (float)inCompliance);
 */
-    public static native long internal_native_create_int_int_int_int_float(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance);
+    public static native long internal_native_create_int_int_int_int_float_addr(int inVertex1, int inVertex2, int inVertex3, int inVertex4, float inCompliance);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

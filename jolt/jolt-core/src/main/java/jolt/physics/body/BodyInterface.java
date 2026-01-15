@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.body;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -89,11 +90,11 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Body CreateBody(BodyCreationSettings inSettings) {
-        long pointer = internal_native_CreateBody(native_address, inSettings.native_address);
-        if (pointer == 0)
+        long addr = internal_native_CreateBody_addr(native_address, inSettings.native_address);
+        if (addr == 0)
             return Body.NULL;
         Body Body_NEW = Body.native_new();
-        Body_NEW.internal_reset(pointer, false);
+        Body_NEW.internal_reset(addr, false);
         return Body_NEW;
     }
 
@@ -102,14 +103,14 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 Body* obj = nativeObject->CreateBody(*((BodyCreationSettings* )inSettings_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_CreateBody(long this_addr, long inSettings_addr);
+    public static native long internal_native_CreateBody_addr(long this_addr, long inSettings_addr);
 
     public Body CreateSoftBody(SoftBodyCreationSettings inSettings) {
-        long pointer = internal_native_CreateSoftBody(native_address, inSettings.native_address);
-        if (pointer == 0)
+        long addr = internal_native_CreateSoftBody_addr(native_address, inSettings.native_address);
+        if (addr == 0)
             return Body.NULL;
         Body Body_NEW = Body.native_new();
-        Body_NEW.internal_reset(pointer, false);
+        Body_NEW.internal_reset(addr, false);
         return Body_NEW;
     }
 
@@ -118,14 +119,14 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 Body* obj = nativeObject->CreateSoftBody(*((SoftBodyCreationSettings* )inSettings_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_CreateSoftBody(long this_addr, long inSettings_addr);
+    public static native long internal_native_CreateSoftBody_addr(long this_addr, long inSettings_addr);
 
     public Body CreateBodyWithID(BodyID inBodyID, BodyCreationSettings inSettings) {
-        long pointer = internal_native_CreateBodyWithID(native_address, inBodyID.native_address, inSettings.native_address);
-        if (pointer == 0)
+        long addr = internal_native_CreateBodyWithID_addr(native_address, inBodyID.native_address, inSettings.native_address);
+        if (addr == 0)
             return Body.NULL;
         Body Body_NEW = Body.native_new();
-        Body_NEW.internal_reset(pointer, false);
+        Body_NEW.internal_reset(addr, false);
         return Body_NEW;
     }
 
@@ -134,14 +135,14 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 Body* obj = nativeObject->CreateBodyWithID(*((BodyID* )inBodyID_addr), *((BodyCreationSettings* )inSettings_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_CreateBodyWithID(long this_addr, long inBodyID_addr, long inSettings_addr);
+    public static native long internal_native_CreateBodyWithID_addr(long this_addr, long inBodyID_addr, long inSettings_addr);
 
     public Body CreateSoftBodyWithID(BodyID inBodyID, SoftBodyCreationSettings inSettings) {
-        long pointer = internal_native_CreateSoftBodyWithID(native_address, inBodyID.native_address, inSettings.native_address);
-        if (pointer == 0)
+        long addr = internal_native_CreateSoftBodyWithID_addr(native_address, inBodyID.native_address, inSettings.native_address);
+        if (addr == 0)
             return Body.NULL;
         Body Body_NEW = Body.native_new();
-        Body_NEW.internal_reset(pointer, false);
+        Body_NEW.internal_reset(addr, false);
         return Body_NEW;
     }
 
@@ -150,14 +151,14 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 Body* obj = nativeObject->CreateSoftBodyWithID(*((BodyID* )inBodyID_addr), *((SoftBodyCreationSettings* )inSettings_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_CreateSoftBodyWithID(long this_addr, long inBodyID_addr, long inSettings_addr);
+    public static native long internal_native_CreateSoftBodyWithID_addr(long this_addr, long inBodyID_addr, long inSettings_addr);
 
     public Body CreateBodyWithoutID(BodyCreationSettings inSettings) {
-        long pointer = internal_native_CreateBodyWithoutID(native_address, inSettings.native_address);
-        if (pointer == 0)
+        long addr = internal_native_CreateBodyWithoutID_addr(native_address, inSettings.native_address);
+        if (addr == 0)
             return Body.NULL;
         Body Body_NEW = Body.native_new();
-        Body_NEW.internal_reset(pointer, false);
+        Body_NEW.internal_reset(addr, false);
         return Body_NEW;
     }
 
@@ -166,14 +167,14 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 Body* obj = nativeObject->CreateBodyWithoutID(*((BodyCreationSettings* )inSettings_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_CreateBodyWithoutID(long this_addr, long inSettings_addr);
+    public static native long internal_native_CreateBodyWithoutID_addr(long this_addr, long inSettings_addr);
 
     public Body CreateSoftBodyWithoutID(SoftBodyCreationSettings inSettings) {
-        long pointer = internal_native_CreateSoftBodyWithoutID(native_address, inSettings.native_address);
-        if (pointer == 0)
+        long addr = internal_native_CreateSoftBodyWithoutID_addr(native_address, inSettings.native_address);
+        if (addr == 0)
             return Body.NULL;
         Body Body_NEW = Body.native_new();
-        Body_NEW.internal_reset(pointer, false);
+        Body_NEW.internal_reset(addr, false);
         return Body_NEW;
     }
 
@@ -182,7 +183,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 Body* obj = nativeObject->CreateSoftBodyWithoutID(*((SoftBodyCreationSettings* )inSettings_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_CreateSoftBodyWithoutID(long this_addr, long inSettings_addr);
+    public static native long internal_native_CreateSoftBodyWithoutID_addr(long this_addr, long inSettings_addr);
 
     public void DestroyBodyWithoutID(Body inBody) {
         internal_native_DestroyBodyWithoutID(native_address, inBody.native_address);
@@ -215,12 +216,12 @@ return nativeObject->AssignBodyID((Body* )ioBody_addr, *((BodyID* )inBodyID_addr
     public static native boolean internal_native_AssignBodyID(long this_addr, long ioBody_addr, long inBodyID_addr);
 
     public Body UnassignBodyID(BodyID inBodyID) {
-        long pointer = internal_native_UnassignBodyID(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_UnassignBodyID_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return Body.NULL;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = Body.native_new();
-        Body_TEMP_GEN_0.internal_reset(pointer, false);
+        Body_TEMP_GEN_0.internal_reset(addr, false);
         return Body_TEMP_GEN_0;
     }
 
@@ -229,7 +230,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 Body* obj = nativeObject->UnassignBodyID(*((BodyID* )inBodyID_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_UnassignBodyID(long this_addr, long inBodyID_addr);
+    public static native long internal_native_UnassignBodyID_addr(long this_addr, long inBodyID_addr);
 
     public void UnassignBodyIDs(BodyIDMemRef inBodyIDs, int inNumber, BodyPtrMemRef outBodies) {
         internal_native_UnassignBodyIDs(native_address, inBodyIDs.native_address, inNumber, outBodies.native_address);
@@ -292,12 +293,12 @@ return nativeObject->IsAdded(*((BodyID* )inBodyID_addr));
     public static native boolean internal_native_IsAdded(long this_addr, long inBodyID_addr);
 
     public BodyID CreateAndAddBody(BodyCreationSettings inSettings, EActivation inActivationMode) {
-        long pointer = internal_native_CreateAndAddBody(native_address, inSettings.native_address, inActivationMode.getValue());
-        if (pointer == 0)
+        long addr = internal_native_CreateAndAddBody_addr(native_address, inSettings.native_address, inActivationMode.getValue());
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -306,15 +307,15 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->CreateAndAddBody(*((BodyCreationSettings* )inSettings_addr), (::EActivation)inActivationMode);
 return (jlong)&copy_addr;*/
-    public static native long internal_native_CreateAndAddBody(long this_addr, long inSettings_addr, int inActivationMode);
+    public static native long internal_native_CreateAndAddBody_addr(long this_addr, long inSettings_addr, int inActivationMode);
 
     public BodyID CreateAndAddSoftBody(SoftBodyCreationSettings inSettings, EActivation inActivationMode) {
-        long pointer = internal_native_CreateAndAddSoftBody(native_address, inSettings.native_address, inActivationMode.getValue());
-        if (pointer == 0)
+        long addr = internal_native_CreateAndAddSoftBody_addr(native_address, inSettings.native_address, inActivationMode.getValue());
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_1 == null)
             BodyID_TEMP_GEN_1 = BodyID.native_new();
-        BodyID_TEMP_GEN_1.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_1.internal_reset(addr, false);
         return BodyID_TEMP_GEN_1;
     }
 
@@ -323,15 +324,15 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->CreateAndAddSoftBody(*((SoftBodyCreationSettings* )inSettings_addr), (::EActivation)inActivationMode);
 return (jlong)&copy_addr;*/
-    public static native long internal_native_CreateAndAddSoftBody(long this_addr, long inSettings_addr, int inActivationMode);
+    public static native long internal_native_CreateAndAddSoftBody_addr(long this_addr, long inSettings_addr, int inActivationMode);
 
     public BodyInterface_AddState AddBodiesPrepare(BodyIDMemRef ioBodies, int inNumber) {
-        long pointer = internal_native_AddBodiesPrepare(native_address, ioBodies.native_address, inNumber);
-        if (pointer == 0)
+        long addr = internal_native_AddBodiesPrepare_addr(native_address, ioBodies.native_address, inNumber);
+        if (addr == 0)
             return BodyInterface_AddState.NULL;
         if (BodyInterface_AddState_TEMP_GEN_0 == null)
             BodyInterface_AddState_TEMP_GEN_0 = BodyInterface_AddState.native_new();
-        BodyInterface_AddState_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyInterface_AddState_TEMP_GEN_0.internal_reset(addr, false);
         return BodyInterface_AddState_TEMP_GEN_0;
     }
 
@@ -340,7 +341,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 BodyInterface_AddState* obj = nativeObject->AddBodiesPrepare((BodyIDMemRef* )ioBodies_addr, (int)inNumber);
 return (jlong)obj;
 */
-    public static native long internal_native_AddBodiesPrepare(long this_addr, long ioBodies_addr, int inNumber);
+    public static native long internal_native_AddBodiesPrepare_addr(long this_addr, long ioBodies_addr, int inNumber);
 
     public void AddBodiesFinalize(BodyIDMemRef ioBodies, int inNumber, BodyInterface_AddState inAddState, EActivation inActivationMode) {
         internal_native_AddBodiesFinalize(native_address, ioBodies.native_address, inNumber, inAddState.native_address, inActivationMode.getValue());
@@ -373,12 +374,12 @@ nativeObject->RemoveBodies((BodyIDMemRef* )ioBodies_addr, (int)inNumber);
     public static native void internal_native_RemoveBodies(long this_addr, long ioBodies_addr, int inNumber);
 
     public TwoBodyConstraint CreateConstraint(TwoBodyConstraintSettings inSettings, BodyID inBodyID1, BodyID inBodyID2) {
-        long pointer = internal_native_CreateConstraint(native_address, inSettings.native_address, inBodyID1.native_address, inBodyID2.native_address);
-        if (pointer == 0)
+        long addr = internal_native_CreateConstraint_addr(native_address, inSettings.native_address, inBodyID1.native_address, inBodyID2.native_address);
+        if (addr == 0)
             return TwoBodyConstraint.NULL;
         if (TwoBodyConstraint_TEMP_GEN_0 == null)
             TwoBodyConstraint_TEMP_GEN_0 = TwoBodyConstraint.native_new();
-        TwoBodyConstraint_TEMP_GEN_0.internal_reset(pointer, false);
+        TwoBodyConstraint_TEMP_GEN_0.internal_reset(addr, false);
         return TwoBodyConstraint_TEMP_GEN_0;
     }
 
@@ -387,7 +388,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 TwoBodyConstraint* obj = nativeObject->CreateConstraint((TwoBodyConstraintSettings* )inSettings_addr, *((BodyID* )inBodyID1_addr), *((BodyID* )inBodyID2_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_CreateConstraint(long this_addr, long inSettings_addr, long inBodyID1_addr, long inBodyID2_addr);
+    public static native long internal_native_CreateConstraint_addr(long this_addr, long inSettings_addr, long inBodyID1_addr, long inBodyID2_addr);
 
     public void ActivateConstraint(TwoBodyConstraint inConstraint) {
         internal_native_ActivateConstraint(native_address, inConstraint.native_address);
@@ -400,12 +401,12 @@ nativeObject->ActivateConstraint((TwoBodyConstraint* )inConstraint_addr);
     public static native void internal_native_ActivateConstraint(long this_addr, long inConstraint_addr);
 
     public Shape GetShape(BodyID inBodyID) {
-        long pointer = internal_native_GetShape(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetShape_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -414,7 +415,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 const Shape* obj = nativeObject->GetShape(*((BodyID* )inBodyID_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_GetShape(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetShape_addr(long this_addr, long inBodyID_addr);
 
     public void SetShape(BodyID inBodyID, Shape inShape, boolean inUpdateMassProperties, EActivation inActivationMode) {
         internal_native_SetShape(native_address, inBodyID.native_address, inShape.native_address, inUpdateMassProperties, inActivationMode.getValue());
@@ -497,12 +498,12 @@ nativeObject->SetPosition(*((BodyID* )inBodyID_addr), *((Vec3* )inPosition_addr)
     public static native void internal_native_SetPosition(long this_addr, long inBodyID_addr, long inPosition_addr, int inActivationMode);
 
     public Vec3 GetPosition(BodyID inBodyID) {
-        long pointer = internal_native_GetPosition(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetPosition_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -511,7 +512,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPosition(*((BodyID* )inBodyID_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetPosition(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetPosition_addr(long this_addr, long inBodyID_addr);
 
     public void SetRotation(BodyID inBodyID, Quat inRotation, EActivation inActivationMode) {
         internal_native_SetRotation(native_address, inBodyID.native_address, inRotation.native_address, inActivationMode.getValue());
@@ -524,12 +525,12 @@ nativeObject->SetRotation(*((BodyID* )inBodyID_addr), *((Quat* )inRotation_addr)
     public static native void internal_native_SetRotation(long this_addr, long inBodyID_addr, long inRotation_addr, int inActivationMode);
 
     public Quat GetRotation(BodyID inBodyID) {
-        long pointer = internal_native_GetRotation(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetRotation_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -538,15 +539,15 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetRotation(*((BodyID* )inBodyID_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetRotation(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetRotation_addr(long this_addr, long inBodyID_addr);
 
     public Mat44 GetWorldTransform(BodyID inBodyID) {
-        long pointer = internal_native_GetWorldTransform(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetWorldTransform_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -555,15 +556,15 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetWorldTransform(*((BodyID* )inBodyID_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetWorldTransform(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetWorldTransform_addr(long this_addr, long inBodyID_addr);
 
     public Mat44 GetCenterOfMassTransform(BodyID inBodyID) {
-        long pointer = internal_native_GetCenterOfMassTransform(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetCenterOfMassTransform_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
-        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(addr, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -572,7 +573,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetCenterOfMassTransform(*((BodyID* )inBodyID_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetCenterOfMassTransform(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetCenterOfMassTransform_addr(long this_addr, long inBodyID_addr);
 
     public void SetLinearAndAngularVelocity(BodyID inBodyID, Vec3 inLinearVelocity, Vec3 inAngularVelocity) {
         internal_native_SetLinearAndAngularVelocity(native_address, inBodyID.native_address, inLinearVelocity.native_address, inAngularVelocity.native_address);
@@ -605,12 +606,12 @@ nativeObject->SetLinearVelocity(*((BodyID* )inBodyID_addr), *((Vec3* )inLinearVe
     public static native void internal_native_SetLinearVelocity(long this_addr, long inBodyID_addr, long inLinearVelocity_addr);
 
     public Vec3 GetLinearVelocity(BodyID inBodyID) {
-        long pointer = internal_native_GetLinearVelocity(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetLinearVelocity_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -619,7 +620,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLinearVelocity(*((BodyID* )inBodyID_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetLinearVelocity(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetLinearVelocity_addr(long this_addr, long inBodyID_addr);
 
     public void AddLinearVelocity(BodyID inBodyID, Vec3 inLinearVelocity) {
         internal_native_AddLinearVelocity(native_address, inBodyID.native_address, inLinearVelocity.native_address);
@@ -652,12 +653,12 @@ nativeObject->SetAngularVelocity(*((BodyID* )inBodyID_addr), *((Vec3* )inAngular
     public static native void internal_native_SetAngularVelocity(long this_addr, long inBodyID_addr, long inAngularVelocity_addr);
 
     public Vec3 GetAngularVelocity(BodyID inBodyID) {
-        long pointer = internal_native_GetAngularVelocity(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetAngularVelocity_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -666,15 +667,15 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAngularVelocity(*((BodyID* )inBodyID_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetAngularVelocity(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetAngularVelocity_addr(long this_addr, long inBodyID_addr);
 
     public Vec3 GetPointVelocity(BodyID inBodyID, Vec3 inPoint) {
-        long pointer = internal_native_GetPointVelocity(native_address, inBodyID.native_address, inPoint.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetPointVelocity_addr(native_address, inBodyID.native_address, inPoint.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -683,7 +684,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPointVelocity(*((BodyID* )inBodyID_addr), *((Vec3* )inPoint_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetPointVelocity(long this_addr, long inBodyID_addr, long inPoint_addr);
+    public static native long internal_native_GetPointVelocity_addr(long this_addr, long inBodyID_addr, long inPoint_addr);
 
     public void SetPositionRotationAndVelocity(BodyID inBodyID, Vec3 inPosition, Quat inRotation, Vec3 inLinearVelocity, Vec3 inAngularVelocity) {
         internal_native_SetPositionRotationAndVelocity(native_address, inBodyID.native_address, inPosition.native_address, inRotation.native_address, inLinearVelocity.native_address, inAngularVelocity.native_address);
@@ -847,12 +848,12 @@ return (int)nativeObject->GetMotionQuality(*((BodyID* )inBodyID_addr));
     public static native int internal_native_GetMotionQuality(long this_addr, long inBodyID_addr);
 
     public Mat44 GetInverseInertia(BodyID inBodyID) {
-        long pointer = internal_native_GetInverseInertia(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetInverseInertia_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = Mat44.native_new();
-        Mat44_TEMP_GEN_2.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_2.internal_reset(addr, false);
         return Mat44_TEMP_GEN_2;
     }
 
@@ -861,7 +862,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetInverseInertia(*((BodyID* )inBodyID_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetInverseInertia(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetInverseInertia_addr(long this_addr, long inBodyID_addr);
 
     public void SetRestitution(BodyID inBodyID, float inRestitution) {
         internal_native_SetRestitution(native_address, inBodyID.native_address, inRestitution);
@@ -954,12 +955,12 @@ nativeObject->SetCollisionGroup(*((BodyID* )inBodyID_addr), *((CollisionGroup* )
     public static native void internal_native_SetCollisionGroup(long this_addr, long inBodyID_addr, long inCollisionGroup_addr);
 
     public CollisionGroup GetCollisionGroup(BodyID inBodyID) {
-        long pointer = internal_native_GetCollisionGroup(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetCollisionGroup_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return CollisionGroup.NULL;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = CollisionGroup.native_new();
-        CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);
+        CollisionGroup_TEMP_GEN_0.internal_reset(addr, false);
         return CollisionGroup_TEMP_GEN_0;
     }
 
@@ -967,7 +968,7 @@ nativeObject->SetCollisionGroup(*((BodyID* )inBodyID_addr), *((CollisionGroup* )
 BodyInterface* nativeObject = (BodyInterface*)this_addr;
 return (jlong)&nativeObject->GetCollisionGroup(*((BodyID* )inBodyID_addr));
 */
-    public static native long internal_native_GetCollisionGroup(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetCollisionGroup_addr(long this_addr, long inBodyID_addr);
 
     public void AddForce(BodyID inBodyID, Vec3 inForce, EActivation inActivationMode) {
         internal_native_AddForce(native_address, inBodyID.native_address, inForce.native_address, inActivationMode.getValue());
@@ -1050,12 +1051,12 @@ nativeObject->AddAngularImpulse(*((BodyID* )inBodyID_addr), *((Vec3* )inAngularI
     public static native void internal_native_AddAngularImpulse(long this_addr, long inBodyID_addr, long inAngularImpulse_addr);
 
     public TransformedShape GetTransformedShape(BodyID inBodyID) {
-        long pointer = internal_native_GetTransformedShape(native_address, inBodyID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetTransformedShape_addr(native_address, inBodyID.native_address);
+        if (addr == 0)
             return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
-        TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
+        TransformedShape_TEMP_GEN_0.internal_reset(addr, false);
         return TransformedShape_TEMP_GEN_0;
     }
 
@@ -1064,7 +1065,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 static TransformedShape copy_addr;
 copy_addr = nativeObject->GetTransformedShape(*((BodyID* )inBodyID_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetTransformedShape(long this_addr, long inBodyID_addr);
+    public static native long internal_native_GetTransformedShape_addr(long this_addr, long inBodyID_addr);
 
     public long GetUserData(BodyID inBodyID) {
         return internal_native_GetUserData(native_address, inBodyID.native_address);
@@ -1087,12 +1088,12 @@ nativeObject->SetUserData(*((BodyID* )inBodyID_addr), inUserData);
     public static native void internal_native_SetUserData(long this_addr, long inBodyID_addr, long inUserData);
 
     public PhysicsMaterial GetMaterial(BodyID inBodyID, SubShapeID inSubShapeID) {
-        long pointer = internal_native_GetMaterial(native_address, inBodyID.native_address, inSubShapeID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetMaterial_addr(native_address, inBodyID.native_address, inSubShapeID.native_address);
+        if (addr == 0)
             return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
-        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -1101,7 +1102,7 @@ BodyInterface* nativeObject = (BodyInterface*)this_addr;
 const PhysicsMaterial* obj = nativeObject->GetMaterial(*((BodyID* )inBodyID_addr), *((SubShapeID* )inSubShapeID_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_GetMaterial(long this_addr, long inBodyID_addr, long inSubShapeID_addr);
+    public static native long internal_native_GetMaterial_addr(long this_addr, long inBodyID_addr, long inSubShapeID_addr);
 
     public void InvalidateContactCache(BodyID inBodyID) {
         internal_native_InvalidateContactCache(native_address, inBodyID.native_address);

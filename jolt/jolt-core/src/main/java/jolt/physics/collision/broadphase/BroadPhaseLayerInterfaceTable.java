@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.broadphase;
 
 public class BroadPhaseLayerInterfaceTable extends BroadPhaseLayerInterface {
@@ -11,14 +12,14 @@ public class BroadPhaseLayerInterfaceTable extends BroadPhaseLayerInterface {
 
     public BroadPhaseLayerInterfaceTable(int inNumObjectLayers, int inNumBroadPhaseLayers) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int_int(inNumObjectLayers, inNumBroadPhaseLayers);
+        long addr = internal_native_create_int_int_addr(inNumObjectLayers, inNumBroadPhaseLayers);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new BroadPhaseLayerInterfaceTable(inNumObjectLayers, inNumBroadPhaseLayers);
 */
-    public static native long internal_native_create_int_int(int inNumObjectLayers, int inNumBroadPhaseLayers);
+    public static native long internal_native_create_int_int_addr(int inNumObjectLayers, int inNumBroadPhaseLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

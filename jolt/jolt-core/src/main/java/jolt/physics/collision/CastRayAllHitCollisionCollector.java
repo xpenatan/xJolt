@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import jolt.physics.softbody.CastRayCollector;
@@ -15,14 +16,14 @@ public class CastRayAllHitCollisionCollector extends CastRayCollector {
 
     public CastRayAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new CastRayAllHitCollisionCollector();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -70,12 +71,12 @@ return nativeObject->HadHit();
     public static native boolean internal_native_HadHit(long this_addr);
 
     public ArrayRayCastResult get_mHits() {
-        long pointer = internal_native_get_mHits(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mHits_addr(native_address);
+        if (addr == 0)
             return ArrayRayCastResult.NULL;
         if (ArrayRayCastResult_TEMP_GEN_0 == null)
             ArrayRayCastResult_TEMP_GEN_0 = ArrayRayCastResult.native_new();
-        ArrayRayCastResult_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayRayCastResult_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayRayCastResult_TEMP_GEN_0;
     }
 
@@ -83,7 +84,7 @@ return nativeObject->HadHit();
 CastRayAllHitCollisionCollector* nativeObject = (CastRayAllHitCollisionCollector*)this_addr;
 return (jlong)&nativeObject->mHits;
 */
-    public static native long internal_native_get_mHits(long this_addr);
+    public static native long internal_native_get_mHits_addr(long this_addr);
 
     public void set_mHits(ArrayRayCastResult mHits) {
         internal_native_set_mHits(native_address, mHits.native_address);

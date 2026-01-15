@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.geometry.Plane;
@@ -18,36 +19,36 @@ public class PlaneShapeSettings extends ShapeSettings {
 
     public PlaneShapeSettings(Plane inPlane, PhysicsMaterial inMaterial, float inHalfExtent) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Plane_PhysicsMaterial_float(inPlane.native_address, inMaterial.native_address, inHalfExtent);
+        long addr = internal_native_create_Plane_PhysicsMaterial_float_addr(inPlane.native_address, inMaterial.native_address, inHalfExtent);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new PlaneShapeSettings(*((Plane* )inPlane_addr), (PhysicsMaterial* )inMaterial_addr, (float)inHalfExtent);
 */
-    public static native long internal_native_create_Plane_PhysicsMaterial_float(long inPlane_addr, long inMaterial_addr, float inHalfExtent);
+    public static native long internal_native_create_Plane_PhysicsMaterial_float_addr(long inPlane_addr, long inMaterial_addr, float inHalfExtent);
 
     public PlaneShapeSettings(Plane inPlane, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Plane_PhysicsMaterial(inPlane.native_address, inMaterial.native_address);
+        long addr = internal_native_create_Plane_PhysicsMaterial_addr(inPlane.native_address, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new PlaneShapeSettings(*((Plane* )inPlane_addr), (PhysicsMaterial* )inMaterial_addr);
 */
-    public static native long internal_native_create_Plane_PhysicsMaterial(long inPlane_addr, long inMaterial_addr);
+    public static native long internal_native_create_Plane_PhysicsMaterial_addr(long inPlane_addr, long inMaterial_addr);
 
     public PlaneShapeSettings(Plane inPlane) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Plane(inPlane.native_address);
+        long addr = internal_native_create_Plane_addr(inPlane.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new PlaneShapeSettings(*((Plane* )inPlane_addr));
 */
-    public static native long internal_native_create_Plane(long inPlane_addr);
+    public static native long internal_native_create_Plane_addr(long inPlane_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -75,12 +76,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Plane get_mPlane() {
-        long pointer = internal_native_get_mPlane(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPlane_addr(native_address);
+        if (addr == 0)
             return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
-        Plane_TEMP_GEN_0.internal_reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(addr, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -88,7 +89,7 @@ delete nativeObject;
 PlaneShapeSettings* nativeObject = (PlaneShapeSettings*)this_addr;
 return (jlong)&nativeObject->mPlane;
 */
-    public static native long internal_native_get_mPlane(long this_addr);
+    public static native long internal_native_get_mPlane_addr(long this_addr);
 
     public void set_mPlane(Plane mPlane) {
         internal_native_set_mPlane(native_address, mPlane.native_address);
@@ -101,12 +102,12 @@ nativeObject->mPlane = *((Plane*)mPlane_addr);
     public static native void internal_native_set_mPlane(long this_addr, long mPlane_addr);
 
     public PhysicsMaterial get_mMaterial() {
-        long pointer = internal_native_get_mMaterial(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mMaterial_addr(native_address);
+        if (addr == 0)
             return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
-        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -115,7 +116,7 @@ PlaneShapeSettings* nativeObject = (PlaneShapeSettings*)this_addr;
 const PhysicsMaterial* attr = nativeObject->mMaterial;
 return (jlong)attr;
 */
-    public static native long internal_native_get_mMaterial(long this_addr);
+    public static native long internal_native_get_mMaterial_addr(long this_addr);
 
     public void set_mMaterial(PhysicsMaterial mMaterial) {
         internal_native_set_mMaterial(native_address, mMaterial.native_address);

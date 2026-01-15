@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import jolt.enums.EMotorState;
@@ -41,12 +42,12 @@ nativeObject->SetPath((PathConstraintPath* )inPath_addr, (float)inPathFraction);
     public static native void internal_native_SetPath(long this_addr, long inPath_addr, float inPathFraction);
 
     public PathConstraintPath GetPath() {
-        long pointer = internal_native_GetPath(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetPath_addr(native_address);
+        if (addr == 0)
             return PathConstraintPath.NULL;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.native_new();
-        PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
+        PathConstraintPath_TEMP_GEN_0.internal_reset(addr, false);
         return PathConstraintPath_TEMP_GEN_0;
     }
 
@@ -55,7 +56,7 @@ PathConstraint* nativeObject = (PathConstraint*)this_addr;
 const PathConstraintPath* obj = nativeObject->GetPath();
 return (jlong)obj;
 */
-    public static native long internal_native_GetPath(long this_addr);
+    public static native long internal_native_GetPath_addr(long this_addr);
 
     public float GetPathFraction() {
         return internal_native_GetPathFraction(native_address);
@@ -88,12 +89,12 @@ return nativeObject->GetMaxFrictionForce();
     public static native float internal_native_GetMaxFrictionForce(long this_addr);
 
     public MotorSettings GetPositionMotorSettings() {
-        long pointer = internal_native_GetPositionMotorSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetPositionMotorSettings_addr(native_address);
+        if (addr == 0)
             return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
-        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(addr, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -101,7 +102,7 @@ return nativeObject->GetMaxFrictionForce();
 PathConstraint* nativeObject = (PathConstraint*)this_addr;
 return (jlong)&nativeObject->GetPositionMotorSettings();
 */
-    public static native long internal_native_GetPositionMotorSettings(long this_addr);
+    public static native long internal_native_GetPositionMotorSettings_addr(long this_addr);
 
     public void SetPositionMotorState(EMotorState inState) {
         internal_native_SetPositionMotorState(native_address, inState.getValue());

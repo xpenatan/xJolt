@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.body;
 
 public class IgnoreSingleBodyFilter extends BodyFilter {
@@ -11,14 +12,14 @@ public class IgnoreSingleBodyFilter extends BodyFilter {
 
     public IgnoreSingleBodyFilter(BodyID inBodyID) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_BodyID(inBodyID.native_address);
+        long addr = internal_native_create_BodyID_addr(inBodyID.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new IgnoreSingleBodyFilter(*((BodyID* )inBodyID_addr));
 */
-    public static native long internal_native_create_BodyID(long inBodyID_addr);
+    public static native long internal_native_create_BodyID_addr(long inBodyID_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

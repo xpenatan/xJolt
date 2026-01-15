@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -21,14 +22,14 @@ public class SubShapeIDPair extends IDLBase {
     static public final SubShapeIDPair NULL = SubShapeIDPair.native_new();
 
     public SubShapeIDPair() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SubShapeIDPair();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,12 +56,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public BodyID GetBody1ID() {
-        long pointer = internal_native_GetBody1ID(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBody1ID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -68,15 +69,15 @@ delete nativeObject;
 SubShapeIDPair* nativeObject = (SubShapeIDPair*)this_addr;
 return (jlong)&nativeObject->GetBody1ID();
 */
-    public static native long internal_native_GetBody1ID(long this_addr);
+    public static native long internal_native_GetBody1ID_addr(long this_addr);
 
     public SubShapeID GetSubShapeID1() {
-        long pointer = internal_native_GetSubShapeID1(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSubShapeID1_addr(native_address);
+        if (addr == 0)
             return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
-        SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
+        SubShapeID_TEMP_GEN_0.internal_reset(addr, false);
         return SubShapeID_TEMP_GEN_0;
     }
 
@@ -84,15 +85,15 @@ return (jlong)&nativeObject->GetBody1ID();
 SubShapeIDPair* nativeObject = (SubShapeIDPair*)this_addr;
 return (jlong)&nativeObject->GetSubShapeID1();
 */
-    public static native long internal_native_GetSubShapeID1(long this_addr);
+    public static native long internal_native_GetSubShapeID1_addr(long this_addr);
 
     public BodyID GetBody2ID() {
-        long pointer = internal_native_GetBody2ID(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBody2ID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_1 == null)
             BodyID_TEMP_GEN_1 = BodyID.native_new();
-        BodyID_TEMP_GEN_1.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_1.internal_reset(addr, false);
         return BodyID_TEMP_GEN_1;
     }
 
@@ -100,15 +101,15 @@ return (jlong)&nativeObject->GetSubShapeID1();
 SubShapeIDPair* nativeObject = (SubShapeIDPair*)this_addr;
 return (jlong)&nativeObject->GetBody2ID();
 */
-    public static native long internal_native_GetBody2ID(long this_addr);
+    public static native long internal_native_GetBody2ID_addr(long this_addr);
 
     public SubShapeID GetSubShapeID2() {
-        long pointer = internal_native_GetSubShapeID2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSubShapeID2_addr(native_address);
+        if (addr == 0)
             return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = SubShapeID.native_new();
-        SubShapeID_TEMP_GEN_1.internal_reset(pointer, false);
+        SubShapeID_TEMP_GEN_1.internal_reset(addr, false);
         return SubShapeID_TEMP_GEN_1;
     }
 
@@ -116,5 +117,5 @@ return (jlong)&nativeObject->GetBody2ID();
 SubShapeIDPair* nativeObject = (SubShapeIDPair*)this_addr;
 return (jlong)&nativeObject->GetSubShapeID2();
 */
-    public static native long internal_native_GetSubShapeID2(long this_addr);
+    public static native long internal_native_GetSubShapeID2_addr(long this_addr);
 }

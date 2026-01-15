@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -72,12 +73,12 @@ jsObj.set_mMode(mMode);
     public static native void internal_native_set_mMode(int this_addr, int mMode);
 
     public ArrayFloat get_mGearRatios() {
-        int pointer = internal_native_get_mGearRatios(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mGearRatios_addr(native_address);
+        if (addr == 0)
             return ArrayFloat.NULL;
         if (ArrayFloat_TEMP_GEN_0 == null)
             ArrayFloat_TEMP_GEN_0 = ArrayFloat.native_new();
-        ArrayFloat_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayFloat_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayFloat_TEMP_GEN_0;
     }
 
@@ -88,7 +89,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);var returnedJSObj = jsObj.get_mGearRatios();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mGearRatios(int this_addr);
+    public static native int internal_native_get_mGearRatios_addr(int this_addr);
 
     public void set_mGearRatios(ArrayFloat mGearRatios) {
         internal_native_set_mGearRatios(native_address, mGearRatios.native_address);
@@ -102,12 +103,12 @@ jsObj.set_mGearRatios(mGearRatios_addr);
     public static native void internal_native_set_mGearRatios(int this_addr, int mGearRatios_addr);
 
     public ArrayFloat get_mReverseGearRatios() {
-        int pointer = internal_native_get_mReverseGearRatios(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mReverseGearRatios_addr(native_address);
+        if (addr == 0)
             return ArrayFloat.NULL;
         if (ArrayFloat_TEMP_GEN_1 == null)
             ArrayFloat_TEMP_GEN_1 = ArrayFloat.native_new();
-        ArrayFloat_TEMP_GEN_1.internal_reset(pointer, false);
+        ArrayFloat_TEMP_GEN_1.internal_reset(addr, false);
         return ArrayFloat_TEMP_GEN_1;
     }
 
@@ -118,7 +119,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTransmissionSettings);var returnedJSObj = jsObj.get_mReverseGearRatios();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mReverseGearRatios(int this_addr);
+    public static native int internal_native_get_mReverseGearRatios_addr(int this_addr);
 
     public void set_mReverseGearRatios(ArrayFloat mReverseGearRatios) {
         internal_native_set_mReverseGearRatios(native_address, mReverseGearRatios.native_address);

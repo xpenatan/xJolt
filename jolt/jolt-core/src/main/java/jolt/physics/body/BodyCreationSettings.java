@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.body;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -66,12 +67,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public ShapeSettings GetShapeSettings() {
-        long pointer = internal_native_GetShapeSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetShapeSettings_addr(native_address);
+        if (addr == 0)
             return ShapeSettings.NULL;
         if (ShapeSettings_TEMP_GEN_0 == null)
             ShapeSettings_TEMP_GEN_0 = ShapeSettings.native_new();
-        ShapeSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        ShapeSettings_TEMP_GEN_0.internal_reset(addr, false);
         return ShapeSettings_TEMP_GEN_0;
     }
 
@@ -80,7 +81,7 @@ BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 const ShapeSettings* obj = nativeObject->GetShapeSettings();
 return (jlong)obj;
 */
-    public static native long internal_native_GetShapeSettings(long this_addr);
+    public static native long internal_native_GetShapeSettings_addr(long this_addr);
 
     public void SetShapeSettings(ShapeSettings inShape) {
         internal_native_SetShapeSettings(native_address, inShape.native_address);
@@ -93,12 +94,12 @@ nativeObject->SetShapeSettings((ShapeSettings* )inShape_addr);
     public static native void internal_native_SetShapeSettings(long this_addr, long inShape_addr);
 
     public ShapeResult ConvertShapeSettings() {
-        long pointer = internal_native_ConvertShapeSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_ConvertShapeSettings_addr(native_address);
+        if (addr == 0)
             return ShapeResult.NULL;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = ShapeResult.native_new();
-        ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
+        ShapeResult_TEMP_GEN_0.internal_reset(addr, false);
         return ShapeResult_TEMP_GEN_0;
     }
 
@@ -107,15 +108,15 @@ BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 static Shape::ShapeResult copy_addr;
 copy_addr = nativeObject->ConvertShapeSettings();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_ConvertShapeSettings(long this_addr);
+    public static native long internal_native_ConvertShapeSettings_addr(long this_addr);
 
     public Shape GetShape() {
-        long pointer = internal_native_GetShape(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -124,7 +125,7 @@ BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 const Shape* obj = nativeObject->GetShape();
 return (jlong)obj;
 */
-    public static native long internal_native_GetShape(long this_addr);
+    public static native long internal_native_GetShape_addr(long this_addr);
 
     public void SetShape(Shape inShape) {
         internal_native_SetShape(native_address, inShape.native_address);
@@ -147,12 +148,12 @@ return nativeObject->HasMassProperties();
     public static native boolean internal_native_HasMassProperties(long this_addr);
 
     public MassProperties GetMassProperties() {
-        long pointer = internal_native_GetMassProperties(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetMassProperties_addr(native_address);
+        if (addr == 0)
             return MassProperties.NULL;
         if (MassProperties_TEMP_GEN_0 == null)
             MassProperties_TEMP_GEN_0 = MassProperties.native_new();
-        MassProperties_TEMP_GEN_0.internal_reset(pointer, false);
+        MassProperties_TEMP_GEN_0.internal_reset(addr, false);
         return MassProperties_TEMP_GEN_0;
     }
 
@@ -161,15 +162,15 @@ BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 static MassProperties copy_addr;
 copy_addr = nativeObject->GetMassProperties();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetMassProperties(long this_addr);
+    public static native long internal_native_GetMassProperties_addr(long this_addr);
 
     public Vec3 get_mPosition() {
-        long pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -177,7 +178,7 @@ return (jlong)&copy_addr;*/
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    public static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition_addr(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition(native_address, mPosition.native_address);
@@ -190,12 +191,12 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Quat get_mRotation() {
-        long pointer = internal_native_get_mRotation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -203,7 +204,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mRotation;
 */
-    public static native long internal_native_get_mRotation(long this_addr);
+    public static native long internal_native_get_mRotation_addr(long this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation(native_address, mRotation.native_address);
@@ -216,12 +217,12 @@ nativeObject->mRotation = *((Quat*)mRotation_addr);
     public static native void internal_native_set_mRotation(long this_addr, long mRotation_addr);
 
     public Vec3 get_mLinearVelocity() {
-        long pointer = internal_native_get_mLinearVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mLinearVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -229,7 +230,7 @@ nativeObject->mRotation = *((Quat*)mRotation_addr);
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mLinearVelocity;
 */
-    public static native long internal_native_get_mLinearVelocity(long this_addr);
+    public static native long internal_native_get_mLinearVelocity_addr(long this_addr);
 
     public void set_mLinearVelocity(Vec3 mLinearVelocity) {
         internal_native_set_mLinearVelocity(native_address, mLinearVelocity.native_address);
@@ -242,12 +243,12 @@ nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
     public static native void internal_native_set_mLinearVelocity(long this_addr, long mLinearVelocity_addr);
 
     public Vec3 get_mAngularVelocity() {
-        long pointer = internal_native_get_mAngularVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mAngularVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -255,7 +256,7 @@ nativeObject->mLinearVelocity = *((Vec3*)mLinearVelocity_addr);
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mAngularVelocity;
 */
-    public static native long internal_native_get_mAngularVelocity(long this_addr);
+    public static native long internal_native_get_mAngularVelocity_addr(long this_addr);
 
     public void set_mAngularVelocity(Vec3 mAngularVelocity) {
         internal_native_set_mAngularVelocity(native_address, mAngularVelocity.native_address);
@@ -308,12 +309,12 @@ nativeObject->mObjectLayer = mObjectLayer;
     public static native void internal_native_set_mObjectLayer(long this_addr, int mObjectLayer);
 
     public CollisionGroup get_mCollisionGroup() {
-        long pointer = internal_native_get_mCollisionGroup(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mCollisionGroup_addr(native_address);
+        if (addr == 0)
             return CollisionGroup.NULL;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = CollisionGroup.native_new();
-        CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);
+        CollisionGroup_TEMP_GEN_0.internal_reset(addr, false);
         return CollisionGroup_TEMP_GEN_0;
     }
 
@@ -321,7 +322,7 @@ nativeObject->mObjectLayer = mObjectLayer;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mCollisionGroup;
 */
-    public static native long internal_native_get_mCollisionGroup(long this_addr);
+    public static native long internal_native_get_mCollisionGroup_addr(long this_addr);
 
     public void set_mCollisionGroup(CollisionGroup mCollisionGroup) {
         internal_native_set_mCollisionGroup(native_address, mCollisionGroup.native_address);
@@ -782,12 +783,12 @@ nativeObject->mInertiaMultiplier = mInertiaMultiplier;
     public static native void internal_native_set_mInertiaMultiplier(long this_addr, float mInertiaMultiplier);
 
     public MassProperties get_mMassPropertiesOverride() {
-        long pointer = internal_native_get_mMassPropertiesOverride(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mMassPropertiesOverride_addr(native_address);
+        if (addr == 0)
             return MassProperties.NULL;
         if (MassProperties_TEMP_GEN_1 == null)
             MassProperties_TEMP_GEN_1 = MassProperties.native_new();
-        MassProperties_TEMP_GEN_1.internal_reset(pointer, false);
+        MassProperties_TEMP_GEN_1.internal_reset(addr, false);
         return MassProperties_TEMP_GEN_1;
     }
 
@@ -795,7 +796,7 @@ nativeObject->mInertiaMultiplier = mInertiaMultiplier;
 BodyCreationSettings* nativeObject = (BodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mMassPropertiesOverride;
 */
-    public static native long internal_native_get_mMassPropertiesOverride(long this_addr);
+    public static native long internal_native_get_mMassPropertiesOverride_addr(long this_addr);
 
     public void set_mMassPropertiesOverride(MassProperties mMassPropertiesOverride) {
         internal_native_set_mMassPropertiesOverride(native_address, mMassPropertiesOverride.native_address);

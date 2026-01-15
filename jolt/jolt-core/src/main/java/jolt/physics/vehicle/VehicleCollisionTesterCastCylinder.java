@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 public class VehicleCollisionTesterCastCylinder extends VehicleCollisionTester {
@@ -11,25 +12,25 @@ public class VehicleCollisionTesterCastCylinder extends VehicleCollisionTester {
 
     public VehicleCollisionTesterCastCylinder(int inObjectLayer, float inConvexRadiusFraction) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int_float(inObjectLayer, inConvexRadiusFraction);
+        long addr = internal_native_create_int_float_addr(inObjectLayer, inConvexRadiusFraction);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastCylinder(inObjectLayer, (float)inConvexRadiusFraction);
 */
-    public static native long internal_native_create_int_float(int inObjectLayer, float inConvexRadiusFraction);
+    public static native long internal_native_create_int_float_addr(int inObjectLayer, float inConvexRadiusFraction);
 
     public VehicleCollisionTesterCastCylinder(int inObjectLayer) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int(inObjectLayer);
+        long addr = internal_native_create_int_addr(inObjectLayer);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastCylinder(inObjectLayer);
 */
-    public static native long internal_native_create_int(int inObjectLayer);
+    public static native long internal_native_create_int_addr(int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

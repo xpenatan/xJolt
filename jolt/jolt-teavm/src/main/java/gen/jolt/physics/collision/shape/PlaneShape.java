@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.geometry.Plane;
@@ -16,7 +17,7 @@ public class PlaneShape extends Shape {
 
     public PlaneShape(Plane inPlane, PhysicsMaterial inMaterial, float inHalfExtent) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Plane_PhysicsMaterial_float(inPlane.native_address, inMaterial.native_address, inHalfExtent);
+        int addr = internal_native_create_Plane_PhysicsMaterial_float_addr(inPlane.native_address, inMaterial.native_address, inHalfExtent);
         internal_reset(addr, true);
     }
 
@@ -25,11 +26,11 @@ var jsObj = new jolt.PlaneShape(inPlane_addr, inMaterial_addr, inHalfExtent);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPlane_addr", "inMaterial_addr", "inHalfExtent"}, script = "var jsObj = new jolt.PlaneShape(inPlane_addr, inMaterial_addr, inHalfExtent);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Plane_PhysicsMaterial_float(int inPlane_addr, int inMaterial_addr, float inHalfExtent);
+    public static native int internal_native_create_Plane_PhysicsMaterial_float_addr(int inPlane_addr, int inMaterial_addr, float inHalfExtent);
 
     public PlaneShape(Plane inPlane, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Plane_PhysicsMaterial(inPlane.native_address, inMaterial.native_address);
+        int addr = internal_native_create_Plane_PhysicsMaterial_addr(inPlane.native_address, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
@@ -38,11 +39,11 @@ var jsObj = new jolt.PlaneShape(inPlane_addr, inMaterial_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPlane_addr", "inMaterial_addr"}, script = "var jsObj = new jolt.PlaneShape(inPlane_addr, inMaterial_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Plane_PhysicsMaterial(int inPlane_addr, int inMaterial_addr);
+    public static native int internal_native_create_Plane_PhysicsMaterial_addr(int inPlane_addr, int inMaterial_addr);
 
     public PlaneShape(Plane inPlane) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Plane(inPlane.native_address);
+        int addr = internal_native_create_Plane_addr(inPlane.native_address);
         internal_reset(addr, true);
     }
 
@@ -51,7 +52,7 @@ var jsObj = new jolt.PlaneShape(inPlane_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPlane_addr"}, script = "var jsObj = new jolt.PlaneShape(inPlane_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Plane(int inPlane_addr);
+    public static native int internal_native_create_Plane_addr(int inPlane_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -91,12 +92,12 @@ jsObj.SetMaterial(inMaterial_addr);
     public static native void internal_native_SetMaterial(int this_addr, int inMaterial_addr);
 
     public Plane GetPlane() {
-        int pointer = internal_native_GetPlane(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetPlane_addr(native_address);
+        if (addr == 0)
             return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
-        Plane_TEMP_GEN_0.internal_reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(addr, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -107,7 +108,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PlaneShape);var returnedJSObj = jsObj.GetPlane();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetPlane(int this_addr);
+    public static native int internal_native_GetPlane_addr(int this_addr);
 
     public float GetHalfExtent() {
         return internal_native_GetHalfExtent(native_address);

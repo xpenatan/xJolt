@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.math;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,14 +13,14 @@ public class Float3 extends IDLBase {
     static public final Float3 NULL = Float3.native_new();
 
     public Float3(float inX, float inY, float inZ) {
-        long addr = internal_native_create_float_float_float(inX, inY, inZ);
+        long addr = internal_native_create_float_float_float_addr(inX, inY, inZ);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new Float3((float)inX, (float)inY, (float)inZ);
 */
-    public static native long internal_native_create_float_float_float(float inX, float inY, float inZ);
+    public static native long internal_native_create_float_float_float_addr(float inX, float inY, float inZ);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

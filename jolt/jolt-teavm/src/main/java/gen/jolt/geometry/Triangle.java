@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.geometry;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -16,7 +17,7 @@ public class Triangle extends IDLBase {
     static public final Triangle NULL = Triangle.native_new();
 
     public Triangle() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -25,10 +26,10 @@ var jsObj = new jolt.Triangle();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.Triangle();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, int inMaterialIndex, int inUserData) {
-        int addr = internal_native_create_Vec3_Vec3_Vec3_int_int(inV1.native_address, inV2.native_address, inV3.native_address, inMaterialIndex, inUserData);
+        int addr = internal_native_create_Vec3_Vec3_Vec3_int_int_addr(inV1.native_address, inV2.native_address, inV3.native_address, inMaterialIndex, inUserData);
         internal_reset(addr, true);
     }
 
@@ -37,10 +38,10 @@ var jsObj = new jolt.Triangle(inV1_addr, inV2_addr, inV3_addr, inMaterialIndex, 
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inV1_addr", "inV2_addr", "inV3_addr", "inMaterialIndex", "inUserData"}, script = "var jsObj = new jolt.Triangle(inV1_addr, inV2_addr, inV3_addr, inMaterialIndex, inUserData);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Vec3_Vec3_Vec3_int_int(int inV1_addr, int inV2_addr, int inV3_addr, int inMaterialIndex, int inUserData);
+    public static native int internal_native_create_Vec3_Vec3_Vec3_int_int_addr(int inV1_addr, int inV2_addr, int inV3_addr, int inMaterialIndex, int inUserData);
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, int inMaterialIndex) {
-        int addr = internal_native_create_Vec3_Vec3_Vec3_int(inV1.native_address, inV2.native_address, inV3.native_address, inMaterialIndex);
+        int addr = internal_native_create_Vec3_Vec3_Vec3_int_addr(inV1.native_address, inV2.native_address, inV3.native_address, inMaterialIndex);
         internal_reset(addr, true);
     }
 
@@ -49,10 +50,10 @@ var jsObj = new jolt.Triangle(inV1_addr, inV2_addr, inV3_addr, inMaterialIndex);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inV1_addr", "inV2_addr", "inV3_addr", "inMaterialIndex"}, script = "var jsObj = new jolt.Triangle(inV1_addr, inV2_addr, inV3_addr, inMaterialIndex);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Vec3_Vec3_Vec3_int(int inV1_addr, int inV2_addr, int inV3_addr, int inMaterialIndex);
+    public static native int internal_native_create_Vec3_Vec3_Vec3_int_addr(int inV1_addr, int inV2_addr, int inV3_addr, int inMaterialIndex);
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3) {
-        int addr = internal_native_create_Vec3_Vec3_Vec3(inV1.native_address, inV2.native_address, inV3.native_address);
+        int addr = internal_native_create_Vec3_Vec3_Vec3_addr(inV1.native_address, inV2.native_address, inV3.native_address);
         internal_reset(addr, true);
     }
 
@@ -61,7 +62,7 @@ var jsObj = new jolt.Triangle(inV1_addr, inV2_addr, inV3_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inV1_addr", "inV2_addr", "inV3_addr"}, script = "var jsObj = new jolt.Triangle(inV1_addr, inV2_addr, inV3_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Vec3_Vec3_Vec3(int inV1_addr, int inV2_addr, int inV3_addr);
+    public static native int internal_native_create_Vec3_Vec3_Vec3_addr(int inV1_addr, int inV2_addr, int inV3_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -89,12 +90,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Float3 get_mV(int index) {
-        int pointer = internal_native_get_mV(native_address, index);
-        if (pointer == 0)
+        int addr = internal_native_get_mV_addr(native_address, index);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
-        Float3_TEMP_GEN_0.internal_reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(addr, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -105,7 +106,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Triangle);var returnedJSObj = jsObj.get_mV(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mV(int this_addr, int index);
+    public static native int internal_native_get_mV_addr(int this_addr, int index);
 
     public void set_mV(int index, Float3 mV) {
         internal_native_set_mV(native_address, index, mV.native_address);

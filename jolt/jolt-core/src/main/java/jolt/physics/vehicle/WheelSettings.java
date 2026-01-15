@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -28,14 +29,14 @@ public class WheelSettings extends IDLBase {
     static public final WheelSettings NULL = WheelSettings.native_new();
 
     public WheelSettings() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new WheelSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -92,12 +93,12 @@ nativeObject->Release();
     public static native void internal_native_Release(long this_addr);
 
     public Vec3 get_mPosition() {
-        long pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -105,7 +106,7 @@ nativeObject->Release();
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    public static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition_addr(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition(native_address, mPosition.native_address);
@@ -118,12 +119,12 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Vec3 get_mSuspensionForcePoint() {
-        long pointer = internal_native_get_mSuspensionForcePoint(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mSuspensionForcePoint_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -131,7 +132,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mSuspensionForcePoint;
 */
-    public static native long internal_native_get_mSuspensionForcePoint(long this_addr);
+    public static native long internal_native_get_mSuspensionForcePoint_addr(long this_addr);
 
     public void set_mSuspensionForcePoint(Vec3 mSuspensionForcePoint) {
         internal_native_set_mSuspensionForcePoint(native_address, mSuspensionForcePoint.native_address);
@@ -144,12 +145,12 @@ nativeObject->mSuspensionForcePoint = *((Vec3*)mSuspensionForcePoint_addr);
     public static native void internal_native_set_mSuspensionForcePoint(long this_addr, long mSuspensionForcePoint_addr);
 
     public Vec3 get_mSuspensionDirection() {
-        long pointer = internal_native_get_mSuspensionDirection(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mSuspensionDirection_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -157,7 +158,7 @@ nativeObject->mSuspensionForcePoint = *((Vec3*)mSuspensionForcePoint_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mSuspensionDirection;
 */
-    public static native long internal_native_get_mSuspensionDirection(long this_addr);
+    public static native long internal_native_get_mSuspensionDirection_addr(long this_addr);
 
     public void set_mSuspensionDirection(Vec3 mSuspensionDirection) {
         internal_native_set_mSuspensionDirection(native_address, mSuspensionDirection.native_address);
@@ -170,12 +171,12 @@ nativeObject->mSuspensionDirection = *((Vec3*)mSuspensionDirection_addr);
     public static native void internal_native_set_mSuspensionDirection(long this_addr, long mSuspensionDirection_addr);
 
     public Vec3 get_mSteeringAxis() {
-        long pointer = internal_native_get_mSteeringAxis(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mSteeringAxis_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -183,7 +184,7 @@ nativeObject->mSuspensionDirection = *((Vec3*)mSuspensionDirection_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mSteeringAxis;
 */
-    public static native long internal_native_get_mSteeringAxis(long this_addr);
+    public static native long internal_native_get_mSteeringAxis_addr(long this_addr);
 
     public void set_mSteeringAxis(Vec3 mSteeringAxis) {
         internal_native_set_mSteeringAxis(native_address, mSteeringAxis.native_address);
@@ -196,12 +197,12 @@ nativeObject->mSteeringAxis = *((Vec3*)mSteeringAxis_addr);
     public static native void internal_native_set_mSteeringAxis(long this_addr, long mSteeringAxis_addr);
 
     public Vec3 get_mWheelUp() {
-        long pointer = internal_native_get_mWheelUp(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mWheelUp_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -209,7 +210,7 @@ nativeObject->mSteeringAxis = *((Vec3*)mSteeringAxis_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mWheelUp;
 */
-    public static native long internal_native_get_mWheelUp(long this_addr);
+    public static native long internal_native_get_mWheelUp_addr(long this_addr);
 
     public void set_mWheelUp(Vec3 mWheelUp) {
         internal_native_set_mWheelUp(native_address, mWheelUp.native_address);
@@ -222,12 +223,12 @@ nativeObject->mWheelUp = *((Vec3*)mWheelUp_addr);
     public static native void internal_native_set_mWheelUp(long this_addr, long mWheelUp_addr);
 
     public Vec3 get_mWheelForward() {
-        long pointer = internal_native_get_mWheelForward(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mWheelForward_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(addr, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -235,7 +236,7 @@ nativeObject->mWheelUp = *((Vec3*)mWheelUp_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mWheelForward;
 */
-    public static native long internal_native_get_mWheelForward(long this_addr);
+    public static native long internal_native_get_mWheelForward_addr(long this_addr);
 
     public void set_mWheelForward(Vec3 mWheelForward) {
         internal_native_set_mWheelForward(native_address, mWheelForward.native_address);
@@ -248,12 +249,12 @@ nativeObject->mWheelForward = *((Vec3*)mWheelForward_addr);
     public static native void internal_native_set_mWheelForward(long this_addr, long mWheelForward_addr);
 
     public SpringSettings get_mSuspensionSpring() {
-        long pointer = internal_native_get_mSuspensionSpring(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mSuspensionSpring_addr(native_address);
+        if (addr == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
-        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -261,7 +262,7 @@ nativeObject->mWheelForward = *((Vec3*)mWheelForward_addr);
 WheelSettings* nativeObject = (WheelSettings*)this_addr;
 return (jlong)&nativeObject->mSuspensionSpring;
 */
-    public static native long internal_native_get_mSuspensionSpring(long this_addr);
+    public static native long internal_native_get_mSuspensionSpring_addr(long this_addr);
 
     public void set_mSuspensionSpring(SpringSettings mSuspensionSpring) {
         internal_native_set_mSuspensionSpring(native_address, mSuspensionSpring.native_address);

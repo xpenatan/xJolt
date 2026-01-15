@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -76,12 +77,12 @@ nativeObject->SetContext((TransformedShape* )inContext_addr);
     public static native void internal_native_SetContext(long this_addr, long inContext_addr);
 
     public TransformedShape GetContext() {
-        long pointer = internal_native_GetContext(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetContext_addr(native_address);
+        if (addr == 0)
             return TransformedShape.NULL;
         if (TransformedShape_TEMP_GEN_0 == null)
             TransformedShape_TEMP_GEN_0 = TransformedShape.native_new();
-        TransformedShape_TEMP_GEN_0.internal_reset(pointer, false);
+        TransformedShape_TEMP_GEN_0.internal_reset(addr, false);
         return TransformedShape_TEMP_GEN_0;
     }
 
@@ -90,7 +91,7 @@ RayCastBodyCollector* nativeObject = (RayCastBodyCollector*)this_addr;
 const TransformedShape* obj = nativeObject->GetContext();
 return (jlong)obj;
 */
-    public static native long internal_native_GetContext(long this_addr);
+    public static native long internal_native_GetContext_addr(long this_addr);
 
     public void UpdateEarlyOutFraction(float inFraction) {
         internal_native_UpdateEarlyOutFraction(native_address, inFraction);
@@ -163,7 +164,7 @@ return nativeObject->GetPositiveEarlyOutFraction();
     public static native float internal_native_GetPositiveEarlyOutFraction(long this_addr);
 
     public RayCastBodyCollector() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -192,7 +193,7 @@ return nativeObject->GetPositiveEarlyOutFraction();
     /*[-JNI;-NATIVE]
 return (jlong)new RayCastBodyCollectorJS();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 RayCastBodyCollectorJS* nativeObject = (RayCastBodyCollectorJS*)this_addr;

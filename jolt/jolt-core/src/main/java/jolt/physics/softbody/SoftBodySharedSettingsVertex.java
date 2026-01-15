@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -17,14 +18,14 @@ public class SoftBodySharedSettingsVertex extends IDLBase {
     static public final SoftBodySharedSettingsVertex NULL = SoftBodySharedSettingsVertex.native_new();
 
     public SoftBodySharedSettingsVertex() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SoftBodySharedSettingsVertex();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,12 +52,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Float3 get_mPosition() {
-        long pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
-        Float3_TEMP_GEN_0.internal_reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(addr, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -64,7 +65,7 @@ delete nativeObject;
 SoftBodySharedSettingsVertex* nativeObject = (SoftBodySharedSettingsVertex*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    public static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition_addr(long this_addr);
 
     public void set_mPosition(Float3 mPosition) {
         internal_native_set_mPosition(native_address, mPosition.native_address);
@@ -77,12 +78,12 @@ nativeObject->mPosition = *((Float3*)mPosition_addr);
     public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Float3 get_mVelocity() {
-        long pointer = internal_native_get_mVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mVelocity_addr(native_address);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = Float3.native_new();
-        Float3_TEMP_GEN_1.internal_reset(pointer, false);
+        Float3_TEMP_GEN_1.internal_reset(addr, false);
         return Float3_TEMP_GEN_1;
     }
 
@@ -90,7 +91,7 @@ nativeObject->mPosition = *((Float3*)mPosition_addr);
 SoftBodySharedSettingsVertex* nativeObject = (SoftBodySharedSettingsVertex*)this_addr;
 return (jlong)&nativeObject->mVelocity;
 */
-    public static native long internal_native_get_mVelocity(long this_addr);
+    public static native long internal_native_get_mVelocity_addr(long this_addr);
 
     public void set_mVelocity(Float3 mVelocity) {
         internal_native_set_mVelocity(native_address, mVelocity.native_address);

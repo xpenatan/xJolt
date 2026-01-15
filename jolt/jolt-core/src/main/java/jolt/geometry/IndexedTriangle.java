@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.geometry;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,34 +13,34 @@ public class IndexedTriangle extends IDLBase {
     static public final IndexedTriangle NULL = IndexedTriangle.native_new();
 
     public IndexedTriangle() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new IndexedTriangle();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     public IndexedTriangle(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData) {
-        long addr = internal_native_create_int_int_int_int_int(inI1, inI2, inI3, inMaterialIndex, inUserData);
+        long addr = internal_native_create_int_int_int_int_int_addr(inI1, inI2, inI3, inMaterialIndex, inUserData);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new IndexedTriangle(inI1, inI2, inI3, inMaterialIndex, inUserData);
 */
-    public static native long internal_native_create_int_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData);
+    public static native long internal_native_create_int_int_int_int_int_addr(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData);
 
     public IndexedTriangle(int inI1, int inI2, int inI3, int inMaterialIndex) {
-        long addr = internal_native_create_int_int_int_int(inI1, inI2, inI3, inMaterialIndex);
+        long addr = internal_native_create_int_int_int_int_addr(inI1, inI2, inI3, inMaterialIndex);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new IndexedTriangle(inI1, inI2, inI3, inMaterialIndex);
 */
-    public static native long internal_native_create_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex);
+    public static native long internal_native_create_int_int_int_int_addr(int inI1, int inI2, int inI3, int inMaterialIndex);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

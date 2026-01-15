@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 public class DistanceConstraint extends TwoBodyConstraint {
@@ -57,12 +58,12 @@ return nativeObject->GetMaxDistance();
     public static native float internal_native_GetMaxDistance(long this_addr);
 
     public SpringSettings GetLimitsSpringSettings() {
-        long pointer = internal_native_GetLimitsSpringSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetLimitsSpringSettings_addr(native_address);
+        if (addr == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
-        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -70,7 +71,7 @@ return nativeObject->GetMaxDistance();
 DistanceConstraint* nativeObject = (DistanceConstraint*)this_addr;
 return (jlong)&nativeObject->GetLimitsSpringSettings();
 */
-    public static native long internal_native_GetLimitsSpringSettings(long this_addr);
+    public static native long internal_native_GetLimitsSpringSettings_addr(long this_addr);
 
     public void SetLimitsSpringSettings(SpringSettings inSettings) {
         internal_native_SetLimitsSpringSettings(native_address, inSettings.native_address);

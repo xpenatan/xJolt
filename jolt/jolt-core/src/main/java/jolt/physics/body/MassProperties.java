@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.body;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -18,14 +19,14 @@ public class MassProperties extends IDLBase {
     static public final MassProperties NULL = MassProperties.native_new();
 
     public MassProperties() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new MassProperties();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -72,12 +73,12 @@ nativeObject->ScaleToMass((float)inMass);
     public static native void internal_native_ScaleToMass(long this_addr, float inMass);
 
     public static Vec3 sGetEquivalentSolidBoxSize(float inMass, Vec3 inInertiaDiagonal) {
-        long pointer = internal_native_sGetEquivalentSolidBoxSize(inMass, inInertiaDiagonal.native_address);
-        if (pointer == 0)
+        long addr = internal_native_sGetEquivalentSolidBoxSize_addr(inMass, inInertiaDiagonal.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_0;
     }
 
@@ -85,7 +86,7 @@ nativeObject->ScaleToMass((float)inMass);
 static Vec3 copy_addr;
 copy_addr = MassProperties::sGetEquivalentSolidBoxSize((float)inMass, *((Vec3* )inInertiaDiagonal_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_sGetEquivalentSolidBoxSize(float inMass, long inInertiaDiagonal_addr);
+    public static native long internal_native_sGetEquivalentSolidBoxSize_addr(float inMass, long inInertiaDiagonal_addr);
 
     public void Rotate(Mat44 inRotation) {
         internal_native_Rotate(native_address, inRotation.native_address);
@@ -138,12 +139,12 @@ nativeObject->mMass = mMass;
     public static native void internal_native_set_mMass(long this_addr, float mMass);
 
     public Mat44 get_mInertia() {
-        long pointer = internal_native_get_mInertia(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mInertia_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -151,7 +152,7 @@ nativeObject->mMass = mMass;
 MassProperties* nativeObject = (MassProperties*)this_addr;
 return (jlong)&nativeObject->mInertia;
 */
-    public static native long internal_native_get_mInertia(long this_addr);
+    public static native long internal_native_get_mInertia_addr(long this_addr);
 
     public void set_mInertia(Mat44 mInertia) {
         internal_native_set_mInertia(native_address, mInertia.native_address);

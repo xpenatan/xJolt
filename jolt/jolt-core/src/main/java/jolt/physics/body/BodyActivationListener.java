@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.body;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -64,7 +65,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public BodyActivationListener() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -96,7 +97,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)new BodyActivationListenerJS();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 BodyActivationListenerJS* nativeObject = (BodyActivationListenerJS*)this_addr;

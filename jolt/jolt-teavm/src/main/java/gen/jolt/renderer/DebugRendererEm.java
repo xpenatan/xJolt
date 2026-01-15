@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.renderer;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ import gen.jolt.math.Mat44;
 import gen.jolt.core.Color;
 import gen.jolt.enums.ECastShadow;
 import gen.jolt.enums.EDrawMode;
-import gen.jolt.idl.helper.IDLFloatArray;
+import gen.com.github.xpenatan.jparser.idl.helper.IDLFloatArray;
 import gen.jolt.enums.ECullMode;
 import gen.jolt.math.Vec3;
 
@@ -129,7 +130,7 @@ jsObj.DrawCylinder(inMatrix_addr, inHalfHeight, inRadius, inColor_addr);
 
     public DebugRendererEm() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -261,7 +262,7 @@ var jsObj = new jolt.DebugRendererImplCustom();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.DebugRendererImplCustom();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "DrawMesh", "DrawLine", "DrawTriangle", "DrawText3D" }, script = "var DebugRendererImplCustom = jolt.wrapPointer(this_addr, jolt.DebugRendererImplCustom); DebugRendererImplCustom.DrawMesh = DrawMesh; DebugRendererImplCustom.DrawLine = DrawLine; DebugRendererImplCustom.DrawTriangle = DrawTriangle; DebugRendererImplCustom.DrawText3D = DrawText3D;")
     public static native void internal_native_setupCallback(int this_addr, DrawMesh DrawMesh, DrawLine DrawLine, DrawTriangle DrawTriangle, DrawText3D DrawText3D);

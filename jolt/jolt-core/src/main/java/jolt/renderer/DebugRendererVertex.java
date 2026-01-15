@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.renderer;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -47,12 +48,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Float3 get_mPosition() {
-        long pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
-        Float3_TEMP_GEN_0.internal_reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(addr, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -60,15 +61,15 @@ delete nativeObject;
 DebugRendererVertex* nativeObject = (DebugRendererVertex*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    public static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition_addr(long this_addr);
 
     public Float3 get_mNormal() {
-        long pointer = internal_native_get_mNormal(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mNormal_addr(native_address);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = Float3.native_new();
-        Float3_TEMP_GEN_1.internal_reset(pointer, false);
+        Float3_TEMP_GEN_1.internal_reset(addr, false);
         return Float3_TEMP_GEN_1;
     }
 
@@ -76,15 +77,15 @@ return (jlong)&nativeObject->mPosition;
 DebugRendererVertex* nativeObject = (DebugRendererVertex*)this_addr;
 return (jlong)&nativeObject->mNormal;
 */
-    public static native long internal_native_get_mNormal(long this_addr);
+    public static native long internal_native_get_mNormal_addr(long this_addr);
 
     public Float2 get_mUV() {
-        long pointer = internal_native_get_mUV(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mUV_addr(native_address);
+        if (addr == 0)
             return Float2.NULL;
         if (Float2_TEMP_GEN_0 == null)
             Float2_TEMP_GEN_0 = Float2.native_new();
-        Float2_TEMP_GEN_0.internal_reset(pointer, false);
+        Float2_TEMP_GEN_0.internal_reset(addr, false);
         return Float2_TEMP_GEN_0;
     }
 
@@ -92,15 +93,15 @@ return (jlong)&nativeObject->mNormal;
 DebugRendererVertex* nativeObject = (DebugRendererVertex*)this_addr;
 return (jlong)&nativeObject->mUV;
 */
-    public static native long internal_native_get_mUV(long this_addr);
+    public static native long internal_native_get_mUV_addr(long this_addr);
 
     public Color get_mColor() {
-        long pointer = internal_native_get_mColor(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mColor_addr(native_address);
+        if (addr == 0)
             return Color.NULL;
         if (Color_TEMP_GEN_0 == null)
             Color_TEMP_GEN_0 = Color.native_new();
-        Color_TEMP_GEN_0.internal_reset(pointer, false);
+        Color_TEMP_GEN_0.internal_reset(addr, false);
         return Color_TEMP_GEN_0;
     }
 
@@ -108,5 +109,5 @@ return (jlong)&nativeObject->mUV;
 DebugRendererVertex* nativeObject = (DebugRendererVertex*)this_addr;
 return (jlong)&nativeObject->mColor;
 */
-    public static native long internal_native_get_mColor(long this_addr);
+    public static native long internal_native_get_mColor_addr(long this_addr);
 }

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -20,7 +21,7 @@ public class ShapeGetTriangles extends IDLBase {
     static public final ShapeGetTriangles NULL = ShapeGetTriangles.native_new();
 
     public ShapeGetTriangles(Shape inShape, AABox inBox, Vec3 inPositionCOM, Quat inRotation, Vec3 inScale) {
-        int addr = internal_native_create_Shape_AABox_Vec3_Quat_Vec3(inShape.native_address, inBox.native_address, inPositionCOM.native_address, inRotation.native_address, inScale.native_address);
+        int addr = internal_native_create_Shape_AABox_Vec3_Quat_Vec3_addr(inShape.native_address, inBox.native_address, inPositionCOM.native_address, inRotation.native_address, inScale.native_address);
         internal_reset(addr, true);
     }
 
@@ -29,7 +30,7 @@ var jsObj = new jolt.ShapeGetTriangles(inShape_addr, inBox_addr, inPositionCOM_a
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inShape_addr", "inBox_addr", "inPositionCOM_addr", "inRotation_addr", "inScale_addr"}, script = "var jsObj = new jolt.ShapeGetTriangles(inShape_addr, inBox_addr, inPositionCOM_addr, inRotation_addr, inScale_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Shape_AABox_Vec3_Quat_Vec3(int inShape_addr, int inBox_addr, int inPositionCOM_addr, int inRotation_addr, int inScale_addr);
+    public static native int internal_native_create_Shape_AABox_Vec3_Quat_Vec3_addr(int inShape_addr, int inBox_addr, int inPositionCOM_addr, int inRotation_addr, int inScale_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -81,12 +82,12 @@ return returnedJSObj;
     public static native int internal_native_GetVerticesSize(int this_addr);
 
     public IDLBase GetVerticesData() {
-        int pointer = internal_native_GetVerticesData(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetVerticesData_addr(native_address);
+        if (addr == 0)
             return IDLBase.NULL;
         if (IDLBase_TEMP_GEN_0 == null)
             IDLBase_TEMP_GEN_0 = IDLBase.native_new();
-        IDLBase_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLBase_TEMP_GEN_0.internal_reset(addr, false);
         return IDLBase_TEMP_GEN_0;
     }
 
@@ -96,15 +97,15 @@ var returnedJSObj = jsObj.GetVerticesData();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeGetTriangles);var returnedJSObj = jsObj.GetVerticesData();return returnedJSObj;")
-    public static native int internal_native_GetVerticesData(int this_addr);
+    public static native int internal_native_GetVerticesData_addr(int this_addr);
 
     public PhysicsMaterial GetMaterial(int inTriangle) {
-        int pointer = internal_native_GetMaterial(native_address, inTriangle);
-        if (pointer == 0)
+        int addr = internal_native_GetMaterial_addr(native_address, inTriangle);
+        if (addr == 0)
             return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
-        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -115,5 +116,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inTriangle"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeGetTriangles);var returnedJSObj = jsObj.GetMaterial(inTriangle);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetMaterial(int this_addr, int inTriangle);
+    public static native int internal_native_GetMaterial_addr(int this_addr, int inTriangle);
 }

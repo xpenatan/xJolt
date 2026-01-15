@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import jolt.physics.body.Body;
@@ -36,12 +37,12 @@ public class TwoBodyConstraint extends Constraint {
     }
 
     public Body GetBody1() {
-        long pointer = internal_native_GetBody1(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBody1_addr(native_address);
+        if (addr == 0)
             return Body.NULL;
         if (Body_TEMP_GEN_0 == null)
             Body_TEMP_GEN_0 = Body.native_new();
-        Body_TEMP_GEN_0.internal_reset(pointer, false);
+        Body_TEMP_GEN_0.internal_reset(addr, false);
         return Body_TEMP_GEN_0;
     }
 
@@ -50,15 +51,15 @@ TwoBodyConstraint* nativeObject = (TwoBodyConstraint*)this_addr;
 Body* obj = nativeObject->GetBody1();
 return (jlong)obj;
 */
-    public static native long internal_native_GetBody1(long this_addr);
+    public static native long internal_native_GetBody1_addr(long this_addr);
 
     public Body GetBody2() {
-        long pointer = internal_native_GetBody2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBody2_addr(native_address);
+        if (addr == 0)
             return Body.NULL;
         if (Body_TEMP_GEN_1 == null)
             Body_TEMP_GEN_1 = Body.native_new();
-        Body_TEMP_GEN_1.internal_reset(pointer, false);
+        Body_TEMP_GEN_1.internal_reset(addr, false);
         return Body_TEMP_GEN_1;
     }
 
@@ -67,15 +68,15 @@ TwoBodyConstraint* nativeObject = (TwoBodyConstraint*)this_addr;
 Body* obj = nativeObject->GetBody2();
 return (jlong)obj;
 */
-    public static native long internal_native_GetBody2(long this_addr);
+    public static native long internal_native_GetBody2_addr(long this_addr);
 
     public Mat44 GetConstraintToBody1Matrix() {
-        long pointer = internal_native_GetConstraintToBody1Matrix(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetConstraintToBody1Matrix_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -84,15 +85,15 @@ TwoBodyConstraint* nativeObject = (TwoBodyConstraint*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetConstraintToBody1Matrix();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetConstraintToBody1Matrix(long this_addr);
+    public static native long internal_native_GetConstraintToBody1Matrix_addr(long this_addr);
 
     public Mat44 GetConstraintToBody2Matrix() {
-        long pointer = internal_native_GetConstraintToBody2Matrix(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetConstraintToBody2Matrix_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
-        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(addr, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -101,5 +102,5 @@ TwoBodyConstraint* nativeObject = (TwoBodyConstraint*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetConstraintToBody2Matrix();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetConstraintToBody2Matrix(long this_addr);
+    public static native long internal_native_GetConstraintToBody2Matrix_addr(long this_addr);
 }

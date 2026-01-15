@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.character;
 
 public class CharacterVsCharacterCollisionSimple extends CharacterVsCharacterCollision {

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.jolt.physics.constraints.ConstraintSettings;
@@ -24,7 +25,7 @@ public class VehicleConstraintSettings extends ConstraintSettings {
 
     public VehicleConstraintSettings() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -33,7 +34,7 @@ var jsObj = new jolt.VehicleConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.VehicleConstraintSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -62,12 +63,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mUp() {
-        int pointer = internal_native_get_mUp(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mUp_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -78,7 +79,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraintSettings);var returnedJSObj = jsObj.get_mUp();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mUp(int this_addr);
+    public static native int internal_native_get_mUp_addr(int this_addr);
 
     public void set_mUp(Vec3 mUp) {
         internal_native_set_mUp(native_address, mUp.native_address);
@@ -92,12 +93,12 @@ jsObj.set_mUp(mUp_addr);
     public static native void internal_native_set_mUp(int this_addr, int mUp_addr);
 
     public Vec3 get_mForward() {
-        int pointer = internal_native_get_mForward(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mForward_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -108,7 +109,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraintSettings);var returnedJSObj = jsObj.get_mForward();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mForward(int this_addr);
+    public static native int internal_native_get_mForward_addr(int this_addr);
 
     public void set_mForward(Vec3 mForward) {
         internal_native_set_mForward(native_address, mForward.native_address);
@@ -144,12 +145,12 @@ jsObj.set_mMaxPitchRollAngle(mMaxPitchRollAngle);
     public static native void internal_native_set_mMaxPitchRollAngle(int this_addr, float mMaxPitchRollAngle);
 
     public ArrayWheelSettings get_mWheels() {
-        int pointer = internal_native_get_mWheels(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mWheels_addr(native_address);
+        if (addr == 0)
             return ArrayWheelSettings.NULL;
         if (ArrayWheelSettings_TEMP_GEN_0 == null)
             ArrayWheelSettings_TEMP_GEN_0 = ArrayWheelSettings.native_new();
-        ArrayWheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayWheelSettings_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayWheelSettings_TEMP_GEN_0;
     }
 
@@ -160,7 +161,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraintSettings);var returnedJSObj = jsObj.get_mWheels();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mWheels(int this_addr);
+    public static native int internal_native_get_mWheels_addr(int this_addr);
 
     public void set_mWheels(ArrayWheelSettings mWheels) {
         internal_native_set_mWheels(native_address, mWheels.native_address);
@@ -174,12 +175,12 @@ jsObj.set_mWheels(mWheels_addr);
     public static native void internal_native_set_mWheels(int this_addr, int mWheels_addr);
 
     public ArrayVehicleAntiRollBar get_mAntiRollBars() {
-        int pointer = internal_native_get_mAntiRollBars(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mAntiRollBars_addr(native_address);
+        if (addr == 0)
             return ArrayVehicleAntiRollBar.NULL;
         if (ArrayVehicleAntiRollBar_TEMP_GEN_0 == null)
             ArrayVehicleAntiRollBar_TEMP_GEN_0 = ArrayVehicleAntiRollBar.native_new();
-        ArrayVehicleAntiRollBar_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayVehicleAntiRollBar_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayVehicleAntiRollBar_TEMP_GEN_0;
     }
 
@@ -190,7 +191,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraintSettings);var returnedJSObj = jsObj.get_mAntiRollBars();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mAntiRollBars(int this_addr);
+    public static native int internal_native_get_mAntiRollBars_addr(int this_addr);
 
     public void set_mAntiRollBars(ArrayVehicleAntiRollBar mAntiRollBars) {
         internal_native_set_mAntiRollBars(native_address, mAntiRollBars.native_address);
@@ -204,12 +205,12 @@ jsObj.set_mAntiRollBars(mAntiRollBars_addr);
     public static native void internal_native_set_mAntiRollBars(int this_addr, int mAntiRollBars_addr);
 
     public VehicleControllerSettings get_mController() {
-        int pointer = internal_native_get_mController(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mController_addr(native_address);
+        if (addr == 0)
             return VehicleControllerSettings.NULL;
         if (VehicleControllerSettings_TEMP_GEN_0 == null)
             VehicleControllerSettings_TEMP_GEN_0 = VehicleControllerSettings.native_new();
-        VehicleControllerSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        VehicleControllerSettings_TEMP_GEN_0.internal_reset(addr, false);
         return VehicleControllerSettings_TEMP_GEN_0;
     }
 
@@ -220,7 +221,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleConstraintSettings);var returnedJSObj = jsObj.get_mController();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mController(int this_addr);
+    public static native int internal_native_get_mController_addr(int this_addr);
 
     public void set_mController(VehicleControllerSettings mController) {
         internal_native_set_mController(native_address, mController.native_address);

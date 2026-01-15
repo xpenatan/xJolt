@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 public class CompoundShape extends Shape {
@@ -39,12 +40,12 @@ return returnedJSObj;
     public static native int internal_native_GetNumSubShapes(int this_addr);
 
     public CompoundShapeSubShape GetSubShape(int inIdx) {
-        int pointer = internal_native_GetSubShape(native_address, inIdx);
-        if (pointer == 0)
+        int addr = internal_native_GetSubShape_addr(native_address, inIdx);
+        if (addr == 0)
             return CompoundShapeSubShape.NULL;
         if (CompoundShapeSubShape_TEMP_GEN_0 == null)
             CompoundShapeSubShape_TEMP_GEN_0 = CompoundShapeSubShape.native_new();
-        CompoundShapeSubShape_TEMP_GEN_0.internal_reset(pointer, false);
+        CompoundShapeSubShape_TEMP_GEN_0.internal_reset(addr, false);
         return CompoundShapeSubShape_TEMP_GEN_0;
     }
 
@@ -55,5 +56,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIdx"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CompoundShape);var returnedJSObj = jsObj.GetSubShape(inIdx);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetSubShape(int this_addr, int inIdx);
+    public static native int internal_native_GetSubShape_addr(int this_addr, int inIdx);
 }

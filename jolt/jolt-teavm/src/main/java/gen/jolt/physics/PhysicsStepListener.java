@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -39,7 +40,7 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public PhysicsStepListener() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -69,7 +70,7 @@ var jsObj = new jolt.PhysicsStepListenerJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.PhysicsStepListenerJS();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "OnStep" }, script = "var PhysicsStepListenerJS = jolt.wrapPointer(this_addr, jolt.PhysicsStepListenerJS); PhysicsStepListenerJS.OnStep = OnStep;")
     public static native void internal_native_setupCallback(int this_addr, OnStep OnStep);

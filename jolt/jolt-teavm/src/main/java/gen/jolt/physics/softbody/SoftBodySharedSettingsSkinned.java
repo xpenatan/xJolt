@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -61,12 +62,12 @@ jsObj.set_mVertex(mVertex);
     public static native void internal_native_set_mVertex(int this_addr, int mVertex);
 
     public SoftBodySharedSettingsSkinWeight get_mWeights(int index) {
-        int pointer = internal_native_get_mWeights(native_address, index);
-        if (pointer == 0)
+        int addr = internal_native_get_mWeights_addr(native_address, index);
+        if (addr == 0)
             return SoftBodySharedSettingsSkinWeight.NULL;
         if (SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 == null)
             SoftBodySharedSettingsSkinWeight_TEMP_GEN_0 = SoftBodySharedSettingsSkinWeight.native_new();
-        SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.internal_reset(pointer, false);
+        SoftBodySharedSettingsSkinWeight_TEMP_GEN_0.internal_reset(addr, false);
         return SoftBodySharedSettingsSkinWeight_TEMP_GEN_0;
     }
 
@@ -77,7 +78,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsSkinned);var returnedJSObj = jsObj.get_mWeights(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mWeights(int this_addr, int index);
+    public static native int internal_native_get_mWeights_addr(int this_addr, int index);
 
     public void set_mWeights(int index, SoftBodySharedSettingsSkinWeight mWeights) {
         internal_native_set_mWeights(native_address, index, mWeights.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.geometry;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -16,44 +17,44 @@ public class Triangle extends IDLBase {
     static public final Triangle NULL = Triangle.native_new();
 
     public Triangle() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new Triangle();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, int inMaterialIndex, int inUserData) {
-        long addr = internal_native_create_Vec3_Vec3_Vec3_int_int(inV1.native_address, inV2.native_address, inV3.native_address, inMaterialIndex, inUserData);
+        long addr = internal_native_create_Vec3_Vec3_Vec3_int_int_addr(inV1.native_address, inV2.native_address, inV3.native_address, inMaterialIndex, inUserData);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new Triangle(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr), *((Vec3* )inV3_addr), inMaterialIndex, inUserData);
 */
-    public static native long internal_native_create_Vec3_Vec3_Vec3_int_int(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex, int inUserData);
+    public static native long internal_native_create_Vec3_Vec3_Vec3_int_int_addr(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex, int inUserData);
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3, int inMaterialIndex) {
-        long addr = internal_native_create_Vec3_Vec3_Vec3_int(inV1.native_address, inV2.native_address, inV3.native_address, inMaterialIndex);
+        long addr = internal_native_create_Vec3_Vec3_Vec3_int_addr(inV1.native_address, inV2.native_address, inV3.native_address, inMaterialIndex);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new Triangle(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr), *((Vec3* )inV3_addr), inMaterialIndex);
 */
-    public static native long internal_native_create_Vec3_Vec3_Vec3_int(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex);
+    public static native long internal_native_create_Vec3_Vec3_Vec3_int_addr(long inV1_addr, long inV2_addr, long inV3_addr, int inMaterialIndex);
 
     public Triangle(Vec3 inV1, Vec3 inV2, Vec3 inV3) {
-        long addr = internal_native_create_Vec3_Vec3_Vec3(inV1.native_address, inV2.native_address, inV3.native_address);
+        long addr = internal_native_create_Vec3_Vec3_Vec3_addr(inV1.native_address, inV2.native_address, inV3.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new Triangle(*((Vec3* )inV1_addr), *((Vec3* )inV2_addr), *((Vec3* )inV3_addr));
 */
-    public static native long internal_native_create_Vec3_Vec3_Vec3(long inV1_addr, long inV2_addr, long inV3_addr);
+    public static native long internal_native_create_Vec3_Vec3_Vec3_addr(long inV1_addr, long inV2_addr, long inV3_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -80,12 +81,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Float3 get_mV(int index) {
-        long pointer = internal_native_get_mV(native_address, index);
-        if (pointer == 0)
+        long addr = internal_native_get_mV_addr(native_address, index);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
-        Float3_TEMP_GEN_0.internal_reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(addr, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -93,7 +94,7 @@ delete nativeObject;
 Triangle* nativeObject = (Triangle*)this_addr;
 return (jlong)&nativeObject->mV[index];
 */
-    public static native long internal_native_get_mV(long this_addr, int index);
+    public static native long internal_native_get_mV_addr(long this_addr, int index);
 
     public void set_mV(int index, Float3 mV) {
         internal_native_set_mV(native_address, index, mV.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -28,12 +29,12 @@ public class VehicleController extends IDLBase {
     }
 
     public VehicleConstraint GetConstraint() {
-        int pointer = internal_native_GetConstraint(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetConstraint_addr(native_address);
+        if (addr == 0)
             return VehicleConstraint.NULL;
         if (VehicleConstraint_TEMP_GEN_0 == null)
             VehicleConstraint_TEMP_GEN_0 = VehicleConstraint.native_new();
-        VehicleConstraint_TEMP_GEN_0.internal_reset(pointer, false);
+        VehicleConstraint_TEMP_GEN_0.internal_reset(addr, false);
         return VehicleConstraint_TEMP_GEN_0;
     }
 
@@ -44,5 +45,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleController);var returnedJSObj = jsObj.GetConstraint();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetConstraint(int this_addr);
+    public static native int internal_native_GetConstraint_addr(int this_addr);
 }

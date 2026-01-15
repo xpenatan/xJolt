@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.raddoll;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -62,12 +63,12 @@ jsObj.set_mBodyIdx(index, mBodyIdx);
     public static native void internal_native_set_mBodyIdx(int this_addr, int index, int mBodyIdx);
 
     public TwoBodyConstraintSettings get_mConstraint() {
-        int pointer = internal_native_get_mConstraint(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mConstraint_addr(native_address);
+        if (addr == 0)
             return TwoBodyConstraintSettings.NULL;
         if (TwoBodyConstraintSettings_TEMP_GEN_0 == null)
             TwoBodyConstraintSettings_TEMP_GEN_0 = TwoBodyConstraintSettings.native_new();
-        TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        TwoBodyConstraintSettings_TEMP_GEN_0.internal_reset(addr, false);
         return TwoBodyConstraintSettings_TEMP_GEN_0;
     }
 
@@ -78,7 +79,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RagdollAdditionalConstraint);var returnedJSObj = jsObj.get_mConstraint();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mConstraint(int this_addr);
+    public static native int internal_native_get_mConstraint_addr(int this_addr);
 
     public void set_mConstraint(TwoBodyConstraintSettings mConstraint) {
         internal_native_set_mConstraint(native_address, mConstraint.native_address);

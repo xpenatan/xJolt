@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.character;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -58,12 +59,12 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public CharacterVirtualContact at(int inIndex) {
-        long pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        long addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return CharacterVirtualContact.NULL;
         if (CharacterVirtualContact_TEMP_GEN_0 == null)
             CharacterVirtualContact_TEMP_GEN_0 = CharacterVirtualContact.native_new();
-        CharacterVirtualContact_TEMP_GEN_0.internal_reset(pointer, false);
+        CharacterVirtualContact_TEMP_GEN_0.internal_reset(addr, false);
         return CharacterVirtualContact_TEMP_GEN_0;
     }
 
@@ -71,5 +72,5 @@ return nativeObject->size();
 ArrayCharacterVirtualContact* nativeObject = (ArrayCharacterVirtualContact*)this_addr;
 return (jlong)&nativeObject->at((int)inIndex);
 */
-    public static native long internal_native_at(long this_addr, int inIndex);
+    public static native long internal_native_at_addr(long this_addr, int inIndex);
 }

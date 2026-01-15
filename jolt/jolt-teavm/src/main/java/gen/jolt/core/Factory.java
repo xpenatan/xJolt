@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.core;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class Factory extends IDLBase {
     static public final Factory NULL = Factory.native_new();
 
     public Factory() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jolt.Factory();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.Factory();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -51,12 +52,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public static Factory get_sInstance() {
-        int pointer = internal_native_get_sInstance();
-        if (pointer == 0)
+        int addr = internal_native_get_sInstance_addr();
+        if (addr == 0)
             return Factory.NULL;
         if (Factory_TEMP_STATIC_GEN_0 == null)
             Factory_TEMP_STATIC_GEN_0 = Factory.native_new();
-        Factory_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        Factory_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return Factory_TEMP_STATIC_GEN_0;
     }
 
@@ -66,7 +67,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.Factory.prototype.get_sInstance();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_sInstance();
+    public static native int internal_native_get_sInstance_addr();
 
     public static void set_sInstance(Factory sInstance) {
         internal_native_set_sInstance(sInstance.native_address);

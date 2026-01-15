@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -47,12 +48,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public ArraySoftBodyVertex GetVertices() {
-        int pointer = internal_native_GetVertices(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetVertices_addr(native_address);
+        if (addr == 0)
             return ArraySoftBodyVertex.NULL;
         if (ArraySoftBodyVertex_TEMP_GEN_0 == null)
             ArraySoftBodyVertex_TEMP_GEN_0 = ArraySoftBodyVertex.native_new();
-        ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySoftBodyVertex_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySoftBodyVertex_TEMP_GEN_0;
     }
 
@@ -63,7 +64,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyManifold);var returnedJSObj = jsObj.GetVertices();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetVertices(int this_addr);
+    public static native int internal_native_GetVertices_addr(int this_addr);
 
     public boolean HasContact(SoftBodyVertex inVertex) {
         return internal_native_HasContact(native_address, inVertex.native_address);
@@ -78,12 +79,12 @@ return returnedJSObj;
     public static native boolean internal_native_HasContact(int this_addr, int inVertex_addr);
 
     public Vec3 GetLocalContactPoint(SoftBodyVertex inVertex) {
-        int pointer = internal_native_GetLocalContactPoint(native_address, inVertex.native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetLocalContactPoint_addr(native_address, inVertex.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -94,15 +95,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inVertex_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyManifold);var returnedJSObj = jsObj.GetLocalContactPoint(inVertex_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetLocalContactPoint(int this_addr, int inVertex_addr);
+    public static native int internal_native_GetLocalContactPoint_addr(int this_addr, int inVertex_addr);
 
     public Vec3 GetContactNormal(SoftBodyVertex inVertex) {
-        int pointer = internal_native_GetContactNormal(native_address, inVertex.native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetContactNormal_addr(native_address, inVertex.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -113,15 +114,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inVertex_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyManifold);var returnedJSObj = jsObj.GetContactNormal(inVertex_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetContactNormal(int this_addr, int inVertex_addr);
+    public static native int internal_native_GetContactNormal_addr(int this_addr, int inVertex_addr);
 
     public BodyID GetContactBodyID(SoftBodyVertex inVertex) {
-        int pointer = internal_native_GetContactBodyID(native_address, inVertex.native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetContactBodyID_addr(native_address, inVertex.native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -132,5 +133,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inVertex_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodyManifold);var returnedJSObj = jsObj.GetContactBodyID(inVertex_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetContactBodyID(int this_addr, int inVertex_addr);
+    public static native int internal_native_GetContactBodyID_addr(int this_addr, int inVertex_addr);
 }

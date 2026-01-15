@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.physics.collision.PhysicsMaterial;
@@ -29,12 +30,12 @@ public class ConvexShapeSettings extends ShapeSettings {
     }
 
     public PhysicsMaterial get_mMaterial() {
-        long pointer = internal_native_get_mMaterial(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mMaterial_addr(native_address);
+        if (addr == 0)
             return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
-        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -43,7 +44,7 @@ ConvexShapeSettings* nativeObject = (ConvexShapeSettings*)this_addr;
 const PhysicsMaterial* attr = nativeObject->mMaterial;
 return (jlong)attr;
 */
-    public static native long internal_native_get_mMaterial(long this_addr);
+    public static native long internal_native_get_mMaterial_addr(long this_addr);
 
     public void set_mMaterial(PhysicsMaterial mMaterial) {
         internal_native_set_mMaterial(native_address, mMaterial.native_address);

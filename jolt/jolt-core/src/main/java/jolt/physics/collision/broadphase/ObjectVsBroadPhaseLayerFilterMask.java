@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.broadphase;
 
 public class ObjectVsBroadPhaseLayerFilterMask extends ObjectVsBroadPhaseLayerFilter {
@@ -11,14 +12,14 @@ public class ObjectVsBroadPhaseLayerFilterMask extends ObjectVsBroadPhaseLayerFi
 
     public ObjectVsBroadPhaseLayerFilterMask(BroadPhaseLayerInterfaceMask inBroadPhaseLayerInterface) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_BroadPhaseLayerInterfaceMask(inBroadPhaseLayerInterface.native_address);
+        long addr = internal_native_create_BroadPhaseLayerInterfaceMask_addr(inBroadPhaseLayerInterface.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ObjectVsBroadPhaseLayerFilterMask(*((BroadPhaseLayerInterfaceMask* )inBroadPhaseLayerInterface_addr));
 */
-    public static native long internal_native_create_BroadPhaseLayerInterfaceMask(long inBroadPhaseLayerInterface_addr);
+    public static native long internal_native_create_BroadPhaseLayerInterfaceMask_addr(long inBroadPhaseLayerInterface_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

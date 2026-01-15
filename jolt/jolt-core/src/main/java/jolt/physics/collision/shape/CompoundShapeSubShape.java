@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -44,12 +45,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 GetPositionCOM() {
-        long pointer = internal_native_GetPositionCOM(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetPositionCOM_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -58,15 +59,15 @@ CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPositionCOM();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetPositionCOM(long this_addr);
+    public static native long internal_native_GetPositionCOM_addr(long this_addr);
 
     public Quat GetRotation() {
-        long pointer = internal_native_GetRotation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -75,15 +76,15 @@ CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetRotation();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetRotation(long this_addr);
+    public static native long internal_native_GetRotation_addr(long this_addr);
 
     public Shape get_mShape() {
-        long pointer = internal_native_get_mShape(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -92,7 +93,7 @@ CompoundShapeSubShape* nativeObject = (CompoundShapeSubShape*)this_addr;
 const Shape* attr = nativeObject->mShape;
 return (jlong)attr;
 */
-    public static native long internal_native_get_mShape(long this_addr);
+    public static native long internal_native_get_mShape_addr(long this_addr);
 
     public void set_mShape(Shape mShape) {
         internal_native_set_mShape(native_address, mShape.native_address);

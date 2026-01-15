@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.broadphase;
 
 public class BroadPhaseLayerInterfaceTable extends BroadPhaseLayerInterface {
@@ -11,7 +12,7 @@ public class BroadPhaseLayerInterfaceTable extends BroadPhaseLayerInterface {
 
     public BroadPhaseLayerInterfaceTable(int inNumObjectLayers, int inNumBroadPhaseLayers) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int_int(inNumObjectLayers, inNumBroadPhaseLayers);
+        int addr = internal_native_create_int_int_addr(inNumObjectLayers, inNumBroadPhaseLayers);
         internal_reset(addr, true);
     }
 
@@ -20,7 +21,7 @@ var jsObj = new jolt.BroadPhaseLayerInterfaceTable(inNumObjectLayers, inNumBroad
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inNumObjectLayers", "inNumBroadPhaseLayers"}, script = "var jsObj = new jolt.BroadPhaseLayerInterfaceTable(inNumObjectLayers, inNumBroadPhaseLayers);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_int(int inNumObjectLayers, int inNumBroadPhaseLayers);
+    public static native int internal_native_create_int_int_addr(int inNumObjectLayers, int inNumBroadPhaseLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

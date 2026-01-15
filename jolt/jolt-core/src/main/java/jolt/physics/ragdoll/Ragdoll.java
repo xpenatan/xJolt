@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.ragdoll;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -34,14 +35,14 @@ public class Ragdoll extends IDLBase {
     static public final Ragdoll NULL = Ragdoll.native_new();
 
     public Ragdoll(PhysicsSystem inSystem) {
-        long addr = internal_native_create_PhysicsSystem(inSystem.native_address);
+        long addr = internal_native_create_PhysicsSystem_addr(inSystem.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new Ragdoll((PhysicsSystem* )inSystem_addr);
 */
-    public static native long internal_native_create_PhysicsSystem(long inSystem_addr);
+    public static native long internal_native_create_PhysicsSystem_addr(long inSystem_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -358,12 +359,12 @@ return nativeObject->GetBodyCount();
     public static native int internal_native_GetBodyCount(long this_addr);
 
     public BodyID GetBodyID(int inBodyIndex) {
-        long pointer = internal_native_GetBodyID(native_address, inBodyIndex);
-        if (pointer == 0)
+        long addr = internal_native_GetBodyID_addr(native_address, inBodyIndex);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -372,15 +373,15 @@ Ragdoll* nativeObject = (Ragdoll*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->GetBodyID((int)inBodyIndex);
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetBodyID(long this_addr, int inBodyIndex);
+    public static native long internal_native_GetBodyID_addr(long this_addr, int inBodyIndex);
 
     public BodyIDVector GetBodyIDs() {
-        long pointer = internal_native_GetBodyIDs(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetBodyIDs_addr(native_address);
+        if (addr == 0)
             return BodyIDVector.NULL;
         if (BodyIDVector_TEMP_GEN_0 == null)
             BodyIDVector_TEMP_GEN_0 = BodyIDVector.native_new();
-        BodyIDVector_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyIDVector_TEMP_GEN_0.internal_reset(addr, false);
         return BodyIDVector_TEMP_GEN_0;
     }
 
@@ -388,7 +389,7 @@ return (jlong)&copy_addr;*/
 Ragdoll* nativeObject = (Ragdoll*)this_addr;
 return (jlong)&nativeObject->GetBodyIDs();
 */
-    public static native long internal_native_GetBodyIDs(long this_addr);
+    public static native long internal_native_GetBodyIDs_addr(long this_addr);
 
     public int GetConstraintCount() {
         return internal_native_GetConstraintCount(native_address);
@@ -401,12 +402,12 @@ return nativeObject->GetConstraintCount();
     public static native int internal_native_GetConstraintCount(long this_addr);
 
     public AABox GetWorldSpaceBounds(boolean inLockBodies) {
-        long pointer = internal_native_GetWorldSpaceBounds(native_address, inLockBodies);
-        if (pointer == 0)
+        long addr = internal_native_GetWorldSpaceBounds_addr(native_address, inLockBodies);
+        if (addr == 0)
             return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
-        AABox_TEMP_GEN_0.internal_reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(addr, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -415,15 +416,15 @@ Ragdoll* nativeObject = (Ragdoll*)this_addr;
 static AABox copy_addr;
 copy_addr = nativeObject->GetWorldSpaceBounds(inLockBodies);
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetWorldSpaceBounds(long this_addr, boolean inLockBodies);
+    public static native long internal_native_GetWorldSpaceBounds_addr(long this_addr, boolean inLockBodies);
 
     public AABox GetWorldSpaceBounds() {
-        long pointer = internal_native_GetWorldSpaceBounds(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetWorldSpaceBounds_addr(native_address);
+        if (addr == 0)
             return AABox.NULL;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = AABox.native_new();
-        AABox_TEMP_GEN_1.internal_reset(pointer, false);
+        AABox_TEMP_GEN_1.internal_reset(addr, false);
         return AABox_TEMP_GEN_1;
     }
 
@@ -432,15 +433,15 @@ Ragdoll* nativeObject = (Ragdoll*)this_addr;
 static AABox copy_addr;
 copy_addr = nativeObject->GetWorldSpaceBounds();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetWorldSpaceBounds(long this_addr);
+    public static native long internal_native_GetWorldSpaceBounds_addr(long this_addr);
 
     public TwoBodyConstraint GetConstraint(int inConstraintIndex) {
-        long pointer = internal_native_GetConstraint(native_address, inConstraintIndex);
-        if (pointer == 0)
+        long addr = internal_native_GetConstraint_addr(native_address, inConstraintIndex);
+        if (addr == 0)
             return TwoBodyConstraint.NULL;
         if (TwoBodyConstraint_TEMP_GEN_0 == null)
             TwoBodyConstraint_TEMP_GEN_0 = TwoBodyConstraint.native_new();
-        TwoBodyConstraint_TEMP_GEN_0.internal_reset(pointer, false);
+        TwoBodyConstraint_TEMP_GEN_0.internal_reset(addr, false);
         return TwoBodyConstraint_TEMP_GEN_0;
     }
 
@@ -449,15 +450,15 @@ Ragdoll* nativeObject = (Ragdoll*)this_addr;
 const TwoBodyConstraint* obj = nativeObject->GetConstraint((int)inConstraintIndex);
 return (jlong)obj;
 */
-    public static native long internal_native_GetConstraint(long this_addr, int inConstraintIndex);
+    public static native long internal_native_GetConstraint_addr(long this_addr, int inConstraintIndex);
 
     public RagdollSettings GetRagdollSettings() {
-        long pointer = internal_native_GetRagdollSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetRagdollSettings_addr(native_address);
+        if (addr == 0)
             return RagdollSettings.NULL;
         if (RagdollSettings_TEMP_GEN_0 == null)
             RagdollSettings_TEMP_GEN_0 = RagdollSettings.native_new();
-        RagdollSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        RagdollSettings_TEMP_GEN_0.internal_reset(addr, false);
         return RagdollSettings_TEMP_GEN_0;
     }
 
@@ -466,5 +467,5 @@ Ragdoll* nativeObject = (Ragdoll*)this_addr;
 const RagdollSettings* obj = nativeObject->GetRagdollSettings();
 return (jlong)obj;
 */
-    public static native long internal_native_GetRagdollSettings(long this_addr);
+    public static native long internal_native_GetRagdollSettings_addr(long this_addr);
 }

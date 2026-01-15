@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.body;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ public class BodyID extends IDLBase {
     static public final BodyID NULL = BodyID.native_new();
 
     public BodyID() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -21,10 +22,10 @@ var jsObj = new jolt.BodyID();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.BodyID();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     public BodyID(int inIndexAndSequenceNumber) {
-        int addr = internal_native_create_int(inIndexAndSequenceNumber);
+        int addr = internal_native_create_int_addr(inIndexAndSequenceNumber);
         internal_reset(addr, true);
     }
 
@@ -33,7 +34,7 @@ var jsObj = new jolt.BodyID(inIndexAndSequenceNumber);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inIndexAndSequenceNumber"}, script = "var jsObj = new jolt.BodyID(inIndexAndSequenceNumber);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int(int inIndexAndSequenceNumber);
+    public static native int internal_native_create_int_addr(int inIndexAndSequenceNumber);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

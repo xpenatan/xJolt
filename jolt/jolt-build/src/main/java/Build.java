@@ -7,6 +7,7 @@ import com.github.xpenatan.jParser.builder.targets.WindowsMSVCTarget;
 import com.github.xpenatan.jParser.builder.tool.BuildToolListener;
 import com.github.xpenatan.jParser.builder.tool.BuildToolOptions;
 import com.github.xpenatan.jParser.builder.tool.BuilderTool;
+import com.github.xpenatan.jParser.core.JParser;
 import com.github.xpenatan.jParser.idl.IDLClassOrEnum;
 import com.github.xpenatan.jParser.idl.IDLHelper;
 import com.github.xpenatan.jParser.idl.IDLReader;
@@ -31,6 +32,8 @@ public class Build {
             return null;
         };
 
+        JParser.CREATE_IDL_HELPER = false;
+
         BuildToolOptions.BuildToolParams data = new BuildToolOptions.BuildToolParams();
         data.libName = libName;
         data.idlName = libName;
@@ -40,11 +43,12 @@ public class Build {
         data.modulePrefix = modulePrefix;
 
         BuildToolOptions op = new BuildToolOptions(data, args);
+        op.addAdditionalIDLRefPath(IDLReader.getIDLHelperFile());
         if(double_precision) {
-            op.addAdditionalIDLPath(op.getCPPPath() + "jolt_double.idl");
+            op.addAdditionalIDLPath(IDLReader.parseFile(op.getCPPPath() + "jolt_double.idl"));
         }
         else {
-            op.addAdditionalIDLPath(op.getCPPPath() + "jolt_float.idl");
+            op.addAdditionalIDLPath(IDLReader.parseFile(op.getCPPPath() + "jolt_float.idl"));
         }
 
         BuilderTool.build(op, new BuildToolListener() {
@@ -90,17 +94,18 @@ public class Build {
 //        WindowsMSVCTarget.DEBUG_BUILD = true;
 
         // Make a static library
-        WindowsMSVCTarget windowsTarget = new WindowsMSVCTarget();
-        windowsTarget.isStatic = true;
-        windowsTarget.cppFlags.add("-std:c++17");
-        windowsTarget.headerDirs.add("-I" + sourceDir);
-        windowsTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
-        windowsTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
-        windowsTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
-        windowsTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
-        windowsTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
-        windowsTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
-        multiTarget.add(windowsTarget);
+        WindowsMSVCTarget compileStaticTarget = new WindowsMSVCTarget();
+        compileStaticTarget.isStatic = true;
+        compileStaticTarget.cppFlags.add("-std:c++17");
+        compileStaticTarget.headerDirs.add("-I" + sourceDir);
+        compileStaticTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        compileStaticTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
+        compileStaticTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
+        compileStaticTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
+        compileStaticTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
+        compileStaticTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
+        compileStaticTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+        multiTarget.add(compileStaticTarget);
 
         // Compile glue code and link
         WindowsMSVCTarget linkTarget = new WindowsMSVCTarget();
@@ -115,6 +120,7 @@ public class Build {
         linkTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
         linkTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
         linkTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+        linkTarget.linkerFlags.add("-DLL");
         multiTarget.add(linkTarget);
 
         return multiTarget;
@@ -126,22 +132,25 @@ public class Build {
         String sourceDir = op.getSourceDir();
 
         // Make a static library
-        LinuxTarget linuxTarget = new LinuxTarget();
-        linuxTarget.isStatic = true;
-        linuxTarget.cppFlags.add("-std=c++17");
-        linuxTarget.headerDirs.add("-I" + sourceDir);
-        linuxTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
-        linuxTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
-        linuxTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
-        linuxTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
-        linuxTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
-        linuxTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
-        multiTarget.add(linuxTarget);
+        LinuxTarget compileStaticTarget = new LinuxTarget();
+        compileStaticTarget.isStatic = true;
+        compileStaticTarget.cppFlags.add("-std=c++17");
+        compileStaticTarget.cppFlags.add("-fPIC");
+        compileStaticTarget.headerDirs.add("-I" + sourceDir);
+        compileStaticTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        compileStaticTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
+        compileStaticTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
+        compileStaticTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
+        compileStaticTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
+        compileStaticTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
+        compileStaticTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+        multiTarget.add(compileStaticTarget);
 
         // Compile glue code and link
         LinuxTarget linkTarget = new LinuxTarget();
         linkTarget.addJNIHeaders();
         linkTarget.cppFlags.add("-std=c++17");
+        linkTarget.cppFlags.add("-fPIC");
         linkTarget.headerDirs.add("-I" + sourceDir);
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         linkTarget.linkerFlags.add(libBuildCPPPath + "/libs/linux/libjolt64_.a");
@@ -162,22 +171,25 @@ public class Build {
         String sourceDir = op.getSourceDir();
 
         // Make a static library
-        MacTarget macTarget = new MacTarget(isArm);
-        macTarget.isStatic = true;
-        macTarget.cppFlags.add("-std=c++17");
-        macTarget.headerDirs.add("-I" + sourceDir);
-        macTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
-        macTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
-        macTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
-        macTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
-        macTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
-        macTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
-        multiTarget.add(macTarget);
+        MacTarget compileStaticTarget = new MacTarget(isArm);
+        compileStaticTarget.isStatic = true;
+        compileStaticTarget.cppFlags.add("-std=c++17");
+        compileStaticTarget.cppFlags.add("-fPIC");
+        compileStaticTarget.headerDirs.add("-I" + sourceDir);
+        compileStaticTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        compileStaticTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
+        compileStaticTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
+        compileStaticTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
+        compileStaticTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
+        compileStaticTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
+        compileStaticTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+        multiTarget.add(compileStaticTarget);
 
         // Compile glue code and link
         MacTarget linkTarget = new MacTarget(isArm);
         linkTarget.addJNIHeaders();
         linkTarget.cppFlags.add("-std=c++17");
+        linkTarget.cppFlags.add("-fPIC");
         linkTarget.headerDirs.add("-I" + sourceDir);
         linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
         if(isArm) {
@@ -205,24 +217,25 @@ public class Build {
         EmscriptenTarget.DEBUG_BUILD = false;
 
         // Make a static library
-        EmscriptenTarget libTarget = new EmscriptenTarget();
-        libTarget.idlReader = idlReader;
-        libTarget.isStatic = true;
-        libTarget.cppFlags.add("-std=c++17");
-        libTarget.compileGlueCode = false;
-        libTarget.headerDirs.add("-I" + sourceDir);
-        libTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
-        libTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
-        libTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
-        libTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
-        libTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
-        libTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
-        libTarget.cppFlags.add("-msimd128");
-        libTarget.cppFlags.add("-msse4.2");
-        multiTarget.add(libTarget);
+        EmscriptenTarget compileStaticTarget = new EmscriptenTarget();
+        compileStaticTarget.isStatic = true;
+        compileStaticTarget.cppFlags.add("-std=c++17");
+        compileStaticTarget.compileGlueCode = false;
+        compileStaticTarget.headerDirs.add("-I" + sourceDir);
+        compileStaticTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+        compileStaticTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
+        compileStaticTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
+        compileStaticTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
+        compileStaticTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
+        compileStaticTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
+        compileStaticTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+        compileStaticTarget.cppFlags.add("-msimd128");
+        compileStaticTarget.cppFlags.add("-msse4.2");
+        multiTarget.add(compileStaticTarget);
 
         // Compile glue code and link
         EmscriptenTarget linkTarget = new EmscriptenTarget();
+        linkTarget.mainModuleName = "idl";
         linkTarget.idlReader = idlReader;
         linkTarget.cppFlags.add("-std=c++17");
         linkTarget.headerDirs.add("-I" + sourceDir);
@@ -235,6 +248,10 @@ public class Build {
         linkTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
         linkTarget.cppFlags.add("-msimd128");
         linkTarget.cppFlags.add("-msse4.2");
+        linkTarget.linkerFlags.add("-sSIDE_MODULE=1");
+        linkTarget.linkerFlags.add("-lc++abi"); // C++ ABI (exceptions, thread_atexit, etc.)
+        linkTarget.linkerFlags.add("-lc++"); // C++ STL (std::cout, std::string, etc.)
+        linkTarget.linkerFlags.add("-lc"); // C standard library (fopen, fclose, printf, etc.)
         multiTarget.add(linkTarget);
 
         return multiTarget;
@@ -257,22 +274,25 @@ public class Build {
             AndroidTarget.Target target = targets.get(i);
 
             // Make a static library
-            AndroidTarget androidTarget = new AndroidTarget(target, apiLevel);
-            androidTarget.isStatic = true;
-            androidTarget.cppFlags.add("-std=c++17");
-            androidTarget.headerDirs.add("-I" + sourceDir);
-            androidTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
-            androidTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
-            androidTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
-            androidTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
-            androidTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
-            androidTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
-            multiTarget.add(androidTarget);
+            AndroidTarget compileStaticTarget = new AndroidTarget(target, apiLevel);
+            compileStaticTarget.isStatic = true;
+            compileStaticTarget.cppFlags.add("-std=c++17");
+            compileStaticTarget.cppCompiler.add("-fPIC");
+            compileStaticTarget.headerDirs.add("-I" + sourceDir);
+            compileStaticTarget.headerDirs.add("-I" + op.getCustomSourceDir());
+            compileStaticTarget.cppInclude.add(sourceDir + "/Jolt/**.cpp");
+            compileStaticTarget.cppFlags.add("-DJPH_DEBUG_RENDERER");
+            compileStaticTarget.cppFlags.add("-DJPH_DISABLE_CUSTOM_ALLOCATOR");
+            compileStaticTarget.cppFlags.add("-DJPH_ENABLE_ASSERTS");
+            compileStaticTarget.cppFlags.add("-DJPH_CROSS_PLATFORM_DETERMINISTIC");
+            compileStaticTarget.cppFlags.add("-DJPH_OBJECT_LAYER_BITS=32");
+            multiTarget.add(compileStaticTarget);
 
             // Compile glue code and link
             AndroidTarget linkTarget = new AndroidTarget(target, apiLevel);
             linkTarget.addJNIHeaders();
             linkTarget.cppFlags.add("-std=c++17");
+            linkTarget.cppCompiler.add("-fPIC");
             linkTarget.headerDirs.add("-I" + sourceDir);
             linkTarget.headerDirs.add("-I" + op.getCustomSourceDir());
             linkTarget.cppInclude.add(libBuildCPPPath + "/src/jniglue/JNIGlue.cpp");

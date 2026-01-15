@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.math.Vec3;
@@ -57,12 +58,12 @@ return returnedJSObj;
     public static native int internal_native_GetBlockSize(int this_addr);
 
     public Vec3 GetPosition(int inX, int inY) {
-        int pointer = internal_native_GetPosition(native_address, inX, inY);
-        if (pointer == 0)
+        int addr = internal_native_GetPosition_addr(native_address, inX, inY);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -73,7 +74,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inX", "inY"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HeightFieldShape);var returnedJSObj = jsObj.GetPosition(inX, inY);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetPosition(int this_addr, int inX, int inY);
+    public static native int internal_native_GetPosition_addr(int this_addr, int inX, int inY);
 
     public boolean IsNoCollision(int inX, int inY) {
         return internal_native_IsNoCollision(native_address, inX, inY);

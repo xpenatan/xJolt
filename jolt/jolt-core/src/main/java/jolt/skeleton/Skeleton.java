@@ -3,24 +3,25 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.skeleton;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
-import jolt.idl.helper.IDLString;
+import com.github.xpenatan.jparser.idl.helper.IDLString;
 
 public class Skeleton extends IDLBase {
 
     static public final Skeleton NULL = Skeleton.native_new();
 
     public Skeleton() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new Skeleton();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

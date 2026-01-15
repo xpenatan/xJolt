@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.math.Vec3;
@@ -18,7 +19,7 @@ public class RotatedTranslatedShapeSettings extends DecoratedShapeSettings {
 
     public RotatedTranslatedShapeSettings(Vec3 inPosition, Quat inRotation, ShapeSettings inShape) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Vec3_Quat_ShapeSettings(inPosition.native_address, inRotation.native_address, inShape.native_address);
+        int addr = internal_native_create_Vec3_Quat_ShapeSettings_addr(inPosition.native_address, inRotation.native_address, inShape.native_address);
         internal_reset(addr, true);
     }
 
@@ -27,7 +28,7 @@ var jsObj = new jolt.RotatedTranslatedShapeSettings(inPosition_addr, inRotation_
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPosition_addr", "inRotation_addr", "inShape_addr"}, script = "var jsObj = new jolt.RotatedTranslatedShapeSettings(inPosition_addr, inRotation_addr, inShape_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Vec3_Quat_ShapeSettings(int inPosition_addr, int inRotation_addr, int inShape_addr);
+    public static native int internal_native_create_Vec3_Quat_ShapeSettings_addr(int inPosition_addr, int inRotation_addr, int inShape_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -56,12 +57,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mPosition() {
-        int pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -72,7 +73,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);var returnedJSObj = jsObj.get_mPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPosition(int this_addr);
+    public static native int internal_native_get_mPosition_addr(int this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition(native_address, mPosition.native_address);
@@ -86,12 +87,12 @@ jsObj.set_mPosition(mPosition_addr);
     public static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
 
     public Quat get_mRotation() {
-        int pointer = internal_native_get_mRotation(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -102,7 +103,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RotatedTranslatedShapeSettings);var returnedJSObj = jsObj.get_mRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mRotation(int this_addr);
+    public static native int internal_native_get_mRotation_addr(int this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation(native_address, mRotation.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.character;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class CharacterID extends IDLBase {
     static public final CharacterID NULL = CharacterID.native_new();
 
     public CharacterID() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jolt.CharacterID();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CharacterID();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -75,12 +76,12 @@ return returnedJSObj;
     public static native boolean internal_native_IsInvalid(int this_addr);
 
     public static CharacterID sNextCharacterID() {
-        int pointer = internal_native_sNextCharacterID();
-        if (pointer == 0)
+        int addr = internal_native_sNextCharacterID_addr();
+        if (addr == 0)
             return CharacterID.NULL;
         if (CharacterID_TEMP_STATIC_GEN_0 == null)
             CharacterID_TEMP_STATIC_GEN_0 = CharacterID.native_new();
-        CharacterID_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        CharacterID_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return CharacterID_TEMP_STATIC_GEN_0;
     }
 
@@ -90,7 +91,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(script = "var returnedJSObj = jolt.CharacterID.prototype.sNextCharacterID();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_sNextCharacterID();
+    public static native int internal_native_sNextCharacterID_addr();
 
     public static void sSetNextCharacterID(int inNextValue) {
         internal_native_sSetNextCharacterID(inNextValue);

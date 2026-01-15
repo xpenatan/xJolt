@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -59,12 +60,12 @@ nativeObject->mJointIndex = mJointIndex;
     public static native void internal_native_set_mJointIndex(long this_addr, int mJointIndex);
 
     public Mat44 get_mInvBind() {
-        long pointer = internal_native_get_mInvBind(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mInvBind_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -72,7 +73,7 @@ nativeObject->mJointIndex = mJointIndex;
 SoftBodySharedSettingsInvBind* nativeObject = (SoftBodySharedSettingsInvBind*)this_addr;
 return (jlong)&nativeObject->mInvBind;
 */
-    public static native long internal_native_get_mInvBind(long this_addr);
+    public static native long internal_native_get_mInvBind_addr(long this_addr);
 
     public void set_mInvBind(Mat44 mInvBind) {
         internal_native_set_mInvBind(native_address, mInvBind.native_address);

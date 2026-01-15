@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 import gen.jolt.math.TwoBodyConstraintSettings;
@@ -23,7 +24,7 @@ public class ConeConstraintSettings extends TwoBodyConstraintSettings {
 
     public ConeConstraintSettings() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -32,7 +33,7 @@ var jsObj = new jolt.ConeConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.ConeConstraintSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -90,12 +91,12 @@ jsObj.set_mSpace(mSpace);
     public static native void internal_native_set_mSpace(int this_addr, int mSpace);
 
     public Vec3 get_mPoint1() {
-        int pointer = internal_native_get_mPoint1(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPoint1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -106,7 +107,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);var returnedJSObj = jsObj.get_mPoint1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPoint1(int this_addr);
+    public static native int internal_native_get_mPoint1_addr(int this_addr);
 
     public void set_mPoint1(Vec3 mPoint1) {
         internal_native_set_mPoint1(native_address, mPoint1.native_address);
@@ -120,12 +121,12 @@ jsObj.set_mPoint1(mPoint1_addr);
     public static native void internal_native_set_mPoint1(int this_addr, int mPoint1_addr);
 
     public Vec3 get_mTwistAxis1() {
-        int pointer = internal_native_get_mTwistAxis1(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mTwistAxis1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -136,7 +137,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);var returnedJSObj = jsObj.get_mTwistAxis1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mTwistAxis1(int this_addr);
+    public static native int internal_native_get_mTwistAxis1_addr(int this_addr);
 
     public void set_mTwistAxis1(Vec3 mTwistAxis1) {
         internal_native_set_mTwistAxis1(native_address, mTwistAxis1.native_address);
@@ -150,12 +151,12 @@ jsObj.set_mTwistAxis1(mTwistAxis1_addr);
     public static native void internal_native_set_mTwistAxis1(int this_addr, int mTwistAxis1_addr);
 
     public Vec3 get_mPoint2() {
-        int pointer = internal_native_get_mPoint2(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPoint2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -166,7 +167,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);var returnedJSObj = jsObj.get_mPoint2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPoint2(int this_addr);
+    public static native int internal_native_get_mPoint2_addr(int this_addr);
 
     public void set_mPoint2(Vec3 mPoint2) {
         internal_native_set_mPoint2(native_address, mPoint2.native_address);
@@ -180,12 +181,12 @@ jsObj.set_mPoint2(mPoint2_addr);
     public static native void internal_native_set_mPoint2(int this_addr, int mPoint2_addr);
 
     public Vec3 get_mTwistAxis2() {
-        int pointer = internal_native_get_mTwistAxis2(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mTwistAxis2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -196,7 +197,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ConeConstraintSettings);var returnedJSObj = jsObj.get_mTwistAxis2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mTwistAxis2(int this_addr);
+    public static native int internal_native_get_mTwistAxis2_addr(int this_addr);
 
     public void set_mTwistAxis2(Vec3 mTwistAxis2) {
         internal_native_set_mTwistAxis2(native_address, mTwistAxis2.native_address);

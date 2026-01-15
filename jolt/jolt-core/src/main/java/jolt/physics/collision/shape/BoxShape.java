@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.math.Vec3;
@@ -16,36 +17,36 @@ public class BoxShape extends ConvexShape {
 
     public BoxShape(Vec3 inHalfExtent, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3_float_PhysicsMaterial(inHalfExtent.native_address, inConvexRadius, inMaterial.native_address);
+        long addr = internal_native_create_Vec3_float_PhysicsMaterial_addr(inHalfExtent.native_address, inConvexRadius, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    public static native long internal_native_create_Vec3_float_PhysicsMaterial(long inHalfExtent_addr, float inConvexRadius, long inMaterial_addr);
+    public static native long internal_native_create_Vec3_float_PhysicsMaterial_addr(long inHalfExtent_addr, float inConvexRadius, long inMaterial_addr);
 
     public BoxShape(Vec3 inHalfExtent, float inConvexRadius) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3_float(inHalfExtent.native_address, inConvexRadius);
+        long addr = internal_native_create_Vec3_float_addr(inHalfExtent.native_address, inConvexRadius);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr), (float)inConvexRadius);
 */
-    public static native long internal_native_create_Vec3_float(long inHalfExtent_addr, float inConvexRadius);
+    public static native long internal_native_create_Vec3_float_addr(long inHalfExtent_addr, float inConvexRadius);
 
     public BoxShape(Vec3 inHalfExtent) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3(inHalfExtent.native_address);
+        long addr = internal_native_create_Vec3_addr(inHalfExtent.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new BoxShape(*((Vec3* )inHalfExtent_addr));
 */
-    public static native long internal_native_create_Vec3(long inHalfExtent_addr);
+    public static native long internal_native_create_Vec3_addr(long inHalfExtent_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -73,12 +74,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 GetHalfExtent() {
-        long pointer = internal_native_GetHalfExtent(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetHalfExtent_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -87,5 +88,5 @@ BoxShape* nativeObject = (BoxShape*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetHalfExtent();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetHalfExtent(long this_addr);
+    public static native long internal_native_GetHalfExtent_addr(long this_addr);
 }

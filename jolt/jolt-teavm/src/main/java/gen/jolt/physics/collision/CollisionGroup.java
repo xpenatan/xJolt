@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class CollisionGroup extends IDLBase {
     static public final CollisionGroup NULL = CollisionGroup.native_new();
 
     public CollisionGroup() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,10 +24,10 @@ var jsObj = new jolt.CollisionGroup();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CollisionGroup();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     public CollisionGroup(GroupFilter inFilter, int inGroupID, int inSubGroupID) {
-        int addr = internal_native_create_GroupFilter_int_int(inFilter.native_address, inGroupID, inSubGroupID);
+        int addr = internal_native_create_GroupFilter_int_int_addr(inFilter.native_address, inGroupID, inSubGroupID);
         internal_reset(addr, true);
     }
 
@@ -35,7 +36,7 @@ var jsObj = new jolt.CollisionGroup(inFilter_addr, inGroupID, inSubGroupID);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inFilter_addr", "inGroupID", "inSubGroupID"}, script = "var jsObj = new jolt.CollisionGroup(inFilter_addr, inGroupID, inSubGroupID);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_GroupFilter_int_int(int inFilter_addr, int inGroupID, int inSubGroupID);
+    public static native int internal_native_create_GroupFilter_int_int_addr(int inFilter_addr, int inGroupID, int inSubGroupID);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -74,12 +75,12 @@ jsObj.SetGroupFilter(inFilter_addr);
     public static native void internal_native_SetGroupFilter(int this_addr, int inFilter_addr);
 
     public GroupFilter GetGroupFilter() {
-        int pointer = internal_native_GetGroupFilter(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetGroupFilter_addr(native_address);
+        if (addr == 0)
             return GroupFilter.NULL;
         if (GroupFilter_TEMP_GEN_0 == null)
             GroupFilter_TEMP_GEN_0 = GroupFilter.native_new();
-        GroupFilter_TEMP_GEN_0.internal_reset(pointer, false);
+        GroupFilter_TEMP_GEN_0.internal_reset(addr, false);
         return GroupFilter_TEMP_GEN_0;
     }
 
@@ -90,7 +91,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CollisionGroup);var returnedJSObj = jsObj.GetGroupFilter();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetGroupFilter(int this_addr);
+    public static native int internal_native_GetGroupFilter_addr(int this_addr);
 
     public void SetGroupID(int inGroupID) {
         internal_native_SetGroupID(native_address, inGroupID);

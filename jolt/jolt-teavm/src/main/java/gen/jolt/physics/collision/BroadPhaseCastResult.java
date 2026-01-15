@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -15,7 +16,7 @@ public class BroadPhaseCastResult extends IDLBase {
     static public final BroadPhaseCastResult NULL = BroadPhaseCastResult.native_new();
 
     public BroadPhaseCastResult() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -24,7 +25,7 @@ var jsObj = new jolt.BroadPhaseCastResult();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.BroadPhaseCastResult();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -63,12 +64,12 @@ jsObj.Reset();
     public static native void internal_native_Reset(int this_addr);
 
     public BodyID get_mBodyID() {
-        int pointer = internal_native_get_mBodyID(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mBodyID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -79,7 +80,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BroadPhaseCastResult);var returnedJSObj = jsObj.get_mBodyID();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mBodyID(int this_addr);
+    public static native int internal_native_get_mBodyID_addr(int this_addr);
 
     public void set_mBodyID(BodyID mBodyID) {
         internal_native_set_mBodyID(native_address, mBodyID.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -62,12 +63,12 @@ jsObj.set_mDrivenWheel(mDrivenWheel);
     public static native void internal_native_set_mDrivenWheel(int this_addr, int mDrivenWheel);
 
     public ArrayUint get_mWheels() {
-        int pointer = internal_native_get_mWheels(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mWheels_addr(native_address);
+        if (addr == 0)
             return ArrayUint.NULL;
         if (ArrayUint_TEMP_GEN_0 == null)
             ArrayUint_TEMP_GEN_0 = ArrayUint.native_new();
-        ArrayUint_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayUint_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayUint_TEMP_GEN_0;
     }
 
@@ -78,7 +79,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleTrackSettings);var returnedJSObj = jsObj.get_mWheels();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mWheels(int this_addr);
+    public static native int internal_native_get_mWheels_addr(int this_addr);
 
     public void set_mWheels(ArrayUint mWheels) {
         internal_native_set_mWheels(native_address, mWheels.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 public class PulleyConstraint extends TwoBodyConstraint {

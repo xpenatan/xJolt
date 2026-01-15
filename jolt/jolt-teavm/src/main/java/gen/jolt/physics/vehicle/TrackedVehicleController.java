@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 public class TrackedVehicleController extends VehicleController {
@@ -15,7 +16,7 @@ public class TrackedVehicleController extends VehicleController {
 
     public TrackedVehicleController(TrackedVehicleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);
+        int addr = internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint_addr(inSettings.native_address, inConstraint.native_address);
         internal_reset(addr, true);
     }
 
@@ -24,7 +25,7 @@ var jsObj = new jolt.TrackedVehicleController(inSettings_addr, inConstraint_addr
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inSettings_addr", "inConstraint_addr"}, script = "var jsObj = new jolt.TrackedVehicleController(inSettings_addr, inConstraint_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint(int inSettings_addr, int inConstraint_addr);
+    public static native int internal_native_create_TrackedVehicleControllerSettings_VehicleConstraint_addr(int inSettings_addr, int inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -156,12 +157,12 @@ return returnedJSObj;
     public static native float internal_native_GetBrakeInput(int this_addr);
 
     public VehicleEngine GetEngine() {
-        int pointer = internal_native_GetEngine(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetEngine_addr(native_address);
+        if (addr == 0)
             return VehicleEngine.NULL;
         if (VehicleEngine_TEMP_GEN_0 == null)
             VehicleEngine_TEMP_GEN_0 = VehicleEngine.native_new();
-        VehicleEngine_TEMP_GEN_0.internal_reset(pointer, false);
+        VehicleEngine_TEMP_GEN_0.internal_reset(addr, false);
         return VehicleEngine_TEMP_GEN_0;
     }
 
@@ -172,15 +173,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleController);var returnedJSObj = jsObj.GetEngine();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetEngine(int this_addr);
+    public static native int internal_native_GetEngine_addr(int this_addr);
 
     public VehicleTransmission GetTransmission() {
-        int pointer = internal_native_GetTransmission(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetTransmission_addr(native_address);
+        if (addr == 0)
             return VehicleTransmission.NULL;
         if (VehicleTransmission_TEMP_GEN_0 == null)
             VehicleTransmission_TEMP_GEN_0 = VehicleTransmission.native_new();
-        VehicleTransmission_TEMP_GEN_0.internal_reset(pointer, false);
+        VehicleTransmission_TEMP_GEN_0.internal_reset(addr, false);
         return VehicleTransmission_TEMP_GEN_0;
     }
 
@@ -191,5 +192,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.TrackedVehicleController);var returnedJSObj = jsObj.GetTransmission();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetTransmission(int this_addr);
+    public static native int internal_native_GetTransmission_addr(int this_addr);
 }

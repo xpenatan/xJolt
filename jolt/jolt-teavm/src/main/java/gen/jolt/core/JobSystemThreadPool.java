@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.core;
 
 public class JobSystemThreadPool extends JobSystemWithBarrier {
@@ -11,7 +12,7 @@ public class JobSystemThreadPool extends JobSystemWithBarrier {
 
     public JobSystemThreadPool(int inMaxJobs, int inMaxBarriers, int inNumThreads) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int_int_int(inMaxJobs, inMaxBarriers, inNumThreads);
+        int addr = internal_native_create_int_int_int_addr(inMaxJobs, inMaxBarriers, inNumThreads);
         internal_reset(addr, true);
     }
 
@@ -20,11 +21,11 @@ var jsObj = new jolt.JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads)
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inMaxJobs", "inMaxBarriers", "inNumThreads"}, script = "var jsObj = new jolt.JobSystemThreadPool(inMaxJobs, inMaxBarriers, inNumThreads);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_int_int(int inMaxJobs, int inMaxBarriers, int inNumThreads);
+    public static native int internal_native_create_int_int_int_addr(int inMaxJobs, int inMaxBarriers, int inNumThreads);
 
     public JobSystemThreadPool(int inMaxJobs, int inMaxBarriers) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int_int(inMaxJobs, inMaxBarriers);
+        int addr = internal_native_create_int_int_addr(inMaxJobs, inMaxBarriers);
         internal_reset(addr, true);
     }
 
@@ -33,7 +34,7 @@ var jsObj = new jolt.JobSystemThreadPool(inMaxJobs, inMaxBarriers);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inMaxJobs", "inMaxBarriers"}, script = "var jsObj = new jolt.JobSystemThreadPool(inMaxJobs, inMaxBarriers);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_int(int inMaxJobs, int inMaxBarriers);
+    public static native int internal_native_create_int_int_addr(int inMaxJobs, int inMaxBarriers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

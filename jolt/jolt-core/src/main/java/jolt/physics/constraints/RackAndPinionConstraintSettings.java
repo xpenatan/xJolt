@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import jolt.math.TwoBodyConstraintSettings;
@@ -19,14 +20,14 @@ public class RackAndPinionConstraintSettings extends TwoBodyConstraintSettings {
 
     public RackAndPinionConstraintSettings() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new RackAndPinionConstraintSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -91,12 +92,12 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
     public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public Vec3 get_mHingeAxis() {
-        long pointer = internal_native_get_mHingeAxis(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mHingeAxis_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -104,7 +105,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mHingeAxis;
 */
-    public static native long internal_native_get_mHingeAxis(long this_addr);
+    public static native long internal_native_get_mHingeAxis_addr(long this_addr);
 
     public void set_mHingeAxis(Vec3 mHingeAxis) {
         internal_native_set_mHingeAxis(native_address, mHingeAxis.native_address);
@@ -117,12 +118,12 @@ nativeObject->mHingeAxis = *((Vec3*)mHingeAxis_addr);
     public static native void internal_native_set_mHingeAxis(long this_addr, long mHingeAxis_addr);
 
     public Vec3 get_mSliderAxis() {
-        long pointer = internal_native_get_mSliderAxis(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mSliderAxis_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -130,7 +131,7 @@ nativeObject->mHingeAxis = *((Vec3*)mHingeAxis_addr);
 RackAndPinionConstraintSettings* nativeObject = (RackAndPinionConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mSliderAxis;
 */
-    public static native long internal_native_get_mSliderAxis(long this_addr);
+    public static native long internal_native_get_mSliderAxis_addr(long this_addr);
 
     public void set_mSliderAxis(Vec3 mSliderAxis) {
         internal_native_set_mSliderAxis(native_address, mSliderAxis.native_address);

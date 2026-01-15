@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.geometry.Plane;
@@ -18,7 +19,7 @@ public class PlaneShapeSettings extends ShapeSettings {
 
     public PlaneShapeSettings(Plane inPlane, PhysicsMaterial inMaterial, float inHalfExtent) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Plane_PhysicsMaterial_float(inPlane.native_address, inMaterial.native_address, inHalfExtent);
+        int addr = internal_native_create_Plane_PhysicsMaterial_float_addr(inPlane.native_address, inMaterial.native_address, inHalfExtent);
         internal_reset(addr, true);
     }
 
@@ -27,11 +28,11 @@ var jsObj = new jolt.PlaneShapeSettings(inPlane_addr, inMaterial_addr, inHalfExt
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPlane_addr", "inMaterial_addr", "inHalfExtent"}, script = "var jsObj = new jolt.PlaneShapeSettings(inPlane_addr, inMaterial_addr, inHalfExtent);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Plane_PhysicsMaterial_float(int inPlane_addr, int inMaterial_addr, float inHalfExtent);
+    public static native int internal_native_create_Plane_PhysicsMaterial_float_addr(int inPlane_addr, int inMaterial_addr, float inHalfExtent);
 
     public PlaneShapeSettings(Plane inPlane, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Plane_PhysicsMaterial(inPlane.native_address, inMaterial.native_address);
+        int addr = internal_native_create_Plane_PhysicsMaterial_addr(inPlane.native_address, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
@@ -40,11 +41,11 @@ var jsObj = new jolt.PlaneShapeSettings(inPlane_addr, inMaterial_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPlane_addr", "inMaterial_addr"}, script = "var jsObj = new jolt.PlaneShapeSettings(inPlane_addr, inMaterial_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Plane_PhysicsMaterial(int inPlane_addr, int inMaterial_addr);
+    public static native int internal_native_create_Plane_PhysicsMaterial_addr(int inPlane_addr, int inMaterial_addr);
 
     public PlaneShapeSettings(Plane inPlane) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Plane(inPlane.native_address);
+        int addr = internal_native_create_Plane_addr(inPlane.native_address);
         internal_reset(addr, true);
     }
 
@@ -53,7 +54,7 @@ var jsObj = new jolt.PlaneShapeSettings(inPlane_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inPlane_addr"}, script = "var jsObj = new jolt.PlaneShapeSettings(inPlane_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Plane(int inPlane_addr);
+    public static native int internal_native_create_Plane_addr(int inPlane_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -82,12 +83,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Plane get_mPlane() {
-        int pointer = internal_native_get_mPlane(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPlane_addr(native_address);
+        if (addr == 0)
             return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
-        Plane_TEMP_GEN_0.internal_reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(addr, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -98,7 +99,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PlaneShapeSettings);var returnedJSObj = jsObj.get_mPlane();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPlane(int this_addr);
+    public static native int internal_native_get_mPlane_addr(int this_addr);
 
     public void set_mPlane(Plane mPlane) {
         internal_native_set_mPlane(native_address, mPlane.native_address);
@@ -112,12 +113,12 @@ jsObj.set_mPlane(mPlane_addr);
     public static native void internal_native_set_mPlane(int this_addr, int mPlane_addr);
 
     public PhysicsMaterial get_mMaterial() {
-        int pointer = internal_native_get_mMaterial(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mMaterial_addr(native_address);
+        if (addr == 0)
             return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
-        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -128,7 +129,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PlaneShapeSettings);var returnedJSObj = jsObj.get_mMaterial();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mMaterial(int this_addr);
+    public static native int internal_native_get_mMaterial_addr(int this_addr);
 
     public void set_mMaterial(PhysicsMaterial mMaterial) {
         internal_native_set_mMaterial(native_address, mMaterial.native_address);

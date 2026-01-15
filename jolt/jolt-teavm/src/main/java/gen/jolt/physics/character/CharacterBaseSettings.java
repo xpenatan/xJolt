@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.character;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -69,12 +70,12 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public Vec3 get_mUp() {
-        int pointer = internal_native_get_mUp(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mUp_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -85,7 +86,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);var returnedJSObj = jsObj.get_mUp();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mUp(int this_addr);
+    public static native int internal_native_get_mUp_addr(int this_addr);
 
     public void set_mUp(Vec3 mUp) {
         internal_native_set_mUp(native_address, mUp.native_address);
@@ -99,12 +100,12 @@ jsObj.set_mUp(mUp_addr);
     public static native void internal_native_set_mUp(int this_addr, int mUp_addr);
 
     public Plane get_mSupportingVolume() {
-        int pointer = internal_native_get_mSupportingVolume(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mSupportingVolume_addr(native_address);
+        if (addr == 0)
             return Plane.NULL;
         if (Plane_TEMP_GEN_0 == null)
             Plane_TEMP_GEN_0 = Plane.native_new();
-        Plane_TEMP_GEN_0.internal_reset(pointer, false);
+        Plane_TEMP_GEN_0.internal_reset(addr, false);
         return Plane_TEMP_GEN_0;
     }
 
@@ -115,7 +116,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);var returnedJSObj = jsObj.get_mSupportingVolume();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mSupportingVolume(int this_addr);
+    public static native int internal_native_get_mSupportingVolume_addr(int this_addr);
 
     public void set_mSupportingVolume(Plane mSupportingVolume) {
         internal_native_set_mSupportingVolume(native_address, mSupportingVolume.native_address);
@@ -173,12 +174,12 @@ jsObj.set_mEnhancedInternalEdgeRemoval(mEnhancedInternalEdgeRemoval);
     public static native void internal_native_set_mEnhancedInternalEdgeRemoval(int this_addr, boolean mEnhancedInternalEdgeRemoval);
 
     public Shape get_mShape() {
-        int pointer = internal_native_get_mShape(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -189,7 +190,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CharacterBaseSettings);var returnedJSObj = jsObj.get_mShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mShape(int this_addr);
+    public static native int internal_native_get_mShape_addr(int this_addr);
 
     public void set_mShape(Shape mShape) {
         internal_native_set_mShape(native_address, mShape.native_address);

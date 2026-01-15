@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.body;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -18,7 +19,7 @@ public class MassProperties extends IDLBase {
     static public final MassProperties NULL = MassProperties.native_new();
 
     public MassProperties() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -27,7 +28,7 @@ var jsObj = new jolt.MassProperties();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.MassProperties();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -77,12 +78,12 @@ jsObj.ScaleToMass(inMass);
     public static native void internal_native_ScaleToMass(int this_addr, float inMass);
 
     public static Vec3 sGetEquivalentSolidBoxSize(float inMass, Vec3 inInertiaDiagonal) {
-        int pointer = internal_native_sGetEquivalentSolidBoxSize(inMass, inInertiaDiagonal.native_address);
-        if (pointer == 0)
+        int addr = internal_native_sGetEquivalentSolidBoxSize_addr(inMass, inInertiaDiagonal.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_0;
     }
 
@@ -92,7 +93,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"inMass", "inInertiaDiagonal_addr"}, script = "var returnedJSObj = jolt.MassProperties.prototype.sGetEquivalentSolidBoxSize(inMass, inInertiaDiagonal_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_sGetEquivalentSolidBoxSize(float inMass, int inInertiaDiagonal_addr);
+    public static native int internal_native_sGetEquivalentSolidBoxSize_addr(float inMass, int inInertiaDiagonal_addr);
 
     public void Rotate(Mat44 inRotation) {
         internal_native_Rotate(native_address, inRotation.native_address);
@@ -150,12 +151,12 @@ jsObj.set_mMass(mMass);
     public static native void internal_native_set_mMass(int this_addr, float mMass);
 
     public Mat44 get_mInertia() {
-        int pointer = internal_native_get_mInertia(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mInertia_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -166,7 +167,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MassProperties);var returnedJSObj = jsObj.get_mInertia();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mInertia(int this_addr);
+    public static native int internal_native_get_mInertia_addr(int this_addr);
 
     public void set_mInertia(Mat44 mInertia) {
         internal_native_set_mInertia(native_address, mInertia.native_address);

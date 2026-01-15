@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -17,14 +18,14 @@ public class ContactSettings extends IDLBase {
     static public final ContactSettings NULL = ContactSettings.native_new();
 
     public ContactSettings() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ContactSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -191,12 +192,12 @@ nativeObject->mIsSensor = mIsSensor;
     public static native void internal_native_set_mIsSensor(long this_addr, boolean mIsSensor);
 
     public Vec3 get_mRelativeLinearSurfaceVelocity() {
-        long pointer = internal_native_get_mRelativeLinearSurfaceVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mRelativeLinearSurfaceVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -204,7 +205,7 @@ nativeObject->mIsSensor = mIsSensor;
 ContactSettings* nativeObject = (ContactSettings*)this_addr;
 return (jlong)&nativeObject->mRelativeLinearSurfaceVelocity;
 */
-    public static native long internal_native_get_mRelativeLinearSurfaceVelocity(long this_addr);
+    public static native long internal_native_get_mRelativeLinearSurfaceVelocity_addr(long this_addr);
 
     public void set_mRelativeLinearSurfaceVelocity(Vec3 mRelativeLinearSurfaceVelocity) {
         internal_native_set_mRelativeLinearSurfaceVelocity(native_address, mRelativeLinearSurfaceVelocity.native_address);
@@ -217,12 +218,12 @@ nativeObject->mRelativeLinearSurfaceVelocity = *((Vec3*)mRelativeLinearSurfaceVe
     public static native void internal_native_set_mRelativeLinearSurfaceVelocity(long this_addr, long mRelativeLinearSurfaceVelocity_addr);
 
     public Vec3 get_mRelativeAngularSurfaceVelocity() {
-        long pointer = internal_native_get_mRelativeAngularSurfaceVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mRelativeAngularSurfaceVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -230,7 +231,7 @@ nativeObject->mRelativeLinearSurfaceVelocity = *((Vec3*)mRelativeLinearSurfaceVe
 ContactSettings* nativeObject = (ContactSettings*)this_addr;
 return (jlong)&nativeObject->mRelativeAngularSurfaceVelocity;
 */
-    public static native long internal_native_get_mRelativeAngularSurfaceVelocity(long this_addr);
+    public static native long internal_native_get_mRelativeAngularSurfaceVelocity_addr(long this_addr);
 
     public void set_mRelativeAngularSurfaceVelocity(Vec3 mRelativeAngularSurfaceVelocity) {
         internal_native_set_mRelativeAngularSurfaceVelocity(native_address, mRelativeAngularSurfaceVelocity.native_address);

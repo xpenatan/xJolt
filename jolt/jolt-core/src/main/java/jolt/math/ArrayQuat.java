@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.math;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -60,12 +61,12 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public Quat at(int inIndex) {
-        long pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        long addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -73,7 +74,7 @@ return nativeObject->size();
 ArrayQuat* nativeObject = (ArrayQuat*)this_addr;
 return (jlong)&nativeObject->at((int)inIndex);
 */
-    public static native long internal_native_at(long this_addr, int inIndex);
+    public static native long internal_native_at_addr(long this_addr, int inIndex);
 
     public void push_back(Quat inValue) {
         internal_native_push_back(native_address, inValue.native_address);
@@ -116,12 +117,12 @@ nativeObject->clear();
     public static native void internal_native_clear(long this_addr);
 
     public QuatMemRef data() {
-        long pointer = internal_native_data(native_address);
-        if (pointer == 0)
+        long addr = internal_native_data_addr(native_address);
+        if (addr == 0)
             return QuatMemRef.NULL;
         if (QuatMemRef_TEMP_GEN_0 == null)
             QuatMemRef_TEMP_GEN_0 = QuatMemRef.native_new();
-        QuatMemRef_TEMP_GEN_0.internal_reset(pointer, false);
+        QuatMemRef_TEMP_GEN_0.internal_reset(addr, false);
         return QuatMemRef_TEMP_GEN_0;
     }
 
@@ -130,5 +131,5 @@ ArrayQuat* nativeObject = (ArrayQuat*)this_addr;
 QuatMemRef* obj = nativeObject->data();
 return (jlong)obj;
 */
-    public static native long internal_native_data(long this_addr);
+    public static native long internal_native_data_addr(long this_addr);
 }

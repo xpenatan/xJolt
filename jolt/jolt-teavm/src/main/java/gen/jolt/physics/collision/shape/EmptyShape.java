@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.math.Vec3;
@@ -13,7 +14,7 @@ public class EmptyShape extends Shape {
 
     public EmptyShape(Vec3 inCenterOfMass) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Vec3(inCenterOfMass.native_address);
+        int addr = internal_native_create_Vec3_addr(inCenterOfMass.native_address);
         internal_reset(addr, true);
     }
 
@@ -22,11 +23,11 @@ var jsObj = new jolt.EmptyShape(inCenterOfMass_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inCenterOfMass_addr"}, script = "var jsObj = new jolt.EmptyShape(inCenterOfMass_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Vec3(int inCenterOfMass_addr);
+    public static native int internal_native_create_Vec3_addr(int inCenterOfMass_addr);
 
     public EmptyShape() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -35,7 +36,7 @@ var jsObj = new jolt.EmptyShape();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.EmptyShape();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

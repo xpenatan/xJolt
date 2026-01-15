@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.character;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -401,7 +402,7 @@ jsObj.set_onCharacterContactSolve(onCharacterContactSolve);
     public static native void internal_native_set_OnCharacterContactSolve(int this_addr, boolean onCharacterContactSolve);
 
     public CharacterContactListener() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -734,7 +735,7 @@ var jsObj = new jolt.CharacterContactListenerImpl();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CharacterContactListenerImpl();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "OnAdjustBodyVelocity_custom", "OnContactValidate_custom", "OnCharacterContactValidate_custom", "OnContactAdded_custom", "OnContactPersisted_custom", "OnContactRemoved_custom", "OnCharacterContactAdded_custom", "OnCharacterContactPersisted_custom", "OnCharacterContactRemoved_custom", "OnContactSolve_custom", "OnCharacterContactSolve_custom" }, script = "var CharacterContactListenerImpl = jolt.wrapPointer(this_addr, jolt.CharacterContactListenerImpl); CharacterContactListenerImpl.OnAdjustBodyVelocity_custom = OnAdjustBodyVelocity_custom; CharacterContactListenerImpl.OnContactValidate_custom = OnContactValidate_custom; CharacterContactListenerImpl.OnCharacterContactValidate_custom = OnCharacterContactValidate_custom; CharacterContactListenerImpl.OnContactAdded_custom = OnContactAdded_custom; CharacterContactListenerImpl.OnContactPersisted_custom = OnContactPersisted_custom; CharacterContactListenerImpl.OnContactRemoved_custom = OnContactRemoved_custom; CharacterContactListenerImpl.OnCharacterContactAdded_custom = OnCharacterContactAdded_custom; CharacterContactListenerImpl.OnCharacterContactPersisted_custom = OnCharacterContactPersisted_custom; CharacterContactListenerImpl.OnCharacterContactRemoved_custom = OnCharacterContactRemoved_custom; CharacterContactListenerImpl.OnContactSolve_custom = OnContactSolve_custom; CharacterContactListenerImpl.OnCharacterContactSolve_custom = OnCharacterContactSolve_custom;")
     public static native void internal_native_setupCallback(int this_addr, OnAdjustBodyVelocity_custom OnAdjustBodyVelocity_custom, OnContactValidate_custom OnContactValidate_custom, OnCharacterContactValidate_custom OnCharacterContactValidate_custom, OnContactAdded_custom OnContactAdded_custom, OnContactPersisted_custom OnContactPersisted_custom, OnContactRemoved_custom OnContactRemoved_custom, OnCharacterContactAdded_custom OnCharacterContactAdded_custom, OnCharacterContactPersisted_custom OnCharacterContactPersisted_custom, OnCharacterContactRemoved_custom OnCharacterContactRemoved_custom, OnContactSolve_custom OnContactSolve_custom, OnCharacterContactSolve_custom OnCharacterContactSolve_custom);

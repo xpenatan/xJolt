@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 import gen.jolt.math.TwoBodyConstraintSettings;
@@ -27,7 +28,7 @@ public class FixedConstraintSettings extends TwoBodyConstraintSettings {
 
     public FixedConstraintSettings() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -36,7 +37,7 @@ var jsObj = new jolt.FixedConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.FixedConstraintSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -116,12 +117,12 @@ jsObj.set_mAutoDetectPoint(mAutoDetectPoint);
     public static native void internal_native_set_mAutoDetectPoint(int this_addr, boolean mAutoDetectPoint);
 
     public Vec3 get_mPoint1() {
-        int pointer = internal_native_get_mPoint1(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPoint1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -132,7 +133,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.FixedConstraintSettings);var returnedJSObj = jsObj.get_mPoint1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPoint1(int this_addr);
+    public static native int internal_native_get_mPoint1_addr(int this_addr);
 
     public void set_mPoint1(Vec3 mPoint1) {
         internal_native_set_mPoint1(native_address, mPoint1.native_address);
@@ -146,12 +147,12 @@ jsObj.set_mPoint1(mPoint1_addr);
     public static native void internal_native_set_mPoint1(int this_addr, int mPoint1_addr);
 
     public Vec3 get_mAxisX1() {
-        int pointer = internal_native_get_mAxisX1(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mAxisX1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -162,7 +163,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.FixedConstraintSettings);var returnedJSObj = jsObj.get_mAxisX1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mAxisX1(int this_addr);
+    public static native int internal_native_get_mAxisX1_addr(int this_addr);
 
     public void set_mAxisX1(Vec3 mAxisX1) {
         internal_native_set_mAxisX1(native_address, mAxisX1.native_address);
@@ -176,12 +177,12 @@ jsObj.set_mAxisX1(mAxisX1_addr);
     public static native void internal_native_set_mAxisX1(int this_addr, int mAxisX1_addr);
 
     public Vec3 get_mAxisY1() {
-        int pointer = internal_native_get_mAxisY1(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mAxisY1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -192,7 +193,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.FixedConstraintSettings);var returnedJSObj = jsObj.get_mAxisY1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mAxisY1(int this_addr);
+    public static native int internal_native_get_mAxisY1_addr(int this_addr);
 
     public void set_mAxisY1(Vec3 mAxisY1) {
         internal_native_set_mAxisY1(native_address, mAxisY1.native_address);
@@ -206,12 +207,12 @@ jsObj.set_mAxisY1(mAxisY1_addr);
     public static native void internal_native_set_mAxisY1(int this_addr, int mAxisY1_addr);
 
     public Vec3 get_mPoint2() {
-        int pointer = internal_native_get_mPoint2(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPoint2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -222,7 +223,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.FixedConstraintSettings);var returnedJSObj = jsObj.get_mPoint2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPoint2(int this_addr);
+    public static native int internal_native_get_mPoint2_addr(int this_addr);
 
     public void set_mPoint2(Vec3 mPoint2) {
         internal_native_set_mPoint2(native_address, mPoint2.native_address);
@@ -236,12 +237,12 @@ jsObj.set_mPoint2(mPoint2_addr);
     public static native void internal_native_set_mPoint2(int this_addr, int mPoint2_addr);
 
     public Vec3 get_mAxisX2() {
-        int pointer = internal_native_get_mAxisX2(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mAxisX2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -252,7 +253,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.FixedConstraintSettings);var returnedJSObj = jsObj.get_mAxisX2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mAxisX2(int this_addr);
+    public static native int internal_native_get_mAxisX2_addr(int this_addr);
 
     public void set_mAxisX2(Vec3 mAxisX2) {
         internal_native_set_mAxisX2(native_address, mAxisX2.native_address);
@@ -266,12 +267,12 @@ jsObj.set_mAxisX2(mAxisX2_addr);
     public static native void internal_native_set_mAxisX2(int this_addr, int mAxisX2_addr);
 
     public Vec3 get_mAxisY2() {
-        int pointer = internal_native_get_mAxisY2(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mAxisY2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(addr, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -282,7 +283,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.FixedConstraintSettings);var returnedJSObj = jsObj.get_mAxisY2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mAxisY2(int this_addr);
+    public static native int internal_native_get_mAxisY2_addr(int this_addr);
 
     public void set_mAxisY2(Vec3 mAxisY2) {
         internal_native_set_mAxisY2(native_address, mAxisY2.native_address);

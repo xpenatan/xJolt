@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -51,7 +52,7 @@ jsObj.SetWheeledVehicleController(inController_addr);
     public static native void internal_native_SetWheeledVehicleController(int this_addr, int inController_addr);
 
     public WheeledVehicleControllerCallbacksEm() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -81,7 +82,7 @@ var jsObj = new jolt.WheeledVehicleControllerCallbacksJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.WheeledVehicleControllerCallbacksJS();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "OnTireMaxImpulseCallback" }, script = "var WheeledVehicleControllerCallbacksJS = jolt.wrapPointer(this_addr, jolt.WheeledVehicleControllerCallbacksJS); WheeledVehicleControllerCallbacksJS.OnTireMaxImpulseCallback = OnTireMaxImpulseCallback;")
     public static native void internal_native_setupCallback(int this_addr, OnTireMaxImpulseCallback OnTireMaxImpulseCallback);

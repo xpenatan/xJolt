@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 import gen.jolt.math.TwoBodyConstraintSettings;
@@ -19,7 +20,7 @@ public class RackAndPinionConstraintSettings extends TwoBodyConstraintSettings {
 
     public RackAndPinionConstraintSettings() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -28,7 +29,7 @@ var jsObj = new jolt.RackAndPinionConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.RackAndPinionConstraintSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -97,12 +98,12 @@ jsObj.set_mSpace(mSpace);
     public static native void internal_native_set_mSpace(int this_addr, int mSpace);
 
     public Vec3 get_mHingeAxis() {
-        int pointer = internal_native_get_mHingeAxis(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mHingeAxis_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -113,7 +114,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);var returnedJSObj = jsObj.get_mHingeAxis();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mHingeAxis(int this_addr);
+    public static native int internal_native_get_mHingeAxis_addr(int this_addr);
 
     public void set_mHingeAxis(Vec3 mHingeAxis) {
         internal_native_set_mHingeAxis(native_address, mHingeAxis.native_address);
@@ -127,12 +128,12 @@ jsObj.set_mHingeAxis(mHingeAxis_addr);
     public static native void internal_native_set_mHingeAxis(int this_addr, int mHingeAxis_addr);
 
     public Vec3 get_mSliderAxis() {
-        int pointer = internal_native_get_mSliderAxis(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mSliderAxis_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -143,7 +144,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.RackAndPinionConstraintSettings);var returnedJSObj = jsObj.get_mSliderAxis();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mSliderAxis(int this_addr);
+    public static native int internal_native_get_mSliderAxis_addr(int this_addr);
 
     public void set_mSliderAxis(Vec3 mSliderAxis) {
         internal_native_set_mSliderAxis(native_address, mSliderAxis.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.renderer;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -51,12 +52,12 @@ return returnedJSObj;
     public static native int internal_native_size(int this_addr);
 
     public DebugRendererTriangle at(int inIndex) {
-        int pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        int addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return DebugRendererTriangle.NULL;
         if (DebugRendererTriangle_TEMP_GEN_0 == null)
             DebugRendererTriangle_TEMP_GEN_0 = DebugRendererTriangle.native_new();
-        DebugRendererTriangle_TEMP_GEN_0.internal_reset(pointer, false);
+        DebugRendererTriangle_TEMP_GEN_0.internal_reset(addr, false);
         return DebugRendererTriangle_TEMP_GEN_0;
     }
 
@@ -67,5 +68,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugArrayTriangle);var returnedJSObj = jsObj.at(inIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_at(int this_addr, int inIndex);
+    public static native int internal_native_at_addr(int this_addr, int inIndex);
 }

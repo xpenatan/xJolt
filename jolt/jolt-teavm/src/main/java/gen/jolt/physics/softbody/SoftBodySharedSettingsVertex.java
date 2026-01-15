@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -17,7 +18,7 @@ public class SoftBodySharedSettingsVertex extends IDLBase {
     static public final SoftBodySharedSettingsVertex NULL = SoftBodySharedSettingsVertex.native_new();
 
     public SoftBodySharedSettingsVertex() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -26,7 +27,7 @@ var jsObj = new jolt.SoftBodySharedSettingsVertex();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SoftBodySharedSettingsVertex();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -54,12 +55,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Float3 get_mPosition() {
-        int pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
-        Float3_TEMP_GEN_0.internal_reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(addr, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -70,7 +71,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVertex);var returnedJSObj = jsObj.get_mPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPosition(int this_addr);
+    public static native int internal_native_get_mPosition_addr(int this_addr);
 
     public void set_mPosition(Float3 mPosition) {
         internal_native_set_mPosition(native_address, mPosition.native_address);
@@ -84,12 +85,12 @@ jsObj.set_mPosition(mPosition_addr);
     public static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
 
     public Float3 get_mVelocity() {
-        int pointer = internal_native_get_mVelocity(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mVelocity_addr(native_address);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_1 == null)
             Float3_TEMP_GEN_1 = Float3.native_new();
-        Float3_TEMP_GEN_1.internal_reset(pointer, false);
+        Float3_TEMP_GEN_1.internal_reset(addr, false);
         return Float3_TEMP_GEN_1;
     }
 
@@ -100,7 +101,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsVertex);var returnedJSObj = jsObj.get_mVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mVelocity(int this_addr);
+    public static native int internal_native_get_mVelocity_addr(int this_addr);
 
     public void set_mVelocity(Float3 mVelocity) {
         internal_native_set_mVelocity(native_address, mVelocity.native_address);

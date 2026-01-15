@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -13,14 +14,14 @@ public class SpringSettings extends IDLBase {
     static public final SpringSettings NULL = SpringSettings.native_new();
 
     public SpringSettings() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SpringSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

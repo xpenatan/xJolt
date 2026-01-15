@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.math.Vec3;
@@ -26,14 +27,14 @@ public class HeightFieldShapeSettings extends ShapeSettings {
 
     public HeightFieldShapeSettings() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new HeightFieldShapeSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -61,12 +62,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mOffset() {
-        long pointer = internal_native_get_mOffset(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mOffset_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -74,7 +75,7 @@ delete nativeObject;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mOffset;
 */
-    public static native long internal_native_get_mOffset(long this_addr);
+    public static native long internal_native_get_mOffset_addr(long this_addr);
 
     public void set_mOffset(Vec3 mOffset) {
         internal_native_set_mOffset(native_address, mOffset.native_address);
@@ -87,12 +88,12 @@ nativeObject->mOffset = *((Vec3*)mOffset_addr);
     public static native void internal_native_set_mOffset(long this_addr, long mOffset_addr);
 
     public Vec3 get_mScale() {
-        long pointer = internal_native_get_mScale(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mScale_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -100,7 +101,7 @@ nativeObject->mOffset = *((Vec3*)mOffset_addr);
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mScale;
 */
-    public static native long internal_native_get_mScale(long this_addr);
+    public static native long internal_native_get_mScale_addr(long this_addr);
 
     public void set_mScale(Vec3 mScale) {
         internal_native_set_mScale(native_address, mScale.native_address);
@@ -233,12 +234,12 @@ nativeObject->mBitsPerSample = mBitsPerSample;
     public static native void internal_native_set_mBitsPerSample(long this_addr, int mBitsPerSample);
 
     public ArrayFloat get_mHeightSamples() {
-        long pointer = internal_native_get_mHeightSamples(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mHeightSamples_addr(native_address);
+        if (addr == 0)
             return ArrayFloat.NULL;
         if (ArrayFloat_TEMP_GEN_0 == null)
             ArrayFloat_TEMP_GEN_0 = ArrayFloat.native_new();
-        ArrayFloat_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayFloat_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayFloat_TEMP_GEN_0;
     }
 
@@ -246,7 +247,7 @@ nativeObject->mBitsPerSample = mBitsPerSample;
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mHeightSamples;
 */
-    public static native long internal_native_get_mHeightSamples(long this_addr);
+    public static native long internal_native_get_mHeightSamples_addr(long this_addr);
 
     public void set_mHeightSamples(ArrayFloat mHeightSamples) {
         internal_native_set_mHeightSamples(native_address, mHeightSamples.native_address);
@@ -259,12 +260,12 @@ nativeObject->mHeightSamples = *((ArrayFloat*)mHeightSamples_addr);
     public static native void internal_native_set_mHeightSamples(long this_addr, long mHeightSamples_addr);
 
     public ArrayUint8 get_mMaterialIndices() {
-        long pointer = internal_native_get_mMaterialIndices(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mMaterialIndices_addr(native_address);
+        if (addr == 0)
             return ArrayUint8.NULL;
         if (ArrayUint8_TEMP_GEN_0 == null)
             ArrayUint8_TEMP_GEN_0 = ArrayUint8.native_new();
-        ArrayUint8_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayUint8_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayUint8_TEMP_GEN_0;
     }
 
@@ -272,7 +273,7 @@ nativeObject->mHeightSamples = *((ArrayFloat*)mHeightSamples_addr);
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mMaterialIndices;
 */
-    public static native long internal_native_get_mMaterialIndices(long this_addr);
+    public static native long internal_native_get_mMaterialIndices_addr(long this_addr);
 
     public void set_mMaterialIndices(ArrayUint8 mMaterialIndices) {
         internal_native_set_mMaterialIndices(native_address, mMaterialIndices.native_address);
@@ -285,12 +286,12 @@ nativeObject->mMaterialIndices = *((ArrayUint8*)mMaterialIndices_addr);
     public static native void internal_native_set_mMaterialIndices(long this_addr, long mMaterialIndices_addr);
 
     public PhysicsMaterialList get_mMaterials() {
-        long pointer = internal_native_get_mMaterials(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mMaterials_addr(native_address);
+        if (addr == 0)
             return PhysicsMaterialList.NULL;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
-        PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterialList_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
 
@@ -298,7 +299,7 @@ nativeObject->mMaterialIndices = *((ArrayUint8*)mMaterialIndices_addr);
 HeightFieldShapeSettings* nativeObject = (HeightFieldShapeSettings*)this_addr;
 return (jlong)&nativeObject->mMaterials;
 */
-    public static native long internal_native_get_mMaterials(long this_addr);
+    public static native long internal_native_get_mMaterials_addr(long this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
         internal_native_set_mMaterials(native_address, mMaterials.native_address);

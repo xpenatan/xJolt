@@ -4,10 +4,11 @@ plugins {
 
 val moduleName = "jolt-teavm"
 
-val emscriptenFile = "$projectDir/../jolt-build/build/c++/libs/emscripten/jolt.wasm.js"
+val emscriptenJS = "$projectDir/../jolt-build/build/c++/libs/emscripten/jolt.js"
+val emscriptenWASM = "$projectDir/../jolt-build/build/c++/libs/emscripten/jolt.wasm"
 
 tasks.jar {
-    from(emscriptenFile)
+    from(emscriptenJS, emscriptenWASM)
 }
 
 dependencies {
@@ -16,6 +17,8 @@ dependencies {
     implementation("com.github.xpenatan.jParser:loader-teavm:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
     implementation("com.github.xpenatan.jParser:idl-teavm:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
+    implementation("com.github.xpenatan.jParser:idl-helper-teavm:${LibExt.jParserVersion}")
 }
 
 tasks.named("clean") {

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import jolt.math.TwoBodyConstraintSettings;
@@ -33,14 +34,14 @@ public class SixDOFConstraintSettings extends TwoBodyConstraintSettings {
 
     public SixDOFConstraintSettings() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SixDOFConstraintSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -145,12 +146,12 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
     public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public Vec3 get_mPosition1() {
-        long pointer = internal_native_get_mPosition1(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPosition1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -158,7 +159,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPosition1;
 */
-    public static native long internal_native_get_mPosition1(long this_addr);
+    public static native long internal_native_get_mPosition1_addr(long this_addr);
 
     public void set_mPosition1(Vec3 mPosition1) {
         internal_native_set_mPosition1(native_address, mPosition1.native_address);
@@ -171,12 +172,12 @@ nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
     public static native void internal_native_set_mPosition1(long this_addr, long mPosition1_addr);
 
     public Vec3 get_mAxisX1() {
-        long pointer = internal_native_get_mAxisX1(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mAxisX1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -184,7 +185,7 @@ nativeObject->mPosition1 = *((Vec3*)mPosition1_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisX1;
 */
-    public static native long internal_native_get_mAxisX1(long this_addr);
+    public static native long internal_native_get_mAxisX1_addr(long this_addr);
 
     public void set_mAxisX1(Vec3 mAxisX1) {
         internal_native_set_mAxisX1(native_address, mAxisX1.native_address);
@@ -197,12 +198,12 @@ nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
     public static native void internal_native_set_mAxisX1(long this_addr, long mAxisX1_addr);
 
     public Vec3 get_mAxisY1() {
-        long pointer = internal_native_get_mAxisY1(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mAxisY1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -210,7 +211,7 @@ nativeObject->mAxisX1 = *((Vec3*)mAxisX1_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisY1;
 */
-    public static native long internal_native_get_mAxisY1(long this_addr);
+    public static native long internal_native_get_mAxisY1_addr(long this_addr);
 
     public void set_mAxisY1(Vec3 mAxisY1) {
         internal_native_set_mAxisY1(native_address, mAxisY1.native_address);
@@ -223,12 +224,12 @@ nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
     public static native void internal_native_set_mAxisY1(long this_addr, long mAxisY1_addr);
 
     public Vec3 get_mPosition2() {
-        long pointer = internal_native_get_mPosition2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPosition2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -236,7 +237,7 @@ nativeObject->mAxisY1 = *((Vec3*)mAxisY1_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPosition2;
 */
-    public static native long internal_native_get_mPosition2(long this_addr);
+    public static native long internal_native_get_mPosition2_addr(long this_addr);
 
     public void set_mPosition2(Vec3 mPosition2) {
         internal_native_set_mPosition2(native_address, mPosition2.native_address);
@@ -249,12 +250,12 @@ nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
     public static native void internal_native_set_mPosition2(long this_addr, long mPosition2_addr);
 
     public Vec3 get_mAxisX2() {
-        long pointer = internal_native_get_mAxisX2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mAxisX2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -262,7 +263,7 @@ nativeObject->mPosition2 = *((Vec3*)mPosition2_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisX2;
 */
-    public static native long internal_native_get_mAxisX2(long this_addr);
+    public static native long internal_native_get_mAxisX2_addr(long this_addr);
 
     public void set_mAxisX2(Vec3 mAxisX2) {
         internal_native_set_mAxisX2(native_address, mAxisX2.native_address);
@@ -275,12 +276,12 @@ nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
     public static native void internal_native_set_mAxisX2(long this_addr, long mAxisX2_addr);
 
     public Vec3 get_mAxisY2() {
-        long pointer = internal_native_get_mAxisY2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mAxisY2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(addr, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -288,7 +289,7 @@ nativeObject->mAxisX2 = *((Vec3*)mAxisX2_addr);
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAxisY2;
 */
-    public static native long internal_native_get_mAxisY2(long this_addr);
+    public static native long internal_native_get_mAxisY2_addr(long this_addr);
 
     public void set_mAxisY2(Vec3 mAxisY2) {
         internal_native_set_mAxisY2(native_address, mAxisY2.native_address);
@@ -388,12 +389,12 @@ nativeObject->mLimitMax[index] = mLimitMax;
     public static native void internal_native_set_mLimitMax(long this_addr, int index, float mLimitMax);
 
     public SpringSettings get_mLimitsSpringSettings(int index) {
-        long pointer = internal_native_get_mLimitsSpringSettings(native_address, index);
-        if (pointer == 0)
+        long addr = internal_native_get_mLimitsSpringSettings_addr(native_address, index);
+        if (addr == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
-        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -401,7 +402,7 @@ nativeObject->mLimitMax[index] = mLimitMax;
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mLimitsSpringSettings[index];
 */
-    public static native long internal_native_get_mLimitsSpringSettings(long this_addr, int index);
+    public static native long internal_native_get_mLimitsSpringSettings_addr(long this_addr, int index);
 
     public void set_mLimitsSpringSettings(int index, SpringSettings mLimitsSpringSettings) {
         internal_native_set_mLimitsSpringSettings(native_address, index, mLimitsSpringSettings.native_address);
@@ -414,12 +415,12 @@ nativeObject->mLimitsSpringSettings[index] = *((SpringSettings*)mLimitsSpringSet
     public static native void internal_native_set_mLimitsSpringSettings(long this_addr, int index, long mLimitsSpringSettings_addr);
 
     public MotorSettings get_mMotorSettings(int index) {
-        long pointer = internal_native_get_mMotorSettings(native_address, index);
-        if (pointer == 0)
+        long addr = internal_native_get_mMotorSettings_addr(native_address, index);
+        if (addr == 0)
             return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
-        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(addr, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -427,7 +428,7 @@ nativeObject->mLimitsSpringSettings[index] = *((SpringSettings*)mLimitsSpringSet
 SixDOFConstraintSettings* nativeObject = (SixDOFConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mMotorSettings[index];
 */
-    public static native long internal_native_get_mMotorSettings(long this_addr, int index);
+    public static native long internal_native_get_mMotorSettings_addr(long this_addr, int index);
 
     public void set_mMotorSettings(int index, MotorSettings mMotorSettings) {
         internal_native_set_mMotorSettings(native_address, index, mMotorSettings.native_address);

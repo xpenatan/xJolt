@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.jolt.math.Vec3;
@@ -13,7 +14,7 @@ public class VehicleCollisionTesterRay extends VehicleCollisionTester {
 
     public VehicleCollisionTesterRay(int inObjectLayer, Vec3 inUp, float inMaxSlopeAngle) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int_Vec3_float(inObjectLayer, inUp.native_address, inMaxSlopeAngle);
+        int addr = internal_native_create_int_Vec3_float_addr(inObjectLayer, inUp.native_address, inMaxSlopeAngle);
         internal_reset(addr, true);
     }
 
@@ -22,11 +23,11 @@ var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer, inUp_addr, inMaxSl
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer", "inUp_addr", "inMaxSlopeAngle"}, script = "var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer, inUp_addr, inMaxSlopeAngle);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_Vec3_float(int inObjectLayer, int inUp_addr, float inMaxSlopeAngle);
+    public static native int internal_native_create_int_Vec3_float_addr(int inObjectLayer, int inUp_addr, float inMaxSlopeAngle);
 
     public VehicleCollisionTesterRay(int inObjectLayer, Vec3 inUp) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int_Vec3(inObjectLayer, inUp.native_address);
+        int addr = internal_native_create_int_Vec3_addr(inObjectLayer, inUp.native_address);
         internal_reset(addr, true);
     }
 
@@ -35,11 +36,11 @@ var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer, inUp_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer", "inUp_addr"}, script = "var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer, inUp_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_Vec3(int inObjectLayer, int inUp_addr);
+    public static native int internal_native_create_int_Vec3_addr(int inObjectLayer, int inUp_addr);
 
     public VehicleCollisionTesterRay(int inObjectLayer) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int(inObjectLayer);
+        int addr = internal_native_create_int_addr(inObjectLayer);
         internal_reset(addr, true);
     }
 
@@ -48,7 +49,7 @@ var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inObjectLayer"}, script = "var jsObj = new jolt.VehicleCollisionTesterRay(inObjectLayer);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int(int inObjectLayer);
+    public static native int internal_native_create_int_addr(int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

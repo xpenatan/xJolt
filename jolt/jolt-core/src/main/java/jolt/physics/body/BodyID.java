@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.body;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,24 +13,24 @@ public class BodyID extends IDLBase {
     static public final BodyID NULL = BodyID.native_new();
 
     public BodyID() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new BodyID();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     public BodyID(int inIndexAndSequenceNumber) {
-        long addr = internal_native_create_int(inIndexAndSequenceNumber);
+        long addr = internal_native_create_int_addr(inIndexAndSequenceNumber);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new BodyID(inIndexAndSequenceNumber);
 */
-    public static native long internal_native_create_int(int inIndexAndSequenceNumber);
+    public static native long internal_native_create_int_addr(int inIndexAndSequenceNumber);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,34 +15,34 @@ public class MotorSettings extends IDLBase {
     static public final MotorSettings NULL = MotorSettings.native_new();
 
     public MotorSettings() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new MotorSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     public MotorSettings(float inFrequency, float inDamping) {
-        long addr = internal_native_create_float_float(inFrequency, inDamping);
+        long addr = internal_native_create_float_float_addr(inFrequency, inDamping);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new MotorSettings((float)inFrequency, (float)inDamping);
 */
-    public static native long internal_native_create_float_float(float inFrequency, float inDamping);
+    public static native long internal_native_create_float_float_addr(float inFrequency, float inDamping);
 
     public MotorSettings(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit) {
-        long addr = internal_native_create_float_float_float_float(inFrequency, inDamping, inForceLimit, inTorqueLimit);
+        long addr = internal_native_create_float_float_float_float_addr(inFrequency, inDamping, inForceLimit, inTorqueLimit);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new MotorSettings((float)inFrequency, (float)inDamping, (float)inForceLimit, (float)inTorqueLimit);
 */
-    public static native long internal_native_create_float_float_float_float(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
+    public static native long internal_native_create_float_float_float_float_addr(float inFrequency, float inDamping, float inForceLimit, float inTorqueLimit);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -68,12 +69,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public SpringSettings get_mSpringSettings() {
-        long pointer = internal_native_get_mSpringSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mSpringSettings_addr(native_address);
+        if (addr == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
-        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -81,7 +82,7 @@ delete nativeObject;
 MotorSettings* nativeObject = (MotorSettings*)this_addr;
 return (jlong)&nativeObject->mSpringSettings;
 */
-    public static native long internal_native_get_mSpringSettings(long this_addr);
+    public static native long internal_native_get_mSpringSettings_addr(long this_addr);
 
     public void set_mSpringSettings(SpringSettings mSpringSettings) {
         internal_native_set_mSpringSettings(native_address, mSpringSettings.native_address);

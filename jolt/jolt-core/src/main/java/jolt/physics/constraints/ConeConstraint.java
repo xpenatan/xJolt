@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import jolt.math.Vec3;
@@ -49,12 +50,12 @@ return nativeObject->GetCosHalfConeAngle();
     public static native float internal_native_GetCosHalfConeAngle(long this_addr);
 
     public Vec3 GetTotalLambdaPosition() {
-        long pointer = internal_native_GetTotalLambdaPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetTotalLambdaPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -63,7 +64,7 @@ ConeConstraint* nativeObject = (ConeConstraint*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetTotalLambdaPosition();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetTotalLambdaPosition(long this_addr);
+    public static native long internal_native_GetTotalLambdaPosition_addr(long this_addr);
 
     public float GetTotalLambdaRotation() {
         return internal_native_GetTotalLambdaRotation(native_address);

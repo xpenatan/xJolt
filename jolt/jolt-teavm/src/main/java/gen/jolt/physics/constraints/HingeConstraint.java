@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 import gen.jolt.enums.EMotorState;
@@ -72,12 +73,12 @@ return returnedJSObj;
     public static native float internal_native_GetMaxFrictionTorque(int this_addr);
 
     public MotorSettings GetMotorSettings() {
-        int pointer = internal_native_GetMotorSettings(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetMotorSettings_addr(native_address);
+        if (addr == 0)
             return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
-        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(addr, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -88,7 +89,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetMotorSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetMotorSettings(int this_addr);
+    public static native int internal_native_GetMotorSettings_addr(int this_addr);
 
     public void SetMotorState(EMotorState inState) {
         internal_native_SetMotorState(native_address, inState.getValue());
@@ -214,12 +215,12 @@ return returnedJSObj;
     public static native boolean internal_native_HasLimits(int this_addr);
 
     public SpringSettings GetLimitsSpringSettings() {
-        int pointer = internal_native_GetLimitsSpringSettings(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetLimitsSpringSettings_addr(native_address);
+        if (addr == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
-        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -230,7 +231,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetLimitsSpringSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetLimitsSpringSettings(int this_addr);
+    public static native int internal_native_GetLimitsSpringSettings_addr(int this_addr);
 
     public void SetLimitsSpringSettings(SpringSettings inLimitsSpringSettings) {
         internal_native_SetLimitsSpringSettings(native_address, inLimitsSpringSettings.native_address);
@@ -244,12 +245,12 @@ jsObj.SetLimitsSpringSettings(inLimitsSpringSettings_addr);
     public static native void internal_native_SetLimitsSpringSettings(int this_addr, int inLimitsSpringSettings_addr);
 
     public Vec3 GetTotalLambdaPosition() {
-        int pointer = internal_native_GetTotalLambdaPosition(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetTotalLambdaPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -260,15 +261,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetTotalLambdaPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetTotalLambdaPosition(int this_addr);
+    public static native int internal_native_GetTotalLambdaPosition_addr(int this_addr);
 
     public Vector2 GetTotalLambdaRotation() {
-        int pointer = internal_native_GetTotalLambdaRotation(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetTotalLambdaRotation_addr(native_address);
+        if (addr == 0)
             return Vector2.NULL;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = Vector2.native_new();
-        Vector2_TEMP_GEN_0.internal_reset(pointer, false);
+        Vector2_TEMP_GEN_0.internal_reset(addr, false);
         return Vector2_TEMP_GEN_0;
     }
 
@@ -279,7 +280,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.HingeConstraint);var returnedJSObj = jsObj.GetTotalLambdaRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetTotalLambdaRotation(int this_addr);
+    public static native int internal_native_GetTotalLambdaRotation_addr(int this_addr);
 
     public float GetTotalLambdaRotationLimits() {
         return internal_native_GetTotalLambdaRotationLimits(native_address);

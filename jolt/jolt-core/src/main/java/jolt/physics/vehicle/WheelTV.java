@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 public class WheelTV extends Wheel {
@@ -13,14 +14,14 @@ public class WheelTV extends Wheel {
 
     public WheelTV(WheelSettingsTV inWheel) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_WheelSettingsTV(inWheel.native_address);
+        long addr = internal_native_create_WheelSettingsTV_addr(inWheel.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new WheelTV(*((WheelSettingsTV* )inWheel_addr));
 */
-    public static native long internal_native_create_WheelSettingsTV(long inWheel_addr);
+    public static native long internal_native_create_WheelSettingsTV_addr(long inWheel_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -48,12 +49,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public WheelSettingsTV GetSettings() {
-        long pointer = internal_native_GetSettings(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSettings_addr(native_address);
+        if (addr == 0)
             return WheelSettingsTV.NULL;
         if (WheelSettingsTV_TEMP_GEN_0 == null)
             WheelSettingsTV_TEMP_GEN_0 = WheelSettingsTV.native_new();
-        WheelSettingsTV_TEMP_GEN_0.internal_reset(pointer, false);
+        WheelSettingsTV_TEMP_GEN_0.internal_reset(addr, false);
         return WheelSettingsTV_TEMP_GEN_0;
     }
 
@@ -62,7 +63,7 @@ WheelTV* nativeObject = (WheelTV*)this_addr;
 const WheelSettingsTV* obj = nativeObject->GetSettings();
 return (jlong)obj;
 */
-    public static native long internal_native_GetSettings(long this_addr);
+    public static native long internal_native_GetSettings_addr(long this_addr);
 
     public int get_mTrackIndex() {
         return internal_native_get_mTrackIndex(native_address);

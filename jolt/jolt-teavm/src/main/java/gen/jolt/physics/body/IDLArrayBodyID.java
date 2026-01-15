@@ -3,9 +3,10 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.body;
 
-import gen.jolt.idl.helper.IDLArray;
+import gen.com.github.xpenatan.jparser.idl.helper.IDLArray;
 
 public class IDLArrayBodyID extends IDLArray {
 
@@ -15,7 +16,7 @@ public class IDLArrayBodyID extends IDLArray {
 
     public IDLArrayBodyID(int size) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int(size);
+        int addr = internal_native_create_int_addr(size);
         internal_reset(addr, true);
     }
 
@@ -24,7 +25,7 @@ var jsObj = new jolt.IDLArrayBodyID(size);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"size"}, script = "var jsObj = new jolt.IDLArrayBodyID(size);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int(int size);
+    public static native int internal_native_create_int_addr(int size);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -53,12 +54,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public BodyID getValue(int index) {
-        int pointer = internal_native_getValue(native_address, index);
-        if (pointer == 0)
+        int addr = internal_native_getValue_addr(native_address, index);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -69,7 +70,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.IDLArrayBodyID);var returnedJSObj = jsObj.getValue(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_getValue(int this_addr, int index);
+    public static native int internal_native_getValue_addr(int this_addr, int index);
 
     public void setValue(int index, BodyID value) {
         internal_native_setValue(native_address, index, value.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class ArrayWheelSettings extends IDLBase {
     static public final ArrayWheelSettings NULL = ArrayWheelSettings.native_new();
 
     public ArrayWheelSettings() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ArrayWheelSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -68,12 +69,12 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public WheelSettings at(int inIndex) {
-        long pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        long addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return WheelSettings.NULL;
         if (WheelSettings_TEMP_GEN_0 == null)
             WheelSettings_TEMP_GEN_0 = WheelSettings.native_new();
-        WheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        WheelSettings_TEMP_GEN_0.internal_reset(addr, false);
         return WheelSettings_TEMP_GEN_0;
     }
 
@@ -82,7 +83,7 @@ ArrayWheelSettings* nativeObject = (ArrayWheelSettings*)this_addr;
 WheelSettings* obj = nativeObject->at((int)inIndex);
 return (jlong)obj;
 */
-    public static native long internal_native_at(long this_addr, int inIndex);
+    public static native long internal_native_at_addr(long this_addr, int inIndex);
 
     public void push_back(WheelSettings inValue) {
         internal_native_push_back(native_address, inValue.native_address);

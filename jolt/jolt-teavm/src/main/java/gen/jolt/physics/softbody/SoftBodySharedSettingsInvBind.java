@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.softbody;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -62,12 +63,12 @@ jsObj.set_mJointIndex(mJointIndex);
     public static native void internal_native_set_mJointIndex(int this_addr, int mJointIndex);
 
     public Mat44 get_mInvBind() {
-        int pointer = internal_native_get_mInvBind(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mInvBind_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -78,7 +79,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SoftBodySharedSettingsInvBind);var returnedJSObj = jsObj.get_mInvBind();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mInvBind(int this_addr);
+    public static native int internal_native_get_mInvBind_addr(int this_addr);
 
     public void set_mInvBind(Mat44 mInvBind) {
         internal_native_set_mInvBind(native_address, mInvBind.native_address);

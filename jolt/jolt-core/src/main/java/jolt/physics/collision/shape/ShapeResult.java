@@ -3,10 +3,11 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
-import jolt.idl.helper.IDLString;
+import com.github.xpenatan.jparser.idl.helper.IDLString;
 
 public class ShapeResult extends IDLBase {
 
@@ -61,12 +62,12 @@ return nativeObject->HasError();
     public static native boolean internal_native_HasError(long this_addr);
 
     public IDLString GetError() {
-        long pointer = internal_native_GetError(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetError_addr(native_address);
+        if (addr == 0)
             return IDLString.NULL;
         if (IDLString_TEMP_GEN_0 == null)
             IDLString_TEMP_GEN_0 = IDLString.native_new();
-        IDLString_TEMP_GEN_0.internal_reset(pointer, false);
+        IDLString_TEMP_GEN_0.internal_reset(addr, false);
         return IDLString_TEMP_GEN_0;
     }
 
@@ -74,15 +75,15 @@ return nativeObject->HasError();
 Shape::ShapeResult* nativeObject = (Shape::ShapeResult*)this_addr;
 return (jlong)&nativeObject->GetError();
 */
-    public static native long internal_native_GetError(long this_addr);
+    public static native long internal_native_GetError_addr(long this_addr);
 
     public Shape Get() {
-        long pointer = internal_native_Get(native_address);
-        if (pointer == 0)
+        long addr = internal_native_Get_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -91,7 +92,7 @@ Shape::ShapeResult* nativeObject = (Shape::ShapeResult*)this_addr;
 Shape* obj = nativeObject->Get();
 return (jlong)obj;
 */
-    public static native long internal_native_Get(long this_addr);
+    public static native long internal_native_Get_addr(long this_addr);
 
     public void Clear() {
         internal_native_Clear(native_address);

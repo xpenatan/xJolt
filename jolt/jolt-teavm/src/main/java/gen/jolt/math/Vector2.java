@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.math;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class Vector2 extends IDLBase {
     static public final Vector2 NULL = Vector2.native_new();
 
     public Vector2() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jolt.Vector2();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.Vector2();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -117,12 +118,12 @@ jsObj.IsNormalized();
     public static native void internal_native_IsNormalized(int this_addr);
 
     public Vector2 Normalized() {
-        int pointer = internal_native_Normalized(native_address);
-        if (pointer == 0)
+        int addr = internal_native_Normalized_addr(native_address);
+        if (addr == 0)
             return Vector2.NULL;
         if (Vector2_TEMP_GEN_0 == null)
             Vector2_TEMP_GEN_0 = Vector2.native_new();
-        Vector2_TEMP_GEN_0.internal_reset(pointer, false);
+        Vector2_TEMP_GEN_0.internal_reset(addr, false);
         return Vector2_TEMP_GEN_0;
     }
 
@@ -133,7 +134,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Vector2);var returnedJSObj = jsObj.Normalized();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Normalized(int this_addr);
+    public static native int internal_native_Normalized_addr(int this_addr);
 
     public float Dot(Vector2 inRHS) {
         return internal_native_Dot(native_address, inRHS.native_address);

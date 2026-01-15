@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.math.Vec3;
@@ -13,25 +14,25 @@ public class EmptyShape extends Shape {
 
     public EmptyShape(Vec3 inCenterOfMass) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Vec3(inCenterOfMass.native_address);
+        long addr = internal_native_create_Vec3_addr(inCenterOfMass.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new EmptyShape(*((Vec3* )inCenterOfMass_addr));
 */
-    public static native long internal_native_create_Vec3(long inCenterOfMass_addr);
+    public static native long internal_native_create_Vec3_addr(long inCenterOfMass_addr);
 
     public EmptyShape() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new EmptyShape();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

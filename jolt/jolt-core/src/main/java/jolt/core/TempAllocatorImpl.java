@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.core;
 
 public class TempAllocatorImpl extends TempAllocator {
@@ -11,14 +12,14 @@ public class TempAllocatorImpl extends TempAllocator {
 
     public TempAllocatorImpl(int size) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int(size);
+        long addr = internal_native_create_int_addr(size);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new TempAllocatorImpl((int)size);
 */
-    public static native long internal_native_create_int(int size);
+    public static native long internal_native_create_int_addr(int size);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

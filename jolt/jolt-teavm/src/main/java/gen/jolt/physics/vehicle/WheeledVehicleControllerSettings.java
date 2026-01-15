@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 public class WheeledVehicleControllerSettings extends VehicleControllerSettings {
@@ -17,7 +18,7 @@ public class WheeledVehicleControllerSettings extends VehicleControllerSettings 
 
     public WheeledVehicleControllerSettings() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -26,7 +27,7 @@ var jsObj = new jolt.WheeledVehicleControllerSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.WheeledVehicleControllerSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,12 +56,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public VehicleEngineSettings get_mEngine() {
-        int pointer = internal_native_get_mEngine(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mEngine_addr(native_address);
+        if (addr == 0)
             return VehicleEngineSettings.NULL;
         if (VehicleEngineSettings_TEMP_GEN_0 == null)
             VehicleEngineSettings_TEMP_GEN_0 = VehicleEngineSettings.native_new();
-        VehicleEngineSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        VehicleEngineSettings_TEMP_GEN_0.internal_reset(addr, false);
         return VehicleEngineSettings_TEMP_GEN_0;
     }
 
@@ -71,7 +72,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleControllerSettings);var returnedJSObj = jsObj.get_mEngine();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mEngine(int this_addr);
+    public static native int internal_native_get_mEngine_addr(int this_addr);
 
     public void set_mEngine(VehicleEngineSettings mEngine) {
         internal_native_set_mEngine(native_address, mEngine.native_address);
@@ -85,12 +86,12 @@ jsObj.set_mEngine(mEngine_addr);
     public static native void internal_native_set_mEngine(int this_addr, int mEngine_addr);
 
     public VehicleTransmissionSettings get_mTransmission() {
-        int pointer = internal_native_get_mTransmission(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mTransmission_addr(native_address);
+        if (addr == 0)
             return VehicleTransmissionSettings.NULL;
         if (VehicleTransmissionSettings_TEMP_GEN_0 == null)
             VehicleTransmissionSettings_TEMP_GEN_0 = VehicleTransmissionSettings.native_new();
-        VehicleTransmissionSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        VehicleTransmissionSettings_TEMP_GEN_0.internal_reset(addr, false);
         return VehicleTransmissionSettings_TEMP_GEN_0;
     }
 
@@ -101,7 +102,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleControllerSettings);var returnedJSObj = jsObj.get_mTransmission();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mTransmission(int this_addr);
+    public static native int internal_native_get_mTransmission_addr(int this_addr);
 
     public void set_mTransmission(VehicleTransmissionSettings mTransmission) {
         internal_native_set_mTransmission(native_address, mTransmission.native_address);
@@ -115,12 +116,12 @@ jsObj.set_mTransmission(mTransmission_addr);
     public static native void internal_native_set_mTransmission(int this_addr, int mTransmission_addr);
 
     public ArrayVehicleDifferentialSettings get_mDifferentials() {
-        int pointer = internal_native_get_mDifferentials(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mDifferentials_addr(native_address);
+        if (addr == 0)
             return ArrayVehicleDifferentialSettings.NULL;
         if (ArrayVehicleDifferentialSettings_TEMP_GEN_0 == null)
             ArrayVehicleDifferentialSettings_TEMP_GEN_0 = ArrayVehicleDifferentialSettings.native_new();
-        ArrayVehicleDifferentialSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayVehicleDifferentialSettings_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayVehicleDifferentialSettings_TEMP_GEN_0;
     }
 
@@ -131,7 +132,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheeledVehicleControllerSettings);var returnedJSObj = jsObj.get_mDifferentials();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mDifferentials(int this_addr);
+    public static native int internal_native_get_mDifferentials_addr(int this_addr);
 
     public void set_mDifferentials(ArrayVehicleDifferentialSettings mDifferentials) {
         internal_native_set_mDifferentials(native_address, mDifferentials.native_address);

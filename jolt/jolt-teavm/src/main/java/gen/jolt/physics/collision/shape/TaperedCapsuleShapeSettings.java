@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.physics.collision.PhysicsMaterial;
@@ -13,7 +14,7 @@ public class TaperedCapsuleShapeSettings extends ConvexShapeSettings {
 
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, inMaterial.native_address);
+        int addr = internal_native_create_float_float_float_PhysicsMaterial_addr(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
@@ -22,11 +23,11 @@ var jsObj = new jolt.TaperedCapsuleShapeSettings(inHalfHeightOfTaperedCylinder, 
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfHeightOfTaperedCylinder", "inTopRadius", "inBottomRadius", "inMaterial_addr"}, script = "var jsObj = new jolt.TaperedCapsuleShapeSettings(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, inMaterial_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_float_float_float_PhysicsMaterial(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, int inMaterial_addr);
+    public static native int internal_native_create_float_float_float_PhysicsMaterial_addr(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, int inMaterial_addr);
 
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_float_float_float(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);
+        int addr = internal_native_create_float_float_float_addr(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);
         internal_reset(addr, true);
     }
 
@@ -35,7 +36,7 @@ var jsObj = new jolt.TaperedCapsuleShapeSettings(inHalfHeightOfTaperedCylinder, 
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfHeightOfTaperedCylinder", "inTopRadius", "inBottomRadius"}, script = "var jsObj = new jolt.TaperedCapsuleShapeSettings(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_float_float_float(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius);
+    public static native int internal_native_create_float_float_float_addr(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

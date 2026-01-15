@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.geometry.TriangleList;
@@ -23,47 +24,47 @@ public class MeshShapeSettings extends ShapeSettings {
 
     public MeshShapeSettings() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new MeshShapeSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     public MeshShapeSettings(TriangleList inTriangleList, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_TriangleList_PhysicsMaterialList(inTriangleList.native_address, inMaterialList.native_address);
+        long addr = internal_native_create_TriangleList_PhysicsMaterialList_addr(inTriangleList.native_address, inMaterialList.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new MeshShapeSettings(*((TriangleList* )inTriangleList_addr), *((PhysicsMaterialList* )inMaterialList_addr));
 */
-    public static native long internal_native_create_TriangleList_PhysicsMaterialList(long inTriangleList_addr, long inMaterialList_addr);
+    public static native long internal_native_create_TriangleList_PhysicsMaterialList_addr(long inTriangleList_addr, long inMaterialList_addr);
 
     public MeshShapeSettings(TriangleList inTriangleList) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_TriangleList(inTriangleList.native_address);
+        long addr = internal_native_create_TriangleList_addr(inTriangleList.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new MeshShapeSettings(*((TriangleList* )inTriangleList_addr));
 */
-    public static native long internal_native_create_TriangleList(long inTriangleList_addr);
+    public static native long internal_native_create_TriangleList_addr(long inTriangleList_addr);
 
     public MeshShapeSettings(VertexList inVertices, IndexedTriangleList inTriangles, PhysicsMaterialList inMaterialList) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList(inVertices.native_address, inTriangles.native_address, inMaterialList.native_address);
+        long addr = internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList_addr(inVertices.native_address, inTriangles.native_address, inMaterialList.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new MeshShapeSettings(*((VertexList* )inVertices_addr), *((IndexedTriangleList* )inTriangles_addr), *((PhysicsMaterialList* )inMaterialList_addr));
 */
-    public static native long internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList(long inVertices_addr, long inTriangles_addr, long inMaterialList_addr);
+    public static native long internal_native_create_VertexList_IndexedTriangleList_PhysicsMaterialList_addr(long inVertices_addr, long inTriangles_addr, long inMaterialList_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -101,12 +102,12 @@ nativeObject->Sanitize();
     public static native void internal_native_Sanitize(long this_addr);
 
     public VertexList get_mTriangleVertices() {
-        long pointer = internal_native_get_mTriangleVertices(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mTriangleVertices_addr(native_address);
+        if (addr == 0)
             return VertexList.NULL;
         if (VertexList_TEMP_GEN_0 == null)
             VertexList_TEMP_GEN_0 = VertexList.native_new();
-        VertexList_TEMP_GEN_0.internal_reset(pointer, false);
+        VertexList_TEMP_GEN_0.internal_reset(addr, false);
         return VertexList_TEMP_GEN_0;
     }
 
@@ -114,7 +115,7 @@ nativeObject->Sanitize();
 MeshShapeSettings* nativeObject = (MeshShapeSettings*)this_addr;
 return (jlong)&nativeObject->mTriangleVertices;
 */
-    public static native long internal_native_get_mTriangleVertices(long this_addr);
+    public static native long internal_native_get_mTriangleVertices_addr(long this_addr);
 
     public void set_mTriangleVertices(VertexList mTriangleVertices) {
         internal_native_set_mTriangleVertices(native_address, mTriangleVertices.native_address);
@@ -127,12 +128,12 @@ nativeObject->mTriangleVertices = *((VertexList*)mTriangleVertices_addr);
     public static native void internal_native_set_mTriangleVertices(long this_addr, long mTriangleVertices_addr);
 
     public IndexedTriangleList get_mIndexedTriangles() {
-        long pointer = internal_native_get_mIndexedTriangles(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mIndexedTriangles_addr(native_address);
+        if (addr == 0)
             return IndexedTriangleList.NULL;
         if (IndexedTriangleList_TEMP_GEN_0 == null)
             IndexedTriangleList_TEMP_GEN_0 = IndexedTriangleList.native_new();
-        IndexedTriangleList_TEMP_GEN_0.internal_reset(pointer, false);
+        IndexedTriangleList_TEMP_GEN_0.internal_reset(addr, false);
         return IndexedTriangleList_TEMP_GEN_0;
     }
 
@@ -140,7 +141,7 @@ nativeObject->mTriangleVertices = *((VertexList*)mTriangleVertices_addr);
 MeshShapeSettings* nativeObject = (MeshShapeSettings*)this_addr;
 return (jlong)&nativeObject->mIndexedTriangles;
 */
-    public static native long internal_native_get_mIndexedTriangles(long this_addr);
+    public static native long internal_native_get_mIndexedTriangles_addr(long this_addr);
 
     public void set_mIndexedTriangles(IndexedTriangleList mIndexedTriangles) {
         internal_native_set_mIndexedTriangles(native_address, mIndexedTriangles.native_address);
@@ -153,12 +154,12 @@ nativeObject->mIndexedTriangles = *((IndexedTriangleList*)mIndexedTriangles_addr
     public static native void internal_native_set_mIndexedTriangles(long this_addr, long mIndexedTriangles_addr);
 
     public PhysicsMaterialList get_mMaterials() {
-        long pointer = internal_native_get_mMaterials(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mMaterials_addr(native_address);
+        if (addr == 0)
             return PhysicsMaterialList.NULL;
         if (PhysicsMaterialList_TEMP_GEN_0 == null)
             PhysicsMaterialList_TEMP_GEN_0 = PhysicsMaterialList.native_new();
-        PhysicsMaterialList_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterialList_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterialList_TEMP_GEN_0;
     }
 
@@ -166,7 +167,7 @@ nativeObject->mIndexedTriangles = *((IndexedTriangleList*)mIndexedTriangles_addr
 MeshShapeSettings* nativeObject = (MeshShapeSettings*)this_addr;
 return (jlong)&nativeObject->mMaterials;
 */
-    public static native long internal_native_get_mMaterials(long this_addr);
+    public static native long internal_native_get_mMaterials_addr(long this_addr);
 
     public void set_mMaterials(PhysicsMaterialList mMaterials) {
         internal_native_set_mMaterials(native_address, mMaterials.native_address);

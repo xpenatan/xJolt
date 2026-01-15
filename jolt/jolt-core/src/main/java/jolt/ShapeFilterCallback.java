@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt;
 
 import jolt.physics.collision.ShapeFilter;
@@ -76,7 +77,7 @@ delete nativeObject;
 
     public ShapeFilterCallback() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -122,7 +123,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)new ShapeFilterCallbackImpl();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 ShapeFilterCallbackImpl* nativeObject = (ShapeFilterCallbackImpl*)this_addr;

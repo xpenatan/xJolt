@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -51,14 +52,14 @@ public class TransformedShape extends IDLBase {
     static public final TransformedShape NULL = TransformedShape.native_new();
 
     public TransformedShape() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new TransformedShape();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -145,12 +146,12 @@ nativeObject->CollectTransformedShapes(*((AABox* )inBox_addr), *((TransformedSha
     public static native void internal_native_CollectTransformedShapes(long this_addr, long inBox_addr, long ioCollector_addr, long inShapeFilter_addr);
 
     public Vec3 GetShapeScale() {
-        long pointer = internal_native_GetShapeScale(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetShapeScale_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -159,7 +160,7 @@ TransformedShape* nativeObject = (TransformedShape*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetShapeScale();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetShapeScale(long this_addr);
+    public static native long internal_native_GetShapeScale_addr(long this_addr);
 
     public void SetShapeScale(Vec3 inScale) {
         internal_native_SetShapeScale(native_address, inScale.native_address);
@@ -172,12 +173,12 @@ nativeObject->SetShapeScale(*((Vec3* )inScale_addr));
     public static native void internal_native_SetShapeScale(long this_addr, long inScale_addr);
 
     public Mat44 GetCenterOfMassTransform() {
-        long pointer = internal_native_GetCenterOfMassTransform(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetCenterOfMassTransform_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -186,15 +187,15 @@ TransformedShape* nativeObject = (TransformedShape*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetCenterOfMassTransform();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetCenterOfMassTransform(long this_addr);
+    public static native long internal_native_GetCenterOfMassTransform_addr(long this_addr);
 
     public Mat44 GetInverseCenterOfMassTransform() {
-        long pointer = internal_native_GetInverseCenterOfMassTransform(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetInverseCenterOfMassTransform_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
-        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(addr, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -203,7 +204,7 @@ TransformedShape* nativeObject = (TransformedShape*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetInverseCenterOfMassTransform();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetInverseCenterOfMassTransform(long this_addr);
+    public static native long internal_native_GetInverseCenterOfMassTransform_addr(long this_addr);
 
     public void SetWorldTransform(Vec3 inPosition, Quat inRotation, Vec3 inScale) {
         internal_native_SetWorldTransform(native_address, inPosition.native_address, inRotation.native_address, inScale.native_address);
@@ -226,12 +227,12 @@ nativeObject->SetWorldTransform(*((Mat44* )inTransform_addr));
     public static native void internal_native_SetWorldTransform(long this_addr, long inTransform_addr);
 
     public Mat44 GetWorldTransform() {
-        long pointer = internal_native_GetWorldTransform(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetWorldTransform_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_2 == null)
             Mat44_TEMP_GEN_2 = Mat44.native_new();
-        Mat44_TEMP_GEN_2.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_2.internal_reset(addr, false);
         return Mat44_TEMP_GEN_2;
     }
 
@@ -240,15 +241,15 @@ TransformedShape* nativeObject = (TransformedShape*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetWorldTransform();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetWorldTransform(long this_addr);
+    public static native long internal_native_GetWorldTransform_addr(long this_addr);
 
     public AABox GetWorldSpaceBounds() {
-        long pointer = internal_native_GetWorldSpaceBounds(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetWorldSpaceBounds_addr(native_address);
+        if (addr == 0)
             return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
-        AABox_TEMP_GEN_0.internal_reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(addr, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -257,15 +258,15 @@ TransformedShape* nativeObject = (TransformedShape*)this_addr;
 static AABox copy_addr;
 copy_addr = nativeObject->GetWorldSpaceBounds();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetWorldSpaceBounds(long this_addr);
+    public static native long internal_native_GetWorldSpaceBounds_addr(long this_addr);
 
     public Vec3 GetWorldSpaceSurfaceNormal(SubShapeID inSubShapeID, Vec3 inPosition) {
-        long pointer = internal_native_GetWorldSpaceSurfaceNormal(native_address, inSubShapeID.native_address, inPosition.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetWorldSpaceSurfaceNormal_addr(native_address, inSubShapeID.native_address, inPosition.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -274,15 +275,15 @@ TransformedShape* nativeObject = (TransformedShape*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetWorldSpaceSurfaceNormal(*((SubShapeID* )inSubShapeID_addr), *((Vec3* )inPosition_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetWorldSpaceSurfaceNormal(long this_addr, long inSubShapeID_addr, long inPosition_addr);
+    public static native long internal_native_GetWorldSpaceSurfaceNormal_addr(long this_addr, long inSubShapeID_addr, long inPosition_addr);
 
     public PhysicsMaterial GetMaterial(SubShapeID inSubShapeID) {
-        long pointer = internal_native_GetMaterial(native_address, inSubShapeID.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetMaterial_addr(native_address, inSubShapeID.native_address);
+        if (addr == 0)
             return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
-        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -291,15 +292,15 @@ TransformedShape* nativeObject = (TransformedShape*)this_addr;
 const PhysicsMaterial* obj = nativeObject->GetMaterial(*((SubShapeID* )inSubShapeID_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_GetMaterial(long this_addr, long inSubShapeID_addr);
+    public static native long internal_native_GetMaterial_addr(long this_addr, long inSubShapeID_addr);
 
     public Vec3 get_mShapePositionCOM() {
-        long pointer = internal_native_get_mShapePositionCOM(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mShapePositionCOM_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -307,7 +308,7 @@ return (jlong)obj;
 TransformedShape* nativeObject = (TransformedShape*)this_addr;
 return (jlong)&nativeObject->mShapePositionCOM;
 */
-    public static native long internal_native_get_mShapePositionCOM(long this_addr);
+    public static native long internal_native_get_mShapePositionCOM_addr(long this_addr);
 
     public void set_mShapePositionCOM(Vec3 mShapePositionCOM) {
         internal_native_set_mShapePositionCOM(native_address, mShapePositionCOM.native_address);
@@ -320,12 +321,12 @@ nativeObject->mShapePositionCOM = *((Vec3*)mShapePositionCOM_addr);
     public static native void internal_native_set_mShapePositionCOM(long this_addr, long mShapePositionCOM_addr);
 
     public Quat get_mShapeRotation() {
-        long pointer = internal_native_get_mShapeRotation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mShapeRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -333,7 +334,7 @@ nativeObject->mShapePositionCOM = *((Vec3*)mShapePositionCOM_addr);
 TransformedShape* nativeObject = (TransformedShape*)this_addr;
 return (jlong)&nativeObject->mShapeRotation;
 */
-    public static native long internal_native_get_mShapeRotation(long this_addr);
+    public static native long internal_native_get_mShapeRotation_addr(long this_addr);
 
     public void set_mShapeRotation(Quat mShapeRotation) {
         internal_native_set_mShapeRotation(native_address, mShapeRotation.native_address);
@@ -346,12 +347,12 @@ nativeObject->mShapeRotation = *((Quat*)mShapeRotation_addr);
     public static native void internal_native_set_mShapeRotation(long this_addr, long mShapeRotation_addr);
 
     public Shape get_mShape() {
-        long pointer = internal_native_get_mShape(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -360,7 +361,7 @@ TransformedShape* nativeObject = (TransformedShape*)this_addr;
 const Shape* attr = nativeObject->mShape;
 return (jlong)attr;
 */
-    public static native long internal_native_get_mShape(long this_addr);
+    public static native long internal_native_get_mShape_addr(long this_addr);
 
     public void set_mShape(Shape mShape) {
         internal_native_set_mShape(native_address, mShape.native_address);
@@ -373,12 +374,12 @@ nativeObject->mShape = (Shape*)mShape_addr;
     public static native void internal_native_set_mShape(long this_addr, long mShape_addr);
 
     public Float3 get_mShapeScale() {
-        long pointer = internal_native_get_mShapeScale(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mShapeScale_addr(native_address);
+        if (addr == 0)
             return Float3.NULL;
         if (Float3_TEMP_GEN_0 == null)
             Float3_TEMP_GEN_0 = Float3.native_new();
-        Float3_TEMP_GEN_0.internal_reset(pointer, false);
+        Float3_TEMP_GEN_0.internal_reset(addr, false);
         return Float3_TEMP_GEN_0;
     }
 
@@ -386,7 +387,7 @@ nativeObject->mShape = (Shape*)mShape_addr;
 TransformedShape* nativeObject = (TransformedShape*)this_addr;
 return (jlong)&nativeObject->mShapeScale;
 */
-    public static native long internal_native_get_mShapeScale(long this_addr);
+    public static native long internal_native_get_mShapeScale_addr(long this_addr);
 
     public void set_mShapeScale(Float3 mShapeScale) {
         internal_native_set_mShapeScale(native_address, mShapeScale.native_address);
@@ -399,12 +400,12 @@ nativeObject->mShapeScale = *((Float3*)mShapeScale_addr);
     public static native void internal_native_set_mShapeScale(long this_addr, long mShapeScale_addr);
 
     public BodyID get_mBodyID() {
-        long pointer = internal_native_get_mBodyID(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mBodyID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -412,7 +413,7 @@ nativeObject->mShapeScale = *((Float3*)mShapeScale_addr);
 TransformedShape* nativeObject = (TransformedShape*)this_addr;
 return (jlong)&nativeObject->mBodyID;
 */
-    public static native long internal_native_get_mBodyID(long this_addr);
+    public static native long internal_native_get_mBodyID_addr(long this_addr);
 
     public void set_mBodyID(BodyID mBodyID) {
         internal_native_set_mBodyID(native_address, mBodyID.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.ragdoll;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -34,7 +35,7 @@ public class Ragdoll extends IDLBase {
     static public final Ragdoll NULL = Ragdoll.native_new();
 
     public Ragdoll(PhysicsSystem inSystem) {
-        int addr = internal_native_create_PhysicsSystem(inSystem.native_address);
+        int addr = internal_native_create_PhysicsSystem_addr(inSystem.native_address);
         internal_reset(addr, true);
     }
 
@@ -43,7 +44,7 @@ var jsObj = new jolt.Ragdoll(inSystem_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inSystem_addr"}, script = "var jsObj = new jolt.Ragdoll(inSystem_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_PhysicsSystem(int inSystem_addr);
+    public static native int internal_native_create_PhysicsSystem_addr(int inSystem_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -393,12 +394,12 @@ return returnedJSObj;
     public static native int internal_native_GetBodyCount(int this_addr);
 
     public BodyID GetBodyID(int inBodyIndex) {
-        int pointer = internal_native_GetBodyID(native_address, inBodyIndex);
-        if (pointer == 0)
+        int addr = internal_native_GetBodyID_addr(native_address, inBodyIndex);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -409,15 +410,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inBodyIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetBodyID(inBodyIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetBodyID(int this_addr, int inBodyIndex);
+    public static native int internal_native_GetBodyID_addr(int this_addr, int inBodyIndex);
 
     public BodyIDVector GetBodyIDs() {
-        int pointer = internal_native_GetBodyIDs(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetBodyIDs_addr(native_address);
+        if (addr == 0)
             return BodyIDVector.NULL;
         if (BodyIDVector_TEMP_GEN_0 == null)
             BodyIDVector_TEMP_GEN_0 = BodyIDVector.native_new();
-        BodyIDVector_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyIDVector_TEMP_GEN_0.internal_reset(addr, false);
         return BodyIDVector_TEMP_GEN_0;
     }
 
@@ -428,7 +429,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetBodyIDs();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetBodyIDs(int this_addr);
+    public static native int internal_native_GetBodyIDs_addr(int this_addr);
 
     public int GetConstraintCount() {
         return internal_native_GetConstraintCount(native_address);
@@ -443,12 +444,12 @@ return returnedJSObj;
     public static native int internal_native_GetConstraintCount(int this_addr);
 
     public AABox GetWorldSpaceBounds(boolean inLockBodies) {
-        int pointer = internal_native_GetWorldSpaceBounds(native_address, inLockBodies);
-        if (pointer == 0)
+        int addr = internal_native_GetWorldSpaceBounds_addr(native_address, inLockBodies);
+        if (addr == 0)
             return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
-        AABox_TEMP_GEN_0.internal_reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(addr, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -459,15 +460,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inLockBodies"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetWorldSpaceBounds(inLockBodies);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetWorldSpaceBounds(int this_addr, boolean inLockBodies);
+    public static native int internal_native_GetWorldSpaceBounds_addr(int this_addr, boolean inLockBodies);
 
     public AABox GetWorldSpaceBounds() {
-        int pointer = internal_native_GetWorldSpaceBounds(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetWorldSpaceBounds_addr(native_address);
+        if (addr == 0)
             return AABox.NULL;
         if (AABox_TEMP_GEN_1 == null)
             AABox_TEMP_GEN_1 = AABox.native_new();
-        AABox_TEMP_GEN_1.internal_reset(pointer, false);
+        AABox_TEMP_GEN_1.internal_reset(addr, false);
         return AABox_TEMP_GEN_1;
     }
 
@@ -478,15 +479,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetWorldSpaceBounds();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetWorldSpaceBounds(int this_addr);
+    public static native int internal_native_GetWorldSpaceBounds_addr(int this_addr);
 
     public TwoBodyConstraint GetConstraint(int inConstraintIndex) {
-        int pointer = internal_native_GetConstraint(native_address, inConstraintIndex);
-        if (pointer == 0)
+        int addr = internal_native_GetConstraint_addr(native_address, inConstraintIndex);
+        if (addr == 0)
             return TwoBodyConstraint.NULL;
         if (TwoBodyConstraint_TEMP_GEN_0 == null)
             TwoBodyConstraint_TEMP_GEN_0 = TwoBodyConstraint.native_new();
-        TwoBodyConstraint_TEMP_GEN_0.internal_reset(pointer, false);
+        TwoBodyConstraint_TEMP_GEN_0.internal_reset(addr, false);
         return TwoBodyConstraint_TEMP_GEN_0;
     }
 
@@ -497,15 +498,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inConstraintIndex"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetConstraint(inConstraintIndex);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetConstraint(int this_addr, int inConstraintIndex);
+    public static native int internal_native_GetConstraint_addr(int this_addr, int inConstraintIndex);
 
     public RagdollSettings GetRagdollSettings() {
-        int pointer = internal_native_GetRagdollSettings(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetRagdollSettings_addr(native_address);
+        if (addr == 0)
             return RagdollSettings.NULL;
         if (RagdollSettings_TEMP_GEN_0 == null)
             RagdollSettings_TEMP_GEN_0 = RagdollSettings.native_new();
-        RagdollSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        RagdollSettings_TEMP_GEN_0.internal_reset(addr, false);
         return RagdollSettings_TEMP_GEN_0;
     }
 
@@ -516,5 +517,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Ragdoll);var returnedJSObj = jsObj.GetRagdollSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetRagdollSettings(int this_addr);
+    public static native int internal_native_GetRagdollSettings_addr(int this_addr);
 }

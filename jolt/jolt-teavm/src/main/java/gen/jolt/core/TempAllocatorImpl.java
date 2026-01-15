@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.core;
 
 public class TempAllocatorImpl extends TempAllocator {
@@ -11,7 +12,7 @@ public class TempAllocatorImpl extends TempAllocator {
 
     public TempAllocatorImpl(int size) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int(size);
+        int addr = internal_native_create_int_addr(size);
         internal_reset(addr, true);
     }
 
@@ -20,7 +21,7 @@ var jsObj = new jolt.TempAllocatorImpl(size);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"size"}, script = "var jsObj = new jolt.TempAllocatorImpl(size);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int(int size);
+    public static native int internal_native_create_int_addr(int size);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -68,7 +69,7 @@ jsObj.SetVehicleConstraint(inConstraint_addr);
     public static native void internal_native_SetVehicleConstraint(int this_addr, int inConstraint_addr);
 
     public VehicleConstraintCallbacksEm() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -168,7 +169,7 @@ var jsObj = new jolt.VehicleConstraintCallbacksJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.VehicleConstraintCallbacksJS();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "GetCombinedFriction", "OnPreStepCallback", "OnPostCollideCallback", "OnPostStepCallback" }, script = "var VehicleConstraintCallbacksJS = jolt.wrapPointer(this_addr, jolt.VehicleConstraintCallbacksJS); VehicleConstraintCallbacksJS.GetCombinedFriction = GetCombinedFriction; VehicleConstraintCallbacksJS.OnPreStepCallback = OnPreStepCallback; VehicleConstraintCallbacksJS.OnPostCollideCallback = OnPostCollideCallback; VehicleConstraintCallbacksJS.OnPostStepCallback = OnPostStepCallback;")
     public static native void internal_native_setupCallback(int this_addr, GetCombinedFriction GetCombinedFriction, OnPreStepCallback OnPreStepCallback, OnPostCollideCallback OnPostCollideCallback, OnPostStepCallback OnPostStepCallback);

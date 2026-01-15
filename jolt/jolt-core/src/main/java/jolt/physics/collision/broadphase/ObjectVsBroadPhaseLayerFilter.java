@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.broadphase;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,14 +13,14 @@ public class ObjectVsBroadPhaseLayerFilter extends IDLBase {
     static public final ObjectVsBroadPhaseLayerFilter NULL = ObjectVsBroadPhaseLayerFilter.native_new();
 
     public ObjectVsBroadPhaseLayerFilter() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ObjectVsBroadPhaseLayerFilter();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.skeleton;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,7 +15,7 @@ public class SkeletalAnimation extends IDLBase {
     static public final SkeletalAnimation NULL = SkeletalAnimation.native_new();
 
     public SkeletalAnimation() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -23,7 +24,7 @@ var jsObj = new jolt.SkeletalAnimation();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SkeletalAnimation();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -85,12 +86,12 @@ jsObj.Sample(inTime, ioPose_addr);
     public static native void internal_native_Sample(int this_addr, float inTime, int ioPose_addr);
 
     public ArraySkeletonAnimatedJoint GetAnimatedJoints() {
-        int pointer = internal_native_GetAnimatedJoints(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetAnimatedJoints_addr(native_address);
+        if (addr == 0)
             return ArraySkeletonAnimatedJoint.NULL;
         if (ArraySkeletonAnimatedJoint_TEMP_GEN_0 == null)
             ArraySkeletonAnimatedJoint_TEMP_GEN_0 = ArraySkeletonAnimatedJoint.native_new();
-        ArraySkeletonAnimatedJoint_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySkeletonAnimatedJoint_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySkeletonAnimatedJoint_TEMP_GEN_0;
     }
 
@@ -101,5 +102,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimation);var returnedJSObj = jsObj.GetAnimatedJoints();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetAnimatedJoints(int this_addr);
+    public static native int internal_native_GetAnimatedJoints_addr(int this_addr);
 }

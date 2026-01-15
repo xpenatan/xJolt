@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.skeleton;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -57,12 +58,12 @@ jsObj.FromMatrix(inMatrix_addr);
     public static native void internal_native_FromMatrix(int this_addr, int inMatrix_addr);
 
     public Mat44 ToMatrix() {
-        int pointer = internal_native_ToMatrix(native_address);
-        if (pointer == 0)
+        int addr = internal_native_ToMatrix_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -73,15 +74,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);var returnedJSObj = jsObj.ToMatrix();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_ToMatrix(int this_addr);
+    public static native int internal_native_ToMatrix_addr(int this_addr);
 
     public Vec3 get_mTranslation() {
-        int pointer = internal_native_get_mTranslation(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mTranslation_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -92,7 +93,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);var returnedJSObj = jsObj.get_mTranslation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mTranslation(int this_addr);
+    public static native int internal_native_get_mTranslation_addr(int this_addr);
 
     public void set_mTranslation(Vec3 mTranslation) {
         internal_native_set_mTranslation(native_address, mTranslation.native_address);
@@ -106,12 +107,12 @@ jsObj.set_mTranslation(mTranslation_addr);
     public static native void internal_native_set_mTranslation(int this_addr, int mTranslation_addr);
 
     public Quat get_mRotation() {
-        int pointer = internal_native_get_mRotation(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -122,7 +123,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SkeletalAnimationJointState);var returnedJSObj = jsObj.get_mRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mRotation(int this_addr);
+    public static native int internal_native_get_mRotation_addr(int this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation(native_address, mRotation.native_address);

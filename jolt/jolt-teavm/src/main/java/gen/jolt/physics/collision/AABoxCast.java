@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -18,7 +19,7 @@ public class AABoxCast extends IDLBase {
     static public final AABoxCast NULL = AABoxCast.native_new();
 
     public AABoxCast() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -27,7 +28,7 @@ var jsObj = new jolt.AABoxCast();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.AABoxCast();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,12 +56,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public AABox get_mBox() {
-        int pointer = internal_native_get_mBox(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mBox_addr(native_address);
+        if (addr == 0)
             return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
-        AABox_TEMP_GEN_0.internal_reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(addr, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -71,7 +72,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);var returnedJSObj = jsObj.get_mBox();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mBox(int this_addr);
+    public static native int internal_native_get_mBox_addr(int this_addr);
 
     public void set_mBox(AABox mBox) {
         internal_native_set_mBox(native_address, mBox.native_address);
@@ -85,12 +86,12 @@ jsObj.set_mBox(mBox_addr);
     public static native void internal_native_set_mBox(int this_addr, int mBox_addr);
 
     public Vec3 get_mDirection() {
-        int pointer = internal_native_get_mDirection(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mDirection_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -101,7 +102,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.AABoxCast);var returnedJSObj = jsObj.get_mDirection();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mDirection(int this_addr);
+    public static native int internal_native_get_mDirection_addr(int this_addr);
 
     public void set_mDirection(Vec3 mDirection) {
         internal_native_set_mDirection(native_address, mDirection.native_address);

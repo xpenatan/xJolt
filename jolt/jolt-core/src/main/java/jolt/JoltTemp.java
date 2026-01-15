@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -118,602 +119,602 @@ public class JoltTemp extends IDLBase {
     }
 
     public static Vec3 Vec3_1() {
-        long pointer = internal_native_Vec3_1__0();
-        if (pointer == 0)
+        long addr = internal_native_Vec3_1__0_addr();
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_0 == null)
             Vec3_TEMP_STATIC_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_1();
 */
-    public static native long internal_native_Vec3_1__0();
+    public static native long internal_native_Vec3_1__0_addr();
 
     public static Vec3 Vec3_1(float inX, float inY, float inZ) {
-        long pointer = internal_native_Vec3_1__1(inX, inY, inZ);
-        if (pointer == 0)
+        long addr = internal_native_Vec3_1__1_addr(inX, inY, inZ);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_1 == null)
             Vec3_TEMP_STATIC_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_1;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_1((float)inX, (float)inY, (float)inZ);
 */
-    public static native long internal_native_Vec3_1__1(float inX, float inY, float inZ);
+    public static native long internal_native_Vec3_1__1_addr(float inX, float inY, float inZ);
 
     public static Vec3 Vec3_1(Vec3 other) {
-        long pointer = internal_native_Vec3_1__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Vec3_1__2_addr(other.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_2 == null)
             Vec3_TEMP_STATIC_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_2;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_1((Vec3* )other_addr);
 */
-    public static native long internal_native_Vec3_1__2(long other_addr);
+    public static native long internal_native_Vec3_1__2_addr(long other_addr);
 
     public static Vec3 Vec3_2() {
-        long pointer = internal_native_Vec3_2__0();
-        if (pointer == 0)
+        long addr = internal_native_Vec3_2__0_addr();
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_3 == null)
             Vec3_TEMP_STATIC_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_3;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_2();
 */
-    public static native long internal_native_Vec3_2__0();
+    public static native long internal_native_Vec3_2__0_addr();
 
     public static Vec3 Vec3_2(float inX, float inY, float inZ) {
-        long pointer = internal_native_Vec3_2__1(inX, inY, inZ);
-        if (pointer == 0)
+        long addr = internal_native_Vec3_2__1_addr(inX, inY, inZ);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_4 == null)
             Vec3_TEMP_STATIC_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_4;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_2((float)inX, (float)inY, (float)inZ);
 */
-    public static native long internal_native_Vec3_2__1(float inX, float inY, float inZ);
+    public static native long internal_native_Vec3_2__1_addr(float inX, float inY, float inZ);
 
     public static Vec3 Vec3_2(Vec3 other) {
-        long pointer = internal_native_Vec3_2__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Vec3_2__2_addr(other.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_5 == null)
             Vec3_TEMP_STATIC_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_5.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_5;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_2((Vec3* )other_addr);
 */
-    public static native long internal_native_Vec3_2__2(long other_addr);
+    public static native long internal_native_Vec3_2__2_addr(long other_addr);
 
     public static Vec3 Vec3_3() {
-        long pointer = internal_native_Vec3_3__0();
-        if (pointer == 0)
+        long addr = internal_native_Vec3_3__0_addr();
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_6 == null)
             Vec3_TEMP_STATIC_GEN_6 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_6.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_6;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_3();
 */
-    public static native long internal_native_Vec3_3__0();
+    public static native long internal_native_Vec3_3__0_addr();
 
     public static Vec3 Vec3_3(float inX, float inY, float inZ) {
-        long pointer = internal_native_Vec3_3__1(inX, inY, inZ);
-        if (pointer == 0)
+        long addr = internal_native_Vec3_3__1_addr(inX, inY, inZ);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_7 == null)
             Vec3_TEMP_STATIC_GEN_7 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_7.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_7;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_3((float)inX, (float)inY, (float)inZ);
 */
-    public static native long internal_native_Vec3_3__1(float inX, float inY, float inZ);
+    public static native long internal_native_Vec3_3__1_addr(float inX, float inY, float inZ);
 
     public static Vec3 Vec3_3(Vec3 other) {
-        long pointer = internal_native_Vec3_3__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Vec3_3__2_addr(other.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_8 == null)
             Vec3_TEMP_STATIC_GEN_8 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_8.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_8;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_3((Vec3* )other_addr);
 */
-    public static native long internal_native_Vec3_3__2(long other_addr);
+    public static native long internal_native_Vec3_3__2_addr(long other_addr);
 
     public static Vec3 Vec3_4() {
-        long pointer = internal_native_Vec3_4__0();
-        if (pointer == 0)
+        long addr = internal_native_Vec3_4__0_addr();
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_9 == null)
             Vec3_TEMP_STATIC_GEN_9 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_9.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_9;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_4();
 */
-    public static native long internal_native_Vec3_4__0();
+    public static native long internal_native_Vec3_4__0_addr();
 
     public static Vec3 Vec3_4(float inX, float inY, float inZ) {
-        long pointer = internal_native_Vec3_4__1(inX, inY, inZ);
-        if (pointer == 0)
+        long addr = internal_native_Vec3_4__1_addr(inX, inY, inZ);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_10 == null)
             Vec3_TEMP_STATIC_GEN_10 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_10.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_10;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_4((float)inX, (float)inY, (float)inZ);
 */
-    public static native long internal_native_Vec3_4__1(float inX, float inY, float inZ);
+    public static native long internal_native_Vec3_4__1_addr(float inX, float inY, float inZ);
 
     public static Vec3 Vec3_4(Vec3 other) {
-        long pointer = internal_native_Vec3_4__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Vec3_4__2_addr(other.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_STATIC_GEN_11 == null)
             Vec3_TEMP_STATIC_GEN_11 = Vec3.native_new();
-        Vec3_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
+        Vec3_TEMP_STATIC_GEN_11.internal_reset(addr, false);
         return Vec3_TEMP_STATIC_GEN_11;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec3_4((Vec3* )other_addr);
 */
-    public static native long internal_native_Vec3_4__2(long other_addr);
+    public static native long internal_native_Vec3_4__2_addr(long other_addr);
 
     public static Vec4 Vec4_1() {
-        long pointer = internal_native_Vec4_1__0();
-        if (pointer == 0)
+        long addr = internal_native_Vec4_1__0_addr();
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_0 == null)
             Vec4_TEMP_STATIC_GEN_0 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_1();
 */
-    public static native long internal_native_Vec4_1__0();
+    public static native long internal_native_Vec4_1__0_addr();
 
     public static Vec4 Vec4_1(float inX, float inY, float inZ, float inW) {
-        long pointer = internal_native_Vec4_1__1(inX, inY, inZ, inW);
-        if (pointer == 0)
+        long addr = internal_native_Vec4_1__1_addr(inX, inY, inZ, inW);
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_1 == null)
             Vec4_TEMP_STATIC_GEN_1 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_1.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_1;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_1((float)inX, (float)inY, (float)inZ, (float)inW);
 */
-    public static native long internal_native_Vec4_1__1(float inX, float inY, float inZ, float inW);
+    public static native long internal_native_Vec4_1__1_addr(float inX, float inY, float inZ, float inW);
 
     public static Vec4 Vec4_1(Vec4 other) {
-        long pointer = internal_native_Vec4_1__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Vec4_1__2_addr(other.native_address);
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_2 == null)
             Vec4_TEMP_STATIC_GEN_2 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_2.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_2;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_1((Vec4* )other_addr);
 */
-    public static native long internal_native_Vec4_1__2(long other_addr);
+    public static native long internal_native_Vec4_1__2_addr(long other_addr);
 
     public static Vec4 Vec4_2() {
-        long pointer = internal_native_Vec4_2__0();
-        if (pointer == 0)
+        long addr = internal_native_Vec4_2__0_addr();
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_3 == null)
             Vec4_TEMP_STATIC_GEN_3 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_3.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_3;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_2();
 */
-    public static native long internal_native_Vec4_2__0();
+    public static native long internal_native_Vec4_2__0_addr();
 
     public static Vec4 Vec4_2(float inX, float inY, float inZ, float inW) {
-        long pointer = internal_native_Vec4_2__1(inX, inY, inZ, inW);
-        if (pointer == 0)
+        long addr = internal_native_Vec4_2__1_addr(inX, inY, inZ, inW);
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_4 == null)
             Vec4_TEMP_STATIC_GEN_4 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_4.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_4;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_2((float)inX, (float)inY, (float)inZ, (float)inW);
 */
-    public static native long internal_native_Vec4_2__1(float inX, float inY, float inZ, float inW);
+    public static native long internal_native_Vec4_2__1_addr(float inX, float inY, float inZ, float inW);
 
     public static Vec4 Vec4_2(Vec4 other) {
-        long pointer = internal_native_Vec4_2__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Vec4_2__2_addr(other.native_address);
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_5 == null)
             Vec4_TEMP_STATIC_GEN_5 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_5.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_5;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_2((Vec4* )other_addr);
 */
-    public static native long internal_native_Vec4_2__2(long other_addr);
+    public static native long internal_native_Vec4_2__2_addr(long other_addr);
 
     public static Vec4 Vec4_3() {
-        long pointer = internal_native_Vec4_3__0();
-        if (pointer == 0)
+        long addr = internal_native_Vec4_3__0_addr();
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_6 == null)
             Vec4_TEMP_STATIC_GEN_6 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_6.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_6.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_6;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_3();
 */
-    public static native long internal_native_Vec4_3__0();
+    public static native long internal_native_Vec4_3__0_addr();
 
     public static Vec4 Vec4_3(float inX, float inY, float inZ, float inW) {
-        long pointer = internal_native_Vec4_3__1(inX, inY, inZ, inW);
-        if (pointer == 0)
+        long addr = internal_native_Vec4_3__1_addr(inX, inY, inZ, inW);
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_7 == null)
             Vec4_TEMP_STATIC_GEN_7 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_7.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_7.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_7;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_3((float)inX, (float)inY, (float)inZ, (float)inW);
 */
-    public static native long internal_native_Vec4_3__1(float inX, float inY, float inZ, float inW);
+    public static native long internal_native_Vec4_3__1_addr(float inX, float inY, float inZ, float inW);
 
     public static Vec4 Vec4_3(Vec4 other) {
-        long pointer = internal_native_Vec4_3__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Vec4_3__2_addr(other.native_address);
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_8 == null)
             Vec4_TEMP_STATIC_GEN_8 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_8.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_8.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_8;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_3((Vec4* )other_addr);
 */
-    public static native long internal_native_Vec4_3__2(long other_addr);
+    public static native long internal_native_Vec4_3__2_addr(long other_addr);
 
     public static Vec4 Vec4_4() {
-        long pointer = internal_native_Vec4_4__0();
-        if (pointer == 0)
+        long addr = internal_native_Vec4_4__0_addr();
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_9 == null)
             Vec4_TEMP_STATIC_GEN_9 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_9.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_9.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_9;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_4();
 */
-    public static native long internal_native_Vec4_4__0();
+    public static native long internal_native_Vec4_4__0_addr();
 
     public static Vec4 Vec4_4(float inX, float inY, float inZ, float inW) {
-        long pointer = internal_native_Vec4_4__1(inX, inY, inZ, inW);
-        if (pointer == 0)
+        long addr = internal_native_Vec4_4__1_addr(inX, inY, inZ, inW);
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_10 == null)
             Vec4_TEMP_STATIC_GEN_10 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_10.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_10.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_10;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_4((float)inX, (float)inY, (float)inZ, (float)inW);
 */
-    public static native long internal_native_Vec4_4__1(float inX, float inY, float inZ, float inW);
+    public static native long internal_native_Vec4_4__1_addr(float inX, float inY, float inZ, float inW);
 
     public static Vec4 Vec4_4(Vec4 other) {
-        long pointer = internal_native_Vec4_4__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Vec4_4__2_addr(other.native_address);
+        if (addr == 0)
             return Vec4.NULL;
         if (Vec4_TEMP_STATIC_GEN_11 == null)
             Vec4_TEMP_STATIC_GEN_11 = Vec4.native_new();
-        Vec4_TEMP_STATIC_GEN_11.internal_reset(pointer, false);
+        Vec4_TEMP_STATIC_GEN_11.internal_reset(addr, false);
         return Vec4_TEMP_STATIC_GEN_11;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Vec4_4((Vec4* )other_addr);
 */
-    public static native long internal_native_Vec4_4__2(long other_addr);
+    public static native long internal_native_Vec4_4__2_addr(long other_addr);
 
     public static Quat Quat_1() {
-        long pointer = internal_native_Quat_1__0();
-        if (pointer == 0)
+        long addr = internal_native_Quat_1__0_addr();
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_STATIC_GEN_0 == null)
             Quat_TEMP_STATIC_GEN_0 = Quat.native_new();
-        Quat_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Quat_1();
 */
-    public static native long internal_native_Quat_1__0();
+    public static native long internal_native_Quat_1__0_addr();
 
     public static Quat Quat_1(float inX, float inY, float inZ, float inW) {
-        long pointer = internal_native_Quat_1__1(inX, inY, inZ, inW);
-        if (pointer == 0)
+        long addr = internal_native_Quat_1__1_addr(inX, inY, inZ, inW);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_STATIC_GEN_1 == null)
             Quat_TEMP_STATIC_GEN_1 = Quat.native_new();
-        Quat_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_1.internal_reset(addr, false);
         return Quat_TEMP_STATIC_GEN_1;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Quat_1((float)inX, (float)inY, (float)inZ, (float)inW);
 */
-    public static native long internal_native_Quat_1__1(float inX, float inY, float inZ, float inW);
+    public static native long internal_native_Quat_1__1_addr(float inX, float inY, float inZ, float inW);
 
     public static Quat Quat_1(Quat other) {
-        long pointer = internal_native_Quat_1__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Quat_1__2_addr(other.native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_STATIC_GEN_2 == null)
             Quat_TEMP_STATIC_GEN_2 = Quat.native_new();
-        Quat_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_2.internal_reset(addr, false);
         return Quat_TEMP_STATIC_GEN_2;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Quat_1((Quat* )other_addr);
 */
-    public static native long internal_native_Quat_1__2(long other_addr);
+    public static native long internal_native_Quat_1__2_addr(long other_addr);
 
     public static Quat Quat_2() {
-        long pointer = internal_native_Quat_2__0();
-        if (pointer == 0)
+        long addr = internal_native_Quat_2__0_addr();
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_STATIC_GEN_3 == null)
             Quat_TEMP_STATIC_GEN_3 = Quat.native_new();
-        Quat_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_3.internal_reset(addr, false);
         return Quat_TEMP_STATIC_GEN_3;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Quat_2();
 */
-    public static native long internal_native_Quat_2__0();
+    public static native long internal_native_Quat_2__0_addr();
 
     public static Quat Quat_2(float inX, float inY, float inZ, float inW) {
-        long pointer = internal_native_Quat_2__1(inX, inY, inZ, inW);
-        if (pointer == 0)
+        long addr = internal_native_Quat_2__1_addr(inX, inY, inZ, inW);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_STATIC_GEN_4 == null)
             Quat_TEMP_STATIC_GEN_4 = Quat.native_new();
-        Quat_TEMP_STATIC_GEN_4.internal_reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_4.internal_reset(addr, false);
         return Quat_TEMP_STATIC_GEN_4;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Quat_2((float)inX, (float)inY, (float)inZ, (float)inW);
 */
-    public static native long internal_native_Quat_2__1(float inX, float inY, float inZ, float inW);
+    public static native long internal_native_Quat_2__1_addr(float inX, float inY, float inZ, float inW);
 
     public static Quat Quat_2(Quat other) {
-        long pointer = internal_native_Quat_2__2(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Quat_2__2_addr(other.native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_STATIC_GEN_5 == null)
             Quat_TEMP_STATIC_GEN_5 = Quat.native_new();
-        Quat_TEMP_STATIC_GEN_5.internal_reset(pointer, false);
+        Quat_TEMP_STATIC_GEN_5.internal_reset(addr, false);
         return Quat_TEMP_STATIC_GEN_5;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Quat_2((Quat* )other_addr);
 */
-    public static native long internal_native_Quat_2__2(long other_addr);
+    public static native long internal_native_Quat_2__2_addr(long other_addr);
 
     public static Mat44 Mat44_1() {
-        long pointer = internal_native_Mat44_1__0();
-        if (pointer == 0)
+        long addr = internal_native_Mat44_1__0_addr();
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_STATIC_GEN_0 == null)
             Mat44_TEMP_STATIC_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Mat44_1();
 */
-    public static native long internal_native_Mat44_1__0();
+    public static native long internal_native_Mat44_1__0_addr();
 
     public static Mat44 Mat44_1(Mat44 other) {
-        long pointer = internal_native_Mat44_1__1(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Mat44_1__1_addr(other.native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_STATIC_GEN_1 == null)
             Mat44_TEMP_STATIC_GEN_1 = Mat44.native_new();
-        Mat44_TEMP_STATIC_GEN_1.internal_reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_1.internal_reset(addr, false);
         return Mat44_TEMP_STATIC_GEN_1;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Mat44_1((Mat44* )other_addr);
 */
-    public static native long internal_native_Mat44_1__1(long other_addr);
+    public static native long internal_native_Mat44_1__1_addr(long other_addr);
 
     public static Mat44 Mat44_2() {
-        long pointer = internal_native_Mat44_2__0();
-        if (pointer == 0)
+        long addr = internal_native_Mat44_2__0_addr();
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_STATIC_GEN_2 == null)
             Mat44_TEMP_STATIC_GEN_2 = Mat44.native_new();
-        Mat44_TEMP_STATIC_GEN_2.internal_reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_2.internal_reset(addr, false);
         return Mat44_TEMP_STATIC_GEN_2;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Mat44_2();
 */
-    public static native long internal_native_Mat44_2__0();
+    public static native long internal_native_Mat44_2__0_addr();
 
     public static Mat44 Mat44_2(Mat44 other) {
-        long pointer = internal_native_Mat44_2__1(other.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Mat44_2__1_addr(other.native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_STATIC_GEN_3 == null)
             Mat44_TEMP_STATIC_GEN_3 = Mat44.native_new();
-        Mat44_TEMP_STATIC_GEN_3.internal_reset(pointer, false);
+        Mat44_TEMP_STATIC_GEN_3.internal_reset(addr, false);
         return Mat44_TEMP_STATIC_GEN_3;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_Mat44_2((Mat44* )other_addr);
 */
-    public static native long internal_native_Mat44_2__1(long other_addr);
+    public static native long internal_native_Mat44_2__1_addr(long other_addr);
 
     public static ExtendedUpdateSettings ExtendedUpdateSettings() {
-        long pointer = internal_native_ExtendedUpdateSettings__0();
-        if (pointer == 0)
+        long addr = internal_native_ExtendedUpdateSettings__0_addr();
+        if (addr == 0)
             return ExtendedUpdateSettings.NULL;
         if (ExtendedUpdateSettings_TEMP_STATIC_GEN_0 == null)
             ExtendedUpdateSettings_TEMP_STATIC_GEN_0 = ExtendedUpdateSettings.native_new();
-        ExtendedUpdateSettings_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        ExtendedUpdateSettings_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return ExtendedUpdateSettings_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_ExtendedUpdateSettings();
 */
-    public static native long internal_native_ExtendedUpdateSettings__0();
+    public static native long internal_native_ExtendedUpdateSettings__0_addr();
 
     public static DefaultBroadPhaseLayerFilter DefaultBroadPhaseLayerFilter(ObjectVsBroadPhaseLayerFilter filter, int inObjectLayer) {
-        long pointer = internal_native_DefaultBroadPhaseLayerFilter__0(filter.native_address, inObjectLayer);
-        if (pointer == 0)
+        long addr = internal_native_DefaultBroadPhaseLayerFilter__0_addr(filter.native_address, inObjectLayer);
+        if (addr == 0)
             return DefaultBroadPhaseLayerFilter.NULL;
         if (DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0 == null)
             DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0 = DefaultBroadPhaseLayerFilter.native_new();
-        DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return DefaultBroadPhaseLayerFilter_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_DefaultBroadPhaseLayerFilter((ObjectVsBroadPhaseLayerFilter* )filter_addr, inObjectLayer);
 */
-    public static native long internal_native_DefaultBroadPhaseLayerFilter__0(long filter_addr, int inObjectLayer);
+    public static native long internal_native_DefaultBroadPhaseLayerFilter__0_addr(long filter_addr, int inObjectLayer);
 
     public static DefaultObjectLayerFilter DefaultObjectLayerFilter(ObjectLayerPairFilter filter, int inObjectLayer) {
-        long pointer = internal_native_DefaultObjectLayerFilter__0(filter.native_address, inObjectLayer);
-        if (pointer == 0)
+        long addr = internal_native_DefaultObjectLayerFilter__0_addr(filter.native_address, inObjectLayer);
+        if (addr == 0)
             return DefaultObjectLayerFilter.NULL;
         if (DefaultObjectLayerFilter_TEMP_STATIC_GEN_0 == null)
             DefaultObjectLayerFilter_TEMP_STATIC_GEN_0 = DefaultObjectLayerFilter.native_new();
-        DefaultObjectLayerFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        DefaultObjectLayerFilter_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return DefaultObjectLayerFilter_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_DefaultObjectLayerFilter((ObjectLayerPairFilter* )filter_addr, inObjectLayer);
 */
-    public static native long internal_native_DefaultObjectLayerFilter__0(long filter_addr, int inObjectLayer);
+    public static native long internal_native_DefaultObjectLayerFilter__0_addr(long filter_addr, int inObjectLayer);
 
     public static StaticCompoundShapeSettings StaticCompoundShapeSettings() {
-        long pointer = internal_native_StaticCompoundShapeSettings__0();
-        if (pointer == 0)
+        long addr = internal_native_StaticCompoundShapeSettings__0_addr();
+        if (addr == 0)
             return StaticCompoundShapeSettings.NULL;
         if (StaticCompoundShapeSettings_TEMP_STATIC_GEN_0 == null)
             StaticCompoundShapeSettings_TEMP_STATIC_GEN_0 = StaticCompoundShapeSettings.native_new();
-        StaticCompoundShapeSettings_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        StaticCompoundShapeSettings_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return StaticCompoundShapeSettings_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_StaticCompoundShapeSettings();
 */
-    public static native long internal_native_StaticCompoundShapeSettings__0();
+    public static native long internal_native_StaticCompoundShapeSettings__0_addr();
 
     public static BodyFilter BodyFilter() {
-        long pointer = internal_native_BodyFilter__0();
-        if (pointer == 0)
+        long addr = internal_native_BodyFilter__0_addr();
+        if (addr == 0)
             return BodyFilter.NULL;
         if (BodyFilter_TEMP_STATIC_GEN_0 == null)
             BodyFilter_TEMP_STATIC_GEN_0 = BodyFilter.native_new();
-        BodyFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        BodyFilter_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return BodyFilter_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_BodyFilter();
 */
-    public static native long internal_native_BodyFilter__0();
+    public static native long internal_native_BodyFilter__0_addr();
 
     public static ShapeFilter ShapeFilter() {
-        long pointer = internal_native_ShapeFilter__0();
-        if (pointer == 0)
+        long addr = internal_native_ShapeFilter__0_addr();
+        if (addr == 0)
             return ShapeFilter.NULL;
         if (ShapeFilter_TEMP_STATIC_GEN_0 == null)
             ShapeFilter_TEMP_STATIC_GEN_0 = ShapeFilter.native_new();
-        ShapeFilter_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        ShapeFilter_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return ShapeFilter_TEMP_STATIC_GEN_0;
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)JoltTemp::Temp_ShapeFilter();
 */
-    public static native long internal_native_ShapeFilter__0();
+    public static native long internal_native_ShapeFilter__0_addr();
 }

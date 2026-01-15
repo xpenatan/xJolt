@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import jolt.physics.softbody.CollidePointCollector;
@@ -15,14 +16,14 @@ public class CollidePointAllHitCollisionCollector extends CollidePointCollector 
 
     public CollidePointAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new CollidePointAllHitCollisionCollector();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -70,12 +71,12 @@ return nativeObject->HadHit();
     public static native boolean internal_native_HadHit(long this_addr);
 
     public ArrayCollidePointResult get_mHits() {
-        long pointer = internal_native_get_mHits(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mHits_addr(native_address);
+        if (addr == 0)
             return ArrayCollidePointResult.NULL;
         if (ArrayCollidePointResult_TEMP_GEN_0 == null)
             ArrayCollidePointResult_TEMP_GEN_0 = ArrayCollidePointResult.native_new();
-        ArrayCollidePointResult_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayCollidePointResult_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayCollidePointResult_TEMP_GEN_0;
     }
 
@@ -83,7 +84,7 @@ return nativeObject->HadHit();
 CollidePointAllHitCollisionCollector* nativeObject = (CollidePointAllHitCollisionCollector*)this_addr;
 return (jlong)&nativeObject->mHits;
 */
-    public static native long internal_native_get_mHits(long this_addr);
+    public static native long internal_native_get_mHits_addr(long this_addr);
 
     public void set_mHits(ArrayCollidePointResult mHits) {
         internal_native_set_mHits(native_address, mHits.native_address);

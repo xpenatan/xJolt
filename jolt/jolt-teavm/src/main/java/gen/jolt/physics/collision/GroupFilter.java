@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -75,7 +76,7 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public GroupFilter() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -109,7 +110,7 @@ var jsObj = new jolt.GroupFilterJS();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.GroupFilterJS();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     @org.teavm.jso.JSBody(params = { "this_addr", "CanCollide" }, script = "var GroupFilterJS = jolt.wrapPointer(this_addr, jolt.GroupFilterJS); GroupFilterJS.CanCollide = CanCollide;")
     public static native void internal_native_setupCallback(int this_addr, CanCollide CanCollide);

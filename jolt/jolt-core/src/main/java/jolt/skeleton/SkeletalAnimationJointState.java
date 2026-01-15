@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.skeleton;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -55,12 +56,12 @@ nativeObject->FromMatrix(*((Mat44* )inMatrix_addr));
     public static native void internal_native_FromMatrix(long this_addr, long inMatrix_addr);
 
     public Mat44 ToMatrix() {
-        long pointer = internal_native_ToMatrix(native_address);
-        if (pointer == 0)
+        long addr = internal_native_ToMatrix_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -69,15 +70,15 @@ SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_a
 static Mat44 copy_addr;
 copy_addr = nativeObject->ToMatrix();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_ToMatrix(long this_addr);
+    public static native long internal_native_ToMatrix_addr(long this_addr);
 
     public Vec3 get_mTranslation() {
-        long pointer = internal_native_get_mTranslation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mTranslation_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -85,7 +86,7 @@ return (jlong)&copy_addr;*/
 SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_addr;
 return (jlong)&nativeObject->mTranslation;
 */
-    public static native long internal_native_get_mTranslation(long this_addr);
+    public static native long internal_native_get_mTranslation_addr(long this_addr);
 
     public void set_mTranslation(Vec3 mTranslation) {
         internal_native_set_mTranslation(native_address, mTranslation.native_address);
@@ -98,12 +99,12 @@ nativeObject->mTranslation = *((Vec3*)mTranslation_addr);
     public static native void internal_native_set_mTranslation(long this_addr, long mTranslation_addr);
 
     public Quat get_mRotation() {
-        long pointer = internal_native_get_mRotation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -111,7 +112,7 @@ nativeObject->mTranslation = *((Vec3*)mTranslation_addr);
 SkeletalAnimationJointState* nativeObject = (SkeletalAnimationJointState*)this_addr;
 return (jlong)&nativeObject->mRotation;
 */
-    public static native long internal_native_get_mRotation(long this_addr);
+    public static native long internal_native_get_mRotation_addr(long this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation(native_address, mRotation.native_address);

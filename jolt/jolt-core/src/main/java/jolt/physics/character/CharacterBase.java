@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.character;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -105,12 +106,12 @@ nativeObject->SetUp(*((Vec3* )inUp_addr));
     public static native void internal_native_SetUp(long this_addr, long inUp_addr);
 
     public Vec3 GetUp() {
-        long pointer = internal_native_GetUp(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetUp_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -119,15 +120,15 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetUp();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetUp(long this_addr);
+    public static native long internal_native_GetUp_addr(long this_addr);
 
     public Shape GetShape() {
-        long pointer = internal_native_GetShape(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -136,7 +137,7 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 const Shape* obj = nativeObject->GetShape();
 return (jlong)obj;
 */
-    public static native long internal_native_GetShape(long this_addr);
+    public static native long internal_native_GetShape_addr(long this_addr);
 
     public EGroundState GetGroundState() {
         int value = internal_native_GetGroundState(native_address);
@@ -176,12 +177,12 @@ return nativeObject->IsSupported();
     public static native boolean internal_native_IsSupported(long this_addr);
 
     public Vec3 GetGroundPosition() {
-        long pointer = internal_native_GetGroundPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetGroundPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -190,15 +191,15 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetGroundPosition();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetGroundPosition(long this_addr);
+    public static native long internal_native_GetGroundPosition_addr(long this_addr);
 
     public Vec3 GetGroundNormal() {
-        long pointer = internal_native_GetGroundNormal(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetGroundNormal_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -207,15 +208,15 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetGroundNormal();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetGroundNormal(long this_addr);
+    public static native long internal_native_GetGroundNormal_addr(long this_addr);
 
     public Vec3 GetGroundVelocity() {
-        long pointer = internal_native_GetGroundVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetGroundVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -224,15 +225,15 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetGroundVelocity();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetGroundVelocity(long this_addr);
+    public static native long internal_native_GetGroundVelocity_addr(long this_addr);
 
     public PhysicsMaterial GetGroundMaterial() {
-        long pointer = internal_native_GetGroundMaterial(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetGroundMaterial_addr(native_address);
+        if (addr == 0)
             return PhysicsMaterial.NULL;
         if (PhysicsMaterial_TEMP_GEN_0 == null)
             PhysicsMaterial_TEMP_GEN_0 = PhysicsMaterial.native_new();
-        PhysicsMaterial_TEMP_GEN_0.internal_reset(pointer, false);
+        PhysicsMaterial_TEMP_GEN_0.internal_reset(addr, false);
         return PhysicsMaterial_TEMP_GEN_0;
     }
 
@@ -241,15 +242,15 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 const PhysicsMaterial* obj = nativeObject->GetGroundMaterial();
 return (jlong)obj;
 */
-    public static native long internal_native_GetGroundMaterial(long this_addr);
+    public static native long internal_native_GetGroundMaterial_addr(long this_addr);
 
     public BodyID GetGroundBodyID() {
-        long pointer = internal_native_GetGroundBodyID(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetGroundBodyID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -258,5 +259,5 @@ CharacterBase* nativeObject = (CharacterBase*)this_addr;
 static BodyID copy_addr;
 copy_addr = nativeObject->GetGroundBodyID();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetGroundBodyID(long this_addr);
+    public static native long internal_native_GetGroundBodyID_addr(long this_addr);
 }

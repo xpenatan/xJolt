@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.jolt.physics.PhysicsStepListener;
@@ -13,7 +14,7 @@ public class VehicleConstraintStepListener extends PhysicsStepListener {
 
     public VehicleConstraintStepListener(VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_VehicleConstraint(inConstraint.native_address);
+        int addr = internal_native_create_VehicleConstraint_addr(inConstraint.native_address);
         internal_reset(addr, true);
     }
 
@@ -22,7 +23,7 @@ var jsObj = new jolt.VehicleConstraintStepListener(inConstraint_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inConstraint_addr"}, script = "var jsObj = new jolt.VehicleConstraintStepListener(inConstraint_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_VehicleConstraint(int inConstraint_addr);
+    public static native int internal_native_create_VehicleConstraint_addr(int inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

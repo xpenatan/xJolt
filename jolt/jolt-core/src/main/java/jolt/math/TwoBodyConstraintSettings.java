@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.math;
 
 import jolt.physics.constraints.ConstraintSettings;
@@ -31,12 +32,12 @@ public class TwoBodyConstraintSettings extends ConstraintSettings {
     }
 
     public Constraint Create(Body inBody1, Body inBody2) {
-        long pointer = internal_native_Create(native_address, inBody1.native_address, inBody2.native_address);
-        if (pointer == 0)
+        long addr = internal_native_Create_addr(native_address, inBody1.native_address, inBody2.native_address);
+        if (addr == 0)
             return Constraint.NULL;
         if (Constraint_TEMP_GEN_0 == null)
             Constraint_TEMP_GEN_0 = Constraint.native_new();
-        Constraint_TEMP_GEN_0.internal_reset(pointer, false);
+        Constraint_TEMP_GEN_0.internal_reset(addr, false);
         return Constraint_TEMP_GEN_0;
     }
 
@@ -45,5 +46,5 @@ TwoBodyConstraintSettings* nativeObject = (TwoBodyConstraintSettings*)this_addr;
 Constraint* obj = nativeObject->Create(*((Body* )inBody1_addr), *((Body* )inBody2_addr));
 return (jlong)obj;
 */
-    public static native long internal_native_Create(long this_addr, long inBody1_addr, long inBody2_addr);
+    public static native long internal_native_Create_addr(long this_addr, long inBody1_addr, long inBody2_addr);
 }

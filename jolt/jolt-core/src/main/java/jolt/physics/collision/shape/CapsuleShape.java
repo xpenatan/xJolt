@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.physics.collision.PhysicsMaterial;
@@ -13,25 +14,25 @@ public class CapsuleShape extends ConvexShape {
 
     public CapsuleShape(float inHalfHeight, float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, inMaterial.native_address);
+        long addr = internal_native_create_float_float_PhysicsMaterial_addr(inHalfHeight, inRadius, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    public static native long internal_native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, long inMaterial_addr);
+    public static native long internal_native_create_float_float_PhysicsMaterial_addr(float inHalfHeight, float inRadius, long inMaterial_addr);
 
     public CapsuleShape(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_float(inHalfHeight, inRadius);
+        long addr = internal_native_create_float_float_addr(inHalfHeight, inRadius);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new CapsuleShape((float)inHalfHeight, (float)inRadius);
 */
-    public static native long internal_native_create_float_float(float inHalfHeight, float inRadius);
+    public static native long internal_native_create_float_float_addr(float inHalfHeight, float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

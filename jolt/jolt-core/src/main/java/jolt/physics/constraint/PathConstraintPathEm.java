@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraint;
 
 import jolt.physics.constraints.PathConstraintPath;
@@ -78,7 +79,7 @@ delete nativeObject;
 
     public PathConstraintPathEm() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -128,7 +129,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)new PathConstraintPathJS();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 PathConstraintPathJS* nativeObject = (PathConstraintPathJS*)this_addr;

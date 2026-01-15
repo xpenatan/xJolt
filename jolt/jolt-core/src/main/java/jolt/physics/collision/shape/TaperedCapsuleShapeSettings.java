@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.physics.collision.PhysicsMaterial;
@@ -13,25 +14,25 @@ public class TaperedCapsuleShapeSettings extends ConvexShapeSettings {
 
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_float_float_PhysicsMaterial(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, inMaterial.native_address);
+        long addr = internal_native_create_float_float_float_PhysicsMaterial_addr(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylinder, (float)inTopRadius, (float)inBottomRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    public static native long internal_native_create_float_float_float_PhysicsMaterial(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, long inMaterial_addr);
+    public static native long internal_native_create_float_float_float_PhysicsMaterial_addr(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius, long inMaterial_addr);
 
     public TaperedCapsuleShapeSettings(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_float_float(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);
+        long addr = internal_native_create_float_float_float_addr(inHalfHeightOfTaperedCylinder, inTopRadius, inBottomRadius);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new TaperedCapsuleShapeSettings((float)inHalfHeightOfTaperedCylinder, (float)inTopRadius, (float)inBottomRadius);
 */
-    public static native long internal_native_create_float_float_float(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius);
+    public static native long internal_native_create_float_float_float_addr(float inHalfHeightOfTaperedCylinder, float inTopRadius, float inBottomRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

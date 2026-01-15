@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.math.Vec3;
@@ -15,14 +16,14 @@ public class ScaledShape extends DecoratedShape {
 
     public ScaledShape(Shape inShape, Vec3 inScale) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_Shape_Vec3(inShape.native_address, inScale.native_address);
+        long addr = internal_native_create_Shape_Vec3_addr(inShape.native_address, inScale.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ScaledShape((Shape* )inShape_addr, *((Vec3* )inScale_addr));
 */
-    public static native long internal_native_create_Shape_Vec3(long inShape_addr, long inScale_addr);
+    public static native long internal_native_create_Shape_Vec3_addr(long inShape_addr, long inScale_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -50,12 +51,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 GetScale() {
-        long pointer = internal_native_GetScale(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetScale_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -64,5 +65,5 @@ ScaledShape* nativeObject = (ScaledShape*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetScale();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetScale(long this_addr);
+    public static native long internal_native_GetScale_addr(long this_addr);
 }

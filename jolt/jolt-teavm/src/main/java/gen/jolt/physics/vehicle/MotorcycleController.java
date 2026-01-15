@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 public class MotorcycleController extends WheeledVehicleController {
@@ -11,7 +12,7 @@ public class MotorcycleController extends WheeledVehicleController {
 
     public MotorcycleController(MotorcycleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_MotorcycleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);
+        int addr = internal_native_create_MotorcycleControllerSettings_VehicleConstraint_addr(inSettings.native_address, inConstraint.native_address);
         internal_reset(addr, true);
     }
 
@@ -20,7 +21,7 @@ var jsObj = new jolt.MotorcycleController(inSettings_addr, inConstraint_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inSettings_addr", "inConstraint_addr"}, script = "var jsObj = new jolt.MotorcycleController(inSettings_addr, inConstraint_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_MotorcycleControllerSettings_VehicleConstraint(int inSettings_addr, int inConstraint_addr);
+    public static native int internal_native_create_MotorcycleControllerSettings_VehicleConstraint_addr(int inSettings_addr, int inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

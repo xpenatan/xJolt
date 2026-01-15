@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import jolt.physics.constraints.ConstraintSettings;
@@ -24,14 +25,14 @@ public class VehicleConstraintSettings extends ConstraintSettings {
 
     public VehicleConstraintSettings() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleConstraintSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -59,12 +60,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mUp() {
-        long pointer = internal_native_get_mUp(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mUp_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -72,7 +73,7 @@ delete nativeObject;
 VehicleConstraintSettings* nativeObject = (VehicleConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mUp;
 */
-    public static native long internal_native_get_mUp(long this_addr);
+    public static native long internal_native_get_mUp_addr(long this_addr);
 
     public void set_mUp(Vec3 mUp) {
         internal_native_set_mUp(native_address, mUp.native_address);
@@ -85,12 +86,12 @@ nativeObject->mUp = *((Vec3*)mUp_addr);
     public static native void internal_native_set_mUp(long this_addr, long mUp_addr);
 
     public Vec3 get_mForward() {
-        long pointer = internal_native_get_mForward(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mForward_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -98,7 +99,7 @@ nativeObject->mUp = *((Vec3*)mUp_addr);
 VehicleConstraintSettings* nativeObject = (VehicleConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mForward;
 */
-    public static native long internal_native_get_mForward(long this_addr);
+    public static native long internal_native_get_mForward_addr(long this_addr);
 
     public void set_mForward(Vec3 mForward) {
         internal_native_set_mForward(native_address, mForward.native_address);
@@ -131,12 +132,12 @@ nativeObject->mMaxPitchRollAngle = mMaxPitchRollAngle;
     public static native void internal_native_set_mMaxPitchRollAngle(long this_addr, float mMaxPitchRollAngle);
 
     public ArrayWheelSettings get_mWheels() {
-        long pointer = internal_native_get_mWheels(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mWheels_addr(native_address);
+        if (addr == 0)
             return ArrayWheelSettings.NULL;
         if (ArrayWheelSettings_TEMP_GEN_0 == null)
             ArrayWheelSettings_TEMP_GEN_0 = ArrayWheelSettings.native_new();
-        ArrayWheelSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayWheelSettings_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayWheelSettings_TEMP_GEN_0;
     }
 
@@ -144,7 +145,7 @@ nativeObject->mMaxPitchRollAngle = mMaxPitchRollAngle;
 VehicleConstraintSettings* nativeObject = (VehicleConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mWheels;
 */
-    public static native long internal_native_get_mWheels(long this_addr);
+    public static native long internal_native_get_mWheels_addr(long this_addr);
 
     public void set_mWheels(ArrayWheelSettings mWheels) {
         internal_native_set_mWheels(native_address, mWheels.native_address);
@@ -157,12 +158,12 @@ nativeObject->mWheels = *((ArrayWheelSettings*)mWheels_addr);
     public static native void internal_native_set_mWheels(long this_addr, long mWheels_addr);
 
     public ArrayVehicleAntiRollBar get_mAntiRollBars() {
-        long pointer = internal_native_get_mAntiRollBars(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mAntiRollBars_addr(native_address);
+        if (addr == 0)
             return ArrayVehicleAntiRollBar.NULL;
         if (ArrayVehicleAntiRollBar_TEMP_GEN_0 == null)
             ArrayVehicleAntiRollBar_TEMP_GEN_0 = ArrayVehicleAntiRollBar.native_new();
-        ArrayVehicleAntiRollBar_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayVehicleAntiRollBar_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayVehicleAntiRollBar_TEMP_GEN_0;
     }
 
@@ -170,7 +171,7 @@ nativeObject->mWheels = *((ArrayWheelSettings*)mWheels_addr);
 VehicleConstraintSettings* nativeObject = (VehicleConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mAntiRollBars;
 */
-    public static native long internal_native_get_mAntiRollBars(long this_addr);
+    public static native long internal_native_get_mAntiRollBars_addr(long this_addr);
 
     public void set_mAntiRollBars(ArrayVehicleAntiRollBar mAntiRollBars) {
         internal_native_set_mAntiRollBars(native_address, mAntiRollBars.native_address);
@@ -183,12 +184,12 @@ nativeObject->mAntiRollBars = *((ArrayVehicleAntiRollBar*)mAntiRollBars_addr);
     public static native void internal_native_set_mAntiRollBars(long this_addr, long mAntiRollBars_addr);
 
     public VehicleControllerSettings get_mController() {
-        long pointer = internal_native_get_mController(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mController_addr(native_address);
+        if (addr == 0)
             return VehicleControllerSettings.NULL;
         if (VehicleControllerSettings_TEMP_GEN_0 == null)
             VehicleControllerSettings_TEMP_GEN_0 = VehicleControllerSettings.native_new();
-        VehicleControllerSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        VehicleControllerSettings_TEMP_GEN_0.internal_reset(addr, false);
         return VehicleControllerSettings_TEMP_GEN_0;
     }
 
@@ -197,7 +198,7 @@ VehicleConstraintSettings* nativeObject = (VehicleConstraintSettings*)this_addr;
 VehicleControllerSettings* attr = nativeObject->mController;
 return (jlong)attr;
 */
-    public static native long internal_native_get_mController(long this_addr);
+    public static native long internal_native_get_mController_addr(long this_addr);
 
     public void set_mController(VehicleControllerSettings mController) {
         internal_native_set_mController(native_address, mController.native_address);

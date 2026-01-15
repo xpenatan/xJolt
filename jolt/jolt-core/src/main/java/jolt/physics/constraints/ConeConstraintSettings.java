@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import jolt.math.TwoBodyConstraintSettings;
@@ -23,14 +24,14 @@ public class ConeConstraintSettings extends TwoBodyConstraintSettings {
 
     public ConeConstraintSettings() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new ConeConstraintSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -85,12 +86,12 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
     public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public Vec3 get_mPoint1() {
-        long pointer = internal_native_get_mPoint1(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPoint1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -98,7 +99,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 ConeConstraintSettings* nativeObject = (ConeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPoint1;
 */
-    public static native long internal_native_get_mPoint1(long this_addr);
+    public static native long internal_native_get_mPoint1_addr(long this_addr);
 
     public void set_mPoint1(Vec3 mPoint1) {
         internal_native_set_mPoint1(native_address, mPoint1.native_address);
@@ -111,12 +112,12 @@ nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
     public static native void internal_native_set_mPoint1(long this_addr, long mPoint1_addr);
 
     public Vec3 get_mTwistAxis1() {
-        long pointer = internal_native_get_mTwistAxis1(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mTwistAxis1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -124,7 +125,7 @@ nativeObject->mPoint1 = *((Vec3*)mPoint1_addr);
 ConeConstraintSettings* nativeObject = (ConeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mTwistAxis1;
 */
-    public static native long internal_native_get_mTwistAxis1(long this_addr);
+    public static native long internal_native_get_mTwistAxis1_addr(long this_addr);
 
     public void set_mTwistAxis1(Vec3 mTwistAxis1) {
         internal_native_set_mTwistAxis1(native_address, mTwistAxis1.native_address);
@@ -137,12 +138,12 @@ nativeObject->mTwistAxis1 = *((Vec3*)mTwistAxis1_addr);
     public static native void internal_native_set_mTwistAxis1(long this_addr, long mTwistAxis1_addr);
 
     public Vec3 get_mPoint2() {
-        long pointer = internal_native_get_mPoint2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPoint2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -150,7 +151,7 @@ nativeObject->mTwistAxis1 = *((Vec3*)mTwistAxis1_addr);
 ConeConstraintSettings* nativeObject = (ConeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mPoint2;
 */
-    public static native long internal_native_get_mPoint2(long this_addr);
+    public static native long internal_native_get_mPoint2_addr(long this_addr);
 
     public void set_mPoint2(Vec3 mPoint2) {
         internal_native_set_mPoint2(native_address, mPoint2.native_address);
@@ -163,12 +164,12 @@ nativeObject->mPoint2 = *((Vec3*)mPoint2_addr);
     public static native void internal_native_set_mPoint2(long this_addr, long mPoint2_addr);
 
     public Vec3 get_mTwistAxis2() {
-        long pointer = internal_native_get_mTwistAxis2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mTwistAxis2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -176,7 +177,7 @@ nativeObject->mPoint2 = *((Vec3*)mPoint2_addr);
 ConeConstraintSettings* nativeObject = (ConeConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mTwistAxis2;
 */
-    public static native long internal_native_get_mTwistAxis2(long this_addr);
+    public static native long internal_native_get_mTwistAxis2_addr(long this_addr);
 
     public void set_mTwistAxis2(Vec3 mTwistAxis2) {
         internal_native_set_mTwistAxis2(native_address, mTwistAxis2.native_address);

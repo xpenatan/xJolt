@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -55,7 +56,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public ObjectLayerPairFilter() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -75,7 +76,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)new ObjectLayerPairFilterJS();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 ObjectLayerPairFilterJS* nativeObject = (ObjectLayerPairFilterJS*)this_addr;

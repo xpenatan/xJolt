@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.math.Vec3;
@@ -16,7 +17,7 @@ public class BoxShapeSettings extends ConvexShapeSettings {
 
     public BoxShapeSettings(Vec3 inHalfExtent, float inConvexRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Vec3_float_PhysicsMaterial(inHalfExtent.native_address, inConvexRadius, inMaterial.native_address);
+        int addr = internal_native_create_Vec3_float_PhysicsMaterial_addr(inHalfExtent.native_address, inConvexRadius, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
@@ -25,11 +26,11 @@ var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr, inConvexRadius, inMater
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfExtent_addr", "inConvexRadius", "inMaterial_addr"}, script = "var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr, inConvexRadius, inMaterial_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Vec3_float_PhysicsMaterial(int inHalfExtent_addr, float inConvexRadius, int inMaterial_addr);
+    public static native int internal_native_create_Vec3_float_PhysicsMaterial_addr(int inHalfExtent_addr, float inConvexRadius, int inMaterial_addr);
 
     public BoxShapeSettings(Vec3 inHalfExtent, float inConvexRadius) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Vec3_float(inHalfExtent.native_address, inConvexRadius);
+        int addr = internal_native_create_Vec3_float_addr(inHalfExtent.native_address, inConvexRadius);
         internal_reset(addr, true);
     }
 
@@ -38,11 +39,11 @@ var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr, inConvexRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfExtent_addr", "inConvexRadius"}, script = "var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr, inConvexRadius);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Vec3_float(int inHalfExtent_addr, float inConvexRadius);
+    public static native int internal_native_create_Vec3_float_addr(int inHalfExtent_addr, float inConvexRadius);
 
     public BoxShapeSettings(Vec3 inHalfExtent) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_Vec3(inHalfExtent.native_address);
+        int addr = internal_native_create_Vec3_addr(inHalfExtent.native_address);
         internal_reset(addr, true);
     }
 
@@ -51,7 +52,7 @@ var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfExtent_addr"}, script = "var jsObj = new jolt.BoxShapeSettings(inHalfExtent_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_Vec3(int inHalfExtent_addr);
+    public static native int internal_native_create_Vec3_addr(int inHalfExtent_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -80,12 +81,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public Vec3 get_mHalfExtent() {
-        int pointer = internal_native_get_mHalfExtent(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mHalfExtent_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -96,7 +97,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.BoxShapeSettings);var returnedJSObj = jsObj.get_mHalfExtent();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mHalfExtent(int this_addr);
+    public static native int internal_native_get_mHalfExtent_addr(int this_addr);
 
     public void set_mHalfExtent(Vec3 mHalfExtent) {
         internal_native_set_mHalfExtent(native_address, mHalfExtent.native_address);

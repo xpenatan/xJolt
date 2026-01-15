@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.jolt.core.LinearCurve;
@@ -17,7 +18,7 @@ public class WheelSettingsWV extends WheelSettings {
 
     public WheelSettingsWV() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -26,7 +27,7 @@ var jsObj = new jolt.WheelSettingsWV();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.WheelSettingsWV();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -121,12 +122,12 @@ jsObj.set_mMaxSteerAngle(mMaxSteerAngle);
     public static native void internal_native_set_mMaxSteerAngle(int this_addr, float mMaxSteerAngle);
 
     public LinearCurve get_mLongitudinalFriction() {
-        int pointer = internal_native_get_mLongitudinalFriction(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mLongitudinalFriction_addr(native_address);
+        if (addr == 0)
             return LinearCurve.NULL;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = LinearCurve.native_new();
-        LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);
+        LinearCurve_TEMP_GEN_0.internal_reset(addr, false);
         return LinearCurve_TEMP_GEN_0;
     }
 
@@ -137,7 +138,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);var returnedJSObj = jsObj.get_mLongitudinalFriction();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mLongitudinalFriction(int this_addr);
+    public static native int internal_native_get_mLongitudinalFriction_addr(int this_addr);
 
     public void set_mLongitudinalFriction(LinearCurve mLongitudinalFriction) {
         internal_native_set_mLongitudinalFriction(native_address, mLongitudinalFriction.native_address);
@@ -151,12 +152,12 @@ jsObj.set_mLongitudinalFriction(mLongitudinalFriction_addr);
     public static native void internal_native_set_mLongitudinalFriction(int this_addr, int mLongitudinalFriction_addr);
 
     public LinearCurve get_mLateralFriction() {
-        int pointer = internal_native_get_mLateralFriction(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mLateralFriction_addr(native_address);
+        if (addr == 0)
             return LinearCurve.NULL;
         if (LinearCurve_TEMP_GEN_1 == null)
             LinearCurve_TEMP_GEN_1 = LinearCurve.native_new();
-        LinearCurve_TEMP_GEN_1.internal_reset(pointer, false);
+        LinearCurve_TEMP_GEN_1.internal_reset(addr, false);
         return LinearCurve_TEMP_GEN_1;
     }
 
@@ -167,7 +168,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettingsWV);var returnedJSObj = jsObj.get_mLateralFriction();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mLateralFriction(int this_addr);
+    public static native int internal_native_get_mLateralFriction_addr(int this_addr);
 
     public void set_mLateralFriction(LinearCurve mLateralFriction) {
         internal_native_set_mLateralFriction(native_address, mLateralFriction.native_address);

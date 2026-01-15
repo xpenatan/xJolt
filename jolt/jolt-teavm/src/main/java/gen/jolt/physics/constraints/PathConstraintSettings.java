@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 import gen.jolt.math.TwoBodyConstraintSettings;
@@ -24,7 +25,7 @@ public class PathConstraintSettings extends TwoBodyConstraintSettings {
 
     public PathConstraintSettings() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -33,7 +34,7 @@ var jsObj = new jolt.PathConstraintSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.PathConstraintSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -62,12 +63,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public PathConstraintPath get_mPath() {
-        int pointer = internal_native_get_mPath(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPath_addr(native_address);
+        if (addr == 0)
             return PathConstraintPath.NULL;
         if (PathConstraintPath_TEMP_GEN_0 == null)
             PathConstraintPath_TEMP_GEN_0 = PathConstraintPath.native_new();
-        PathConstraintPath_TEMP_GEN_0.internal_reset(pointer, false);
+        PathConstraintPath_TEMP_GEN_0.internal_reset(addr, false);
         return PathConstraintPath_TEMP_GEN_0;
     }
 
@@ -78,7 +79,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);var returnedJSObj = jsObj.get_mPath();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPath(int this_addr);
+    public static native int internal_native_get_mPath_addr(int this_addr);
 
     public void set_mPath(PathConstraintPath mPath) {
         internal_native_set_mPath(native_address, mPath.native_address);
@@ -92,12 +93,12 @@ jsObj.set_mPath(mPath_addr);
     public static native void internal_native_set_mPath(int this_addr, int mPath_addr);
 
     public Vec3 get_mPathPosition() {
-        int pointer = internal_native_get_mPathPosition(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPathPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -108,7 +109,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);var returnedJSObj = jsObj.get_mPathPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPathPosition(int this_addr);
+    public static native int internal_native_get_mPathPosition_addr(int this_addr);
 
     public void set_mPathPosition(Vec3 mPathPosition) {
         internal_native_set_mPathPosition(native_address, mPathPosition.native_address);
@@ -122,12 +123,12 @@ jsObj.set_mPathPosition(mPathPosition_addr);
     public static native void internal_native_set_mPathPosition(int this_addr, int mPathPosition_addr);
 
     public Quat get_mPathRotation() {
-        int pointer = internal_native_get_mPathRotation(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPathRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -138,7 +139,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);var returnedJSObj = jsObj.get_mPathRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPathRotation(int this_addr);
+    public static native int internal_native_get_mPathRotation_addr(int this_addr);
 
     public void set_mPathRotation(Quat mPathRotation) {
         internal_native_set_mPathRotation(native_address, mPathRotation.native_address);
@@ -225,12 +226,12 @@ jsObj.set_mRotationConstraintType(mRotationConstraintType);
     public static native void internal_native_set_mRotationConstraintType(int this_addr, int mRotationConstraintType);
 
     public MotorSettings get_mPositionMotorSettings() {
-        int pointer = internal_native_get_mPositionMotorSettings(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPositionMotorSettings_addr(native_address);
+        if (addr == 0)
             return MotorSettings.NULL;
         if (MotorSettings_TEMP_GEN_0 == null)
             MotorSettings_TEMP_GEN_0 = MotorSettings.native_new();
-        MotorSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        MotorSettings_TEMP_GEN_0.internal_reset(addr, false);
         return MotorSettings_TEMP_GEN_0;
     }
 
@@ -241,7 +242,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.PathConstraintSettings);var returnedJSObj = jsObj.get_mPositionMotorSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPositionMotorSettings(int this_addr);
+    public static native int internal_native_get_mPositionMotorSettings_addr(int this_addr);
 
     public void set_mPositionMotorSettings(MotorSettings mPositionMotorSettings) {
         internal_native_set_mPositionMotorSettings(native_address, mPositionMotorSettings.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 import gen.jolt.physics.softbody.CastShapeCollector;
@@ -16,7 +17,7 @@ public class CastShapeAllHitCollisionCollector extends CastShapeCollector {
 
     public CastShapeAllHitCollisionCollector() {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -25,7 +26,7 @@ var jsObj = new jolt.CastShapeAllHitCollisionCollector();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.CastShapeAllHitCollisionCollector();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -77,12 +78,12 @@ return returnedJSObj;
     public static native boolean internal_native_HadHit(int this_addr);
 
     public ArrayShapeCastResult get_mHits() {
-        int pointer = internal_native_get_mHits(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mHits_addr(native_address);
+        if (addr == 0)
             return ArrayShapeCastResult.NULL;
         if (ArrayShapeCastResult_TEMP_GEN_0 == null)
             ArrayShapeCastResult_TEMP_GEN_0 = ArrayShapeCastResult.native_new();
-        ArrayShapeCastResult_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayShapeCastResult_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayShapeCastResult_TEMP_GEN_0;
     }
 
@@ -93,7 +94,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.CastShapeAllHitCollisionCollector);var returnedJSObj = jsObj.get_mHits();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mHits(int this_addr);
+    public static native int internal_native_get_mHits_addr(int this_addr);
 
     public void set_mHits(ArrayShapeCastResult mHits) {
         internal_native_set_mHits(native_address, mHits.native_address);

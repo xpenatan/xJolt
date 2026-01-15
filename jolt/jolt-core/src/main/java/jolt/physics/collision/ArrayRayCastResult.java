@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -58,12 +59,12 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public RayCastResult at(int inIndex) {
-        long pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        long addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return RayCastResult.NULL;
         if (RayCastResult_TEMP_GEN_0 == null)
             RayCastResult_TEMP_GEN_0 = RayCastResult.native_new();
-        RayCastResult_TEMP_GEN_0.internal_reset(pointer, false);
+        RayCastResult_TEMP_GEN_0.internal_reset(addr, false);
         return RayCastResult_TEMP_GEN_0;
     }
 
@@ -71,7 +72,7 @@ return nativeObject->size();
 ArrayRayCastResult* nativeObject = (ArrayRayCastResult*)this_addr;
 return (jlong)&nativeObject->at((int)inIndex);
 */
-    public static native long internal_native_at(long this_addr, int inIndex);
+    public static native long internal_native_at_addr(long this_addr, int inIndex);
 
     public void push_back(RayCastResult inValue) {
         internal_native_push_back(native_address, inValue.native_address);

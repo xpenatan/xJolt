@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -21,14 +22,14 @@ public class SoftBodyCreationSettings extends IDLBase {
     static public final SoftBodyCreationSettings NULL = SoftBodyCreationSettings.native_new();
 
     public SoftBodyCreationSettings(SoftBodySharedSettings inSettings, Vec3 inPosition, Quat inRotation, int inObjectLayer) {
-        long addr = internal_native_create_SoftBodySharedSettings_Vec3_Quat_int(inSettings.native_address, inPosition.native_address, inRotation.native_address, inObjectLayer);
+        long addr = internal_native_create_SoftBodySharedSettings_Vec3_Quat_int_addr(inSettings.native_address, inPosition.native_address, inRotation.native_address, inObjectLayer);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SoftBodyCreationSettings((SoftBodySharedSettings* )inSettings_addr, *((Vec3* )inPosition_addr), *((Quat* )inRotation_addr), inObjectLayer);
 */
-    public static native long internal_native_create_SoftBodySharedSettings_Vec3_Quat_int(long inSettings_addr, long inPosition_addr, long inRotation_addr, int inObjectLayer);
+    public static native long internal_native_create_SoftBodySharedSettings_Vec3_Quat_int_addr(long inSettings_addr, long inPosition_addr, long inRotation_addr, int inObjectLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -55,12 +56,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public Vec3 get_mPosition() {
-        long pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -68,7 +69,7 @@ delete nativeObject;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mPosition;
 */
-    public static native long internal_native_get_mPosition(long this_addr);
+    public static native long internal_native_get_mPosition_addr(long this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition(native_address, mPosition.native_address);
@@ -81,12 +82,12 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
     public static native void internal_native_set_mPosition(long this_addr, long mPosition_addr);
 
     public Quat get_mRotation() {
-        long pointer = internal_native_get_mRotation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -94,7 +95,7 @@ nativeObject->mPosition = *((Vec3*)mPosition_addr);
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mRotation;
 */
-    public static native long internal_native_get_mRotation(long this_addr);
+    public static native long internal_native_get_mRotation_addr(long this_addr);
 
     public void set_mRotation(Quat mRotation) {
         internal_native_set_mRotation(native_address, mRotation.native_address);
@@ -147,12 +148,12 @@ nativeObject->mObjectLayer = mObjectLayer;
     public static native void internal_native_set_mObjectLayer(long this_addr, int mObjectLayer);
 
     public CollisionGroup get_mCollisionGroup() {
-        long pointer = internal_native_get_mCollisionGroup(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mCollisionGroup_addr(native_address);
+        if (addr == 0)
             return CollisionGroup.NULL;
         if (CollisionGroup_TEMP_GEN_0 == null)
             CollisionGroup_TEMP_GEN_0 = CollisionGroup.native_new();
-        CollisionGroup_TEMP_GEN_0.internal_reset(pointer, false);
+        CollisionGroup_TEMP_GEN_0.internal_reset(addr, false);
         return CollisionGroup_TEMP_GEN_0;
     }
 
@@ -160,7 +161,7 @@ nativeObject->mObjectLayer = mObjectLayer;
 SoftBodyCreationSettings* nativeObject = (SoftBodyCreationSettings*)this_addr;
 return (jlong)&nativeObject->mCollisionGroup;
 */
-    public static native long internal_native_get_mCollisionGroup(long this_addr);
+    public static native long internal_native_get_mCollisionGroup_addr(long this_addr);
 
     public void set_mCollisionGroup(CollisionGroup mCollisionGroup) {
         internal_native_set_mCollisionGroup(native_address, mCollisionGroup.native_address);

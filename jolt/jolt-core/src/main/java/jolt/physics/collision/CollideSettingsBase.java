@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -135,12 +136,12 @@ nativeObject->mPenetrationTolerance = mPenetrationTolerance;
     public static native void internal_native_set_mPenetrationTolerance(long this_addr, float mPenetrationTolerance);
 
     public Vec3 get_mActiveEdgeMovementDirection() {
-        long pointer = internal_native_get_mActiveEdgeMovementDirection(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mActiveEdgeMovementDirection_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -148,7 +149,7 @@ nativeObject->mPenetrationTolerance = mPenetrationTolerance;
 CollideSettingsBase* nativeObject = (CollideSettingsBase*)this_addr;
 return (jlong)&nativeObject->mActiveEdgeMovementDirection;
 */
-    public static native long internal_native_get_mActiveEdgeMovementDirection(long this_addr);
+    public static native long internal_native_get_mActiveEdgeMovementDirection_addr(long this_addr);
 
     public void set_mActiveEdgeMovementDirection(Vec3 mActiveEdgeMovementDirection) {
         internal_native_set_mActiveEdgeMovementDirection(native_address, mActiveEdgeMovementDirection.native_address);

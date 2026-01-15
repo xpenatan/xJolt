@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.core.RefTargetShapeSettings;
@@ -63,12 +64,12 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public ShapeResult Create() {
-        int pointer = internal_native_Create(native_address);
-        if (pointer == 0)
+        int addr = internal_native_Create_addr(native_address);
+        if (addr == 0)
             return ShapeResult.NULL;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = ShapeResult.native_new();
-        ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
+        ShapeResult_TEMP_GEN_0.internal_reset(addr, false);
         return ShapeResult_TEMP_GEN_0;
     }
 
@@ -79,7 +80,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);var returnedJSObj = jsObj.Create();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_Create(int this_addr);
+    public static native int internal_native_Create_addr(int this_addr);
 
     public void ClearCachedResult() {
         internal_native_ClearCachedResult(native_address);
@@ -101,10 +102,10 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);
 return jsObj.get_mUserData();
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);return jsObj.get_mUserData();")
-    public static native int internal_native_get_mUserData(int this_addr);
+    public static native long internal_native_get_mUserData(int this_addr);
 
     public void set_mUserData(long mUserData) {
-        internal_native_set_mUserData(native_address, (int) mUserData);
+        internal_native_set_mUserData(native_address, mUserData);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -112,5 +113,5 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);
 jsObj.set_mUserData(mUserData);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "mUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ShapeSettings);jsObj.set_mUserData(mUserData);")
-    public static native void internal_native_set_mUserData(int this_addr, int mUserData);
+    public static native void internal_native_set_mUserData(int this_addr, long mUserData);
 }

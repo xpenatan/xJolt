@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.math;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ public class Float2 extends IDLBase {
     static public final Float2 NULL = Float2.native_new();
 
     public Float2(float inX, float inY) {
-        int addr = internal_native_create_float_float(inX, inY);
+        int addr = internal_native_create_float_float_addr(inX, inY);
         internal_reset(addr, true);
     }
 
@@ -21,7 +22,7 @@ var jsObj = new jolt.Float2(inX, inY);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inX", "inY"}, script = "var jsObj = new jolt.Float2(inX, inY);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_float_float(float inX, float inY);
+    public static native int internal_native_create_float_float_addr(float inX, float inY);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

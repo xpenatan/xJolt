@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.core.RefTargetShapeSettings;
@@ -59,12 +60,12 @@ nativeObject->Release();
     public static native void internal_native_Release(long this_addr);
 
     public ShapeResult Create() {
-        long pointer = internal_native_Create(native_address);
-        if (pointer == 0)
+        long addr = internal_native_Create_addr(native_address);
+        if (addr == 0)
             return ShapeResult.NULL;
         if (ShapeResult_TEMP_GEN_0 == null)
             ShapeResult_TEMP_GEN_0 = ShapeResult.native_new();
-        ShapeResult_TEMP_GEN_0.internal_reset(pointer, false);
+        ShapeResult_TEMP_GEN_0.internal_reset(addr, false);
         return ShapeResult_TEMP_GEN_0;
     }
 
@@ -73,7 +74,7 @@ ShapeSettings* nativeObject = (ShapeSettings*)this_addr;
 static Shape::ShapeResult copy_addr;
 copy_addr = nativeObject->Create();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_Create(long this_addr);
+    public static native long internal_native_Create_addr(long this_addr);
 
     public void ClearCachedResult() {
         internal_native_ClearCachedResult(native_address);

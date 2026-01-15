@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -21,7 +22,7 @@ public class SubShapeIDPair extends IDLBase {
     static public final SubShapeIDPair NULL = SubShapeIDPair.native_new();
 
     public SubShapeIDPair() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -30,7 +31,7 @@ var jsObj = new jolt.SubShapeIDPair();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.SubShapeIDPair();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -58,12 +59,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public BodyID GetBody1ID() {
-        int pointer = internal_native_GetBody1ID(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetBody1ID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_0 == null)
             BodyID_TEMP_GEN_0 = BodyID.native_new();
-        BodyID_TEMP_GEN_0.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_0.internal_reset(addr, false);
         return BodyID_TEMP_GEN_0;
     }
 
@@ -74,15 +75,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SubShapeIDPair);var returnedJSObj = jsObj.GetBody1ID();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetBody1ID(int this_addr);
+    public static native int internal_native_GetBody1ID_addr(int this_addr);
 
     public SubShapeID GetSubShapeID1() {
-        int pointer = internal_native_GetSubShapeID1(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetSubShapeID1_addr(native_address);
+        if (addr == 0)
             return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_0 == null)
             SubShapeID_TEMP_GEN_0 = SubShapeID.native_new();
-        SubShapeID_TEMP_GEN_0.internal_reset(pointer, false);
+        SubShapeID_TEMP_GEN_0.internal_reset(addr, false);
         return SubShapeID_TEMP_GEN_0;
     }
 
@@ -93,15 +94,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SubShapeIDPair);var returnedJSObj = jsObj.GetSubShapeID1();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetSubShapeID1(int this_addr);
+    public static native int internal_native_GetSubShapeID1_addr(int this_addr);
 
     public BodyID GetBody2ID() {
-        int pointer = internal_native_GetBody2ID(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetBody2ID_addr(native_address);
+        if (addr == 0)
             return BodyID.NULL;
         if (BodyID_TEMP_GEN_1 == null)
             BodyID_TEMP_GEN_1 = BodyID.native_new();
-        BodyID_TEMP_GEN_1.internal_reset(pointer, false);
+        BodyID_TEMP_GEN_1.internal_reset(addr, false);
         return BodyID_TEMP_GEN_1;
     }
 
@@ -112,15 +113,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SubShapeIDPair);var returnedJSObj = jsObj.GetBody2ID();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetBody2ID(int this_addr);
+    public static native int internal_native_GetBody2ID_addr(int this_addr);
 
     public SubShapeID GetSubShapeID2() {
-        int pointer = internal_native_GetSubShapeID2(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetSubShapeID2_addr(native_address);
+        if (addr == 0)
             return SubShapeID.NULL;
         if (SubShapeID_TEMP_GEN_1 == null)
             SubShapeID_TEMP_GEN_1 = SubShapeID.native_new();
-        SubShapeID_TEMP_GEN_1.internal_reset(pointer, false);
+        SubShapeID_TEMP_GEN_1.internal_reset(addr, false);
         return SubShapeID_TEMP_GEN_1;
     }
 
@@ -131,5 +132,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.SubShapeIDPair);var returnedJSObj = jsObj.GetSubShapeID2();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetSubShapeID2(int this_addr);
+    public static native int internal_native_GetSubShapeID2_addr(int this_addr);
 }

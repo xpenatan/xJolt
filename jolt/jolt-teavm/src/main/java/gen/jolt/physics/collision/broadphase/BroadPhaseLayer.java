@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.broadphase;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ public class BroadPhaseLayer extends IDLBase {
     static public final BroadPhaseLayer NULL = BroadPhaseLayer.native_new();
 
     public BroadPhaseLayer(short inLayer) {
-        int addr = internal_native_create_short(inLayer);
+        int addr = internal_native_create_short_addr(inLayer);
         internal_reset(addr, true);
     }
 
@@ -21,7 +22,7 @@ var jsObj = new jolt.BroadPhaseLayer(inLayer);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inLayer"}, script = "var jsObj = new jolt.BroadPhaseLayer(inLayer);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_short(short inLayer);
+    public static native int internal_native_create_short_addr(short inLayer);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

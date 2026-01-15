@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.constraints;
 
 import jolt.math.TwoBodyConstraintSettings;
@@ -23,14 +24,14 @@ public class PulleyConstraintSettings extends TwoBodyConstraintSettings {
 
     public PulleyConstraintSettings() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new PulleyConstraintSettings();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -85,12 +86,12 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
     public static native void internal_native_set_mSpace(long this_addr, int mSpace);
 
     public Vec3 get_mBodyPoint1() {
-        long pointer = internal_native_get_mBodyPoint1(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mBodyPoint1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -98,7 +99,7 @@ nativeObject->mSpace = (::EConstraintSpace)mSpace;
 PulleyConstraintSettings* nativeObject = (PulleyConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mBodyPoint1;
 */
-    public static native long internal_native_get_mBodyPoint1(long this_addr);
+    public static native long internal_native_get_mBodyPoint1_addr(long this_addr);
 
     public void set_mBodyPoint1(Vec3 mBodyPoint1) {
         internal_native_set_mBodyPoint1(native_address, mBodyPoint1.native_address);
@@ -111,12 +112,12 @@ nativeObject->mBodyPoint1 = *((Vec3*)mBodyPoint1_addr);
     public static native void internal_native_set_mBodyPoint1(long this_addr, long mBodyPoint1_addr);
 
     public Vec3 get_mFixedPoint1() {
-        long pointer = internal_native_get_mFixedPoint1(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mFixedPoint1_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -124,7 +125,7 @@ nativeObject->mBodyPoint1 = *((Vec3*)mBodyPoint1_addr);
 PulleyConstraintSettings* nativeObject = (PulleyConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mFixedPoint1;
 */
-    public static native long internal_native_get_mFixedPoint1(long this_addr);
+    public static native long internal_native_get_mFixedPoint1_addr(long this_addr);
 
     public void set_mFixedPoint1(Vec3 mFixedPoint1) {
         internal_native_set_mFixedPoint1(native_address, mFixedPoint1.native_address);
@@ -137,12 +138,12 @@ nativeObject->mFixedPoint1 = *((Vec3*)mFixedPoint1_addr);
     public static native void internal_native_set_mFixedPoint1(long this_addr, long mFixedPoint1_addr);
 
     public Vec3 get_mBodyPoint2() {
-        long pointer = internal_native_get_mBodyPoint2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mBodyPoint2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -150,7 +151,7 @@ nativeObject->mFixedPoint1 = *((Vec3*)mFixedPoint1_addr);
 PulleyConstraintSettings* nativeObject = (PulleyConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mBodyPoint2;
 */
-    public static native long internal_native_get_mBodyPoint2(long this_addr);
+    public static native long internal_native_get_mBodyPoint2_addr(long this_addr);
 
     public void set_mBodyPoint2(Vec3 mBodyPoint2) {
         internal_native_set_mBodyPoint2(native_address, mBodyPoint2.native_address);
@@ -163,12 +164,12 @@ nativeObject->mBodyPoint2 = *((Vec3*)mBodyPoint2_addr);
     public static native void internal_native_set_mBodyPoint2(long this_addr, long mBodyPoint2_addr);
 
     public Vec3 get_mFixedPoint2() {
-        long pointer = internal_native_get_mFixedPoint2(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mFixedPoint2_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -176,7 +177,7 @@ nativeObject->mBodyPoint2 = *((Vec3*)mBodyPoint2_addr);
 PulleyConstraintSettings* nativeObject = (PulleyConstraintSettings*)this_addr;
 return (jlong)&nativeObject->mFixedPoint2;
 */
-    public static native long internal_native_get_mFixedPoint2(long this_addr);
+    public static native long internal_native_get_mFixedPoint2_addr(long this_addr);
 
     public void set_mFixedPoint2(Vec3 mFixedPoint2) {
         internal_native_set_mFixedPoint2(native_address, mFixedPoint2.native_address);

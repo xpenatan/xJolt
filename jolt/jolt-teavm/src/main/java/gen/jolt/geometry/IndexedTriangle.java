@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.geometry;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -12,7 +13,7 @@ public class IndexedTriangle extends IDLBase {
     static public final IndexedTriangle NULL = IndexedTriangle.native_new();
 
     public IndexedTriangle() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -21,10 +22,10 @@ var jsObj = new jolt.IndexedTriangle();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.IndexedTriangle();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     public IndexedTriangle(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData) {
-        int addr = internal_native_create_int_int_int_int_int(inI1, inI2, inI3, inMaterialIndex, inUserData);
+        int addr = internal_native_create_int_int_int_int_int_addr(inI1, inI2, inI3, inMaterialIndex, inUserData);
         internal_reset(addr, true);
     }
 
@@ -33,10 +34,10 @@ var jsObj = new jolt.IndexedTriangle(inI1, inI2, inI3, inMaterialIndex, inUserDa
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inI1", "inI2", "inI3", "inMaterialIndex", "inUserData"}, script = "var jsObj = new jolt.IndexedTriangle(inI1, inI2, inI3, inMaterialIndex, inUserData);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData);
+    public static native int internal_native_create_int_int_int_int_int_addr(int inI1, int inI2, int inI3, int inMaterialIndex, int inUserData);
 
     public IndexedTriangle(int inI1, int inI2, int inI3, int inMaterialIndex) {
-        int addr = internal_native_create_int_int_int_int(inI1, inI2, inI3, inMaterialIndex);
+        int addr = internal_native_create_int_int_int_int_addr(inI1, inI2, inI3, inMaterialIndex);
         internal_reset(addr, true);
     }
 
@@ -45,7 +46,7 @@ var jsObj = new jolt.IndexedTriangle(inI1, inI2, inI3, inMaterialIndex);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inI1", "inI2", "inI3", "inMaterialIndex"}, script = "var jsObj = new jolt.IndexedTriangle(inI1, inI2, inI3, inMaterialIndex);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int_int_int_int(int inI1, int inI2, int inI3, int inMaterialIndex);
+    public static native int internal_native_create_int_int_int_int_addr(int inI1, int inI2, int inI3, int inMaterialIndex);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

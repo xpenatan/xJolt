@@ -7,6 +7,7 @@ val moduleName = "jolt-core"
 dependencies {
     api("com.github.xpenatan.jParser:loader-core:${LibExt.jParserVersion}")
     api("com.github.xpenatan.jParser:idl-core:${LibExt.jParserVersion}")
+    api("com.github.xpenatan.jParser:idl-helper-core:${LibExt.jParserVersion}")
 
     testImplementation(project(":jolt:jolt-desktop"))
     testImplementation("junit:junit:${LibExt.jUnitVersion}")

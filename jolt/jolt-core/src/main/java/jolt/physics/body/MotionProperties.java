@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.body;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -109,12 +110,12 @@ return nativeObject->GetAllowSleeping();
     public static native boolean internal_native_GetAllowSleeping(long this_addr);
 
     public Vec3 GetLinearVelocity() {
-        long pointer = internal_native_GetLinearVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetLinearVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -123,7 +124,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetLinearVelocity();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetLinearVelocity(long this_addr);
+    public static native long internal_native_GetLinearVelocity_addr(long this_addr);
 
     public void SetLinearVelocity(Vec3 inVelocity) {
         internal_native_SetLinearVelocity(native_address, inVelocity.native_address);
@@ -146,12 +147,12 @@ nativeObject->SetLinearVelocityClamped(*((Vec3* )inVelocity_addr));
     public static native void internal_native_SetLinearVelocityClamped(long this_addr, long inVelocity_addr);
 
     public Vec3 GetAngularVelocity() {
-        long pointer = internal_native_GetAngularVelocity(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetAngularVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -160,7 +161,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAngularVelocity();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetAngularVelocity(long this_addr);
+    public static native long internal_native_GetAngularVelocity_addr(long this_addr);
 
     public void SetAngularVelocity(Vec3 inVelocity) {
         internal_native_SetAngularVelocity(native_address, inVelocity.native_address);
@@ -353,12 +354,12 @@ nativeObject->SetInverseMass((float)inInvM);
     public static native void internal_native_SetInverseMass(long this_addr, float inInvM);
 
     public Vec3 GetInverseInertiaDiagonal() {
-        long pointer = internal_native_GetInverseInertiaDiagonal(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetInverseInertiaDiagonal_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -367,15 +368,15 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetInverseInertiaDiagonal();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetInverseInertiaDiagonal(long this_addr);
+    public static native long internal_native_GetInverseInertiaDiagonal_addr(long this_addr);
 
     public Quat GetInertiaRotation() {
-        long pointer = internal_native_GetInertiaRotation(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetInertiaRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -384,7 +385,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Quat copy_addr;
 copy_addr = nativeObject->GetInertiaRotation();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetInertiaRotation(long this_addr);
+    public static native long internal_native_GetInertiaRotation_addr(long this_addr);
 
     public void SetInverseInertia(Vec3 inInvI, Quat inRotation) {
         internal_native_SetInverseInertia(native_address, inInvI.native_address, inRotation.native_address);
@@ -397,12 +398,12 @@ nativeObject->SetInverseInertia(*((Vec3* )inInvI_addr), *((Quat* )inRotation_add
     public static native void internal_native_SetInverseInertia(long this_addr, long inInvI_addr, long inRotation_addr);
 
     public Mat44 GetLocalSpaceInverseInertia() {
-        long pointer = internal_native_GetLocalSpaceInverseInertia(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetLocalSpaceInverseInertia_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -411,15 +412,15 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetLocalSpaceInverseInertia();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetLocalSpaceInverseInertia(long this_addr);
+    public static native long internal_native_GetLocalSpaceInverseInertia_addr(long this_addr);
 
     public Mat44 GetInverseInertiaForRotation(Mat44 inRotation) {
-        long pointer = internal_native_GetInverseInertiaForRotation(native_address, inRotation.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetInverseInertiaForRotation_addr(native_address, inRotation.native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
-        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(addr, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -428,15 +429,15 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Mat44 copy_addr;
 copy_addr = nativeObject->GetInverseInertiaForRotation(*((Mat44* )inRotation_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetInverseInertiaForRotation(long this_addr, long inRotation_addr);
+    public static native long internal_native_GetInverseInertiaForRotation_addr(long this_addr, long inRotation_addr);
 
     public Vec3 MultiplyWorldSpaceInverseInertiaByVector(Quat inRotation, Vec3 inV) {
-        long pointer = internal_native_MultiplyWorldSpaceInverseInertiaByVector(native_address, inRotation.native_address, inV.native_address);
-        if (pointer == 0)
+        long addr = internal_native_MultiplyWorldSpaceInverseInertiaByVector_addr(native_address, inRotation.native_address, inV.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -445,15 +446,15 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->MultiplyWorldSpaceInverseInertiaByVector(*((Quat* )inRotation_addr), *((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_MultiplyWorldSpaceInverseInertiaByVector(long this_addr, long inRotation_addr, long inV_addr);
+    public static native long internal_native_MultiplyWorldSpaceInverseInertiaByVector_addr(long this_addr, long inRotation_addr, long inV_addr);
 
     public Vec3 GetPointVelocityCOM(Vec3 inPointRelativeToCOM) {
-        long pointer = internal_native_GetPointVelocityCOM(native_address, inPointRelativeToCOM.native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetPointVelocityCOM_addr(native_address, inPointRelativeToCOM.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -462,15 +463,15 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetPointVelocityCOM(*((Vec3* )inPointRelativeToCOM_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetPointVelocityCOM(long this_addr, long inPointRelativeToCOM_addr);
+    public static native long internal_native_GetPointVelocityCOM_addr(long this_addr, long inPointRelativeToCOM_addr);
 
     public Vec3 GetAccumulatedForce() {
-        long pointer = internal_native_GetAccumulatedForce(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetAccumulatedForce_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(addr, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -479,15 +480,15 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAccumulatedForce();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetAccumulatedForce(long this_addr);
+    public static native long internal_native_GetAccumulatedForce_addr(long this_addr);
 
     public Vec3 GetAccumulatedTorque() {
-        long pointer = internal_native_GetAccumulatedTorque(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetAccumulatedTorque_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = Vec3.native_new();
-        Vec3_TEMP_GEN_6.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_6.internal_reset(addr, false);
         return Vec3_TEMP_GEN_6;
     }
 
@@ -496,7 +497,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetAccumulatedTorque();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetAccumulatedTorque(long this_addr);
+    public static native long internal_native_GetAccumulatedTorque_addr(long this_addr);
 
     public void ResetForce() {
         internal_native_ResetForce(native_address);
@@ -529,12 +530,12 @@ nativeObject->ResetMotion();
     public static native void internal_native_ResetMotion(long this_addr);
 
     public Vec3 LockTranslation(Vec3 inV) {
-        long pointer = internal_native_LockTranslation(native_address, inV.native_address);
-        if (pointer == 0)
+        long addr = internal_native_LockTranslation_addr(native_address, inV.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = Vec3.native_new();
-        Vec3_TEMP_GEN_7.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_7.internal_reset(addr, false);
         return Vec3_TEMP_GEN_7;
     }
 
@@ -543,15 +544,15 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->LockTranslation(*((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_LockTranslation(long this_addr, long inV_addr);
+    public static native long internal_native_LockTranslation_addr(long this_addr, long inV_addr);
 
     public Vec3 LockAngular(Vec3 inV) {
-        long pointer = internal_native_LockAngular(native_address, inV.native_address);
-        if (pointer == 0)
+        long addr = internal_native_LockAngular_addr(native_address, inV.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = Vec3.native_new();
-        Vec3_TEMP_GEN_8.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_8.internal_reset(addr, false);
         return Vec3_TEMP_GEN_8;
     }
 
@@ -560,7 +561,7 @@ MotionProperties* nativeObject = (MotionProperties*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->LockAngular(*((Vec3* )inV_addr));
 return (jlong)&copy_addr;*/
-    public static native long internal_native_LockAngular(long this_addr, long inV_addr);
+    public static native long internal_native_LockAngular_addr(long this_addr, long inV_addr);
 
     public void SetNumVelocityStepsOverride(int inN) {
         internal_native_SetNumVelocityStepsOverride(native_address, inN);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.skeleton;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class SkeletalAnimation extends IDLBase {
     static public final SkeletalAnimation NULL = SkeletalAnimation.native_new();
 
     public SkeletalAnimation() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SkeletalAnimation();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -78,12 +79,12 @@ nativeObject->Sample((float)inTime, *((SkeletonPose* )ioPose_addr));
     public static native void internal_native_Sample(long this_addr, float inTime, long ioPose_addr);
 
     public ArraySkeletonAnimatedJoint GetAnimatedJoints() {
-        long pointer = internal_native_GetAnimatedJoints(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetAnimatedJoints_addr(native_address);
+        if (addr == 0)
             return ArraySkeletonAnimatedJoint.NULL;
         if (ArraySkeletonAnimatedJoint_TEMP_GEN_0 == null)
             ArraySkeletonAnimatedJoint_TEMP_GEN_0 = ArraySkeletonAnimatedJoint.native_new();
-        ArraySkeletonAnimatedJoint_TEMP_GEN_0.internal_reset(pointer, false);
+        ArraySkeletonAnimatedJoint_TEMP_GEN_0.internal_reset(addr, false);
         return ArraySkeletonAnimatedJoint_TEMP_GEN_0;
     }
 
@@ -91,5 +92,5 @@ nativeObject->Sample((float)inTime, *((SkeletonPose* )ioPose_addr));
 SkeletalAnimation* nativeObject = (SkeletalAnimation*)this_addr;
 return (jlong)&nativeObject->GetAnimatedJoints();
 */
-    public static native long internal_native_GetAnimatedJoints(long this_addr);
+    public static native long internal_native_GetAnimatedJoints_addr(long this_addr);
 }

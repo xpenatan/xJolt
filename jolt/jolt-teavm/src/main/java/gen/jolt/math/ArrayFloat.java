@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.math;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -119,12 +120,12 @@ jsObj.clear();
     public static native void internal_native_clear(int this_addr);
 
     public FloatMemRef data() {
-        int pointer = internal_native_data(native_address);
-        if (pointer == 0)
+        int addr = internal_native_data_addr(native_address);
+        if (addr == 0)
             return FloatMemRef.NULL;
         if (FloatMemRef_TEMP_GEN_0 == null)
             FloatMemRef_TEMP_GEN_0 = FloatMemRef.native_new();
-        FloatMemRef_TEMP_GEN_0.internal_reset(pointer, false);
+        FloatMemRef_TEMP_GEN_0.internal_reset(addr, false);
         return FloatMemRef_TEMP_GEN_0;
     }
 
@@ -135,5 +136,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.ArrayFloat);var returnedJSObj = jsObj.data();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_data(int this_addr);
+    public static native int internal_native_data_addr(int this_addr);
 }

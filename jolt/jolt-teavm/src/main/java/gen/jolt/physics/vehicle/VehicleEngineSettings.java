@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -106,12 +107,12 @@ jsObj.set_mMaxRPM(mMaxRPM);
     public static native void internal_native_set_mMaxRPM(int this_addr, float mMaxRPM);
 
     public LinearCurve get_mNormalizedTorque() {
-        int pointer = internal_native_get_mNormalizedTorque(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mNormalizedTorque_addr(native_address);
+        if (addr == 0)
             return LinearCurve.NULL;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = LinearCurve.native_new();
-        LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);
+        LinearCurve_TEMP_GEN_0.internal_reset(addr, false);
         return LinearCurve_TEMP_GEN_0;
     }
 
@@ -122,7 +123,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.VehicleEngineSettings);var returnedJSObj = jsObj.get_mNormalizedTorque();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mNormalizedTorque(int this_addr);
+    public static native int internal_native_get_mNormalizedTorque_addr(int this_addr);
 
     public void set_mNormalizedTorque(LinearCurve mNormalizedTorque) {
         internal_native_set_mNormalizedTorque(native_address, mNormalizedTorque.native_address);

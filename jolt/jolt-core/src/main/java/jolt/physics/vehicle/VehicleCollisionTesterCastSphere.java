@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import jolt.math.Vec3;
@@ -13,36 +14,36 @@ public class VehicleCollisionTesterCastSphere extends VehicleCollisionTester {
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp, float inMaxSlopeAngle) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int_float_Vec3_float(inObjectLayer, inRadius, inUp.native_address, inMaxSlopeAngle);
+        long addr = internal_native_create_int_float_Vec3_float_addr(inObjectLayer, inRadius, inUp.native_address, inMaxSlopeAngle);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadius, *((Vec3* )inUp_addr), (float)inMaxSlopeAngle);
 */
-    public static native long internal_native_create_int_float_Vec3_float(int inObjectLayer, float inRadius, long inUp_addr, float inMaxSlopeAngle);
+    public static native long internal_native_create_int_float_Vec3_float_addr(int inObjectLayer, float inRadius, long inUp_addr, float inMaxSlopeAngle);
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius, Vec3 inUp) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int_float_Vec3(inObjectLayer, inRadius, inUp.native_address);
+        long addr = internal_native_create_int_float_Vec3_addr(inObjectLayer, inRadius, inUp.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadius, *((Vec3* )inUp_addr));
 */
-    public static native long internal_native_create_int_float_Vec3(int inObjectLayer, float inRadius, long inUp_addr);
+    public static native long internal_native_create_int_float_Vec3_addr(int inObjectLayer, float inRadius, long inUp_addr);
 
     public VehicleCollisionTesterCastSphere(int inObjectLayer, float inRadius) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int_float(inObjectLayer, inRadius);
+        long addr = internal_native_create_int_float_addr(inObjectLayer, inRadius);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleCollisionTesterCastSphere(inObjectLayer, (float)inRadius);
 */
-    public static native long internal_native_create_int_float(int inObjectLayer, float inRadius);
+    public static native long internal_native_create_int_float_addr(int inObjectLayer, float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

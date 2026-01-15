@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.skeleton;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -25,14 +26,14 @@ public class SkeletonPose extends IDLBase {
     static public final SkeletonPose NULL = SkeletonPose.native_new();
 
     public SkeletonPose() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SkeletonPose();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -69,12 +70,12 @@ nativeObject->SetSkeleton((Skeleton* )inSkeleton_addr);
     public static native void internal_native_SetSkeleton(long this_addr, long inSkeleton_addr);
 
     public Skeleton GetSkeleton() {
-        long pointer = internal_native_GetSkeleton(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetSkeleton_addr(native_address);
+        if (addr == 0)
             return Skeleton.NULL;
         if (Skeleton_TEMP_GEN_0 == null)
             Skeleton_TEMP_GEN_0 = Skeleton.native_new();
-        Skeleton_TEMP_GEN_0.internal_reset(pointer, false);
+        Skeleton_TEMP_GEN_0.internal_reset(addr, false);
         return Skeleton_TEMP_GEN_0;
     }
 
@@ -83,7 +84,7 @@ SkeletonPose* nativeObject = (SkeletonPose*)this_addr;
 const Skeleton* obj = nativeObject->GetSkeleton();
 return (jlong)obj;
 */
-    public static native long internal_native_GetSkeleton(long this_addr);
+    public static native long internal_native_GetSkeleton_addr(long this_addr);
 
     public void SetRootOffset(Vec3 inOffset) {
         internal_native_SetRootOffset(native_address, inOffset.native_address);
@@ -96,12 +97,12 @@ nativeObject->SetRootOffset(*((Vec3* )inOffset_addr));
     public static native void internal_native_SetRootOffset(long this_addr, long inOffset_addr);
 
     public Vec3 GetRootOffset() {
-        long pointer = internal_native_GetRootOffset(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetRootOffset_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -110,7 +111,7 @@ SkeletonPose* nativeObject = (SkeletonPose*)this_addr;
 static Vec3 copy_addr;
 copy_addr = nativeObject->GetRootOffset();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_GetRootOffset(long this_addr);
+    public static native long internal_native_GetRootOffset_addr(long this_addr);
 
     public int GetJointCount() {
         return internal_native_GetJointCount(native_address);
@@ -123,12 +124,12 @@ return nativeObject->GetJointCount();
     public static native int internal_native_GetJointCount(long this_addr);
 
     public SkeletalAnimationJointState GetJoint(int inJoint) {
-        long pointer = internal_native_GetJoint(native_address, inJoint);
-        if (pointer == 0)
+        long addr = internal_native_GetJoint_addr(native_address, inJoint);
+        if (addr == 0)
             return SkeletalAnimationJointState.NULL;
         if (SkeletalAnimationJointState_TEMP_GEN_0 == null)
             SkeletalAnimationJointState_TEMP_GEN_0 = SkeletalAnimationJointState.native_new();
-        SkeletalAnimationJointState_TEMP_GEN_0.internal_reset(pointer, false);
+        SkeletalAnimationJointState_TEMP_GEN_0.internal_reset(addr, false);
         return SkeletalAnimationJointState_TEMP_GEN_0;
     }
 
@@ -136,15 +137,15 @@ return nativeObject->GetJointCount();
 SkeletonPose* nativeObject = (SkeletonPose*)this_addr;
 return (jlong)&nativeObject->GetJoint((int)inJoint);
 */
-    public static native long internal_native_GetJoint(long this_addr, int inJoint);
+    public static native long internal_native_GetJoint_addr(long this_addr, int inJoint);
 
     public ArrayMat44 GetJointMatrices() {
-        long pointer = internal_native_GetJointMatrices(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetJointMatrices_addr(native_address);
+        if (addr == 0)
             return ArrayMat44.NULL;
         if (ArrayMat44_TEMP_GEN_0 == null)
             ArrayMat44_TEMP_GEN_0 = ArrayMat44.native_new();
-        ArrayMat44_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayMat44_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayMat44_TEMP_GEN_0;
     }
 
@@ -152,15 +153,15 @@ return (jlong)&nativeObject->GetJoint((int)inJoint);
 SkeletonPose* nativeObject = (SkeletonPose*)this_addr;
 return (jlong)&nativeObject->GetJointMatrices();
 */
-    public static native long internal_native_GetJointMatrices(long this_addr);
+    public static native long internal_native_GetJointMatrices_addr(long this_addr);
 
     public Mat44 GetJointMatrix(int inJoint) {
-        long pointer = internal_native_GetJointMatrix(native_address, inJoint);
-        if (pointer == 0)
+        long addr = internal_native_GetJointMatrix_addr(native_address, inJoint);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -168,7 +169,7 @@ return (jlong)&nativeObject->GetJointMatrices();
 SkeletonPose* nativeObject = (SkeletonPose*)this_addr;
 return (jlong)&nativeObject->GetJointMatrix((int)inJoint);
 */
-    public static native long internal_native_GetJointMatrix(long this_addr, int inJoint);
+    public static native long internal_native_GetJointMatrix_addr(long this_addr, int inJoint);
 
     public void CalculateJointMatrices() {
         internal_native_CalculateJointMatrices(native_address);

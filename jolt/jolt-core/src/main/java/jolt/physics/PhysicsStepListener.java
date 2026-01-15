@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -57,7 +58,7 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public PhysicsStepListener() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -79,7 +80,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)new PhysicsStepListenerJS();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 PhysicsStepListenerJS* nativeObject = (PhysicsStepListenerJS*)this_addr;

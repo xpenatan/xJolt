@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import jolt.physics.body.Body;
@@ -100,7 +101,7 @@ delete nativeObject;
 
     public ContactListenerEm() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -180,7 +181,7 @@ delete nativeObject;
     /*[-JNI;-NATIVE]
 return (jlong)new ContactListenerJS();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 ContactListenerJS* nativeObject = (ContactListenerJS*)this_addr;

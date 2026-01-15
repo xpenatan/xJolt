@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 public class GroupFilterTable extends GroupFilter {
@@ -11,25 +12,25 @@ public class GroupFilterTable extends GroupFilter {
 
     public GroupFilterTable(int inNumGroups) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_int(inNumGroups);
+        long addr = internal_native_create_int_addr(inNumGroups);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new GroupFilterTable(inNumGroups);
 */
-    public static native long internal_native_create_int(int inNumGroups);
+    public static native long internal_native_create_int_addr(int inNumGroups);
 
     public GroupFilterTable() {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new GroupFilterTable();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

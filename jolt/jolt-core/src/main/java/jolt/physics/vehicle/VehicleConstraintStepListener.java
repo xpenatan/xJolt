@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import jolt.physics.PhysicsStepListener;
@@ -13,14 +14,14 @@ public class VehicleConstraintStepListener extends PhysicsStepListener {
 
     public VehicleConstraintStepListener(VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_VehicleConstraint(inConstraint.native_address);
+        long addr = internal_native_create_VehicleConstraint_addr(inConstraint.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleConstraintStepListener((VehicleConstraint* )inConstraint_addr);
 */
-    public static native long internal_native_create_VehicleConstraint(long inConstraint_addr);
+    public static native long internal_native_create_VehicleConstraint_addr(long inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

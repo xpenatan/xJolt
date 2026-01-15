@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -213,10 +214,10 @@ var returnedJSObj = jsObj.GetUserData();
 return returnedJSObj;
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);var returnedJSObj = jsObj.GetUserData();return returnedJSObj;")
-    public static native int internal_native_GetUserData(int this_addr);
+    public static native long internal_native_GetUserData(int this_addr);
 
     public void SetUserData(long inUserData) {
-        internal_native_SetUserData(native_address, (int) inUserData);
+        internal_native_SetUserData(native_address, inUserData);
     }
 
     /*[-TEAVM;-NATIVE]
@@ -224,7 +225,7 @@ var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);
 jsObj.SetUserData(inUserData);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inUserData"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.Constraint);jsObj.SetUserData(inUserData);")
-    public static native void internal_native_SetUserData(int this_addr, int inUserData);
+    public static native void internal_native_SetUserData(int this_addr, long inUserData);
 
     public void ResetWarmStart() {
         internal_native_ResetWarmStart(native_address);

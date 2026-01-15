@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 public class MotorcycleController extends WheeledVehicleController {
@@ -11,14 +12,14 @@ public class MotorcycleController extends WheeledVehicleController {
 
     public MotorcycleController(MotorcycleControllerSettings inSettings, VehicleConstraint inConstraint) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_MotorcycleControllerSettings_VehicleConstraint(inSettings.native_address, inConstraint.native_address);
+        long addr = internal_native_create_MotorcycleControllerSettings_VehicleConstraint_addr(inSettings.native_address, inConstraint.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new MotorcycleController(*((MotorcycleControllerSettings* )inSettings_addr), *((VehicleConstraint* )inConstraint_addr));
 */
-    public static native long internal_native_create_MotorcycleControllerSettings_VehicleConstraint(long inSettings_addr, long inConstraint_addr);
+    public static native long internal_native_create_MotorcycleControllerSettings_VehicleConstraint_addr(long inSettings_addr, long inConstraint_addr);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

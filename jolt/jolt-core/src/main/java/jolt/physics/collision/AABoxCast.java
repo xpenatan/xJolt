@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -18,14 +19,14 @@ public class AABoxCast extends IDLBase {
     static public final AABoxCast NULL = AABoxCast.native_new();
 
     public AABoxCast() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new AABoxCast();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -52,12 +53,12 @@ delete nativeObject;
     public static native void internal_native_deleteNative(long this_addr);
 
     public AABox get_mBox() {
-        long pointer = internal_native_get_mBox(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mBox_addr(native_address);
+        if (addr == 0)
             return AABox.NULL;
         if (AABox_TEMP_GEN_0 == null)
             AABox_TEMP_GEN_0 = AABox.native_new();
-        AABox_TEMP_GEN_0.internal_reset(pointer, false);
+        AABox_TEMP_GEN_0.internal_reset(addr, false);
         return AABox_TEMP_GEN_0;
     }
 
@@ -65,7 +66,7 @@ delete nativeObject;
 AABoxCast* nativeObject = (AABoxCast*)this_addr;
 return (jlong)&nativeObject->mBox;
 */
-    public static native long internal_native_get_mBox(long this_addr);
+    public static native long internal_native_get_mBox_addr(long this_addr);
 
     public void set_mBox(AABox mBox) {
         internal_native_set_mBox(native_address, mBox.native_address);
@@ -78,12 +79,12 @@ nativeObject->mBox = *((AABox*)mBox_addr);
     public static native void internal_native_set_mBox(long this_addr, long mBox_addr);
 
     public Vec3 get_mDirection() {
-        long pointer = internal_native_get_mDirection(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mDirection_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -91,7 +92,7 @@ nativeObject->mBox = *((AABox*)mBox_addr);
 AABoxCast* nativeObject = (AABoxCast*)this_addr;
 return (jlong)&nativeObject->mDirection;
 */
-    public static native long internal_native_get_mDirection(long this_addr);
+    public static native long internal_native_get_mDirection_addr(long this_addr);
 
     public void set_mDirection(Vec3 mDirection) {
         internal_native_set_mDirection(native_address, mDirection.native_address);

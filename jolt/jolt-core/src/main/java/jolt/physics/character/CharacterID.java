@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.character;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -14,14 +15,14 @@ public class CharacterID extends IDLBase {
     static public final CharacterID NULL = CharacterID.native_new();
 
     public CharacterID() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new CharacterID();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -68,12 +69,12 @@ return nativeObject->IsInvalid();
     public static native boolean internal_native_IsInvalid(long this_addr);
 
     public static CharacterID sNextCharacterID() {
-        long pointer = internal_native_sNextCharacterID();
-        if (pointer == 0)
+        long addr = internal_native_sNextCharacterID_addr();
+        if (addr == 0)
             return CharacterID.NULL;
         if (CharacterID_TEMP_STATIC_GEN_0 == null)
             CharacterID_TEMP_STATIC_GEN_0 = CharacterID.native_new();
-        CharacterID_TEMP_STATIC_GEN_0.internal_reset(pointer, false);
+        CharacterID_TEMP_STATIC_GEN_0.internal_reset(addr, false);
         return CharacterID_TEMP_STATIC_GEN_0;
     }
 
@@ -81,7 +82,7 @@ return nativeObject->IsInvalid();
 static CharacterID copy_addr;
 copy_addr = CharacterID::sNextCharacterID();
 return (jlong)&copy_addr;*/
-    public static native long internal_native_sNextCharacterID();
+    public static native long internal_native_sNextCharacterID_addr();
 
     public static void sSetNextCharacterID(int inNextValue) {
         internal_native_sSetNextCharacterID(inNextValue);

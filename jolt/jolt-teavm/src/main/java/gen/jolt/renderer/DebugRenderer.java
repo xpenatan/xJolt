@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.renderer;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;

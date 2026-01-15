@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -69,12 +70,12 @@ nativeObject->mMode = (::ETransmissionMode)mMode;
     public static native void internal_native_set_mMode(long this_addr, int mMode);
 
     public ArrayFloat get_mGearRatios() {
-        long pointer = internal_native_get_mGearRatios(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mGearRatios_addr(native_address);
+        if (addr == 0)
             return ArrayFloat.NULL;
         if (ArrayFloat_TEMP_GEN_0 == null)
             ArrayFloat_TEMP_GEN_0 = ArrayFloat.native_new();
-        ArrayFloat_TEMP_GEN_0.internal_reset(pointer, false);
+        ArrayFloat_TEMP_GEN_0.internal_reset(addr, false);
         return ArrayFloat_TEMP_GEN_0;
     }
 
@@ -82,7 +83,7 @@ nativeObject->mMode = (::ETransmissionMode)mMode;
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return (jlong)&nativeObject->mGearRatios;
 */
-    public static native long internal_native_get_mGearRatios(long this_addr);
+    public static native long internal_native_get_mGearRatios_addr(long this_addr);
 
     public void set_mGearRatios(ArrayFloat mGearRatios) {
         internal_native_set_mGearRatios(native_address, mGearRatios.native_address);
@@ -95,12 +96,12 @@ nativeObject->mGearRatios = *((ArrayFloat*)mGearRatios_addr);
     public static native void internal_native_set_mGearRatios(long this_addr, long mGearRatios_addr);
 
     public ArrayFloat get_mReverseGearRatios() {
-        long pointer = internal_native_get_mReverseGearRatios(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mReverseGearRatios_addr(native_address);
+        if (addr == 0)
             return ArrayFloat.NULL;
         if (ArrayFloat_TEMP_GEN_1 == null)
             ArrayFloat_TEMP_GEN_1 = ArrayFloat.native_new();
-        ArrayFloat_TEMP_GEN_1.internal_reset(pointer, false);
+        ArrayFloat_TEMP_GEN_1.internal_reset(addr, false);
         return ArrayFloat_TEMP_GEN_1;
     }
 
@@ -108,7 +109,7 @@ nativeObject->mGearRatios = *((ArrayFloat*)mGearRatios_addr);
 VehicleTransmissionSettings* nativeObject = (VehicleTransmissionSettings*)this_addr;
 return (jlong)&nativeObject->mReverseGearRatios;
 */
-    public static native long internal_native_get_mReverseGearRatios(long this_addr);
+    public static native long internal_native_get_mReverseGearRatios_addr(long this_addr);
 
     public void set_mReverseGearRatios(ArrayFloat mReverseGearRatios) {
         internal_native_set_mReverseGearRatios(native_address, mReverseGearRatios.native_address);

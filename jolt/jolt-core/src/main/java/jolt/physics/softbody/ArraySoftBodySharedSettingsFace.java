@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -58,12 +59,12 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public SoftBodySharedSettingsFace at(int inIndex) {
-        long pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        long addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return SoftBodySharedSettingsFace.NULL;
         if (SoftBodySharedSettingsFace_TEMP_GEN_0 == null)
             SoftBodySharedSettingsFace_TEMP_GEN_0 = SoftBodySharedSettingsFace.native_new();
-        SoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(pointer, false);
+        SoftBodySharedSettingsFace_TEMP_GEN_0.internal_reset(addr, false);
         return SoftBodySharedSettingsFace_TEMP_GEN_0;
     }
 
@@ -71,7 +72,7 @@ return nativeObject->size();
 ArraySoftBodySharedSettingsFace* nativeObject = (ArraySoftBodySharedSettingsFace*)this_addr;
 return (jlong)&nativeObject->at((int)inIndex);
 */
-    public static native long internal_native_at(long this_addr, int inIndex);
+    public static native long internal_native_at_addr(long this_addr, int inIndex);
 
     public void push_back(SoftBodySharedSettingsFace inValue) {
         internal_native_push_back(native_address, inValue.native_address);

@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 import jolt.physics.collision.PhysicsMaterial;
@@ -13,25 +14,25 @@ public class SphereShape extends ConvexShape {
 
     public SphereShape(float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float_PhysicsMaterial(inRadius, inMaterial.native_address);
+        long addr = internal_native_create_float_PhysicsMaterial_addr(inRadius, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SphereShape((float)inRadius, (PhysicsMaterial* )inMaterial_addr);
 */
-    public static native long internal_native_create_float_PhysicsMaterial(float inRadius, long inMaterial_addr);
+    public static native long internal_native_create_float_PhysicsMaterial_addr(float inRadius, long inMaterial_addr);
 
     public SphereShape(float inRadius) {
         super((byte) 1, (char) 1);
-        long addr = internal_native_create_float(inRadius);
+        long addr = internal_native_create_float_addr(inRadius);
         internal_reset(addr, true);
     }
 
     /*[-JNI;-NATIVE]
 return (jlong)new SphereShape((float)inRadius);
 */
-    public static native long internal_native_create_float(float inRadius);
+    public static native long internal_native_create_float_addr(float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

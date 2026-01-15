@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.constraints;
 
 public class DistanceConstraint extends TwoBodyConstraint {
@@ -62,12 +63,12 @@ return returnedJSObj;
     public static native float internal_native_GetMaxDistance(int this_addr);
 
     public SpringSettings GetLimitsSpringSettings() {
-        int pointer = internal_native_GetLimitsSpringSettings(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetLimitsSpringSettings_addr(native_address);
+        if (addr == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
-        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -78,7 +79,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DistanceConstraint);var returnedJSObj = jsObj.GetLimitsSpringSettings();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetLimitsSpringSettings(int this_addr);
+    public static native int internal_native_GetLimitsSpringSettings_addr(int this_addr);
 
     public void SetLimitsSpringSettings(SpringSettings inSettings) {
         internal_native_SetLimitsSpringSettings(native_address, inSettings.native_address);

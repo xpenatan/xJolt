@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -100,7 +101,7 @@ nativeObject->SetVehicleConstraint(*((VehicleConstraint* )inConstraint_addr));
     public static native void internal_native_SetVehicleConstraint(long this_addr, long inConstraint_addr);
 
     public VehicleConstraintCallbacksEm() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -174,7 +175,7 @@ nativeObject->SetVehicleConstraint(*((VehicleConstraint* )inConstraint_addr));
     /*[-JNI;-NATIVE]
 return (jlong)new VehicleConstraintCallbacksJS();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 VehicleConstraintCallbacksJS* nativeObject = (VehicleConstraintCallbacksJS*)this_addr;

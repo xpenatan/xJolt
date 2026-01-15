@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -89,7 +90,7 @@ nativeObject->Release();
     public static native void internal_native_Release(long this_addr);
 
     public GroupFilter() {
-        long addr = internal_native_create();
+        long addr = internal_native_create_addr();
         internal_reset(addr, true);
         setupCallback();
     }
@@ -115,7 +116,7 @@ nativeObject->Release();
     /*[-JNI;-NATIVE]
 return (jlong)new GroupFilterJS();
 */
-    public static native long internal_native_create();
+    public static native long internal_native_create_addr();
 
     /*[-JNI;-NATIVE]
 GroupFilterJS* nativeObject = (GroupFilterJS*)this_addr;

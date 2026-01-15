@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.softbody;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -60,12 +61,12 @@ return nativeObject->size();
     public static native int internal_native_size(long this_addr);
 
     public SoftBodySharedSettingsVertexAttributes at(int inIndex) {
-        long pointer = internal_native_at(native_address, inIndex);
-        if (pointer == 0)
+        long addr = internal_native_at_addr(native_address, inIndex);
+        if (addr == 0)
             return SoftBodySharedSettingsVertexAttributes.NULL;
         if (SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0 == null)
             SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0 = SoftBodySharedSettingsVertexAttributes.native_new();
-        SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0.internal_reset(pointer, false);
+        SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0.internal_reset(addr, false);
         return SoftBodySharedSettingsVertexAttributes_TEMP_GEN_0;
     }
 
@@ -73,7 +74,7 @@ return nativeObject->size();
 ArraySoftBodySharedSettingsVertexAttributes* nativeObject = (ArraySoftBodySharedSettingsVertexAttributes*)this_addr;
 return (jlong)&nativeObject->at((int)inIndex);
 */
-    public static native long internal_native_at(long this_addr, int inIndex);
+    public static native long internal_native_at_addr(long this_addr, int inIndex);
 
     public void push_back(SoftBodySharedSettingsVertexAttributes inValue) {
         internal_native_push_back(native_address, inValue.native_address);
@@ -116,12 +117,12 @@ nativeObject->clear();
     public static native void internal_native_clear(long this_addr);
 
     public SoftBodySharedSettingsVertexAttributes data() {
-        long pointer = internal_native_data(native_address);
-        if (pointer == 0)
+        long addr = internal_native_data_addr(native_address);
+        if (addr == 0)
             return SoftBodySharedSettingsVertexAttributes.NULL;
         if (SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1 == null)
             SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1 = SoftBodySharedSettingsVertexAttributes.native_new();
-        SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1.internal_reset(pointer, false);
+        SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1.internal_reset(addr, false);
         return SoftBodySharedSettingsVertexAttributes_TEMP_GEN_1;
     }
 
@@ -130,5 +131,5 @@ ArraySoftBodySharedSettingsVertexAttributes* nativeObject = (ArraySoftBodyShared
 SoftBodySharedSettingsVertexAttributes* obj = nativeObject->data();
 return (jlong)obj;
 */
-    public static native long internal_native_data(long this_addr);
+    public static native long internal_native_data_addr(long this_addr);
 }

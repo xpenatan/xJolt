@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.vehicle;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -28,7 +29,7 @@ public class WheelSettings extends IDLBase {
     static public final WheelSettings NULL = WheelSettings.native_new();
 
     public WheelSettings() {
-        int addr = internal_native_create();
+        int addr = internal_native_create_addr();
         internal_reset(addr, true);
     }
 
@@ -37,7 +38,7 @@ var jsObj = new jolt.WheelSettings();
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(script = "var jsObj = new jolt.WheelSettings();return jolt.getPointer(jsObj);")
-    public static native int internal_native_create();
+    public static native int internal_native_create_addr();
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer
@@ -99,12 +100,12 @@ jsObj.Release();
     public static native void internal_native_Release(int this_addr);
 
     public Vec3 get_mPosition() {
-        int pointer = internal_native_get_mPosition(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mPosition_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -115,7 +116,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mPosition();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mPosition(int this_addr);
+    public static native int internal_native_get_mPosition_addr(int this_addr);
 
     public void set_mPosition(Vec3 mPosition) {
         internal_native_set_mPosition(native_address, mPosition.native_address);
@@ -129,12 +130,12 @@ jsObj.set_mPosition(mPosition_addr);
     public static native void internal_native_set_mPosition(int this_addr, int mPosition_addr);
 
     public Vec3 get_mSuspensionForcePoint() {
-        int pointer = internal_native_get_mSuspensionForcePoint(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mSuspensionForcePoint_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -145,7 +146,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mSuspensionForcePoint();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mSuspensionForcePoint(int this_addr);
+    public static native int internal_native_get_mSuspensionForcePoint_addr(int this_addr);
 
     public void set_mSuspensionForcePoint(Vec3 mSuspensionForcePoint) {
         internal_native_set_mSuspensionForcePoint(native_address, mSuspensionForcePoint.native_address);
@@ -159,12 +160,12 @@ jsObj.set_mSuspensionForcePoint(mSuspensionForcePoint_addr);
     public static native void internal_native_set_mSuspensionForcePoint(int this_addr, int mSuspensionForcePoint_addr);
 
     public Vec3 get_mSuspensionDirection() {
-        int pointer = internal_native_get_mSuspensionDirection(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mSuspensionDirection_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -175,7 +176,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mSuspensionDirection();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mSuspensionDirection(int this_addr);
+    public static native int internal_native_get_mSuspensionDirection_addr(int this_addr);
 
     public void set_mSuspensionDirection(Vec3 mSuspensionDirection) {
         internal_native_set_mSuspensionDirection(native_address, mSuspensionDirection.native_address);
@@ -189,12 +190,12 @@ jsObj.set_mSuspensionDirection(mSuspensionDirection_addr);
     public static native void internal_native_set_mSuspensionDirection(int this_addr, int mSuspensionDirection_addr);
 
     public Vec3 get_mSteeringAxis() {
-        int pointer = internal_native_get_mSteeringAxis(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mSteeringAxis_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -205,7 +206,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mSteeringAxis();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mSteeringAxis(int this_addr);
+    public static native int internal_native_get_mSteeringAxis_addr(int this_addr);
 
     public void set_mSteeringAxis(Vec3 mSteeringAxis) {
         internal_native_set_mSteeringAxis(native_address, mSteeringAxis.native_address);
@@ -219,12 +220,12 @@ jsObj.set_mSteeringAxis(mSteeringAxis_addr);
     public static native void internal_native_set_mSteeringAxis(int this_addr, int mSteeringAxis_addr);
 
     public Vec3 get_mWheelUp() {
-        int pointer = internal_native_get_mWheelUp(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mWheelUp_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -235,7 +236,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mWheelUp();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mWheelUp(int this_addr);
+    public static native int internal_native_get_mWheelUp_addr(int this_addr);
 
     public void set_mWheelUp(Vec3 mWheelUp) {
         internal_native_set_mWheelUp(native_address, mWheelUp.native_address);
@@ -249,12 +250,12 @@ jsObj.set_mWheelUp(mWheelUp_addr);
     public static native void internal_native_set_mWheelUp(int this_addr, int mWheelUp_addr);
 
     public Vec3 get_mWheelForward() {
-        int pointer = internal_native_get_mWheelForward(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mWheelForward_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(addr, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -265,7 +266,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mWheelForward();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mWheelForward(int this_addr);
+    public static native int internal_native_get_mWheelForward_addr(int this_addr);
 
     public void set_mWheelForward(Vec3 mWheelForward) {
         internal_native_set_mWheelForward(native_address, mWheelForward.native_address);
@@ -279,12 +280,12 @@ jsObj.set_mWheelForward(mWheelForward_addr);
     public static native void internal_native_set_mWheelForward(int this_addr, int mWheelForward_addr);
 
     public SpringSettings get_mSuspensionSpring() {
-        int pointer = internal_native_get_mSuspensionSpring(native_address);
-        if (pointer == 0)
+        int addr = internal_native_get_mSuspensionSpring_addr(native_address);
+        if (addr == 0)
             return SpringSettings.NULL;
         if (SpringSettings_TEMP_GEN_0 == null)
             SpringSettings_TEMP_GEN_0 = SpringSettings.native_new();
-        SpringSettings_TEMP_GEN_0.internal_reset(pointer, false);
+        SpringSettings_TEMP_GEN_0.internal_reset(addr, false);
         return SpringSettings_TEMP_GEN_0;
     }
 
@@ -295,7 +296,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.WheelSettings);var returnedJSObj = jsObj.get_mSuspensionSpring();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mSuspensionSpring(int this_addr);
+    public static native int internal_native_get_mSuspensionSpring_addr(int this_addr);
 
     public void set_mSuspensionSpring(SpringSettings mSuspensionSpring) {
         internal_native_set_mSuspensionSpring(native_address, mSuspensionSpring.native_address);

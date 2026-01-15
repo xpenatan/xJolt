@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 public class DecoratedShape extends Shape {
@@ -27,12 +28,12 @@ public class DecoratedShape extends Shape {
     }
 
     public Shape GetInnerShape() {
-        int pointer = internal_native_GetInnerShape(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetInnerShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -43,5 +44,5 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DecoratedShape);var returnedJSObj = jsObj.GetInnerShape();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetInnerShape(int this_addr);
+    public static native int internal_native_GetInnerShape_addr(int this_addr);
 }

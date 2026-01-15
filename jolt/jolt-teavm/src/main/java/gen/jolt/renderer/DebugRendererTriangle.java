@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.renderer;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -39,12 +40,12 @@ jolt.destroy(jsObj);
     public static native void internal_native_deleteNative(int this_addr);
 
     public DebugRendererVertex get_mV(int index) {
-        int pointer = internal_native_get_mV(native_address, index);
-        if (pointer == 0)
+        int addr = internal_native_get_mV_addr(native_address, index);
+        if (addr == 0)
             return DebugRendererVertex.NULL;
         if (DebugRendererVertex_TEMP_GEN_0 == null)
             DebugRendererVertex_TEMP_GEN_0 = DebugRendererVertex.native_new();
-        DebugRendererVertex_TEMP_GEN_0.internal_reset(pointer, false);
+        DebugRendererVertex_TEMP_GEN_0.internal_reset(addr, false);
         return DebugRendererVertex_TEMP_GEN_0;
     }
 
@@ -55,7 +56,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "index"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.DebugRendererTriangle);var returnedJSObj = jsObj.get_mV(index);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_get_mV(int this_addr, int index);
+    public static native int internal_native_get_mV_addr(int this_addr, int index);
 
     public void set_mV(int index, DebugRendererVertex mV) {
         internal_native_set_mV(native_address, index, mV.native_address);

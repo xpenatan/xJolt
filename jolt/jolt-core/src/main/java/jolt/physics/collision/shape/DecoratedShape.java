@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.collision.shape;
 
 public class DecoratedShape extends Shape {
@@ -27,12 +28,12 @@ public class DecoratedShape extends Shape {
     }
 
     public Shape GetInnerShape() {
-        long pointer = internal_native_GetInnerShape(native_address);
-        if (pointer == 0)
+        long addr = internal_native_GetInnerShape_addr(native_address);
+        if (addr == 0)
             return Shape.NULL;
         if (Shape_TEMP_GEN_0 == null)
             Shape_TEMP_GEN_0 = Shape.native_new();
-        Shape_TEMP_GEN_0.internal_reset(pointer, false);
+        Shape_TEMP_GEN_0.internal_reset(addr, false);
         return Shape_TEMP_GEN_0;
     }
 
@@ -41,5 +42,5 @@ DecoratedShape* nativeObject = (DecoratedShape*)this_addr;
 const Shape* obj = nativeObject->GetInnerShape();
 return (jlong)obj;
 */
-    public static native long internal_native_GetInnerShape(long this_addr);
+    public static native long internal_native_GetInnerShape_addr(long this_addr);
 }

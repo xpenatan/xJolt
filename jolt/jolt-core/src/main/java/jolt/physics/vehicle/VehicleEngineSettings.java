@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt.physics.vehicle;
 
 import com.github.xpenatan.jParser.idl.IDLBase;
@@ -99,12 +100,12 @@ nativeObject->mMaxRPM = mMaxRPM;
     public static native void internal_native_set_mMaxRPM(long this_addr, float mMaxRPM);
 
     public LinearCurve get_mNormalizedTorque() {
-        long pointer = internal_native_get_mNormalizedTorque(native_address);
-        if (pointer == 0)
+        long addr = internal_native_get_mNormalizedTorque_addr(native_address);
+        if (addr == 0)
             return LinearCurve.NULL;
         if (LinearCurve_TEMP_GEN_0 == null)
             LinearCurve_TEMP_GEN_0 = LinearCurve.native_new();
-        LinearCurve_TEMP_GEN_0.internal_reset(pointer, false);
+        LinearCurve_TEMP_GEN_0.internal_reset(addr, false);
         return LinearCurve_TEMP_GEN_0;
     }
 
@@ -112,7 +113,7 @@ nativeObject->mMaxRPM = mMaxRPM;
 VehicleEngineSettings* nativeObject = (VehicleEngineSettings*)this_addr;
 return (jlong)&nativeObject->mNormalizedTorque;
 */
-    public static native long internal_native_get_mNormalizedTorque(long this_addr);
+    public static native long internal_native_get_mNormalizedTorque_addr(long this_addr);
 
     public void set_mNormalizedTorque(LinearCurve mNormalizedTorque) {
         internal_native_set_mNormalizedTorque(native_address, mNormalizedTorque.native_address);

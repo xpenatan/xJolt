@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package jolt;
 
 import com.github.xpenatan.jParser.idl.IDLBase;

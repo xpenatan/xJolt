@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision.shape;
 
 import gen.jolt.physics.collision.PhysicsMaterial;
@@ -13,7 +14,7 @@ public class CapsuleShape extends ConvexShape {
 
     public CapsuleShape(float inHalfHeight, float inRadius, PhysicsMaterial inMaterial) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_float_float_PhysicsMaterial(inHalfHeight, inRadius, inMaterial.native_address);
+        int addr = internal_native_create_float_float_PhysicsMaterial_addr(inHalfHeight, inRadius, inMaterial.native_address);
         internal_reset(addr, true);
     }
 
@@ -22,11 +23,11 @@ var jsObj = new jolt.CapsuleShape(inHalfHeight, inRadius, inMaterial_addr);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfHeight", "inRadius", "inMaterial_addr"}, script = "var jsObj = new jolt.CapsuleShape(inHalfHeight, inRadius, inMaterial_addr);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_float_float_PhysicsMaterial(float inHalfHeight, float inRadius, int inMaterial_addr);
+    public static native int internal_native_create_float_float_PhysicsMaterial_addr(float inHalfHeight, float inRadius, int inMaterial_addr);
 
     public CapsuleShape(float inHalfHeight, float inRadius) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_float_float(inHalfHeight, inRadius);
+        int addr = internal_native_create_float_float_addr(inHalfHeight, inRadius);
         internal_reset(addr, true);
     }
 
@@ -35,7 +36,7 @@ var jsObj = new jolt.CapsuleShape(inHalfHeight, inRadius);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inHalfHeight", "inRadius"}, script = "var jsObj = new jolt.CapsuleShape(inHalfHeight, inRadius);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_float_float(float inHalfHeight, float inRadius);
+    public static native int internal_native_create_float_float_addr(float inHalfHeight, float inRadius);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

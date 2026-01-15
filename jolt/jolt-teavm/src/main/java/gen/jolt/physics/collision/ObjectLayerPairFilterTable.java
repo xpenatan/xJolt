@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.collision;
 
 public class ObjectLayerPairFilterTable extends ObjectLayerPairFilter {
@@ -11,7 +12,7 @@ public class ObjectLayerPairFilterTable extends ObjectLayerPairFilter {
 
     public ObjectLayerPairFilterTable(int inNumObjectLayers) {
         super((byte) 1, (char) 1);
-        int addr = internal_native_create_int(inNumObjectLayers);
+        int addr = internal_native_create_int_addr(inNumObjectLayers);
         internal_reset(addr, true);
     }
 
@@ -20,7 +21,7 @@ var jsObj = new jolt.ObjectLayerPairFilterTable(inNumObjectLayers);
 return jolt.getPointer(jsObj);
 */
     @org.teavm.jso.JSBody(params = {"inNumObjectLayers"}, script = "var jsObj = new jolt.ObjectLayerPairFilterTable(inNumObjectLayers);return jolt.getPointer(jsObj);")
-    public static native int internal_native_create_int(int inNumObjectLayers);
+    public static native int internal_native_create_int_addr(int inNumObjectLayers);
 
     /**
      * Dummy constructor, used internally to creates objects without C++ pointer

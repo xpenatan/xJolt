@@ -3,6 +3,7 @@
  *
  * Do not make changes to this file
  *-------------------------------------------------------*/
+
 package gen.jolt.physics.body;
 
 import gen.com.github.xpenatan.jParser.idl.IDLBase;
@@ -116,12 +117,12 @@ return returnedJSObj;
     public static native boolean internal_native_GetAllowSleeping(int this_addr);
 
     public Vec3 GetLinearVelocity() {
-        int pointer = internal_native_GetLinearVelocity(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetLinearVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_0 == null)
             Vec3_TEMP_GEN_0 = Vec3.native_new();
-        Vec3_TEMP_GEN_0.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_0.internal_reset(addr, false);
         return Vec3_TEMP_GEN_0;
     }
 
@@ -132,7 +133,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetLinearVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetLinearVelocity(int this_addr);
+    public static native int internal_native_GetLinearVelocity_addr(int this_addr);
 
     public void SetLinearVelocity(Vec3 inVelocity) {
         internal_native_SetLinearVelocity(native_address, inVelocity.native_address);
@@ -157,12 +158,12 @@ jsObj.SetLinearVelocityClamped(inVelocity_addr);
     public static native void internal_native_SetLinearVelocityClamped(int this_addr, int inVelocity_addr);
 
     public Vec3 GetAngularVelocity() {
-        int pointer = internal_native_GetAngularVelocity(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetAngularVelocity_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_1 == null)
             Vec3_TEMP_GEN_1 = Vec3.native_new();
-        Vec3_TEMP_GEN_1.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_1.internal_reset(addr, false);
         return Vec3_TEMP_GEN_1;
     }
 
@@ -173,7 +174,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetAngularVelocity();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetAngularVelocity(int this_addr);
+    public static native int internal_native_GetAngularVelocity_addr(int this_addr);
 
     public void SetAngularVelocity(Vec3 inVelocity) {
         internal_native_SetAngularVelocity(native_address, inVelocity.native_address);
@@ -392,12 +393,12 @@ jsObj.SetInverseMass(inInvM);
     public static native void internal_native_SetInverseMass(int this_addr, float inInvM);
 
     public Vec3 GetInverseInertiaDiagonal() {
-        int pointer = internal_native_GetInverseInertiaDiagonal(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetInverseInertiaDiagonal_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_2 == null)
             Vec3_TEMP_GEN_2 = Vec3.native_new();
-        Vec3_TEMP_GEN_2.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_2.internal_reset(addr, false);
         return Vec3_TEMP_GEN_2;
     }
 
@@ -408,15 +409,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetInverseInertiaDiagonal();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetInverseInertiaDiagonal(int this_addr);
+    public static native int internal_native_GetInverseInertiaDiagonal_addr(int this_addr);
 
     public Quat GetInertiaRotation() {
-        int pointer = internal_native_GetInertiaRotation(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetInertiaRotation_addr(native_address);
+        if (addr == 0)
             return Quat.NULL;
         if (Quat_TEMP_GEN_0 == null)
             Quat_TEMP_GEN_0 = Quat.native_new();
-        Quat_TEMP_GEN_0.internal_reset(pointer, false);
+        Quat_TEMP_GEN_0.internal_reset(addr, false);
         return Quat_TEMP_GEN_0;
     }
 
@@ -427,7 +428,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetInertiaRotation();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetInertiaRotation(int this_addr);
+    public static native int internal_native_GetInertiaRotation_addr(int this_addr);
 
     public void SetInverseInertia(Vec3 inInvI, Quat inRotation) {
         internal_native_SetInverseInertia(native_address, inInvI.native_address, inRotation.native_address);
@@ -441,12 +442,12 @@ jsObj.SetInverseInertia(inInvI_addr, inRotation_addr);
     public static native void internal_native_SetInverseInertia(int this_addr, int inInvI_addr, int inRotation_addr);
 
     public Mat44 GetLocalSpaceInverseInertia() {
-        int pointer = internal_native_GetLocalSpaceInverseInertia(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetLocalSpaceInverseInertia_addr(native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_0 == null)
             Mat44_TEMP_GEN_0 = Mat44.native_new();
-        Mat44_TEMP_GEN_0.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_0.internal_reset(addr, false);
         return Mat44_TEMP_GEN_0;
     }
 
@@ -457,15 +458,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetLocalSpaceInverseInertia();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetLocalSpaceInverseInertia(int this_addr);
+    public static native int internal_native_GetLocalSpaceInverseInertia_addr(int this_addr);
 
     public Mat44 GetInverseInertiaForRotation(Mat44 inRotation) {
-        int pointer = internal_native_GetInverseInertiaForRotation(native_address, inRotation.native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetInverseInertiaForRotation_addr(native_address, inRotation.native_address);
+        if (addr == 0)
             return Mat44.NULL;
         if (Mat44_TEMP_GEN_1 == null)
             Mat44_TEMP_GEN_1 = Mat44.native_new();
-        Mat44_TEMP_GEN_1.internal_reset(pointer, false);
+        Mat44_TEMP_GEN_1.internal_reset(addr, false);
         return Mat44_TEMP_GEN_1;
     }
 
@@ -476,15 +477,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inRotation_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetInverseInertiaForRotation(inRotation_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetInverseInertiaForRotation(int this_addr, int inRotation_addr);
+    public static native int internal_native_GetInverseInertiaForRotation_addr(int this_addr, int inRotation_addr);
 
     public Vec3 MultiplyWorldSpaceInverseInertiaByVector(Quat inRotation, Vec3 inV) {
-        int pointer = internal_native_MultiplyWorldSpaceInverseInertiaByVector(native_address, inRotation.native_address, inV.native_address);
-        if (pointer == 0)
+        int addr = internal_native_MultiplyWorldSpaceInverseInertiaByVector_addr(native_address, inRotation.native_address, inV.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_3 == null)
             Vec3_TEMP_GEN_3 = Vec3.native_new();
-        Vec3_TEMP_GEN_3.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_3.internal_reset(addr, false);
         return Vec3_TEMP_GEN_3;
     }
 
@@ -495,15 +496,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inRotation_addr", "inV_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.MultiplyWorldSpaceInverseInertiaByVector(inRotation_addr, inV_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_MultiplyWorldSpaceInverseInertiaByVector(int this_addr, int inRotation_addr, int inV_addr);
+    public static native int internal_native_MultiplyWorldSpaceInverseInertiaByVector_addr(int this_addr, int inRotation_addr, int inV_addr);
 
     public Vec3 GetPointVelocityCOM(Vec3 inPointRelativeToCOM) {
-        int pointer = internal_native_GetPointVelocityCOM(native_address, inPointRelativeToCOM.native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetPointVelocityCOM_addr(native_address, inPointRelativeToCOM.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_4 == null)
             Vec3_TEMP_GEN_4 = Vec3.native_new();
-        Vec3_TEMP_GEN_4.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_4.internal_reset(addr, false);
         return Vec3_TEMP_GEN_4;
     }
 
@@ -514,15 +515,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inPointRelativeToCOM_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetPointVelocityCOM(inPointRelativeToCOM_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetPointVelocityCOM(int this_addr, int inPointRelativeToCOM_addr);
+    public static native int internal_native_GetPointVelocityCOM_addr(int this_addr, int inPointRelativeToCOM_addr);
 
     public Vec3 GetAccumulatedForce() {
-        int pointer = internal_native_GetAccumulatedForce(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetAccumulatedForce_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_5 == null)
             Vec3_TEMP_GEN_5 = Vec3.native_new();
-        Vec3_TEMP_GEN_5.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_5.internal_reset(addr, false);
         return Vec3_TEMP_GEN_5;
     }
 
@@ -533,15 +534,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetAccumulatedForce();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetAccumulatedForce(int this_addr);
+    public static native int internal_native_GetAccumulatedForce_addr(int this_addr);
 
     public Vec3 GetAccumulatedTorque() {
-        int pointer = internal_native_GetAccumulatedTorque(native_address);
-        if (pointer == 0)
+        int addr = internal_native_GetAccumulatedTorque_addr(native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_6 == null)
             Vec3_TEMP_GEN_6 = Vec3.native_new();
-        Vec3_TEMP_GEN_6.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_6.internal_reset(addr, false);
         return Vec3_TEMP_GEN_6;
     }
 
@@ -552,7 +553,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.GetAccumulatedTorque();if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_GetAccumulatedTorque(int this_addr);
+    public static native int internal_native_GetAccumulatedTorque_addr(int this_addr);
 
     public void ResetForce() {
         internal_native_ResetForce(native_address);
@@ -588,12 +589,12 @@ jsObj.ResetMotion();
     public static native void internal_native_ResetMotion(int this_addr);
 
     public Vec3 LockTranslation(Vec3 inV) {
-        int pointer = internal_native_LockTranslation(native_address, inV.native_address);
-        if (pointer == 0)
+        int addr = internal_native_LockTranslation_addr(native_address, inV.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_7 == null)
             Vec3_TEMP_GEN_7 = Vec3.native_new();
-        Vec3_TEMP_GEN_7.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_7.internal_reset(addr, false);
         return Vec3_TEMP_GEN_7;
     }
 
@@ -604,15 +605,15 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inV_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.LockTranslation(inV_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_LockTranslation(int this_addr, int inV_addr);
+    public static native int internal_native_LockTranslation_addr(int this_addr, int inV_addr);
 
     public Vec3 LockAngular(Vec3 inV) {
-        int pointer = internal_native_LockAngular(native_address, inV.native_address);
-        if (pointer == 0)
+        int addr = internal_native_LockAngular_addr(native_address, inV.native_address);
+        if (addr == 0)
             return Vec3.NULL;
         if (Vec3_TEMP_GEN_8 == null)
             Vec3_TEMP_GEN_8 = Vec3.native_new();
-        Vec3_TEMP_GEN_8.internal_reset(pointer, false);
+        Vec3_TEMP_GEN_8.internal_reset(addr, false);
         return Vec3_TEMP_GEN_8;
     }
 
@@ -623,7 +624,7 @@ if(!returnedJSObj.hasOwnProperty('ptr')) return 0;
 return jolt.getPointer(returnedJSObj);
 */
     @org.teavm.jso.JSBody(params = {"this_addr", "inV_addr"}, script = "var jsObj = jolt.wrapPointer(this_addr, jolt.MotionProperties);var returnedJSObj = jsObj.LockAngular(inV_addr);if(!returnedJSObj.hasOwnProperty('ptr')) return 0; return jolt.getPointer(returnedJSObj);")
-    public static native int internal_native_LockAngular(int this_addr, int inV_addr);
+    public static native int internal_native_LockAngular_addr(int this_addr, int inV_addr);
 
     public void SetNumVelocityStepsOverride(int inN) {
         internal_native_SetNumVelocityStepsOverride(native_address, inN);
