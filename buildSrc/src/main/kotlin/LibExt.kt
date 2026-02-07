@@ -19,7 +19,7 @@ object LibExt {
     const val gdxWebGPUVersion = "-SNAPSHOT"
 
     //Example dependencies
-    const val gdxTeaVMVersion = "1.4.0"
+    const val gdxTeaVMVersion = "1.5.0"
     const val gdxImGuiVersion = "-SNAPSHOT"
     const val jUnitVersion = "4.12"
 
