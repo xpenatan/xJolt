@@ -129,7 +129,7 @@ public class SamplesApp extends InputAdapter {
                 ImGui.EndTabItem();
             }
             if(ImGui.BeginTabItem("Test")) {
-                renderTestUI();
+                test.renderUI();
                 ImGui.EndTabItem();
             }
             ImGui.EndTabBar();
@@ -139,6 +139,8 @@ public class SamplesApp extends InputAdapter {
         if(newTest != null) {
             startTest(newTest);
         }
+
+        renderTestUI();
     }
 
     private void renderTestUI() {

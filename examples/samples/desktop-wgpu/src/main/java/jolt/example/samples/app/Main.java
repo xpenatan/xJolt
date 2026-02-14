@@ -11,7 +11,7 @@ public class Main {
         GraphicManagerApi.graphicApi = new WGPUGraphicApi();
 
         WgDesktopApplicationConfiguration config = new WgDesktopApplicationConfiguration();
-        config.setWindowedMode(640, 480);
+        config.setWindowedMode(1444, 800);
         config.setTitle("WebGPU");
         config.enableGPUtiming = false;
         config.useVsync(false);

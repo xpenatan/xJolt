@@ -222,4 +222,8 @@ public abstract class Test {
         bodyCreationSettings.dispose();
         return floor;
     }
+
+    public void renderUI() {
+
+    }
 }
