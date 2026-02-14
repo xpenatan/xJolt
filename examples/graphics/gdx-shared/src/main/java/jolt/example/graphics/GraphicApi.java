@@ -3,6 +3,7 @@ package jolt.example.graphics;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.glutils.ImmediateModeRenderer;
+import imgui.gdx.ImGuiGdxImpl;
 import jolt.gdx.JoltDebugRenderer;
 
 public interface GraphicApi {
@@ -12,4 +13,5 @@ public interface GraphicApi {
     Batch createSpriteBatch();
     BitmapFont createBitmapFont();
     GraphicType getGraphicType();
+    ImGuiGdxImpl getImGuiImpl();
 }

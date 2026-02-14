@@ -2,6 +2,7 @@ package jolt.example.samples.app;
 
 import com.badlogic.gdx.ScreenAdapter;
 //import imgui.ImGuiLoader;
+import imgui.ImGuiLoader;
 import jolt.JoltLoader;
 
 public class InitScreen extends ScreenAdapter {
@@ -16,11 +17,11 @@ public class InitScreen extends ScreenAdapter {
 
     @Override
     public void show() {
-//        ImGuiLoader.init((isSuccess, e) -> {
-//            if(isSuccess) {
+        ImGuiLoader.init((isSuccess, e) -> {
+            if(isSuccess) {
                 JoltLoader.init((joltSuccess, e2) -> init = joltSuccess);
-//            }
-//        });
+            }
+        });
     }
 
     @Override

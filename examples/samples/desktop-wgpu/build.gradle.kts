@@ -19,7 +19,7 @@ dependencies {
 
     implementation("io.github.monstroussoftware.gdx-webgpu:backend-desktop:${LibExt.gdxWebGPUVersion}")
     implementation("com.badlogicgames.gdx:gdx-platform:${LibExt.gdxVersion}:natives-desktop")
-//    implementation("com.github.xpenatan.gdx-imgui:imgui-ext-desktop:${LibExt.gdxImGuiVersion}")
+    implementation("com.github.xpenatan.xImGui:imgui-desktop:${LibExt.gdxImGuiVersion}")
 }
 
 java {

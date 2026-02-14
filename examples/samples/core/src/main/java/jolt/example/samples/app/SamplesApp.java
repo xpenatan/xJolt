@@ -14,6 +14,10 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 //import imgui.ImGuiCond;
 //import imgui.ImGuiTabBarFlags;
 //import imgui.ImVec2;
+import imgui.ImGui;
+import imgui.ImTemp;
+import imgui.enums.ImGuiCond;
+import imgui.enums.ImGuiTabBarFlags;
 import jolt.example.graphics.GraphicManagerApi;
 import jolt.example.samples.app.imgui.FPSRenderer;
 import jolt.example.samples.app.imgui.ImGuiSettingsRenderer;
@@ -97,44 +101,44 @@ public class SamplesApp extends InputAdapter {
     }
 
     public void renderUI() {
-//        Class<Test> newTest = null;
-//        ImGui.SetNextWindowSize(ImVec2.TMP_1.set(250, 400), ImGuiCond.FirstUseEver);
-//        ImGui.Begin("Settings");
-//
-//        fpsRenderer.render();
-//
-//        newTest = settingsRenderer.render(allTests);
-//
-//        settingsRenderer.idlBool.set(isPaused);
-//        if(ImGui.Checkbox("IsPaused", settingsRenderer.idlBool)) {
-//            isPaused = settingsRenderer.idlBool.getValue();
-//        }
-//
-//        settingsRenderer.idlBool.set(debugRenderer.isEnable());
-//        if(ImGui.Checkbox("DebugRenderer", settingsRenderer.idlBool)) {
-//            debugRenderer.setEnable(settingsRenderer.idlBool.getValue());
-//        }
-//
-//        if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.FittingPolicyScroll.or(ImGuiTabBarFlags.Reorderable))) {
-//            if(ImGui.BeginTabItem("Physics")) {
-//                settingsRenderer.render(joltInstance);
-//                ImGui.EndTabItem();
-//            }
-//            if(ImGui.BeginTabItem("DebugRenderer")) {
-//                settingsRenderer.render(debugSettings);
-//                ImGui.EndTabItem();
-//            }
-//            if(ImGui.BeginTabItem("Test")) {
+        Class<Test> newTest = null;
+        ImGui.SetNextWindowSize(ImTemp.ImVec2_1(250, 400), ImGuiCond.FirstUseEver);
+        ImGui.Begin("Settings");
+
+        fpsRenderer.render();
+
+        newTest = settingsRenderer.render(allTests);
+
+        settingsRenderer.idlBool.set(isPaused);
+        if(ImGui.Checkbox("IsPaused", settingsRenderer.idlBool)) {
+            isPaused = settingsRenderer.idlBool.getValue();
+        }
+
+        settingsRenderer.idlBool.set(debugRenderer.isEnable());
+        if(ImGui.Checkbox("DebugRenderer", settingsRenderer.idlBool)) {
+            debugRenderer.setEnable(settingsRenderer.idlBool.getValue());
+        }
+
+        if(ImGui.BeginTabBar("##Settings", ImGuiTabBarFlags.FittingPolicyScroll.or(ImGuiTabBarFlags.Reorderable))) {
+            if(ImGui.BeginTabItem("Physics")) {
+                settingsRenderer.render(joltInstance);
+                ImGui.EndTabItem();
+            }
+            if(ImGui.BeginTabItem("DebugRenderer")) {
+                settingsRenderer.render(debugSettings);
+                ImGui.EndTabItem();
+            }
+            if(ImGui.BeginTabItem("Test")) {
                 renderTestUI();
-//                ImGui.EndTabItem();
-//            }
-//            ImGui.EndTabBar();
-//        }
-//        ImGui.End();
-//
-//        if(newTest != null) {
-//            startTest(newTest);
-//        }
+                ImGui.EndTabItem();
+            }
+            ImGui.EndTabBar();
+        }
+        ImGui.End();
+
+        if(newTest != null) {
+            startTest(newTest);
+        }
     }
 
     private void renderTestUI() {

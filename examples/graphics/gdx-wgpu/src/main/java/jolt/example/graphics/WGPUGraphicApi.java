@@ -7,6 +7,8 @@ import com.monstrous.gdx.webgpu.graphics.g2d.WgBitmapFont;
 import com.monstrous.gdx.webgpu.graphics.g2d.WgSpriteBatch;
 import com.monstrous.gdx.webgpu.graphics.utils.WgImmediateModeRenderer;
 import com.monstrous.gdx.webgpu.graphics.utils.WgScreenUtils;
+import imgui.gdx.ImGuiGdxImpl;
+import imgui.gdx.ImGuiGdxWGPUImpl;
 import jolt.gdx.JoltDebugRenderer;
 import jolt.gdx.wgpu.WGPUDebugRenderer;
 
@@ -39,5 +41,10 @@ public class WGPUGraphicApi implements GraphicApi {
     @Override
     public GraphicType getGraphicType() {
         return GraphicType.WGPU;
+    }
+
+    @Override
+    public ImGuiGdxImpl getImGuiImpl() {
+        return new ImGuiGdxWGPUImpl();
     }
 }

@@ -21,7 +21,7 @@ dependencies {
     implementation("com.github.xpenatan.gdx-teavm:backend-web:${LibExt.gdxTeaVMVersion}")
     implementation("com.github.xpenatan.gdx-teavm:backend-web:${LibExt.gdxTeaVMVersion}:sources")
     implementation("io.github.monstroussoftware.gdx-webgpu:backend-teavm:${LibExt.gdxWebGPUVersion}")
-//    implementation("com.github.xpenatan.gdx-imgui:imgui-ext-teavm:${LibExt.gdxImGuiVersion}")
+    implementation("com.github.xpenatan.xImGui:imgui-teavm:${LibExt.gdxImGuiVersion}")
 }
 
 java {

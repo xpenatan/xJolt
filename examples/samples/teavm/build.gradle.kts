@@ -20,7 +20,7 @@ dependencies {
     implementation("com.badlogicgames.gdx:gdx:${LibExt.gdxVersion}")
     implementation("com.github.xpenatan.gdx-teavm:backend-web:${LibExt.gdxTeaVMVersion}")
     implementation("com.github.xpenatan.gdx-teavm:backend-web:${LibExt.gdxTeaVMVersion}:sources")
-//    implementation("com.github.xpenatan.gdx-imgui:imgui-ext-teavm:${LibExt.gdxImGuiVersion}")
+    implementation("com.github.xpenatan.xImGui:imgui-teavm:${LibExt.gdxImGuiVersion}")
 }
 
 java {
