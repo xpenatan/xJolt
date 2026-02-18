@@ -22,6 +22,11 @@ public class WGPUDebugRenderer extends JoltDebugRenderer {
     WgModelBatch batch;
 
     public WGPUDebugRenderer() {
+        this(true);
+    }
+
+    public WGPUDebugRenderer(boolean enabled) {
+        super(enabled);
         batch = new WgModelBatch();
     }
 
