@@ -54,9 +54,9 @@ configure(libProjects) {
                         }
                     }
                     scm {
-                        connection.set("scm:git:git://https://github.com/xpenatan/xJolt.git")
-                        developerConnection.set("scm:git:ssh://https://github.com/xpenatan/xJolt.git")
-                        url.set("http://https://github.com/xpenatan/xJolt/tree/master")
+                        connection.set("scm:git@github.com:xpenatan/xJolt.git")
+                        developerConnection.set("scm:git@github.com:xpenatan/xJolt.git")
+                        url.set("http://https://github.com/xpenatan/xJolt")
                     }
                     licenses {
                         license {
