@@ -17,6 +17,11 @@ public class GdxDebugRenderer extends JoltDebugRenderer {
     private ModelBatch batch;
 
     public GdxDebugRenderer() {
+        this(true);
+    }
+
+    public GdxDebugRenderer(boolean enabled) {
+        super(enabled);
         batch = new ModelBatch();
     }
 
